@@ -43,3 +43,6 @@ https://10up.invisionapp.com/share/QRRHNIT68UV#/screens/357529463
 Playful:
 https://godaddy.10uplabs.com/play/
 https://10up.invisionapp.com/share/QRRHNIT68UV#/screens/360640620
+
+## 10Up QA Matrix: 
+https://docs.google.com/spreadsheets/d/1g2CspmSgOaIdmQ0vnV5wCGs4G23ntsFpIFAY7dm-HMc/edit#gid=791639588
