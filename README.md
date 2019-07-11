@@ -1,5 +1,7 @@
 # Project "Maverick" Review
 
+### Issues must be logged by July 17
+
 Hey team, 
 
 It's time to kick off our formal review of the Maverick theme and report any bugs we discover. Let's make issues on this repository for each bug found. 
