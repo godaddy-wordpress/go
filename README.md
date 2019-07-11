@@ -15,7 +15,9 @@ To start, we'll each focus on a singular design style to review as outlined belo
 - [ ] Rich: _Trendy, Modern_
 
 ## Functionality Review
-Functionality wise, download the theme from the [10Up GitLab repo](https://gitlab.10up.com/godaddy/godaddy-theme) and start looking for bugs.
+Functionality wise, 10Up has created a couple accounts for us to use (I'll send the info in Slack) to test around. You may also download the theme from the [10Up GitLab repo](https://gitlab.10up.com/godaddy/godaddy-theme). They've been using `develop` as the base branch (master) and the `staging` branch autodeploys to godaddy.10uplabs.com.  
+
+The staging site is a multisite with each design style as its own site.
 
 ## Staging sites
 Below you'll find the staging sites for testing the Maverick theme, plus corresponding Invision prototypes of each design style. 
