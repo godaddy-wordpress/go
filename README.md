@@ -17,7 +17,13 @@ To start, we'll each focus on a singular design style to review as outlined belo
 - [ ] Rich: _Trendy, Modern_
 
 ## Functionality Review
-Functionality wise, 10Up has created a couple accounts for us to use (I'll send the info in Slack) to test around. You may also download the theme from the [10Up GitLab repo](https://gitlab.10up.com/godaddy/godaddy-theme). They've been using `develop` as the base branch (master) and the `staging` branch autodeploys to godaddy.10uplabs.com.  
+Functionality wise, 10Up has created a couple accounts for us to use (I'll send the info in Slack) to test around. You may also download/clone the theme from the [10Up GitLab repo](https://gitlab.10up.com/godaddy/godaddy-theme). They've been using `develop` as the base branch (master) and the `staging` branch autodeploys to godaddy.10uplabs.com. After cloning, run `npm start` to install deps and build all the assets.  
+
+```
+$ git clone git@gitlab.10up.com:godaddy/godaddy-theme.git maverick
+$ cd maverick
+$ npm start
+```
 
 The staging site is a multisite with each design style as its own site.
 
