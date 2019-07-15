@@ -6,7 +6,7 @@ Hey team,
 
 It's time to kick off our formal review of the Maverick theme and report any bugs we discover. Let's make issues on this repository for each bug found. 
 
-[Click here to create an issue &rarr;](https://github.com/godaddy/wp-project-maverick/issues/new?assignees=&labels=bug&template=---bug-report.md&title=) 
+[Click here to create an issue &rarr;](https://github.com/godaddy/wp-project-maverick/issues/new/choose) 
 
 ### Initial Design Review
 To start, we'll each focus on a singular design style to review as outlined below. Report any discrepancies from the Invision prototypes and all improper styling that needs to be resolved. There are also labels for each design style that we should use to help organize.   
