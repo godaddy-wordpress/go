@@ -16,4 +16,4 @@ assignees: ''
 **Priority** (select one):
 - [ ] High - Functional blocker
 - [ ] Medium - Doesn't work as expected 
-- [ ] Low - Styling fix, but not a blocker of functionality
+- [ ] Low - Not a big deal but we'd want to get to this eventually
