@@ -2,7 +2,7 @@
 name: "\U0001F3A8 Design Style Issue"
 about: Create a report to help us improve our new theme
 title: ''
-labels: Design, bug
+labels: design, bug
 assignees: ''
 
 ---
