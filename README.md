@@ -9,12 +9,7 @@ It's time to kick off our formal review of the Maverick theme and report any bug
 [Click here to create an issue &rarr;](https://github.com/godaddy/wp-project-maverick/issues/new/choose) 
 
 ### Initial Design Review
-To start, we'll each focus on a singular design style to review as outlined below. Report any discrepancies from the Invision prototypes and all improper styling that needs to be resolved. There are also labels for each design style that we should use to help organize.   
-
-- [ ] Evan: _Traditional_
-- [ ] JR: _Welcoming_
-- [ ] Frankie: _Playful_
-- [ ] Rich: _Trendy, Modern_
+Rich will focus on design styles and report any discrepancies from the Invision prototypes and all improper styling that needs to be resolved. There are also labels for each design style that we should use to help organize.   
 
 ## Functionality Review
 Functionality wise, 10Up has created a couple accounts for us to use (I'll send the info in Slack) to test around. You may also download/clone the theme from the [10Up GitLab repo](https://gitlab.10up.com/godaddy/godaddy-theme). They've been using `develop` as the base branch (master) and the `staging` branch autodeploys to godaddy.10uplabs.com. After cloning, run `npm start` to install deps and build all the assets.  
