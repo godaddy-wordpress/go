@@ -267,7 +267,7 @@ function get_default_design_style() {
 	 *
 	 * @param array $default_design_style The slug of the default design style.
 	 */
-	return apply_filters( 'maverick_default_design_style', 'creative-services' );
+	return apply_filters( 'maverick_default_design_style', 'modern' );
 }
 
 /**
@@ -277,10 +277,10 @@ function get_default_design_style() {
  */
 function get_available_design_styles() {
 	$default_design_styles = [
-		'creative-services' => [
+		'modern' => [
 			'label'         => esc_html__( 'Creative Services', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/creative-services.css',
-			'editor_style'  => 'dist/css/design-styles/creative-services-editor.css',
+			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
+			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Creative+Services',
 			'color_schemes' => [
 				'light' => [
