@@ -77,8 +77,8 @@ module.exports = {
 	BrowserSyncConfig: {
 		host: 'localhost',
 		port: 3000,
-		proxy: 'http://godaddy.test',
-		open: false,
+		proxy: 'http://maverick.test',
+		open: true,
 		files: [
 			'**/*.php',
 			'dist/js/**/*.js',

@@ -85,7 +85,7 @@
   },
   "testing": {
     "urls": {
-      "local": "http://godaddy.test",
+      "local": "http://maverick.test",
       "staging": "",
       "production": ""
     },
