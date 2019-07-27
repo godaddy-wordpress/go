@@ -1,12 +1,11 @@
 .content-area > * {
-	margin: var(--theme-spacing-unit-2) auto;
+	margin: var(--theme-block-spacing) auto;
 	max-width: var(--theme-max-width-base);
-	padding-left: var(--theme-spacing-unit-2);
-	padding-right: var(--theme-spacing-unit-2);
+	padding-left: var(--theme-block-padding-x);
+	padding-right: var(--theme-block-padding-x);
 
-	@media (--medium) {
-		margin-bottom: calc(2 * var(--theme-spacing-unit-2));
-		margin-top: calc(2 * var(--theme-spacing-unit-2));
+	&:not(p):not(ul):not(ol):not(.wp-block-spacer) {
+		margin: var(--theme-block-spacing-huge) auto;
 	}
 
 	&:first-child {
@@ -17,9 +16,15 @@
 		margin-bottom: 0 !important;
 	}
 
+	& > *:first-child {
+		margin-top: 0;
+	}
+
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+
 	&.alignwide {
-		margin-left: auto;
-		margin-right: auto;
 		max-width: var(--theme-max-width-wide);
 	}
 
@@ -30,42 +35,41 @@
 	}
 }
 
-.content-area > h1 + p,
-.content-area > h2 + p,
-.content-area > h3 + p,
-.content-area > h4 + p,
-.content-area > h5 + p,
-.content-area > h6 + p
-.content-area > h1 + .wp-block-button,
-.content-area > h2 + .wp-block-button,
-.content-area > h3 + .wp-block-button,
-.content-area > h4 + .wp-block-button,
-.content-area > h5 + .wp-block-button,
-.content-area > h6 + .wp-block-button {
-	margin-top: 0;
-}
+.content-area {
 
-.content-area > p {
-	margin-bottom: var(--theme-spacing-unit-2);
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
 
-	& + p {
-		margin-top: var(--theme-spacing-unit);
+		& + p {
+			margin-top: calc(-0.8 * var(--theme-block-spacing-huge)) !important;
+		}
+
+		& + .wp-block-button {
+			margin-top: calc(-0.65 * var(--theme-block-spacing-huge)) !important;
+		}
 	}
-}
 
-.content-area > .wp-block-separator,
-.content-area > hr {
-	margin-bottom: var(--theme-spacing-unit-6);
-	margin-top: var(--theme-spacing-unit-6);
-}
+	& p ~ {
 
-.content-area > .wp-block-image,
-.content-area > .wp-block-coblocks-row {
-	margin-bottom: calc(3.25 * var(--theme-spacing-unit-2));
-	margin-top: calc(3.25 * var(--theme-spacing-unit-2));
+		& h1,
+		& h2,
+		& h3,
+		& h4,
+		& h5,
+		& h6 {
+			margin-bottom: 0 !important;
+			margin-top: var(--theme-block-spacing-larger) !important;
+			padding-top: 2rem;
+		}
 
-	@media (--medium) {
-		margin-bottom: calc(7.5 * var(--theme-spacing-unit-2));
-		margin-top: calc(7.5 * var(--theme-spacing-unit-2));
+		& figure,
+		& blockquote {
+			margin-bottom: var(--theme-block-spacing-larger) !important;
+			margin-top: var(--theme-block-spacing-larger) !important;
+		}
 	}
 }

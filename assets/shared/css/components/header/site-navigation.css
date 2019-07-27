@@ -32,7 +32,7 @@
 		width: auto;
 	}
 
-	& .primary-menu [aria-hidden="true"] {
+	& .primary-menu [aria-hidden="true"]:not(:hover) {
 		display: none !important;
 		opacity: 0;
 		visibility: hidden;

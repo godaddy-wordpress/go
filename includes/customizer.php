@@ -703,7 +703,7 @@ function css_variables() {
  */
 function inline_css() {
 	$header_background   = get_theme_mod( 'maverick_header_background_color_setting', false );
-	$header_text_color   = get_theme_mod( 'maverick_header_text_color_setting', false );
+	$header_text_color   = hex_to_hsl( get_theme_mod( 'maverick_header_text_color_setting', false ), true );
 	$footer_text_color   = get_theme_mod( 'maverick_footer_text_color_setting', false );
 	$footer_background   = get_theme_mod( 'maverick_footer_background_color_setting', false );
 	$footer_social_color = get_theme_mod( 'maverick_footer_social_icons_color_setting', false );

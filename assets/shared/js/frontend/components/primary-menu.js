@@ -8,7 +8,9 @@ const init = () => {
 	if ( TenUp ) {
 		TenUp.navigation( {
 			target: '#js-primary-menu',
-			toggle: '#js-site-navigation__toggle'
+			toggle: '#js-site-navigation__toggle',
+			// eslint-disable-next-line
+			sub_menu_open: 'click'
 		} );
 	}
 };

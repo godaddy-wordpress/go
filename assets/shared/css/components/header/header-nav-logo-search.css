@@ -42,7 +42,6 @@
 	background-color: hsl(var(--theme-site-navigation__toggle-background-color));
 	display: block;
 	height: 70px;
-	left: 0;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -81,10 +80,6 @@
 	@media (--large) {
 		width: 100px;
 	}
-}
-
-.menu-is-open .site-header--nav-logo-search .site-navigation__toggle {
-	left: auto;
 }
 
 /*

@@ -2,12 +2,12 @@
 	border: none;
 	color: hsl(var(--theme-h2-color));
 	font-family: var(--theme-heading-font-family);
-	font-weight: var(--theme-quote-font-weight, 700);
+	font-weight: var(--theme-quote-font-weight);
 	padding: 0;
 
 	& p {
-		font-size: var(--theme-quote-font-size, 1.9rem);
-		line-height: var(--theme-quote-line-height, 1.36);
+		font-size: var(--theme-quote-font-size);
+		line-height: var(--theme-quote-line-height);
 		margin: 0 0 0 1.5rem;
 		position: relative;
 

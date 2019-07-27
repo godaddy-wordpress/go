@@ -1,49 +1,52 @@
-# Project "Maverick" Review
+# A WordPress theme for GoDaddy
 
-### Issues must be logged by July 17
+__Description:__ GoDaddy wanted the ability for a single WordPress theme to encompass several design styles (aka moods). This theme uses the Customizer to apply different design styles based on the user's selection.
 
-Hey team, 
+Also included within the theme:
 
-It's time to kick off our formal review of the Maverick theme and report any bugs we discover. Let's make issues on this repository for each bug found. 
+* [TGM Plugin Activation](http://tgmpluginactivation.com/) library - used to help onboard users to install necessary plugin dependencies. Including:
+    * [WooCommerce](https://wordpress.org/plugins/woocommerce/) plugin
+	* [CoBlocks](https://wordpress.org/plugins/coblocks/) plugin - Page Builder Gutenberg Blocks
 
-[Click here to create an issue &rarr;](https://github.com/godaddy/wp-project-maverick/issues/new/choose) 
+## Asset organization
 
-### Initial Design Review
-Rich will focus on design styles and report any discrepancies from the Invision prototypes and all improper styling that needs to be resolved. There are also labels for each design style that we should use to help organize.   
+Since we're dealing with mini-themes (aka design styles) within a theme. Here is an overview of the asset organization:
 
-## Functionality Review
-Functionality wise, 10Up has created a couple accounts for us to use (I'll send the info in Slack) to test around. You may also download/clone the theme from the [10Up GitLab repo](https://gitlab.10up.com/godaddy/godaddy-theme). They've been using `develop` as the base branch (master) and the `staging` branch autodeploys to godaddy.10uplabs.com. After cloning, run `npm start` to install deps and build all the assets.  
-
+``` bash
+|—— assets/
+    |—— admin/         Customizer and WP admin assets
+        |—— css/
+        |—— images/
+        |—— js/
+    |-- design-styles/  Each Design Style assets
+        |—— creative-services/
+            |—— css/
+            |—— fonts/
+            |—— images/
+        |—— play/
+        |—— traditional/
+        |—— trendy-shop/
+        |—— welcoming/
+    |—— shared           Global and shared assets
+        |—— css/
+            |—— coblocks/
+            |—— components/
+            |—— config/
+            |—— core-blocks/
+            |—— editor/
+            |—— elements/  Generic HTML element coverage
+            |—— layout/    Layout specific
+            |—— templates/ WordPress template specific
+            |—— utilities/
+            |—— woocommerce/
+            |—— editor-style.css Gutenberg editor styles
+            |—— shared-style.css Imports all of the above
+        |—— images/
+        |—— js/
+            |—— frontend/
+                |—— components/
+                |—— utility/
+                |—— vendor/
+                |—— frontend.js Imports most of the above
+        |—— svg/
 ```
-$ git clone git@gitlab.10up.com:godaddy/godaddy-theme.git maverick
-$ cd maverick
-$ npm start
-```
-
-The staging site is a multisite with each design style as its own site.
-
-## Staging sites
-Below you'll find the staging sites for testing the Maverick theme, plus corresponding Invision prototypes of each design style. 
-
-Traditional: 
-https://godaddy.10uplabs.com/traditional/
-https://10up.invisionapp.com/share/QRRHNIT68UV#/screens/357529448
-
-Modern/Creative Services:
-https://godaddy.10uplabs.com/creative-services/
-https://10up.invisionapp.com/share/QRRHNIT68UV#/screens/357529442
-
-Trendy:
-https://godaddy.10uplabs.com/trendy-shop/
-https://10up.invisionapp.com/share/QRRHNIT68UV#/screens/357529454
-
-Welcoming:
-https://godaddy.10uplabs.com/welcoming/
-https://10up.invisionapp.com/share/QRRHNIT68UV#/screens/357529463
-
-Playful:
-https://godaddy.10uplabs.com/play/
-https://10up.invisionapp.com/share/QRRHNIT68UV#/screens/360640620
-
-## 10Up QA Matrix: 
-https://docs.google.com/spreadsheets/d/1g2CspmSgOaIdmQ0vnV5wCGs4G23ntsFpIFAY7dm-HMc/edit#gid=791639588

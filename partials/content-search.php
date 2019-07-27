@@ -19,7 +19,7 @@ $excerpt = get_the_excerpt();
 		</div>
 	<?php endif; ?>
 	<div class="post__summary">
-		<h2 class="h3 entry-title">
+		<h2 class="h3 post__title">
 			<span itemprop="name">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 					<?php the_title(); ?>

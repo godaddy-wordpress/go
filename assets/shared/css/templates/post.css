@@ -15,7 +15,7 @@
 	}
 }
 
-.entry-title {
+.post__title {
 	margin: 0;
 }
 
@@ -24,7 +24,7 @@
 }
 
 /* Archive loop */
-.hentry {
+.post--archive {
 	margin: 0 0 4rem;
 
 	& a {

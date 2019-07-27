@@ -15,6 +15,8 @@
 @import url("elements/hr.css");
 
 /* Components - everything that is NOT a block */
+@import url("components/header/primary-menu.css");
+@import url("components/header/site-branding.css");
 @import url("components/header/has-offscreen-nav.css");
 @import url("components/header/header-nav-logo-search.css");
 @import url("components/header/header-search-logo-nav.css");

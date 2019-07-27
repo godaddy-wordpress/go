@@ -25,10 +25,8 @@
 	/* All menu links */
 	& a {
 		border: none;
-		color: hsla(var(--theme-primary-menu-link-color), 1);
+		color: hsla(var(--THEME-COLOR-NAV), 1);
 		display: inline-block;
-		padding-bottom: calc(2 * var(--theme-spacing-unit));
-		padding-top: calc(2 * var(--theme-spacing-unit));
 		position: relative;
 		text-decoration: none;
 		transition: opacity 0.2s ease;
@@ -172,15 +170,9 @@
 		&:hover,
 		&.child-has-focus {
 
-			& > a::after {
-				transform: rotate(180deg);
-			}
-
 			& > .sub-menu {
 				@media (--large) {
-					display: block !important;
-					opacity: 1;
-					visibility: visible;
+					display: block;
 				}
 			}
 		}

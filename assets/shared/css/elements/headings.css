@@ -8,10 +8,8 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
 	font-family: var(--theme-heading-font-family);
 	line-height: var(--theme-heading-line-height);
-	margin: var(--theme-spacing-unit-2) 0;
 }
 
 h1 {

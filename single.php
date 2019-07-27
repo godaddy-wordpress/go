@@ -18,7 +18,7 @@ get_header(); ?>
 						</div>
 					<?php endif; ?>
 					<div class="post__summary">
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<h1 class="post__title"><?php the_title(); ?></h1>
 						<span class="post__author"><?php esc_html_e( 'by', 'maverick' ); ?> <?php the_author_posts_link(); ?></span>
 					</div>
 				</div>
