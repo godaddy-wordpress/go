@@ -1,0 +1,13 @@
+/**
+ * Traditional - site search
+ */
+
+.site-search .search-input__button {
+	border-radius: 3px;
+	border-width: 2px;
+
+	&:active,
+	&:hover {
+		border-width: 2px;
+	}
+}

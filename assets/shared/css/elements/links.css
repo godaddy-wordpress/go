@@ -1,0 +1,17 @@
+/**
+ * Global link styling
+ */
+
+a:not(.wp-block-button__link) {
+	color: hsla(var(--theme-link-color), 1);
+	font-weight: 700;
+	text-decoration: underline;
+	text-decoration-color: hsla(var(--theme-link-underline-color), 1);
+
+	&:active,
+	&:focus,
+	&:hover {
+		color: hsla(var(--theme-link-color-interactive), 1);
+		text-decoration-color: hsla(var(--theme-link-underline-color-interactive), 1);
+	}
+}

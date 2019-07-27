@@ -1,0 +1,48 @@
+/**
+ * Site search toggle <button>
+ */
+
+/**
+ * Button to toggle search
+ *
+ * Typically hidden on small screens and shown on larger.
+ */
+.site-search__toggle {
+	--theme-button-block-padding: 0;
+
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	color: hsl(var(--theme-site-search__toggle-color));
+	display: none;
+	height: 50px;
+	line-height: 1;
+	padding: var(--theme-button-block-padding) !important;
+	position: relative;
+	width: 50px;
+	z-index: 1;
+
+	@media (--large) {
+		display: block;
+	}
+
+	&:focus {
+		outline: 1px dotted var(--theme-primary-menu-link-color);
+	}
+
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+		color: hsl(var(--theme-primary-menu-link-hover-active-color));
+	}
+
+	& svg {
+		fill: currentColor;
+		height: var(--theme-site-search__toggle-height);
+		width: var(--theme-site-search__toggle-width);
+	}
+}

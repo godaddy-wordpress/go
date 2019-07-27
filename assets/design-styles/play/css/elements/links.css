@@ -1,0 +1,15 @@
+/**
+ * Global link styling
+ */
+
+.content-area {
+
+	& a:not(.wp-block-button__link) {
+
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration-color: hsla(var(--theme-link-underline-color-interactive), 0.1);
+		}
+	}
+}

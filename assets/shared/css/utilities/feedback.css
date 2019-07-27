@@ -1,0 +1,27 @@
+/**
+ * Everything should be prefixed with .u-your-class
+ */
+
+.u-informational {
+	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
+	border: 1px solid hsla(var(--theme-feedback-informational-color), 1);
+	color: hsla(var(--theme-feedback-informational-color), 1);
+}
+
+.u-error {
+	background-color: hsla(var(--theme-feedback-error-color), 0.1);
+	border: 1px solid hsla(var(--theme-feedback-error-color), 1);
+	color: hsla(var(--theme-feedback-error-color), 1);
+}
+
+.u-success {
+	background-color: hsla(var(--theme-feedback-success-color), 0.1);
+	border: 1px solid hsla(var(--theme-feedback-success-color), 1);
+	color: hsla(var(--theme-feedback-success-color), 1);
+}
+
+.u-warning {
+	background-color: hsla(var(--theme-feedback-warning-color), 0.1);
+	border: 1px solid hsla(var(--theme-feedback-warning-color), 1);
+	color: hsla(var(--theme-feedback-warning-color), 1);
+}

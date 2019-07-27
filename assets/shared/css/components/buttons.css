@@ -1,0 +1,13 @@
+/**
+ * Generic button class.
+ */
+
+.button {
+	@mixin c-button-block;
+
+	&:hover,
+	&:active,
+	&:focus {
+		@mixin c-button-block-hover;
+	}
+}

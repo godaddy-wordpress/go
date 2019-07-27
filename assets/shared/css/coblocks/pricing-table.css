@@ -1,0 +1,85 @@
+/**
+ * CoBlocks - Pricing Table block
+ */
+
+.wp-block-coblocks-pricing-table {
+	color: hsla(var(--theme-coblocks-pricing-table-color), 1);
+
+	/* When 3-col is chosen */
+	&.has-3-columns {
+
+		& .wp-block-coblocks-pricing-table__inner {
+			@media (--large) {
+				flex-wrap: nowrap;
+			}
+		}
+
+		& .wp-block-coblocks-pricing-table-item {
+			flex: 1 1 28%;
+		}
+	}
+
+	/* Pricing Tables - each item */
+	& .wp-block-coblocks-pricing-table-item {
+		margin: calc(2 * var(--theme-spacing-unit-2));
+		padding: calc(4 * var(--theme-spacing-unit-2)) calc(2.5 * var(--theme-spacing-unit-2));
+	}
+
+	/* Set default background color per item */
+	& .wp-block-coblocks-pricing-table-item:not(.has-background) {
+		background-color: hsla(var(--theme-coblocks-pricing-table-background-color), 1);
+	}
+
+	/* Pricing Tables - item title */
+	& .wp-block-coblocks-pricing-table-item__title {
+		font-family: var(--theme-coblocks-pricing-table-title-font-family);
+		font-weight: 700;
+		letter-spacing: 2px;
+		margin-bottom: 0;
+	}
+
+	/* Pricing Tables - price wrapper */
+	& .wp-block-coblocks-pricing-table-item__price-wrapper {
+		font-family: var(--theme-coblocks-pricing-table-price-font-family);
+		font-weight: 700;
+		letter-spacing: 2px;
+		line-height: 1;
+		margin-bottom: var(--theme-spacing-unit-2);
+		margin-top: var(--theme-spacing-unit-2);
+	}
+
+	/* Pricing Tables - currency */
+	& .wp-block-coblocks-pricing-table-item__currency {
+		font-size: 1.5rem;
+		left: -5px;
+		position: relative;
+	}
+
+	/* Pricing Tables - features <ul> list */
+	& .wp-block-coblocks-pricing-table-item__features {
+		color: hsla(var(--theme-coblocks-pricint-table-features-color), 1);
+		font-family: var(--theme-coblocks-pricing-table-features-font-family);
+		margin-bottom: calc(3 * var(--theme-spacing-unit-2));
+
+		& li {
+			margin-bottom: var(--theme-spacing-unit);
+		}
+	}
+
+	/* Pricing Tables - link-button */
+	& .wp-block-button__link {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* Pricing Tables - alignwide is chosen */
+.wp-block-coblocks-pricing-table.alignwide {
+
+	& .wp-block-coblocks-pricing-table__inner {
+		@media (--large) {
+			margin-left: calc(-2 * var(--theme-spacing-unit-2)) !important;
+			margin-right: calc(-2 * var(--theme-spacing-unit-2)) !important;
+		}
+	}
+}

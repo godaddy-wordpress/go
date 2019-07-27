@@ -1,0 +1,44 @@
+/**
+ * Welcoming - header-nav-logo-search variant
+ */
+
+.is-welcoming .site-header--nav-logo-search .primary-menu {
+
+	& .sub-menu {
+
+		& a {
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: hsl(var(--color-black));
+			}
+		}
+	}
+}
+
+.is-welcoming .site-header--nav-logo-search .site-navigation__toggle {
+
+	&:hover[aria-expanded="false"] {
+
+		& .site-navigation__toggle-icon-inner,
+		& .site-navigation__toggle-icon-inner::before,
+		& .site-navigation__toggle-icon-inner::after {
+			background-color: hsl(var(--color-black));
+		}
+	}
+
+	&[aria-expanded="true"] {
+		background-color: transparent;
+
+		&:active,
+		&:focus,
+		&:hover {
+
+			& .site-navigation__toggle-icon-inner::before,
+			& .site-navigation__toggle-icon-inner::after {
+				background-color: hsl(var(--color-black));
+			}
+		}
+	}
+}

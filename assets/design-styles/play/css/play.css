@@ -1,0 +1,37 @@
+/**
+ * Play - Design Style
+ */
+
+/* Setting variables */
+@import url("../../../shared/css/config/media-queries.css");
+@import url("config/settings.css");
+@import url("config/fonts.css");
+
+/* Elements - all the HTML elements coverage */
+@import url("elements/headings.css");
+@import url("elements/links.css");
+@import url("elements/forms.css");
+@import url("elements/blockquotes.css");
+@import url("elements/hr.css");
+
+/* Components - everything that is NOT a block */
+@import url("components/header/primary-menu.css");
+@import url("components/header/site-branding.css");
+@import url("components/header/has-offscreen-nav.css");
+@import url("components/header/header-nav-logo-search.css");
+@import url("components/header/header-search-logo-nav.css");
+@import url("components/header/site-header.css");
+@import url("components/footer/site-footer.css");
+@import url("components/footer/footer-4.css");
+@import url("components/custom-logo.css");
+
+/* CoBlocks customizations */
+@import url("coblocks/author.css");
+@import url("coblocks/carousel.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/media-card.css");
+@import url("coblocks/pricing-table.css");
+
+/* Utilities customizations */
+@import url("utilities/colorize.css");
+

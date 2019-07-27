@@ -1,0 +1,132 @@
+/**
+ * WooCommerce Global - product template
+ *
+ * Global overrides to product template
+*/
+
+/* Override margin bottom for better vertical layout */
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product,
+.woocommerce-page ul.wc-block-grid__products li.wc-block-grid__product {
+
+	padding-right: 0;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	/* Avoid last child bottom margin */
+	& .wc-block-grid__product-link,
+	& .woocommerce-loop-product__link {
+		display: block;
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.woocommerce-page ul.wc-block-grid__products li.wc-block-grid__product .wc-block-grid__product-link > *:last-child,
+.woocommerce div.product .product_title {
+	margin-bottom: 0.5rem;
+}
+
+.woocommerce-product-details__short-description {
+	margin-bottom: 2.5rem;
+}
+
+/* Additional Information table */
+.woocommerce .content-area table {
+	border-spacing: 0;
+}
+
+.woocommerce table.shop_attributes th {
+	text-transform: capitalize;
+}
+
+/* Product page table */
+.woocommerce div.product form.cart table {
+	margin: 0 0 2rem;
+}
+
+.wc-block-grid .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-price,
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+	color: inherit;
+	font-size: 1.5rem;
+}
+
+.woocommerce div.product form.cart {
+	border-bottom: 1px solid hsl(var(--color-gallery));
+	border-top: 1px solid hsl(var(--color-gallery));
+	margin-bottom: 2.5rem;
+	padding: 2rem 0;
+}
+
+.woocommerce div.product div.summary {
+	padding-top: 1rem;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+	margin: 3% 3% 0 0;
+	width: 22%;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image:last-child {
+	margin-right: 0;
+}
+
+.woocommerce p.stars a {
+	border-bottom: none;
+}
+
+.comment-reply-title {
+	display: block;
+	margin-bottom: 1rem;
+}
+
+/* Variations dropdowns */
+table.variations tbody tr:nth-child(odd) {
+	background-color: hsl(var(--color-white));
+}
+
+.woocommerce div.product form.cart .variations td.label {
+	width: 20%;
+}
+
+.woocommerce div.product form.cart .variations td,
+.woocommerce div.product form.cart .variations th {
+
+	& label {
+		margin-bottom: 0;
+		padding: var(--theme-spacing-v-input) 36px var(--theme-spacing-v-input) var(--theme-spacing-h-input);
+	}
+}
+
+/* Input qty and add to cart button when NOT has variations */
+.cart:not(.variations_form):not(.grouped_form):not(.shop_table) {
+	display: flex;
+}
+
+/* Input qty and add to cart button when HAS variations */
+.cart.variations_form {
+
+	& .single_variation_wrap {
+
+		& .woocommerce-variation-add-to-cart {
+			display: flex;
+		}
+
+		& .woocommerce-variation-price {
+			margin: 0 0 1.5rem;
+		}
+	}
+}
+
+/* Tiny meta details */
+.product_meta {
+
+	& > span {
+		display: block;
+	}
+}

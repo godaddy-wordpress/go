@@ -1,0 +1,21 @@
+/**
+ * Welcoming - CoBlocks Author card overrides
+ */
+
+/* Local scoped variable overrides */
+.wp-block-coblocks-author {
+	font-family: var(--theme-heading-font-family);
+
+	@media (--medium) {
+		padding-bottom: calc(2 * var(--theme-spacing-unit-2));
+		padding-top: calc(2 * var(--theme-spacing-unit-2));
+	}
+
+	& .wp-block-coblocks-author__biography {
+		color: hsl(var(--color-abbey));
+	}
+
+	& .wp-block-button {
+		margin-top: var(--theme-spacing-unit-2);
+	}
+}

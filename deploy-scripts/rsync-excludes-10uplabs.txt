@@ -1,0 +1,4 @@
+# Use this file as an exclude-from along with the rsync-excludes-master.txt file when deploying to 10uplabs.
+
+*/restricted-site-access*
+*/batcache*

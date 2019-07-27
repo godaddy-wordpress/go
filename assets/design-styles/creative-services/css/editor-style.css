@@ -1,0 +1,36 @@
+/**
+ * Godaddy - 'Creative Services' Editor Styles
+ */
+
+/* Setting variables */
+@import url("config/settings.css");
+@import url("config/fonts.css");
+
+/* Elements - all the HTML elements coverage */
+@import url("elements/headings.css");
+@import url("elements/forms.css");
+@import url("elements/site-search.css");
+
+/* Gutenberg core blocks overrides */
+@import url("core-blocks/button.css");
+
+/* CoBlocks customizations */
+@import url("coblocks/carousel.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/media-card.css");
+@import url("coblocks/pricing-table.css");
+
+/* Components - everything that is NOT a block */
+@import url("components/header/site-branding.css");
+@import url("components/header/primary-menu.css");
+@import url("components/header/site-navigation__toggle.css");
+@import url("components/header/site-search.css");
+@import url("components/header/header-search-logo-nav.css");
+@import url("components/footer/footer-1.css");
+
+/* Woocommerce */
+@import url("woocommerce/button.css");
+@import url("woocommerce/shop.css");
+
+/* Templates */
+@import url("templates/post.css");

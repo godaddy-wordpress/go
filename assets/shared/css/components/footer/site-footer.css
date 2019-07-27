@@ -1,0 +1,28 @@
+.site-footer {
+	padding-top: var(--theme-footer-spacing-top);
+	position: relative;
+
+	@media (--full-width) {
+		padding-left: inherit;
+		padding-right: inherit;
+	}
+
+	& .u-informational {
+		display: inline-block;
+		padding: 0.3rem 0.5rem;
+	}
+
+	& .footer-copy-text {
+		color: hsla(var(--THEME-COLOR-NAV), 1);
+	}
+
+	& a {
+		color: hsla(var(--THEME-COLOR-NAV), 1);
+
+		&:active,
+		&:focus,
+		&:hover {
+			color: hsla(var(--theme-footer-1-link-color-interactive), 0.8);
+		}
+	}
+}

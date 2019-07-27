@@ -1,0 +1,77 @@
+/**
+ * Welcoming - Gutenberg core Button block overrides.
+ */
+
+/* Local scoped variable overrides. */
+.wp-block-button {
+
+	& .wp-block-button__link {
+		min-width: 16.25rem;
+		text-align: left;
+	}
+
+	&:not(.is-style-outline) .wp-block-button__link {
+
+		&::after {
+			background-image: url("../../../dist/design-styles/welcoming/svg/arrow-right.svg");
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			content: "";
+			display: inline-block;
+			height: 6px;
+			position: absolute;
+			right: var(--theme-button-block-horizontal-spacing-unit);
+			top: 50%;
+			transform: translateY(-50%);
+			width: 34px;
+		}
+
+		&:active,
+		&:focus,
+		&:hover {
+
+			&::after {
+				filter: invert(100%);
+			}
+		}
+	}
+
+	&.is-style-outline .wp-block-button__link {
+		background-image: url("../../../dist/design-styles/welcoming/images/hero-bg-pattern.png");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+
+		&::after {
+			background-color: transparent;
+			background-image: url("../../../dist/design-styles/welcoming/svg/arrow-right.svg");
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			bottom: 31px;
+			content: "";
+			display: inline-block;
+			height: 6px;
+			position: absolute;
+			right: var(--theme-button-block-horizontal-spacing-unit);
+			width: 34px;
+		}
+
+		&:active,
+		&:focus,
+		&:hover {
+
+			&::before {
+				background-color: hsl(var(--color-shark));
+				bottom: 0;
+				content: "";
+				display: block;
+				height: 18px;
+				position: absolute;
+				right: var(--theme-button-block-horizontal-spacing-unit);
+				width: calc(100% - var(--theme-button-block-horizontal-spacing-unit));
+			}
+		}
+	}
+}

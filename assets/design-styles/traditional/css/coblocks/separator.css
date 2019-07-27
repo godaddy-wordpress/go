@@ -1,0 +1,8 @@
+/**
+ * Traditional - CoBlocks Separator block
+ */
+
+.wp-block-coblocks-row[data-columns="1"] .wp-block-coblocks-column__inner > .wp-block-separator {
+	border-bottom-color: hsl(var(--color-gallery));
+	max-width: var(--theme-max-width-wide);
+}

@@ -1,0 +1,16 @@
+html {
+	font-size: 100%;
+}
+
+body,
+button {
+	color: hsl(var(--theme-body-color));
+	font-family: var(--theme-body-font-family);
+	font-size: var(--theme-body-font-size);
+	line-height: var(--theme-body-line-height);
+	word-wrap: break-word;
+}
+
+body {
+	background-color: hsla(var(--theme-body-background-color), 1);
+}

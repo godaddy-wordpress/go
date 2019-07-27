@@ -1,0 +1,10 @@
+/**
+ * WP Block File overrides.
+ */
+
+body {
+
+	& .wp-block-file {
+		margin-bottom: var(--theme-spacing-unit-6);
+	}
+}

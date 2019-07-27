@@ -1,0 +1,37 @@
+/**
+ * Traditional - header-logo-nav-search variant
+ */
+
+.has-offscreen-nav.menu-is-open .site-header--logo-nav-search .site-navigation {
+	border-left: 2px solid hsl(var(--color-silver));
+	height: 100%;
+	left: 20%;
+	padding-left: 2rem;
+	top: 0;
+	width: 80%;
+
+	/* Prevent links from colliding with mobile close button */
+	& a {
+		margin-right: 5rem;
+
+		@media (--medium) {
+			margin-right: 0;
+		}
+	}
+}
+
+body.admin-bar.has-offscreen-nav.menu-is-open .site-header--logo-nav-search .site-navigation {
+	height: calc(100% - 32px);
+	padding-bottom: 1rem;
+	top: 32px;
+
+	@media (--large) {
+		height: auto;
+		top: auto;
+	}
+}
+
+body.admin-bar .site-header--logo-nav-search .site-navigation {
+	top: 0;
+}
+

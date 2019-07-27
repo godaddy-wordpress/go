@@ -1,0 +1,18 @@
+/**
+ * Overrides for Gravity forms
+ */
+
+body {
+
+	& .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	& .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
+	& .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_right select,
+	& .gform_wrapper ul.gform_fields li.gfield select {
+		padding-left: 0;
+		padding-right: 2rem;
+	}
+}

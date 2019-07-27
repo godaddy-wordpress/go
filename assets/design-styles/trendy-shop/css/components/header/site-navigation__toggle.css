@@ -1,0 +1,39 @@
+/**
+ * Trendy Shop - Site navigation toggle.
+ */
+
+.site-navigation__toggle {
+
+	/* Alter appearance when menu is opened */
+	@nest .menu-is-open & {
+		background-color: transparent;
+	}
+}
+
+.site-navigation__toggle-icon {
+	margin-top: calc(-1 * var(--theme-spacing-unit-2));
+
+	/* Alter appearance when menu is opened */
+	@nest .menu-is-open & {
+		margin-top: 0;
+	}
+}
+
+.site-navigation__toggle-icon-inner {
+
+	&::before {
+		width: 86%;
+	}
+
+	&::after {
+		bottom: -20px;
+	}
+
+	/* Alter appearance when menu is opened */
+	@nest .menu-is-open & {
+
+		&::before {
+			width: 100%;
+		}
+	}
+}

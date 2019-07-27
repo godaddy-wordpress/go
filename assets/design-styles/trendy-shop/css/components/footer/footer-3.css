@@ -1,0 +1,41 @@
+/**
+ * Trendy Shop - Footer #3 variant
+ */
+
+.site-footer--3 {
+
+	& .footer-menu {
+		font-size: 0.875rem;
+
+		& a {
+			color: hsl(var(--color-abbey));
+			font-weight: 400;
+			text-decoration-color: transparent;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration-color: hsl(var(--color-link-interactive-default));
+			}
+		}
+	}
+
+	& .footer-copy-text {
+		color: hsl(var(--color-abbey));
+		opacity: 0.4;
+	}
+
+	& .social-icons {
+
+		& svg {
+			fill: hsl(var(--color-charade));
+			opacity: 0.5;
+		}
+
+		& a:active svg,
+		& a:focus svg,
+		& a:hover svg {
+			opacity: 0.9;
+		}
+	}
+}

@@ -1,0 +1,110 @@
+/**
+ * partials/headers/header-logo-nav-vert.php
+ */
+
+.site-header--logo-nav-vert {
+	align-items: center;
+	flex-direction: row;
+	height: 84px;
+	position: relative;
+
+	@media (--large) {
+		flex-direction: column;
+		height: 186px;
+
+		& .primary-menu a {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		& .sub-menu a {
+			padding-bottom: var(--theme-spacing-unit-2);
+			padding-top: var(--theme-spacing-unit-2);
+
+			&::before {
+				display: none !important;
+			}
+		}
+
+		& .sub-menu a[aria-haspopup] {
+
+			&::after {
+				background-image: url("../../dist/shared/svg/arrow-down-white.svg");
+			}
+		}
+	}
+
+	@media (--full-width) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	& .site-branding {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 66vw;
+		padding-bottom: var(--theme-spacing-unit);
+		padding-top: var(--theme-spacing-unit);
+		text-align: center;
+
+		@media (--large) {
+			max-width: var(--theme-max-width-base);
+			padding-bottom: calc(var(--theme-spacing-unit) * 2);
+			padding-top: calc(var(--theme-spacing-unit) * 5);
+		}
+	}
+
+	& .site-navigation {
+		top: 84px;
+
+		@media (--large) {
+			justify-content: center;
+			margin-bottom: 1rem;
+			top: auto;
+		}
+	}
+
+	& .site-navigation__toggle {
+		position: absolute;
+		right: var(--theme-spacing-unit);
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	/* Mobile overlay menu */
+	@nest .has-offscreen-nav.menu-is-open & .primary-menu {
+		width: 100%;
+	}
+}
+
+.has-offscreen-nav.menu-is-open .site-header--logo-nav-vert .site-navigation {
+
+	/* Will override all links (including sub links) for mobile,
+	so they appear same color */
+	& .primary-menu a {
+		color: hsl(var(--theme-primary-menu-link-color));
+	}
+
+	/* Restore sub-menu colors when desktop style */
+	@media (--large) {
+
+		& .sub-menu a {
+			color: hsl(var(--theme-sub-menu-link-color));
+		}
+	}
+}
+
+/* When admin bar is on */
+body.admin-bar.has-offscreen-nav.menu-is-open .site-header--logo-nav-vert .site-navigation {
+	height: calc(100% - 130px);
+	top: 130px;
+
+	@media (--medium) {
+		height: calc(100% - 116px);
+		top: 116px;
+	}
+
+	@media (--large) {
+		top: auto;
+	}
+}

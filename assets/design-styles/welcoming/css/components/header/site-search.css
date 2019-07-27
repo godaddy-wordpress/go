@@ -1,0 +1,15 @@
+/**
+ * Welcoming - site search
+ */
+
+body {
+
+	& .site-search .search-input__button {
+		border-width: 2px;
+
+		&:active,
+		&:hover {
+			border-width: 2px;
+		}
+	}
+}

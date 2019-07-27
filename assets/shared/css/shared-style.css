@@ -1,0 +1,112 @@
+/**
+ * This is ground zero and where it all starts.
+ * Here we write globally inherited traits.
+ *
+ */
+
+/* Resets - installed via NPM */
+@import url("normalize.css");
+
+/* Setting global variables */
+@import url("config/media-queries.css");
+@import url("config/animations.css");
+@import url("config/colors-global.css");
+@import url("config/layout.css");
+@import url("config/typography.css");
+@import url("config/z-index.css");
+@import url("config/borders.css");
+@import url("config/mixins.css");
+
+/* Utilities - helpers, mixins */
+@import url("utilities/feedback.css");
+@import url("utilities/layout.css");
+@import url("utilities/wordpress.css");
+@import url("utilities/captions.css");
+@import url("utilities/accessibility.css");
+@import url("utilities/colorize.css");
+
+/* Elements - all the HTML elements coverage */
+@import url("elements/buttons.css");
+@import url("elements/forms.css");
+@import url("elements/headings.css");
+@import url("elements/links.css");
+@import url("elements/lists.css");
+@import url("elements/media.css");
+@import url("elements/page.css");
+@import url("elements/tables.css");
+
+/* Gutenberg core blocks */
+@import url("core-blocks/button.css");
+@import url("core-blocks/separator.css");
+@import url("core-blocks/image.css");
+@import url("core-blocks/columns.css");
+@import url("core-blocks/cover.css");
+@import url("core-blocks/media.css");
+@import url("core-blocks/gallery.css");
+@import url("core-blocks/preformatted.css");
+@import url("core-blocks/pullquote.css");
+@import url("core-blocks/file.css");
+@import url("core-blocks/latest-posts.css");
+@import url("core-blocks/latest-comments.css");
+@import url("core-blocks/quote.css");
+
+/* CoBlocks */
+@import url("coblocks/author.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/pricing-table.css");
+@import url("coblocks/row.css");
+
+/* Components - everything that is NOT a block */
+@import url("components/header/site-header.css");
+@import url("components/header/site-branding.css");
+@import url("components/header/site-navigation.css");
+@import url("components/header/site-navigation__toggle.css");
+@import url("components/header/site-search__toggle.css");
+@import url("components/header/site-search.css");
+@import url("components/header/primary-menu.css");
+@import url("components/header/has-offscreen-nav.css");
+@import url("components/buttons.css");
+@import url("components/footer/site-footer.css");
+@import url("components/footer/footer-1.css");
+@import url("components/footer/footer-2.css");
+@import url("components/footer/footer-3.css");
+@import url("components/footer/footer-4.css");
+@import url("components/footer/social-icons.css");
+@import url("components/posts-navigation.css");
+@import url("components/comments.css");
+
+/* Header variants */
+@import url("components/header/header-logo-nav-search.css");
+@import url("components/header/header-logo-nav-vert.css");
+@import url("components/header/header-nav-logo.css");
+@import url("components/header/header-search-logo-nav.css");
+@import url("components/header/header-nav-logo-search.css");
+@import url("components/header/is-header-search-logo-nav.css");
+@import url("components/header/is-header-nav-logo-search.css");
+
+/* Layout */
+@import url("layout/page.css");
+@import url("layout/content.css");
+@import url("layout/entry-header.css");
+
+/* Templates - related to WordPress templates */
+@import url("templates/post.css");
+@import url("templates/blog.css");
+
+/* WooCommerce */
+@import url("woocommerce/layout.css");
+@import url("woocommerce/button.css");
+@import url("woocommerce/pagination.css");
+@import url("woocommerce/forms.css");
+@import url("woocommerce/cart.css");
+@import url("woocommerce/shop.css");
+@import url("woocommerce/product.css");
+@import url("woocommerce/tabs.css");
+@import url("woocommerce/typography.css");
+@import url("woocommerce/checkbox.css");
+
+/* Gravity */
+@import url("gravity/forms.css");
+@import url("gravity/checkbox.css");
+@import url("gravity/radio.css");
+@import url("gravity/button.css");

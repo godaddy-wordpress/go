@@ -1,0 +1,22 @@
+/**
+ * CoBlocks - Row Overrides
+ */
+
+body {
+
+	/* This allows the hero content area to hug the image when stacked */
+	& div.is-stacked-on-mobile.has-no-gutter > [class*="wp-block-coblocks-"]:not(:last-child) {
+		@media (max-width: 600px) {
+			margin-bottom: 0;
+		}
+	}
+
+	/* Remove bottom margin from last row. */
+	& .wp-block-coblocks-row:last-of-type > .wp-block-coblocks-row__inner.has-no-margin {
+		margin-bottom: 0;
+
+		@media (--medium) {
+			margin-bottom: 0;
+		}
+	}
+}

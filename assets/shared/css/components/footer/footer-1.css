@@ -1,0 +1,73 @@
+/**
+ * Footer #1 variant
+ */
+
+.site-footer--1 {
+	padding-bottom: var(--theme-spacing-unit-6);
+	text-align: center;
+
+	@media (--large) {
+		padding-bottom: calc(2 * var(--theme-spacing-unit-6));
+	}
+
+	/* Social icons */
+	& .social-icons {
+		margin: 0 auto var(--theme-spacing-unit-6);
+
+		@media (--large) {
+			margin: 0 auto calc(2.5 * var(--theme-spacing-unit-6));
+		}
+
+		& li {
+			@media (--large) {
+				padding-left: var(--theme-spacing-unit-2);
+				padding-right: var(--theme-spacing-unit-2);
+			}
+		}
+	}
+
+	/* We only have one menu in footer for this variant */
+	& .footer-menu--1 {
+		margin-bottom: var(--theme-spacing-unit-6);
+
+		@media (--large) {
+			margin-bottom: calc(2 * var(--theme-spacing-unit-6));
+		}
+
+		/* Each <li> item in menu */
+		& .menu-item {
+			display: inline-block;
+			width: 100%;
+
+			@media (--medium) {
+				width: auto;
+			}
+		}
+
+		& a {
+			color: hsla(var(--theme-footer-1-link-color), 0.5);
+			padding: var(--theme-spacing-unit-2);
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: hsla(var(--theme-footer-1-link-color-interactive), 0.8);
+			}
+		}
+	}
+
+	/* Editable text before copyright */
+	& .footer-blurb-text {
+		color: hsla(var(--theme-footer-1-text-color), 0.6);
+		margin-bottom: var(--theme-spacing-unit-6);
+
+		@media (--large) {
+			margin-bottom: calc(2 * var(--theme-spacing-unit-6));
+		}
+	}
+
+	/* Copyright text */
+	& .footer-copy-text {
+		font-size: 0.9375rem;
+	}
+}

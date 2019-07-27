@@ -1,0 +1,19 @@
+:root {
+
+	/* Max widths. */
+	--max-width-base: 720px;
+	--max-width-wide: 1276px;
+	--max-width-full: 1440px;
+
+	/* Spacing unit. */
+	--spacing-unit: 0.5rem;
+	--spacing-unit-2: 1rem;
+	--spacing-unit-4: 2rem;
+	--spacing-unit-5: 2.5rem;
+	--spacing-unit-6: 3rem;
+	--spacing-unit-15: 7.5rem;
+
+	/* Mobile toggle menu button */
+	--menu-toggle-height: 3rem;
+	--menu-toggle-width: 2rem;
+}

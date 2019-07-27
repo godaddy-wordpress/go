@@ -1,0 +1,20 @@
+/**
+ * WooCommerce Traditional Theme - shop
+ *
+*/
+
+/* Woocommerce Products Grid overrides */
+
+.woocommerce ul.products {
+
+	& li.product {
+
+		& .woocommerce-loop-product__title {
+			font-size: var(--theme-h3-font-size, var(--font-size-h3));
+
+			@media (--large) {
+				font-size: var(--theme-h2-font-size, var(--font-size-h2));
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+/**
+ * Trendy Shop - Design Style
+ */
+
+/* Setting variables */
+@import url("config/settings.css");
+@import url("../../../shared/css/config/media-queries.css");
+@import url("config/fonts.css");
+
+/* Elements - all the HTML elements coverage */
+@import url("elements/headings.css");
+@import url("elements/forms.css");
+@import url("elements/tables.css");
+@import url("elements/site-search.css");
+
+/* Components - everything that is NOT a block */
+@import url("components/header/site-navigation__toggle.css");
+@import url("components/header/primary-menu.css");
+@import url("components/header/site-branding.css");
+@import url("components/header/header-nav-logo-search.css");
+@import url("components/footer/footer-3.css");
+
+/* Gutenberg core blocks overrides */
+@import url("core-blocks/button.css");
+
+/* CoBlocks overrides */
+@import url("coblocks/author.css");
+@import url("coblocks/carousel.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/media-card.css");
+@import url("coblocks/pricing-table.css");
+
+/* Woo overrides */
+@import url("woocommerce/button.css");
+@import url("woocommerce/shop.css");

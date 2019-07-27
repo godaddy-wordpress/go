@@ -1,0 +1,92 @@
+/**
+ * WooCommerce Global - buttons
+ *
+ * Global overrides to buttons
+*/
+
+/* Specificity to override nested styles from woo */
+body {
+
+	&.woocommerce-page .content-area {
+
+		/* Primary Button */
+		& #respond input#submit.alt,
+		& .button.alt {
+			@mixin c-button-block;
+
+			&:hover,
+			&:focus,
+			&:active {
+				@mixin c-button-block-hover;
+			}
+		}
+
+		/* Primary Button Disabled */
+		& button.button.alt.disabled,
+		& button.button.alt:disabled {
+			@mixin c-button-block-disabled;
+
+			&:hover,
+			&:focus,
+			&:active {
+				@mixin c-button-block-disabled;
+			}
+		}
+
+		/* Secondary Button */
+		& #respond input#submit,
+		& .button {
+			@mixin c-button-block-outline;
+
+			&:hover,
+			&:focus,
+			&:active {
+				@mixin c-button-block-outline-hover;
+			}
+
+			/* Safari fix, in order for the after loading icon to animate
+			the base element needs initial display setup */
+			&.add_to_cart_button {
+				display: inline-flex;
+			}
+
+			/* When ajax loading or added icon appears */
+			&.added,
+			&.loading {
+				align-items: center;
+				padding-right: 2.618em !important;
+
+				/* IE adds underline to the after icon
+				so we remove it here during animation */
+				text-decoration: none !important;
+
+				&::after {
+					font-size: 16px;
+					line-height: 1;
+					margin-left: 1rem;
+					position: absolute;
+					right: 0.5rem;
+					top: auto;
+					vertical-align: bottom;
+				}
+			}
+		}
+
+		/* Secondary Button Disabled */
+		& .woocommerce button.button.disabled,
+		& .woocommerce button.button:disabled {
+			@mixin c-button-block-disabled;
+
+			&:hover,
+			&:focus,
+			&:active {
+				@mixin c-button-block-disabled;
+			}
+		}
+	}
+}
+
+/* Buttons found on full product pages */
+.woocommerce div.product form.cart .button {
+	float: none;
+}

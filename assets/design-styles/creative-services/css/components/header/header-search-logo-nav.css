@@ -1,0 +1,11 @@
+/*
+Header overrides
+*/
+
+.is-header-logo-nav #js-header-variation {
+	background-color: hsl(var(--THEME-COLOR-PRIMARY));
+}
+
+body .primary-menu .menu-item-has-children > [aria-haspopup]::after {
+	background-image: url("../../../dist/shared/svg/arrow-down-white.svg");
+}

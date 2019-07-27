@@ -1,0 +1,18 @@
+/**
+ * Posts navigation
+ * the_posts_navigation();
+ */
+
+.posts-navigation .nav-links {
+	display: flex;
+	margin: var(--spacing-unit-2) 0;
+
+	& .nav-previous,
+	& .nav-next {
+		flex: 1 50%;
+	}
+
+	& .nav-next {
+		text-align: right;
+	}
+}

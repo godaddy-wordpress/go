@@ -1,0 +1,402 @@
+:root {
+
+	/* CUSTOMIZER SETTINGS */
+
+	/* Hex: #ffffff */
+	--THEME-COLOR-PRIMARY-DEFAULT: 0, 0%, 100%;
+	--THEME-COLOR-PRIMARY: var(--USER-COLOR-PRIMARY, var(--THEME-COLOR-PRIMARY-DEFAULT));
+
+	/* Hex: #24252f */
+	--THEME-COLOR-SECONDARY-DEFAULT: 0, 0%, 41%;
+	--THEME-COLOR-SECONDARY: var(--USER-COLOR-SECONDARY, var(--THEME-COLOR-SECONDARY-DEFAULT));
+
+	--THEME-COLOR-BODY: 0, 0%, 41%;
+	--THEME-COLOR-HEADING: 0, 0%, 12%;
+	--THEME-COLOR-NAV: var(--THEME-COLOR-BODY);
+
+	/* Block spacing. */
+	--theme-block-spacing: 1.15rem;
+	--theme-block-spacing-larger: 1.75rem;
+	--theme-block-spacing-huge: 4rem;
+
+	@media (--large) {
+		--theme-block-spacing: 1.75rem;
+		--theme-block-spacing-larger: 2.3rem;
+		--theme-block-spacing-huge: 8.5rem;
+	}
+
+	--theme-block-padding-x: 1rem;
+
+	/* Widths. */
+	--theme-max-width-base: 680px;
+	--theme-max-width-wide: 1280px;
+	--theme-max-width-full: 1440px;
+
+	/* Page entry header spacing. */
+	--theme-entryheader-spacing-top: 4rem;
+	--theme-entryheader-spacing-bottom: 7rem;
+
+	@media (--large) {
+		--theme-entryheader-spacing-bottom: 8.5rem;
+	}
+
+	/* Foooter spacing. */
+	--theme-footer-spacing-top: 8.5rem;
+
+	/* Spacing units. */
+	--theme-spacing-unit: 0.5rem;
+	--theme-spacing-unit-2: 1rem;
+	--theme-spacing-unit-3: 1.5rem;
+	--theme-spacing-unit-4: 2rem;
+	--theme-spacing-unit-5: 2.5rem;
+	--theme-spacing-unit-6: 3rem;
+	--theme-spacing-unit-15: 7.5rem;
+
+	/***************************************************************
+	* TYPOGRAPHY
+	***************************************************************/
+
+	/* <body> settings */
+	--theme-body-font-size: 1rem;
+	--theme-body-line-height: 1.9em;
+	--theme-body-font-family: "Arimo", sans-serif;
+
+	/* Headings */
+	--theme-heading-font-family: "Montserrat", sans-serif;
+	--theme-heading-line-height: var(--line-height-heading);
+
+	--theme-heading-content-space-above: 1rem;
+	--theme-heading-content-space-below: 0;
+
+	/* Heading font size */
+	--theme-h1-font-size: 2.5rem;
+	--theme-h2-font-size: 2rem;
+	--theme-h3-font-size: 1.75rem;
+	--theme-h4-font-size: 1.65rem;
+	--theme-h5-font-size: 1.35rem;
+	--theme-h6-font-size: 1.15rem;
+
+	@media (--large) {
+		--theme-h1-font-size: 3.25rem;
+		--theme-h2-font-size: 2.5rem;
+		--theme-h3-font-size: 2rem;
+
+		--theme-heading-content-space-above: 1.5rem;
+		--theme-heading-content-space-below: -0.375rem;
+	}
+
+	/* Blockquote */
+	--theme-quote-font-size: 1.9rem;
+	--theme-quote-line-height: 1.36;
+	--theme-quote-font-weight: 700;
+
+	--theme-quote-large-font-size: 2.25rem;
+	--theme-quote-large-line-height: 1.3;
+	--theme-quote-large-font-style: italic;
+	--theme-quote-large-padding: 0.9rem 0 0 2rem;
+	--theme-quote-large-cite-margin-left: 1.25rem;
+
+	--theme-quote-large-border-width: 0.45rem;
+	--theme-quote-large-border-style: solid;
+	--theme-quote-large-border: var(--theme-quote-large-border-width) var(--theme-quote-large-border-style);
+
+	@media (--large) {
+		--theme-quote-font-size: 2.15rem;
+		--theme-quote-large-font-size: 2.75em;
+	}
+
+	/* Heading colors */
+	--theme-h1-color: var(--THEME-COLOR-HEADING);
+	--theme-h2-color: var(--THEME-COLOR-HEADING);
+	--theme-h3-color: var(--THEME-COLOR-HEADING);
+	--theme-h4-color: var(--THEME-COLOR-HEADING);
+	--theme-h5-color: var(--THEME-COLOR-HEADING);
+	--theme-h6-color: var(--THEME-COLOR-HEADING);
+
+	/* Body color */
+	--theme-body-color: var(--THEME-COLOR-BODY);
+	--theme-body-font-color: var(--THEME-COLOR-BODY);
+	--theme-body-background-color: var(--THEME-COLOR-PRIMARY);
+
+	/* Links */
+	--theme-link-color: var(--THEME-COLOR-SECONDARY);
+	--theme-link-color-interactive: var(--THEME-COLOR-SECONDARY);
+	--theme-link-underline-color: var(--THEME-COLOR-SECONDARY);
+	--theme-link-underline-color-interactive: var(--THEME-COLOR-SECONDARY);
+
+	/* Bulleted Lists */
+	--theme-list-bullet-color: var(--THEME-COLOR-SECONDARY);
+	--theme-list-font-size: 1.0625rem;
+	--theme-list-line-height: 1.89;
+	--theme-list-color: var(-THEME-COLOR-SECONDARY);
+	--theme-list-font-weight: 700;
+
+	/* Feedback colors: error, success, warning, informational.
+	 * shared/css/utilities/feedback.css
+	 */
+	--theme-feedback-error-color: 3, 100%, 61%;
+	--theme-feedback-informational-color: 208, 100%, 43%;
+	--theme-feedback-success-color: 94, 48%, 56%;
+	--theme-feedback-warning-color: 46, 100%, 61%;
+
+	/* shared/css/components/header/site-navigation__toggle.css */
+	--theme-site-navigation__toggle-color: var(--THEME-COLOR-SECONDARY);
+	--theme-site-navigation__toggle-color-interactive: var(--THEME-COLOR-PRIMARY);
+	--theme-site-navigation__toggle-color-active: var(--THEME-COLOR-SECONDARY);
+	--theme-site-navigation__toggle-height: var(--spacing-unit-4);
+	--theme-site-navigation__toggle-width: var(--spacing-unit-4);
+	--theme-site-navigation__toggle-transition-duration: var(--transition-duration);
+	--theme-site-navigation__toggle-easing-function: var(--transition-easing-function);
+	--theme-site-navigation__toggle-spacing-unit: var(--spacing-unit);
+	--theme-site-navigation__toggle-z-index: 301;
+
+	/* shared/css/components/header/has-offscreen-nav.css */
+	--theme-has-offscreen-nav-overlay-color: var(--THEME-COLOR-PRIMARY);
+	--theme-offscreen-nav-padding: var(--spacing-unit-4);
+
+	/* shared/css/components/header/site-search__toggle.css */
+	--theme-site-search__toggle-color: var(--THEME-COLOR-SECONDARY);
+	--theme-site-search__toggle-color-interactive: var(--THEME-COLOR-SECONDARY);
+	--theme-site-search__toggle-color-active: var(--THEME-COLOR-SECONDARY);
+	--theme-site-search__toggle-height: 22px;
+	--theme-site-search__toggle-width: 22px;
+	--theme-site-search__toggle-transition-duration: var(--transition-duration);
+	--theme-site-search__toggle-easing-function: var(--transition-easing-function);
+	--theme-site-search__toggle-spacing-unit: var(--spacing-unit);
+
+	--theme-site-search-z-index: 2;
+
+	/* shared/css/components/header/primary-menu.css */
+	--theme-primary-menu-link-color: var(--THEME-COLOR-BODY);
+	--theme-primary-submenu-bg-color: var(--THEME-COLOR-SECONDARY);
+	--theme-primary-submenu-link-color: var(--THEME-COLOR-SECONDARY);
+	--theme-primary-menu-link-hover-active-color: 0, 0%, 12%;
+
+	@media (--large) {
+		--theme-primary-submenu-link-color: var(--THEME-COLOR-PRIMARY);
+	}
+	--theme-primary-submenu-z-index: 400;
+
+	/* shared/css/components/header/site-branding.css */
+	--theme-site-branding-text-color: var(--THEME-COLOR-SECONDARY);
+	--theme-site-branding-font-family: var(--theme-font-family-heading);
+	--theme-site-branding-spacing-unit: var(--spacing-unit-2);
+	--theme-site-branding-dividing-border-color: var(--THEME-COLOR-SECONDARY);
+
+	/* shared/css/components/header/site-navigation.css */
+	--theme-site-navigation-overlay-color: var(--THEME-COLOR-SECONDARY);
+	--theme-site-navigation-z-index: var(--z-index-menu);
+
+	/* shared/css/components/footer/footer-1.css */
+	--theme-footer-1-link-color: var(--THEME-COLOR-SECONDARY);
+	--theme-footer-1-link-color-interactive: var(--THEME-COLOR-SECONDARY);
+	--theme-footer-1-text-color: var(--THEME-COLOR-SECONDARY);
+
+	/* shared/css/components/footer/footer-2.css */
+	--theme-footer-2-border-top-color: var(--THEME-COLOR-SECONDARY);
+
+	/* shared/css/components/footer/footer-3.css */
+	--theme-footer-3-text-color: var(--THEME-COLOR-SECONDARY);
+
+	/***************************************************************
+	* BUTTONS
+	* shared/css/config/mixins.css
+	***************************************************************/
+
+	/* SHARED: Vertical button padding */
+	--theme-button-block-vertical-spacing-unit: 1.5rem;
+
+	/* SHARED: Horizontal button padding */
+	--theme-button-block-horizontal-spacing-unit: 1.5rem;
+
+	/* SHARED: Line height */
+	--theme-button-block-line-height: 1;
+
+	/* PRIMARY BUTTON: Font color */
+	--theme-button-block-color: var(--THEME-COLOR-PRIMARY); /* #fff */
+	--theme-button-block-color-interactive: var(--THEME-COLOR-PRIMARY); /* #fff */
+
+	/* PRIMARY BUTTON: Font size */
+	--theme-button-block-font-size: 0.85rem;
+
+	/* PRIMARY BUTTON: Font weight */
+	--theme-button-block-font-weight: 700;
+
+	/* PRIMARY BUTTON: Background color */
+	--theme-button-block-background-color: var(--THEME-COLOR-HEADING);
+	--theme-button-block-background-color-interactive: var(--THEME-COLOR-HEADING);
+
+	/* PRIMARY BUTTON: Border */
+	--theme-button-block-border: none;
+	--theme-button-block-border-interactive: none;
+
+	/* PRIMARY BUTTON: Border radius */
+	--theme-button-block-border-radius: 0;
+
+	/* PRIMARY BUTTON: Box shadow (use none to remove) */
+	--theme-button-block-shadow: none;
+	--theme-button-block-shadow-interactive: none;
+
+	/* PRIMARY BUTTON: Padding */
+	--theme-button-block-padding: var(--theme-button-block-vertical-spacing-unit) var(--theme-button-block-horizontal-spacing-unit) calc(var(--theme-button-block-vertical-spacing-unit) - 1px);
+
+	/* PRIMARY BUTTON: Text decoration */
+	--theme-button-block-text-decoration: none;
+	--theme-button-block-text-decoration-interactive: none;
+
+	/* PRIMARY BUTTON: Text transform */
+	--theme-button-block-text-transform: uppercase;
+
+	/* SECONDARY BUTTON: Background color */
+	--theme-button-block-outline-background-color: var(--THEME-COLOR-PRIMARY); /* #fff */
+	--theme-button-block-outline-background-color-interactive: var(--THEME-COLOR-PRIMARY); /* #fff */
+
+	/* SECONDARY BUTTON: Border */
+	--theme-button-block-outline-border: 2px solid hsl(var(--THEME-COLOR-SECONDARY));
+	--theme-button-block-outline-border-interactive: 2px solid hsl(var(--THEME-COLOR-SECONDARY));
+
+	/* SECONDARY BUTTON: Border radius */
+	--theme-button-block-outline-border-radius: 0;
+
+	/* SECONDARY BUTTON: Box shadow (use none to remove) */
+	--theme-button-block-outline-shadow: none;
+	--theme-button-block-outline-shadow-interactive: 0 0 8px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.12);
+
+	/* SECONDARY BUTTON: Font color */
+	--theme-button-block-outline-color: var(--THEME-COLOR-SECONDARY);
+	--theme-button-block-outline-color-interactive: var(--THEME-COLOR-SECONDARY);
+
+	/* SECONDARY BUTTON: Font size */
+	--theme-button-block-outline-font-size: 1.0625rem;
+
+	/* SECONDARY BUTTON: Font weight */
+	--theme-button-block-outline-font-weight: 700;
+
+	/* SECONDARY BUTTON: Padding */
+	--theme-button-block-outline-padding: calc(var(--theme-button-block-vertical-spacing-unit) - 2px) calc(var(--theme-button-block-horizontal-spacing-unit) - 2px);
+
+	/* SECONDARY BUTTON: Text decoration */
+	--theme-button-block-outline-text-decoration: none;
+	--theme-button-block-outline-text-decoration-interactive: underline;
+
+	/* SECONDARY BUTTON: Text transform */
+	--theme-button-block-outline-text-transform: uppercase;
+
+	/* ALTERNATE BUTTON: Border color */
+	--theme-button-block-alternate-border: 3px solid hsl(var(--THEME-COLOR-SECONDARY));
+	--theme-button-block-alternate-border-interactive: 3px solid hsl(var(--THEME-COLOR-SECONDARY));
+
+	/* ALTERNATE BUTTON: Font color */
+	--theme-button-block-alternate-color: var(--THEME-COLOR-SECONDARY);
+	--theme-button-block-alternate-color-interactive: var(--THEME-COLOR-SECONDARY);
+
+	/* ALTERNATE BUTTON: Font size */
+	--theme-button-block-alternate-font-size: 0.875rem;
+
+	/* ALTERNATE BUTTON: Font weight */
+	--theme-button-block-alternate-font-weight: 700;
+
+	/* ALTERNATE BUTTON: Padding */
+	--theme-button-block-alternate-padding: var(--theme-button-block-vertical-spacing-unit) 0 0;
+
+	/* ALTERNATE BUTTON: Text transform */
+	--theme-button-block-alternate-text-transform: uppercase;
+
+	/* DISABLED BUTTON: Background color */
+	--theme-button-block-disabled-background-color: 0, 2%, 89%; /* #e3e2e2 */
+
+	/* DISABLED BUTTON: Border radius */
+	--theme-button-block-disabled-border-radius: 0;
+
+	/* DISABLED BUTTON: Font color */
+	--theme-button-block-disabled-color: 0, 0%, 61%; /* #9b9b9b */
+
+	/* DISABLED BUTTON: Font weight */
+	--theme-button-block-disabled-font-weight: 400;
+
+	/* DISABLED BUTTON: Font size */
+	--theme-button-block-disabled-font-size: 1.0625rem;
+
+	/* DISABLED BUTTON: Padding */
+	--theme-button-block-disabled-padding: var(--theme-button-block-vertical-spacing-unit) var(--theme-button-block-horizontal-spacing-unit);
+
+	/* UNDERLINED BUTTON: Underline color */
+	--theme-button-block-underlined-color: var(--THEME-COLOR-PRIMARY); /* #fff */
+	--theme-button-block-underlined-color-interactive: var(--THEME-COLOR-PRIMARY); /* #fff */
+
+	/***************************************************************
+	* Gutenberg core blocks
+	***************************************************************/
+	--theme-image-caption-text-color: var(--THEME-COLOR-SECONDARY);
+	--theme-block-separator-color: var(--THEME-COLOR-SECONDARY);
+
+	/***************************************************************
+	* CoBlocks blocks
+	***************************************************************/
+	--theme-coblocks-author-background-color: var(--THEME-COLOR-PRIMARY);
+	--theme-coblocks-author-border-radius: 0;
+	--theme-coblocks-author-heading-color: var(--THEME-COLOR-SECONDARY);
+	--theme-coblocks-author-name-color: var(--THEME-COLOR-SECONDARY);
+
+	--theme-coblocks-hero-content-color: var(--THEME-COLOR-SECONDARY);
+
+	--theme-coblocks-pricing-table-color: var(--THEME-COLOR-SECONDARY);
+	--theme-coblocks-pricing-table-background-color: var(--color-athens-gray);
+	--theme-coblocks-pricing-table-title-font-family: var(--theme-heading-font-family);
+	--theme-coblocks-pricing-table-price-font-family: var(--theme-heading-font-family);
+	--theme-coblocks-pricing-table-features-font-family: var(--theme-heading-font-family);
+	--theme-coblocks-pricing-table-features-color: var(--color-mid-gray);
+
+	--theme-coblocks-gallery-carousel-overlay-color: var(--THEME-COLOR-SECONDARY);
+	--theme-coblocks-gallery-carousel-border-color: var(--color-charade);
+
+	/***************************************************************
+	* FORMS
+	* shared/css/elements/forms.css
+	* shared/css/config/mixins.css
+	***************************************************************/
+
+	/* SHARED: Input padding */
+	--theme-spacing-v-input: 1rem;
+	--theme-spacing-h-input: 1rem;
+
+	/* Labels */
+	--theme-label-letter-spacing: 2px;
+	--theme-label-text-transform: uppercase;
+	--theme-label-font-family: var(--theme-body-font-family);
+	--theme-input-label-font-size: 0.875rem;
+	--theme-input-label-font-weight: 700;
+	--theme-label-color: var(--THEME-COLOR-SECONDARY);
+
+
+	/* Inputs */
+	--theme-input-border-bottom-width: 1px;
+	--theme-input-border-left-width: 1px;
+	--theme-input-border-right-width: 1px;
+	--theme-input-border-top-width: 1px;
+	--theme-input-border-width: 1px;
+	--theme-input-stroke-color: var(--THEME-COLOR-SECONDARY);
+	--theme-input-border-radius: 0;
+	--theme-input-font-size: 1.0625rem;
+	--theme-input-font-weight: 700;
+	--theme-input-stroke-color-focus: var(--THEME-COLOR-SECONDARY);
+	--theme-input-box-shadow-focus: 0 1px 11px rgba(40, 37, 37, 0.07);
+	--theme-input-color: var(--THEME-COLOR-SECONDARY);
+	--theme-input-color-focus: var(--THEME-COLOR-SECONDARY);
+	--theme-input-placeholder-color: 0, 0%, 47%; /* #797878 */
+	--theme-input-color-background: 0, 0%, 100%; /* #fff */
+
+	/* Errors */
+	--theme-color-error: 357, 81%, 38%; /* #b0131c */
+	--theme-input-stroke-error: 357, 81%, 38%; /* #b0131c */
+
+	/* Textarea */
+	--theme-textarea-color: var(--THEME-COLOR-SECONDARY);
+	--theme-textarea-stroke-color: var(--THEME-COLOR-SECONDARY);
+	--theme-textarea-color-focus: var(--THEME-COLOR-SECONDARY);
+	--theme-textarea-stroke-color-focus: var(--THEME-COLOR-SECONDARY);
+	--theme-textarea-color-background: 0, 0%, 100%; /* #fff */
+
+	/* Check and Radio SVG trick */
+	--theme-checkbox-radio-fill: var(--THEME-COLOR-SECONDARY); /* #202124 */
+}

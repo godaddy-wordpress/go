@@ -1,0 +1,64 @@
+/**
+ * Godaddy - Global Editor Styles
+ */
+
+/* Utilities */
+@import url("utilities/colorize.css");
+
+/* Setting global variables */
+@import url("config/media-queries.css");
+@import url("config/colors-global.css");
+@import url("config/layout.css");
+@import url("config/typography.css");
+@import url("config/mixins.css");
+
+/* Elements - all the HTML elements coverage */
+@import url("elements/headings.css");
+@import url("elements/links.css");
+@import url("elements/lists.css");
+@import url("elements/media.css");
+@import url("elements/page.css");
+@import url("elements/tables.css");
+
+/* Core Blocks - Gutenberg core */
+@import url("core-blocks/button.css");
+@import url("core-blocks/separator.css");
+@import url("core-blocks/image.css");
+@import url("core-blocks/media.css");
+@import url("core-blocks/gallery.css");
+@import url("core-blocks/preformatted.css");
+@import url("core-blocks/pullquote.css");
+@import url("core-blocks/file.css");
+@import url("core-blocks/latest-posts.css");
+@import url("core-blocks/latest-comments.css");
+
+/* WooCommerce */
+@import url("woocommerce/layout.css");
+@import url("woocommerce/button.css");
+@import url("woocommerce/pagination.css");
+@import url("woocommerce/forms.css");
+@import url("woocommerce/cart.css");
+@import url("woocommerce/shop.css");
+@import url("woocommerce/product.css");
+@import url("woocommerce/tabs.css");
+@import url("woocommerce/typography.css");
+@import url("woocommerce/checkbox.css");
+
+/* CoBlocks */
+@import url("coblocks/author.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/pricing-table.css");
+@import url("coblocks/row.css");
+
+/* Templates - related to WordPress templates */
+@import url("templates/post.css");
+@import url("templates/blog.css");
+
+/* Start importing unique editor partials */
+@import url("editor/page.css");
+
+/* Gravity */
+@import url("gravity/forms.css");
+@import url("gravity/checkbox.css");
+@import url("gravity/radio.css");
+@import url("gravity/button.css");

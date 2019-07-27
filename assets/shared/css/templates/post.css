@@ -1,0 +1,162 @@
+/**
+ * post.css
+ *
+ * Defines most styles for archives and single templates.
+ *
+ */
+
+/* Global styles */
+.post__categories {
+	text-transform: uppercase;
+
+	& li,
+	& a {
+		display: inline-block;
+	}
+}
+
+.post__title {
+	margin: 0;
+}
+
+.post__thumbnail img {
+	width: 100%;
+}
+
+/* Archive loop */
+.post--archive {
+	margin: 0 0 4rem;
+
+	& a {
+		font-weight: 400;
+		text-decoration: none;
+
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	& .post__thumbnail {
+		margin: 0 0 2rem 0;
+		width: 100%;
+	}
+
+	@media (--medium) {
+		align-items: center;
+		display: flex;
+
+		& .post__thumbnail {
+			margin: 0 3rem 0 0;
+			width: 39%;
+		}
+
+		& .post__summary {
+			flex: 1;
+		}
+	}
+}
+
+/* Single post */
+.post--single {
+
+	& .post__hero {
+		background: hsl(var(--THEME-COLOR-SECONDARY)); /* tmp make dynamic */
+		margin: 0 0 2rem;
+
+		& .post__thumbnail {
+			margin: 0;
+		}
+
+		& .post__summary {
+			padding: 3rem 2rem 3.5rem;
+		}
+
+		@media (--medium) {
+			display: flex;
+			margin: 0 0 4rem;
+
+			& .post__thumbnail,
+			& .post__summary {
+				width: 50%;
+			}
+		}
+	}
+
+	& .post__hero-inner {
+		@media (--medium) {
+			display: flex;
+			flex: 1;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: var(--theme-max-width-base);
+		}
+	}
+
+	& .post__author {
+		display: block;
+		margin: 3rem 0 0;
+	}
+
+}
+
+/* Post meta typically includes things like: author, date, category. */
+.post__meta {
+	font-size: var(--theme-font-size-post-meta, 0.875rem);
+	letter-spacing: 2px;
+}
+
+/* Author */
+.post__author {
+	font-style: italic;
+}
+
+/* When no thumbnail available */
+.post--no-thumbnail {
+
+	& .post__hero {
+		padding-left: var(--theme-spacing-unit-2);
+		padding-right: var(--theme-spacing-unit-2);
+
+		& .post__summary {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: var(--theme-max-width-base));
+			padding-left: 0;
+			padding-right: 0;
+			width: 100%;
+		}
+
+		@media (--full-width) {
+			padding-left: inherit;
+			padding-right: inherit;
+		}
+	}
+}
+
+.post__excerpt {
+	line-height: 1.89;
+	margin-top: 0.375rem;
+}
+
+/*
+* Overrides when left panel nav (is-header-nav-logo-search)
+*/
+.is-header-nav-logo-search .post--no-thumbnail .post__hero {
+	padding: 0;
+}
+
+.is-header-nav-logo-search .post--single .post__hero-inner {
+	padding-left: 1rem;
+	padding-right: 1rem;
+
+	@media (--medium) {
+		margin-left: 0;
+		padding-left: 6rem;
+	}
+
+	@media (--large) {
+		padding-left: 9rem;
+	}
+}

@@ -1,0 +1,40 @@
+/**
+ * Welcoming - Design Style
+ */
+
+/* Setting variables */
+@import url("config/settings.css");
+@import url("../../../shared/css/config/mixins.css");
+@import url("../../../shared/css/config/media-queries.css");
+@import url("config/fonts.css");
+
+/* Elements - all the HTML elements coverage */
+@import url("elements/headings.css");
+@import url("elements/forms.css");
+
+/* Components - everything that is NOT a block */
+@import url("components/header/site-branding.css");
+@import url("components/header/primary-menu.css");
+@import url("components/header/header-nav-logo-search");
+@import url("components/footer/footer-4.css");
+@import url("components/custom-logo.css");
+@import url("components/header/site-search.css");
+@import url("components/comments.css");
+
+/* Gutenberg core blocks customizations */
+@import url("core-blocks/button.css");
+
+/* CoBlocks customizations */
+@import url("coblocks/author.css");
+@import url("coblocks/carousel.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/media.css");
+@import url("coblocks/media-card.css");
+@import url("coblocks/pricing-table.css");
+@import url("coblocks/row.css");
+
+/* Woocommerce overrides */
+@import url("woocommerce/button.css");
+
+/* Gravity overrides */
+@import url("gravity/button.css");

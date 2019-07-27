@@ -1,0 +1,246 @@
+/**
+ *
+ */
+
+.site-header--nav-logo-search {
+	background-color: hsl(var(--color-white));
+	display: flex;
+	margin-left: 0;
+	max-width: var(--theme-max-width-full);
+	padding-right: 1rem;
+
+	@media (--medium) {
+		background-color: hsla(var(--theme-site-header-background-color), 1);
+		padding-left: 6rem;
+	}
+
+	@media (--large) {
+		padding-left: 9rem;
+	}
+
+	@media (--full-width) {
+		padding-right: 0;
+	}
+}
+
+.site-header--nav-logo-search .site-branding {
+	flex: 1 0 60%;
+	padding-left: 20px;
+
+	@media (--medium) {
+		padding-left: 0;
+	}
+}
+
+.site-header--nav-logo-search .site-branding__link {
+	position: relative;
+	z-index: 309;
+}
+
+/* Off-screen navigation's navicon */
+.site-header--nav-logo-search .site-navigation__toggle {
+	background-color: hsl(var(--theme-site-navigation__toggle-background-color));
+	display: block;
+	height: 70px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 70px;
+
+	@media (--large) {
+		display: block;
+		height: 100px;
+		width: 100px;
+	}
+}
+
+/* <nav> Navigation wrapper */
+.site-header--nav-logo-search .site-navigation {
+	background-color: hsl(var(--color-white));
+	bottom: 0;
+	height: 70px;
+	left: 0;
+	position: relative;
+	top: 0;
+	transition: width 0.2s ease;
+	width: 70px;
+	z-index: 1000;
+
+	&[aria-hidden="true"] .primary-menu {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	@media (--medium) {
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		height: 100%;
+		position: fixed;
+	}
+
+	@media (--large) {
+		width: 100px;
+	}
+}
+
+/*
+Once the menu is open, we reset the positioning on the menu in order
+to have it appear in place. This is done to counter the fix that follows
+that was applied to prevent the flash of content.
+*/
+.menu-is-open .site-header--nav-logo-search .primary-menu {
+	left: auto;
+	position: relative;
+}
+
+/*
+Because we're doing a full height reveal container on the navigation,
+there is a flash of nav items, since we need to wait for the JS to load
+in order to provide the aria controls. To counter this flash, we temporarily
+position the menu items offscreen using left and absolute positioning.
+*/
+.site-header--nav-logo-search .primary-menu {
+	left: -5000px;
+	margin-right: 0;
+	overflow-y: scroll;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	position: absolute;
+	width: 100%;
+
+	& a {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	& .menu-item {
+		padding-left: 0;
+
+		@media (--large) {
+			display: block;
+			padding-left: 1rem;
+			padding-right: 0;
+		}
+	}
+
+	/* Sub-menus */
+	& .sub-menu {
+		margin-left: -1rem;
+		margin-right: -1rem;
+		padding: 0 1rem;
+
+		& .sub-menu {
+			margin: 0 -1rem;
+			padding: 0 1rem;
+		}
+
+		@media (--large) {
+			left: auto;
+			margin-left: -1rem;
+			margin-right: 0;
+			padding: 0;
+			position: relative;
+			text-align: inherit;
+			top: auto;
+			transform: none;
+			width: auto;
+
+			& .sub-menu {
+				margin: 0 0 0 -2rem;
+				padding-left: 1rem;
+			}
+		}
+
+		&::before {
+			display: none;
+		}
+	}
+
+	& > .menu-item-has-children {
+
+		&:hover {
+
+			& > .sub-menu {
+				@media (--large) {
+					display: none;
+				}
+
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	& > .menu-item-has-children.child-has-focus {
+
+		& > .sub-menu {
+			display: block;
+		}
+	}
+
+	@media (--large) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+.site-header--nav-logo-search .site-search {
+	left: 1rem;
+	opacity: 0;
+	padding: var(--theme-spacing-unit) 0;
+	pointer-events: none;
+	position: absolute;
+	right: 5rem;
+	transform: translateX(40%);
+	transition: opacity 175ms ease-out, transform ease-out 125ms;
+	z-index: 1200;
+
+	@media (--medium) {
+		left: 6rem;
+	}
+
+	@media (--large) {
+		left: auto;
+		padding: var(--theme-spacing-unit) var(--theme-spacing-unit-2);
+		right: 4rem;
+	}
+
+	@media (--full-width) {
+		right: 3rem;
+	}
+}
+
+.site-header--nav-logo-search .is-open.c-site-search {
+	opacity: 1;
+	pointer-events: all;
+	transform: translateX(0);
+}
+
+.site-header--nav-logo-search .site-search__toggle {
+	display: inline-block;
+	flex: 0 1 70px;
+	height: 70px;
+}
+
+body.has-offscreen-nav.menu-is-open .site-header--nav-logo-search .site-navigation {
+	padding-left: 0;
+}
+
+body.admin-bar .site-header--nav-logo-search .site-navigation {
+	top: 0;
+
+	@media (--medium) {
+		top: 32px;
+	}
+}
+
+body.admin-bar.menu-is-open.has-offscreen-nav .site-header--nav-logo-search .site-navigation {
+	height: calc(100% - 46px);
+	top: 46px;
+
+	@media (--medium) {
+		height: calc(100% - 32px);
+		top: 32px;
+	}
+}

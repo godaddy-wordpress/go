@@ -1,0 +1,95 @@
+/**
+ * Play - CoBlocks Carousel gallery block
+ */
+
+/* Block wrapper */
+.wp-block-coblocks-gallery-carousel {
+
+	& .has-horizontal-gutter.is-cropped {
+
+		& .coblocks-gallery--item {
+			margin: 35px 0 0 !important;
+			padding-bottom: 55px !important;
+			padding-top: 15px !important;
+			top: -25px;
+		}
+
+		& .is-selected .coblocks-gallery--figure {
+			border: 15px solid hsl(var(--color-white)) !important;
+			box-shadow: 0 4px 25px hsla(var(--color-black), 0.25);
+		}
+	}
+}
+
+/* Prev/Next buttons */
+.flickity-button {
+	background-color: hsla(var(--THEME-COLOR-PRIMARY), 0.4);
+	border-radius: 100%;
+	height: 60px;
+	width: 60px;
+
+	@media (--medium) {
+		height: 105px;
+		width: 105px;
+	}
+
+	&::after {
+		background-image: url("../../../dist/design-styles/play/svg/icon-carousel.svg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		content: "";
+		display: inline-block;
+		height: 40px;
+		left: calc(50% - 12px);
+		position: absolute;
+		top: calc(50% - 21px);
+		width: 16px;
+
+		@media (--medium) {
+			height: 55px;
+			left: calc(50% - 15px);
+			top: calc(50% - 28px);
+			width: 29px;
+		}
+	}
+
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: hsla(var(--THEME-COLOR-PRIMARY), 0.7);
+	}
+
+	& .flickity-button-icon {
+		display: none;
+	}
+
+	&.next {
+
+		&::after {
+			left: calc(50% - 5px);
+			transform: rotate(180deg);
+
+			@media (--medium) {
+				left: calc(50% - 11px);
+			}
+		}
+	}
+}
+
+.flickity-page-dots {
+
+	& .dot {
+		background-color: hsla(var(--THEME-COLOR-PRIMARY), 0.6);
+
+		&:active,
+		&:focus,
+		&:hover {
+			background-color: hsla(var(--THEME-COLOR-PRIMARY), 0.8);
+		}
+
+		&.is-selected {
+			background-color: hsla(var(--THEME-COLOR-PRIMARY), 1);
+		}
+	}
+}

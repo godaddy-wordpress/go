@@ -1,0 +1,10 @@
+/* Single post overrides */
+.post--single {
+
+	& .post__hero {
+		background: hsl(var(--color-gallery)); /* tmp make dynamic */
+		& * {
+			color: hsl(var(--theme-body-color));
+		}
+	}
+}

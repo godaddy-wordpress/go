@@ -1,0 +1,27 @@
+h1 {
+	letter-spacing: -0.5px;
+}
+
+h2 {
+	letter-spacing: -0.005em;
+	line-height: 1.275;
+}
+
+h3 {
+	line-height: 1.307;
+}
+
+h4 {
+	letter-spacing: 0.0025em;
+	line-height: 1.465;
+}
+
+h5 {
+	line-height: 1.5;
+}
+
+h6 {
+	letter-spacing: 0.005em;
+	line-height: 1.45;
+	text-transform: uppercase;
+}

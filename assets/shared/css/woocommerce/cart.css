@@ -1,0 +1,23 @@
+/**
+ * WooCommerce Global - cart
+ */
+
+/* Specificity to override nested styles from woo */
+body {
+
+	&.woocommerce-cart {
+
+		& .coupon {
+			display: flex;
+		}
+
+	}
+
+	&.woocommerce,
+	&.woocommerce-page {
+
+		& .input-text {
+			width: 180px;
+		}
+	}
+}

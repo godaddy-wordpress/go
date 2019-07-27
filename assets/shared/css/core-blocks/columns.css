@@ -1,0 +1,38 @@
+/* TODO: Test other column counts */
+.wp-block-columns {
+
+	& .wp-block-column {
+		margin-bottom: var(--theme-block-spacing-huge);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@media (--small) {
+
+			&:nth-child(2n) {
+				margin-left: 0;
+				padding-left: 32px;
+			}
+		}
+
+		@media (--large) {
+			margin-bottom: 0;
+		}
+
+		& > *:first-child {
+			margin-top: 0;
+		}
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.wp-block-column {
+
+	& .wp-block-button {
+		margin-top: 1.5rem;
+	}
+}

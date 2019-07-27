@@ -1,0 +1,10 @@
+/**
+ * Creative Services - Side branding
+ */
+
+.site-branding__title,
+.site-branding__description {
+	font-family: var(--theme-heading-font-family);
+	font-size: 1.1875rem;
+	letter-spacing: 2px;
+}
