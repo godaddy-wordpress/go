@@ -18,8 +18,8 @@ module.exports = {
 		'shared-style': './assets/shared/css/shared-style.css',
 
 		// CSS Design Styles
-		'design-styles/creative-services': './assets/design-styles/creative-services/css/creative-services.css',
-		'design-styles/creative-services-editor': './assets/design-styles/creative-services/css/editor-style.css',
+		'design-styles/modern': './assets/design-styles/modern/css/modern.css',
+		'design-styles/modern-editor': './assets/design-styles/modern/css/editor-style.css',
 		'design-styles/traditional': './assets/design-styles/traditional/css/traditional.css',
 		'design-styles/traditional-editor': './assets/design-styles/traditional/css/editor-style.css',
 		'design-styles/trendy-shop': './assets/design-styles/trendy-shop/css/trendy-shop.css',
@@ -40,8 +40,8 @@ module.exports = {
 			sharedCss: './assets/shared/css/',
 			sharedJs: './assets/shared/js/',
 			adminCss: './assets/admin/css',
-			creativeServicesBase: './assets/design-styles/creative-services/',
-			creativeServicesCss: './assets/design-styles/creative-services/css/',
+			creativeServicesBase: './assets/design-styles/modern/',
+			creativeServicesCss: './assets/design-styles/modern/css/',
 			traditionalBase: './assets/design-styles/traditional/',
 			traditionalCss: './assets/design-styles/traditional/css/',
 			trendyShopBase: './assets/design-styles/trendy-shop/',

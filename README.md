@@ -19,7 +19,7 @@ Since we're dealing with mini-themes (aka design styles) within a theme. Here is
         |—— images/
         |—— js/
     |-- design-styles/  Each Design Style assets
-        |—— creative-services/
+        |—— modern/
             |—— css/
             |—— fonts/
             |—— images/
