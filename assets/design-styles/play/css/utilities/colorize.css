@@ -1,5 +1,0 @@
-/* Colorize override */
-
-.has-theme-background {
-	color: hsl(var(--color-white));
-}

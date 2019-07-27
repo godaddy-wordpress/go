@@ -1,8 +1,0 @@
-/*
-* Table overrides
-*/
-
-.content-area table thead th,
-.content-area table tfoot th {
-	color: hsl(var(--theme-body-color));
-}

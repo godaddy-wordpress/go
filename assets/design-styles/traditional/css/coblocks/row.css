@@ -1,8 +1,0 @@
-/**
- * Traditional - CoBlocks Row block
- */
-
-/* Added to allow contrast with form field specs */
-body .has-very-light-gray-background-color {
-	background-color: hsl(var(--color-alabaster)) !important;
-}
