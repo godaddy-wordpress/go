@@ -277,8 +277,8 @@ function get_default_design_style() {
  */
 function get_available_design_styles() {
 	$default_design_styles = [
-		'modern' => [
-			'label'         => esc_html__( 'Creative Services', 'maverick' ),
+		'modern'      => [
+			'label'         => esc_html__( 'Modern', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Creative+Services',
@@ -313,7 +313,7 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'trendy-shop'       => [
+		'trendy-shop' => [
 			'label'         => esc_html__( 'Trendy Shop', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy-shop.css',
 			'editor_style'  => 'dist/css/design-styles/trendy-shop-editor.css',
