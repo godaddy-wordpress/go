@@ -3,7 +3,7 @@
  */
 
 /* Footer wrapper */
-.is-creative-services .site-footer--1 {
+.is-modern .site-footer--1 {
 	padding-bottom: calc(2.8 * var(--spacing-unit-6));
 
 	@media (--large) {
@@ -12,12 +12,12 @@
 }
 
 /* Social icons */
-.is-creative-services .social-icons {
+.is-modern .social-icons {
 	margin-bottom: calc(1.6 * var(--spacing-unit-6));
 }
 
 /* Footer menus */
-.is-creative-services .footer-menu {
+.is-modern .footer-menu {
 	@media (--large) {
 		margin-bottom: calc(0.8 * var(--spacing-unit-6));
 	}
@@ -40,6 +40,6 @@
 }
 
 /* Copyright text */
-.is-creative-services .footer-copy-text {
+.is-modern .footer-copy-text {
 	letter-spacing: 0.04em;
 }
