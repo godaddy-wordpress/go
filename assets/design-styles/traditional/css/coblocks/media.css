@@ -1,8 +1,0 @@
-/**
- * Traditional - Media block
- */
-
-.wp-block-media-text.alignfull {
-	border: 1px solid hsl(var(--color-gallery));
-	border-radius: 3px;
-}

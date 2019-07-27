@@ -1,8 +1,0 @@
-/**
- * Traditional - header-search-logo-nav variant
- */
-
-
-body.is-header-search-logo-nav #searchform {
-	background-color: hsl(var(--color-white));
-}
