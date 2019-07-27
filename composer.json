@@ -1,0 +1,42 @@
+{
+  "name": "10up/godaddy",
+  "type": "wordpress-theme",
+  "authors": [
+    {
+      "name": "10up",
+      "email": "info@10up.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Maverick\\": "includes/classes/"
+    }
+  },
+  "repositories": [
+    {
+        "type":"composer",
+        "url":"https://wpackagist.org"
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
+  },
+  "require": {
+    "php": ">=5.5",
+    "wpackagist-plugin/coblocks": "dev-trunk",
+    "wpackagist-plugin/block-gallery": "dev-trunk",
+    "wpackagist-plugin/woocommerce": "dev-trunk",
+    "oomphinc/composer-installers-extender": "^1.1"
+  },
+  "require-dev": {
+    "10up/phpcs-composer": "dev-master"
+  },
+  "scripts": {
+    "lint": "phpcs .",
+    "lint-fix": "phpcbf ."
+  }
+}

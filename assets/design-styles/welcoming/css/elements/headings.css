@@ -1,0 +1,30 @@
+h1,
+.h1 {
+	font-weight: 300;
+	letter-spacing: 2px;
+}
+
+h2,
+.h2 {
+	font-weight: 400;
+	letter-spacing: -0.005em;
+	line-height: 1.165;
+}
+
+h4,
+.h4 {
+	font-weight: 300;
+	letter-spacing: 0.0025em;
+}
+
+h5,
+.h5 {
+	font-weight: 800;
+	line-height: 1.365;
+}
+
+h6,
+.h6 {
+	letter-spacing: 0.005em;
+	text-transform: uppercase;
+}

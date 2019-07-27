@@ -1,0 +1,88 @@
+/**
+ * Creative Services - CoBlocks Carousel gallery block
+ */
+
+/* Block wrapper */
+.wp-block-coblocks-gallery-carousel {
+
+	/* Each image in carousel */
+	& .coblocks-gallery--item {
+		width: 50%;
+
+		@media (--medium) {
+			width: 33.33%;
+		}
+
+		&:not(.is-selected) {
+
+			&::before {
+				background-color: hsla(var(--theme-coblocks-gallery-carousel-overlay-color), 0.6);
+				content: "";
+				height: 100%;
+				position: absolute;
+				width: 100%;
+				z-index: 19;
+			}
+		}
+	}
+}
+
+/* Prev/Next buttons */
+.flickity-button {
+	background-color: transparent;
+	border: 1px solid hsla(var(--theme-coblocks-gallery-carousel-border-color), 0.74) !important;
+	border-radius: 0;
+	height: 36px;
+	width: 47px;
+
+	&::after {
+		background-image: url("../../../dist/design-styles/creative-services/svg/arrow-right.svg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		content: "";
+		display: inline-block;
+		height: 8px;
+		left: 13px;
+		position: absolute;
+		top: calc(50% - 3px);
+		width: 42px;
+	}
+
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: var(--color-white);
+	}
+
+	& .flickity-button-icon {
+		display: none;
+	}
+
+	&.previous {
+
+		&::after {
+			transform: rotate(180deg);
+		}
+
+		&:active::after,
+		&:focus::after,
+		&:hover::after {
+			transform: translateX(-29px) rotate(180deg);
+		}
+	}
+
+	&.next {
+
+		&::after {
+			left: auto;
+			right: 13px;
+		}
+
+		&:active::after,
+		&:focus::after,
+		&:hover::after {
+			transform: translateX(29px);
+		}
+	}
+}

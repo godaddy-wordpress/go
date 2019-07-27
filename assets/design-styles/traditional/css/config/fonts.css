@@ -1,0 +1,73 @@
+/* "Crimson Text" font */
+@font-face {
+	font-family: "Crimson Text";
+	font-style: italic;
+	font-weight: 700;
+	src:
+		url("../../../dist/design-styles/traditional/fonts/crimsontext/crimsontext-bolditalic-webfont.woff2") format("woff2"),
+		url("../../../dist/design-styles/traditional/fonts/crimsontext/crimsontext-bolditalic-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Crimson Text";
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url("../../../dist/design-styles/traditional/fonts/crimsontext/crimsontext-bold-webfont.woff2") format("woff2"),
+		url("../../../dist/design-styles/traditional/fonts/crimsontext/crimsontext-bold-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Crimson Text";
+	font-style: italic;
+	font-weight: 400;
+	src:
+		url("../../../dist/design-styles/traditional/fonts/crimsontext/crimsontext-italic-webfont.woff2") format("woff2"),
+		url("../../../dist/design-styles/traditional/fonts/crimsontext/crimsontext-italic-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Crimson Text";
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url("../../../dist/design-styles/traditional/fonts/crimsontext/crimsontext-regular-webfont.woff2") format("woff2"),
+		url("../../../dist/design-styles/traditional/fonts/crimsontext/crimsontext-regular-webfont.woff") format("woff");
+}
+
+/* "Nunito Sans" font */
+@font-face {
+	font-family: "Nunito Sans";
+	font-style: italic;
+	font-weight: 700;
+	src:
+		url("../../../dist/design-styles/traditional/fonts/nunitosans/nunitosans-bolditalic-webfont.woff2") format("woff2"),
+		url("../../../dist/design-styles/traditional/fonts/nunitosans/nunitosans-bolditalic-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Nunito Sans";
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url("../../../dist/design-styles/traditional/fonts/nunitosans/nunitosans-bold-webfont.woff2") format("woff2"),
+		url("../../../dist/design-styles/traditional/fonts/nunitosans/nunitosans-bold-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Nunito Sans";
+	font-style: italic;
+	font-weight: 400;
+	src:
+		url("../../../dist/design-styles/traditional/fonts/nunitosans/nunitosans-italic-webfont.woff2") format("woff2"),
+		url("../../../dist/design-styles/traditional/fonts/nunitosans/nunitosans-italic-webfont.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Nunito Sans";
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url("../../../dist/design-styles/traditional/fonts/nunitosans/nunitosans-regular-webfont.woff2") format("woff2"),
+		url("../../../dist/design-styles/traditional/fonts/nunitosans/nunitosans-regular-webfont.woff") format("woff");
+}

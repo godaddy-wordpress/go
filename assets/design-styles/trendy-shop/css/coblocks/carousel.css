@@ -1,0 +1,41 @@
+/**
+ * Trendy - CoBlocks Carousel gallery block
+ */
+
+.coblocks-gallery--item:not(.is-selected) {
+	transform: scale(0.9);
+}
+
+/* Prev/Next buttons */
+.flickity-button {
+	background-color: hsl(var(--color-white));
+	border-radius: 0;
+	height: 119px;
+	width: 60px;
+
+	& .flickity-button-icon {
+		width: 64%;
+	}
+
+	/* Previous button */
+	&.previous {
+		@media (--medium) {
+			left: 3rem;
+		}
+
+		& .flickity-button-icon {
+			left: 23%;
+		}
+	}
+
+	/* Next button */
+	&.next {
+		@media (--medium) {
+			right: 3rem;
+		}
+
+		& .flickity-button-icon {
+			left: 16%;
+		}
+	}
+}

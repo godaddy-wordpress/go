@@ -1,0 +1,114 @@
+/**
+ * Comments Area for all Posts
+ */
+
+/* Specificity to override */
+body {
+
+	& .comment-form-cookies-consent input[type="checkbox"] + label {
+		padding-left: 35px;
+	}
+
+	& .comments-area {
+		border-top: 7px solid hsl(var(--color-athens-gray));
+		margin: 3rem 0;
+
+		& input {
+			line-height: inherit;
+		}
+
+		/* Post Comment button */
+		& input[type="submit"] {
+			@mixin c-button-block-outline;
+
+			&:hover,
+			&:focus,
+			&:active {
+				@mixin c-button-block-outline-hover;
+			}
+		}
+
+		/* Each response */
+		& article {
+			margin: 3rem 0;
+		}
+
+		/* Response list */
+		& .commentlist {
+			margin: 2rem 0 4rem;
+
+			/* Don't need to see numeric count */
+			& li::before {
+				display: none;
+			}
+
+			/* Separate each comment block containing replies */
+			& > li {
+				border-bottom: 2px solid hsl(var(--color-athens-gray));
+
+			}
+
+			/* Indent replies only once */
+			& > li > .children {
+				margin-left: 2rem;
+			}
+		}
+
+		/* Header of each comment */
+		& .comment-meta {
+
+			& img,
+			& cite {
+				display: block;
+			}
+
+			/* Comment Gravatar */
+			& img {
+				margin: 0 0 1rem;
+			}
+
+			/* Comment author */
+			& cite {
+				font-style: normal;
+				margin: 0 1rem 0 0;
+			}
+
+			/* Comment Timestamp */
+			& > a {
+				font-size: 0.75rem;
+			}
+		}
+
+		/* Actual response form */
+		& .comment-form {
+
+			& > p:not(.comment-notes) {
+				margin: 2rem 0;
+			}
+		}
+
+		@media (--medium) {
+
+			/* Response list */
+			& .commentlist {
+
+				/* Indent replies only once */
+				& > li > .children {
+					margin-left: 4rem;
+				}
+			}
+
+			/* Header of each comment */
+			& .comment-meta {
+				align-items: center;
+				display: flex;
+
+				/* Comment Gravatar */
+				& img {
+					display: inline;
+					margin: 0 1rem 0 0;
+				}
+			}
+		}
+	}
+}

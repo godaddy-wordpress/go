@@ -1,0 +1,33 @@
+/**
+ * Site header
+ */
+
+.site-header {
+	align-items: center;
+	display: flex;
+	height: 80px;
+	justify-content: space-between;
+	margin-left: 0;
+	margin-right: 0;
+	max-width: var(--theme-max-width-wide);
+	position: relative;
+	width: 100%;
+
+	@media (--large) {
+		height: 120px;
+	}
+
+	@media (--full-width) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	& .u-informational {
+		display: inline-block;
+		padding: 0.3rem 0.5rem;
+	}
+}
+
+#customize-preview .site-header {
+	display: block;
+}

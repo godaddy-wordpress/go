@@ -1,0 +1,8 @@
+/**
+ * Animation and transition variables
+ */
+
+:root {
+	--transition-duration: var(--theme-transition-duration, 25ms);
+	--transition-easing-function: var(--theme-easing-function, cubic-bezier(0.645, 0.045, 0.355, 1));
+}

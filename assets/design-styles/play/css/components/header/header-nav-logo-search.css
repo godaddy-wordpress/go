@@ -1,0 +1,13 @@
+/**
+ * Play - header-nav-logo-search variant
+ */
+
+body.menu-is-open .site-header--nav-logo-search .site-navigation {
+	padding-left: 0;
+}
+
+body:not(.menu-is-open) .site-header--nav-logo-search .site-navigation__toggle-icon-inner,
+body .site-header--nav-logo-search .site-navigation__toggle-icon-inner::after,
+body .site-header--nav-logo-search .site-navigation__toggle-icon-inner::before {
+	background-color: hsl(var(--color-shark)) !important;
+}

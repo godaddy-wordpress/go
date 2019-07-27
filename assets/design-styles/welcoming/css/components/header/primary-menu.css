@@ -1,0 +1,9 @@
+/**
+ * Welcoming - Primary Menu
+ */
+
+.primary-menu {
+	--border-start: 16px;
+	--border-end-mobile: 22px;
+	--border-end-desktop: 22px;
+}

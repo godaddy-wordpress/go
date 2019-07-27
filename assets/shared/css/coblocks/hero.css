@@ -1,0 +1,127 @@
+/**
+ * CoBlocks - Hero block
+ */
+
+div.is-stacked-on-mobile {
+	@media (max-width: 600px) {
+
+		& .wp-block-button {
+			margin-top: 1rem;
+		}
+	}
+}
+
+.wp-block-coblocks-hero .has-center-content {
+
+	& .wp-block-coblocks-buttons__inner.flex-align-left {
+		align-items: center;
+	}
+}
+
+.wp-block-coblocks-hero .has-right-content {
+
+	& .wp-block-coblocks-buttons__inner.flex-align-left {
+		align-items: flex-end;
+	}
+}
+
+.wp-block-coblocks-hero .has-right-content.has-background.has-padding:not(.has-background-overlay),
+.wp-block-coblocks-hero .has-left-content.has-background.has-padding:not(.has-background-overlay) {
+	padding: 0;
+	position: relative;
+	text-align: left;
+
+	@media (--medium) {
+		display: grid;
+	}
+
+	&::before {
+		display: none;
+	}
+
+	& .wp-block-coblocks-hero__box {
+		grid-column: 1 / 3;
+		margin-left: 0;
+		margin-right: 0;
+		max-width: none !important;
+		padding: var(--theme-spacing-unit-6);
+		width: 100%;
+		z-index: 0;
+
+		@media (--medium) {
+			align-content: center;
+			display: grid;
+			grid-column: 2;
+			max-width: inherit;
+		}
+
+		@media (--large) {
+			padding-left: var(--theme-spacing-unit-6);
+			padding-right: var(--theme-spacing-unit-6);
+		}
+
+		&::before {
+			background-color: hsla(var(--theme-coblocks-hero-content-color), 1);
+			bottom: 0;
+			content: "";
+			left: 0;
+			opacity: 0.5;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		& * {
+			position: relative;
+			z-index: 2;
+		}
+
+		& *:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&.wp-block-coblocks-hero__inner {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr auto;
+
+		@media (--medium) {
+			grid-template-columns: repeat(2, 50%);
+			grid-template-rows: 0 auto;
+		}
+	}
+
+	& .wp-block-coblocks-buttons__inner {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+
+		@media (--large) {
+			flex-wrap: nowrap;
+		}
+	}
+
+	& .wp-block-coblocks-buttons .has-medium-gutter > .wp-block-button:not(:first-child) {
+		margin-left: 0;
+	}
+
+	& .wp-block-coblocks-buttons .has-medium-gutter > .wp-block-button:not(:last-child) {
+		@media (--medium) {
+			margin-bottom: var(--theme-spacing-unit-2);
+		}
+
+		@media (--large) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.wp-block-coblocks-hero .has-left-content.has-background.has-padding:not(.has-background-overlay) {
+
+	& .wp-block-coblocks-hero__box {
+		@media (--medium) {
+			grid-column: 1;
+		}
+	}
+}

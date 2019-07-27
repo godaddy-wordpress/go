@@ -1,0 +1,14 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+body.home {
+
+	& .content-area {
+		padding-top: 0;
+	}
+}

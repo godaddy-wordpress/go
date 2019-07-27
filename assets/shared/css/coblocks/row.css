@@ -1,0 +1,128 @@
+/**
+ * CoBlocks - Row Overrides
+ */
+
+body {
+
+	& div.is-stacked-on-mobile.has-no-gutter > [class*="wp-block-coblocks-"]:not(:last-child) {
+		@media (max-width: 600px) {
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	& div.is-stacked-on-mobile.has-huge-gutter > [class*="wp-block-coblocks-"]:not(:last-child) {
+		margin-bottom: 0;
+
+		@media (--medium) {
+			margin-bottom: 0;
+		}
+	}
+
+	& div.is-stacked-on-mobile.has-large-gutter > [class*="wp-block-coblocks-"]:not(:last-child) {
+		@media (max-width: 600px) {
+			margin-bottom: 0;
+		}
+	}
+
+	& .wp-block-coblocks-row:not(:last-of-type) > .wp-block-coblocks-row__inner.has-no-margin {
+		margin-bottom: calc(2 * var(--theme-spacing-unit-6));
+
+		@media (--medium) {
+			margin-bottom: var(--theme-spacing-unit-15);
+		}
+	}
+
+	& .wp-block-coblocks-row .woocommerce ul.products {
+		margin-bottom: 0;
+
+		@media (--medium) {
+			margin-bottom: 0;
+		}
+	}
+
+	& div.is-stacked-on-mobile.has-medium-gutter > [class*="wp-block-coblocks-"]:not(:last-child) {
+		@media (max-width: 600px) {
+			margin-bottom: 0;
+		}
+	}
+
+	& .wp-block-coblocks-row[data-columns="1"] .wp-block-coblocks-column__inner > [class="wp-block-separator"] {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	& .wp-block-coblocks-row > .wp-block-coblocks-row__inner > .wp-block-coblocks-column:last-child .wp-block-coblocks-column__inner > *:last-child:not('blockquote') {
+		margin-bottom: 0;
+	}
+
+	/* Prevent word wrapping and breaking in mobile on main CTAs */
+	& .wp-block-coblocks-column {
+		word-break: normal;
+	}
+
+	/* Override standard zero margin */
+	& .wp-block-coblocks-column p:last-of-type {
+		margin-bottom: 2em;
+	}
+
+	/* Remove from blockquote */
+	& .wp-block-coblocks-column blockquote p:last-of-type {
+		margin-bottom: 0;
+	}
+
+	/* Remove the margin right of last column blocks added by coblocks */
+	& .wp-block-coblocks-row .wp-block-coblocks-row__inner > .wp-block-coblocks-column:last-child {
+		margin-right: 0;
+	}
+
+	/* Should the user add custom negative margin to the left
+	of an element, this will assure that in mobile it looks correct.
+	ie: Welcome Hero */
+	& .wp-block-coblocks-column__inner {
+		@media (max-width: 600px) {
+			margin-bottom: 0;
+			margin-left: 0;
+			margin-top: 0;
+		}
+	}
+}
+
+/*
+ * CoBlocks Row block
+ */
+
+/**
+ * Allows us to overlap an Shape Divider (SVG) block
+ * on top of another block above it.
+ */
+.wp-block-coblocks-row.is-overlapping-above {
+	position: relative;
+	z-index: 10;
+}
+
+/*
+* Reset CoBlocks color inherit setting
+*/
+.wp-block-coblocks-column h1 {
+	color: hsl(var(--theme-h1-color));
+}
+
+.wp-block-coblocks-column h2 {
+	color: hsl(var(--theme-h2-color));
+}
+
+.wp-block-coblocks-column h3 {
+	color: hsl(var(--theme-h3-color));
+}
+
+.wp-block-coblocks-column h4 {
+	color: hsl(var(--theme-h4-color));
+}
+
+.wp-block-coblocks-column h5 {
+	color: hsl(var(--theme-h5-color));
+}
+
+.wp-block-coblocks-column h6 {
+	color: hsl(var(--theme-h6-color));
+}

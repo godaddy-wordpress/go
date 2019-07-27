@@ -1,0 +1,25 @@
+/**
+ * Godaddy - 'Play' Editor Styles
+ */
+
+/* Setting variables */
+@import url("config/settings.css");
+@import url("config/fonts.css");
+
+/* Elements - all the HTML elements coverage */
+@import url("elements/headings.css");
+@import url("elements/links.css");
+@import url("elements/forms.css");
+@import url("elements/blockquotes.css");
+@import url("elements/hr.css");
+
+/* CoBlocks customizations */
+@import url("coblocks/author.css");
+@import url("coblocks/carousel.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/media-card.css");
+@import url("coblocks/pricing-table.css");
+
+/* Utilities customizations */
+@import url("utilities/colorize.css");
+

@@ -1,0 +1,16 @@
+/**
+ * Customizations to the overlay menu
+ */
+
+.has-offscreen-nav {
+
+	& .site-header {
+		background-color: hsla(var(--theme-site-header-background-color), 1);
+	}
+
+	/* & .c-primary-menu {
+		& a {
+			color: hsl(var(--color-white));
+		}
+	} */
+}

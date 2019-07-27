@@ -1,0 +1,37 @@
+/**
+ * Play - header-search-logo-nav variant
+ */
+
+body.menu-is-open .site-header--search-logo-nav .site-navigation {
+
+	& .primary-menu .menu-item-has-children > [aria-haspopup]::after {
+		background-image: url("../../../dist/shared/svg/arrow-down.svg");
+	}
+}
+
+.has-offscreen-nav.menu-is-open .site-header--search-logo-nav .site-navigation {
+
+	/* Play is unique and uses a white color link by default.
+	However, in the case of this header variant, it is grey in the background,
+	so we need to force an inverse. */
+	& .primary-menu a {
+		color: hsl(var(--color-shark));
+
+		/* also override border color */
+		&::before {
+			background-color: hsl(var(--color-shark));
+		}
+	}
+}
+
+body.admin-bar.menu-is-open .site-header--search-logo-nav .site-navigation {
+	height: calc(100% - 116px);
+
+	@media (--medium) {
+		height: calc(100% - 102px);
+	}
+
+	@media (--large) {
+		height: auto;
+	}
+}

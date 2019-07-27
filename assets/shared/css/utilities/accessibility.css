@@ -1,0 +1,56 @@
+/* stylelint-disable declaration-no-important */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+
+	/**
+	 * Many screen reader and browser combinations announce broken words
+	 * as they would appear visually.
+	 */
+	word-wrap: normal !important;
+
+	&:focus {
+		background-color: var(--color-alabaster);
+		clip: auto !important;
+		clip-path: none;
+		color: var(--color-black);
+		display: block;
+		font-size: 1rem;
+		font-weight: 700;
+		height: auto;
+		left: var(--theme-spacing-unit);
+		padding: var(--theme-spacing-unit) var(--theme-spacing-unit-2);
+		text-decoration: none;
+		top: var(--theme-spacing-unit);
+		width: auto;
+
+		/* Above WP toolbar. */
+		z-index: 100000;
+	}
+}
+
+/* stylelint-enable */
+
+/**
+ * Resources on prefers-reduced-motion:
+ * https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+ */
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001s !important;
+		transition-duration: 0.001s !important;
+	}
+}

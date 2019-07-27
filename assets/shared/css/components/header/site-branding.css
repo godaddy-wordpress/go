@@ -1,0 +1,40 @@
+/**
+ * Site branding
+ */
+
+.site-branding {
+	flex: 1 0 50%;
+	line-height: 1.2;
+
+	& a {
+		text-decoration-color: transparent;
+	}
+}
+
+.site-branding__link {
+	display: block;
+	text-decoration: none;
+
+	@media (--medium) {
+		display: inline-block;
+	}
+}
+
+.site-branding__title,
+.site-branding__description {
+	color: hsla(var(--theme-site-branding-text-color), 1);
+	font-family: hsla(var(--theme-site-branding-font-family), 1);
+	font-size: 1.1875rem;
+	font-weight: 700;
+}
+
+.site-branding__description {
+	font-size: 78%;
+
+	@media (--medium) {
+		border-left: 2px solid hsla(var(--theme-site-branding-dividing-border-color), 1);
+		font-size: 100%;
+		margin-left: var(--theme-site-branding-spacing-unit);
+		padding-left: var(--theme-site-branding-spacing-unit);
+	}
+}

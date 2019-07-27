@@ -1,0 +1,8 @@
+/* Make sure images are scaled correctly. */
+img {
+	height: auto;
+	max-width: 100%;
+
+	/* Removes the whitespace under img, safer than `display: block;`. */
+	vertical-align: middle;
+}

@@ -1,0 +1,14 @@
+.site-footer {
+	padding: var(--theme-spacing-unit-6) var(--theme-spacing-unit-2);
+	position: relative;
+
+	@media (--full-width) {
+		padding-left: inherit;
+		padding-right: inherit;
+	}
+
+	& .u-informational {
+		display: inline-block;
+		padding: 0.3rem 0.5rem;
+	}
+}

@@ -1,0 +1,18 @@
+h1 {
+	letter-spacing: -0.0275em;
+	line-height: 1.145;
+}
+
+h2 {
+	letter-spacing: -0.02em;
+}
+
+h3 {
+	font-weight: 400;
+	letter-spacing: 1px;
+	line-height: 1.36;
+}
+
+h4 {
+	line-height: 1.36;
+}

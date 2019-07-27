@@ -1,0 +1,26 @@
+/**
+ * Comments overrides
+ */
+
+/* Specificity to override */
+body {
+
+	/* Because the welcoming button needs to use
+	the primary style, and not the secondary, we
+	need to override that here */
+	& .comments-area {
+
+		/* Post Comment button */
+		& input[type="submit"] {
+			@mixin c-button-block;
+
+			padding-right: 1.25rem !important;
+
+			&:hover,
+			&:focus,
+			&:active {
+				@mixin c-button-block-hover;
+			}
+		}
+	}
+}

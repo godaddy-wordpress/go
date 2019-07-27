@@ -1,0 +1,45 @@
+/**
+ * Creative Services - CoBlocks Pricing Table block
+ */
+
+.wp-block-coblocks-pricing-table {
+
+	/* Pricing Tables - item title */
+	& .wp-block-coblocks-pricing-table-item__title {
+		font-size: 0.8125rem;
+		text-transform: uppercase;
+	}
+
+	/* Pricing Tables - price wrapper */
+	& .wp-block-coblocks-pricing-table-item__price-wrapper {
+		font-family: var(--theme-body-font-family);
+		margin-bottom: var(--theme-spacing-unit-4);
+	}
+
+	/* Pricing Tables - currency */
+	& .wp-block-coblocks-pricing-table-item__currency {
+		top: 5px;
+	}
+
+	/* Pricing Tables - features <ul> list */
+	& .wp-block-coblocks-pricing-table-item__features {
+		font-family: var(--theme-body-font-family);
+		font-size: 0.8125rem;
+
+		& li {
+			margin-bottom: var(--theme-spacing-unit-2);
+		}
+	}
+
+	/* Pricing Tables - link-button */
+	& .is-style-outline .wp-block-button__link,
+	& .is-style-outline-rounded .wp-block-button__link {
+		padding-bottom: 9px;
+		padding-top: 9px;
+
+		@media (--large) {
+			padding-left: 34px;
+			padding-right: 34px;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+/**
+ * blockquotes.css
+ * All blockquote style overrides
+ *
+ */
+
+/* Specificity for overriding */
+.content-area {
+
+	/* Default (small) blockquote */
+	& .wp-block-quote {
+
+		/* Override base WP */
+		font-family: Poppins, sans-serif;
+		font-weight: 700;
+
+		&.is-style-large p::before {
+			@media (--medium) {
+				transform: translate3d(-160%, -16%, 0);
+			}
+		}
+	}
+}

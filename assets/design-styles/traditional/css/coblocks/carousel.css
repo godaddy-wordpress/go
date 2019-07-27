@@ -1,0 +1,39 @@
+/**
+ * Traditional - CoBlocks Carousel gallery block
+ */
+
+/* Prev/Next buttons */
+.flickity-button {
+	background-color: hsla(var(--theme-coblocks-gallery-carousel-button-color), 0.75);
+	border: 2px solid hsl(var(--theme-coblocks-gallery-carousel-border-color));
+	border-radius: 3px;
+	height: 55px;
+	width: 55px;
+
+	& .flickity-button-icon {
+		width: 64%;
+	}
+
+	&:active,
+	&:focus,
+	&:hover {
+
+		& .flickity-button-icon {
+			fill: var(--color-black);
+		}
+	}
+
+	&.previous {
+
+		& .flickity-button-icon {
+			left: 23%;
+		}
+	}
+
+	&.next {
+
+		& .flickity-button-icon {
+			left: 16%;
+		}
+	}
+}

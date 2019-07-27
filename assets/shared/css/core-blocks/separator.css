@@ -1,0 +1,3 @@
+.wp-block-separator {
+	border-bottom-color: var(--theme-block-separator-color);
+}

@@ -1,0 +1,7 @@
+.wp-block-gallery {
+	margin-bottom: -16px !important;
+
+	& .blocks-gallery-item:last-child {
+		margin-bottom: 16px !important;
+	}
+}

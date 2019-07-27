@@ -1,0 +1,8 @@
+.entry-header {
+	margin: var(--theme-spacing-unit-6) auto  var(--theme-spacing-unit-4);
+	max-width: var(--theme-max-width-base);
+
+	& .entry-title {
+		text-align: center;
+	}
+}

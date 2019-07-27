@@ -1,0 +1,32 @@
+/**
+ * Creative Services - CoBlocks Gallery styling.
+ */
+
+/**
+ *      2-col Aign Wide gallery
+ *   ------------------------------
+ *   |                  |         |
+ *   |     Image 1      | Image 2 |
+ *   |                  |         |
+ *   ==============================
+ *   |         |                  |
+ *   | Image 3 |     Image 4      |
+ *   |         |                  |
+ *   ------------------------------
+ */
+.wp-block-gallery.alignwide.columns-2.is-cropped {
+
+	& > .blocks-gallery-item {
+		flex: 1 1 28%;
+		flex-direction: row;
+		width: auto;
+	}
+
+	& > .blocks-gallery-item > figure {
+		width: 100%;
+	}
+
+	& > li:nth-of-type(3n+1) {
+		flex: 2 1 70%;
+	}
+}

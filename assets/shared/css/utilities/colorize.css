@@ -1,0 +1,6 @@
+/**
+ * Used to apply primary background color
+ */
+.has-theme-background {
+	background-color: hsl(var(--THEME-COLOR-PRIMARY));
+}

@@ -1,0 +1,31 @@
+/**
+ * Social icons
+ */
+
+.social-icons {
+	display: inline-block;
+	margin: 0.35rem auto 0;
+
+	& li {
+		display: inline-block;
+		padding-left: var(--theme-spacing-unit);
+		padding-right: var(--theme-spacing-unit);
+	}
+
+	& a {
+		align-items: center;
+		color: hsl(var(--THEME-COLOR-SECONDARY));
+		display: flex;
+		justify-content: center;
+		min-height: 48px;
+		min-width: 48px;
+		padding: 0;
+		text-align: center;
+	}
+
+	& svg {
+		fill: currentColor;
+		height: var(--theme-spacing-unit-2);
+		vertical-align: middle;
+	}
+}

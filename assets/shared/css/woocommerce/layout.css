@@ -1,0 +1,20 @@
+/**
+ * WooCommerce Global - layout
+ *
+ * Global overrides to general layout
+*/
+
+.content-area--woocommerce {
+
+	& .page-title {
+		text-align: center;
+	}
+}
+
+.woocommerce ul.products {
+	margin-bottom: var(--theme-spacing-unit-4);
+
+	@media (--medium) {
+		margin-bottom: var(--theme-spacing-unit-4);
+	}
+}

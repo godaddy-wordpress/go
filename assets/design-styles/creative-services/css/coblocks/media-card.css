@@ -1,0 +1,82 @@
+/**
+ * Creative Services - CoBlocks Media Card block
+ */
+
+.wp-block-coblocks-media-card {
+
+	/* Media Card - wrapper */
+	& .wp-block-coblocks-media-card__wrapper {
+		grid-template-columns: repeat(24, 1fr);
+	}
+
+	/* Media Card - <figure> element */
+	& .wp-block-coblocks-media-card__media {
+		@media (min-width: 660px) {
+			grid-column: 1 / 16;
+		}
+
+		@media (--medium) {
+			grid-column: 1 / 18;
+		}
+
+		& img {
+			object-fit: fill;
+		}
+	}
+
+	/* Media Card - content: heading + copy */
+	& .wp-block-coblocks-media-card__content {
+		@media (min-width: 660px) {
+			grid-column: 15 / 25;
+			margin: 0;
+		}
+	}
+
+	/* Media Card - we have to brute this color in to place. */
+	& .wp-block-coblocks-row__inner[style*="background-color:#FFFFFF"],
+	& .wp-block-coblocks-row__inner[style*="background-color: rgb(255, 255, 255)"] {
+		background-color: hsla(var(--color-alabaster), 1) !important;
+	}
+
+	/* Media Card - we override the 'Huge' setting only */
+	& .wp-block-coblocks-row__inner.has-huge-padding {
+		padding: calc(1.5 * var(--theme-spacing-unit-4));
+	}
+
+	&.is-stacked-on-mobile .wp-block-coblocks-media-card__content {
+		@media (max-width: 660px) {
+			margin-left: var(--theme-spacing-unit-2);
+			margin-right: var(--theme-spacing-unit-2);
+			margin-top: -10%;
+		}
+	}
+
+	/* Media Card - heading */
+	& h3 {
+		font-size: 1.8rem;
+		font-weight: 700;
+		letter-spacing: 2px;
+		line-height: 1.44;
+		margin: 0 0 var(--theme-spacing-unit-2);
+
+		@media (--large) {
+			font-size: 2.375rem;
+		}
+	}
+
+	/* Media Card - inner content */
+	& .wp-block-coblocks-column__inner {
+
+		& > h3 {
+			color: hsla(var(--color-charade), 1);
+		}
+
+		& > * {
+			color: hsla(var(--color-mid-gray), 1);
+		}
+
+		& > p {
+			line-height: 2.25;
+		}
+	}
+}

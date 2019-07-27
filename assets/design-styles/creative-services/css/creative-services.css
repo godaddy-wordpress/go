@@ -1,0 +1,78 @@
+/**
+ * Creative Services - Design Style
+ */
+
+/* Setting variables */
+@import url("../../../shared/css/config/media-queries.css");
+@import url("config/settings.css");
+@import url("config/fonts.css");
+
+/* Elements - all the HTML elements coverage */
+@import url("elements/headings.css");
+@import url("elements/forms.css");
+@import url("elements/site-search.css");
+
+/* Gutenberg core blocks overrides */
+@import url("core-blocks/button.css");
+
+/* CoBlocks customizations */
+@import url("coblocks/carousel.css");
+@import url("coblocks/gallery.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/media-card.css");
+@import url("coblocks/pricing-table.css");
+
+/* Components - everything that is NOT a block */
+@import url("components/header/site-branding.css");
+@import url("components/header/primary-menu.css");
+@import url("components/header/site-navigation__toggle.css");
+@import url("components/header/site-search.css");
+@import url("components/header/header-search-logo-nav.css");
+@import url("components/footer/footer-1.css");
+
+/* Woocommerce */
+@import url("woocommerce/button.css");
+@import url("woocommerce/shop.css");
+
+/* Templates */
+@import url("templates/post.css");
+
+p {
+	margin-top: 0;
+}
+
+.wp-block-coblocks-food-and-drinks {
+
+	& h3,
+	& h4,
+	& h5 {
+		margin-bottom: 2rem;
+	}
+}
+
+.wp-block-coblocks-food-and-drinks.is-style-list .wp-block-coblocks-food-item {
+	margin-top: 1rem;
+}
+
+.wp-block-coblocks-food-item {
+	margin-top: 2rem;
+}
+
+.wp-block-coblocks-food-item__heading {
+	font-size: var(--theme-h6-font-size);
+	margin-bottom: 0 !important;
+}
+
+.wp-block-coblocks-food-item__heading-wrapper {
+	margin-bottom: 0;
+}
+
+.wp-block-coblocks-food-item__price {
+	color: hsla(var(--THEME-COLOR-BODY), 1);
+	font-size: 0.9rem;
+	opacity: 1;
+}
+
+strong {
+	color: hsla(var(--theme-h1-color), 1);
+}

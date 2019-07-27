@@ -1,0 +1,172 @@
+/**
+ * WooCommerce Global - shop template
+ *
+ * Global overrides to shop template
+*/
+
+.woocommerce .content-area ins {
+	text-decoration: none;
+}
+
+.woocommerce ul.products,
+.woocommerce-page ul.products,
+.woocommerce-page ul.wc-block-grid__products {
+	display: block;
+
+	@media (--medium) {
+		align-content: space-between;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		&::after {
+			content: "";
+			flex: 1 0 29%;
+			margin-left: 0;
+			margin-right: 0;
+			max-width: 100%;
+		}
+	}
+}
+
+.wc-block-grid.has-3-columns {
+
+	& ul.wc-block-grid__products,
+	& ul.products {
+
+		& li.wc-block-grid__product,
+		& li.product {
+			max-width: 100%;
+
+			@media (min-width: 400px) {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 75%;
+			}
+
+			@media (--medium) {
+				flex: 1 0 29%;
+				margin-left: 0;
+				margin-right: 0;
+				max-width: 29%;
+			}
+		}
+	}
+}
+
+.woocommerce-page ul.wc-block-grid__products,
+.woocommerce ul.products {
+
+	& li.wc-block-grid__product,
+	& li.product {
+		text-align: left;
+
+		& a {
+
+			& img {
+				height: auto;
+				margin: 0;
+				width: 100%;
+
+				@media (--large) {
+					margin: 0 0 1rem;
+				}
+			}
+
+
+			/* Add to cart button appears on Shop page after ajax load */
+			&.added_to_cart {
+				border: none;
+				margin-left: 1rem;
+			}
+		}
+
+		& .wc-block-grid__product-title,
+		& .woocommerce-loop-product__title {
+			color: hsl(var(--color-charade));
+			font-family: var(--theme-heading-font-family);
+			font-size: var(--theme-h5-font-size);
+			font-weight: 400;
+			letter-spacing: 0.125rem;
+			line-height: 39px;
+			margin-bottom: 0.5rem;
+
+			@media (--large) {
+				font-size: var(--theme-h3-font-size);
+			}
+		}
+
+		& .price {
+			color: hsl(var(--color-shark));
+			font-size: var(--theme-body-font-size);
+			font-weight: 700;
+			letter-spacing: 1px;
+
+			@media (--large) {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+
+}
+
+/* Sale badge overrides */
+.wc-block-grid .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-onsale,
+.woocommerce span.onsale {
+	@mixin on-sale-badge;
+
+	left: 20px;
+	top: 20px;
+
+	@media (--large) {
+		@mixin on-sale-badge-lg;
+
+		left: 30px;
+		top: 30px;
+	}
+}
+
+.wc-block-grid .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-onsale,
+.woocommerce ul.products li.product span.onsale {
+	@mixin on-sale-badge;
+
+	left: auto;
+	right: 10px;
+	top: 10px;
+
+	@media (--large) {
+		@mixin on-sale-badge-lg;
+
+		right: 30px;
+		top: 30px;
+	}
+}
+
+/* Result count overrides */
+.woocommerce .woocommerce-result-count,
+.woocommerce-page .woocommerce-result-count {
+	float: none;
+	margin: 0 0 1rem 0;
+	max-width: 100%;
+	text-align: center;
+
+	@media (--medium) {
+		margin: 0 0 2.5rem 0;
+		text-align: right;
+	}
+}
+
+/* Odering overrides - Select menu */
+.woocommerce .woocommerce-ordering,
+.woocommerce-page .woocommerce-ordering {
+	float: none;
+	margin: 0 auto 2.5rem;
+	max-width: 260px;
+
+	@media (--medium) {
+		float: right;
+		margin: 0 0 2.5rem 0;
+		max-width: 100%;
+	}
+}
+

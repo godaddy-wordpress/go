@@ -1,0 +1,15 @@
+{
+  "extends": "@10up/stylelint-config",
+  "rules": {
+     "selector-nested-pattern": ["^&"],
+     "no-descending-specificity": null,
+     "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["define-mixin", "mixin"]
+    }],
+     "at-rule-empty-line-before": ["always", {
+      "except": ["first-nested", "blockless-after-blockless"],
+      "ignore": ['after-comment'],
+    }],
+	"sh-waqar/declaration-use-variable": [ [ "/color/", { ignoreValues: ["transparent", "inherit", "currentColor"] } ] ],
+  }
+}

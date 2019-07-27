@@ -1,0 +1,38 @@
+/**
+ * Play - CoBlocks Pricing Table block
+ */
+
+.wp-block-coblocks-pricing-table {
+
+	/* Pricing Tables - each item */
+	& .wp-block-coblocks-pricing-table-item {
+		padding-bottom: calc(3.2 * var(--theme-spacing-unit-2));
+		padding-top: calc(3.5 * var(--theme-spacing-unit-2));
+	}
+
+	/* Set default background color per item */
+	& .wp-block-coblocks-pricing-table-item:not(.has-background) {
+		background-color: hsl(var(--theme-color-aqua-squeeze));
+	}
+
+	/* Pricing Tables - item title */
+	& .wp-block-coblocks-pricing-table-item__title {
+		text-transform: uppercase;
+	}
+
+	/* Pricing Tables - currency */
+	& .wp-block-coblocks-pricing-table-item__currency {
+		top: 4px;
+	}
+
+	/* Pricing Tables - price wrapper */
+	& .wp-block-coblocks-pricing-table-item__price-wrapper {
+		margin-bottom: calc(3 * var(--theme-spacing-unit));
+	}
+
+	/* Pricing Tables - features <ul> list */
+	& .wp-block-coblocks-pricing-table-item__features {
+		color: hsl(var(--theme-color-tangaroa));
+		margin-bottom: calc(3.5 * var(--theme-spacing-unit-2));
+	}
+}

@@ -1,0 +1,9 @@
+.woocommerce-page input[type="checkbox"] {
+	appearance: checkbox;
+}
+
+.woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme {
+	@media (--medium) {
+		padding: var(--theme-button-block-outline-padding);
+	}
+}

@@ -1,0 +1,18 @@
+/**
+ * WooCommerce Global - forms
+ *
+ * Global overrides to forms
+*/
+
+#add_payment_method table.cart td.actions .coupon .input-text,
+.woocommerce-cart table.cart td.actions .coupon .input-text,
+.woocommerce-checkout table.cart td.actions .coupon .input-text,
+.woocommerce .quantity .qty {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.select2-container--default .select2-selection--single {
+	padding-left: 0;
+	padding-right: 2rem;
+}

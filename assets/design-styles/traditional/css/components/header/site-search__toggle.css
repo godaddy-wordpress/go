@@ -1,0 +1,21 @@
+/**
+ * Traditional - site search toggle button
+ */
+
+.site-search__toggle {
+	border: 1px solid hsl(var(--color-iron));
+	border-radius: 3px;
+	height: 34px;
+	min-width: inherit;
+	width: 34px;
+
+	&:active,
+	&:focus,
+	&:hover {
+		border-color: hsl(var(--color-black));
+	}
+
+	& svg {
+		transform: scale(0.7);
+	}
+}

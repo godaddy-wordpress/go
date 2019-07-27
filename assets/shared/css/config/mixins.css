@@ -1,0 +1,233 @@
+/**
+ * Mixins
+ */
+
+/* Primary button */
+@define-mixin c-button-block {
+	background-color: hsl(var(--theme-button-block-background-color));
+	border: var(--theme-button-block-border);
+	border-radius: var(--theme-button-block-border-radius);
+	box-shadow: var(--theme-button-block-shadow);
+	color: hsl(var(--theme-button-block-color));
+	cursor: pointer;
+	display: inline-block;
+	font-size: var(--theme-button-block-font-size) !important;
+	font-weight: var(--theme-button-block-font-weight);
+	letter-spacing: 1px;
+	line-height: var(--theme-button-block-line-height);
+	opacity: 1;
+	padding: var(--theme-button-block-padding);
+	position: relative;
+	text-decoration: var(--theme-button-block-text-decoration) !important;
+	text-transform: var(--theme-button-block-text-transform);
+}
+
+/* Primary button hover */
+@define-mixin c-button-block-hover {
+	background-color: hsl(var(--theme-button-block-background-color-interactive));
+	border: var(--theme-button-block-border-interactive);
+	box-shadow: var(--theme-button-block-shadow-interactive);
+	color: hsl(var(--theme-button-block-color-interactive));
+	text-decoration: var(--theme-button-block-text-decoration-interactive) !important;
+}
+
+/* Primary button visited */
+@define-mixin c-button-block-visited {
+	color: hsl(var(--theme-button-block-color));
+}
+
+/* Secondary button */
+@define-mixin c-button-block-outline {
+	background-color: hsl(var(--theme-button-block-outline-background-color)) !important;
+	border: var(--theme-button-block-outline-border);
+	color: hsl(var(--theme-button-block-outline-color));
+}
+
+/* Secondary button hover */
+@define-mixin c-button-block-outline-hover {
+	background-color: hsl(var(--theme-button-block-outline-background-color-interactive));
+	border: var(--theme-button-block-outline-border-interactive);
+	box-shadow: var(--theme-button-block-outline-shadow-interactive);
+	color: hsl(var(--theme-button-block-outline-color-interactive));
+	position: relative;
+	text-decoration: var(--theme-button-block-outline-text-decoration-interactive) !important;
+}
+
+/* Secondary button visited */
+@define-mixin c-button-block-outline-visited {
+	border-color: hsl(var(--theme-button-block-outline-color));
+	color: hsl(var(--theme-button-block-outline-color));
+}
+
+/* Disabled button */
+@define-mixin c-button-block-disabled {
+	background-color: hsl(var(--theme-button-block-disabled-background-color));
+	border: none;
+	border-radius: var(--theme-button-block-disabled-border-radius);
+	box-shadow: none;
+	color: hsl(var(--theme-button-block-disabled-color));
+	cursor: default;
+	display: inline-block;
+	font-size: var(--theme-button-block-disabled-font-size) !important;
+	font-weight: var(--theme-button-block-disabled-font-weight);
+	letter-spacing: 1px;
+	line-height: var(--theme-button-block-line-height);
+	margin-bottom: 0;
+	padding: var(--theme-button-block-disabled-padding) !important;
+	position: relative;
+	text-decoration: none;
+}
+
+@define-mixin c-button-block-underlined {
+	background-color: transparent;
+	border-bottom: 2px solid;
+	border-radius: 0;
+	color: hsl(var(--theme-button-block-underlined-color));
+	padding: 0;
+	text-transform: uppercase;
+}
+
+@define-mixin c-button-block-underlined-hover {
+	color: hsl(var(--theme-button-block-underlined-color-interactive));
+}
+
+/* Alternate button */
+@define-mixin c-button-block-alternate {
+	background-color: transparent;
+	border-bottom: var(--theme-button-block-alternate-border);
+	border-radius: none;
+	box-shadow: none;
+	color: hsl(var(--theme-button-block-alternate-color));
+	cursor: pointer;
+	display: inline-block;
+	font-size: var(--theme-button-block-alternate-font-size) !important;
+	font-weight: var(--theme-button-block-alternate-font-weight);
+	letter-spacing: 2px;
+	line-height: var(--theme-button-block-line-height);
+	margin-bottom: calc(var(--theme-button-block-vertical-spacing-unit) - 10px);
+	opacity: 1;
+	padding: var(--theme-button-block-alternate-padding) !important;
+	position: relative;
+	text-decoration: none;
+	text-transform: var(--theme-button-block-alternate-text-transform);
+}
+
+/* Alternate button hover */
+@define-mixin c-button-block-alternate-hover {
+	border-bottom: var(--theme-button-block-alternate-border-interactive);
+	box-shadow: none;
+	color: hsl(var(--theme-button-block-alternate-color-interactive));
+	text-decoration: none;
+}
+
+/* TODO: Consider removing GLOBAL refs */
+@define-mixin GLOBAL-FOCUS-STYLES {
+	outline: thin dotted;
+}
+
+/* Select menu */
+@define-mixin select-menu {
+	appearance: button;
+	background-color: hsl(var(--theme-input-color-background));
+	background-image: url("../shared/svg/arrow-down-solid.svg");
+	background-position: calc(100% - 10px) center;
+	background-repeat: no-repeat;
+	border-bottom-width: var(--theme-input-border-bottom-width);
+	border-color: hsl(var(--theme-input-stroke-color));
+	border-left-width: var(--theme-input-border-left-width);
+	border-radius: var(--theme-input-border-radius);
+	border-right-width: var(--theme-input-border-right-width);
+	border-style: solid;
+	border-top-width: var(--theme-input-border-top-width);
+	box-shadow: none;
+	color: hsl(var(--theme-input-color));
+	display: block;
+	font-size: 1rem;
+	font-weight: var(--theme-input-font-weight);
+	line-height: 1.25;
+	margin: 0;
+	overflow: hidden;
+	padding: var(--theme-spacing-v-input) calc(var(--theme-spacing-h-input)) var(--theme-spacing-v-input) var(--theme-spacing-h-input);
+	text-overflow: ellipsis;
+	user-select: none;
+	white-space: nowrap;
+	width: 100%;
+}
+
+/* Select menu on focus */
+@define-mixin select-menu-focus {
+	border-color: hsl(var(--theme-input-stroke-color-focus));
+	box-shadow: var(--theme-input-box-shadow-focus);
+	color: hsl(var(--theme-input-color));
+	outline: 0;
+}
+
+/* Checkbox and Radio */
+@define-mixin checkbox-radio-label {
+	align-items: center;
+	display: flex;
+	padding-left: 30px;
+}
+
+/* Checkbox and Radio :before */
+@define-mixin checkbox-radio-label-before {
+	background-color: hsl(var(--theme-checkbox-radio-fill));
+	content: "";
+	display: block;
+	height: 19px;
+	left: 0;
+	mask-position: left bottom;
+	mask-repeat: no-repeat;
+	position: absolute;
+	width: 20px;
+}
+
+/* Checkbox :before asset */
+@define-mixin checkbox-label-before {
+	mask-image: url("../shared/svg/checkbox.svg");
+}
+
+/* Checkbox :checked:before asset */
+@define-mixin checkbox-label-checked-before {
+	mask-image: url("../shared/svg/checkbox-checked.svg");
+}
+
+/* Radio :before asset */
+@define-mixin radio-label-before {
+	background-color: hsl(var(--color-white));
+	border: 1px solid hsl(var(--theme-checkbox-radio-fill));
+	border-radius: 9999px;
+	box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* Radio :selected:before asset */
+@define-mixin radio-label-selected-before {
+	background-color: hsl(var(--theme-checkbox-radio-fill));
+}
+
+/* On Sale badge (default) */
+@define-mixin on-sale-badge {
+	align-items: center;
+	background-color: hsl(var(--THEME-COLOR-PRIMARY));
+	border-radius: 50%;
+	display: flex;
+	font-weight: 400;
+	height: 65px;
+	justify-content: center;
+	letter-spacing: 1px;
+	margin: 0;
+
+	/* Pointer events prevents the sale badge from blocking
+	the wrapping link's click event. Essentially, the click can
+	pass through. As of this writing, the sale badge sits above
+	the <a> element's z-index. */
+	pointer-events: none;
+	text-transform: uppercase;
+	width: 65px;
+}
+
+/* On Sale badge (large) */
+@define-mixin on-sale-badge-lg {
+	height: 110px;
+	width: 110px;
+}
