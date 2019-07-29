@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div class="content-area u-ma-auto u-max-width-full">
+	<div id="content" class="content-area m-auto u-max-width-full">
 		<h1><?php the_archive_title(); ?></h1>
 
 		<?php if ( have_posts() ) : ?>
@@ -17,7 +17,7 @@ get_header(); ?>
 			<?php the_posts_navigation(); ?>
 		<?php endif; ?>
 
-	</div><!-- .u-ma-auto .u-max-width-full -->
+	</div>
 
 <?php
 get_footer();

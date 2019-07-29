@@ -51,7 +51,7 @@
 /* Header: Search | Logo | Nav */
 
 /* Menu is toggled open */
-.has-offscreen-nav.menu-is-open.is-header-search-logo-nav .site-navigation {
+.has-offscreen-nav.menu-is-open[data-header="header-4"] .site-navigation {
 	@media (--large) {
 		align-items: flex-start;
 		bottom: 0;
@@ -82,7 +82,7 @@
 /* Header: Nav | Logo | Search */
 
 /* Give main content area an overlay when menu is open */
-.has-offscreen-nav.menu-is-open.is-header-nav-logo-search {
+.has-offscreen-nav.menu-is-open[data-header="header-2"] {
 
 	&::after {
 		background-color: hsla(var(--theme-has-offscreen-nav-overlay-color), 0.7);

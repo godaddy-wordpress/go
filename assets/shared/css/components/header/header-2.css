@@ -1,8 +1,4 @@
-/**
- * partials/headers/header-logo-nav-vert.php
- */
-
-.site-header--logo-nav-vert {
+[data-header="header-2"] {
 
 	& .site-header__inner {
 		flex-direction: row;
@@ -66,7 +62,8 @@
 	}
 }
 
-.has-offscreen-nav.menu-is-open .site-header--logo-nav-vert .site-navigation {
+
+.has-offscreen-nav.menu-is-open[data-header="header-2"] .site-navigation {
 
 	/* Will override all links (including sub links) for mobile,
 	so they appear same color */
@@ -84,7 +81,7 @@
 }
 
 /* When admin bar is on */
-body.admin-bar.has-offscreen-nav.menu-is-open .site-header--logo-nav-vert .site-navigation {
+body.admin-bar.has-offscreen-nav.menu-is-open[data-header="header-2"] .site-navigation {
 	height: calc(100% - 130px);
 	top: 130px;
 

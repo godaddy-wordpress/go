@@ -76,13 +76,10 @@
 @import url("components/comments.css");
 
 /* Header variants */
-@import url("components/header/header-1.css");
-@import url("components/header/header-logo-nav-vert.css");
-@import url("components/header/header-nav-logo.css");
-@import url("components/header/header-search-logo-nav.css");
-@import url("components/header/header-nav-logo-search.css");
-@import url("components/header/is-header-search-logo-nav.css");
-@import url("components/header/is-header-nav-logo-search.css");
+@import url("components/header/header-2.css");
+@import url("components/header/header-3.css");
+@import url("components/header/header-4.css");
+@import url("components/header/header-5.css");
 
 /* Layout */
 @import url("layout/page.css");
@@ -132,6 +129,10 @@
 	margin-bottom: 0;
 }
 
+.justify-center {
+	justify-content: center;
+}
+
 .justify-between {
 	justify-content: space-between;
 }
@@ -157,11 +158,18 @@
 	letter-spacing: var(--theme-text-sm__letter-spacing);
 }
 
+.relative {
+	position: relative;
+}
 
+.justify-end {
+	justify-content: flex-end;
+}
 
+.max-w-full {
+	max-width: 100%;
+}
 
-
-
-
-
-
+.max-w-wide {
+	max-width: var(--theme-max-width-wide);
+}

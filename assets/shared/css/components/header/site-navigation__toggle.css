@@ -13,7 +13,6 @@
 	cursor: pointer;
 	height: 100%;
 	line-height: 1;
-	/*margin-right: -0.5rem;*/
 	padding: var(--theme-button-block-padding) var(--theme-button-block-padding) 0;
 	position: relative;
 	user-select: none;
@@ -33,6 +32,7 @@
 
 	&:focus {
 		outline: 1px dotted hsla(var(--theme-site-navigation__toggle-color), 1);
+		outline-offset: -10px;
 	}
 }
 

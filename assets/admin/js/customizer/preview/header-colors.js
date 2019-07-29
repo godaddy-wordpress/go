@@ -3,6 +3,12 @@ import { hexToHSL } from '../util';
 const $ = jQuery; // eslint-disable-line
 
 export default () => {
+	wp.customize( 'header_variation', ( value ) => {
+		value.bind( ( to ) => {
+			$( 'body' ).attr( 'data-header', to );
+		} );
+	} );
+
 	wp.customize( 'maverick_header_background_color_setting', ( value ) => {
 		value.bind( ( to ) => {
 			$( '.site-header' ).css( 'background-color', to );

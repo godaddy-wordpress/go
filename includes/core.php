@@ -259,7 +259,7 @@ function body_data( $classes ) {
 
 	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
 	$footer_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
-	$header_variation = get_theme_mod( 'maverick_header_variation_setting', get_default_header_variation() );
+	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
 
 	if ( $design_style ) {
 		$classes[] = sprintf( '" data-style="%s"', esc_attr( $design_style ) );
@@ -434,7 +434,7 @@ function get_default_header_variation() {
 	 *
 	 * @param array $default_header_variation The slug of the default header variation.
 	 */
-	return apply_filters( 'maverick_default_header_variation', 'header-1' );
+	return apply_filters( 'maverick_default_header', 'header-1' );
 }
 
 /**
@@ -444,39 +444,39 @@ function get_default_header_variation() {
  */
 function get_available_header_variations() {
 	$default_header_variations = [
-		'header-1'                 => [
+		'header-1' => [
 			'label'         => esc_html__( 'Logo + Nav + Search', 'maverick' ),
 			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-search.svg',
 			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', 'logo-nav-search' );
+				return get_template_part( 'partials/headers/header', '1' );
 			},
 		],
-		'header-logo-nav-vertical' => [
+		'header-2' => [
 			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
 			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-vertical.svg',
 			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', 'logo-nav-vertical' );
+				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
-		'header-nav-logo'   => [
+		'header-3' => [
 			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
 			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo.svg',
 			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', 'nav-logo' );
+				return get_template_part( 'partials/headers/header', '3' );
 			},
 		],
-		'header-search-logo-nav'   => [
+		'header-4' => [
 			'label'         => esc_html__( 'Search + Logo + Nav', 'maverick' ),
 			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-search-logo-nav.svg',
 			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', 'search-logo-nav' );
+				return get_template_part( 'partials/headers/header', '4' );
 			},
 		],
-		'header-nav-logo-search'   => [
+		'header-5' => [
 			'label'         => esc_html__( 'Nav + Logo + Search', 'maverick' ),
 			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo-search.svg',
 			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', 'nav-logo-search' );
+				return get_template_part( 'partials/headers/header', '5' );
 			},
 		],
 	];
@@ -489,7 +489,7 @@ function get_available_header_variations() {
 	 * @param array $header_variations Array containings the supported header variations,
 	 * where the index is the slug of header variation and the value an array of options that sets up the header variation.
 	 */
-	$supported_header_variations = apply_filters( 'maverick_header_variations', $default_header_variations );
+	$supported_header_variations = apply_filters( 'header_variations', $default_header_variations );
 
 	return $supported_header_variations;
 }
@@ -500,7 +500,7 @@ function get_available_header_variations() {
  * @return array
  */
 function get_header_variation() {
-	$selected_variation = get_theme_mod( 'maverick_header_variation_setting', get_default_header_variation() );
+	$selected_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
 
 	$supported_header_variations = get_available_header_variations();
 

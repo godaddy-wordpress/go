@@ -25,7 +25,7 @@
 		position: relative;
 	}
 
-	& label[for^="maverick_header_variation"] img {
+	& label[for^="header_variation"] img {
 		border: 1px solid #b4b9be;
 	}
 

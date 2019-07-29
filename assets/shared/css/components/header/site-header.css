@@ -3,9 +3,6 @@
  */
 
 .site-header {
-	position: relative;
-	width: 100%;
-
 	@media (--full-width) {
 		margin-left: auto;
 		margin-right: auto;
@@ -18,6 +15,5 @@
 }
 
 .site-header__inner {
-	max-width: var(--theme-max-width-wide);
 	padding: var(--theme-header-padding-x) var(--theme-header-padding-y);
 }

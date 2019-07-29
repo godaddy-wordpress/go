@@ -10,7 +10,7 @@
 
 <h1 class="page__title"><?php esc_html_e( 'Nothing Found', 'maverick' ); ?></h1>
 
-<div class="content-area u-ma-auto u-max-width-base">
+<div id="content" class="content-area m-auto u-max-width-full">
 	<?php
 	if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -42,4 +42,4 @@
 
 	endif;
 	?>
-</div><!-- .content-area -->
+</div>

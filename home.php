@@ -17,7 +17,7 @@ get_header(); ?>
 			<?php endwhile; ?>
 			<?php the_posts_navigation(); ?>
 		<?php endif; ?>
-	</div><!-- .u-ma-auto .u-max-width-full -->
+	</div>
 
 <?php
 get_footer();

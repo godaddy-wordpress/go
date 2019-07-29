@@ -307,6 +307,20 @@ function site_branding( $args = [] ) {
 }
 
 /**
+ * Display the navigation toggle button.
+ *
+ * @return void
+ */
+function navigation_toggle() {
+	echo '<button id="js-site-navigation__toggle" class="site-navigation__toggle c-site-navigation__toggle" type="button" aria-controls="js-primary-menu">';
+		echo '<div class="site-navigation__toggle-icon">';
+			echo '<div class="site-navigation__toggle-icon-inner"></div>';
+		echo '</div>';
+		echo '<span class="screen-reader-text">' . __( 'Menu', 'maverick' ) . '</span>';
+	echo '</button>';
+}
+
+/**
  * Returns the primary color selected by the user.
  *
  * @param string $color  Which color to return ('primary' or 'secondary').
