@@ -14,7 +14,6 @@
 	overflow-y: scroll;
 	position: fixed;
 	top: 70px; /* a default */
-	transition: opacity 0.3s ease-in-out;
 	width: 100%;
 	z-index: var(--theme-site-navigation-z-index);
 
@@ -52,6 +51,7 @@ body.menu-is-open {
 		height: 100%;
 		overflow: hidden;
 		position: fixed;
+		width: 100%;
 	}
 }
 

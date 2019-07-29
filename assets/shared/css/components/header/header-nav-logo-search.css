@@ -1,10 +1,5 @@
-/**
- *
- */
-
 .site-header--nav-logo-search {
 	background-color: hsl(var(--color-white));
-	display: flex;
 	margin-left: 0;
 	max-width: var(--theme-max-width-full);
 	padding-right: 1rem;

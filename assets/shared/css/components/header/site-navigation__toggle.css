@@ -13,7 +13,7 @@
 	cursor: pointer;
 	height: 100%;
 	line-height: 1;
-	margin-right: -0.75rem;
+	/*margin-right: -0.5rem;*/
 	padding: var(--theme-button-block-padding) var(--theme-button-block-padding) 0;
 	position: relative;
 	user-select: none;

@@ -76,7 +76,7 @@
 @import url("components/comments.css");
 
 /* Header variants */
-@import url("components/header/header-logo-nav-search.css");
+@import url("components/header/header-1.css");
 @import url("components/header/header-logo-nav-vert.css");
 @import url("components/header/header-nav-logo.css");
 @import url("components/header/header-search-logo-nav.css");
@@ -110,3 +110,58 @@
 @import url("gravity/checkbox.css");
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
+
+.flex {
+	display: flex;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.m-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+@media (--small) {
+
+	.sm\:flex {
+		display: flex;
+
+	}
+}
+
+@media (--medium) {
+
+	.md\:flex {
+		display: flex;
+
+	}
+}
+
+.text-sm {
+	font-size: var(--theme-text-sm);
+	letter-spacing: var(--theme-text-sm__letter-spacing);
+}
+
+
+
+
+
+
+
+
+

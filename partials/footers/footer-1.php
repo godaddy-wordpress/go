@@ -27,14 +27,20 @@ $footer_copy_text = Maverick\footer_copy_text();
 					]
 				);
 			?>
-		</nav><!-- .footer-navigation -->
+		</nav>
 	<?php } elseif ( is_customize_preview() ) { ?>
 		<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #1', 'maverick' ); ?></a></p>
 	<?php } ?>
 
 	<?php if ( ! empty( $footer_copy_text ) ) : ?>
-		<p class="footer-copy-text">
+		<p class="footer-copy-text text-sm mb-0">
 			<?php echo esc_html( $footer_copy_text ); ?>
-		</p><!-- .footer-copy-text -->
+
+			<?php
+			if ( function_exists( 'the_privacy_policy_link' ) ) {
+				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
+			}
+			?>
+		</p>
 	<?php endif; ?>
-</footer><!-- #colophon .site-footer -->
+</footer>

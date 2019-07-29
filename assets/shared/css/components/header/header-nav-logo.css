@@ -1,7 +1,3 @@
-/**
- * partials/headers/header-nav-logo.php
- */
-
 .site-header--nav-logo {
 	display: flex;
 	max-width: var(--theme-max-width-full);

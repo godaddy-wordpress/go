@@ -86,20 +86,20 @@
 	& > li > .sub-menu {
 		@media (--large) {
 
-			top: 100%;
+			top: 150%;
 
 			/* Upward dark arrow on top of the flyout sub-menu */
 			&::before {
-				border-bottom: 20px solid hsla(var(--theme-primary-submenu-bg-color), 1);
-				border-left: 30px solid transparent;
-				border-right: 30px solid transparent;
+				border-bottom: 10px solid hsla(var(--theme-primary-submenu-bg-color), 1);
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
 				content: "";
 				display: inline-block;
 				height: 0;
 				left: 50%;
 				position: absolute;
-				top: -12px;
-				transform: translateX(-30px);
+				top: -10px;
+				transform: translateX(-10px);
 				width: 0;
 			}
 		}
@@ -115,7 +115,7 @@
 			background-color: hsla(var(--theme-primary-submenu-bg-color), 1);
 			display: none;
 			left: 50%;
-			padding: calc(1.24 * var(--theme-spacing-unit)) 0;
+			padding: 1rem 0;
 			position: absolute;
 			text-align: center;
 			transform: translateX(-50%);
@@ -133,14 +133,17 @@
 		/* All submenu links */
 		& a {
 			color: hsl(var(--theme-primary-submenu-link-color));
+			padding-bottom: 0.5rem;
+			padding-top: 0.5rem;
+			width: 100%;
 
 			&:focus {
 				@mixin GLOBAL-FOCUS-STYLES;
 			}
 
 			@media (--large) {
-				padding-left: calc(2 * var(--theme-spacing-unit));
-				padding-right: calc(2 * var(--theme-spacing-unit));
+				padding-left: 0.5rem;
+				padding-right: 0.5rem;
 			}
 		}
 	}

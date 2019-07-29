@@ -175,7 +175,12 @@ function footer_blurb_text() {
  * @return string
  */
 function footer_copy_text() {
+
+	$year = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
+
 	$copy_text = get_theme_mod( 'maverick_footer_copy_text_setting', \Maverick\Core\get_default_footer_copy_text() );
+
+	$copyright = $year . $copy_text;
 
 	/**
 	 * Filters the footer copy text.
@@ -184,7 +189,7 @@ function footer_copy_text() {
 	 *
 	 * @param string $footer_blurb_text The footer blurb text.
 	 */
-	return apply_filters( 'maverick_footer_copy_text', $copy_text );
+	return apply_filters( 'maverick_footer_copy_text', $copyright );
 }
 
 /**
@@ -263,9 +268,9 @@ function social_icons( $args = [] ) {
  * @return void
  */
 function display_site_branding( $args = [] ) {
-	echo '<div class="site-branding c-site-branding" itemscope itemtype="http://schema.org/Organization">';
+	echo '<div class="site-branding text-sm sm:flex items-center" itemscope itemtype="http://schema.org/Organization">';
 		site_branding( $args );
-	echo '</div><!-- .site-branding -->';
+	echo '</div>';
 }
 
 /**

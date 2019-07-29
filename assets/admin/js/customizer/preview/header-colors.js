@@ -13,8 +13,8 @@ export default () => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			document.querySelector( '.c-primary-menu' ).style.setProperty( '--theme-primary-menu-link-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
-			document.querySelector( '.c-site-branding' ).style.setProperty( '--theme-link-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
-			document.querySelector( '.c-site-branding' ).style.setProperty( '--theme-site-branding-text-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+			document.querySelector( '.site-branding' ).style.setProperty( '--theme-link-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+			document.querySelector( '.site-branding' ).style.setProperty( '--theme-site-branding-text-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 		} );
 	} );
 };

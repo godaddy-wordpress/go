@@ -364,6 +364,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 			'transport'  => 'postMessage',
+			'default'    => 'ffffff',
 		]
 	);
 
@@ -720,7 +721,7 @@ function inline_css() {
 				.c-site-navigation {
 					--theme-primary-menu-link-color: <?php echo esc_attr( $header_text_color ); ?>;
 				}
-				.c-site-branding {
+				.site-branding {
 					--theme-site-branding-text-color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-link-color: <?php echo esc_attr( $header_text_color ); ?>;
 				}

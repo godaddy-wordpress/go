@@ -33,9 +33,9 @@ $footer_copy_text = Maverick\footer_copy_text();
 	<?php Maverick\social_icons( [ 'class' => 'social-icons unlist' ] ); ?>
 
 	<?php if ( ! empty( $footer_copy_text ) ) : ?>
-		<p class="footer-copy-text">
+		<p class="footer-copy-text mb-0">
 			<?php echo esc_html( $footer_copy_text ); ?>
-		</p><!-- .footer-copy-text -->
+		</p>
 	<?php endif; ?>
 
-</footer><!-- #colophon .site-footer -->
+</footer>

@@ -30,6 +30,7 @@ function setup() {
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
+	add_filter( 'body_class', $n( 'body_data' ), 999 );
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
 }
 
@@ -219,17 +220,11 @@ function script_loader_tag( $tag, $handle ) {
  */
 function body_classes( $classes ) {
 	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
-	$header_variation = get_theme_mod( 'maverick_header_variation_setting', get_default_header_variation() );
 	$footer_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
 
 	// Design style variation body class.
 	if ( $design_style ) {
 		$classes[] = 'is-' . esc_attr( $design_style );
-	}
-
-	// Header variation body class.
-	if ( $header_variation ) {
-		$classes[] = 'is-' . esc_attr( $header_variation );
 	}
 
 	// Footer variation body class.
@@ -249,6 +244,33 @@ function body_classes( $classes ) {
 		|| has_block( 'woocommerce/featured-product' )
 	) {
 		$classes[] = 'woocommerce-page';
+	}
+
+	return $classes;
+}
+
+/**
+ * Adds data attributes to the body based on Customizer entries.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function body_data( $classes ) {
+
+	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
+	$footer_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
+	$header_variation = get_theme_mod( 'maverick_header_variation_setting', get_default_header_variation() );
+
+	if ( $design_style ) {
+		$classes[] = sprintf( '" data-style="%s"', esc_attr( $design_style ) );
+	}
+
+	if ( $header_variation ) {
+		$classes[] = sprintf( 'data-header="%s"', esc_attr( $header_variation ) );
+	}
+
+	if ( $footer_variation ) {
+		$classes[] = sprintf( 'data-footer="%s"', esc_attr( $footer_variation ) );
 	}
 
 	return $classes;
@@ -412,7 +434,7 @@ function get_default_header_variation() {
 	 *
 	 * @param array $default_header_variation The slug of the default header variation.
 	 */
-	return apply_filters( 'maverick_default_header_variation', 'header-logo-nav' );
+	return apply_filters( 'maverick_default_header_variation', 'header-1' );
 }
 
 /**
@@ -422,7 +444,7 @@ function get_default_header_variation() {
  */
 function get_available_header_variations() {
 	$default_header_variations = [
-		'header-logo-nav'          => [
+		'header-1'                 => [
 			'label'         => esc_html__( 'Logo + Nav + Search', 'maverick' ),
 			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-search.svg',
 			'partial'       => function() {
@@ -601,7 +623,7 @@ function get_default_footer_copy_text() {
 	 *
 	 * @param string $default_footer_blurb_text The default text for footer blurb.
 	 */
-	return apply_filters( 'maverick_default_footer_copy_text', 'Copyright @ 2019 - WordPress theme by GoDaddy' );
+	return apply_filters( 'maverick_default_footer_copy_text', 'WordPress Theme by GoDaddy' );
 }
 
 /**
