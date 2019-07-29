@@ -72,22 +72,8 @@
 		display: block;
 		height: 2px;
 		position: absolute;
-		transition: all 0.2s ease-in-out;
+		transition: all 0.1s ease-in-out;
 		width: 100%;
-	}
-
-	&:active,
-	&:focus,
-	&:hover {
-		background-color: hsla(var(--theme-site-navigation__toggle-color-interactive), 1);
-
-		&::before {
-			background-color: hsla(var(--theme-site-navigation__toggle-color-interactive), 1);
-		}
-
-		&::after {
-			background-color: hsla(var(--theme-site-navigation__toggle-color-interactive), 1);
-		}
 	}
 
 	/* Alter appearance when menu is opened */
@@ -96,20 +82,19 @@
 
 		&::after,
 		&::before {
-			background-color: hsla(var(--theme-site-navigation__toggle-color-active), 1);
-			transition: all 0.2s ease-in-out;
+			transition: all 0.1s ease-in-out;
 		}
 
 		&::before {
 			top: 0;
 			transform: rotate(45deg);
-			transition: all 0.2s ease-in-out;
+			transition: all 0.1s ease-in-out;
 		}
 
 		&::after {
 			bottom: 0;
 			transform: rotate(-45deg);
-			transition: all 0.3s ease-in-out;
+			transition: all 0.1s ease-in-out;
 		}
 	}
 }

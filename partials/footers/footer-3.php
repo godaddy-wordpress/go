@@ -33,7 +33,7 @@ $footer_copy_text = Maverick\footer_copy_text();
 			<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #1', 'maverick' ); ?></a></p>
 		<?php } ?>
 
-		<?php Maverick\social_icons( [ 'class' => 'social-icons unlist' ] ); ?>
+		<?php Maverick\social_icons( [ 'class' => 'social-icons m-0' ] ); ?>
 
 		<?php if ( ! empty( $footer_copy_text ) ) : ?>
 			<p class="footer-copy-text mb-0">

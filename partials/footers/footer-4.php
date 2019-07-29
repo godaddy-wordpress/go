@@ -78,7 +78,7 @@ $has_social_icons = Maverick\has_social_icons();
 
 		<?php if ( $has_social_icons ) : ?>
 			<div class="row row--2">
-				<?php Maverick\social_icons( [ 'class' => 'social-icons unlist' ] ); ?>
+				<?php Maverick\social_icons( [ 'class' => 'social-icons m-0' ] ); ?>
 			</div><!-- .row .row--2 -->
 		<?php endif; ?>
 
@@ -91,4 +91,4 @@ $has_social_icons = Maverick\has_social_icons();
 		<?php endif; ?>
 
 	</div>
-</footer><!-- #colophon .site-footer -->
+</footer>

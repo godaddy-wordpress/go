@@ -108,6 +108,10 @@
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
 
+.display-inline-block {
+	display: inline-block;
+}
+
 .flex {
 	display: flex;
 }
@@ -118,6 +122,10 @@
 
 .w-full {
 	width: 100%;
+}
+
+.m-0 {
+	margin: 0;
 }
 
 .m-auto {
@@ -172,4 +180,8 @@
 
 .max-w-wide {
 	max-width: var(--theme-max-width-wide);
+}
+
+.text-center {
+	text-align: center;
 }

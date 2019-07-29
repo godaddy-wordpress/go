@@ -527,7 +527,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
-		'maverick_footer_social_section',
+		'footer_social_section',
 		[
 			'title'      => esc_html__( 'Social Icons', 'maverick' ),
 			'capability' => 'edit_theme_options',
@@ -539,7 +539,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 
 	foreach ( $social_icons as $key => $social_icon ) {
 		$wp_customize->add_setting(
-			sprintf( 'maverick_footer_social_%s_setting', $key ),
+			sprintf( 'footer_social_%s_setting', $key ),
 			[
 				'type'       => 'theme_mod',
 				'capability' => 'edit_theme_options',
@@ -549,12 +549,12 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		);
 
 		$wp_customize->add_control(
-			sprintf( 'maverick_footer_social_%s_control', $key ),
+			sprintf( 'footer_social_%s_control', $key ),
 			[
 				'label'       => $social_icon['label'],
 				'description' => $social_icon['description'],
-				'section'     => 'maverick_footer_social_section',
-				'settings'    => sprintf( 'maverick_footer_social_%s_setting', $key ),
+				'section'     => 'footer_social_section',
+				'settings'    => sprintf( 'footer_social_%s_setting', $key ),
 				'type'        => 'text',
 			]
 		);
@@ -570,7 +570,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_footer_text_color_setting',
+		'footer_text_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -582,17 +582,17 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_footer_text_color_setting',
+			'footer_text_color',
 			[
 				'label'    => esc_html__( 'Text Color', 'maverick' ),
 				'section'  => 'maverick_footer_colors_section',
-				'settings' => 'maverick_footer_text_color_setting',
+				'settings' => 'footer_text_color',
 			]
 		)
 	);
 
 	$wp_customize->add_setting(
-		'maverick_footer_background_color_setting',
+		'footer_background_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -604,17 +604,17 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_footer_background_color_setting',
+			'footer_background_color',
 			[
 				'label'    => esc_html__( 'Background Color', 'maverick' ),
 				'section'  => 'maverick_footer_colors_section',
-				'settings' => 'maverick_footer_background_color_setting',
+				'settings' => 'footer_background_color',
 			]
 		)
 	);
 
 	$wp_customize->add_setting(
-		'maverick_footer_social_icons_color_setting',
+		'footer_social_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -626,11 +626,11 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_footer_social_icons_color_setting',
+			'footer_social_color',
 			[
 				'label'    => esc_html__( 'Social Icons Color', 'maverick' ),
 				'section'  => 'maverick_footer_colors_section',
-				'settings' => 'maverick_footer_social_icons_color_setting',
+				'settings' => 'footer_social_color',
 			]
 		)
 	);
@@ -643,7 +643,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$settings_footer_partial = [ 'maverick_footer_variation_setting', 'maverick_footer_copy_text_setting', 'maverick_footer_blurb_text_setting' ];
 
 	foreach ( $social_icons as $key => $social_icon ) {
-		$settings_footer_partial[] = sprintf( 'maverick_footer_social_%s_setting', $key );
+		$settings_footer_partial[] = sprintf( 'footer_social_%s_setting', $key );
 	}
 
 	$wp_customize->selective_refresh->add_partial(
@@ -703,49 +703,41 @@ function css_variables() {
  * @return void
  */
 function inline_css() {
-	$header_background   = get_theme_mod( 'maverick_header_background_color_setting', false );
+	$header_background   = hex_to_hsl( get_theme_mod( 'maverick_header_background_color_setting', false ), true );
 	$header_text_color   = hex_to_hsl( get_theme_mod( 'maverick_header_text_color_setting', false ), true );
-	$footer_text_color   = get_theme_mod( 'maverick_footer_text_color_setting', false );
-	$footer_background   = get_theme_mod( 'maverick_footer_background_color_setting', false );
-	$footer_social_color = get_theme_mod( 'maverick_footer_social_icons_color_setting', false );
+	$footer_text_color   = hex_to_hsl( get_theme_mod( 'footer_text_color', false ), true );
+	$footer_background   = hex_to_hsl( get_theme_mod( 'footer_background_color', false ), true );
+	$footer_social_color = hex_to_hsl( get_theme_mod( 'footer_social_color', false ), true );
 	?>
-		<!-- Maverick Customizer Overrides -->
+		<!-- Variable Overrides -->
 		<style>
-			<?php if ( false !== $header_background ) : ?>
-				.site-header {
-					background-color: <?php echo esc_attr( $header_background ); ?>;
-				}
-			<?php endif; ?>
+			:root {
+				/* Footer */
+				<?php if ( false !== $footer_background ) : ?>
+					--theme-footer-background-color: <?php echo esc_attr( $footer_background ); ?>;
+				<?php endif; ?>
 
-			<?php if ( false !== $header_text_color ) : ?>
-				.c-site-navigation {
+				<?php if ( false !== $footer_text_color ) : ?>
+					--theme-footer-color: <?php echo esc_attr( $footer_text_color ); ?>;;
+					--theme-footer-link-color: <?php echo esc_attr( $footer_text_color ); ?>;
+				<?php endif; ?>
+
+				<?php if ( false !== $footer_social_color ) : ?>
+					--theme-footer-social-icon-color: <?php echo esc_attr( $footer_social_color ); ?>;
+				<?php endif; ?>
+
+				/* Header */
+				<?php if ( false !== $header_background ) : ?>
+					--theme-header-background-color: <?php echo esc_attr( $header_background ); ?>;
+				<?php endif; ?>
+
+				<?php if ( false !== $header_text_color ) : ?>
 					--theme-primary-menu-link-color: <?php echo esc_attr( $header_text_color ); ?>;
-				}
-				.site-branding {
 					--theme-site-branding-text-color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-link-color: <?php echo esc_attr( $header_text_color ); ?>;
-				}
-			<?php endif; ?>
+				<?php endif; ?>
 
-			/* The inline CSS will need to be updated as the footer variations are built. */
-			<?php if ( false !== $footer_background ) : ?>
-				#colophon {
-					background: <?php echo esc_attr( $footer_background ); ?>;
-				}
-			<?php endif; ?>
-
-			<?php if ( false !== $footer_text_color ) : ?>
-				#colophon,
-				#colophon a {
-					color: <?php echo esc_attr( $footer_text_color ); ?>;
-				}
-			<?php endif; ?>
-
-			<?php if ( false !== $footer_social_color ) : ?>
-				#colophon .social-icons a {
-					color: <?php echo esc_attr( $footer_social_color ); ?>;
-				}
-			<?php endif; ?>
+			}
 		</style>
 	<?php
 }
