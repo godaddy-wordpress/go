@@ -1,6 +1,6 @@
 <?php
 /**
- * Header variant #5
+ * Header #5
  *
  * @package Maverick
  */
@@ -17,13 +17,7 @@
 
 			<nav id="js-primary-menu" class="site-navigation c-site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
-				<button id="js-site-navigation__toggle" class="site-navigation__toggle c-site-navigation__toggle" type="button" aria-controls="js-primary-menu">
-					<div class="site-navigation__toggle-icon">
-						<div class="site-navigation__toggle-icon-inner"></div>
-					</div>
-
-					<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'maverick' ); ?></span>
-				</button>
+				<?php Maverick\navigation_toggle(); ?>
 
 				<?php
 					wp_nav_menu(

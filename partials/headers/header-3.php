@@ -1,6 +1,6 @@
 <?php
 /**
- * Header variant #3
+ * Header #3
  *
  * @package Maverick
  */
@@ -14,13 +14,8 @@
 	<div class="site-header__inner flex items-center justify-between w-full max-w-wide m-auto">
 
 		<?php if ( has_nav_menu( 'primary' ) ) { ?>
-			<button id="js-site-navigation__toggle" class="site-navigation__toggle c-site-navigation__toggle" type="button" aria-controls="js-primary-menu">
-				<div class="site-navigation__toggle-icon">
-					<div class="site-navigation__toggle-icon-inner"></div>
-				</div>
 
-				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'maverick' ); ?></span>
-			</button>
+			<?php Maverick\navigation_toggle(); ?>
 
 			<nav id="js-primary-menu" class="site-navigation c-site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
