@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d323ecadafd2acfabad53098cd4f51c",
+    "content-hash": "94d28a0d0dd8bf6a99bb7c78c375db7a",
     "packages": [
         {
             "name": "composer/installers",
@@ -167,25 +167,6 @@
             "description": "Extend the composer/installers plugin to accept any arbitrary package type.",
             "homepage": "http://www.oomphinc.com/",
             "time": "2017-03-31T16:57:39+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/block-gallery",
-            "version": "dev-trunk",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/block-gallery/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/block-gallery.zip?timestamp=1550267685"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/block-gallery/",
-            "time": "2019-02-15T21:54:45+00:00"
         },
         {
             "name": "wpackagist-plugin/coblocks",
@@ -585,7 +566,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "wpackagist-plugin/coblocks": 20,
-        "wpackagist-plugin/block-gallery": 20,
         "wpackagist-plugin/woocommerce": 20,
         "10up/phpcs-composer": 20
     },
