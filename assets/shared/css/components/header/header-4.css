@@ -1,22 +1,30 @@
-/**
- * partials/headers/header-search-logo-nav.php
- */
+[data-header="header-4"] {
 
-/* To span full width, we pass a bg white to the menu container */
-#js-header-variation {
-	background-color: hsl(var(--color-white));
+	&::before {
+		content: "has-search-toggle has-offscreen-nav";
+		display: none;
+
+		@media (--large) {
+			content: "has-search-toggle has-offscreen-nav";
+		}
+	}
+
+	/* In mobile view, this navigation system removes spacing
+	between itself and the content area */
+	& .content-area {
+		@media (max-width: 600px) {
+			margin-top: 0;
+		}
+	}
+
+	& .site-search__toggle {
+		color: hsla(var(--theme-site-navigation__toggle-color), 1);
+	}
 }
 
-.site-header--search-logo-nav {
-	display: flex;
-	justify-content: space-between;
-}
-
-/* Logo (Site Name and Site Description */
 .site-header--search-logo-nav .site-branding {
 	flex: 1;
-	margin-left: 2%;
-	margin-right: 2%;
+	justify-content: center;
 	text-align: center;
 }
 

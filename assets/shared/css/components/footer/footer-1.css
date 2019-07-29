@@ -2,7 +2,7 @@
  * Footer #1 variant
  */
 
-.site-footer--1 {
+[data-footer="footer-1"] .site-footer {
 	padding-bottom: calc(2 * var(--theme-spacing-unit-6));
 	padding-top: calc(2 * var(--theme-spacing-unit-6));
 	text-align: center;

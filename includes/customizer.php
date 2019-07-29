@@ -316,7 +316,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
-		'maverick_header_variation_section',
+		'header_variation_section',
 		[
 			'title'      => esc_html__( 'Header Variations', 'maverick' ),
 			'capability' => 'edit_theme_options',
@@ -325,7 +325,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_header_variation_setting',
+		'header_variation',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -337,12 +337,12 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new Switcher_Control(
 			$wp_customize,
-			'maverick_header_variation_control',
+			'header_variation',
 			[
 				'label'       => esc_html__( 'Header Variation', 'maverick' ),
 				'description' => esc_html__( 'Choose one of the supported header variations.', 'maverick' ),
-				'section'     => 'maverick_header_variation_section',
-				'settings'    => 'maverick_header_variation_setting',
+				'section'     => 'header_variation_section',
+				'settings'    => 'header_variation',
 				'choices'     => \Maverick\Core\get_available_header_variations(),
 			]
 		)
@@ -412,7 +412,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 		'header_variation',
 		[
 			'selector'        => '#js-header-variation',
-			'settings'        => [ 'maverick_header_variation_setting' ],
+			'settings'        => [ 'header_variation' ],
 			'render_callback' => function() {
 				ob_start();
 				\Maverick\header_variation();

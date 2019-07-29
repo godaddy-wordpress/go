@@ -3,7 +3,7 @@ import { hexToHSL } from '../util';
 const $ = jQuery; // eslint-disable-line
 
 export default () => {
-	wp.customize( 'maverick_header_variation_setting', ( value ) => {
+	wp.customize( 'header_variation', ( value ) => {
 		value.bind( ( to ) => {
 			$( 'body' ).attr( 'data-header', to );
 		} );

@@ -11,7 +11,7 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
 
-	<div class="site-header__inner flex items-center justify-between w-full m-auto">
+	<div class="site-header__inner flex items-center justify-between w-full max-w-wide m-auto">
 
 		<?php Maverick\display_site_branding(); ?>
 
