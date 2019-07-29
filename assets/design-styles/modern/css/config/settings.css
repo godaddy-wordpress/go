@@ -37,6 +37,9 @@
 		--theme-text-sm: 92%;
 	}
 
+
+	/* Header */
+	--theme-header-background-color: 0, 0%, 100%; /* #ffffff */
 	--theme-header-padding-x: 1rem;
 	--theme-header-padding-y: 1rem;
 
@@ -62,6 +65,10 @@
 	/* Footer. */
 	--theme-footer-spacing: 4rem;
 	--theme-footer-menu-link-spacing: 0.25rem 1rem;
+	--theme-footer-background-color: 0, 0%, 100%; /* #ffffff */
+	--theme-footer-color: var(--THEME-COLOR-NAV);
+	--theme-footer-link-color: var(--THEME-COLOR-NAV);
+	--theme-footer-link-hover-active-color: var(--THEME-COLOR-HEADING);
 
 	@media (--medium) {
 		--theme-footer-menu-link-spacing: 1rem 1.75rem;

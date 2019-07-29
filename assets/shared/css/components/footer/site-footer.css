@@ -1,15 +1,17 @@
 .site-footer {
+	background-color: hsla(var(--theme-footer-background-color), 1);
+	color: hsla(var(--theme-footer-color), 1);
 	padding-bottom: calc(2 * var(--theme-spacing-unit-6));
 	padding-top: calc(2 * var(--theme-spacing-unit-6));
 
 	& a {
-		color: hsla(var(--theme-primary-menu-link-color), 1);
+		color: hsla(var(--theme-footer-link-color), 1);
 		text-decoration: none;
 
 		&:active,
 		&:focus,
 		&:hover {
-			color: hsla(var(--theme-primary-menu-link-hover-active-color), 1);
+			color: hsla(var(--theme-footer-link-hover-active-color), 1);
 		}
 	}
 

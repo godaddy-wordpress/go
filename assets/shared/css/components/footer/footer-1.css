@@ -12,15 +12,8 @@
 		margin-bottom: var(--theme-footer-spacing);
 
 		& a {
-			color: hsla(var(--theme-footer-1-link-color), 1);
 			display: block;
 			padding: var(--theme-footer-menu-link-spacing);
-
-			&:active,
-			&:focus,
-			&:hover {
-				color: hsla(var(--theme-primary-menu-link-hover-active-color), 1);
-			}
 		}
 	}
 

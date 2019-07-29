@@ -3,6 +3,8 @@
  */
 
 .site-header {
+	background-color: hsla(var(--theme-header-background-color), 1);
+
 	@media (--full-width) {
 		margin-left: auto;
 		margin-right: auto;
