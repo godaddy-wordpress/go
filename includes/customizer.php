@@ -570,7 +570,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_footer_text_color_setting',
+		'footer_text_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -582,17 +582,17 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_footer_text_color_setting',
+			'footer_text_color',
 			[
 				'label'    => esc_html__( 'Text Color', 'maverick' ),
 				'section'  => 'maverick_footer_colors_section',
-				'settings' => 'maverick_footer_text_color_setting',
+				'settings' => 'footer_text_color',
 			]
 		)
 	);
 
 	$wp_customize->add_setting(
-		'maverick_footer_background_color_setting',
+		'footer_background_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -604,17 +604,17 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_footer_background_color_setting',
+			'footer_background_color',
 			[
 				'label'    => esc_html__( 'Background Color', 'maverick' ),
 				'section'  => 'maverick_footer_colors_section',
-				'settings' => 'maverick_footer_background_color_setting',
+				'settings' => 'footer_background_color',
 			]
 		)
 	);
 
 	$wp_customize->add_setting(
-		'footer_social_icons_color_setting',
+		'footer_social_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -626,11 +626,11 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'footer_social_icons_color_setting',
+			'footer_social_color',
 			[
 				'label'    => esc_html__( 'Social Icons Color', 'maverick' ),
 				'section'  => 'maverick_footer_colors_section',
-				'settings' => 'footer_social_icons_color_setting',
+				'settings' => 'footer_social_color',
 			]
 		)
 	);
@@ -705,9 +705,9 @@ function css_variables() {
 function inline_css() {
 	$header_background   = get_theme_mod( 'maverick_header_background_color_setting', false );
 	$header_text_color   = hex_to_hsl( get_theme_mod( 'maverick_header_text_color_setting', false ), true );
-	$footer_text_color   = get_theme_mod( 'maverick_footer_text_color_setting', false );
-	$footer_background   = get_theme_mod( 'maverick_footer_background_color_setting', false );
-	$footer_social_color = get_theme_mod( 'footer_social_icons_color_setting', false );
+	$footer_text_color   = get_theme_mod( 'footer_text_color', false );
+	$footer_background   = get_theme_mod( 'footer_background_color', false );
+	$footer_social_color = hex_to_hsl( get_theme_mod( 'footer_social_color', false ), true );
 	?>
 		<!-- Maverick Customizer Overrides -->
 		<style>
@@ -729,21 +729,23 @@ function inline_css() {
 
 			/* The inline CSS will need to be updated as the footer variations are built. */
 			<?php if ( false !== $footer_background ) : ?>
-				#colophon {
+				.site-footer {
 					background: <?php echo esc_attr( $footer_background ); ?>;
 				}
 			<?php endif; ?>
 
 			<?php if ( false !== $footer_text_color ) : ?>
-				#colophon,
-				#colophon a {
+				.site-footer,
+				.site-footer a,
+				.site-footer .footer-navigation a,
+				.footer-copy-text {
 					color: <?php echo esc_attr( $footer_text_color ); ?>;
 				}
 			<?php endif; ?>
 
 			<?php if ( false !== $footer_social_color ) : ?>
-				#colophon .social-icons a {
-					color: <?php echo esc_attr( $footer_social_color ); ?>;
+				.social-icons__icon {
+					--theme-footer-social-icon-color: <?php echo esc_attr( $footer_social_color ); ?>;
 				}
 			<?php endif; ?>
 		</style>

@@ -2,7 +2,7 @@
  * Footer #1
  */
 
-[data-footer="footer-1"] .site-footer {
+[data-footer="footer-1"] {
 
 	& .social-icons {
 		margin-bottom: var(--theme-footer-spacing);
@@ -10,15 +10,6 @@
 
 	& .footer-navigation {
 		margin-bottom: var(--theme-footer-spacing);
-
-		& .menu-item {
-			display: inline-block;
-			width: 100%;
-
-			@media (--medium) {
-				width: auto;
-			}
-		}
 
 		& a {
 			color: hsla(var(--theme-footer-1-link-color), 1);
@@ -30,6 +21,15 @@
 			&:hover {
 				color: hsla(var(--theme-primary-menu-link-hover-active-color), 1);
 			}
+		}
+	}
+
+	& .menu-item {
+		display: inline-block;
+		width: 100%;
+
+		@media (--medium) {
+			width: auto;
 		}
 	}
 }

@@ -91,4 +91,4 @@ $has_social_icons = Maverick\has_social_icons();
 		<?php endif; ?>
 
 	</div>
-</footer><!-- #colophon .site-footer -->
+</footer>

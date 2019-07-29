@@ -246,7 +246,7 @@ function social_icons( $args = [] ) {
 		<?php foreach ( $social_icons as $key => $social_icon ) : ?>
 			<?php if ( ! empty( $social_icon['url'] ) ) : ?>
 				<li class="<?php echo esc_attr( sprintf( $args['li_class'], $key ) ); ?>">
-					<a href="<?php echo esc_attr( $social_icon['url'] ); ?>" aria-label="<?php echo esc_attr( $social_icon['label'] ); ?>" rel="noopener noreferrer">
+					<a class="social-icons__icon" href="<?php echo esc_attr( $social_icon['url'] ); ?>" aria-label="<?php echo esc_attr( $social_icon['label'] ); ?>" rel="noopener noreferrer">
 						<?php echo file_get_contents( $social_icon['icon'] ); // phpcs:ignore ?>
 					</a>
 				</li>

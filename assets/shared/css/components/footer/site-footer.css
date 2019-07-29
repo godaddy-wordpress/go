@@ -3,13 +3,13 @@
 	padding-top: calc(2 * var(--theme-spacing-unit-6));
 
 	& a {
-		color: hsla(var(--THEME-COLOR-NAV), 1);
+		color: hsla(var(--theme-primary-menu-link-color), 1);
 		text-decoration: none;
 
 		&:active,
 		&:focus,
 		&:hover {
-			color: hsl(var(--theme-primary-menu-link-hover-active-color));
+			color: hsla(var(--theme-primary-menu-link-hover-active-color), 1);
 		}
 	}
 
@@ -43,8 +43,4 @@
 			padding-top: 0;
 		}
 	}
-}
-
-.footer-copy-text {
-	color: hsla(var(--THEME-COLOR-NAV), 1);
 }

@@ -1,21 +1,21 @@
 const $ = jQuery; // eslint-disable-line
 
 export default () => {
-	wp.customize( 'maverick_footer_background_color_setting', ( value ) => {
+	wp.customize( 'footer_background_color', ( value ) => {
 		value.bind( ( to ) => {
-			$( '#colophon' ).css( 'background-color', to );
+			$( '.site-footer' ).css( 'background-color', to );
 		} );
 	} );
 
-	wp.customize( 'maverick_footer_text_color_setting', ( value ) => {
+	wp.customize( 'footer_text_color', ( value ) => {
 		value.bind( ( to ) => {
-			$( '#colophon, #colophon a' ).css( 'color', to );
+			$( '.site-footer, .site-footer a, .site-footer .footer-navigation a, .footer-copy-text ' ).css( 'color', to );
 		} );
 	} );
 
-	wp.customize( 'footer_social_icons_color_setting', ( value ) => {
+	wp.customize( 'footer_social_color', ( value ) => {
 		value.bind( ( to ) => {
-			$( '#colophon .social-icons a' ).css( 'color', to );
+			$( '.social-icons__icon svg' ).css( 'fill', to );
 		} );
 	} );
 };
