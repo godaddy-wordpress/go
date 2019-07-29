@@ -33,6 +33,10 @@
 		--theme-text-sm: 87%;
 	}
 
+	@media (--large) {
+		--theme-text-sm: 92%;
+	}
+
 	--theme-header-padding-x: 1rem;
 	--theme-header-padding-y: 1rem;
 
