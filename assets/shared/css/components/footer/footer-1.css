@@ -1,37 +1,16 @@
 /**
- * Footer #1 variant
+ * Footer #1
  */
 
 [data-footer="footer-1"] .site-footer {
-	padding-bottom: calc(2 * var(--theme-spacing-unit-6));
-	padding-top: calc(2 * var(--theme-spacing-unit-6));
-	text-align: center;
 
-	/* Social icons */
 	& .social-icons {
-		margin: 0 auto var(--theme-spacing-unit-6);
-
-		@media (--large) {
-			margin: 0 auto calc(2.5 * var(--theme-spacing-unit-6));
-		}
-
-		& li {
-			@media (--large) {
-				padding-left: var(--theme-spacing-unit-2);
-				padding-right: var(--theme-spacing-unit-2);
-			}
-		}
+		margin-bottom: var(--theme-footer-spacing);
 	}
 
-	/* We only have one menu in footer for this variant */
-	& .footer-menu--1 {
-		margin-bottom: var(--theme-spacing-unit-6);
+	& .footer-navigation {
+		margin-bottom: var(--theme-footer-spacing);
 
-		@media (--large) {
-			margin-bottom: calc(2 * var(--theme-spacing-unit-6));
-		}
-
-		/* Each <li> item in menu */
 		& .menu-item {
 			display: inline-block;
 			width: 100%;
@@ -42,24 +21,15 @@
 		}
 
 		& a {
-			color: hsla(var(--theme-footer-1-link-color), 0.5);
-			padding: var(--theme-spacing-unit-2);
+			color: hsla(var(--theme-footer-1-link-color), 1);
+			display: block;
+			padding: var(--theme-footer-menu-link-spacing);
 
 			&:active,
 			&:focus,
 			&:hover {
-				color: hsla(var(--theme-footer-1-link-color-interactive), 0.8);
+				color: hsla(var(--theme-primary-menu-link-hover-active-color), 1);
 			}
-		}
-	}
-
-	/* Editable text before copyright */
-	& .footer-blurb-text {
-		color: hsla(var(--theme-footer-1-text-color), 0.6);
-		margin-bottom: var(--theme-spacing-unit-6);
-
-		@media (--large) {
-			margin-bottom: calc(2 * var(--theme-spacing-unit-6));
 		}
 	}
 }

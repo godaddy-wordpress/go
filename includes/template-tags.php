@@ -230,7 +230,7 @@ function social_icons( $args = [] ) {
 		$args,
 		[
 			'class'    => 'social-icons',
-			'li_class' => 'social-icon-%s',
+			'li_class' => 'display-inline-block social-icon-%s',
 		]
 	);
 

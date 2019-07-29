@@ -26,7 +26,7 @@
 	}
 
 
-	--theme-text-sm: 80%;
+	--theme-text-sm: 83.75%;
 	--theme-text-sm__letter-spacing: 0.015em;
 
 	@media (--small) {
@@ -55,8 +55,24 @@
 		--theme-entryheader-spacing-bottom: 8.5rem;
 	}
 
-	/* Foooter spacing. */
-	--theme-footer-spacing-top: 8.5rem;
+	/* Footer. */
+	--theme-footer-spacing: 4rem;
+	--theme-footer-menu-link-spacing: 0.25rem 1rem;
+
+	@media (--medium) {
+		--theme-footer-menu-link-spacing: 1rem 1.75rem;
+	}
+
+	/* Footer Social. */
+	--theme-footer-social-icon-color: 0, 0%, 12%;
+	--theme-footer-social-icon-size: 1.5rem;
+	--theme-footer-social-icon-spacing: 0.5rem;
+
+	@media (--medium) {
+		--theme-footer-social-icon-size: 1.75rem;
+		--theme-footer-social-icon-spacing: 1.5rem;
+	}
+
 
 	/* Spacing units. */
 	--theme-spacing-unit: 0.5rem;
@@ -203,9 +219,9 @@
 	--theme-site-navigation-z-index: var(--z-index-menu);
 
 	/* shared/css/components/footer/footer-1.css */
-	--theme-footer-1-link-color: var(--THEME-COLOR-SECONDARY);
-	--theme-footer-1-link-color-interactive: var(--THEME-COLOR-SECONDARY);
-	--theme-footer-1-text-color: var(--THEME-COLOR-SECONDARY);
+	--theme-footer-1-link-color: var(--THEME-COLOR-NAV);
+	--theme-footer-1-link-color-interactive: var(--THEME-COLOR-NAV);
+	--theme-footer-1-text-color: var(--THEME-COLOR-NAV);
 
 	/* shared/css/components/footer/footer-2.css */
 	--theme-footer-2-border-top-color: var(--THEME-COLOR-SECONDARY);

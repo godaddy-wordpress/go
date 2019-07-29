@@ -3,18 +3,17 @@
  */
 
 .social-icons {
-	display: inline-block;
-	margin: 0.35rem auto 0;
 
 	& li {
 		display: inline-block;
-		padding-left: var(--theme-spacing-unit);
-		padding-right: var(--theme-spacing-unit);
+		padding-left: var(--theme-footer-social-icon-spacing);
+		padding-right: var(--theme-footer-social-icon-spacing);
 	}
 
 	& a {
 		align-items: center;
 		color: hsl(var(--THEME-COLOR-SECONDARY));
+		color: hsla(var(--theme-footer-social-icon-color), 1);
 		display: flex;
 		justify-content: center;
 		min-height: 48px;
@@ -25,7 +24,7 @@
 
 	& svg {
 		fill: currentColor;
-		height: var(--theme-spacing-unit-2);
+		height: var(--theme-footer-social-icon-size);
 		vertical-align: middle;
 	}
 }

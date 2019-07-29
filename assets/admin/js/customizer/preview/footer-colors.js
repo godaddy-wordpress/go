@@ -13,7 +13,7 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'maverick_footer_social_icons_color_setting', ( value ) => {
+	wp.customize( 'footer_social_icons_color_setting', ( value ) => {
 		value.bind( ( to ) => {
 			$( '#colophon .social-icons a' ).css( 'color', to );
 		} );

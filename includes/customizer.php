@@ -527,7 +527,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
-		'maverick_footer_social_section',
+		'footer_social_section',
 		[
 			'title'      => esc_html__( 'Social Icons', 'maverick' ),
 			'capability' => 'edit_theme_options',
@@ -539,7 +539,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 
 	foreach ( $social_icons as $key => $social_icon ) {
 		$wp_customize->add_setting(
-			sprintf( 'maverick_footer_social_%s_setting', $key ),
+			sprintf( 'footer_social_%s_setting', $key ),
 			[
 				'type'       => 'theme_mod',
 				'capability' => 'edit_theme_options',
@@ -549,12 +549,12 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		);
 
 		$wp_customize->add_control(
-			sprintf( 'maverick_footer_social_%s_control', $key ),
+			sprintf( 'footer_social_%s_control', $key ),
 			[
 				'label'       => $social_icon['label'],
 				'description' => $social_icon['description'],
-				'section'     => 'maverick_footer_social_section',
-				'settings'    => sprintf( 'maverick_footer_social_%s_setting', $key ),
+				'section'     => 'footer_social_section',
+				'settings'    => sprintf( 'footer_social_%s_setting', $key ),
 				'type'        => 'text',
 			]
 		);
@@ -614,7 +614,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_footer_social_icons_color_setting',
+		'footer_social_icons_color_setting',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -626,11 +626,11 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_footer_social_icons_color_setting',
+			'footer_social_icons_color_setting',
 			[
 				'label'    => esc_html__( 'Social Icons Color', 'maverick' ),
 				'section'  => 'maverick_footer_colors_section',
-				'settings' => 'maverick_footer_social_icons_color_setting',
+				'settings' => 'footer_social_icons_color_setting',
 			]
 		)
 	);
@@ -643,7 +643,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$settings_footer_partial = [ 'maverick_footer_variation_setting', 'maverick_footer_copy_text_setting', 'maverick_footer_blurb_text_setting' ];
 
 	foreach ( $social_icons as $key => $social_icon ) {
-		$settings_footer_partial[] = sprintf( 'maverick_footer_social_%s_setting', $key );
+		$settings_footer_partial[] = sprintf( 'footer_social_%s_setting', $key );
 	}
 
 	$wp_customize->selective_refresh->add_partial(
@@ -707,7 +707,7 @@ function inline_css() {
 	$header_text_color   = hex_to_hsl( get_theme_mod( 'maverick_header_text_color_setting', false ), true );
 	$footer_text_color   = get_theme_mod( 'maverick_footer_text_color_setting', false );
 	$footer_background   = get_theme_mod( 'maverick_footer_background_color_setting', false );
-	$footer_social_color = get_theme_mod( 'maverick_footer_social_icons_color_setting', false );
+	$footer_social_color = get_theme_mod( 'footer_social_icons_color_setting', false );
 	?>
 		<!-- Maverick Customizer Overrides -->
 		<style>
