@@ -1,0 +1,44 @@
+[data-header="header-3"] {
+
+	& .site-navigation__toggle {
+		margin-right: 1rem;
+	}
+
+	@media (--large) {
+
+		& .site-branding {
+			flex: auto 0;
+		}
+	}
+}
+
+.has-offscreen-nav.menu-is-open[data-header="header-3"] .site-navigation {
+
+	/* Will override all links (including sub links) for mobile,
+	so they appear same color */
+	& .primary-menu a {
+		color: hsl(var(--theme-primary-menu-link-color));
+	}
+
+	/* Restore sub-menu colors when desktop style */
+	@media (--large) {
+
+		& .sub-menu a {
+			color: hsl(var(--theme-sub-menu-link-color));
+		}
+	}
+}
+
+/* When admin bar is on */
+.admin-bar.has-offscreen-nav.menu-is-open[data-header="header-3"] .site-navigation {
+	height: calc(100% - 116px);
+	top: auto;
+
+	@media (--medium) {
+		height: calc(100% - 102px);
+	}
+}
+
+.admin-bar[data-header="header-3"] .site-navigation {
+	top: auto;
+}

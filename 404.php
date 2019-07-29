@@ -7,9 +7,9 @@
 
 get_header(); ?>
 
-	<div class="content-area u-ma-auto u-max-width-full">
+	<div id="content" class="content-area m-auto u-max-width-full">
 		<?php get_template_part( 'partials/content', 'none' ); ?>
-	</div><!-- .u-ma-auto .u-max-width-full -->
+	</div>
 
 <?php
 get_footer();

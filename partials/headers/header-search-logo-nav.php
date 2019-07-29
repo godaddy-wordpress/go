@@ -8,7 +8,7 @@
 ?>
 
 <header id="masthead" class="site-header site-header--search-logo-nav c-header-search-logo-nav" itemscope itemtype="http://schema.org/WPHeader">
-	<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
 
 	<button id="js-site-search__toggle" class="site-search__toggle c-site-search__toggle" type="button" aria-controls="js-site-search">
 		<?php echo Maverick\load_inline_svg( 'search.svg' ); // phpcs:ignore ?>

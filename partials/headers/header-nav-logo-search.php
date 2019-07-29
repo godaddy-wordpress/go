@@ -8,7 +8,7 @@
 ?>
 
 <header id="masthead" class="site-header site-header--nav-logo-search c-header-nav-logo-search" itemscope itemtype="http://schema.org/WPHeader">
-	<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
 
 	<?php if ( has_nav_menu( 'primary' ) ) { ?>
 

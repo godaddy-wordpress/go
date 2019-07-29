@@ -77,8 +77,8 @@
 
 /* Header variants */
 @import url("components/header/header-1.css");
-@import url("components/header/header-logo-nav-vert.css");
-@import url("components/header/header-nav-logo.css");
+@import url("components/header/header-2.css");
+@import url("components/header/header-3.css");
 @import url("components/header/header-search-logo-nav.css");
 @import url("components/header/header-nav-logo-search.css");
 @import url("components/header/is-header-search-logo-nav.css");
@@ -157,11 +157,9 @@
 	letter-spacing: var(--theme-text-sm__letter-spacing);
 }
 
+.relative {
+	position: relative;
+}
 
-
-
-
-
-
-
+.justify-end { justify-content: flex-end; }
 

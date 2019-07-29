@@ -1,20 +1,22 @@
 <?php
 /**
- * Header #1
+ * Header variant #2
  *
  * @package Maverick
  */
 
 ?>
 
-<header id="masthead" class="site-header site-header--1 w-full" itemscope itemtype="http://schema.org/WPHeader">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
+<header id="masthead" class="site-header relative w-full" itemscope itemtype="http://schema.org/WPHeader">
+
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
 
 	<div class="site-header__inner flex items-center justify-between w-full m-auto">
+
 		<?php Maverick\display_site_branding(); ?>
 
 		<?php if ( has_nav_menu( 'primary' ) ) { ?>
-			<button id="js-site-navigation__toggle" class="site-navigation__toggle c-site-navigation__toggle" type="button">
+			<button id="js-site-navigation__toggle" class="site-navigation__toggle c-site-navigation__toggle" type="button" aria-controls="js-primary-menu">
 				<div class="site-navigation__toggle-icon">
 					<div class="site-navigation__toggle-icon-inner"></div>
 				</div>
@@ -33,18 +35,10 @@
 					);
 				?>
 
-				<button id="js-site-search__toggle" class="site-search__toggle c-site-search__toggle" type="button" aria-controls="js-site-search">
-					<?php echo Maverick\load_inline_svg( 'search.svg' ); // phpcs:ignore ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Search Toggle', 'maverick' ); ?></span>
-				</button>
-
-				<?php get_search_form(); ?>
-
 			</nav>
 		<?php } else { ?>
 			<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a Primary menu to the header', 'maverick' ); ?></a></p>
 		<?php } ?>
-
 	</div>
 
-</header>
+</header><!-- #masthead .site-header -->

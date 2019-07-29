@@ -15,13 +15,16 @@ get_header(); ?>
 
 	<?php } ?>
 
-	<div class="content-area u-ma-auto">
+	<div id="content" class="content-area">
 		<?php if ( have_posts() ) : ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php the_content(); ?>
-			<?php endwhile; ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				the_content();
+			endwhile;
+			?>
 		<?php endif; ?>
-	</div><!-- .u-ma-auto .u-max-width-full -->
+	</div>
 
 <?php
 get_footer();

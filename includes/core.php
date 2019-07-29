@@ -444,25 +444,25 @@ function get_default_header_variation() {
  */
 function get_available_header_variations() {
 	$default_header_variations = [
-		'header-1'                 => [
+		'header-1'               => [
 			'label'         => esc_html__( 'Logo + Nav + Search', 'maverick' ),
 			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-search.svg',
 			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', 'logo-nav-search' );
+				return get_template_part( 'partials/headers/header', '1' );
 			},
 		],
-		'header-logo-nav-vertical' => [
+		'header-2' => [
 			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
 			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-vertical.svg',
 			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', 'logo-nav-vertical' );
+				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
-		'header-nav-logo'   => [
+		'header-3'   => [
 			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
 			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo.svg',
 			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', 'nav-logo' );
+				return get_template_part( 'partials/headers/header', '3' );
 			},
 		],
 		'header-search-logo-nav'   => [
