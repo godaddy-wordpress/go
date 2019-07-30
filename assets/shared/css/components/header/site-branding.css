@@ -24,7 +24,8 @@
 	}
 
 	& + .site-branding__description {
-		color: hsla(var(--theme-site-branding-text-color), 1);
+		color: hsla(var(--theme-site-branding-description-color), 1);
+		opacity: var(--theme-site-branding-description-opacity);
 		margin-top: 0.25rem;
 
 		@media (--small) {
