@@ -85,14 +85,49 @@ function theme_setup() {
 	];
 	add_theme_support( 'custom-logo', $custom_logo_defaults );
 
+	/**
+	 * Custom font sizes for use in the editor.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#block-font-sizes
+	 */
+	add_theme_support(
+		'editor-font-sizes',
+		[
+			[
+				'name'      => esc_html__( 'Small', 'maverick' ),
+				'shortName' => esc_html__( 'S', 'maverick' ),
+				'size'      => 17,
+				'slug'      => 'small',
+			],
+			[
+				'name'      => esc_html__( 'Medium', 'maverick' ),
+				'shortName' => esc_html__( 'M', 'maverick' ),
+				'size'      => 21,
+				'slug'      => 'medium',
+			],
+			[
+				'name'      => esc_html__( 'Large', 'maverick' ),
+				'shortName' => esc_html__( 'L', 'maverick' ),
+				'size'      => 24,
+				'slug'      => 'large',
+			],
+			[
+				'name'      => esc_html__( 'Huge', 'maverick' ),
+				'shortName' => esc_html__( 'XL', 'maverick' ),
+				'size'      => 30,
+				'slug'      => 'huge',
+			],
+		]
+	);
+
 	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus(
-		array(
+		[
 			'primary'  => esc_html__( 'Primary Menu', 'maverick' ),
 			'footer-1' => esc_html__( 'Footer Menu #1 (Primary)', 'maverick' ),
 			'footer-2' => esc_html__( 'Footer Menu #2', 'maverick' ),
 			'footer-3' => esc_html__( 'Footer Menu #3', 'maverick' ),
-		)
+		]
 	);
 }
 
