@@ -18,7 +18,7 @@ $footer_copy_text = Maverick\footer_copy_text();
 	<div class="site-footer__inner max-w-wide m-auto text-center">
 
 		<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
-			<nav class="footer-navigation text-sm" aria-label="<?php esc_attr_e( 'Footer Menu', 'maverick' ); ?>">
+			<nav class="footer-navigation text-md" aria-label="<?php esc_attr_e( 'Footer Menu', 'maverick' ); ?>">
 				<?php
 					wp_nav_menu(
 						[
