@@ -1,14 +1,18 @@
 [data-header="header-3"] {
 
+	& .site-branding {
+		@media (--large) {
+			flex: auto 0;
+		}
+	}
+
 	& .site-navigation__toggle {
 		margin-right: 1rem;
 	}
 
-	@media (--large) {
-
-		& .site-branding {
-			flex: auto 0;
-		}
+	& .site-header__inner {
+		padding-bottom: calc(1.5 * var(--theme-header-padding-x));
+		padding-top: calc(1.5 * var(--theme-header-padding-x));
 	}
 }
 
