@@ -597,26 +597,11 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		return;
 	}
 
-	$settings_footer_partial = [ 'footer_variation', 'maverick_footer_copy_text_setting', 'maverick_footer_blurb_text_setting' ];
+	$settings_footer_partial = [ 'maverick_footer_copy_text_setting', 'maverick_footer_blurb_text_setting' ];
 
 	foreach ( $social_icons as $key => $social_icon ) {
 		$settings_footer_partial[] = sprintf( 'footer_social_%s_setting', $key );
 	}
-
-	$wp_customize->selective_refresh->add_partial(
-		'footer_variation',
-		[
-			'selector'        => '#js-footer-variation',
-			'settings'        => $settings_footer_partial,
-			'render_callback' => function() {
-				ob_start();
-				\Maverick\footer_variation();
-				$content = ob_get_contents();
-				ob_end_clean();
-				return $content;
-			},
-		]
-	);
 }
 
 /**

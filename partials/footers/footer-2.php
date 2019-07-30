@@ -11,7 +11,7 @@ $footer_copy_text = Maverick\footer_copy_text();
 $has_social_icons = Maverick\has_social_icons();
 ?>
 
-<footer id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer site-footer--2">
 
 	<div class="site-footer__inner max-w-base lg:max-w-wide m-auto px-1">
 

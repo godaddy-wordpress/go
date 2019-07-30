@@ -140,6 +140,36 @@
 	}
 }
 
+[data-footer="footer-1"] {
+	& .site-footer:not(.site-footer--1) {
+		display: none;
+	}
+}
+
+[data-footer="footer-2"] {
+	& .site-footer:not(.site-footer--2) {
+		display: none;
+	}
+}
+
+[data-footer="footer-3"] {
+	& .site-footer:not(.site-footer--3) {
+		display: none;
+	}
+}
+
+[data-footer="footer-4"] {
+	& .site-footer:not(.site-footer--4) {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
 
 
 .display-block {

@@ -10,7 +10,7 @@
 $footer_copy_text = Maverick\footer_copy_text();
 ?>
 
-<footer id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer site-footer--3">
 
 	<div class="site-footer__inner flex flex-column md:flex-row md:flex-wrap items-center align-center max-w-wide m-auto px-1">
 
