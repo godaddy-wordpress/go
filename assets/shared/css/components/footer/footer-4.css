@@ -96,7 +96,7 @@
 	}
 
 	/* Footer copyright text */
-	& .footer-copy-text {
+	& .site-info {
 		font-size: 0.75rem;
 		text-align: right;
 	}

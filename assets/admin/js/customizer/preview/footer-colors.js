@@ -15,7 +15,7 @@ export default () => {
 
 	wp.customize( 'footer_text_color', ( value ) => {
 		value.bind( ( to ) => {
-			$( '.site-footer, .site-footer a, .site-footer .footer-navigation a, .footer-copy-text ' ).css( 'color', to );
+			$( '.site-footer, .site-footer a, .site-footer .footer-navigation a, .site-info ' ).css( 'color', to );
 		} );
 	} );
 

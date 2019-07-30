@@ -149,12 +149,20 @@
 	margin-bottom: 0;
 }
 
+.mt-0 {
+	margin-top: 0;
+}
+
 .justify-center {
 	justify-content: center;
 }
 
 .justify-between {
 	justify-content: space-between;
+}
+
+.text-xs {
+	font-size: var(--theme-text-xs);
 }
 
 .text-sm {
@@ -208,6 +216,11 @@
 	flex-direction: column;
 }
 
+.px-1 {
+	padding-left: var(--theme-block-padding-x);
+	padding-right: var(--theme-block-padding-x);
+}
+
 @media (--small) {
 
 	.sm\:flex {
@@ -232,6 +245,10 @@
 
 	.md\:flex-row {
 		flex-direction: row;
+	}
+
+	.md\:flex-wrap {
+	        flex-wrap: wrap;
 	}
 
 	.md\:max-w-base {

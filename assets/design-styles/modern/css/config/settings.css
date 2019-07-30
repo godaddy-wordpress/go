@@ -14,6 +14,11 @@
 	--THEME-COLOR-HEADING: 0, 0%, 12%;
 	--THEME-COLOR-NAV: var(--THEME-COLOR-BODY);
 
+	/* Widths. */
+	--theme-max-width-base: 680px;
+	--theme-max-width-wide: 1280px;
+	--theme-max-width-full: 1440px;
+
 	/* Block spacing. */
 	--theme-block-padding-x: 1rem;
 	--theme-block-spacing: 1.15rem;
@@ -27,6 +32,7 @@
 	}
 
 	--theme-text-sm: 82.5%;
+	--theme-text-xs: 78%;
 	--theme-text-sm__letter-spacing: 0.015em;
 	--theme-text-md: 105%;
 
@@ -46,13 +52,6 @@
 	@media (--large) {
 		--theme-header-padding-y: 1.25rem;
 	}
-
-
-
-	/* Widths. */
-	--theme-max-width-base: 680px;
-	--theme-max-width-wide: 1280px;
-	--theme-max-width-full: 1440px;
 
 	/* Page entry header spacing. */
 	--theme-entryheader-spacing-top: 4rem;

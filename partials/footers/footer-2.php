@@ -2,9 +2,6 @@
 /**
  * Footer Partial 2
  *
- * The .footer-blurb-text and .footer-copy-text are used by customizer,
- * when changing these classes make sure to always update the classes that the Customizer Preview is targeting in /assets/admin/js/customizer/preview/footer-text.js
- *
  * @see assets/admin/js/customizer/preview/footer-text.js
  *
  * @package Maverick
@@ -16,7 +13,7 @@ $has_social_icons = Maverick\has_social_icons();
 
 <footer id="colophon" class="site-footer">
 
-	<div class="site-footer__inner max-w-base lg:max-w-wide m-auto">
+	<div class="site-footer__inner max-w-base lg:max-w-wide m-auto px-1">
 
 		<div class="flex flex-wrap lg:justify-between lg:flex-nowrap">
 
@@ -79,7 +76,7 @@ $has_social_icons = Maverick\has_social_icons();
 		<?php if ( $has_social_icons || ! empty( $footer_copy_text ) ) : ?>
 			<div class="flex flex-column md:flex-row justify-between items-center">
 				<?php if ( ! empty( $footer_copy_text ) ) : ?>
-					<p class="footer-copy-text mb-0 text-sm">
+					<p class="site-info mb-0 text-sm">
 						<?php echo esc_html( $footer_copy_text ); ?>
 					</p>
 				<?php endif; ?>
@@ -89,4 +86,5 @@ $has_social_icons = Maverick\has_social_icons();
 		<?php endif; ?>
 
 	</div>
+
 </footer>

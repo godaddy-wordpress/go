@@ -2,9 +2,6 @@
 /**
  * Footer Partial 1
  *
- * The .footer-blurb-text and .footer-copy-text are used by customizer,
- * when changing these classes make sure to always update the classes that the Customizer Preview is targeting in /assets/admin/js/customizer/preview/footer-text.js\
- *
  * @see assets/admin/js/customizer/preview/footer-text.js
  *
  * @package Maverick
@@ -23,7 +20,7 @@ $footer_copy_text = Maverick\footer_copy_text();
 					wp_nav_menu(
 						[
 							'theme_location' => 'footer-1',
-							'menu_class'     => 'footer-menu footer-menu--1 m-0',
+							'menu_class'     => 'footer-menu footer-menu--1 list-resest',
 							'depth'          => 1,
 						]
 					);
@@ -36,7 +33,7 @@ $footer_copy_text = Maverick\footer_copy_text();
 		<?php Maverick\social_icons( [ 'class' => 'social-icons m-0' ] ); ?>
 
 		<?php if ( ! empty( $footer_copy_text ) ) : ?>
-			<p class="footer-copy-text text-sm mb-0">
+			<p class="site-info text-sm mb-0">
 				<?php echo esc_html( $footer_copy_text ); ?>
 
 				<?php
@@ -48,4 +45,5 @@ $footer_copy_text = Maverick\footer_copy_text();
 		<?php endif; ?>
 
 	</div>
+
 </footer>

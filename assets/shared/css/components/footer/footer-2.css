@@ -16,8 +16,6 @@
 	}
 
 	& .site-footer__inner {
-		padding-left: var(--theme-block-padding-x);
-		padding-right: var(--theme-block-padding-x);
 
 		& > div + div {
 			margin-top: calc(var(--theme-footer-spacing) * 0.75);
@@ -76,7 +74,7 @@
 		}
 	}
 
-	& .footer-copy-text {
+	& .site-info {
 		margin-top: 0.75rem;
 
 		@media (--medium) {
@@ -91,11 +89,6 @@
 		@media (--medium) {
 			margin-top: 0;
 			margin-right: -1rem;
-		}
-
-		& li {
-			padding-left: 0;
-			padding-right: 0;
 		}
 
 		& svg {

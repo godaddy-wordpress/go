@@ -2,7 +2,6 @@
  * Modern - Site navigation toggle.
  */
 
-/* Make last line a little shorter */
 .site-navigation__toggle-icon-inner::before {
 	width: 88%;
 }

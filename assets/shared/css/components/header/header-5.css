@@ -10,6 +10,7 @@
 	}
 
 	& .site-header,
+	& .site-footer,
 	& .content-area {
 		@media (--medium) {
 			padding-left: 70px; /* Same as the width of the .site-navigation */
@@ -57,6 +58,12 @@
 		color: hsla(var(--theme-site-navigation__toggle-color), 1);
 	}
 }
+
+
+
+
+
+
 
 .site-header--nav-logo-search .site-navigation {
 	background-color: hsl(var(--color-white));
@@ -314,24 +321,6 @@ body.admin-bar.menu-is-open.has-offscreen-nav .site-header--nav-logo-search .sit
 
 
 		}
-	}
-
-
-	& .site-footer {
-
-		& .row {
-			margin-left: 0;
-		}
-
-		@media (--medium) {
-			margin-left: 0;
-			padding-left: 6rem;
-		}
-
-		@media (--large) {
-			padding-left: 9rem;
-		}
-
 	}
 }
 

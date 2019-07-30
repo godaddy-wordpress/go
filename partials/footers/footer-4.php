@@ -2,9 +2,6 @@
 /**
  * Footer Partial 4
  *
- * The .footer-blurb-text and .footer-copy-text are used by customizer,
- * when changing these classes make sure to always update the classes that the Customizer Preview is targeting in /assets/admin/js/customizer/preview/footer-text.js\
- *
  * @see assets/admin/js/customizer/preview/footer-text.js
  *
  * @package Maverick
@@ -84,7 +81,7 @@ $has_social_icons = Maverick\has_social_icons();
 
 		<?php if ( ! empty( $footer_copy_text ) ) : ?>
 			<div class="row row--3">
-				<p class="footer-copy-text">
+				<p class="site-info">
 					<?php echo esc_html( $footer_copy_text ); ?>
 				</p>
 			</div><!-- .row .row--3 -->
