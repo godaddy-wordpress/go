@@ -161,6 +161,14 @@
 	justify-content: space-between;
 }
 
+.justify-start {
+	justify-content: start;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
 .text-xs {
 	font-size: var(--theme-text-xs);
 }
@@ -176,10 +184,6 @@
 
 .relative {
 	position: relative;
-}
-
-.justify-end {
-	justify-content: flex-end;
 }
 
 .max-w-full {
@@ -296,6 +300,10 @@
 
 	.lg\:justify-between {
 		justify-content: space-between;
+	}
+
+	.lg\:justify-start {
+		justify-content: start;
 	}
 
 	.lg\:max-w-base {

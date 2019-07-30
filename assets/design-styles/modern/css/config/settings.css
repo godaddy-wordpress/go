@@ -50,7 +50,7 @@
 	--theme-header-padding-y: 1rem;
 
 	@media (--large) {
-		--theme-header-padding-y: 1.25rem;
+		--theme-header-padding-y: 1.5rem;
 	}
 
 	/* Page entry header spacing. */

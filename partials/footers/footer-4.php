@@ -15,12 +15,12 @@ $has_social_icons = Maverick\has_social_icons();
 
 	<div class="site-footer__inner m-auto max-w-wide px-1">
 
-		<div class="site-footer__row site-footer__row--1 flex flex-wrap lg:justify-between lg:flex-nowrap">
+		<div class="site-footer__row site-footer__row--1 flex flex-wrap lg:justify-start lg:flex-nowrap">
 
 			<?php Maverick\display_site_branding( array( 'description' => false ) ); ?>
 
 			<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
-				<nav class="footer-navigation footer-navigation--1" aria-label="<?php esc_attr_e( 'Primary Footer Menu', 'maverick' ); ?>">
+				<nav class="footer-navigation footer-navigation--1 text-sm" aria-label="<?php esc_attr_e( 'Primary Footer Menu', 'maverick' ); ?>">
 					<span class="footer-navigation__title text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-1' ) ); ?></span>
 
 					<?php
@@ -38,7 +38,7 @@ $has_social_icons = Maverick\has_social_icons();
 			<?php } ?>
 
 			<?php if ( has_nav_menu( 'footer-2' ) ) { ?>
-				<nav class="footer-navigation footer-navigation--2" aria-label="<?php esc_attr_e( 'Secondary Footer Menu', 'maverick' ); ?>">
+				<nav class="footer-navigation footer-navigation--2 text-sm" aria-label="<?php esc_attr_e( 'Secondary Footer Menu', 'maverick' ); ?>">
 					<span class="footer-navigation__title text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-2' ) ); ?></span>
 
 					<?php
@@ -56,7 +56,7 @@ $has_social_icons = Maverick\has_social_icons();
 			<?php } ?>
 
 			<?php if ( has_nav_menu( 'footer-3' ) ) { ?>
-				<nav class="footer-navigation footer-navigation--3" aria-label="<?php esc_attr_e( 'Tertiary Footer Menu', 'maverick' ); ?>">
+				<nav class="footer-navigation footer-navigation--3 text-sm" aria-label="<?php esc_attr_e( 'Tertiary Footer Menu', 'maverick' ); ?>">
 					<span class="footer-navigation__title text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-3' ) ); ?></span>
 
 					<?php
@@ -74,17 +74,15 @@ $has_social_icons = Maverick\has_social_icons();
 			<?php } ?>
 		</div>
 
-		<?php if ( $has_social_icons ) : ?>
-			<div class="site-footer__row site-footer__row--2">
-				<?php Maverick\social_icons( [ 'class' => 'social-icons m-0' ] ); ?>
-			</div>
-		<?php endif; ?>
+		<?php if ( $has_social_icons || ! empty( $footer_copy_text ) ) : ?>
+			<div class="site-footer__row site-footer__row--2 flex flex-column md:flex-row justify-between items-center">
+				<?php if ( ! empty( $footer_copy_text ) ) : ?>
+					<p class="site-info mb-0 text-sm">
+						<?php echo esc_html( $footer_copy_text ); ?>
+					</p>
+				<?php endif; ?>
 
-		<?php if ( ! empty( $footer_copy_text ) ) : ?>
-			<div class="site-footer__row site-footer__row--3">
-				<p class="site-info text-right text-xs mb-0">
-					<?php echo esc_html( $footer_copy_text ); ?>
-				</p>
+				<?php Maverick\social_icons( [ 'class' => 'social-icons list-reset' ] ); ?>
 			</div>
 		<?php endif; ?>
 

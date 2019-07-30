@@ -53,16 +53,15 @@
 		&:hover {
 			opacity: var(--theme-primary-menu-link-hover-active-opacity);
 
-			&::before {
+			/* &::before {
 				bottom: var(--border-end-mobile);
 				opacity: 1;
 
 				@media (--large) {
 					bottom: var(--border-end-desktop);
 				}
-			}
+			} */
 		}
-
 	}
 
 	/* Active menu link */
