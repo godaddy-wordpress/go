@@ -15,6 +15,7 @@
 	--THEME-COLOR-NAV: var(--THEME-COLOR-BODY);
 
 	/* Block spacing. */
+	--theme-block-padding-x: 1rem;
 	--theme-block-spacing: 1.15rem;
 	--theme-block-spacing-larger: 1.75rem;
 	--theme-block-spacing-huge: 4rem;
@@ -25,8 +26,7 @@
 		--theme-block-spacing-huge: 8.5rem;
 	}
 
-
-	--theme-text-sm: 80%;
+	--theme-text-sm: 82.5%;
 	--theme-text-sm__letter-spacing: 0.015em;
 	--theme-text-md: 105%;
 
@@ -39,18 +39,15 @@
 		--theme-text-sm: 90%;
 	}
 
-
-
 	/* Header */
 	--theme-header-background-color: 0, 0%, 100%; /* #ffffff */
-	--theme-header-padding-x: 1rem;
 	--theme-header-padding-y: 1rem;
 
 	@media (--large) {
 		--theme-header-padding-y: 1.25rem;
 	}
 
-	--theme-block-padding-x: 1rem;
+
 
 	/* Widths. */
 	--theme-max-width-base: 680px;
@@ -155,6 +152,7 @@
 	}
 
 	/* Heading colors */
+	--theme-heading-color: 0, 0%, 12%;
 	--theme-h1-color: var(--THEME-COLOR-HEADING);
 	--theme-h2-color: var(--THEME-COLOR-HEADING);
 	--theme-h3-color: var(--THEME-COLOR-HEADING);
@@ -249,7 +247,7 @@
 	--theme-footer-1-text-color: var(--THEME-COLOR-NAV);
 
 	/* shared/css/components/footer/footer-2.css */
-	--theme-footer-2-border-top-color: var(--THEME-COLOR-SECONDARY);
+	--theme-footer-2-border-top-color: 0, 0%, 90%;
 
 	/* shared/css/components/footer/footer-3.css */
 	--theme-footer-3-text-color: var(--THEME-COLOR-SECONDARY);

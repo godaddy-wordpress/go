@@ -1,6 +1,12 @@
 const $ = jQuery; // eslint-disable-line
 
 export default () => {
+	wp.customize( 'footer_variation', ( value ) => {
+		value.bind( ( to ) => {
+			$( 'body' ).attr( 'data-footer', to );
+		} );
+	} );
+
 	wp.customize( 'footer_background_color', ( value ) => {
 		value.bind( ( to ) => {
 			$( '.site-footer' ).css( 'background-color', to );
