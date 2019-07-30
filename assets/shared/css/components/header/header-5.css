@@ -20,6 +20,14 @@
 		}
 	}
 
+	& .site-header__inner {
+
+		@media (--small) {
+			padding-bottom: calc(var(--theme-header-padding-y) * 1.25);
+			padding-top: calc(var(--theme-header-padding-y) * 1.25);
+		}
+	}
+
 	& .site-branding {
 		flex: 1 0 60%;
 		padding-left: 20px;
