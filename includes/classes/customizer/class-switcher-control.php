@@ -90,7 +90,7 @@ class Switcher_Control extends \WP_Customize_Control {
 			#>
 
 			<# if ( data.label ) { #>
-				<h3>{{ data.label }}</h3>
+				<span class="customize-control-title">{{ data.label }}</span>
 			<# } #>
 
 			<# if ( data.description ) { #>

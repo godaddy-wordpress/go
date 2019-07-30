@@ -306,21 +306,11 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
  */
 function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 
-	$wp_customize->add_panel(
+	$wp_customize->add_section(
 		'maverick_header_settings',
 		[
-			'title'       => esc_html__( 'Header Settings', 'maverick' ),
-			'description' => esc_html__( 'Customize the header of your site.', 'maverick' ),
-			'priority'    => 70,
-		]
-	);
-
-	$wp_customize->add_section(
-		'header_variation_section',
-		[
-			'title'      => esc_html__( 'Header Variations', 'maverick' ),
-			'capability' => 'edit_theme_options',
-			'panel'      => 'maverick_header_settings',
+			'title'    => esc_html__( 'Header', 'maverick' ),
+			'priority' => 70,
 		]
 	);
 
@@ -339,23 +329,12 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 			$wp_customize,
 			'header_variation',
 			[
-				'label'       => esc_html__( 'Header Variation', 'maverick' ),
-				'description' => esc_html__( 'Choose one of the supported header variations.', 'maverick' ),
-				'section'     => 'header_variation_section',
-				'settings'    => 'header_variation',
-				'choices'     => \Maverick\Core\get_available_header_variations(),
+				'label'    => esc_html__( 'Header Variation', 'maverick' ),
+				'section'  => 'maverick_header_settings',
+				'settings' => 'header_variation',
+				'choices'  => \Maverick\Core\get_available_header_variations(),
 			]
 		)
-	);
-
-	$wp_customize->add_section(
-		'maverick_header_colors_section',
-		[
-			'title'       => esc_html__( 'Header Colors', 'maverick' ),
-			'description' => esc_html__( 'Here you can customize the colors of the header. Be mindfull of the combination of colors you choose.', 'maverick' ),
-			'capability'  => 'edit_theme_options',
-			'panel'       => 'maverick_header_settings',
-		]
 	);
 
 	$wp_customize->add_setting(
@@ -373,10 +352,9 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 			$wp_customize,
 			'maverick_header_background_color_contorl',
 			[
-				'label'       => esc_html__( 'Background Color', 'maverick' ),
-				'description' => esc_html__( 'Override the design style background color.', 'maverick' ),
-				'section'     => 'maverick_header_colors_section',
-				'settings'    => 'maverick_header_background_color_setting',
+				'label'    => esc_html__( 'Background Color', 'maverick' ),
+				'section'  => 'maverick_header_settings',
+				'settings' => 'maverick_header_background_color_setting',
 			]
 		)
 	);
@@ -395,10 +373,9 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 			$wp_customize,
 			'maverick_header_text_color_control',
 			[
-				'label'       => esc_html__( 'Text Color', 'maverick' ),
-				'description' => esc_html__( 'Override the design style text color.', 'maverick' ),
-				'section'     => 'maverick_header_colors_section',
-				'settings'    => 'maverick_header_text_color_setting',
+				'label'    => esc_html__( 'Text Color', 'maverick' ),
+				'section'  => 'maverick_header_settings',
+				'settings' => 'maverick_header_text_color_setting',
 			]
 		)
 	);
