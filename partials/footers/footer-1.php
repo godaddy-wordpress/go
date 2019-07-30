@@ -14,6 +14,8 @@ $footer_copy_text = Maverick\footer_copy_text();
 
 	<div class="site-footer__inner max-w-wide m-auto text-center">
 
+		<?php Maverick\social_icons( [ 'class' => 'social-icons list-reset' ] ); ?>
+
 		<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
 			<nav class="footer-navigation text-md" aria-label="<?php esc_attr_e( 'Footer Menu', 'maverick' ); ?>">
 				<?php
@@ -29,8 +31,6 @@ $footer_copy_text = Maverick\footer_copy_text();
 		<?php } elseif ( is_customize_preview() ) { ?>
 			<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #1', 'maverick' ); ?></a></p>
 		<?php } ?>
-
-		<?php Maverick\social_icons( [ 'class' => 'social-icons m-0' ] ); ?>
 
 		<?php if ( ! empty( $footer_copy_text ) ) : ?>
 			<p class="site-info text-sm mb-0">

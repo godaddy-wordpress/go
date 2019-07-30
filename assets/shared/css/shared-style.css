@@ -121,7 +121,7 @@
 }
 
 .flex-wrap {
-        flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .flex-nowrap {
@@ -198,10 +198,14 @@
 	text-align: center;
 }
 
+.text-right {
+	text-align: right;
+}
+
 .list-reset {
 	list-style: none;
-	padding-left: 0;
 	margin: 0;
+	padding-left: 0;
 }
 
 .bold {
@@ -248,7 +252,7 @@
 	}
 
 	.md\:flex-wrap {
-	        flex-wrap: wrap;
+		flex-wrap: wrap;
 	}
 
 	.md\:max-w-base {
@@ -265,6 +269,10 @@
 
 	.md\:items-center {
 		align-items: center;
+	}
+
+	.md\:w-full {
+		width: 100%;
 	}
 }
 

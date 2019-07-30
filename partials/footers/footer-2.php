@@ -17,13 +17,13 @@ $has_social_icons = Maverick\has_social_icons();
 
 		<div class="flex flex-wrap lg:justify-between lg:flex-nowrap">
 
-			<div class="footer-blurb-text">
+			<div class="footer-blurb-text text-md">
 				<?php echo wp_kses_post( Maverick\footer_blurb_text() ); ?>
 			</div>
 
 			<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
 				<nav class="footer-navigation footer-navigation--1 text-sm" aria-label="<?php esc_attr_e( 'Primary Footer Menu', 'maverick' ); ?>">
-					<span class="footer-navigation__title text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-1' ) ); ?></span>
+					<span class="footer-navigation__title text-md text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-1' ) ); ?></span>
 					<?php
 						wp_nav_menu(
 							[
@@ -40,7 +40,7 @@ $has_social_icons = Maverick\has_social_icons();
 
 			<?php if ( has_nav_menu( 'footer-2' ) ) { ?>
 				<nav class="footer-navigation footer-navigation--2 text-sm" aria-label="<?php esc_attr_e( 'Secondary Footer Menu', 'maverick' ); ?>">
-					<span class="footer-navigation__title text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-2' ) ); ?></span>
+					<span class="footer-navigation__title text-md text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-2' ) ); ?></span>
 					<?php
 						wp_nav_menu(
 							[
@@ -57,7 +57,7 @@ $has_social_icons = Maverick\has_social_icons();
 
 			<?php if ( has_nav_menu( 'footer-3' ) ) { ?>
 				<nav class="footer-navigation footer-navigation--3 text-sm" aria-label="<?php esc_attr_e( 'Tertiary Footer Menu', 'maverick' ); ?>">
-					<span class="footer-navigation__title text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-3' ) ); ?></span>
+					<span class="footer-navigation__title text-md text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-3' ) ); ?></span>
 					<?php
 						wp_nav_menu(
 							[
@@ -74,7 +74,7 @@ $has_social_icons = Maverick\has_social_icons();
 		</div>
 
 		<?php if ( $has_social_icons || ! empty( $footer_copy_text ) ) : ?>
-			<div class="flex flex-column md:flex-row justify-between items-center">
+			<div class="site-info__wrapper flex flex-column md:flex-row justify-between items-center">
 				<?php if ( ! empty( $footer_copy_text ) ) : ?>
 					<p class="site-info mb-0 text-sm">
 						<?php echo esc_html( $footer_copy_text ); ?>

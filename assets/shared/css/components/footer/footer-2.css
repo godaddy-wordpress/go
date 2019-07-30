@@ -6,8 +6,8 @@
 
 	& .site-footer {
 		border-top: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
-		padding-bottom: calc(var(--theme-footer-spacing) * 0.90);
-		padding-top: calc(var(--theme-footer-spacing) * 0.90);
+		padding-bottom: calc(var(--theme-footer-spacing) * 0.9);
+		padding-top: calc(var(--theme-footer-spacing) * 0.9);
 
 		@media (--large) {
 			padding-bottom: calc(var(--theme-footer-spacing) * 0.66);
@@ -15,17 +15,36 @@
 		}
 	}
 
-	& .site-footer__inner {
+	& .site-info__wrapper {
+		border-bottom: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
+		border-top: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
+		margin-top: calc(var(--theme-footer-spacing) * 0.75);
+		padding: 1rem 0;
 
-		& > div + div {
-			margin-top: calc(var(--theme-footer-spacing) * 0.75);
-			border-top: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
-			border-bottom: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
-			padding: 1rem 0;
+		@media (--large) {
+			margin-top: calc(var(--theme-footer-spacing) * 0.55);
+		}
+	}
 
-			@media (--large) {
-				margin-top: calc(var(--theme-footer-spacing) * 0.55);
-			}
+	& .footer-navigation {
+		flex: 0 1 48%;
+		padding-right: 2%;
+
+		@media (--small) {
+			flex: 0 1 33%;
+		}
+
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+
+	& .footer-navigation--1,
+	& .footer-navigation--2 {
+		margin-bottom: 1.5rem;
+
+		@media (--medium) {
+			margin-bottom: 0;
 		}
 	}
 
@@ -52,25 +71,20 @@
 		}
 	}
 
-	& .footer-navigation {
-		flex: 0 1 48%;
-		padding-right: 2%;
-
-		@media (--small) {
-			flex: 0 1 33%;
-		}
-
-		&:last-of-type {
-			padding-right: 0
-		}
-	}
-
-	& .footer-navigation--1,
-	& .footer-navigation--2 {
-		margin-bottom: 1.5rem;
+	& .social-icons {
+		margin-top: 0.25rem;
 
 		@media (--medium) {
-			margin-bottom: 0;
+			margin-top: 0;
+		}
+
+		& svg {
+			height: calc(var(--theme-footer-social-icon-size) * 0.66);
+		}
+
+		& a {
+			padding-left: calc(var(--theme-footer-social-icon-spacing) * 0.5);
+			padding-right: calc(var(--theme-footer-social-icon-spacing) * 0.5);
 		}
 	}
 
@@ -80,19 +94,6 @@
 		@media (--medium) {
 			flex: 1 50%;
 			margin-top: 0;
-		}
-	}
-
-	& .social-icons {
-		margin-top: 0.25rem;
-
-		@media (--medium) {
-			margin-top: 0;
-			margin-right: -1rem;
-		}
-
-		& svg {
-			height: calc(var(--theme-footer-social-icon-size) * .66);
 		}
 	}
 }
