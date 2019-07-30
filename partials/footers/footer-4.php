@@ -75,7 +75,7 @@ $has_social_icons = Maverick\has_social_icons();
 		</div>
 
 		<?php if ( $has_social_icons || ! empty( $footer_copy_text ) ) : ?>
-			<div class="site-footer__row site-footer__row--2 flex flex-column md:flex-row justify-between items-center">
+			<div class="site-footer__row site-footer__row--2 flex flex-column md:flex-row justify-between md:items-center">
 				<?php if ( ! empty( $footer_copy_text ) ) : ?>
 					<p class="site-info mb-0 text-sm">
 						<?php echo esc_html( $footer_copy_text ); ?>

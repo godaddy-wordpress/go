@@ -26,6 +26,7 @@
 		border: none;
 		color: hsla(var(--theme-primary-menu-link-color), 1);
 		display: inline-block;
+		font-size: var(--theme-primary-menu-link-font-size);
 		position: relative;
 		text-decoration: none;
 		transition: opacity 0.2s ease;

@@ -37,6 +37,15 @@ p {
 	margin-top: 0;
 }
 
+.footer-navigation__title {
+	font-family: var(--theme-heading-font-family);
+	font-size: var(--theme-primary-menu-link-font-size);
+	letter-spacing: 2px;
+	margin-bottom: 0.75rem;
+	display: block;
+	text-transform: uppercase;
+}
+
 .wp-block-coblocks-food-and-drinks {
 
 	& h3,
