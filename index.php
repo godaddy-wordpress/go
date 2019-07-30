@@ -7,13 +7,7 @@
 
 get_header(); ?>
 
-	<?php if ( ! is_front_page() ) { ?>
-
-		<header class="entry-header">
-			<?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
-		</header>
-
-	<?php } ?>
+	<?php do_action( 'maverick_page_title' ); ?>
 
 	<div id="content" class="content-area">
 		<?php if ( have_posts() ) : ?>

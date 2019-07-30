@@ -214,6 +214,29 @@ function has_social_icons( $social_icons = null ) {
 }
 
 /**
+ * Display the page title markup
+ *
+ * @return mixed Markup for the page title
+ */
+function maverick_page_title() {
+
+	if ( is_front_page() || ! get_theme_mod( 'maverick_show_page_titles', false ) ) {
+
+		return;
+
+	}
+
+	printf(
+		'<header class="entry-header">
+			<h1 class="post__title">%1$s</h1>
+		</header>',
+		esc_html( get_the_title() )
+	);
+
+}
+add_action( 'maverick_page_title', 'Maverick\maverick_page_title' );
+
+/**
  * Displays the social icons
  *
  * @param array $args {
@@ -316,7 +339,7 @@ function navigation_toggle() {
 		echo '<div class="site-navigation__toggle-icon">';
 			echo '<div class="site-navigation__toggle-icon-inner"></div>';
 		echo '</div>';
-		echo '<span class="screen-reader-text">' . __( 'Menu', 'maverick' ) . '</span>';
+		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'maverick' ) . '</span>';
 	echo '</button>';
 }
 

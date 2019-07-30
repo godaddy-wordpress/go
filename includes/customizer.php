@@ -295,6 +295,35 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			]
 		)
 	);
+
+	$wp_customize->add_section(
+		'maverick_page_titles_section',
+		[
+			'title'       => esc_html__( 'Page Titles', 'maverick' ),
+			'description' => esc_html__( 'The page title visibility varies based on the design style, so if you change a design style, you need to save and refresh the customizer.', 'maverick' ),
+			'capability'  => 'edit_theme_options',
+			'panel'       => 'maverick_global_settings',
+		]
+	);
+
+	$wp_customize->add_setting(
+		'maverick_show_page_titles',
+		[
+			'type'       => 'theme_mod',
+			'capability' => 'edit_theme_options',
+		]
+	);
+
+	$wp_customize->add_control(
+		'maverick_show_page_title_checkbox',
+		[
+			'label'       => esc_html__( 'Show page title', 'maverick' ),
+			'description' => esc_html__( 'Check this option to show page titles.', 'maverick' ),
+			'section'     => 'maverick_page_titles_section',
+			'settings'    => 'maverick_show_page_titles',
+			'type'        => 'checkbox',
+		]
+	);
 }
 
 /**
