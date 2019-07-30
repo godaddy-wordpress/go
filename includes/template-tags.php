@@ -301,7 +301,7 @@ function site_branding( $args = [] ) {
 		}
 
 		if ( true === $args['description'] && ! empty( $blog_description ) ) :
-			echo '<span class="site-branding__description">' . esc_html( $blog_description ) . '</span>';
+			echo '<span class="site-branding__description display-block relative">' . esc_html( $blog_description ) . '</span>';
 		endif;
 	}
 }

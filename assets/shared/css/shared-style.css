@@ -108,6 +108,10 @@
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
 
+.display-block {
+	display: block;
+}
+
 .display-inline-block {
 	display: inline-block;
 }

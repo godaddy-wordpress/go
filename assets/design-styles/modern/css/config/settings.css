@@ -209,10 +209,11 @@
 	--theme-site-search-z-index: 2;
 
 	/* shared/css/components/header/primary-menu.css */
-	--theme-primary-menu-link-color: var(--THEME-COLOR-BODY);
+	--theme-primary-menu-link-color: 0, 0%, 12%;
 	--theme-primary-submenu-bg-color: 0, 0%, 12%;
 	--theme-primary-submenu-link-color: var(--THEME-COLOR-SECONDARY);
-	--theme-primary-menu-link-hover-active-color: 0, 0%, 12%;
+	--theme-primary-menu-link-hover-active-opacity: 0.55;
+	--theme-primary-menu-link-hover-active-color: ;
 
 	@media (--large) {
 		--theme-primary-submenu-link-color: var(--THEME-COLOR-PRIMARY);
@@ -220,6 +221,7 @@
 	--theme-primary-submenu-z-index: 400;
 
 	/* shared/css/components/header/site-branding.css */
+	--theme-site-branding-title-color: var(--theme-h1-color);
 	--theme-site-branding-text-color: var(--THEME-COLOR-SECONDARY);
 	--theme-site-branding-font-family: var(--theme-font-family-heading);
 	--theme-site-branding-spacing-unit: var(--spacing-unit-2);

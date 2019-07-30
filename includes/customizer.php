@@ -713,30 +713,32 @@ function inline_css() {
 		<style>
 			:root {
 				/* Footer */
-				<?php if ( false !== $footer_background ) : ?>
+				<?php if ( $footer_background ) : ?>
 					--theme-footer-background-color: <?php echo esc_attr( $footer_background ); ?>;
 				<?php endif; ?>
 
-				<?php if ( false !== $footer_text_color ) : ?>
+				<?php if ( $footer_text_color ) : ?>
 					--theme-footer-color: <?php echo esc_attr( $footer_text_color ); ?>;;
 					--theme-footer-link-color: <?php echo esc_attr( $footer_text_color ); ?>;
 				<?php endif; ?>
 
-				<?php if ( false !== $footer_social_color ) : ?>
+				<?php if ( $footer_social_color ) : ?>
 					--theme-footer-social-icon-color: <?php echo esc_attr( $footer_social_color ); ?>;
 				<?php endif; ?>
 
 				/* Header */
-				<?php if ( false !== $header_background ) : ?>
+				<?php if ( $header_background ) : ?>
 					--theme-header-background-color: <?php echo esc_attr( $header_background ); ?>;
 				<?php endif; ?>
 
-				<?php if ( false !== $header_text_color ) : ?>
+				<?php if ( $header_text_color ) : ?>
 					--theme-primary-menu-link-color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-branding-text-color: <?php echo esc_attr( $header_text_color ); ?>;
-					--theme-link-color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-site-branding-title-color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-site-search__toggle-color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-primary-menu-link-hover-active-color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-site-navigation__toggle-color: <?php echo esc_attr( $header_text_color ); ?>;
 				<?php endif; ?>
-
 			}
 		</style>
 	<?php
