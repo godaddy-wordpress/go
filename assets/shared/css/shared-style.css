@@ -170,6 +170,10 @@
 	letter-spacing: var(--theme-text-sm__letter-spacing);
 }
 
+.text-md {
+	font-size: var(--theme-text-md);
+}
+
 .relative {
 	position: relative;
 }

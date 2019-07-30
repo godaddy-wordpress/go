@@ -1,8 +1,8 @@
 .site-footer {
 	background-color: hsla(var(--theme-footer-background-color), 1);
 	color: hsla(var(--theme-footer-color), 1);
-	padding-bottom: calc(2 * var(--theme-spacing-unit-6));
-	padding-top: calc(2 * var(--theme-spacing-unit-6));
+	padding-bottom: var(--theme-footer-spacing);
+	padding-top: var(--theme-footer-spacing);
 
 	& a {
 		color: hsla(var(--theme-footer-link-color), 1);
@@ -17,8 +17,8 @@
 
 	& .privacy-policy-link {
 		display: block;
-		margin-top: 0.3rem;
-		padding-top: 0.3rem;
+		margin-top: 0.75rem;
+		padding-top: 0.75rem;
 		position: relative;
 
 		@media (--small) {

@@ -5,11 +5,11 @@
 [data-footer="footer-1"] {
 
 	& .social-icons {
-		margin-bottom: var(--theme-footer-spacing);
+		margin-bottom: calc( var(--theme-footer-spacing) * .55);
 	}
 
 	& .footer-navigation {
-		margin-bottom: var(--theme-footer-spacing);
+		margin-bottom: calc( var(--theme-footer-spacing) * .5);
 
 		& a {
 			display: block;

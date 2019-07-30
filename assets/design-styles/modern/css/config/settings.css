@@ -26,16 +26,19 @@
 	}
 
 
-	--theme-text-sm: 83.75%;
+	--theme-text-sm: 80%;
 	--theme-text-sm__letter-spacing: 0.015em;
+	--theme-text-md: 105%;
 
 	@media (--small) {
-		--theme-text-sm: 87%;
+		--theme-text-sm: 85%;
+		--theme-text-md: 110%;
 	}
 
 	@media (--large) {
-		--theme-text-sm: 92%;
+		--theme-text-sm: 90%;
 	}
+
 
 
 	/* Header */
@@ -72,6 +75,10 @@
 
 	@media (--medium) {
 		--theme-footer-menu-link-spacing: 1rem 1.75rem;
+	}
+
+	@media (--large) {
+		--theme-footer-spacing: 8rem;
 	}
 
 	/* Footer Social. */
@@ -216,7 +223,7 @@
 	--theme-primary-menu-link-color: 0, 0%, 12%;
 	--theme-primary-submenu-bg-color: 0, 0%, 12%;
 	--theme-primary-submenu-link-color: var(--THEME-COLOR-SECONDARY);
-	--theme-primary-menu-link-hover-active-opacity: 0.55;
+	--theme-primary-menu-link-hover-active-opacity: 0.65;
 	--theme-primary-menu-link-hover-active-color: ;
 
 	@media (--large) {
