@@ -206,6 +206,8 @@
 	--theme-site-search__toggle-easing-function: var(--transition-easing-function);
 	--theme-site-search__toggle-spacing-unit: var(--spacing-unit);
 
+	--theme-search-input__button-color: 0, 0%, 12%;
+
 	--theme-site-search-z-index: 2;
 
 	/* shared/css/components/header/primary-menu.css */

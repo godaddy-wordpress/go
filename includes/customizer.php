@@ -738,6 +738,7 @@ function inline_css() {
 					--theme-site-search__toggle-color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-primary-menu-link-hover-active-color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-navigation__toggle-color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-search-input__button-color: <?php echo esc_attr( $header_text_color ); ?>;
 				<?php endif; ?>
 			}
 		</style>
