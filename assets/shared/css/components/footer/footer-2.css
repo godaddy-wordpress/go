@@ -15,7 +15,7 @@
 		}
 	}
 
-	& .site-info__wrapper {
+	& .site-footer__row {
 		border-bottom: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
 		border-top: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
 		margin-top: calc(var(--theme-footer-spacing) * 0.75);

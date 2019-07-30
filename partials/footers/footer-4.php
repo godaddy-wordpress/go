@@ -15,7 +15,8 @@ $has_social_icons = Maverick\has_social_icons();
 
 	<div class="site-footer__inner m-auto max-w-wide px-1">
 
-		<div class="row row--1">
+		<div class="site-footer__row site-footer__row--1 flex flex-wrap lg:justify-between lg:flex-nowrap">
+
 			<?php Maverick\display_site_branding( array( 'description' => false ) ); ?>
 
 			<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
@@ -26,7 +27,7 @@ $has_social_icons = Maverick\has_social_icons();
 						wp_nav_menu(
 							[
 								'theme_location' => 'footer-1',
-								'menu_class'     => 'footer-menu footer-menu--1 unlist',
+								'menu_class'     => 'footer-menu footer-menu--1 list-reset',
 								'depth'          => 1,
 							]
 						);
@@ -44,7 +45,7 @@ $has_social_icons = Maverick\has_social_icons();
 						wp_nav_menu(
 							[
 								'theme_location' => 'footer-2',
-								'menu_class'     => 'footer-menu footer-menu--2 unlist',
+								'menu_class'     => 'footer-menu footer-menu--2 list-reset',
 								'depth'          => 1,
 							]
 						);
@@ -62,7 +63,7 @@ $has_social_icons = Maverick\has_social_icons();
 						wp_nav_menu(
 							[
 								'theme_location' => 'footer-3',
-								'menu_class'     => 'footer-menu footer-menu--3 unlist',
+								'menu_class'     => 'footer-menu footer-menu--3 list-reset',
 								'depth'          => 1,
 							]
 						);
@@ -74,13 +75,13 @@ $has_social_icons = Maverick\has_social_icons();
 		</div>
 
 		<?php if ( $has_social_icons ) : ?>
-			<div class="row row--2">
+			<div class="site-footer__row site-footer__row--2">
 				<?php Maverick\social_icons( [ 'class' => 'social-icons m-0' ] ); ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if ( ! empty( $footer_copy_text ) ) : ?>
-			<div class="row row--3">
+			<div class="site-footer__row site-footer__row--3">
 				<p class="site-info text-right text-xs mb-0">
 					<?php echo esc_html( $footer_copy_text ); ?>
 				</p>
