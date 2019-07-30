@@ -9,7 +9,6 @@
 	--border-end-mobile: 18px; /* from the bottom */
 	--border-end-desktop: 18px; /* from the bottom */
 
-	/* Each link container (<li>) */
 	& .menu-item {
 		position: relative;
 		width: 100%;
@@ -25,14 +24,13 @@
 	/* All menu links */
 	& a {
 		border: none;
-		color: hsla(var(--THEME-COLOR-NAV), 1);
+		color: hsla(var(--theme-primary-menu-link-color), 1);
 		display: inline-block;
 		position: relative;
 		text-decoration: none;
 		transition: opacity 0.2s ease;
 
-		/* Fake bottom border */
-		&::before {
+		/* &::before {
 			background-color: hsl(var(--theme-primary-menu-link-color));
 			bottom: var(--border-start);
 			content: "";
@@ -43,7 +41,7 @@
 			position: absolute;
 			transition: opacity 0.2s ease, bottom 0.2s ease;
 			width: 100%;
-		}
+		} */
 
 		&:focus {
 			outline: 1px dotted var(--theme-primary-menu-link-color);
@@ -53,8 +51,7 @@
 		&:active,
 		&:focus,
 		&:hover {
-			color: hsl(var(--theme-primary-menu-link-hover-active-color));
-			opacity: 1;
+			opacity: var(--theme-primary-menu-link-hover-active-opacity);
 
 			&::before {
 				bottom: var(--border-end-mobile);

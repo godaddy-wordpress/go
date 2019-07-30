@@ -20,7 +20,9 @@ export default () => {
 			const hsl = hexToHSL( to );
 			document.querySelector( '.c-primary-menu' ).style.setProperty( '--theme-primary-menu-link-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 			document.querySelector( '.site-branding' ).style.setProperty( '--theme-link-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
-			document.querySelector( '.site-branding' ).style.setProperty( '--theme-site-branding-text-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+			document.querySelector( '.site-branding' ).style.setProperty( '--theme-site-branding-description-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+			document.querySelector( '.site-search__toggle' ).style.setProperty( '--theme-site-search__toggle-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+			document.querySelector( '.site-branding__title' ).style.setProperty( '--theme-site-branding-title-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 		} );
 	} );
 };

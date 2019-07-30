@@ -206,13 +206,18 @@
 	--theme-site-search__toggle-easing-function: var(--transition-easing-function);
 	--theme-site-search__toggle-spacing-unit: var(--spacing-unit);
 
+	--theme-search-input__button-color: 0, 0%, 12%;
+	--theme-search-input__button-icon-color: 0, 0%, 100%;
+	--theme-search-input__button-color-interactive: 0, 0%, 12%;
+
 	--theme-site-search-z-index: 2;
 
 	/* shared/css/components/header/primary-menu.css */
-	--theme-primary-menu-link-color: var(--THEME-COLOR-BODY);
+	--theme-primary-menu-link-color: 0, 0%, 12%;
 	--theme-primary-submenu-bg-color: 0, 0%, 12%;
 	--theme-primary-submenu-link-color: var(--THEME-COLOR-SECONDARY);
-	--theme-primary-menu-link-hover-active-color: 0, 0%, 12%;
+	--theme-primary-menu-link-hover-active-opacity: 0.55;
+	--theme-primary-menu-link-hover-active-color: ;
 
 	@media (--large) {
 		--theme-primary-submenu-link-color: var(--THEME-COLOR-PRIMARY);
@@ -220,8 +225,10 @@
 	--theme-primary-submenu-z-index: 400;
 
 	/* shared/css/components/header/site-branding.css */
-	--theme-site-branding-text-color: var(--THEME-COLOR-SECONDARY);
+	--theme-site-branding-title-color: var(--theme-h1-color);
+	--theme-site-branding-description-color: 0, 0%, 12%;
 	--theme-site-branding-font-family: var(--theme-font-family-heading);
+	--theme-site-branding-description-opacity: 0.65;
 	--theme-site-branding-spacing-unit: var(--spacing-unit-2);
 	--theme-site-branding-dividing-border-color: var(--THEME-COLOR-SECONDARY);
 

@@ -25,8 +25,8 @@ body {
 		}
 
 		& .search-input__button {
-			background-color: hsl(var(--theme-button-block-background-color));
-			border: var(--theme-button-block-border);
+			background-color: hsl(var(--theme-search-input__button-color));
+			border: var(--theme-search-input__button-border);
 			border-radius: 0;
 			box-shadow: none;
 			color: inherit;
@@ -41,7 +41,7 @@ body {
 			}
 
 			& .search-input__arrow-icon {
-				fill: hsl(var(--theme-button-block-color));
+				fill: hsl(var(--theme-search-input__button-icon-color));
 				height: auto;
 				left: 50%;
 				position: absolute;
@@ -56,12 +56,12 @@ body {
 
 			&:active,
 			&:hover {
-				background-color: hsl(var(--theme-button-block-background-color-interactive));
-				border: var(--theme-button-block-border-interactive);
+				background-color: hsl(var(--theme-search-input__button-color-interactive));
+				border-color: hsl(var(--theme-search-input__button-color-interactive));
 				box-shadow: none;
 
 				& .search-input__arrow-icon {
-					fill: hsl(var(--theme-button-block-color-interactive));
+					fill: hsl(var(--theme-search-input__button-icon-color));
 				}
 			}
 		}

@@ -24,20 +24,33 @@
 	}
 
 	& + .site-branding__description {
-		display: block;
+		color: hsla(var(--theme-site-branding-description-color), 1);
+		opacity: var(--theme-site-branding-description-opacity);
 		margin-top: 0.25rem;
 
 		@media (--small) {
-			border-left: 1px solid hsla(var(--theme-body-color), 0.25);
-			margin-left: 1rem;
 			margin-top: 0;
-			padding-left: 1rem;
+			padding-left: 1.75rem;
+			margin-left: 0.5rem;
+		}
+
+		&::before {
+			@media (--small) {
+				width: 1px;
+				height: 100%;
+				content: '';
+				left: 10px;
+				position: absolute;
+				display: block;
+				background-color: currentColor;
+				opacity: 0.25;
+			}
 		}
 	}
 }
 
 .site-branding__title {
-	color: hsla(var(--theme-h1-color), 1);
+	color: hsla(var(--theme-site-branding-title-color), 1);
 	font-family: var(--theme-heading-font-family);
 	font-size: var(--theme-h4-font-size);
 	font-weight: 700;

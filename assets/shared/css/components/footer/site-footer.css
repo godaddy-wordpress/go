@@ -21,8 +21,17 @@
 		padding-top: 0.3rem;
 		position: relative;
 
+		@media (--small) {
+			display: inline;
+			margin-left: 0.85rem;
+			margin-top: 0;
+			padding-left: 1rem;
+			padding-top: 0;
+		}
+
 		&::before {
-			background-color: hsla(var(--theme-body-color), 0.25);
+			background-color: currentColor;
+			opacity: 0.25;
 			content: "";
 			height: 1px;
 			left: 50%;
@@ -32,17 +41,10 @@
 			width: 20px;
 
 			@media (--small) {
-				display: none;
+				height: 100%;
+				width: 1px;
+				left: 0;
 			}
-		}
-
-		@media (--small) {
-			border-left: 1px solid hsla(var(--theme-body-color), 0.25);
-			display: inline;
-			margin-left: 0.85rem;
-			margin-top: 0;
-			padding-left: 1rem;
-			padding-top: 0;
 		}
 	}
 }

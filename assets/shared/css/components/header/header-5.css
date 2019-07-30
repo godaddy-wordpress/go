@@ -20,6 +20,14 @@
 		}
 	}
 
+	& .site-header__inner {
+
+		@media (--small) {
+			padding-bottom: calc(var(--theme-header-padding-y) * 1.25);
+			padding-top: calc(var(--theme-header-padding-y) * 1.25);
+		}
+	}
+
 	& .site-branding {
 		flex: 1 0 60%;
 		padding-left: 20px;
@@ -50,11 +58,6 @@
 	}
 }
 
-
-
-
-
-/* <nav> Navigation wrapper */
 .site-header--nav-logo-search .site-navigation {
 	background-color: hsl(var(--color-white));
 	bottom: 0;
@@ -183,7 +186,6 @@ position the menu items offscreen using left and absolute positioning.
 		padding-right: 0;
 	}
 }
-
 
 .site-header--nav-logo-search .site-search {
 	left: 1rem;
