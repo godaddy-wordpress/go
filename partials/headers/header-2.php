@@ -7,7 +7,7 @@
 
 ?>
 
-<header id="masthead" class="site-header relative w-full" itemscope itemtype="http://schema.org/WPHeader">
+<header id="masthead" class="site-header site-header--2 relative w-full" itemscope itemtype="http://schema.org/WPHeader">
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
 

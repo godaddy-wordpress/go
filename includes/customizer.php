@@ -379,26 +379,6 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 			]
 		)
 	);
-
-	// Abort if selective refresh is not available.
-	if ( ! isset( $wp_customize->selective_refresh ) ) {
-		return;
-	}
-
-	$wp_customize->selective_refresh->add_partial(
-		'header_variation',
-		[
-			'selector'        => '#js-header-variation',
-			'settings'        => [ 'header_variation' ],
-			'render_callback' => function() {
-				ob_start();
-				\Maverick\header_variation();
-				$content = ob_get_contents();
-				ob_end_clean();
-				return $content;
-			},
-		]
-	);
 }
 
 /**

@@ -128,8 +128,13 @@ function hex_to_hsl( $hex, $string_output = false ) {
  */
 function header_variation() {
 	$selected_variation = \Maverick\Core\get_header_variation();
+	$variations         = \Maverick\Core\get_available_header_variations();
 
-	if ( $selected_variation ) {
+	if ( is_customize_preview() ) {
+		foreach ( $variations as $variation ) {
+			call_user_func( $variation['partial'] );
+		}
+	} elseif ( $selected_variation ) {
 		echo '<div id="js-header-variation">';
 			call_user_func( $selected_variation['partial'] );
 		echo '</div>';
