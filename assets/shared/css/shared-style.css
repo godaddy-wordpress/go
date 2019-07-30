@@ -57,29 +57,29 @@
 @import url("coblocks/row.css");
 
 /* Components - everything that is NOT a block */
-@import url("components/header/site-header.css");
-@import url("components/header/site-branding.css");
-@import url("components/header/site-navigation.css");
-@import url("components/header/site-navigation__toggle.css");
-@import url("components/header/site-search__toggle.css");
-@import url("components/header/site-search.css");
-@import url("components/header/primary-menu.css");
-@import url("components/header/has-offscreen-nav.css");
+@import url("header/site-header.css");
+@import url("header/site-branding.css");
+@import url("header/site-navigation.css");
+@import url("header/site-navigation__toggle.css");
+@import url("header/site-search__toggle.css");
+@import url("header/site-search.css");
+@import url("header/primary-menu.css");
+@import url("header/has-offscreen-nav.css");
 @import url("components/buttons.css");
-@import url("components/footer/site-footer.css");
-@import url("components/footer/footer-1.css");
-@import url("components/footer/footer-2.css");
-@import url("components/footer/footer-3.css");
-@import url("components/footer/footer-4.css");
-@import url("components/footer/social-icons.css");
+@import url("footer/site-footer.css");
+@import url("footer/footer-1.css");
+@import url("footer/footer-2.css");
+@import url("footer/footer-3.css");
+@import url("footer/footer-4.css");
+@import url("footer/social-icons.css");
 @import url("components/posts-navigation.css");
 @import url("components/comments.css");
 
-/* Header variants */
-@import url("components/header/header-2.css");
-@import url("components/header/header-3.css");
-@import url("components/header/header-4.css");
-@import url("components/header/header-5.css");
+/* Headers */
+@import url("header/header-2.css");
+@import url("header/header-3.css");
+@import url("header/header-4.css");
+@import url("header/header-5.css");
 
 /* Layout */
 @import url("layout/page.css");

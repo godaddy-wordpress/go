@@ -22,9 +22,9 @@
 @import url("coblocks/pricing-table.css");
 
 /* Components - everything that is NOT a block */
-@import url("components/header/primary-menu.css");
-@import url("components/header/site-navigation__toggle.css");
-@import url("components/header/site-search.css");
+@import url("header/primary-menu.css");
+@import url("header/site-navigation__toggle.css");
+@import url("header/site-search.css");
 
 /* Woocommerce */
 @import url("woocommerce/button.css");
