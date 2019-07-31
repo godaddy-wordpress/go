@@ -4,3 +4,19 @@
 .has-theme-background {
 	background-color: hsl(var(--THEME-COLOR-PRIMARY));
 }
+
+.has-primary-background-color {
+	background-color: hsl(var(--THEME-COLOR-PRIMARY));
+}
+
+.has-primary-color {
+	color: hsl(var(--THEME-COLOR-PRIMARY));
+}
+
+.has-secondary-background-color {
+	background-color: hsl(var(--THEME-COLOR-SECONDARY));
+}
+
+.has-secondary-color {
+	color: hsl(var(--THEME-COLOR-SECONDARY));
+}
