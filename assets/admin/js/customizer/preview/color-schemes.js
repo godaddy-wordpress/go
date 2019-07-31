@@ -3,7 +3,6 @@ import { hexToHSL } from '../util';
 const $ = jQuery; // eslint-disable-line
 
 export default () => {
-	let useAlternativeColors;
 	let useColorsOverride;
 	let selectedPrimaryColor;
 	let selectedSecondaryColor;
@@ -98,18 +97,14 @@ export default () => {
 	 * Set the colors
 	 */
 	const setColors = () => {
-		if ( ! useAlternativeColors ) {
-			document.documentElement.style.removeProperty( '--USER-PRIMARY-HUE' );
-			document.documentElement.style.removeProperty( '--USER-PRIMARY-SATURATION' );
-			document.documentElement.style.removeProperty( '--USER-PRIMARY-LIGHTNESS' );
-			document.documentElement.style.removeProperty( '--USER-COLOR-PRIMARY' );
 
-			document.documentElement.style.removeProperty( '--USER-SECONDARY-HUE' );
-			document.documentElement.style.removeProperty( '--USER-SECONDARY-SATURATION' );
-			document.documentElement.style.removeProperty( '--USER-SECONDARY-LIGHTNESS' );
-			document.documentElement.style.removeProperty( '--USER-COLOR-SECONDARY' );
-			return false;
-		}
+		const designStyle = getDesignStyle( selectedDesignStyle );
+		const colors = designStyle.color_schemes[ selectedColorScheme ];
+		setPrimaryColor( colors['primary_color'] );
+		setSecondaryColor( colors[ 'secondary_color' ] );
+		setTertiaryColor( colors[ 'tertiary_color' ] );
+		setQuaternaryColor( colors[ 'quaternary_color' ] );
+		setQuinaryColor( colors[ 'quinary_color' ] );
 
 		if ( useColorsOverride ) {
 			setPrimaryColor( selectedPrimaryColor );
@@ -117,26 +112,8 @@ export default () => {
 			setTertiaryColor( selectedTertiaryColor );
 			setQuaternaryColor( selectedQuaternaryColor );
 			setQuinaryColor( selectedQuinaryColor );
-		} else {
-			const designStyle = getDesignStyle( selectedDesignStyle );
-			const colors = designStyle.color_schemes[ selectedColorScheme ];
-			setPrimaryColor( colors['primary_color'] );
-			setSecondaryColor( colors[ 'secondary_color' ] );
-			setTertiaryColor( colors[ 'tertiary_color' ] );
-			setQuaternaryColor( colors[ 'quaternary_color' ] );
-			setQuinaryColor( colors[ 'quinary_color' ] );
 		}
 	};
-
-	wp.customize( 'maverick_alternative_colors', ( value ) => {
-		useAlternativeColors = value.get();
-
-		value.bind( ( to ) => {
-			useAlternativeColors = to;
-
-			setColors();
-		} );
-	} );
 
 	wp.customize( 'maverick_design_style', ( value ) => {
 		selectedDesignStyle = value.get();
@@ -152,7 +129,7 @@ export default () => {
 			selectedColorScheme = colorScheme;
 			const designStyle = getDesignStyle( selectedDesignStyle );
 
-			if ( useColorsOverride || ! useAlternativeColors ) {
+			if ( useColorsOverride ) {
 				return;
 			}
 
@@ -181,7 +158,7 @@ export default () => {
 		value.bind( ( to ) => {
 			selectedPrimaryColor = to;
 
-			if ( ! useColorsOverride || ! useAlternativeColors ) {
+			if ( ! useColorsOverride ) {
 				return;
 			}
 
@@ -194,7 +171,7 @@ export default () => {
 		value.bind( ( to ) => {
 			selectedSecondaryColor = to;
 
-			if ( ! useColorsOverride || ! useAlternativeColors  ) {
+			if ( ! useColorsOverride ) {
 				return;
 			}
 			setSecondaryColor( to );
@@ -206,7 +183,7 @@ export default () => {
 		value.bind( ( to ) => {
 			selectedTertiaryColor = to;
 
-			if ( ! useColorsOverride || ! useAlternativeColors  ) {
+			if ( ! useColorsOverride ) {
 				return;
 			}
 			setTertiaryColor( to );
@@ -218,7 +195,7 @@ export default () => {
 		value.bind( ( to ) => {
 			selectedQuaternaryColor = to;
 
-			if ( ! useColorsOverride || ! useAlternativeColors  ) {
+			if ( ! useColorsOverride ) {
 				return;
 			}
 			setQuaternaryColor( to );
@@ -230,7 +207,7 @@ export default () => {
 		value.bind( ( to ) => {
 			selectedQuinaryColor = to;
 
-			if ( ! useColorsOverride || ! useAlternativeColors  ) {
+			if ( ! useColorsOverride ) {
 				return;
 			}
 			setQuinaryColor( to );

@@ -189,26 +189,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_alternative_colors',
-		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-		]
-	);
-
-	$wp_customize->add_control(
-		'maverick_alternative_colors_checkbox',
-		[
-			'label'       => esc_html__( 'Use alternative colors', 'maverick' ),
-			'description' => esc_html__( 'Check this option to change colors of the design style.', 'maverick' ),
-			'section'     => 'maverick_color_schemes_section',
-			'settings'    => 'maverick_alternative_colors',
-			'type'        => 'checkbox',
-		]
-	);
-
-	$wp_customize->add_setting(
 		'maverick_color_schemes',
 		[
 			'type'       => 'theme_mod',
@@ -711,7 +691,6 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
  * @return void
  */
 function css_variables() {
-	$alternative_colors = get_theme_mod( 'maverick_alternative_colors', false );
 	$primary_color      = get_palette_color( 'primary', 'HSL' );
 	$secondary_color    = get_palette_color( 'secondary', 'HSL' );
 	$tertiary_color     = get_palette_color( 'tertiary', 'HSL' );
@@ -722,7 +701,7 @@ function css_variables() {
 
 	<!-- Maverick CSS variable overrides -->
 	<style>
-		<?php if ( $alternative_colors && false !== $primary_color ) : ?>
+		<?php if ( false !== $primary_color ) : ?>
 			:root {
 				--USER-PRIMARY-HUE: <?php echo esc_attr( $primary_color[0] ); ?>;
 				--USER-PRIMARY-SATURATION: <?php echo esc_attr( $primary_color[1] ); ?>;
@@ -731,7 +710,7 @@ function css_variables() {
 			}
 		<?php endif; ?>
 
-		<?php if ( $alternative_colors && false !== $secondary_color ) : ?>
+		<?php if ( false !== $secondary_color ) : ?>
 			:root {
 				--USER-ACCENT-HUE: <?php echo esc_attr( $secondary_color[0] ); ?>;
 				--USER-ACCENT-SATURATION: <?php echo esc_attr( $secondary_color[1] ); ?>;
@@ -740,7 +719,7 @@ function css_variables() {
 			}
 		<?php endif; ?>
 
-		<?php if ( $alternative_colors && false !== $tertiary_color ) : ?>
+		<?php if ( false !== $tertiary_color ) : ?>
 			:root {
 				--USER-TERTIARY-HUE: <?php echo esc_attr( $tertiary_color[0] ); ?>;
 				--USER-TERTIARY-SATURATION: <?php echo esc_attr( $tertiary_color[1] ); ?>;
@@ -749,7 +728,7 @@ function css_variables() {
 			}
 		<?php endif; ?>
 
-		<?php if ( $alternative_colors && false !== $quaternary_color ) : ?>
+		<?php if ( false !== $quaternary_color ) : ?>
 			:root {
 				--USER-QUATERNARY-HUE: <?php echo esc_attr( $quaternary_color[0] ); ?>;
 				--USER-QUATERNARY-SATURATION: <?php echo esc_attr( $quaternary_color[1] ); ?>;
@@ -758,7 +737,7 @@ function css_variables() {
 			}
 		<?php endif; ?>
 
-		<?php if ( $alternative_colors && false !== $quinary_color ) : ?>
+		<?php if ( false !== $quinary_color ) : ?>
 			:root {
 				--USER-QUINARY-HUE: <?php echo esc_attr( $quinary_color[0] ); ?>;
 				--USER-QUINARY-SATURATION: <?php echo esc_attr( $quinary_color[1] ); ?>;
