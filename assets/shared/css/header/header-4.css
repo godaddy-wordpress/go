@@ -9,7 +9,7 @@
 		}
 	}
 
-	& .site-branding {
+	& .site-header .site-branding {
 		flex: 1;
 		justify-content: center;
 		text-align: center;

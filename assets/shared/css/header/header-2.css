@@ -1,12 +1,12 @@
 [data-header="header-2"] {
 
-	& .site-branding {
+	& .site-header .site-branding {
 		@media (--small) {
 			flex: auto 0;
 		}
 	}
 
-	& .site-branding__link {
+	& .site-header .site-branding__link {
 		@media (--small) {
 			order: 2;
 		}
