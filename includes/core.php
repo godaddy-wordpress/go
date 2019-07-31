@@ -254,17 +254,11 @@ function script_loader_tag( $tag, $handle ) {
  * @return array
  */
 function body_classes( $classes ) {
-	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
-	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
+	$design_style = get_theme_mod( 'maverick_design_style', get_default_design_style() );
 
 	// Design style variation body class.
 	if ( $design_style ) {
 		$classes[] = 'is-' . esc_attr( $design_style );
-	}
-
-	// Footer variation body class.
-	if ( $footer_variation ) {
-		$classes[] = 'is-' . esc_attr( $footer_variation );
 	}
 
 	// Add woo class whenever block is on page
