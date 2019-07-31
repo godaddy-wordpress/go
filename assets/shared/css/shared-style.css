@@ -234,7 +234,18 @@
 
 	.sm\:flex {
 		display: flex;
+	}
 
+	.sm\:flex-wrap {
+		flex-wrap: wrap;
+	}
+
+	.sm\:flex-nowrap {
+		flex-wrap: nowrap;
+	}
+
+	.sm\:justify-start {
+		justify-content: start;
 	}
 
 	.sm\:max-w-base {
@@ -258,6 +269,10 @@
 
 	.md\:flex-wrap {
 		flex-wrap: wrap;
+	}
+
+	.md\:flex-nowrap {
+		flex-wrap: nowrap;
 	}
 
 	.md\:max-w-base {
