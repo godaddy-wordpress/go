@@ -19,6 +19,7 @@
 	& .site-header .site-branding {
 		flex: 1 0 60%;
 		padding-left: 10px;
+		max-width: 100%;
 
 		@media (--medium) {
 			padding-left: 0;

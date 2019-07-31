@@ -35,8 +35,8 @@
 		--theme-block-spacing-huge: 8.5rem;
 	}
 
-	--theme-text-sm: 82.5%;
 	--theme-text-xs: 78%;
+	--theme-text-sm: 82.5%;
 	--theme-text-sm__letter-spacing: 0.015em;
 	--theme-text-md: 105%;
 
@@ -245,6 +245,7 @@
 	--theme-site-branding-title-color: var(--theme-h1-color);
 	--theme-site-branding-description-color: 0, 0%, 11%;
 	--theme-site-branding-font-family: var(--theme-font-family-heading);
+	--theme-site-branding-description__line-height: 1.4;
 	--theme-site-branding-description-opacity: 0.65;
 	--theme-site-branding-spacing-unit: var(--spacing-unit-2);
 	--theme-site-branding-dividing-border-color: var(--THEME-COLOR-SECONDARY);
