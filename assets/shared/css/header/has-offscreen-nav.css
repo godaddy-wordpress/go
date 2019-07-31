@@ -53,7 +53,7 @@
 		}
 	}
 
-	&.menu-is-open[data-header="header-2"] {
+	&.menu-is-open[data-header="header-3"] {
 
 		&::after {
 			background-color: hsla(var(--theme-has-offscreen-nav-overlay-color), 0.7);

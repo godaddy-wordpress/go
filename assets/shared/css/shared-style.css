@@ -318,6 +318,10 @@
 		justify-content: space-between;
 	}
 
+	.lg\:justify-center {
+		justify-content: center;
+	}
+
 	.lg\:justify-start {
 		justify-content: start;
 	}

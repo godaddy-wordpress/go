@@ -11,7 +11,7 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
 
-	<div class="site-header__inner flex items-center justify-between w-full max-w-wide m-auto">
+	<div class="site-header__inner flex lg:flex-column items-center justify-between w-full max-w-wide m-auto relative">
 
 		<?php Maverick\display_site_branding(); ?>
 
@@ -19,7 +19,7 @@
 
 			<?php Maverick\navigation_toggle(); ?>
 
-			<nav id="js-primary-menu" class="site-navigation c-site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			<nav id="js-primary-menu" class="site-navigation c-site-navigation lg:justify-center text-center" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
 				<?php
 					wp_nav_menu(

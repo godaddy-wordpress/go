@@ -50,11 +50,19 @@
 	}
 
 	/* Header */
-	--theme-header-background-color: 0, 0%, 100%; /* #ffffff */
+	--theme-header-background-color: 0, 0%, 100%;
 	--theme-header-padding-y: 1rem;
 
 	@media (--medium) {
 		--theme-header-padding-y: 1.5rem;
+	}
+
+	/* Header 3 */
+	--theme-header-3-padding-y: 3.5rem;
+	--theme-header-3-navigation-margin-top: 1.5rem;
+
+	@media (--large) {
+		--theme-header-3-padding-y: 8rem;
 	}
 
 	/* Page entry header spacing. */

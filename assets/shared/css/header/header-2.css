@@ -30,7 +30,8 @@
 	}
 
 	& .site-navigation__toggle {
-		margin-right: 1rem;
+		margin-left: -0.5rem;
+		margin-right: calc( var(--theme-block-padding-x) * .65);
 	}
 }
 
