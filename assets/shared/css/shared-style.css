@@ -22,6 +22,7 @@
 @import url("utilities/feedback.css");
 @import url("utilities/layout.css");
 @import url("utilities/wordpress.css");
+@import url("utilities/customizer.css");
 @import url("utilities/captions.css");
 @import url("utilities/accessibility.css");
 @import url("utilities/colorize.css");
@@ -109,70 +110,6 @@
 @import url("gravity/checkbox.css");
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
-
-
-
-[data-header="header-1"] {
-	& .site-header:not(.site-header--1) {
-		display: none;
-	}
-}
-
-[data-header="header-2"] {
-	& .site-header:not(.site-header--2) {
-		display: none;
-	}
-}
-
-[data-header="header-3"] {
-	& .site-header:not(.site-header--3) {
-		display: none;
-	}
-}
-
-[data-header="header-4"] {
-	& .site-header:not(.site-header--4) {
-		display: none;
-	}
-}
-
-[data-header="header-5"] {
-	& .site-header:not(.site-header--5) {
-		display: none;
-	}
-}
-
-[data-footer="footer-1"] {
-	& .site-footer:not(.site-footer--1) {
-		display: none;
-	}
-}
-
-[data-footer="footer-2"] {
-	& .site-footer:not(.site-footer--2) {
-		display: none;
-	}
-}
-
-[data-footer="footer-3"] {
-	& .site-footer:not(.site-footer--3) {
-		display: none;
-	}
-}
-
-[data-footer="footer-4"] {
-	& .site-footer:not(.site-footer--4) {
-		display: none;
-	}
-}
-
-
-
-
-
-
-
-
 
 .display-block {
 	display: block;
