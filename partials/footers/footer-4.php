@@ -15,7 +15,7 @@ $has_social_icons = Maverick\has_social_icons();
 
 	<div class="site-footer__inner m-auto max-w-wide px-1">
 
-		<div class="flex flex-wrap md:justify-start md:flex-nowrap">
+		<div class="flex flex-wrap lg:justify-start lg:flex-nowrap">
 
 			<?php Maverick\display_site_branding( array( 'description' => false ) ); ?>
 
