@@ -40,8 +40,8 @@
 		height: calc(100% - 70px);
 		left: 0;
 		opacity: 1;
-		padding-left: 0;
-		padding-right: 0;
+		padding-left: var(--theme-block-padding-x);
+		padding-right: var(--theme-block-padding-x);
 		position: fixed;
 		right: 0;
 		visibility: visible;
@@ -51,6 +51,10 @@
 			height: auto;
 			padding: 0;
 		}
+	}
+
+	&.menu-is-open .site-search__toggle {
+		display: none;
 	}
 
 	&.menu-is-open[data-header="header-3"] {
