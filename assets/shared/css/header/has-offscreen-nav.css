@@ -70,49 +70,106 @@
 		}
 	}
 
-	&.menu-is-open[data-header="header-4"] .site-navigation {
-		@media (--large) {
-			align-items: flex-start;
-			bottom: 0;
-			height: calc(100% - 100px);
-			left: 0;
-			overflow-y: scroll;
-			position: fixed;
-			right: 0;
+	&.menu-is-open[data-header="header-4"] {
+		height: 100%;
+		overflow: hidden;
+		position: fixed;
+		width: 100%;
 
-			& .primary-menu {
-				text-align: center;
+		& .site-navigation {
+			@media (--large) {
+				align-items: flex-start;
+				bottom: 0;
+				height: calc(100% - 98px);
+				left: 0;
+				overflow-y: scroll;
+				padding-left: 0;
+				position: fixed;
+				right: 0;
+				top: 98px;
 
-				& .sub-menu a,
-				& .menu-item {
-					padding-left: 0;
-					padding-right: 0;
+				& .primary-menu {
+					text-align: center;
+
+					& .sub-menu a,
+					& .menu-item {
+						padding-left: 0;
+						padding-right: 0;
+					}
+				}
+
+				& .sub-menu {
+					margin: 0;
 				}
 			}
-		}
 
-		/* We want it to be visible in this variant */
-		& [aria-hidden="true"] {
-			opacity: 1;
-			visibility: visible;
+			& .primary-menu a {
+				color: hsl(var(--theme-primary-menu-link-color));
+				text-transform: uppercase;
+
+				&::before {
+					background-color: hsl(var(--theme-primary-menu-link-color));
+				}
+			}
+
+			& .site-navigation .primary-menu .menu-item-has-children > [aria-haspopup] {
+				@media (--large) {
+					margin-left: 10px;
+				}
+			}
+
+			/* We want it to be visible in this variant */
+			& [aria-hidden="true"] {
+				opacity: 1;
+				visibility: visible;
+			}
 		}
 	}
 
-	&.menu-is-open[data-header="header-5"] .site-navigation {
-		align-items: flex-start;
+	&.menu-is-open[data-header="header-5"] {
+		bottom: 0;
 		height: 100%;
+		left: 0;
+		overflow-y: hidden;
+		position: static;
+		right: 0;
+		top: 0;
+		width: 100%;
+
+		& .site-navigation {
+			align-items: flex-start;
+			height: 100%;
+
+			& .primary-menu {
+				height: 100%;
+				overflow-y: scroll;
+			}
+
+			@media (--medium) {
+				width: 440px;
+			}
+
+			@media (--large) {
+				width: 600px;
+			}
+		}
 
 		& .primary-menu {
-			height: 100%;
-			overflow-y: scroll;
+			left: auto;
+			position: relative;
 		}
 
-		@media (--medium) {
-			width: 440px;
-		}
+		& .site-footer,
+		& .content-area,
+		& .site-header .site-branding,
+		& .site-search__toggle,
+		& .post__hero,
+		& .entry-header {
+			transform: translate3d(370px, 0, 0);
 
-		@media (--large) {
-			width: 600px;
+			@media (--large) {
+				transform: translate3d(500px, 0, 0);
+			}
 		}
 	}
 }

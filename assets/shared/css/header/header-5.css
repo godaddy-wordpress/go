@@ -102,11 +102,15 @@
 
 		& a {
 			color: hsl(var(--color-shark));
-			padding-left: 0;
-			padding-right: 0;
 
 			&::before {
 				background-color: hsl(var(--color-shark));
+			}
+		}
+
+		& .menu-item {
+			@media (--large) {
+				display: block;
 			}
 		}
 
@@ -117,16 +121,6 @@
 				&::after {
 					background-image: url("../../dist/shared/svg/arrow-down.svg");
 				}
-			}
-		}
-
-		& .menu-item {
-			padding-left: 0;
-
-			@media (--large) {
-				display: block;
-				padding-left: 1rem;
-				padding-right: 0;
 			}
 		}
 
@@ -142,7 +136,7 @@
 
 			@media (--large) {
 				left: auto;
-				margin-left: -1rem;
+				margin-left: 0;
 				margin-right: 0;
 				padding: 0;
 				position: relative;
@@ -184,11 +178,6 @@
 				display: block;
 			}
 		}
-
-		@media (--large) {
-			padding-left: 0;
-			padding-right: 0;
-		}
 	}
 
 	& .site-search {
@@ -215,29 +204,12 @@
 		@media (--full-width) {
 			right: 3rem;
 		}
-	}
 
-	& .is-open.c-site-search {
-		opacity: 1;
-		pointer-events: all;
-		transform: translateX(0);
-	}
-
-	&.blog .content-area,
-	&.archive .content-area {
-		margin-top: 0;
-	}
-
-	&.blog .content-area h1,
-	&.archive .content-area h1,
-	& .content-area .navigation.posts-navigation,
-	& .content-area .post.post--archive {
-		margin-left: 0;
-	}
-
-	&.blog .content-area h1,
-	&.archive .content-area h1 {
-		text-align: left;
+		&.is-open {
+			opacity: 1;
+			pointer-events: all;
+			transform: translateX(0);
+		}
 	}
 
 	& .site-footer,
@@ -248,44 +220,6 @@
 	& .entry-header {
 		transition: transform 0.2s ease-in-out;
 	}
-
-	&.menu-is-open {
-		bottom: 0;
-		height: 100%;
-		left: 0;
-		overflow-y: hidden;
-		position: static;
-		right: 0;
-		top: 0;
-		width: 100%;
-
-		& .site-footer,
-		& .content-area,
-		& .site-header .site-branding,
-		& .site-search__toggle,
-		& .post__hero,
-		& .entry-header {
-			transform: translate3d(370px, 0, 0);
-
-			@media (--large) {
-				transform: translate3d(500px, 0, 0);
-			}
-		}
-	}
-}
-
-/*
-Once the menu is open, we reset the positioning on the menu in order
-to have it appear in place. This is done to counter the fix that follows
-that was applied to prevent the flash of content.
-*/
-.menu-is-open[data-header="header-5"] .primary-menu {
-	left: auto;
-	position: relative;
-}
-
-.has-offscreen-nav.menu-is-open[data-header="header-5"] .site-navigation {
-	padding-left: 0;
 }
 
 .admin-bar[data-header="header-5"] .site-navigation {

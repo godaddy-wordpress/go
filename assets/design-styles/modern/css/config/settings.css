@@ -205,7 +205,7 @@
 	--theme-offscreen-nav-padding: var(--spacing-unit-4);
 
 	/* shared/css/header/site-search__toggle.css */
-	--theme-site-search__toggle-color: var(--THEME-COLOR-SECONDARY);
+	--theme-site-search__toggle-color: 0, 0%, 11%;
 	--theme-site-search__toggle-color-interactive: var(--THEME-COLOR-SECONDARY);
 	--theme-site-search__toggle-color-active: var(--THEME-COLOR-SECONDARY);
 	--theme-site-search__toggle-height: 22px;

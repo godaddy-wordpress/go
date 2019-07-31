@@ -8,8 +8,6 @@
  * Typically hidden on small screens and shown on larger.
  */
 .site-search__toggle {
-	--theme-button-block-padding: 0;
-
 	background-color: transparent;
 	border: none;
 	border-radius: 0;
@@ -18,7 +16,7 @@
 	display: none;
 	height: 50px;
 	line-height: 1;
-	padding: var(--theme-button-block-padding) !important;
+	padding: 0;
 	position: relative;
 	width: 50px;
 	z-index: 1;
