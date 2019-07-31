@@ -38,11 +38,11 @@ p {
 }
 
 .footer-navigation__title {
+	display: block;
 	font-family: var(--theme-heading-font-family);
 	font-size: var(--theme-primary-menu-link-font-size);
 	letter-spacing: 2px;
 	margin-bottom: 0.75rem;
-	display: block;
 	text-transform: uppercase;
 }
 
