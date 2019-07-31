@@ -481,15 +481,15 @@ function get_available_header_variations() {
 			},
 		],
 		'header-2' => [
-			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-vertical.svg',
+			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
 		'header-3' => [
-			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo.svg',
+			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-vertical.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
