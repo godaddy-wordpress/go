@@ -8,19 +8,15 @@
  * Typically hidden on small screens and shown on larger.
  */
 .site-search__toggle {
-	--theme-button-block-padding: 0;
-
 	background-color: transparent;
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
 	color: hsl(var(--theme-site-search__toggle-color));
-	display: none;
-	height: 50px;
+	display: inline-block;
 	line-height: 1;
-	padding: var(--theme-button-block-padding) !important;
+	padding: 0 0.4rem;
 	position: relative;
-	width: 50px;
 	z-index: 1;
 
 	@media (--large) {

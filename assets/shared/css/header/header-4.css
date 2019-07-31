@@ -9,174 +9,113 @@
 		}
 	}
 
-	/* In mobile view, this navigation system removes spacing
-	between itself and the content area */
-	& .content-area {
-		@media (max-width: 600px) {
-			margin-top: 0;
-		}
-	}
-
-	& .site-search__toggle {
-		color: hsla(var(--theme-site-navigation__toggle-color), 1);
-	}
-}
-
-.site-header--search-logo-nav .site-branding {
-	flex: 1;
-	justify-content: center;
-	text-align: center;
-}
-
-/* Off-screen navigation's navicon */
-.site-header--search-logo-nav .site-navigation__toggle {
-	display: block;
-	height: 70px;
-	width: 70px;
-}
-
-.site-header--search-logo-nav .site-navigation {
-	background-color: hsl(var(--color-gallery));
-
-	@media (--large) {
-		align-items: center;
-		flex-direction: row;
-		height: 0;
+	& .site-header .site-branding {
+		flex: 1;
 		justify-content: center;
-		opacity: 0;
-		overflow: hidden;
-		position: fixed;
-		width: auto;
-	}
-}
-
-.site-header--search-logo-nav .primary-menu {
-	margin-left: 0;
-	margin-right: 0;
-	width: 100%;
-
-	& .menu-item {
-		@media (--large) {
-			display: block;
-			padding-right: 0;
-		}
+		text-align: center;
 	}
 
-	/* Sub-menus */
-	& .sub-menu {
+	& .site-navigation__toggle {
+		display: block;
+	}
+
+	& .site-navigation {
+		background-color: hsl(var(--color-gallery));
+
 		@media (--large) {
-			left: auto;
-			padding: 0;
-			position: relative;
-			text-align: inherit;
-			top: auto;
-			transform: none;
+			align-items: center;
+			flex-direction: row;
+			height: 0;
+			justify-content: center;
+			opacity: 0;
+			overflow: hidden;
+			position: fixed;
 			width: auto;
 		}
-
-		&::before {
-			display: none;
-		}
 	}
 
-	& > .menu-item-has-children {
+	& .primary-menu {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
 
-		&:hover {
+		& .menu-item {
+			@media (--large) {
+				display: block;
+				padding-right: 0;
+			}
+		}
+
+		/* Sub-menus */
+		& .sub-menu {
+			@media (--large) {
+				left: auto;
+				padding: 0;
+				position: relative;
+				text-align: inherit;
+				top: auto;
+				transform: none;
+				width: auto;
+			}
+
+			&::before {
+				display: none;
+			}
+		}
+
+		& > .menu-item-has-children {
+
+			&:hover {
+
+				& > .sub-menu {
+					@media (--large) {
+						display: none;
+					}
+
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+
+		& > .menu-item-has-children.child-has-focus {
 
 			& > .sub-menu {
-				@media (--large) {
-					display: none;
-				}
-
-				&::before {
-					display: none;
-				}
+				display: block;
 			}
 		}
 	}
 
-	& > .menu-item-has-children.child-has-focus {
+	& .site-search {
+		left: 56px;
+		opacity: 0;
+		padding: var(--theme-spacing-unit) 0;
+		pointer-events: none;
+		position: absolute;
+		right: 0.5rem;
+		transform: translateX(-100%);
+		transition: opacity 175ms ease-out, transform ease-out 125ms;
+		z-index: 310;
 
-		& > .sub-menu {
-			display: block;
+		@media (--medium) {
+			right: 56px;
+		}
+
+		@media (--large) {
+			right: auto;
+		}
+
+		&.is-open {
+			opacity: 1;
+			pointer-events: all;
+			transform: translateX(0);
 		}
 	}
-}
-
-.site-header--search-logo-nav .site-search {
-	left: 56px;
-	opacity: 0;
-	padding: var(--theme-spacing-unit) 0;
-	pointer-events: none;
-	position: absolute;
-	right: 0.5rem;
-	transform: translateX(-100%);
-	transition: opacity 175ms ease-out, transform ease-out 125ms;
-	z-index: 310;
-
-	@media (--medium) {
-		right: 56px;
-	}
-
-	@media (--large) {
-		right: auto;
-	}
-}
-
-.site-header--search-logo-nav .is-open.c-site-search {
-	opacity: 1;
-	pointer-events: all;
-	transform: translateX(0);
-}
-
-.site-header--search-logo-nav .site-search__toggle {
-	display: inline-block;
-}
-
-.has-offscreen-nav.menu-is-open .site-header--search-logo-nav .site-navigation {
-
-	/* Override all menu link colors, which includes sub-menus here because of
-	specificity. This allows links to appear in unison. This style also displays
-	mobile nav system on desktop, so no need to restore the sub-menu link colors
-	in a media query */
-	& .primary-menu a {
-		color: hsl(var(--theme-primary-menu-link-color));
-		text-transform: uppercase;
-
-		&::before {
-			background-color: hsl(var(--theme-primary-menu-link-color));
-		}
-	}
-
-	@media (--large) {
-		padding-left: 0;
-		top: 100px;
-
-		& .sub-menu {
-			margin: 0;
-		}
-	}
-}
-
-/* Counters the ddown arrow for better center alignment */
-.has-offscreen-nav.menu-is-open.is-header-search-logo-nav .site-navigation .primary-menu .menu-item-has-children > [aria-haspopup] {
-	@media (--large) {
-		margin-left: 10px;
-	}
-}
-
-/* Prevent scrolling page when nav is open.
-Because this variant only uses mobile nav to full width, we
-apply this fix to the full design style. */
-body.menu-is-open.is-header-search-logo-nav {
-	height: 100%;
-	overflow: hidden;
-	position: fixed;
-	width: 100%;
 }
 
 /* When admin bar is on */
-body.admin-bar.has-offscreen-nav.menu-is-open .site-header--search-logo-nav .site-navigation {
+body.admin-bar.has-offscreen-nav.menu-is-open[data-header="header-4"] .site-navigation {
 	height: calc(100% - 116px);
 	top: 116px;
 

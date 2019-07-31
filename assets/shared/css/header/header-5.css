@@ -9,31 +9,46 @@
 		}
 	}
 
-	& .site-header,
-	& .site-footer,
-	& .content-area {
-		@media (--medium) {
-			padding-left: 70px; /* Same as the width of the .site-navigation */
-		}
-
-		@media (--large) {
-			padding-left: 100px; /* Same as the width of the .site-navigation */
-		}
-	}
-
 	& .site-header__inner {
 		@media (--small) {
-			padding-bottom: calc(var(--theme-header-padding-y) * 1.25);
-			padding-top: calc(var(--theme-header-padding-y) * 1.25);
+			padding-bottom: calc(var(--theme-header-padding-y) * 1.75);
+			padding-top: calc(var(--theme-header-padding-y) * 1.75);
 		}
 	}
 
-	& .site-branding {
+	& .site-header .site-branding {
 		flex: 1 0 60%;
-		padding-left: 20px;
+		padding-left: 10px;
 
 		@media (--medium) {
 			padding-left: 0;
+		}
+	}
+
+	& .site-navigation {
+		background-color: hsl(var(--color-white));
+		bottom: 0;
+		height: 70px;
+		left: 0;
+		position: relative;
+		top: 0;
+		transition: width 0.2s ease;
+		width: 70px;
+		z-index: 1000;
+
+		&[aria-hidden="true"] .primary-menu {
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		@media (--medium) {
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+			height: 100%;
+			position: fixed;
+		}
+
+		@media (--large) {
+			width: 100px;
 		}
 	}
 
@@ -41,6 +56,7 @@
 		background-color: hsl(var(--theme-site-navigation__toggle-background-color));
 		display: block;
 		height: 70px;
+		margin: 0;
 		position: absolute;
 		right: 0;
 		top: 0;
@@ -57,55 +73,33 @@
 		color: hsla(var(--theme-site-navigation__toggle-color), 1);
 	}
 
-	&.blog .content-area,
-	&.archive .content-area {
-		margin-top: 0;
-	}
-
-	&.blog .content-area h1,
-	&.archive .content-area h1,
-	& .content-area .navigation.posts-navigation,
-	& .content-area .post.post--archive {
-		margin-left: 0;
-	}
-
-	&.blog .content-area h1,
-	&.archive .content-area h1 {
-		text-align: left;
-	}
-
+	& .site-header,
 	& .site-footer,
-	& .content-area,
-	& .site-header .site-branding,
-	& .site-search__toggle,
-	& .post__hero {
-		transition: transform 0.2s ease-in-out;
-	}
+	& .entry-header,
+	& .content-area {
+		@media (--medium) {
+			padding-left: 70px; /* Same as the width of the .site-navigation */
+		}
 
-	&.menu-is-open {
-		bottom: 0;
-		height: 100%;
-		left: 0;
-		overflow-y: hidden;
-		position: static;
-		right: 0;
-		top: 0;
-		width: 100%;
-
-		& .site-footer,
-		& .content-area,
-		& .site-header .site-branding,
-		& .site-search__toggle,
-		& .post__hero {
-			transform: translate3d(370px, 0, 0);
-
-			@media (--large) {
-				transform: translate3d(500px, 0, 0);
-			}
+		@media (--large) {
+			padding-left: 100px; /* Same as the width of the .site-navigation */
 		}
 	}
 
+	/*
+	Because we're doing a full height reveal container on the navigation,
+	there is a flash of nav items, since we need to wait for the JS to load
+	in order to provide the aria controls. To counter this flash, we temporarily
+	position the menu items offscreen using left and absolute positioning.
+	*/
 	& .primary-menu {
+		left: -5000px;
+		margin-right: 0;
+		overflow-y: scroll;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		position: absolute;
+		width: 100%;
 
 		& a {
 			color: hsl(var(--color-shark));
@@ -115,188 +109,121 @@
 			}
 		}
 
-		/* A toggling parent item with children */
+		& .menu-item {
+			@media (--large) {
+				display: block;
+			}
+		}
+
 		& .menu-item-has-children {
 
-			/* Add a small ddown arrow */
 			& > [aria-haspopup] {
 
 				&::after {
 					background-image: url("../../dist/shared/svg/arrow-down.svg");
 				}
 			}
-
-
 		}
-	}
-}
-
-.site-header--nav-logo-search .site-navigation {
-	background-color: hsl(var(--color-white));
-	bottom: 0;
-	height: 70px;
-	left: 0;
-	position: relative;
-	top: 0;
-	transition: width 0.2s ease;
-	width: 70px;
-	z-index: 1000;
-
-	&[aria-hidden="true"] .primary-menu {
-		opacity: 0;
-		pointer-events: none;
-	}
-
-	@media (--medium) {
-		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-		height: 100%;
-		position: fixed;
-	}
-
-	@media (--large) {
-		width: 100px;
-	}
-}
-
-/*
-Once the menu is open, we reset the positioning on the menu in order
-to have it appear in place. This is done to counter the fix that follows
-that was applied to prevent the flash of content.
-*/
-.menu-is-open .site-header--nav-logo-search .primary-menu {
-	left: auto;
-	position: relative;
-}
-
-/*
-Because we're doing a full height reveal container on the navigation,
-there is a flash of nav items, since we need to wait for the JS to load
-in order to provide the aria controls. To counter this flash, we temporarily
-position the menu items offscreen using left and absolute positioning.
-*/
-.site-header--nav-logo-search .primary-menu {
-	left: -5000px;
-	margin-right: 0;
-	overflow-y: scroll;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	position: absolute;
-	width: 100%;
-
-	& a {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
-	& .menu-item {
-		padding-left: 0;
-
-		@media (--large) {
-			display: block;
-			padding-left: 1rem;
-			padding-right: 0;
-		}
-	}
-
-	/* Sub-menus */
-	& .sub-menu {
-		margin-left: -1rem;
-		margin-right: -1rem;
-		padding: 0 1rem;
 
 		& .sub-menu {
-			margin: 0 -1rem;
+			margin-left: -1rem;
+			margin-right: -1rem;
 			padding: 0 1rem;
+
+			& .sub-menu {
+				margin: 0 -1rem;
+				padding: 0 1rem;
+			}
+
+			@media (--large) {
+				left: auto;
+				margin-left: 0;
+				margin-right: 0;
+				padding: 0;
+				position: relative;
+				text-align: inherit;
+				top: auto;
+				transform: none;
+				width: auto;
+
+				& .sub-menu {
+					margin: 0 0 0 -2rem;
+					padding-left: 1rem;
+				}
+			}
+
+			&::before {
+				display: none;
+			}
+		}
+
+		& > .menu-item-has-children {
+
+			&:hover {
+
+				& > .sub-menu {
+					@media (--large) {
+						display: none;
+					}
+
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+
+		& > .menu-item-has-children.child-has-focus {
+
+			& > .sub-menu {
+				display: block;
+			}
+		}
+	}
+
+	& .site-search {
+		left: 1rem;
+		opacity: 0;
+		padding: var(--theme-spacing-unit) 0;
+		pointer-events: none;
+		position: absolute;
+		right: 5rem;
+		transform: translateX(40%);
+		transition: opacity 175ms ease-out, transform ease-out 125ms;
+		z-index: 1200;
+
+		@media (--medium) {
+			left: 6rem;
 		}
 
 		@media (--large) {
 			left: auto;
-			margin-left: -1rem;
-			margin-right: 0;
-			padding: 0;
-			position: relative;
-			text-align: inherit;
-			top: auto;
-			transform: none;
-			width: auto;
-
-			& .sub-menu {
-				margin: 0 0 0 -2rem;
-				padding-left: 1rem;
-			}
+			padding: var(--theme-spacing-unit) var(--theme-spacing-unit-2);
+			right: 4rem;
 		}
 
-		&::before {
-			display: none;
+		@media (--full-width) {
+			right: 3rem;
+		}
+
+		&.is-open {
+			opacity: 1;
+			pointer-events: all;
+			transform: translateX(0);
 		}
 	}
 
-	& > .menu-item-has-children {
-
-		&:hover {
-
-			& > .sub-menu {
-				@media (--large) {
-					display: none;
-				}
-
-				&::before {
-					display: none;
-				}
-			}
-		}
-	}
-
-	& > .menu-item-has-children.child-has-focus {
-
-		& > .sub-menu {
-			display: block;
-		}
-	}
-
-	@media (--large) {
-		padding-left: 0;
-		padding-right: 0;
+	& .site-footer,
+	& .content-area,
+	& .site-header .site-branding,
+	& .site-search__toggle,
+	& .post__hero,
+	& .entry-header {
+		transition: transform 0.2s ease-in-out;
 	}
 }
 
-.site-header--nav-logo-search .site-search {
-	left: 1rem;
-	opacity: 0;
-	padding: var(--theme-spacing-unit) 0;
-	pointer-events: none;
-	position: absolute;
-	right: 5rem;
-	transform: translateX(40%);
-	transition: opacity 175ms ease-out, transform ease-out 125ms;
-	z-index: 1200;
-
-	@media (--medium) {
-		left: 6rem;
-	}
-
-	@media (--large) {
-		left: auto;
-		padding: var(--theme-spacing-unit) var(--theme-spacing-unit-2);
-		right: 4rem;
-	}
-
-	@media (--full-width) {
-		right: 3rem;
-	}
-}
-
-.site-header--nav-logo-search .is-open.c-site-search {
-	opacity: 1;
-	pointer-events: all;
-	transform: translateX(0);
-}
-
-body.has-offscreen-nav.menu-is-open .site-header--nav-logo-search .site-navigation {
-	padding-left: 0;
-}
-
-body.admin-bar .site-header--nav-logo-search .site-navigation {
+.admin-bar[data-header="header-5"] .site-navigation {
 	top: 0;
 
 	@media (--medium) {
@@ -304,7 +231,7 @@ body.admin-bar .site-header--nav-logo-search .site-navigation {
 	}
 }
 
-body.admin-bar.menu-is-open.has-offscreen-nav .site-header--nav-logo-search .site-navigation {
+.admin-bar.menu-is-open.has-offscreen-nav[data-header="header-5"] .site-navigation {
 	height: calc(100% - 46px);
 	top: 46px;
 

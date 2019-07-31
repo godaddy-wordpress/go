@@ -1,135 +1,179 @@
 /**
- * Has offscreen navigation
+ * Offscreen navigation
  */
 
-/* We have overlay menu initiated and want to hide submenus */
-.has-offscreen-nav .sub-menu[aria-hidden="true"] {
-	display: none;
-	opacity: 0;
-	visibility: hidden;
-}
+.has-offscreen-nav {
 
-/* When overlay menu is opened */
-.has-offscreen-nav.menu-is-open .primary-menu {
-	padding-bottom: var(--theme-spacing-unit-5);
-	padding-top: var(--theme-spacing-unit-5);
-	z-index: 11;
-
-	& .menu-item {
-		padding-bottom: 0.75rem;
-		padding-top: 0.75rem;
+	& .site-navigation {
+		opacity: 1;
 	}
-}
 
-/* Menu overlay */
-.has-offscreen-nav .site-navigation {
-	opacity: 1;
-}
-
-.has-offscreen-nav.menu-is-open .site-navigation {
-	bottom: 0;
-	height: calc(100% - 70px);
-	left: 0;
-	opacity: 1;
-	padding-left: 0;
-	padding-right: 0;
-	position: fixed;
-	right: 0;
-	visibility: visible;
-	width: 100%;
-
-	@media (--large) {
-		height: auto;
-		padding: 0;
+	& .primary-menu .sub-menu {
+		background-color: hsla(var(--color-shark), 0.1);
+		margin: 0 0 0 -2rem;
+		padding: 0 0 0 2rem;
 	}
-}
 
-/**
- * Header variant customizations.
- */
+	& .primary-menu .sub-menu .sub-menu {
+		background-color: hsla(var(--color-shark), 0.1);
+	}
 
-/* Header: Search | Logo | Nav */
+	& .sub-menu[aria-hidden="true"] {
+		display: none;
+		opacity: 0;
+		visibility: hidden;
+	}
 
-/* Menu is toggled open */
-.has-offscreen-nav.menu-is-open[data-header="header-4"] .site-navigation {
-	@media (--large) {
-		align-items: flex-start;
+	&.menu-is-open .primary-menu {
+		padding-bottom: var(--theme-spacing-unit-5);
+		padding-top: var(--theme-spacing-unit-5);
+		z-index: 11;
+
+		& .menu-item {
+			padding-bottom: 0.75rem;
+			padding-top: 0.75rem;
+		}
+	}
+
+	&.menu-is-open .site-navigation {
 		bottom: 0;
-		height: calc(100% - 100px);
+		height: calc(100% - 70px);
 		left: 0;
-		overflow-y: scroll;
+		opacity: 1;
+		padding-left: var(--theme-block-padding-x);
+		padding-right: var(--theme-block-padding-x);
 		position: fixed;
 		right: 0;
+		visibility: visible;
+		width: 100%;
 
-		& .primary-menu {
-			text-align: center;
+		@media (--large) {
+			height: auto;
+			padding: 0;
+		}
+	}
 
-			& .sub-menu a,
-			& .menu-item {
+	&.menu-is-open .site-search__toggle {
+		display: none;
+	}
+
+	&.menu-is-open[data-header="header-3"] {
+
+		&::after {
+			background-color: hsla(var(--theme-has-offscreen-nav-overlay-color), 0.7);
+			bottom: 0;
+			content: "";
+			display: block;
+			height: 100%;
+			left: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+			width: 100%;
+			z-index: 10;
+		}
+	}
+
+	&.menu-is-open[data-header="header-4"] {
+		height: 100%;
+		overflow: hidden;
+		position: fixed;
+		width: 100%;
+
+		& .site-navigation {
+			@media (--large) {
+				align-items: flex-start;
+				bottom: 0;
+				height: calc(100% - 98px);
+				left: 0;
+				overflow-y: scroll;
 				padding-left: 0;
-				padding-right: 0;
+				position: fixed;
+				right: 0;
+				top: 98px;
+
+				& .primary-menu {
+					text-align: center;
+
+					& .sub-menu a,
+					& .menu-item {
+						padding-left: 0;
+						padding-right: 0;
+					}
+				}
+
+				& .sub-menu {
+					margin: 0;
+				}
+			}
+
+			& .primary-menu a {
+				color: hsl(var(--theme-primary-menu-link-color));
+				text-transform: uppercase;
+
+				&::before {
+					background-color: hsl(var(--theme-primary-menu-link-color));
+				}
+			}
+
+			& .site-navigation .primary-menu .menu-item-has-children > [aria-haspopup] {
+				@media (--large) {
+					margin-left: 10px;
+				}
+			}
+
+			/* We want it to be visible in this variant */
+			& [aria-hidden="true"] {
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 	}
 
-	/* We want it to be visible in this variant */
-	& [aria-hidden="true"] {
-		opacity: 1;
-		visibility: visible;
-	}
-}
-
-/* Header: Nav | Logo | Search */
-
-/* Give main content area an overlay when menu is open */
-.has-offscreen-nav.menu-is-open[data-header="header-2"] {
-
-	&::after {
-		background-color: hsla(var(--theme-has-offscreen-nav-overlay-color), 0.7);
+	&.menu-is-open[data-header="header-5"] {
 		bottom: 0;
-		content: "";
-		display: block;
 		height: 100%;
 		left: 0;
-		position: fixed;
+		overflow-y: hidden;
+		position: static;
 		right: 0;
 		top: 0;
 		width: 100%;
-		z-index: 10;
+
+		& .site-navigation {
+			align-items: flex-start;
+			height: 100%;
+
+			& .primary-menu {
+				height: 100%;
+				overflow-y: scroll;
+			}
+
+			@media (--medium) {
+				width: 440px;
+			}
+
+			@media (--large) {
+				width: 600px;
+			}
+		}
+
+		& .primary-menu {
+			left: auto;
+			position: relative;
+		}
+
+		& .site-footer,
+		& .content-area,
+		& .site-header .site-branding,
+		& .site-search__toggle,
+		& .post__hero,
+		& .entry-header {
+			transform: translate3d(370px, 0, 0);
+
+			@media (--large) {
+				transform: translate3d(500px, 0, 0);
+			}
+		}
 	}
-}
-
-/* Offscreen navigation drawer */
-.has-offscreen-nav.menu-is-open .site-header--nav-logo-search .site-navigation {
-	align-items: flex-start;
-	height: 100%;
-
-	& .primary-menu {
-		height: 100%;
-		overflow-y: scroll;
-	}
-
-	@media (--medium) {
-		width: 440px;
-	}
-
-	@media (--large) {
-		width: 600px;
-	}
-}
-
-/* Remove padding from menu when in admin */
-.admin-bar.has-offscreen-nav.menu-is-open .site-header--nav-logo-search .primary-menu {
-	padding-top: 0;
-}
-
-/* Submenus have lighter background */
-.has-offscreen-nav .primary-menu .sub-menu {
-	background-color: hsla(var(--color-shark), 0.1);
-	margin: 0 0 0 -2rem;
-	padding: 0 0 0 2rem;
-}
-
-.has-offscreen-nav .primary-menu .sub-menu .sub-menu {
-	background-color: hsla(var(--color-shark), 0.1);
 }

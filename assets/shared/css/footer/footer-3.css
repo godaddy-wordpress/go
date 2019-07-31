@@ -10,15 +10,22 @@
 	}
 
 	& .footer-navigation {
+		text-align: center;
+
 		@media (--medium) {
 			flex: 1 65%;
+			text-align: left;
 		}
 
 		& li {
-			display: inline-block;
+			@media (--medium) {
+				display: inline-block;
+			}
 
 			&:first-child a {
-				padding-left: 0;
+				@media (--medium) {
+					padding-left: 0;
+				}
 			}
 		}
 
@@ -29,6 +36,10 @@
 
 	& .social-icons {
 		margin-top: 1rem;
+
+		@media (--medium) {
+			margin-top: 0;
+		}
 
 		& a {
 			padding-left: calc(var(--theme-footer-social-icon-spacing) * 0.75);

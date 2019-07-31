@@ -50,11 +50,19 @@
 	}
 
 	/* Header */
-	--theme-header-background-color: 0, 0%, 100%; /* #ffffff */
+	--theme-header-background-color: 0, 0%, 100%;
 	--theme-header-padding-y: 1rem;
 
 	@media (--medium) {
 		--theme-header-padding-y: 1.5rem;
+	}
+
+	/* Header 3 */
+	--theme-header-3-padding-y: 3.5rem;
+	--theme-header-3-navigation-margin-top: 1.5rem;
+
+	@media (--large) {
+		--theme-header-3-padding-y: 8rem;
 	}
 
 	/* Page entry header spacing. */
@@ -193,8 +201,8 @@
 	--theme-site-navigation__toggle-color: var(--THEME-COLOR-HEADING);
 	--theme-site-navigation__toggle-color-interactive: var(--THEME-COLOR-PRIMARY);
 	--theme-site-navigation__toggle-color-active: var(--THEME-COLOR-SECONDARY);
-	--theme-site-navigation__toggle-height: var(--spacing-unit-4);
-	--theme-site-navigation__toggle-width: var(--spacing-unit-4);
+	--theme-site-navigation__toggle-height: 2rem;
+	--theme-site-navigation__toggle-width: 2rem;
 	--theme-site-navigation__toggle-transition-duration: var(--transition-duration);
 	--theme-site-navigation__toggle-easing-function: var(--transition-easing-function);
 	--theme-site-navigation__toggle-spacing-unit: var(--spacing-unit);
@@ -205,7 +213,7 @@
 	--theme-offscreen-nav-padding: var(--spacing-unit-4);
 
 	/* shared/css/header/site-search__toggle.css */
-	--theme-site-search__toggle-color: var(--THEME-COLOR-SECONDARY);
+	--theme-site-search__toggle-color: 0, 0%, 11%;
 	--theme-site-search__toggle-color-interactive: var(--THEME-COLOR-SECONDARY);
 	--theme-site-search__toggle-color-active: var(--THEME-COLOR-SECONDARY);
 	--theme-site-search__toggle-height: 22px;

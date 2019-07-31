@@ -15,7 +15,7 @@ $has_social_icons = Maverick\has_social_icons();
 
 	<div class="site-footer__inner m-auto max-w-wide px-1">
 
-		<div class="site-footer__row site-footer__row--1 flex flex-wrap lg:justify-start lg:flex-nowrap">
+		<div class="flex flex-wrap md:justify-start md:flex-nowrap">
 
 			<?php Maverick\display_site_branding( array( 'description' => false ) ); ?>
 
@@ -75,7 +75,7 @@ $has_social_icons = Maverick\has_social_icons();
 		</div>
 
 		<?php if ( $has_social_icons || ! empty( $footer_copy_text ) ) : ?>
-			<div class="site-footer__row site-footer__row--2 flex flex-column md:flex-row justify-between md:items-center">
+			<div class="site-footer__row flex flex-column md:flex-row justify-between md:items-center">
 				<?php if ( ! empty( $footer_copy_text ) ) : ?>
 					<p class="site-info mb-0 text-sm">
 						<?php echo esc_html( $footer_copy_text ); ?>

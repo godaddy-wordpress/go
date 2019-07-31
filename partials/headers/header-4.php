@@ -13,7 +13,7 @@
 
 	<div class="site-header__inner flex items-center justify-center w-full max-w-wide m-auto relative">
 
-		<button id="js-site-search__toggle" class="site-search__toggle c-site-search__toggle" type="button" aria-controls="js-site-search">
+		<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
 			<?php echo Maverick\load_inline_svg( 'search.svg' ); // phpcs:ignore ?>
 			<span class="screen-reader-text"><?php esc_html_e( 'Search Toggle', 'maverick' ); ?></span>
 		</button>
