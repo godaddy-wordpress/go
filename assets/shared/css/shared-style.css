@@ -11,6 +11,7 @@
 @import url("config/media-queries.css");
 @import url("config/animations.css");
 @import url("config/colors-global.css");
+@import url("config/editor-font-sizes.css");
 @import url("config/layout.css");
 @import url("config/typography.css");
 @import url("config/z-index.css");
@@ -24,6 +25,7 @@
 @import url("utilities/captions.css");
 @import url("utilities/accessibility.css");
 @import url("utilities/colorize.css");
+@import url("utilities/font-sizes.css");
 
 /* Elements - all the HTML elements coverage */
 @import url("elements/buttons.css");
