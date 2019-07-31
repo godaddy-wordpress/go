@@ -312,12 +312,14 @@ function site_branding( $args = [] ) {
  * @return void
  */
 function navigation_toggle() {
-	echo '<button id="js-site-navigation__toggle" class="site-navigation__toggle c-site-navigation__toggle" type="button" aria-controls="js-primary-menu">';
-		echo '<div class="site-navigation__toggle-icon">';
-			echo '<div class="site-navigation__toggle-icon-inner"></div>';
-		echo '</div>';
-		echo '<span class="screen-reader-text">' . __( 'Menu', 'maverick' ) . '</span>';
-	echo '</button>';
+	?>
+	<button id="js-site-navigation__toggle" class="site-navigation__toggle c-site-navigation__toggle" type="button" aria-controls="js-primary-menu">
+		<div class="site-navigation__toggle-icon">
+			<div class="site-navigation__toggle-icon-inner"></div>
+		</div>
+		<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'maverick' ); ?></span>
+	</button>
+	<?php
 }
 
 /**
