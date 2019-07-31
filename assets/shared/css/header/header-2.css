@@ -1,8 +1,32 @@
 [data-header="header-2"] {
 
 	& .site-branding {
-		@media (--large) {
+		@media (--small) {
 			flex: auto 0;
+		}
+	}
+
+	& .site-branding__link {
+		@media (--small) {
+			order: 2;
+		}
+
+		& + .site-branding__description {
+
+			@media (--small) {
+				margin-right: 0.5rem;
+				padding-right: 1.75rem;
+				padding-left: 0;
+				margin-left: 0;
+			}
+
+			&::before {
+				@media (--small) {
+					left: auto;
+					right: 10px;
+					width: 1px;
+				}
+			}
 		}
 	}
 
