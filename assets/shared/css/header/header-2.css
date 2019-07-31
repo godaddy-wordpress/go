@@ -12,12 +12,11 @@
 		}
 
 		& + .site-branding__description {
-
 			@media (--small) {
-				margin-right: 0.5rem;
-				padding-right: 1.75rem;
-				padding-left: 0;
 				margin-left: 0;
+				margin-right: 0.5rem;
+				padding-left: 0;
+				padding-right: 1.75rem;
 			}
 
 			&::before {
