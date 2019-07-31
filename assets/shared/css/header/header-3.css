@@ -9,8 +9,8 @@
 		}
 
 		@media (--large) {
-			padding-bottom: calc(var(--theme-spacing-unit) * 10);
-			padding-top: calc(var(--theme-spacing-unit) * 10);
+			padding-bottom: calc(var(--theme-spacing-unit) * 12);
+			padding-top: calc(var(--theme-spacing-unit) * 12);
 		}
 
 		@media (--large) {
