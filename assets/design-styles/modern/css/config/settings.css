@@ -193,8 +193,8 @@
 	--theme-site-navigation__toggle-color: var(--THEME-COLOR-HEADING);
 	--theme-site-navigation__toggle-color-interactive: var(--THEME-COLOR-PRIMARY);
 	--theme-site-navigation__toggle-color-active: var(--THEME-COLOR-SECONDARY);
-	--theme-site-navigation__toggle-height: var(--spacing-unit-4);
-	--theme-site-navigation__toggle-width: var(--spacing-unit-4);
+	--theme-site-navigation__toggle-height: 2rem;
+	--theme-site-navigation__toggle-width: 2rem;
 	--theme-site-navigation__toggle-transition-duration: var(--transition-duration);
 	--theme-site-navigation__toggle-easing-function: var(--transition-easing-function);
 	--theme-site-navigation__toggle-spacing-unit: var(--spacing-unit);
