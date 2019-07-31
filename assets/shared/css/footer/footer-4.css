@@ -17,11 +17,16 @@
 		align-items: flex-start;
 		flex: 0 0 100%;
 		margin-bottom: calc(var(--theme-footer-spacing) * 0.55);
+		max-width: 100%;
 
-		@media (--medium) {
+		@media (--large) {
 			flex: 0 0 28%;
 			margin-bottom: 0;
 			padding-right: 1rem;
+		}
+
+		& .site-branding__description {
+			display: none;
 		}
 	}
 
