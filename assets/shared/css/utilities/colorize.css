@@ -20,3 +20,27 @@
 .has-secondary-color {
 	color: hsl(var(--THEME-COLOR-SECONDARY));
 }
+
+.has-tertiary-background-color {
+	background-color: hsl(var(--THEME-COLOR-TERTIARY));
+}
+
+.has-tertiary-color {
+	color: hsl(var(--THEME-COLOR-TERTIARY));
+}
+
+.has-quaternary-background-color {
+	background-color: hsl(var(--THEME-COLOR-QUATERNARY));
+}
+
+.has-quaternary-color {
+	color: hsl(var(--THEME-COLOR-QUATERNARY));
+}
+
+.has-quinary-background-color {
+	background-color: hsl(var(--THEME-COLOR-QUINARY));
+}
+
+.has-quinary-color {
+	color: hsl(var(--THEME-COLOR-QUINARY));
+}

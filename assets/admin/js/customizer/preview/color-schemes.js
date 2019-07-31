@@ -7,6 +7,9 @@ export default () => {
 	let useColorsOverride;
 	let selectedPrimaryColor;
 	let selectedSecondaryColor;
+	let selectedTertiaryColor;
+	let selectedQuaternaryColor;
+	let selectedQuinaryColor;
 	let selectedDesignStyle;
 	let selectedColorScheme;
 
@@ -34,6 +37,45 @@ export default () => {
 		document.documentElement.style.setProperty( '--USER-SECONDARY-SATURATION', hsl[1] );
 		document.documentElement.style.setProperty( '--USER-SECONDARY-LIGHTNESS', hsl[2] );
 		document.documentElement.style.setProperty( '--USER-COLOR-SECONDARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+	};
+
+	/**
+	 * Set tertiary color
+	 *
+	 * @param {*} color
+	 */
+	const setTertiaryColor = ( color ) => {
+		const hsl = hexToHSL( color );
+		document.documentElement.style.setProperty( '--USER-TERTIARY-HUE', hsl[0] );
+		document.documentElement.style.setProperty( '--USER-TERTIARY-SATURATION', hsl[1] );
+		document.documentElement.style.setProperty( '--USER-TERTIARY-LIGHTNESS', hsl[2] );
+		document.documentElement.style.setProperty( '--USER-COLOR-TERTIARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+	};
+
+	/**
+	 * Set quaternary color
+	 *
+	 * @param {*} color
+	 */
+	const setQuaternaryColor = ( color ) => {
+		const hsl = hexToHSL( color );
+		document.documentElement.style.setProperty( '--USER-QUATERNARY-HUE', hsl[0] );
+		document.documentElement.style.setProperty( '--USER-QUATERNARY-SATURATION', hsl[1] );
+		document.documentElement.style.setProperty( '--USER-QUATERNARY-LIGHTNESS', hsl[2] );
+		document.documentElement.style.setProperty( '--USER-COLOR-QUATERNARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+	};
+
+	/**
+	 * Set quinary color
+	 *
+	 * @param {*} color
+	 */
+	const setQuinaryColor = ( color ) => {
+		const hsl = hexToHSL( color );
+		document.documentElement.style.setProperty( '--USER-QUINARY-HUE', hsl[0] );
+		document.documentElement.style.setProperty( '--USER-QUINARY-SATURATION', hsl[1] );
+		document.documentElement.style.setProperty( '--USER-QUINARY-LIGHTNESS', hsl[2] );
+		document.documentElement.style.setProperty( '--USER-COLOR-QUINARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
 	/**
@@ -72,11 +114,17 @@ export default () => {
 		if ( useColorsOverride ) {
 			setPrimaryColor( selectedPrimaryColor );
 			setSecondaryColor( selectedSecondaryColor );
+			setTertiaryColor( selectedTertiaryColor );
+			setQuaternaryColor( selectedQuaternaryColor );
+			setQuinaryColor( selectedQuinaryColor );
 		} else {
 			const designStyle = getDesignStyle( selectedDesignStyle );
 			const colors = designStyle.color_schemes[ selectedColorScheme ];
 			setPrimaryColor( colors['primary_color'] );
-			setSecondaryColor( colors['secondary_color'] );
+			setSecondaryColor( colors[ 'secondary_color' ] );
+			setTertiaryColor( colors[ 'tertiary_color' ] );
+			setQuaternaryColor( colors[ 'quaternary_color' ] );
+			setQuinaryColor( colors[ 'quinary_color' ] );
 		}
 	};
 
@@ -150,6 +198,42 @@ export default () => {
 				return;
 			}
 			setSecondaryColor( to );
+		} );
+	} );
+
+	wp.customize( 'maverick_custom_tertiary_color', ( value ) => {
+		selectedTertiaryColor = value.get();
+		value.bind( ( to ) => {
+			selectedTertiaryColor = to;
+
+			if ( ! useColorsOverride || ! useAlternativeColors  ) {
+				return;
+			}
+			setTertiaryColor( to );
+		} );
+	} );
+
+	wp.customize( 'maverick_custom_quaternary_color', ( value ) => {
+		selectedQuaternaryColor = value.get();
+		value.bind( ( to ) => {
+			selectedQuaternaryColor = to;
+
+			if ( ! useColorsOverride || ! useAlternativeColors  ) {
+				return;
+			}
+			setQuaternaryColor( to );
+		} );
+	} );
+
+	wp.customize( 'maverick_custom_quinary_color', ( value ) => {
+		selectedQuinaryColor = value.get();
+		value.bind( ( to ) => {
+			selectedQuinaryColor = to;
+
+			if ( ! useColorsOverride || ! useAlternativeColors  ) {
+				return;
+			}
+			setQuinaryColor( to );
 		} );
 	} );
 };
