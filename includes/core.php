@@ -75,7 +75,7 @@ function theme_setup() {
 	add_theme_support( 'disable-custom-font-sizes' );
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'align-wide' );
-	add_theme_support( 'editor-styles' );
+	// add_theme_support( 'editor-styles' );
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'woocommerce' );
 
