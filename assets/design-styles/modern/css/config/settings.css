@@ -6,7 +6,7 @@
 	--THEME-COLOR-PRIMARY-DEFAULT: 0, 0%, 100%;
 	--THEME-COLOR-PRIMARY: var(--USER-COLOR-PRIMARY, var(--THEME-COLOR-PRIMARY-DEFAULT));
 
-	/* Hex: #24252f */
+	/* Hex: #696969 */
 	--THEME-COLOR-SECONDARY-DEFAULT: 0, 0%, 41%;
 	--THEME-COLOR-SECONDARY: var(--USER-COLOR-SECONDARY, var(--THEME-COLOR-SECONDARY-DEFAULT));
 
@@ -38,7 +38,6 @@
 	@media (--large) {
 		--theme-text-sm: 90%;
 	}
-
 
 
 	/* Header */
@@ -224,7 +223,7 @@
 	--theme-primary-submenu-bg-color: 0, 0%, 12%;
 	--theme-primary-submenu-link-color: var(--THEME-COLOR-SECONDARY);
 	--theme-primary-menu-link-hover-active-opacity: 0.65;
-	--theme-primary-menu-link-hover-active-color: ;
+	--theme-primary-menu-link-hover-active-color: 0, 0%, 11%;
 
 	@media (--large) {
 		--theme-primary-submenu-link-color: var(--THEME-COLOR-PRIMARY);
