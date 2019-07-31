@@ -5,6 +5,7 @@
 	}
 
 	& .site-header .site-branding__link {
+		text-align: right;
 
 		@media (--small) {
 			order: 2;
