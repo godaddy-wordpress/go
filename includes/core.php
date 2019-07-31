@@ -255,7 +255,7 @@ function script_loader_tag( $tag, $handle ) {
  */
 function body_classes( $classes ) {
 	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
-	$footer_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
+	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
 
 	// Design style variation body class.
 	if ( $design_style ) {
@@ -293,7 +293,7 @@ function body_classes( $classes ) {
 function body_data( $classes ) {
 
 	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
-	$footer_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
+	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
 	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
 
 	if ( $design_style ) {
@@ -618,7 +618,7 @@ function get_default_footer_variation() {
  * @return array
  */
 function get_footer_variation() {
-	$selected_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
+	$selected_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
 
 	$supported_header_variations = get_available_footer_variations();
 

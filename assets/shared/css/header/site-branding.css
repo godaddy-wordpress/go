@@ -25,25 +25,25 @@
 
 	& + .site-branding__description {
 		color: hsla(var(--theme-site-branding-description-color), 1);
-		opacity: var(--theme-site-branding-description-opacity);
 		margin-top: 0.25rem;
+		opacity: var(--theme-site-branding-description-opacity);
 
 		@media (--small) {
+			margin-left: 0.5rem;
 			margin-top: 0;
 			padding-left: 1.75rem;
-			margin-left: 0.5rem;
 		}
 
 		&::before {
 			@media (--small) {
-				width: 1px;
-				height: 100%;
-				content: '';
-				left: 10px;
-				position: absolute;
-				display: block;
 				background-color: currentColor;
+				content: "";
+				display: block;
+				height: 100%;
+				left: 10px;
 				opacity: 0.25;
+				position: absolute;
+				width: 1px;
 			}
 		}
 	}

@@ -1,0 +1,65 @@
+/**
+ * Footer #4
+ */
+
+[data-footer="footer-4"] {
+
+	& .site-footer {
+		padding-bottom: calc(var(--theme-footer-spacing) * 0.55);
+		padding-top: calc(var(--theme-footer-spacing) * 0.7);
+	}
+
+	& .site-footer__row--2 {
+		margin-top: calc(var(--theme-footer-spacing) * 0.45);
+	}
+
+	& .site-footer .site-branding {
+		align-items: flex-start;
+		flex: 0 0 100%;
+		margin-bottom: calc(var(--theme-footer-spacing) * 0.55);
+
+		@media (--medium) {
+			flex: 0 0 28%;
+			margin-bottom: 0;
+			padding-right: 1rem;
+		}
+	}
+
+	& .footer-navigation {
+		flex: 0 1 50%;
+
+		@media (--small) {
+			flex: 0 1 33%;
+			max-width: 12rem;
+		}
+
+		@media (--medium) {
+			flex: 0 1 25%;
+		}
+
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+
+	& .footer-navigation--1,
+	& .footer-navigation--2 {
+		margin-bottom: 1.5rem;
+
+		@media (--medium) {
+			margin-bottom: 0;
+		}
+	}
+
+	& .social-icons {
+
+		& li a {
+			padding-left: calc(var(--theme-footer-social-icon-spacing) * 0.9);
+			padding-right: calc(var(--theme-footer-social-icon-spacing) * 0.9);
+		}
+
+		& svg {
+			height: calc(var(--theme-footer-social-icon-size) * 1.2);
+		}
+	}
+}

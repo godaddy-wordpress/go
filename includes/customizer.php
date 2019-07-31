@@ -379,26 +379,6 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 			]
 		)
 	);
-
-	// Abort if selective refresh is not available.
-	if ( ! isset( $wp_customize->selective_refresh ) ) {
-		return;
-	}
-
-	$wp_customize->selective_refresh->add_partial(
-		'header_variation',
-		[
-			'selector'        => '#js-header-variation',
-			'settings'        => [ 'header_variation' ],
-			'render_callback' => function() {
-				ob_start();
-				\Maverick\header_variation();
-				$content = ob_get_contents();
-				ob_end_clean();
-				return $content;
-			},
-		]
-	);
 }
 
 /**
@@ -429,7 +409,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_footer_variation_setting',
+		'footer_variation',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -441,12 +421,12 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new Switcher_Control(
 			$wp_customize,
-			'maverick_footer_variation_control',
+			'footer_variation',
 			[
 				'label'       => esc_html__( 'Footer Variation', 'maverick' ),
 				'description' => esc_html__( 'Choose one of the supported footer variations.', 'maverick' ),
 				'section'     => 'maverick_footer_variation_section',
-				'settings'    => 'maverick_footer_variation_setting',
+				'settings'    => 'footer_variation',
 				'choices'     => \Maverick\Core\get_available_footer_variations(),
 			]
 		)
@@ -617,26 +597,11 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		return;
 	}
 
-	$settings_footer_partial = [ 'maverick_footer_variation_setting', 'maverick_footer_copy_text_setting', 'maverick_footer_blurb_text_setting' ];
+	$settings_footer_partial = [ 'maverick_footer_copy_text_setting', 'maverick_footer_blurb_text_setting' ];
 
 	foreach ( $social_icons as $key => $social_icon ) {
 		$settings_footer_partial[] = sprintf( 'footer_social_%s_setting', $key );
 	}
-
-	$wp_customize->selective_refresh->add_partial(
-		'footer_variation',
-		[
-			'selector'        => '#js-footer-variation',
-			'settings'        => $settings_footer_partial,
-			'render_callback' => function() {
-				ob_start();
-				\Maverick\footer_variation();
-				$content = ob_get_contents();
-				ob_end_clean();
-				return $content;
-			},
-		]
-	);
 }
 
 /**

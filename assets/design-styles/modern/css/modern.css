@@ -22,11 +22,9 @@
 @import url("coblocks/pricing-table.css");
 
 /* Components - everything that is NOT a block */
-@import url("components/header/site-branding.css");
-@import url("components/header/primary-menu.css");
-@import url("components/header/site-navigation__toggle.css");
-@import url("components/header/site-search.css");
-@import url("components/footer/footer-1.css");
+@import url("header/primary-menu.css");
+@import url("header/site-navigation__toggle.css");
+@import url("header/site-search.css");
 
 /* Woocommerce */
 @import url("woocommerce/button.css");
@@ -37,6 +35,15 @@
 
 p {
 	margin-top: 0;
+}
+
+.footer-navigation__title {
+	font-family: var(--theme-heading-font-family);
+	font-size: var(--theme-primary-menu-link-font-size);
+	letter-spacing: 2px;
+	margin-bottom: 0.75rem;
+	display: block;
+	text-transform: uppercase;
 }
 
 .wp-block-coblocks-food-and-drinks {

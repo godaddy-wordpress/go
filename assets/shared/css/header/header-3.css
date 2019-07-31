@@ -11,8 +11,8 @@
 	}
 
 	& .site-header__inner {
-		padding-bottom: calc(1.5 * var(--theme-header-padding-x));
-		padding-top: calc(1.5 * var(--theme-header-padding-x));
+		padding-bottom: calc(1.5 * var(--theme-header-padding-y));
+		padding-top: calc(1.5 * var(--theme-header-padding-y));
 	}
 }
 
