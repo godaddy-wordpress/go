@@ -53,8 +53,11 @@
 		}
 	}
 
-	&.menu-is-open .site-search__toggle {
-		display: none;
+	&.menu-is-open[data-header="header-1"] {
+
+		& .site-search__toggle {
+			display: none;
+		}
 	}
 
 	&.menu-is-open[data-header="header-3"] {
