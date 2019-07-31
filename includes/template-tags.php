@@ -216,6 +216,8 @@ function has_social_icons( $social_icons = null ) {
 /**
  * Display the page title markup
  *
+ * @since 0.1.0
+ *
  * @return mixed Markup for the page title
  */
 function maverick_page_title() {
@@ -226,15 +228,68 @@ function maverick_page_title() {
 
 	}
 
+	/**
+	 * Filter the page title display args.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @var array
+	 */
+	$args = (array) apply_filters(
+		'maverick_page_title_args',
+		[
+			'title'   => get_the_title(),
+			'wrapper' => 'h1',
+			'atts'    => [
+				'class' => 'post__title',
+			],
+		]
+	);
+
+	if ( empty( $args['title'] ) ) {
+
+		return;
+
+	}
+
+	$args['atts'] = empty( $args['atts'] ) ? [] : (array) $args['atts'];
+
+	foreach ( $args['atts'] as $key => $value ) {
+
+		$args['classes'][] = sprintf( '%s="%s"', sanitize_key( $key ), esc_attr( $value ) );
+
+	}
+
+	$html = esc_html( $args['title'] );
+
+	if ( ! empty( $args['wrapper'] ) ) {
+
+		$html = sprintf(
+			'<%1$s %2$s>%3$s</%1$s>',
+			sanitize_key( $args['wrapper'] ),
+			implode( ' ', $args['classes'] ),
+			$html
+		);
+
+	}
+
+	foreach ( array_keys( $args['atts'] ) as $index => $attribute ) {
+
+		$args['atts'][ $attribute ] = [];
+
+	}
+
 	printf(
-		'<header class="entry-header">
-			<h1 class="post__title">%1$s</h1>
-		</header>',
-		esc_html( get_the_title() )
+		'<header class="entry-header">%s</header>',
+		wp_kses(
+			$html,
+			[
+				$args['wrapper'] => $args['atts'],
+			]
+		)
 	);
 
 }
-add_action( 'maverick_page_title', 'Maverick\maverick_page_title' );
 
 /**
  * Displays the social icons

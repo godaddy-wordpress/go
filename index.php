@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<?php do_action( 'maverick_page_title' ); ?>
+	<?php Maverick\maverick_page_title(); ?>
 
 	<div id="content" class="content-area">
 		<?php if ( have_posts() ) : ?>
