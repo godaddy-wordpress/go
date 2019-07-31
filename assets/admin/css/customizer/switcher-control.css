@@ -52,10 +52,11 @@
 .switcher__wrapper.color_scheme {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 
 	& .switcher__choice {
-		flex: 1;
 		height: 100px;
+		width: calc( 50% - 10px );
 		margin-right: 10px;
 
 		& .color-scheme {
