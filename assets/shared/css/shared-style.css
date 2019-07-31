@@ -25,6 +25,7 @@
 @import url("utilities/captions.css");
 @import url("utilities/accessibility.css");
 @import url("utilities/colorize.css");
+@import url("utilities/font-sizes.css");
 
 /* Elements - all the HTML elements coverage */
 @import url("elements/buttons.css");
