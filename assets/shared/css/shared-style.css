@@ -12,7 +12,6 @@
 @import url("config/animations.css");
 @import url("config/colors-global.css");
 @import url("config/editor-font-sizes.css");
-@import url("config/layout.css");
 @import url("config/typography.css");
 @import url("config/z-index.css");
 @import url("config/borders.css");
@@ -21,7 +20,7 @@
 /* Utilities - helpers, mixins */
 @import url("utilities/feedback.css");
 @import url("utilities/layout.css");
-@import url("utilities/wordpress.css");
+@import url("utilities/alignment.css");
 @import url("utilities/customizer.css");
 @import url("utilities/captions.css");
 @import url("utilities/accessibility.css");
@@ -189,16 +188,16 @@
 	position: relative;
 }
 
-.max-w-full {
-	max-width: 100%;
+.max-w-base {
+	max-width: var(--theme-max-width-base);
 }
 
 .max-w-wide {
 	max-width: var(--theme-max-width-wide);
 }
 
-.max-w-base {
-	max-width: var(--theme-max-width-base);
+.max-w-full {
+	max-width: 100%;
 }
 
 .text-center {
