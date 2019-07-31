@@ -94,6 +94,25 @@ function theme_setup() {
 			'footer-3' => esc_html__( 'Footer Menu #3', 'maverick' ),
 		)
 	);
+
+	$design_style = get_design_style();
+
+	if ( $design_style ) {
+		$color_palette = array(
+			array(
+				'name'  => __( 'Primary', 'maverick' ),
+				'slug'  => 'primary',
+				'color' => \Maverick\get_palette_color( 'primary' ),
+			),
+			array(
+				'name'  => __( 'secondary', 'maverick' ),
+				'slug'  => 'secondary',
+				'color' => \Maverick\get_palette_color( 'secondary' ),
+			),
+		);
+
+		add_theme_support( 'editor-color-palette', $color_palette );
+	}
 }
 
 /**
@@ -308,7 +327,7 @@ function get_available_design_styles() {
 				'light' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#ffffff',
-					'secondary_color' => '#000000',
+					'secondary_color' => '#696969',
 				],
 				'dark'  => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
@@ -317,7 +336,7 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'traditional'       => [
+		'traditional' => [
 			'label'         => esc_html__( 'Traditional', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
 			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
@@ -353,7 +372,7 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'welcoming'         => [
+		'welcoming'   => [
 			'label'         => esc_html__( 'Welcoming', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/welcoming.css',
 			'editor_style'  => 'dist/css/design-styles/welcoming-editor.css',
@@ -371,7 +390,7 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'play'              => [
+		'play'        => [
 			'label'         => esc_html__( 'Play', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
 			'editor_style'  => 'dist/css/design-styles/play-editor.css',
