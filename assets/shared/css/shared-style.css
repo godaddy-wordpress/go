@@ -19,7 +19,6 @@
 
 /* Utilities - helpers, mixins */
 @import url("utilities/feedback.css");
-@import url("utilities/layout.css");
 @import url("utilities/alignment.css");
 @import url("utilities/customizer.css");
 @import url("utilities/captions.css");
