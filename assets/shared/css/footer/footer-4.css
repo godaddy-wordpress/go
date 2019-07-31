@@ -23,6 +23,10 @@
 			margin-bottom: 0;
 			padding-right: 1rem;
 		}
+
+		& .site-branding__description {
+			display: none;
+		}
 	}
 
 	& .footer-navigation {
