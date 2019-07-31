@@ -300,11 +300,11 @@ function get_default_design_style() {
 function get_available_design_styles() {
 	$default_design_styles = [
 		'modern'      => [
-			'label'         => esc_html__( 'Modern', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
-			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Creative+Services',
-			'color_schemes' => [
+			'label'           => esc_html__( 'Modern', 'maverick' ),
+			'url'             => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
+			'editor_style'    => 'dist/css/design-styles/modern-editor.css',
+			'preview_image'   => 'https://via.placeholder.com/400x100.png?text=Creative+Services',
+			'color_schemes'   => [
 				'light' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#ffffff',
@@ -316,13 +316,14 @@ function get_available_design_styles() {
 					'secondary_color' => '#ffffff',
 				],
 			],
+			'title_visbility' => true,
 		],
-		'traditional'       => [
-			'label'         => esc_html__( 'Traditional', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
-			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Traditional',
-			'color_schemes' => [
+		'traditional' => [
+			'label'           => esc_html__( 'Traditional', 'maverick' ),
+			'url'             => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
+			'editor_style'    => 'dist/css/design-styles/traditional-editor.css',
+			'preview_image'   => 'https://via.placeholder.com/400x100.png?text=Traditional',
+			'color_schemes'   => [
 				'light' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#c76919',
@@ -334,13 +335,14 @@ function get_available_design_styles() {
 					'secondary_color' => '#293922',
 				],
 			],
+			'title_visbility' => true,
 		],
 		'trendy-shop' => [
-			'label'         => esc_html__( 'Trendy Shop', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy-shop.css',
-			'editor_style'  => 'dist/css/design-styles/trendy-shop-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Trendy+Shop',
-			'color_schemes' => [
+			'label'           => esc_html__( 'Trendy Shop', 'maverick' ),
+			'url'             => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy-shop.css',
+			'editor_style'    => 'dist/css/design-styles/trendy-shop-editor.css',
+			'preview_image'   => 'https://via.placeholder.com/400x100.png?text=Trendy+Shop',
+			'color_schemes'   => [
 				'light' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#fcfcfc',
@@ -352,13 +354,14 @@ function get_available_design_styles() {
 					'secondary_color' => '#ebeeee',
 				],
 			],
+			'title_visbility' => true,
 		],
-		'welcoming'         => [
-			'label'         => esc_html__( 'Welcoming', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/welcoming.css',
-			'editor_style'  => 'dist/css/design-styles/welcoming-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Welcoming',
-			'color_schemes' => [
+		'welcoming'   => [
+			'label'           => esc_html__( 'Welcoming', 'maverick' ),
+			'url'             => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/welcoming.css',
+			'editor_style'    => 'dist/css/design-styles/welcoming-editor.css',
+			'preview_image'   => 'https://via.placeholder.com/400x100.png?text=Welcoming',
+			'color_schemes'   => [
 				'light' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#02392f',
@@ -370,13 +373,14 @@ function get_available_design_styles() {
 					'secondary_color' => '#f7f5e9',
 				],
 			],
+			'title_visbility' => true,
 		],
-		'play'              => [
-			'label'         => esc_html__( 'Play', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
-			'editor_style'  => 'dist/css/design-styles/play-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Play',
-			'color_schemes' => [
+		'play'        => [
+			'label'           => esc_html__( 'Play', 'maverick' ),
+			'url'             => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
+			'editor_style'    => 'dist/css/design-styles/play-editor.css',
+			'preview_image'   => 'https://via.placeholder.com/400x100.png?text=Play',
+			'color_schemes'   => [
 				'light' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#254e9c',
@@ -388,6 +392,7 @@ function get_available_design_styles() {
 					'secondary_color' => '#eecd94',
 				],
 			],
+			'title_visbility' => false,
 		],
 	];
 
