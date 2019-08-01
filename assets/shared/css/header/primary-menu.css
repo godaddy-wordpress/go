@@ -26,6 +26,7 @@
 		border: none;
 		color: hsla(var(--theme-primary-menu-link-color), 1);
 		display: inline-block;
+		font-size: var(--theme-primary-menu-link-font-size);
 		position: relative;
 		text-decoration: none;
 		transition: opacity 0.2s ease;
@@ -53,16 +54,15 @@
 		&:hover {
 			opacity: var(--theme-primary-menu-link-hover-active-opacity);
 
-			&::before {
+			/* &::before {
 				bottom: var(--border-end-mobile);
 				opacity: 1;
 
 				@media (--large) {
 					bottom: var(--border-end-desktop);
 				}
-			}
+			} */
 		}
-
 	}
 
 	/* Active menu link */

@@ -20,14 +20,6 @@
 @import url("coblocks/media-card.css");
 @import url("coblocks/pricing-table.css");
 
-/* Components - everything that is NOT a block */
-@import url("components/header/site-branding.css");
-@import url("components/header/primary-menu.css");
-@import url("components/header/site-navigation__toggle.css");
-@import url("components/header/site-search.css");
-@import url("components/header/header-search-logo-nav.css");
-@import url("components/footer/footer-1.css");
-
 /* Woocommerce */
 @import url("woocommerce/button.css");
 @import url("woocommerce/shop.css");

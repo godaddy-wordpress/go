@@ -8,7 +8,6 @@
 	--border-end-desktop: 28px;
 
 	font-family: var(--theme-heading-font-family);
-	font-size: 1.5rem;
 	font-weight: 700;
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -47,9 +46,5 @@
 			top: 4.5rem;
 			width: 12.5rem;
 		}
-	}
-
-	@media (--large) {
-		font-size: 0.85rem;
 	}
 }

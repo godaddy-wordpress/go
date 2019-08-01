@@ -75,7 +75,7 @@ function theme_setup() {
 	add_theme_support( 'disable-custom-font-sizes' );
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'align-wide' );
-	add_theme_support( 'editor-styles' );
+	// add_theme_support( 'editor-styles' );
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'woocommerce' );
 
@@ -85,14 +85,49 @@ function theme_setup() {
 	];
 	add_theme_support( 'custom-logo', $custom_logo_defaults );
 
+	/**
+	 * Custom font sizes for use in the editor.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#block-font-sizes
+	 */
+	add_theme_support(
+		'editor-font-sizes',
+		[
+			[
+				'name'      => esc_html__( 'Small', 'maverick' ),
+				'shortName' => esc_html__( 'S', 'maverick' ),
+				'size'      => 17,
+				'slug'      => 'small',
+			],
+			[
+				'name'      => esc_html__( 'Medium', 'maverick' ),
+				'shortName' => esc_html__( 'M', 'maverick' ),
+				'size'      => 21,
+				'slug'      => 'medium',
+			],
+			[
+				'name'      => esc_html__( 'Large', 'maverick' ),
+				'shortName' => esc_html__( 'L', 'maverick' ),
+				'size'      => 24,
+				'slug'      => 'large',
+			],
+			[
+				'name'      => esc_html__( 'Huge', 'maverick' ),
+				'shortName' => esc_html__( 'XL', 'maverick' ),
+				'size'      => 30,
+				'slug'      => 'huge',
+			],
+		]
+	);
+
 	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus(
-		array(
+		[
 			'primary'  => esc_html__( 'Primary Menu', 'maverick' ),
 			'footer-1' => esc_html__( 'Footer Menu #1 (Primary)', 'maverick' ),
 			'footer-2' => esc_html__( 'Footer Menu #2', 'maverick' ),
 			'footer-3' => esc_html__( 'Footer Menu #3', 'maverick' ),
-		)
+		]
 	);
 
 	$design_style = get_design_style();
@@ -253,17 +288,11 @@ function script_loader_tag( $tag, $handle ) {
  * @return array
  */
 function body_classes( $classes ) {
-	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
-	$footer_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
+	$design_style = get_theme_mod( 'maverick_design_style', get_default_design_style() );
 
 	// Design style variation body class.
 	if ( $design_style ) {
 		$classes[] = 'is-' . esc_attr( $design_style );
-	}
-
-	// Footer variation body class.
-	if ( $footer_variation ) {
-		$classes[] = 'is-' . esc_attr( $footer_variation );
 	}
 
 	// Add woo class whenever block is on page
@@ -292,7 +321,7 @@ function body_classes( $classes ) {
 function body_data( $classes ) {
 
 	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
-	$footer_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
+	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
 	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
 
 	if ( $design_style ) {
@@ -516,15 +545,15 @@ function get_available_header_variations() {
 			},
 		],
 		'header-2' => [
-			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-vertical.svg',
+			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
 		'header-3' => [
-			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo.svg',
+			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-vertical.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
@@ -647,7 +676,7 @@ function get_default_footer_variation() {
  * @return array
  */
 function get_footer_variation() {
-	$selected_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
+	$selected_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
 
 	$supported_header_variations = get_available_footer_variations();
 

@@ -16,7 +16,7 @@ get_header(); ?>
 	</h1>
 </header>
 
-<div class="content-area u-ma-auto u-max-width-full">
+<div class="content-area m-auto">
 
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -27,7 +27,7 @@ get_header(); ?>
 		<?php get_template_part( 'partials/content', 'none' ); ?>
 	<?php endif; ?>
 
-</div><!-- .u-ma-auto .u-max-width-full -->
+</div>
 
 <?php
 get_footer();

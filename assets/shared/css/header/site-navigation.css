@@ -2,7 +2,6 @@
  * Primary menu
  */
 
-/* Locally scoped component variables */
 .site-navigation {
 	background-color: hsla(var(--theme-has-offscreen-nav-overlay-color));
 	bottom: 0;
@@ -38,11 +37,6 @@
 	}
 }
 
-/* Set all panel navigations to have some left cushion */
-body.has-offscreen-nav.menu-is-open .site-navigation {
-	padding-left: 1rem;
-}
-
 /* Whenever a panel nav is opened, it receives a menu-is-open class.
 We want to fix the body height to prevent scrolling when this system
 is open. */
@@ -52,18 +46,5 @@ body.menu-is-open {
 		overflow: hidden;
 		position: fixed;
 		width: 100%;
-	}
-}
-
-/* If admin, add to nav top positioning */
-body.admin-bar.has-offscreen-nav.menu-is-open .site-navigation {
-	top: 116px;
-
-	@media (--medium) {
-		top: 102px;
-	}
-
-	@media (--large) {
-		top: auto;
 	}
 }

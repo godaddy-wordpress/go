@@ -13,7 +13,8 @@
 	cursor: pointer;
 	height: 100%;
 	line-height: 1;
-	padding: var(--theme-button-block-padding) var(--theme-button-block-padding) 0;
+	margin-right: -0.5rem;
+	padding: 0.5rem 0.5rem 0;
 	position: relative;
 	user-select: none;
 	z-index: var(--theme-site-navigation__toggle-z-index);

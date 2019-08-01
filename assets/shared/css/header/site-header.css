@@ -17,5 +17,5 @@
 }
 
 .site-header__inner {
-	padding: var(--theme-header-padding-x) var(--theme-header-padding-y);
+	padding: var(--theme-header-padding-y) var(--theme-block-padding-x);
 }

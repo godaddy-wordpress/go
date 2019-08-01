@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div id="content" class="content-area m-auto u-max-width-full">
+	<div id="content" class="content-area">
 		<?php get_template_part( 'partials/content', 'none' ); ?>
 	</div>
 
