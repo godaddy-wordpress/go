@@ -99,7 +99,6 @@
 		--theme-footer-social-icon-spacing: 1rem;
 	}
 
-
 	/* Spacing units. */
 	--theme-spacing-unit: 0.5rem;
 	--theme-spacing-unit-2: 1rem;
@@ -120,7 +119,7 @@
 
 	/* Headings */
 	--theme-heading-font-family: "Montserrat", sans-serif;
-	--theme-heading-line-height: var(--line-height-heading);
+	/* --theme-heading-line-height: var(--line-height-heading); */
 
 	--theme-heading-content-space-above: 1rem;
 	--theme-heading-content-space-below: 0;
@@ -230,7 +229,7 @@
 	--theme-primary-menu--color: 0, 0%, 11%;
 	--theme-primary-menu--color-interactive: 0, 0%, 11%;
 	--theme-primary-menu--font-family: var(--theme-heading-font-family);
-	--theme-primary-menu--font-size: 0.8rem;
+	--theme-primary-menu--font-size: 0.75rem;
 	--theme-primary-menu--font-weight: 700;
 	--theme-primary-menu--opacity-interactive: 0.65;
 	--theme-primary-menu--text-transform: uppercase;

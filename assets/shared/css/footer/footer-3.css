@@ -40,8 +40,9 @@
 		}
 
 		& a {
+			color: hsla(var(--theme-primary-menu--color), 1);
 			display: block;
-			padding: 0.5rem 1.35rem;
+			padding: var(--theme-footer-menu-link-spacing);
 		}
 	}
 

@@ -9,8 +9,6 @@
 
 <header id="masthead" class="site-header site-header--4 site-header--search-logo-nav" itemscope itemtype="http://schema.org/WPHeader">
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
-
 	<div class="site-header__inner flex items-center justify-center w-full max-w-wide m-auto relative">
 
 		<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
@@ -48,5 +46,3 @@
 	</div>
 
 </header>
-
-

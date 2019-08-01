@@ -5,7 +5,9 @@
  * @package Maverick
  */
 
-get_header(); ?>
+get_header();
+
+?>
 
 	<div id="content" class="content-area">
 		<section class="error-404 not-found center-align">
@@ -20,4 +22,5 @@ get_header(); ?>
 	</div>
 
 <?php
+
 get_footer();

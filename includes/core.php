@@ -23,10 +23,11 @@ function setup() {
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_init', $n( 'editor_styles' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
+	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
@@ -60,36 +61,81 @@ function i18n() {
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function theme_setup() {
+
+	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
 	add_theme_support( 'title-tag' );
+
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
 	add_theme_support( 'post-thumbnails' );
 
+	// This theme uses wp_nav_menu() in up to four locations.
+	register_nav_menus(
+		[
+			'primary'  => esc_html__( 'Primary', 'maverick' ),
+			'footer-1' => esc_html__( 'Footer Menu #1', 'maverick' ),
+			'footer-2' => esc_html__( 'Footer Menu #2', 'maverick' ),
+			'footer-3' => esc_html__( 'Footer Menu #3', 'maverick' ),
+		]
+	);
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
 	add_theme_support(
 		'html5',
 		[
 			'search-form',
+			'comment-form',
+			'comment-list',
 			'gallery',
+			'caption',
 		]
 	);
-	add_theme_support( 'disable-custom-colors' );
-	add_theme_support( 'disable-custom-font-sizes' );
-	add_theme_support( 'responsive-embeds' );
-	add_theme_support( 'align-wide' );
-	// add_theme_support( 'editor-styles' );
-	add_theme_support( 'wp-block-styles' );
-	add_theme_support( 'woocommerce' );
-
-	$custom_logo_defaults = [
-		'flex-height' => true,
-		'flex-width'  => true,
-	];
-	add_theme_support( 'custom-logo', $custom_logo_defaults );
 
 	/**
-	 * Custom font sizes for use in the editor.
+	 * Add support for core custom logo.
 	 *
-	 * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#block-font-sizes
+	 * @link https://codex.wordpress.org/Theme_Logo
 	 */
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 190,
+			'width'       => 190,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
+
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for editor styles.
+	// add_theme_support( 'editor-styles' );
+
+	// Add support for WooCommerce.
+	add_theme_support( 'woocommerce' );
+
+	// Add custom editor font sizes.
 	add_theme_support(
 		'editor-font-sizes',
 		[
@@ -117,16 +163,6 @@ function theme_setup() {
 				'size'      => 30,
 				'slug'      => 'huge',
 			],
-		]
-	);
-
-	// This theme uses wp_nav_menu() in three locations.
-	register_nav_menus(
-		[
-			'primary'  => esc_html__( 'Primary Menu', 'maverick' ),
-			'footer-1' => esc_html__( 'Footer Menu #1 (Primary)', 'maverick' ),
-			'footer-2' => esc_html__( 'Footer Menu #2', 'maverick' ),
-			'footer-3' => esc_html__( 'Footer Menu #3', 'maverick' ),
 		]
 	);
 }
@@ -214,6 +250,23 @@ function js_detection() {
 }
 
 /**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function skip_link_focus_fix() {
+	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+
+/**
  * Add async/defer attributes to enqueued scripts that have the specified script_execution flag.
  *
  * @link https://core.trac.wordpress.org/ticket/12009
@@ -254,14 +307,8 @@ function script_loader_tag( $tag, $handle ) {
  * @return array
  */
 function body_classes( $classes ) {
-	$design_style = get_theme_mod( 'maverick_design_style', get_default_design_style() );
 
-	// Design style variation body class.
-	if ( $design_style ) {
-		$classes[] = 'is-' . esc_attr( $design_style );
-	}
-
-	// Add woo class whenever block is on page
+	// Add class whenever a WooCommerce block is added to a page
 	if (
 		has_block( 'woocommerce/handpicked-products' )
 		|| has_block( 'woocommerce/product-best-sellers' )
@@ -665,31 +712,31 @@ function get_available_social_icons() {
 		'facebook'  => [
 			'label'       => esc_html__( 'Facebook', 'maverick' ),
 			'description' => esc_html__( 'Facebook URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/admin/images/facebook.svg',
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/facebook.svg',
 			'icon_class'  => '',
 		],
 		'twitter'   => [
 			'label'       => esc_html__( 'Twitter', 'maverick' ),
 			'description' => esc_html__( 'Twitter URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/admin/images/twitter.svg',
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/twitter.svg',
 			'icon_class'  => '',
 		],
 		'instagram' => [
 			'label'       => esc_html__( 'Instagram', 'maverick' ),
 			'description' => esc_html__( 'Instagram URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/admin/images/instagram.svg',
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/instagram.svg',
 			'icon_class'  => '',
 		],
 		'linkedin'  => [
 			'label'       => esc_html__( 'LinkedIn', 'maverick' ),
 			'description' => esc_html__( 'LinkedIn URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/admin/images/linkedin.svg',
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/linkedin.svg',
 			'icon_class'  => '',
 		],
 		'pinterest' => [
 			'label'       => esc_html__( 'Pinterest', 'maverick' ),
 			'description' => esc_html__( 'Pinterest URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/admin/images/pinterest.svg',
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/pinterest.svg',
 			'icon_class'  => '',
 		],
 	];

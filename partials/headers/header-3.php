@@ -9,8 +9,6 @@
 
 <header id="masthead" class="site-header site-header--3 relative w-full" itemscope itemtype="http://schema.org/WPHeader">
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
-
 	<div class="site-header__inner flex lg:flex-column items-center justify-between w-full max-w-wide m-auto relative">
 
 		<?php Maverick\display_site_branding(); ?>
