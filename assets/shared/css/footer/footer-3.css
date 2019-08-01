@@ -10,7 +10,11 @@
 	}
 
 	& .footer-navigation {
+		font-family: var(--theme-primary-menu--font-family);
+		font-size: var(--theme-primary-menu--font-size);
+		font-weight: var(--theme-primary-menu--font-weight);
 		text-align: center;
+		text-transform: var(--theme-primary-menu--text-transform);
 
 		@media (--medium) {
 			flex: 1 65%;
@@ -27,10 +31,17 @@
 					padding-left: 0;
 				}
 			}
+
+			&:last-child a {
+				@media (--medium) {
+					padding-right: 0;
+				}
+			}
 		}
 
 		& a {
-			padding: 1rem 1.35rem;
+			display: block;
+			padding: 0.5rem 1.35rem;
 		}
 	}
 

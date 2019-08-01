@@ -703,7 +703,6 @@ function inline_css() {
 
 				<?php if ( $footer_text_color ) : ?>
 					--theme-footer-color: <?php echo esc_attr( $footer_text_color ); ?>;;
-					--theme-footer-link-color: <?php echo esc_attr( $footer_text_color ); ?>;
 				<?php endif; ?>
 
 				<?php if ( $footer_social_color ) : ?>

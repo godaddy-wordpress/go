@@ -56,6 +56,7 @@
 @import url("coblocks/hero.css");
 @import url("coblocks/pricing-table.css");
 @import url("coblocks/row.css");
+@import url("coblocks/food-drinks.css");
 
 /* Components - everything that is NOT a block */
 @import url("header/site-header.css");

@@ -25,7 +25,6 @@ export default () => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			document.querySelector( ':root' ).style.setProperty( '--theme-footer-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
-			document.querySelector( ':root' ).style.setProperty( '--theme-footer-link-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 		} );
 	} );
 
