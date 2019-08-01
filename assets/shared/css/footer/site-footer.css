@@ -46,3 +46,7 @@
 		}
 	}
 }
+
+.footer-navigation__title {
+	color: hsla(var(--theme-footer-heading-color), 1);
+}

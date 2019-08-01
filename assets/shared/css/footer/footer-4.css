@@ -25,6 +25,10 @@
 			padding-right: 1rem;
 		}
 
+		& .site-branding__title {
+			color: hsla(var(--theme-footer-heading-color), 1);
+		}
+
 		& .site-branding__description {
 			display: none;
 		}

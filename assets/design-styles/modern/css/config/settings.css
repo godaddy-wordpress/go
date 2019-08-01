@@ -80,6 +80,7 @@
 	--theme-footer-color: var(--THEME-COLOR-NAV);
 	--theme-footer-link-color: 0, 0%, 11%;
 	--theme-footer-link-hover-active-color: var(--THEME-COLOR-HEADING);
+	--theme-footer-heading-color: var(--THEME-COLOR-HEADING);
 
 	@media (--medium) {
 		--theme-footer-menu-link-spacing: 1rem 1.75rem;
