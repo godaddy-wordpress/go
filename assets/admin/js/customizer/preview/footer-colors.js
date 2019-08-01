@@ -13,10 +13,10 @@ export default () => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			if ( to ) {
-				document.querySelector( ':root' ).style.setProperty( '--theme-footer-bg-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+				document.querySelector( ':root' ).style.setProperty( '--theme-footer--bg-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 				$( '.site-footer' ).addClass( 'has-background' );
 			} else {
-				document.querySelector( ':root' ).style.setProperty( '--theme-footer-bg-color', undefined );
+				document.querySelector( ':root' ).style.setProperty( '--theme-footer--bg-color', undefined );
 				$( '.site-footer' ).removeClass( 'has-background' );
 			}
 		} );
@@ -31,14 +31,14 @@ export default () => {
 	wp.customize( 'footer_text_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			document.querySelector( ':root' ).style.setProperty( '--theme-footer-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+			document.querySelector( ':root' ).style.setProperty( '--theme-footer--color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 		} );
 	} );
 
 	wp.customize( 'footer_heading_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			document.querySelector( ':root' ).style.setProperty( '--theme-footer-heading-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+			document.querySelector( ':root' ).style.setProperty( '--theme-footer-heading--color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 		} );
 	} );
 };

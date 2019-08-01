@@ -11,8 +11,8 @@
 
 	& .site-header__inner {
 		@media (--small) {
-			padding-bottom: calc(var(--theme-header-padding-y) * 1.75);
-			padding-top: calc(var(--theme-header-padding-y) * 1.75);
+			padding-bottom: calc(var(--theme-header--padding-y) * 1.75);
+			padding-top: calc(var(--theme-header--padding-y) * 1.75);
 		}
 	}
 

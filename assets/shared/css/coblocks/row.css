@@ -24,14 +24,6 @@ body {
 		}
 	}
 
-	& .wp-block-coblocks-row:not(:last-of-type) > .wp-block-coblocks-row__inner.has-no-margin {
-		margin-bottom: calc(2 * var(--theme-spacing-unit-6));
-
-		@media (--medium) {
-			margin-bottom: var(--theme-spacing-unit-15);
-		}
-	}
-
 	& .wp-block-coblocks-row .woocommerce ul.products {
 		margin-bottom: 0;
 

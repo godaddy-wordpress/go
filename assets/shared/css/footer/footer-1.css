@@ -40,7 +40,7 @@
 		margin-bottom: calc(var(--theme-block-spacing-huge) * 0.5);
 
 		& svg {
-			height: var(--theme-footer-social-icon-size);
+			height: var(--theme-social--size);
 		}
 	}
 }

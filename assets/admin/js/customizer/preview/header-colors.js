@@ -9,9 +9,10 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'maverick_header_background_color_setting', ( value ) => {
+	wp.customize( 'header_background_color', ( value ) => {
 		value.bind( ( to ) => {
-			$( '.site-header' ).css( 'background-color', to );
+			const hsl = hexToHSL( to );
+			document.querySelector( ':root' ).style.setProperty( '--theme-header--bg-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 		} );
 	} );
 

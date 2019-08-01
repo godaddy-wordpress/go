@@ -1,6 +1,6 @@
 .site-footer {
-	background-color: hsla(var(--theme-footer-bg-color), 1);
-	color: hsla(var(--theme-footer-color), 1);
+	background-color: hsla(var(--theme-footer--bg-color), 1);
+	color: hsla(var(--theme-footer--color), 1);
 
 	&.has-background {
 		margin-top: var(--theme-block-spacing-huge);
@@ -13,7 +13,7 @@
 		&:active,
 		&:focus,
 		&:hover {
-			color: hsla(var(--theme-footer-link-hover-active-color), 1);
+			color: hsla(var(--theme-footer-nav--color-interactive), 1);
 		}
 	}
 
@@ -56,7 +56,7 @@
 }
 
 .footer-navigation {
-	line-height: var(--theme-footer-navigation-line-height);
+	line-height: var(--theme-footer-nav--line-height);
 
 	& a:focus {
 		@mixin outline;
@@ -64,7 +64,7 @@
 }
 
 .footer-navigation__title {
-	color: hsla(var(--theme-footer-heading-color), 1);
+	color: hsla(var(--theme-footer-heading--color), 1);
 	display: block;
 	font-family: var(--theme-primary-menu--font-family);
 	font-size: var(--theme-primary-menu--font-size);

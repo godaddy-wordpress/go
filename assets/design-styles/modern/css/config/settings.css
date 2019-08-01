@@ -1,27 +1,37 @@
 :root {
 
-	/* CUSTOMIZER SETTINGS */
 
-	/* Hex: #ffffff */
+	/***************************************************************
+	* COLORS
+	***************************************************************/
+
+
 	--THEME-COLOR-PRIMARY-DEFAULT: 0, 0%, 100%;
 	--THEME-COLOR-PRIMARY: var(--USER-COLOR-PRIMARY, var(--THEME-COLOR-PRIMARY-DEFAULT));
 
-	/* Hex: #24252f */
 	--THEME-COLOR-SECONDARY-DEFAULT: 0, 0%, 41%;
 	--THEME-COLOR-SECONDARY: var(--USER-COLOR-SECONDARY, var(--THEME-COLOR-SECONDARY-DEFAULT));
 
 	--THEME-COLOR-BODY: 0, 0%, 41%;
 	--THEME-COLOR-HEADING: 0, 0%, 11%;
 
+
+	/***************************************************************
+	* BASE, HEADER, FOOTER
+	***************************************************************/
+
+
 	/* Widths. */
 	--theme-max-width-base: 680px;
 	--theme-max-width-wide: 1280px;
 	--theme-max-width-full: 1440px;
 
+
 	/* Accessibility. */
 	--theme-outline-color: 0, 0%, 11%;
 	--theme-outline-style: dotted;
 	--theme-outline-width: 2px;
+
 
 	/* Vertical Rhythm. */
 	--theme-block-spacing: 1.15rem;
@@ -34,6 +44,7 @@
 		--theme-block-spacing-huge: 8.5rem;
 	}
 
+
 	/* Site Padding. */
 	--theme-block-padding-x: 1.25rem;
 
@@ -41,71 +52,88 @@
 		--theme-block-padding-x: 3.5rem;
 	}
 
+
 	/* Header */
-	--theme-header-background-color: 0, 0%, 100%;
-	--theme-header-padding-y: 1rem;
+	--theme-header--bg-color: "";
+	--theme-header--padding-y: 1rem;
 	--theme-header-3-padding-y: 3.5rem;
 	--theme-header-3-navigation-margin-top: 1.5rem;
 
 	@media (--medium) {
-		--theme-header-padding-y: 1.85rem;
+		--theme-header--padding-y: 1.85rem;
 	}
-
 	@media (--large) {
 		--theme-header-3-padding-y: 8rem;
 	}
 
+
+	/* Header > Navigation */
+	--theme-primary-menu--color: 0, 0%, 11%;
+	--theme-primary-menu--color-interactive: 0, 0%, 11%;
+	--theme-primary-menu--font-family: var(--theme-heading-font-family);
+	--theme-primary-menu--font-size: 0.75rem;
+	--theme-primary-menu--font-weight: 700;
+	--theme-primary-menu--opacity-interactive: 0.65;
+	--theme-primary-menu--text-transform: uppercase;
+	--theme-submenu--bg-color: 0, 0%, 11%;
+	--theme-submenu--color: var(--THEME-COLOR-SECONDARY);
+
+	@media (--large) {
+		--theme-submenu--color: var(--THEME-COLOR-PRIMARY);
+	}
+
+
+	/* Header > Site Branding */
+	--theme-site-title--color: var(--theme-h1-color);
+	--theme-site-title--font-size: 1.5rem;
+	--theme-site-title--font-family: var(--theme-font-family-heading);
+	--theme-site-title--font-weight: 700;
+
+	--theme-site-description--color: 0, 0%, 11%;
+	--theme-site-description--line-height: 1.4;
+	--theme-site-description--opacity: 0.65;
+
+
+	/* Entry Header */
+	--theme-entryheader-padding-top: 4rem;
+	--theme-entryheader-padding-bottom: 7rem;
+
+	@media (--large) {
+		--theme-entryheader-padding-bottom: 8.5rem;
+	}
+
+
 	/* Footer */
-	--theme-footer-bg-color: 0, 0%, 100%;
-	--theme-footer-color: var(--THEME-COLOR-SECONDARY);
-	--theme-footer-heading-color: var(--THEME-COLOR-HEADING);
-	--theme-footer-link-hover-active-color: var(--THEME-COLOR-HEADING);
-	--theme-footer-nav--padding-y: 0.25rem;
+	--theme-footer--bg-color: "";
+	--theme-footer--color: var(--THEME-COLOR-SECONDARY);
+	--theme-footer-heading--color: var(--THEME-COLOR-HEADING);
+
+	--theme-footer-nav--color-interactive: var(--THEME-COLOR-HEADING);
+	--theme-footer-nav--line-height: 2.25;
 	--theme-footer-nav--padding-x: 1rem;
-	--theme-footer-navigation-line-height: 2.25;
+	--theme-footer-nav--padding-y: 0.25rem;
 
 	@media (--medium) {
 		--theme-footer-nav--padding-y: 1.15rem;
 		--theme-footer-nav--padding-x: 1.75rem;
 	}
 
-	/* Social Icons */
-	--theme-footer-social-icon-color: 0, 0%, 11%;
-	--theme-footer-social-icon-size: 1.5rem;
-	--theme-footer-social-icon-spacing: 0.5rem;
+
+	/* Footer > Social Icons */
+	--theme-social--color: 0, 0%, 11%;
+	--theme-social--size: 1.5rem;
+	--theme-social--spacing: 0.5rem;
 
 	@media (--medium) {
-		--theme-footer-social-icon-size: 1.75rem;
-		--theme-footer-social-icon-spacing: 1rem;
+		--theme-social--size: 1.75rem;
+		--theme-social--spacing: 1rem;
 	}
 
-
-
-
-	/* Page entry header spacing. */
-	--theme-entryheader-spacing-top: 4rem;
-	--theme-entryheader-spacing-bottom: 7rem;
-
-	@media (--large) {
-		--theme-entryheader-spacing-bottom: 8.5rem;
-	}
-
-
-
-
-
-	/* Spacing units */
-	--theme-spacing-unit: 0.5rem;
-	--theme-spacing-unit-2: 1rem;
-	--theme-spacing-unit-3: 1.5rem;
-	--theme-spacing-unit-4: 2rem;
-	--theme-spacing-unit-5: 2.5rem;
-	--theme-spacing-unit-6: 3rem;
-	--theme-spacing-unit-15: 7.5rem;
 
 	/***************************************************************
 	* TYPOGRAPHY
 	***************************************************************/
+
 
 	/* Body */
 	--theme-body-font-size: 1rem;
@@ -227,29 +255,7 @@
 	--theme-search-input__button-color-interactive: 0, 0%, 11%;
 	--theme-site-search-z-index: 2;
 
-	/* Primary Menu */
-	--theme-primary-menu--color: 0, 0%, 11%;
-	--theme-primary-menu--color-interactive: 0, 0%, 11%;
-	--theme-primary-menu--font-family: var(--theme-heading-font-family);
-	--theme-primary-menu--font-size: 0.75rem;
-	--theme-primary-menu--font-weight: 700;
-	--theme-primary-menu--opacity-interactive: 0.65;
-	--theme-primary-menu--text-transform: uppercase;
-	--theme-submenu--bg-color: 0, 0%, 11%;
-	--theme-submenu--color: var(--THEME-COLOR-SECONDARY);
 
-	@media (--large) {
-		--theme-submenu--color: var(--THEME-COLOR-PRIMARY);
-	}
-
-	/* Site Branding */
-	--theme-site-title--color: var(--theme-h1-color);
-	--theme-site-title--font-size: 1.5rem;
-	--theme-site-title--font-family: var(--theme-font-family-heading);
-	--theme-site-title--font-weight: 700;
-	--theme-site-description--color: 0, 0%, 11%;
-	--theme-site-description--line-height: 1.4;
-	--theme-site-description--opacity: 0.65;
 
 	--theme-button--bg-color: 0, 0%, 11%;
 	--theme-button--color: 0, 0%, 100%;
@@ -475,4 +481,14 @@
 
 	/* Check and Radio SVG trick */
 	--theme-checkbox-radio-fill: var(--THEME-COLOR-SECONDARY); /* #202124 */
+
+
+
+	/* Spacing units */
+	--theme-spacing-unit: 0.5rem;
+	--theme-spacing-unit-2: 1rem;
+	--theme-spacing-unit-3: 1.5rem;
+	--theme-spacing-unit-4: 2rem;
+	--theme-spacing-unit-5: 2.5rem;
+	--theme-spacing-unit-6: 3rem;
 }
