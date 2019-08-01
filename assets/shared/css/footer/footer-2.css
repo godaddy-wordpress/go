@@ -9,11 +9,7 @@
 	}
 
 	& .site-footer__inner {
-		padding-bottom: 0.75rem;
-
-		@media (--medium) {
-			padding-bottom: 2rem;
-		}
+		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.25);
 	}
 
 	& .site-footer__row {

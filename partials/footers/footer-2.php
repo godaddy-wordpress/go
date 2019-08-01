@@ -9,6 +9,7 @@
 
 $footer_copy_text = Maverick\footer_copy_text();
 $has_social_icons = Maverick\has_social_icons();
+$has_background   = Maverick\has_footer_background();
 ?>
 
 <footer id="colophon" class="site-footer site-footer--2">

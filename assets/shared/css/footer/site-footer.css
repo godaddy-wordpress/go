@@ -2,6 +2,10 @@
 	background-color: hsla(var(--theme-footer-background-color), 1);
 	color: hsla(var(--theme-footer-color), 1);
 
+	&.has-background {
+		margin-top: var(--theme-block-spacing-huge);
+	}
+
 	& a {
 		color: hsla(var(--theme-footer-text-color), 1);
 		text-decoration: none;

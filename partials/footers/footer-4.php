@@ -9,9 +9,10 @@
 
 $footer_copy_text = Maverick\footer_copy_text();
 $has_social_icons = Maverick\has_social_icons();
+$has_background   = Maverick\has_footer_background();
 ?>
 
-<footer id="colophon" class="site-footer site-footer--4">
+<footer id="colophon" class="site-footer site-footer--4 <?php echo esc_attr( $has_background ); ?>">
 
 	<div class="site-footer__inner m-auto max-w-wide px-1">
 

@@ -5,8 +5,8 @@
 [data-footer="footer-3"] {
 
 	& .site-footer {
-		padding-bottom: calc(var(--theme-footer-spacing) * 0.4);
-		padding-top: calc(var(--theme-footer-spacing) * 0.4);
+		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.4);
+		padding-top: var(--theme-block-spacing-huge);
 	}
 
 	& .footer-navigation {

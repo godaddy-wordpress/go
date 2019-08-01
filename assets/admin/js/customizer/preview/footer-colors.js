@@ -11,7 +11,14 @@ export default () => {
 
 	wp.customize( 'footer_background_color', ( value ) => {
 		value.bind( ( to ) => {
-			$( '.site-footer' ).css( 'background-color', to );
+			const hsl = hexToHSL( to );
+			if ( to ) {
+				document.querySelector( ':root' ).style.setProperty( '--theme-footer-background-color', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+				$( '.site-footer' ).addClass( 'has-background' );
+			} else {
+				document.querySelector( ':root' ).style.setProperty( '--theme-footer-background-color', undefined );
+				$( '.site-footer' ).removeClass( 'has-background' );
+			}
 		} );
 	} );
 
