@@ -54,6 +54,6 @@
 .site-branding__title {
 	color: hsla(var(--theme-site-branding-title-color), 1);
 	font-family: var(--theme-heading-font-family);
-	font-size: var(--theme-h4-font-size);
+	font-size: var(--theme-site-branding__font-size);
 	font-weight: 700;
 }

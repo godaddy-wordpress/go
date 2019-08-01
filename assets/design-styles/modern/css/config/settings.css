@@ -54,7 +54,7 @@
 	--theme-header-padding-y: 1rem;
 
 	@media (--medium) {
-		--theme-header-padding-y: 1.5rem;
+		--theme-header-padding-y: 1.85rem;
 	}
 
 	/* Header 3 */
@@ -78,7 +78,7 @@
 	--theme-footer-menu-link-spacing: 0.25rem 1rem;
 	--theme-footer-background-color: 0, 0%, 100%; /* #ffffff */
 	--theme-footer-color: var(--THEME-COLOR-NAV);
-	--theme-footer-link-color: var(--THEME-COLOR-NAV);
+	--theme-footer-link-color: 0, 0%, 11%;
 	--theme-footer-link-hover-active-color: var(--THEME-COLOR-HEADING);
 
 	@media (--medium) {
@@ -245,6 +245,7 @@
 	--theme-site-branding-title-color: var(--theme-h1-color);
 	--theme-site-branding-description-color: 0, 0%, 11%;
 	--theme-site-branding-font-family: var(--theme-font-family-heading);
+	--theme-site-branding__font-size: 1.5rem;
 	--theme-site-branding-description__line-height: 1.4;
 	--theme-site-branding-description-opacity: 0.65;
 	--theme-site-branding-spacing-unit: var(--spacing-unit-2);
@@ -437,12 +438,12 @@
 
 
 	/* Inputs */
-	--theme-input-border-bottom-width: 1px;
-	--theme-input-border-left-width: 1px;
-	--theme-input-border-right-width: 1px;
-	--theme-input-border-top-width: 1px;
-	--theme-input-border-width: 1px;
-	--theme-input-stroke-color: var(--THEME-COLOR-SECONDARY);
+	--theme-input-border-bottom-width: 2px;
+	--theme-input-border-left-width: 2px;
+	--theme-input-border-right-width: 2px;
+	--theme-input-border-top-width: 2px;
+	--theme-input-border-width: 2px;
+	--theme-input-stroke-color:  0, 0%, 11%;
 	--theme-input-border-radius: 0;
 	--theme-input-font-size: 1.0625rem;
 	--theme-input-font-weight: 700;

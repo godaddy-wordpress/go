@@ -37,6 +37,11 @@ p {
 	margin-top: 0;
 }
 
+.site-branding__title {
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
 .footer-navigation__title {
 	display: block;
 	font-family: var(--theme-heading-font-family);
@@ -44,6 +49,13 @@ p {
 	letter-spacing: 2px;
 	margin-bottom: 0.75rem;
 	text-transform: uppercase;
+}
+
+[data-footer="footer-1"] .footer-navigation li {
+	font-size: var(--theme-primary-menu-link-font-size);
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: 700;
 }
 
 .wp-block-coblocks-food-and-drinks {
