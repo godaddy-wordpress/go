@@ -79,6 +79,12 @@ $has_social_icons = Maverick\has_social_icons();
 				<?php if ( ! empty( $footer_copy_text ) ) : ?>
 					<p class="site-info mb-0 text-sm">
 						<?php echo esc_html( $footer_copy_text ); ?>
+
+						<?php
+						if ( function_exists( 'the_privacy_policy_link' ) ) {
+							the_privacy_policy_link( '' );
+						}
+						?>
 					</p>
 				<?php endif; ?>
 
