@@ -165,9 +165,9 @@
 		& svg {
 			color: currentColor;
 			display: inline-block;
-			height: 0.8rem;
-			margin-left: var(--theme-spacing-unit);
-			width: 0.8rem;
+			height: 0.65rem;
+			margin-left: 0.5rem;
+			width: 0.65rem;
 		}
 
 		&:hover,
