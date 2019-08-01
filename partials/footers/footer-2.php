@@ -23,7 +23,7 @@ $has_social_icons = Maverick\has_social_icons();
 
 			<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
 				<nav class="footer-navigation footer-navigation--1 text-sm" aria-label="<?php esc_attr_e( 'Primary Footer Menu', 'maverick' ); ?>">
-					<span class="footer-navigation__title text-md text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-1' ) ); ?></span>
+					<span class="footer-navigation__title bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-1' ) ); ?></span>
 					<?php
 						wp_nav_menu(
 							[
@@ -40,7 +40,7 @@ $has_social_icons = Maverick\has_social_icons();
 
 			<?php if ( has_nav_menu( 'footer-2' ) ) { ?>
 				<nav class="footer-navigation footer-navigation--2 text-sm" aria-label="<?php esc_attr_e( 'Secondary Footer Menu', 'maverick' ); ?>">
-					<span class="footer-navigation__title text-md text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-2' ) ); ?></span>
+					<span class="footer-navigation__title bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-2' ) ); ?></span>
 					<?php
 						wp_nav_menu(
 							[
@@ -57,7 +57,7 @@ $has_social_icons = Maverick\has_social_icons();
 
 			<?php if ( has_nav_menu( 'footer-3' ) ) { ?>
 				<nav class="footer-navigation footer-navigation--3 text-sm" aria-label="<?php esc_attr_e( 'Tertiary Footer Menu', 'maverick' ); ?>">
-					<span class="footer-navigation__title text-md text-heading bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-3' ) ); ?></span>
+					<span class="footer-navigation__title bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-3' ) ); ?></span>
 					<?php
 						wp_nav_menu(
 							[

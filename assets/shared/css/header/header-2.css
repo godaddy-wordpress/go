@@ -40,7 +40,7 @@
 	/* Will override all links (including sub links) for mobile,
 	so they appear same color */
 	& .primary-menu a {
-		color: hsl(var(--theme-primary-menu-link-color));
+		color: hsl(var(--theme-primary-menu--color));
 	}
 
 	/* Restore sub-menu colors when desktop style */

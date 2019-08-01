@@ -3,7 +3,7 @@
 	color: hsla(var(--theme-footer-color), 1);
 
 	& a {
-		color: hsla(var(--theme-footer-link-color), 1);
+		color: hsla(var(--theme-footer-text-color), 1);
 		text-decoration: none;
 
 		&:active,
@@ -45,4 +45,12 @@
 			}
 		}
 	}
+}
+
+.footer-navigation__title {
+	color: hsla(var(--theme-footer-heading-color), 1);
+	display: block;
+	font-family: var(--theme-primary-menu--font-family);
+	font-size: var(--theme-primary-menu--font-size);
+	text-transform: var(--theme-primary-menu--text-transform);
 }

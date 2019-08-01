@@ -111,11 +111,11 @@
 			}
 
 			& .primary-menu a {
-				color: hsl(var(--theme-primary-menu-link-color));
+				color: hsl(var(--theme-primary-menu--color));
 				text-transform: uppercase;
 
 				&::before {
-					background-color: hsl(var(--theme-primary-menu-link-color));
+					background-color: hsl(var(--theme-primary-menu--color));
 				}
 			}
 

@@ -1,8 +1,8 @@
 /**
- * Godaddy - 'Modern' Editor Styles
+ * Modern - Editor Style
  */
 
-/* Setting variables */
+/* Settings */
 @import url("config/settings.css");
 @import url("config/fonts.css");
 
@@ -14,13 +14,13 @@
 /* Gutenberg core blocks overrides */
 @import url("core-blocks/button.css");
 
-/* CoBlocks customizations */
+/* CoBlocks */
 @import url("coblocks/carousel.css");
 @import url("coblocks/hero.css");
 @import url("coblocks/media-card.css");
 @import url("coblocks/pricing-table.css");
 
-/* Woocommerce */
+/* WooCommerce */
 @import url("woocommerce/button.css");
 @import url("woocommerce/shop.css");
 

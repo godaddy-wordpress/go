@@ -3,7 +3,6 @@
 */
 
 .wp-block-pullquote {
-	border-color: hsl(var(--theme-site-branding-dividing-border-color));
 	color: hsl(var(--theme-body-color));
 }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Woocommerce main template file
+ * WooCommerce main template file
  *
  * @package Maverick
  */

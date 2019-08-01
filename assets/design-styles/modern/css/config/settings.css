@@ -77,9 +77,9 @@
 	--theme-footer-spacing: 4rem;
 	--theme-footer-menu-link-spacing: 0.25rem 1rem;
 	--theme-footer-background-color: 0, 0%, 100%; /* #ffffff */
-	--theme-footer-color: var(--THEME-COLOR-NAV);
-	--theme-footer-link-color: 0, 0%, 11%;
+	--theme-footer-color: var(--THEME-COLOR-SECONDARY);
 	--theme-footer-link-hover-active-color: var(--THEME-COLOR-HEADING);
+	--theme-footer-heading-color: var(--THEME-COLOR-HEADING);
 
 	@media (--medium) {
 		--theme-footer-menu-link-spacing: 1rem 1.75rem;
@@ -212,7 +212,7 @@
 	--theme-has-offscreen-nav-overlay-color: var(--THEME-COLOR-PRIMARY);
 	--theme-offscreen-nav-padding: var(--spacing-unit-4);
 
-	/* shared/css/header/site-search__toggle.css */
+	/* Search Toggle */
 	--theme-site-search__toggle-color: 0, 0%, 11%;
 	--theme-site-search__toggle-color-interactive: var(--THEME-COLOR-SECONDARY);
 	--theme-site-search__toggle-color-active: var(--THEME-COLOR-SECONDARY);
@@ -221,35 +221,40 @@
 	--theme-site-search__toggle-transition-duration: var(--transition-duration);
 	--theme-site-search__toggle-easing-function: var(--transition-easing-function);
 	--theme-site-search__toggle-spacing-unit: var(--spacing-unit);
-
 	--theme-search-input__button-color: 0, 0%, 11%;
 	--theme-search-input__button-icon-color: 0, 0%, 100%;
 	--theme-search-input__button-color-interactive: 0, 0%, 11%;
-
 	--theme-site-search-z-index: 2;
 
-	/* shared/css/header/primary-menu.css */
-	--theme-primary-menu-link-font-size: 0.8rem;
-	--theme-primary-menu-link-color: 0, 0%, 11%;
-	--theme-primary-submenu-bg-color: 0, 0%, 11%;
-	--theme-primary-submenu-link-color: var(--THEME-COLOR-SECONDARY);
-	--theme-primary-menu-link-hover-active-opacity: 0.65;
-	--theme-primary-menu-link-hover-active-color: 0, 0%, 11%;
+	/* Primary Menu */
+	--theme-primary-menu--color: 0, 0%, 11%;
+	--theme-primary-menu--color-interactive: 0, 0%, 11%;
+	--theme-primary-menu--font-family: var(--theme-heading-font-family);
+	--theme-primary-menu--font-size: 0.8rem;
+	--theme-primary-menu--font-weight: 700;
+	--theme-primary-menu--opacity-interactive: 0.65;
+	--theme-primary-menu--text-transform: uppercase;
+	--theme-submenu--bg-color: 0, 0%, 11%;
+	--theme-submenu--color: var(--THEME-COLOR-SECONDARY);
 
 	@media (--large) {
-		--theme-primary-submenu-link-color: var(--THEME-COLOR-PRIMARY);
+		--theme-submenu--color: var(--THEME-COLOR-PRIMARY);
 	}
-	--theme-primary-submenu-z-index: 400;
 
-	/* shared/css/header/site-branding.css */
-	--theme-site-branding-title-color: var(--theme-h1-color);
-	--theme-site-branding-description-color: 0, 0%, 11%;
-	--theme-site-branding-font-family: var(--theme-font-family-heading);
-	--theme-site-branding__font-size: 1.5rem;
-	--theme-site-branding-description__line-height: 1.4;
-	--theme-site-branding-description-opacity: 0.65;
-	--theme-site-branding-spacing-unit: var(--spacing-unit-2);
-	--theme-site-branding-dividing-border-color: var(--THEME-COLOR-SECONDARY);
+	/* Site Branding */
+	--theme-site-title--color: var(--theme-h1-color);
+	--theme-site-title--font-size: 1.5rem;
+	--theme-site-title--font-family: var(--theme-font-family-heading);
+	--theme-site-title--font-weight: 700;
+	--theme-site-description--color: 0, 0%, 11%;
+	--theme-site-description--line-height: 1.4;
+	--theme-site-description--opacity: 0.65;
+
+
+
+
+
+
 
 	/* shared/css/header/site-navigation.css */
 	--theme-site-navigation-overlay-color: var(--THEME-COLOR-SECONDARY);

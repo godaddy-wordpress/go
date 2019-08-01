@@ -56,6 +56,7 @@
 @import url("coblocks/hero.css");
 @import url("coblocks/pricing-table.css");
 @import url("coblocks/row.css");
+@import url("coblocks/food-drinks.css");
 
 /* Components - everything that is NOT a block */
 @import url("header/site-header.css");
@@ -108,6 +109,10 @@
 @import url("gravity/checkbox.css");
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
+
+strong {
+	color: hsla(var(--theme-h1-color), 1);
+}
 
 .display-block {
 	display: block;

@@ -24,7 +24,7 @@
 	}
 
 	&:focus {
-		outline: 1px dotted var(--theme-primary-menu-link-color);
+		outline: 1px dotted var(--theme-primary-menu--color);
 	}
 
 	&:active,
@@ -33,7 +33,7 @@
 		background-color: transparent;
 		border: none;
 		box-shadow: none;
-		color: hsl(var(--theme-primary-menu-link-hover-active-color));
+		color: hsl(var(--theme-primary-menu--color-interactive));
 	}
 
 	& svg {
