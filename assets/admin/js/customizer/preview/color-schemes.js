@@ -4,7 +4,6 @@ const $ = jQuery; // eslint-disable-line
 
 export default () => {
 	let selectedDesignStyle;
-	let selectedColorScheme;
 
 	/**
 	 * Set primary color
@@ -87,20 +86,6 @@ export default () => {
 		return false;
 	};
 
-	/**
-	 * Set the colors
-	 */
-	const setColors = () => {
-		const designStyle = getDesignStyle( selectedDesignStyle );
-		const colors = designStyle.color_schemes[ selectedColorScheme ];
-
-		setPrimaryColor( colors['primary_color'] );
-		setSecondaryColor( colors[ 'secondary_color' ] );
-		setTertiaryColor( colors[ 'tertiary_color' ] );
-		setQuaternaryColor( colors[ 'quaternary_color' ] );
-		setQuinaryColor( colors[ 'quinary_color' ] );
-	};
-
 	wp.customize( 'maverick_design_style', ( value ) => {
 		selectedDesignStyle = value.get();
 		value.bind( ( to ) => {
@@ -110,8 +95,16 @@ export default () => {
 
 	wp.customize( 'maverick_color_schemes', ( value ) => {
 		value.bind( ( colorScheme ) => {
-			selectedColorScheme = colorScheme;
-			setColors();
+			const designStyle = getDesignStyle( selectedDesignStyle );
+
+			if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
+				const colors = designStyle.color_schemes[ colorScheme ];
+				setPrimaryColor( colors['primary_color'] );
+				setSecondaryColor( colors[ 'secondary_color' ] );
+				setTertiaryColor( colors[ 'tertiary_color' ] );
+				setQuaternaryColor( colors[ 'quaternary_color' ] );
+				setQuinaryColor( colors[ 'quinary_color' ] );
+			}
 		} );
 	} );
 
