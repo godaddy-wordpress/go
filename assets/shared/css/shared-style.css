@@ -109,6 +109,10 @@
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
 
+strong {
+	color: hsla(var(--theme-h1-color), 1);
+}
+
 .display-block {
 	display: block;
 }

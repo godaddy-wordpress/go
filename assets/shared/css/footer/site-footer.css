@@ -49,4 +49,6 @@
 
 .footer-navigation__title {
 	color: hsla(var(--theme-footer-heading-color), 1);
+	font-size: var(--theme-primary-menu--font-size);
+	display: block;
 }

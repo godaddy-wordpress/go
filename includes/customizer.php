@@ -683,11 +683,11 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $header_text_color ) : ?>
-					--theme-primary-menu-link-color: <?php echo esc_attr( $header_text_color ); ?>;
-					--theme-site-branding-description-color: <?php echo esc_attr( $header_text_color ); ?>;
-					--theme-site-branding-title-color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-primary-menu--color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-site-description--color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-site-title--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-search__toggle-color: <?php echo esc_attr( $header_text_color ); ?>;
-					--theme-primary-menu-link-hover-active-color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-primary-menu--color-interactive: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-navigation__toggle-color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-search-input__button-color: <?php echo esc_attr( $header_text_color ); ?>;
 				<?php endif; ?>

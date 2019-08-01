@@ -3,6 +3,7 @@
  */
 
 .primary-menu {
+	font-weight: var(--theme-primary-menu--font-weight);
 
 	/* Animated bottom borders */
 	--border-start: 12px; /* from the bottom */
@@ -24,15 +25,17 @@
 	/* All menu links */
 	& a {
 		border: none;
-		color: hsla(var(--theme-primary-menu-link-color), 1);
+		color: hsla(var(--theme-primary-menu--color), 1);
 		display: inline-block;
-		font-size: var(--theme-primary-menu-link-font-size);
+		font-size: var(--theme-primary-menu--font-size);
+		font-family: var(--theme-primary-menu--font-family);
+		text-transform: var(--theme-primary-menu--text-transform);
 		position: relative;
 		text-decoration: none;
 		transition: opacity 0.2s ease;
 
 		/* &::before {
-			background-color: hsl(var(--theme-primary-menu-link-color));
+			background-color: hsl(var(--theme-primary-menu--color));
 			bottom: var(--border-start);
 			content: "";
 			display: block;
@@ -45,14 +48,14 @@
 		} */
 
 		&:focus {
-			outline: 1px dotted var(--theme-primary-menu-link-color);
+			outline: 1px dotted var(--theme-primary-menu--color);
 			outline-offset: 5px;
 		}
 
 		&:active,
 		&:focus,
 		&:hover {
-			opacity: var(--theme-primary-menu-link-hover-active-opacity);
+			opacity: var(--theme-primary-menu--opacity-interactive);
 
 			/* &::before {
 				bottom: var(--border-end-mobile);
@@ -67,7 +70,7 @@
 
 	/* Active menu link */
 	& .current-menu-item a {
-		color: hsl(var(--theme-primary-menu-link-hover-active-color));
+		color: hsl(var(--theme-primary-menu--color-interactive));
 
 		&::before {
 			bottom: var(--border-end-mobile);
@@ -87,7 +90,7 @@
 
 			/* Upward dark arrow on top of the flyout sub-menu */
 			&::before {
-				border-bottom: 10px solid hsla(var(--theme-primary-submenu-bg-color), 1);
+				border-bottom: 10px solid hsla(var(--theme-submenu--bg-color), 1);
 				border-left: 10px solid transparent;
 				border-right: 10px solid transparent;
 				content: "";
@@ -109,7 +112,7 @@
 		padding: 0;
 
 		@media (--large) {
-			background-color: hsla(var(--theme-primary-submenu-bg-color), 1);
+			background-color: hsla(var(--theme-submenu--bg-color), 1);
 			display: none;
 			left: 50%;
 			padding: 1rem 0;
@@ -129,7 +132,7 @@
 
 		/* All submenu links */
 		& a {
-			color: hsl(var(--theme-primary-submenu-link-color));
+			color: hsl(var(--theme-submenu--color));
 			padding-bottom: 0.5rem;
 			padding-top: 0.5rem;
 			width: 100%;

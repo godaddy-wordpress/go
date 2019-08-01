@@ -14,6 +14,9 @@
 
 		& li {
 			display: inline-block;
+			font-size: var(--theme-primary-menu--font-size);
+			font-weight: var(--theme-primary-menu--font-weight);
+			text-transform: var(--theme-primary-menu--text-transform);
 			width: 100%;
 
 			@media (--medium) {
