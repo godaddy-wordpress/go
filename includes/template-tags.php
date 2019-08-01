@@ -135,9 +135,7 @@ function header_variation() {
 			call_user_func( $variation['partial'] );
 		}
 	} elseif ( $selected_variation ) {
-		echo '<div id="js-header-variation">';
-			call_user_func( $selected_variation['partial'] );
-		echo '</div>';
+		call_user_func( $selected_variation['partial'] );
 	}
 }
 
@@ -155,9 +153,7 @@ function footer_variation() {
 			call_user_func( $variation['partial'] );
 		}
 	} elseif ( $selected_variation ) {
-		echo '<div id="js-footer-variation">';
-			call_user_func( $selected_variation['partial'] );
-		echo '</div>';
+		call_user_func( $selected_variation['partial'] );
 	}
 }
 

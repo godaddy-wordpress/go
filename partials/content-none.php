@@ -10,7 +10,7 @@
 
 <h1 class="page__title"><?php esc_html_e( 'Nothing Found', 'maverick' ); ?></h1>
 
-<div id="content" class="content-area m-auto">
+<div class="content-area m-auto">
 	<?php
 	if ( is_home() && current_user_can( 'publish_posts' ) ) :
 

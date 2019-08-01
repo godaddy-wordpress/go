@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div id="content" class="content-area m-auto u-max-width-full">
+	<div class="content-area m-auto u-max-width-full">
 		<h1><?php the_archive_title(); ?></h1>
 
 		<?php if ( have_posts() ) : ?>
