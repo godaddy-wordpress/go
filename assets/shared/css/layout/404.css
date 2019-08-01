@@ -1,0 +1,16 @@
+.error-404 .entry-header {
+	margin: 40px auto;
+	text-align: center;
+}
+
+.error-404 .entry-header h1 {
+	font-size: calc(var(--theme-h1-font-size) * 2);
+	margin-bottom: 10px;
+}
+
+.error-404 .page-content .site-search {
+	opacity: 1;
+	pointer-events: auto;
+	position: relative;
+	transform: none;
+}

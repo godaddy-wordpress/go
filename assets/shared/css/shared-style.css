@@ -87,6 +87,7 @@
 @import url("layout/page.css");
 @import url("layout/content.css");
 @import url("layout/entry-header.css");
+@import url("layout/404.css");
 
 /* Templates - related to WordPress templates */
 @import url("templates/post.css");
