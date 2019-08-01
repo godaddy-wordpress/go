@@ -31,4 +31,3 @@ $excerpt = get_the_excerpt();
 		</p>
 	</div>
 </article>
-
