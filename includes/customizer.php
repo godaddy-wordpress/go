@@ -213,26 +213,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_color_schemes_override',
-		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-		]
-	);
-
-	$wp_customize->add_control(
-		'maverick_color_schemes_checkbox_override',
-		[
-			'label'       => esc_html__( 'Use custom colors', 'maverick' ),
-			'description' => esc_html__( 'Check this option to set custom primary and secondary colors', 'maverick' ),
-			'section'     => 'maverick_color_schemes_section',
-			'settings'    => 'maverick_color_schemes_override',
-			'type'        => 'checkbox',
-		]
-	);
-
-	$wp_customize->add_setting(
 		'maverick_custom_primary_color',
 		[
 			'type'       => 'theme_mod',

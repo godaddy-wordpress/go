@@ -3,12 +3,6 @@ import { hexToHSL } from '../util';
 const $ = jQuery; // eslint-disable-line
 
 export default () => {
-	let useColorsOverride;
-	let selectedPrimaryColor;
-	let selectedSecondaryColor;
-	let selectedTertiaryColor;
-	let selectedQuaternaryColor;
-	let selectedQuinaryColor;
 	let selectedDesignStyle;
 	let selectedColorScheme;
 
@@ -97,119 +91,56 @@ export default () => {
 	 * Set the colors
 	 */
 	const setColors = () => {
-
 		const designStyle = getDesignStyle( selectedDesignStyle );
 		const colors = designStyle.color_schemes[ selectedColorScheme ];
+
 		setPrimaryColor( colors['primary_color'] );
 		setSecondaryColor( colors[ 'secondary_color' ] );
 		setTertiaryColor( colors[ 'tertiary_color' ] );
 		setQuaternaryColor( colors[ 'quaternary_color' ] );
 		setQuinaryColor( colors[ 'quinary_color' ] );
-
-		if ( useColorsOverride ) {
-			setPrimaryColor( selectedPrimaryColor );
-			setSecondaryColor( selectedSecondaryColor );
-			setTertiaryColor( selectedTertiaryColor );
-			setQuaternaryColor( selectedQuaternaryColor );
-			setQuinaryColor( selectedQuinaryColor );
-		}
 	};
 
 	wp.customize( 'maverick_design_style', ( value ) => {
 		selectedDesignStyle = value.get();
-
 		value.bind( ( to ) => {
 			selectedDesignStyle = to;
 		} );
 	} );
 
 	wp.customize( 'maverick_color_schemes', ( value ) => {
-		selectedColorScheme = value.get();
 		value.bind( ( colorScheme ) => {
 			selectedColorScheme = colorScheme;
-			const designStyle = getDesignStyle( selectedDesignStyle );
-
-			if ( useColorsOverride ) {
-				return;
-			}
-
-			if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
-				const colors = designStyle.color_schemes[ colorScheme ];
-				setPrimaryColor( colors['primary_color'] );
-				setSecondaryColor( colors['secondary_color'] );
-			}
-		} );
-	} );
-
-	wp.customize( 'maverick_color_schemes_override', ( checkbox ) => {
-		useColorsOverride = checkbox.get();
-
-		checkbox.bind( ( to ) => {
-			useColorsOverride = to;
-
 			setColors();
-
 		} );
 	} );
 
 	wp.customize( 'maverick_custom_primary_color', ( value ) => {
-		selectedPrimaryColor = value.get();
-
 		value.bind( ( to ) => {
-			selectedPrimaryColor = to;
-
-			if ( ! useColorsOverride ) {
-				return;
-			}
-
 			setPrimaryColor( to );
 		} );
 	} );
 
 	wp.customize( 'maverick_custom_secondary_color', ( value ) => {
-		selectedSecondaryColor = value.get();
 		value.bind( ( to ) => {
-			selectedSecondaryColor = to;
-
-			if ( ! useColorsOverride ) {
-				return;
-			}
 			setSecondaryColor( to );
 		} );
 	} );
 
 	wp.customize( 'maverick_custom_tertiary_color', ( value ) => {
-		selectedTertiaryColor = value.get();
 		value.bind( ( to ) => {
-			selectedTertiaryColor = to;
-
-			if ( ! useColorsOverride ) {
-				return;
-			}
 			setTertiaryColor( to );
 		} );
 	} );
 
 	wp.customize( 'maverick_custom_quaternary_color', ( value ) => {
-		selectedQuaternaryColor = value.get();
 		value.bind( ( to ) => {
-			selectedQuaternaryColor = to;
-
-			if ( ! useColorsOverride ) {
-				return;
-			}
 			setQuaternaryColor( to );
 		} );
 	} );
 
 	wp.customize( 'maverick_custom_quinary_color', ( value ) => {
-		selectedQuinaryColor = value.get();
 		value.bind( ( to ) => {
-			selectedQuinaryColor = to;
-
-			if ( ! useColorsOverride ) {
-				return;
-			}
 			setQuinaryColor( to );
 		} );
 	} );

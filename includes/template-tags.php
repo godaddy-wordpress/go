@@ -332,7 +332,6 @@ function navigation_toggle() {
  */
 function get_palette_color( $color, $format = 'RBG' ) {
 	$color_scheme    = get_theme_mod( 'maverick_color_schemes' );
-	$use_overrides   = get_theme_mod( 'maverick_color_schemes_override', false );
 	$override_colors = [
 		'primary'    => 'maverick_custom_primary_color',
 		'secondary'  => 'maverick_custom_secondary_color',
@@ -343,23 +342,15 @@ function get_palette_color( $color, $format = 'RBG' ) {
 
 	$color_override = get_theme_mod( $override_colors[ $color ] );
 
-	if ( ! $color_scheme && ! $use_overrides ) {
-		return false;
-	}
-
-	if ( $use_overrides && ! $color_override ) {
-		return false;
-	}
-
 	$avaliable_color_schemes = get_available_color_schemes();
 
 	$the_color = false;
 
-	if ( ! $use_overrides && $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
 		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color . '_color' ];
 	}
 
-	if ( $use_overrides && $color_override ) {
+	if ( $color_override ) {
 		$the_color = $color_override;
 	}
 
