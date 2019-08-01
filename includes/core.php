@@ -60,36 +60,81 @@ function i18n() {
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function theme_setup() {
+
+	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
 	add_theme_support( 'title-tag' );
+
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
 	add_theme_support( 'post-thumbnails' );
 
+	// This theme uses wp_nav_menu() in up to four locations.
+	register_nav_menus(
+		[
+			'primary'  => esc_html__( 'Primary', 'maverick' ),
+			'footer-1' => esc_html__( 'Footer Menu #1', 'maverick' ),
+			'footer-2' => esc_html__( 'Footer Menu #2', 'maverick' ),
+			'footer-3' => esc_html__( 'Footer Menu #3', 'maverick' ),
+		]
+	);
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
 	add_theme_support(
 		'html5',
 		[
 			'search-form',
+			'comment-form',
+			'comment-list',
 			'gallery',
+			'caption',
 		]
 	);
-	add_theme_support( 'disable-custom-colors' );
-	add_theme_support( 'disable-custom-font-sizes' );
-	add_theme_support( 'responsive-embeds' );
-	add_theme_support( 'align-wide' );
-	// add_theme_support( 'editor-styles' );
-	add_theme_support( 'wp-block-styles' );
-	add_theme_support( 'woocommerce' );
-
-	$custom_logo_defaults = [
-		'flex-height' => true,
-		'flex-width'  => true,
-	];
-	add_theme_support( 'custom-logo', $custom_logo_defaults );
 
 	/**
-	 * Custom font sizes for use in the editor.
+	 * Add support for core custom logo.
 	 *
-	 * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#block-font-sizes
+	 * @link https://codex.wordpress.org/Theme_Logo
 	 */
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 190,
+			'width'       => 190,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
+
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for editor styles.
+	// add_theme_support( 'editor-styles' );
+
+	// Add support for WooCommerce.
+	add_theme_support( 'woocommerce' );
+
+	// Add custom editor font sizes.
 	add_theme_support(
 		'editor-font-sizes',
 		[
@@ -117,16 +162,6 @@ function theme_setup() {
 				'size'      => 30,
 				'slug'      => 'huge',
 			],
-		]
-	);
-
-	// This theme uses wp_nav_menu() in three locations.
-	register_nav_menus(
-		[
-			'primary'  => esc_html__( 'Primary Menu', 'maverick' ),
-			'footer-1' => esc_html__( 'Footer Menu #1 (Primary)', 'maverick' ),
-			'footer-2' => esc_html__( 'Footer Menu #2', 'maverick' ),
-			'footer-3' => esc_html__( 'Footer Menu #3', 'maverick' ),
 		]
 	);
 }
