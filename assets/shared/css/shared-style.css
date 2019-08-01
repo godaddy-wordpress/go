@@ -339,7 +339,3 @@ strong {
 		max-width: var(--theme-max-width-wide);
 	}
 }
-
-.text-heading {
-	color: hsla(var(--theme-heading-color), 1);
-}

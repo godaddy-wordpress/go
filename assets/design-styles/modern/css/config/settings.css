@@ -31,7 +31,7 @@
 	--theme-block-spacing-huge: 4rem;
 
 	@media (--medium) {
-		--theme-block-padding-x: 3rem;
+		--theme-block-padding-x: 3.5rem;
 	}
 
 	@media (--large) {
@@ -40,42 +40,18 @@
 		--theme-block-spacing-huge: 8.5rem;
 	}
 
-	--theme-text-xs: 78%;
-	--theme-text-sm: 82.5%;
-	--theme-text-sm__letter-spacing: 0.015em;
-	--theme-text-md: 105%;
-
-	@media (--small) {
-		--theme-text-sm: 85%;
-		--theme-text-md: 110%;
-	}
-
-	@media (--large) {
-		--theme-text-sm: 90%;
-	}
-
 	/* Header */
 	--theme-header-background-color: 0, 0%, 100%;
 	--theme-header-padding-y: 1rem;
+	--theme-header-3-padding-y: 3.5rem;
+	--theme-header-3-navigation-margin-top: 1.5rem;
 
 	@media (--medium) {
 		--theme-header-padding-y: 1.85rem;
 	}
 
-	/* Header 3 */
-	--theme-header-3-padding-y: 3.5rem;
-	--theme-header-3-navigation-margin-top: 1.5rem;
-
 	@media (--large) {
 		--theme-header-3-padding-y: 8rem;
-	}
-
-	/* Page entry header spacing. */
-	--theme-entryheader-spacing-top: 4rem;
-	--theme-entryheader-spacing-bottom: 7rem;
-
-	@media (--large) {
-		--theme-entryheader-spacing-bottom: 8.5rem;
 	}
 
 	/* Footer. */
@@ -110,7 +86,22 @@
 		--theme-footer-social-icon-spacing: 1rem;
 	}
 
-	/* Spacing units. */
+
+
+
+	/* Page entry header spacing. */
+	--theme-entryheader-spacing-top: 4rem;
+	--theme-entryheader-spacing-bottom: 7rem;
+
+	@media (--large) {
+		--theme-entryheader-spacing-bottom: 8.5rem;
+	}
+
+
+
+
+
+	/* Spacing units */
 	--theme-spacing-unit: 0.5rem;
 	--theme-spacing-unit-2: 1rem;
 	--theme-spacing-unit-3: 1.5rem;
@@ -123,19 +114,14 @@
 	* TYPOGRAPHY
 	***************************************************************/
 
-	/* <body> settings */
+	/* Body */
 	--theme-body-font-size: 1rem;
-	--theme-body-line-height: 1.9em;
+	--theme-body-line-height: 1.9;
 	--theme-body-font-family: "Arimo", sans-serif;
 
 	/* Headings */
 	--theme-heading-font-family: "Montserrat", sans-serif;
-	/* --theme-heading-line-height: var(--line-height-heading); */
 
-	--theme-heading-content-space-above: 1rem;
-	--theme-heading-content-space-below: 0;
-
-	/* Heading font size */
 	--theme-h1-font-size: 2.5rem;
 	--theme-h2-font-size: 2rem;
 	--theme-h3-font-size: 1.75rem;
@@ -147,9 +133,28 @@
 		--theme-h1-font-size: 3.25rem;
 		--theme-h2-font-size: 2.5rem;
 		--theme-h3-font-size: 2rem;
+	}
 
-		--theme-heading-content-space-above: 1.5rem;
-		--theme-heading-content-space-below: -0.375rem;
+	--theme-h1-color: var(--THEME-COLOR-HEADING);
+	--theme-h2-color: var(--THEME-COLOR-HEADING);
+	--theme-h3-color: var(--THEME-COLOR-HEADING);
+	--theme-h4-color: var(--THEME-COLOR-HEADING);
+	--theme-h5-color: var(--THEME-COLOR-HEADING);
+	--theme-h6-color: var(--THEME-COLOR-HEADING);
+
+	/* Text Utilities */
+	--theme-text-xs: 78%;
+	--theme-text-sm: 82.5%;
+	--theme-text-sm__letter-spacing: 0.015em;
+	--theme-text-md: 105%;
+
+	@media (--small) {
+		--theme-text-sm: 85%;
+		--theme-text-md: 110%;
+	}
+
+	@media (--large) {
+		--theme-text-sm: 90%;
 	}
 
 	/* Blockquote */
@@ -173,13 +178,6 @@
 	}
 
 	/* Heading colors */
-	--theme-heading-color: 0, 0%, 11%;
-	--theme-h1-color: var(--THEME-COLOR-HEADING);
-	--theme-h2-color: var(--THEME-COLOR-HEADING);
-	--theme-h3-color: var(--THEME-COLOR-HEADING);
-	--theme-h4-color: var(--THEME-COLOR-HEADING);
-	--theme-h5-color: var(--THEME-COLOR-HEADING);
-	--theme-h6-color: var(--THEME-COLOR-HEADING);
 
 	/* Body color */
 	--theme-body-color: var(--THEME-COLOR-BODY);
