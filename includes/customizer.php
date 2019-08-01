@@ -26,6 +26,7 @@ function setup() {
 	add_action( 'customize_register', $n( 'register_header_controls' ) );
 	add_action( 'customize_register', $n( 'register_footer_controls' ) );
 	add_action( 'customize_preview_init', $n( 'customize_preview_init' ) );
+	add_action( 'customize_preview_init', $n( 'enqueue_controls_assets' ) );
 	add_action( 'wp_head', $n( 'css_variables' ), 0 );
 	add_action( 'wp_head', $n( 'inline_css' ) );
 }
