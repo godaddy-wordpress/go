@@ -254,14 +254,8 @@ function script_loader_tag( $tag, $handle ) {
  * @return array
  */
 function body_classes( $classes ) {
-	$design_style = get_theme_mod( 'maverick_design_style', get_default_design_style() );
 
-	// Design style variation body class.
-	if ( $design_style ) {
-		$classes[] = 'is-' . esc_attr( $design_style );
-	}
-
-	// Add woo class whenever block is on page
+	// Add class whenever a WooCommerce block is added to a page
 	if (
 		has_block( 'woocommerce/handpicked-products' )
 		|| has_block( 'woocommerce/product-best-sellers' )
