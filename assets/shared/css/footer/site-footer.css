@@ -44,6 +44,27 @@
 				width: 1px;
 			}
 		}
+
+		&:focus {
+			outline: none;
+
+			&::after {
+				@mixin outline-text-link;
+				content: "";
+				position: absolute;
+				width: calc(100% - 1rem);
+				bottom: -3px;
+				left: 1rem;
+			}
+		}
+	}
+}
+
+.footer-navigation {
+	line-height: var(--theme-footer-navigation-line-height);
+
+	& a:focus {
+		@mixin outline;
 	}
 }
 

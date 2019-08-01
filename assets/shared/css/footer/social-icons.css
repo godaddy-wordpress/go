@@ -4,22 +4,15 @@
 
 .social-icons {
 
-	& li {
-
-		&:first-child a {
-			padding-left: 0;
-		}
-
-		&:last-child a {
-			padding-right: 0;
-		}
-	}
-
 	& a {
 		align-items: center;
 		display: flex;
 		justify-content: center;
-		padding: 1rem var(--theme-footer-social-icon-spacing);
+		padding: var(--theme-footer-social-icon-spacing);
+
+		&:focus {
+			outline: 2px dotted hsla(var(--theme-outline-color), 1);
+		}
 	}
 
 	& svg {

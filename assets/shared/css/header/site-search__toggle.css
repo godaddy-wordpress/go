@@ -15,8 +15,10 @@
 	color: hsl(var(--theme-site-search__toggle-color));
 	display: inline-block;
 	line-height: 1;
-	padding: 0 0.4rem;
+	padding: 0.1rem;
 	position: relative;
+	width: calc( var(--theme-site-search__toggle-width) * 2);
+	height: calc( var(--theme-site-search__toggle-width) * 2);
 	z-index: 1;
 
 	@media (--large) {
@@ -24,7 +26,7 @@
 	}
 
 	&:focus {
-		outline: 1px dotted var(--theme-primary-menu--color);
+		@mixin outline;
 	}
 
 	&:active,
@@ -38,7 +40,10 @@
 
 	& svg {
 		fill: currentColor;
-		height: var(--theme-site-search__toggle-height);
 		width: var(--theme-site-search__toggle-width);
 	}
+}
+
+.primary-menu + .site-search__toggle {
+	margin-left: 0.7rem;
 }

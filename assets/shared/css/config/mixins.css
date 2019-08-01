@@ -2,6 +2,21 @@
  * Mixins
  */
 
+/* Outline */
+@define-mixin outline {
+	outline-color: hsla(var(--theme-outline-color), 1);
+	outline-style: var(--theme-outline-style);
+	outline-width: var(--theme-outline-width);
+}
+
+@define-mixin outline-text-link {
+	border: 0;
+	border-bottom-width: var(--theme-outline-width);
+	border-color: hsla(var(--theme-outline-color), 1);
+	border-style: var(--theme-outline-style);
+	outline: none;
+}
+
 /* Primary button */
 @define-mixin c-button-block {
 	background-color: hsl(var(--theme-button-block-background-color));

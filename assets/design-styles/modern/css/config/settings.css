@@ -19,6 +19,11 @@
 	--theme-max-width-wide: 1280px;
 	--theme-max-width-full: 1440px;
 
+	/* Accessibility. */
+	--theme-outline-color: 0, 0%, 11%;
+	--theme-outline-style: dotted;
+	--theme-outline-width: 2px;
+
 	/* Block spacing. */
 	--theme-block-padding-x: 1.25rem;
 	--theme-block-spacing: 1.15rem;
@@ -74,15 +79,21 @@
 	}
 
 	/* Footer. */
-	--theme-footer-spacing: 4rem;
-	--theme-footer-menu-link-spacing: 0.25rem 1rem;
 	--theme-footer-background-color: 0, 0%, 100%; /* #ffffff */
 	--theme-footer-color: var(--THEME-COLOR-SECONDARY);
-	--theme-footer-link-hover-active-color: var(--THEME-COLOR-HEADING);
 	--theme-footer-heading-color: var(--THEME-COLOR-HEADING);
+	--theme-footer-link-hover-active-color: var(--THEME-COLOR-HEADING);
+
+	--theme-footer-nav--padding-y: 0.25rem;
+	--theme-footer-nav--padding-x: 1rem;
+
+
+	--theme-footer-navigation-line-height: 2.25;
+	--theme-footer-spacing: 4rem;
 
 	@media (--medium) {
-		--theme-footer-menu-link-spacing: 1rem 1.75rem;
+		--theme-footer-nav--padding-y: 1.15rem;
+		--theme-footer-nav--padding-x: 1.75rem;
 	}
 
 	@media (--large) {
@@ -249,10 +260,13 @@
 	--theme-site-description--line-height: 1.4;
 	--theme-site-description--opacity: 0.65;
 
-
-
-
-
+	--theme-button--bg-color: 0, 0%, 11%;
+	--theme-button--color: 0, 0%, 100%;
+	--theme-button--font-weight: 600;
+	--theme-button--text-transform: uppercase;
+	--theme-button--letter-spacing: 3px;
+	--theme-button--font-family: var(--theme-heading-font-family);
+	--theme-button--font-size: 0.65rem;
 
 
 	/* shared/css/header/site-navigation.css */
