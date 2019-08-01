@@ -695,7 +695,7 @@ function inline_css() {
 
 				/* Footer */
 				<?php if ( $footer_background ) : ?>
-					--theme-footer-background-color: <?php echo esc_attr( $footer_background ); ?>;
+					--theme-footer-bg-color: <?php echo esc_attr( $footer_background ); ?>;
 				<?php endif; ?>
 
 				<?php if ( $footer_heading_color ) : ?>

@@ -11,7 +11,7 @@ $footer_copy_text = Maverick\footer_copy_text();
 $has_background   = Maverick\has_footer_background();
 ?>
 
-<footer id="colophon" class="site-footer site-footer--1">
+<footer id="colophon" class="site-footer site-footer--1 <?php echo esc_attr( $has_background ); ?>">
 
 	<div class="site-footer__inner max-w-wide m-auto text-center">
 

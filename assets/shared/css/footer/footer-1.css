@@ -10,7 +10,7 @@
 	}
 
 	& .footer-navigation {
-		margin-bottom: calc(var(--theme-footer-spacing) * 0.5);
+		margin-bottom: calc(var(--theme-block-spacing-huge) * 0.5);
 
 		& li {
 			display: inline-block;
@@ -37,7 +37,7 @@
 	}
 
 	& .social-icons {
-		margin-bottom: calc(var(--theme-footer-spacing) * 0.5);
+		margin-bottom: calc(var(--theme-block-spacing-huge) * 0.5);
 
 		& svg {
 			height: var(--theme-footer-social-icon-size);

@@ -55,29 +55,21 @@
 		--theme-header-3-padding-y: 8rem;
 	}
 
-	/* Footer. */
-	--theme-footer-background-color: 0, 0%, 100%; /* #ffffff */
+	/* Footer */
+	--theme-footer-bg-color: 0, 0%, 100%;
 	--theme-footer-color: var(--THEME-COLOR-SECONDARY);
 	--theme-footer-heading-color: var(--THEME-COLOR-HEADING);
 	--theme-footer-link-hover-active-color: var(--THEME-COLOR-HEADING);
-
 	--theme-footer-nav--padding-y: 0.25rem;
 	--theme-footer-nav--padding-x: 1rem;
-
-
 	--theme-footer-navigation-line-height: 2.25;
-	--theme-footer-spacing: 4rem;
 
 	@media (--medium) {
 		--theme-footer-nav--padding-y: 1.15rem;
 		--theme-footer-nav--padding-x: 1.75rem;
 	}
 
-	@media (--large) {
-		--theme-footer-spacing: 8rem;
-	}
-
-	/* Footer Social. */
+	/* Social Icons */
 	--theme-footer-social-icon-color: 0, 0%, 11%;
 	--theme-footer-social-icon-size: 1.5rem;
 	--theme-footer-social-icon-spacing: 0.5rem;

@@ -1,5 +1,5 @@
 .site-footer {
-	background-color: hsla(var(--theme-footer-background-color), 1);
+	background-color: hsla(var(--theme-footer-bg-color), 1);
 	color: hsla(var(--theme-footer-color), 1);
 
 	&.has-background {
@@ -18,35 +18,23 @@
 	}
 
 	& .privacy-policy-link {
-		display: block;
-		margin-top: 0.75rem;
-		padding-top: 0.75rem;
 		position: relative;
-
-		@media (--small) {
-			display: inline;
-			margin-left: 0.85rem;
-			margin-top: 0;
-			padding-left: 1rem;
-			padding-top: 0;
-		}
+		display: inline;
+		margin-left: 0.85rem;
+		margin-top: 0;
+		padding-left: 1rem;
+		padding-top: 0;
 
 		&::before {
 			background-color: currentColor;
 			content: "";
-			height: 1px;
-			left: 50%;
+			height: 100%;
+			left: 0;
 			opacity: 0.25;
 			position: absolute;
 			top: 0;
 			transform: translateX(-50%);
-			width: 20px;
-
-			@media (--small) {
-				height: 100%;
-				left: 0;
-				width: 1px;
-			}
+			width: 1px;
 		}
 
 		&:focus {
@@ -54,11 +42,14 @@
 
 			&::after {
 				@mixin outline-text-link;
-				content: "";
-				position: absolute;
-				width: calc(100% - 1rem);
-				bottom: -3px;
-				left: 1rem;
+
+				@media (--medium) {
+					content: "";
+					position: absolute;
+					width: calc(100% - 1rem);
+					bottom: -3px;
+					left: 1rem;
+				}
 			}
 		}
 	}

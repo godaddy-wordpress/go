@@ -78,7 +78,7 @@ $has_background   = Maverick\has_footer_background();
 		<?php if ( $has_social_icons || ! empty( $footer_copy_text ) ) : ?>
 			<div class="site-footer__row flex flex-column md:flex-row justify-between md:items-center">
 				<?php if ( ! empty( $footer_copy_text ) ) : ?>
-					<p class="site-info mb-0 text-sm">
+					<p class="site-info mb-0 text-xs">
 						<?php echo esc_html( $footer_copy_text ); ?>
 
 						<?php

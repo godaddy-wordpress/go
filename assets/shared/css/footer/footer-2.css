@@ -51,7 +51,7 @@
 
 	& .footer-blurb-text {
 		flex: 100%;
-		margin-bottom: calc(var(--theme-footer-spacing) * 0.75);
+		margin-bottom: calc(var(--theme-block-spacing-huge) * 0.75);
 
 		@media (--large) {
 			margin-bottom: 0;

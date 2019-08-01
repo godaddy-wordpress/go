@@ -12,7 +12,7 @@ $has_social_icons = Maverick\has_social_icons();
 $has_background   = Maverick\has_footer_background();
 ?>
 
-<footer id="colophon" class="site-footer site-footer--2">
+<footer id="colophon" class="site-footer site-footer--2 <?php echo esc_attr( $has_background ); ?>">
 
 	<div class="site-footer__inner max-w-base lg:max-w-wide m-auto px-1">
 

@@ -307,6 +307,10 @@ strong {
 		display: flex;
 	}
 
+	.lg\:flex-wrap {
+		flex-wrap: wrap;
+	}
+
 	.lg\:flex-nowrap {
 		flex-wrap: nowrap;
 	}
