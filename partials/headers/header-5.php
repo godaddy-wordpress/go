@@ -21,7 +21,7 @@
 					wp_nav_menu(
 						[
 							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu c-primary-menu list-reset',
+							'menu_class'     => 'primary-menu list-reset',
 							'container'      => false,
 						]
 					);
