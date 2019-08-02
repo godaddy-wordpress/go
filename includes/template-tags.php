@@ -331,9 +331,9 @@ function navigation_toggle() {
 }
 
 /**
- * Returns the primary color selected by the user.
+ * Returns the color selected by the user.
  *
- * @param string $color  Which color to return ('primary' or 'secondary').
+ * @param string $color  Which color to return.
  * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
  *
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
@@ -360,6 +360,36 @@ function get_palette_color( $color, $format = 'RBG' ) {
 
 	if ( $color_override ) {
 		$the_color = $color_override;
+	}
+
+	if ( 'HSL' === $format ) {
+		return hex_to_hsl( $the_color );
+	}
+
+	return $the_color;
+}
+
+/**
+ * Returns the default color for the active color scheme.
+ *
+ * @param string $color  Which color to return.
+ * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
+ *
+ * @return string|array|bool A string with the RGB value or an array containing the HSL values.
+ */
+function get_default_palette_color( $color, $format = 'RBG' ) {
+	$color_scheme            = get_theme_mod( 'maverick_color_schemes' );
+	$avaliable_color_schemes = get_available_color_schemes();
+
+	$the_color = false;
+
+	if ( $color_scheme && empty( $avaliable_color_schemes[ $color_scheme ] ) ) {
+		$color_scheme_keys = array_keys( $avaliable_color_schemes );
+		$color_scheme      = array_shift( $color_scheme_keys );
+	}
+
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color . '_color' ];
 	}
 
 	if ( 'HSL' === $format ) {
