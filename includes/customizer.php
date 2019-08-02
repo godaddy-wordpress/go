@@ -183,9 +183,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_section(
 		'maverick_color_schemes_section',
 		[
-			'title'       => esc_html__( 'Color Schemes', 'maverick' ),
-			'description' => esc_html__( 'The color schames varies based on the design style, so if you change a design style, you need to save and refresh the customizer', 'maverick' ),
-			'capability'  => 'edit_theme_options',
+			'title' => esc_html__( 'Color Scheme', 'maverick' ),
 		]
 	);
 
@@ -253,7 +251,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			[
 				'label'    => esc_html__( 'Secondary', 'maverick' ),
 				'section'  => 'maverick_color_schemes_section',
-				'settings' => 'maverick_custom_primary_color',
+				'settings' => 'maverick_custom_secondary_color',
 			]
 		)
 	);
@@ -275,7 +273,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			[
 				'label'    => esc_html__( 'Tertiary', 'maverick' ),
 				'section'  => 'maverick_color_schemes_section',
-				'settings' => 'maverick_custom_primary_color',
+				'settings' => 'maverick_custom_tertiary_color',
 			]
 		)
 	);
@@ -297,7 +295,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			[
 				'label'    => esc_html__( 'Quaternary', 'maverick' ),
 				'section'  => 'maverick_color_schemes_section',
-				'settings' => 'maverick_custom_primary_color',
+				'settings' => 'maverick_custom_quaternary_color',
 			]
 		)
 	);
