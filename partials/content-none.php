@@ -30,8 +30,11 @@ elseif ( is_search() ) :
 	?>
 
 	<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'maverick' ); ?></p>
+	<div class="site-search" itemscope="" itemtype="http://schema.org/WebSite">
+		<?php get_template_part( 'partials/search' ); ?>
+	</div>
+
 	<?php
-	get_template_part( 'partials/search' );
 
 else :
 	?>
