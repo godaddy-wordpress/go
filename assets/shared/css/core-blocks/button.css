@@ -7,18 +7,6 @@
 	margin-bottom: 0.75rem !important;
 }
 
-/* Style variations. */
-.is-style-outline .wp-block-button__link,
-.is-style-outline-rounded .wp-block-button__link {
-	@mixin c-button-block-outline;
-
-	&:hover,
-	&:focus,
-	&:active {
-		@mixin c-button-block-outline-hover;
-	}
-}
-
 /* stylelint-disable no-descending-specificity */
 .is-style-underlined .wp-block-button__link {
 	@mixin c-button-block-underlined;
