@@ -1,9 +1,25 @@
 :root {
+	/*--------------------------------------------------------------
+	>>> TABLE OF CONTENTS:
+	----------------------------------------------------------------
+	# Colors
+	# Base
+	# Typography
+	# Header
+	# Footer
 
 
-	/***************************************************************
-	* COLORS
-	***************************************************************/
+	/*--------------------------------------------------------------
+	## Colors
+	--------------------------------------------------------------*/
+
+	/* Body */
+	--theme-body--bg-color: 0, 0%, 100%;
+	--theme-body--color: 0, 0%, 41%;
+
+	/* Text Color */
+	--theme-color-heading: 0, 0%, 11%;
+
 
 
 	--THEME-COLOR-PRIMARY-DEFAULT: 0, 0%, 100%;
@@ -12,28 +28,19 @@
 	--THEME-COLOR-SECONDARY-DEFAULT: 0, 0%, 41%;
 	--THEME-COLOR-SECONDARY: var(--USER-COLOR-SECONDARY, var(--THEME-COLOR-SECONDARY-DEFAULT));
 
-	--THEME-COLOR-BODY: 0, 0%, 41%;
-	--THEME-COLOR-HEADING: 0, 0%, 11%;
 
 
-	/***************************************************************
-	* BASE, HEADER, FOOTER
-	***************************************************************/
 
+	/*--------------------------------------------------------------
+	## Base
+	--------------------------------------------------------------*/
 
-	/* Widths. */
+	/* Widths */
 	--theme-max-width-base: 680px;
 	--theme-max-width-wide: 1280px;
 	--theme-max-width-full: 1440px;
 
-
-	/* Accessibility. */
-	--theme-outline-color: 0, 0%, 11%;
-	--theme-outline-style: dotted;
-	--theme-outline-width: 2px;
-
-
-	/* Vertical Rhythm. */
+	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
 	--theme-block-spacing-larger: 1.75rem;
 	--theme-block-spacing-huge: 4rem;
@@ -44,8 +51,12 @@
 		--theme-block-spacing-huge: 8.5rem;
 	}
 
+	/* Accessibility */
+	--theme-outline-color: 0, 0%, 11%;
+	--theme-outline-style: dotted;
+	--theme-outline-width: 2px;
 
-	/* Site Padding. */
+	/* Site Padding */
 	--theme-block-padding-x: 1.25rem;
 
 	@media (--medium) {
@@ -53,35 +64,17 @@
 	}
 
 
-	/* Header */
+	/*--------------------------------------------------------------
+	## Header
+	--------------------------------------------------------------*/
+
+
 	--theme-header--bg-color: "";
 	--theme-header--padding-y: 1rem;
-	--theme-header-3-padding-y: 3.5rem;
-	--theme-header-3-navigation-margin-top: 1.5rem;
 
 	@media (--medium) {
 		--theme-header--padding-y: 1.85rem;
 	}
-	@media (--large) {
-		--theme-header-3-padding-y: 8rem;
-	}
-
-
-	/* Header > Navigation */
-	--theme-primary-menu--color: 0, 0%, 11%;
-	--theme-primary-menu--color-interactive: 0, 0%, 11%;
-	--theme-primary-menu--font-family: var(--theme-heading-font-family);
-	--theme-primary-menu--font-size: 0.75rem;
-	--theme-primary-menu--font-weight: 700;
-	--theme-primary-menu--opacity-interactive: 0.65;
-	--theme-primary-menu--text-transform: uppercase;
-	--theme-submenu--bg-color: 0, 0%, 11%;
-	--theme-submenu--color: var(--THEME-COLOR-SECONDARY);
-
-	@media (--large) {
-		--theme-submenu--color: var(--THEME-COLOR-PRIMARY);
-	}
-
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-h1-color);
@@ -93,21 +86,42 @@
 	--theme-site-description--line-height: 1.4;
 	--theme-site-description--opacity: 0.65;
 
+	/* Header > Navigation */
+	--theme-site-nav--color: 0, 0%, 11%;
+	--theme-site-nav--color-interactive: 0, 0%, 11%;
+	--theme-site-nav--font-family: var(--theme-heading-font-family);
+	--theme-site-nav--font-size: 0.75rem;
+	--theme-site-nav--font-weight: 700;
+	--theme-site-nav--opacity-interactive: 0.65;
+	--theme-site-nav--text-transform: uppercase;
 
-	/* Entry Header */
-	--theme-entryheader-padding-top: 4rem;
-	--theme-entryheader-padding-bottom: 7rem;
+	/* Header > Navigation > Submenu */
+	--theme-submenu--bg-color: 0, 0%, 11%;
+	--theme-submenu--color: var(--THEME-COLOR-SECONDARY);
 
 	@media (--large) {
-		--theme-entryheader-padding-bottom: 8.5rem;
+		--theme-submenu--color: var(--THEME-COLOR-PRIMARY);
+	}
+
+	/* Header Variation Specific */
+	--theme-header-3--padding-y: 3.5rem;
+	--theme-header-3-nav--margin-top: 1.5rem;
+
+	@media (--large) {
+		--theme-header-3--padding-y: 8rem;
 	}
 
 
-	/* Footer */
+	/*--------------------------------------------------------------
+	## Footer
+	--------------------------------------------------------------*/
+
+
 	--theme-footer--bg-color: "";
 	--theme-footer--color: var(--THEME-COLOR-SECONDARY);
 	--theme-footer-heading--color: var(--THEME-COLOR-HEADING);
 
+	/* Footer > Navigation */
 	--theme-footer-nav--color-interactive: var(--THEME-COLOR-HEADING);
 	--theme-footer-nav--line-height: 2.25;
 	--theme-footer-nav--padding-x: 1rem;
@@ -117,7 +131,6 @@
 		--theme-footer-nav--padding-y: 1.15rem;
 		--theme-footer-nav--padding-x: 1.75rem;
 	}
-
 
 	/* Footer > Social Icons */
 	--theme-social--color: 0, 0%, 11%;
@@ -129,10 +142,13 @@
 		--theme-social--spacing: 1rem;
 	}
 
+	/* Footer Variations Specific */
+	--theme-footer-2-border-top-color: 0, 0%, 90%;
 
-	/***************************************************************
-	* TYPOGRAPHY
-	***************************************************************/
+
+	/*--------------------------------------------------------------
+	## Typography
+	--------------------------------------------------------------*/
 
 
 	/* Body */
@@ -178,6 +194,12 @@
 		--theme-text-sm: 90%;
 	}
 
+	/* Links */
+	--theme-link-color: var(--THEME-COLOR-SECONDARY);
+	--theme-link-color-interactive: var(--THEME-COLOR-SECONDARY);
+	--theme-link-underline-color: var(--THEME-COLOR-SECONDARY);
+	--theme-link-underline-color-interactive: var(--THEME-COLOR-SECONDARY);
+
 	/* Blockquote */
 	--theme-quote-font-size: 1.9rem;
 	--theme-quote-line-height: 1.36;
@@ -197,19 +219,6 @@
 		--theme-quote-font-size: 2.15rem;
 		--theme-quote-large-font-size: 2.75em;
 	}
-
-	/* Heading colors */
-
-	/* Body color */
-	--theme-body-color: var(--THEME-COLOR-BODY);
-	--theme-body-font-color: var(--THEME-COLOR-BODY);
-	--theme-body-background-color: var(--THEME-COLOR-PRIMARY);
-
-	/* Links */
-	--theme-link-color: var(--THEME-COLOR-SECONDARY);
-	--theme-link-color-interactive: var(--THEME-COLOR-SECONDARY);
-	--theme-link-underline-color: var(--THEME-COLOR-SECONDARY);
-	--theme-link-underline-color-interactive: var(--THEME-COLOR-SECONDARY);
 
 	/* Bulleted Lists */
 	--theme-list-bullet-color: var(--THEME-COLOR-SECONDARY);
@@ -269,16 +278,23 @@
 	/* shared/css/header/site-navigation.css */
 	--theme-site-navigation-overlay-color: var(--THEME-COLOR-SECONDARY);
 
-	/* shared/css/footer/footer-1.css */
-	--theme-footer-1-link-color: var(--THEME-COLOR-BODY);
-	--theme-footer-1-link-color-interactive: var(--THEME-COLOR-BODY);
-	--theme-footer-1-text-color: var(--THEME-COLOR-BODY);
 
-	/* shared/css/footer/footer-2.css */
-	--theme-footer-2-border-top-color: 0, 0%, 90%;
 
-	/* shared/css/footer/footer-3.css */
-	--theme-footer-3-text-color: var(--THEME-COLOR-SECONDARY);
+
+
+
+
+	/* Entry Header */
+	--theme-entryheader--padding-top: 4rem;
+	--theme-entryheader--padding-bottom: 7rem;
+
+	@media (--large) {
+		--theme-entryheader--padding-bottom: 8.5rem;
+	}
+
+
+
+
 
 	/***************************************************************
 	* BUTTONS
@@ -450,14 +466,13 @@
 	--theme-input-label-font-weight: 700;
 	--theme-label-color: var(--THEME-COLOR-SECONDARY);
 
-
 	/* Inputs */
 	--theme-input-border-bottom-width: 2px;
 	--theme-input-border-left-width: 2px;
 	--theme-input-border-right-width: 2px;
 	--theme-input-border-top-width: 2px;
 	--theme-input-border-width: 2px;
-	--theme-input-stroke-color:  0, 0%, 11%;
+	--theme-input-stroke-color: 0, 0%, 11%;
 	--theme-input-border-radius: 0;
 	--theme-input-font-size: 1.0625rem;
 	--theme-input-font-weight: 700;

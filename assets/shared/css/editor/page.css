@@ -1,6 +1,6 @@
 .editor-writing-flow {
-	background-color: hsla(var(--theme-body-background-color), 1);
-	color: hsla(var(--theme-body-font-color), 1);
+	background-color: hsla(var(--theme-body--bg-color), 1);
+	color: hsla(var(--theme-body--color), 1);
 	font-family: var(--theme-body-font-family);
 	font-size: var(--theme-body-font-size);
 	line-height: var(--theme-body-line-height);

@@ -3,7 +3,7 @@
 */
 
 .wp-block-pullquote {
-	color: hsl(var(--theme-body-color));
+	color: hsl(var(--theme-body--color));
 }
 
 .wp-block-pullquote__citation,

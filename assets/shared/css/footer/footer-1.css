@@ -14,9 +14,9 @@
 
 		& li {
 			display: inline-block;
-			font-size: var(--theme-primary-menu--font-size);
-			font-weight: var(--theme-primary-menu--font-weight);
-			text-transform: var(--theme-primary-menu--text-transform);
+			font-size: var(--theme-site-nav--font-size);
+			font-weight: var(--theme-site-nav--font-weight);
+			text-transform: var(--theme-site-nav--text-transform);
 			width: 100%;
 
 			@media (--medium) {
@@ -25,7 +25,7 @@
 		}
 
 		& a {
-			color: hsla(var(--theme-primary-menu--color), 1);
+			color: hsla(var(--theme-site-nav--color), 1);
 			display: block;
 			padding: var(--theme-footer-nav--padding-y) var(--theme-footer-nav--padding-x);
 			padding-top: 1.25rem;

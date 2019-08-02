@@ -4,7 +4,7 @@ html {
 
 body,
 button {
-	color: hsl(var(--theme-body-color));
+	color: hsl(var(--theme-body--color));
 	font-family: var(--theme-body-font-family);
 	font-size: var(--theme-body-font-size);
 	line-height: var(--theme-body-line-height);
@@ -12,5 +12,5 @@ button {
 }
 
 body {
-	background-color: hsla(var(--theme-body-background-color), 1);
+	background-color: hsla(var(--theme-body--bg-color), 1);
 }
