@@ -14,7 +14,7 @@
 	& .post.post--archive {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: var(--theme-max-width-wide); /* design doesn't match */
+		max-width: var(--theme-max-w-wide);
 		max-width: 1150px;
 	}
 

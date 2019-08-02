@@ -24,14 +24,6 @@ body {
 		}
 	}
 
-	& .wp-block-coblocks-row:not(:last-of-type) > .wp-block-coblocks-row__inner.has-no-margin {
-		margin-bottom: calc(2 * var(--theme-spacing-unit-6));
-
-		@media (--medium) {
-			margin-bottom: var(--theme-spacing-unit-15);
-		}
-	}
-
 	& .wp-block-coblocks-row .woocommerce ul.products {
 		margin-bottom: 0;
 
@@ -104,25 +96,25 @@ body {
 * Reset CoBlocks color inherit setting
 */
 .wp-block-coblocks-column h1 {
-	color: hsl(var(--theme-h1-color));
+	color: hsl(var(--theme-h1--color));
 }
 
 .wp-block-coblocks-column h2 {
-	color: hsl(var(--theme-h2-color));
+	color: hsl(var(--theme-h2--color));
 }
 
 .wp-block-coblocks-column h3 {
-	color: hsl(var(--theme-h3-color));
+	color: hsl(var(--theme-h3--color));
 }
 
 .wp-block-coblocks-column h4 {
-	color: hsl(var(--theme-h4-color));
+	color: hsl(var(--theme-h4--color));
 }
 
 .wp-block-coblocks-column h5 {
-	color: hsl(var(--theme-h5-color));
+	color: hsl(var(--theme-h5--color));
 }
 
 .wp-block-coblocks-column h6 {
-	color: hsl(var(--theme-h6-color));
+	color: hsl(var(--theme-h6--color));
 }

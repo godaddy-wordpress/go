@@ -32,7 +32,7 @@ Since we're dealing with mini-themes (aka design styles) within a theme. Here is
             |—— coblocks/
             |—— components/
             |—— config/
-            |—— core-blocks/
+            |—— blocks/
             |—— editor/
             |—— elements/  Generic HTML element coverage
             |—— layout/    Layout specific

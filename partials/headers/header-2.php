@@ -9,9 +9,7 @@
 
 <header id="masthead" class="site-header site-header--2" itemscope itemtype="http://schema.org/WPHeader">
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
-
-	<div class="site-header__inner flex items-center justify-between w-full max-w-wide m-auto">
+	<div class="site-header__inner flex items-center justify-between max-w-wide m-auto">
 
 		<?php if ( has_nav_menu( 'primary' ) ) { ?>
 
@@ -23,7 +21,7 @@
 					wp_nav_menu(
 						[
 							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu c-primary-menu list-reset',
+							'menu_class'     => 'primary-menu list-reset',
 							'container'      => false,
 						]
 					);

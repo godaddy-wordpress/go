@@ -135,9 +135,7 @@ function header_variation() {
 			call_user_func( $variation['partial'] );
 		}
 	} elseif ( $selected_variation ) {
-		echo '<div id="js-header-variation">';
-			call_user_func( $selected_variation['partial'] );
-		echo '</div>';
+		call_user_func( $selected_variation['partial'] );
 	}
 }
 
@@ -155,9 +153,7 @@ function footer_variation() {
 			call_user_func( $variation['partial'] );
 		}
 	} elseif ( $selected_variation ) {
-		echo '<div id="js-footer-variation">';
-			call_user_func( $selected_variation['partial'] );
-		echo '</div>';
+		call_user_func( $selected_variation['partial'] );
 	}
 }
 
@@ -200,6 +196,20 @@ function footer_copy_text() {
 	 * @param string $footer_blurb_text The footer blurb text.
 	 */
 	return apply_filters( 'maverick_footer_copy_text', $copyright );
+}
+
+/**
+ * Returns whether there are social icons set or not.
+ *
+ * @return boolean
+ */
+function has_footer_background() {
+
+	$background_color = get_theme_mod( 'footer_background_color', '' );
+
+	if ( $background_color ) {
+		return 'has-background';
+	}
 }
 
 /**
@@ -326,7 +336,7 @@ function navigation_toggle() {
 		echo '<div class="site-navigation__toggle-icon">';
 			echo '<div class="site-navigation__toggle-icon-inner"></div>';
 		echo '</div>';
-		echo '<span class="screen-reader-text">' . __( 'Menu', 'maverick' ) . '</span>';
+		echo '<span class="screen-reader-text">' . esc_html_e( 'Menu', 'maverick' ) . '</span>';
 	echo '</button>';
 }
 
@@ -409,7 +419,7 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
 function load_inline_svg( $filename ) {
 
 	// Add the path to your SVG directory inside your theme.
-	$svg_path = '/dist/shared/svg/';
+	$svg_path = '/dist/shared/images/';
 
 	// Check the SVG file exists
 	if ( file_exists( get_stylesheet_directory() . $svg_path . $filename ) ) {

@@ -19,21 +19,26 @@
 	word-wrap: normal !important;
 
 	&:focus {
-		background-color: var(--color-alabaster);
+		@mixin outline;
+
+		background-color: hsla(var(--theme-button--bg), 1);
 		clip: auto !important;
 		clip-path: none;
-		color: var(--color-black);
+		color: hsla(var(--theme-button--color), 1);
 		display: block;
-		font-size: 1rem;
-		font-weight: 700;
+		font-family: var(--theme-button--font-family);
+		font-size: var(--theme-button--font-size);
+		font-weight: var(--theme-button--font-weight);
 		height: auto;
-		left: var(--theme-spacing-unit);
-		padding: var(--theme-spacing-unit) var(--theme-spacing-unit-2);
+		left: 0;
+		letter-spacing: var(--theme-button--letter-spacing);
+		outline-color: hsla(var(--theme-color-body-bg), 1);
+		outline-offset: -5px;
+		padding: 0.75rem 1rem;
 		text-decoration: none;
-		top: var(--theme-spacing-unit);
+		text-transform: var(--theme-button--text-transform);
+		top: 0;
 		width: auto;
-
-		/* Above WP toolbar. */
 		z-index: 100000;
 	}
 }

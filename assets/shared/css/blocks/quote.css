@@ -1,13 +1,13 @@
 .wp-block-quote {
 	border: none;
-	color: hsl(var(--theme-h2-color));
-	font-family: var(--theme-heading-font-family);
-	font-weight: var(--theme-quote-font-weight);
+	color: hsl(var(--theme-h2--color));
+	font-family: var(--theme-heading--font);
+	font-weight: var(--theme-quote--weight);
 	padding: 0;
 
 	& p {
-		font-size: var(--theme-quote-font-size);
-		line-height: var(--theme-quote-line-height);
+		font-size: var(--theme-quote--font-size);
+		line-height: var(--theme-quote--leading);
 		margin: 0 0 0 1.5rem;
 		position: relative;
 
@@ -26,7 +26,7 @@
 	& cite {
 		color: hsla(var(--THEME-COLOR-SECONDARY), 0.75);
 		display: block;
-		font-family: var(--theme-body-font-family);
+		font-family: var(--theme-body--font);
 		font-size: 0.85rem;
 		font-weight: 400;
 		margin-bottom: -0.7rem !important;
@@ -43,9 +43,9 @@
 		margin: var(--theme-block-spacing-huge) auto;
 
 		& p {
-			font-size: var(--theme-quote-large-font-size);
+			font-size: var(--theme-quote-large--font-size);
 			font-style: var(--theme-quote-large-font-style);
-			line-height: var(--theme-quote-large-line-height);
+			line-height: var(--theme-quote-large--leading);
 			margin-bottom: 0 !important;
 			margin-left: 0;
 			padding: var(--theme-quote-large-padding);
