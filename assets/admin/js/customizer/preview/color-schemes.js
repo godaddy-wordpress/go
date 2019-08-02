@@ -46,16 +46,6 @@ export default () => {
 	};
 
 	/**
-	 * Set quinary color
-	 *
-	 * @param {*} color
-	 */
-	const setQuinaryColor = ( color ) => {
-		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--USER-COLOR-QUINARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
-	};
-
-	/**
 	 * Returns the design style array
 	 *
 	 * @param {*} designStyle
