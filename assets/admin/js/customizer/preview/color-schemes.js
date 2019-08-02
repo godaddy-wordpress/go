@@ -99,6 +99,17 @@ export default () => {
 
 			if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
 				const colors = designStyle.color_schemes[ colorScheme ];
+
+				Object.entries( colors ).forEach( function( [ setting, color ] ) {
+					const customizerSetting = wp.customize( `maverick_custom_${setting}` );
+
+					if ( 'label' === setting || 'undefined' === typeof customizerSetting ) {
+						return;
+					}
+
+					customizerSetting.set( color );
+				} );
+
 				setPrimaryColor( colors['primary_color'] );
 				setSecondaryColor( colors[ 'secondary_color' ] );
 				setTertiaryColor( colors[ 'tertiary_color' ] );
