@@ -1,7 +1,6 @@
 /* stylelint-disable */
 .switcher__wrapper {
-
-	padding: 5px;
+	margin-top: 14px;
 
 	& .switcher__choice {
 		cursor: pointer;
@@ -15,9 +14,11 @@
 			position: absolute;
 			bottom: 0;
 			height: 30px;
-			background: rgba(0,0,0, 0.6);
-			padding: 5px;
-			color: #FFF;
+			background: rgba(0,0,0, 0.4);
+			padding: 5px 9px;
+			color: #ffffff;
+			backdrop-filter: blur(4px) saturate(150%);
+			border-radius: 0 0 3px 3px;
 		}
 	}
 
@@ -43,10 +44,6 @@
 		box-shadow: 0 0 2px rgba(30,140,190,.8);
 		outline: 2px solid transparent;
 	}
-
-	&:focus-within {
-		outline: 1px dashed #5b9dd9;
-	}
 }
 
 .switcher__wrapper.color_scheme {
@@ -55,21 +52,101 @@
 	flex-wrap: wrap;
 
 	& .switcher__choice {
-		height: 100px;
-		width: calc( 50% - 10px );
-		margin-right: 10px;
+		height: 75px;
+		width: 47.5%;
 
 		& .color-scheme {
 			display: block;
 			width: 100%;
 			height: 100%;
+			border-radius: 3px;
+			overflow: hidden;
 		}
 
 		&:hover {
-			opacity: 0.5;
+			/* opacity: 0.5; */
 		}
 	}
 
+	& input[type="radio"]:focus + .color-scheme {
+   		box-shadow: 0 0 0 3px #0085ba;
+	}
+
+	& .color-scheme__check {
+		border-radius: 100%;
+		cursor: pointer;
+		display: inline-block;
+		height: 25px;
+		position: absolute;
+		top: 5px;
+		opacity: 0;
+		right: 5px;
+		background: #0085ba;
+		vertical-align: middle;
+		visibility: hidden;
+		width: 25px;
+
+		&::before,
+		&::after {
+			background-color: #fff;
+			content: " ";
+			height: 24px;
+			left: 10px;
+			position: absolute;
+			top: 13px;
+			border-radius: 6px;
+			transition: opacity 0.2s;
+			width: 2px;
+		}
+
+		&:before {
+			height: 11px;
+			transform: translate3d(3px, -6px, 0) rotate(45deg);
+		}
+
+		&:after {
+			height: 4px;
+			transform: translate3d(-2px, -1px, 0) rotate(-45deg);
+		}
+	}
+
+	& input[type="radio"]:checked + .color-scheme + .color-scheme__check {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes popIn {
+	0% {
+		opacity: 0;
+		visibility: visible;
+		transform: scale(0);
+		visibility: visible;
+	}
+
+	25% {
+		opacity: 0;
+		transform: scale(0);
+		visibility: visible;
+	}
+
+	75% {
+		opacity: 1;
+		transform: scale(1.05);
+		visibility: visible;
+	}
+
+	90% {
+		opacity: 1;
+		transform: scale(0.9);
+		visibility: visible;
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+		visibility: visible;
+	}
 }
 
 /* stylelint-enable */
