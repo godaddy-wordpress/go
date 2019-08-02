@@ -54,6 +54,7 @@
 		&:active,
 		&:focus,
 		&:hover {
+
 			/* opacity: var(--theme-site-nav--opacity-interactive); */
 
 			/* &::before {
@@ -71,7 +72,7 @@
 	& .current-menu-item a {
 		color: hsl(var(--theme-site-nav--color-interactive));
 
-/* 		&::before {
+		/* &::before {
 			bottom: var(--border-end-mobile);
 			opacity: 1;
 
