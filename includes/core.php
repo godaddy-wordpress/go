@@ -171,29 +171,29 @@ function theme_setup() {
 	if ( $design_style ) {
 		$color_palette = array(
 			array(
-				'name'  => __( 'Primary', 'maverick' ),
+				'name'  => esc_html__( 'Primary', 'maverick' ),
 				'slug'  => 'primary',
 				'color' => \Maverick\get_palette_color( 'primary' ),
 			),
 			array(
-				'name'  => __( 'Secondary', 'maverick' ),
+				'name'  => esc_html__( 'Secondary', 'maverick' ),
 				'slug'  => 'secondary',
 				'color' => \Maverick\get_palette_color( 'secondary' ),
 			),
 			array(
-				'name'  => __( 'Tertiary', 'maverick' ),
+				'name'  => esc_html__( 'Tertiary', 'maverick' ),
 				'slug'  => 'tertiary',
 				'color' => \Maverick\get_palette_color( 'tertiary' ),
 			),
 			array(
-				'name'  => __( 'Quaternary', 'maverick' ),
+				'name'  => esc_html__( 'Quaternary', 'maverick' ),
 				'slug'  => 'quaternary',
 				'color' => \Maverick\get_palette_color( 'quaternary' ),
 			),
 			array(
-				'name'  => __( 'Quinary', 'maverick' ),
+				'name'  => esc_html__( 'Quinary', 'maverick' ),
 				'slug'  => 'quinary',
-				'color' => \Maverick\get_palette_color( 'quinary' ),
+				'color' => '#ffffff',
 			),
 		);
 
@@ -417,19 +417,17 @@ function get_available_design_styles() {
 			'color_schemes' => [
 				'light' => [
 					'label'            => esc_html__( 'Light', 'maverick' ),
-					'primary_color'    => '#ffffff',
-					'secondary_color'  => '#696969',
-					'tertiary_color'   => '#123456',
-					'quaternary_color' => '#7890AB',
-					'quinary_color'    => '#CDEF12',
+					'primary_color'    => '#e8b9a0',
+					'secondary_color'  => '#b0b1a1',
+					'tertiary_color'   => '#e4d9cd',
+					'quaternary_color' => '#f8f1e6',
 				],
 				'dark'  => [
-					'label'           => esc_html__( 'Dark', 'maverick' ),
-					'primary_color'    => '#000000',
-					'secondary_color'  => '#ffffff',
-					'tertiary_color'   => '#123456',
-					'quaternary_color' => '#7890AB',
-					'quinary_color'    => '#CDEF12',
+					'label'            => esc_html__( 'Feminene', 'maverick' ),
+					'primary_color'    => '#5860bd',
+					'secondary_color'  => '#ffcbaf',
+					'tertiary_color'   => '#ffd631',
+					'quaternary_color' => '#ff547f',
 				],
 			],
 		],
@@ -445,7 +443,6 @@ function get_available_design_styles() {
 					'secondary_color'  => '#a0510e',
 					'tertiary_color'   => '#123456',
 					'quaternary_color' => '#7890AB',
-					'quinary_color'    => '#CDEF12',
 				],
 				'dark'  => [
 					'label'            => esc_html__( 'Dark', 'maverick' ),
@@ -453,7 +450,6 @@ function get_available_design_styles() {
 					'secondary_color'  => '#293922',
 					'tertiary_color'   => '#123456',
 					'quaternary_color' => '#7890AB',
-					'quinary_color'    => '#CDEF12',
 				],
 			],
 		],
@@ -469,7 +465,6 @@ function get_available_design_styles() {
 					'secondary_color'  => '#f3f0ed',
 					'tertiary_color'   => '#123456',
 					'quaternary_color' => '#7890AB',
-					'quinary_color'    => '#CDEF12',
 				],
 				'dark'  => [
 					'label'            => esc_html__( 'Dark', 'maverick' ),
@@ -477,7 +472,6 @@ function get_available_design_styles() {
 					'secondary_color'  => '#ebeeee',
 					'tertiary_color'   => '#123456',
 					'quaternary_color' => '#7890AB',
-					'quinary_color'    => '#CDEF12',
 				],
 			],
 		],
@@ -493,7 +487,6 @@ function get_available_design_styles() {
 					'secondary_color'  => '#f1f1f1',
 					'tertiary_color'   => '#123456',
 					'quaternary_color' => '#7890AB',
-					'quinary_color'    => '#CDEF12',
 				],
 				'dark'  => [
 					'label'            => esc_html__( 'Dark', 'maverick' ),
@@ -501,7 +494,6 @@ function get_available_design_styles() {
 					'secondary_color'  => '#f7f5e9',
 					'tertiary_color'   => '#123456',
 					'quaternary_color' => '#7890AB',
-					'quinary_color'    => '#CDEF12',
 				],
 			],
 		],
@@ -517,7 +509,6 @@ function get_available_design_styles() {
 					'secondary_color'  => '#fcae6e',
 					'tertiary_color'   => '#123456',
 					'quaternary_color' => '#7890AB',
-					'quinary_color'    => '#CDEF12',
 				],
 				'dark'  => [
 					'label'            => esc_html__( 'Dark', 'maverick' ),
@@ -525,7 +516,6 @@ function get_available_design_styles() {
 					'secondary_color'  => '#eecd94',
 					'tertiary_color'   => '#123456',
 					'quaternary_color' => '#7890AB',
-					'quinary_color'    => '#CDEF12',
 				],
 			],
 		],

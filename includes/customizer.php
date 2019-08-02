@@ -186,7 +186,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'title'       => esc_html__( 'Color Schemes', 'maverick' ),
 			'description' => esc_html__( 'The color schames varies based on the design style, so if you change a design style, you need to save and refresh the customizer', 'maverick' ),
 			'capability'  => 'edit_theme_options',
-			'panel'       => 'maverick_global_settings',
 		]
 	);
 
@@ -302,29 +301,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 				'description' => esc_html__( 'Override the quaternary color', 'maverick' ),
 				'section'     => 'maverick_color_schemes_section',
 				'settings'    => 'maverick_custom_quaternary_color',
-			]
-		)
-	);
-
-	$wp_customize->add_setting(
-		'maverick_custom_quinary_color',
-		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-			'default'    => \Maverick\get_default_palette_color( 'quinary' ),
-		]
-	);
-
-	$wp_customize->add_control(
-		new \WP_Customize_Color_Control(
-			$wp_customize,
-			'maverick_custom_quinary_color_control',
-			[
-				'label'       => esc_html__( 'Quinary Color', 'maverick' ),
-				'description' => esc_html__( 'Override the quinary color', 'maverick' ),
-				'section'     => 'maverick_color_schemes_section',
-				'settings'    => 'maverick_custom_quinary_color',
 			]
 		)
 	);
@@ -665,58 +641,35 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
  * @return void
  */
 function css_variables() {
-	$primary_color      = get_palette_color( 'primary', 'HSL' );
-	$secondary_color    = get_palette_color( 'secondary', 'HSL' );
-	$tertiary_color     = get_palette_color( 'tertiary', 'HSL' );
-	$quaternary_color   = get_palette_color( 'quaternary', 'HSL' );
-	$quinary_color      = get_palette_color( 'quinary', 'HSL' );
-
+	$primary_color    = get_palette_color( 'primary', 'HSL' );
+	$secondary_color  = get_palette_color( 'secondary', 'HSL' );
+	$tertiary_color   = get_palette_color( 'tertiary', 'HSL' );
+	$quaternary_color = get_palette_color( 'quaternary', 'HSL' );
 	?>
 
 	<!-- Maverick CSS variable overrides -->
 	<style>
 		<?php if ( false !== $primary_color ) : ?>
 			:root {
-				--USER-PRIMARY-HUE: <?php echo esc_attr( $primary_color[0] ); ?>;
-				--USER-PRIMARY-SATURATION: <?php echo esc_attr( $primary_color[1] ); ?>;
-				--USER-PRIMARY-LIGHTNESS: <?php echo esc_attr( $primary_color[2] ); ?>;
 				--USER-COLOR-PRIMARY: <?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>;
 			}
 		<?php endif; ?>
 
 		<?php if ( false !== $secondary_color ) : ?>
 			:root {
-				--USER-ACCENT-HUE: <?php echo esc_attr( $secondary_color[0] ); ?>;
-				--USER-ACCENT-SATURATION: <?php echo esc_attr( $secondary_color[1] ); ?>;
-				--USER-ACCENT-LIGHTNESS: <?php echo esc_attr( $secondary_color[2] ); ?>;
 				--USER-COLOR-SECONDARY: <?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>;
 			}
 		<?php endif; ?>
 
 		<?php if ( false !== $tertiary_color ) : ?>
 			:root {
-				--USER-TERTIARY-HUE: <?php echo esc_attr( $tertiary_color[0] ); ?>;
-				--USER-TERTIARY-SATURATION: <?php echo esc_attr( $tertiary_color[1] ); ?>;
-				--USER-TERTIARY-LIGHTNESS: <?php echo esc_attr( $tertiary_color[2] ); ?>;
 				--USER-COLOR-TERTIARY: <?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>;
 			}
 		<?php endif; ?>
 
 		<?php if ( false !== $quaternary_color ) : ?>
 			:root {
-				--USER-QUATERNARY-HUE: <?php echo esc_attr( $quaternary_color[0] ); ?>;
-				--USER-QUATERNARY-SATURATION: <?php echo esc_attr( $quaternary_color[1] ); ?>;
-				--USER-QUATERNARY-LIGHTNESS: <?php echo esc_attr( $quaternary_color[2] ); ?>;
 				--USER-COLOR-QUATERNARY: <?php echo esc_attr( $quaternary_color[0] ) . ', ' . esc_attr( $quaternary_color[1] ) . '%, ' . esc_attr( $quaternary_color[2] ) . '%'; ?>;
-			}
-		<?php endif; ?>
-
-		<?php if ( false !== $quinary_color ) : ?>
-			:root {
-				--USER-QUINARY-HUE: <?php echo esc_attr( $quinary_color[0] ); ?>;
-				--USER-QUINARY-SATURATION: <?php echo esc_attr( $quinary_color[1] ); ?>;
-				--USER-QUINARY-LIGHTNESS: <?php echo esc_attr( $quinary_color[2] ); ?>;
-				--USER-COLOR-QUINARY: <?php echo esc_attr( $quinary_color[0] ) . ', ' . esc_attr( $quinary_color[1] ) . '%, ' . esc_attr( $quinary_color[2] ) . '%'; ?>;
 			}
 		<?php endif; ?>
 	</style>

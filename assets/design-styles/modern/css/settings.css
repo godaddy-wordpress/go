@@ -32,19 +32,19 @@
 		--theme-block-spacing-huge: 8.5rem;
 	}
 
-	/* Accessibility */
-	--theme-outline-color: var(--theme-color-heading);
-	--theme-outline-style: dotted;
-	--theme-outline-width: 2px;
-
-	--theme-selection--color: 0, 0%, 0%;
-
 	/* Site Padding */
 	--theme-block-padding-x: 1.25rem;
 
 	@media (--medium) {
 		--theme-block-padding-x: 3.5rem;
 	}
+
+	/* Accessibility */
+	--theme-outline-color: var(--theme-color-heading);
+	--theme-outline-style: dotted;
+	--theme-outline-width: 2px;
+
+	--theme-selection--color: 0, 0%, 0%;
 
 
 	/*--------------------------------------------------------------
@@ -64,7 +64,7 @@
 	--THEME-COLOR-SECONDARY: var(--USER-COLOR-SECONDARY);
 	--THEME-COLOR-TERTIARY: var(--USER-COLOR-TERTIARY);
 	--THEME-COLOR-QUATERNARY: var(--USER-COLOR-QUATERNARY);
-	--THEME-COLOR-QUINARY: var(--USER-COLOR-QUINARY);
+	--THEME-COLOR-QUINARY: var(--color-white);
 
 
 	/*--------------------------------------------------------------
