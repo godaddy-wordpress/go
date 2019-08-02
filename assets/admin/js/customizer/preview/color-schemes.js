@@ -12,9 +12,6 @@ export default () => {
 	 */
 	const setPrimaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--USER-PRIMARY-HUE', hsl[0] );
-		document.documentElement.style.setProperty( '--USER-PRIMARY-SATURATION', hsl[1] );
-		document.documentElement.style.setProperty( '--USER-PRIMARY-LIGHTNESS', hsl[2] );
 		document.documentElement.style.setProperty( '--USER-COLOR-PRIMARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
@@ -25,9 +22,6 @@ export default () => {
 	 */
 	const setSecondaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--USER-SECONDARY-HUE', hsl[0] );
-		document.documentElement.style.setProperty( '--USER-SECONDARY-SATURATION', hsl[1] );
-		document.documentElement.style.setProperty( '--USER-SECONDARY-LIGHTNESS', hsl[2] );
 		document.documentElement.style.setProperty( '--USER-COLOR-SECONDARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
@@ -38,9 +32,6 @@ export default () => {
 	 */
 	const setTertiaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--USER-TERTIARY-HUE', hsl[0] );
-		document.documentElement.style.setProperty( '--USER-TERTIARY-SATURATION', hsl[1] );
-		document.documentElement.style.setProperty( '--USER-TERTIARY-LIGHTNESS', hsl[2] );
 		document.documentElement.style.setProperty( '--USER-COLOR-TERTIARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
@@ -51,9 +42,6 @@ export default () => {
 	 */
 	const setQuaternaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--USER-QUATERNARY-HUE', hsl[0] );
-		document.documentElement.style.setProperty( '--USER-QUATERNARY-SATURATION', hsl[1] );
-		document.documentElement.style.setProperty( '--USER-QUATERNARY-LIGHTNESS', hsl[2] );
 		document.documentElement.style.setProperty( '--USER-COLOR-QUATERNARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
@@ -64,9 +52,6 @@ export default () => {
 	 */
 	const setQuinaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--USER-QUINARY-HUE', hsl[0] );
-		document.documentElement.style.setProperty( '--USER-QUINARY-SATURATION', hsl[1] );
-		document.documentElement.style.setProperty( '--USER-QUINARY-LIGHTNESS', hsl[2] );
 		document.documentElement.style.setProperty( '--USER-COLOR-QUINARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
@@ -131,9 +116,5 @@ export default () => {
 
 	wp.customize( 'maverick_custom_quaternary_color', ( value ) => {
 		value.bind( ( to ) => setQuaternaryColor( to ) );
-	} );
-
-	wp.customize( 'maverick_custom_quinary_color', ( value ) => {
-		value.bind( ( to ) => setQuinaryColor( to ) );
 	} );
 };
