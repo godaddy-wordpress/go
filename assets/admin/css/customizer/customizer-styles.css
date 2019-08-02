@@ -6,6 +6,19 @@
 	transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1), padding 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+.customize-partial-edit-shortcut button {
+
+	&:hover,
+	&:active,
+	&:focus {
+		border: 2px solid #fff;
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 2px #008ec2;
+	}
+}
+
 [data-header="header-1"] {
 
 	& .site-header:not(.site-header--1) {
