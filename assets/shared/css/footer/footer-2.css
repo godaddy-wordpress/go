@@ -13,7 +13,7 @@
 	}
 
 	& .site-footer__row {
-		border-top: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
+		border-top: 1px solid hsl(var(--theme-footer-2-site-info--border-color), 1);
 		margin-top: calc(var(--theme-block-spacing-huge) * 0.75);
 		padding: 1rem 0;
 		text-align: center;

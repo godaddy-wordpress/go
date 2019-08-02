@@ -1,7 +1,21 @@
+/*
+ * Add named breakpoints into the DOM for JS hooks
+*/
+body {
+
+	&::before {
+		content: "has-offscreen-nav";
+		display: none;
+
+		@media (--large) {
+			content: "has-full-nav has-search-toggle";
+		}
+	}
+}
+
 /**
  * Offscreen navigation
  */
-
 .has-offscreen-nav {
 
 	& .site-navigation {

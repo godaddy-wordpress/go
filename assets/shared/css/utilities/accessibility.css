@@ -21,9 +21,9 @@
 	&:focus {
 		@mixin outline;
 
-		background-color: hsla(var(--theme-button--bg-color), 1);
-		clip-path: none;
+		background-color: hsla(var(--theme-button--bg), 1);
 		clip: auto !important;
+		clip-path: none;
 		color: hsla(var(--theme-button--color), 1);
 		display: block;
 		font-family: var(--theme-button--font-family);
@@ -32,7 +32,7 @@
 		height: auto;
 		left: 0;
 		letter-spacing: var(--theme-button--letter-spacing);
-		outline-color: hsla(var(--theme-body--bg-color), 1);
+		outline-color: hsla(var(--theme-color-body-bg), 1);
 		outline-offset: -5px;
 		padding: 0.75rem 1rem;
 		text-decoration: none;

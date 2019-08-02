@@ -1,34 +1,16 @@
 :root {
+
 	/*--------------------------------------------------------------
 	>>> TABLE OF CONTENTS:
 	----------------------------------------------------------------
-	# Colors
 	# Base
+	# Colors
 	# Typography
 	# Header
+	# Header Navigation Toggle
+	# Header Search Toggle
+	# Entry Header
 	# Footer
-
-
-	/*--------------------------------------------------------------
-	## Colors
-	--------------------------------------------------------------*/
-
-	/* Body */
-	--theme-body--bg-color: 0, 0%, 100%;
-	--theme-body--color: 0, 0%, 41%;
-
-	/* Text Color */
-	--theme-color-heading: 0, 0%, 11%;
-
-
-
-	--THEME-COLOR-PRIMARY-DEFAULT: 0, 0%, 100%;
-	--THEME-COLOR-PRIMARY: var(--USER-COLOR-PRIMARY, var(--THEME-COLOR-PRIMARY-DEFAULT));
-
-	--THEME-COLOR-SECONDARY-DEFAULT: 0, 0%, 41%;
-	--THEME-COLOR-SECONDARY: var(--USER-COLOR-SECONDARY, var(--THEME-COLOR-SECONDARY-DEFAULT));
-
-
 
 
 	/*--------------------------------------------------------------
@@ -36,9 +18,8 @@
 	--------------------------------------------------------------*/
 
 	/* Widths */
-	--theme-max-width-base: 680px;
-	--theme-max-width-wide: 1280px;
-	--theme-max-width-full: 1440px;
+	--theme-max-w-base: 680px;
+	--theme-max-w-wide: 1280px;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -52,9 +33,11 @@
 	}
 
 	/* Accessibility */
-	--theme-outline-color: 0, 0%, 11%;
+	--theme-outline-color: var(--theme-color-heading);
 	--theme-outline-style: dotted;
 	--theme-outline-width: 2px;
+
+	--theme-selection--color: 0, 0%, 0%;
 
 	/* Site Padding */
 	--theme-block-padding-x: 1.25rem;
@@ -65,124 +48,62 @@
 
 
 	/*--------------------------------------------------------------
-	## Header
+	## Colors
 	--------------------------------------------------------------*/
 
+	/* Body */
+	--theme-color-body-bg: 0, 0%, 100%;
 
-	--theme-header--bg-color: "";
-	--theme-header--padding-y: 1rem;
+	/* Text Colors */
+	--theme-color-text: 0, 0%, 41%;
+	--theme-color-text-secondary: 0, 0%, 41%;
+	--theme-color-heading: 0, 0%, 11%;
 
-	@media (--medium) {
-		--theme-header--padding-y: 1.85rem;
-	}
+	/* @todo - do we need these?*/
+	--THEME-COLOR-PRIMARY-DEFAULT: 0, 0%, 100%;
+	--THEME-COLOR-PRIMARY: var(--USER-COLOR-PRIMARY, var(--THEME-COLOR-PRIMARY-DEFAULT));
 
-	/* Header > Site Branding */
-	--theme-site-title--color: var(--theme-h1-color);
-	--theme-site-title--font-size: 1.5rem;
-	--theme-site-title--font-family: var(--theme-font-family-heading);
-	--theme-site-title--font-weight: 700;
-
-	--theme-site-description--color: 0, 0%, 11%;
-	--theme-site-description--line-height: 1.4;
-	--theme-site-description--opacity: 0.65;
-
-	/* Header > Navigation */
-	--theme-site-nav--color: 0, 0%, 11%;
-	--theme-site-nav--color-interactive: 0, 0%, 11%;
-	--theme-site-nav--font-family: var(--theme-heading-font-family);
-	--theme-site-nav--font-size: 0.75rem;
-	--theme-site-nav--font-weight: 700;
-	--theme-site-nav--opacity-interactive: 0.65;
-	--theme-site-nav--text-transform: uppercase;
-
-	/* Header > Navigation > Submenu */
-	--theme-submenu--bg-color: 0, 0%, 11%;
-	--theme-submenu--color: var(--THEME-COLOR-SECONDARY);
-
-	@media (--large) {
-		--theme-submenu--color: var(--THEME-COLOR-PRIMARY);
-	}
-
-	/* Header Variation Specific */
-	--theme-header-3--padding-y: 3.5rem;
-	--theme-header-3-nav--margin-top: 1.5rem;
-
-	@media (--large) {
-		--theme-header-3--padding-y: 8rem;
-	}
-
-
-	/*--------------------------------------------------------------
-	## Footer
-	--------------------------------------------------------------*/
-
-
-	--theme-footer--bg-color: "";
-	--theme-footer--color: var(--THEME-COLOR-SECONDARY);
-	--theme-footer-heading--color: var(--THEME-COLOR-HEADING);
-
-	/* Footer > Navigation */
-	--theme-footer-nav--color-interactive: var(--THEME-COLOR-HEADING);
-	--theme-footer-nav--line-height: 2.25;
-	--theme-footer-nav--padding-x: 1rem;
-	--theme-footer-nav--padding-y: 0.25rem;
-
-	@media (--medium) {
-		--theme-footer-nav--padding-y: 1.15rem;
-		--theme-footer-nav--padding-x: 1.75rem;
-	}
-
-	/* Footer > Social Icons */
-	--theme-social--color: 0, 0%, 11%;
-	--theme-social--size: 1.5rem;
-	--theme-social--spacing: 0.5rem;
-
-	@media (--medium) {
-		--theme-social--size: 1.75rem;
-		--theme-social--spacing: 1rem;
-	}
-
-	/* Footer Variations Specific */
-	--theme-footer-2-border-top-color: 0, 0%, 90%;
+	--THEME-COLOR-SECONDARY-DEFAULT: 0, 0%, 41%;
+	--THEME-COLOR-SECONDARY: var(--USER-COLOR-SECONDARY, var(--THEME-COLOR-SECONDARY-DEFAULT));
 
 
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
 
-
 	/* Body */
-	--theme-body-font-size: 1rem;
-	--theme-body-line-height: 1.9;
-	--theme-body-font-family: "Arimo", sans-serif;
+	--theme-body--font: "Arimo", sans-serif;
+	--theme-body--font-size: 1rem;
+	--theme-body--leading: 1.9;
+	--theme-body--weight: 400;
 
 	/* Headings */
-	--theme-heading-font-family: "Montserrat", sans-serif;
+	--theme-heading--font: "Montserrat", sans-serif;
 
-	--theme-h1-font-size: 2.5rem;
-	--theme-h2-font-size: 2rem;
-	--theme-h3-font-size: 1.75rem;
-	--theme-h4-font-size: 1.65rem;
-	--theme-h5-font-size: 1.35rem;
-	--theme-h6-font-size: 1.15rem;
+	--theme-h1--font-size: 2.5rem;
+	--theme-h2--font-size: 2rem;
+	--theme-h3--font-size: 1.75rem;
+	--theme-h4--font-size: 1.65rem;
+	--theme-h5--font-size: 1.35rem;
+	--theme-h6--font-size: 1.15rem;
 
 	@media (--large) {
-		--theme-h1-font-size: 3.25rem;
-		--theme-h2-font-size: 2.5rem;
-		--theme-h3-font-size: 2rem;
+		--theme-h1--font-size: 3.25rem;
+		--theme-h2--font-size: 2.5rem;
+		--theme-h3--font-size: 2rem;
 	}
 
-	--theme-h1-color: var(--THEME-COLOR-HEADING);
-	--theme-h2-color: var(--THEME-COLOR-HEADING);
-	--theme-h3-color: var(--THEME-COLOR-HEADING);
-	--theme-h4-color: var(--THEME-COLOR-HEADING);
-	--theme-h5-color: var(--THEME-COLOR-HEADING);
-	--theme-h6-color: var(--THEME-COLOR-HEADING);
+	--theme-h1--color: var(--theme-color-heading);
+	--theme-h2--color: var(--theme-color-heading);
+	--theme-h3--color: var(--theme-color-heading);
+	--theme-h4--color: var(--theme-color-heading);
+	--theme-h5--color: var(--theme-color-heading);
+	--theme-h6--color: var(--theme-color-heading);
 
 	/* Text Utilities */
 	--theme-text-xs: 78%;
 	--theme-text-sm: 82.5%;
-	--theme-text-sm__letter-spacing: 0.015em;
+	--theme-text-sm--letter-spacing: 0.015em;
 	--theme-text-md: 105%;
 
 	@media (--small) {
@@ -195,18 +116,18 @@
 	}
 
 	/* Links */
-	--theme-link-color: var(--THEME-COLOR-SECONDARY);
-	--theme-link-color-interactive: var(--THEME-COLOR-SECONDARY);
-	--theme-link-underline-color: var(--THEME-COLOR-SECONDARY);
-	--theme-link-underline-color-interactive: var(--THEME-COLOR-SECONDARY);
+	--theme-link-color: var(--theme-color-text-secondary);
+	--theme-link-color-interactive: var(--theme-color-text-secondary);
+	--theme-link-underline-color: var(--theme-color-text-secondary);
+	--theme-link-underline-color-interactive: var(--theme-color-text-secondary);
 
 	/* Blockquote */
-	--theme-quote-font-size: 1.9rem;
-	--theme-quote-line-height: 1.36;
-	--theme-quote-font-weight: 700;
+	--theme-quote--font-size: 1.9rem;
+	--theme-quote--leading: 1.36;
+	--theme-quote--weight: 700;
 
-	--theme-quote-large-font-size: 2.25rem;
-	--theme-quote-large-line-height: 1.3;
+	--theme-quote-large--font-size: 2.25rem;
+	--theme-quote-large--leading: 1.3;
 	--theme-quote-large-font-style: italic;
 	--theme-quote-large-padding: 0.9rem 0 0 2rem;
 	--theme-quote-large-cite-margin-left: 1.25rem;
@@ -216,81 +137,135 @@
 	--theme-quote-large-border: var(--theme-quote-large-border-width) var(--theme-quote-large-border-style);
 
 	@media (--large) {
-		--theme-quote-font-size: 2.15rem;
-		--theme-quote-large-font-size: 2.75em;
+		--theme-quote--font-size: 2.15rem;
+		--theme-quote-large--font-size: 2.75em;
 	}
 
 	/* Bulleted Lists */
-	--theme-list-bullet-color: var(--THEME-COLOR-SECONDARY);
+	--theme-list-bullet-color: var(--theme-color-text-secondary);
 	--theme-list-font-size: 1.0625rem;
 	--theme-list-line-height: 1.89;
 	--theme-list-color: var(-THEME-COLOR-SECONDARY);
 	--theme-list-font-weight: 700;
 
-	/* Feedback colors: error, success, warning, informational.
-	 * shared/css/utilities/feedback.css
-	 */
-	--theme-feedback-error-color: 3, 100%, 61%;
-	--theme-feedback-informational-color: 208, 100%, 43%;
-	--theme-feedback-success-color: 94, 48%, 56%;
-	--theme-feedback-warning-color: 46, 100%, 61%;
 
-	/* shared/css/header/site-navigation__toggle.css */
-	--theme-site-navigation__toggle-color: var(--THEME-COLOR-HEADING);
-	--theme-site-navigation__toggle-color-interactive: var(--THEME-COLOR-PRIMARY);
-	--theme-site-navigation__toggle-color-active: var(--THEME-COLOR-SECONDARY);
-	--theme-site-navigation__toggle-height: 2rem;
-	--theme-site-navigation__toggle-width: 2rem;
-	--theme-site-navigation__toggle-transition-duration: var(--transition-duration);
-	--theme-site-navigation__toggle-easing-function: var(--transition-easing-function);
-	--theme-site-navigation__toggle-spacing-unit: var(--spacing-unit);
-	--theme-site-navigation__toggle-z-index: 301;
+	/*--------------------------------------------------------------
+	## Header
+	--------------------------------------------------------------*/
 
-	/* shared/css/header/has-offscreen-nav.css */
+	--theme-header--bg: "";
+	--theme-header--padding-y: 1rem;
+
+	@media (--medium) {
+		--theme-header--padding-y: 1.85rem;
+	}
+
+	/* Header > Site Branding */
+	--theme-site-title--color: var(--theme-color-heading);
+	--theme-site-title--font-size: 1.5rem;
+	--theme-site-title--font-family: var(--theme-font-family-heading);
+	--theme-site-title--font-weight: 700;
+
+	--theme-site-description--color: var(--theme-color-heading);
+	--theme-site-description--leading: 1.4;
+	--theme-site-description--opacity: 0.65;
+
+	/* Header > Navigation */
+	--theme-site-nav--color: var(--theme-color-heading);
+	--theme-site-nav--color-interactive: var(--theme-color-heading);
+	--theme-site-nav--font-family: var(--theme-heading--font);
+	--theme-site-nav--font-size: 0.75rem;
+	--theme-site-nav--font-weight: 700;
+	--theme-site-nav--opacity-interactive: 0.65;
+	--theme-site-nav--text-transform: uppercase;
+
+	/* Header > Navigation > Submenu */
+	--theme-submenu--bg: var(--theme-color-heading);
+	--theme-submenu--color: var(--theme-color-text-secondary);
+
+	@media (--large) {
+		--theme-submenu--color: 0, 0%, 100%;
+	}
+
+	/* Header Variation Specific */
+	--theme-header-3--padding-y: 3.5rem;
+	--theme-header-3-nav--margin-top: 1.5rem;
+
+	@media (--large) {
+		--theme-header-3--padding-y: 8rem;
+	}
+
+	/*--------------------------------------------------------------
+	## Header Navigation Toggle
+	--------------------------------------------------------------*/
+
+	/* Header > Navigation > Toggle */
+	--theme-site-nav-toggle--color: var(--theme-color-heading);
+	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading); /* Not currently in use, could be hover color for primary color */
+	--theme-site-nav-toggle--size: 2rem;
+
+	/* Offscreen Navigation */
 	--theme-has-offscreen-nav-overlay-color: var(--THEME-COLOR-PRIMARY);
-	--theme-offscreen-nav-padding: var(--spacing-unit-4);
-
-	/* Search Toggle */
-	--theme-site-search__toggle-color: 0, 0%, 11%;
-	--theme-site-search__toggle-color-interactive: var(--THEME-COLOR-SECONDARY);
-	--theme-site-search__toggle-color-active: var(--THEME-COLOR-SECONDARY);
-	--theme-site-search__toggle-height: 22px;
-	--theme-site-search__toggle-width: 22px;
-	--theme-site-search__toggle-transition-duration: var(--transition-duration);
-	--theme-site-search__toggle-easing-function: var(--transition-easing-function);
-	--theme-site-search__toggle-spacing-unit: var(--spacing-unit);
-	--theme-search-input__button-color: 0, 0%, 11%;
-	--theme-search-input__button-icon-color: 0, 0%, 100%;
-	--theme-search-input__button-color-interactive: 0, 0%, 11%;
-	--theme-site-search-z-index: 2;
+	--theme-offscreen-nav-padding: 2rem;
 
 
+	/*--------------------------------------------------------------
+	## Header Search Toggle
+	--------------------------------------------------------------*/
 
-	--theme-button--bg-color: 0, 0%, 11%;
-	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-weight: 600;
-	--theme-button--text-transform: uppercase;
-	--theme-button--letter-spacing: 3px;
-	--theme-button--font-family: var(--theme-heading-font-family);
-	--theme-button--font-size: 0.65rem;
+	--theme-search-toggle--color: var(--theme-color-heading);
+	--theme-search-toggle--color-interactive: var(--theme-color-heading);
+	--theme-search-toggle--size: 22px;
 
-
-	/* shared/css/header/site-navigation.css */
-	--theme-site-navigation-overlay-color: var(--THEME-COLOR-SECONDARY);
-
+	--theme-search-submit--bg: var(--theme-color-heading);
+	--theme-search-submit--bg-interactive: var(--theme-color-heading);
+	--theme-search-submit--color: var(--color-white);
 
 
+	/*--------------------------------------------------------------
+	## Entry Header
+	--------------------------------------------------------------*/
 
-
-
-
-	/* Entry Header */
 	--theme-entryheader--padding-top: 4rem;
 	--theme-entryheader--padding-bottom: 7rem;
 
 	@media (--large) {
 		--theme-entryheader--padding-bottom: 8.5rem;
 	}
+
+
+	/*--------------------------------------------------------------
+	## Footer
+	--------------------------------------------------------------*/
+
+	--theme-footer--bg: "";
+	--theme-footer--color: var(--theme-color-text-secondary);
+	--theme-footer-heading--color: var(--theme-color-heading);
+
+	/* Footer > Navigation */
+	--theme-footer-nav--color-interactive: var(--theme-color-heading);
+	--theme-footer-nav--leading: 2.25;
+	--theme-footer-nav--padding-x: 1rem;
+	--theme-footer-nav--padding-y: 0.25rem;
+
+	@media (--medium) {
+		--theme-footer-nav--padding-y: 1.15rem;
+		--theme-footer-nav--padding-x: 1.75rem;
+	}
+
+	/* Footer > Social Icons */
+	--theme-social--color: var(--theme-color-heading);
+	--theme-social--size: 1.5rem;
+	--theme-social--spacing: 0.5rem;
+
+	@media (--medium) {
+		--theme-social--size: 1.75rem;
+		--theme-social--spacing: 1rem;
+	}
+
+	/* Footer Variations Specific */
+	--theme-footer-2-site-info--border-color: 0, 0%, 90%;
+
 
 
 
@@ -300,6 +275,15 @@
 	* BUTTONS
 	* shared/css/config/mixins.css
 	***************************************************************/
+
+	--theme-button--bg: var(--theme-color-heading);
+	--theme-button--color: 0, 0%, 100%;
+	--theme-button--font-weight: 600;
+	--theme-button--text-transform: uppercase;
+	--theme-button--letter-spacing: 3px;
+	--theme-button--font-family: var(--theme-heading--font);
+	--theme-button--font-size: 0.65rem;
+
 
 	/* SHARED: Vertical button padding */
 	--theme-button-block-vertical-spacing-unit: 1.5rem;
@@ -321,8 +305,8 @@
 	--theme-button-block-font-weight: 700;
 
 	/* PRIMARY BUTTON: Background color */
-	--theme-button-block-background-color: var(--THEME-COLOR-HEADING);
-	--theme-button-block-background-color-interactive: var(--THEME-COLOR-HEADING);
+	--theme-button-block-background-color: var(--theme-color-heading);
+	--theme-button-block-background-color-interactive: var(--theme-color-heading);
 
 	/* PRIMARY BUTTON: Border */
 	--theme-button-block-border: none;
@@ -361,8 +345,8 @@
 	--theme-button-block-outline-shadow-interactive: 0 0 8px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.12);
 
 	/* SECONDARY BUTTON: Font color */
-	--theme-button-block-outline-color: var(--THEME-COLOR-SECONDARY);
-	--theme-button-block-outline-color-interactive: var(--THEME-COLOR-SECONDARY);
+	--theme-button-block-outline-color: var(--theme-color-text-secondary);
+	--theme-button-block-outline-color-interactive: var(--theme-color-text-secondary);
 
 	/* SECONDARY BUTTON: Font size */
 	--theme-button-block-outline-font-size: 1.0625rem;
@@ -385,8 +369,8 @@
 	--theme-button-block-alternate-border-interactive: 3px solid hsl(var(--THEME-COLOR-SECONDARY));
 
 	/* ALTERNATE BUTTON: Font color */
-	--theme-button-block-alternate-color: var(--THEME-COLOR-SECONDARY);
-	--theme-button-block-alternate-color-interactive: var(--THEME-COLOR-SECONDARY);
+	--theme-button-block-alternate-color: var(--theme-color-text-secondary);
+	--theme-button-block-alternate-color-interactive: var(--theme-color-text-secondary);
 
 	/* ALTERNATE BUTTON: Font size */
 	--theme-button-block-alternate-font-size: 0.875rem;
@@ -425,27 +409,27 @@
 	/***************************************************************
 	* Gutenberg core blocks
 	***************************************************************/
-	--theme-image-caption-text-color: var(--THEME-COLOR-SECONDARY);
-	--theme-block-separator-color: var(--THEME-COLOR-SECONDARY);
+	--theme-image-caption-text-color: var(--theme-color-text-secondary);
+	--theme-block-separator-color: var(--theme-color-text-secondary);
 
 	/***************************************************************
 	* CoBlocks blocks
 	***************************************************************/
 	--theme-coblocks-author-background-color: var(--THEME-COLOR-PRIMARY);
 	--theme-coblocks-author-border-radius: 0;
-	--theme-coblocks-author-heading-color: var(--THEME-COLOR-SECONDARY);
-	--theme-coblocks-author-name-color: var(--THEME-COLOR-SECONDARY);
+	--theme-coblocks-author-heading-color: var(--theme-color-text-secondary);
+	--theme-coblocks-author-name-color: var(--theme-color-text-secondary);
 
-	--theme-coblocks-hero-content-color: var(--THEME-COLOR-SECONDARY);
+	--theme-coblocks-hero-content-color: var(--theme-color-text-secondary);
 
-	--theme-coblocks-pricing-table-color: var(--THEME-COLOR-SECONDARY);
+	--theme-coblocks-pricing-table-color: var(--theme-color-text-secondary);
 	--theme-coblocks-pricing-table-background-color: var(--color-athens-gray);
-	--theme-coblocks-pricing-table-title-font-family: var(--theme-heading-font-family);
-	--theme-coblocks-pricing-table-price-font-family: var(--theme-heading-font-family);
-	--theme-coblocks-pricing-table-features-font-family: var(--theme-heading-font-family);
+	--theme-coblocks-pricing-table-title-font-family: var(--theme-heading--font);
+	--theme-coblocks-pricing-table-price-font-family: var(--theme-heading--font);
+	--theme-coblocks-pricing-table-features-font-family: var(--theme-heading--font);
 	--theme-coblocks-pricing-table-features-color: var(--color-mid-gray);
 
-	--theme-coblocks-gallery-carousel-overlay-color: var(--THEME-COLOR-SECONDARY);
+	--theme-coblocks-gallery-carousel-overlay-color: var(--theme-color-text-secondary);
 	--theme-coblocks-gallery-carousel-border-color: var(--color-charade);
 
 	/***************************************************************
@@ -461,10 +445,10 @@
 	/* Labels */
 	--theme-label-letter-spacing: 2px;
 	--theme-label-text-transform: uppercase;
-	--theme-label-font-family: var(--theme-body-font-family);
+	--theme-label-font-family: var(--theme-body--font);
 	--theme-input-label-font-size: 0.875rem;
 	--theme-input-label-font-weight: 700;
-	--theme-label-color: var(--THEME-COLOR-SECONDARY);
+	--theme-label-color: var(--theme-color-text-secondary);
 
 	/* Inputs */
 	--theme-input-border-bottom-width: 2px;
@@ -472,14 +456,14 @@
 	--theme-input-border-right-width: 2px;
 	--theme-input-border-top-width: 2px;
 	--theme-input-border-width: 2px;
-	--theme-input-stroke-color: 0, 0%, 11%;
+	--theme-input-stroke-color: var(--theme-color-heading);
 	--theme-input-border-radius: 0;
 	--theme-input-font-size: 1.0625rem;
 	--theme-input-font-weight: 700;
-	--theme-input-stroke-color-focus: var(--THEME-COLOR-SECONDARY);
+	--theme-input-stroke-color-focus: var(--theme-color-text-secondary);
 	--theme-input-box-shadow-focus: 0 1px 11px rgba(40, 37, 37, 0.07);
-	--theme-input-color: var(--THEME-COLOR-SECONDARY);
-	--theme-input-color-focus: var(--THEME-COLOR-SECONDARY);
+	--theme-input-color: var(--theme-color-text-secondary);
+	--theme-input-color-focus: var(--theme-color-text-secondary);
 	--theme-input-placeholder-color: 0, 0%, 47%; /* #797878 */
 	--theme-input-color-background: 0, 0%, 100%; /* #fff */
 
@@ -488,15 +472,18 @@
 	--theme-input-stroke-error: 357, 81%, 38%; /* #b0131c */
 
 	/* Textarea */
-	--theme-textarea-color: var(--THEME-COLOR-SECONDARY);
-	--theme-textarea-stroke-color: var(--THEME-COLOR-SECONDARY);
-	--theme-textarea-color-focus: var(--THEME-COLOR-SECONDARY);
-	--theme-textarea-stroke-color-focus: var(--THEME-COLOR-SECONDARY);
+	--theme-textarea-color: var(--theme-color-text-secondary);
+	--theme-textarea-stroke-color: var(--theme-color-text-secondary);
+	--theme-textarea-color-focus: var(--theme-color-text-secondary);
+	--theme-textarea-stroke-color-focus: var(--theme-color-text-secondary);
 	--theme-textarea-color-background: 0, 0%, 100%; /* #fff */
 
 	/* Check and Radio SVG trick */
-	--theme-checkbox-radio-fill: var(--THEME-COLOR-SECONDARY); /* #202124 */
+	--theme-checkbox-radio-fill: var(--theme-color-text-secondary); /* #202124 */
 
+
+	/* Feedback colors: error, success, warning, informational. */
+	--theme-feedback-informational-color: 208, 100%, 43%;
 
 
 	/* Spacing units */

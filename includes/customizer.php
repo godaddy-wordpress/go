@@ -680,22 +680,22 @@ function inline_css() {
 			:root {
 				/* Header */
 				<?php if ( $header_background ) : ?>
-					--theme-header--bg-color: <?php echo esc_attr( $header_background ); ?>;
+					--theme-header--bg: <?php echo esc_attr( $header_background ); ?>;
 				<?php endif; ?>
 
 				<?php if ( $header_text_color ) : ?>
 					--theme-site-nav--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-description--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-title--color: <?php echo esc_attr( $header_text_color ); ?>;
-					--theme-site-search__toggle-color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-search-toggle--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-nav--color-interactive: <?php echo esc_attr( $header_text_color ); ?>;
-					--theme-site-navigation__toggle-color: <?php echo esc_attr( $header_text_color ); ?>;
-					--theme-search-input__button-color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-site-nav-toggle--color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-search-submit--bg: <?php echo esc_attr( $header_text_color ); ?>;
 				<?php endif; ?>
 
 				/* Footer */
 				<?php if ( $footer_background ) : ?>
-					--theme-footer--bg-color: <?php echo esc_attr( $footer_background ); ?>;
+					--theme-footer--bg: <?php echo esc_attr( $footer_background ); ?>;
 				<?php endif; ?>
 
 				<?php if ( $footer_heading_color ) : ?>

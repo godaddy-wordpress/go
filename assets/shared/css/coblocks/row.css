@@ -96,25 +96,25 @@ body {
 * Reset CoBlocks color inherit setting
 */
 .wp-block-coblocks-column h1 {
-	color: hsl(var(--theme-h1-color));
+	color: hsl(var(--theme-h1--color));
 }
 
 .wp-block-coblocks-column h2 {
-	color: hsl(var(--theme-h2-color));
+	color: hsl(var(--theme-h2--color));
 }
 
 .wp-block-coblocks-column h3 {
-	color: hsl(var(--theme-h3-color));
+	color: hsl(var(--theme-h3--color));
 }
 
 .wp-block-coblocks-column h4 {
-	color: hsl(var(--theme-h4-color));
+	color: hsl(var(--theme-h4--color));
 }
 
 .wp-block-coblocks-column h5 {
-	color: hsl(var(--theme-h5-color));
+	color: hsl(var(--theme-h5--color));
 }
 
 .wp-block-coblocks-column h6 {
-	color: hsl(var(--theme-h6-color));
+	color: hsl(var(--theme-h6--color));
 }

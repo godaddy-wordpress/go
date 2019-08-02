@@ -1,9 +1,9 @@
 /**
- * Modern - Editor Style
+ * Modern - Editor Styles
  */
 
 /* Settings */
-@import url("config/settings.css");
+@import url("settings.css");
 @import url("config/fonts.css");
 
 /* Elements - all the HTML elements coverage */

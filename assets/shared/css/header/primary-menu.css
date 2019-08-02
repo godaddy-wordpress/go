@@ -27,11 +27,11 @@
 		border: none;
 		color: hsla(var(--theme-site-nav--color), 1);
 		display: inline-block;
-		font-size: var(--theme-site-nav--font-size);
 		font-family: var(--theme-site-nav--font-family);
-		text-transform: var(--theme-site-nav--text-transform);
+		font-size: var(--theme-site-nav--font-size);
 		position: relative;
 		text-decoration: none;
+		text-transform: var(--theme-site-nav--text-transform);
 
 		/* &::before {
 			background-color: hsl(var(--theme-site-nav--color));
@@ -89,7 +89,7 @@
 
 			/* Upward dark arrow on top of the flyout sub-menu */
 			&::before {
-				border-bottom: 10px solid hsla(var(--theme-submenu--bg-color), 1);
+				border-bottom: 10px solid hsla(var(--theme-submenu--bg), 1);
 				border-left: 10px solid transparent;
 				border-right: 10px solid transparent;
 				content: "";
@@ -111,7 +111,7 @@
 		padding: 0;
 
 		@media (--large) {
-			background-color: hsla(var(--theme-submenu--bg-color), 1);
+			background-color: hsla(var(--theme-submenu--bg), 1);
 			display: none;
 			left: 50%;
 			padding: 1rem 0;

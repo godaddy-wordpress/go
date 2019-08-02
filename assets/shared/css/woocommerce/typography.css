@@ -5,7 +5,7 @@
 */
 
 .related.products h2 {
-	font-family: var(--theme-body-font-family);
-	font-size: var(--theme-h5-font-size);
+	font-family: var(--theme-body--font);
+	font-size: var(--theme-h5--font-size);
 	letter-spacing: 1px;
 }

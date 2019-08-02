@@ -1,5 +1,5 @@
 .site-footer {
-	background-color: hsla(var(--theme-footer--bg-color), 1);
+	background-color: hsla(var(--theme-footer--bg), 1);
 	color: hsla(var(--theme-footer--color), 1);
 
 	&.has-background {
@@ -18,12 +18,12 @@
 	}
 
 	& .privacy-policy-link {
-		position: relative;
 		display: inline;
 		margin-left: 0.85rem;
 		margin-top: 0;
 		padding-left: 1rem;
 		padding-top: 0;
+		position: relative;
 
 		&::before {
 			background-color: currentColor;
@@ -44,11 +44,11 @@
 				@mixin outline-text-link;
 
 				@media (--medium) {
+					bottom: -3px;
 					content: "";
+					left: 1rem;
 					position: absolute;
 					width: calc(100% - 1rem);
-					bottom: -3px;
-					left: 1rem;
 				}
 			}
 		}
@@ -56,7 +56,7 @@
 }
 
 .footer-navigation {
-	line-height: var(--theme-footer-nav--line-height);
+	line-height: var(--theme-footer-nav--leading);
 
 	& a:focus {
 		@mixin outline;

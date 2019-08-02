@@ -12,13 +12,13 @@
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
-	color: hsl(var(--theme-site-search__toggle-color));
+	color: hsl(var(--theme-search-toggle--color));
 	display: inline-block;
+	height: calc(var(--theme-search-toggle--size) * 2);
 	line-height: 1;
 	padding: 0.1rem;
 	position: relative;
-	width: calc( var(--theme-site-search__toggle-width) * 2);
-	height: calc( var(--theme-site-search__toggle-width) * 2);
+	width: calc(var(--theme-search-toggle--size) * 2);
 	z-index: 1;
 
 	@media (--large) {
@@ -40,7 +40,7 @@
 
 	& svg {
 		fill: currentColor;
-		width: var(--theme-site-search__toggle-width);
+		width: var(--theme-search-toggle--size);
 	}
 }
 

@@ -18,7 +18,7 @@ $has_background   = Maverick\has_footer_background();
 
 		<div class="flex flex-wrap lg:justify-between lg:flex-nowrap">
 
-			<div class="footer-blurb-text text-md">
+			<div class="footer-blurb-text">
 				<?php echo wp_kses_post( Maverick\footer_blurb_text() ); ?>
 			</div>
 
