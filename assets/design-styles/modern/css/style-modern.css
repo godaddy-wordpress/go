@@ -22,7 +22,9 @@
 @import url("coblocks/pricing-table.css");
 
 /* Components */
+@import url("header/has-offscreen-nav.css");
 @import url("header/site-navigation__toggle.css");
+@import url("header/site-navigation.css");
 
 /* WooCommerce */
 @import url("woocommerce/button.css");
