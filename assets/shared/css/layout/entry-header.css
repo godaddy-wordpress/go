@@ -1,6 +1,6 @@
 .entry-header {
-	margin: var(--theme-entryheader-spacing-top) auto  var(--theme-entryheader-spacing-bottom);
-	max-width: var(--theme-max-width-base);
+	max-width: var(--theme-max-w-base);
+	padding: var(--theme-entryheader--padding-top) auto  var(--theme-entryheader--padding-bottom);
 
 	& .post__title {
 		text-align: center;

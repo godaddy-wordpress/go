@@ -2,6 +2,10 @@
  * Customizer specific styles.
  */
 
+.site-footer {
+	transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 [data-header="header-1"] {
 
 	& .site-header:not(.site-header--1) {

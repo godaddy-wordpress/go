@@ -16,7 +16,7 @@
 }
 
 .wp-block-coblocks-food-item__heading {
-	font-size: var(--theme-h6-font-size);
+	font-size: var(--theme-h6--font-size);
 	margin-bottom: 0 !important;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .wp-block-coblocks-food-item__price {
-	color: hsla(var(--THEME-COLOR-BODY), 1);
+	color: hsl(var(--theme-color-text));
 	font-size: 0.9rem;
 	opacity: 1;
 }

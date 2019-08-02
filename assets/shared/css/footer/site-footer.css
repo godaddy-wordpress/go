@@ -1,6 +1,10 @@
 .site-footer {
-	background-color: hsla(var(--theme-footer-background-color), 1);
-	color: hsla(var(--theme-footer-color), 1);
+	background-color: hsla(var(--theme-footer--bg), 1);
+	color: hsla(var(--theme-footer--color), 1);
+
+	&.has-background {
+		margin-top: var(--theme-block-spacing-huge);
+	}
 
 	& a {
 		color: hsla(var(--theme-footer-text-color), 1);
@@ -9,48 +13,60 @@
 		&:active,
 		&:focus,
 		&:hover {
-			color: hsla(var(--theme-footer-link-hover-active-color), 1);
+			color: hsla(var(--theme-footer-nav--color-interactive), 1);
 		}
 	}
 
 	& .privacy-policy-link {
-		display: block;
-		margin-top: 0.75rem;
-		padding-top: 0.75rem;
+		display: inline;
+		margin-left: 0.85rem;
+		margin-top: 0;
+		padding-left: 1rem;
+		padding-top: 0;
 		position: relative;
-
-		@media (--small) {
-			display: inline;
-			margin-left: 0.85rem;
-			margin-top: 0;
-			padding-left: 1rem;
-			padding-top: 0;
-		}
 
 		&::before {
 			background-color: currentColor;
 			content: "";
-			height: 1px;
-			left: 50%;
+			height: 100%;
+			left: 0;
 			opacity: 0.25;
 			position: absolute;
 			top: 0;
 			transform: translateX(-50%);
-			width: 20px;
+			width: 1px;
+		}
 
-			@media (--small) {
-				height: 100%;
-				left: 0;
-				width: 1px;
+		&:focus {
+			outline: none;
+
+			&::after {
+				@mixin outline-text-link;
+
+				@media (--medium) {
+					bottom: -3px;
+					content: "";
+					left: 1rem;
+					position: absolute;
+					width: calc(100% - 1rem);
+				}
 			}
 		}
 	}
 }
 
+.footer-navigation {
+	line-height: var(--theme-footer-nav--leading);
+
+	& a:focus {
+		@mixin outline;
+	}
+}
+
 .footer-navigation__title {
-	color: hsla(var(--theme-footer-heading-color), 1);
+	color: hsla(var(--theme-footer-heading--color), 1);
 	display: block;
-	font-family: var(--theme-primary-menu--font-family);
-	font-size: var(--theme-primary-menu--font-size);
-	text-transform: var(--theme-primary-menu--text-transform);
+	font-family: var(--theme-site-nav--font-family);
+	font-size: var(--theme-site-nav--font-size);
+	text-transform: var(--theme-site-nav--text-transform);
 }

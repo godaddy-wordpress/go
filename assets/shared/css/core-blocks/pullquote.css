@@ -2,15 +2,11 @@
  * Global - pullquote styling
 */
 
-.wp-block-pullquote {
-	color: hsl(var(--theme-body-color));
-}
-
 .wp-block-pullquote__citation,
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
 	color: inherit;
-	font-family: var(--theme-body-font-family);
+	font-family: var(--theme-body--font);
 	font-weight: 400;
 	letter-spacing: 1px;
 	opacity: 0.7;

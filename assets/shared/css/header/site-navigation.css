@@ -9,12 +9,12 @@
 	flex-direction: column;
 	height: 0;
 	left: 0;
+	line-height: 1.2;
 	opacity: 0;
 	overflow-y: scroll;
 	position: fixed;
-	top: 70px; /* a default */
+	top: 70px;
 	width: 100%;
-	z-index: var(--theme-site-navigation-z-index);
 
 	@media (--large) {
 		align-items: center;
@@ -26,7 +26,7 @@
 		opacity: 1;
 		overflow: visible;
 		position: relative;
-		top: auto; /* a default */
+		top: auto;
 		width: auto;
 	}
 

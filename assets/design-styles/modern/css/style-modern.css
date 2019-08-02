@@ -1,10 +1,10 @@
 /**
- * Modern - Design Style
+ * Modern Style
  */
 
 /* Settings */
 @import url("../../../shared/css/config/media-queries.css");
-@import url("config/settings.css");
+@import url("settings.css");
 @import url("config/fonts.css");
 
 /* Elements - all the HTML elements coverage */

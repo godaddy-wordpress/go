@@ -55,7 +55,7 @@ textarea {
 	font-size: var(--theme-input-font-size);
 	font-weight: var(--theme-input-font-weight);
 	line-height: 1.25;
-	min-height: calc(var(--spacing-unit) * 10);
+	min-height: calc(0.5rem * 10);
 	padding: var(--theme-spacing-v-input);
 	width: 100%;
 

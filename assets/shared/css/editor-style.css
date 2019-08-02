@@ -7,9 +7,6 @@
 
 /* Setting global variables */
 @import url("config/media-queries.css");
-@import url("config/colors-global.css");
-@import url("config/layout.css");
-@import url("config/typography.css");
 @import url("config/mixins.css");
 
 /* Elements - all the HTML elements coverage */

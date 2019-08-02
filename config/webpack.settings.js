@@ -11,15 +11,15 @@ module.exports = {
 		'admin/customize-preview': './assets/admin/js/customize-preview.js',
 
 		// admin css
-		'admin/customize-controls-styles': './assets/admin/css/customize-controls.css',
+		'admin/customizer-styles': './assets/admin/css/customizer.css',
 
 		// CSS files.
 		'editor-style': './assets/shared/css/editor-style.css',
 		'shared-style': './assets/shared/css/shared-style.css',
 
 		// CSS Design Styles
-		'design-styles/modern': './assets/design-styles/modern/css/modern.css',
-		'design-styles/modern-editor': './assets/design-styles/modern/css/editor-style.css',
+		'design-styles/modern': './assets/design-styles/modern/css/style-modern.css',
+		'design-styles/modern-editor': './assets/design-styles/modern/css/style-editor.css',
 		// 'design-styles/traditional': './assets/design-styles/traditional/css/traditional.css',
 		// 'design-styles/traditional-editor': './assets/design-styles/traditional/css/editor-style.css',
 		// 'design-styles/trendy-shop': './assets/design-styles/trendy-shop/css/trendy-shop.css',
@@ -83,8 +83,7 @@ module.exports = {
 			'**/*.php',
 			'dist/js/**/*.js',
 			'dist/css/**/*.css',
-			'dist/svg/**/*.svg',
-			'dist/images/**/*.{jpg,jpeg,png,gif}',
+			'dist/images/**/*.{jpg,jpeg,png,gif,svg}',
 			'dist/fonts/**/*.{eot,ttf,woff,woff2,svg}'
 		]
 	},
