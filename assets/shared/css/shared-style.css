@@ -53,6 +53,7 @@
 /* Layout */
 @import url("layout/content.css");
 @import url("layout/entry-header.css");
+@import url("layout/404.css");
 
 /* Headers */
 @import url("header/header-2.css");

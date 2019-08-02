@@ -1,0 +1,34 @@
+.error404 {
+
+	& .site-content {
+		display: flex;
+		align-items: center;
+		margin-top: var(--theme-block-spacing-huge);
+	}
+}
+
+.error-404 {
+	max-width: 28em;
+	padding-bottom: var(--theme-header--padding-y);
+	padding-left: var(--theme-block-padding-x);
+	padding-right: var(--theme-block-padding-x);
+
+	& .entry-header {
+		margin-bottom: 2rem;
+	}
+
+	& .page-title {
+		font-size: var(--theme-h2--font-size);
+		margin: 0;
+		text-align: left;
+	}
+
+	& .site-search {
+		margin: 0;
+		opacity: 1;
+		padding: 0 3rem;
+		pointer-events: auto;
+		position: relative;
+		transform: none;
+	}
+}

@@ -9,7 +9,7 @@ h4,
 h5,
 h6 {
 	font-family: var(--theme-heading--font);
-	line-height: var(--theme-heading-line-height);
+	line-height: var(--theme-heading--leading);
 }
 
 h1 {
