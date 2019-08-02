@@ -7,6 +7,10 @@
 	& .site-footer {
 		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.4);
 		padding-top: var(--theme-block-spacing-huge);
+
+		&.has-background {
+			padding-top: calc(var(--theme-block-spacing-huge) * 0.4);
+		}
 	}
 
 	& .footer-navigation {
@@ -72,6 +76,7 @@
 
 	& .site-info {
 		margin-top: 1.85rem;
+		margin-bottom: calc(var(--theme-footer-nav--padding-y) * 0.85);
 		text-align: center;
 
 		@media (--large) {
