@@ -522,35 +522,35 @@ function get_available_header_variations() {
 	$default_header_variations = [
 		'header-1' => [
 			'label'         => esc_html__( 'Logo + Nav + Search', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-search.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-1.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '1' );
 			},
 		],
 		'header-2' => [
 			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-2.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
 		'header-3' => [
 			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-vertical.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-3.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
 		],
 		'header-4' => [
 			'label'         => esc_html__( 'Search + Logo + Nav', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-search-logo-nav.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-4.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '4' );
 			},
 		],
 		'header-5' => [
 			'label'         => esc_html__( 'Nav + Logo + Search', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo-search.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-5.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '5' );
 			},
