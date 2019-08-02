@@ -223,7 +223,7 @@
 /* On Sale badge (default) */
 @define-mixin on-sale-badge {
 	align-items: center;
-	background-color: hsl(var(--THEME-COLOR-PRIMARY));
+	background-color: hsl(var(--theme-color-primary));
 	border-radius: 50%;
 	display: flex;
 	font-weight: 400;

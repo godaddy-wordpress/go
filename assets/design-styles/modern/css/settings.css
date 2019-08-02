@@ -60,11 +60,11 @@
 	--theme-color-heading: 0, 0%, 11%;
 
 	/* @todo - do we need these?*/
-	--THEME-COLOR-PRIMARY: var(--USER-COLOR-PRIMARY);
-	--THEME-COLOR-SECONDARY: var(--USER-COLOR-SECONDARY);
-	--THEME-COLOR-TERTIARY: var(--USER-COLOR-TERTIARY);
-	--THEME-COLOR-QUATERNARY: var(--USER-COLOR-QUATERNARY);
-	--THEME-COLOR-QUINARY: var(--color-white);
+	--theme-color-primary: var(--USER-COLOR-PRIMARY);
+	--theme-color-secondary: var(--USER-COLOR-SECONDARY);
+	--theme-color-tertiary: var(--USER-COLOR-TERTIARY);
+	--theme-color-quaternary: var(--USER-COLOR-QUATERNARY);
+	--theme-color-quinary: var(--color-white);
 
 
 	/*--------------------------------------------------------------
@@ -146,7 +146,7 @@
 	--theme-list-bullet-color: var(--theme-color-text-secondary);
 	--theme-list-font-size: 1.0625rem;
 	--theme-list-line-height: 1.89;
-	--theme-list-color: var(-THEME-COLOR-SECONDARY);
+	--theme-list-color: var(-theme-color-secondary);
 	--theme-list-font-weight: 700;
 
 
@@ -206,7 +206,7 @@
 	--theme-site-nav-toggle--size: 2rem;
 
 	/* Offscreen Navigation */
-	--theme-has-offscreen-nav-overlay-color: var(--THEME-COLOR-PRIMARY);
+	--theme-has-offscreen-nav-overlay-color: var(--theme-color-primary);
 	--theme-offscreen-nav-padding: 2rem;
 
 
@@ -292,8 +292,8 @@
 	--theme-button-block-line-height: 1;
 
 	/* PRIMARY BUTTON: Font color */
-	--theme-button-block-color: var(--THEME-COLOR-PRIMARY); /* #fff */
-	--theme-button-block-color-interactive: var(--THEME-COLOR-PRIMARY); /* #fff */
+	--theme-button-block-color: var(--theme-color-primary); /* #fff */
+	--theme-button-block-color-interactive: var(--theme-color-primary); /* #fff */
 
 	/* PRIMARY BUTTON: Font size */
 	--theme-button-block-font-size: 0.85rem;
@@ -327,12 +327,12 @@
 	--theme-button-block-text-transform: uppercase;
 
 	/* SECONDARY BUTTON: Background color */
-	--theme-button-block-outline-background-color: var(--THEME-COLOR-PRIMARY); /* #fff */
-	--theme-button-block-outline-background-color-interactive: var(--THEME-COLOR-PRIMARY); /* #fff */
+	--theme-button-block-outline-background-color: var(--theme-color-primary); /* #fff */
+	--theme-button-block-outline-background-color-interactive: var(--theme-color-primary); /* #fff */
 
 	/* SECONDARY BUTTON: Border */
-	--theme-button-block-outline-border: 2px solid hsl(var(--THEME-COLOR-SECONDARY));
-	--theme-button-block-outline-border-interactive: 2px solid hsl(var(--THEME-COLOR-SECONDARY));
+	--theme-button-block-outline-border: 2px solid hsl(var(--theme-color-secondary));
+	--theme-button-block-outline-border-interactive: 2px solid hsl(var(--theme-color-secondary));
 
 	/* SECONDARY BUTTON: Border radius */
 	--theme-button-block-outline-border-radius: 0;
@@ -362,8 +362,8 @@
 	--theme-button-block-outline-text-transform: uppercase;
 
 	/* ALTERNATE BUTTON: Border color */
-	--theme-button-block-alternate-border: 3px solid hsl(var(--THEME-COLOR-SECONDARY));
-	--theme-button-block-alternate-border-interactive: 3px solid hsl(var(--THEME-COLOR-SECONDARY));
+	--theme-button-block-alternate-border: 3px solid hsl(var(--theme-color-secondary));
+	--theme-button-block-alternate-border-interactive: 3px solid hsl(var(--theme-color-secondary));
 
 	/* ALTERNATE BUTTON: Font color */
 	--theme-button-block-alternate-color: var(--theme-color-text-secondary);
@@ -400,8 +400,8 @@
 	--theme-button-block-disabled-padding: var(--theme-button-block-vertical-spacing-unit) var(--theme-button-block-horizontal-spacing-unit);
 
 	/* UNDERLINED BUTTON: Underline color */
-	--theme-button-block-underlined-color: var(--THEME-COLOR-PRIMARY); /* #fff */
-	--theme-button-block-underlined-color-interactive: var(--THEME-COLOR-PRIMARY); /* #fff */
+	--theme-button-block-underlined-color: var(--theme-color-primary); /* #fff */
+	--theme-button-block-underlined-color-interactive: var(--theme-color-primary); /* #fff */
 
 	/***************************************************************
 	* Gutenberg core blocks
@@ -412,7 +412,7 @@
 	/***************************************************************
 	* CoBlocks blocks
 	***************************************************************/
-	--theme-coblocks-author-background-color: var(--THEME-COLOR-PRIMARY);
+	--theme-coblocks-author-background-color: var(--theme-color-primary);
 	--theme-coblocks-author-border-radius: 0;
 	--theme-coblocks-author-heading-color: var(--theme-color-text-secondary);
 	--theme-coblocks-author-name-color: var(--theme-color-text-secondary);
