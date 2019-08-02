@@ -144,7 +144,7 @@
 @define-mixin select-menu {
 	appearance: button;
 	background-color: hsl(var(--theme-input-color-background));
-	background-image: url("../shared/svg/arrow-down-solid.svg");
+	background-image: url("../shared/images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border-bottom-width: var(--theme-input-border-bottom-width);
@@ -199,12 +199,12 @@
 
 /* Checkbox :before asset */
 @define-mixin checkbox-label-before {
-	mask-image: url("../shared/svg/checkbox.svg");
+	mask-image: url("../shared/images/checkbox.svg");
 }
 
 /* Checkbox :checked:before asset */
 @define-mixin checkbox-label-checked-before {
-	mask-image: url("../shared/svg/checkbox-checked.svg");
+	mask-image: url("../shared/images/checkbox-checked.svg");
 }
 
 /* Radio :before asset */
