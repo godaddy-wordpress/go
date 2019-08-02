@@ -12,7 +12,7 @@ export default () => {
 	 */
 	const setPrimaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-primary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--USER-COLOR-PRIMARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
 	/**
@@ -22,7 +22,7 @@ export default () => {
 	 */
 	const setSecondaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-secondary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--USER-COLOR-SECONDARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
 	/**
@@ -32,7 +32,7 @@ export default () => {
 	 */
 	const setTertiaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-tertiary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--USER-COLOR-TERTIARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
 	/**
@@ -42,7 +42,7 @@ export default () => {
 	 */
 	const setQuaternaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-quaternary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--USER-COLOR-QUATERNARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
 	/**

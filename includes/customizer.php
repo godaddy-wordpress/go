@@ -648,25 +648,25 @@ function css_variables() {
 	<style>
 		<?php if ( false !== $primary_color ) : ?>
 			:root {
-				--theme-color-primary: <?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>;
+				--USER-COLOR-PRIMARY: <?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>;
 			}
 		<?php endif; ?>
 
 		<?php if ( false !== $secondary_color ) : ?>
 			:root {
-				--theme-color-secondary: <?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>;
+				--USER-COLOR-SECONDARY: <?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>;
 			}
 		<?php endif; ?>
 
 		<?php if ( false !== $tertiary_color ) : ?>
 			:root {
-				--theme-color-tertiary: <?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>;
+				--USER-COLOR-TERTIARY: <?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>;
 			}
 		<?php endif; ?>
 
 		<?php if ( false !== $quaternary_color ) : ?>
 			:root {
-				--theme-color-quaternary: <?php echo esc_attr( $quaternary_color[0] ) . ', ' . esc_attr( $quaternary_color[1] ) . '%, ' . esc_attr( $quaternary_color[2] ) . '%'; ?>;
+				--USER-COLOR-QUATERNARY: <?php echo esc_attr( $quaternary_color[0] ) . ', ' . esc_attr( $quaternary_color[1] ) . '%, ' . esc_attr( $quaternary_color[2] ) . '%'; ?>;
 			}
 		<?php endif; ?>
 	</style>

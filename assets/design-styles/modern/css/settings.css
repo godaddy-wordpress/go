@@ -59,7 +59,11 @@
 	--theme-color-text-secondary: 0, 0%, 41%;
 	--theme-color-heading: 0, 0%, 11%;
 
-	/* Global Color Scheme Colors */
+	/* @todo - do we need these?*/
+	--theme-color-primary: var(--USER-COLOR-PRIMARY);
+	--theme-color-secondary: var(--USER-COLOR-SECONDARY);
+	--theme-color-tertiary: var(--USER-COLOR-TERTIARY);
+	--theme-color-quaternary: var(--USER-COLOR-QUATERNARY);
 	--theme-color-quinary: var(--color-white);
 
 
