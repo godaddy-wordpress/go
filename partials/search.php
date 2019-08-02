@@ -5,13 +5,15 @@
  * @package Maverick
  */
 
+$search_term = filter_input( INPUT_GET, 's', FILTER_SANITIZE_STRING );
+
 ?>
-<form role="search" id="searchform" class="search-form mt-0" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+<form role="search" id="searchform" class="search-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<meta itemprop="target" content="<?php echo esc_url( home_url() ); ?>/?s={s}" />
 	<label for="search-form__label">
 		<span class="screen-reader-text"><?php echo esc_html_x( 'Search for:', 'label', 'maverick' ); ?></span>
 	</label>
-	<input itemprop="query-input" type="search" id="search-field" class="input input--search search-form__input" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'maverick' ); ?>" name="s" />
+	<input itemprop="query-input" type="search" id="search-field" class="input input--search search-form__input" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'maverick' ); ?>" name="s" value="<?php echo esc_attr( $search_term ); ?>" />
 	<button type="submit" class="button search-input__button">
 		<span class="search-input__label"><?php echo esc_attr_x( 'Submit', 'submit button', 'maverick' ); ?></span>
 		<svg class="search-input__arrow-icon" width="30" height="28" viewBox="0 0 30 28" fill="inherit" xmlns="http://www.w3.org/2000/svg">
