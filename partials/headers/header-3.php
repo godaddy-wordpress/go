@@ -7,9 +7,9 @@
 
 ?>
 
-<header id="masthead" class="site-header site-header--3 relative w-full" itemscope itemtype="http://schema.org/WPHeader">
+<header id="masthead" class="site-header site-header--3 relative" itemscope itemtype="http://schema.org/WPHeader">
 
-	<div class="site-header__inner flex lg:flex-column items-center justify-between w-full max-w-wide m-auto relative">
+	<div class="site-header__inner flex lg:flex-column items-center justify-between max-w-wide m-auto relative">
 
 		<?php Maverick\display_site_branding(); ?>
 

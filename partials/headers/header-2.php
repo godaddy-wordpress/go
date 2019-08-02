@@ -9,7 +9,7 @@
 
 <header id="masthead" class="site-header site-header--2" itemscope itemtype="http://schema.org/WPHeader">
 
-	<div class="site-header__inner flex items-center justify-between w-full max-w-wide m-auto">
+	<div class="site-header__inner flex items-center justify-between max-w-wide m-auto">
 
 		<?php if ( has_nav_menu( 'primary' ) ) { ?>
 

@@ -62,6 +62,7 @@
 		right: 0;
 		top: 0;
 		width: 70px;
+		padding: 0;
 
 		@media (--large) {
 			display: block;

@@ -7,9 +7,9 @@
 
 ?>
 
-<header id="masthead" class="site-header site-header--4 site-header--search-logo-nav" itemscope itemtype="http://schema.org/WPHeader">
+<header id="masthead" class="site-header site-header--4" itemscope itemtype="http://schema.org/WPHeader">
 
-	<div class="site-header__inner flex items-center justify-center w-full max-w-wide m-auto relative">
+	<div class="site-header__inner flex items-center justify-center max-w-wide m-auto relative">
 
 		<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
 			<?php echo Maverick\load_inline_svg( 'search.svg' ); // phpcs:ignore ?>
