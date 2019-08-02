@@ -5,7 +5,7 @@
 
 .posts-navigation .nav-links {
 	display: flex;
-	margin: var(--spacing-unit-2) 0;
+	margin: 1rem 0;
 
 	& .nav-previous,
 	& .nav-next {

@@ -2,15 +2,41 @@ html {
 	font-size: 100%;
 }
 
-body,
-button {
-	color: hsl(var(--theme-body-color));
-	font-family: var(--theme-body-font-family);
-	font-size: var(--theme-body-font-size);
-	line-height: var(--theme-body-line-height);
-	word-wrap: break-word;
+::-moz-selection {
+	background-color: hsl(var(--theme-selection--color));
+}
+
+::selection {
+	background-color: hsl(var(--theme-selection--color));
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
 body {
-	background-color: hsla(var(--theme-body-background-color), 1);
+	background-color: hsl(var(--theme-color-body-bg));
+	color: hsl(var(--theme-color-text));
+	font-family: var(--theme-body--font);
+	font-size: var(--theme-body--font-size);
+	font-weight: var(--theme-body--weight);
+	letter-spacing: var(--theme-body--tracking);
+	line-height: var(--theme-body--leading);
+	overflow-x: hidden;
+	text-rendering: optimizeLegibility;
+	word-wrap: break-word;
+}
+
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+	font-family: var(--theme-body--font);
+	font-weight: var(--theme-body--weight);
+	line-height: var(--theme-body--leading);
+	text-rendering: optimizeLegibility;
 }

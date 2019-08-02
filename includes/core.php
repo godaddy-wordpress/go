@@ -379,7 +379,7 @@ function get_available_design_styles() {
 			'label'         => esc_html__( 'Modern', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Creative+Services',
+			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Modern',
 			'color_schemes' => [
 				'light' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),

@@ -18,8 +18,8 @@ module.exports = {
 		'shared-style': './assets/shared/css/shared-style.css',
 
 		// CSS Design Styles
-		'design-styles/modern': './assets/design-styles/modern/css/modern.css',
-		'design-styles/modern-editor': './assets/design-styles/modern/css/editor-style.css',
+		'design-styles/modern': './assets/design-styles/modern/css/style-modern.css',
+		'design-styles/modern-editor': './assets/design-styles/modern/css/style-editor.css',
 		// 'design-styles/traditional': './assets/design-styles/traditional/css/traditional.css',
 		// 'design-styles/traditional-editor': './assets/design-styles/traditional/css/editor-style.css',
 		// 'design-styles/trendy-shop': './assets/design-styles/trendy-shop/css/trendy-shop.css',

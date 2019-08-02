@@ -8,46 +8,36 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--theme-heading-font-family);
+	font-family: var(--theme-heading--font);
 	line-height: var(--theme-heading-line-height);
 }
 
 h1 {
-	color: hsla(var(--theme-h1-color), 1);
-	font-size: var(--theme-h1-font-size);
+	color: hsl(var(--theme-h1--color));
+	font-size: var(--theme-h1--font-size);
 }
 
 h2 {
-	color: hsla(var(--theme-h2-color), 1);
-	font-size: var(--theme-h2-font-size);
+	color: hsl(var(--theme-h2--color));
+	font-size: var(--theme-h2--font-size);
 }
 
 h3 {
-	color: hsla(var(--theme-h3-color), 1);
-	font-size: var(--theme-h3-font-size);
+	color: hsl(var(--theme-h3--color));
+	font-size: var(--theme-h3--font-size);
 }
 
 h4 {
-	color: hsla(var(--theme-h4-color), 1);
-	font-size: var(--theme-h4-font-size);
+	color: hsl(var(--theme-h4--color));
+	font-size: var(--theme-h4--font-size);
 }
 
 h5 {
-	color: hsla(var(--theme-h5-color), 1);
-	font-size: var(--theme-h5-font-size);
+	color: hsl(var(--theme-h5--color));
+	font-size: var(--theme-h5--font-size);
 }
 
 h6 {
-	color: hsla(var(--theme-h6-color), 1);
-	font-size: var(--theme-h6-font-size);
-}
-
-/* Bonus class. Would be applied via editor Advanced tab */
-.over-line {
-	font-family: var(--theme-heading-font-family);
-	font-size: 0.75rem;
-	font-weight: 700;
-	letter-spacing: 2px;
-	line-height: 1.33;
-	text-transform: uppercase;
+	color: hsl(var(--theme-h6--color));
+	font-size: var(--theme-h6--font-size);
 }

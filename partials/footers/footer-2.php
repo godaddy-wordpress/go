@@ -9,15 +9,16 @@
 
 $footer_copy_text = Maverick\footer_copy_text();
 $has_social_icons = Maverick\has_social_icons();
+$has_background   = Maverick\has_footer_background();
 ?>
 
-<footer id="colophon" class="site-footer site-footer--2">
+<footer id="colophon" class="site-footer site-footer--2 <?php echo esc_attr( $has_background ); ?>">
 
 	<div class="site-footer__inner max-w-base lg:max-w-wide m-auto px-1">
 
 		<div class="flex flex-wrap lg:justify-between lg:flex-nowrap">
 
-			<div class="footer-blurb-text text-md">
+			<div class="footer-blurb-text">
 				<?php echo wp_kses_post( Maverick\footer_blurb_text() ); ?>
 			</div>
 
@@ -74,10 +75,16 @@ $has_social_icons = Maverick\has_social_icons();
 		</div>
 
 		<?php if ( $has_social_icons || ! empty( $footer_copy_text ) ) : ?>
-			<div class="site-footer__row flex flex-column md:flex-row justify-between items-center">
+			<div class="site-footer__row flex flex-column lg:flex-row justify-between items-center">
 				<?php if ( ! empty( $footer_copy_text ) ) : ?>
 					<p class="site-info mb-0 text-sm">
 						<?php echo esc_html( $footer_copy_text ); ?>
+
+						<?php
+						if ( function_exists( 'the_privacy_policy_link' ) ) {
+							the_privacy_policy_link( '' );
+						}
+						?>
 					</p>
 				<?php endif; ?>
 

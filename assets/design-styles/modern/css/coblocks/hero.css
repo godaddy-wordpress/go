@@ -29,7 +29,7 @@
 	}
 
 	& h2 {
-		font-family: var(--theme-heading-font-family);
+		font-family: var(--theme-heading--font);
 		font-size: 2.5rem;
 		font-weight: 400;
 		margin-bottom: var(--theme-spacing-unit-2);

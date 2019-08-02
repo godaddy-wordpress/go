@@ -8,16 +8,17 @@
  */
 
 $footer_copy_text = Maverick\footer_copy_text();
+$has_background   = Maverick\has_footer_background();
 ?>
 
-<footer id="colophon" class="site-footer site-footer--1">
+<footer id="colophon" class="site-footer site-footer--1 <?php echo esc_attr( $has_background ); ?>">
 
 	<div class="site-footer__inner max-w-wide m-auto text-center">
 
 		<?php Maverick\social_icons( [ 'class' => 'social-icons list-reset' ] ); ?>
 
 		<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
-			<nav class="footer-navigation text-md" aria-label="<?php esc_attr_e( 'Footer Menu', 'maverick' ); ?>">
+			<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'maverick' ); ?>">
 				<?php
 					wp_nav_menu(
 						[

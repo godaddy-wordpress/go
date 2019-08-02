@@ -84,21 +84,21 @@
 		& .wc-block-grid__product-title,
 		& .woocommerce-loop-product__title {
 			color: hsl(var(--color-charade));
-			font-family: var(--theme-heading-font-family);
-			font-size: var(--theme-h5-font-size);
+			font-family: var(--theme-heading--font);
+			font-size: var(--theme-h5--font-size);
 			font-weight: 400;
 			letter-spacing: 0.125rem;
 			line-height: 39px;
 			margin-bottom: 0.5rem;
 
 			@media (--large) {
-				font-size: var(--theme-h3-font-size);
+				font-size: var(--theme-h3--font-size);
 			}
 		}
 
 		& .price {
 			color: hsl(var(--color-shark));
-			font-size: var(--theme-body-font-size);
+			font-size: var(--theme-body--font-size);
 			font-weight: 700;
 			letter-spacing: 1px;
 

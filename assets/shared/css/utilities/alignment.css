@@ -1,26 +1,3 @@
 /**
  * Alignments
  */
-
-.alignleft {
-	@media (--medium) {
-		float: left;
-		margin-bottom: calc(var(--theme-spacing-unit) * 3);
-		margin-right: calc(var(--theme-spacing-unit) * 3);
-	}
-}
-
-.alignright {
-	@media (--medium) {
-		float: right;
-		margin-bottom: calc(var(--theme-spacing-unit) * 3);
-		margin-left: calc(var(--theme-spacing-unit) * 3);
-	}
-}
-
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}

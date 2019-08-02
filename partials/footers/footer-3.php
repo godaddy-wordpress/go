@@ -8,11 +8,12 @@
  */
 
 $footer_copy_text = Maverick\footer_copy_text();
+$has_background   = Maverick\has_footer_background();
 ?>
 
-<footer id="colophon" class="site-footer site-footer--3">
+<footer id="colophon" class="site-footer site-footer--3 <?php echo esc_attr( $has_background ); ?>">
 
-	<div class="site-footer__inner flex flex-column md:flex-row md:flex-wrap items-center align-center max-w-wide m-auto px-1">
+	<div class="site-footer__inner flex flex-column lg:flex-row lg:flex-wrap items-center align-center max-w-wide m-auto px-1">
 
 		<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
 			<nav class="footer-navigation text-sm" aria-label="<?php esc_attr_e( 'Footer Menu', 'maverick' ); ?>">
@@ -33,8 +34,14 @@ $footer_copy_text = Maverick\footer_copy_text();
 		<?php Maverick\social_icons( [ 'class' => 'social-icons list-reset' ] ); ?>
 
 		<?php if ( ! empty( $footer_copy_text ) ) : ?>
-			<p class="site-info mb-0 md:w-full text-xs">
+			<p class="site-info mb-0 lg:w-full text-xs">
 				<?php echo esc_html( $footer_copy_text ); ?>
+
+				<?php
+				if ( function_exists( 'the_privacy_policy_link' ) ) {
+					the_privacy_policy_link( '' );
+				}
+				?>
 			</p>
 		<?php endif; ?>
 

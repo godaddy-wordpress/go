@@ -205,6 +205,22 @@ function footer_copy_text() {
  *
  * @return boolean
  */
+function has_footer_background() {
+
+	$background_color = get_theme_mod( 'footer_background_color', '' );
+
+	if ( $background_color ) {
+		return 'has-background';
+	}
+}
+
+/**
+ * Returns whether there are social icons set or not.
+ *
+ * @param array $social_icons the array of social icons.
+ *
+ * @return boolean
+ */
 function has_social_icons( $social_icons = null ) {
 	if ( is_null( $social_icons ) ) {
 		$social_icons = \Maverick\Core\get_social_icons();

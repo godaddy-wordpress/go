@@ -5,16 +5,16 @@
 [data-footer="footer-3"] {
 
 	& .site-footer {
-		padding-bottom: calc(var(--theme-footer-spacing) * 0.4);
-		padding-top: calc(var(--theme-footer-spacing) * 0.4);
+		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.4);
+		padding-top: var(--theme-block-spacing-huge);
 	}
 
 	& .footer-navigation {
-		font-family: var(--theme-primary-menu--font-family);
-		font-size: var(--theme-primary-menu--font-size);
-		font-weight: var(--theme-primary-menu--font-weight);
+		font-family: var(--theme-site-nav--font-family);
+		font-size: var(--theme-site-nav--font-size);
+		font-weight: var(--theme-site-nav--font-weight);
 		text-align: center;
-		text-transform: var(--theme-primary-menu--text-transform);
+		text-transform: var(--theme-site-nav--text-transform);
 
 		@media (--medium) {
 			flex: 1 65%;
@@ -28,51 +28,55 @@
 
 			&:first-child a {
 				@media (--medium) {
-					padding-left: 0;
-				}
-			}
-
-			&:last-child a {
-				@media (--medium) {
-					padding-right: 0;
+					margin-left: calc(-1 * var(--theme-footer-nav--padding-x));
 				}
 			}
 		}
 
 		& a {
-			color: hsla(var(--theme-primary-menu--color), 1);
+			color: hsla(var(--theme-site-nav--color), 1);
 			display: block;
-			padding: var(--theme-footer-menu-link-spacing);
+			padding: var(--theme-footer-nav--padding-y) var(--theme-footer-nav--padding-x);
+
+			&:focus {
+				@media (--medium) {
+					outline-offset: -16px;
+				}
+			}
 		}
 	}
 
 	& .social-icons {
-		margin-top: 1rem;
+		margin-top: 1.5rem;
 
 		@media (--medium) {
+			margin-top: 1.25rem;
+		}
+
+		@media (--large) {
 			margin-top: 0;
 		}
 
 		& a {
-			padding-left: calc(var(--theme-footer-social-icon-spacing) * 0.75);
-			padding-right: calc(var(--theme-footer-social-icon-spacing) * 0.75);
+			padding: calc(var(--theme-social--spacing) * 0.85);
 
 			@media (--medium) {
-				padding-left: calc(var(--theme-footer-social-icon-spacing) * 0.5);
-				padding-right: calc(var(--theme-footer-social-icon-spacing) * 0.5);
+				padding: calc(var(--theme-social--spacing) * 0.5);
 			}
 		}
 
 		& svg {
-			height: calc(var(--theme-footer-social-icon-size) * 0.85);
+			height: calc(var(--theme-social--size) * 0.85);
 		}
 	}
 
 	& .site-info {
-		margin-top: 0.75rem;
+		margin-top: 1.85rem;
+		text-align: center;
 
-		@media (--medium) {
+		@media (--large) {
 			margin-top: 0;
+			text-align: left;
 		}
 	}
 }
