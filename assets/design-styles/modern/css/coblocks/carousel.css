@@ -36,7 +36,7 @@
 	width: 47px;
 
 	&::after {
-		background-image: url("../../../dist/design-styles/modern/svg/arrow-right.svg");
+		background-image: url("../../../dist/design-styles/modern/images/carousel-arrow.svg");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: 100%;

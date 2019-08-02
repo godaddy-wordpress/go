@@ -54,7 +54,7 @@
 		width: 40px;
 
 		&::before {
-			background: url("../shared/svg/arrow-paginator.svg") no-repeat center center;
+			background: url("../shared/images/arrow-paginator.svg") no-repeat center center;
 			content: "";
 			height: 100%;
 			left: 0;

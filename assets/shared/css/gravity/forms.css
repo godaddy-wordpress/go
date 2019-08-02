@@ -142,7 +142,7 @@ body {
 
 	& .gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
 		background-color: hsl(var(--theme-input-color-background));
-		background-image: url("../shared/svg/error-icon.svg");
+		background-image: url("../shared/images/error-icon.svg");
 		background-position: calc(100% - 10px) center;
 		background-repeat: no-repeat;
 		border-bottom-width: var(--theme-input-border-bottom-width);
