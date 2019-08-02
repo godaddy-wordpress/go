@@ -109,43 +109,27 @@ export default () => {
 
 					customizerSetting.set( color );
 				} );
-
-				setPrimaryColor( colors['primary_color'] );
-				setSecondaryColor( colors[ 'secondary_color' ] );
-				setTertiaryColor( colors[ 'tertiary_color' ] );
-				setQuaternaryColor( colors[ 'quaternary_color' ] );
-				setQuinaryColor( colors[ 'quinary_color' ] );
 			}
 		} );
 	} );
 
 	wp.customize( 'maverick_custom_primary_color', ( value ) => {
-		value.bind( ( to ) => {
-			setPrimaryColor( to );
-		} );
+		value.bind( ( to ) => setPrimaryColor( to ) );
 	} );
 
 	wp.customize( 'maverick_custom_secondary_color', ( value ) => {
-		value.bind( ( to ) => {
-			setSecondaryColor( to );
-		} );
+		value.bind( ( to ) => setSecondaryColor( to ) );
 	} );
 
 	wp.customize( 'maverick_custom_tertiary_color', ( value ) => {
-		value.bind( ( to ) => {
-			setTertiaryColor( to );
-		} );
+		value.bind( ( to ) => setTertiaryColor( to ) );
 	} );
 
 	wp.customize( 'maverick_custom_quaternary_color', ( value ) => {
-		value.bind( ( to ) => {
-			setQuaternaryColor( to );
-		} );
+		value.bind( ( to ) => setQuaternaryColor( to ) );
 	} );
 
 	wp.customize( 'maverick_custom_quinary_color', ( value ) => {
-		value.bind( ( to ) => {
-			setQuinaryColor( to );
-		} );
+		value.bind( ( to ) => setQuinaryColor( to ) );
 	} );
 };
