@@ -219,6 +219,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 			'transport'  => 'postMessage',
+			'default'    => \Maverick\get_palette_color( 'primary' ),
 		]
 	);
 
@@ -241,6 +242,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 			'transport'  => 'postMessage',
+			'default'    => \Maverick\get_palette_color( 'secondary' ),
 		]
 	);
 
@@ -263,6 +265,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 			'transport'  => 'postMessage',
+			'default'    => \Maverick\get_palette_color( 'tertiary' ),
 		]
 	);
 
@@ -285,6 +288,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 			'transport'  => 'postMessage',
+			'default'    => \Maverick\get_palette_color( 'quaternary' ),
 		]
 	);
 
@@ -307,6 +311,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 			'transport'  => 'postMessage',
+			'default'    => \Maverick\get_palette_color( 'quinary' ),
 		]
 	);
 
