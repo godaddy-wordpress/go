@@ -28,20 +28,20 @@
 @import url("elements/page.css");
 @import url("elements/tables.css");
 
-/* Core Blocks */
-@import url("core-blocks/button.css");
-@import url("core-blocks/separator.css");
-@import url("core-blocks/image.css");
-@import url("core-blocks/columns.css");
-@import url("core-blocks/cover.css");
-@import url("core-blocks/media.css");
-@import url("core-blocks/gallery.css");
-@import url("core-blocks/preformatted.css");
-@import url("core-blocks/pullquote.css");
-@import url("core-blocks/file.css");
-@import url("core-blocks/latest-posts.css");
-@import url("core-blocks/latest-comments.css");
-@import url("core-blocks/quote.css");
+/* Blocks */
+@import url("blocks/button.css");
+@import url("blocks/separator.css");
+@import url("blocks/image.css");
+@import url("blocks/columns.css");
+@import url("blocks/cover.css");
+@import url("blocks/media.css");
+@import url("blocks/gallery.css");
+@import url("blocks/preformatted.css");
+@import url("blocks/pullquote.css");
+@import url("blocks/file.css");
+@import url("blocks/latest-posts.css");
+@import url("blocks/latest-comments.css");
+@import url("blocks/quote.css");
 
 /* CoBlocks */
 @import url("coblocks/author.css");
