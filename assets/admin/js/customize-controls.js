@@ -17,6 +17,9 @@
 		function customizerOptionDisplay( parentSetting, affectedControl, value, valueAlt = null, speed ) {
 			wp.customize( parentSetting, function( setting ) {
 				wp.customize.control( affectedControl, function( control ) {
+					/**
+					 * Toggle the visibility of a control.
+					 */
 					const visibility = function() {
 						if ( value == setting.get() ) {
 							control.container.slideDown( speed );
@@ -41,6 +44,9 @@
 		function customizerImageOptionDisplay( parentSetting, affectedControl, speed ) {
 			wp.customize( parentSetting, function( setting ) {
 				wp.customize.control( affectedControl, function( control ) {
+					/**
+					 * Toggle the visibility of a control.
+					 */
 					const visibility = function() {
 						if ( setting.get() && 'none' !== setting.get() && '0' !== setting.get() ) {
 							control.container.slideDown( speed );
@@ -59,8 +65,8 @@
 		customizerOptionDisplay( 'footer_variation', 'footer_heading_color', 'footer-2', 'footer-4', 100 );
 
 		// Only show the following options, if a logo is uploaded. @todo, bake these in with the future Custom Logo width controls
-		// customizerImageOptionDisplay( 'custom_logo', 'custom_logo_max_width', 100 );
-		// customizerImageOptionDisplay( 'custom_logo', 'custom_logo_mobile_max_width', 100 );
+		customizerImageOptionDisplay( 'custom_logo', 'custom_logo_max_width', 100 );
+		customizerImageOptionDisplay( 'custom_logo', 'custom_logo_mobile_max_width', 100 );
 	} );
 
 } )( jQuery );

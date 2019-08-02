@@ -22,6 +22,7 @@ function setup() {
 
 	add_action( 'customize_register', $n( 'register_control_types' ) );
 	add_action( 'customize_register', $n( 'default_controls' ) );
+	add_action( 'customize_register', $n( 'register_logo_controls' ) );
 	add_action( 'customize_register', $n( 'register_global_controls' ) );
 	add_action( 'customize_register', $n( 'register_header_controls' ) );
 	add_action( 'customize_register', $n( 'register_footer_controls' ) );
@@ -42,8 +43,10 @@ function setup() {
 function register_control_types( \WP_Customize_Manager $wp_customize ) {
 	// Load custom controls
 	require_once MAVERICK_PATH . '/includes/classes/customizer/class-switcher-control.php';
+	require_once MAVERICK_PATH . '/includes/classes/customizer/class-range-control.php';
 
 	$wp_customize->register_control_type( Switcher_Control::class );
+	$wp_customize->register_control_type( Range_Control::class );
 }
 
 /**
@@ -125,6 +128,74 @@ function enqueue_controls_assets() {
 		MAVERICK_TEMPLATE_URL . '/dist/css/admin/customizer-styles.css',
 		[],
 		MAVERICK_VERSION
+	);
+}
+
+/**
+ * Register the Logo Controls within Customize.
+ *
+ * @param \WP_Customize_Manager $wp_customize The customize manager object.
+ *
+ * @return void
+ */
+function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_setting(
+		'custom_logo_max_width',
+		array(
+			'default'           => 100,
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Range_Control(
+			$wp_customize,
+			'custom_logo_max_width',
+			array(
+				'default'     => 100,
+				'type'        => 'maverick_range_control',
+				'label'       => esc_html__( 'Max Width', 'coblocks' ),
+				'description' => 'px',
+				'section'     => 'title_tagline',
+				'priority'    => 8,
+				'input_attrs' => array(
+					'min'  => 40,
+					'max'  => 300,
+					'step' => 2,
+				),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'custom_logo_mobile_max_width',
+		array(
+			'default'           => 100,
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Range_Control(
+			$wp_customize,
+			'custom_logo_mobile_max_width',
+			array(
+				'default'     => 100,
+				'type'        => 'maverick_range_control',
+				'label'       => esc_html__( 'Mobile Max Width', 'coblocks' ),
+				'description' => 'px',
+				'section'     => 'title_tagline',
+				'priority'    => 9,
+				'input_attrs' => array(
+					'min'  => 40,
+					'max'  => 200,
+					'step' => 2,
+				),
+			)
+		)
 	);
 }
 
