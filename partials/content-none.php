@@ -29,7 +29,7 @@ if ( is_home() && current_user_can( 'publish_posts' ) ) :
 elseif ( is_search() ) :
 	?>
 
-	<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'maverick' ); ?></p>
+	<p class="text-center"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'maverick' ); ?></p>
 	<div class="site-search" itemscope="" itemtype="http://schema.org/WebSite">
 		<?php get_template_part( 'partials/search' ); ?>
 	</div>

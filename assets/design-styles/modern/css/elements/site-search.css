@@ -4,36 +4,6 @@
 
 body {
 
-	&.search-no-results {
-
-		& .content-area {
-			margin-top: var(--theme-block-spacing-huge);
-			text-align: center;
-		}
-	}
-
-	& .search-form {
-		position: relative;
-
-		& .search-submit {
-			background: transparent;
-			bottom: 3px;
-			height: 46px;
-			padding: 0.2em 0.8em;
-			position: absolute;
-			right: var(--theme-block-padding-x);
-			top: 8px;
-
-			& .icon {
-				fill: #242424;
-				height: 27px;
-				position: relative;
-				top: 0.08em;
-				width: 27px;
-			}
-		}
-	}
-
 	& .site-search {
 
 		& .search-input__button {
