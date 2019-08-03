@@ -277,28 +277,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			]
 		)
 	);
-
-	$wp_customize->add_setting(
-		'maverick_custom_quaternary_color',
-		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-			'default'    => \Maverick\get_default_palette_color( 'quaternary' ),
-		]
-	);
-
-	$wp_customize->add_control(
-		new \WP_Customize_Color_Control(
-			$wp_customize,
-			'maverick_custom_quaternary_color_control',
-			[
-				'label'    => esc_html__( 'Quaternary', 'maverick' ),
-				'section'  => 'maverick_color_schemes_section',
-				'settings' => 'maverick_custom_quaternary_color',
-			]
-		)
-	);
 }
 
 /**
@@ -639,7 +617,6 @@ function css_variables() {
 	$primary_color    = get_palette_color( 'primary', 'HSL' );
 	$secondary_color  = get_palette_color( 'secondary', 'HSL' );
 	$tertiary_color   = get_palette_color( 'tertiary', 'HSL' );
-	$quaternary_color = get_palette_color( 'quaternary', 'HSL' );
 	?>
 
 	<!-- Maverick CSS variable overrides -->
@@ -659,12 +636,6 @@ function css_variables() {
 		<?php if ( false !== $tertiary_color ) : ?>
 			:root {
 				--theme-color-tertiary: <?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>;
-			}
-		<?php endif; ?>
-
-		<?php if ( false !== $quaternary_color ) : ?>
-			:root {
-				--theme-color-quaternary: <?php echo esc_attr( $quaternary_color[0] ) . ', ' . esc_attr( $quaternary_color[1] ) . '%, ' . esc_attr( $quaternary_color[2] ) . '%'; ?>;
 			}
 		<?php endif; ?>
 	</style>

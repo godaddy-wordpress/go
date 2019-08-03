@@ -36,16 +36,6 @@ export default () => {
 	};
 
 	/**
-	 * Set quaternary color
-	 *
-	 * @param {*} color
-	 */
-	const setQuaternaryColor = ( color ) => {
-		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-quaternary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
-	};
-
-	/**
 	 * Returns the design style array
 	 *
 	 * @param {*} designStyle
@@ -102,9 +92,5 @@ export default () => {
 
 	wp.customize( 'maverick_custom_tertiary_color', ( value ) => {
 		value.bind( ( to ) => setTertiaryColor( to ) );
-	} );
-
-	wp.customize( 'maverick_custom_quaternary_color', ( value ) => {
-		value.bind( ( to ) => setQuaternaryColor( to ) );
 	} );
 };

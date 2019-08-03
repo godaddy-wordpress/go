@@ -354,7 +354,6 @@ function get_palette_color( $color, $format = 'RBG' ) {
 		'primary'    => 'maverick_custom_primary_color',
 		'secondary'  => 'maverick_custom_secondary_color',
 		'tertiary'   => 'maverick_custom_tertiary_color',
-		'quaternary' => 'maverick_custom_quaternary_color',
 	];
 
 	$color_override = get_theme_mod( $override_colors[ $color ] );

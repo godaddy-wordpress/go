@@ -26,17 +26,9 @@
 }
 
 .has-quaternary-background-color {
-	background-color: hsl(var(--theme-color-quaternary));
+	background-color: hsl(var(--color-white));
 }
 
 .has-quaternary-color {
-	color: hsl(var(--theme-color-quaternary));
-}
-
-.has-quinary-background-color {
-	background-color: hsl(var(--theme-color-quinary));
-}
-
-.has-quinary-color {
-	color: hsl(var(--theme-color-quinary));
+	color: hsl(var(--color-white));
 }
