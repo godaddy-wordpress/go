@@ -66,7 +66,7 @@ export default () => {
 				const colors = designStyle.color_schemes[ colorScheme ];
 
 				Object.entries( colors ).forEach( function ( [ setting, color ] ) {
-					const customizerSetting = wp.customize( `maverick_custom_${setting}` );
+					const customizerSetting = wp.customize( `${setting}` );
 
 					if ( 'label' === setting || 'undefined' === typeof customizerSetting || 'undefined' === typeof wp.customize.control ) {
 						return;
@@ -74,7 +74,7 @@ export default () => {
 
 					customizerSetting.set( color );
 
-					wp.customize.control( `maverick_custom_${setting}_control` ).container.find( '.color-picker-hex' )
+					wp.customize.control( `${setting}_control` ).container.find( '.color-picker-hex' )
 						.data( 'data-default-color', color )
 						.wpColorPicker( 'defaultColor', color );
 				} );
@@ -82,15 +82,15 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'maverick_custom_primary_color', ( value ) => {
+	wp.customize( 'primary_color', ( value ) => {
 		value.bind( ( to ) => setPrimaryColor( to ) );
 	} );
 
-	wp.customize( 'maverick_custom_secondary_color', ( value ) => {
+	wp.customize( 'secondary_color', ( value ) => {
 		value.bind( ( to ) => setSecondaryColor( to ) );
 	} );
 
-	wp.customize( 'maverick_custom_tertiary_color', ( value ) => {
+	wp.customize( 'tertiary_color', ( value ) => {
 		value.bind( ( to ) => setTertiaryColor( to ) );
 	} );
 };

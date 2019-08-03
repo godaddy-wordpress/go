@@ -212,7 +212,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_custom_primary_color',
+		'primary_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -224,17 +224,17 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_custom_primary_color_control',
+			'primary_color_control',
 			[
 				'label'    => esc_html__( 'Primary', 'maverick' ),
 				'section'  => 'color_schemes_section',
-				'settings' => 'maverick_custom_primary_color',
+				'settings' => 'primary_color',
 			]
 		)
 	);
 
 	$wp_customize->add_setting(
-		'maverick_custom_secondary_color',
+		'secondary_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -246,17 +246,17 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_custom_secondary_color_control',
+			'secondary_color_control',
 			[
 				'label'    => esc_html__( 'Secondary', 'maverick' ),
 				'section'  => 'color_schemes_section',
-				'settings' => 'maverick_custom_secondary_color',
+				'settings' => 'secondary_color',
 			]
 		)
 	);
 
 	$wp_customize->add_setting(
-		'maverick_custom_tertiary_color',
+		'tertiary_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -268,11 +268,11 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_custom_tertiary_color_control',
+			'tertiary_color_control',
 			[
 				'label'    => esc_html__( 'Tertiary', 'maverick' ),
 				'section'  => 'color_schemes_section',
-				'settings' => 'maverick_custom_tertiary_color',
+				'settings' => 'tertiary_color',
 			]
 		)
 	);
