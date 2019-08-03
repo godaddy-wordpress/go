@@ -58,7 +58,7 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'color_schemes', ( value ) => {
+	wp.customize( 'color_scheme', ( value ) => {
 		value.bind( ( colorScheme ) => {
 			const designStyle = getDesignStyle( selectedDesignStyle );
 

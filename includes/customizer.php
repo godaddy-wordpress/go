@@ -187,7 +187,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'color_schemes',
+		'color_scheme',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -204,7 +204,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 				'label'         => esc_html__( 'Color Schemes', 'maverick' ),
 				'description'   => esc_html__( 'Choose one of the supported color schemes', 'maverick' ),
 				'section'       => 'color_schemes_section',
-				'settings'      => 'color_schemes',
+				'settings'      => 'color_scheme',
 				'choices'       => \Maverick\Core\get_available_color_schemes(),
 				'switcher_type' => 'color-scheme',
 			]
