@@ -5,7 +5,7 @@
 	& .switcher__choice {
 		cursor: pointer;
 		display: block;
-		margin-bottom: 10px;
+		margin-bottom: 13px;
 		position: relative;
 
 		& .label {
@@ -53,7 +53,7 @@
 
 	& .switcher__choice {
 		height: 70px;
-		width: 47.5%;
+		width: 46%;
 
 		& .color-scheme {
 			border-radius: 3px;

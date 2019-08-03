@@ -416,25 +416,25 @@ function get_available_design_styles() {
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Modern',
 			'color_schemes' => [
 				'one'   => [
-					'label'            => esc_html__( 'Night', 'maverick' ),
+					'label'            => esc_html__( 'Shade', 'maverick' ),
 					'primary_color'    => '#1c1c1c',
 					'secondary_color'  => '#686868',
 					'tertiary_color'   => '#cccccc',
 					'quaternary_color' => '#eeeeee',
 				],
 				'two'   => [
+					'label'            => esc_html__( 'Blush', 'maverick' ),
+					'primary_color'    => '#F50057',
+					'secondary_color'  => '#ff5c8d',
+					'tertiary_color'   => '#ffc1d1',
+					'quaternary_color' => '#000',
+				],
+				'three' => [
 					'label'            => esc_html__( 'Pacific', 'maverick' ),
 					'primary_color'    => '#132743',
 					'secondary_color'  => '#407088',
 					'tertiary_color'   => '#ffb5b5',
 					'quaternary_color' => '#ffcbcb',
-				],
-				'three' => [
-					'label'            => esc_html__( 'Material Pink', 'maverick' ),
-					'primary_color'    => '#F50057',
-					'secondary_color'  => '#ff5c8d',
-					'tertiary_color'   => '#b5004c',
-					'quaternary_color' => '#000',
 				],
 				'four'  => [
 					'label'            => esc_html__( 'Brutalist', 'maverick' ),
