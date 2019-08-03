@@ -46,15 +46,12 @@
 			width: 100%;
 		} */
 
-		&:focus {
-			@mixin outline;
-			outline-offset: 9px;
-		}
+		/* a:hover {
+			hsl(var(--theme-color-primary));
+		} */
 
-		&:active,
-		&:focus,
 		&:hover {
-
+			color: hsl(var(--theme-color-primary));
 			/* opacity: var(--theme-site-nav--opacity-interactive); */
 
 			/* &::before {
@@ -66,11 +63,16 @@
 				}
 			} */
 		}
+
+		&:focus {
+			@mixin outline;
+			outline-offset: 9px;
+		}
 	}
 
 	/* Active menu link */
 	& .current-menu-item a {
-		color: hsl(var(--theme-site-nav--color-interactive));
+		color: hsl(var(--theme-color-primary));
 
 		/* &::before {
 			bottom: var(--border-end-mobile);

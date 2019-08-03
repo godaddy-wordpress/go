@@ -40,11 +40,11 @@
 	}
 
 	/* Accessibility */
-	--theme-outline-color: var(--theme-color-heading);
+	--theme-outline-color: var(--theme-color-primary);
 	--theme-outline-style: dotted;
 	--theme-outline-width: 2px;
 
-	--theme-selection--color: 0, 0%, 0%;
+	--theme-selection--color: var(--theme-color-primary);
 
 
 	/*--------------------------------------------------------------

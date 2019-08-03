@@ -430,10 +430,10 @@ function get_available_design_styles() {
 					'quaternary_color' => '#ffcbcb',
 				],
 				'three' => [
-					'label'            => esc_html__( 'Vintage', 'maverick' ),
-					'primary_color'    => '#fe1844',
-					'secondary_color'  => '#ff80ab',
-					'tertiary_color'   => '#000',
+					'label'            => esc_html__( 'Material Pink', 'maverick' ),
+					'primary_color'    => '#F50057',
+					'secondary_color'  => '#ff5c8d',
+					'tertiary_color'   => '#b5004c',
 					'quaternary_color' => '#000',
 				],
 				'four'  => [
