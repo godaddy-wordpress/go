@@ -26,8 +26,8 @@ function setup() {
 	add_action( 'customize_register', $n( 'register_header_controls' ) );
 	add_action( 'customize_register', $n( 'register_footer_controls' ) );
 	add_action( 'customize_preview_init', $n( 'customize_preview_init' ) );
+	add_action( 'customize_controls_enqueue_scripts', $n( 'customize_preview_init' ) );
 	add_action( 'customize_preview_init', $n( 'enqueue_controls_assets' ) );
-	add_action( 'wp_head', $n( 'css_variables' ), 0 );
 	add_action( 'wp_head', $n( 'inline_css' ) );
 }
 
@@ -180,41 +180,19 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
-		'maverick_color_schemes_section',
+		'color_schemes_section',
 		[
-			'title'       => esc_html__( 'Color Schemes', 'maverick' ),
-			'description' => esc_html__( 'The color schames varies based on the design style, so if you change a design style, you need to save and refresh the customizer', 'maverick' ),
-			'capability'  => 'edit_theme_options',
-			'panel'       => 'maverick_global_settings',
+			'title' => esc_html__( 'Color Scheme', 'maverick' ),
 		]
 	);
 
 	$wp_customize->add_setting(
-		'maverick_alternative_colors',
+		'color_scheme',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 			'transport'  => 'postMessage',
-		]
-	);
-
-	$wp_customize->add_control(
-		'maverick_alternative_colors_checkbox',
-		[
-			'label'       => esc_html__( 'Use alternative colors', 'maverick' ),
-			'description' => esc_html__( 'Check this option to change colors of the design style.', 'maverick' ),
-			'section'     => 'maverick_color_schemes_section',
-			'settings'    => 'maverick_alternative_colors',
-			'type'        => 'checkbox',
-		]
-	);
-
-	$wp_customize->add_setting(
-		'maverick_color_schemes',
-		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
+			'default'    => 'one',
 		]
 	);
 
@@ -225,8 +203,8 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			[
 				'label'         => esc_html__( 'Color Schemes', 'maverick' ),
 				'description'   => esc_html__( 'Choose one of the supported color schemes', 'maverick' ),
-				'section'       => 'maverick_color_schemes_section',
-				'settings'      => 'maverick_color_schemes',
+				'section'       => 'color_schemes_section',
+				'settings'      => 'color_scheme',
 				'choices'       => \Maverick\Core\get_available_color_schemes(),
 				'switcher_type' => 'color-scheme',
 			]
@@ -234,65 +212,67 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_color_schemes_override',
+		'primary_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 			'transport'  => 'postMessage',
-		]
-	);
-
-	$wp_customize->add_control(
-		'maverick_color_schemes_checkbox_override',
-		[
-			'label'       => esc_html__( 'Use custom colors', 'maverick' ),
-			'description' => esc_html__( 'Check this option to set custom primary and secondary colors', 'maverick' ),
-			'section'     => 'maverick_color_schemes_section',
-			'settings'    => 'maverick_color_schemes_override',
-			'type'        => 'checkbox',
-		]
-	);
-
-	$wp_customize->add_setting(
-		'maverick_custom_primary_color',
-		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
+			'default'    => \Maverick\get_default_palette_color( 'primary' ),
 		]
 	);
 
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_custom_primary_color_control',
+			'primary_color_control',
 			[
-				'label'       => esc_html__( 'Primary Color', 'maverick' ),
-				'description' => esc_html__( 'Override the primary color', 'maverick' ),
-				'section'     => 'maverick_color_schemes_section',
-				'settings'    => 'maverick_custom_primary_color',
+				'label'    => esc_html__( 'Primary', 'maverick' ),
+				'section'  => 'color_schemes_section',
+				'settings' => 'primary_color',
 			]
 		)
 	);
 
 	$wp_customize->add_setting(
-		'maverick_custom_secondary_color',
+		'secondary_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 			'transport'  => 'postMessage',
+			'default'    => \Maverick\get_default_palette_color( 'secondary' ),
 		]
 	);
 
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_custom_secondary_color_control',
+			'secondary_color_control',
 			[
-				'label'       => esc_html__( 'Secondary Color', 'maverick' ),
-				'description' => esc_html__( 'Override the secondary color', 'maverick' ),
-				'section'     => 'maverick_color_schemes_section',
-				'settings'    => 'maverick_custom_secondary_color',
+				'label'    => esc_html__( 'Secondary', 'maverick' ),
+				'section'  => 'color_schemes_section',
+				'settings' => 'secondary_color',
+			]
+		)
+	);
+
+	$wp_customize->add_setting(
+		'tertiary_color',
+		[
+			'type'       => 'theme_mod',
+			'capability' => 'edit_theme_options',
+			'transport'  => 'postMessage',
+			'default'    => \Maverick\get_default_palette_color( 'tertiary' ),
+		]
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'tertiary_color_control',
+			[
+				'label'    => esc_html__( 'Tertiary', 'maverick' ),
+				'section'  => 'color_schemes_section',
+				'settings' => 'tertiary_color',
 			]
 		)
 	);
@@ -628,46 +608,18 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 }
 
 /**
- * Generates overrides for the CSS variables
- *
- * @return void
- */
-function css_variables() {
-	$alternative_colors = get_theme_mod( 'maverick_alternative_colors', false );
-	$primary_color      = get_palette_color( 'primary', 'HSL' );
-	$secondary_color    = get_palette_color( 'secondary', 'HSL' );
-
-	?>
-
-	<!-- Maverick CSS variable overrides -->
-	<style>
-		<?php if ( $alternative_colors && false !== $primary_color ) : ?>
-			:root {
-				--USER-PRIMARY-HUE: <?php echo esc_attr( $primary_color[0] ); ?>;
-				--USER-PRIMARY-SATURATION: <?php echo esc_attr( $primary_color[1] ); ?>;
-				--USER-PRIMARY-LIGHTNESS: <?php echo esc_attr( $primary_color[2] ); ?>;
-				--USER-COLOR-PRIMARY: <?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>;
-			}
-		<?php endif; ?>
-
-		<?php if ( $alternative_colors && false !== $secondary_color ) : ?>
-			:root {
-				--USER-ACCENT-HUE: <?php echo esc_attr( $secondary_color[0] ); ?>;
-				--USER-ACCENT-SATURATION: <?php echo esc_attr( $secondary_color[1] ); ?>;
-				--USER-ACCENT-LIGHTNESS: <?php echo esc_attr( $secondary_color[2] ); ?>;
-				--USER-COLOR-SECONDARY: <?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>;
-			}
-		<?php endif; ?>
-	</style>
-	<?php
-}
-
-/**
  * Generates the inline CSS from the Customizer settings
  *
  * @return void
  */
 function inline_css() {
+
+	//Color palette.
+	$primary_color   = get_palette_color( 'primary', 'HSL' );
+	$secondary_color = get_palette_color( 'secondary', 'HSL' );
+	$tertiary_color  = get_palette_color( 'tertiary', 'HSL' );
+
+	//Customizer colors.
 	$header_background    = hex_to_hsl( get_theme_mod( 'header_background_color', false ), true );
 	$header_text_color    = hex_to_hsl( get_theme_mod( 'maverick_header_text_color_setting', false ), true );
 	$footer_text_color    = hex_to_hsl( get_theme_mod( 'footer_text_color', false ), true );
@@ -678,6 +630,19 @@ function inline_css() {
 		<!-- Variable Overrides -->
 		<style>
 			:root {
+				/* Color Palette */
+				<?php if ( $primary_color ) : ?>
+					--theme-color-primary: <?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>;
+				<?php endif; ?>
+
+				<?php if ( $secondary_color ) : ?>
+					--theme-color-secondary: <?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>;
+				<?php endif; ?>
+
+				<?php if ( $tertiary_color ) : ?>
+					--theme-color-tertiary: <?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>;
+				<?php endif; ?>
+
 				/* Header */
 				<?php if ( $header_background ) : ?>
 					--theme-header--bg: <?php echo esc_attr( $header_background ); ?>;
