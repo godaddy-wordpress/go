@@ -28,7 +28,6 @@ function setup() {
 	add_action( 'customize_preview_init', $n( 'customize_preview_init' ) );
 	add_action( 'customize_controls_enqueue_scripts', $n( 'customize_preview_init' ) );
 	add_action( 'customize_preview_init', $n( 'enqueue_controls_assets' ) );
-	add_action( 'wp_head', $n( 'css_variables' ), 0 );
 	add_action( 'wp_head', $n( 'inline_css' ) );
 }
 
@@ -609,45 +608,18 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 }
 
 /**
- * Generates overrides for the CSS variables
- *
- * @return void
- */
-function css_variables() {
-	$primary_color    = get_palette_color( 'primary', 'HSL' );
-	$secondary_color  = get_palette_color( 'secondary', 'HSL' );
-	$tertiary_color   = get_palette_color( 'tertiary', 'HSL' );
-	?>
-
-	<!-- Maverick CSS variable overrides -->
-	<style>
-		<?php if ( false !== $primary_color ) : ?>
-			:root {
-				--theme-color-primary: <?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>;
-			}
-		<?php endif; ?>
-
-		<?php if ( false !== $secondary_color ) : ?>
-			:root {
-				--theme-color-secondary: <?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>;
-			}
-		<?php endif; ?>
-
-		<?php if ( false !== $tertiary_color ) : ?>
-			:root {
-				--theme-color-tertiary: <?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>;
-			}
-		<?php endif; ?>
-	</style>
-	<?php
-}
-
-/**
  * Generates the inline CSS from the Customizer settings
  *
  * @return void
  */
 function inline_css() {
+
+	//Color palette.
+	$primary_color   = get_palette_color( 'primary', 'HSL' );
+	$secondary_color = get_palette_color( 'secondary', 'HSL' );
+	$tertiary_color  = get_palette_color( 'tertiary', 'HSL' );
+
+	//Customizer colors.
 	$header_background    = hex_to_hsl( get_theme_mod( 'header_background_color', false ), true );
 	$header_text_color    = hex_to_hsl( get_theme_mod( 'maverick_header_text_color_setting', false ), true );
 	$footer_text_color    = hex_to_hsl( get_theme_mod( 'footer_text_color', false ), true );
@@ -658,6 +630,19 @@ function inline_css() {
 		<!-- Variable Overrides -->
 		<style>
 			:root {
+				/* Color Palette */
+				<?php if ( $primary_color ) : ?>
+					--theme-color-primary: <?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>;
+				<?php endif; ?>
+
+				<?php if ( $secondary_color ) : ?>
+					--theme-color-secondary: <?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>;
+				<?php endif; ?>
+
+				<?php if ( $tertiary_color ) : ?>
+					--theme-color-tertiary: <?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>;
+				<?php endif; ?>
+
 				/* Header */
 				<?php if ( $header_background ) : ?>
 					--theme-header--bg: <?php echo esc_attr( $header_background ); ?>;
