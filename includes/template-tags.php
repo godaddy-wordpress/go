@@ -351,9 +351,9 @@ function navigation_toggle() {
 function get_palette_color( $color, $format = 'RBG' ) {
 	$color_scheme    = get_theme_mod( 'maverick_color_schemes' );
 	$override_colors = [
-		'primary'    => 'maverick_custom_primary_color',
-		'secondary'  => 'maverick_custom_secondary_color',
-		'tertiary'   => 'maverick_custom_tertiary_color',
+		'primary'   => 'maverick_custom_primary_color',
+		'secondary' => 'maverick_custom_secondary_color',
+		'tertiary'  => 'maverick_custom_tertiary_color',
 	];
 
 	$color_override = get_theme_mod( $override_colors[ $color ] );

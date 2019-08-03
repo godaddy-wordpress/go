@@ -5,7 +5,7 @@
 	& .switcher__choice {
 		cursor: pointer;
 		display: block;
-		margin-bottom: 13px;
+		margin-bottom: 20px;
 		position: relative;
 
 		& .label {
