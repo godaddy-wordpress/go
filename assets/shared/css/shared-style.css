@@ -107,6 +107,22 @@
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
 
+
+.wp-block-pullquote p {
+	/* font-style: italic; */
+	font-family: Linden Hill;
+	line-height: 1.25;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote {
+	max-width: none;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+	max-width: none;
+	font-size: 2.75rem;
+}
+
 /* Everything below here still needs organizing */
 .u-informational {
 	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
