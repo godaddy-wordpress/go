@@ -51,8 +51,7 @@
 		} */
 
 		&:hover {
-			color: hsl(var(--theme-color-primary));
-			/* opacity: var(--theme-site-nav--opacity-interactive); */
+			color: hsl(var(--theme-site-nav--color-interactive));
 
 			/* &::before {
 				bottom: var(--border-end-mobile);
