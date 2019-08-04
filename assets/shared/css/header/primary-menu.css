@@ -45,8 +45,7 @@
 	/* First submenu (second level) */
 	& > li > .sub-menu {
 		@media (--large) {
-
-			top: 150%;
+			top: 200%;
 
 			/* Upward dark arrow on top of the flyout sub-menu */
 			&::before {
@@ -97,9 +96,13 @@
 			padding-top: 1rem;
 			width: 100%;
 
+			&::after {
+				display: none;
+			}
+
 			&:focus {
 				@mixin outline;
-				outline-color: hsl(var(--theme-submenu--color));
+				outline-color: hsla(var(--theme-submenu--color), 0.25);
 				outline-offset: 0;
 			}
 		}
