@@ -58,11 +58,11 @@
 		display: block;
 		height: 70px;
 		margin: 0;
+		padding: 0;
 		position: absolute;
 		right: 0;
 		top: 0;
 		width: 70px;
-		padding: 0;
 
 		@media (--large) {
 			display: block;

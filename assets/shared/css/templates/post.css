@@ -62,7 +62,7 @@
 .post--single {
 
 	& .post__hero {
-		background: hsl(var(--THEME-COLOR-SECONDARY)); /* tmp make dynamic */
+		background: hsl(var(--theme-color-secondary)); /* tmp make dynamic */
 		margin: 0 0 2rem;
 
 		& .post__thumbnail {

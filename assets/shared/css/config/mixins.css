@@ -19,11 +19,11 @@
 
 /* Primary button */
 @define-mixin c-button-block {
-	background-color: hsl(var(--theme-button-block-background-color));
-	border: var(--theme-button-block-border);
+	/* background-color: hsl(var(--theme-button-block-background-color)); */
+	/* border: var(--theme-button-block-border); */
 	border-radius: var(--theme-button-block-border-radius);
-	box-shadow: var(--theme-button-block-shadow);
-	color: hsl(var(--theme-button-block-color));
+/* 	box-shadow: var(--theme-button-block-shadow);
+	color: hsl(var(--theme-button-block-color)); */
 	cursor: pointer;
 	display: inline-block;
 	font-size: var(--theme-button-block-font-size) !important;
@@ -223,7 +223,7 @@
 /* On Sale badge (default) */
 @define-mixin on-sale-badge {
 	align-items: center;
-	background-color: hsl(var(--THEME-COLOR-PRIMARY));
+	background-color: hsl(var(--theme-color-primary));
 	border-radius: 50%;
 	display: flex;
 	font-weight: 400;
