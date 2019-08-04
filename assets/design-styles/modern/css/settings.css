@@ -46,6 +46,9 @@
 
 	--theme-selection--color: var(--theme-color-primary);
 
+	/* Transitions */
+	--theme-link-transition: color 200ms cubic-bezier(.7,0,.3,1);
+
 
 	/*--------------------------------------------------------------
 	## Colors
@@ -174,6 +177,7 @@
 	--theme-site-nav--font-size: 0.75rem;
 	--theme-site-nav--font-weight: 700;
 	--theme-site-nav--text-transform: uppercase;
+	--theme-site-nav--transition: var(--theme-link-transition);
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);
@@ -243,6 +247,7 @@
 	--theme-footer-nav--leading: 2.25;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
+	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-y: 1.15rem;
