@@ -1,6 +1,6 @@
 .content-area > * {
 	margin: var(--theme-block-spacing) auto;
-	max-width: var(--theme-max-width-base);
+	max-width: var(--theme-max-w-base);
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
 
@@ -25,7 +25,7 @@
 	}
 
 	&.alignwide {
-		max-width: var(--theme-max-width-wide);
+		max-width: var(--theme-max-w-wide);
 	}
 
 	&.alignfull {

@@ -6,6 +6,6 @@
  */
 
 ?>
-<div id="js-site-search" class="site-search c-site-search" itemscope itemtype="http://schema.org/WebSite">
+<div id="js-site-search" class="site-search" itemscope itemtype="http://schema.org/WebSite">
 	<?php get_template_part( 'partials/search' ); ?>
-</div><!-- #js-site-search .site-search -->
+</div>

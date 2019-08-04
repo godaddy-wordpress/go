@@ -7,9 +7,6 @@
 
 /* Setting global variables */
 @import url("config/media-queries.css");
-@import url("config/colors-global.css");
-@import url("config/layout.css");
-@import url("config/typography.css");
 @import url("config/mixins.css");
 
 /* Elements - all the HTML elements coverage */
@@ -20,17 +17,23 @@
 @import url("elements/page.css");
 @import url("elements/tables.css");
 
-/* Core Blocks - Gutenberg core */
-@import url("core-blocks/button.css");
-@import url("core-blocks/separator.css");
-@import url("core-blocks/image.css");
-@import url("core-blocks/media.css");
-@import url("core-blocks/gallery.css");
-@import url("core-blocks/preformatted.css");
-@import url("core-blocks/pullquote.css");
-@import url("core-blocks/file.css");
-@import url("core-blocks/latest-posts.css");
-@import url("core-blocks/latest-comments.css");
+/* Blocks */
+@import url("blocks/button.css");
+@import url("blocks/separator.css");
+@import url("blocks/image.css");
+@import url("blocks/media.css");
+@import url("blocks/gallery.css");
+@import url("blocks/preformatted.css");
+@import url("blocks/pullquote.css");
+@import url("blocks/file.css");
+@import url("blocks/latest-posts.css");
+@import url("blocks/latest-comments.css");
+
+/* CoBlocks */
+@import url("coblocks/author.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/pricing-table.css");
+@import url("coblocks/row.css");
 
 /* WooCommerce */
 @import url("woocommerce/layout.css");
@@ -43,12 +46,6 @@
 @import url("woocommerce/tabs.css");
 @import url("woocommerce/typography.css");
 @import url("woocommerce/checkbox.css");
-
-/* CoBlocks */
-@import url("coblocks/author.css");
-@import url("coblocks/hero.css");
-@import url("coblocks/pricing-table.css");
-@import url("coblocks/row.css");
 
 /* Templates - related to WordPress templates */
 @import url("templates/post.css");

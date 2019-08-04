@@ -1,0 +1,15 @@
+.has-small-font-size {
+	font-size: var(--editor-font-size-small);
+}
+
+.has-medium-font-size {
+	font-size: var(--editor-font-size-medium);
+}
+
+.has-large-font-size {
+	font-size: var(--editor-font-size-large);
+}
+
+.has-huge-font-size {
+	font-size: var(--editor-font-size-huge);
+}

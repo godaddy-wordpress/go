@@ -1,22 +1,5 @@
 @custom-media --small (min-width: 600px);
-@custom-media --medium (min-width: 48em);
+@custom-media --medium (min-width: 40em);
 @custom-media --large (min-width: 68em);
-@custom-media --admin-bar-sm (min-width: 600px);
-@custom-media --admin-bar-lg (min-width: 782px);
-@custom-media --full-width (min-width: 1440px);
-@custom-media --xlarge (min-width: 1620px);
-
-/*
- * Add named breakpoints into the DOM for JS hooks
-*/
-body {
-
-	&::before {
-		content: "has-offscreen-nav";
-		display: none;
-
-		@media (--large) {
-			content: "has-full-nav has-search-toggle";
-		}
-	}
-}
+@custom-media --admin-bar-sm (max-width: 600px);
+@custom-media --admin-bar-lg (max-width: 782px);

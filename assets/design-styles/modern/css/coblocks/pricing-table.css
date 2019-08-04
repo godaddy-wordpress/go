@@ -12,7 +12,7 @@
 
 	/* Pricing Tables - price wrapper */
 	& .wp-block-coblocks-pricing-table-item__price-wrapper {
-		font-family: var(--theme-body-font-family);
+		font-family: var(--theme-body--font);
 		margin-bottom: var(--theme-spacing-unit-4);
 	}
 
@@ -23,7 +23,7 @@
 
 	/* Pricing Tables - features <ul> list */
 	& .wp-block-coblocks-pricing-table-item__features {
-		font-family: var(--theme-body-font-family);
+		font-family: var(--theme-body--font);
 		font-size: 0.8125rem;
 
 		& li {

@@ -1,0 +1,67 @@
+[data-header="header-2"] {
+
+	& .site-header .site-branding {
+		flex: auto 0;
+	}
+
+	& .site-header .site-branding__link {
+		text-align: right;
+
+		@media (--small) {
+			order: 2;
+		}
+
+		& + .site-branding__description {
+			@media (--small) {
+				margin-left: 0;
+				margin-right: 0.5rem;
+				padding-left: 0;
+				padding-right: 1.75rem;
+			}
+
+			&::before {
+				@media (--small) {
+					left: auto;
+					right: 10px;
+					width: 1px;
+				}
+			}
+		}
+	}
+
+	& .site-navigation__toggle {
+		margin-left: -0.5rem;
+		margin-right: calc(var(--theme-block-padding-x) * 0.65);
+	}
+}
+
+.has-offscreen-nav.menu-is-open[data-header="header-2"] .site-navigation {
+
+	/* Will override all links (including sub links) for mobile,
+	so they appear same color */
+	& .primary-menu a {
+		color: hsl(var(--theme-site-nav--color));
+	}
+
+	/* Restore sub-menu colors when desktop style */
+	@media (--large) {
+
+		& .sub-menu a {
+			color: hsl(var(--theme-sub-menu-link-color));
+		}
+	}
+}
+
+/* When admin bar is on */
+.admin-bar.has-offscreen-nav.menu-is-open[data-header="header-2"] .site-navigation {
+	height: calc(100% - 116px);
+	top: auto;
+
+	@media (--medium) {
+		height: calc(100% - 102px);
+	}
+}
+
+.admin-bar[data-header="header-2"] .site-navigation {
+	top: auto;
+}

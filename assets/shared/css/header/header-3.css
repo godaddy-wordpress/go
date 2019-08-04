@@ -1,0 +1,52 @@
+[data-header="header-3"] {
+
+	& .site-header__inner {
+		@media (--small) {
+			padding-bottom: var(--theme-header-3--padding-y);
+			padding-top: var(--theme-header-3--padding-y);
+		}
+	}
+
+	& .site-navigation {
+		@media (--large) {
+			margin-top: calc(var(--theme-header-3-nav--margin-top));
+		}
+	}
+
+	/* Mobile overlay menu */
+	@nest .has-offscreen-nav.menu-is-open & .primary-menu {
+		width: 100%;
+	}
+}
+
+.has-offscreen-nav.menu-is-open[data-header="header-3"] .site-navigation {
+
+	/* Will override all links (including sub links) for mobile,
+	so they appear same color */
+	& .primary-menu a {
+		color: hsl(var(--theme-site-nav--color));
+	}
+
+	/* Restore sub-menu colors when desktop style */
+	@media (--large) {
+
+		& .sub-menu a {
+			color: hsl(var(--theme-sub-menu-link-color));
+		}
+	}
+}
+
+/* When admin bar is on */
+body.admin-bar.has-offscreen-nav.menu-is-open[data-header="header-3"] .site-navigation {
+	height: calc(100% - 130px);
+	top: 130px;
+
+	@media (--medium) {
+		height: calc(100% - 116px);
+		top: 116px;
+	}
+
+	@media (--large) {
+		top: auto;
+	}
+}

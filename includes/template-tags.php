@@ -127,12 +127,15 @@ function hex_to_hsl( $hex, $string_output = false ) {
  * @return void
  */
 function header_variation() {
+	$variations         = \Maverick\Core\get_available_header_variations();
 	$selected_variation = \Maverick\Core\get_header_variation();
 
-	if ( $selected_variation ) {
-		echo '<div id="js-header-variation">';
-			call_user_func( $selected_variation['partial'] );
-		echo '</div>';
+	if ( is_customize_preview() ) {
+		foreach ( $variations as $variation ) {
+			call_user_func( $variation['partial'] );
+		}
+	} elseif ( $selected_variation ) {
+		call_user_func( $selected_variation['partial'] );
 	}
 }
 
@@ -142,12 +145,15 @@ function header_variation() {
  * @return void
  */
 function footer_variation() {
+	$variations         = \Maverick\Core\get_available_footer_variations();
 	$selected_variation = \Maverick\Core\get_footer_variation();
 
-	if ( $selected_variation ) {
-		echo '<div id="js-footer-variation">';
-			call_user_func( $selected_variation['partial'] );
-		echo '</div>';
+	if ( is_customize_preview() ) {
+		foreach ( $variations as $variation ) {
+			call_user_func( $variation['partial'] );
+		}
+	} elseif ( $selected_variation ) {
+		call_user_func( $selected_variation['partial'] );
 	}
 }
 
@@ -190,6 +196,20 @@ function footer_copy_text() {
 	 * @param string $footer_blurb_text The footer blurb text.
 	 */
 	return apply_filters( 'maverick_footer_copy_text', $copyright );
+}
+
+/**
+ * Returns whether there are social icons set or not.
+ *
+ * @return boolean
+ */
+function has_footer_background() {
+
+	$background_color = get_theme_mod( 'footer_background_color', '' );
+
+	if ( $background_color ) {
+		return 'has-background';
+	}
 }
 
 /**
@@ -392,7 +412,7 @@ function site_branding( $args = [] ) {
  * @return void
  */
 function navigation_toggle() {
-	echo '<button id="js-site-navigation__toggle" class="site-navigation__toggle c-site-navigation__toggle" type="button" aria-controls="js-primary-menu">';
+	echo '<button id="js-site-navigation__toggle" class="site-navigation__toggle" type="button" aria-controls="js-primary-menu">';
 		echo '<div class="site-navigation__toggle-icon">';
 			echo '<div class="site-navigation__toggle-icon-inner"></div>';
 		echo '</div>';
@@ -401,41 +421,63 @@ function navigation_toggle() {
 }
 
 /**
- * Returns the primary color selected by the user.
+ * Returns the color selected by the user.
  *
- * @param string $color  Which color to return ('primary' or 'secondary').
+ * @param string $color  Which color to return.
  * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
  *
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
 function get_palette_color( $color, $format = 'RBG' ) {
-	$color_scheme    = get_theme_mod( 'maverick_color_schemes' );
-	$use_overrides   = get_theme_mod( 'maverick_color_schemes_override', false );
+	$color_scheme    = get_theme_mod( 'color_schemes' );
 	$override_colors = [
-		'primary'   => 'maverick_custom_primary_color',
-		'secondary' => 'maverick_custom_secondary_color',
+		'primary'   => 'primary_color',
+		'secondary' => 'secondary_color',
+		'tertiary'  => 'tertiary_color',
 	];
 
 	$color_override = get_theme_mod( $override_colors[ $color ] );
-
-	if ( ! $color_scheme && ! $use_overrides ) {
-		return false;
-	}
-
-	if ( $use_overrides && ! $color_override ) {
-		return false;
-	}
 
 	$avaliable_color_schemes = get_available_color_schemes();
 
 	$the_color = false;
 
-	if ( ! $use_overrides && $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
 		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color . '_color' ];
 	}
 
-	if ( $use_overrides && $color_override ) {
+	if ( $color_override ) {
 		$the_color = $color_override;
+	}
+
+	if ( 'HSL' === $format ) {
+		return hex_to_hsl( $the_color );
+	}
+
+	return $the_color;
+}
+
+/**
+ * Returns the default color for the active color scheme.
+ *
+ * @param string $color  Which color to return.
+ * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
+ *
+ * @return string|array|bool A string with the RGB value or an array containing the HSL values.
+ */
+function get_default_palette_color( $color, $format = 'RBG' ) {
+	$color_scheme            = get_theme_mod( 'color_schemes' );
+	$avaliable_color_schemes = get_available_color_schemes();
+
+	$the_color = false;
+
+	if ( $color_scheme && empty( $avaliable_color_schemes[ $color_scheme ] ) ) {
+		$color_scheme_keys = array_keys( $avaliable_color_schemes );
+		$color_scheme      = array_shift( $color_scheme_keys );
+	}
+
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color . '_color' ];
 	}
 
 	if ( 'HSL' === $format ) {
@@ -455,7 +497,7 @@ function get_palette_color( $color, $format = 'RBG' ) {
 function load_inline_svg( $filename ) {
 
 	// Add the path to your SVG directory inside your theme.
-	$svg_path = '/dist/shared/svg/';
+	$svg_path = '/dist/shared/images/';
 
 	// Check the SVG file exists
 	if ( file_exists( get_stylesheet_directory() . $svg_path . $filename ) ) {

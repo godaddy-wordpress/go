@@ -1,0 +1,22 @@
+/**
+ * Social icons
+ */
+
+.social-icons {
+
+	& a {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		padding: var(--theme-social--spacing);
+
+		&:focus {
+			outline: 2px dotted hsla(var(--theme-outline-color), 1);
+		}
+	}
+
+	& svg {
+		fill: hsla(var(--theme-social--color), 1);
+		vertical-align: middle;
+	}
+}

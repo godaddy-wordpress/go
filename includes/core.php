@@ -23,10 +23,11 @@ function setup() {
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_init', $n( 'editor_styles' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
+	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
@@ -60,40 +61,139 @@ function i18n() {
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function theme_setup() {
+
+	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
 	add_theme_support( 'title-tag' );
+
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
 	add_theme_support( 'post-thumbnails' );
 
+	// This theme uses wp_nav_menu() in up to four locations.
+	register_nav_menus(
+		[
+			'primary'  => esc_html__( 'Primary', 'maverick' ),
+			'footer-1' => esc_html__( 'Footer Menu #1', 'maverick' ),
+			'footer-2' => esc_html__( 'Footer Menu #2', 'maverick' ),
+			'footer-3' => esc_html__( 'Footer Menu #3', 'maverick' ),
+		]
+	);
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
 	add_theme_support(
 		'html5',
 		[
 			'search-form',
+			'comment-form',
+			'comment-list',
 			'gallery',
+			'caption',
 		]
 	);
-	add_theme_support( 'disable-custom-colors' );
-	add_theme_support( 'disable-custom-font-sizes' );
-	add_theme_support( 'responsive-embeds' );
-	add_theme_support( 'align-wide' );
-	add_theme_support( 'editor-styles' );
-	add_theme_support( 'wp-block-styles' );
-	add_theme_support( 'woocommerce' );
 
-	$custom_logo_defaults = [
-		'flex-height' => true,
-		'flex-width'  => true,
-	];
-	add_theme_support( 'custom-logo', $custom_logo_defaults );
-
-	// This theme uses wp_nav_menu() in three locations.
-	register_nav_menus(
+	/**
+	 * Add support for core custom logo.
+	 *
+	 * @link https://codex.wordpress.org/Theme_Logo
+	 */
+	add_theme_support(
+		'custom-logo',
 		array(
-			'primary'  => esc_html__( 'Primary Menu', 'maverick' ),
-			'footer-1' => esc_html__( 'Footer Menu #1 (Primary)', 'maverick' ),
-			'footer-2' => esc_html__( 'Footer Menu #2', 'maverick' ),
-			'footer-3' => esc_html__( 'Footer Menu #3', 'maverick' ),
+			'height'      => 190,
+			'width'       => 190,
+			'flex-width'  => true,
+			'flex-height' => true,
 		)
 	);
+
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for editor styles.
+	// add_theme_support( 'editor-styles' );
+
+	// Add support for WooCommerce.
+	add_theme_support( 'woocommerce' );
+
+	// Add custom editor font sizes.
+	add_theme_support(
+		'editor-font-sizes',
+		[
+			[
+				'name'      => esc_html__( 'Small', 'maverick' ),
+				'shortName' => esc_html__( 'S', 'maverick' ),
+				'size'      => 17,
+				'slug'      => 'small',
+			],
+			[
+				'name'      => esc_html__( 'Medium', 'maverick' ),
+				'shortName' => esc_html__( 'M', 'maverick' ),
+				'size'      => 21,
+				'slug'      => 'medium',
+			],
+			[
+				'name'      => esc_html__( 'Large', 'maverick' ),
+				'shortName' => esc_html__( 'L', 'maverick' ),
+				'size'      => 24,
+				'slug'      => 'large',
+			],
+			[
+				'name'      => esc_html__( 'Huge', 'maverick' ),
+				'shortName' => esc_html__( 'XL', 'maverick' ),
+				'size'      => 30,
+				'slug'      => 'huge',
+			],
+		]
+	);
+
+	$design_style = get_design_style();
+
+	if ( $design_style ) {
+		$color_palette = array(
+			array(
+				'name'  => esc_html__( 'Primary', 'maverick' ),
+				'slug'  => 'primary',
+				'color' => \Maverick\get_palette_color( 'primary' ),
+			),
+			array(
+				'name'  => esc_html__( 'Secondary', 'maverick' ),
+				'slug'  => 'secondary',
+				'color' => \Maverick\get_palette_color( 'secondary' ),
+			),
+			array(
+				'name'  => esc_html__( 'Tertiary', 'maverick' ),
+				'slug'  => 'tertiary',
+				'color' => \Maverick\get_palette_color( 'tertiary' ),
+			),
+			array(
+				'name'  => esc_html__( 'Quaternary', 'maverick' ),
+				'slug'  => 'quaternary',
+				'color' => '#ffffff',
+			),
+		);
+
+		add_theme_support( 'editor-color-palette', $color_palette );
+	}
 }
 
 /**
@@ -179,6 +279,23 @@ function js_detection() {
 }
 
 /**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function skip_link_focus_fix() {
+	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+
+/**
  * Add async/defer attributes to enqueued scripts that have the specified script_execution flag.
  *
  * @link https://core.trac.wordpress.org/ticket/12009
@@ -219,20 +336,8 @@ function script_loader_tag( $tag, $handle ) {
  * @return array
  */
 function body_classes( $classes ) {
-	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
-	$footer_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
 
-	// Design style variation body class.
-	if ( $design_style ) {
-		$classes[] = 'is-' . esc_attr( $design_style );
-	}
-
-	// Footer variation body class.
-	if ( $footer_variation ) {
-		$classes[] = 'is-' . esc_attr( $footer_variation );
-	}
-
-	// Add woo class whenever block is on page
+	// Add class whenever a WooCommerce block is added to a page
 	if (
 		has_block( 'woocommerce/handpicked-products' )
 		|| has_block( 'woocommerce/product-best-sellers' )
@@ -258,7 +363,7 @@ function body_classes( $classes ) {
 function body_data( $classes ) {
 
 	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
-	$footer_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
+	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
 	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
 
 	if ( $design_style ) {
@@ -300,102 +405,118 @@ function get_default_design_style() {
 function get_available_design_styles() {
 	$default_design_styles = [
 		'modern'      => [
-			'label'           => esc_html__( 'Modern', 'maverick' ),
-			'url'             => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
-			'editor_style'    => 'dist/css/design-styles/modern-editor.css',
-			'preview_image'   => 'https://via.placeholder.com/400x100.png?text=Creative+Services',
-			'color_schemes'   => [
-				'light' => [
-					'label'           => esc_html__( 'Light', 'maverick' ),
-					'primary_color'   => '#ffffff',
-					'secondary_color' => '#000000',
+			'label'         => esc_html__( 'Modern', 'maverick' ),
+			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
+			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
+			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Modern',
+			'color_schemes' => [
+				'default' => [
+					'label'           => esc_html__( 'Shade', 'maverick' ),
+					'primary_color'   => '#1c1c1c',
+					'secondary_color' => '#686868',
+					'tertiary_color'  => '#cccccc',
 				],
-				'dark'  => [
-					'label'           => esc_html__( 'Dark', 'maverick' ),
-					'primary_color'   => '#000000',
-					'secondary_color' => '#ffffff',
+				'two'     => [
+					'label'           => esc_html__( 'Blush', 'maverick' ),
+					'primary_color'   => '#F50057',
+					'secondary_color' => '#ff5c8d',
+					'tertiary_color'  => '#ffc1d1',
+				],
+				'three'   => [
+					'label'           => esc_html__( 'Indigo', 'maverick' ),
+					'primary_color'   => '#283593',
+					'secondary_color' => '#5f5fc4',
+					'tertiary_color'  => '#d1d9ff',
+				],
+				'four'    => [
+					'label'           => esc_html__( 'Pacific', 'maverick' ),
+					'primary_color'   => '#20534d',
+					'secondary_color' => '#00bfa5',
+					'tertiary_color'  => '#afebe5',
 				],
 			],
-			'title_visbility' => true,
 		],
 		'traditional' => [
-			'label'           => esc_html__( 'Traditional', 'maverick' ),
-			'url'             => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
-			'editor_style'    => 'dist/css/design-styles/traditional-editor.css',
-			'preview_image'   => 'https://via.placeholder.com/400x100.png?text=Traditional',
-			'color_schemes'   => [
-				'light' => [
+			'label'         => esc_html__( 'Traditional', 'maverick' ),
+			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
+			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
+			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Traditional',
+			'color_schemes' => [
+				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#c76919',
 					'secondary_color' => '#a0510e',
+					'tertiary_color'  => '#123456',
 				],
-				'dark'  => [
+				'two'     => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#3f5836',
 					'secondary_color' => '#293922',
+					'tertiary_color'  => '#123456',
 				],
 			],
-			'title_visbility' => true,
 		],
 		'trendy-shop' => [
-			'label'           => esc_html__( 'Trendy Shop', 'maverick' ),
-			'url'             => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy-shop.css',
-			'editor_style'    => 'dist/css/design-styles/trendy-shop-editor.css',
-			'preview_image'   => 'https://via.placeholder.com/400x100.png?text=Trendy+Shop',
-			'color_schemes'   => [
-				'light' => [
+			'label'         => esc_html__( 'Trendy Shop', 'maverick' ),
+			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy-shop.css',
+			'editor_style'  => 'dist/css/design-styles/trendy-shop-editor.css',
+			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Trendy+Shop',
+			'color_schemes' => [
+				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#fcfcfc',
 					'secondary_color' => '#f3f0ed',
+					'tertiary_color'  => '#123456',
 				],
-				'dark'  => [
+				'two'     => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#f1f4f4',
 					'secondary_color' => '#ebeeee',
+					'tertiary_color'  => '#123456',
 				],
 			],
-			'title_visbility' => true,
 		],
 		'welcoming'   => [
-			'label'           => esc_html__( 'Welcoming', 'maverick' ),
-			'url'             => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/welcoming.css',
-			'editor_style'    => 'dist/css/design-styles/welcoming-editor.css',
-			'preview_image'   => 'https://via.placeholder.com/400x100.png?text=Welcoming',
-			'color_schemes'   => [
-				'light' => [
+			'label'         => esc_html__( 'Welcoming', 'maverick' ),
+			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/welcoming.css',
+			'editor_style'  => 'dist/css/design-styles/welcoming-editor.css',
+			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Welcoming',
+			'color_schemes' => [
+				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#02392f',
 					'secondary_color' => '#f1f1f1',
+					'tertiary_color'  => '#123456',
 				],
-				'dark'  => [
+				'two'     => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#49384d',
 					'secondary_color' => '#f7f5e9',
+					'tertiary_color'  => '#123456',
 				],
 			],
-			'title_visbility' => true,
 		],
 		'play'        => [
-			'label'           => esc_html__( 'Play', 'maverick' ),
-			'url'             => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
-			'editor_style'    => 'dist/css/design-styles/play-editor.css',
-			'preview_image'   => 'https://via.placeholder.com/400x100.png?text=Play',
-			'color_schemes'   => [
-				'light' => [
+			'label'         => esc_html__( 'Play', 'maverick' ),
+			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
+			'editor_style'  => 'dist/css/design-styles/play-editor.css',
+			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Play',
+			'color_schemes' => [
+				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#254e9c',
 					'secondary_color' => '#fcae6e',
+					'tertiary_color'  => '#123456',
 				],
-				'dark'  => [
+				'two'     => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#41b093',
 					'secondary_color' => '#eecd94',
+					'tertiary_color'  => '#123456',
 				],
 			],
-			'title_visbility' => false,
 		],
 	];
-
 	/**
 	 * Filters the supported design styles.
 	 *
@@ -405,7 +526,6 @@ function get_available_design_styles() {
 	 * where the index is the slug of design style and value an array of options that sets up the design styles.
 	 */
 	$supported_design_styles = apply_filters( 'maverick_design_styles', $default_design_styles );
-
 	return $supported_design_styles;
 }
 
@@ -451,35 +571,35 @@ function get_available_header_variations() {
 	$default_header_variations = [
 		'header-1' => [
 			'label'         => esc_html__( 'Logo + Nav + Search', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-search.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-1.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '1' );
 			},
 		],
 		'header-2' => [
-			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-logo-nav-vertical.svg',
+			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-2.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
 		'header-3' => [
-			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo.svg',
+			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-3.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
 		],
 		'header-4' => [
 			'label'         => esc_html__( 'Search + Logo + Nav', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-search-logo-nav.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-4.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '4' );
 			},
 		],
 		'header-5' => [
 			'label'         => esc_html__( 'Nav + Logo + Search', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-nav-logo-search.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-5.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '5' );
 			},
@@ -588,7 +708,7 @@ function get_default_footer_variation() {
  * @return array
  */
 function get_footer_variation() {
-	$selected_variation = get_theme_mod( 'maverick_footer_variation_setting', get_default_footer_variation() );
+	$selected_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
 
 	$supported_header_variations = get_available_footer_variations();
 
@@ -641,31 +761,31 @@ function get_available_social_icons() {
 		'facebook'  => [
 			'label'       => esc_html__( 'Facebook', 'maverick' ),
 			'description' => esc_html__( 'Facebook URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/admin/images/facebook.svg',
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/facebook.svg',
 			'icon_class'  => '',
 		],
 		'twitter'   => [
 			'label'       => esc_html__( 'Twitter', 'maverick' ),
 			'description' => esc_html__( 'Twitter URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/admin/images/twitter.svg',
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/twitter.svg',
 			'icon_class'  => '',
 		],
 		'instagram' => [
 			'label'       => esc_html__( 'Instagram', 'maverick' ),
 			'description' => esc_html__( 'Instagram URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/admin/images/instagram.svg',
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/instagram.svg',
 			'icon_class'  => '',
 		],
 		'linkedin'  => [
 			'label'       => esc_html__( 'LinkedIn', 'maverick' ),
 			'description' => esc_html__( 'LinkedIn URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/admin/images/linkedin.svg',
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/linkedin.svg',
 			'icon_class'  => '',
 		],
 		'pinterest' => [
 			'label'       => esc_html__( 'Pinterest', 'maverick' ),
 			'description' => esc_html__( 'Pinterest URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/admin/images/pinterest.svg',
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/pinterest.svg',
 			'icon_class'  => '',
 		],
 	];

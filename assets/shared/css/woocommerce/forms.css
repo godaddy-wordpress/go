@@ -26,7 +26,7 @@
 
 .select2-container--default .select2-selection--single {
 	background-color: hsl(var(--theme-input-color-background));
-	background-image: url("../shared/svg/arrow-down-solid.svg");
+	background-image: url("../shared/images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border-bottom-width: var(--theme-input-border-bottom-width);
@@ -140,7 +140,7 @@
 .woocommerce form .form-row.woocommerce-invalid input.input-text,
 .woocommerce form .form-row.woocommerce-invalid select {
 	background-color: hsl(var(--theme-input-color-background));
-	background-image: url("../shared/svg/error-icon.svg");
+	background-image: url("../shared/images/error-icon.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border-color: var(--theme-input-stroke-error);

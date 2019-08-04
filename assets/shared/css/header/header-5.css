@@ -1,0 +1,240 @@
+[data-header="header-5"] {
+
+	&::before {
+		content: "has-search-toggle has-offscreen-nav";
+		display: none;
+
+		@media (--large) {
+			content: "has-search-toggle has-offscreen-nav";
+		}
+	}
+
+	& .site-header__inner {
+		@media (--small) {
+			padding-bottom: calc(var(--theme-header--padding-y) * 1.75);
+			padding-top: calc(var(--theme-header--padding-y) * 1.75);
+		}
+	}
+
+	& .site-header .site-branding {
+		flex: 1 0 60%;
+		max-width: 100%;
+		padding-left: 10px;
+
+		@media (--medium) {
+			padding-left: 0;
+		}
+	}
+
+	& .site-navigation {
+		background-color: hsl(var(--color-white));
+		bottom: 0;
+		height: 70px;
+		left: 0;
+		position: relative;
+		top: 0;
+		transition: width 0.2s ease;
+		width: 70px;
+		z-index: 1000;
+
+		&[aria-hidden="true"] .primary-menu {
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		@media (--medium) {
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+			height: 100%;
+			position: fixed;
+		}
+
+		@media (--large) {
+			width: 100px;
+		}
+	}
+
+	& .site-navigation__toggle {
+		background-color: hsl(var(--theme-site-navigation__toggle-background-color));
+		display: block;
+		height: 70px;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 70px;
+
+		@media (--large) {
+			display: block;
+			height: 100px;
+			width: 100px;
+		}
+	}
+
+	& .site-search__toggle {
+		color: hsla(var(--theme-site-nav-toggle--color), 1);
+	}
+
+	& .site-header,
+	& .site-footer,
+	& .entry-header,
+	& .content-area {
+		@media (--medium) {
+			padding-left: 70px; /* Same as the width of the .site-navigation */
+		}
+
+		@media (--large) {
+			padding-left: 100px; /* Same as the width of the .site-navigation */
+		}
+	}
+
+	/*
+	Because we're doing a full height reveal container on the navigation,
+	there is a flash of nav items, since we need to wait for the JS to load
+	in order to provide the aria controls. To counter this flash, we temporarily
+	position the menu items offscreen using left and absolute positioning.
+	*/
+	& .primary-menu {
+		left: -5000px;
+		margin-right: 0;
+		overflow-y: scroll;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		position: absolute;
+		width: 100%;
+
+		& a {
+			color: hsl(var(--color-shark));
+
+			&::before {
+				background-color: hsl(var(--color-shark));
+			}
+		}
+
+		& .menu-item {
+			@media (--large) {
+				display: block;
+			}
+		}
+
+		& .menu-item-has-children {
+
+			& > [aria-haspopup] {
+
+				&::after {
+					background-image: url("../../dist/shared/images/arrow-down.svg");
+				}
+			}
+		}
+
+		& .sub-menu {
+			margin-left: -1rem;
+			margin-right: -1rem;
+			padding: 0 1rem;
+
+			& .sub-menu {
+				margin: 0 -1rem;
+				padding: 0 1rem;
+			}
+
+			@media (--large) {
+				left: auto;
+				margin-left: 0;
+				margin-right: 0;
+				padding: 0;
+				position: relative;
+				text-align: inherit;
+				top: auto;
+				transform: none;
+				width: auto;
+
+				& .sub-menu {
+					margin: 0 0 0 -2rem;
+					padding-left: 1rem;
+				}
+			}
+
+			&::before {
+				display: none;
+			}
+		}
+
+		& > .menu-item-has-children {
+
+			&:hover {
+
+				& > .sub-menu {
+					@media (--large) {
+						display: none;
+					}
+
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+
+		& > .menu-item-has-children.child-has-focus {
+
+			& > .sub-menu {
+				display: block;
+			}
+		}
+	}
+
+	& .site-search {
+		left: 1rem;
+		opacity: 0;
+		padding: var(--theme-spacing-unit) 0;
+		pointer-events: none;
+		position: absolute;
+		right: 5rem;
+		transform: translateX(40%);
+		transition: opacity 175ms ease-out, transform ease-out 125ms;
+		z-index: 1200;
+
+		@media (--medium) {
+			left: 6rem;
+		}
+
+		@media (--large) {
+			left: auto;
+			padding: var(--theme-spacing-unit) var(--theme-spacing-unit-2);
+			right: 4rem;
+		}
+
+		&.is-open {
+			opacity: 1;
+			pointer-events: all;
+			transform: translateX(0);
+		}
+	}
+
+	& .site-footer,
+	& .content-area,
+	& .site-header .site-branding,
+	& .site-search__toggle,
+	& .post__hero,
+	& .entry-header {
+		transition: transform 0.2s ease-in-out;
+	}
+}
+
+.admin-bar[data-header="header-5"] .site-navigation {
+	top: 0;
+
+	@media (--medium) {
+		top: 32px;
+	}
+}
+
+.admin-bar.menu-is-open.has-offscreen-nav[data-header="header-5"] .site-navigation {
+	height: calc(100% - 46px);
+	top: 46px;
+
+	@media (--medium) {
+		height: calc(100% - 32px);
+		top: 32px;
+	}
+}

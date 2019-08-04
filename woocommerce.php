@@ -1,15 +1,15 @@
 <?php
 /**
- * Woocommerce main template file
+ * WooCommerce main template file
  *
  * @package Maverick
  */
 
 get_header(); ?>
 
-	<div class="content-area content-area--woocommerce u-ma-auto u-max-width-full">
+	<div class="content-area content-area--woocommerce m-auto m-w-full">
 		<?php woocommerce_content(); ?>
-	</div><!-- .u-ma-auto .u-max-width-full -->
+	</div>
 
 <?php
 get_footer();

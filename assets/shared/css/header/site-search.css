@@ -1,0 +1,99 @@
+/**
+ * Global - site search
+ */
+
+/* Locally scoped component variables */
+body {
+
+	& .site-search {
+		padding: var(--theme-spacing-unit) 0;
+		z-index: 2;
+
+		@media (--large) {
+			left: 0;
+			opacity: 0;
+			padding: var(--theme-spacing-unit) var(--theme-spacing-unit-2);
+			pointer-events: none;
+			position: absolute;
+			right: -0.75rem;
+			transform: translateX(60%);
+			transition: opacity 175ms ease-out 75ms, transform ease-out 175ms;
+		}
+
+		& .search-form {
+			display: flex;
+		}
+
+		& .search-input__button {
+			background-color: hsl(var(--theme-search-submit--bg));
+			border: var(--theme-search-input__button-border);
+			border-radius: 0;
+			box-shadow: none;
+			color: inherit;
+			margin: 0 0 0 0.5rem;
+			padding: 0 1.75rem;
+			position: relative;
+			width: 50px;
+
+			& .search-input__label {
+				left: -5000px;
+				position: absolute;
+			}
+
+			& .search-input__arrow-icon {
+				fill: hsl(var(--theme-search-submit--color));
+				height: auto;
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate3d(-50%, -50%, 0);
+				width: 20px;
+			}
+
+			&::after {
+				display: none !important;
+			}
+
+			&:active,
+			&:hover {
+				background-color: hsl(var(--theme-search-submit--bg-interactive));
+				border-color: hsl(var(--theme-search-submit--bg-interactive));
+				box-shadow: none;
+
+				& .search-input__arrow-icon {
+					fill: hsl(var(--theme-search-submit--color));
+				}
+			}
+		}
+	}
+
+	& .error-404 .search-form {
+		position: relative;
+
+		& .search-input__button {
+			background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCA1MCA1MCIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij48ZyBpZD0ic3VyZmFjZTEiPjxwYXRoIHN0eWxlPSIgIiBkPSJNIDIxIDMgQyAxMS42MDE1NjMgMyA0IDEwLjYwMTU2MyA0IDIwIEMgNCAyOS4zOTg0MzggMTEuNjAxNTYzIDM3IDIxIDM3IEMgMjQuMzU1NDY5IDM3IDI3LjQ2MDkzOCAzNi4wMTU2MjUgMzAuMDkzNzUgMzQuMzQzNzUgTCA0Mi4zNzUgNDYuNjI1IEwgNDYuNjI1IDQyLjM3NSBMIDM0LjUgMzAuMjgxMjUgQyAzNi42Nzk2ODggMjcuNDIxODc1IDM4IDIzLjg3ODkwNiAzOCAyMCBDIDM4IDEwLjYwMTU2MyAzMC4zOTg0MzggMyAyMSAzIFogTSAyMSA3IEMgMjguMTk5MjE5IDcgMzQgMTIuODAwNzgxIDM0IDIwIEMgMzQgMjcuMTk5MjE5IDI4LjE5OTIxOSAzMyAyMSAzMyBDIDEzLjgwMDc4MSAzMyA4IDI3LjE5OTIxOSA4IDIwIEMgOCAxMi44MDA3ODEgMTMuODAwNzgxIDcgMjEgNyBaICI+PC9wYXRoPjwvZz48L3N2Zz4=") 50% 50% no-repeat;
+			background-size: 50%;
+			bottom: 3px;
+			position: absolute;
+			right: 5px;
+			top: 8px;
+
+			& svg {
+				display: none;
+			}
+		}
+	}
+}
+
+/* When search becomes visible */
+.site-search.is-open {
+	opacity: 1;
+	pointer-events: all;
+	transform: translateX(0);
+}
+
+/* Override aria defaults */
+.site-navigation .site-search[aria-hidden="true"] {
+	display: block;
+	visibility: visible;
+}

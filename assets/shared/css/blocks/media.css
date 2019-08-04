@@ -1,0 +1,33 @@
+/**
+ * media.css
+ * All media style overrides
+ *
+ */
+
+body {
+
+	& .wp-block-media-text p {
+		margin-bottom: 2em;
+	}
+
+
+	& .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+		padding: 0 2rem 5rem;
+
+		@media (--medium) {
+			padding: 0 7rem 0 2rem;
+		}
+	}
+
+	& .wp-block-media-text .wp-block-media-text__content {
+		padding: 5rem 2rem 0;
+
+		@media (--medium) {
+			padding: 0 2rem 0 5rem;
+		}
+	}
+
+	& .has-large-font-size {
+		line-height: var(--theme-heading--leading);
+	}
+}

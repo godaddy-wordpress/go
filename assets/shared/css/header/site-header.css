@@ -1,0 +1,16 @@
+/**
+ * Site header
+ */
+
+.site-header {
+	background-color: hsla(var(--theme-header--bg), 1);
+
+	& .u-informational {
+		display: inline-block;
+		padding: 0.3rem 0.5rem;
+	}
+}
+
+.site-header__inner {
+	padding: var(--theme-header--padding-y) var(--theme-block-padding-x);
+}

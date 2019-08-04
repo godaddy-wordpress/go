@@ -1,0 +1,28 @@
+/**
+ * Modern - Editor Styles
+ */
+
+/* Settings */
+@import url("settings.css");
+@import url("config/fonts.css");
+
+/* Elements - all the HTML elements coverage */
+@import url("elements/headings.css");
+@import url("elements/forms.css");
+@import url("elements/site-search.css");
+
+/* Gutenberg core blocks overrides */
+@import url("blocks/button.css");
+
+/* CoBlocks */
+@import url("coblocks/carousel.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/media-card.css");
+@import url("coblocks/pricing-table.css");
+
+/* WooCommerce */
+@import url("woocommerce/button.css");
+@import url("woocommerce/shop.css");
+
+/* Templates */
+@import url("templates/post.css");

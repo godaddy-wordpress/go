@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<?php Maverick\maverick_page_title(); ?>
 
-	<div id="content" class="content-area">
+	<div class="content-area">
 		<?php if ( have_posts() ) : ?>
 			<?php
 			while ( have_posts() ) :

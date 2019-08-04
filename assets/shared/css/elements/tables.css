@@ -6,19 +6,19 @@
 
 	& th,
 	& td {
-		border-color: hsla(var(--THEME-COLOR-SECONDARY), 1);
+		border-color: hsla(var(--theme-color-secondary), 1);
 		padding: var(--theme-spacing-unit);
 	}
 
 	& thead th,
 	& tfoot th {
-		background-color: hsla(var(--THEME-COLOR-SECONDARY), 1);
-		border-color: hsla(var(--THEME-COLOR-SECONDARY), 1);
+		background-color: hsla(var(--theme-color-secondary), 1);
+		border-color: hsla(var(--theme-color-secondary), 1);
 		color: hsla(var(--color-white));
 	}
 
 	& tbody tr:nth-child(odd) {
-		background-color: hsla(var(--THEME-COLOR-SECONDARY), 0.15);
+		background-color: hsla(var(--theme-color-secondary), 0.15);
 	}
 }
 

@@ -23,10 +23,10 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
-			<div class="content-area u-ma-auto u-max-width-base">
+			<div class="content-area">
 				<?php the_content(); ?>
 				<?php comments_template(); ?>
-			</div><!-- .u-ma-auto .u-max-width-full -->
+			</div>
 		</article>
 	<?php endwhile; ?>
 <?php endif; ?>

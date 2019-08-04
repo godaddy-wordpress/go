@@ -18,7 +18,7 @@
 }
 
 .wp-block-coblocks-author__content {
-	max-width: var(--theme-max-width-base);
+	max-width: var(--theme-max-w-base);
 }
 
 .wp-block-coblocks-author__heading {

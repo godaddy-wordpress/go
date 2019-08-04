@@ -2,28 +2,28 @@
 /**
  * Footer Partial 1
  *
- * The .footer-blurb-text and .footer-copy-text are used by customizer,
- * when changing these classes make sure to always update the classes that the Customizer Preview is targeting in /assets/admin/js/customizer/preview/footer-text.js\
- *
  * @see assets/admin/js/customizer/preview/footer-text.js
  *
  * @package Maverick
  */
 
 $footer_copy_text = Maverick\footer_copy_text();
+$has_background   = Maverick\has_footer_background();
 ?>
 
-<footer id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer site-footer--1 <?php echo esc_attr( $has_background ); ?>">
 
 	<div class="site-footer__inner max-w-wide m-auto text-center">
 
+		<?php Maverick\social_icons( [ 'class' => 'social-icons list-reset' ] ); ?>
+
 		<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
-			<nav class="footer-navigation text-md" aria-label="<?php esc_attr_e( 'Footer Menu', 'maverick' ); ?>">
+			<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'maverick' ); ?>">
 				<?php
 					wp_nav_menu(
 						[
 							'theme_location' => 'footer-1',
-							'menu_class'     => 'footer-menu footer-menu--1 m-0',
+							'menu_class'     => 'footer-menu footer-menu--1 list-resest',
 							'depth'          => 1,
 						]
 					);
@@ -33,10 +33,8 @@ $footer_copy_text = Maverick\footer_copy_text();
 			<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #1', 'maverick' ); ?></a></p>
 		<?php } ?>
 
-		<?php Maverick\social_icons( [ 'class' => 'social-icons m-0' ] ); ?>
-
 		<?php if ( ! empty( $footer_copy_text ) ) : ?>
-			<p class="footer-copy-text text-sm mb-0">
+			<p class="site-info text-sm mb-0">
 				<?php echo esc_html( $footer_copy_text ); ?>
 
 				<?php
@@ -48,4 +46,5 @@ $footer_copy_text = Maverick\footer_copy_text();
 		<?php endif; ?>
 
 	</div>
+
 </footer>

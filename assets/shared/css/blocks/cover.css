@@ -1,0 +1,11 @@
+.wp-block-cover {
+
+	&__inner-container {
+		width: auto;
+	}
+
+	& h2 {
+		font-size: var(--theme-h2--font-size);
+
+	}
+}

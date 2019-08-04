@@ -1,0 +1,132 @@
+[data-header="header-4"] {
+
+	&::before {
+		content: "has-search-toggle has-offscreen-nav";
+		display: none;
+
+		@media (--large) {
+			content: "has-search-toggle has-offscreen-nav";
+		}
+	}
+
+	& .site-header .site-branding {
+		flex: 1;
+		justify-content: center;
+		max-width: 100%;
+		text-align: center;
+	}
+
+	& .site-navigation__toggle {
+		display: block;
+	}
+
+	& .site-navigation {
+		background-color: hsl(var(--color-gallery));
+
+		@media (--large) {
+			align-items: center;
+			flex-direction: row;
+			height: 0;
+			justify-content: center;
+			opacity: 0;
+			overflow: hidden;
+			position: fixed;
+			width: auto;
+		}
+	}
+
+	& .primary-menu {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+
+		& .menu-item {
+			@media (--large) {
+				display: block;
+				padding-right: 0;
+			}
+		}
+
+		/* Sub-menus */
+		& .sub-menu {
+			@media (--large) {
+				left: auto;
+				padding: 0;
+				position: relative;
+				text-align: inherit;
+				top: auto;
+				transform: none;
+				width: auto;
+			}
+
+			&::before {
+				display: none;
+			}
+		}
+
+		& > .menu-item-has-children {
+
+			&:hover {
+
+				& > .sub-menu {
+					@media (--large) {
+						display: none;
+					}
+
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+
+		& > .menu-item-has-children.child-has-focus {
+
+			& > .sub-menu {
+				display: block;
+			}
+		}
+	}
+
+	& .site-search {
+		left: 56px;
+		opacity: 0;
+		padding: var(--theme-spacing-unit) 0;
+		pointer-events: none;
+		position: absolute;
+		right: 0.5rem;
+		transform: translateX(-100%);
+		transition: opacity 175ms ease-out, transform ease-out 125ms;
+		z-index: 310;
+
+		@media (--medium) {
+			right: 56px;
+		}
+
+		@media (--large) {
+			right: auto;
+		}
+
+		&.is-open {
+			opacity: 1;
+			pointer-events: all;
+			transform: translateX(0);
+		}
+	}
+}
+
+/* When admin bar is on */
+body.admin-bar.has-offscreen-nav.menu-is-open[data-header="header-4"] .site-navigation {
+	height: calc(100% - 116px);
+	top: 116px;
+
+	@media (--medium) {
+		height: calc(100% - 102px);
+		top: 102px;
+	}
+
+	@media (--large) {
+		height: calc(100% - 132px);
+		top: 132px;
+	}
+}

@@ -1,0 +1,53 @@
+/**
+ * "Unlike other CSS globals, creating a color system is
+ * 10% about coding and 90% about semantics." - Somebody Famous
+ *
+ * These are some global grayscale colors we can use throughout.
+ */
+:root {
+
+	/* #ffffff */
+	--color-white: 0, 0%, 100%;
+
+	/* #000000 */
+	--color-black: 0, 0%, 0%;
+
+	/* #f2f2f3 */
+	--color-athens-gray: 240, 4%, 95%;
+
+	/* #ededed */
+	--color-gallery: 0, 0%, 93%;
+
+	/* #dde1e4 */
+	--color-iron: 206, 11%, 88%;
+
+	/* #d9d9d9 */
+	--color-silver: 0, 0%, 85%;
+
+	/* #9ba1a6 */
+	--color-bone: 210, 6%, 63%;
+
+	/* #737373 */
+	--color-gray: 0, 0%, 45%;
+
+	/* #6d6d74*/
+	--color-mid-gray: 240, 3%, 44%;
+
+	/* #464749 */
+	--color-abbey: 220, 2%, 28%;
+
+	/* #3d3d3d */
+	--color-charcoal: 0, 0%, 24%;
+
+	/* #2e2e2e */
+	--color-mineshaft: 0, 0%, 18%;
+
+	/* #35383c */
+	--color-tuna: 214, 6%, 22%;
+
+	/* #23242e */
+	--color-charade: 235, 13%, 16%;
+
+	/* #1f2023 */
+	--color-shark: 225, 6%, 13%;
+}

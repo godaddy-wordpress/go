@@ -7,11 +7,9 @@
 
 ?>
 
-<header id="masthead" class="site-header relative w-full" itemscope itemtype="http://schema.org/WPHeader">
+<header id="masthead" class="site-header site-header--1 relative" itemscope itemtype="http://schema.org/WPHeader">
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
-
-	<div class="site-header__inner flex items-center justify-between w-full max-w-wide m-auto">
+	<div class="site-header__inner flex items-center justify-between max-w-wide m-auto relative">
 
 		<?php Maverick\display_site_branding(); ?>
 
@@ -25,13 +23,13 @@
 					wp_nav_menu(
 						[
 							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu c-primary-menu u-unlist',
+							'menu_class'     => 'primary-menu list-reset',
 							'container'      => false,
 						]
 					);
 				?>
 
-				<button id="js-site-search__toggle" class="site-search__toggle c-site-search__toggle" type="button" aria-controls="js-site-search">
+				<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
 					<?php echo Maverick\load_inline_svg( 'search.svg' ); // phpcs:ignore ?>
 					<span class="screen-reader-text"><?php esc_html_e( 'Search Toggle', 'maverick' ); ?></span>
 				</button>
