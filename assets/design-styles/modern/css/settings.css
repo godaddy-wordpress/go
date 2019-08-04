@@ -174,10 +174,14 @@
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font-family: var(--theme-heading--font);
-	--theme-site-nav--font-size: 0.75rem;
+	--theme-site-nav--font-size: 1rem;
 	--theme-site-nav--font-weight: 700;
 	--theme-site-nav--text-transform: uppercase;
 	--theme-site-nav--transition: var(--theme-link-transition);
+
+	@media (--large) {
+		--theme-site-nav--font-size: 0.75rem;
+	}
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);

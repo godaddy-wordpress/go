@@ -6,7 +6,7 @@
 body {
 
 	& .site-search {
-		padding: var(--theme-spacing-unit) 0;
+		/* padding: var(--theme-spacing-unit) 0; */
 		z-index: 2;
 
 		@media (--large) {
