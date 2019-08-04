@@ -19,6 +19,7 @@
 	padding: 0.1rem;
 	position: relative;
 	width: calc(var(--theme-search-toggle--size) * 2);
+	transition: var(--theme-link-transition);
 	z-index: 1;
 
 	@media (--large) {
