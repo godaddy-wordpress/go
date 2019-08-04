@@ -2,9 +2,9 @@
 .post--single {
 
 	& .post__hero {
-		background: hsl(var(--THEME-COLOR-SECONDARY)); /* tmp make dynamic */
+		background: hsl(var(--theme-color-secondary)); /* tmp make dynamic */
 		& * {
-			color: hsl(var(--THEME-COLOR-PRIMARY));
+			color: hsl(var(--theme-color-primary));
 		}
 	}
 }

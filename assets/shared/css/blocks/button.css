@@ -2,6 +2,13 @@
  * Gutenberg core Button block styling.
  */
 
+.wp-block-button__link {
+
+	&:not(.has-background) {
+		background-color: hsl(var(--theme-color-primary));
+	}
+}
+
 /* Local scoped variables */
 .wp-block-button__link {
 	margin-bottom: 0.75rem !important;

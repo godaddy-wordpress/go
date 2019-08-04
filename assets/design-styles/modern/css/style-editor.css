@@ -12,7 +12,7 @@
 @import url("elements/site-search.css");
 
 /* Gutenberg core blocks overrides */
-@import url("core-blocks/button.css");
+@import url("blocks/button.css");
 
 /* CoBlocks */
 @import url("coblocks/carousel.css");

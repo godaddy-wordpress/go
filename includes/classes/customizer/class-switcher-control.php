@@ -115,7 +115,8 @@ class Switcher_Control extends \WP_Customize_Control {
 						<# if ( c.preview_image ) { #>
 							<img src="{{ c.preview_image }}" />
 						<# } else { #>
-							<span class="color-scheme" style="background: linear-gradient(to right, {{ c.primary_color }}, {{ c.primary_color }} 50%, {{ c.secondary_color }} 50%, {{ c.secondary_color }} 100%);"></span>
+							<span class="color-scheme" style="background: linear-gradient(to right, {{ c.primary_color }}, {{ c.primary_color }} 33.33%, {{ c.secondary_color }} 33.33%, {{ c.secondary_color }} 66.66%, {{ c.tertiary_color }} 66.66%, {{ c.tertiary_color }} 100%);"></span>
+							<span class="color-scheme__check"></span>
 							<span class="label">{{ c.label }}</span>
 						<# } #>
 					</label>

@@ -24,7 +24,7 @@
 	}
 
 	& cite {
-		color: hsla(var(--THEME-COLOR-SECONDARY), 0.75);
+		color: hsla(var(--theme-color-secondary), 0.75);
 		display: block;
 		font-family: var(--theme-body--font);
 		font-size: 0.85rem;

@@ -1,6 +1,34 @@
 /**
  * Used to apply primary background color
  */
-.has-theme-background {
-	background-color: hsl(var(--THEME-COLOR-PRIMARY));
+.has-primary-background-color {
+	background-color: hsl(var(--theme-color-primary));
+}
+
+.has-primary-color {
+	color: hsl(var(--theme-color-primary));
+}
+
+.has-secondary-background-color {
+	background-color: hsl(var(--theme-color-secondary));
+}
+
+.has-secondary-color {
+	color: hsl(var(--theme-color-secondary));
+}
+
+.has-tertiary-background-color {
+	background-color: hsl(var(--theme-color-tertiary));
+}
+
+.has-tertiary-color {
+	color: hsl(var(--theme-color-tertiary));
+}
+
+.has-quaternary-background-color {
+	background-color: hsl(var(--color-white));
+}
+
+.has-quaternary-color {
+	color: hsl(var(--color-white));
 }
