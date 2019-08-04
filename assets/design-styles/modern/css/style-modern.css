@@ -70,3 +70,12 @@
 		}
 	}
 }
+
+p.has-background {
+
+	@media (max-width: 795px) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
+
