@@ -10,7 +10,6 @@
 /* Elements - all the HTML elements coverage */
 @import url("elements/headings.css");
 @import url("elements/forms.css");
-@import url("elements/site-search.css");
 
 /* Gutenberg core blocks overrides */
 @import url("blocks/button.css");
@@ -51,22 +50,30 @@
 .primary-menu a {
 
 	&::after {
+		background-color: currentColor;
 		bottom: -5px;
 		content: "";
 		height: 2px;
 		left: 0;
 		position: absolute;
-		transform-origin: left center;
 		transform: scaleX(1);
-		transition: transform .4s cubic-bezier(.7,0,.3,1);
+		transform-origin: left center;
+		transition: transform 400ms cubic-bezier(0.7, 0, 0.3, 1), background-color 200ms cubic-bezier(0.7, 0, 0.3, 1);
 		width: 100%;
-		background-color: currentColor;
 	}
 
 	@media (hover: hover) {
+
 		&:hover::after {
 			transform: scaleX(0);
 			transform-origin: right center;
 		}
+	}
+}
+
+p.has-background {
+	@media (max-width: 795px) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
 	}
 }

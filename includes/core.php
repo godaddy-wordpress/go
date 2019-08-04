@@ -418,7 +418,7 @@ function get_available_design_styles() {
 				],
 				'two'     => [
 					'label'           => esc_html__( 'Blush', 'maverick' ),
-					'primary_color'   => '#F50057',
+					'primary_color'   => '#ef0254',
 					'secondary_color' => '#ff5c8d',
 					'tertiary_color'  => '#ffc1d1',
 				],

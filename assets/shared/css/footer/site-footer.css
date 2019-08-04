@@ -8,8 +8,8 @@
 
 	& a {
 		color: hsl(var(--theme-footer-text-color));
-		transition: var(--theme-footer-nav--transition);
 		text-decoration: none;
+		transition: var(--theme-footer-nav--transition);
 
 		&:hover {
 			color: hsl(var(--theme-footer-nav--color-interactive));

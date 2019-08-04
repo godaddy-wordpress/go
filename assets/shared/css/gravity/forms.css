@@ -202,7 +202,7 @@ body {
 		& input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
 			line-height: 22px;
 			max-height: 100%;
-			padding: calc(var(--theme-button-block-vertical-spacing-unit) - 7px) calc(var(--theme-button-block-horizontal-spacing-unit) - 6px) !important;
+			padding: calc(var(--theme-button--padding-x) - 7px) calc(var(--theme-button--padding-x) - 6px) !important;
 		}
 
 		& h3.gform_title {

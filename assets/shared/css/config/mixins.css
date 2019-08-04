@@ -2,6 +2,27 @@
  * Mixins
  */
 
+/* Buttons */
+@define-mixin button {
+	box-sizing: border-box;
+	color: hsl(var(--theme-button--color));
+	border-radius: var(--theme-button--radius);
+	font-family: var(--theme-button--font);
+	font-size: var(--theme-button--font-size);
+	font-weight: var(--theme-button--weight);
+	letter-spacing: var(--theme-button--tracking);
+	text-transform: var(--theme-button--text-transform);
+	transition: var(--theme-button-transition);
+	padding: var(--theme-button--padding-y) var(--theme-button--padding-x);
+	line-height: 1;
+	text-decoration: none;
+	vertical-align: bottom;
+}
+
+@define-mixin button-hover {
+	background-color: hsl(var(--theme-button--bg-interactive));
+}
+
 /* Outline */
 @define-mixin outline {
 	outline-color: hsla(var(--theme-outline-color), 1);
@@ -17,13 +38,10 @@
 	outline: none;
 }
 
+
 /* Primary button */
 @define-mixin c-button-block {
-	/* background-color: hsl(var(--theme-button-block-background-color)); */
-	/* border: var(--theme-button-block-border); */
 	border-radius: var(--theme-button-block-border-radius);
-/* 	box-shadow: var(--theme-button-block-shadow);
-	color: hsl(var(--theme-button-block-color)); */
 	cursor: pointer;
 	display: inline-block;
 	font-size: var(--theme-button-block-font-size) !important;
@@ -104,35 +122,6 @@
 
 @define-mixin c-button-block-underlined-hover {
 	color: hsl(var(--theme-button-block-underlined-color-interactive));
-}
-
-/* Alternate button */
-@define-mixin c-button-block-alternate {
-	background-color: transparent;
-	border-bottom: var(--theme-button-block-alternate-border);
-	border-radius: none;
-	box-shadow: none;
-	color: hsl(var(--theme-button-block-alternate-color));
-	cursor: pointer;
-	display: inline-block;
-	font-size: var(--theme-button-block-alternate-font-size) !important;
-	font-weight: var(--theme-button-block-alternate-font-weight);
-	letter-spacing: 2px;
-	line-height: var(--theme-button-block-line-height);
-	margin-bottom: calc(var(--theme-button-block-vertical-spacing-unit) - 10px);
-	opacity: 1;
-	padding: var(--theme-button-block-alternate-padding) !important;
-	position: relative;
-	text-decoration: none;
-	text-transform: var(--theme-button-block-alternate-text-transform);
-}
-
-/* Alternate button hover */
-@define-mixin c-button-block-alternate-hover {
-	border-bottom: var(--theme-button-block-alternate-border-interactive);
-	box-shadow: none;
-	color: hsl(var(--theme-button-block-alternate-color-interactive));
-	text-decoration: none;
 }
 
 /* TODO: Consider removing GLOBAL refs */

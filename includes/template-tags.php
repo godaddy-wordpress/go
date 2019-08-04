@@ -336,7 +336,7 @@ function navigation_toggle() {
 		echo '<div class="site-navigation__toggle-icon">';
 			echo '<div class="site-navigation__toggle-icon-inner"></div>';
 		echo '</div>';
-		echo '<span class="screen-reader-text">' . esc_html_e( 'Menu', 'maverick' ) . '</span>';
+		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'maverick' ) . '</span>';
 	echo '</button>';
 }
 

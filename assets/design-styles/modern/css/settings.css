@@ -47,8 +47,8 @@
 	--theme-selection--color: var(--theme-color-primary);
 
 	/* Transitions */
-	--theme-link-transition: color 200ms cubic-bezier(.7,0,.3,1);
-
+	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
+	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1);
 
 	/*--------------------------------------------------------------
 	## Colors
@@ -88,7 +88,7 @@
 	--theme-h6--font-size: 1.15rem;
 
 	@media (--large) {
-		--theme-h1--font-size: 3.25rem;
+		--theme-h1--font-size: 3rem;
 		--theme-h2--font-size: 2.5rem;
 		--theme-h3--font-size: 2rem;
 	}
@@ -174,10 +174,14 @@
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font-family: var(--theme-heading--font);
-	--theme-site-nav--font-size: 0.75rem;
+	--theme-site-nav--font-size: 1rem;
 	--theme-site-nav--font-weight: 700;
 	--theme-site-nav--text-transform: uppercase;
 	--theme-site-nav--transition: var(--theme-link-transition);
+
+	@media (--large) {
+		--theme-site-nav--font-size: 0.75rem;
+	}
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);
@@ -205,7 +209,7 @@
 	--theme-site-nav-toggle--size: 2rem;
 
 	/* Offscreen Navigation */
-	--theme-has-offscreen-nav-overlay-color: var(--theme-color-primary);
+	--theme-has-offscreen-nav-overlay-color: var(--color-white);
 	--theme-offscreen-nav-padding: 2rem;
 
 
@@ -217,7 +221,7 @@
 	--theme-search-toggle--color-interactive: var(--theme-color-heading);
 	--theme-search-toggle--size: 22px;
 
-	--theme-search-submit--bg: var(--theme-color-heading);
+	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 	--theme-search-submit--color: var(--color-white);
 
@@ -268,18 +272,24 @@
 	--theme-footer-2-site-info--border-color: 0, 0%, 90%;
 
 
-	/***************************************************************
-	* BUTTONS
-	* shared/css/config/mixins.css
-	***************************************************************/
+	/*--------------------------------------------------------------
+	## Buttons
+	--------------------------------------------------------------*/
 
-	--theme-button--bg: var(--theme-color-heading);
+	--theme-button--bg: var(--theme-color-primary);
+	--theme-button--bg-interactive: var(--theme-color-heading);
 	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-weight: 600;
-	--theme-button--text-transform: uppercase;
-	--theme-button--letter-spacing: 3px;
-	--theme-button--font-family: var(--theme-heading--font);
 	--theme-button--font-size: 0.65rem;
+	--theme-button--font: var(--theme-heading--font);
+	--theme-button--padding-x: 2rem;
+	--theme-button--padding-y: 1.6rem;
+	--theme-button--radius: 0;
+	--theme-button--text-transform: uppercase;
+	--theme-button--tracking: 3px;
+	--theme-button--weight: 600;
+
+
+
 
 
 	/* SHARED: Vertical button padding */
