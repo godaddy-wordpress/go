@@ -192,7 +192,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 			'transport'  => 'postMessage',
-			'default'    => 'one',
+			'default'    => 'default',
 		]
 	);
 

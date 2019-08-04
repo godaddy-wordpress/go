@@ -169,11 +169,10 @@
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
-	--theme-site-nav--color-interactive: var(--theme-color-heading);
+	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font-family: var(--theme-heading--font);
 	--theme-site-nav--font-size: 0.75rem;
 	--theme-site-nav--font-weight: 700;
-	--theme-site-nav--opacity-interactive: 0.65;
 	--theme-site-nav--text-transform: uppercase;
 
 	/* Header > Navigation > Submenu */
@@ -240,7 +239,7 @@
 	--theme-footer-heading--color: var(--theme-color-heading);
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color-interactive: var(--theme-color-heading);
+	--theme-footer-nav--color-interactive: var(--theme-color-primary);
 	--theme-footer-nav--leading: 2.25;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;

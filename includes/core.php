@@ -410,25 +410,25 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Modern',
 			'color_schemes' => [
-				'one'   => [
+				'default' => [
 					'label'           => esc_html__( 'Shade', 'maverick' ),
 					'primary_color'   => '#1c1c1c',
 					'secondary_color' => '#686868',
 					'tertiary_color'  => '#cccccc',
 				],
-				'two'   => [
+				'two'     => [
 					'label'           => esc_html__( 'Blush', 'maverick' ),
 					'primary_color'   => '#F50057',
 					'secondary_color' => '#ff5c8d',
 					'tertiary_color'  => '#ffc1d1',
 				],
-				'three' => [
+				'three'   => [
 					'label'           => esc_html__( 'Indigo', 'maverick' ),
 					'primary_color'   => '#283593',
 					'secondary_color' => '#5f5fc4',
 					'tertiary_color'  => '#d1d9ff',
 				],
-				'four'  => [
+				'four'    => [
 					'label'           => esc_html__( 'Pacific', 'maverick' ),
 					'primary_color'   => '#20534d',
 					'secondary_color' => '#00bfa5',
@@ -442,13 +442,13 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Traditional',
 			'color_schemes' => [
-				'one' => [
+				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#c76919',
 					'secondary_color' => '#a0510e',
 					'tertiary_color'  => '#123456',
 				],
-				'two' => [
+				'two'     => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#3f5836',
 					'secondary_color' => '#293922',
@@ -462,13 +462,13 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/trendy-shop-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Trendy+Shop',
 			'color_schemes' => [
-				'one' => [
+				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#fcfcfc',
 					'secondary_color' => '#f3f0ed',
 					'tertiary_color'  => '#123456',
 				],
-				'two' => [
+				'two'     => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#f1f4f4',
 					'secondary_color' => '#ebeeee',
@@ -482,13 +482,13 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/welcoming-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Welcoming',
 			'color_schemes' => [
-				'one' => [
+				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#02392f',
 					'secondary_color' => '#f1f1f1',
 					'tertiary_color'  => '#123456',
 				],
-				'two' => [
+				'two'     => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#49384d',
 					'secondary_color' => '#f7f5e9',
@@ -502,13 +502,13 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/play-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Play',
 			'color_schemes' => [
-				'one' => [
+				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
 					'primary_color'   => '#254e9c',
 					'secondary_color' => '#fcae6e',
 					'tertiary_color'  => '#123456',
 				],
-				'two' => [
+				'two'     => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#41b093',
 					'secondary_color' => '#eecd94',

@@ -54,6 +54,7 @@
 	& .switcher__choice {
 		height: 70px;
 		width: 46%;
+		margin-bottom: 7%;
 
 		& .color-scheme {
 			border-radius: 3px;
