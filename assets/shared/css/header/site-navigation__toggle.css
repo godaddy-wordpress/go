@@ -39,8 +39,7 @@
 	}
 
 	&:focus {
-		outline: 1px dotted hsla(var(--theme-site-nav-toggle--color), 1);
-		outline-offset: -10px;
+		@mixin outline;
 	}
 }
 
@@ -49,6 +48,7 @@
 	height: var(--theme-site-nav-toggle--size);
 	position: relative;
 	width: var(--theme-site-nav-toggle--size);
+	top: 1px;
 }
 
 .site-navigation__toggle-icon-inner {
