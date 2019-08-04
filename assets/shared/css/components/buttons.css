@@ -2,7 +2,7 @@
  * Generic button class.
  */
 
-.button {
+/* .button {
 	@mixin c-button-block;
 
 	&:hover,
@@ -10,4 +10,4 @@
 	&:focus {
 		@mixin c-button-block-hover;
 	}
-}
+} */

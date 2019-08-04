@@ -1,7 +1,7 @@
 /**
  * Global buttons
  */
-button,
+/* button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -17,3 +17,4 @@ input[type="submit"] {
 		@mixin GLOBAL-FOCUS-STYLES;
 	}
 }
+ */
