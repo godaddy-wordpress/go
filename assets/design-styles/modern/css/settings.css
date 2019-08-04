@@ -205,7 +205,7 @@
 	--theme-site-nav-toggle--size: 2rem;
 
 	/* Offscreen Navigation */
-	--theme-has-offscreen-nav-overlay-color: var(--theme-color-primary);
+	--theme-has-offscreen-nav-overlay-color: var(--color-white);
 	--theme-offscreen-nav-padding: 2rem;
 
 
