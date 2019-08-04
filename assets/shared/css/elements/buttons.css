@@ -1,20 +1,17 @@
-/**
- * Global buttons
- */
-/* button,
+.button,
+button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	@mixin c-button-block;
 
-	&:hover,
-	&:active,
-	&:focus {
-		@mixin c-button-block-hover;
+	&:hover {
+		background: $color__background-button-hover;
+		cursor: pointer;
 	}
 
 	&:focus {
-		@mixin GLOBAL-FOCUS-STYLES;
+		@mixin outline;
+		cursor: pointer;
 	}
+
 }
- */

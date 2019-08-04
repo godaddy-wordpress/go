@@ -37,10 +37,6 @@
 			background-color: hsl(var(--theme-site-nav--color-interactive));
 		}
 	}
-
-	&:focus {
-		@mixin outline;
-	}
 }
 
 .site-navigation__toggle-icon {
