@@ -242,7 +242,7 @@ function has_social_icons( $social_icons = null ) {
  */
 function maverick_page_title() {
 
-	if ( is_front_page() || ! get_theme_mod( 'maverick_show_page_titles', true ) ) {
+	if ( is_front_page() || ! get_theme_mod( 'page_titles', true ) ) {
 
 		return;
 

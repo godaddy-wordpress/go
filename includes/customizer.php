@@ -286,7 +286,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_show_page_titles',
+		'page_titles',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -300,7 +300,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'label'       => esc_html__( 'Page Titles', 'maverick' ),
 			'description' => esc_html__( 'Display page titles on individual pages.', 'maverick' ),
 			'section'     => 'maverick_page_titles_section',
-			'settings'    => 'maverick_show_page_titles',
+			'settings'    => 'page_titles',
 			'type'        => 'checkbox',
 		]
 	);
