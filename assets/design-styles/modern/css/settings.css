@@ -240,7 +240,7 @@
 	--theme-footer-heading--color: var(--theme-color-heading);
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color-interactive: var(--theme-color-heading);
+	--theme-footer-nav--color-interactive: var(--theme-color-primary);
 	--theme-footer-nav--leading: 2.25;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
