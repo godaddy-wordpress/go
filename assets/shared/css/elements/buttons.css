@@ -1,11 +1,11 @@
-.button,
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+	@mixin button;
 
 	&:hover {
-		background: $color__background-button-hover;
+		@mixin button-hover;
 		cursor: pointer;
 	}
 
@@ -13,5 +13,4 @@ input[type="submit"] {
 		@mixin outline;
 		cursor: pointer;
 	}
-
 }

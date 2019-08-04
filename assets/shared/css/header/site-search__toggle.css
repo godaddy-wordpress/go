@@ -1,7 +1,7 @@
 .site-search__toggle {
 	background-color: transparent;
-	border-radius: 0;
 	border: none;
+	border-radius: 0;
 	box-shadow: none;
 	color: hsl(var(--theme-search-toggle--color));
 	display: inline-block;
