@@ -242,9 +242,7 @@ function has_social_icons( $social_icons = null ) {
  */
 function maverick_page_title() {
 
-	$design_styles = \Maverick\Core\get_available_design_styles();
-
-	if ( is_front_page() || ! get_theme_mod( 'maverick_show_page_titles', $design_styles[ get_theme_mod( 'maverick_design_style', \Maverick\Core\get_default_design_style() ) ]['title_visbility'] ) ) {
+	if ( is_front_page() || ! get_theme_mod( 'maverick_show_page_titles', true ) ) {
 
 		return;
 

@@ -409,7 +409,6 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Modern',
-			'title_visbility' => true,
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Shade', 'maverick' ),
@@ -442,7 +441,6 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
 			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Traditional',
-			'title_visbility' => false,
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -463,7 +461,6 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy-shop.css',
 			'editor_style'  => 'dist/css/design-styles/trendy-shop-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Trendy+Shop',
-			'title_visbility' => true,
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -484,7 +481,6 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/welcoming.css',
 			'editor_style'  => 'dist/css/design-styles/welcoming-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Welcoming',
-			'title_visbility' => true,
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -505,7 +501,6 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
 			'editor_style'  => 'dist/css/design-styles/play-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Play',
-			'title_visbility' => true,
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
