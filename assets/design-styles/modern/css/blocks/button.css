@@ -7,6 +7,7 @@
 
 	&:not(.is-style-outline) .wp-block-button__link {
 		overflow: hidden;
+		position: relative;
 
 		&::after {
 			background-color: hsl(var(--color-white));
