@@ -19,11 +19,7 @@
 
 /* Primary button */
 @define-mixin c-button-block {
-	/* background-color: hsl(var(--theme-button-block-background-color)); */
-	/* border: var(--theme-button-block-border); */
 	border-radius: var(--theme-button-block-border-radius);
-/* 	box-shadow: var(--theme-button-block-shadow);
-	color: hsl(var(--theme-button-block-color)); */
 	cursor: pointer;
 	display: inline-block;
 	font-size: var(--theme-button-block-font-size) !important;
