@@ -280,10 +280,8 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_section(
 		'maverick_page_titles_section',
 		[
-			'title'       => esc_html__( 'Page', 'maverick' ),
-			'description' => esc_html__( 'The page title visibility varies based on the design style, so if you change a design style, you need to save and refresh the customizer.', 'maverick' ),
-			'capability'  => 'edit_theme_options',
-			'panel'       => 'maverick_global_settings',
+			'title' => esc_html__( 'Page', 'maverick' ),
+			'panel' => 'maverick_global_settings',
 		]
 	);
 
