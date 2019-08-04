@@ -1,8 +1,4 @@
 .entry-header {
-	max-width: var(--theme-max-w-base);
-	padding: var(--theme-entryheader--padding-top) auto  var(--theme-entryheader--padding-bottom);
-
-	& .post__title {
-		text-align: center;
-	}
+	padding-bottom: var(--theme-block-spacing-larger);
+	padding-top: var(--theme-block-spacing-larger);
 }

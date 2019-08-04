@@ -261,7 +261,7 @@ function maverick_page_title() {
 			'title'   => get_the_title(),
 			'wrapper' => 'h1',
 			'atts'    => [
-				'class' => 'post__title',
+				'class' => 'post__title max-w-base m-0 m-auto text-center',
 			],
 		]
 	);
