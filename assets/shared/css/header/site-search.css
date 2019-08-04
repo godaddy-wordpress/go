@@ -32,6 +32,7 @@ body {
 			padding: 0 1.75rem;
 			position: relative;
 			width: 50px;
+			transition: var(--theme-button-transition);
 
 			& .search-input__label {
 				left: -5000px;
