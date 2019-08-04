@@ -442,7 +442,7 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
 			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Traditional',
-			'title_visbility' => true,
+			'title_visbility' => false,
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
