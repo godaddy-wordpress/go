@@ -3,13 +3,11 @@
  */
 
 .site-navigation__toggle {
-	--theme-button-block-padding: var(--theme-spacing-unit);
-
 	background-color: transparent;
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
-	color: hsla(var(--theme-site-nav-toggle--color), 1);
+	color: hsl(var(--theme-site-nav-toggle--color));
 	cursor: pointer;
 	height: 100%;
 	line-height: 1;
@@ -29,6 +27,15 @@
 		background-color: transparent;
 		border: none;
 		box-shadow: none;
+	}
+
+	&:hover {
+
+		& .site-navigation__toggle-icon-inner,
+		& .site-navigation__toggle-icon-inner::before,
+		& .site-navigation__toggle-icon-inner::after {
+			background-color: hsl(var(--theme-site-nav--color-interactive));
+		}
 	}
 
 	&:focus {
@@ -79,7 +86,7 @@
 
 	/* Alter appearance when menu is opened */
 	@nest .menu-is-open & {
-		background-color: transparent;
+		background-color: transparent !important;
 
 		&::after,
 		&::before {
