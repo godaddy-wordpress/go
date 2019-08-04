@@ -62,6 +62,12 @@ body {
 					fill: hsl(var(--theme-search-submit--color));
 				}
 			}
+
+			&:focus {
+				@mixin outline;
+				outline-color: hsl(var(--theme-search-submit--color));
+				outline-offset: -6px;
+			}
 		}
 	}
 
