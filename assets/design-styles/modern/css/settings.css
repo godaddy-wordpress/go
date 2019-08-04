@@ -47,7 +47,7 @@
 	--theme-selection--color: var(--theme-color-primary);
 
 	/* Transitions */
-	--theme-link-transition: color 200ms cubic-bezier(.694,0,.335,1);
+	--theme-link-transition: color 200ms cubic-bezier(.7,0,.3,1);
 
 
 	/*--------------------------------------------------------------

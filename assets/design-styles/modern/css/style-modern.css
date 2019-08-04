@@ -47,3 +47,26 @@
 .footer-navigation__title {
 	margin-bottom: 0.75rem;
 }
+
+.primary-menu a {
+
+	&::after {
+		bottom: -5px;
+		content: "";
+		height: 2px;
+		left: 0;
+		position: absolute;
+		transform-origin: left center;
+		transform: scaleX(1);
+		transition: transform .4s cubic-bezier(.7,0,.3,1);
+		width: 100%;
+		background-color: currentColor;
+	}
+
+	@media (hover: hover) {
+		&:hover::after {
+			transform: scaleX(0);
+			transform-origin: right center;
+		}
+	}
+}
