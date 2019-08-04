@@ -1,49 +1,9 @@
-/**
- * Gutenberg core Button block styling.
- */
-
-.wp-block-button__link {
-
-	&:not(.has-background) {
+.wp-block-button {
+	&:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
 		background-color: hsl(var(--theme-color-primary));
 	}
-}
 
-/* Local scoped variables */
-.wp-block-button__link {
-	margin-bottom: 0.75rem !important;
-}
-
-.wp-block-button__link:not(.wp-block-coblocks-social__button) {
-	@mixin c-button-block;
-
-	&:hover,
-	&:focus,
-	&:active {
-		@mixin c-button-block-hover;
+	&.is-style-outline .wp-block-button__link:not(.has-text-color) {
+		color: hsl(var(--theme-color-primary));
 	}
 }
-
-/* Style variations. */
-.is-style-outline .wp-block-button__link,
-.is-style-outline-rounded .wp-block-button__link {
-	@mixin c-button-block-outline;
-
-	&:hover,
-	&:focus,
-	&:active {
-		@mixin c-button-block-outline-hover;
-	}
-}
-
-/* stylelint-disable no-descending-specificity */
-.is-style-underlined .wp-block-button__link {
-	@mixin c-button-block-underlined;
-
-	&:hover,
-	&:focus,
-	&:active {
-		@mixin c-button-block-underlined-hover;
-	}
-}
-/* stylelint-enable */
