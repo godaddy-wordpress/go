@@ -1,7 +1,3 @@
-/**
- * Primary menu
- */
-
 .site-navigation {
 	bottom: 0;
 	display: flex;
@@ -12,7 +8,7 @@
 	opacity: 0;
 	overflow-y: scroll;
 	position: fixed;
-	top: 70px;
+	top: 0;
 
 	@media (--large) {
 		align-items: center;
@@ -35,9 +31,6 @@
 	}
 }
 
-/* Whenever a panel nav is opened, it receives a menu-is-open class.
-We want to fix the body height to prevent scrolling when this system
-is open. */
 body.menu-is-open {
 	@media (max-width: 1087px) {
 		height: 100%;

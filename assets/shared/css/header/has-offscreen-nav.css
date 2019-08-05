@@ -44,20 +44,24 @@ body {
 	}
 
 	&.menu-is-open .primary-menu {
-		padding-bottom: 2.5rem;
-		padding-top: 2.5rem;
+		padding-bottom: 4rem;
+		padding-top: 4rem;
 		z-index: 11;
 
 		& .menu-item {
 			padding-bottom: 1.25rem;
 			padding-top: 1.25rem;
 		}
+
+		& a {
+			color: hsl(var(--theme-offscreen-nav--color));
+		}
 	}
 
 	&.menu-is-open .site-navigation {
 		background-color: hsl(var(--theme-offscreen-nav--bg));
 		bottom: 0;
-		height: calc(100% - 70px);
+		height: 100%;
 		left: 0;
 		opacity: 1;
 		padding-left: var(--theme-block-padding-x);
@@ -66,13 +70,18 @@ body {
 		right: 0;
 		visibility: visible;
 		width: auto;
-		height: 100%;
 		z-index: 999;
 
 		@media (--large) {
 			height: auto;
 			padding: 0;
 		}
+	}
+
+	&.menu-is-open .site-navigation__toggle-icon-inner,
+	&.menu-is-open .site-navigation__toggle-icon-inner::before,
+	&.menu-is-open .site-navigation__toggle-icon-inner::after {
+		background-color: hsl(var(--theme-offscreen-nav--color));
 	}
 
 	&.menu-is-open[data-header="header-1"] {
@@ -95,13 +104,12 @@ body {
 			@media (--large) {
 				align-items: flex-start;
 				bottom: 0;
-				height: calc(100% - 98px);
+				height: 100%;
 				left: 0;
 				overflow-y: scroll;
 				padding-left: 0;
 				position: fixed;
 				right: 0;
-				top: 98px;
 
 				& .primary-menu {
 
@@ -117,22 +125,12 @@ body {
 				}
 			}
 
-			& .primary-menu a {
-				color: hsl(var(--theme-site-nav--color));
-				text-transform: uppercase;
-
-				&::before {
-					background-color: hsl(var(--theme-site-nav--color));
-				}
-			}
-
 			& .site-navigation .primary-menu .menu-item-has-children > [aria-haspopup] {
 				@media (--large) {
 					margin-left: 10px;
 				}
 			}
 
-			/* We want it to be visible in this variant */
 			& [aria-hidden="true"] {
 				opacity: 1;
 				visibility: visible;
@@ -151,17 +149,17 @@ body {
 		width: 100%;
 
 		&::after {
-			visibility: visible;
 			opacity: 1;
 			transition: opacity 100ms linear, visibility 0ms 0ms linear;
+			visibility: visible;
 		}
 
 		& .site-navigation {
-			overflow: visible;
 			align-items: flex-start;
-			text-align: center;
+			overflow: visible;
 			padding-left: 0;
 			padding-right: 0;
+			text-align: center;
 			width: 100%;
 
 			@media (--medium) {
@@ -185,8 +183,8 @@ body {
 
 		& .primary-menu {
 			height: 100%;
-			overflow-y: scroll;
 			left: 0;
+			overflow-y: scroll;
 			padding-top: 4em;
 
 			@media (--medium) {

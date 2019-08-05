@@ -218,6 +218,7 @@
 		--theme-header-3--padding-y: 8rem;
 	}
 
+
 	/*--------------------------------------------------------------
 	## Header Navigation Toggle
 	--------------------------------------------------------------*/
@@ -229,6 +230,7 @@
 
 	/* Offscreen Navigation */
 	--theme-offscreen-nav--bg: var(--color-white);
+	--theme-offscreen-nav--color: var(--theme-site-nav--color);
 	--theme-offscreen-nav-overlay--color: hsla(var(--color-black), 0.15);
 	--theme-offscreen-nav-padding: 2rem;
 	--theme-offscreen-nav-vert--width: 70px;
