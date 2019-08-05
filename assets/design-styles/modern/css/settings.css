@@ -115,13 +115,13 @@
 		--theme-text-sm: 90%;
 	}
 
-	/* Links */
+	/* Links @todo - Needs reviewing */
 	--theme-link-color: var(--theme-color-text-secondary);
 	--theme-link-color-interactive: var(--theme-color-text-secondary);
 	--theme-link-underline-color: var(--theme-color-text-secondary);
 	--theme-link-underline-color-interactive: var(--theme-color-text-secondary);
 
-	/* Blockquote */
+	/* Blockquote @todo - Needs reviewing  */
 	--theme-quote--font-size: 1.9rem;
 	--theme-quote--leading: 1.36;
 	--theme-quote--weight: 700;
@@ -141,11 +141,11 @@
 		--theme-quote-large--font-size: 2.75em;
 	}
 
-	/* Bulleted Lists */
+	/* Bulleted Lists @todo - Needs reviewing  */
 	--theme-list-bullet-color: var(--theme-color-text-secondary);
 	--theme-list-font-size: 1.0625rem;
 	--theme-list-line-height: 1.89;
-	--theme-list-color: var(-theme-color-secondary);
+	--theme-list-color: var(--theme-color-text-secondary);
 	--theme-list-font-weight: 700;
 
 
@@ -370,10 +370,6 @@
 
 	/* SECONDARY BUTTON: Text transform */
 	--theme-button-block-outline-text-transform: uppercase;
-
-	/* ALTERNATE BUTTON: Border color */
-	--theme-button-block-alternate-border: 3px solid hsl(var(--theme-color-secondary));
-	--theme-button-block-alternate-border-interactive: 3px solid hsl(var(--theme-color-secondary));
 
 	/* ALTERNATE BUTTON: Font color */
 	--theme-button-block-alternate-color: var(--theme-color-text-secondary);
