@@ -4,7 +4,6 @@
 
 /* Settings */
 @import url("settings.css");
-@import url("config/fonts.css");
 
 /* Elements - all the HTML elements coverage */
 @import url("elements/headings.css");

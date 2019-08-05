@@ -197,6 +197,48 @@ function theme_setup() {
 }
 
 /**
+ * Enqueue the correct fonts for the given design style
+ */
+function fonts_url() {
+
+	$design_style = get_design_style();
+
+	if ( ! $design_style ) {
+
+		return;
+
+	}
+
+	$design_styles = get_available_design_styles();
+	$design_style  = sanitize_title( $design_style['label'] );
+
+	if ( ! isset( $design_styles[ $design_style ] ) || ! isset( $design_styles[ $design_style ]['fonts'] ) ) {
+
+		return;
+
+	}
+
+	$fonts = [];
+
+	foreach ( $design_styles[ $design_style ]['fonts'] as $font => $font_weights ) {
+
+		$fonts[] = sprintf( '%1$s: %2$s', $font, implode( ',', $font_weights ) );
+
+	}
+
+	return esc_url_raw(
+		add_query_arg(
+			[
+				'family' => rawurlencode( implode( '|', $fonts ) ),
+				'subset' => rawurlencode( 'latin,latin-ext' ),
+			],
+			'https://fonts.googleapis.com/css'
+		)
+	);
+
+}
+
+/**
  * Enqueue scripts for front-end.
  *
  * @return void
@@ -238,6 +280,8 @@ function editor_styles() {
 			$design_style['editor_style']
 		);
 	}
+
+	add_editor_style( fonts_url() );
 }
 
 /**
@@ -248,9 +292,16 @@ function editor_styles() {
 function styles() {
 
 	wp_enqueue_style(
+		'maverick-fonts',
+		fonts_url(),
+		[],
+		MAVERICK_VERSION
+	);
+
+	wp_enqueue_style(
 		'styles',
 		MAVERICK_TEMPLATE_URL . '/dist/css/shared-style.css',
-		[],
+		[ 'maverick-fonts' ],
 		MAVERICK_VERSION
 	);
 
@@ -409,6 +460,20 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Modern',
+			'fonts'         => [
+				'Arimo'      => [
+					'400',
+					'400i',
+					'700',
+					'700i',
+				],
+				'Montserrat' => [
+					'400',
+					'400i',
+					'700',
+					'700i',
+				],
+			],
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Shade', 'maverick' ),
