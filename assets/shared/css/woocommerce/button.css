@@ -12,36 +12,36 @@ body {
 		/* Primary Button */
 		& #respond input#submit.alt,
 		& .button.alt {
-			@mixin c-button-block;
+			@mixin button;
 
 			&:hover,
 			&:focus,
 			&:active {
-				@mixin c-button-block-hover;
+				@mixin button-hover;
 			}
 		}
 
 		/* Primary Button Disabled */
 		& button.button.alt.disabled,
 		& button.button.alt:disabled {
-			@mixin c-button-block-disabled;
+			@mixin button-disabled;
 
 			&:hover,
 			&:focus,
 			&:active {
-				@mixin c-button-block-disabled;
+				@mixin button-disabled;
 			}
 		}
 
 		/* Secondary Button */
 		& #respond input#submit,
 		& .button {
-			@mixin c-button-block-outline;
+			@mixin button;
 
 			&:hover,
 			&:focus,
 			&:active {
-				@mixin c-button-block-outline-hover;
+				@mixin button-hover;
 			}
 
 			/* Safari fix, in order for the after loading icon to animate
@@ -75,12 +75,12 @@ body {
 		/* Secondary Button Disabled */
 		& .woocommerce button.button.disabled,
 		& .woocommerce button.button:disabled {
-			@mixin c-button-block-disabled;
+			@mixin button-disabled;
 
 			&:hover,
 			&:focus,
 			&:active {
-				@mixin c-button-block-disabled;
+				@mixin button-disabled;
 			}
 		}
 	}
