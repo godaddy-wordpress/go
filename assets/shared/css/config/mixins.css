@@ -4,23 +4,31 @@
 
 /* Buttons */
 @define-mixin button {
+	border-radius: var(--theme-button--radius);
 	box-sizing: border-box;
 	color: hsl(var(--theme-button--color));
-	border-radius: var(--theme-button--radius);
+	display: inline-block;
 	font-family: var(--theme-button--font);
 	font-size: var(--theme-button--font-size);
 	font-weight: var(--theme-button--weight);
 	letter-spacing: var(--theme-button--tracking);
+	line-height: 1;
+	padding: var(--theme-button--padding-y) var(--theme-button--padding-x);
+	position: relative;
+	text-decoration: none;
 	text-transform: var(--theme-button--text-transform);
 	transition: var(--theme-button-transition);
-	padding: var(--theme-button--padding-y) var(--theme-button--padding-x);
-	line-height: 1;
-	text-decoration: none;
 	vertical-align: bottom;
 }
 
 @define-mixin button-hover {
 	background-color: hsl(var(--theme-button--bg-interactive));
+}
+
+@define-mixin c-button-block-disabled {
+	background-color: hsl(var(--theme-button--disabled-bg));
+	color: hsl(var(--theme-button--disabled-color));
+	cursor: default;
 }
 
 /* Outline */
@@ -36,97 +44,6 @@
 	border-color: hsla(var(--theme-outline-color), 1);
 	border-style: var(--theme-outline-style);
 	outline: none;
-}
-
-
-/* Primary button */
-@define-mixin c-button-block {
-	border-radius: var(--theme-button-block-border-radius);
-	cursor: pointer;
-	display: inline-block;
-	font-size: var(--theme-button-block-font-size) !important;
-	font-weight: var(--theme-button-block-font-weight);
-	letter-spacing: 1px;
-	line-height: var(--theme-button-block-line-height);
-	opacity: 1;
-	padding: var(--theme-button-block-padding);
-	position: relative;
-	text-decoration: var(--theme-button-block-text-decoration) !important;
-	text-transform: var(--theme-button-block-text-transform);
-}
-
-/* Primary button hover */
-@define-mixin c-button-block-hover {
-	background-color: hsl(var(--theme-button-block-background-color-interactive));
-	border: var(--theme-button-block-border-interactive);
-	box-shadow: var(--theme-button-block-shadow-interactive);
-	color: hsl(var(--theme-button-block-color-interactive));
-	text-decoration: var(--theme-button-block-text-decoration-interactive) !important;
-}
-
-/* Primary button visited */
-@define-mixin c-button-block-visited {
-	color: hsl(var(--theme-button-block-color));
-}
-
-/* Secondary button */
-@define-mixin c-button-block-outline {
-	background-color: hsl(var(--theme-button-block-outline-background-color)) !important;
-	border: var(--theme-button-block-outline-border);
-	color: hsl(var(--theme-button-block-outline-color));
-}
-
-/* Secondary button hover */
-@define-mixin c-button-block-outline-hover {
-	background-color: hsl(var(--theme-button-block-outline-background-color-interactive));
-	border: var(--theme-button-block-outline-border-interactive);
-	box-shadow: var(--theme-button-block-outline-shadow-interactive);
-	color: hsl(var(--theme-button-block-outline-color-interactive));
-	position: relative;
-	text-decoration: var(--theme-button-block-outline-text-decoration-interactive) !important;
-}
-
-/* Secondary button visited */
-@define-mixin c-button-block-outline-visited {
-	border-color: hsl(var(--theme-button-block-outline-color));
-	color: hsl(var(--theme-button-block-outline-color));
-}
-
-/* Disabled button */
-@define-mixin c-button-block-disabled {
-	background-color: hsl(var(--theme-button-block-disabled-background-color));
-	border: none;
-	border-radius: var(--theme-button-block-disabled-border-radius);
-	box-shadow: none;
-	color: hsl(var(--theme-button-block-disabled-color));
-	cursor: default;
-	display: inline-block;
-	font-size: var(--theme-button-block-disabled-font-size) !important;
-	font-weight: var(--theme-button-block-disabled-font-weight);
-	letter-spacing: 1px;
-	line-height: var(--theme-button-block-line-height);
-	margin-bottom: 0;
-	padding: var(--theme-button-block-disabled-padding) !important;
-	position: relative;
-	text-decoration: none;
-}
-
-@define-mixin c-button-block-underlined {
-	background-color: transparent;
-	border-bottom: 2px solid;
-	border-radius: 0;
-	color: hsl(var(--theme-button-block-underlined-color));
-	padding: 0;
-	text-transform: uppercase;
-}
-
-@define-mixin c-button-block-underlined-hover {
-	color: hsl(var(--theme-button-block-underlined-color-interactive));
-}
-
-/* TODO: Consider removing GLOBAL refs */
-@define-mixin GLOBAL-FOCUS-STYLES {
-	outline: thin dotted;
 }
 
 /* Select menu */

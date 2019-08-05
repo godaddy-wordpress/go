@@ -6,6 +6,7 @@
 	# Base
 	# Colors
 	# Typography
+	# Buttons
 	# Header
 	# Header Navigation Toggle
 	# Header Search Toggle
@@ -150,6 +151,27 @@
 
 
 	/*--------------------------------------------------------------
+	## Buttons
+	--------------------------------------------------------------*/
+
+	--theme-button--bg: var(--theme-color-primary);
+	--theme-button--bg-interactive: var(--theme-color-heading);
+	--theme-button--color: 0, 0%, 100%;
+	--theme-button--font-size: 0.65rem;
+	--theme-button--font: var(--theme-heading--font);
+	--theme-button--padding-x: 2rem;
+	--theme-button--padding-y: 1.6rem;
+	--theme-button--radius: 0;
+	--theme-button--text-transform: uppercase;
+	--theme-button--tracking: 3px;
+	--theme-button--weight: 600;
+
+	/* Disabled */
+	--theme-button--disabled-bg: 0, 2%, 89%;
+	--theme-button--disabled-color: 0, 0%, 61%;
+
+
+	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
 
@@ -272,143 +294,6 @@
 	--theme-footer-2-site-info--border-color: 0, 0%, 90%;
 
 
-	/*--------------------------------------------------------------
-	## Buttons
-	--------------------------------------------------------------*/
-
-	--theme-button--bg: var(--theme-color-primary);
-	--theme-button--bg-interactive: var(--theme-color-heading);
-	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-size: 0.65rem;
-	--theme-button--font: var(--theme-heading--font);
-	--theme-button--padding-x: 2rem;
-	--theme-button--padding-y: 1.6rem;
-	--theme-button--radius: 0;
-	--theme-button--text-transform: uppercase;
-	--theme-button--tracking: 3px;
-	--theme-button--weight: 600;
-
-
-
-
-
-	/* SHARED: Vertical button padding */
-	--theme-button-block-vertical-spacing-unit: 1.5rem;
-
-	/* SHARED: Horizontal button padding */
-	--theme-button-block-horizontal-spacing-unit: 1.5rem;
-
-	/* SHARED: Line height */
-	--theme-button-block-line-height: 1;
-
-	/* PRIMARY BUTTON: Font color */
-	--theme-button-block-color: var(--theme-color-primary); /* #fff */
-	--theme-button-block-color-interactive: var(--theme-color-primary); /* #fff */
-
-	/* PRIMARY BUTTON: Font size */
-	--theme-button-block-font-size: 0.85rem;
-
-	/* PRIMARY BUTTON: Font weight */
-	--theme-button-block-font-weight: 700;
-
-	/* PRIMARY BUTTON: Background color */
-	--theme-button-block-background-color: var(--theme-color-heading);
-	--theme-button-block-background-color-interactive: var(--theme-color-heading);
-
-	/* PRIMARY BUTTON: Border */
-	--theme-button-block-border: none;
-	--theme-button-block-border-interactive: none;
-
-	/* PRIMARY BUTTON: Border radius */
-	--theme-button-block-border-radius: 0;
-
-	/* PRIMARY BUTTON: Box shadow (use none to remove) */
-	--theme-button-block-shadow: none;
-	--theme-button-block-shadow-interactive: none;
-
-	/* PRIMARY BUTTON: Padding */
-	--theme-button-block-padding: var(--theme-button-block-vertical-spacing-unit) var(--theme-button-block-horizontal-spacing-unit) calc(var(--theme-button-block-vertical-spacing-unit) - 1px);
-
-	/* PRIMARY BUTTON: Text decoration */
-	--theme-button-block-text-decoration: none;
-	--theme-button-block-text-decoration-interactive: none;
-
-	/* PRIMARY BUTTON: Text transform */
-	--theme-button-block-text-transform: uppercase;
-
-	/* SECONDARY BUTTON: Background color */
-	--theme-button-block-outline-background-color: var(--theme-color-primary); /* #fff */
-	--theme-button-block-outline-background-color-interactive: var(--theme-color-primary); /* #fff */
-
-	/* SECONDARY BUTTON: Border */
-	--theme-button-block-outline-border: 2px solid hsl(var(--theme-color-secondary));
-	--theme-button-block-outline-border-interactive: 2px solid hsl(var(--theme-color-secondary));
-
-	/* SECONDARY BUTTON: Border radius */
-	--theme-button-block-outline-border-radius: 0;
-
-	/* SECONDARY BUTTON: Box shadow (use none to remove) */
-	--theme-button-block-outline-shadow: none;
-	--theme-button-block-outline-shadow-interactive: 0 0 8px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.12);
-
-	/* SECONDARY BUTTON: Font color */
-	--theme-button-block-outline-color: var(--theme-color-text-secondary);
-	--theme-button-block-outline-color-interactive: var(--theme-color-text-secondary);
-
-	/* SECONDARY BUTTON: Font size */
-	--theme-button-block-outline-font-size: 1.0625rem;
-
-	/* SECONDARY BUTTON: Font weight */
-	--theme-button-block-outline-font-weight: 700;
-
-	/* SECONDARY BUTTON: Padding */
-	--theme-button-block-outline-padding: calc(var(--theme-button-block-vertical-spacing-unit) - 2px) calc(var(--theme-button-block-horizontal-spacing-unit) - 2px);
-
-	/* SECONDARY BUTTON: Text decoration */
-	--theme-button-block-outline-text-decoration: none;
-	--theme-button-block-outline-text-decoration-interactive: underline;
-
-	/* SECONDARY BUTTON: Text transform */
-	--theme-button-block-outline-text-transform: uppercase;
-
-	/* ALTERNATE BUTTON: Font color */
-	--theme-button-block-alternate-color: var(--theme-color-text-secondary);
-	--theme-button-block-alternate-color-interactive: var(--theme-color-text-secondary);
-
-	/* ALTERNATE BUTTON: Font size */
-	--theme-button-block-alternate-font-size: 0.875rem;
-
-	/* ALTERNATE BUTTON: Font weight */
-	--theme-button-block-alternate-font-weight: 700;
-
-	/* ALTERNATE BUTTON: Padding */
-	--theme-button-block-alternate-padding: var(--theme-button-block-vertical-spacing-unit) 0 0;
-
-	/* ALTERNATE BUTTON: Text transform */
-	--theme-button-block-alternate-text-transform: uppercase;
-
-	/* DISABLED BUTTON: Background color */
-	--theme-button-block-disabled-background-color: 0, 2%, 89%; /* #e3e2e2 */
-
-	/* DISABLED BUTTON: Border radius */
-	--theme-button-block-disabled-border-radius: 0;
-
-	/* DISABLED BUTTON: Font color */
-	--theme-button-block-disabled-color: 0, 0%, 61%; /* #9b9b9b */
-
-	/* DISABLED BUTTON: Font weight */
-	--theme-button-block-disabled-font-weight: 400;
-
-	/* DISABLED BUTTON: Font size */
-	--theme-button-block-disabled-font-size: 1.0625rem;
-
-	/* DISABLED BUTTON: Padding */
-	--theme-button-block-disabled-padding: var(--theme-button-block-vertical-spacing-unit) var(--theme-button-block-horizontal-spacing-unit);
-
-	/* UNDERLINED BUTTON: Underline color */
-	--theme-button-block-underlined-color: var(--theme-color-primary); /* #fff */
-	--theme-button-block-underlined-color-interactive: var(--theme-color-primary); /* #fff */
-
 	/***************************************************************
 	* Gutenberg core blocks
 	***************************************************************/
@@ -487,7 +372,6 @@
 
 	/* Feedback colors: error, success, warning, informational. */
 	--theme-feedback-informational-color: 208, 100%, 43%;
-
 
 	/* Spacing units */
 	--theme-spacing-unit: 0.5rem;
