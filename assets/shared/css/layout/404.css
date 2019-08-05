@@ -5,16 +5,20 @@
 		display: flex;
 		margin-top: var(--theme-block-spacing-huge);
 	}
+
+	&[data-header="header-3"] .site-header__inner {
+		padding-bottom: 0;
+	}
 }
 
 .error-404 {
 	max-width: 28em;
-	padding-bottom: var(--theme-header--padding-y);
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
 
 	& .entry-header {
-		margin-bottom: 2rem;
+		padding: 0;
+		margin-bottom: 3rem;
 	}
 
 	& .page-title {
