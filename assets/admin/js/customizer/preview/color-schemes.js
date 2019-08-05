@@ -3,12 +3,7 @@ import { hexToHSL } from '../util';
 const $ = jQuery; // eslint-disable-line
 
 export default () => {
-	let useAlternativeColors;
-	let useColorsOverride;
-	let selectedPrimaryColor;
-	let selectedSecondaryColor;
 	let selectedDesignStyle;
-	let selectedColorScheme;
 
 	/**
 	 * Set primary color
@@ -17,10 +12,7 @@ export default () => {
 	 */
 	const setPrimaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--USER-PRIMARY-HUE', hsl[0] );
-		document.documentElement.style.setProperty( '--USER-PRIMARY-SATURATION', hsl[1] );
-		document.documentElement.style.setProperty( '--USER-PRIMARY-LIGHTNESS', hsl[2] );
-		document.documentElement.style.setProperty( '--USER-COLOR-PRIMARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--theme-color-primary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
 	/**
@@ -30,10 +22,17 @@ export default () => {
 	 */
 	const setSecondaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--USER-SECONDARY-HUE', hsl[0] );
-		document.documentElement.style.setProperty( '--USER-SECONDARY-SATURATION', hsl[1] );
-		document.documentElement.style.setProperty( '--USER-SECONDARY-LIGHTNESS', hsl[2] );
-		document.documentElement.style.setProperty( '--USER-COLOR-SECONDARY', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--theme-color-secondary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+	};
+
+	/**
+	 * Set tertiary color
+	 *
+	 * @param {*} color
+	 */
+	const setTertiaryColor = ( color ) => {
+		const hsl = hexToHSL( color );
+		document.documentElement.style.setProperty( '--theme-color-tertiary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
 	};
 
 	/**
@@ -52,104 +51,46 @@ export default () => {
 		return false;
 	};
 
-	/**
-	 * Set the colors
-	 */
-	const setColors = () => {
-		if ( ! useAlternativeColors ) {
-			document.documentElement.style.removeProperty( '--USER-PRIMARY-HUE' );
-			document.documentElement.style.removeProperty( '--USER-PRIMARY-SATURATION' );
-			document.documentElement.style.removeProperty( '--USER-PRIMARY-LIGHTNESS' );
-			document.documentElement.style.removeProperty( '--USER-COLOR-PRIMARY' );
-
-			document.documentElement.style.removeProperty( '--USER-SECONDARY-HUE' );
-			document.documentElement.style.removeProperty( '--USER-SECONDARY-SATURATION' );
-			document.documentElement.style.removeProperty( '--USER-SECONDARY-LIGHTNESS' );
-			document.documentElement.style.removeProperty( '--USER-COLOR-SECONDARY' );
-			return false;
-		}
-
-		if ( useColorsOverride ) {
-			setPrimaryColor( selectedPrimaryColor );
-			setSecondaryColor( selectedSecondaryColor );
-		} else {
-			const designStyle = getDesignStyle( selectedDesignStyle );
-			const colors = designStyle.color_schemes[ selectedColorScheme ];
-			setPrimaryColor( colors['primary_color'] );
-			setSecondaryColor( colors['secondary_color'] );
-		}
-	};
-
-	wp.customize( 'maverick_alternative_colors', ( value ) => {
-		useAlternativeColors = value.get();
-
-		value.bind( ( to ) => {
-			useAlternativeColors = to;
-
-			setColors();
-		} );
-	} );
-
 	wp.customize( 'maverick_design_style', ( value ) => {
 		selectedDesignStyle = value.get();
-
 		value.bind( ( to ) => {
 			selectedDesignStyle = to;
 		} );
 	} );
 
-	wp.customize( 'maverick_color_schemes', ( value ) => {
-		selectedColorScheme = value.get();
+	wp.customize( 'color_scheme', ( value ) => {
 		value.bind( ( colorScheme ) => {
-			selectedColorScheme = colorScheme;
 			const designStyle = getDesignStyle( selectedDesignStyle );
-
-			if ( useColorsOverride || ! useAlternativeColors ) {
-				return;
-			}
 
 			if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
 				const colors = designStyle.color_schemes[ colorScheme ];
-				setPrimaryColor( colors['primary_color'] );
-				setSecondaryColor( colors['secondary_color'] );
+
+				Object.entries( colors ).forEach( function ( [ setting, color ] ) {
+					const customizerSetting = wp.customize( `${setting}` );
+
+					if ( 'label' === setting || 'undefined' === typeof customizerSetting || 'undefined' === typeof wp.customize.control ) {
+						return;
+					}
+
+					customizerSetting.set( color );
+
+					wp.customize.control( `${setting}_control` ).container.find( '.color-picker-hex' )
+						.data( 'data-default-color', color )
+						.wpColorPicker( 'defaultColor', color );
+				} );
 			}
 		} );
 	} );
 
-	wp.customize( 'maverick_color_schemes_override', ( checkbox ) => {
-		useColorsOverride = checkbox.get();
-
-		checkbox.bind( ( to ) => {
-			useColorsOverride = to;
-
-			setColors();
-
-		} );
+	wp.customize( 'primary_color', ( value ) => {
+		value.bind( ( to ) => setPrimaryColor( to ) );
 	} );
 
-	wp.customize( 'maverick_custom_primary_color', ( value ) => {
-		selectedPrimaryColor = value.get();
-
-		value.bind( ( to ) => {
-			selectedPrimaryColor = to;
-
-			if ( ! useColorsOverride || ! useAlternativeColors ) {
-				return;
-			}
-
-			setPrimaryColor( to );
-		} );
+	wp.customize( 'secondary_color', ( value ) => {
+		value.bind( ( to ) => setSecondaryColor( to ) );
 	} );
 
-	wp.customize( 'maverick_custom_secondary_color', ( value ) => {
-		selectedSecondaryColor = value.get();
-		value.bind( ( to ) => {
-			selectedSecondaryColor = to;
-
-			if ( ! useColorsOverride || ! useAlternativeColors  ) {
-				return;
-			}
-			setSecondaryColor( to );
-		} );
+	wp.customize( 'tertiary_color', ( value ) => {
+		value.bind( ( to ) => setTertiaryColor( to ) );
 	} );
 };

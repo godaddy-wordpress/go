@@ -142,7 +142,7 @@ body {
 
 	& .gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
 		background-color: hsl(var(--theme-input-color-background));
-		background-image: url("../shared/svg/error-icon.svg");
+		background-image: url("../shared/images/error-icon.svg");
 		background-position: calc(100% - 10px) center;
 		background-repeat: no-repeat;
 		border-bottom-width: var(--theme-input-border-bottom-width);
@@ -202,7 +202,7 @@ body {
 		& input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
 			line-height: 22px;
 			max-height: 100%;
-			padding: calc(var(--theme-button-block-vertical-spacing-unit) - 7px) calc(var(--theme-button-block-horizontal-spacing-unit) - 6px) !important;
+			padding: calc(var(--theme-button--padding-x) - 7px) calc(var(--theme-button--padding-x) - 6px) !important;
 		}
 
 		& h3.gform_title {

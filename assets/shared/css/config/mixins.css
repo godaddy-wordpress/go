@@ -2,134 +2,55 @@
  * Mixins
  */
 
-/* Primary button */
-@define-mixin c-button-block {
-	background-color: hsl(var(--theme-button-block-background-color));
-	border: var(--theme-button-block-border);
-	border-radius: var(--theme-button-block-border-radius);
-	box-shadow: var(--theme-button-block-shadow);
-	color: hsl(var(--theme-button-block-color));
-	cursor: pointer;
+/* Buttons */
+@define-mixin button {
+	border-radius: var(--theme-button--radius);
+	box-sizing: border-box;
+	color: hsl(var(--theme-button--color));
 	display: inline-block;
-	font-size: var(--theme-button-block-font-size) !important;
-	font-weight: var(--theme-button-block-font-weight);
-	letter-spacing: 1px;
-	line-height: var(--theme-button-block-line-height);
-	opacity: 1;
-	padding: var(--theme-button-block-padding);
+	font-family: var(--theme-button--font);
+	font-size: var(--theme-button--font-size);
+	font-weight: var(--theme-button--weight);
+	letter-spacing: var(--theme-button--tracking);
+	line-height: 1;
+	padding: var(--theme-button--padding-y) var(--theme-button--padding-x);
 	position: relative;
-	text-decoration: var(--theme-button-block-text-decoration) !important;
-	text-transform: var(--theme-button-block-text-transform);
+	text-decoration: none;
+	text-transform: var(--theme-button--text-transform);
+	transition: var(--theme-button-transition);
+	vertical-align: bottom;
 }
 
-/* Primary button hover */
-@define-mixin c-button-block-hover {
-	background-color: hsl(var(--theme-button-block-background-color-interactive));
-	border: var(--theme-button-block-border-interactive);
-	box-shadow: var(--theme-button-block-shadow-interactive);
-	color: hsl(var(--theme-button-block-color-interactive));
-	text-decoration: var(--theme-button-block-text-decoration-interactive) !important;
+@define-mixin button-hover {
+	background-color: hsl(var(--theme-button--bg-interactive));
 }
 
-/* Primary button visited */
-@define-mixin c-button-block-visited {
-	color: hsl(var(--theme-button-block-color));
-}
-
-/* Secondary button */
-@define-mixin c-button-block-outline {
-	background-color: hsl(var(--theme-button-block-outline-background-color)) !important;
-	border: var(--theme-button-block-outline-border);
-	color: hsl(var(--theme-button-block-outline-color));
-}
-
-/* Secondary button hover */
-@define-mixin c-button-block-outline-hover {
-	background-color: hsl(var(--theme-button-block-outline-background-color-interactive));
-	border: var(--theme-button-block-outline-border-interactive);
-	box-shadow: var(--theme-button-block-outline-shadow-interactive);
-	color: hsl(var(--theme-button-block-outline-color-interactive));
-	position: relative;
-	text-decoration: var(--theme-button-block-outline-text-decoration-interactive) !important;
-}
-
-/* Secondary button visited */
-@define-mixin c-button-block-outline-visited {
-	border-color: hsl(var(--theme-button-block-outline-color));
-	color: hsl(var(--theme-button-block-outline-color));
-}
-
-/* Disabled button */
-@define-mixin c-button-block-disabled {
-	background-color: hsl(var(--theme-button-block-disabled-background-color));
-	border: none;
-	border-radius: var(--theme-button-block-disabled-border-radius);
-	box-shadow: none;
-	color: hsl(var(--theme-button-block-disabled-color));
+@define-mixin button-disabled {
+	background-color: hsl(var(--theme-button--disabled-bg));
+	color: hsl(var(--theme-button--disabled-color));
 	cursor: default;
-	display: inline-block;
-	font-size: var(--theme-button-block-disabled-font-size) !important;
-	font-weight: var(--theme-button-block-disabled-font-weight);
-	letter-spacing: 1px;
-	line-height: var(--theme-button-block-line-height);
-	margin-bottom: 0;
-	padding: var(--theme-button-block-disabled-padding) !important;
-	position: relative;
-	text-decoration: none;
 }
 
-@define-mixin c-button-block-underlined {
-	background-color: transparent;
-	border-bottom: 2px solid;
-	border-radius: 0;
-	color: hsl(var(--theme-button-block-underlined-color));
-	padding: 0;
-	text-transform: uppercase;
+/* Outline */
+@define-mixin outline {
+	outline-color: hsla(var(--theme-outline-color), 1);
+	outline-style: var(--theme-outline-style);
+	outline-width: var(--theme-outline-width);
 }
 
-@define-mixin c-button-block-underlined-hover {
-	color: hsl(var(--theme-button-block-underlined-color-interactive));
-}
-
-/* Alternate button */
-@define-mixin c-button-block-alternate {
-	background-color: transparent;
-	border-bottom: var(--theme-button-block-alternate-border);
-	border-radius: none;
-	box-shadow: none;
-	color: hsl(var(--theme-button-block-alternate-color));
-	cursor: pointer;
-	display: inline-block;
-	font-size: var(--theme-button-block-alternate-font-size) !important;
-	font-weight: var(--theme-button-block-alternate-font-weight);
-	letter-spacing: 2px;
-	line-height: var(--theme-button-block-line-height);
-	margin-bottom: calc(var(--theme-button-block-vertical-spacing-unit) - 10px);
-	opacity: 1;
-	padding: var(--theme-button-block-alternate-padding) !important;
-	position: relative;
-	text-decoration: none;
-	text-transform: var(--theme-button-block-alternate-text-transform);
-}
-
-/* Alternate button hover */
-@define-mixin c-button-block-alternate-hover {
-	border-bottom: var(--theme-button-block-alternate-border-interactive);
-	box-shadow: none;
-	color: hsl(var(--theme-button-block-alternate-color-interactive));
-	text-decoration: none;
-}
-
-/* TODO: Consider removing GLOBAL refs */
-@define-mixin GLOBAL-FOCUS-STYLES {
-	outline: thin dotted;
+@define-mixin outline-text-link {
+	border: 0;
+	border-bottom-width: var(--theme-outline-width);
+	border-color: hsla(var(--theme-outline-color), 1);
+	border-style: var(--theme-outline-style);
+	outline: none;
 }
 
 /* Select menu */
 @define-mixin select-menu {
 	appearance: button;
 	background-color: hsl(var(--theme-input-color-background));
-	background-image: url("../shared/svg/arrow-down-solid.svg");
+	background-image: url("../shared/images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border-bottom-width: var(--theme-input-border-bottom-width);
@@ -184,12 +105,12 @@
 
 /* Checkbox :before asset */
 @define-mixin checkbox-label-before {
-	mask-image: url("../shared/svg/checkbox.svg");
+	mask-image: url("../shared/images/checkbox.svg");
 }
 
 /* Checkbox :checked:before asset */
 @define-mixin checkbox-label-checked-before {
-	mask-image: url("../shared/svg/checkbox-checked.svg");
+	mask-image: url("../shared/images/checkbox-checked.svg");
 }
 
 /* Radio :before asset */
@@ -208,7 +129,7 @@
 /* On Sale badge (default) */
 @define-mixin on-sale-badge {
 	align-items: center;
-	background-color: hsl(var(--THEME-COLOR-PRIMARY));
+	background-color: hsl(var(--theme-color-primary));
 	border-radius: 50%;
 	display: flex;
 	font-weight: 400;

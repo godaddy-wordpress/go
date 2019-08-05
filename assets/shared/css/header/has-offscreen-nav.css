@@ -1,7 +1,21 @@
+/*
+ * Add named breakpoints into the DOM for JS hooks
+*/
+body {
+
+	&::before {
+		content: "has-offscreen-nav";
+		display: none;
+
+		@media (--large) {
+			content: "has-full-nav has-search-toggle";
+		}
+	}
+}
+
 /**
  * Offscreen navigation
  */
-
 .has-offscreen-nav {
 
 	& .site-navigation {
@@ -30,8 +44,8 @@
 		z-index: 11;
 
 		& .menu-item {
-			padding-bottom: 0.75rem;
-			padding-top: 0.75rem;
+			padding-bottom: 1.25rem;
+			padding-top: 1.25rem;
 		}
 	}
 
@@ -45,7 +59,6 @@
 		position: fixed;
 		right: 0;
 		visibility: visible;
-		width: 100%;
 
 		@media (--large) {
 			height: auto;
@@ -111,11 +124,11 @@
 			}
 
 			& .primary-menu a {
-				color: hsl(var(--theme-primary-menu--color));
+				color: hsl(var(--theme-site-nav--color));
 				text-transform: uppercase;
 
 				&::before {
-					background-color: hsl(var(--theme-primary-menu--color));
+					background-color: hsl(var(--theme-site-nav--color));
 				}
 			}
 

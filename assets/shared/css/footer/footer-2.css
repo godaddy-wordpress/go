@@ -5,24 +5,21 @@
 [data-footer="footer-2"] {
 
 	& .site-footer {
-		border-top: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
-		padding-bottom: calc(var(--theme-footer-spacing) * 0.9);
-		padding-top: calc(var(--theme-footer-spacing) * 0.9);
+		padding-top: var(--theme-block-spacing-huge);
+	}
 
-		@media (--large) {
-			padding-bottom: calc(var(--theme-footer-spacing) * 0.66);
-			padding-top: calc(var(--theme-footer-spacing) * 0.66);
-		}
+	& .site-footer__inner {
+		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.25);
 	}
 
 	& .site-footer__row {
-		border-bottom: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
-		border-top: 1px solid hsl(var(--theme-footer-2-border-top-color), 1);
-		margin-top: calc(var(--theme-footer-spacing) * 0.75);
+		border-top: 1px solid hsl(var(--theme-footer-2-site-info--border-color), 1);
+		margin-top: calc(var(--theme-block-spacing-huge) * 0.75);
 		padding: 1rem 0;
+		text-align: center;
 
-		@media (--large) {
-			margin-top: calc(var(--theme-footer-spacing) * 0.55);
+		@media (--medium) {
+			text-align: left;
 		}
 	}
 
@@ -37,6 +34,10 @@
 		&:last-of-type {
 			padding-right: 0;
 		}
+
+		& a:focus {
+			@mixin outline-text-link;
+		}
 	}
 
 	& .footer-navigation--1,
@@ -50,7 +51,7 @@
 
 	& .footer-blurb-text {
 		flex: 100%;
-		margin-bottom: calc(var(--theme-footer-spacing) * 0.75);
+		margin-bottom: calc(var(--theme-block-spacing-huge) * 0.75);
 
 		@media (--large) {
 			margin-bottom: 0;
@@ -72,26 +73,29 @@
 	}
 
 	& .social-icons {
-		margin-top: 0.25rem;
+		margin-top: 1rem;
 
-		@media (--medium) {
+		@media (--large) {
 			margin-top: 0;
 		}
 
 		& svg {
-			height: calc(var(--theme-footer-social-icon-size) * 0.66);
+			height: calc(var(--theme-social--size) * 0.8);
 		}
 
 		& a {
-			padding-left: calc(var(--theme-footer-social-icon-spacing) * 0.5);
-			padding-right: calc(var(--theme-footer-social-icon-spacing) * 0.5);
+			padding: calc(var(--theme-social--spacing) * 0.8);
+
+			@media (--large) {
+				padding: calc(var(--theme-social--spacing) * 0.5);
+			}
 		}
 	}
 
 	& .site-info {
 		margin-top: 0.75rem;
 
-		@media (--medium) {
+		@media (--large) {
 			flex: 1 50%;
 			margin-top: 0;
 		}

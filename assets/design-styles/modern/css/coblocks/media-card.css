@@ -32,12 +32,6 @@
 		}
 	}
 
-	/* Media Card - we have to brute this color in to place. */
-	& .wp-block-coblocks-row__inner[style*="background-color:#FFFFFF"],
-	& .wp-block-coblocks-row__inner[style*="background-color: rgb(255, 255, 255)"] {
-		background-color: hsla(var(--color-alabaster), 1) !important;
-	}
-
 	/* Media Card - we override the 'Huge' setting only */
 	& .wp-block-coblocks-row__inner.has-huge-padding {
 		padding: calc(1.5 * var(--theme-spacing-unit-4));

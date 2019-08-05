@@ -28,6 +28,6 @@ body {
 	}
 
 	& .has-large-font-size {
-		line-height: var(--theme-heading-line-height);
+		line-height: var(--theme-heading--leading);
 	}
 }

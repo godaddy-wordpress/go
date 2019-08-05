@@ -5,7 +5,7 @@
 	}
 
 	& h2 {
-		font-size: var(--theme-h2-font-size);
+		font-size: var(--theme-h2--font-size);
 
 	}
 }

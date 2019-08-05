@@ -2,14 +2,14 @@
 
 	& .site-header__inner {
 		@media (--small) {
-			padding-bottom: var(--theme-header-3-padding-y);
-			padding-top: var(--theme-header-3-padding-y);
+			padding-bottom: var(--theme-header-3--padding-y);
+			padding-top: var(--theme-header-3--padding-y);
 		}
 	}
 
 	& .site-navigation {
 		@media (--large) {
-			margin-top: calc(var(--theme-header-3-navigation-margin-top));
+			margin-top: calc(var(--theme-header-3-nav--margin-top));
 		}
 	}
 
@@ -24,7 +24,7 @@
 	/* Will override all links (including sub links) for mobile,
 	so they appear same color */
 	& .primary-menu a {
-		color: hsl(var(--theme-primary-menu--color));
+		color: hsl(var(--theme-site-nav--color));
 	}
 
 	/* Restore sub-menu colors when desktop style */

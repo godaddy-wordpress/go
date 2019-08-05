@@ -12,12 +12,6 @@
 	/* #000000 */
 	--color-black: 0, 0%, 0%;
 
-	/* #ffffff */
-	--color-white-alt: 0, 0%, 100%;
-
-	/* #fafafa */
-	--color-alabaster: 0, 0%, 98%;
-
 	/* #f2f2f3 */
 	--color-athens-gray: 240, 4%, 95%;
 
@@ -56,7 +50,4 @@
 
 	/* #1f2023 */
 	--color-shark: 225, 6%, 13%;
-
-	/* #021936 */
-	--color-midnight: 214, 93%, 11%;
 }

@@ -166,8 +166,6 @@
 
 		// Listener for the window resize
 		var listener_window = debounce( function( e ) {
-
-			console.log(get_screen_size( 'has-offscreen-nav' ));
 			if( get_screen_size( 'has-offscreen-nav' ) ) {
 				menu_create();
 			} else {
