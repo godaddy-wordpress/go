@@ -75,6 +75,11 @@
 			transform-origin: right center;
 		}
 	}
+
+	&:focus::after {
+		transform: scaleX(0);
+		transform-origin: right center;
+	}
 }
 
 p.has-background {
