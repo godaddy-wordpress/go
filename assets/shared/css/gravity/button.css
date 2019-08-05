@@ -4,24 +4,12 @@ body {
 
 		/* Primary Button */
 		& input[type="submit"] {
-			@mixin c-button-block;
+			@mixin button;
 
 			&:hover,
 			&:focus,
 			&:active {
-				@mixin c-button-block-hover;
-			}
-		}
-
-		/* Secondary Button */
-		& .gform_previous_button,
-		& .gform_next_button {
-			@mixin c-button-block-outline;
-
-			&:hover,
-			&:focus,
-			&:active {
-				@mixin c-button-block-outline-hover;
+				@mixin button-hover;
 			}
 		}
 	}
