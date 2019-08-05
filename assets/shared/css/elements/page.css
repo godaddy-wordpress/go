@@ -3,11 +3,11 @@ html {
 }
 
 ::-moz-selection {
-	background-color: hsl(var(--theme-selection--color));
+	background-color: hsla(var(--theme-selection--color), 0.15);
 }
 
 ::selection {
-	background-color: hsl(var(--theme-selection--color));
+	background-color: hsla(var(--theme-selection--color), 0.15);
 }
 
 *,

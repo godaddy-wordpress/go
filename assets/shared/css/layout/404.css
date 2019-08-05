@@ -1,8 +1,8 @@
 .error404 {
 
 	& .site-content {
-		display: flex;
 		align-items: center;
+		display: flex;
 		margin-top: var(--theme-block-spacing-huge);
 	}
 }

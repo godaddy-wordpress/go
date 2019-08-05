@@ -23,7 +23,7 @@
 
 	<div id="page" class="site">
 
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'maverick' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maverick' ); ?></a>
 
 		<?php Maverick\header_variation(); ?>
 
