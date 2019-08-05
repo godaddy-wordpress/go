@@ -25,7 +25,7 @@
 	background-color: hsl(var(--theme-button--bg-interactive));
 }
 
-@define-mixin c-button-block-disabled {
+@define-mixin button-disabled {
 	background-color: hsl(var(--theme-button--disabled-bg));
 	color: hsl(var(--theme-button--disabled-color));
 	cursor: default;
