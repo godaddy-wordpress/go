@@ -6,6 +6,7 @@
 	# Base
 	# Colors
 	# Typography
+	# Buttons
 	# Header
 	# Header Navigation Toggle
 	# Header Search Toggle
@@ -150,6 +151,27 @@
 
 
 	/*--------------------------------------------------------------
+	## Buttons
+	--------------------------------------------------------------*/
+
+	--theme-button--bg: var(--theme-color-primary);
+	--theme-button--bg-interactive: var(--theme-color-heading);
+	--theme-button--color: 0, 0%, 100%;
+	--theme-button--font-size: 0.65rem;
+	--theme-button--font: var(--theme-heading--font);
+	--theme-button--padding-x: 2rem;
+	--theme-button--padding-y: 1.6rem;
+	--theme-button--radius: 0;
+	--theme-button--text-transform: uppercase;
+	--theme-button--tracking: 3px;
+	--theme-button--weight: 600;
+
+	/* Disabled */
+	--theme-button--disabled-bg: 0, 2%, 89%;
+	--theme-button--disabled-color: 0, 0%, 61%;
+
+
+	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
 
@@ -270,27 +292,6 @@
 
 	/* Footer Variations Specific */
 	--theme-footer-2-site-info--border-color: 0, 0%, 90%;
-
-
-	/*--------------------------------------------------------------
-	## Buttons
-	--------------------------------------------------------------*/
-
-	--theme-button--bg: var(--theme-color-primary);
-	--theme-button--bg-interactive: var(--theme-color-heading);
-	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-size: 0.65rem;
-	--theme-button--font: var(--theme-heading--font);
-	--theme-button--padding-x: 2rem;
-	--theme-button--padding-y: 1.6rem;
-	--theme-button--radius: 0;
-	--theme-button--text-transform: uppercase;
-	--theme-button--tracking: 3px;
-	--theme-button--weight: 600;
-
-	/* Disabled */
-	--theme-button--disabled-bg: 0, 2%, 89%;
-	--theme-button--disabled-color: 0, 0%, 61%;
 
 
 	/***************************************************************
