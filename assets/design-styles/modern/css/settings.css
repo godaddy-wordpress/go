@@ -373,7 +373,6 @@
 	/* Feedback colors: error, success, warning, informational. */
 	--theme-feedback-informational-color: 208, 100%, 43%;
 
-
 	/* Spacing units */
 	--theme-spacing-unit: 0.5rem;
 	--theme-spacing-unit-2: 1rem;
