@@ -3,7 +3,6 @@
  */
 
 .site-navigation {
-	background-color: hsla(var(--theme-has-offscreen-nav-overlay-color));
 	bottom: 0;
 	display: flex;
 	flex-direction: column;
