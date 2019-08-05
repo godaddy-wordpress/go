@@ -2,11 +2,9 @@
  * Global - site search
  */
 
-/* Locally scoped component variables */
 body {
 
 	& .site-search {
-		padding: var(--theme-spacing-unit) 0;
 		z-index: 2;
 
 		@media (--large) {
@@ -33,6 +31,7 @@ body {
 			margin: 0 0 0 0.5rem;
 			padding: 0 1.75rem;
 			position: relative;
+			transition: var(--theme-button-transition);
 			width: 50px;
 
 			& .search-input__label {
@@ -63,6 +62,12 @@ body {
 				& .search-input__arrow-icon {
 					fill: hsl(var(--theme-search-submit--color));
 				}
+			}
+
+			&:focus {
+				@mixin outline;
+				outline-color: hsl(var(--theme-search-submit--color));
+				outline-offset: -6px;
 			}
 		}
 	}

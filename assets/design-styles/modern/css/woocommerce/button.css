@@ -23,9 +23,9 @@ body {
 					content: "";
 					display: block;
 					height: 8px;
-					left: var(--theme-button-block-vertical-spacing-unit);
+					left: var(--theme-button--padding-x);
 					position: absolute;
-					right: var(--theme-button-block-vertical-spacing-unit);
+					right: var(--theme-button--padding-x);
 				}
 			}
 		}

@@ -9,7 +9,6 @@
 /* Elements - all the HTML elements coverage */
 @import url("elements/headings.css");
 @import url("elements/forms.css");
-@import url("elements/site-search.css");
 
 /* Gutenberg core blocks overrides */
 @import url("blocks/button.css");

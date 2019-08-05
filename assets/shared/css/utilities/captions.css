@@ -2,7 +2,7 @@
 .wp-block-embed {
 
 	& figcaption {
-		color: hsla(var(--THEME-COLOR-SECONDARY), 0.75);
+		color: hsla(var(--theme-color-secondary), 0.75);
 		font-size: 0.8125rem;
 		margin-bottom: -0.6rem !important;
 		text-align: left;

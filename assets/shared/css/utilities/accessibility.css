@@ -3,13 +3,14 @@
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);
+	clip: rect(1px, 1px, 1px, 1px);
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
 	padding: 0;
 	position: absolute;
+	transition: none !important;;
 	width: 1px;
 
 	/**
@@ -19,24 +20,17 @@
 	word-wrap: normal !important;
 
 	&:focus {
+		@mixin button;
 		@mixin outline;
-
-		background-color: hsla(var(--theme-button--bg), 1);
-		clip: auto !important;
+		background-color: hsl(var(--theme-button--bg));
 		clip-path: none;
-		color: hsla(var(--theme-button--color), 1);
+		clip: auto !important;
 		display: block;
-		font-family: var(--theme-button--font-family);
-		font-size: var(--theme-button--font-size);
-		font-weight: var(--theme-button--font-weight);
 		height: auto;
 		left: 0;
-		letter-spacing: var(--theme-button--letter-spacing);
-		outline-color: hsla(var(--theme-color-body-bg), 1);
 		outline-offset: -5px;
-		padding: 0.75rem 1rem;
+		padding: 0.85rem;
 		text-decoration: none;
-		text-transform: var(--theme-button--text-transform);
 		top: 0;
 		width: auto;
 		z-index: 100000;
