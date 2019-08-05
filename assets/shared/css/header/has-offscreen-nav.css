@@ -177,8 +177,8 @@ body {
 			width: calc(var(--theme-site-nav-toggle--size) + 2rem);
 
 			@media (--medium) {
-				height: var(--theme-header-5-offscreen-nav-vert--width);
-				width: var(--theme-header-5-offscreen-nav-vert--width);
+				height: var(--theme-header-5-nav--width);
+				width: var(--theme-header-5-nav--width);
 			}
 		}
 
