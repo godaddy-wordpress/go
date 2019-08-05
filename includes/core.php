@@ -517,7 +517,6 @@ function get_available_design_styles() {
 			],
 		],
 	];
-
 	/**
 	 * Filters the supported design styles.
 	 *
@@ -527,7 +526,6 @@ function get_available_design_styles() {
 	 * where the index is the slug of design style and value an array of options that sets up the design styles.
 	 */
 	$supported_design_styles = apply_filters( 'maverick_design_styles', $default_design_styles );
-
 	return $supported_design_styles;
 }
 
