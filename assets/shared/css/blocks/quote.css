@@ -1,6 +1,6 @@
 .wp-block-quote {
 	border: none;
-	color: hsl(var(--theme-h2--color));
+	color: hsl(var(--theme-color-heading));
 	font-family: var(--theme-heading--font);
 	font-weight: var(--theme-quote--weight);
 	padding: 0;
@@ -24,7 +24,7 @@
 	}
 
 	& cite {
-		color: hsla(var(--theme-color-secondary), 0.75);
+		color: hsl(var(--theme-color-text-secondary));
 		display: block;
 		font-family: var(--theme-body--font);
 		font-size: 0.85rem;
