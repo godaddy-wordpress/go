@@ -40,7 +40,7 @@ body {
 
 	&.menu-is-open .site-header .custom-logo-link,
 	&.menu-is-open .site-header .site-branding__link {
-		display: none;
+		opacity: 0;
 	}
 
 	&.menu-is-open .primary-menu {
@@ -99,10 +99,16 @@ body {
 
 		& .site-navigation {
 			overflow: visible;
-			text-align: center;
+
+			& .primary-menu {
+				opacity: 1;
+				transform: scale(1,1);
+				transition: opacity 250ms ease-in-out, visibility 0s 0s linear, transform 250ms ease-in-out;
+				visibility: visible;
+			}
 
 			@media (--large) {
-				align-items: flex-start;
+				align-items: center;
 				bottom: 0;
 				height: 100%;
 				left: 0;
