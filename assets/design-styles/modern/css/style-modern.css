@@ -47,6 +47,12 @@
 	margin-bottom: 0.75rem;
 }
 
+.site-navigation {
+	@media (--large) {
+		margin-top: -0.3rem;
+	}
+}
+
 .primary-menu a {
 
 	&::after {
@@ -68,6 +74,11 @@
 			transform: scaleX(0);
 			transform-origin: right center;
 		}
+	}
+
+	&:focus::after {
+		transform: scaleX(0);
+		transform-origin: right center;
 	}
 }
 

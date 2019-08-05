@@ -38,20 +38,30 @@ body {
 		visibility: hidden;
 	}
 
+	&.menu-is-open .site-header .custom-logo-link,
+	&.menu-is-open .site-header .site-branding__link {
+		opacity: 0;
+	}
+
 	&.menu-is-open .primary-menu {
-		padding-bottom: var(--theme-spacing-unit-5);
-		padding-top: var(--theme-spacing-unit-5);
+		padding-bottom: 4rem;
+		padding-top: 4rem;
 		z-index: 11;
 
 		& .menu-item {
 			padding-bottom: 1.25rem;
 			padding-top: 1.25rem;
 		}
+
+		& a {
+			color: hsl(var(--theme-offscreen-nav--color));
+		}
 	}
 
 	&.menu-is-open .site-navigation {
+		background-color: hsl(var(--theme-offscreen-nav--bg));
 		bottom: 0;
-		height: calc(100% - 70px);
+		height: 100%;
 		left: 0;
 		opacity: 1;
 		padding-left: var(--theme-block-padding-x);
@@ -59,6 +69,8 @@ body {
 		position: fixed;
 		right: 0;
 		visibility: visible;
+		width: auto;
+		z-index: 999;
 
 		@media (--large) {
 			height: auto;
@@ -66,27 +78,16 @@ body {
 		}
 	}
 
+	&.menu-is-open .site-navigation__toggle-icon-inner,
+	&.menu-is-open .site-navigation__toggle-icon-inner::before,
+	&.menu-is-open .site-navigation__toggle-icon-inner::after {
+		background-color: hsl(var(--theme-offscreen-nav--color));
+	}
+
 	&.menu-is-open[data-header="header-1"] {
 
 		& .site-search__toggle {
 			display: none;
-		}
-	}
-
-	&.menu-is-open[data-header="header-3"] {
-
-		&::after {
-			background-color: hsla(var(--theme-has-offscreen-nav-overlay-color), 0.7);
-			bottom: 0;
-			content: "";
-			display: block;
-			height: 100%;
-			left: 0;
-			position: fixed;
-			right: 0;
-			top: 0;
-			width: 100%;
-			z-index: 10;
 		}
 	}
 
@@ -97,19 +98,26 @@ body {
 		width: 100%;
 
 		& .site-navigation {
+			overflow: visible;
+
+			& .primary-menu {
+				opacity: 1;
+				transform: scale(1,1);
+				transition: opacity 250ms ease-in-out, visibility 0s 0s linear, transform 250ms ease-in-out;
+				visibility: visible;
+			}
+
 			@media (--large) {
-				align-items: flex-start;
+				align-items: center;
 				bottom: 0;
-				height: calc(100% - 98px);
+				height: 100%;
 				left: 0;
 				overflow-y: scroll;
 				padding-left: 0;
 				position: fixed;
 				right: 0;
-				top: 98px;
 
 				& .primary-menu {
-					text-align: center;
 
 					& .sub-menu a,
 					& .menu-item {
@@ -123,22 +131,12 @@ body {
 				}
 			}
 
-			& .primary-menu a {
-				color: hsl(var(--theme-site-nav--color));
-				text-transform: uppercase;
-
-				&::before {
-					background-color: hsl(var(--theme-site-nav--color));
-				}
-			}
-
 			& .site-navigation .primary-menu .menu-item-has-children > [aria-haspopup] {
 				@media (--large) {
 					margin-left: 10px;
 				}
 			}
 
-			/* We want it to be visible in this variant */
 			& [aria-hidden="true"] {
 				opacity: 1;
 				visibility: visible;
@@ -156,39 +154,58 @@ body {
 		top: 0;
 		width: 100%;
 
+		&::after {
+			opacity: 1;
+			transition: opacity 100ms linear, visibility 0ms 0ms linear;
+			visibility: visible;
+		}
+
 		& .site-navigation {
 			align-items: flex-start;
-			height: 100%;
-
-			& .primary-menu {
-				height: 100%;
-				overflow-y: scroll;
-			}
+			background-color: hsl(var(--theme-header-5-offscreen-nav--bg));
+			overflow: visible;
+			padding-left: 0;
+			padding-right: 0;
+			text-align: center;
+			width: 100%;
 
 			@media (--medium) {
-				width: 440px;
+				width: 26em;
 			}
 
 			@media (--large) {
-				width: 600px;
+				width: 30em;
 			}
+		}
+
+		& .site-navigation__toggle {
+			height: calc(var(--theme-site-nav-toggle--size) + 2rem);
+			width: calc(var(--theme-site-nav-toggle--size) + 2rem);
+
+			@media (--medium) {
+				height: var(--theme-header-5-nav--width);
+				width: var(--theme-header-5-nav--width);
+			}
+		}
+
+		&.menu-is-open .site-navigation__toggle-icon-inner,
+		&.menu-is-open .site-navigation__toggle-icon-inner::before,
+		&.menu-is-open .site-navigation__toggle-icon-inner::after {
+			background-color: hsl(var(--theme-header-5-offscreen-nav--color));
 		}
 
 		& .primary-menu {
-			left: auto;
-			position: relative;
-		}
+			height: 100%;
+			left: 0;
+			overflow-y: scroll;
+			padding-top: 4em;
 
-		& .site-footer,
-		& .content-area,
-		& .site-header .site-branding,
-		& .site-search__toggle,
-		& .post__hero,
-		& .entry-header {
-			transform: translate3d(370px, 0, 0);
+			@media (--medium) {
+				padding-top: 8em;
+			}
 
-			@media (--large) {
-				transform: translate3d(500px, 0, 0);
+			& a {
+				color: hsl(var(--theme-header-5-offscreen-nav--color));
 			}
 		}
 	}

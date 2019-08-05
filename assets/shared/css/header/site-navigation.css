@@ -1,9 +1,4 @@
-/**
- * Primary menu
- */
-
 .site-navigation {
-	background-color: hsla(var(--theme-has-offscreen-nav-overlay-color));
 	bottom: 0;
 	display: flex;
 	flex-direction: column;
@@ -13,7 +8,7 @@
 	opacity: 0;
 	overflow-y: scroll;
 	position: fixed;
-	top: 70px;
+	top: 0;
 
 	@media (--large) {
 		align-items: center;
@@ -36,9 +31,6 @@
 	}
 }
 
-/* Whenever a panel nav is opened, it receives a menu-is-open class.
-We want to fix the body height to prevent scrolling when this system
-is open. */
 body.menu-is-open {
 	@media (max-width: 1087px) {
 		height: 100%;
