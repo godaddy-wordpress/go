@@ -6,6 +6,7 @@
 	# Base
 	# Colors
 	# Typography
+	# Buttons
 	# Header
 	# Header Navigation Toggle
 	# Header Search Toggle
@@ -115,13 +116,13 @@
 		--theme-text-sm: 90%;
 	}
 
-	/* Links */
+	/* Links @todo - Needs reviewing */
 	--theme-link-color: var(--theme-color-text-secondary);
 	--theme-link-color-interactive: var(--theme-color-text-secondary);
 	--theme-link-underline-color: var(--theme-color-text-secondary);
 	--theme-link-underline-color-interactive: var(--theme-color-text-secondary);
 
-	/* Blockquote */
+	/* Blockquote @todo - Needs reviewing  */
 	--theme-quote--font-size: 1.9rem;
 	--theme-quote--leading: 1.36;
 	--theme-quote--weight: 700;
@@ -141,12 +142,33 @@
 		--theme-quote-large--font-size: 2.75em;
 	}
 
-	/* Bulleted Lists */
+	/* Bulleted Lists @todo - Needs reviewing  */
 	--theme-list-bullet-color: var(--theme-color-text-secondary);
 	--theme-list-font-size: 1.0625rem;
 	--theme-list-line-height: 1.89;
-	--theme-list-color: var(-theme-color-secondary);
+	--theme-list-color: var(--theme-color-text-secondary);
 	--theme-list-font-weight: 700;
+
+
+	/*--------------------------------------------------------------
+	## Buttons
+	--------------------------------------------------------------*/
+
+	--theme-button--bg: var(--theme-color-primary);
+	--theme-button--bg-interactive: var(--theme-color-heading);
+	--theme-button--color: 0, 0%, 100%;
+	--theme-button--font-size: 0.65rem;
+	--theme-button--font: var(--theme-heading--font);
+	--theme-button--padding-x: 2rem;
+	--theme-button--padding-y: 1.6rem;
+	--theme-button--radius: 0;
+	--theme-button--text-transform: uppercase;
+	--theme-button--tracking: 3px;
+	--theme-button--weight: 600;
+
+	/* Disabled */
+	--theme-button--disabled-bg: 0, 2%, 89%;
+	--theme-button--disabled-color: 0, 0%, 61%;
 
 
 	/*--------------------------------------------------------------
@@ -174,14 +196,11 @@
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font-family: var(--theme-heading--font);
-	--theme-site-nav--font-size: 1rem;
+	--theme-site-nav--font-size: 0.75rem;
+	--theme-site-nav--font-size-mobile: 1rem;
 	--theme-site-nav--font-weight: 700;
 	--theme-site-nav--text-transform: uppercase;
 	--theme-site-nav--transition: var(--theme-link-transition);
-
-	@media (--large) {
-		--theme-site-nav--font-size: 0.75rem;
-	}
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);
@@ -191,7 +210,7 @@
 		--theme-submenu--color: 0, 0%, 100%;
 	}
 
-	/* Header Variation Specific */
+	/* Header Variations */
 	--theme-header-3--padding-y: 3.5rem;
 	--theme-header-3-nav--margin-top: 1.5rem;
 
@@ -199,18 +218,32 @@
 		--theme-header-3--padding-y: 8rem;
 	}
 
+	--theme-header-5-nav--width: 70px;
+	--theme-header-5--shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+	@media (--large) {
+		--theme-header-5-nav--width: 100px;
+	}
+
+
 	/*--------------------------------------------------------------
-	## Header Navigation Toggle
+	## Navigation Toggle
 	--------------------------------------------------------------*/
 
-	/* Header > Navigation > Toggle */
+	/* Navigation > Toggle */
 	--theme-site-nav-toggle--color: var(--theme-color-heading);
 	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading); /* Not currently in use, could be hover color for primary color */
 	--theme-site-nav-toggle--size: 2rem;
 
 	/* Offscreen Navigation */
-	--theme-has-offscreen-nav-overlay-color: var(--color-white);
+	--theme-offscreen-nav--bg: var(--color-white);
+	--theme-offscreen-nav--color: var(--theme-color-heading);
+	--theme-offscreen-nav-overlay--color: hsla(var(--color-black), 0.15);
 	--theme-offscreen-nav-padding: 2rem;
+
+	/* Header 5 > Offscreen Navigation */
+	--theme-header-5-offscreen-nav--bg: var(--color-white);
+	--theme-header-5-offscreen-nav--color: var(--theme-color-heading);
 
 
 	/*--------------------------------------------------------------
@@ -271,147 +304,6 @@
 	/* Footer Variations Specific */
 	--theme-footer-2-site-info--border-color: 0, 0%, 90%;
 
-
-	/*--------------------------------------------------------------
-	## Buttons
-	--------------------------------------------------------------*/
-
-	--theme-button--bg: var(--theme-color-primary);
-	--theme-button--bg-interactive: var(--theme-color-heading);
-	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-size: 0.65rem;
-	--theme-button--font: var(--theme-heading--font);
-	--theme-button--padding-x: 2rem;
-	--theme-button--padding-y: 1.6rem;
-	--theme-button--radius: 0;
-	--theme-button--text-transform: uppercase;
-	--theme-button--tracking: 3px;
-	--theme-button--weight: 600;
-
-
-
-
-
-	/* SHARED: Vertical button padding */
-	--theme-button-block-vertical-spacing-unit: 1.5rem;
-
-	/* SHARED: Horizontal button padding */
-	--theme-button-block-horizontal-spacing-unit: 1.5rem;
-
-	/* SHARED: Line height */
-	--theme-button-block-line-height: 1;
-
-	/* PRIMARY BUTTON: Font color */
-	--theme-button-block-color: var(--theme-color-primary); /* #fff */
-	--theme-button-block-color-interactive: var(--theme-color-primary); /* #fff */
-
-	/* PRIMARY BUTTON: Font size */
-	--theme-button-block-font-size: 0.85rem;
-
-	/* PRIMARY BUTTON: Font weight */
-	--theme-button-block-font-weight: 700;
-
-	/* PRIMARY BUTTON: Background color */
-	--theme-button-block-background-color: var(--theme-color-heading);
-	--theme-button-block-background-color-interactive: var(--theme-color-heading);
-
-	/* PRIMARY BUTTON: Border */
-	--theme-button-block-border: none;
-	--theme-button-block-border-interactive: none;
-
-	/* PRIMARY BUTTON: Border radius */
-	--theme-button-block-border-radius: 0;
-
-	/* PRIMARY BUTTON: Box shadow (use none to remove) */
-	--theme-button-block-shadow: none;
-	--theme-button-block-shadow-interactive: none;
-
-	/* PRIMARY BUTTON: Padding */
-	--theme-button-block-padding: var(--theme-button-block-vertical-spacing-unit) var(--theme-button-block-horizontal-spacing-unit) calc(var(--theme-button-block-vertical-spacing-unit) - 1px);
-
-	/* PRIMARY BUTTON: Text decoration */
-	--theme-button-block-text-decoration: none;
-	--theme-button-block-text-decoration-interactive: none;
-
-	/* PRIMARY BUTTON: Text transform */
-	--theme-button-block-text-transform: uppercase;
-
-	/* SECONDARY BUTTON: Background color */
-	--theme-button-block-outline-background-color: var(--theme-color-primary); /* #fff */
-	--theme-button-block-outline-background-color-interactive: var(--theme-color-primary); /* #fff */
-
-	/* SECONDARY BUTTON: Border */
-	--theme-button-block-outline-border: 2px solid hsl(var(--theme-color-secondary));
-	--theme-button-block-outline-border-interactive: 2px solid hsl(var(--theme-color-secondary));
-
-	/* SECONDARY BUTTON: Border radius */
-	--theme-button-block-outline-border-radius: 0;
-
-	/* SECONDARY BUTTON: Box shadow (use none to remove) */
-	--theme-button-block-outline-shadow: none;
-	--theme-button-block-outline-shadow-interactive: 0 0 8px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.12);
-
-	/* SECONDARY BUTTON: Font color */
-	--theme-button-block-outline-color: var(--theme-color-text-secondary);
-	--theme-button-block-outline-color-interactive: var(--theme-color-text-secondary);
-
-	/* SECONDARY BUTTON: Font size */
-	--theme-button-block-outline-font-size: 1.0625rem;
-
-	/* SECONDARY BUTTON: Font weight */
-	--theme-button-block-outline-font-weight: 700;
-
-	/* SECONDARY BUTTON: Padding */
-	--theme-button-block-outline-padding: calc(var(--theme-button-block-vertical-spacing-unit) - 2px) calc(var(--theme-button-block-horizontal-spacing-unit) - 2px);
-
-	/* SECONDARY BUTTON: Text decoration */
-	--theme-button-block-outline-text-decoration: none;
-	--theme-button-block-outline-text-decoration-interactive: underline;
-
-	/* SECONDARY BUTTON: Text transform */
-	--theme-button-block-outline-text-transform: uppercase;
-
-	/* ALTERNATE BUTTON: Border color */
-	--theme-button-block-alternate-border: 3px solid hsl(var(--theme-color-secondary));
-	--theme-button-block-alternate-border-interactive: 3px solid hsl(var(--theme-color-secondary));
-
-	/* ALTERNATE BUTTON: Font color */
-	--theme-button-block-alternate-color: var(--theme-color-text-secondary);
-	--theme-button-block-alternate-color-interactive: var(--theme-color-text-secondary);
-
-	/* ALTERNATE BUTTON: Font size */
-	--theme-button-block-alternate-font-size: 0.875rem;
-
-	/* ALTERNATE BUTTON: Font weight */
-	--theme-button-block-alternate-font-weight: 700;
-
-	/* ALTERNATE BUTTON: Padding */
-	--theme-button-block-alternate-padding: var(--theme-button-block-vertical-spacing-unit) 0 0;
-
-	/* ALTERNATE BUTTON: Text transform */
-	--theme-button-block-alternate-text-transform: uppercase;
-
-	/* DISABLED BUTTON: Background color */
-	--theme-button-block-disabled-background-color: 0, 2%, 89%; /* #e3e2e2 */
-
-	/* DISABLED BUTTON: Border radius */
-	--theme-button-block-disabled-border-radius: 0;
-
-	/* DISABLED BUTTON: Font color */
-	--theme-button-block-disabled-color: 0, 0%, 61%; /* #9b9b9b */
-
-	/* DISABLED BUTTON: Font weight */
-	--theme-button-block-disabled-font-weight: 400;
-
-	/* DISABLED BUTTON: Font size */
-	--theme-button-block-disabled-font-size: 1.0625rem;
-
-	/* DISABLED BUTTON: Padding */
-	--theme-button-block-disabled-padding: var(--theme-button-block-vertical-spacing-unit) var(--theme-button-block-horizontal-spacing-unit);
-
-	/* UNDERLINED BUTTON: Underline color */
-	--theme-button-block-underlined-color: var(--theme-color-primary); /* #fff */
-	--theme-button-block-underlined-color-interactive: var(--theme-color-primary); /* #fff */
 
 	/***************************************************************
 	* Gutenberg core blocks
@@ -491,7 +383,6 @@
 
 	/* Feedback colors: error, success, warning, informational. */
 	--theme-feedback-informational-color: 208, 100%, 43%;
-
 
 	/* Spacing units */
 	--theme-spacing-unit: 0.5rem;

@@ -2,7 +2,7 @@
 .wp-block-embed {
 
 	& figcaption {
-		color: hsla(var(--theme-color-secondary), 0.75);
+		color: hsl(var(--theme-color-text-secondary));
 		font-size: 0.8125rem;
 		margin-bottom: -0.6rem !important;
 		text-align: left;
@@ -11,8 +11,8 @@
 	&.alignfull {
 
 		& figcaption {
-			padding-left: var(--theme-block-padding-x);
-			padding-right: var(--theme-block-padding-x);
+			padding-left: 1.25rem;
+			padding-right: 1.25rem;
 		}
 	}
 }

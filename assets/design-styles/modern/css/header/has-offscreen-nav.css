@@ -1,0 +1,6 @@
+.has-offscreen-nav {
+
+	&.logged-in.menu-is-open .site-navigation {
+		margin-top: 46px;
+	}
+}

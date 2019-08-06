@@ -19,12 +19,12 @@ body {
 
 		/* Post Comment button */
 		& input[type="submit"] {
-			@mixin c-button-block-outline;
+			@mixin button;
 
 			&:hover,
 			&:focus,
 			&:active {
-				@mixin c-button-block-outline-hover;
+				@mixin button-hover;
 			}
 		}
 

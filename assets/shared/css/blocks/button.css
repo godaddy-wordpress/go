@@ -5,7 +5,7 @@
 	}
 
 	&.is-style-outline .wp-block-button__link {
-		padding: calc( var(--theme-button--padding-y) - 2px ) calc( var(--theme-button--padding-x) - 2px );
+		padding: calc(var(--theme-button--padding-y) - 2px) calc(var(--theme-button--padding-x) - 2px);
 	}
 
 	&.is-style-outline .wp-block-button__link:not(.has-text-color) {
@@ -17,6 +17,7 @@
 	}
 
 	&:not(.is-style-outline) .wp-block-button__link {
+
 		&:hover {
 			@mixin button-hover;
 		}
