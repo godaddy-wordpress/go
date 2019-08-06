@@ -83,8 +83,7 @@ module.exports = {
 			'**/*.php',
 			'dist/js/**/*.js',
 			'dist/css/**/*.css',
-			'dist/images/**/*.{jpg,jpeg,png,gif,svg}',
-			'dist/fonts/**/*.{eot,ttf,woff,woff2,svg}'
+			'dist/images/**/*.{jpg,jpeg,png,gif,svg}'
 		]
 	},
 	performance: {
