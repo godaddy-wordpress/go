@@ -1,7 +1,4 @@
-/**
- * Latest posts overrides
- */
-
+/*! Latest Posts */
 .content-area > .wp-block-latest-posts {
 	margin-bottom: var(--theme-spacing-unit-6);
 	margin-top: var(--theme-spacing-unit-6);

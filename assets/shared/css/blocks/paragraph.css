@@ -1,3 +1,4 @@
+/*! Paragraph */
 p.has-background {
 	max-width: calc(var(--theme-max-w-base) - 60px);
 }
