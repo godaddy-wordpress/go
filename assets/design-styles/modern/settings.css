@@ -120,11 +120,13 @@
 	/* Captions */
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.8125rem;
+	--theme-caption--alignment: left;
+
+	/* Links */
+	--theme-link--color: var(--theme-color-primary);
+	--theme-link--color-interactive: var(--theme-color-heading);
 
 
-	/* Links @todo - Needs reviewing */
-	--theme-link-color: var(--theme-color-text-secondary);
-	--theme-link-color-interactive: var(--theme-color-text-secondary);
 	--theme-link-underline-color: var(--theme-color-text-secondary);
 	--theme-link-underline-color-interactive: var(--theme-color-text-secondary);
 
