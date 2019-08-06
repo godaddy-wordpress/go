@@ -163,7 +163,7 @@
 			& > [aria-haspopup] {
 
 				&::after {
-					background-image: url("../../dist/shared/images/arrow-down.svg");
+					background-image: url("../../dist/images/arrow-down.svg");
 				}
 			}
 		}
