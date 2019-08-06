@@ -43,6 +43,7 @@
 @import url("blocks/latest-comments.css");
 @import url("blocks/quote.css");
 @import url("blocks/paragraph.css");
+@import url("blocks/verse.css");
 
 /* CoBlocks */
 @import url("coblocks/author.css");

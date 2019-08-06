@@ -89,3 +89,10 @@ p.has-background {
 		margin-right: var(--theme-block-padding-x);
 	}
 }
+
+.wp-block-verse {
+	@media (max-width: 730px) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
