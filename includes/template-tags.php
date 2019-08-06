@@ -441,7 +441,7 @@ function get_palette_color( $color, $format = 'RBG' ) {
 	$the_color = false;
 
 	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
-		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color . '_color' ];
+		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
 	}
 
 	if ( $color_override ) {
@@ -475,7 +475,7 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
 	}
 
 	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
-		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color . '_color' ];
+		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
 	}
 
 	if ( 'HSL' === $format ) {
