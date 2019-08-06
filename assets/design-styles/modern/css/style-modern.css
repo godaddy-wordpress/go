@@ -70,11 +70,7 @@
 .footer-navigation__title,
 [data-footer="footer-3"] .footer-navigation,
 [data-footer="footer-1"] .footer-navigation li {
-	letter-spacing: 2px;
-}
-
-.footer-navigation__title {
-	margin-bottom: 0.75rem;
+	letter-spacing: 3px;
 }
 
 /* Blocks with applied padding */
