@@ -152,31 +152,6 @@
 	--theme-separator--color: var(--theme-color-heading);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	/* Bulleted Lists @todo - Needs reviewing  */
-	--theme-list-bullet-color: var(--theme-color-text-secondary);
-	--theme-list-font-size: 1.0625rem;
-	--theme-list-line-height: 1.89;
-	--theme-list-color: var(--theme-color-text-secondary);
-	--theme-list-font-weight: 700;
-
-
 	/*--------------------------------------------------------------
 	## Buttons
 	--------------------------------------------------------------*/
@@ -330,18 +305,6 @@
 
 	/* Footer Variations Specific */
 	--theme-footer-2-site-info--border-color: 0, 0%, 90%;
-
-
-
-
-
-
-
-
-
-	/***************************************************************
-	* Gutenberg core blocks
-	***************************************************************/
 
 
 	/***************************************************************

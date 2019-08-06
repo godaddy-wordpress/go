@@ -6,11 +6,10 @@
 @import url("../../../shared/css/config/media-queries.css");
 @import url("../settings.css");
 
-/* Elements - all the HTML elements coverage */
-@import url("elements/headings.css");
+/* Elements */
 @import url("elements/forms.css");
 
-/* Gutenberg core blocks overrides */
+/* Core Blocks */
 @import url("blocks/button.css");
 
 /* CoBlocks */
@@ -18,11 +17,6 @@
 @import url("coblocks/hero.css");
 @import url("coblocks/media-card.css");
 @import url("coblocks/pricing-table.css");
-
-/* Components */
-@import url("header/has-offscreen-nav.css");
-@import url("header/site-navigation__toggle.css");
-@import url("header/site-navigation.css");
 
 /* WooCommerce */
 @import url("woocommerce/button.css");

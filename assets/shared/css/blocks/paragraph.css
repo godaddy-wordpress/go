@@ -14,7 +14,7 @@ p.has-background {
 		padding-top: 0;
 	}
 
-	&:after {
+	&::after {
 		padding-top: 0;
 	}
 }
