@@ -1,5 +1,6 @@
 .wp-block-image,
-.wp-block-embed {
+.wp-block-embed,
+.wp-block-audio {
 
 	& figcaption {
 		color: hsl(var(--theme-caption--color));

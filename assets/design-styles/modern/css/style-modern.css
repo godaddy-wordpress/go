@@ -83,7 +83,7 @@
 	margin-bottom: 0.75rem;
 }
 
-/* Blocks */
+/* Blocks with applied padding */
 p.has-background {
 	@media (max-width: 795px) {
 		margin-left: var(--theme-block-padding-x);
@@ -92,6 +92,13 @@ p.has-background {
 }
 
 .wp-block-verse {
+	@media (max-width: 730px) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
+
+.wp-block-code {
 	@media (max-width: 730px) {
 		margin-left: var(--theme-block-padding-x);
 		margin-right: var(--theme-block-padding-x);

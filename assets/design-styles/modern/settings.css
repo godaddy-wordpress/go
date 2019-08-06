@@ -184,7 +184,7 @@
 	--theme-button--bg: var(--theme-color-primary);
 	--theme-button--bg-interactive: var(--theme-color-heading);
 	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-size: 0.65rem;
+	--theme-button--font-size: 0.75rem;
 	--theme-button--font: var(--theme-heading--font);
 	--theme-button--padding-x: 2rem;
 	--theme-button--padding-y: 1.6rem;
