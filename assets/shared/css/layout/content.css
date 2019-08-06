@@ -45,29 +45,22 @@
 	& h6 {
 
 		& + p {
-			margin-top: calc(-0.8 * var(--theme-block-spacing-huge)) !important;
+			/* Remove space between headings and paragraphs */
+			margin-top: calc(-0.825 * var(--theme-block-spacing-huge)) !important;
 		}
 
 		& + .wp-block-button {
+			/* Remove space between headings and button blocks */
 			margin-top: calc(-0.65 * var(--theme-block-spacing-huge)) !important;
 		}
 	}
 
 	& p ~ {
 
-		& h1,
-		& h2,
-		& h3,
-		& h4,
-		& h5,
-		& h6 {
-			margin-bottom: 0 !important;
-			margin-top: var(--theme-block-spacing-larger) !important;
-			padding-top: 2rem;
-		}
-
 		& figure,
-		& blockquote {
+		& blockquote,
+		& .wp-block-button {
+			/* Remove huge spacing when there's an image/blockquote/button right after a paragraph */
 			margin-bottom: var(--theme-block-spacing-larger) !important;
 			margin-top: var(--theme-block-spacing-larger) !important;
 		}

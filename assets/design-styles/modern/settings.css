@@ -84,17 +84,17 @@
 	--theme-heading--weight: 700;
 	--theme-heading--style: normal;
 
-	--theme-h1--font-size: 2.5rem;
-	--theme-h2--font-size: 2rem;
-	--theme-h3--font-size: 1.75rem;
-	--theme-h4--font-size: 1.65rem;
+	--theme-h1--font-size: 2.25rem;
+	--theme-h2--font-size: 1.85rem;
+	--theme-h3--font-size: 1.6rem;
+	--theme-h4--font-size: 1.5rem;
 	--theme-h5--font-size: 1.35rem;
 	--theme-h6--font-size: 1.15rem;
 
-	@media (--large) {
-		--theme-h1--font-size: 3rem;
+	@media (--medium) {
+		--theme-h1--font-size: 2.5rem;
 		--theme-h2--font-size: 2.25rem;
-		--theme-h3--font-size: 2rem;
+		--theme-h3--font-size: 1.85rem;
 	}
 
 	--theme-h1--color: var(--theme-color-heading);
