@@ -1,3 +1,5 @@
+import './customizer/controls/range-control';
+
 /**
  * Scripts within the customizer controls window.
  *
