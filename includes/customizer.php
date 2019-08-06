@@ -566,7 +566,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_section(
 		'footer_social_section',
 		[
-			'title'      => esc_html__( 'Social Icons', 'maverick' ),
+			'title'      => esc_html__( 'Social Media', 'maverick' ),
 			'capability' => 'edit_theme_options',
 			'panel'      => 'maverick_footer_settings',
 		]
