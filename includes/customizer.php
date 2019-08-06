@@ -218,11 +218,9 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
-		'maverick_design_style_section',
+		'color_schemes_section',
 		[
-			'title'      => esc_html__( 'Design Styles', 'maverick' ),
-			'capability' => 'edit_theme_options',
-			'panel'      => 'maverick_global_settings',
+			'title' => esc_html__( 'Color Scheme', 'maverick' ),
 		]
 	);
 
@@ -243,18 +241,11 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			[
 				'label'       => esc_html__( 'Design Style', 'maverick' ),
 				'description' => esc_html__( 'Choose one of the supported design styles.', 'maverick' ),
-				'section'     => 'maverick_design_style_section',
+				'section'     => 'color_schemes_section',
 				'settings'    => 'maverick_design_style',
 				'choices'     => \Maverick\Core\get_available_design_styles(),
 			]
 		)
-	);
-
-	$wp_customize->add_section(
-		'color_schemes_section',
-		[
-			'title' => esc_html__( 'Color Scheme', 'maverick' ),
-		]
 	);
 
 	$wp_customize->add_setting(
