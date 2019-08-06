@@ -467,19 +467,19 @@ function get_available_design_styles() {
 					'secondary_color' => '#686868',
 					'tertiary_color'  => '#cccccc',
 				],
-				'two'     => [
+				'blush'   => [
 					'label'           => esc_html__( 'Blush', 'maverick' ),
 					'primary_color'   => '#ef0254',
 					'secondary_color' => '#ff5c8d',
 					'tertiary_color'  => '#ffc1d1',
 				],
-				'three'   => [
+				'indigo'  => [
 					'label'           => esc_html__( 'Indigo', 'maverick' ),
 					'primary_color'   => '#283593',
 					'secondary_color' => '#5f5fc4',
 					'tertiary_color'  => '#d1d9ff',
 				],
-				'four'    => [
+				'pacific' => [
 					'label'           => esc_html__( 'Pacific', 'maverick' ),
 					'primary_color'   => '#20534d',
 					'secondary_color' => '#00bfa5',
@@ -512,7 +512,7 @@ function get_available_design_styles() {
 					'secondary_color' => '#a0510e',
 					'tertiary_color'  => '#123456',
 				],
-				'two'     => [
+				'dark'    => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#3f5836',
 					'secondary_color' => '#293922',
@@ -532,7 +532,7 @@ function get_available_design_styles() {
 					'secondary_color' => '#f3f0ed',
 					'tertiary_color'  => '#123456',
 				],
-				'two'     => [
+				'dark'    => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#f1f4f4',
 					'secondary_color' => '#ebeeee',
@@ -552,7 +552,7 @@ function get_available_design_styles() {
 					'secondary_color' => '#f1f1f1',
 					'tertiary_color'  => '#123456',
 				],
-				'two'     => [
+				'dark'    => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#49384d',
 					'secondary_color' => '#f7f5e9',
@@ -572,7 +572,7 @@ function get_available_design_styles() {
 					'secondary_color' => '#fcae6e',
 					'tertiary_color'  => '#123456',
 				],
-				'two'     => [
+				'dark'    => [
 					'label'           => esc_html__( 'Dark', 'maverick' ),
 					'primary_color'   => '#41b093',
 					'secondary_color' => '#eecd94',
