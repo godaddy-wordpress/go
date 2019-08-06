@@ -19,7 +19,7 @@
 	--------------------------------------------------------------*/
 
 	/* Widths */
-	--theme-max-w-base: 680px;
+	--theme-max-w-base: 640px;
 	--theme-max-w-wide: 1280px;
 
 	/* Vertical Rhythm */
@@ -72,7 +72,7 @@
 	--------------------------------------------------------------*/
 
 	/* Body */
-	--theme-body--font: "Arimo", sans-serif;
+	--theme-body--font: "IBM Plex Sans", sans-serif;
 	--theme-body--font-size: 1rem;
 	--theme-body--leading: 1.9;
 	--theme-body--weight: 400;
@@ -80,6 +80,9 @@
 	/* Headings */
 	--theme-heading--font: "Montserrat", sans-serif;
 	--theme-heading--leading: 1.35;
+	--theme-heading--tracking: -0.025em;
+	--theme-heading--weight: 700;
+	--theme-heading--style: normal;
 
 	--theme-h1--font-size: 2.5rem;
 	--theme-h2--font-size: 2rem;
@@ -90,7 +93,7 @@
 
 	@media (--large) {
 		--theme-h1--font-size: 3rem;
-		--theme-h2--font-size: 2.5rem;
+		--theme-h2--font-size: 2.25rem;
 		--theme-h3--font-size: 2rem;
 	}
 
