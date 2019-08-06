@@ -78,7 +78,6 @@
 		& figure,
 		& blockquote,
 		& .wp-block-cover,
-		& .wp-block-button,
 		& .wp-block-columns {
 
 			/* Remove huge spacing when right after a paragraph */
@@ -86,7 +85,12 @@
 			margin-top: var(--theme-block-spacing-larger) !important;
 		}
 
-		& .wp-block-gallery:not([class*="align"]) {
+		& .wp-block-button {
+			margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5) !important;
+			margin-top: calc(var(--theme-block-spacing-larger) * 1.5) !important;
+		}
+
+		& .wp-block-gallery {
 			margin-bottom: calc(var(--theme-block-spacing-larger) - 35px);
 			margin-top: var(--theme-block-spacing-larger);
 
