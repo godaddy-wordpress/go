@@ -53,6 +53,34 @@
 
 .content-area {
 
+	& p ~ {
+
+		& figure,
+		& blockquote,
+		& .wp-block-cover,
+		& .wp-block-columns {
+
+			/* Remove huge spacing when right after a paragraph */
+			margin-bottom: var(--theme-block-spacing-larger) !important;
+			margin-top: var(--theme-block-spacing-larger) !important;
+		}
+
+		& .wp-block-button,
+		& .wp-block-separator {
+			margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5) !important;
+			margin-top: calc(var(--theme-block-spacing-larger) * 1.5) !important;
+		}
+
+		& .wp-block-gallery {
+			margin-bottom: calc(var(--theme-block-spacing-larger) - 35px);
+			margin-top: var(--theme-block-spacing-larger);
+
+			@media (--large) {
+				margin-bottom: calc(var(--theme-block-spacing-larger) - 45px);
+			}
+		}
+	}
+
 	& h1,
 	& h2,
 	& h3,
@@ -70,33 +98,6 @@
 
 			/* Remove space between headings and button blocks */
 			margin-top: calc(-0.65 * var(--theme-block-spacing-huge)) !important;
-		}
-	}
-
-	& p ~ {
-
-		& figure,
-		& blockquote,
-		& .wp-block-cover,
-		& .wp-block-columns {
-
-			/* Remove huge spacing when right after a paragraph */
-			margin-bottom: var(--theme-block-spacing-larger) !important;
-			margin-top: var(--theme-block-spacing-larger) !important;
-		}
-
-		& .wp-block-button {
-			margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5) !important;
-			margin-top: calc(var(--theme-block-spacing-larger) * 1.5) !important;
-		}
-
-		& .wp-block-gallery {
-			margin-bottom: calc(var(--theme-block-spacing-larger) - 35px);
-			margin-top: var(--theme-block-spacing-larger);
-
-			@media (--large) {
-				margin-bottom: calc(var(--theme-block-spacing-larger) - 45px);
-			}
 		}
 	}
 }

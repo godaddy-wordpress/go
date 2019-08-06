@@ -19,7 +19,7 @@
 			content: "“";
 			line-height: 1;
 			position: absolute;
-			transform: translate3d(-120%, 0, 0);
+			transform: translate3d(-120%, 20%, 0);
 		}
 
 		&::after {
@@ -40,11 +40,6 @@
 
 		& cite {
 			margin-top: -2.5rem;
-		}
-
-		& p,
-		& cite {
-			margin-left: 1.25rem;
 		}
 	}
 
