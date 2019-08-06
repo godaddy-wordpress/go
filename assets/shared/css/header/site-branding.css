@@ -59,7 +59,7 @@
 	}
 }
 
-.site-branding__link,
+.site-branding__link:focus,
 .custom-logo-link:focus {
 	@mixin outline;
 	outline-offset: 7px;

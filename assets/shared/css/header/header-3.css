@@ -19,23 +19,6 @@
 	}
 }
 
-.has-offscreen-nav.menu-is-open[data-header="header-3"] .site-navigation {
-
-	/* Will override all links (including sub links) for mobile,
-	so they appear same color */
-	& .primary-menu a {
-		color: hsl(var(--theme-site-nav--color));
-	}
-
-	/* Restore sub-menu colors when desktop style */
-	@media (--large) {
-
-		& .sub-menu a {
-			color: hsl(var(--theme-sub-menu-link-color));
-		}
-	}
-}
-
 /* When admin bar is on */
 body.admin-bar.has-offscreen-nav.menu-is-open[data-header="header-3"] .site-navigation {
 	height: calc(100% - 130px);
