@@ -117,6 +117,10 @@
 		--theme-text-sm: 90%;
 	}
 
+	/* Drop Cap */
+	--theme-dropcap--font-size: 5rem;
+	--theme-dropcap--weight: 700;
+
 	/* Captions */
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.8125rem;
