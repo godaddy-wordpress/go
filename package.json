@@ -10,7 +10,7 @@
   "author": {
     "name": "GoDaddy",
     "url": "https://www.godaddy.com",
-    "role": "developer"
+    "role": "Developer"
   },
   "scripts": {
     "start": "composer install && npm install && npm run build",

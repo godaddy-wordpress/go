@@ -1,10 +1,11 @@
 {
-  "name": "10up/godaddy",
+  "name": "godaddy/maverick",
   "type": "wordpress-theme",
   "authors": [
     {
-      "name": "10up",
-      "email": "info@10up.com"
+      "name": "GoDaddy",
+      "homepage": "http://www.godaddy.com",
+      "role": "Developer"
     }
   ],
   "autoload": {
