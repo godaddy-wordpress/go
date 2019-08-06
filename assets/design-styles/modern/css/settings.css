@@ -19,7 +19,7 @@
 	--------------------------------------------------------------*/
 
 	/* Widths */
-	--theme-max-w-base: 680px;
+	--theme-max-w-base: 640px;
 	--theme-max-w-wide: 1280px;
 
 	/* Vertical Rhythm */
@@ -72,7 +72,7 @@
 	--------------------------------------------------------------*/
 
 	/* Body */
-	--theme-body--font: "Arimo", sans-serif;
+	--theme-body--font: "IBM Plex Sans", sans-serif;
 	--theme-body--font-size: 1rem;
 	--theme-body--leading: 1.9;
 	--theme-body--weight: 400;
@@ -80,6 +80,9 @@
 	/* Headings */
 	--theme-heading--font: "Montserrat", sans-serif;
 	--theme-heading--leading: 1.35;
+	--theme-heading--tracking: -0.025em;
+	--theme-heading--weight: 700;
+	--theme-heading--style: normal;
 
 	--theme-h1--font-size: 2.5rem;
 	--theme-h2--font-size: 2rem;
@@ -90,7 +93,7 @@
 
 	@media (--large) {
 		--theme-h1--font-size: 3rem;
-		--theme-h2--font-size: 2.5rem;
+		--theme-h2--font-size: 2.25rem;
 		--theme-h3--font-size: 2rem;
 	}
 
@@ -196,14 +199,11 @@
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font-family: var(--theme-heading--font);
-	--theme-site-nav--font-size: 1rem;
+	--theme-site-nav--font-size: 0.75rem;
+	--theme-site-nav--font-size-mobile: 1rem;
 	--theme-site-nav--font-weight: 700;
 	--theme-site-nav--text-transform: uppercase;
 	--theme-site-nav--transition: var(--theme-link-transition);
-
-	@media (--large) {
-		--theme-site-nav--font-size: 0.75rem;
-	}
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);
@@ -213,7 +213,7 @@
 		--theme-submenu--color: 0, 0%, 100%;
 	}
 
-	/* Header Variation Specific */
+	/* Header Variations */
 	--theme-header-3--padding-y: 3.5rem;
 	--theme-header-3-nav--margin-top: 1.5rem;
 
@@ -221,18 +221,32 @@
 		--theme-header-3--padding-y: 8rem;
 	}
 
+	--theme-header-5-nav--width: 70px;
+	--theme-header-5--shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+	@media (--large) {
+		--theme-header-5-nav--width: 100px;
+	}
+
+
 	/*--------------------------------------------------------------
-	## Header Navigation Toggle
+	## Navigation Toggle
 	--------------------------------------------------------------*/
 
-	/* Header > Navigation > Toggle */
+	/* Navigation > Toggle */
 	--theme-site-nav-toggle--color: var(--theme-color-heading);
 	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading); /* Not currently in use, could be hover color for primary color */
 	--theme-site-nav-toggle--size: 2rem;
 
 	/* Offscreen Navigation */
-	--theme-has-offscreen-nav-overlay-color: var(--color-white);
+	--theme-offscreen-nav--bg: var(--color-white);
+	--theme-offscreen-nav--color: var(--theme-color-heading);
+	--theme-offscreen-nav-overlay--color: hsla(var(--color-black), 0.15);
 	--theme-offscreen-nav-padding: 2rem;
+
+	/* Header 5 > Offscreen Navigation */
+	--theme-header-5-offscreen-nav--bg: var(--color-white);
+	--theme-header-5-offscreen-nav--color: var(--theme-color-heading);
 
 
 	/*--------------------------------------------------------------

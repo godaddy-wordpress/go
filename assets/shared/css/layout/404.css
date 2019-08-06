@@ -17,8 +17,8 @@
 	padding-right: var(--theme-block-padding-x);
 
 	& .entry-header {
-		padding: 0;
 		margin-bottom: 3rem;
+		padding: 0;
 	}
 
 	& .page-title {

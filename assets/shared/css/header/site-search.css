@@ -95,6 +95,7 @@ body {
 	opacity: 1;
 	pointer-events: all;
 	transform: translateX(0);
+	z-index: 9999;
 }
 
 /* Override aria defaults */

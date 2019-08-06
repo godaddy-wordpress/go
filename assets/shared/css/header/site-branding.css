@@ -10,6 +10,14 @@
 	& a {
 		text-decoration-color: transparent;
 	}
+
+	& .custom-logo {
+		max-width: var(--theme-site-logo--width-mobile);
+
+		@media (--small) {
+			max-width: var(--theme-site-logo--width);
+		}
+	}
 }
 
 .site-branding__title {
@@ -59,7 +67,7 @@
 	}
 }
 
-.site-branding__link,
+.site-branding__link:focus,
 .custom-logo-link:focus {
 	@mixin outline;
 	outline-offset: 7px;
