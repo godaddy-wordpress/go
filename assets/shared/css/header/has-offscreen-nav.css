@@ -102,7 +102,7 @@ body {
 
 			& .primary-menu {
 				opacity: 1;
-				transform: scale(1,1);
+				transform: scale(1, 1);
 				transition: opacity 250ms ease-in-out, visibility 0s 0s linear, transform 250ms ease-in-out;
 				visibility: visible;
 			}
