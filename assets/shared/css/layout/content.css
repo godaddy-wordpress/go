@@ -45,11 +45,13 @@
 	& h6 {
 
 		& + p {
+
 			/* Remove space between headings and paragraphs */
 			margin-top: calc(-0.825 * var(--theme-block-spacing-huge)) !important;
 		}
 
 		& + .wp-block-button {
+
 			/* Remove space between headings and button blocks */
 			margin-top: calc(-0.65 * var(--theme-block-spacing-huge)) !important;
 		}
@@ -60,6 +62,7 @@
 		& figure,
 		& blockquote,
 		& .wp-block-button {
+
 			/* Remove huge spacing when there's an image/blockquote/button right after a paragraph */
 			margin-bottom: var(--theme-block-spacing-larger) !important;
 			margin-top: var(--theme-block-spacing-larger) !important;
