@@ -144,7 +144,8 @@
 	--theme-quote-large--border-color: var(--theme-color-primary);
 	--theme-quote-large--border: var(--theme-quote-large--border-width) var(--theme-quote-large--border-style) hsl(var(--theme-quote-large--border-color));
 
-
+	/* Separator */
+	--theme-separator--color: var(--theme-color-heading);
 
 
 
@@ -337,7 +338,7 @@
 	/***************************************************************
 	* Gutenberg core blocks
 	***************************************************************/
-	--theme-block-separator-color: var(--theme-color-text-secondary);
+
 
 	/***************************************************************
 	* CoBlocks blocks
