@@ -4,6 +4,7 @@
 	& figcaption {
 		color: hsl(var(--theme-caption--color));
 		font-size: var(--theme-caption--font-size);
+		font-style: var(--theme-caption--style);
 		margin-bottom: -0.6rem !important;
 		text-align: var(--theme-caption--alignment);
 	}

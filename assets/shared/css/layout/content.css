@@ -36,18 +36,18 @@
 
 	&.alignleft {
 		float: left;
-		max-width: 300px;
-		margin-top: 0;
 		margin-left: 0;
 		margin-right: 2rem;
+		margin-top: 0;
+		max-width: 300px;
 	}
 
 	&.alignright {
 		float: right;
-		max-width: 300px;
-		margin-top: 0;
-		margin-right: 0;
 		margin-left: 2rem;
+		margin-right: 0;
+		margin-top: 0;
+		max-width: 300px;
 	}
 }
 
@@ -77,9 +77,10 @@
 
 		& figure,
 		& blockquote,
+		& .wp-block-cover,
 		& .wp-block-button {
 
-			/* Remove huge spacing when there's an image/blockquote/button right after a paragraph */
+			/* Remove huge spacing when right after a paragraph */
 			margin-bottom: var(--theme-block-spacing-larger) !important;
 			margin-top: var(--theme-block-spacing-larger) !important;
 		}

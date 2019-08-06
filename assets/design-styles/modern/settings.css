@@ -84,7 +84,7 @@
 	--theme-heading--weight: 700;
 	--theme-heading--style: normal;
 
-	--theme-h1--font-size: 2.25rem;
+	--theme-h1--font-size: 2rem;
 	--theme-h2--font-size: 1.85rem;
 	--theme-h3--font-size: 1.6rem;
 	--theme-h4--font-size: 1.5rem;
@@ -121,34 +121,48 @@
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.8125rem;
 	--theme-caption--alignment: left;
+	--theme-caption--style: normal;
 
 	/* Links */
 	--theme-link--color: var(--theme-color-primary);
 	--theme-link--color-interactive: var(--theme-color-heading);
 
+	/* Blockquote */
+	--theme-quote--color: var(--theme-color-heading);
+	--theme-quote--font-size: var(--theme-h2--font-size);
+	--theme-quote--leading: var(--theme-heading--leading);
+	--theme-quote--weight: var(--theme-heading--weight);
+	--theme-quote--style: normal;
 
-	--theme-link-underline-color: var(--theme-color-text-secondary);
-	--theme-link-underline-color-interactive: var(--theme-color-text-secondary);
-
-	/* Blockquote @todo - Needs reviewing  */
-	--theme-quote--font-size: 1.9rem;
-	--theme-quote--leading: 1.36;
-	--theme-quote--weight: 700;
-
-	--theme-quote-large--font-size: 2.25rem;
+	/* Blockquote (Large) */
+	--theme-quote-large--color: var(--theme-color-heading);
+	--theme-quote-large--font-size: var(--theme-h1--font-size);
 	--theme-quote-large--leading: 1.3;
-	--theme-quote-large-font-style: italic;
-	--theme-quote-large-padding: 0.9rem 0 0 2rem;
-	--theme-quote-large-cite-margin-left: 1.25rem;
+	--theme-quote-large--style: italic;
+	--theme-quote-large--border-width: 0.45rem;
+	--theme-quote-large--border-style: solid;
+	--theme-quote-large--border-color: var(--theme-color-primary);
+	--theme-quote-large--border: var(--theme-quote-large--border-width) var(--theme-quote-large--border-style) hsl(var(--theme-quote-large--border-color));
 
-	--theme-quote-large-border-width: 0.45rem;
-	--theme-quote-large-border-style: solid;
-	--theme-quote-large-border: var(--theme-quote-large-border-width) var(--theme-quote-large-border-style);
 
-	@media (--large) {
-		--theme-quote--font-size: 2.15rem;
-		--theme-quote-large--font-size: 2.75em;
-	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	/* Bulleted Lists @todo - Needs reviewing  */
 	--theme-list-bullet-color: var(--theme-color-text-secondary);
