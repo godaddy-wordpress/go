@@ -1,10 +1,12 @@
 .content-area > * {
+
+	/* background: #f0f0f0; */
 	margin: var(--theme-block-spacing) auto;
 	max-width: var(--theme-max-w-base);
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
 
-	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image) {
+	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file) {
 		margin: var(--theme-block-spacing-huge) auto;
 	}
 
