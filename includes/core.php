@@ -197,7 +197,7 @@ function theme_setup() {
 }
 
 /**
- * Enqueue the correct fonts for the given design style
+ * Enqueue the correct font(s) for the given design style.
  */
 function fonts_url() {
 
@@ -460,20 +460,6 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
 			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Modern',
-			'fonts'         => [
-				'Arimo'      => [
-					'400',
-					'400i',
-					'700',
-					'700i',
-				],
-				'Montserrat' => [
-					'400',
-					'400i',
-					'700',
-					'700i',
-				],
-			],
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Shade', 'maverick' ),
@@ -498,6 +484,20 @@ function get_available_design_styles() {
 					'primary_color'   => '#20534d',
 					'secondary_color' => '#00bfa5',
 					'tertiary_color'  => '#afebe5',
+				],
+			],
+			'fonts'         => [
+				'Arimo'      => [
+					'400',
+					'400i',
+					'700',
+					'700i',
+				],
+				'Montserrat' => [
+					'400',
+					'400i',
+					'700',
+					'700i',
 				],
 			],
 		],
