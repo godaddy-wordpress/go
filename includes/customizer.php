@@ -235,17 +235,15 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new Switcher_Control(
-			$wp_customize,
-			'maverick_design_style_control',
-			[
-				'label'       => esc_html__( 'Design Style', 'maverick' ),
-				'description' => esc_html__( 'Choose one of the supported design styles.', 'maverick' ),
-				'section'     => 'color_schemes_section',
-				'settings'    => 'maverick_design_style',
-				'choices'     => \Maverick\Core\get_available_design_styles(),
-			]
-		)
+		'maverick_design_style_control',
+		[
+			'label'       => esc_html__( 'Design Style', 'maverick' ),
+			'description' => esc_html__( 'Choose one of the supported design styles.', 'maverick' ),
+			'section'     => 'color_schemes_section',
+			'settings'    => 'maverick_design_style',
+			'type'        => 'radio',
+			'choices'     => wp_list_pluck( \Maverick\Core\get_available_design_styles(), 'label' ),
+		]
 	);
 
 	$wp_customize->add_setting(
