@@ -8,9 +8,8 @@
     "url": "https://project-git-repo.tld"
   },
   "author": {
-    "name": "10up",
-    "email": "info@10up.com",
-    "url": "https://10up.com",
+    "name": "GoDaddy",
+    "url": "https://www.godaddy.com",
     "role": "developer"
   },
   "scripts": {
