@@ -108,16 +108,19 @@
 	--theme-text-xs: 78%;
 	--theme-text-sm: 82.5%;
 	--theme-text-sm--letter-spacing: 0.015em;
-	--theme-text-md: 105%;
 
 	@media (--small) {
 		--theme-text-sm: 85%;
-		--theme-text-md: 110%;
 	}
 
 	@media (--large) {
 		--theme-text-sm: 90%;
 	}
+
+	/* Captions */
+	--theme-caption--color: var(--theme-color-text-secondary);
+	--theme-caption--font-size: 0.8125rem;
+
 
 	/* Links @todo - Needs reviewing */
 	--theme-link-color: var(--theme-color-text-secondary);
@@ -308,10 +311,16 @@
 	--theme-footer-2-site-info--border-color: 0, 0%, 90%;
 
 
+
+
+
+
+
+
+
 	/***************************************************************
 	* Gutenberg core blocks
 	***************************************************************/
-	--theme-image-caption-text-color: var(--theme-color-text-secondary);
 	--theme-block-separator-color: var(--theme-color-text-secondary);
 
 	/***************************************************************
