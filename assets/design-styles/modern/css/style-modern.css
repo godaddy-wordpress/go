@@ -37,17 +37,6 @@
 	text-transform: uppercase;
 }
 
-.primary-menu,
-.footer-navigation__title,
-[data-footer="footer-3"] .footer-navigation,
-[data-footer="footer-1"] .footer-navigation li {
-	letter-spacing: 2px;
-}
-
-.footer-navigation__title {
-	margin-bottom: 0.75rem;
-}
-
 .site-navigation {
 	@media (--large) {
 		margin-top: -0.3rem;
@@ -83,6 +72,18 @@
 	}
 }
 
+.primary-menu,
+.footer-navigation__title,
+[data-footer="footer-3"] .footer-navigation,
+[data-footer="footer-1"] .footer-navigation li {
+	letter-spacing: 2px;
+}
+
+.footer-navigation__title {
+	margin-bottom: 0.75rem;
+}
+
+/* Blocks */
 p.has-background {
 	@media (max-width: 795px) {
 		margin-left: var(--theme-block-padding-x);
