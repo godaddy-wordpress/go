@@ -72,11 +72,12 @@
 		}
 
 		& .wp-block-gallery {
-			margin-bottom: calc(var(--theme-block-spacing-larger) - 35px);
-			margin-top: var(--theme-block-spacing-larger);
+			--spacing: calc((var(--theme-block-spacing-larger) * 1.5));
+			margin-bottom: calc(var(--spacing) - 15px);
+			margin-top: var(--spacing);
 
 			@media (--large) {
-				margin-bottom: calc(var(--theme-block-spacing-larger) - 45px);
+				margin-bottom: calc(var(--spacing) - 20px);
 			}
 		}
 	}
