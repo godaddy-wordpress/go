@@ -569,7 +569,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 			'title'       => esc_html__( 'Social Media', 'maverick' ),
 			'capability'  => 'edit_theme_options',
 			'description' => 'Add your own social media account links here to add social icons to the footer of your site.',
-			'panel'       => 'maverick_footer_settings',
+			'priority'    => 81,
 		]
 	);
 
