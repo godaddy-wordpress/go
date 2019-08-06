@@ -81,6 +81,8 @@
 	--theme-heading--font: "Montserrat", sans-serif;
 	--theme-heading--leading: 1.35;
 	--theme-heading--tracking: -0.025em;
+	--theme-heading--weight: 700;
+	--theme-heading--style: normal;
 
 	--theme-h1--font-size: 2.5rem;
 	--theme-h2--font-size: 2rem;
