@@ -1,8 +1,3 @@
-/**
- * Mixins
- */
-
-/* Buttons */
 @define-mixin button {
 	border-radius: var(--theme-button--radius);
 	box-sizing: border-box;
@@ -31,7 +26,6 @@
 	cursor: default;
 }
 
-/* Outline */
 @define-mixin outline {
 	outline-color: hsla(var(--theme-outline-color), 1);
 	outline-style: var(--theme-outline-style);
@@ -46,7 +40,6 @@
 	outline: none;
 }
 
-/* Select menu */
 @define-mixin select-menu {
 	appearance: button;
 	background-color: hsl(var(--theme-input-color-background));
@@ -75,7 +68,6 @@
 	width: 100%;
 }
 
-/* Select menu on focus */
 @define-mixin select-menu-focus {
 	border-color: hsl(var(--theme-input-stroke-color-focus));
 	box-shadow: var(--theme-input-box-shadow-focus);
@@ -83,14 +75,12 @@
 	outline: 0;
 }
 
-/* Checkbox and Radio */
 @define-mixin checkbox-radio-label {
 	align-items: center;
 	display: flex;
 	padding-left: 30px;
 }
 
-/* Checkbox and Radio :before */
 @define-mixin checkbox-radio-label-before {
 	background-color: hsl(var(--theme-checkbox-radio-fill));
 	content: "";
@@ -103,17 +93,14 @@
 	width: 20px;
 }
 
-/* Checkbox :before asset */
 @define-mixin checkbox-label-before {
 	mask-image: url("../shared/images/checkbox.svg");
 }
 
-/* Checkbox :checked:before asset */
 @define-mixin checkbox-label-checked-before {
 	mask-image: url("../shared/images/checkbox-checked.svg");
 }
 
-/* Radio :before asset */
 @define-mixin radio-label-before {
 	background-color: hsl(var(--color-white));
 	border: 1px solid hsl(var(--theme-checkbox-radio-fill));
@@ -121,12 +108,10 @@
 	box-shadow: inset 0 0 0 3px #fff;
 }
 
-/* Radio :selected:before asset */
 @define-mixin radio-label-selected-before {
 	background-color: hsl(var(--theme-checkbox-radio-fill));
 }
 
-/* On Sale badge (default) */
 @define-mixin on-sale-badge {
 	align-items: center;
 	background-color: hsl(var(--theme-color-primary));
@@ -137,17 +122,11 @@
 	justify-content: center;
 	letter-spacing: 1px;
 	margin: 0;
-
-	/* Pointer events prevents the sale badge from blocking
-	the wrapping link's click event. Essentially, the click can
-	pass through. As of this writing, the sale badge sits above
-	the <a> element's z-index. */
 	pointer-events: none;
 	text-transform: uppercase;
 	width: 65px;
 }
 
-/* On Sale badge (large) */
 @define-mixin on-sale-badge-lg {
 	height: 110px;
 	width: 110px;
