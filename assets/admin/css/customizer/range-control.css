@@ -229,6 +229,7 @@
 
 #customize-control-logo_width + #customize-control-logo_width_mobile {
 	margin-top: -5px;
+	margin-bottom: 15px;
 }
 
 /* stylelint-enable */
