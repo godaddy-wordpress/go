@@ -156,7 +156,7 @@ function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
 			array(
 				'default'     => 100,
 				'type'        => 'maverick_range_control',
-				'label'       => esc_html__( 'Max Width', 'coblocks' ),
+				'label'       => esc_html__( 'Max Width', 'maverick' ),
 				'description' => 'px',
 				'section'     => 'title_tagline',
 				'priority'    => 8,
@@ -185,7 +185,7 @@ function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
 			array(
 				'default'     => 100,
 				'type'        => 'maverick_range_control',
-				'label'       => esc_html__( 'Mobile Max Width', 'coblocks' ),
+				'label'       => esc_html__( 'Mobile Max Width', 'maverick' ),
 				'description' => 'px',
 				'section'     => 'title_tagline',
 				'priority'    => 9,
