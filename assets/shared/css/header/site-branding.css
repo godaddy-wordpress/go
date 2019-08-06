@@ -10,6 +10,14 @@
 	& a {
 		text-decoration-color: transparent;
 	}
+
+	& .custom-logo {
+		max-width: var(--theme-site-logo--width-mobile);
+
+		@media (--small) {
+			max-width: var(--theme-site-logo--width);
+		}
+	}
 }
 
 .site-branding__title {
