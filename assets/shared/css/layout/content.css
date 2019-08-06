@@ -78,7 +78,8 @@
 		& figure,
 		& blockquote,
 		& .wp-block-cover,
-		& .wp-block-button {
+		& .wp-block-button,
+		& .wp-block-columns {
 
 			/* Remove huge spacing when right after a paragraph */
 			margin-bottom: var(--theme-block-spacing-larger) !important;
