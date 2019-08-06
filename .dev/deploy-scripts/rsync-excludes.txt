@@ -13,7 +13,7 @@ composer.lock
 installed.json
 /tasks
 /conf
-/deploy-scripts
+/.dev/deploy-scripts
 .gitlab-ci.yml
 */package-lock.json
 package-lock.json

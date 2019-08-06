@@ -635,35 +635,35 @@ function get_available_header_variations() {
 	$default_header_variations = [
 		'header-1' => [
 			'label'         => esc_html__( 'Logo + Nav + Search', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-1.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/header-1.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '1' );
 			},
 		],
 		'header-2' => [
 			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-2.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/header-2.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
 		'header-3' => [
 			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-3.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/header-3.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
 		],
 		'header-4' => [
 			'label'         => esc_html__( 'Search + Logo + Nav', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-4.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/header-4.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '4' );
 			},
 		],
 		'header-5' => [
 			'label'         => esc_html__( 'Nav + Logo + Search', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/header-5.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/header-5.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '5' );
 			},
@@ -709,28 +709,28 @@ function get_available_footer_variations() {
 	$default_footer_variations = [
 		'footer-1' => [
 			'label'         => esc_html__( 'Footer 1', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/footer-1.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-1.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '1' );
 			},
 		],
 		'footer-2' => [
 			'label'         => esc_html__( 'Footer 2', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/footer-2.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-2.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '2' );
 			},
 		],
 		'footer-3' => [
 			'label'         => esc_html__( 'Footer 3', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/footer-3.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-3.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '3' );
 			},
 		],
 		'footer-4' => [
 			'label'         => esc_html__( 'Footer 4', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/assets/admin/images/footer-4.svg',
+			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-4.svg',
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '4' );
 			},
@@ -825,31 +825,31 @@ function get_available_social_icons() {
 		'facebook'  => [
 			'label'       => esc_html__( 'Facebook', 'maverick' ),
 			'description' => esc_html__( 'Facebook URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/facebook.svg',
+			'icon'        => MAVERICK_PATH . '/dist/images/shared/social/facebook.svg',
 			'icon_class'  => '',
 		],
 		'twitter'   => [
 			'label'       => esc_html__( 'Twitter', 'maverick' ),
 			'description' => esc_html__( 'Twitter URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/twitter.svg',
+			'icon'        => MAVERICK_PATH . '/dist/images/shared/social/twitter.svg',
 			'icon_class'  => '',
 		],
 		'instagram' => [
 			'label'       => esc_html__( 'Instagram', 'maverick' ),
 			'description' => esc_html__( 'Instagram URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/instagram.svg',
+			'icon'        => MAVERICK_PATH . '/dist/images/shared/social/instagram.svg',
 			'icon_class'  => '',
 		],
 		'linkedin'  => [
 			'label'       => esc_html__( 'LinkedIn', 'maverick' ),
 			'description' => esc_html__( 'LinkedIn URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/linkedin.svg',
+			'icon'        => MAVERICK_PATH . '/dist/images/shared/social/linkedin.svg',
 			'icon_class'  => '',
 		],
 		'pinterest' => [
 			'label'       => esc_html__( 'Pinterest', 'maverick' ),
 			'description' => esc_html__( 'Pinterest URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/pinterest.svg',
+			'icon'        => MAVERICK_PATH . '/dist/images/shared/social/pinterest.svg',
 			'icon_class'  => '',
 		],
 	];

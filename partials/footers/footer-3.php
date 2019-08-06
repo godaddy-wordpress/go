@@ -2,7 +2,7 @@
 /**
  * Footer Partial 3
  *
- * @see assets/admin/js/customizer/preview/footer-text.js
+ * @see .dev/assets/admin/js/customizer/preview/footer-text.js
  *
  * @package Maverick
  */
