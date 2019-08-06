@@ -1,5 +1,8 @@
 /*! Latest Posts */
-.content-area > .wp-block-latest-posts {
-	margin-bottom: var(--theme-spacing-unit-6);
-	margin-top: var(--theme-spacing-unit-6);
+ul.wp-block-latest-posts {
+
+	& li {
+		margin-left: 0;
+		padding-left: 0
+	}
 }
