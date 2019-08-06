@@ -56,6 +56,7 @@
 
 .footer-navigation {
 	line-height: var(--theme-footer-nav--leading);
+	font-family: var(--theme-site-nav--font-family);
 
 	& a:focus {
 		@mixin outline;

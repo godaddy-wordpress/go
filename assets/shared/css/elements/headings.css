@@ -9,6 +9,7 @@ h4,
 h5,
 h6 {
 	font-family: var(--theme-heading--font);
+	letter-spacing: var(--theme-heading--tracking);
 	line-height: var(--theme-heading--leading);
 }
 

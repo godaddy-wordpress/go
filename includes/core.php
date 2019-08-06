@@ -487,17 +487,16 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Arimo'      => [
+				'Montserrat'    => [
 					'400',
 					'400i',
 					'700',
 					'700i',
 				],
-				'Montserrat' => [
+				'IBM Plex Sans' => [
 					'400',
 					'400i',
 					'700',
-					'700i',
 				],
 			],
 		],
