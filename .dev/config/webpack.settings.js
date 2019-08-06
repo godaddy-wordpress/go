@@ -71,7 +71,7 @@ module.exports = {
 		performance: true
 	},
 	copyWebpackConfig: {
-		from: '.dev/assets/images',
+		from: '.dev/assets/**/*.{jpg,jpeg,png,gif,svg}',
 		to: 'images',
 	},
 	BrowserSyncConfig: {
