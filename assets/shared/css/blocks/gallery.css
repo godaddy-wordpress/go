@@ -5,8 +5,9 @@
 		font-size: var(--theme-caption--font-size);
 		font-style: var(--theme-caption--style);
 		text-align: var(--theme-caption--alignment);
-		width: calc(100% - 25px);
+		width: calc(100% - 30px);
 		padding-left: 15px;
+		padding-right: 15px;
 	}
 
 	& .blocks-gallery-item:last-child {
