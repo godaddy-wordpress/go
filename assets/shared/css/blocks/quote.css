@@ -1,6 +1,7 @@
 /*! Blockquote */
 .wp-block-quote {
 	border: none;
+	margin-bottom: 0;
 	padding: 0;
 
 	& p {
@@ -10,6 +11,7 @@
 		font-style: var(--theme-quote--style);
 		font-weight: var(--theme-quote--weight);
 		line-height: var(--theme-quote--leading);
+		margin: 0 0 2rem;
 		padding: 1.5rem 0;
 		position: relative;
 
@@ -55,7 +57,6 @@
 			font-size: var(--theme-quote-large--font-size);
 			font-style: var(--theme-quote-large--style);
 			line-height: var(--theme-quote--leading);
-			margin-bottom: 2rem;
 			padding-left: 2rem;
 
 			&::after,
@@ -78,5 +79,5 @@
 }
 
 .wp-block-column .wp-block-quote p {
-	padding: 0;
+	padding-top: 0;
 }

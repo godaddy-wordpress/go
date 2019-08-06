@@ -1,6 +1,9 @@
 .wp-block-image {
-	margin-bottom: 0 !important;
-	margin-top: 0 !important;
+
+	&.alignfull,
+	&.alignwide {
+		margin: var(--theme-block-spacing-huge) auto;
+	}
 
 	& img {
 		display: block;
