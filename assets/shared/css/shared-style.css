@@ -44,6 +44,7 @@
 @import url("blocks/quote.css");
 @import url("blocks/paragraph.css");
 @import url("blocks/verse.css");
+@import url("blocks/more.css");
 
 /* CoBlocks */
 @import url("coblocks/author.css");
