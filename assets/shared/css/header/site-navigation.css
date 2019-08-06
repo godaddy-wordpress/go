@@ -43,7 +43,6 @@ body.menu-is-open {
 	@media (max-width: 1087px) {
 		height: 100%;
 		overflow: hidden;
-		position: fixed;
 		width: 100%;
 	}
 
