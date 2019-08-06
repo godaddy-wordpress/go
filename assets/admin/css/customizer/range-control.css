@@ -218,8 +218,8 @@
 	}
 }
 
-#customize-control-custom_logo_max_width,
-#customize-control-custom_logo_mobile_max_width {
+#customize-control-logo_width,
+#customize-control-logo_width_mobile {
 	margin-bottom: 12px;
 
 	& .customize-control-title {
@@ -227,7 +227,7 @@
 	}
 }
 
-#customize-control-custom_logo_max_width + #customize-control-custom_logo_mobile_max_width {
+#customize-control-logo_width + #customize-control-logo_width_mobile {
 	margin-top: -5px;
 }
 

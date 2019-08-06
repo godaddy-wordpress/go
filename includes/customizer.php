@@ -141,7 +141,7 @@ function enqueue_controls_assets() {
 function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
 
 	$wp_customize->add_setting(
-		'custom_logo_max_width',
+		'logo_width',
 		array(
 			'default'           => 100,
 			'transport'         => 'postMessage',
@@ -152,7 +152,7 @@ function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new Range_Control(
 			$wp_customize,
-			'custom_logo_max_width',
+			'logo_width',
 			array(
 				'default'     => 100,
 				'type'        => 'maverick_range_control',
@@ -170,7 +170,7 @@ function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'custom_logo_mobile_max_width',
+		'logo_width_mobile',
 		array(
 			'default'           => 100,
 			'transport'         => 'postMessage',
@@ -181,7 +181,7 @@ function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new Range_Control(
 			$wp_customize,
-			'custom_logo_mobile_max_width',
+			'logo_width_mobile',
 			array(
 				'default'     => 100,
 				'type'        => 'maverick_range_control',
@@ -727,8 +727,8 @@ function inline_css() {
 	$footer_social_color  = hex_to_hsl( get_theme_mod( 'footer_social_color', false ), true );
 
 	// Site logo width
-	$logo_width        = get_theme_mod( 'custom_logo_max_width', false );
-	$logo_width_mobile = get_theme_mod( 'custom_logo_mobile_max_width', false );
+	$logo_width        = get_theme_mod( 'logo_width', false );
+	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', false );
 	?>
 		<!-- Variable Overrides -->
 		<style>

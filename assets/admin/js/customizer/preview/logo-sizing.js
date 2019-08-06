@@ -17,11 +17,11 @@ export default () => {
 		document.documentElement.style.setProperty( '--theme-site-logo--width-mobile', width ? `${width}px` : 'none' );
 	};
 
-	wp.customize( 'custom_logo_max_width', ( value ) => {
+	wp.customize( 'logo_width', ( value ) => {
 		value.bind( ( to ) => setLogoWidth( to ) );
 	} );
 
-	wp.customize( 'custom_logo_mobile_max_width', ( value ) => {
+	wp.customize( 'logo_width_mobile', ( value ) => {
 		value.bind( ( to ) => setLogoMobileWidth( to ) );
 	} );
 };

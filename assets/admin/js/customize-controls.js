@@ -67,8 +67,8 @@ import './customizer/controls/range-control';
 		customizerOptionDisplay( 'footer_variation', 'footer_heading_color', 'footer-2', 'footer-4', 100 );
 
 		// Only show the following options, if a logo is uploaded.
-		customizerImageOptionDisplay( 'custom_logo', 'custom_logo_max_width', 100 );
-		customizerImageOptionDisplay( 'custom_logo', 'custom_logo_mobile_max_width', 100 );
+		customizerImageOptionDisplay( 'custom_logo', 'logo_width', 100 );
+		customizerImageOptionDisplay( 'custom_logo', 'logo_width_mobile', 100 );
 	} );
 
 } )( jQuery );
