@@ -21,12 +21,16 @@
 		color: hsla(var(--theme-site-nav--color), 1);
 		display: inline-block;
 		font-family: var(--theme-site-nav--font-family);
-		font-size: var(--theme-site-nav--font-size);
+		font-size: var(--theme-site-nav--font-size-mobile);
 		font-weight: var(--theme-site-nav--font-weight);
 		position: relative;
 		text-decoration: none;
 		text-transform: var(--theme-site-nav--text-transform);
 		transition: var(--theme-site-nav--transition);
+
+		@media (--large) {
+			font-size: var(--theme-site-nav--font-size);
+		}
 
 		&:hover {
 			color: hsl(var(--theme-site-nav--color-interactive));
