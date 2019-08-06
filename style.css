@@ -1,10 +1,20 @@
+/* stylelint-disable */
 /**
- * Theme Name:  Maverick (GD)
- * Theme URI:   https://10up.com
- * Description: Project description.
- * Author:      10up
- * Author URI:  https://10up.com
+ * Theme Name:  Maverick
+ * Theme URI:   https://github.com/godaddy/wp-project-maverick
+ * Description: Maverick is a powerful Gutenberg theme for writers, publishers and content marketers.
+ * Author:      GoDaddy
+ * Author URI:  https://www.godaddy.com
  * Version:     0.1.0
- * Tags:
+ * License:     GPL-2.0
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Tags:        one-column, accessibility-ready, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
  * Text Domain: maverick
+ * Domain Path: /languages
+ *
+ * This theme, like WordPress, is licensed under the GPL.
+ * Use it to make something cool, have fun, and share what you've learned with others.
+ *
+ * Copyright © 2019 GoDaddy Operating Company, LLC. All Rights Reserved.
  */
+/* stylelint-enable */
