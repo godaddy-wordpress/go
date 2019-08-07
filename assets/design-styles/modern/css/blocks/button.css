@@ -1,4 +1,6 @@
-.wp-block-button__link {
+/*! Modern: Button */
+.wp-block-button__link,
+.wp-block-search__button {
 	overflow: hidden;
 
 	&::after {

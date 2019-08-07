@@ -1,10 +1,11 @@
-/**
- * WP Block File overrides.
- */
+/*! File */
+.wp-block-file {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
 
-body {
-
-	& .wp-block-file {
-		margin-bottom: var(--theme-spacing-unit-6);
+	& .wp-block-file__button {
+		@mixin button;
+		vertical-align: inherit;
 	}
 }

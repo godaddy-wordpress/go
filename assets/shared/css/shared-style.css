@@ -28,29 +28,6 @@
 @import url("elements/page.css");
 @import url("elements/tables.css");
 
-/* Blocks */
-@import url("blocks/button.css");
-@import url("blocks/separator.css");
-@import url("blocks/image.css");
-@import url("blocks/columns.css");
-@import url("blocks/cover.css");
-@import url("blocks/media.css");
-@import url("blocks/gallery.css");
-@import url("blocks/preformatted.css");
-@import url("blocks/pullquote.css");
-@import url("blocks/file.css");
-@import url("blocks/latest-posts.css");
-@import url("blocks/latest-comments.css");
-@import url("blocks/quote.css");
-@import url("blocks/paragraph.css");
-
-/* CoBlocks */
-@import url("coblocks/author.css");
-@import url("coblocks/hero.css");
-@import url("coblocks/pricing-table.css");
-@import url("coblocks/row.css");
-@import url("coblocks/food-drinks.css");
-
 /* Layout */
 @import url("layout/content.css");
 @import url("layout/entry-header.css");
@@ -89,6 +66,34 @@
 /* Blogroll */
 @import url("templates/post.css");
 @import url("templates/blog.css");
+
+/* Blocks */
+@import url("blocks/button.css");
+@import url("blocks/separator.css");
+@import url("blocks/image.css");
+@import url("blocks/columns.css");
+@import url("blocks/cover.css");
+@import url("blocks/media.css");
+@import url("blocks/gallery.css");
+@import url("blocks/preformatted.css");
+@import url("blocks/pullquote.css");
+@import url("blocks/file.css");
+@import url("blocks/latest-posts.css");
+@import url("blocks/latest-comments.css");
+@import url("blocks/quote.css");
+@import url("blocks/paragraph.css");
+@import url("blocks/verse.css");
+@import url("blocks/more.css");
+@import url("blocks/code.css");
+@import url("blocks/audio-video.css");
+@import url("blocks/search.css");
+
+/* CoBlocks */
+@import url("coblocks/author.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/pricing-table.css");
+@import url("coblocks/row.css");
+@import url("coblocks/food-drinks.css");
 
 /* WooCommerce */
 @import url("woocommerce/layout.css");
