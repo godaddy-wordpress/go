@@ -1,8 +1,8 @@
-/**
- * Latest posts overrides
- */
+/*! Latest Posts */
+ul.wp-block-latest-posts {
 
-.content-area > .wp-block-latest-posts {
-	margin-bottom: var(--theme-spacing-unit-6);
-	margin-top: var(--theme-spacing-unit-6);
+	& li {
+		margin-left: 0;
+		padding-left: 0;
+	}
 }

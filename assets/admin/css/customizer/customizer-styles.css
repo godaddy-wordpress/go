@@ -6,6 +6,13 @@
 	transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1), padding 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+/* Add transitions for color changing elements */
+.has-background,
+.wp-block-quote.is-style-large,
+.wp-block-pullquote.is-style-solid-color {
+	transition: var(--theme-button-transition);
+}
+
 .customize-partial-edit-shortcut button {
 
 	&:hover,

@@ -1,0 +1,7 @@
+/*! Code */
+.content-area {
+
+	& .wp-block-code {
+		@mixin blockWidthNoPadding;
+	}
+}

@@ -1,23 +1,15 @@
-.content-area table {
+.wp-block-table {
 
-	& caption {
-		padding: var(--theme-spacing-unit);
+	& table {
+		border-collapse: collapse;
+		margin: 0 0 1rem;
+		width: 100%;
 	}
 
-	& th,
-	& td {
-		border-color: hsla(var(--theme-color-text-secondary), 1);
-		padding: var(--theme-spacing-unit);
-	}
-
-	& thead th,
-	& tfoot th {
-		background-color: hsla(var(--theme-color-text-secondary), 1);
-		border-color: hsla(var(--theme-color-text-secondary), 1);
-		color: hsla(var(--color-white));
-	}
-
-	& tbody tr:nth-child(odd) {
-		background-color: hsla(var(--theme-color-text-secondary), 0.15);
+	& table td,
+	& table th {
+		border: 2px solid hsl(var(--theme-table--border-color));
+		padding: 0.5em;
+		word-break: break-all;
 	}
 }
