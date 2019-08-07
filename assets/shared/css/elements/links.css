@@ -13,6 +13,9 @@ a {
 
 	&:focus {
 		@mixin outline;
-		outline-width: thin;
 	}
+}
+
+p a:focus {
+	outline-width: thin;
 }
