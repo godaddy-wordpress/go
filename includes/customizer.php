@@ -132,6 +132,31 @@ function enqueue_controls_assets() {
 }
 
 /**
+ * Returns all available color schemes for all design styles
+ * in an array for use in the Customizer control.
+ *
+ * @return array
+ */
+function get_color_schemes_as_choices() {
+	$design_styles = \Maverick\Core\get_available_design_styles();
+	$color_schemes = array();
+
+	array_walk(
+		$design_styles,
+		function( $style_data, $design_style ) use ( &$color_schemes ) {
+			array_walk(
+				$style_data['color_schemes'],
+				function( $data, $name ) use ( $design_style, &$color_schemes ) {
+					$color_schemes[ "${design_style}-${name}" ] = $data;
+				}
+			);
+		}
+	);
+
+	return $color_schemes;
+}
+
+/**
  * Register the Logo Controls within Customize.
  *
  * @param \WP_Customize_Manager $wp_customize The customize manager object.
@@ -217,15 +242,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		]
 	);
 
-	$wp_customize->add_section(
-		'maverick_design_style_section',
-		[
-			'title'      => esc_html__( 'Design Styles', 'maverick' ),
-			'capability' => 'edit_theme_options',
-			'panel'      => 'maverick_global_settings',
-		]
-	);
-
 	$wp_customize->add_setting(
 		'maverick_design_style',
 		[
@@ -237,23 +253,14 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new Switcher_Control(
-			$wp_customize,
-			'maverick_design_style_control',
-			[
-				'label'       => esc_html__( 'Design Style', 'maverick' ),
-				'description' => esc_html__( 'Choose one of the supported design styles.', 'maverick' ),
-				'section'     => 'maverick_design_style_section',
-				'settings'    => 'maverick_design_style',
-				'choices'     => \Maverick\Core\get_available_design_styles(),
-			]
-		)
-	);
-
-	$wp_customize->add_section(
-		'color_schemes_section',
+		'maverick_design_style_control',
 		[
-			'title' => esc_html__( 'Color Scheme', 'maverick' ),
+			'label'       => esc_html__( 'Design Style', 'maverick' ),
+			'description' => esc_html__( 'Choose a style, select a color scheme and customize colors to personalize your site.', 'maverick' ),
+			'section'     => 'colors',
+			'settings'    => 'maverick_design_style',
+			'type'        => 'radio',
+			'choices'     => wp_list_pluck( \Maverick\Core\get_available_design_styles(), 'label' ),
 		]
 	);
 
@@ -272,11 +279,10 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			$wp_customize,
 			'maverick_color_scheme_control',
 			[
-				'label'         => esc_html__( 'Color Schemes', 'maverick' ),
-				'description'   => esc_html__( 'Choose one of the supported color schemes', 'maverick' ),
-				'section'       => 'color_schemes_section',
+				'label'         => esc_html__( 'Color Scheme', 'maverick' ),
+				'section'       => 'colors',
 				'settings'      => 'color_scheme',
-				'choices'       => \Maverick\Core\get_available_color_schemes(),
+				'choices'       => get_color_schemes_as_choices(),
 				'switcher_type' => 'color-scheme',
 			]
 		)
@@ -298,7 +304,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'primary_color_control',
 			[
 				'label'    => esc_html__( 'Primary', 'maverick' ),
-				'section'  => 'color_schemes_section',
+				'section'  => 'colors',
 				'settings' => 'primary_color',
 			]
 		)
@@ -320,7 +326,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'secondary_color_control',
 			[
 				'label'    => esc_html__( 'Secondary', 'maverick' ),
-				'section'  => 'color_schemes_section',
+				'section'  => 'colors',
 				'settings' => 'secondary_color',
 			]
 		)
@@ -342,7 +348,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'tertiary_color_control',
 			[
 				'label'    => esc_html__( 'Tertiary', 'maverick' ),
-				'section'  => 'color_schemes_section',
+				'section'  => 'colors',
 				'settings' => 'tertiary_color',
 			]
 		)

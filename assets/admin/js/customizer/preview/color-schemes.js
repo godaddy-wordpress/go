@@ -12,7 +12,7 @@ export default () => {
 	 */
 	const setPrimaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-primary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--theme-color-primary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
 	};
 
 	/**
@@ -22,7 +22,7 @@ export default () => {
 	 */
 	const setSecondaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-secondary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--theme-color-secondary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
 	};
 
 	/**
@@ -32,7 +32,42 @@ export default () => {
 	 */
 	const setTertiaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-tertiary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--theme-color-tertiary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
+	};
+
+	/**
+	 * Load the color schemes for the selected design style.
+	 */
+	const loadColorSchemes = ( colorScheme ) => {
+		const designStyle = getDesignStyle( selectedDesignStyle );
+		colorScheme = colorScheme.replace( `${selectedDesignStyle}-`, '' );
+
+		if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
+			const colors = designStyle.color_schemes[ colorScheme ];
+			toggleColorSchemes();
+
+			Object.entries( colors ).forEach( function ( [ setting, color ] ) {
+				const customizerSetting = wp.customize( `${setting}` );
+
+				if ( 'label' === setting || 'undefined' === typeof customizerSetting || 'undefined' === typeof wp.customize.control ) {
+					return;
+				}
+
+				customizerSetting.set( color );
+
+				wp.customize.control( `${setting}_control` ).container.find( '.color-picker-hex' )
+					.data( 'data-default-color', color )
+					.wpColorPicker( 'defaultColor', color );
+			} );
+		}
+	};
+
+	/**
+	 * Control the visibility of the color schemes selections.
+	 */
+	const toggleColorSchemes = () => {
+		$( 'label[for^=maverick_color_scheme_control' ).hide();
+		$( `label[for^=maverick_color_scheme_control-${selectedDesignStyle}-` ).show();
 	};
 
 	/**
@@ -51,35 +86,19 @@ export default () => {
 		return false;
 	};
 
+	wp.customize.bind( 'ready', () => toggleColorSchemes() );
+
 	wp.customize( 'maverick_design_style', ( value ) => {
 		selectedDesignStyle = value.get();
 		value.bind( ( to ) => {
 			selectedDesignStyle = to;
+			loadColorSchemes( 'default' );
+			$( `#maverick_color_scheme_control-${selectedDesignStyle}-default` ).prop( 'checked', true );
 		} );
 	} );
 
 	wp.customize( 'color_scheme', ( value ) => {
-		value.bind( ( colorScheme ) => {
-			const designStyle = getDesignStyle( selectedDesignStyle );
-
-			if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
-				const colors = designStyle.color_schemes[ colorScheme ];
-
-				Object.entries( colors ).forEach( function ( [ setting, color ] ) {
-					const customizerSetting = wp.customize( `${setting}` );
-
-					if ( 'label' === setting || 'undefined' === typeof customizerSetting || 'undefined' === typeof wp.customize.control ) {
-						return;
-					}
-
-					customizerSetting.set( color );
-
-					wp.customize.control( `${setting}_control` ).container.find( '.color-picker-hex' )
-						.data( 'data-default-color', color )
-						.wpColorPicker( 'defaultColor', color );
-				} );
-			}
-		} );
+		value.bind( ( colorScheme ) => loadColorSchemes( colorScheme ) );
 	} );
 
 	wp.customize( 'primary_color', ( value ) => {

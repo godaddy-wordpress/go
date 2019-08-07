@@ -459,7 +459,6 @@ function get_available_design_styles() {
 			'label'         => esc_html__( 'Modern', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Modern',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Shade', 'maverick' ),
@@ -504,7 +503,6 @@ function get_available_design_styles() {
 			'label'         => esc_html__( 'Traditional', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
 			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Traditional',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -520,11 +518,10 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'trendy-shop' => [
-			'label'         => esc_html__( 'Trendy Shop', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy-shop.css',
-			'editor_style'  => 'dist/css/design-styles/trendy-shop-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Trendy+Shop',
+		'trendy'      => [
+			'label'         => esc_html__( 'Trendy', 'maverick' ),
+			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy.css',
+			'editor_style'  => 'dist/css/design-styles/trendy-editor.css',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -544,7 +541,6 @@ function get_available_design_styles() {
 			'label'         => esc_html__( 'Welcoming', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/welcoming.css',
 			'editor_style'  => 'dist/css/design-styles/welcoming-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Welcoming',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -560,11 +556,10 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'play'        => [
-			'label'         => esc_html__( 'Play', 'maverick' ),
+		'playful'        => [
+			'label'         => esc_html__( 'Playful', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
 			'editor_style'  => 'dist/css/design-styles/play-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Play',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
