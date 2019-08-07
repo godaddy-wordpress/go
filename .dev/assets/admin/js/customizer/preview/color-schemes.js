@@ -47,7 +47,7 @@ export default () => {
 			toggleColorSchemes();
 
 			Object.entries( colors ).forEach( function ( [ setting, color ] ) {
-				const customizerSetting = wp.customize( `${setting}` );
+				const customizerSetting = wp.customize( `${setting}_color` );
 
 				if ( 'label' === setting || 'undefined' === typeof customizerSetting || 'undefined' === typeof wp.customize.control ) {
 					return;
@@ -55,7 +55,7 @@ export default () => {
 
 				customizerSetting.set( color );
 
-				wp.customize.control( `${setting}_control` ).container.find( '.color-picker-hex' )
+				wp.customize.control( `${setting}_color_control` ).container.find( '.color-picker-hex' )
 					.data( 'data-default-color', color )
 					.wpColorPicker( 'defaultColor', color );
 			} );

@@ -461,28 +461,28 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
 			'color_schemes' => [
 				'default' => [
-					'label'           => esc_html__( 'Shade', 'maverick' ),
-					'primary_color'   => '#000a12',
-					'secondary_color' => '#455a64',
-					'tertiary_color'  => '#eceff1',
+					'label'     => esc_html__( 'Shade', 'maverick' ),
+					'primary'   => '#000a12',
+					'secondary' => '#455a64',
+					'tertiary'  => '#eceff1',
 				],
 				'two'     => [
-					'label'           => esc_html__( 'Blush', 'maverick' ),
-					'primary_color'   => '#c2185b', // 700
-					'secondary_color' => '#ec407a', // 400
-					'tertiary_color'  => '#fce4ec', // 100
+					'label'     => esc_html__( 'Blush', 'maverick' ),
+					'primary'   => '#c2185b', // 700
+					'secondary' => '#ec407a', // 400
+					'tertiary'  => '#fce4ec', // 100
 				],
 				'three'   => [
-					'label'           => esc_html__( 'Indigo', 'maverick' ),
-					'primary_color'   => '#303f9f', // 700
-					'secondary_color' => '#5c6bc0', // 400
-					'tertiary_color'  => '#e8eaf6', // 100
+					'label'     => esc_html__( 'Indigo', 'maverick' ),
+					'primary'   => '#303f9f', // 700
+					'secondary' => '#5c6bc0', // 400
+					'tertiary'  => '#e8eaf6', // 100
 				],
 				'four'    => [
-					'label'           => esc_html__( 'Pacific', 'maverick' ),
-					'primary_color'   => '#00796b', // 700
-					'secondary_color' => '#26a69a', // 400
-					'tertiary_color'  => '#e0f2f1', // 100
+					'label'     => esc_html__( 'Pacific', 'maverick' ),
+					'primary'   => '#00796b', // 700
+					'secondary' => '#26a69a', // 400
+					'tertiary'  => '#e0f2f1', // 100
 				],
 			],
 			'fonts'         => [
@@ -505,16 +505,16 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
 			'color_schemes' => [
 				'default' => [
-					'label'           => esc_html__( 'Light', 'maverick' ),
-					'primary_color'   => '#c76919',
-					'secondary_color' => '#a0510e',
-					'tertiary_color'  => '#123456',
+					'label'     => esc_html__( 'Light', 'maverick' ),
+					'primary'   => '#c76919',
+					'secondary' => '#a0510e',
+					'tertiary'  => '#123456',
 				],
-				'two'     => [
-					'label'           => esc_html__( 'Dark', 'maverick' ),
-					'primary_color'   => '#3f5836',
-					'secondary_color' => '#293922',
-					'tertiary_color'  => '#123456',
+				'dark'    => [
+					'label'     => esc_html__( 'Dark', 'maverick' ),
+					'primary'   => '#3f5836',
+					'secondary' => '#293922',
+					'tertiary'  => '#123456',
 				],
 			],
 		],
@@ -524,16 +524,16 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/trendy-editor.css',
 			'color_schemes' => [
 				'default' => [
-					'label'           => esc_html__( 'Light', 'maverick' ),
-					'primary_color'   => '#fcfcfc',
-					'secondary_color' => '#f3f0ed',
-					'tertiary_color'  => '#123456',
+					'label'     => esc_html__( 'Light', 'maverick' ),
+					'primary'   => '#fcfcfc',
+					'secondary' => '#f3f0ed',
+					'tertiary'  => '#123456',
 				],
-				'two'     => [
-					'label'           => esc_html__( 'Dark', 'maverick' ),
-					'primary_color'   => '#f1f4f4',
-					'secondary_color' => '#ebeeee',
-					'tertiary_color'  => '#123456',
+				'dark'    => [
+					'label'     => esc_html__( 'Dark', 'maverick' ),
+					'primary'   => '#f1f4f4',
+					'secondary' => '#ebeeee',
+					'tertiary'  => '#123456',
 				],
 			],
 		],
@@ -543,16 +543,16 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/welcoming-editor.css',
 			'color_schemes' => [
 				'default' => [
-					'label'           => esc_html__( 'Light', 'maverick' ),
-					'primary_color'   => '#02392f',
-					'secondary_color' => '#f1f1f1',
-					'tertiary_color'  => '#123456',
+					'label'     => esc_html__( 'Light', 'maverick' ),
+					'primary'   => '#02392f',
+					'secondary' => '#f1f1f1',
+					'tertiary'  => '#123456',
 				],
-				'two'     => [
-					'label'           => esc_html__( 'Dark', 'maverick' ),
-					'primary_color'   => '#49384d',
-					'secondary_color' => '#f7f5e9',
-					'tertiary_color'  => '#123456',
+				'dark'    => [
+					'label'     => esc_html__( 'Dark', 'maverick' ),
+					'primary'   => '#49384d',
+					'secondary' => '#f7f5e9',
+					'tertiary'  => '#123456',
 				],
 			],
 		],
@@ -562,16 +562,16 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/play-editor.css',
 			'color_schemes' => [
 				'default' => [
-					'label'           => esc_html__( 'Light', 'maverick' ),
-					'primary_color'   => '#254e9c',
-					'secondary_color' => '#fcae6e',
-					'tertiary_color'  => '#123456',
+					'label'     => esc_html__( 'Light', 'maverick' ),
+					'primary'   => '#254e9c',
+					'secondary' => '#fcae6e',
+					'tertiary'  => '#123456',
 				],
-				'two'     => [
-					'label'           => esc_html__( 'Dark', 'maverick' ),
-					'primary_color'   => '#41b093',
-					'secondary_color' => '#eecd94',
-					'tertiary_color'  => '#123456',
+				'dark'    => [
+					'label'     => esc_html__( 'Dark', 'maverick' ),
+					'primary'   => '#41b093',
+					'secondary' => '#eecd94',
+					'tertiary'  => '#123456',
 				],
 			],
 		],
