@@ -582,19 +582,23 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 
 	foreach ( $social_icons as $key => $social_icon ) {
 		$wp_customize->add_setting(
-			sprintf( 'footer_social_%s', $key ),
+			sprintf( 'social_icon_%s', $key ),
 			[
-				'transport' => 'postMessage',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'esc_url_raw',
 			]
 		);
 
 		$wp_customize->add_control(
-			sprintf( 'footer_social_%s_control', $key ),
+			sprintf( 'social_icon_%s_control', $key ),
 			[
-				'label'    => $social_icon['label'],
-				'section'  => 'social_media',
-				'settings' => sprintf( 'footer_social_%s', $key ),
-				'type'     => 'text',
+				'label'       => $social_icon['label'],
+				'section'     => 'social_media',
+				'settings'    => sprintf( 'social_icon_%s', $key ),
+				'type'        => 'url',
+				'input_attrs' => [
+					'placeholder' => esc_url( $social_icon['placeholder'] ),
+				],
 			]
 		);
 	}
@@ -675,7 +679,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'footer_social_color',
+		'social_icon_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -687,11 +691,11 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'footer_social_color',
+			'social_icon_color',
 			[
 				'label'    => esc_html__( 'Social Icons Color', 'maverick' ),
 				'section'  => 'maverick_footer_colors_section',
-				'settings' => 'footer_social_color',
+				'settings' => 'social_icon_color',
 			]
 		)
 	);
@@ -722,7 +726,7 @@ function inline_css() {
 	$footer_text_color    = hex_to_hsl( get_theme_mod( 'footer_text_color', false ), true );
 	$footer_heading_color = hex_to_hsl( get_theme_mod( 'footer_heading_color', false ), true );
 	$footer_background    = hex_to_hsl( get_theme_mod( 'footer_background_color', false ), true );
-	$footer_social_color  = hex_to_hsl( get_theme_mod( 'footer_social_color', false ), true );
+	$social_icon_color    = hex_to_hsl( get_theme_mod( 'social_icon_color', false ), true );
 
 	// Site logo width
 	$logo_width        = get_theme_mod( 'logo_width', false );
@@ -772,8 +776,8 @@ function inline_css() {
 					--theme-footer--color: <?php echo esc_attr( $footer_text_color ); ?>;;
 				<?php endif; ?>
 
-				<?php if ( $footer_social_color ) : ?>
-					--theme-social--color: <?php echo esc_attr( $footer_social_color ); ?>;
+				<?php if ( $social_icon_color ) : ?>
+					--theme-social--color: <?php echo esc_attr( $social_icon_color ); ?>;
 				<?php endif; ?>
 
 				/* Site Logo */
