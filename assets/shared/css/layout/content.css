@@ -34,11 +34,14 @@
 		padding-right: 0;
 	}
 
-	&.alignleft {
+	/* &.alignleft {
+		--width: calc(var(--theme-max-w-base) / 2);
+
 		float: left;
 		margin-left: 0;
 		margin-right: 2rem;
 		margin-top: 0;
+		margin-left: calc(var(--width) - var(--theme-block-padding-x)) !important;
 		max-width: 300px;
 	}
 
@@ -48,7 +51,7 @@
 		margin-right: 0;
 		margin-top: 0;
 		max-width: 300px;
-	}
+	} */
 }
 
 .content-area {
@@ -67,7 +70,7 @@
 
 		& .wp-block-button,
 		& .wp-block-separator,
-		& .wp-block-pullquote:not(.is-style-solid-color) {
+		& .wp-block-pullquote:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
 			margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5) !important;
 			margin-top: calc(var(--theme-block-spacing-larger) * 1.5) !important;
 		}

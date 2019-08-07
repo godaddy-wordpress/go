@@ -85,7 +85,7 @@ p.has-background {
 .wp-block-verse,
 .wp-block-pullquote {
 	@media (max-width: 730px) {
-		margin-left: var(--theme-block-padding-x) !important;
-		margin-right: var(--theme-block-padding-x) !important;
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
 	}
 }

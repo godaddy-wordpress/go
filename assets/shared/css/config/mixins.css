@@ -1,8 +1,8 @@
 @define-mixin button {
 	appearance: none !important;
 	background-color: hsl(var(--theme-button--bg));
-	border-radius: var(--theme-button--radius);
 	border: none;
+	border-radius: var(--theme-button--radius);
 	box-sizing: border-box;
 	color: hsl(var(--theme-button--color));
 	display: inline-block;
