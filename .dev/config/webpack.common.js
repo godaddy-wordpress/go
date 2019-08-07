@@ -135,8 +135,8 @@ module.exports = {
 			{
 				from: settings.copyWebpackConfig.from,
 				to: settings.copyWebpackConfig.to,
-				context: path.resolve( process.cwd(), settings.paths.src.base ),
-			},
+				transformPath: settings.copyWebpackConfig.transformPath,
+			}
 		] ),
 
 		// Lint CSS.

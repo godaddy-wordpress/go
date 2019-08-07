@@ -14,18 +14,18 @@
   },
   "scripts": {
     "start": "composer install && npm install && npm run build",
-    "build": "NODE_ENV=production webpack --config config/webpack.prod.js",
-    "dev": "NODE_ENV=development webpack --config config/webpack.dev.js",
-    "watch": "NODE_ENV=development webpack --watch --config config/webpack.dev.js",
+    "build": "NODE_ENV=production webpack --config .dev/config/webpack.prod.js",
+    "dev": "NODE_ENV=development webpack --config .dev/config/webpack.dev.js",
+    "watch": "NODE_ENV=development webpack --watch --config .dev/config/webpack.dev.js",
     "build-release": "npm install && npm run build",
     "lint-release": "npm install && composer install && npm run lint",
-    "lint-css": "stylelint 'assets/shared/css' 'assets/design-styles/**/*.css'",
+    "lint-css": "stylelint 'assets/shared/css' '.dev/assets/design-styles/**/*.css'",
     "lint-js": "eslint assets/shared/js",
     "lint-php": "composer run lint",
     "format-js": "eslint --fix assets/shared/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
-    "test-a11y": "node tests/accessibility/compliance/pa11y.js"
+    "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js"
   },
   "husky": {
     "hooks": {
