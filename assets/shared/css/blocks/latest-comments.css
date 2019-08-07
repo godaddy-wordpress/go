@@ -1,8 +1,0 @@
-/**
- * Latest comments overrides
- */
-
-.content-area > .wp-block-latest-comments {
-	margin-bottom: var(--theme-spacing-unit-6);
-	margin-top: var(--theme-spacing-unit-6);
-}

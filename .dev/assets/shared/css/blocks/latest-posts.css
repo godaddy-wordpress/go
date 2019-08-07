@@ -1,0 +1,8 @@
+/*! Latest Posts */
+ul.wp-block-latest-posts {
+
+	& li {
+		margin-left: 0;
+		padding-left: 0;
+	}
+}

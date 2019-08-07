@@ -1,0 +1,8 @@
+/**
+ * Allows us to overlap an Shape Divider (SVG) block
+ * on top of another block above it.
+ */
+.wp-block-coblocks-row.is-overlapping-above {
+	position: relative;
+	z-index: 10;
+}

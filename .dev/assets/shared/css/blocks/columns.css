@@ -1,0 +1,30 @@
+/*! Columns */
+.content-area {
+
+	& div.wp-block-columns {
+		margin-bottom: calc(var(--theme-block-spacing) * -1) !important;
+
+		& .wp-block-column {
+			margin-bottom: var(--theme-block-spacing);
+
+			& > *:first-child {
+				margin-top: 0;
+			}
+
+			& > *:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.wp-block-column {
+
+	& .wp-block-quote p {
+		padding-top: 0;
+	}
+
+	& p ~ .wp-block-button {
+		margin-bottom: 0 !important;
+	}
+}

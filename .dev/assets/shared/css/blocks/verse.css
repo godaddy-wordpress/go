@@ -1,0 +1,6 @@
+/*! Verse */
+.wp-block-verse {
+	font-size: 0.925rem;
+	max-width: var(--theme-max-w-base) !important;
+	padding: 0 !important;
+}

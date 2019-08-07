@@ -335,16 +335,19 @@ function social_icons( $args = [] ) {
 	$social_icons     = \Maverick\Core\get_social_icons();
 	$has_social_cions = has_social_icons( $social_icons );
 
-	if ( ! $has_social_cions ) {
+	if ( ! $has_social_cions && ! is_customize_preview() ) {
 		return;
 	}
 
 	?>
 	<ul class="js-maverick-social-icons <?php echo esc_attr( $args['class'] ); ?>">
 		<?php foreach ( $social_icons as $key => $social_icon ) : ?>
-			<?php if ( ! empty( $social_icon['url'] ) ) : ?>
-				<li class="<?php echo esc_attr( sprintf( $args['li_class'], $key ) ); ?>">
-					<a class="social-icons__icon" href="<?php echo esc_attr( $social_icon['url'] ); ?>" aria-label="<?php echo esc_attr( $social_icon['label'] ); ?>" rel="noopener noreferrer">
+
+			<?php $visibility = empty( $social_icon['url'] ) ? ' display-none' : null; ?>
+
+			<?php if ( ! empty( $social_icon['url'] ) || is_customize_preview() ) : ?>
+				<li class="<?php echo esc_attr( sprintf( $args['li_class'], $key ) ) . esc_attr( $visibility ); ?>">
+					<a class="social-icons__icon" href="<?php echo esc_url( $social_icon['url'] ); ?>" aria-label="<?php echo esc_attr( $social_icon['label'] ); ?>" rel="noopener noreferrer">
 						<?php echo file_get_contents( $social_icon['icon'] ); // phpcs:ignore ?>
 					</a>
 				</li>
@@ -495,10 +498,10 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
 function load_inline_svg( $filename ) {
 
 	// Add the path to your SVG directory inside your theme.
-	$svg_path = '/dist/shared/images/';
+	$svg_path = 'dist/images/';
 
 	// Check the SVG file exists
-	if ( file_exists( get_stylesheet_directory() . $svg_path . $filename ) ) {
+	if ( file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
 
 		// Load and return the contents of the file
 		return file_get_contents( MAVERICK_PATH . $svg_path . $filename );
