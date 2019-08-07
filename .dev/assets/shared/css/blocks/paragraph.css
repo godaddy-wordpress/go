@@ -6,7 +6,7 @@ p.has-background {
 .has-drop-cap:not(:focus) {
 
 	&::first-letter {
-		color: hsl(var(--theme-color-heading));
+		color: hsl(var(--theme-color-primary));
 		font-size: var(--theme-dropcap--font-size);
 		font-weight: var(--theme-dropcap--weight);
 		line-height: 1;
