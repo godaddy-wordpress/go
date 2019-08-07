@@ -75,7 +75,7 @@
 
 	/* Headings */
 	--theme-heading--font: "Montserrat", sans-serif;
-	--theme-heading--leading: 1.35;
+	--theme-heading--leading: 1.45;
 	--theme-heading--style: normal;
 	--theme-heading--tracking: -0.025em;
 	--theme-heading--weight: 700;
@@ -135,7 +135,7 @@
 	--theme-pullquote--border: var(--theme-pullquote--border-width) var(--theme-pullquote--border-style) hsl(var(--theme-pullquote--border-color));
 	--theme-pullquote--color: var(--theme-color-heading);
 	--theme-pullquote--font-size: var(--theme-h1--font-size);
-	--theme-pullquote--leading: var(--theme-heading--leading);
+	--theme-pullquote--leading: 1.25;
 	--theme-pullquote--padding-y: 0.75rem;
 	--theme-pullquote--padding-x: 1rem;
 	--theme-pullquote--style: italic;
