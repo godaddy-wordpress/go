@@ -36,6 +36,31 @@ export default () => {
 	};
 
 	/**
+	 * Load the color schemes for the selected design style.
+	 */
+	const loadColorSchemes = ( colorScheme ) => {
+		const designStyle = getDesignStyle( selectedDesignStyle );
+
+		if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
+			const colors = designStyle.color_schemes[ colorScheme ];
+
+			Object.entries( colors ).forEach( function ( [ setting, color ] ) {
+				const customizerSetting = wp.customize( `${setting}` );
+
+				if ( 'label' === setting || 'undefined' === typeof customizerSetting || 'undefined' === typeof wp.customize.control ) {
+					return;
+				}
+
+				customizerSetting.set( color );
+
+				wp.customize.control( `${setting}_control` ).container.find( '.color-picker-hex' )
+					.data( 'data-default-color', color )
+					.wpColorPicker( 'defaultColor', color );
+			} );
+		}
+	};
+
+	/**
 	 * Returns the design style array
 	 *
 	 * @param {*} designStyle
@@ -55,31 +80,12 @@ export default () => {
 		selectedDesignStyle = value.get();
 		value.bind( ( to ) => {
 			selectedDesignStyle = to;
+			loadColorSchemes( 'default' );
 		} );
 	} );
 
 	wp.customize( 'color_scheme', ( value ) => {
-		value.bind( ( colorScheme ) => {
-			const designStyle = getDesignStyle( selectedDesignStyle );
-
-			if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
-				const colors = designStyle.color_schemes[ colorScheme ];
-
-				Object.entries( colors ).forEach( function ( [ setting, color ] ) {
-					const customizerSetting = wp.customize( `${setting}` );
-
-					if ( 'label' === setting || 'undefined' === typeof customizerSetting || 'undefined' === typeof wp.customize.control ) {
-						return;
-					}
-
-					customizerSetting.set( color );
-
-					wp.customize.control( `${setting}_control` ).container.find( '.color-picker-hex' )
-						.data( 'data-default-color', color )
-						.wpColorPicker( 'defaultColor', color );
-				} );
-			}
-		} );
+		value.bind( ( colorScheme ) => loadColorSchemes( colorScheme ) );
 	} );
 
 	wp.customize( 'primary_color', ( value ) => {
