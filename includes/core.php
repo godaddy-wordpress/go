@@ -868,7 +868,7 @@ function get_social_icons() {
 	$social_icons = get_available_social_icons();
 
 	foreach ( $social_icons as $key => &$social_icon ) {
-		$social_icon['url'] = get_theme_mod( sprintf( 'footer_social_%s_setting', $key ), '' );
+		$social_icon['url'] = get_theme_mod( sprintf( 'footer_social_%s', $key ), '' );
 	}
 
 	return $social_icons;

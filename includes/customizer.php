@@ -564,7 +564,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
-		'footer_social_section',
+		'social_media',
 		[
 			'title'       => esc_html__( 'Social Media', 'maverick' ),
 			'description' => 'Add social media account links to apply social icons to the footer of your site.',
@@ -576,7 +576,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 
 	foreach ( $social_icons as $key => $social_icon ) {
 		$wp_customize->add_setting(
-			sprintf( 'footer_social_%s_setting', $key ),
+			sprintf( 'footer_social_%s', $key ),
 			[
 				'transport' => 'postMessage',
 			]
@@ -586,8 +586,8 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 			sprintf( 'footer_social_%s_control', $key ),
 			[
 				'label'    => $social_icon['label'],
-				'section'  => 'footer_social_section',
-				'settings' => sprintf( 'footer_social_%s_setting', $key ),
+				'section'  => 'social_media',
+				'settings' => sprintf( 'footer_social_%s', $key ),
 				'type'     => 'text',
 			]
 		);
@@ -696,10 +696,6 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	}
 
 	$settings_footer_partial = [ 'maverick_footer_copy_text_setting', 'maverick_footer_blurb_text_setting' ];
-
-	foreach ( $social_icons as $key => $social_icon ) {
-		$settings_footer_partial[] = sprintf( 'footer_social_%s_setting', $key );
-	}
 }
 
 /**

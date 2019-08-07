@@ -47,4 +47,54 @@ export default () => {
 			document.querySelector( ':root' ).style.setProperty( '--theme-footer-heading--color', setTo );
 		} );
 	} );
+
+	wp.customize( 'footer_social_facebook', ( value ) => {
+		value.bind( ( to ) => {
+			if ( to ) {
+				$( '.social-icon-facebook' ).removeClass( 'display-none' );
+			} else {
+				$( '.social-icon-facebook' ).addClass( 'display-none' );
+			}
+		} );
+	} );
+
+	wp.customize( 'footer_social_twitter', ( value ) => {
+		value.bind( ( to ) => {
+			if ( to ) {
+				$( '.social-icon-twitter' ).removeClass( 'display-none' );
+			} else {
+				$( '.social-icon-twitter' ).addClass( 'display-none' );
+			}
+		} );
+	} );
+
+	wp.customize( 'footer_social_instagram', ( value ) => {
+		value.bind( ( to ) => {
+			if ( to ) {
+				$( '.social-icon-instagram' ).removeClass( 'display-none' );
+			} else {
+				$( '.social-icon-instagram' ).addClass( 'display-none' );
+			}
+		} );
+	} );
+
+	wp.customize( 'footer_social_linkedin', ( value ) => {
+		value.bind( ( to ) => {
+			if ( to ) {
+				$( '.social-icon-linkedin' ).removeClass( 'display-none' );
+			} else {
+				$( '.social-icon-linkedin' ).addClass( 'display-none' );
+			}
+		} );
+	} );
+
+	wp.customize( 'footer_social_pinterest', ( value ) => {
+		value.bind( ( to ) => {
+			if ( to ) {
+				$( '.social-icon-pinterest' ).removeClass( 'display-none' );
+			} else {
+				$( '.social-icon-pinterest' ).addClass( 'display-none' );
+			}
+		} );
+	} );
 };
