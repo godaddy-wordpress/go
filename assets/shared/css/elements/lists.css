@@ -1,75 +1,31 @@
-/**
- * Global - list styling
- */
+/*! Lists */
+.content-area {
 
-ol,
-ul,
-.block-library-list ol,
-.block-library-list ul {
-	list-style: none;
-	padding: 0;
-}
+	& ul,
+	& ol {
 
-.content-area > ol:not([class]),
-.content-area > ul:not([class]),
-.block-library-list ul[aria-autocomplete="list"],
-.block-library-list ol[aria-autocomplete="list"] {
-	margin-bottom: var(--theme-spacing-unit-4);
-	margin-top: var(--theme-spacing-unit-4);
-
-	@media (--medium) {
-		margin-bottom: var(--theme-spacing-unit-6);
-		margin-top: var(--theme-spacing-unit-6);
-	}
-}
-
-.content-area ol:not([class]),
-.content-area ul:not([class]),
-.block-library-list ol,
-.block-library-list ul {
-	line-height: var(--theme-list-line-height);
-	list-style: none;
-
-	& li {
-		color: hsl(var(--theme-list-color));
-		font-size: var(--theme-list-font-size);
-		font-weight: var(--theme-list-font-weight);
-	}
-
-	& ol,
-	& ul {
-		padding-left: var(--theme-spacing-unit-6);
-	}
-}
-
-.content-area ul:not([class]),
-.block-library-list ul {
-
-	& li {
-
-		&::before {
-			color: hsla(var(--theme-list-bullet-color), 1);
-			content: "\2022";
-			display: inline-block;
-			font-weight: 700;
-			width: 1em;
+		& li {
+			margin: 0 0 0.25rem 1rem;
 		}
-	}
-}
 
-.content-area ol:not([class]),
-.block-library-list ol {
-	counter-reset: custom;
+		& ol {
+			margin-bottom: 0.25rem;
+			margin-top: 0.25rem;
+			padding-left: 0;
 
-	& li {
-		counter-increment: custom;
+			& li {
+				list-style: decimal;
+			}
+		}
 
-		&::before {
-			color: hsla(var(--theme-list-bullet-color), 1);
-			content: counters(custom, ".") " ";
-			display: inline-block;
-			font-weight: 700;
-			min-width: 2em;
+		& ul {
+			margin-bottom: 0.25rem;
+			margin-top: 0.25rem;
+			padding-left: 0;
+
+			& li {
+				list-style: circle;
+			}
 		}
 	}
 }

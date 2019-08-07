@@ -4,13 +4,12 @@
 
 /* Settings */
 @import url("../../../shared/css/config/media-queries.css");
-@import url("settings.css");
+@import url("../settings.css");
 
-/* Elements - all the HTML elements coverage */
-@import url("elements/headings.css");
+/* Elements */
 @import url("elements/forms.css");
 
-/* Gutenberg core blocks overrides */
+/* Core Blocks */
 @import url("blocks/button.css");
 
 /* CoBlocks */
@@ -18,11 +17,6 @@
 @import url("coblocks/hero.css");
 @import url("coblocks/media-card.css");
 @import url("coblocks/pricing-table.css");
-
-/* Components */
-@import url("header/has-offscreen-nav.css");
-@import url("header/site-navigation__toggle.css");
-@import url("header/site-navigation.css");
 
 /* WooCommerce */
 @import url("woocommerce/button.css");
@@ -35,17 +29,6 @@
 .site-branding__title {
 	letter-spacing: 3px;
 	text-transform: uppercase;
-}
-
-.primary-menu,
-.footer-navigation__title,
-[data-footer="footer-3"] .footer-navigation,
-[data-footer="footer-1"] .footer-navigation li {
-	letter-spacing: 2px;
-}
-
-.footer-navigation__title {
-	margin-bottom: 0.75rem;
 }
 
 .site-navigation {
@@ -83,8 +66,20 @@
 	}
 }
 
-p.has-background {
-	@media (max-width: 795px) {
+.primary-menu,
+.footer-navigation__title,
+[data-footer="footer-3"] .footer-navigation,
+[data-footer="footer-1"] .footer-navigation li {
+	letter-spacing: 3px;
+}
+
+/* Blocks with applied padding */
+.wp-block-code,
+.wp-block-verse,
+p.has-background,
+.wp-block-pullquote,
+.wp-block-cover:not(.alignwide):not(.alignfull) {
+	@media (max-width: 730px) {
 		margin-left: var(--theme-block-padding-x);
 		margin-right: var(--theme-block-padding-x);
 	}

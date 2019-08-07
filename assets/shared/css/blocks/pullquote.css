@@ -1,14 +1,88 @@
-/**
- * Global - pullquote styling
-*/
+/*! Pullquote */
+.content-area {
 
-.wp-block-pullquote__citation,
-.wp-block-pullquote cite,
-.wp-block-pullquote footer {
-	color: inherit;
-	font-family: var(--theme-body--font);
-	font-weight: 400;
-	letter-spacing: 1px;
-	opacity: 0.7;
-	text-transform: inherit;
+	& .wp-block-pullquote {
+
+		&:not(.alignwide):not(.alignfull):not(.alignleft) {
+			@mixin blockWidthNoPadding;
+		}
+
+		&.alignwide {
+			max-width: calc(var(--theme-max-w-wide) * 0.75);
+		}
+
+		&.alignfull {
+			padding-left: var(--theme-block-padding-x);
+			padding-right: var(--theme-block-padding-x);
+		}
+	}
+}
+
+.wp-block-pullquote {
+	border-bottom: var(--theme-pullquote--border);
+	border-top: var(--theme-pullquote--border);
+
+	&:not(.alignleft):not(.alignright) {
+		padding-bottom: var(--theme-pullquote--padding-y);
+		padding-top: var(--theme-pullquote--padding-y);
+	}
+
+	&:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
+		padding-left: var(--theme-pullquote--padding-x);
+		padding-right: var(--theme-pullquote--padding-x);
+
+		& p {
+			color: hsl(var(--theme-pullquote--color));
+			margin: 1rem 0;
+		}
+	}
+
+	& blockquote {
+		margin: 0;
+	}
+
+	& p {
+
+		font-family: var(--theme-pullquote--font);
+		font-size: var(--theme-pullquote--font-size);
+		font-style: var(--theme-pullquote--style);
+		font-weight: var(--theme-pullquote--weight);
+		line-height: var(--theme-pullquote--leading);
+	}
+
+	& cite {
+		color: hsl(var(--theme-caption--color));
+		display: inline-block;
+		font-size: var(--theme-caption--font-size);
+		font-style: var(--theme-caption--style);
+		margin-bottom: calc(var(--theme-pullquote--padding-y) + 0.5rem);
+		text-transform: none;
+	}
+
+	&.is-style-solid-color {
+
+		&:not([class*="background-color"]) {
+			background-color: hsl(var(--theme-color-primary));
+		}
+
+		&:not([class*="text-color"]) {
+			color: hsl(var(--color-white));
+		}
+
+		& blockquote {
+			max-width: 100%;
+			padding: calc(var(--theme-block-padding-x) * 0.7) 0.75rem;
+
+			& p {
+				font-size: var(--theme-pullquote--font-size);
+			}
+
+			& cite {
+				color: currentColor;
+				margin-bottom: 0;
+				margin-top: 1rem;
+				opacity: 0.65;
+			}
+		}
+	}
 }

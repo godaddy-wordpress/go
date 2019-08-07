@@ -1,11 +1,11 @@
-.wp-block-cover {
+/*! Pullquote */
+.content-area {
 
-	&__inner-container {
+	& .wp-block-cover {
 		width: auto;
-	}
 
-	& h2 {
-		font-size: var(--theme-h2--font-size);
-
+		&:not(.alignwide):not(.alignfull):not(.alignleft) {
+			@mixin blockWidthNoPadding;
+		}
 	}
 }
