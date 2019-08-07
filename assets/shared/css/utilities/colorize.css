@@ -1,34 +1,47 @@
-/**
- * Used to apply primary background color
- */
-.has-primary-background-color {
-	background-color: hsl(var(--theme-color-primary));
+/* Color palette overrides */
+.content-area {
+
+	& .has-primary-background-color,
+	& .has-secondary-background-color {
+
+		&,
+		& a {
+			color: hsl(var(--color-white));
+		}
+	}
 }
 
-.has-primary-color {
-	color: hsl(var(--theme-color-primary));
-}
+/* Color palette classes */
+.content-area {
+ 	& .has-primary-background-color {
+		background-color: hsl(var(--theme-color-primary));
+	}
 
-.has-secondary-background-color {
-	background-color: hsl(var(--theme-color-secondary));
-}
+	& .has-primary-color {
+		color: hsl(var(--theme-color-primary));
+	}
 
-.has-secondary-color {
-	color: hsl(var(--theme-color-secondary));
-}
+	& .has-secondary-background-color {
+		background-color: hsl(var(--theme-color-secondary));
+	}
 
-.has-tertiary-background-color {
-	background-color: hsl(var(--theme-color-tertiary));
-}
+	& .has-secondary-color {
+		color: hsl(var(--theme-color-secondary));
+	}
 
-.has-tertiary-color {
-	color: hsl(var(--theme-color-tertiary));
-}
+	& .has-tertiary-background-color {
+		background-color: hsl(var(--theme-color-tertiary));
+	}
 
-.has-quaternary-background-color {
-	background-color: hsl(var(--color-white));
-}
+	& .has-tertiary-color {
+		color: hsl(var(--theme-color-tertiary));
+	}
 
-.has-quaternary-color {
-	color: hsl(var(--color-white));
+	& .has-quaternary-background-color {
+		background-color: hsl(var(--color-white));
+	}
+
+	& .has-quaternary-color {
+		color: hsl(var(--color-white));
+	}
 }
