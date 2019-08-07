@@ -2,6 +2,7 @@
 	appearance: none !important;
 	background-color: hsl(var(--theme-button--bg));
 	border-radius: var(--theme-button--radius);
+	border: none;
 	box-sizing: border-box;
 	color: hsl(var(--theme-button--color));
 	display: inline-block;
@@ -16,7 +17,6 @@
 	text-transform: var(--theme-button--text-transform);
 	transition: var(--theme-button-transition);
 	vertical-align: bottom;
-	border: none;
 }
 
 @define-mixin button-hover {

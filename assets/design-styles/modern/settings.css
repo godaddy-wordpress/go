@@ -128,15 +128,17 @@
 	--theme-link--color-interactive: var(--theme-color-primary);
 
 	/* Pullquote */
-	--theme-pullquote--border-color: var(--theme-color-primary);
+	--theme-pullquote--font: serif;
+	--theme-pullquote--border-color: transparent;
 	--theme-pullquote--border-style: solid;
-	--theme-pullquote--border-width: 0.45rem;
-	--theme-pullquote--border: var(--theme-quote-large--border-width) var(--theme-quote-large--border-style) hsl(var(--theme-quote-large--border-color));
+	--theme-pullquote--border-width: 0;
+	--theme-pullquote--border: var(--theme-pullquote--border-width) var(--theme-pullquote--border-style) hsl(var(--theme-pullquote--border-color));
 	--theme-pullquote--color: var(--theme-color-heading);
-	--theme-pullquote--font-size: var(--theme-h3--font-size);
-	--theme-pullquote--leading: 1.45;
+	--theme-pullquote--font-size: var(--theme-h1--font-size);
+	--theme-pullquote--leading: var(--theme-heading--leading);
 	--theme-pullquote--padding-y: 0.75rem;
-	--theme-pullquote--style: normal;
+	--theme-pullquote--padding-x: 1rem;
+	--theme-pullquote--style: italic;
 	--theme-pullquote--weight: var(--theme-heading--weight);
 
 	/* Blockquote */
