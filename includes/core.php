@@ -518,10 +518,10 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'trendy-shop' => [
-			'label'         => esc_html__( 'Trendy Shop', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy-shop.css',
-			'editor_style'  => 'dist/css/design-styles/trendy-shop-editor.css',
+		'trendy'      => [
+			'label'         => esc_html__( 'Trendy', 'maverick' ),
+			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy.css',
+			'editor_style'  => 'dist/css/design-styles/trendy-editor.css',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -556,8 +556,8 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'play'        => [
-			'label'         => esc_html__( 'Play', 'maverick' ),
+		'playful'        => [
+			'label'         => esc_html__( 'Playful', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
 			'editor_style'  => 'dist/css/design-styles/play-editor.css',
 			'color_schemes' => [
