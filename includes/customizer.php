@@ -585,10 +585,13 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		$wp_customize->add_control(
 			sprintf( 'footer_social_%s_control', $key ),
 			[
-				'label'    => $social_icon['label'],
-				'section'  => 'social_media',
-				'settings' => sprintf( 'footer_social_%s', $key ),
-				'type'     => 'text',
+				'label'       => $social_icon['label'],
+				'section'     => 'social_media',
+				'settings'    => sprintf( 'footer_social_%s', $key ),
+				'type'        => 'url',
+				'input_attrs' => [
+					'placeholder' => esc_url( $social_icon['placeholder'] ),
+				],
 			]
 		);
 	}

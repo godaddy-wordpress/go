@@ -823,29 +823,34 @@ function get_default_footer_copy_text() {
 function get_available_social_icons() {
 	$social_icons = [
 		'facebook'  => [
-			'label'      => esc_html__( 'Facebook', 'maverick' ),
-			'icon'       => MAVERICK_PATH . '/assets/shared/images/social/facebook.svg',
-			'icon_class' => '',
+			'label'       => esc_html__( 'Facebook', 'maverick' ),
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/facebook.svg',
+			'icon_class'  => '',
+			'placeholder' => 'https://facebook.com/name',
 		],
 		'twitter'   => [
-			'label'      => esc_html__( 'Twitter', 'maverick' ),
-			'icon'       => MAVERICK_PATH . '/assets/shared/images/social/twitter.svg',
-			'icon_class' => '',
+			'label'       => esc_html__( 'Twitter', 'maverick' ),
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/twitter.svg',
+			'icon_class'  => '',
+			'placeholder' => 'https://twitter.com/name',
 		],
 		'instagram' => [
-			'label'      => esc_html__( 'Instagram', 'maverick' ),
-			'icon'       => MAVERICK_PATH . '/assets/shared/images/social/instagram.svg',
-			'icon_class' => '',
+			'label'       => esc_html__( 'Instagram', 'maverick' ),
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/instagram.svg',
+			'icon_class'  => '',
+			'placeholder' => 'https://instagram.com/name',
 		],
 		'linkedin'  => [
-			'label'      => esc_html__( 'LinkedIn', 'maverick' ),
-			'icon'       => MAVERICK_PATH . '/assets/shared/images/social/linkedin.svg',
-			'icon_class' => '',
+			'label'       => esc_html__( 'LinkedIn', 'maverick' ),
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/linkedin.svg',
+			'icon_class'  => '',
+			'placeholder' => 'https://linkedin.com/in/name',
 		],
 		'pinterest' => [
-			'label'      => esc_html__( 'Pinterest', 'maverick' ),
-			'icon'       => MAVERICK_PATH . '/assets/shared/images/social/pinterest.svg',
-			'icon_class' => '',
+			'label'       => esc_html__( 'Pinterest', 'maverick' ),
+			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/pinterest.svg',
+			'icon_class'  => '',
+			'placeholder' => 'https://pinterest.com/name',
 		],
 	];
 
