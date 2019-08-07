@@ -1,11 +1,15 @@
 .content-area > * {
-	margin: var(--theme-block-spacing) auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: var(--theme-block-spacing);
+	margin-top: var(--theme-block-spacing);
 	max-width: var(--theme-max-w-base);
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
 
 	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code) {
-		margin: var(--theme-block-spacing-huge) auto;
+		margin-bottom: var(--theme-block-spacing-huge);
+		margin-top: var(--theme-block-spacing-huge);
 	}
 
 	&:first-child {
