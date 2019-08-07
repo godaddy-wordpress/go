@@ -72,7 +72,10 @@ module.exports = {
 	},
 	copyWebpackConfig: {
 		from: '.dev/assets/**/*.{jpg,jpeg,png,gif,svg}',
-		to: 'images',
+		to: 'images/[path][name].[ext]',
+		transformPath: ( targetPath ) => {
+			return 'images/' + targetPath.replace( /(\.dev\/assets\/|images\/)/g, '' );
+		},
 	},
 	BrowserSyncConfig: {
 		host: 'localhost',

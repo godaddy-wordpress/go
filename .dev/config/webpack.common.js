@@ -135,7 +135,7 @@ module.exports = {
 			{
 				from: settings.copyWebpackConfig.from,
 				to: settings.copyWebpackConfig.to,
-				flatten: true,
+				transformPath: settings.copyWebpackConfig.transformPath,
 			}
 		] ),
 
