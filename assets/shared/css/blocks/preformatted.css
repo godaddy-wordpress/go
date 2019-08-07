@@ -1,18 +1,5 @@
-/**
- * Global - pre styling
- */
-
-pre {
-	font-family: var(--theme-body--font);
+/*! Preformatted */
+.wp-block-preformatted {
+	font-size: 0.925rem;
 	white-space: pre-wrap;
-}
-
-.content-area > pre {
-	margin-bottom: var(--theme-spacing-unit-4);
-	margin-top: var(--theme-spacing-unit-4);
-
-	@media (--medium) {
-		margin-bottom: var(--theme-spacing-unit-6);
-		margin-top: var(--theme-spacing-unit-6);
-	}
 }

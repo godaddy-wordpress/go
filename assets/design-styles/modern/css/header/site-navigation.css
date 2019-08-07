@@ -1,5 +1,0 @@
-body.menu-is-open {
-	@media (max-width: 1087px) {
-		position: inherit;
-	}
-}

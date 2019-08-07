@@ -3,11 +3,11 @@ html {
 }
 
 ::-moz-selection {
-	background-color: hsla(var(--theme-selection--color), 0.15);
+	background-color: hsla(var(--theme-selection--color), 0.1);
 }
 
 ::selection {
-	background-color: hsla(var(--theme-selection--color), 0.15);
+	background-color: hsla(var(--theme-selection--color), 0.1);
 }
 
 *,
@@ -29,7 +29,6 @@ body {
 	word-wrap: break-word;
 }
 
-button,
 input,
 select,
 optgroup,

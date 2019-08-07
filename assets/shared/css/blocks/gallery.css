@@ -1,5 +1,14 @@
+/*! Gallery */
 .wp-block-gallery {
-	margin-bottom: -16px !important;
+
+	& .blocks-gallery-item figcaption {
+		font-size: var(--theme-caption--font-size);
+		font-style: var(--theme-caption--style);
+		padding-left: 15px;
+		padding-right: 15px;
+		text-align: var(--theme-caption--alignment);
+		width: calc(100% - 30px);
+	}
 
 	& .blocks-gallery-item:last-child {
 		margin-bottom: 16px !important;

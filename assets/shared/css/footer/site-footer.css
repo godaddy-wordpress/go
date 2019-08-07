@@ -68,5 +68,6 @@
 	display: block;
 	font-family: var(--theme-site-nav--font-family);
 	font-size: var(--theme-site-nav--font-size);
+	margin-bottom: 0.75rem;
 	text-transform: var(--theme-site-nav--text-transform);
 }
