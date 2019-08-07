@@ -462,27 +462,27 @@ function get_available_design_styles() {
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Shade', 'maverick' ),
-					'primary_color'   => '#111111',
-					'secondary_color' => '#494749',
-					'tertiary_color'  => '#afafaf',
+					'primary_color'   => '#000a12',
+					'secondary_color' => '#455a64',
+					'tertiary_color'  => '#eceff1',
 				],
 				'two'     => [
 					'label'           => esc_html__( 'Blush', 'maverick' ),
-					'primary_color'   => '#ef0254',
-					'secondary_color' => '#ff5c8d',
-					'tertiary_color'  => '#ffc1d1',
+					'primary_color'   => '#c2185b', // 700
+					'secondary_color' => '#ec407a', // 400
+					'tertiary_color'  => '#fce4ec', // 100
 				],
 				'three'   => [
 					'label'           => esc_html__( 'Indigo', 'maverick' ),
-					'primary_color'   => '#142393',
-					'secondary_color' => '#536ac6',
-					'tertiary_color'  => '#bfc7ff',
+					'primary_color'   => '#303f9f', // 700
+					'secondary_color' => '#5c6bc0', // 400
+					'tertiary_color'  => '#e8eaf6', // 100
 				],
 				'four'    => [
 					'label'           => esc_html__( 'Pacific', 'maverick' ),
-					'primary_color'   => '#20534d',
-					'secondary_color' => '#00bfa5',
-					'tertiary_color'  => '#bbeae5',
+					'primary_color'   => '#00796b', // 700
+					'secondary_color' => '#26a69a', // 400
+					'tertiary_color'  => '#e0f2f1', // 100
 				],
 			],
 			'fonts'         => [
