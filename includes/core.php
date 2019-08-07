@@ -462,9 +462,9 @@ function get_available_design_styles() {
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Shade', 'maverick' ),
-					'primary_color'   => '#1c1c1c',
-					'secondary_color' => '#686868',
-					'tertiary_color'  => '#cccccc',
+					'primary_color'   => '#111111',
+					'secondary_color' => '#494749',
+					'tertiary_color'  => '#afafaf',
 				],
 				'two'     => [
 					'label'           => esc_html__( 'Blush', 'maverick' ),
@@ -474,15 +474,15 @@ function get_available_design_styles() {
 				],
 				'three'   => [
 					'label'           => esc_html__( 'Indigo', 'maverick' ),
-					'primary_color'   => '#283593',
-					'secondary_color' => '#5f5fc4',
-					'tertiary_color'  => '#d1d9ff',
+					'primary_color'   => '#142393',
+					'secondary_color' => '#536ac6',
+					'tertiary_color'  => '#bfc7ff',
 				],
 				'four'    => [
 					'label'           => esc_html__( 'Pacific', 'maverick' ),
 					'primary_color'   => '#20534d',
 					'secondary_color' => '#00bfa5',
-					'tertiary_color'  => '#afebe5',
+					'tertiary_color'  => '#bbeae5',
 				],
 			],
 			'fonts'         => [
