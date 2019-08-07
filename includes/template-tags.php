@@ -335,7 +335,7 @@ function social_icons( $args = [] ) {
 	$social_icons     = \Maverick\Core\get_social_icons();
 	$has_social_cions = has_social_icons( $social_icons );
 
-	if ( ! $has_social_cions ) {
+	if ( ! $has_social_cions && ! is_customize_preview() ) {
 		return;
 	}
 
