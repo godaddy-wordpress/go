@@ -826,31 +826,31 @@ function get_available_social_icons() {
 			'label'       => esc_html__( 'Facebook', 'maverick' ),
 			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/facebook.svg',
 			'icon_class'  => '',
-			'placeholder' => 'https://facebook.com/name',
+			'placeholder' => 'https://facebook.com/user',
 		],
 		'twitter'   => [
 			'label'       => esc_html__( 'Twitter', 'maverick' ),
 			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/twitter.svg',
 			'icon_class'  => '',
-			'placeholder' => 'https://twitter.com/name',
+			'placeholder' => 'https://twitter.com/user',
 		],
 		'instagram' => [
 			'label'       => esc_html__( 'Instagram', 'maverick' ),
 			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/instagram.svg',
 			'icon_class'  => '',
-			'placeholder' => 'https://instagram.com/name',
+			'placeholder' => 'https://instagram.com/user',
 		],
 		'linkedin'  => [
 			'label'       => esc_html__( 'LinkedIn', 'maverick' ),
 			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/linkedin.svg',
 			'icon_class'  => '',
-			'placeholder' => 'https://linkedin.com/in/name',
+			'placeholder' => 'https://linkedin.com/in/user',
 		],
 		'pinterest' => [
 			'label'       => esc_html__( 'Pinterest', 'maverick' ),
 			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/pinterest.svg',
 			'icon_class'  => '',
-			'placeholder' => 'https://pinterest.com/name',
+			'placeholder' => 'https://pinterest.com/user',
 		],
 	];
 
