@@ -498,7 +498,7 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
 function load_inline_svg( $filename ) {
 
 	// Add the path to your SVG directory inside your theme.
-	$svg_path = 'dist/images/shared/';
+	$svg_path = 'dist/images/';
 
 	// Check the SVG file exists
 	if ( file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {

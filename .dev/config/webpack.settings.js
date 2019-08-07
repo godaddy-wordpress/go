@@ -74,7 +74,7 @@ module.exports = {
 		from: '.dev/assets/**/*.{jpg,jpeg,png,gif,svg}',
 		to: 'images/[path][name].[ext]',
 		transformPath: ( targetPath ) => {
-			return 'images/' + targetPath.replace( /(\.dev\/assets\/|images\/)/g, '' );
+			return 'images/' + targetPath.replace( /(\.dev\/assets\/|images\/|shared\/)/g, '' );
 		},
 	},
 	BrowserSyncConfig: {
