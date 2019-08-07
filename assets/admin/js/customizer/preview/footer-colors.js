@@ -24,7 +24,7 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'footer_social_color', ( value ) => {
+	wp.customize( 'social_icon_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : undefined;
@@ -48,7 +48,7 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'footer_social_facebook', ( value ) => {
+	wp.customize( 'social_icon_facebook', ( value ) => {
 		value.bind( ( to ) => {
 			if ( to ) {
 				$( '.social-icon-facebook' ).removeClass( 'display-none' );
@@ -58,7 +58,7 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'footer_social_twitter', ( value ) => {
+	wp.customize( 'social_icon_twitter', ( value ) => {
 		value.bind( ( to ) => {
 			if ( to ) {
 				$( '.social-icon-twitter' ).removeClass( 'display-none' );
@@ -68,7 +68,7 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'footer_social_instagram', ( value ) => {
+	wp.customize( 'social_icon_instagram', ( value ) => {
 		value.bind( ( to ) => {
 			if ( to ) {
 				$( '.social-icon-instagram' ).removeClass( 'display-none' );
@@ -78,7 +78,7 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'footer_social_linkedin', ( value ) => {
+	wp.customize( 'social_icon_linkedin', ( value ) => {
 		value.bind( ( to ) => {
 			if ( to ) {
 				$( '.social-icon-linkedin' ).removeClass( 'display-none' );
@@ -88,7 +88,7 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'footer_social_pinterest', ( value ) => {
+	wp.customize( 'social_icon_pinterest', ( value ) => {
 		value.bind( ( to ) => {
 			if ( to ) {
 				$( '.social-icon-pinterest' ).removeClass( 'display-none' );
