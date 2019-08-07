@@ -22,6 +22,7 @@ function setup() {
 
 	add_action( 'customize_register', $n( 'register_control_types' ) );
 	add_action( 'customize_register', $n( 'default_controls' ) );
+	add_action( 'customize_register', $n( 'register_logo_controls' ) );
 	add_action( 'customize_register', $n( 'register_global_controls' ) );
 	add_action( 'customize_register', $n( 'register_header_controls' ) );
 	add_action( 'customize_register', $n( 'register_footer_controls' ) );
@@ -42,8 +43,10 @@ function setup() {
 function register_control_types( \WP_Customize_Manager $wp_customize ) {
 	// Load custom controls
 	require_once MAVERICK_PATH . '/includes/classes/customizer/class-switcher-control.php';
+	require_once MAVERICK_PATH . '/includes/classes/customizer/class-range-control.php';
 
 	$wp_customize->register_control_type( Switcher_Control::class );
+	$wp_customize->register_control_type( Range_Control::class );
 }
 
 /**
@@ -125,6 +128,74 @@ function enqueue_controls_assets() {
 		MAVERICK_TEMPLATE_URL . '/dist/css/admin/customizer-styles.css',
 		[],
 		MAVERICK_VERSION
+	);
+}
+
+/**
+ * Register the Logo Controls within Customize.
+ *
+ * @param \WP_Customize_Manager $wp_customize The customize manager object.
+ *
+ * @return void
+ */
+function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_setting(
+		'logo_width',
+		array(
+			'default'           => 100,
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Range_Control(
+			$wp_customize,
+			'logo_width',
+			array(
+				'default'     => 100,
+				'type'        => 'maverick_range_control',
+				'label'       => esc_html__( 'Width', 'maverick' ),
+				'description' => 'px',
+				'section'     => 'title_tagline',
+				'priority'    => 8,
+				'input_attrs' => array(
+					'min'  => 40,
+					'max'  => 300,
+					'step' => 2,
+				),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'logo_width_mobile',
+		array(
+			'default'           => 100,
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Range_Control(
+			$wp_customize,
+			'logo_width_mobile',
+			array(
+				'default'     => 100,
+				'type'        => 'maverick_range_control',
+				'label'       => esc_html__( 'Mobile Width', 'maverick' ),
+				'description' => 'px',
+				'section'     => 'title_tagline',
+				'priority'    => 9,
+				'input_attrs' => array(
+					'min'  => 40,
+					'max'  => 200,
+					'step' => 2,
+				),
+			)
+		)
 	);
 }
 
@@ -642,18 +713,22 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
  */
 function inline_css() {
 
-	//Color palette.
+	// Color palette.
 	$primary_color   = get_palette_color( 'primary', 'HSL' );
 	$secondary_color = get_palette_color( 'secondary', 'HSL' );
 	$tertiary_color  = get_palette_color( 'tertiary', 'HSL' );
 
-	//Customizer colors.
+	// Customizer colors.
 	$header_background    = hex_to_hsl( get_theme_mod( 'header_background_color', false ), true );
 	$header_text_color    = hex_to_hsl( get_theme_mod( 'maverick_header_text_color_setting', false ), true );
 	$footer_text_color    = hex_to_hsl( get_theme_mod( 'footer_text_color', false ), true );
 	$footer_heading_color = hex_to_hsl( get_theme_mod( 'footer_heading_color', false ), true );
 	$footer_background    = hex_to_hsl( get_theme_mod( 'footer_background_color', false ), true );
 	$footer_social_color  = hex_to_hsl( get_theme_mod( 'footer_social_color', false ), true );
+
+	// Site logo width
+	$logo_width        = get_theme_mod( 'logo_width', false );
+	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', false );
 	?>
 		<!-- Variable Overrides -->
 		<style>
@@ -701,6 +776,15 @@ function inline_css() {
 
 				<?php if ( $footer_social_color ) : ?>
 					--theme-social--color: <?php echo esc_attr( $footer_social_color ); ?>;
+				<?php endif; ?>
+
+				/* Site Logo */
+				<?php if ( $logo_width ) : ?>
+					--theme-site-logo--width: <?php echo esc_attr( $logo_width ); ?>px;
+				<?php endif; ?>
+
+				<?php if ( $logo_width_mobile ) : ?>
+					--theme-site-logo--width-mobile: <?php echo esc_attr( $logo_width_mobile ); ?>px;
 				<?php endif; ?>
 			}
 		</style>
