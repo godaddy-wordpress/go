@@ -27,8 +27,8 @@
 
 .wp-block-button__link {
 	@mixin button;
-	position: relative;
 	outline-offset: 2px;
+	position: relative;
 
 	&:focus {
 		@mixin button-hover;
