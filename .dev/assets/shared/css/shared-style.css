@@ -132,6 +132,10 @@ strong {
 	display: inline-block;
 }
 
+.display-none {
+	display: none;
+}
+
 .flex {
 	display: flex;
 }

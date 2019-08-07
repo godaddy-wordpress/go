@@ -50,11 +50,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	margin-bottom: 0;
 
 	& .switcher__choice {
 		height: 70px;
-		width: 46%;
-		margin-bottom: 7%;
+		width: calc(50% - 7.5px);
+		margin-bottom: 15px;
 
 		& .color-scheme {
 			border-radius: 3px;
