@@ -567,9 +567,8 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		'footer_social_section',
 		[
 			'title'       => esc_html__( 'Social Media', 'maverick' ),
-			'capability'  => 'edit_theme_options',
-			'description' => 'Add your own social media account links here to add social icons to the footer of your site.',
-			'priority'    => 81,
+			'description' => 'Add social media account links to apply social icons to the footer of your site.',
+			'priority'    => 100,
 		]
 	);
 
@@ -579,10 +578,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		$wp_customize->add_setting(
 			sprintf( 'footer_social_%s_setting', $key ),
 			[
-				'type'       => 'theme_mod',
-				'capability' => 'edit_theme_options',
-				'default'    => '',
-				'transport'  => 'postMessage',
+				'transport' => 'postMessage',
 			]
 		);
 
