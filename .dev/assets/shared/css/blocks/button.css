@@ -1,3 +1,4 @@
+/*! Button */
 .wp-block-button {
 
 	&:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
@@ -26,10 +27,10 @@
 
 .wp-block-button__link {
 	@mixin button;
-	outline: none;
+	outline-offset: 2px;
 	position: relative;
 
 	&:focus {
-		background-color: var(--theme-button--bg-interactive) !important;
+		@mixin button-hover;
 	}
 }

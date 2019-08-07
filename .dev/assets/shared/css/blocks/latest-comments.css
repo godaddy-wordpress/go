@@ -1,8 +1,7 @@
-/**
- * Latest comments overrides
- */
+/*! Latest Comments */
+.wp-block-latest-comments {
 
-.content-area > .wp-block-latest-comments {
-	margin-bottom: var(--theme-spacing-unit-6);
-	margin-top: var(--theme-spacing-unit-6);
+	& .wp-block-latest-comments__comment {
+		margin-left: 0;
+	}
 }

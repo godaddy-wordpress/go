@@ -1,11 +1,15 @@
 .content-area > * {
-	margin: var(--theme-block-spacing) auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: var(--theme-block-spacing);
+	margin-top: var(--theme-block-spacing);
 	max-width: var(--theme-max-w-base);
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
 
-	&:not(p):not(ul):not(ol):not(.wp-block-spacer) {
-		margin: var(--theme-block-spacing-huge) auto;
+	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code) {
+		margin-bottom: var(--theme-block-spacing-huge);
+		margin-top: var(--theme-block-spacing-huge);
 	}
 
 	&:first-child {
@@ -37,6 +41,40 @@
 
 .content-area {
 
+	& p ~ {
+
+		& figure,
+		& blockquote,
+		& .wp-block-cover {
+
+			/* Remove huge spacing when right after a paragraph */
+			margin-bottom: var(--theme-block-spacing-larger) !important;
+			margin-top: var(--theme-block-spacing-larger) !important;
+		}
+
+		& .wp-block-columns {
+			margin-bottom: var(--theme-block-spacing) !important;
+			margin-top: var(--theme-block-spacing) !important;
+		}
+
+		& .wp-block-button,
+		& .wp-block-separator,
+		& .wp-block-pullquote:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
+			margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5) !important;
+			margin-top: calc(var(--theme-block-spacing-larger) * 1.5) !important;
+		}
+
+		& .wp-block-gallery {
+			--spacing: calc((var(--theme-block-spacing-larger) * 1.5));
+			margin-bottom: calc(var(--spacing) - 15px);
+			margin-top: var(--spacing);
+
+			@media (--large) {
+				margin-bottom: calc(var(--spacing) - 20px);
+			}
+		}
+	}
+
 	& h1,
 	& h2,
 	& h3,
@@ -45,31 +83,15 @@
 	& h6 {
 
 		& + p {
-			margin-top: calc(-0.8 * var(--theme-block-spacing-huge)) !important;
+
+			/* Remove space between headings and paragraphs */
+			margin-top: calc(-0.825 * var(--theme-block-spacing-huge)) !important;
 		}
 
 		& + .wp-block-button {
+
+			/* Remove space between headings and button blocks */
 			margin-top: calc(-0.65 * var(--theme-block-spacing-huge)) !important;
-		}
-	}
-
-	& p ~ {
-
-		& h1,
-		& h2,
-		& h3,
-		& h4,
-		& h5,
-		& h6 {
-			margin-bottom: 0 !important;
-			margin-top: var(--theme-block-spacing-larger) !important;
-			padding-top: 2rem;
-		}
-
-		& figure,
-		& blockquote {
-			margin-bottom: var(--theme-block-spacing-larger) !important;
-			margin-top: var(--theme-block-spacing-larger) !important;
 		}
 	}
 }
