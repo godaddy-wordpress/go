@@ -498,7 +498,7 @@ function load_inline_svg( $filename ) {
 	$svg_path = 'dist/images/shared/';
 
 	// Check the SVG file exists
-	if ( file_exists( get_stylesheet_directory() . $svg_path . $filename ) ) {
+	if ( file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
 
 		// Load and return the contents of the file
 		return file_get_contents( MAVERICK_PATH . $svg_path . $filename );
