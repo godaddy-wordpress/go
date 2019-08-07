@@ -823,34 +823,29 @@ function get_default_footer_copy_text() {
 function get_available_social_icons() {
 	$social_icons = [
 		'facebook'  => [
-			'label'       => esc_html__( 'Facebook', 'maverick' ),
-			'description' => esc_html__( 'Facebook URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/facebook.svg',
-			'icon_class'  => '',
+			'label'      => esc_html__( 'Facebook', 'maverick' ),
+			'icon'       => MAVERICK_PATH . '/assets/shared/images/social/facebook.svg',
+			'icon_class' => '',
 		],
 		'twitter'   => [
-			'label'       => esc_html__( 'Twitter', 'maverick' ),
-			'description' => esc_html__( 'Twitter URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/twitter.svg',
-			'icon_class'  => '',
+			'label'      => esc_html__( 'Twitter', 'maverick' ),
+			'icon'       => MAVERICK_PATH . '/assets/shared/images/social/twitter.svg',
+			'icon_class' => '',
 		],
 		'instagram' => [
-			'label'       => esc_html__( 'Instagram', 'maverick' ),
-			'description' => esc_html__( 'Instagram URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/instagram.svg',
-			'icon_class'  => '',
+			'label'      => esc_html__( 'Instagram', 'maverick' ),
+			'icon'       => MAVERICK_PATH . '/assets/shared/images/social/instagram.svg',
+			'icon_class' => '',
 		],
 		'linkedin'  => [
-			'label'       => esc_html__( 'LinkedIn', 'maverick' ),
-			'description' => esc_html__( 'LinkedIn URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/linkedin.svg',
-			'icon_class'  => '',
+			'label'      => esc_html__( 'LinkedIn', 'maverick' ),
+			'icon'       => MAVERICK_PATH . '/assets/shared/images/social/linkedin.svg',
+			'icon_class' => '',
 		],
 		'pinterest' => [
-			'label'       => esc_html__( 'Pinterest', 'maverick' ),
-			'description' => esc_html__( 'Pinterest URL', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/pinterest.svg',
-			'icon_class'  => '',
+			'label'      => esc_html__( 'Pinterest', 'maverick' ),
+			'icon'       => MAVERICK_PATH . '/assets/shared/images/social/pinterest.svg',
+			'icon_class' => '',
 		],
 	];
 
