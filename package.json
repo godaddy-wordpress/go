@@ -1,6 +1,6 @@
 {
   "name": "maverick",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Project Description",
   "homepage": "https://project-domain.tld",
   "repository": {
@@ -8,10 +8,9 @@
     "url": "https://project-git-repo.tld"
   },
   "author": {
-    "name": "10up",
-    "email": "info@10up.com",
-    "url": "https://10up.com",
-    "role": "developer"
+    "name": "GoDaddy",
+    "url": "https://www.godaddy.com",
+    "role": "Developer"
   },
   "scripts": {
     "start": "composer install && npm install && npm run build",
