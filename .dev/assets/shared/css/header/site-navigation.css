@@ -39,6 +39,12 @@
 	}
 }
 
+.admin-bar:not([data-header="header-5"]) .site-navigation {
+	@media (--large) {
+		top: initial;
+	}
+}
+
 body.menu-is-open {
 	@media (max-width: 1087px) {
 		height: 100%;

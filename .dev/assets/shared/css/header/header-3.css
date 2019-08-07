@@ -18,18 +18,3 @@
 		width: 100%;
 	}
 }
-
-/* When admin bar is on */
-body.admin-bar.has-offscreen-nav.menu-is-open[data-header="header-3"] .site-navigation {
-	height: calc(100% - 130px);
-	top: 130px;
-
-	@media (--medium) {
-		height: calc(100% - 116px);
-		top: 116px;
-	}
-
-	@media (--large) {
-		top: auto;
-	}
-}

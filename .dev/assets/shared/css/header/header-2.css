@@ -51,17 +51,3 @@
 		}
 	}
 }
-
-/* When admin bar is on */
-.admin-bar.has-offscreen-nav.menu-is-open[data-header="header-2"] .site-navigation {
-	height: calc(100% - 116px);
-	top: auto;
-
-	@media (--medium) {
-		height: calc(100% - 102px);
-	}
-}
-
-.admin-bar[data-header="header-2"] .site-navigation {
-	top: auto;
-}

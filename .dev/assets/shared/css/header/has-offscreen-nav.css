@@ -91,6 +91,14 @@ body {
 		}
 	}
 
+	&.menu-is-open[data-header="header-2"] {
+
+		& .primary-menu {
+			padding-bottom: 5rem;
+			padding-top: 6rem;
+		}
+	}
+
 	&.menu-is-open[data-header="header-4"] {
 		height: 100%;
 		overflow: hidden;
