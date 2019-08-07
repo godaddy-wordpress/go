@@ -33,25 +33,6 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
-
-	/* &.alignleft {
-		--width: calc(var(--theme-max-w-base) / 2);
-
-		float: left;
-		margin-left: 0;
-		margin-right: 2rem;
-		margin-top: 0;
-		margin-left: calc(var(--width) - var(--theme-block-padding-x)) !important;
-		max-width: 300px;
-	}
-
-	&.alignright {
-		float: right;
-		margin-left: 2rem;
-		margin-right: 0;
-		margin-top: 0;
-		max-width: 300px;
-	} */
 }
 
 .content-area {
