@@ -23,7 +23,7 @@ $has_background   = Maverick\has_footer_background();
 					wp_nav_menu(
 						[
 							'theme_location' => 'footer-1',
-							'menu_class'     => 'footer-menu footer-menu--1 list-resest',
+							'menu_class'     => 'footer-menu footer-menu--1 list-reset',
 							'depth'          => 1,
 						]
 					);

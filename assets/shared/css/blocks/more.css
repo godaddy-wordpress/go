@@ -1,0 +1,7 @@
+/*! More */
+.content-area {
+
+	& > [id*="more-"] {
+		display: none;
+	}
+}

@@ -7,6 +7,7 @@
 	# Colors
 	# Typography
 	# Buttons
+	# Blocks
 	# Header
 	# Header Navigation Toggle
 	# Header Search Toggle
@@ -17,10 +18,8 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-
-	/* Widths */
-	--theme-max-w-base: 640px;
-	--theme-max-w-wide: 1280px;
+	--theme-max-w-base: 620px;
+	--theme-max-w-wide: 1260px;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -28,7 +27,7 @@
 	--theme-block-spacing-huge: 4rem;
 
 	@media (--large) {
-		--theme-block-spacing: 1.75rem;
+		--theme-block-spacing: 1.8rem;
 		--theme-block-spacing-larger: 2.3rem;
 		--theme-block-spacing-huge: 8.5rem;
 	}
@@ -51,17 +50,16 @@
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
 	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1);
 
+
 	/*--------------------------------------------------------------
 	## Colors
 	--------------------------------------------------------------*/
-
-	/* Body */
 	--theme-color-body-bg: 0, 0%, 100%;
 
 	/* Text Colors */
+	--theme-color-heading: 0, 0%, 11%;
 	--theme-color-text: 0, 0%, 41%;
 	--theme-color-text-secondary: 0, 0%, 41%;
-	--theme-color-heading: 0, 0%, 11%;
 
 	/* Global Color Scheme Colors */
 	--theme-color-quaternary: var(--color-white);
@@ -70,8 +68,6 @@
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
-
-	/* Body */
 	--theme-body--font: "IBM Plex Sans", sans-serif;
 	--theme-body--font-size: 1rem;
 	--theme-body--leading: 1.9;
@@ -79,22 +75,22 @@
 
 	/* Headings */
 	--theme-heading--font: "Montserrat", sans-serif;
-	--theme-heading--leading: 1.35;
+	--theme-heading--leading: 1.45;
+	--theme-heading--style: normal;
 	--theme-heading--tracking: -0.025em;
 	--theme-heading--weight: 700;
-	--theme-heading--style: normal;
 
-	--theme-h1--font-size: 2.5rem;
-	--theme-h2--font-size: 2rem;
-	--theme-h3--font-size: 1.75rem;
-	--theme-h4--font-size: 1.65rem;
+	--theme-h1--font-size: 2rem;
+	--theme-h2--font-size: 1.85rem;
+	--theme-h3--font-size: 1.6rem;
+	--theme-h4--font-size: 1.5rem;
 	--theme-h5--font-size: 1.35rem;
 	--theme-h6--font-size: 1.15rem;
 
-	@media (--large) {
-		--theme-h1--font-size: 3rem;
+	@media (--medium) {
+		--theme-h1--font-size: 2.5rem;
 		--theme-h2--font-size: 2.25rem;
-		--theme-h3--font-size: 2rem;
+		--theme-h3--font-size: 1.85rem;
 	}
 
 	--theme-h1--color: var(--theme-color-heading);
@@ -108,59 +104,68 @@
 	--theme-text-xs: 78%;
 	--theme-text-sm: 82.5%;
 	--theme-text-sm--letter-spacing: 0.015em;
-	--theme-text-md: 105%;
 
 	@media (--small) {
 		--theme-text-sm: 85%;
-		--theme-text-md: 110%;
 	}
 
 	@media (--large) {
 		--theme-text-sm: 90%;
 	}
 
-	/* Links @todo - Needs reviewing */
-	--theme-link-color: var(--theme-color-text-secondary);
-	--theme-link-color-interactive: var(--theme-color-text-secondary);
-	--theme-link-underline-color: var(--theme-color-text-secondary);
-	--theme-link-underline-color-interactive: var(--theme-color-text-secondary);
+	/* Drop Cap */
+	--theme-dropcap--font-size: 5rem;
+	--theme-dropcap--weight: 700;
 
-	/* Blockquote @todo - Needs reviewing  */
-	--theme-quote--font-size: 1.9rem;
-	--theme-quote--leading: 1.36;
-	--theme-quote--weight: 700;
+	/* Captions */
+	--theme-caption--alignment: left;
+	--theme-caption--color: var(--theme-color-text-secondary);
+	--theme-caption--font-size: 0.85rem;
+	--theme-caption--style: normal;
 
-	--theme-quote-large--font-size: 2.25rem;
+	/* Links */
+	--theme-link--color: var(--theme-color-heading);
+	--theme-link--color-interactive: var(--theme-color-primary);
+
+	/* Pullquote */
+	--theme-pullquote--font: serif;
+	--theme-pullquote--border-color: transparent;
+	--theme-pullquote--border-style: solid;
+	--theme-pullquote--border-width: 0;
+	--theme-pullquote--border: var(--theme-pullquote--border-width) var(--theme-pullquote--border-style) hsl(var(--theme-pullquote--border-color));
+	--theme-pullquote--color: var(--theme-color-heading);
+	--theme-pullquote--font-size: var(--theme-h1--font-size);
+	--theme-pullquote--leading: 1.25;
+	--theme-pullquote--padding-y: 0.75rem;
+	--theme-pullquote--padding-x: 1rem;
+	--theme-pullquote--style: italic;
+	--theme-pullquote--weight: var(--theme-heading--weight);
+
+	/* Blockquote */
+	--theme-quote--color: var(--theme-color-heading);
+	--theme-quote--font-size: var(--theme-h2--font-size);
+	--theme-quote--leading: var(--theme-heading--leading);
+	--theme-quote--style: normal;
+	--theme-quote--weight: var(--theme-heading--weight);
+
+	/* Blockquote (Large) */
+	--theme-quote-large--border-color: var(--theme-color-primary);
+	--theme-quote-large--border-style: solid;
+	--theme-quote-large--border-width: 0.45rem;
+	--theme-quote-large--border: var(--theme-quote-large--border-width) var(--theme-quote-large--border-style) hsl(var(--theme-quote-large--border-color));
+	--theme-quote-large--color: var(--theme-color-heading);
+	--theme-quote-large--font-size: var(--theme-h2--font-size);
 	--theme-quote-large--leading: 1.3;
-	--theme-quote-large-font-style: italic;
-	--theme-quote-large-padding: 0.9rem 0 0 2rem;
-	--theme-quote-large-cite-margin-left: 1.25rem;
-
-	--theme-quote-large-border-width: 0.45rem;
-	--theme-quote-large-border-style: solid;
-	--theme-quote-large-border: var(--theme-quote-large-border-width) var(--theme-quote-large-border-style);
-
-	@media (--large) {
-		--theme-quote--font-size: 2.15rem;
-		--theme-quote-large--font-size: 2.75em;
-	}
-
-	/* Bulleted Lists @todo - Needs reviewing  */
-	--theme-list-bullet-color: var(--theme-color-text-secondary);
-	--theme-list-font-size: 1.0625rem;
-	--theme-list-line-height: 1.89;
-	--theme-list-color: var(--theme-color-text-secondary);
-	--theme-list-font-weight: 700;
+	--theme-quote-large--style: italic;
 
 
 	/*--------------------------------------------------------------
 	## Buttons
 	--------------------------------------------------------------*/
-
 	--theme-button--bg: var(--theme-color-primary);
 	--theme-button--bg-interactive: var(--theme-color-heading);
 	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-size: 0.65rem;
+	--theme-button--font-size: 0.75rem;
 	--theme-button--font: var(--theme-heading--font);
 	--theme-button--padding-x: 2rem;
 	--theme-button--padding-y: 1.6rem;
@@ -172,6 +177,66 @@
 	/* Disabled */
 	--theme-button--disabled-bg: 0, 2%, 89%;
 	--theme-button--disabled-color: 0, 0%, 61%;
+
+
+	/*--------------------------------------------------------------
+	## Forms
+	--------------------------------------------------------------*/
+	--theme-input--padding-y: 1.2rem;
+	--theme-input--padding-x: 1.5rem;
+
+
+	--theme-spacing-v-input: 1rem;
+	--theme-spacing-h-input: 1rem;
+
+	/* Labels */
+	--theme-label-letter-spacing: 3px;
+	--theme-label-text-transform: uppercase;
+	--theme-label-font-family: var(--theme-body--font);
+	--theme-input-label-font-size: 0.875rem;
+	--theme-input-label-font-weight: 700;
+	--theme-label-color: var(--theme-color-text-secondary);
+
+	/* Inputs */
+	--theme-input-border-bottom-width: 2px;
+	--theme-input-border-left-width: 2px;
+	--theme-input-border-right-width: 2px;
+	--theme-input-border-top-width: 2px;
+	--theme-input-border-width: 2px;
+	--theme-input-stroke-color: var(--theme-color-heading);
+	--theme-input-border-radius: 0;
+	--theme-input-font-size: 1.0625rem;
+	--theme-input-font-weight: 700;
+	--theme-input-stroke-color-focus: var(--theme-color-text-secondary);
+	--theme-input-box-shadow-focus: 0 1px 11px rgba(40, 37, 37, 0.07);
+	--theme-input-color: var(--theme-color-text-secondary);
+	--theme-input-color-focus: var(--theme-color-text-secondary);
+	--theme-input-placeholder-color: 0, 0%, 47%; /* #797878 */
+	--theme-input-color-background: 0, 0%, 100%; /* #fff */
+
+	/* Errors */
+	--theme-color-error: 357, 81%, 38%; /* #b0131c */
+	--theme-input-stroke-error: 357, 81%, 38%; /* #b0131c */
+
+	/* Textarea */
+	--theme-textarea-color: var(--theme-color-text-secondary);
+	--theme-textarea-stroke-color: var(--theme-color-text-secondary);
+	--theme-textarea-color-focus: var(--theme-color-text-secondary);
+	--theme-textarea-stroke-color-focus: var(--theme-color-text-secondary);
+	--theme-textarea-color-background: 0, 0%, 100%; /* #fff */
+
+	/* Check and Radio*/
+	--theme-checkbox-radio-fill: var(--theme-color-text-secondary); /* #202124 */
+
+	/* Feedback colors: error, success, warning, informational. */
+	--theme-feedback-informational-color: 208, 100%, 43%;
+
+
+	/*--------------------------------------------------------------
+	## Core Blocks
+	--------------------------------------------------------------*/
+	--theme-separator--color: var(--theme-color-heading);
+	--theme-table--border-color: var(--theme-color-heading);
 
 
 	/*--------------------------------------------------------------
@@ -308,15 +373,9 @@
 	--theme-footer-2-site-info--border-color: 0, 0%, 90%;
 
 
-	/***************************************************************
-	* Gutenberg core blocks
-	***************************************************************/
-	--theme-image-caption-text-color: var(--theme-color-text-secondary);
-	--theme-block-separator-color: var(--theme-color-text-secondary);
-
-	/***************************************************************
-	* CoBlocks blocks
-	***************************************************************/
+	/*--------------------------------------------------------------
+	## CoBlocks - @todo, clean
+	--------------------------------------------------------------*/
 	--theme-coblocks-author-background-color: var(--theme-color-primary);
 	--theme-coblocks-author-border-radius: 0;
 	--theme-coblocks-author-heading-color: var(--theme-color-text-secondary);
@@ -335,57 +394,10 @@
 	--theme-coblocks-gallery-carousel-border-color: var(--color-charade);
 
 	/***************************************************************
-	* FORMS
+	* FORMS - @todo, clean
 	* shared/css/elements/forms.css
 	* shared/css/config/mixins.css
 	***************************************************************/
-
-	/* SHARED: Input padding */
-	--theme-spacing-v-input: 1rem;
-	--theme-spacing-h-input: 1rem;
-
-	/* Labels */
-	--theme-label-letter-spacing: 2px;
-	--theme-label-text-transform: uppercase;
-	--theme-label-font-family: var(--theme-body--font);
-	--theme-input-label-font-size: 0.875rem;
-	--theme-input-label-font-weight: 700;
-	--theme-label-color: var(--theme-color-text-secondary);
-
-	/* Inputs */
-	--theme-input-border-bottom-width: 2px;
-	--theme-input-border-left-width: 2px;
-	--theme-input-border-right-width: 2px;
-	--theme-input-border-top-width: 2px;
-	--theme-input-border-width: 2px;
-	--theme-input-stroke-color: var(--theme-color-heading);
-	--theme-input-border-radius: 0;
-	--theme-input-font-size: 1.0625rem;
-	--theme-input-font-weight: 700;
-	--theme-input-stroke-color-focus: var(--theme-color-text-secondary);
-	--theme-input-box-shadow-focus: 0 1px 11px rgba(40, 37, 37, 0.07);
-	--theme-input-color: var(--theme-color-text-secondary);
-	--theme-input-color-focus: var(--theme-color-text-secondary);
-	--theme-input-placeholder-color: 0, 0%, 47%; /* #797878 */
-	--theme-input-color-background: 0, 0%, 100%; /* #fff */
-
-	/* Errors */
-	--theme-color-error: 357, 81%, 38%; /* #b0131c */
-	--theme-input-stroke-error: 357, 81%, 38%; /* #b0131c */
-
-	/* Textarea */
-	--theme-textarea-color: var(--theme-color-text-secondary);
-	--theme-textarea-stroke-color: var(--theme-color-text-secondary);
-	--theme-textarea-color-focus: var(--theme-color-text-secondary);
-	--theme-textarea-stroke-color-focus: var(--theme-color-text-secondary);
-	--theme-textarea-color-background: 0, 0%, 100%; /* #fff */
-
-	/* Check and Radio SVG trick */
-	--theme-checkbox-radio-fill: var(--theme-color-text-secondary); /* #202124 */
-
-
-	/* Feedback colors: error, success, warning, informational. */
-	--theme-feedback-informational-color: 208, 100%, 43%;
 
 	/* Spacing units */
 	--theme-spacing-unit: 0.5rem;
