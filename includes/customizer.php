@@ -242,13 +242,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		]
 	);
 
-	$wp_customize->add_section(
-		'color_schemes_section',
-		[
-			'title' => esc_html__( 'Color Scheme', 'maverick' ),
-		]
-	);
-
 	$wp_customize->add_setting(
 		'maverick_design_style',
 		[
@@ -263,8 +256,8 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		'maverick_design_style_control',
 		[
 			'label'       => esc_html__( 'Design Style', 'maverick' ),
-			'description' => esc_html__( 'Choose one of the supported design styles.', 'maverick' ),
-			'section'     => 'color_schemes_section',
+			'description' => esc_html__( 'Choose a style, select a color scheme and customize colors to personalize your site.', 'maverick' ),
+			'section'     => 'colors',
 			'settings'    => 'maverick_design_style',
 			'type'        => 'radio',
 			'choices'     => wp_list_pluck( \Maverick\Core\get_available_design_styles(), 'label' ),
@@ -286,9 +279,8 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			$wp_customize,
 			'maverick_color_scheme_control',
 			[
-				'label'         => esc_html__( 'Color Schemes', 'maverick' ),
-				'description'   => esc_html__( 'Choose one of the supported color schemes', 'maverick' ),
-				'section'       => 'color_schemes_section',
+				'label'         => esc_html__( 'Color Scheme', 'maverick' ),
+				'section'       => 'colors',
 				'settings'      => 'color_scheme',
 				'choices'       => get_color_schemes_as_choices(),
 				'switcher_type' => 'color-scheme',
@@ -312,7 +304,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'primary_color_control',
 			[
 				'label'    => esc_html__( 'Primary', 'maverick' ),
-				'section'  => 'color_schemes_section',
+				'section'  => 'colors',
 				'settings' => 'primary_color',
 			]
 		)
@@ -334,7 +326,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'secondary_color_control',
 			[
 				'label'    => esc_html__( 'Secondary', 'maverick' ),
-				'section'  => 'color_schemes_section',
+				'section'  => 'colors',
 				'settings' => 'secondary_color',
 			]
 		)
@@ -356,7 +348,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'tertiary_color_control',
 			[
 				'label'    => esc_html__( 'Tertiary', 'maverick' ),
-				'section'  => 'color_schemes_section',
+				'section'  => 'colors',
 				'settings' => 'tertiary_color',
 			]
 		)
