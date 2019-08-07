@@ -132,6 +132,31 @@ function enqueue_controls_assets() {
 }
 
 /**
+ * Returns all available color schemes for all design styles
+ * in an array for use in the Customizer control.
+ *
+ * @return array
+ */
+function get_color_schemes_as_choices() {
+	$design_styles = \Maverick\Core\get_available_design_styles();
+	$color_schemes = array();
+
+	array_walk(
+		$design_styles,
+		function( $style_data, $design_style ) use ( &$color_schemes ) {
+			array_walk(
+				$style_data['color_schemes'],
+				function( $data, $name ) use ( $design_style, &$color_schemes ) {
+					$color_schemes[ "${design_style}-${name}" ] = $data;
+				}
+			);
+		}
+	);
+
+	return $color_schemes;
+}
+
+/**
  * Register the Logo Controls within Customize.
  *
  * @param \WP_Customize_Manager $wp_customize The customize manager object.
@@ -265,7 +290,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 				'description'   => esc_html__( 'Choose one of the supported color schemes', 'maverick' ),
 				'section'       => 'color_schemes_section',
 				'settings'      => 'color_scheme',
-				'choices'       => \Maverick\Core\get_available_color_schemes(),
+				'choices'       => get_color_schemes_as_choices(),
 				'switcher_type' => 'color-scheme',
 			]
 		)
