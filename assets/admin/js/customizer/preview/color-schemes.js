@@ -12,7 +12,7 @@ export default () => {
 	 */
 	const setPrimaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-primary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--theme-color-primary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
 	};
 
 	/**
@@ -22,7 +22,7 @@ export default () => {
 	 */
 	const setSecondaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-secondary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--theme-color-secondary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
 	};
 
 	/**
@@ -32,7 +32,7 @@ export default () => {
 	 */
 	const setTertiaryColor = ( color ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-tertiary', `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` );
+		document.documentElement.style.setProperty( '--theme-color-tertiary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
 	};
 
 	/**
@@ -40,9 +40,11 @@ export default () => {
 	 */
 	const loadColorSchemes = ( colorScheme ) => {
 		const designStyle = getDesignStyle( selectedDesignStyle );
+		colorScheme = colorScheme.replace( `${selectedDesignStyle}-`, '' );
 
 		if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
 			const colors = designStyle.color_schemes[ colorScheme ];
+			toggleColorSchemes();
 
 			Object.entries( colors ).forEach( function ( [ setting, color ] ) {
 				const customizerSetting = wp.customize( `${setting}` );
@@ -61,6 +63,14 @@ export default () => {
 	};
 
 	/**
+	 * Control the visibility of the color schemes selections.
+	 */
+	const toggleColorSchemes = () => {
+		$( 'label[for^=maverick_color_scheme_control' ).hide();
+		$( `label[for^=maverick_color_scheme_control-${selectedDesignStyle}-` ).show();
+	};
+
+	/**
 	 * Returns the design style array
 	 *
 	 * @param {*} designStyle
@@ -75,6 +85,8 @@ export default () => {
 
 		return false;
 	};
+
+	wp.customize.bind( 'ready', () => toggleColorSchemes() );
 
 	wp.customize( 'maverick_design_style', ( value ) => {
 		selectedDesignStyle = value.get();
