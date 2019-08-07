@@ -459,7 +459,6 @@ function get_available_design_styles() {
 			'label'         => esc_html__( 'Modern', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Modern',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Shade', 'maverick' ),
@@ -504,7 +503,6 @@ function get_available_design_styles() {
 			'label'         => esc_html__( 'Traditional', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
 			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Traditional',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -520,11 +518,10 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'trendy-shop' => [
-			'label'         => esc_html__( 'Trendy Shop', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy-shop.css',
-			'editor_style'  => 'dist/css/design-styles/trendy-shop-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Trendy+Shop',
+		'trendy'      => [
+			'label'         => esc_html__( 'Trendy', 'maverick' ),
+			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy.css',
+			'editor_style'  => 'dist/css/design-styles/trendy-editor.css',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -544,7 +541,6 @@ function get_available_design_styles() {
 			'label'         => esc_html__( 'Welcoming', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/welcoming.css',
 			'editor_style'  => 'dist/css/design-styles/welcoming-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Welcoming',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -560,11 +556,10 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'play'        => [
-			'label'         => esc_html__( 'Play', 'maverick' ),
+		'playful'        => [
+			'label'         => esc_html__( 'Playful', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
 			'editor_style'  => 'dist/css/design-styles/play-editor.css',
-			'preview_image' => 'https://via.placeholder.com/400x100.png?text=Play',
 			'color_schemes' => [
 				'default' => [
 					'label'           => esc_html__( 'Light', 'maverick' ),
@@ -824,33 +819,28 @@ function get_available_social_icons() {
 	$social_icons = [
 		'facebook'  => [
 			'label'       => esc_html__( 'Facebook', 'maverick' ),
-			'description' => esc_html__( 'Facebook URL', 'maverick' ),
 			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/facebook.svg',
-			'icon_class'  => '',
+			'placeholder' => 'https://facebook.com/user',
 		],
 		'twitter'   => [
 			'label'       => esc_html__( 'Twitter', 'maverick' ),
-			'description' => esc_html__( 'Twitter URL', 'maverick' ),
 			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/twitter.svg',
-			'icon_class'  => '',
+			'placeholder' => 'https://twitter.com/user',
 		],
 		'instagram' => [
 			'label'       => esc_html__( 'Instagram', 'maverick' ),
-			'description' => esc_html__( 'Instagram URL', 'maverick' ),
 			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/instagram.svg',
-			'icon_class'  => '',
+			'placeholder' => 'https://instagram.com/user',
 		],
 		'linkedin'  => [
 			'label'       => esc_html__( 'LinkedIn', 'maverick' ),
-			'description' => esc_html__( 'LinkedIn URL', 'maverick' ),
 			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/linkedin.svg',
-			'icon_class'  => '',
+			'placeholder' => 'https://linkedin.com/in/user',
 		],
 		'pinterest' => [
 			'label'       => esc_html__( 'Pinterest', 'maverick' ),
-			'description' => esc_html__( 'Pinterest URL', 'maverick' ),
 			'icon'        => MAVERICK_PATH . '/assets/shared/images/social/pinterest.svg',
-			'icon_class'  => '',
+			'placeholder' => 'https://pinterest.com/user',
 		],
 	];
 
@@ -873,7 +863,7 @@ function get_social_icons() {
 	$social_icons = get_available_social_icons();
 
 	foreach ( $social_icons as $key => &$social_icon ) {
-		$social_icon['url'] = get_theme_mod( sprintf( 'footer_social_%s_setting', $key ), '' );
+		$social_icon['url'] = get_theme_mod( sprintf( 'social_icon_%s', $key ), '' );
 	}
 
 	return $social_icons;

@@ -1,4 +1,7 @@
 @define-mixin button {
+	appearance: none !important;
+	background-color: hsl(var(--theme-button--bg));
+	border: none;
 	border-radius: var(--theme-button--radius);
 	box-sizing: border-box;
 	color: hsl(var(--theme-button--color));
@@ -130,4 +133,9 @@
 @define-mixin on-sale-badge-lg {
 	height: 110px;
 	width: 110px;
+}
+
+@define-mixin blockWidthNoPadding {
+	--total-block-padding: calc(var(--theme-block-padding-x) * 2);
+	max-width: calc(var(--theme-max-w-base) - var(--total-block-padding));
 }

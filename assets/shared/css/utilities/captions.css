@@ -1,11 +1,13 @@
 .wp-block-image,
-.wp-block-embed {
+.wp-block-embed,
+.wp-block-audio {
 
 	& figcaption {
-		color: hsl(var(--theme-color-text-secondary));
-		font-size: 0.8125rem;
+		color: hsl(var(--theme-caption--color));
+		font-size: var(--theme-caption--font-size);
+		font-style: var(--theme-caption--style);
 		margin-bottom: -0.6rem !important;
-		text-align: left;
+		text-align: var(--theme-caption--alignment);
 	}
 
 	&.alignfull {
@@ -13,6 +15,13 @@
 		& figcaption {
 			padding-left: 1.25rem;
 			padding-right: 1.25rem;
+		}
+	}
+
+	& .aligncenter {
+
+		& figcaption {
+			text-align: center;
 		}
 	}
 }

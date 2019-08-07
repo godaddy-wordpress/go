@@ -3,13 +3,12 @@
  */
 
 /* Settings */
-@import url("settings.css");
+@import url("../settings.css");
 
-/* Elements - all the HTML elements coverage */
-@import url("elements/headings.css");
+/* Elements */
 @import url("elements/forms.css");
 
-/* Gutenberg core blocks overrides */
+/* Core Blocks */
 @import url("blocks/button.css");
 
 /* CoBlocks */

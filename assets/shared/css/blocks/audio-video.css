@@ -1,0 +1,23 @@
+/*! Audio and Video */
+.content-area {
+
+	& .wp-block-audio {
+
+		& audio {
+			margin-bottom: -10px;
+			width: 100%;
+		}
+
+		& figcaption {
+			text-align: center;
+		}
+	}
+
+	& .wp-block-video {
+
+		& video {
+			margin-bottom: -10px;
+			width: 100%;
+		}
+	}
+}

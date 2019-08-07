@@ -1,21 +1,24 @@
+/*! Blockquote */
 .wp-block-quote {
 	border: none;
-	color: hsl(var(--theme-color-heading));
-	font-family: var(--theme-heading--font);
-	font-weight: var(--theme-quote--weight);
-	padding: 0;
+	margin-bottom: 0;
 
 	& p {
+		color: hsl(var(--theme-quote--color));
+		font-family: var(--theme-heading--font);
 		font-size: var(--theme-quote--font-size);
+		font-style: var(--theme-quote--style);
+		font-weight: var(--theme-quote--weight);
 		line-height: var(--theme-quote--leading);
-		margin: 0 0 0 1.5rem;
+		margin: 0 0 2rem;
+		padding: 1.5rem 0;
 		position: relative;
 
 		&::before {
 			content: "“";
 			line-height: 1;
 			position: absolute;
-			transform: translate3d(-120%, 0, 0);
+			transform: translate3d(-120%, 20%, 0);
 		}
 
 		&::after {
@@ -24,31 +27,33 @@
 	}
 
 	& cite {
-		color: hsl(var(--theme-color-text-secondary));
+		color: hsl(var(--theme-caption--color));
 		display: block;
-		font-family: var(--theme-body--font);
-		font-size: 0.85rem;
-		font-weight: 400;
-		margin-bottom: -0.7rem !important;
-		margin-left: 0.85rem;
-		margin-top: 1rem;
+		font-size: var(--theme-caption--font-size);
+		font-style: var(--theme-caption--style);
+		margin-top: -2.5rem;
+		padding-bottom: 1.25rem;
+	}
 
-		&::before {
-			content: " - ";
+	&:not(.is-style-large) {
+
+		& cite {
+			margin-top: -2.5rem;
 		}
 	}
 
 	&.is-style-large {
-		border-left: var(--theme-quote-large-border) currentColor;
-		margin: var(--theme-block-spacing-huge) auto;
+		border-left: var(--theme-quote-large--border);
+		color: hsl(var(--theme-quote-large--color));
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 0;
 
 		& p {
 			font-size: var(--theme-quote-large--font-size);
-			font-style: var(--theme-quote-large-font-style);
-			line-height: var(--theme-quote-large--leading);
-			margin-bottom: 0 !important;
-			margin-left: 0;
-			padding: var(--theme-quote-large-padding);
+			font-style: var(--theme-quote-large--style);
+			line-height: var(--theme-quote--leading);
+			padding-left: 2rem;
 
 			&::after,
 			&::before {
@@ -58,8 +63,8 @@
 		}
 
 		& cite {
-			font-size: 1rem;
-			margin-left: var(--theme-quote-large-cite-margin-left);
+			font-size: var(--theme-caption--font-size);
+			margin-left: 2rem;
 			text-align: inherit;
 
 			& em {
