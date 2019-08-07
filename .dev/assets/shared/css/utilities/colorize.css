@@ -1,6 +1,6 @@
 .content-area {
 
-	/* Color palette overrides */
+	/* Color palette classes */
 	& .has-primary-background-color,
 	& .has-secondary-background-color {
 
@@ -10,7 +10,6 @@
 		}
 	}
 
-	/* Color palette classes */
 	& .has-primary-background-color {
 		background-color: hsl(var(--theme-color-primary));
 	}
@@ -29,6 +28,11 @@
 
 	& .has-tertiary-background-color {
 		background-color: hsl(var(--theme-color-tertiary));
+
+		&,
+		& a {
+			color: hsl(var(--theme-color-heading));
+		}
 	}
 
 	& .has-tertiary-color {

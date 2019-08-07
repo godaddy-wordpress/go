@@ -9,7 +9,8 @@
 /* Add transitions for color changing elements */
 .has-background,
 .wp-block-quote.is-style-large,
-.wp-block-pullquote.is-style-solid-color {
+.wp-block-pullquote.is-style-solid-color,
+.has-drop-cap:not(:focus)::first-letter {
 	transition: var(--theme-button-transition);
 }
 
