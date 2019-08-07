@@ -578,7 +578,8 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		$wp_customize->add_setting(
 			sprintf( 'footer_social_%s', $key ),
 			[
-				'transport' => 'postMessage',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'esc_url_raw',
 			]
 		);
 
