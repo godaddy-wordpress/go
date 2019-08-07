@@ -186,9 +186,6 @@
 	--theme-input--padding-x: 1.5rem;
 
 
-
-
-
 	--theme-spacing-v-input: 1rem;
 	--theme-spacing-h-input: 1rem;
 
@@ -233,13 +230,6 @@
 
 	/* Feedback colors: error, success, warning, informational. */
 	--theme-feedback-informational-color: 208, 100%, 43%;
-
-
-
-
-
-
-
 
 
 	/*--------------------------------------------------------------
@@ -408,8 +398,6 @@
 	* shared/css/elements/forms.css
 	* shared/css/config/mixins.css
 	***************************************************************/
-
-
 
 	/* Spacing units */
 	--theme-spacing-unit: 0.5rem;

@@ -1,6 +1,6 @@
-/* Color palette overrides */
 .content-area {
 
+	/* Color palette overrides */
 	& .has-primary-background-color,
 	& .has-secondary-background-color {
 
@@ -9,11 +9,9 @@
 			color: hsl(var(--color-white));
 		}
 	}
-}
 
-/* Color palette classes */
-.content-area {
- 	& .has-primary-background-color {
+	/* Color palette classes */
+	& .has-primary-background-color {
 		background-color: hsl(var(--theme-color-primary));
 	}
 
