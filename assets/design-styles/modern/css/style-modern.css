@@ -81,16 +81,11 @@ p.has-background {
 	}
 }
 
-.wp-block-verse {
+.wp-block-code,
+.wp-block-verse,
+.wp-block-pullquote {
 	@media (max-width: 730px) {
-		margin-left: var(--theme-block-padding-x);
-		margin-right: var(--theme-block-padding-x);
-	}
-}
-
-.wp-block-code {
-	@media (max-width: 730px) {
-		margin-left: var(--theme-block-padding-x);
-		margin-right: var(--theme-block-padding-x);
+		margin-left: var(--theme-block-padding-x) !important;
+		margin-right: var(--theme-block-padding-x) !important;
 	}
 }

@@ -9,7 +9,6 @@ a {
 	&:active {
 		color: hsl(var(--theme-link--color-interactive));
 		outline: 0;
-		text-decoration: none;
 	}
 
 	&:focus {

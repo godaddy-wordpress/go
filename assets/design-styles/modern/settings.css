@@ -57,9 +57,9 @@
 	--theme-color-body-bg: 0, 0%, 100%;
 
 	/* Text Colors */
+	--theme-color-heading: 0, 0%, 11%;
 	--theme-color-text: 0, 0%, 41%;
 	--theme-color-text-secondary: 0, 0%, 41%;
-	--theme-color-heading: 0, 0%, 11%;
 
 	/* Global Color Scheme Colors */
 	--theme-color-quaternary: var(--color-white);
@@ -76,9 +76,9 @@
 	/* Headings */
 	--theme-heading--font: "Montserrat", sans-serif;
 	--theme-heading--leading: 1.35;
+	--theme-heading--style: normal;
 	--theme-heading--tracking: -0.025em;
 	--theme-heading--weight: 700;
-	--theme-heading--style: normal;
 
 	--theme-h1--font-size: 2rem;
 	--theme-h2--font-size: 1.85rem;
@@ -118,31 +118,43 @@
 	--theme-dropcap--weight: 700;
 
 	/* Captions */
+	--theme-caption--alignment: left;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.8125rem;
-	--theme-caption--alignment: left;
 	--theme-caption--style: normal;
 
 	/* Links */
-	--theme-link--color: var(--theme-color-primary);
-	--theme-link--color-interactive: var(--theme-color-heading);
+	--theme-link--color: var(--theme-color-heading);
+	--theme-link--color-interactive: var(--theme-color-primary);
+
+	/* Pullquote */
+	--theme-pullquote--border-color: var(--theme-color-primary);
+	--theme-pullquote--border-style: solid;
+	--theme-pullquote--border-width: 0.45rem;
+	--theme-pullquote--border: var(--theme-quote-large--border-width) var(--theme-quote-large--border-style) hsl(var(--theme-quote-large--border-color));
+	--theme-pullquote--color: var(--theme-color-heading);
+	--theme-pullquote--font-size: var(--theme-h3--font-size);
+	--theme-pullquote--leading: 1.45;
+	--theme-pullquote--padding-y: 0.75rem;
+	--theme-pullquote--style: normal;
+	--theme-pullquote--weight: var(--theme-heading--weight);
 
 	/* Blockquote */
 	--theme-quote--color: var(--theme-color-heading);
 	--theme-quote--font-size: var(--theme-h2--font-size);
 	--theme-quote--leading: var(--theme-heading--leading);
-	--theme-quote--weight: var(--theme-heading--weight);
 	--theme-quote--style: normal;
+	--theme-quote--weight: var(--theme-heading--weight);
 
 	/* Blockquote (Large) */
+	--theme-quote-large--border-color: var(--theme-color-primary);
+	--theme-quote-large--border-style: solid;
+	--theme-quote-large--border-width: 0.45rem;
+	--theme-quote-large--border: var(--theme-quote-large--border-width) var(--theme-quote-large--border-style) hsl(var(--theme-quote-large--border-color));
 	--theme-quote-large--color: var(--theme-color-heading);
 	--theme-quote-large--font-size: var(--theme-h1--font-size);
 	--theme-quote-large--leading: 1.3;
 	--theme-quote-large--style: italic;
-	--theme-quote-large--border-width: 0.45rem;
-	--theme-quote-large--border-style: solid;
-	--theme-quote-large--border-color: var(--theme-color-primary);
-	--theme-quote-large--border: var(--theme-quote-large--border-width) var(--theme-quote-large--border-style) hsl(var(--theme-quote-large--border-color));
 
 
 	/*--------------------------------------------------------------
