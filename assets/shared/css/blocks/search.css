@@ -1,0 +1,9 @@
+.wp-block-search {
+	& input[type="search"] {
+		width: auto;
+		padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+	}
+
+	& .wp-block-search__button {
+	}
+}

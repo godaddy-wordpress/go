@@ -47,6 +47,7 @@
 @import url("blocks/more.css");
 @import url("blocks/code.css");
 @import url("blocks/audio-video.css");
+@import url("blocks/search.css");
 
 /* CoBlocks */
 @import url("coblocks/author.css");

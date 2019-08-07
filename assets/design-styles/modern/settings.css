@@ -178,6 +178,69 @@
 
 
 	/*--------------------------------------------------------------
+	## Forms
+	--------------------------------------------------------------*/
+	--theme-input--padding-y: 1.2rem;
+	--theme-input--padding-x: 1.5rem;
+
+
+
+
+
+	--theme-spacing-v-input: 1rem;
+	--theme-spacing-h-input: 1rem;
+
+	/* Labels */
+	--theme-label-letter-spacing: 3px;
+	--theme-label-text-transform: uppercase;
+	--theme-label-font-family: var(--theme-body--font);
+	--theme-input-label-font-size: 0.875rem;
+	--theme-input-label-font-weight: 700;
+	--theme-label-color: var(--theme-color-text-secondary);
+
+	/* Inputs */
+	--theme-input-border-bottom-width: 2px;
+	--theme-input-border-left-width: 2px;
+	--theme-input-border-right-width: 2px;
+	--theme-input-border-top-width: 2px;
+	--theme-input-border-width: 2px;
+	--theme-input-stroke-color: var(--theme-color-heading);
+	--theme-input-border-radius: 0;
+	--theme-input-font-size: 1.0625rem;
+	--theme-input-font-weight: 700;
+	--theme-input-stroke-color-focus: var(--theme-color-text-secondary);
+	--theme-input-box-shadow-focus: 0 1px 11px rgba(40, 37, 37, 0.07);
+	--theme-input-color: var(--theme-color-text-secondary);
+	--theme-input-color-focus: var(--theme-color-text-secondary);
+	--theme-input-placeholder-color: 0, 0%, 47%; /* #797878 */
+	--theme-input-color-background: 0, 0%, 100%; /* #fff */
+
+	/* Errors */
+	--theme-color-error: 357, 81%, 38%; /* #b0131c */
+	--theme-input-stroke-error: 357, 81%, 38%; /* #b0131c */
+
+	/* Textarea */
+	--theme-textarea-color: var(--theme-color-text-secondary);
+	--theme-textarea-stroke-color: var(--theme-color-text-secondary);
+	--theme-textarea-color-focus: var(--theme-color-text-secondary);
+	--theme-textarea-stroke-color-focus: var(--theme-color-text-secondary);
+	--theme-textarea-color-background: 0, 0%, 100%; /* #fff */
+
+	/* Check and Radio*/
+	--theme-checkbox-radio-fill: var(--theme-color-text-secondary); /* #202124 */
+
+	/* Feedback colors: error, success, warning, informational. */
+	--theme-feedback-informational-color: 208, 100%, 43%;
+
+
+
+
+
+
+
+
+
+	/*--------------------------------------------------------------
 	## Core Blocks
 	--------------------------------------------------------------*/
 	--theme-separator--color: var(--theme-color-heading);
@@ -344,52 +407,7 @@
 	* shared/css/config/mixins.css
 	***************************************************************/
 
-	/* SHARED: Input padding */
-	--theme-spacing-v-input: 1rem;
-	--theme-spacing-h-input: 1rem;
 
-	/* Labels */
-	--theme-label-letter-spacing: 2px;
-	--theme-label-text-transform: uppercase;
-	--theme-label-font-family: var(--theme-body--font);
-	--theme-input-label-font-size: 0.875rem;
-	--theme-input-label-font-weight: 700;
-	--theme-label-color: var(--theme-color-text-secondary);
-
-	/* Inputs */
-	--theme-input-border-bottom-width: 2px;
-	--theme-input-border-left-width: 2px;
-	--theme-input-border-right-width: 2px;
-	--theme-input-border-top-width: 2px;
-	--theme-input-border-width: 2px;
-	--theme-input-stroke-color: var(--theme-color-heading);
-	--theme-input-border-radius: 0;
-	--theme-input-font-size: 1.0625rem;
-	--theme-input-font-weight: 700;
-	--theme-input-stroke-color-focus: var(--theme-color-text-secondary);
-	--theme-input-box-shadow-focus: 0 1px 11px rgba(40, 37, 37, 0.07);
-	--theme-input-color: var(--theme-color-text-secondary);
-	--theme-input-color-focus: var(--theme-color-text-secondary);
-	--theme-input-placeholder-color: 0, 0%, 47%; /* #797878 */
-	--theme-input-color-background: 0, 0%, 100%; /* #fff */
-
-	/* Errors */
-	--theme-color-error: 357, 81%, 38%; /* #b0131c */
-	--theme-input-stroke-error: 357, 81%, 38%; /* #b0131c */
-
-	/* Textarea */
-	--theme-textarea-color: var(--theme-color-text-secondary);
-	--theme-textarea-stroke-color: var(--theme-color-text-secondary);
-	--theme-textarea-color-focus: var(--theme-color-text-secondary);
-	--theme-textarea-stroke-color-focus: var(--theme-color-text-secondary);
-	--theme-textarea-color-background: 0, 0%, 100%; /* #fff */
-
-	/* Check and Radio SVG trick */
-	--theme-checkbox-radio-fill: var(--theme-color-text-secondary); /* #202124 */
-
-
-	/* Feedback colors: error, success, warning, informational. */
-	--theme-feedback-informational-color: 208, 100%, 43%;
 
 	/* Spacing units */
 	--theme-spacing-unit: 0.5rem;
