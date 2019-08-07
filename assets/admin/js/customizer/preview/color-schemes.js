@@ -93,6 +93,7 @@ export default () => {
 		value.bind( ( to ) => {
 			selectedDesignStyle = to;
 			loadColorSchemes( 'default' );
+			$( `#maverick_color_scheme_control-${selectedDesignStyle}-default` ).prop( 'checked', true );
 		} );
 	} );
 
