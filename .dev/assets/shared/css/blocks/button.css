@@ -23,6 +23,10 @@
 			@mixin button-hover;
 		}
 	}
+
+	&:not(.is-style-outline) .wp-block-button__link.has-tertiary-background-color:hover {
+		background-color: hsl(var(--theme-color-tertiary));
+	}
 }
 
 .wp-block-button__link {
