@@ -154,7 +154,7 @@
 	--theme-quote-large--border-width: 0.45rem;
 	--theme-quote-large--border: var(--theme-quote-large--border-width) var(--theme-quote-large--border-style) hsl(var(--theme-quote-large--border-color));
 	--theme-quote-large--color: var(--theme-color-heading);
-	--theme-quote-large--font-size: var(--theme-h1--font-size);
+	--theme-quote-large--font-size: var(--theme-h2--font-size);
 	--theme-quote-large--leading: 1.3;
 	--theme-quote-large--style: italic;
 

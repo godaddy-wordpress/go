@@ -45,6 +45,8 @@
 	&.is-style-large {
 		border-left: var(--theme-quote-large--border);
 		color: hsl(var(--theme-quote-large--color));
+		margin-left: auto;
+		margin-right: auto;
 		padding-left: 0;
 
 		& p {
