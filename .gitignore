@@ -8,7 +8,7 @@ phpunit.xml
 
 # Project Files
 dist
-!assets/shared/js/frontend/vendor/
+!.dev/assets/shared/js/frontend/vendor/
 
 # Editors
 *.esproj
