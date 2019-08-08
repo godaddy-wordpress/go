@@ -473,21 +473,21 @@ function get_available_design_styles() {
 					'tertiary'   => '#eceff1',
 					'background' => '#ffffff',
 				],
-				'two'     => [
+				'blush'   => [
 					'label'      => esc_html__( 'Blush', 'maverick' ),
 					'primary'    => '#c2185b', // 700
 					'secondary'  => '#ec407a', // 400
 					'tertiary'   => '#fce4ec', // 100
 					'background' => '#f8e7ee',
 				],
-				'three'   => [
+				'indigo'  => [
 					'label'      => esc_html__( 'Indigo', 'maverick' ),
 					'primary'    => '#303f9f', // 700
 					'secondary'  => '#5c6bc0', // 400
 					'tertiary'   => '#e8eaf6', // 100
 					'background' => '#eaebf5',
 				],
-				'four'    => [
+				'pacific' => [
 					'label'      => esc_html__( 'Pacific', 'maverick' ),
 					'primary'    => '#00796b', // 700
 					'secondary'  => '#26a69a', // 400
