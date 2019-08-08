@@ -2,20 +2,23 @@
  * Global link styling
  */
 
-a {
-	color: hsl(var(--theme-link--color));
+.site {
 
-	&:hover,
-	&:active {
-		color: hsl(var(--theme-link--color-interactive));
-		outline: 0;
+	& a {
+		color: hsl(var(--theme-link--color));
+
+		&:hover,
+		&:active {
+			color: hsl(var(--theme-link--color-interactive));
+			outline: 0;
+		}
+
+		&:focus {
+			@mixin outline;
+		}
 	}
 
-	&:focus {
-		@mixin outline;
+	& p a:focus {
+		outline-width: thin;
 	}
-}
-
-p a:focus {
-	outline-width: thin;
 }
