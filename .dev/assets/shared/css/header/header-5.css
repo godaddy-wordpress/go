@@ -169,12 +169,9 @@
 		}
 
 		& .sub-menu {
-			margin-left: -1rem;
-			margin-right: -1rem;
 			padding: 0 1rem;
 
 			& .sub-menu {
-				margin: 0 -1rem;
 				padding: 0 1rem;
 			}
 
