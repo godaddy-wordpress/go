@@ -57,7 +57,7 @@
 
 		/* Upward dark arrow on top of the flyout sub-menu */
 		&::before {
-			border-bottom: 10px solid hsla(var(--theme-submenu--bg), 1);
+			border-bottom: 10px solid hsl(var(--theme-submenu--bg));
 			border-left: 10px solid transparent;
 			border-right: 10px solid transparent;
 			content: "";
