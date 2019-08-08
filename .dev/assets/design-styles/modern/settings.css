@@ -18,8 +18,8 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 38rem;
-	--theme-max-w-wide: 76rem;
+	--theme-max-w-base: 46rem;
+	--theme-max-w-wide: 88rem;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -33,10 +33,10 @@
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 1.25rem;
+	--theme-block-padding-x: 2rem;
 
 	@media (--medium) {
-		--theme-block-padding-x: 3.5rem;
+		--theme-block-padding-x: 4rem;
 	}
 
 	/* Accessibility */
@@ -58,8 +58,8 @@
 
 	/* Text Colors */
 	--theme-color-heading: 207, 100%, 4%;
-	--theme-color-text: 0, 0%, 41%;
-	--theme-color-text-secondary: 0, 0%, 41%;
+	--theme-color-text: 0, 0%, 34%;
+	--theme-color-text-secondary: 0, 0%, 34%;
 
 	/* Global Color Scheme Colors */
 	--theme-color-quaternary: var(--color-white);
@@ -70,7 +70,7 @@
 	--------------------------------------------------------------*/
 	--theme-body--font: "IBM Plex Sans", sans-serif;
 	--theme-body--font-size: 1rem;
-	--theme-body--leading: 1.9;
+	--theme-body--leading: 2;
 	--theme-body--weight: 400;
 
 	/* Headings */
@@ -160,6 +160,49 @@
 
 
 	/*--------------------------------------------------------------
+	## Forms
+	--------------------------------------------------------------*/
+	--theme-label--color: var(--theme-color-heading);
+	--theme-label--font-size: var(--theme-site-nav--font-size);
+	--theme-label--font: var(--theme-heading--font);
+	--theme-label--tracking: var(--theme-site-nav--tracking);
+	--theme-label--transform: uppercase;
+	--theme-label--weight: var(--theme-site-nav--weight);
+	--theme-label--spacing: 0.75rem;
+
+	/* Input */
+	--theme-input--bg: 0, 0%, 100%;
+	--theme-input--bg-interactive: 0, 0%, 100%;
+	--theme-input--border-color: var(--theme-color-heading);
+	--theme-input--border-style: solid;
+	--theme-input--border-width: 2px;
+	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style) hsl(var(--theme-input--border-color));
+	--theme-input--color: var(--theme-color-text);
+	--theme-input--font-size: 1rem;
+	--theme-input--padding-x: 1.25rem;
+	--theme-input--padding-y: 1.25rem;
+	--theme-input--radius: 0;
+	--theme-input--shadow: none;
+	--theme-input--spacing: 2.25rem;
+	--theme-input--weight: 400;
+
+	/* Input Focus */
+	--theme-input--border-color-focus: var(--theme-color-primary);
+	--theme-input--color-focus: var(--theme-color-text);
+	--theme-input--shadow-focus: none;
+
+	/* Placeholder */
+	--theme-input-placeholder--color: 0, 0%, 47%;
+
+	/* Errors */
+	--theme-input-error--border-color: 0, 65%, 51%; /* #d32f2f */
+	--theme-input-error--color: 0, 65%, 51%; /* #d32f2f */
+
+	/* Checkbox and Radio*/
+	--theme-checkbox-radio-fill: var(--theme-color-heading);
+
+
+	/*--------------------------------------------------------------
 	## Buttons
 	--------------------------------------------------------------*/
 	--theme-button--bg: var(--theme-color-primary);
@@ -180,74 +223,13 @@
 
 
 	/*--------------------------------------------------------------
-	## Forms
-	--------------------------------------------------------------*/
-	--theme-input--padding-y: 1.2rem;
-	--theme-input--padding-x: 1.5rem;
-
-
-	--theme-spacing-v-input: 1rem;
-	--theme-spacing-h-input: 1rem;
-
-	/* Labels */
-	--theme-label-letter-spacing: 3px;
-	--theme-label-text-transform: uppercase;
-	--theme-label-font-family: var(--theme-body--font);
-	--theme-input-label-font-size: 0.875rem;
-	--theme-input-label-font-weight: 700;
-	--theme-label-color: var(--theme-color-text-secondary);
-
-	/* Inputs */
-	--theme-input-border-bottom-width: 2px;
-	--theme-input-border-left-width: 2px;
-	--theme-input-border-right-width: 2px;
-	--theme-input-border-top-width: 2px;
-	--theme-input-border-width: 2px;
-	--theme-input-stroke-color: var(--theme-color-heading);
-	--theme-input-border-radius: 0;
-	--theme-input-font-size: 1.0625rem;
-	--theme-input-font-weight: 700;
-	--theme-input-stroke-color-focus: var(--theme-color-text-secondary);
-	--theme-input-box-shadow-focus: 0 1px 11px rgba(40, 37, 37, 0.07);
-	--theme-input-color: var(--theme-color-text-secondary);
-	--theme-input-color-focus: var(--theme-color-text-secondary);
-	--theme-input-placeholder-color: 0, 0%, 47%; /* #797878 */
-	--theme-input-color-background: 0, 0%, 100%; /* #fff */
-
-	/* Errors */
-	--theme-color-error: 357, 81%, 38%; /* #b0131c */
-	--theme-input-stroke-error: 357, 81%, 38%; /* #b0131c */
-
-	/* Textarea */
-	--theme-textarea-color: var(--theme-color-text-secondary);
-	--theme-textarea-stroke-color: var(--theme-color-text-secondary);
-	--theme-textarea-color-focus: var(--theme-color-text-secondary);
-	--theme-textarea-stroke-color-focus: var(--theme-color-text-secondary);
-	--theme-textarea-color-background: 0, 0%, 100%; /* #fff */
-
-	/* Check and Radio*/
-	--theme-checkbox-radio-fill: var(--theme-color-text-secondary); /* #202124 */
-
-	/* Feedback colors: error, success, warning, informational. */
-	--theme-feedback-informational-color: 208, 100%, 43%;
-
-
-	/*--------------------------------------------------------------
-	## Core Blocks
-	--------------------------------------------------------------*/
-	--theme-separator--color: var(--theme-color-heading);
-	--theme-table--border-color: var(--theme-color-heading);
-
-
-	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
-
 	--theme-header--bg: "";
-	--theme-header--padding-y: 1rem;
+	--theme-header--padding-y: 1.25rem;
 
 	@media (--medium) {
-		--theme-header--padding-y: 1.85rem;
+		--theme-header--padding-y: 2.55rem;
 	}
 
 	/* Header > Site Branding */
@@ -266,7 +248,7 @@
 	--theme-site-nav--font-family: var(--theme-heading--font);
 	--theme-site-nav--font-size: 0.75rem;
 	--theme-site-nav--font-size-mobile: 1rem;
-	--theme-site-nav--font-weight: 700;
+	--theme-site-nav--weight: 700;
 	--theme-site-nav--text-transform: uppercase;
 	--theme-site-nav--tracking: 3px;
 	--theme-site-nav--transition: var(--theme-link-transition);
@@ -298,10 +280,8 @@
 	/*--------------------------------------------------------------
 	## Navigation Toggle
 	--------------------------------------------------------------*/
-
-	/* Navigation > Toggle */
 	--theme-site-nav-toggle--color: var(--theme-color-heading);
-	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading); /* Not currently in use, could be hover color for primary color */
+	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading);
 	--theme-site-nav-toggle--size: 2rem;
 
 	/* Offscreen Navigation */
@@ -318,7 +298,6 @@
 	/*--------------------------------------------------------------
 	## Header Search Toggle
 	--------------------------------------------------------------*/
-
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-heading);
 	--theme-search-toggle--size: 22px;
@@ -331,7 +310,6 @@
 	/*--------------------------------------------------------------
 	## Entry Header
 	--------------------------------------------------------------*/
-
 	--theme-entryheader--padding-top: 4rem;
 	--theme-entryheader--padding-bottom: 7rem;
 
@@ -343,7 +321,6 @@
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-
 	--theme-footer--bg: "";
 	--theme-footer--color: var(--theme-color-text-secondary);
 	--theme-footer-heading--color: var(--theme-color-heading);
@@ -375,6 +352,13 @@
 
 
 	/*--------------------------------------------------------------
+	## Core Blocks
+	--------------------------------------------------------------*/
+	--theme-separator--color: var(--theme-color-heading);
+	--theme-table--border-color: var(--theme-color-heading);
+
+
+	/*--------------------------------------------------------------
 	## CoBlocks - @todo, clean
 	--------------------------------------------------------------*/
 	--theme-coblocks-author-background-color: var(--theme-color-primary);
@@ -394,12 +378,6 @@
 	--theme-coblocks-gallery-carousel-overlay-color: var(--theme-color-text-secondary);
 	--theme-coblocks-gallery-carousel-border-color: var(--color-charade);
 
-	/***************************************************************
-	* FORMS - @todo, clean
-	* shared/css/elements/forms.css
-	* shared/css/config/mixins.css
-	***************************************************************/
-
 	/* Spacing units */
 	--theme-spacing-unit: 0.5rem;
 	--theme-spacing-unit-2: 1rem;
@@ -407,4 +385,7 @@
 	--theme-spacing-unit-4: 2rem;
 	--theme-spacing-unit-5: 2.5rem;
 	--theme-spacing-unit-6: 3rem;
+
+	/* Feedback colors: error, success, warning, informational. */
+	--theme-feedback-informational-color: 208, 100%, 43%;
 }

@@ -22,6 +22,10 @@ body {
 			display: flex;
 		}
 
+		& .search-form__input {
+			margin-bottom: 0;
+		}
+
 		& .search-input__button {
 			background-color: hsl(var(--theme-search-submit--bg));
 			border: var(--theme-search-input__button-border);
@@ -66,8 +70,7 @@ body {
 
 			&:focus {
 				@mixin outline;
-				outline-color: hsl(var(--theme-search-submit--color));
-				outline-offset: -6px;
+				outline-offset: 2px;
 			}
 		}
 	}

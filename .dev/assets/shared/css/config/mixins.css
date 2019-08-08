@@ -45,26 +45,20 @@
 
 @define-mixin select-menu {
 	appearance: button;
-	background-color: hsl(var(--theme-input-color-background));
+	background-color: hsl(var(--theme-input--bg));
 	background-image: url("../images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
-	border-bottom-width: var(--theme-input-border-bottom-width);
-	border-color: hsl(var(--theme-input-stroke-color));
-	border-left-width: var(--theme-input-border-left-width);
-	border-radius: var(--theme-input-border-radius);
-	border-right-width: var(--theme-input-border-right-width);
-	border-style: solid;
-	border-top-width: var(--theme-input-border-top-width);
+	border: var(--theme-input--border);
 	box-shadow: none;
-	color: hsl(var(--theme-input-color));
+	color: hsl(var(--theme-input--color));
 	display: block;
 	font-size: 1rem;
-	font-weight: var(--theme-input-font-weight);
+	font-weight: var(--theme-input--weight);
 	line-height: 1.25;
 	margin: 0;
 	overflow: hidden;
-	padding: var(--theme-spacing-v-input) calc(var(--theme-spacing-h-input)) var(--theme-spacing-v-input) var(--theme-spacing-h-input);
+	padding: var(--theme-button--padding-y) calc(var(--theme-input--padding-x)) var(--theme-button--padding-y) var(--theme-input--padding-x);
 	text-overflow: ellipsis;
 	user-select: none;
 	white-space: nowrap;
@@ -72,9 +66,9 @@
 }
 
 @define-mixin select-menu-focus {
-	border-color: hsl(var(--theme-input-stroke-color-focus));
-	box-shadow: var(--theme-input-box-shadow-focus);
-	color: hsl(var(--theme-input-color));
+	border-color: hsl(var(--theme-input--border-color-focus));
+	box-shadow: var(--heme-input--shadow-focus);
+	color: hsl(var(--theme-input--color));
 	outline: 0;
 }
 

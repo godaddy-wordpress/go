@@ -99,7 +99,7 @@ table.variations tbody tr:nth-child(odd) {
 
 	& label {
 		margin-bottom: 0;
-		padding: var(--theme-spacing-v-input) 36px var(--theme-spacing-v-input) var(--theme-spacing-h-input);
+		padding: var(--theme-input--padding-y) 36px var(--theme-input--padding-y) var(--theme-input--padding-x);
 	}
 }
 

@@ -2,69 +2,19 @@
  * Global styling for all things forms
  */
 
-select {
-	@mixin select-menu;
-
-	/* CAUTION: IE hackery ahead */
-	&::-ms-expand {
-		display: none; /* remove default arrow on ie10 and ie11 */
-	}
-
-	&:focus {
-		@mixin select-menu-focus;
-	}
-
-	/* target Internet Explorer 9 to undo the custom arrow */
-	@media screen and (min-width: 0\0) {
-		background: none\9;
-		padding: 5px\9;
-	}
-}
-
 fieldset {
 	margin-top: 5rem;
 }
 
-legend,
 label {
-	color: hsl(var(--theme-label-color));
+	color: hsl(var(--theme-label--color));
 	display: block;
-	font-family: var(--theme-label-font-family);
-	font-size: var(--theme-input-label-font-size);
-	font-weight: var(--theme-input-label-font-weight);
-	letter-spacing: var(--theme-label-letter-spacing);
-	line-height: var(--theme-label-line-height);
-	margin-bottom: 0.2rem;
-	text-transform: var(--theme-label-text-transform);
-}
-
-option {
-	font-weight: var(--theme-input-font-weight);
-}
-
-textarea {
-	background-color: hsl(var(--theme-textarea-color-background));
-	border-color: hsl(var(--theme-textarea-stroke-color));
-	border-radius: var(--theme-input-border-radius);
-	border-style: solid;
-	border-width: var(--theme-input-border-width);
-	color: hsl(var(--theme-texarea-color));
-
-	/* Removes empty space under textarea. */
-	display: block;
-	font-size: var(--theme-input-font-size);
-	font-weight: var(--theme-input-font-weight);
-	line-height: 1.25;
-	min-height: calc(0.5rem * 10);
-	padding: var(--theme-spacing-v-input);
-	width: 100%;
-
-	&:focus {
-		border-color: var(--theme-textarea-stroke-color-focus);
-		box-shadow: var(--theme-input-box-shadow-focus);
-		color: hsl(var(--theme-textarea-color-focus));
-		outline: 0;
-	}
+	font-family: var(--theme-label--font);
+	font-size: var(--theme-label--font-size);
+	font-weight: var(--theme-label--weight);
+	letter-spacing: var(--theme-label--tracking);
+	margin-bottom: var(--theme-label--spacing);
+	text-transform: var(--theme-label--transform);
 }
 
 input[type="text"],
@@ -82,47 +32,91 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"] {
-	-webkit-appearance: none;
-
-	background-color: hsl(var(--theme-input-color-background));
-	border-bottom-width: var(--theme-input-border-bottom-width);
-	border-color: hsl(var(--theme-input-stroke-color));
-	border-left-width: var(--theme-input-border-left-width);
-	border-radius: var(--theme-input-border-radius);
-	border-right-width: var(--theme-input-border-right-width);
-	border-style: solid;
-	border-top-width: var(--theme-input-border-top-width);
-	color: hsl(var(--theme-input-color));
-	font-size: var(--theme-input-font-size);
-	font-weight: var(--theme-input-font-weight);
-	line-height: 1.25;
-	padding: var(--theme-spacing-v-input) var(--theme-spacing-h-input);
+	appearance: none;
+	background-color: hsl(var(--theme-input--bg));
+	border: var(--theme-input--border);
+	box-shadow: var(--theme-input--shadow);
+	color: hsl(var(--theme-input--color));
+	font-size: var(--theme-input--font-size);
+	font-weight: var(--theme-input--weight);
+	line-height: 1;
+	margin-bottom: var(--theme-input--spacing);
+	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
 	width: 100%;
 
 	&:focus {
-		border-color: hsl(var(--theme-input-stroke-color-focus));
-		box-shadow: var(--theme-input-box-shadow-focus);
-		color: hsl(var(--theme-input-color-focus));
-		outline: 0;
+		background: hsl(var(--theme-input--bg-interactive));
+		border-color: hsl(var(--theme-input--border-color-focus));
+		box-shadow: var(--theme-input--shadow-focus);
+		color: hsl(var(--theme-input--color-focus));
+
+		@mixin outline;
+		outline-offset: 2px;
+	}
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	appearance: none;
+}
+
+textarea {
+	background-color: hsl(var(--theme-input--bg));
+	border: var(--theme-input--border);
+	border-radius: var(--theme-input--radius);
+	color: hsl(var(--theme-input--color));
+	display: block;
+	font-size: var(--theme-input--font-size);
+	font-weight: var(--theme-input--weight);
+	line-height: 1;
+	margin-bottom: var(--theme-input--spacing);
+	min-height: calc(0.5rem * 10);
+	padding: var(--theme-input--padding-x) var(--theme-input--padding-x);
+	width: 100%;
+
+	&:focus {
+		border-color: hsl(var(--theme-input--border-color-focus));
+		box-shadow: var(--theme-input--shadow-focus);
+		color: hsl(var(--theme-input--color-focus));
+
+		@mixin outline;
+		outline-offset: 2px;
+	}
+}
+
+select {
+	@mixin select-menu;
+
+	/* CAUTION: IE hackery ahead */
+	&::-ms-expand {
+		display: none; /* remove default arrow on ie10 and ie11 */
 	}
 
+	&:focus {
+		@mixin select-menu-focus;
+	}
+
+	/* Target Internet Explorer 9 to undo the custom arrow */
+	@media screen and (min-width: 0\0) {
+		background: none\9;
+		padding: 5px\9;
+	}
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-	-webkit-appearance: none;
+option {
+	font-weight: var(--theme-input--weight);
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	color: hsl(var(--theme-input-placeholder-color));
+::placeholder {
+	color: hsl(var(--theme-input-placeholder--color));
 	line-height: 1.5;
-	opacity: 1; /* Firefox */
+	opacity: 1;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
-	color: hsl(var(--theme-input-placeholder-color));
+::-ms-input-placeholder {
+	color: hsl(var(--theme-input-placeholder--color));
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-	color: hsl(var(--theme-input-placeholder-color));
+:-ms-input-placeholder {
+	color: hsl(var(--theme-input-placeholder--color));
 }
