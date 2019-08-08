@@ -432,9 +432,10 @@ function navigation_toggle() {
 function get_palette_color( $color, $format = 'RBG' ) {
 	$color_scheme    = get_theme_mod( 'color_scheme', 'default' );
 	$override_colors = [
-		'primary'   => 'primary_color',
-		'secondary' => 'secondary_color',
-		'tertiary'  => 'tertiary_color',
+		'primary'    => 'primary_color',
+		'secondary'  => 'secondary_color',
+		'tertiary'   => 'tertiary_color',
+		'background' => 'background_color',
 	];
 
 	$color_override = get_theme_mod( $override_colors[ $color ] );
@@ -450,6 +451,9 @@ function get_palette_color( $color, $format = 'RBG' ) {
 	if ( $color_override ) {
 		$the_color = $color_override;
 	}
+
+	// Ensure we have a hash mark at the beginning of the hex value.
+	$the_color = '#' . ltrim( $the_color, '#' );
 
 	if ( 'HSL' === $format ) {
 		return hex_to_hsl( $the_color );

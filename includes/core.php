@@ -129,6 +129,12 @@ function theme_setup() {
 	// Add support for full and wide align images.
 	add_theme_support( 'align-wide' );
 
+	// Add support for custom background color.
+	add_theme_support(
+		'custom-background',
+		array( 'default-color' => \Maverick\get_palette_color( 'background' ) )
+	);
+
 	// Add support for editor styles.
 	// add_theme_support( 'editor-styles' );
 
@@ -461,28 +467,32 @@ function get_available_design_styles() {
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
 			'color_schemes' => [
 				'default' => [
-					'label'     => esc_html__( 'Shade', 'maverick' ),
-					'primary'   => '#000a12',
-					'secondary' => '#455a64',
-					'tertiary'  => '#eceff1',
+					'label'      => esc_html__( 'Shade', 'maverick' ),
+					'primary'    => '#000a12',
+					'secondary'  => '#455a64',
+					'tertiary'   => '#eceff1',
+					'background' => '#ffffff',
 				],
 				'two'     => [
-					'label'     => esc_html__( 'Blush', 'maverick' ),
-					'primary'   => '#c2185b', // 700
-					'secondary' => '#ec407a', // 400
-					'tertiary'  => '#fce4ec', // 100
+					'label'      => esc_html__( 'Blush', 'maverick' ),
+					'primary'    => '#c2185b', // 700
+					'secondary'  => '#ec407a', // 400
+					'tertiary'   => '#fce4ec', // 100
+					'background' => '#f8e7ee',
 				],
 				'three'   => [
-					'label'     => esc_html__( 'Indigo', 'maverick' ),
-					'primary'   => '#303f9f', // 700
-					'secondary' => '#5c6bc0', // 400
-					'tertiary'  => '#e8eaf6', // 100
+					'label'      => esc_html__( 'Indigo', 'maverick' ),
+					'primary'    => '#303f9f', // 700
+					'secondary'  => '#5c6bc0', // 400
+					'tertiary'   => '#e8eaf6', // 100
+					'background' => '#eaebf5',
 				],
 				'four'    => [
-					'label'     => esc_html__( 'Pacific', 'maverick' ),
-					'primary'   => '#00796b', // 700
-					'secondary' => '#26a69a', // 400
-					'tertiary'  => '#e0f2f1', // 100
+					'label'      => esc_html__( 'Pacific', 'maverick' ),
+					'primary'    => '#00796b', // 700
+					'secondary'  => '#26a69a', // 400
+					'tertiary'   => '#e0f2f1', // 100
+					'background' => '#e5f1f0',
 				],
 			],
 			'fonts'         => [
