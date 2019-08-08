@@ -54,44 +54,8 @@
 			}
 		}
 
-		/* Sub-menus */
-		& .sub-menu {
-			@media (--large) {
-				left: auto;
-				padding: 0;
-				position: relative;
-				text-align: inherit;
-				top: auto;
-				transform: none;
-				width: auto;
-			}
-
-			&::before {
-				display: none;
-			}
-		}
-
-		& > .menu-item-has-children {
-
-			&:hover {
-
-				& > .sub-menu {
-					@media (--large) {
-						display: none;
-					}
-
-					&::before {
-						display: none;
-					}
-				}
-			}
-		}
-
-		& > .menu-item-has-children.child-has-focus {
-
-			& > .sub-menu {
-				display: block;
-			}
+		& > li > .sub-menu::before {
+			left: 50%;
 		}
 	}
 

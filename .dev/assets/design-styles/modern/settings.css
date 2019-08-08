@@ -272,11 +272,7 @@
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);
-	--theme-submenu--color: var(--theme-color-text-secondary);
-
-	@media (--large) {
-		--theme-submenu--color: 0, 0%, 100%;
-	}
+	--theme-submenu--color: 0, 0%, 100%;
 
 	/* Header Variations */
 	--theme-header-3--padding-y: 3.5rem;

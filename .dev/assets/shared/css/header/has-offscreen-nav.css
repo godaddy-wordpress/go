@@ -23,13 +23,8 @@ body {
 	}
 
 	& .primary-menu .sub-menu {
-		background-color: hsla(var(--color-black), 0.1);
-		margin-top: 1rem;
-		padding: 0 2rem;
-	}
-
-	& .primary-menu .sub-menu .sub-menu {
-		background-color: hsla(var(--color-black), 0.1);
+		margin-top: 1.75rem;
+		padding: 0 1.75rem;
 	}
 
 	& .sub-menu[aria-hidden="true"] {
@@ -54,24 +49,24 @@ body {
 		}
 
 		& .sub-menu li {
-			padding-bottom: 0.5rem;
+			padding-bottom: 0.25rem;
 			padding-top: 0.5rem;
 
 			&:first-child {
-				padding-top: 2rem;
+				padding-top: 1.75rem;
 			}
 
 			&:last-child {
-				padding-bottom: 2rem;
+				padding-bottom: 1.75rem;
 			}
 
 			& a {
-				padding: 1rem;
+				padding: 0.5rem;
 				width: auto;
 			}
 		}
 
-		& a {
+		& ul:not(.sub-menu) a {
 			color: hsl(var(--theme-offscreen-nav--color));
 		}
 	}
@@ -230,7 +225,7 @@ body {
 				padding-top: 8em;
 			}
 
-			& a {
+			& ul:not(.sub-menu) a {
 				color: hsl(var(--theme-header-5-offscreen-nav--color));
 			}
 		}

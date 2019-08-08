@@ -13,6 +13,10 @@
 		}
 	}
 
+	& .primary-menu > li > .sub-menu::before {
+		left: 50%;
+	}
+
 	/* Mobile overlay menu */
 	@nest .has-offscreen-nav.menu-is-open & .primary-menu {
 		width: 100%;
