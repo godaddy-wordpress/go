@@ -16,7 +16,7 @@
 	& .footer-navigation {
 		font-family: var(--theme-site-nav--font-family);
 		font-size: var(--theme-site-nav--font-size);
-		font-weight: var(--theme-site-nav--font-weight);
+		font-weight: var(--theme-site-nav--weight);
 		text-align: center;
 		text-transform: var(--theme-site-nav--text-transform);
 

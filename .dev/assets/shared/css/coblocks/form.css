@@ -1,0 +1,14 @@
+.coblocks-form {
+
+	& .coblocks-label {
+		margin-bottom: var(--theme-label--spacing);
+	}
+
+	& .coblocks-field {
+		margin-bottom: var(--theme-input--spacing);
+	}
+
+	& .required {
+		color: hsl(var(--theme-color-primary));
+	}
+}

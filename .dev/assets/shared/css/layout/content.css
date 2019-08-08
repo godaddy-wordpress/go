@@ -57,6 +57,7 @@
 			margin-top: var(--theme-block-spacing) !important;
 		}
 
+		& .coblocks-form,
 		& .wp-block-button,
 		& .wp-block-separator,
 		& .wp-block-pullquote:not(.is-style-solid-color):not(.alignleft):not(.alignright) {

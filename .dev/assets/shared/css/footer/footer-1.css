@@ -15,7 +15,7 @@
 		& li {
 			display: inline-block;
 			font-size: var(--theme-site-nav--font-size);
-			font-weight: var(--theme-site-nav--font-weight);
+			font-weight: var(--theme-site-nav--weight);
 			text-transform: var(--theme-site-nav--text-transform);
 			width: 100%;
 
