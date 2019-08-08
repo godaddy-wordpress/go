@@ -23,6 +23,7 @@
 		font-family: var(--theme-site-nav--font-family);
 		font-size: var(--theme-site-nav--font-size-mobile);
 		font-weight: var(--theme-site-nav--font-weight);
+		letter-spacing: var(--theme-site-nav--tracking);
 		position: relative;
 		text-decoration: none;
 		text-transform: var(--theme-site-nav--text-transform);

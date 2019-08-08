@@ -40,6 +40,7 @@
 		& a {
 			color: hsla(var(--theme-site-nav--color), 1);
 			display: block;
+			letter-spacing: var(--theme-site-nav--tracking);
 			padding: var(--theme-footer-nav--padding-y) var(--theme-footer-nav--padding-x);
 
 			&:focus {
