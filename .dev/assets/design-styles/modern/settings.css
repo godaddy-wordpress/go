@@ -18,8 +18,8 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 38rem;
-	--theme-max-w-wide: 80rem;
+	--theme-max-w-base: 46rem;
+	--theme-max-w-wide: 88rem;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -33,10 +33,10 @@
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 1.25rem;
+	--theme-block-padding-x: 2rem;
 
 	@media (--medium) {
-		--theme-block-padding-x: 3.5rem;
+		--theme-block-padding-x: 4rem;
 	}
 
 	/* Accessibility */
@@ -226,10 +226,10 @@
 	## Header
 	--------------------------------------------------------------*/
 	--theme-header--bg: "";
-	--theme-header--padding-y: 1rem;
+	--theme-header--padding-y: 1.25rem;
 
 	@media (--medium) {
-		--theme-header--padding-y: 2.25rem;
+		--theme-header--padding-y: 2.55rem;
 	}
 
 	/* Header > Site Branding */

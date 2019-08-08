@@ -74,7 +74,7 @@
 p.has-background,
 .wp-block-pullquote,
 .wp-block-cover:not(.alignwide):not(.alignfull) {
-	@media (max-width: 45rem) {
+	@media (max-width: 54rem) {
 		margin-left: var(--theme-block-padding-x);
 		margin-right: var(--theme-block-padding-x);
 	}
