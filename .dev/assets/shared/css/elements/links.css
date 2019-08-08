@@ -4,7 +4,7 @@
 
 .site {
 
-	& a {
+	& p a {
 		color: hsl(var(--theme-link--color));
 
 		&:hover,
@@ -15,10 +15,7 @@
 
 		&:focus {
 			@mixin outline;
+			outline-width: thin;
 		}
-	}
-
-	& p a:focus {
-		outline-width: thin;
 	}
 }
