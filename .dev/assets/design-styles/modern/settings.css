@@ -272,11 +272,11 @@
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);
-	--theme-submenu--color: var(--theme-color-text-secondary);
+	--theme-submenu--color: 0, 0%, 100%;
 
-	@media (--large) {
-		--theme-submenu--color: 0, 0%, 100%;
-	}
+	/* Header > Navigation > Submenu (Offscreen) */
+	--theme-offscreen-submenu--bg: var(--theme-color-heading);
+	--theme-offscreen-submenu--color: var(--color-white);
 
 	/* Header Variations */
 	--theme-header-3--padding-y: 3.5rem;

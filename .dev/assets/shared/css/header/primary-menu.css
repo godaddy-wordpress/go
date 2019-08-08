@@ -48,34 +48,41 @@
 
 	/* First submenu (second level) */
 	& > li > .sub-menu {
-		@media (--large) {
-			top: 200%;
+		position: relative;
 
-			/* Upward dark arrow on top of the flyout sub-menu */
-			&::before {
-				border-bottom: 10px solid hsla(var(--theme-submenu--bg), 1);
-				border-left: 10px solid transparent;
-				border-right: 10px solid transparent;
-				content: "";
-				display: inline-block;
-				height: 0;
+		@media (--large) {
+			position: absolute;
+			top: 200%;
+		}
+
+		/* Upward dark arrow on top of the flyout sub-menu */
+		&::before {
+			border-bottom: 10px solid hsl(var(--theme-submenu--bg));
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			content: "";
+			display: inline-block;
+			height: 0;
+			left: 5%;
+			position: absolute;
+			top: -10px;
+			transform: translateX(-10px);
+			width: 0;
+
+			@media (--large) {
 				left: 50%;
-				position: absolute;
-				top: -10px;
-				transform: translateX(-10px);
-				width: 0;
 			}
 		}
 	}
 
 	/* All submenus */
 	& .sub-menu {
+		background-color: hsla(var(--theme-submenu--bg), 1);
 		list-style: none;
 		margin: 0;
 		padding: 0;
 
 		@media (--large) {
-			background-color: hsla(var(--theme-submenu--bg), 1);
 			display: none;
 			left: 50%;
 			padding: 1rem 0;
@@ -96,9 +103,12 @@
 		/* All submenu links */
 		& a {
 			color: hsl(var(--theme-submenu--color));
-			padding-bottom: 1rem;
-			padding-top: 1rem;
 			width: 100%;
+
+			@media (--large) {
+				padding-bottom: 1rem;
+				padding-top: 1rem;
+			}
 
 			&::after {
 				display: none;
