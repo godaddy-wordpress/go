@@ -2,9 +2,6 @@
  * Godaddy - Global Editor Styles
  */
 
-/* Utilities */
-@import url("utilities/colorize.css");
-
 /* Setting global variables */
 @import url("config/media-queries.css");
 @import url("config/mixins.css");
