@@ -25,4 +25,4 @@
 			</defs>
 		</svg>
 	</button>
-</form><!-- #searchform .search-form -->
+</form>
