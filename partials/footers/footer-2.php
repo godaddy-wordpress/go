@@ -5,7 +5,6 @@
  * @package Maverick
  */
 
-$footer_copy_text = Maverick\footer_copy_text();
 $has_social_icons = Maverick\has_social_icons();
 $has_background   = Maverick\has_footer_background();
 ?>
@@ -16,9 +15,7 @@ $has_background   = Maverick\has_footer_background();
 
 		<div class="flex flex-wrap lg:justify-between lg:flex-nowrap">
 
-			<div class="footer-blurb-text">
-				<?php echo wp_kses_post( Maverick\footer_blurb_text() ); ?>
-			</div>
+			<?php Maverick\display_site_branding( array( 'description' => false ) ); ?>
 
 			<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
 				<nav class="footer-navigation footer-navigation--1 text-sm" aria-label="<?php esc_attr_e( 'Primary Footer Menu', 'maverick' ); ?>">
@@ -72,20 +69,9 @@ $has_background   = Maverick\has_footer_background();
 			<?php } ?>
 		</div>
 
-		<?php if ( $has_social_icons || ! empty( $footer_copy_text ) ) : ?>
+		<?php if ( $has_social_icons ) : ?>
 			<div class="site-footer__row flex flex-column lg:flex-row justify-between items-center">
-				<?php if ( ! empty( $footer_copy_text ) ) : ?>
-					<p class="site-info mb-0 text-sm">
-						<?php echo esc_html( $footer_copy_text ); ?>
-
-						<?php
-						if ( function_exists( 'the_privacy_policy_link' ) ) {
-							the_privacy_policy_link( '' );
-						}
-						?>
-					</p>
-				<?php endif; ?>
-
+				<?php Maverick\copyright( [ 'class' => 'site-info text-sm mb-0' ] ); ?>
 				<?php Maverick\social_icons( [ 'class' => 'social-icons m-0' ] ); ?>
 			</div>
 		<?php endif; ?>
