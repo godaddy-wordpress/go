@@ -106,16 +106,16 @@
 	--theme-h6--color: var(--theme-color-heading);
 
 	/* Text Utilities */
-	--theme-text-xs: 78%;
-	--theme-text-sm: 82.5%;
+	--theme-text-xs: 82%;
+	--theme-text-sm: 83%;
 	--theme-text-sm--letter-spacing: 0.015em;
 
 	@media (--small) {
-		--theme-text-sm: 85%;
+		--theme-text-sm: 87%;
 	}
 
 	@media (--large) {
-		--theme-text-sm: 90%;
+		--theme-text-sm: 92%;
 	}
 
 	/* Drop Cap */
