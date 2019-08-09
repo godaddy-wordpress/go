@@ -34,7 +34,7 @@
 					<span class="screen-reader-text"><?php esc_html_e( 'Search Toggle', 'maverick' ); ?></span>
 				</button>
 
-				<?php get_search_form(); ?>
+				<?php get_search_form( 'header' ); ?>
 
 			</nav>
 		<?php } else { ?>
