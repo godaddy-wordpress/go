@@ -85,6 +85,8 @@ function default_controls( \WP_Customize_Manager $wp_customize ) {
 			]
 		);
 	}
+
+	$wp_customize->remove_section( 'background_image' );
 }
 
 /**
