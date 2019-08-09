@@ -23,6 +23,7 @@ function setup() {
 	add_action( 'customize_register', $n( 'register_control_types' ) );
 	add_action( 'customize_register', $n( 'default_controls' ) );
 	add_action( 'customize_register', $n( 'register_logo_controls' ) );
+	add_action( 'customize_register', $n( 'register_color_controls' ) );
 	add_action( 'customize_register', $n( 'register_global_controls' ) );
 	add_action( 'customize_register', $n( 'register_header_controls' ) );
 	add_action( 'customize_register', $n( 'register_footer_controls' ) );
@@ -232,21 +233,13 @@ function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
  *
  * @return void
  */
-function register_global_controls( \WP_Customize_Manager $wp_customize ) {
-
-	$wp_customize->add_section(
-		'maverick_global_settings',
-		[
-			'title'    => esc_html__( 'Theme Settings', 'maverick' ),
-			'priority' => 110,
-		]
-	);
+function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 
 	$wp_customize->add_setting(
 		'design_style',
 		[
-			'default'    => \Maverick\Core\get_default_design_style(),
-			'transport'  => 'postMessage',
+			'default'   => \Maverick\Core\get_default_design_style(),
+			'transport' => 'postMessage',
 		]
 	);
 
@@ -327,10 +320,8 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'tertiary_color',
 		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-			'default'    => \Maverick\get_default_palette_color( 'tertiary' ),
+			'transport' => 'postMessage',
+			'default'   => \Maverick\get_default_palette_color( 'tertiary' ),
 		]
 	);
 
@@ -344,6 +335,24 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 				'settings' => 'tertiary_color',
 			]
 		)
+	);
+}
+
+/**
+ * Register the Global Controls within Customize.
+ *
+ * @param \WP_Customize_Manager $wp_customize The customize manager object.
+ *
+ * @return void
+ */
+function register_global_controls( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_section(
+		'maverick_global_settings',
+		[
+			'title'    => esc_html__( 'Theme Settings', 'maverick' ),
+			'priority' => 110,
+		]
 	);
 
 	$wp_customize->add_setting(
@@ -453,7 +462,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'header_background_color_contorl',
+			'header_background_color_control',
 			[
 				'label'    => esc_html__( 'Background Color', 'maverick' ),
 				'section'  => 'maverick_header_settings',
@@ -463,7 +472,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'header_text_color_setting',
+		'header_text_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -478,7 +487,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 			[
 				'label'    => esc_html__( 'Text Color', 'maverick' ),
 				'section'  => 'maverick_header_settings',
-				'settings' => 'header_text_color_setting',
+				'settings' => 'header_text_color',
 			]
 		)
 	);
@@ -665,7 +674,7 @@ function inline_css() {
 
 	// Customizer colors.
 	$header_background    = hex_to_hsl( get_theme_mod( 'header_background_color', false ), true );
-	$header_text_color    = hex_to_hsl( get_theme_mod( 'header_text_color_setting', false ), true );
+	$header_text_color    = hex_to_hsl( get_theme_mod( 'header_text_color', false ), true );
 	$footer_text_color    = hex_to_hsl( get_theme_mod( 'footer_text_color', false ), true );
 	$footer_heading_color = hex_to_hsl( get_theme_mod( 'footer_heading_color', false ), true );
 	$footer_background    = hex_to_hsl( get_theme_mod( 'footer_background_color', false ), true );
