@@ -1,0 +1,21 @@
+.not-found {
+
+	& .search-form {
+		display: flex;
+	}
+
+	& .search-input__arrow-icon {
+		display: none;
+	}
+
+	& .search-input__button {
+		outline-offset: 2px;
+	}
+
+	& input[type="search"] {
+		margin-bottom: 0;
+		margin-right: 8px;
+		padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+		width: 100%;
+	}
+}

@@ -243,7 +243,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_design_style',
+		'design_style',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -253,12 +253,12 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'maverick_design_style_control',
+		'design_style_control',
 		[
 			'label'       => esc_html__( 'Design Style', 'maverick' ),
 			'description' => esc_html__( 'Choose a style, select a color scheme and customize colors to personalize your site.', 'maverick' ),
 			'section'     => 'colors',
-			'settings'    => 'maverick_design_style',
+			'settings'    => 'design_style',
 			'type'        => 'radio',
 			'choices'     => wp_list_pluck( \Maverick\Core\get_available_design_styles(), 'label' ),
 			'priority'    => 1,
@@ -278,7 +278,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new Switcher_Control(
 			$wp_customize,
-			'maverick_color_scheme_control',
+			'color_scheme_control',
 			[
 				'label'         => esc_html__( 'Color Scheme', 'maverick' ),
 				'section'       => 'colors',
@@ -377,7 +377,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'maverick_show_page_title_checkbox',
+		'show_page_title_checkbox',
 		[
 			'label'       => esc_html__( 'Page Titles', 'maverick' ),
 			'description' => esc_html__( 'Display page titles on individual pages.', 'maverick' ),
@@ -441,7 +441,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_header_background_color_contorl',
+			'header_background_color_contorl',
 			[
 				'label'    => esc_html__( 'Background Color', 'maverick' ),
 				'section'  => 'maverick_header_settings',
@@ -451,7 +451,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_header_text_color_setting',
+		'header_text_color_setting',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -462,11 +462,11 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'maverick_header_text_color_control',
+			'header_text_color_control',
 			[
 				'label'    => esc_html__( 'Text Color', 'maverick' ),
 				'section'  => 'maverick_header_settings',
-				'settings' => 'maverick_header_text_color_setting',
+				'settings' => 'header_text_color_setting',
 			]
 		)
 	);
@@ -533,7 +533,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_footer_blurb_text_setting',
+		'footer_blurb_text_setting',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -543,18 +543,18 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'maverick_footer_blurb_text_control',
+		'footer_blurb_text_control',
 		[
 			'label'       => esc_html__( 'Blurb Text', 'maverick' ),
 			'description' => esc_html__( 'The footer blurb text. It is only used on a few variations', 'maverick' ),
 			'section'     => 'maverick_footer_text_section',
-			'settings'    => 'maverick_footer_blurb_text_setting',
+			'settings'    => 'footer_blurb_text_setting',
 			'type'        => 'textarea',
 		]
 	);
 
 	$wp_customize->add_setting(
-		'maverick_footer_copy_text_setting',
+		'footer_copy_text_setting',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -564,12 +564,12 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'maverick_footer_copyright_text_control',
+		'footer_copyright_text_control',
 		[
 			'label'       => esc_html__( 'Copyright Text', 'maverick' ),
 			'description' => esc_html__( 'The footer Copyright Text.', 'maverick' ),
 			'section'     => 'maverick_footer_text_section',
-			'settings'    => 'maverick_footer_copy_text_setting',
+			'settings'    => 'footer_copy_text_setting',
 			'type'        => 'text',
 		]
 	);
@@ -710,7 +710,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		return;
 	}
 
-	$settings_footer_partial = [ 'maverick_footer_copy_text_setting', 'maverick_footer_blurb_text_setting' ];
+	$settings_footer_partial = [ 'footer_copy_text_setting', 'footer_blurb_text_setting' ];
 }
 
 /**
@@ -728,15 +728,15 @@ function inline_css() {
 
 	// Customizer colors.
 	$header_background    = hex_to_hsl( get_theme_mod( 'header_background_color', false ), true );
-	$header_text_color    = hex_to_hsl( get_theme_mod( 'maverick_header_text_color_setting', false ), true );
+	$header_text_color    = hex_to_hsl( get_theme_mod( 'header_text_color_setting', false ), true );
 	$footer_text_color    = hex_to_hsl( get_theme_mod( 'footer_text_color', false ), true );
 	$footer_heading_color = hex_to_hsl( get_theme_mod( 'footer_heading_color', false ), true );
 	$footer_background    = hex_to_hsl( get_theme_mod( 'footer_background_color', false ), true );
 	$social_icon_color    = hex_to_hsl( get_theme_mod( 'social_icon_color', false ), true );
 
 	// Site logo width
-	$logo_width        = get_theme_mod( 'logo_width', false );
-	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', false );
+	$logo_width        = get_theme_mod( 'logo_width', '100' );
+	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', '100' );
 	?>
 		<!-- Variable Overrides -->
 		<style>

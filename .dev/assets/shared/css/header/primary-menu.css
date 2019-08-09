@@ -20,7 +20,7 @@
 		border: none;
 		color: hsla(var(--theme-site-nav--color), 1);
 		display: inline-block;
-		font-family: var(--theme-site-nav--font-family);
+		font-family: var(--theme-site-nav--font);
 		font-size: var(--theme-site-nav--font-size-mobile);
 		font-weight: var(--theme-site-nav--weight);
 		letter-spacing: var(--theme-site-nav--tracking);

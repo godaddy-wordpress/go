@@ -15,8 +15,8 @@
 @import url("utilities/alignment.css");
 @import url("utilities/captions.css");
 @import url("utilities/accessibility.css");
-@import url("utilities/colorize.css");
 @import url("utilities/font-sizes.css");
+@import url("utilities/colors.css");
 
 /* Elements */
 @import url("elements/buttons.css");
@@ -32,6 +32,7 @@
 @import url("layout/content.css");
 @import url("layout/entry-header.css");
 @import url("layout/404.css");
+@import url("layout/not-found.css");
 
 /* Headers */
 @import url("header/header-2.css");
