@@ -1,31 +1,28 @@
 /**
- * Modern Style
+ * Modern - Styles
  */
 
-/* Settings */
 @import url("../../../shared/css/config/media-queries.css");
 @import url("../settings.css");
-
-/* Elements */
-@import url("elements/forms.css");
-
-/* Core Blocks */
 @import url("blocks/button.css");
-
-/* CoBlocks */
 @import url("coblocks/carousel.css");
 @import url("coblocks/hero.css");
 @import url("coblocks/media-card.css");
 @import url("coblocks/pricing-table.css");
-
-/* WooCommerce */
 @import url("woocommerce/button.css");
-@import url("woocommerce/shop.css");
 
-/* Templates */
-@import url("templates/post.css");
+/* Blocks with applied padding */
+.wp-block-code,
+.wp-block-verse,
+p.has-background,
+.wp-block-pullquote,
+.wp-block-cover:not(.alignwide):not(.alignfull) {
+	@media (--base) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
 
-/* Custom Styling */
 .site-branding__title {
 	letter-spacing: 3px;
 	text-transform: uppercase;
@@ -66,15 +63,14 @@
 	}
 }
 
-/* Blocks with applied padding */
+/* Single */
+.post--single {
 
-.wp-block-code,
-.wp-block-verse,
-p.has-background,
-.wp-block-pullquote,
-.wp-block-cover:not(.alignwide):not(.alignfull) {
-	@media (--base) {
-		margin-left: var(--theme-block-padding-x);
-		margin-right: var(--theme-block-padding-x);
+	& .post__hero {
+		background: hsl(var(--theme-color-secondary));
+
+		& * {
+			color: hsl(var(--theme-color-primary));
+		}
 	}
 }

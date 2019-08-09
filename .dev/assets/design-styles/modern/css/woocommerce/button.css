@@ -3,7 +3,6 @@
  *
 */
 
-/* Specificity to override nested styles from woo */
 body {
 
 	&.woocommerce-page {

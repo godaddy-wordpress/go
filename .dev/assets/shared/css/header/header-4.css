@@ -59,14 +59,10 @@
 		}
 	}
 
-	& .site-search {
+	& .site-header .site-search {
 		left: calc(var(--theme-block-padding-x) - 0.3rem);
-		opacity: 0;
-		pointer-events: none;
-		position: absolute;
 		right: calc(var(--theme-block-padding-x) - 0.3rem);
 		transform: translateX(-100%);
-		transition: opacity 175ms ease-out, transform ease-out 125ms;
 		z-index: 310;
 
 		@media (--large) {

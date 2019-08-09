@@ -163,7 +163,7 @@ function footer_variation() {
  * @return string
  */
 function footer_blurb_text() {
-	$blurb_text = get_theme_mod( 'maverick_footer_blurb_text_setting', \Maverick\Core\get_default_footer_blurb_text() );
+	$blurb_text = get_theme_mod( 'footer_blurb_text_setting', \Maverick\Core\get_default_footer_blurb_text() );
 
 	/**
 	 * Filters the footer blurb text.
@@ -184,7 +184,7 @@ function footer_copy_text() {
 
 	$year = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
 
-	$copy_text = get_theme_mod( 'maverick_footer_copy_text_setting', \Maverick\Core\get_default_footer_copy_text() );
+	$copy_text = get_theme_mod( 'footer_copy_text_setting', \Maverick\Core\get_default_footer_copy_text() );
 
 	$copyright = $year . $copy_text;
 

@@ -19,20 +19,23 @@
 	& .entry-header {
 		margin-bottom: 3rem;
 		padding: 0;
+		text-align: center;
 	}
 
 	& .page-title {
-		font-size: var(--theme-h2--font-size);
 		margin: 0;
-		text-align: left;
 	}
 
 	& .site-search {
 		margin: 0;
 		opacity: 1;
-		padding: 0 3rem;
+		padding: 0 1rem;
 		pointer-events: auto;
 		position: relative;
 		transform: none;
+
+		@media (--medium) {
+			padding: 0 5rem;
+		}
 	}
 }

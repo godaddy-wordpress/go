@@ -17,7 +17,7 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'maverick_header_text_color_setting', ( value ) => {
+	wp.customize( 'header_text_color_setting', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : undefined ;
