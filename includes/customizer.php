@@ -180,7 +180,7 @@ function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
 			'logo_width',
 			array(
 				'default'     => 100,
-				'type'        => 'range_control',
+				'type'        => 'maverick_range_control',
 				'label'       => esc_html__( 'Width', 'maverick' ),
 				'description' => 'px',
 				'section'     => 'title_tagline',
@@ -209,7 +209,7 @@ function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
 			'logo_width_mobile',
 			array(
 				'default'     => 100,
-				'type'        => 'range_control',
+				'type'        => 'maverick_range_control',
 				'label'       => esc_html__( 'Mobile Width', 'maverick' ),
 				'description' => 'px',
 				'section'     => 'title_tagline',

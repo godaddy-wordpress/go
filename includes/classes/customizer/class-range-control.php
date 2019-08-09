@@ -17,7 +17,7 @@ class Range_Control extends \WP_Customize_Control {
 	 *
 	 * @var string
 	 */
-	public $type = 'range_control';
+	public $type = 'maverick_range_control';
 
 	/**
 	 * Enqueues required JS and CSS

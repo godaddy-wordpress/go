@@ -256,7 +256,7 @@ function maverick_page_title() {
 	 * @var array
 	 */
 	$args = (array) apply_filters(
-		'page_title_args',
+		'maverick_page_title_args',
 		[
 			'title'   => get_the_title(),
 			'wrapper' => 'h1',
