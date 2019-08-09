@@ -239,7 +239,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		'maverick_site_settings',
 		[
 			'title'    => esc_html__( 'Site Settings', 'maverick' ),
-			'priority' => 30,
+			'priority' => 100,
 		]
 	);
 
