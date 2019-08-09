@@ -6,13 +6,15 @@
 	# Base
 	# Colors
 	# Typography
+	# Forms
 	# Buttons
-	# Blocks
 	# Header
 	# Header Navigation Toggle
 	# Header Search Toggle
 	# Entry Header
 	# Footer
+	# Blocks
+	# CoBlocks
 
 
 	/*--------------------------------------------------------------
@@ -20,6 +22,9 @@
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 46rem;
 	--theme-max-w-wide: 88rem;
+
+	/* Below base width query */
+	@custom-media --base (max-width: 46rem);
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
