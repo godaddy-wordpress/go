@@ -66,8 +66,8 @@ export default () => {
 	 * Control the visibility of the color schemes selections.
 	 */
 	const toggleColorSchemes = () => {
-		$( 'label[for^=maverick_color_scheme_control' ).hide();
-		$( `label[for^=maverick_color_scheme_control-${selectedDesignStyle}-` ).show();
+		$( 'label[for^=color_scheme_control' ).hide();
+		$( `label[for^=color_scheme_control-${selectedDesignStyle}-` ).show();
 	};
 
 	/**
@@ -93,7 +93,7 @@ export default () => {
 		value.bind( ( to ) => {
 			selectedDesignStyle = to;
 			loadColorSchemes( 'default' );
-			$( `#maverick_color_scheme_control-${selectedDesignStyle}-default` ).prop( 'checked', true );
+			$( `#color_scheme_control-${selectedDesignStyle}-default` ).prop( 'checked', true );
 		} );
 	} );
 

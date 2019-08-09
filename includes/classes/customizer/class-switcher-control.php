@@ -24,7 +24,7 @@ class Switcher_Control extends \WP_Customize_Control {
 	 *
 	 * @var string
 	 */
-	public $type = 'maverick_switcher_control';
+	public $type = 'switcher_control';
 
 	/**
 	 * Constructor.

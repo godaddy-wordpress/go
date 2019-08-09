@@ -43,7 +43,7 @@ function register_required_plugins() {
 	 *
 	 * @param array $plugins Array containings the plugin dependencies in the TGM format.
 	 */
-	$plugins = apply_filters( 'maverick_plugin_dependencies', $plugins );
+	$plugins = apply_filters( 'plugin_dependencies', $plugins );
 
 	$config = [
 		'id'           => 'maverick',              // Unique ID for hashing notices for multiple instances of TGMPA.
