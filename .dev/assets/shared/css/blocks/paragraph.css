@@ -1,0 +1,20 @@
+/*! Paragraph */
+p.has-background {
+	@mixin blockWidthNoPadding;
+}
+
+.has-drop-cap:not(:focus) {
+
+	&::first-letter {
+		color: hsl(var(--theme-color-primary));
+		font-size: var(--theme-dropcap--font-size);
+		font-weight: var(--theme-dropcap--weight);
+		line-height: 1;
+		margin: 0 0.275em -1px 0;
+		padding-top: 0;
+	}
+
+	&::after {
+		padding-top: 0;
+	}
+}

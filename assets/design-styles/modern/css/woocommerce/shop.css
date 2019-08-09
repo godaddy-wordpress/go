@@ -1,4 +1,0 @@
-/* Sale badge overrides */
-.woocommerce span.onsale {
-	color: hsl(var(--color-white));
-}

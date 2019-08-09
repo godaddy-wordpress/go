@@ -1,0 +1,5 @@
+/*! Preformatted */
+.wp-block-preformatted {
+	font-size: 0.925rem;
+	white-space: pre-wrap;
+}

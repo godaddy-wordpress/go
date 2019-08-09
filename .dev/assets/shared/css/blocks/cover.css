@@ -1,0 +1,11 @@
+/*! Pullquote */
+.content-area {
+
+	& .wp-block-cover {
+		width: auto;
+
+		&:not(.alignwide):not(.alignfull):not(.alignleft) {
+			@mixin blockWidthNoPadding;
+		}
+	}
+}

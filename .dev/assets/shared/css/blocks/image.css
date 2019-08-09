@@ -1,0 +1,26 @@
+/*! Image */
+.wp-block-image {
+
+	&.alignfull,
+	&.alignwide {
+		margin: var(--theme-block-spacing-huge) auto;
+	}
+
+	& img {
+		display: block;
+	}
+
+	& .alignleft {
+		margin-right: 2rem;
+	}
+
+	& .alignright {
+		margin-left: 2rem;
+	}
+
+	& figure.alignleft,
+	& figure.alignright {
+		margin-bottom: 1.5rem;
+		margin-top: 0.7rem;
+	}
+}

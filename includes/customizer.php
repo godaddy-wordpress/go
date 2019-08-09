@@ -22,6 +22,7 @@ function setup() {
 
 	add_action( 'customize_register', $n( 'register_control_types' ) );
 	add_action( 'customize_register', $n( 'default_controls' ) );
+	add_action( 'customize_register', $n( 'register_logo_controls' ) );
 	add_action( 'customize_register', $n( 'register_global_controls' ) );
 	add_action( 'customize_register', $n( 'register_header_controls' ) );
 	add_action( 'customize_register', $n( 'register_footer_controls' ) );
@@ -42,8 +43,10 @@ function setup() {
 function register_control_types( \WP_Customize_Manager $wp_customize ) {
 	// Load custom controls
 	require_once MAVERICK_PATH . '/includes/classes/customizer/class-switcher-control.php';
+	require_once MAVERICK_PATH . '/includes/classes/customizer/class-range-control.php';
 
 	$wp_customize->register_control_type( Switcher_Control::class );
+	$wp_customize->register_control_type( Range_Control::class );
 }
 
 /**
@@ -129,6 +132,99 @@ function enqueue_controls_assets() {
 }
 
 /**
+ * Returns all available color schemes for all design styles
+ * in an array for use in the Customizer control.
+ *
+ * @return array
+ */
+function get_color_schemes_as_choices() {
+	$design_styles = \Maverick\Core\get_available_design_styles();
+	$color_schemes = array();
+
+	array_walk(
+		$design_styles,
+		function( $style_data, $design_style ) use ( &$color_schemes ) {
+			array_walk(
+				$style_data['color_schemes'],
+				function( $data, $name ) use ( $design_style, &$color_schemes ) {
+					$color_schemes[ "${design_style}-${name}" ] = $data;
+				}
+			);
+		}
+	);
+
+	return $color_schemes;
+}
+
+/**
+ * Register the Logo Controls within Customize.
+ *
+ * @param \WP_Customize_Manager $wp_customize The customize manager object.
+ *
+ * @return void
+ */
+function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_setting(
+		'logo_width',
+		array(
+			'default'           => 100,
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Range_Control(
+			$wp_customize,
+			'logo_width',
+			array(
+				'default'     => 100,
+				'type'        => 'maverick_range_control',
+				'label'       => esc_html__( 'Width', 'maverick' ),
+				'description' => 'px',
+				'section'     => 'title_tagline',
+				'priority'    => 8,
+				'input_attrs' => array(
+					'min'  => 40,
+					'max'  => 300,
+					'step' => 2,
+				),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'logo_width_mobile',
+		array(
+			'default'           => 100,
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Range_Control(
+			$wp_customize,
+			'logo_width_mobile',
+			array(
+				'default'     => 100,
+				'type'        => 'maverick_range_control',
+				'label'       => esc_html__( 'Mobile Width', 'maverick' ),
+				'description' => 'px',
+				'section'     => 'title_tagline',
+				'priority'    => 9,
+				'input_attrs' => array(
+					'min'  => 40,
+					'max'  => 200,
+					'step' => 2,
+				),
+			)
+		)
+	);
+}
+
+/**
  * Register the Global Controls within Customize.
  *
  * @param \WP_Customize_Manager $wp_customize The customize manager object.
@@ -146,15 +242,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		]
 	);
 
-	$wp_customize->add_section(
-		'maverick_design_style_section',
-		[
-			'title'      => esc_html__( 'Design Styles', 'maverick' ),
-			'capability' => 'edit_theme_options',
-			'panel'      => 'maverick_global_settings',
-		]
-	);
-
 	$wp_customize->add_setting(
 		'maverick_design_style',
 		[
@@ -166,23 +253,14 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new Switcher_Control(
-			$wp_customize,
-			'maverick_design_style_control',
-			[
-				'label'       => esc_html__( 'Design Style', 'maverick' ),
-				'description' => esc_html__( 'Choose one of the supported design styles.', 'maverick' ),
-				'section'     => 'maverick_design_style_section',
-				'settings'    => 'maverick_design_style',
-				'choices'     => \Maverick\Core\get_available_design_styles(),
-			]
-		)
-	);
-
-	$wp_customize->add_section(
-		'color_schemes_section',
+		'maverick_design_style_control',
 		[
-			'title' => esc_html__( 'Color Scheme', 'maverick' ),
+			'label'       => esc_html__( 'Design Style', 'maverick' ),
+			'description' => esc_html__( 'Choose a style, select a color scheme and customize colors to personalize your site.', 'maverick' ),
+			'section'     => 'colors',
+			'settings'    => 'maverick_design_style',
+			'type'        => 'radio',
+			'choices'     => wp_list_pluck( \Maverick\Core\get_available_design_styles(), 'label' ),
 		]
 	);
 
@@ -201,11 +279,10 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			$wp_customize,
 			'maverick_color_scheme_control',
 			[
-				'label'         => esc_html__( 'Color Schemes', 'maverick' ),
-				'description'   => esc_html__( 'Choose one of the supported color schemes', 'maverick' ),
-				'section'       => 'color_schemes_section',
+				'label'         => esc_html__( 'Color Scheme', 'maverick' ),
+				'section'       => 'colors',
 				'settings'      => 'color_scheme',
-				'choices'       => \Maverick\Core\get_available_color_schemes(),
+				'choices'       => get_color_schemes_as_choices(),
 				'switcher_type' => 'color-scheme',
 			]
 		)
@@ -227,7 +304,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'primary_color_control',
 			[
 				'label'    => esc_html__( 'Primary', 'maverick' ),
-				'section'  => 'color_schemes_section',
+				'section'  => 'colors',
 				'settings' => 'primary_color',
 			]
 		)
@@ -249,7 +326,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'secondary_color_control',
 			[
 				'label'    => esc_html__( 'Secondary', 'maverick' ),
-				'section'  => 'color_schemes_section',
+				'section'  => 'colors',
 				'settings' => 'secondary_color',
 			]
 		)
@@ -271,7 +348,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'tertiary_color_control',
 			[
 				'label'    => esc_html__( 'Tertiary', 'maverick' ),
-				'section'  => 'color_schemes_section',
+				'section'  => 'colors',
 				'settings' => 'tertiary_color',
 			]
 		)
@@ -493,11 +570,11 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
-		'footer_social_section',
+		'social_media',
 		[
-			'title'      => esc_html__( 'Social Icons', 'maverick' ),
-			'capability' => 'edit_theme_options',
-			'panel'      => 'maverick_footer_settings',
+			'title'       => esc_html__( 'Social Media', 'maverick' ),
+			'description' => 'Add social media account links to apply social icons to the footer of your site.',
+			'priority'    => 100,
 		]
 	);
 
@@ -505,23 +582,23 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 
 	foreach ( $social_icons as $key => $social_icon ) {
 		$wp_customize->add_setting(
-			sprintf( 'footer_social_%s_setting', $key ),
+			sprintf( 'social_icon_%s', $key ),
 			[
-				'type'       => 'theme_mod',
-				'capability' => 'edit_theme_options',
-				'default'    => '',
-				'transport'  => 'postMessage',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'esc_url_raw',
 			]
 		);
 
 		$wp_customize->add_control(
-			sprintf( 'footer_social_%s_control', $key ),
+			sprintf( 'social_icon_%s_control', $key ),
 			[
 				'label'       => $social_icon['label'],
-				'description' => $social_icon['description'],
-				'section'     => 'footer_social_section',
-				'settings'    => sprintf( 'footer_social_%s_setting', $key ),
-				'type'        => 'text',
+				'section'     => 'social_media',
+				'settings'    => sprintf( 'social_icon_%s', $key ),
+				'type'        => 'url',
+				'input_attrs' => [
+					'placeholder' => esc_url( $social_icon['placeholder'] ),
+				],
 			]
 		);
 	}
@@ -602,7 +679,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'footer_social_color',
+		'social_icon_color',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -614,11 +691,11 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'footer_social_color',
+			'social_icon_color',
 			[
 				'label'    => esc_html__( 'Social Icons Color', 'maverick' ),
 				'section'  => 'maverick_footer_colors_section',
-				'settings' => 'footer_social_color',
+				'settings' => 'social_icon_color',
 			]
 		)
 	);
@@ -629,10 +706,6 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	}
 
 	$settings_footer_partial = [ 'maverick_footer_copy_text_setting', 'maverick_footer_blurb_text_setting' ];
-
-	foreach ( $social_icons as $key => $social_icon ) {
-		$settings_footer_partial[] = sprintf( 'footer_social_%s_setting', $key );
-	}
 }
 
 /**
@@ -642,18 +715,22 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
  */
 function inline_css() {
 
-	//Color palette.
+	// Color palette.
 	$primary_color   = get_palette_color( 'primary', 'HSL' );
 	$secondary_color = get_palette_color( 'secondary', 'HSL' );
 	$tertiary_color  = get_palette_color( 'tertiary', 'HSL' );
 
-	//Customizer colors.
+	// Customizer colors.
 	$header_background    = hex_to_hsl( get_theme_mod( 'header_background_color', false ), true );
 	$header_text_color    = hex_to_hsl( get_theme_mod( 'maverick_header_text_color_setting', false ), true );
 	$footer_text_color    = hex_to_hsl( get_theme_mod( 'footer_text_color', false ), true );
 	$footer_heading_color = hex_to_hsl( get_theme_mod( 'footer_heading_color', false ), true );
 	$footer_background    = hex_to_hsl( get_theme_mod( 'footer_background_color', false ), true );
-	$footer_social_color  = hex_to_hsl( get_theme_mod( 'footer_social_color', false ), true );
+	$social_icon_color    = hex_to_hsl( get_theme_mod( 'social_icon_color', false ), true );
+
+	// Site logo width
+	$logo_width        = get_theme_mod( 'logo_width', '100' );
+	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', '100' );
 	?>
 		<!-- Variable Overrides -->
 		<style>
@@ -699,8 +776,17 @@ function inline_css() {
 					--theme-footer--color: <?php echo esc_attr( $footer_text_color ); ?>;;
 				<?php endif; ?>
 
-				<?php if ( $footer_social_color ) : ?>
-					--theme-social--color: <?php echo esc_attr( $footer_social_color ); ?>;
+				<?php if ( $social_icon_color ) : ?>
+					--theme-social--color: <?php echo esc_attr( $social_icon_color ); ?>;
+				<?php endif; ?>
+
+				/* Site Logo */
+				<?php if ( $logo_width ) : ?>
+					--theme-site-logo--width: <?php echo esc_attr( $logo_width ); ?>px;
+				<?php endif; ?>
+
+				<?php if ( $logo_width_mobile ) : ?>
+					--theme-site-logo--width-mobile: <?php echo esc_attr( $logo_width_mobile ); ?>px;
 				<?php endif; ?>
 			}
 		</style>

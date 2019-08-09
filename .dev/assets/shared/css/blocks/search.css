@@ -1,0 +1,9 @@
+/*! Search */
+.wp-block-search {
+
+	& input[type="search"] {
+		margin-bottom: 0;
+		padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+		width: auto;
+	}
+}

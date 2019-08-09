@@ -1,0 +1,76 @@
+/**
+ * Modern - Styles
+ */
+
+@import url("../../../shared/css/config/media-queries.css");
+@import url("../settings.css");
+@import url("blocks/button.css");
+@import url("coblocks/carousel.css");
+@import url("coblocks/hero.css");
+@import url("coblocks/media-card.css");
+@import url("coblocks/pricing-table.css");
+@import url("woocommerce/button.css");
+
+/* Blocks with applied padding */
+.wp-block-code,
+.wp-block-verse,
+p.has-background,
+.wp-block-pullquote,
+.wp-block-cover:not(.alignwide):not(.alignfull) {
+	@media (--base) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
+
+.site-branding__title {
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+.site-navigation {
+	@media (--large) {
+		margin-top: -0.3rem;
+	}
+}
+
+.primary-menu a {
+
+	&::after {
+		background-color: currentColor;
+		bottom: -5px;
+		content: "";
+		height: 2px;
+		left: 0;
+		position: absolute;
+		transform: scaleX(1);
+		transform-origin: left center;
+		transition: transform 400ms cubic-bezier(0.7, 0, 0.3, 1), background-color 200ms cubic-bezier(0.7, 0, 0.3, 1);
+		width: 100%;
+	}
+
+	@media (hover: hover) {
+
+		&:hover::after {
+			transform: scaleX(0);
+			transform-origin: right center;
+		}
+	}
+
+	&:focus::after {
+		transform: scaleX(0);
+		transform-origin: right center;
+	}
+}
+
+/* Single */
+.post--single {
+
+	& .post__hero {
+		background: hsl(var(--theme-color-secondary));
+
+		& * {
+			color: hsl(var(--theme-color-primary));
+		}
+	}
+}

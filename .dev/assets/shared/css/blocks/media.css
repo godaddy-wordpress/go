@@ -1,0 +1,13 @@
+/*! Media & Text */
+.wp-block-media-text {
+
+	& .wp-block-media-text__content {
+		@media (max-width: 600px) {
+			padding: 0;
+		}
+
+		& p:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

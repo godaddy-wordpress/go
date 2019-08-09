@@ -1,0 +1,33 @@
+/**
+ * WooCommerce Modern - button overrides
+ *
+*/
+
+body {
+
+	&.woocommerce-page {
+
+		/* Primary Button */
+		& #respond input#submit.alt,
+		& .button.alt {
+
+			&:active,
+			&:focus,
+			&:hover {
+
+				/* Must use :before, since woo reserves after for loader icon */
+				&::before {
+					background-color: hsl(var(--color-white));
+					bottom: 0;
+					content: "";
+					display: block;
+					height: 8px;
+					left: var(--theme-button--padding-x);
+					position: absolute;
+					right: var(--theme-button--padding-x);
+				}
+			}
+		}
+	}
+}
+

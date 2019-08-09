@@ -1,7 +1,4 @@
-assets/js/vendor
-assets/js/admin/vendor
-assets/js/frontend/vendor
-assets/js/shared/vendor
+.dev/assets/shared/js/frontend/vendor
 gulp-tasks/
 webpack.config.babel.js
 gulpfile.babel.js

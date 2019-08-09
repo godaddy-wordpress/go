@@ -1,8 +1,6 @@
 <?php
 /**
- * Footer Partial 3
- *
- * @see assets/admin/js/customizer/preview/footer-text.js
+ * Footer #3
  *
  * @package Maverick
  */

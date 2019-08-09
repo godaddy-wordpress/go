@@ -1,0 +1,24 @@
+[data-header="header-3"] {
+
+	& .site-header__inner {
+		@media (--small) {
+			padding-bottom: var(--theme-header-3--padding-y);
+			padding-top: var(--theme-header-3--padding-y);
+		}
+	}
+
+	& .site-navigation {
+		@media (--large) {
+			margin-top: calc(var(--theme-header-3-nav--margin-top));
+		}
+	}
+
+	& .primary-menu > li > .sub-menu::before {
+		left: 50%;
+	}
+
+	/* Mobile overlay menu */
+	@nest .has-offscreen-nav.menu-is-open & .primary-menu {
+		width: 100%;
+	}
+}

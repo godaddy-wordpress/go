@@ -1,0 +1,122 @@
+/**
+ * Global styling for all things forms
+ */
+
+fieldset {
+	margin-top: 5rem;
+}
+
+label {
+	color: hsl(var(--theme-label--color));
+	display: block;
+	font-family: var(--theme-label--font);
+	font-size: var(--theme-label--font-size);
+	font-weight: var(--theme-label--weight);
+	letter-spacing: var(--theme-label--tracking);
+	margin-bottom: var(--theme-label--spacing);
+	text-transform: var(--theme-label--transform);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
+	appearance: none;
+	background-color: hsl(var(--theme-input--bg));
+	border: var(--theme-input--border);
+	box-shadow: var(--theme-input--shadow);
+	color: hsl(var(--theme-input--color));
+	font-size: var(--theme-input--font-size);
+	font-weight: var(--theme-input--weight);
+	line-height: 1;
+	margin-bottom: var(--theme-input--spacing);
+	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+	width: 100%;
+
+	&:focus {
+		background: hsl(var(--theme-input--bg-interactive));
+		border-color: hsl(var(--theme-input--border-color-focus));
+		box-shadow: var(--theme-input--shadow-focus);
+		color: hsl(var(--theme-input--color-focus));
+
+		@mixin outline;
+		outline-offset: 2px;
+	}
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	appearance: none;
+}
+
+textarea {
+	background-color: hsl(var(--theme-input--bg));
+	border: var(--theme-input--border);
+	border-radius: var(--theme-input--radius);
+	color: hsl(var(--theme-input--color));
+	display: block;
+	font-size: var(--theme-input--font-size);
+	font-weight: var(--theme-input--weight);
+	line-height: 1;
+	margin-bottom: var(--theme-input--spacing);
+	min-height: calc(0.5rem * 10);
+	padding: var(--theme-input--padding-x) var(--theme-input--padding-x);
+	width: 100%;
+
+	&:focus {
+		border-color: hsl(var(--theme-input--border-color-focus));
+		box-shadow: var(--theme-input--shadow-focus);
+		color: hsl(var(--theme-input--color-focus));
+
+		@mixin outline;
+		outline-offset: 2px;
+	}
+}
+
+select {
+	@mixin select-menu;
+
+	/* CAUTION: IE hackery ahead */
+	&::-ms-expand {
+		display: none; /* remove default arrow on ie10 and ie11 */
+	}
+
+	&:focus {
+		@mixin select-menu-focus;
+	}
+
+	/* Target Internet Explorer 9 to undo the custom arrow */
+	@media screen and (min-width: 0\0) {
+		background: none\9;
+		padding: 5px\9;
+	}
+}
+
+option {
+	font-weight: var(--theme-input--weight);
+}
+
+::placeholder {
+	color: hsl(var(--theme-input-placeholder--color));
+	line-height: 1.5;
+	opacity: 1;
+}
+
+::-ms-input-placeholder {
+	color: hsl(var(--theme-input-placeholder--color));
+}
+
+:-ms-input-placeholder {
+	color: hsl(var(--theme-input-placeholder--color));
+}

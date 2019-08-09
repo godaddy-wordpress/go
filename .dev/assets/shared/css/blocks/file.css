@@ -1,0 +1,11 @@
+/*! File */
+.wp-block-file {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+
+	& .wp-block-file__button {
+		@mixin button;
+		vertical-align: inherit;
+	}
+}

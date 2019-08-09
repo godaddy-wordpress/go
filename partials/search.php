@@ -27,4 +27,4 @@ $search_term = filter_input( INPUT_GET, 's', FILTER_SANITIZE_STRING );
 			</defs>
 		</svg>
 	</button>
-</form><!-- #searchform .search-form -->
+</form>
