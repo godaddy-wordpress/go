@@ -158,44 +158,61 @@ function footer_variation() {
 }
 
 /**
- * Returns the footer blurb text
+ * Displays the footer copyright text.
  *
- * @return string
- */
-function footer_blurb_text() {
-	$blurb_text = get_theme_mod( 'footer_blurb_text_setting', \Maverick\Core\get_default_footer_blurb_text() );
-
-	/**
-	 * Filters the footer blurb text.
-	 *
-	 * @since 0.1.0
-	 *
-	 * @param string $footer_blurb_text The footer blurb text.
-	 */
-	return apply_filters( 'maverick_footer_blurb_text', wpautop( $blurb_text ) );
-}
-
-/**
- * Returns the footer blurb text
+ * @param array $args {
+ *   Optional. An array of arguments.
  *
- * @return string
+ *   @type string $class The div class. Default is .site-info
+ * }
+ *
+ * @return void
  */
-function footer_copy_text() {
+function copyright( $args = [] ) {
 
-	$year = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
+	$args = wp_parse_args(
+		$args,
+		[
+			'class' => 'site-info',
+		]
+	);
 
-	$copy_text = get_theme_mod( 'footer_copy_text_setting', \Maverick\Core\get_default_footer_copy_text() );
+	$year      = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
+	$copyright = get_theme_mod( 'copyright', \Maverick\Core\get_default_copyright() );
 
-	$copyright = $year . $copy_text;
+	$html = array(
+		'div'  => [
+			'class' => [],
+		],
+		'span' => [
+			'class' => [],
+		],
+		'a'    => [
+			'href'  => [],
+			'class' => [],
+		],
+	);
+	?>
 
-	/**
-	 * Filters the footer copy text.
-	 *
-	 * @since 0.1.0
-	 *
-	 * @param string $footer_blurb_text The footer blurb text.
-	 */
-	return apply_filters( 'maverick_footer_copy_text', $copyright );
+	<div class="<?php echo esc_attr( $args['class'] ); ?>">
+
+		<?php echo esc_html( $year ); ?>
+
+		<?php if ( $copyright || is_customize_preview() ) : ?>
+			<span class="copyright">
+				<?php echo wp_kses( $copyright, $html ); ?>
+			</span>
+		<?php endif; ?>
+
+		<?php
+		if ( function_exists( 'the_privacy_policy_link' ) ) {
+			the_privacy_policy_link( '' );
+		}
+		?>
+
+	</div>
+
+	<?php
 }
 
 /**
