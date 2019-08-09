@@ -250,7 +250,7 @@
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
-	--theme-site-nav--font-family: var(--theme-heading--font);
+	--theme-site-nav--font: var(--theme-heading--font);
 	--theme-site-nav--font-size: 0.75rem;
 	--theme-site-nav--font-size-mobile: 1rem;
 	--theme-site-nav--weight: 700;
@@ -375,7 +375,7 @@
 
 	--theme-coblocks-pricing-table-color: var(--theme-color-text-secondary);
 	--theme-coblocks-pricing-table-background-color: var(--color-athens-gray);
-	--theme-coblocks-pricing-table-title-font-family: var(--theme-heading--font);
+	--theme-coblocks-pricing-table-title-font: var(--theme-heading--font);
 	--theme-coblocks-pricing-table-price-font-family: var(--theme-heading--font);
 	--theme-coblocks-pricing-table-features-font-family: var(--theme-heading--font);
 	--theme-coblocks-pricing-table-features-color: var(--color-mid-gray);

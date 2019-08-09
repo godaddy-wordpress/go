@@ -32,7 +32,7 @@
 
 	/* Pricing Tables - item title */
 	& .wp-block-coblocks-pricing-table-item__title {
-		font-family: var(--theme-coblocks-pricing-table-title-font-family);
+		font-family: var(--theme-coblocks-pricing-table-title-font);
 		font-weight: 700;
 		letter-spacing: 2px;
 		margin-bottom: 0;
