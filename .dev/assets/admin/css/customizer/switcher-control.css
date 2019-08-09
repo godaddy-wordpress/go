@@ -7,6 +7,8 @@
 		display: block;
 		margin-bottom: 5px;
 		position: relative;
+		border-radius: 3px;
+		background: #ffffff;
 
 		& .label {
 			backdrop-filter: blur(10px) saturate(150%);
@@ -23,6 +25,7 @@
 
 		& img {
 			border-radius: 3px;
+			vertical-align: middle;
 		}
 	}
 
@@ -52,7 +55,7 @@
 	& input[type="radio"]:focus + img,
 	& input[type="radio"]:checked + img {
 		border-color: #5b9dd9;
-   		box-shadow: 0 0 2px rgba(0, 115, 170, 0.8);
+   		box-shadow: 0 0 3px rgba(0,115,170,.8);
 	}
 }
 
