@@ -1,7 +1,3 @@
-/**
- * Modern - Site navigation toggle.
- */
-
 .site-navigation__toggle-icon-inner::before {
 	width: 88%;
 }
