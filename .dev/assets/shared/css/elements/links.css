@@ -2,7 +2,7 @@
  * Global link styling
  */
 
-.site {
+.site-content {
 
 	& p a {
 		color: hsl(var(--theme-link--color));
