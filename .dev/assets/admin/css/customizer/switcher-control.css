@@ -5,7 +5,7 @@
 	& .switcher__choice {
 		cursor: pointer;
 		display: block;
-		margin-bottom: 5px;
+		margin-bottom: 7px;
 		position: relative;
 		border-radius: 3px;
 		background: #ffffff;
@@ -24,8 +24,11 @@
 		}
 
 		& img {
+			background: #ffffff;
 			border-radius: 3px;
 			vertical-align: middle;
+			height: 55px;
+			width: 100%;
 		}
 	}
 
@@ -47,8 +50,7 @@
 		width: 0;
 	}
 
-	& input[type="radio"]:hover + img{
-		background: #fafafa;
+	& input[type="radio"]:hover + img {
     		border-color: #999;
 	}
 
