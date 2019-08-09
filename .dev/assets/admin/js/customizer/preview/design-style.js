@@ -1,7 +1,7 @@
 const $ = jQuery; // eslint-disable-line
 
 export default () => {
-	wp.customize( 'maverick_design_style', ( value ) => {
+	wp.customize( 'design_style', ( value ) => {
 		value.bind( ( to ) => {
 
 			if (
