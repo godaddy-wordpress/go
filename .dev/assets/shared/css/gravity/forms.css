@@ -6,24 +6,18 @@
 @import url("radio.css");
 
 .gform_wrapper ul.gform_fields li.gfield select {
-	background-color: hsl(var(--theme-input-color-background));
-	border-bottom-width: var(--theme-input-border-bottom-width);
-	border-color: hsl(var(--theme-input-stroke-color));
-	border-left-width: var(--theme-input-border-left-width);
-	border-radius: var(--theme-input-border-radius);
-	border-right-width: var(--theme-input-border-right-width);
-	border-style: solid;
-	border-top-width: var(--theme-input-border-top-width);
-	font-size: var(--theme-input-font-size);
-	font-weight: var(--theme-input-font-weight);
+	background-color: hsl(var(--theme-input--bg));
+	border: var(--theme-input--border);
+	font-size: var(--theme-input--font-size);
+	font-weight: var(--theme-input--weight);
 	line-height: 1.25;
 	margin-bottom: 0;
-	padding: var(--theme-spacing-v-input) calc(var(--theme-spacing-h-input) * 2) var(--theme-spacing-v-input) var(--theme-spacing-h-input);
+	padding: var(--theme-button--padding-y) calc(var(--theme-input--padding-x) * 2) var(--theme-button--padding-y) var(--theme-input--padding-x);
 
 	&[multiple="multiple"] {
-		border-color: hsl(var(--theme-textarea-stroke-color));
-		border-width: var(--theme-input-border-width);
-		padding: var(--theme-spacing-v-input) var(--theme-spacing-h-input);
+		border-color: hsl(var(--theme-input--border-color));
+		border-width: var(--theme-input--border-width);
+		padding: var(--theme-button--padding-y) var(--theme-input--padding-x);
 	}
 
 	&:focus {
@@ -38,18 +32,12 @@ body .gform_wrapper .gfield_time_ampm select {
 
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_right select {
-	background-color: hsl(var(--theme-input-color-background));
-	border-bottom-width: var(--theme-input-border-bottom-width);
-	border-color: hsl(var(--theme-input-stroke-color));
-	border-left-width: var(--theme-input-border-left-width);
-	border-radius: var(--theme-input-border-radius);
-	border-right-width: var(--theme-input-border-right-width);
-	border-style: solid;
-	border-top-width: var(--theme-input-border-top-width);
-	font-size: var(--theme-input-font-size);
-	font-weight: var(--theme-input-font-weight);
+	background-color: hsl(var(--theme-input--bg));
+	border: var(--theme-input--border);
+	font-size: var(--theme-input--font-size);
+	font-weight: var(--theme-input--weight);
 	margin-bottom: 0;
-	padding: var(--theme-spacing-v-input) calc(var(--theme-spacing-h-input) * 2) var(--theme-spacing-v-input) var(--theme-spacing-h-input);
+	padding: var(--theme-button--padding-y) calc(var(--theme-input--padding-x) * 2) var(--theme-button--padding-y) var(--theme-input--padding-x);
 
 	&:focus {
 		@mixin select-menu-focus;
@@ -57,10 +45,10 @@ body .gform_wrapper .gfield_time_ampm select {
 }
 
 .gform_wrapper ul.gform_fields li.gfield input[type="radio"] {
-	font-weight: var(--theme-input-font-weight);
+	font-weight: var(--theme-input--weight);
 	line-height: 1.25;
 	margin-bottom: 0;
-	padding: var(--theme-spacing-v-input);
+	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
 }
 
 .content-area table tbody tr.gfield_list_group.gfield_list_row_odd {
@@ -77,15 +65,15 @@ body .gform_wrapper .gfield_time_ampm select {
 body {
 
 	& label.gfield_consent_label {
-		font-size: var(--theme-input-font-size);
-		font-weight: var(--theme-input-font-weight);
+		font-size: var(--theme-input--font-size);
+		font-weight: var(--theme-input--weight);
 	}
 
 	& .gform_wrapper label.gfield_label,
 	& .gform_wrapper legend.gfield_label {
-		font-family: var(--theme-label-font-family);
-		font-size: var(--theme-input-label-font-size);
-		font-weight: var(--theme-input-label-font-weight);
+		font-family: var(--theme-label--font);
+		font-size: var(--theme-label--font-size);
+		font-weight: var(--theme-label--weight);
 	}
 
 	& .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label,
@@ -95,7 +83,7 @@ body {
 
 	& .gform_wrapper select option {
 		margin: 0 0 2px;
-		padding: var(--theme-spacing-v-input) var(--theme-spacing-h-input);
+		padding: var(--theme-button--padding-y) var(--theme-input--padding-x);
 	}
 
 	& .gform_wrapper ul li.gfield {
@@ -103,11 +91,11 @@ body {
 	}
 
 	& .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
-		background-color: hsl(var(--theme-input-color-background));
-		border-radius: var(--theme-input-border-radius);
-		font-size: var(--theme-input-font-size);
+		background-color: hsl(var(--theme-input--bg));
+		border-radius: var(--theme-input--radius);
+		font-size: var(--theme-input--font-size);
 		line-height: 1.25;
-		padding: var(--theme-spacing-v-input) var(--theme-spacing-h-input);
+		padding: var(--theme-button--padding-y) var(--theme-input--padding-x);
 	}
 
 	& .gform_wrapper .field_description_below .gfield_description {
@@ -137,39 +125,34 @@ body {
 
 	& .gform_wrapper .gfield_error .gfield_label,
 	& .gform_wrapper .validation_message {
-		color: hsl(var(--theme-color-error));
+		color: hsl(var(--theme-input-error--color));
 	}
 
 	& .gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
-		background-color: hsl(var(--theme-input-color-background));
+		background-color: hsl(var(--theme-input--bg));
 		background-image: url("../images/error-icon.svg");
 		background-position: calc(100% - 10px) center;
 		background-repeat: no-repeat;
-		border-bottom-width: var(--theme-input-border-bottom-width);
-		border-color: hsl(var(--theme-input-stroke-error));
-		border-left-width: var(--theme-input-border-left-width);
-		border-right-width: var(--theme-input-border-right-width);
-		border-style: solid;
-		border-top-width: var(--theme-input-border-top-width);
-		color: var(--theme-color-error);
+		border: var(--theme-input--border);
+		color: var(--theme-input-error--color);
 	}
 
 	& .gform_wrapper textarea {
-		background-color: hsl(var(--theme-textarea-color-background));
-		border-color: hsl(var(--theme-textarea-stroke-color));
-		color: hsl(var(--theme-textarea-color));
-		font-size: var(--theme-input-font-size);
-		font-weight: var(--theme-input-font-weight);
-		padding: var(--theme-spacing-v-input);
+		background-color: hsl(var(--theme-input--bg));
+		border-color: hsl(var(--theme-input--border-color));
+		color: hsl(var(--theme-input--color));
+		font-size: var(--theme-input--font-size);
+		font-weight: var(--theme-input--weight);
+		padding: var(--theme-button--padding-y);
 
 		&:focus {
-			border-color: hsl(var(--theme-textarea-stroke-color-focus));
-			color: hsl(var(--theme-textarea-color-focus));
+			border-color: hsl(var(--theme-input--border-color-focus));
+			color: hsl(var(--theme-input--color-focus));
 		}
 	}
 
 	& .gform_wrapper li.gfield_error textarea {
-		border-color: hsl(var(--theme-input-stroke-error));
+		border-color: hsl(var(--theme-input-error--border-color));
 	}
 
 	& .gform_wrapper form.gf_simple_horizontal {

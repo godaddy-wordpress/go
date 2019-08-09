@@ -340,7 +340,7 @@ function social_icons( $args = [] ) {
 	}
 
 	?>
-	<ul class="js-maverick-social-icons <?php echo esc_attr( $args['class'] ); ?>">
+	<ul class="<?php echo esc_attr( $args['class'] ); ?>">
 		<?php foreach ( $social_icons as $key => $social_icon ) : ?>
 
 			<?php $visibility = empty( $social_icon['url'] ) ? ' display-none' : null; ?>
