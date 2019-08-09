@@ -88,7 +88,7 @@ export default () => {
 
 	wp.customize.bind( 'ready', () => toggleColorSchemes() );
 
-	wp.customize( 'maverick_design_style', ( value ) => {
+	wp.customize( 'design_style', ( value ) => {
 		selectedDesignStyle = value.get();
 		value.bind( ( to ) => {
 			selectedDesignStyle = to;

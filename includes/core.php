@@ -413,7 +413,7 @@ function body_classes( $classes ) {
  */
 function body_data( $classes ) {
 
-	$design_style     = get_theme_mod( 'maverick_design_style', get_default_design_style() );
+	$design_style     = get_theme_mod( 'design_style', get_default_design_style() );
 	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
 	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
 
@@ -594,7 +594,7 @@ function get_available_design_styles() {
  * @return array
  */
 function get_design_style() {
-	$design_style = get_theme_mod( 'maverick_design_style', get_default_design_style() );
+	$design_style = get_theme_mod( 'design_style', get_default_design_style() );
 
 	$supported_design_styles = get_available_design_styles();
 

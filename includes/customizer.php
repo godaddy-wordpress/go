@@ -243,7 +243,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'maverick_design_style',
+		'design_style',
 		[
 			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
@@ -253,12 +253,12 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'maverick_design_style_control',
+		'design_style_control',
 		[
 			'label'       => esc_html__( 'Design Style', 'maverick' ),
 			'description' => esc_html__( 'Choose a style, select a color scheme and customize colors to personalize your site.', 'maverick' ),
 			'section'     => 'colors',
-			'settings'    => 'maverick_design_style',
+			'settings'    => 'design_style',
 			'type'        => 'radio',
 			'choices'     => wp_list_pluck( \Maverick\Core\get_available_design_styles(), 'label' ),
 		]
