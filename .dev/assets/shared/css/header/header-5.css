@@ -103,13 +103,10 @@
 		margin-top: 0;
 	}
 
-	& .site-search {
+	& .site-header .site-search {
 		left: calc(var(--theme-block-padding-x) - 1rem);
-		opacity: 0;
-		position: absolute;
 		right: calc(var(--theme-block-padding-x) - 1rem);
 		transform: translateX(100%);
-		transition: opacity 175ms ease-out, transform ease-out 125ms;
 		z-index: 1200;
 
 		@media (--large) {

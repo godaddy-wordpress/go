@@ -73,15 +73,15 @@
 				outline-offset: 2px;
 			}
 		}
-	}
-}
 
-/* When search becomes visible */
-.site-search.is-open {
-	opacity: 1;
-	pointer-events: all;
-	transform: translateX(0);
-	z-index: 9999;
+		/* When search becomes visible */
+		&.is-open {
+			opacity: 1;
+			pointer-events: all;
+			transform: translateX(0);
+			z-index: 9999;
+		}
+	}
 }
 
 /* Override aria defaults */
