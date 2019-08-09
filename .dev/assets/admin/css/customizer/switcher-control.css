@@ -26,13 +26,12 @@
 		}
 	}
 
-
-
 	& label {
 		position: relative;
 	}
 
-	& label[for^="header_variation"] img {
+	& label[for^="header_variation"] img,
+	& label[for^="footer_variation"] img {
 		border: 1px solid #ccc;
 	}
 

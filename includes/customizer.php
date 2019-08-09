@@ -26,6 +26,7 @@ function setup() {
 	add_action( 'customize_register', $n( 'register_global_controls' ) );
 	add_action( 'customize_register', $n( 'register_header_controls' ) );
 	add_action( 'customize_register', $n( 'register_footer_controls' ) );
+	add_action( 'customize_register', $n( 'register_social_controls' ) );
 	add_action( 'customize_preview_init', $n( 'customize_preview_init' ) );
 	add_action( 'customize_controls_enqueue_scripts', $n( 'customize_preview_init' ) );
 	add_action( 'customize_preview_init', $n( 'enqueue_controls_assets' ) );
@@ -236,7 +237,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_section(
 		'maverick_global_settings',
 		[
-			'title'    => esc_html__( 'Site Options', 'maverick' ),
+			'title'    => esc_html__( 'Theme Settings', 'maverick' ),
 			'priority' => 110,
 		]
 	);
@@ -244,8 +245,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'design_style',
 		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
 			'default'    => \Maverick\Core\get_default_design_style(),
 			'transport'  => 'postMessage',
 		]
@@ -266,10 +265,8 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'color_scheme',
 		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-			'default'    => 'default',
+			'transport' => 'postMessage',
+			'default'   => 'default',
 		]
 	);
 
@@ -290,10 +287,8 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'primary_color',
 		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-			'default'    => \Maverick\get_default_palette_color( 'primary' ),
+			'transport' => 'postMessage',
+			'default'   => \Maverick\get_default_palette_color( 'primary' ),
 		]
 	);
 
@@ -312,10 +307,8 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'secondary_color',
 		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-			'default'    => \Maverick\get_default_palette_color( 'secondary' ),
+			'transport' => 'postMessage',
+			'default'   => \Maverick\get_default_palette_color( 'secondary' ),
 		]
 	);
 
@@ -354,10 +347,48 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'footer_blurb_text_setting',
+		[
+			'default'   => \Maverick\Core\get_default_footer_blurb_text(),
+			'transport' => 'postMessage',
+		]
+	);
+
+	$wp_customize->add_control(
+		'footer_blurb_text_control',
+		[
+			'label'       => esc_html__( 'Blurb Text', 'maverick' ),
+			'description' => esc_html__( 'The footer blurb text. It is only used on a few variations', 'maverick' ),
+			'section'     => 'maverick_global_settings',
+			'settings'    => 'footer_blurb_text_setting',
+			'type'        => 'textarea',
+		]
+	);
+
+	$wp_customize->add_setting(
+		'footer_copy_text_setting',
+		[
+			'default'   => \Maverick\Core\get_default_footer_copy_text(),
+			'transport' => 'postMessage',
+		]
+	);
+
+	$wp_customize->add_control(
+		'footer_copyright_text_control',
+		[
+			'label'       => esc_html__( 'Copyright Text', 'maverick' ),
+			'description' => esc_html__( 'The footer Copyright Text.', 'maverick' ),
+			'section'     => 'maverick_global_settings',
+			'settings'    => 'footer_copy_text_setting',
+			'type'        => 'text',
+		]
+	);
+
+	$wp_customize->add_setting(
 		'page_titles',
 		[
-			'type'       => 'theme_mod',
-			'default'    => true,
+			'type'    => 'theme_mod',
+			'default' => true,
 		]
 	);
 
@@ -462,31 +493,19 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
  */
 function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 
-	$wp_customize->add_panel(
+	$wp_customize->add_section(
 		'maverick_footer_settings',
 		[
-			'title'       => esc_html__( 'Footer', 'maverick' ),
-			'description' => esc_html__( 'Customize the Footer of your site.', 'maverick' ),
-			'priority'    => 80,
-		]
-	);
-
-	$wp_customize->add_section(
-		'maverick_footer_variation_section',
-		[
-			'title'      => esc_html__( 'Footer', 'maverick' ),
-			'capability' => 'edit_theme_options',
-			'panel'      => 'maverick_footer_settings',
+			'title'    => esc_html__( 'Footer', 'maverick' ),
+			'priority' => 90,
 		]
 	);
 
 	$wp_customize->add_setting(
 		'footer_variation',
 		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'default'    => \Maverick\Core\get_default_footer_variation(),
-			'transport'  => 'postMessage',
+			'default'   => \Maverick\Core\get_default_footer_variation(),
+			'transport' => 'postMessage',
 		]
 	);
 
@@ -504,59 +523,82 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_section(
-		'maverick_footer_text_section',
-		[
-			'title'      => esc_html__( 'Footer Text', 'maverick' ),
-			'capability' => 'edit_theme_options',
-			'panel'      => 'maverick_footer_settings',
-		]
-	);
-
 	$wp_customize->add_setting(
-		'footer_blurb_text_setting',
+		'footer_heading_color',
 		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'default'    => \Maverick\Core\get_default_footer_blurb_text(),
-			'transport'  => 'postMessage',
+			'transport' => 'postMessage',
 		]
 	);
 
 	$wp_customize->add_control(
-		'footer_blurb_text_control',
-		[
-			'label'       => esc_html__( 'Blurb Text', 'maverick' ),
-			'description' => esc_html__( 'The footer blurb text. It is only used on a few variations', 'maverick' ),
-			'section'     => 'maverick_footer_settings',
-			'settings'    => 'footer_blurb_text_setting',
-			'type'        => 'textarea',
-		]
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_heading_color',
+			[
+				'label'    => esc_html__( 'Heading Color', 'maverick' ),
+				'section'  => 'maverick_footer_settings',
+				'settings' => 'footer_heading_color',
+			]
+		)
 	);
 
 	$wp_customize->add_setting(
-		'footer_copy_text_setting',
+		'footer_background_color',
 		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'default'    => \Maverick\Core\get_default_footer_copy_text(),
-			'transport'  => 'postMessage',
+			'transport' => 'postMessage',
 		]
 	);
 
 	$wp_customize->add_control(
-		'footer_copyright_text_control',
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_background_color',
+			[
+				'label'    => esc_html__( 'Background Color', 'maverick' ),
+				'section'  => 'maverick_footer_settings',
+				'settings' => 'footer_background_color',
+			]
+		)
+	);
+
+	$wp_customize->add_setting(
+		'footer_text_color',
 		[
-			'label'       => esc_html__( 'Copyright Text', 'maverick' ),
-			'description' => esc_html__( 'The footer Copyright Text.', 'maverick' ),
-			'section'     => 'maverick_footer_settings',
-			'settings'    => 'footer_copy_text_setting',
-			'type'        => 'text',
+			'transport' => 'postMessage',
 		]
 	);
 
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_text_color',
+			[
+				'label'    => esc_html__( 'Text Color', 'maverick' ),
+				'section'  => 'maverick_footer_settings',
+				'settings' => 'footer_text_color',
+			]
+		)
+	);
+
+	// Abort if selective refresh is not available.
+	if ( ! isset( $wp_customize->selective_refresh ) ) {
+		return;
+	}
+
+	$settings_footer_partial = [ 'footer_copy_text_setting', 'footer_blurb_text_setting' ];
+}
+
+/**
+ * Register the Logo Controls within Customize.
+ *
+ * @param \WP_Customize_Manager $wp_customize The customize manager object.
+ *
+ * @return void
+ */
+function register_social_controls( \WP_Customize_Manager $wp_customize ) {
+
 	$wp_customize->add_section(
-		'social_media',
+		'maverick_social_media',
 		[
 			'title'       => esc_html__( 'Social Media', 'maverick' ),
 			'description' => 'Add social media account links to apply social icons to the footer of your site.',
@@ -579,7 +621,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 			sprintf( 'social_icon_%s_control', $key ),
 			[
 				'label'       => $social_icon['label'],
-				'section'     => 'social_media',
+				'section'     => 'maverick_social_media',
 				'settings'    => sprintf( 'social_icon_%s', $key ),
 				'type'        => 'url',
 				'input_attrs' => [
@@ -601,85 +643,12 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 			$wp_customize,
 			'social_icon_color',
 			[
-				'label'    => esc_html__( 'Social Icons Color', 'maverick' ),
-				'section'  => 'social_media',
+				'label'    => esc_html__( 'Icon Color', 'maverick' ),
+				'section'  => 'maverick_social_media',
 				'settings' => 'social_icon_color',
 			]
 		)
 	);
-
-	$wp_customize->add_setting(
-		'footer_heading_color',
-		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'default'    => '',
-			'transport'  => 'postMessage',
-		]
-	);
-
-	$wp_customize->add_control(
-		new \WP_Customize_Color_Control(
-			$wp_customize,
-			'footer_heading_color',
-			[
-				'label'    => esc_html__( 'Heading Color', 'maverick' ),
-				'section'  => 'maverick_footer_settings',
-				'settings' => 'footer_heading_color',
-			]
-		)
-	);
-
-	$wp_customize->add_setting(
-		'footer_text_color',
-		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'default'    => '',
-			'transport'  => 'postMessage',
-		]
-	);
-
-	$wp_customize->add_control(
-		new \WP_Customize_Color_Control(
-			$wp_customize,
-			'footer_text_color',
-			[
-				'label'    => esc_html__( 'Text Color', 'maverick' ),
-				'section'  => 'maverick_footer_settings',
-				'settings' => 'footer_text_color',
-			]
-		)
-	);
-
-	$wp_customize->add_setting(
-		'footer_background_color',
-		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'default'    => '',
-			'transport'  => 'postMessage',
-		]
-	);
-
-	$wp_customize->add_control(
-		new \WP_Customize_Color_Control(
-			$wp_customize,
-			'footer_background_color',
-			[
-				'label'    => esc_html__( 'Background Color', 'maverick' ),
-				'section'  => 'maverick_footer_settings',
-				'settings' => 'footer_background_color',
-			]
-		)
-	);
-
-	// Abort if selective refresh is not available.
-	if ( ! isset( $wp_customize->selective_refresh ) ) {
-		return;
-	}
-
-	$settings_footer_partial = [ 'footer_copy_text_setting', 'footer_blurb_text_setting' ];
 }
 
 /**
