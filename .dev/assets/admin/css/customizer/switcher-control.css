@@ -5,7 +5,7 @@
 	& .switcher__choice {
 		cursor: pointer;
 		display: block;
-		margin-bottom: 20px;
+		margin-bottom: 5px;
 		position: relative;
 
 		& .label {
@@ -20,14 +20,20 @@
 			text-shadow: 0 0 2px rgba(0,0,0, 0.25);
 			width: 100%;
 		}
+
+		& img {
+			border-radius: 3px;
+		}
 	}
+
+
 
 	& label {
 		position: relative;
 	}
 
 	& label[for^="header_variation"] img {
-		border: 1px solid #b4b9be;
+		border: 1px solid #ccc;
 	}
 
 	& input[type="radio"] {
@@ -39,10 +45,15 @@
 		width: 0;
 	}
 
+	& input[type="radio"]:hover + img{
+		background: #fafafa;
+    		border-color: #999;
+	}
+
+	& input[type="radio"]:focus + img,
 	& input[type="radio"]:checked + img {
 		border-color: #5b9dd9;
-		box-shadow: 0 0 2px rgba(30,140,190,.8);
-		outline: 2px solid transparent;
+   		box-shadow: 0 0 2px rgba(0, 115, 170, 0.8);
 	}
 }
 
