@@ -22,9 +22,9 @@
 
 .site-branding__title {
 	color: hsla(var(--theme-site-title--color), 1);
-	font-family: var(--theme-site-title--font-family);
+	font-family: var(--theme-site-title--font);
 	font-size: var(--theme-site-title--font-size);
-	font-weight: var(--theme-site-title--font-weight);
+	font-weight: var(--theme-site-title--weight);
 }
 
 .site-branding__link {

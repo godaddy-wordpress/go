@@ -240,8 +240,8 @@
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.5rem;
-	--theme-site-title--font-family: var(--theme-font-family-heading);
-	--theme-site-title--font-weight: 700;
+	--theme-site-title--font: var(--theme-heading--font);
+	--theme-site-title--weight: 700;
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
