@@ -16,6 +16,7 @@
 @import url("utilities/captions.css");
 @import url("utilities/accessibility.css");
 @import url("utilities/font-sizes.css");
+@import url("utilities/colors.css");
 
 /* Elements */
 @import url("elements/buttons.css");
