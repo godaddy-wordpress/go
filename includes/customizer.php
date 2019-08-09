@@ -233,6 +233,60 @@ function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
  *
  * @return void
  */
+function register_global_controls( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_section(
+		'maverick_site_settings',
+		[
+			'title'    => esc_html__( 'Site Settings', 'maverick' ),
+			'priority' => 30,
+		]
+	);
+
+	$wp_customize->add_setting(
+		'page_titles',
+		[
+			'default' => true,
+		]
+	);
+
+	$wp_customize->add_control(
+		'show_page_title_checkbox',
+		[
+			'label'       => esc_html__( 'Page Titles', 'maverick' ),
+			'description' => esc_html__( 'Display page titles on individual pages.', 'maverick' ),
+			'section'     => 'maverick_site_settings',
+			'settings'    => 'page_titles',
+			'type'        => 'checkbox',
+		]
+	);
+
+	$wp_customize->add_setting(
+		'copyright',
+		[
+			'default'   => \Maverick\Core\get_default_copyright(),
+			'transport' => 'postMessage',
+		]
+	);
+
+	$wp_customize->add_control(
+		'copyright_control',
+		[
+			'label'    => esc_html__( 'Copyright Text', 'maverick' ),
+			'section'  => 'maverick_site_settings',
+			'settings' => 'copyright',
+			'type'     => 'text',
+		]
+	);
+}
+
+/**
+ * Register the Global Controls within Customize.
+ *
+ * @param \WP_Customize_Manager $wp_customize The customize manager object.
+ *
+ * @return void
+ */
 function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 
 	$wp_customize->add_setting(
@@ -339,81 +393,6 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 }
 
 /**
- * Register the Global Controls within Customize.
- *
- * @param \WP_Customize_Manager $wp_customize The customize manager object.
- *
- * @return void
- */
-function register_global_controls( \WP_Customize_Manager $wp_customize ) {
-
-	$wp_customize->add_section(
-		'maverick_global_settings',
-		[
-			'title'    => esc_html__( 'Theme Settings', 'maverick' ),
-			'priority' => 110,
-		]
-	);
-
-	$wp_customize->add_setting(
-		'footer_blurb_text_setting',
-		[
-			'default'   => \Maverick\Core\get_default_footer_blurb_text(),
-			'transport' => 'postMessage',
-		]
-	);
-
-	$wp_customize->add_control(
-		'footer_blurb_text_control',
-		[
-			'label'       => esc_html__( 'Blurb Text', 'maverick' ),
-			'description' => esc_html__( 'The footer blurb text. It is only used on a few variations', 'maverick' ),
-			'section'     => 'maverick_global_settings',
-			'settings'    => 'footer_blurb_text_setting',
-			'type'        => 'textarea',
-		]
-	);
-
-	$wp_customize->add_setting(
-		'footer_copy_text_setting',
-		[
-			'default'   => \Maverick\Core\get_default_footer_copy_text(),
-			'transport' => 'postMessage',
-		]
-	);
-
-	$wp_customize->add_control(
-		'footer_copyright_text_control',
-		[
-			'label'       => esc_html__( 'Copyright Text', 'maverick' ),
-			'description' => esc_html__( 'The footer Copyright Text.', 'maverick' ),
-			'section'     => 'maverick_global_settings',
-			'settings'    => 'footer_copy_text_setting',
-			'type'        => 'text',
-		]
-	);
-
-	$wp_customize->add_setting(
-		'page_titles',
-		[
-			'type'    => 'theme_mod',
-			'default' => true,
-		]
-	);
-
-	$wp_customize->add_control(
-		'show_page_title_checkbox',
-		[
-			'label'       => esc_html__( 'Page Titles', 'maverick' ),
-			'description' => esc_html__( 'Display page titles on individual pages.', 'maverick' ),
-			'section'     => 'maverick_global_settings',
-			'settings'    => 'page_titles',
-			'type'        => 'checkbox',
-		]
-	);
-}
-
-/**
  * Register the Header Controls within Customize.
  *
  * @param \WP_Customize_Manager $wp_customize The customize manager object.
@@ -474,9 +453,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'header_text_color',
 		[
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
+			'transport' => 'postMessage',
 		]
 	);
 
@@ -533,25 +510,6 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'footer_heading_color',
-		[
-			'transport' => 'postMessage',
-		]
-	);
-
-	$wp_customize->add_control(
-		new \WP_Customize_Color_Control(
-			$wp_customize,
-			'footer_heading_color',
-			[
-				'label'    => esc_html__( 'Heading Color', 'maverick' ),
-				'section'  => 'maverick_footer_settings',
-				'settings' => 'footer_heading_color',
-			]
-		)
-	);
-
-	$wp_customize->add_setting(
 		'footer_background_color',
 		[
 			'transport' => 'postMessage',
@@ -566,6 +524,25 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 				'label'    => esc_html__( 'Background Color', 'maverick' ),
 				'section'  => 'maverick_footer_settings',
 				'settings' => 'footer_background_color',
+			]
+		)
+	);
+
+	$wp_customize->add_setting(
+		'footer_heading_color',
+		[
+			'transport' => 'postMessage',
+		]
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_heading_color',
+			[
+				'label'    => esc_html__( 'Heading Color', 'maverick' ),
+				'section'  => 'maverick_footer_settings',
+				'settings' => 'footer_heading_color',
 			]
 		)
 	);
@@ -588,13 +565,6 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 			]
 		)
 	);
-
-	// Abort if selective refresh is not available.
-	if ( ! isset( $wp_customize->selective_refresh ) ) {
-		return;
-	}
-
-	$settings_footer_partial = [ 'footer_copy_text_setting', 'footer_blurb_text_setting' ];
 }
 
 /**
@@ -609,9 +579,9 @@ function register_social_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_section(
 		'maverick_social_media',
 		[
-			'title'       => esc_html__( 'Social Media', 'maverick' ),
+			'title'       => esc_html__( 'Social', 'maverick' ),
 			'description' => 'Add social media account links to apply social icons to the footer of your site.',
-			'priority'    => 100,
+			'priority'    => 90,
 		]
 	);
 
