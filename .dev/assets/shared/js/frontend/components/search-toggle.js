@@ -72,6 +72,9 @@ const createToggle = ( searchForm, searchToggle, focusableElementsString ) => {
 	searchToggle.setAttribute( 'aria-expanded', 'false' );
 	searchToggle.setAttribute( 'aria-haspopup', 'true' );
 
+	searchForm.querySelector( '.search-form__input' ).setAttribute( 'tabindex', '-1' );
+	searchForm.querySelector( '.search-input__button' ).setAttribute( 'tabindex', '-1' );
+
 	/* Check initialized gate */
 	if ( ! initialized ) {
 		searchToggle.addEventListener( 'click', ( event ) => {
@@ -80,6 +83,7 @@ const createToggle = ( searchForm, searchToggle, focusableElementsString ) => {
 			toggleAriaAttribute( searchToggle, 'expanded' );
 			toggleSearch( searchForm, searchToggle, focusableElementsString );
 		} );
+
 		initialized = true;
 	}
 };
@@ -94,6 +98,10 @@ const resetToggle = ( searchForm, searchToggle ) => {
 	searchToggle.setAttribute( 'aria-expanded', 'false' );
 	searchForm.classList.remove( 'is-open' );
 	searchForm.setAttribute( 'aria-hidden', 'true' );
+
+	searchForm.querySelector( '.search-form__input' ).setAttribute( 'tabindex', '-1' );
+	searchForm.querySelector( '.search-input__button' ).setAttribute( 'tabindex', '-1' );
+
 	navigation.classList.remove( 'primary-menu--hide-medium' );
 };
 
@@ -113,8 +121,12 @@ const toggleSearch = ( searchForm, searchToggle, focusableElementsString ) => {
 
 	if ( searchForm.classList.contains( 'is-open' ) ) {
 		navigation.classList.add( 'primary-menu--hide-medium' );
+		searchForm.querySelector( '.search-form__input' ).removeAttribute( 'tabindex' );
+		searchForm.querySelector( '.search-input__button' ).removeAttribute( 'tabindex' );
 	} else {
 		navigation.classList.remove( 'primary-menu--hide-medium' );
+		searchForm.querySelector( '.search-form__input' ).setAttribute( 'tabindex', '-1' );
+		searchForm.querySelector( '.search-input__button' ).setAttribute( 'tabindex', '-1' );
 	}
 
 	// Find all focusable children
