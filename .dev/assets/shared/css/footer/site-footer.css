@@ -55,7 +55,6 @@
 }
 
 .footer-navigation {
-	font-family: var(--theme-site-nav--font);
 	line-height: var(--theme-footer-nav--leading);
 
 	& a:focus {
@@ -68,6 +67,7 @@
 	display: block;
 	font-family: var(--theme-site-nav--font);
 	font-size: var(--theme-site-nav--font-size);
+	letter-spacing: var(--theme-site-nav--tracking);
 	margin-bottom: 0.75rem;
 	text-transform: var(--theme-site-nav--text-transform);
 }

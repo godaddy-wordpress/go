@@ -14,9 +14,6 @@
 
 		& li {
 			display: inline-block;
-			font-size: var(--theme-site-nav--font-size);
-			font-weight: var(--theme-site-nav--weight);
-			text-transform: var(--theme-site-nav--text-transform);
 			width: 100%;
 
 			@media (--medium) {
@@ -27,9 +24,12 @@
 		& a {
 			color: hsla(var(--theme-site-nav--color), 1);
 			display: block;
+			font-family: var(--theme-site-nav--font);
+			font-size: var(--theme-site-nav--font-size);
+			font-weight: var(--theme-site-nav--weight);
 			letter-spacing: var(--theme-site-nav--tracking);
 			padding: var(--theme-footer-nav--padding-y) var(--theme-footer-nav--padding-x);
-			padding-top: 1.25rem;
+			text-transform: var(--theme-site-nav--text-transform);
 
 			&:focus {
 				outline-offset: -16px;

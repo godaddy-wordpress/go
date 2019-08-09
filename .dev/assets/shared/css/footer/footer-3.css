@@ -14,11 +14,7 @@
 	}
 
 	& .footer-navigation {
-		font-family: var(--theme-site-nav--font);
-		font-size: var(--theme-site-nav--font-size);
-		font-weight: var(--theme-site-nav--weight);
 		text-align: center;
-		text-transform: var(--theme-site-nav--text-transform);
 
 		@media (--medium) {
 			flex: 1 65%;
@@ -40,8 +36,12 @@
 		& a {
 			color: hsla(var(--theme-site-nav--color), 1);
 			display: block;
+			font-family: var(--theme-site-nav--font);
+			font-size: var(--theme-site-nav--font-size);
+			font-weight: var(--theme-site-nav--weight);
 			letter-spacing: var(--theme-site-nav--tracking);
 			padding: var(--theme-footer-nav--padding-y) var(--theme-footer-nav--padding-x);
+			text-transform: var(--theme-site-nav--text-transform);
 
 			&:focus {
 				@media (--medium) {
