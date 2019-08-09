@@ -1,12 +1,10 @@
 import cssVars from 'css-vars-ponyfill';
 import primaryMenu from './components/primary-menu.js';
 import searchToggle from './components/search-toggle.js';
-import blockquoteColorize from './components/blockquote-colorize';
 import _debouce from 'lodash/debounce'; // we need an alias for debounce otherwise it conflicts with customizer
 
 primaryMenu();
 searchToggle();
-blockquoteColorize();
 cssVars();
 
 document.addEventListener( 'DOMContentLoaded', function() {
