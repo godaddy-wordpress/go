@@ -18,6 +18,73 @@ namespace Maverick;
 use function Maverick\Core\get_available_color_schemes;
 
 /**
+ * Returns the color selected by the user.
+ *
+ * @param string $color  Which color to return.
+ * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
+ *
+ * @return string|array|bool A string with the RGB value or an array containing the HSL values.
+ */
+function get_palette_color( $color, $format = 'RBG' ) {
+	$color_scheme    = get_theme_mod( 'color_scheme', 'default' );
+	$override_colors = [
+		'primary'   => 'primary_color',
+		'secondary' => 'secondary_color',
+		'tertiary'  => 'tertiary_color',
+	];
+
+	$color_override = get_theme_mod( $override_colors[ $color ] );
+
+	$avaliable_color_schemes = get_available_color_schemes();
+
+	$the_color = false;
+
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
+	}
+
+	if ( $color_override ) {
+		$the_color = $color_override;
+	}
+
+	if ( 'HSL' === $format ) {
+		return hex_to_hsl( $the_color );
+	}
+
+	return $the_color;
+}
+
+/**
+ * Returns the default color for the active color scheme.
+ *
+ * @param string $color  Which color to return.
+ * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
+ *
+ * @return string|array|bool A string with the RGB value or an array containing the HSL values.
+ */
+function get_default_palette_color( $color, $format = 'RBG' ) {
+	$color_scheme            = get_theme_mod( 'color_scheme', 'default' );
+	$avaliable_color_schemes = get_available_color_schemes();
+
+	$the_color = false;
+
+	if ( $color_scheme && empty( $avaliable_color_schemes[ $color_scheme ] ) ) {
+		$color_scheme_keys = array_keys( $avaliable_color_schemes );
+		$color_scheme      = array_shift( $color_scheme_keys );
+	}
+
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
+	}
+
+	if ( 'HSL' === $format ) {
+		return hex_to_hsl( $the_color );
+	}
+
+	return $the_color;
+}
+
+/**
  * Extract colors from a CSS or Sass file
  *
  * @param string $path the path to your CSS variables file
@@ -158,6 +225,20 @@ function footer_variation() {
 }
 
 /**
+ * Returns whether there are social icons set or not.
+ *
+ * @return boolean
+ */
+function has_footer_background() {
+
+	$background_color = get_theme_mod( 'footer_background_color', '' );
+
+	if ( $background_color ) {
+		return 'has-background';
+	}
+}
+
+/**
  * Displays the footer copyright text.
  *
  * @param array $args {
@@ -213,41 +294,6 @@ function copyright( $args = [] ) {
 	</div>
 
 	<?php
-}
-
-/**
- * Returns whether there are social icons set or not.
- *
- * @return boolean
- */
-function has_footer_background() {
-
-	$background_color = get_theme_mod( 'footer_background_color', '' );
-
-	if ( $background_color ) {
-		return 'has-background';
-	}
-}
-
-/**
- * Returns whether there are social icons set or not.
- *
- * @param array $social_icons the array of social icons.
- *
- * @return boolean
- */
-function has_social_icons( $social_icons = null ) {
-	if ( is_null( $social_icons ) ) {
-		$social_icons = \Maverick\Core\get_social_icons();
-	}
-
-	return array_reduce(
-		$social_icons,
-		function( $previous, $social_icon ) {
-			return $previous || ! empty( $social_icon['url'] );
-		},
-		false
-	);
 }
 
 /**
@@ -326,6 +372,27 @@ function maverick_page_title() {
 		)
 	);
 
+}
+
+/**
+ * Returns whether there are social icons set or not.
+ *
+ * @param array $social_icons the array of social icons.
+ *
+ * @return boolean
+ */
+function has_social_icons( $social_icons = null ) {
+	if ( is_null( $social_icons ) ) {
+		$social_icons = \Maverick\Core\get_social_icons();
+	}
+
+	return array_reduce(
+		$social_icons,
+		function( $previous, $social_icon ) {
+			return $previous || ! empty( $social_icon['url'] );
+		},
+		false
+	);
 }
 
 /**
@@ -436,73 +503,6 @@ function navigation_toggle() {
 		echo '</div>';
 		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'maverick' ) . '</span>';
 	echo '</button>';
-}
-
-/**
- * Returns the color selected by the user.
- *
- * @param string $color  Which color to return.
- * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
- *
- * @return string|array|bool A string with the RGB value or an array containing the HSL values.
- */
-function get_palette_color( $color, $format = 'RBG' ) {
-	$color_scheme    = get_theme_mod( 'color_scheme', 'default' );
-	$override_colors = [
-		'primary'   => 'primary_color',
-		'secondary' => 'secondary_color',
-		'tertiary'  => 'tertiary_color',
-	];
-
-	$color_override = get_theme_mod( $override_colors[ $color ] );
-
-	$avaliable_color_schemes = get_available_color_schemes();
-
-	$the_color = false;
-
-	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
-		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
-	}
-
-	if ( $color_override ) {
-		$the_color = $color_override;
-	}
-
-	if ( 'HSL' === $format ) {
-		return hex_to_hsl( $the_color );
-	}
-
-	return $the_color;
-}
-
-/**
- * Returns the default color for the active color scheme.
- *
- * @param string $color  Which color to return.
- * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
- *
- * @return string|array|bool A string with the RGB value or an array containing the HSL values.
- */
-function get_default_palette_color( $color, $format = 'RBG' ) {
-	$color_scheme            = get_theme_mod( 'color_scheme', 'default' );
-	$avaliable_color_schemes = get_available_color_schemes();
-
-	$the_color = false;
-
-	if ( $color_scheme && empty( $avaliable_color_schemes[ $color_scheme ] ) ) {
-		$color_scheme_keys = array_keys( $avaliable_color_schemes );
-		$color_scheme      = array_shift( $color_scheme_keys );
-	}
-
-	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
-		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
-	}
-
-	if ( 'HSL' === $format ) {
-		return hex_to_hsl( $the_color );
-	}
-
-	return $the_color;
 }
 
 /**
