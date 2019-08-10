@@ -5,9 +5,9 @@
 	& .switcher__choice {
 		cursor: pointer;
 		display: block;
-		margin-bottom: 7px;
+		margin-bottom: 10px;
 		position: relative;
-		border-radius: 3px;
+		border-radius: 2px;
 		background: #ffffff;
 
 		& .label {
@@ -25,9 +25,9 @@
 
 		& img {
 			background: #ffffff;
-			border-radius: 3px;
+			border-radius: 2px;
 			vertical-align: middle;
-			height: 55px;
+			height: 65px;
 			width: 100%;
 		}
 	}
