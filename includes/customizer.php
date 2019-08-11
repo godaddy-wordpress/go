@@ -85,6 +85,8 @@ function default_controls( \WP_Customize_Manager $wp_customize ) {
 			]
 		);
 	}
+
+	$wp_customize->remove_section( 'background_image' );
 }
 
 /**
@@ -261,6 +263,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'settings'    => 'design_style',
 			'type'        => 'radio',
 			'choices'     => wp_list_pluck( \Maverick\Core\get_available_design_styles(), 'label' ),
+			'priority'    => 1,
 		]
 	);
 
@@ -284,6 +287,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 				'settings'      => 'color_scheme',
 				'choices'       => get_color_schemes_as_choices(),
 				'switcher_type' => 'color-scheme',
+				'priority'      => 1,
 			]
 		)
 	);
@@ -306,6 +310,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 				'label'    => esc_html__( 'Primary', 'maverick' ),
 				'section'  => 'colors',
 				'settings' => 'primary_color',
+				'priority' => 1,
 			]
 		)
 	);
@@ -328,6 +333,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 				'label'    => esc_html__( 'Secondary', 'maverick' ),
 				'section'  => 'colors',
 				'settings' => 'secondary_color',
+				'priority' => 1,
 			]
 		)
 	);
@@ -350,6 +356,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 				'label'    => esc_html__( 'Tertiary', 'maverick' ),
 				'section'  => 'colors',
 				'settings' => 'tertiary_color',
+				'priority' => 1,
 			]
 		)
 	);
@@ -716,9 +723,10 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 function inline_css() {
 
 	// Color palette.
-	$primary_color   = get_palette_color( 'primary', 'HSL' );
-	$secondary_color = get_palette_color( 'secondary', 'HSL' );
-	$tertiary_color  = get_palette_color( 'tertiary', 'HSL' );
+	$primary_color    = get_palette_color( 'primary', 'HSL' );
+	$secondary_color  = get_palette_color( 'secondary', 'HSL' );
+	$tertiary_color   = get_palette_color( 'tertiary', 'HSL' );
+	$background_color = get_palette_color( 'background', 'HSL' );
 
 	// Customizer colors.
 	$header_background    = hex_to_hsl( get_theme_mod( 'header_background_color', false ), true );
@@ -746,6 +754,10 @@ function inline_css() {
 
 				<?php if ( $tertiary_color ) : ?>
 					--theme-color-tertiary: <?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>;
+				<?php endif; ?>
+
+				<?php if ( $background_color ) : ?>
+					--theme-color-body-bg: <?php echo esc_attr( $background_color[0] ) . ', ' . esc_attr( $background_color[1] ) . '%, ' . esc_attr( $background_color[2] ) . '%'; ?>;
 				<?php endif; ?>
 
 				/* Header */
