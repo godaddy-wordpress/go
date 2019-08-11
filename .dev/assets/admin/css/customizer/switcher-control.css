@@ -7,7 +7,7 @@
 		display: block;
 		margin-bottom: 10px;
 		position: relative;
-		border-radius: 2px;
+		border-radius: 3px;
 		background: #ffffff;
 
 		& .label {
@@ -25,7 +25,7 @@
 
 		& img {
 			background: #ffffff;
-			border-radius: 2px;
+			border-radius: 3px;
 			vertical-align: middle;
 			height: 65px;
 			width: 100%;
@@ -56,8 +56,8 @@
 
 	& input[type="radio"]:focus + img,
 	& input[type="radio"]:checked + img {
-		border-color: #5b9dd9;
-   		box-shadow: 0 0 3px rgba(0,115,170,.8);
+		border-color: #0085ba;
+   		box-shadow: 0 0 0 1px #0085ba;
 	}
 }
 
