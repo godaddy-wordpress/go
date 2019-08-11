@@ -112,12 +112,12 @@ function theme_setup() {
 	 */
 	add_theme_support(
 		'custom-logo',
-		array(
+		[
 			'height'      => 190,
 			'width'       => 190,
 			'flex-width'  => true,
 			'flex-height' => true,
-		)
+		]
 	);
 
 	// Add support for responsive embedded content.
