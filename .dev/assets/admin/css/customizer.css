@@ -9,3 +9,12 @@
 		margin-bottom: 4px;
 	}
 }
+
+#customize-control-social_icon_color {
+	margin-top: 10px;
+}
+
+#customize-control-header_background_color,
+#customize-control-footer_background_color {
+	margin-top: 5px;
+}

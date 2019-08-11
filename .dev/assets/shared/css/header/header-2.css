@@ -29,25 +29,14 @@
 		}
 	}
 
+	& .primary-menu {
+		@media (--large) {
+			margin-left: calc(-2 * var(--theme-spacing-unit));
+		}
+	}
+
 	& .site-navigation__toggle {
 		margin-left: -0.5rem;
 		margin-right: calc(var(--theme-block-padding-x) * 0.65);
-	}
-}
-
-.has-offscreen-nav.menu-is-open[data-header="header-2"] .site-navigation {
-
-	/* Will override all links (including sub links) for mobile,
-	so they appear same color */
-	& .primary-menu a {
-		color: hsl(var(--theme-site-nav--color));
-	}
-
-	/* Restore sub-menu colors when desktop style */
-	@media (--large) {
-
-		& .sub-menu a {
-			color: hsl(var(--theme-sub-menu-link-color));
-		}
 	}
 }

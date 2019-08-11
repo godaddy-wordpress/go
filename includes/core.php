@@ -112,12 +112,12 @@ function theme_setup() {
 	 */
 	add_theme_support(
 		'custom-logo',
-		array(
+		[
 			'height'      => 190,
 			'width'       => 190,
 			'flex-width'  => true,
 			'flex-height' => true,
-		)
+		]
 	);
 
 	// Add support for responsive embedded content.
@@ -799,35 +799,20 @@ function get_footer_variation() {
 }
 
 /**
- * Returns the default value for footer blurb text
+ * Returns the default value for footer copyright text.
  *
  * @return string
  */
-function get_default_footer_blurb_text() {
+function get_default_copyright() {
 	/**
-	 * Filters the default footer blurb text.
+	 * Filters the default copyright text.
 	 *
 	 * @since 0.1.0
 	 *
-	 * @param string $default_footer_blurb_text The default text for footer blurb.
+	 * @param string $copyright The default text for copyright.
 	 */
-	return apply_filters( 'maverick_default_footer_blurb_text', 'Replace this with real informative text.' );
-}
-
-/**
- * Returns the default value for footer blurb text
- *
- * @return string
- */
-function get_default_footer_copy_text() {
-	/**
-	 * Filters the default footer blurb text.
-	 *
-	 * @since 0.1.0
-	 *
-	 * @param string $default_footer_blurb_text The default text for footer blurb.
-	 */
-	return apply_filters( 'maverick_default_footer_copy_text', 'WordPress Theme by GoDaddy' );
+	/* translators: the theme author */
+	return apply_filters( 'maverick_default_copyright', sprintf( esc_html__( 'WordPress Theme by %s', 'maverick' ), 'GoDaddy' ) );
 }
 
 /**
