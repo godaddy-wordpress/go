@@ -132,7 +132,9 @@ function theme_setup() {
 	// Add support for custom background color.
 	add_theme_support(
 		'custom-background',
-		array( 'default-color' => \Maverick\get_palette_color( 'background' ) )
+		[
+			'default-color' => \Maverick\get_palette_color( 'background' ),
+		]
 	);
 
 	// Add support for editor styles.
@@ -175,28 +177,28 @@ function theme_setup() {
 	$design_style = get_design_style();
 
 	if ( $design_style ) {
-		$color_palette = array(
-			array(
+		$color_palette = [
+			[
 				'name'  => esc_html__( 'Primary', 'maverick' ),
 				'slug'  => 'primary',
 				'color' => \Maverick\get_palette_color( 'primary' ),
-			),
-			array(
+			],
+			[
 				'name'  => esc_html__( 'Secondary', 'maverick' ),
 				'slug'  => 'secondary',
 				'color' => \Maverick\get_palette_color( 'secondary' ),
-			),
-			array(
+			],
+			[
 				'name'  => esc_html__( 'Tertiary', 'maverick' ),
 				'slug'  => 'tertiary',
 				'color' => \Maverick\get_palette_color( 'tertiary' ),
-			),
-			array(
+			],
+			[
 				'name'  => esc_html__( 'Quaternary', 'maverick' ),
 				'slug'  => 'quaternary',
 				'color' => '#ffffff',
-			),
-		);
+			],
+		];
 
 		add_theme_support( 'editor-color-palette', $color_palette );
 	}
@@ -478,21 +480,21 @@ function get_available_design_styles() {
 					'primary'    => '#c2185b', // 700
 					'secondary'  => '#ec407a', // 400
 					'tertiary'   => '#fce4ec', // 100
-					'background' => '#f8e7ee',
+					'background' => '#ffffff',
 				],
 				'indigo'  => [
 					'label'      => esc_html__( 'Indigo', 'maverick' ),
 					'primary'    => '#303f9f', // 700
 					'secondary'  => '#5c6bc0', // 400
 					'tertiary'   => '#e8eaf6', // 100
-					'background' => '#eaebf5',
+					'background' => '#ffffff',
 				],
 				'pacific' => [
 					'label'      => esc_html__( 'Pacific', 'maverick' ),
 					'primary'    => '#00796b', // 700
 					'secondary'  => '#26a69a', // 400
 					'tertiary'   => '#e0f2f1', // 100
-					'background' => '#e5f1f0',
+					'background' => '#ffffff',
 				],
 			],
 			'fonts'         => [
