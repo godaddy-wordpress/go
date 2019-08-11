@@ -73,7 +73,7 @@ $has_background   = Maverick\has_footer_background();
 		</div>
 
 		<?php if ( $has_social_icons ) : ?>
-			<div class="site-footer__row flex flex-column md:flex-row justify-between md:items-center">
+			<div class="site-footer__row flex flex-column lg:flex-row justify-between lg:items-center">
 				<?php Maverick\copyright( [ 'class' => 'site-info text-sm mb-0' ] ); ?>
 				<?php Maverick\social_icons( [ 'class' => 'social-icons list-reset' ] ); ?>
 			</div>
