@@ -14,6 +14,13 @@ export default () => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : undefined ;
 			document.querySelector( ':root' ).style.setProperty( '--theme-header--bg', setTo );
+
+			// Add class if a background color is applied.
+			if ( to ) {
+				$( '.site-header' ).addClass( 'has-background' );
+			} else {
+				$( '.site-header' ).removeClass( 'has-background' );
+			}
 		} );
 	} );
 

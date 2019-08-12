@@ -211,6 +211,20 @@ function header_variation() {
 }
 
 /**
+ * Returns whether there is a footer background or not.
+ *
+ * @return boolean
+ */
+function has_header_background() {
+
+	$background_color = get_theme_mod( 'header_background_color', '' );
+
+	if ( $background_color ) {
+		return 'has-background';
+	}
+}
+
+/**
  * Includes the selected footer varation
  *
  * @return void
@@ -229,7 +243,7 @@ function footer_variation() {
 }
 
 /**
- * Returns whether there are social icons set or not.
+ * Returns whether there is a footer background or not.
  *
  * @return boolean
  */

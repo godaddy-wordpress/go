@@ -15,3 +15,7 @@
 .site-header__inner {
 	padding: var(--theme-header--padding-y) var(--theme-block-padding-x);
 }
+
+.site-header.has-background + .site-content {
+	margin-top: var(--theme-block-padding-x);
+}
