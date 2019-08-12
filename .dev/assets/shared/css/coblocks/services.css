@@ -1,0 +1,19 @@
+/*! CoBlocks: Services */
+.wp-block-coblocks-service__content {
+
+	& p ~ .wp-block-button {
+		margin-top: 2.5rem !important;
+	}
+}
+
+.wp-block-coblocks-services[data-columns="2"] > .wp-block-coblocks-service {
+	@media (--large) {
+		max-width: calc(100% / 2 - 2em);
+	}
+}
+
+.wp-block-coblocks-services[data-columns="3"] > .wp-block-coblocks-service {
+	@media (--large) {
+		max-width: calc(100% / 3 - 2em);
+	}
+}
