@@ -5,8 +5,14 @@
 }
 
 .wp-block-coblocks-accordion-item__title {
-	background: hsl(var(--coblocks-accordion--bg));
-	color: hsl(var(--coblocks-accordion--color));
+
+	&:not(.has-background) {
+		background: hsl(var(--coblocks-accordion--bg));
+	}
+
+	&:not(.has-text-color) {
+		color: hsl(var(--coblocks-accordion--color));
+	}
 
 	&:hover::after {
 		background: var(--coblocks-accordion--bg-hover);
@@ -23,6 +29,10 @@
 .wp-block-coblocks-accordion-item__content {
 	border: var(--coblocks-accordion--border);
 	border-radius: var(--coblocks-accordion--radius);
+}
+
+.wp-block-coblocks-accordion-item__content {
+	border-color: hsl(var(--coblocks-accordion--border-color)) !important;
 }
 
 .wp-block-coblocks-accordion-item details[open] summary {
