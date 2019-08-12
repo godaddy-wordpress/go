@@ -1,4 +1,9 @@
 /*! CoBlocks: Services */
+.wp-block-coblocks-services.alignfull {
+	padding-left: var(--theme-block-padding-x);
+	padding-right: var(--theme-block-padding-x);
+}
+
 .wp-block-coblocks-service__content {
 
 	& p ~ .wp-block-button {
