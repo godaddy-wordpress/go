@@ -16,8 +16,16 @@
 .wp-block-verse,
 p.has-background,
 .wp-block-pullquote,
+.wp-block-group:not(.alignfull):not(.alignwide),
 .wp-block-cover:not(.alignwide):not(.alignfull) {
 	@media (--base) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
+
+.wp-block-group.has-background.alignwide {
+	@media (--wide) {
 		margin-left: var(--theme-block-padding-x);
 		margin-right: var(--theme-block-padding-x);
 	}

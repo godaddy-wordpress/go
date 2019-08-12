@@ -25,6 +25,7 @@
 
 	/* Below base width query */
 	@custom-media --base (max-width: 46rem);
+	@custom-media --wide (max-width: 88rem);
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -93,8 +94,8 @@
 	--theme-h6--font-size: 1.15rem;
 
 	@media (--medium) {
-		--theme-h1--font-size: 2.5rem;
-		--theme-h2--font-size: 2.25rem;
+		--theme-h1--font-size: 3rem;
+		--theme-h2--font-size: 2.5rem;
 		--theme-h3--font-size: 1.85rem;
 	}
 

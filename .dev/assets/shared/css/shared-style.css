@@ -88,6 +88,7 @@
 @import url("blocks/code.css");
 @import url("blocks/audio-video.css");
 @import url("blocks/search.css");
+@import url("blocks/group.css");
 
 /* CoBlocks */
 @import url("coblocks/author.css");
@@ -96,6 +97,8 @@
 @import url("coblocks/pricing-table.css");
 @import url("coblocks/row.css");
 @import url("coblocks/food-drinks.css");
+@import url("coblocks/icon.css");
+@import url("coblocks/masonry.css");
 
 /* WooCommerce */
 @import url("woocommerce/layout.css");
@@ -310,6 +313,10 @@ strong {
 
 	.md\:w-full {
 		width: 100%;
+	}
+
+	.md\:text-right {
+		text-align: right;
 	}
 }
 

@@ -1,0 +1,3 @@
+.wp-block-coblocks-icon__inner:not(.has-text-color) {
+	color: hsl(var(--theme-color-primary));
+}

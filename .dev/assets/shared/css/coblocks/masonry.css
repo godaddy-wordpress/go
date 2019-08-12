@@ -1,0 +1,4 @@
+/*! CoBlocks: Masonry */
+.content-area .wp-block-image + .wp-block-coblocks-gallery-masonry {
+	margin-top: 16px !important;
+}
