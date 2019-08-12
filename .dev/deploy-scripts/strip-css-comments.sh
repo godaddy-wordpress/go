@@ -7,4 +7,3 @@ do
 	CONTENT=$(strip-css-comments $f)
 	echo "$CONTENT" > $f
 done
-# awk '/^--/ {next} /^\/\*/ && /\*\/$/{next} /^\/\*/{c=1;next} /\*\/$/{c=0;next} !c{FS="--|\/\*";a=$1;FS="\\*\\/";a=a$2;$0=a;print}'
