@@ -5,9 +5,10 @@
  * @package Maverick
  */
 
+$has_background = Maverick\has_header_background();
 ?>
 
-<header id="masthead" class="site-header site-header--2" itemscope itemtype="http://schema.org/WPHeader">
+<header id="masthead" class="site-header site-header--2 <?php echo esc_attr( $has_background ); ?>" itemscope itemtype="http://schema.org/WPHeader">
 
 	<div class="site-header__inner flex items-center justify-between max-w-wide m-auto">
 
