@@ -116,8 +116,8 @@
 .post--no-thumbnail {
 
 	& .post__hero {
-		padding-left: var(--theme-spacing-unit-2);
-		padding-right: var(--theme-spacing-unit-2);
+		padding-left: 1rem;
+		padding-right: 1rem;
 
 		& .post__summary {
 			margin-left: auto;

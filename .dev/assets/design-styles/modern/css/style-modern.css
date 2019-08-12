@@ -6,9 +6,6 @@
 @import url("../settings.css");
 @import url("blocks/button.css");
 @import url("coblocks/carousel.css");
-@import url("coblocks/hero.css");
-@import url("coblocks/media-card.css");
-@import url("coblocks/pricing-table.css");
 @import url("woocommerce/button.css");
 
 /* Blocks with applied padding */

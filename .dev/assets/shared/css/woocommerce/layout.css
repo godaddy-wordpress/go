@@ -12,9 +12,9 @@
 }
 
 .woocommerce ul.products {
-	margin-bottom: var(--theme-spacing-unit-4);
+	margin-bottom: 2rem;
 
 	@media (--medium) {
-		margin-bottom: var(--theme-spacing-unit-4);
+		margin-bottom: 2rem;
 	}
 }
