@@ -15,15 +15,28 @@
 		letter-spacing: var(--theme-text-sm--letter-spacing);
 		margin-bottom: 2.5rem;
 	}
+
+	&.has-primary-background-color:not(.has-text-color),
+	&.has-secondary-background-color:not(.has-text-color) {
+
+		& .wp-block-coblocks-pricing-table-item__title,
+		& .wp-block-coblocks-pricing-table-item__amount,
+		& .wp-block-coblocks-pricing-table-item__currency {
+			color: hsl(var(--color-white));
+		}
+	}
 }
 
-.wp-block-coblocks-pricing-table-item__title {
-	color: hsl(var(--coblocks-pricing--color-title));
-}
+.wp-block-coblocks-pricing-table-item:not(.has-text-color) {
 
-.wp-block-coblocks-pricing-table-item__currency,
-.wp-block-coblocks-pricing-table-item__amount {
-	color: hsl(var(--coblocks-pricing--color-price));
+	& .wp-block-coblocks-pricing-table-item__title {
+		color: hsl(var(--coblocks-pricing--color-title));
+	}
+
+	& .wp-block-coblocks-pricing-table-item__currency,
+	& .wp-block-coblocks-pricing-table-item__amount {
+		color: hsl(var(--coblocks-pricing--color-price));
+	}
 }
 
 .wp-block-coblocks-pricing-table-item__currency {
