@@ -82,6 +82,7 @@
 	}
 
 	& .site-navigation__toggle {
+		background-color: hsl(var(--theme-header-5-nav-toggle--bg));
 		display: block;
 		margin: 0;
 		padding: 0;
@@ -101,6 +102,12 @@
 
 	& .site-navigation__toggle-icon-inner {
 		margin-top: 0;
+
+		&,
+		&::before,
+		&::after {
+			background-color: hsl(var(--theme-header-5-nav-toggle--color));
+		}
 	}
 
 	& .site-header .site-search {

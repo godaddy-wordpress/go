@@ -276,6 +276,8 @@
 
 	--theme-header-5-nav--width: 70px;
 	--theme-header-5--shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	--theme-header-5-nav-toggle--bg: var(--theme-color-heading);
+	--theme-header-5-nav-toggle--color: var(--color-white);
 
 	@media (--large) {
 		--theme-header-5-nav--width: 100px;
