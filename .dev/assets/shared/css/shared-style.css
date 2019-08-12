@@ -98,6 +98,7 @@
 @import url("coblocks/icon.css");
 @import url("coblocks/masonry.css");
 @import url("coblocks/carousel.css");
+@import url("coblocks/accordion.css");
 
 /* WooCommerce */
 @import url("woocommerce/layout.css");
@@ -122,6 +123,10 @@
 	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
 	border: 1px solid hsla(var(--theme-feedback-informational-color), 1);
 	color: hsla(var(--theme-feedback-informational-color), 1);
+}
+
+p {
+	margin-top: 0;
 }
 
 strong {

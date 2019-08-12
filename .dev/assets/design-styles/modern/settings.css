@@ -371,6 +371,12 @@
 	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
+	--coblocks-accordion--bg: var(--color-white);
+	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.1);
+	--coblocks-accordion--color: var(--theme-color-heading);
+	--coblocks-accordion--radius: 0;
+	--coblocks-accordion--border: 2px solid hsl(var(--theme-color-heading));
+
 	--coblocks-author--bg: var(--theme-color-tertiary);
 	--coblocks-author--radius: 0;
 	--coblocks-author--color-heading: var(--theme-color-text-secondary);
