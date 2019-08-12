@@ -1,36 +1,7 @@
-/**
- * Modern - CoBlocks Carousel gallery block
- */
-
-/* Block wrapper */
-.wp-block-coblocks-gallery-carousel {
-
-	/* Each image in carousel */
-	& .coblocks-gallery--item {
-		width: 50%;
-
-		@media (--medium) {
-			width: 33.33%;
-		}
-
-		&:not(.is-selected) {
-
-			&::before {
-				background-color: hsla(var(--theme-coblocks-gallery-carousel-overlay-color), 0.6);
-				content: "";
-				height: 100%;
-				position: absolute;
-				width: 100%;
-				z-index: 19;
-			}
-		}
-	}
-}
-
-/* Prev/Next buttons */
+/*! Modern: CoBlocks Carousel */
 .flickity-button {
 	background-color: transparent;
-	border: 1px solid hsla(var(--theme-coblocks-gallery-carousel-border-color), 0.74) !important;
+	border: 2px solid hsl(var(--color-white)) !important;
 	border-radius: 0;
 	height: 36px;
 	width: 47px;
@@ -46,7 +17,8 @@
 		left: 13px;
 		position: absolute;
 		top: calc(50% - 3px);
-		width: 42px;
+		transition: transform 200ms cubic-bezier(0.7, 0, 0.3, 1);
+		width: 48px;
 	}
 
 	&:active,
@@ -60,6 +32,11 @@
 	}
 
 	&.previous {
+		left: 18px;
+
+		@media (--medium) {
+			left: 25px;
+		}
 
 		&::after {
 			transform: rotate(180deg);
@@ -73,6 +50,11 @@
 	}
 
 	&.next {
+		right: 18px;
+
+		@media (--medium) {
+			right: 25px;
+		}
 
 		&::after {
 			left: auto;

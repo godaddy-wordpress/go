@@ -97,6 +97,7 @@
 @import url("coblocks/food-drinks.css");
 @import url("coblocks/icon.css");
 @import url("coblocks/masonry.css");
+@import url("coblocks/carousel.css");
 
 /* WooCommerce */
 @import url("woocommerce/layout.css");
