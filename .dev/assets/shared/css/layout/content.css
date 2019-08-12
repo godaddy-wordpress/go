@@ -60,6 +60,7 @@
 		& .coblocks-form,
 		& .wp-block-button,
 		& .wp-block-separator,
+		& .wp-block-coblocks-dynamic-separator,
 		& .wp-block-pullquote:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
 			margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5) !important;
 			margin-top: calc(var(--theme-block-spacing-larger) * 1.5) !important;

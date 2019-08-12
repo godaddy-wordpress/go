@@ -13,8 +13,10 @@
 .wp-block-verse,
 p.has-background,
 .wp-block-pullquote,
+.wp-block-separator.is-style-wide,
 .wp-block-group:not(.alignfull):not(.alignwide),
-.wp-block-cover:not(.alignwide):not(.alignfull) {
+.wp-block-cover:not(.alignwide):not(.alignfull),
+.wp-block-coblocks-dynamic-separator.is-style-fullwidth::before {
 	@media (--base) {
 		margin-left: var(--theme-block-padding-x);
 		margin-right: var(--theme-block-padding-x);
