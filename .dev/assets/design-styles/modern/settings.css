@@ -207,6 +207,9 @@
 	/* Checkbox and Radio*/
 	--theme-checkbox-radio-fill: var(--theme-color-heading);
 
+	/* Feedback colors: error, success, warning, informational. */
+	--theme-feedback-informational-color: 208, 100%, 43%;
+
 
 	/*--------------------------------------------------------------
 	## Buttons
@@ -258,6 +261,7 @@
 	--theme-site-nav--text-transform: uppercase;
 	--theme-site-nav--tracking: 3px;
 	--theme-site-nav--transition: var(--theme-link-transition);
+	--theme-site-nav--padding-x: 1rem;
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);
@@ -354,7 +358,7 @@
 	}
 
 	/* Footer Variations Specific */
-	--theme-footer-2-site-info--border-color: 0, 0%, 90%;
+	--theme-footer-3-site-info--border-color: 0, 0%, 90%;
 
 
 	/*--------------------------------------------------------------
@@ -365,33 +369,13 @@
 
 
 	/*--------------------------------------------------------------
-	## CoBlocks - @todo, clean
+	## CoBlocks
 	--------------------------------------------------------------*/
-	--theme-coblocks-author-background-color: var(--theme-color-primary);
-	--theme-coblocks-author-border-radius: 0;
-	--theme-coblocks-author-heading-color: var(--theme-color-text-secondary);
-	--theme-coblocks-author-name-color: var(--theme-color-text-secondary);
+	--coblocks-author--bg: var(--theme-color-tertiary);
+	--coblocks-author--radius: 0;
+	--coblocks-author--color-heading: var(--theme-color-text-secondary);
+	--coblocks-author--color-name: var(--theme-color-text-secondary);
 
-	--theme-coblocks-hero-content-color: var(--theme-color-text-secondary);
-
-	--theme-coblocks-pricing-table-color: var(--theme-color-text-secondary);
-	--theme-coblocks-pricing-table-background-color: var(--color-athens-gray);
-	--theme-coblocks-pricing-table-title-font: var(--theme-heading--font);
-	--theme-coblocks-pricing-table-price-font-family: var(--theme-heading--font);
-	--theme-coblocks-pricing-table-features-font-family: var(--theme-heading--font);
-	--theme-coblocks-pricing-table-features-color: var(--color-mid-gray);
-
-	--theme-coblocks-gallery-carousel-overlay-color: var(--theme-color-text-secondary);
-	--theme-coblocks-gallery-carousel-border-color: var(--color-charade);
-
-	/* Spacing units */
-	--theme-spacing-unit: 0.5rem;
-	--theme-spacing-unit-2: 1rem;
-	--theme-spacing-unit-3: 1.5rem;
-	--theme-spacing-unit-4: 2rem;
-	--theme-spacing-unit-5: 2.5rem;
-	--theme-spacing-unit-6: 3rem;
-
-	/* Feedback colors: error, success, warning, informational. */
-	--theme-feedback-informational-color: 208, 100%, 43%;
+	--coblocks-carousel--bg-overlay: hsla(var(--theme-color-primary), 0.75);
+	--coblocks-carousel--border-color: var(--color-white);
 }

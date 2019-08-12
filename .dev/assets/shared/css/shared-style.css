@@ -92,13 +92,12 @@
 
 /* CoBlocks */
 @import url("coblocks/author.css");
-@import url("coblocks/hero.css");
 @import url("coblocks/form.css");
-@import url("coblocks/pricing-table.css");
 @import url("coblocks/row.css");
 @import url("coblocks/food-drinks.css");
 @import url("coblocks/icon.css");
 @import url("coblocks/masonry.css");
+@import url("coblocks/carousel.css");
 
 /* WooCommerce */
 @import url("woocommerce/layout.css");

@@ -31,7 +31,7 @@
 
 	& .primary-menu {
 		@media (--large) {
-			margin-left: calc(-2 * var(--theme-spacing-unit));
+			margin-left: calc(-1 * var(--theme-site-nav--padding-x));
 		}
 	}
 
