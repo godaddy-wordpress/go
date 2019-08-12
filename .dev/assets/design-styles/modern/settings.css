@@ -375,7 +375,7 @@
 	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.1);
 	--coblocks-accordion--color: var(--theme-color-heading);
 	--coblocks-accordion--radius: 0;
-	--coblocks-accordion--border: 2px solid hsl(var(--theme-color-heading));
+	--coblocks-accordion--border: 2px solid hsl(var(--theme-color-primary));
 
 	--coblocks-author--bg: var(--theme-color-tertiary);
 	--coblocks-author--radius: 0;
@@ -384,4 +384,9 @@
 
 	--coblocks-carousel--bg-overlay: hsla(var(--theme-color-primary), 0.75);
 	--coblocks-carousel--border-color: var(--color-white);
+
+	--coblocks-pricing--bg: var(--color-white);
+	--coblocks-pricing--border: 2px solid hsl(var(--theme-color-primary));
+	--coblocks-pricing--color-title: var(--theme-color-heading);
+	--coblocks-pricing--color-price: var(--theme-color-heading);
 }
