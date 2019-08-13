@@ -104,6 +104,7 @@
 @import url("coblocks/dynamic-separator.css");
 @import url("coblocks/social.css");
 @import url("coblocks/shape-divider.css");
+@import url("coblocks/alert.css");
 
 /* WooCommerce */
 @import url("woocommerce/layout.css");
