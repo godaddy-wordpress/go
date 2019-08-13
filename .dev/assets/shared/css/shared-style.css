@@ -122,6 +122,8 @@
 	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
 	border: 1px solid hsla(var(--theme-feedback-informational-color), 1);
 	color: hsla(var(--theme-feedback-informational-color), 1);
+	line-height: 2;
+	padding: 0 0.5em;
 }
 
 strong {
