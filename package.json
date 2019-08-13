@@ -15,8 +15,9 @@
   "scripts": {
     "start": "composer install && npm install && npm run build",
     "build": "NODE_ENV=production webpack --config .dev/config/webpack.prod.js",
-    "postbuild": ".dev/deploy-scripts/generate-unminified-css.sh",
+    "postbuild": "export NODE_ENV=production && .dev/deploy-scripts/generate-css.sh",
     "dev": "NODE_ENV=development webpack --config .dev/config/webpack.dev.js",
+    "postdev": "export NODE_ENV=development && .dev/deploy-scripts/generate-css.sh",
     "watch": "NODE_ENV=development webpack --watch --config .dev/config/webpack.dev.js",
     "build-release": "npm install && npm run build",
     "lint-release": "npm install && composer install && npm run lint",
@@ -78,6 +79,7 @@
     "stylelint-order": "^1.0.0",
     "stylelint-webpack-plugin": "^0.10.5",
     "terser": "^3.17.0",
+    "uglifycss": "0.0.29",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-fix-style-only-entries": "^0.2.1",
