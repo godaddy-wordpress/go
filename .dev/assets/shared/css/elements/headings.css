@@ -12,6 +12,7 @@ h6 {
 	font-style: var(--theme-heading--style);
 	font-weight: var(--theme-heading--weight);
 	line-height: var(--theme-heading--leading);
+	margin: 0 0 0.75rem;
 }
 
 h1 {
