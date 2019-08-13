@@ -91,6 +91,12 @@ jobs:
           paths:
             - node_modules
       - run:
+          name: Install WPCLI
+          command: |
+            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+            chmod +x wp-cli.phar
+            sudo mv wp-cli.phar /usr/local/bin/wp
+      - run:
           name: Install theme check
           command: bash .dev/deploy-scripts/install-themecheck.sh
       - run:
