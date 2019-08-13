@@ -390,4 +390,6 @@
 	--coblocks-pricing--border: 2px solid hsl(var(--theme-color-heading));
 	--coblocks-pricing--color-title: var(--theme-color-heading);
 	--coblocks-pricing--color-price: var(--theme-color-heading);
+
+	--coblocks-shapedivider--bg: var(--theme-color-primary);
 }

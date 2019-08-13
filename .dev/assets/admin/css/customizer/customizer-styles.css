@@ -12,7 +12,8 @@
 .wp-block-coblocks-pricing-table-item,
 .wp-block-quote.is-style-large,
 .wp-block-pullquote.is-style-solid-color,
-.has-drop-cap:not(:focus)::first-letter {
+.has-drop-cap:not(:focus)::first-letter,
+.wp-block-coblocks-shape-divider {
 	transition: var(--theme-button-transition);
 }
 
