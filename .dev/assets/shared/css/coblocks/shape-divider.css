@@ -1,0 +1,7 @@
+/*! CoBlocks: Shape Divider */
+.wp-block-coblocks-shape-divider {
+
+	&:not([class*="background"]) {
+		color: hsl(var(--coblocks-shapedivider--bg));
+	}
+}

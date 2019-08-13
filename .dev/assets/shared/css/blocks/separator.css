@@ -3,7 +3,8 @@
 	border-bottom-color: hsl(var(--theme-separator--color));
 
 	&.is-style-wide {
-		max-width: calc(var(--theme-max-w-base) - var(--theme-block-padding-x) * 2);
+		@mixin blockWidthNoPadding;
+		padding: 0;
 	}
 
 	&.is-style-dots::before {
