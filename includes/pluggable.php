@@ -14,9 +14,9 @@ if ( ! function_exists( 'maverick_comment' ) ) :
 	 *
 	 * Used as a callback by wp_list_comments() for displaying the comments.
 	 *
-	 * @param string $comment - Comment text
-	 * @param array  $args - Array of arguments
-	 * @param int    $depth - Depth of comments to show
+	 * @param string $comment - Comment text.
+	 * @param array  $args - Array of arguments.
+	 * @param int    $depth - Depth of comments to show.
 	 */
 	function maverick_comment( $comment, $args, $depth ) {
 		// $GLOBALS['comment'] = $comment;
@@ -81,6 +81,6 @@ if ( ! function_exists( 'maverick_comment' ) ) :
 			</article><!-- #comment-## -->
 				<?php
 				break;
-		endswitch; // end comment_type check
+		endswitch; // end comment_type check.
 	}
 endif;
