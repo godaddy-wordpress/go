@@ -4,6 +4,7 @@ for f in $(find ./dist/css -type f -name "*.css")
 do
 	echo "Cleaning $f file of comments..."
 	#!/bin/bash
-	CONTENT=$(strip-css-comments $f)
+	CONTENT=$(npx strip-css-comments --no-preserve $f)
 	echo "$CONTENT" > $f
+	npx perfectionist $f $f
 done
