@@ -1,0 +1,19 @@
+/*! CoBlocks: Hero */
+.wp-block-coblocks-hero {
+
+	& .wp-block-coblocks-hero__inner-wrapper {
+		@mixin blockWidthNoPaddingWide;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+	}
+
+	&.alignfull .has-padding {
+		padding-left: var(--theme-block-padding-x);
+		padding-right: var(--theme-block-padding-x);
+	}
+
+	& p ~ div {
+		margin-top: 2rem;
+	}
+}
