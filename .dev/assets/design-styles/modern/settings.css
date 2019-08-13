@@ -373,23 +373,41 @@
 	--------------------------------------------------------------*/
 	--coblocks-accordion--bg: var(--color-white);
 	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.1);
-	--coblocks-accordion--color: var(--theme-color-heading);
-	--coblocks-accordion--radius: 0;
 	--coblocks-accordion--border-color: var(--theme-color-heading);
 	--coblocks-accordion--border: 2px solid hsl(var(--coblocks-accordion--border-color));
+	--coblocks-accordion--color: var(--theme-color-heading);
+	--coblocks-accordion--radius: 0;
 
 	--coblocks-author--bg: var(--theme-color-tertiary);
-	--coblocks-author--radius: 0;
 	--coblocks-author--color-heading: var(--theme-color-text-secondary);
 	--coblocks-author--color-name: var(--theme-color-text-secondary);
+	--coblocks-author--radius: 0;
 
 	--coblocks-carousel--bg-overlay: hsla(var(--theme-color-primary), 0.75);
 	--coblocks-carousel--border-color: var(--color-white);
 
+	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
+	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
+	--coblocks-food-drinks-hint--radius: 0;
+	--coblocks-food-drinks-item--fill: var(--theme-color-heading);
+	--coblocks-food-drinks-item--font-size: 0.8rem;
+	--coblocks-food-drinks-item--text-transform: uppercase;
+	--coblocks-food-drinks-item--tracking: 2px;
+	--coblocks-food-drinks-item--weight: 700;
+	--coblocks-food-drinks-price--color: var(--theme-color-text-secondary);
+	--coblocks-food-drinks-price--font-size: var(--theme-text-sm);
+	--coblocks-food-drinks-title--border-bottom: none;
+	--coblocks-food-drinks-title--margin-y: 0.75rem;
+	--coblocks-food-drinks-title--padding: 0.3rem 0.25rem;
+	--coblocks-food-drinks-title--bg: var(--theme-color-heading);
+	--coblocks-food-drinks-title--color: var(--color-white);
+	--coblocks-food-drinks-title--font-size: 1.25rem;
+	--coblocks-food-drinks-title--style: normal;
+
 	--coblocks-pricing--bg: var(--color-white);
 	--coblocks-pricing--border: 2px solid hsl(var(--theme-color-heading));
-	--coblocks-pricing--color-title: var(--theme-color-heading);
 	--coblocks-pricing--color-price: var(--theme-color-heading);
+	--coblocks-pricing--color-title: var(--theme-color-heading);
 
 	--coblocks-shapedivider--bg: var(--theme-color-primary);
 }
