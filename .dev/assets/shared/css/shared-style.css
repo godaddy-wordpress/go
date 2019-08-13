@@ -17,6 +17,7 @@
 @import url("utilities/accessibility.css");
 @import url("utilities/font-sizes.css");
 @import url("utilities/colors.css");
+@import url("utilities/padding.css");
 
 /* Elements */
 @import url("elements/buttons.css");
@@ -105,6 +106,7 @@
 @import url("coblocks/social.css");
 @import url("coblocks/shape-divider.css");
 @import url("coblocks/alert.css");
+@import url("coblocks/hero.css");
 
 /* WooCommerce */
 @import url("woocommerce/layout.css");
@@ -132,7 +134,7 @@
 }
 
 p {
-	margin-top: 0;
+	margin: 0 0 1.25rem;
 }
 
 strong {

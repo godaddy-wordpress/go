@@ -45,6 +45,9 @@
 		--theme-block-padding-x: 4rem;
 	}
 
+	/* Block Padding */
+	--editor-padding: 7rem;
+
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
 	--theme-outline-style: dotted;
