@@ -48,14 +48,14 @@
 	max-width: var(--theme-max-w-wide);
 
 	& .wp-block-columns {
-		padding: calc(var(--editor-padding) / 4);
+		padding-bottom: calc(var(--editor-padding) / 4);
 
 		@media (--medium) {
-			padding: calc(var(--editor-padding) / 2);
+			padding-bottom: calc(var(--editor-padding) / 2);
 		}
 
 		@media (--large) {
-			padding-top: var(--editor-padding);
+			padding-bottom: var(--editor-padding);
 		}
 	}
 
