@@ -82,4 +82,4 @@ if ( ! function_exists( 'maverick_comment' ) ) :
 				break;
 		endswitch; // end comment_type check.
 	}
-endif; // @codingStandardsIgnoreLine
+endif;

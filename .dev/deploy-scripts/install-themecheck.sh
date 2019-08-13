@@ -11,15 +11,15 @@ export WP_CORE_DIR=/tmp/wordpress
 mkdir -p $WP_CORE_DIR
 cd $WP_CORE_DIR
 
-php /tmp/wp.phar core download --version=$WP_VERSION
-php /tmp/wp.phar config create \
+php wp core download --version=$WP_VERSION
+php wp config create \
 	--dbname=wordpress \
 	--dbuser=root \
 	--dbpass="" \
 	--skip-check
 
-php /tmp/wp.phar db create
-php /tmp/wp.phar core install \
+php wp db create
+php wp core install \
 	--url=http://test.dev \
 	--title="WordPress Site" \
 	--admin_user=admin \
@@ -27,8 +27,8 @@ php /tmp/wp.phar core install \
 	--admin_email=admin@test.dev \
 	--skip-email
 
-php /tmp/wp.phar package install anhskohbo/wp-cli-themecheck
-php /tmp/wp.phar plugin install theme-check --activate
+php wp package install anhskohbo/wp-cli-themecheck
+php wp plugin install theme-check --activate
 
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/maverick
 mkdir -p $INSTALL_PATH
