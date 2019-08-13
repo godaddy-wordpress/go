@@ -17,6 +17,7 @@
 @import url("utilities/accessibility.css");
 @import url("utilities/font-sizes.css");
 @import url("utilities/colors.css");
+@import url("utilities/padding.css");
 
 /* Elements */
 @import url("elements/buttons.css");
@@ -98,6 +99,14 @@
 @import url("coblocks/icon.css");
 @import url("coblocks/masonry.css");
 @import url("coblocks/carousel.css");
+@import url("coblocks/accordion.css");
+@import url("coblocks/pricing-table.css");
+@import url("coblocks/services.css");
+@import url("coblocks/dynamic-separator.css");
+@import url("coblocks/social.css");
+@import url("coblocks/shape-divider.css");
+@import url("coblocks/alert.css");
+@import url("coblocks/hero.css");
 
 /* WooCommerce */
 @import url("woocommerce/layout.css");
@@ -122,6 +131,10 @@
 	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
 	border: 1px solid hsla(var(--theme-feedback-informational-color), 1);
 	color: hsla(var(--theme-feedback-informational-color), 1);
+}
+
+p {
+	margin: 0 0 1.25rem;
 }
 
 strong {

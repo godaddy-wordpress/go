@@ -1,0 +1,35 @@
+.has-small-padding {
+	padding: calc(var(--editor-padding) / 4);
+
+	@media (--large) {
+		padding: calc(var(--editor-padding) / 3);
+	}
+}
+
+.has-medium-padding {
+	padding: calc(var(--editor-padding) / 4);
+
+	@media (--medium) {
+		padding: calc(var(--editor-padding) / 2);
+	}
+}
+
+.has-large-padding {
+	padding: calc(var(--editor-padding) / 4);
+
+	@media (--medium) {
+		padding: calc(var(--editor-padding) / 1.5);
+	}
+}
+
+.has-huge-padding {
+	padding: calc(var(--editor-padding) / 4);
+
+	@media (--medium) {
+		padding: calc(var(--editor-padding) / 1.25);
+	}
+
+	@media (--large) {
+		padding: var(--editor-padding);
+	}
+}
