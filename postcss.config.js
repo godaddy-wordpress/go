@@ -23,9 +23,6 @@ module.exports = ( { file, options, env } ) => ( { /* eslint-disable-line */
 							precision: 8
 						},
 						convertValues: true,
-						discardComments: {
-							removeAll: true
-						},
 						mergeLonghand: false,
 						zindex: false,
 					},
