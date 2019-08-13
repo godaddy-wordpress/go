@@ -45,6 +45,9 @@
 		--theme-block-padding-x: 4rem;
 	}
 
+	/* Block Padding */
+	--editor-padding: 7rem;
+
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
 	--theme-outline-style: dotted;
@@ -207,6 +210,9 @@
 	/* Checkbox and Radio*/
 	--theme-checkbox-radio-fill: var(--theme-color-heading);
 
+	/* Feedback colors: error, success, warning, informational. */
+	--theme-feedback-informational-color: 208, 100%, 43%;
+
 
 	/*--------------------------------------------------------------
 	## Buttons
@@ -258,6 +264,7 @@
 	--theme-site-nav--text-transform: uppercase;
 	--theme-site-nav--tracking: 3px;
 	--theme-site-nav--transition: var(--theme-link-transition);
+	--theme-site-nav--padding-x: 1rem;
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);
@@ -354,7 +361,7 @@
 	}
 
 	/* Footer Variations Specific */
-	--theme-footer-2-site-info--border-color: 0, 0%, 90%;
+	--theme-footer-3-site-info--border-color: 0, 0%, 90%;
 
 
 	/*--------------------------------------------------------------
@@ -365,33 +372,46 @@
 
 
 	/*--------------------------------------------------------------
-	## CoBlocks - @todo, clean
+	## CoBlocks
 	--------------------------------------------------------------*/
-	--theme-coblocks-author-background-color: var(--theme-color-primary);
-	--theme-coblocks-author-border-radius: 0;
-	--theme-coblocks-author-heading-color: var(--theme-color-text-secondary);
-	--theme-coblocks-author-name-color: var(--theme-color-text-secondary);
+	--coblocks-accordion--bg: var(--color-white);
+	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.1);
+	--coblocks-accordion--border-color: var(--theme-color-heading);
+	--coblocks-accordion--border: 2px solid hsl(var(--coblocks-accordion--border-color));
+	--coblocks-accordion--color: var(--theme-color-heading);
+	--coblocks-accordion--radius: 0;
 
-	--theme-coblocks-hero-content-color: var(--theme-color-text-secondary);
+	--coblocks-author--bg: var(--theme-color-tertiary);
+	--coblocks-author--color-heading: var(--theme-color-text-secondary);
+	--coblocks-author--color-name: var(--theme-color-text-secondary);
+	--coblocks-author--radius: 0;
 
-	--theme-coblocks-pricing-table-color: var(--theme-color-text-secondary);
-	--theme-coblocks-pricing-table-background-color: var(--color-athens-gray);
-	--theme-coblocks-pricing-table-title-font: var(--theme-heading--font);
-	--theme-coblocks-pricing-table-price-font-family: var(--theme-heading--font);
-	--theme-coblocks-pricing-table-features-font-family: var(--theme-heading--font);
-	--theme-coblocks-pricing-table-features-color: var(--color-mid-gray);
+	--coblocks-carousel--bg-overlay: hsla(var(--theme-color-primary), 0.75);
+	--coblocks-carousel--border-color: var(--color-white);
 
-	--theme-coblocks-gallery-carousel-overlay-color: var(--theme-color-text-secondary);
-	--theme-coblocks-gallery-carousel-border-color: var(--color-charade);
+	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
+	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
+	--coblocks-food-drinks-hint--radius: 0;
+	--coblocks-food-drinks-item--fill: var(--theme-color-heading);
+	--coblocks-food-drinks-item--font-size: 0.8rem;
+	--coblocks-food-drinks-item--spacing: 2rem;
+	--coblocks-food-drinks-item--text-transform: uppercase;
+	--coblocks-food-drinks-item--tracking: 2px;
+	--coblocks-food-drinks-item--weight: 700;
+	--coblocks-food-drinks-price--color: var(--theme-color-text-secondary);
+	--coblocks-food-drinks-price--font-size: var(--theme-text-sm);
+	--coblocks-food-drinks-title--bg: var(--theme-color-heading);
+	--coblocks-food-drinks-title--border-bottom: none;
+	--coblocks-food-drinks-title--color: var(--color-white);
+	--coblocks-food-drinks-title--font-size: 1.25rem;
+	--coblocks-food-drinks-title--margin-y: 0.75rem;
+	--coblocks-food-drinks-title--padding: 0.3rem 0.25rem;
+	--coblocks-food-drinks-title--style: normal;
 
-	/* Spacing units */
-	--theme-spacing-unit: 0.5rem;
-	--theme-spacing-unit-2: 1rem;
-	--theme-spacing-unit-3: 1.5rem;
-	--theme-spacing-unit-4: 2rem;
-	--theme-spacing-unit-5: 2.5rem;
-	--theme-spacing-unit-6: 3rem;
+	--coblocks-pricing--bg: var(--color-white);
+	--coblocks-pricing--border: 2px solid hsl(var(--theme-color-heading));
+	--coblocks-pricing--color-price: var(--theme-color-heading);
+	--coblocks-pricing--color-title: var(--theme-color-heading);
 
-	/* Feedback colors: error, success, warning, informational. */
-	--theme-feedback-informational-color: 208, 100%, 43%;
+	--coblocks-shapedivider--bg: var(--theme-color-primary);
 }

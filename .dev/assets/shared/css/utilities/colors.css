@@ -1,11 +1,10 @@
 .content-area {
 
-	/* Color palette classes */
 	& .has-primary-background-color,
 	& .has-secondary-background-color {
 
 		&,
-		& a {
+		& a:not(.wp-block-button__link) {
 			color: hsl(var(--color-white));
 		}
 	}

@@ -10,8 +10,8 @@
 
 		@media (--large) {
 			display: inline-block;
-			padding-left: calc(2 * var(--theme-spacing-unit));
-			padding-right: calc(2 * var(--theme-spacing-unit));
+			padding-left: var(--theme-site-nav--padding-x);
+			padding-right: var(--theme-site-nav--padding-x);
 			width: auto;
 		}
 	}
