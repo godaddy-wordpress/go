@@ -1,7 +1,7 @@
 .content-area > * {
+	margin-bottom: var(--theme-block-spacing);
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: var(--theme-block-spacing);
 	margin-top: var(--theme-block-spacing);
 	max-width: var(--theme-max-w-base);
 	padding-left: var(--theme-block-padding-x);
@@ -52,7 +52,8 @@
 			margin-top: var(--theme-block-spacing-larger) !important;
 		}
 
-		& .wp-block-columns {
+		& .wp-block-columns,
+		& .wp-block-coblocks-row {
 			margin-bottom: var(--theme-block-spacing) !important;
 			margin-top: var(--theme-block-spacing) !important;
 		}
