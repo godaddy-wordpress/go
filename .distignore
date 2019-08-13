@@ -1,0 +1,15 @@
+.*
+*.yml
+composer.*
+Gruntfile.js
+package*.json
+phpcs.ruleset.xml
+phpunit.xml.dist
+readme.md
+svn-username
+bin/
+dev-lib/
+languages/*.po
+node_modules/
+tests/
+vendor/

@@ -1,0 +1,133 @@
+workflows:
+  version: 2
+  main:
+    jobs:
+      # Support PHP Versions
+      # http://php.net/supported-versions.php
+      - php71-build: # Will be deprecated on 1 Dec 2019
+          filters:
+            tags:
+              only: /.*/
+      - php72-build: # Will be deprecated on 30 Nov 2020
+          filters:
+            tags:
+              only: /.*/
+      - theme-check:
+          filters:
+            tags:
+              only: /.*/
+      - deploy:
+          requires:
+            - php71-build
+            - php72-build
+            - theme-check
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
+
+version: 2
+jobs:
+  php71-build:
+    docker:
+      - image: circleci/php:7.1
+    steps:
+      - checkout
+      - run:
+          name: "Setup Environment Variables"
+          command: |
+            echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
+            source /home/circleci/.bashrc
+      - run:
+          name: "Install Dependencies"
+          command: |
+            composer global require "phpunit/phpunit=5.7.*"
+            composer global require wp-coding-standards/wpcs
+            phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
+      - run:
+          name: "Run PHPCS"
+          command: phpcs --standard=phpcs.xml --extensions=php --colors -s -p -v .
+
+  php72-build:
+    docker:
+      - image: circleci/php:7.2
+    steps:
+      - checkout
+      - run:
+          name: "Setup Environment Variables"
+          command: |
+            echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
+            source /home/circleci/.bashrc
+      - run:
+          name: "Install Dependencies"
+          command: |
+            composer global require "phpunit/phpunit=5.7.*"
+            composer global require wp-coding-standards/wpcs
+            phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
+      - run:
+          name: "Run PHPCS"
+          command: phpcs --standard=phpcs.xml --extensions=php --colors -s -p -v .
+
+  theme-check:
+    docker:
+      - image: circleci/php:7.2
+      - image: circleci/mysql:5.7
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - run:
+          name: Install Grunt.js
+          command: sudo npm install -g grunt-cli
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Install theme check
+          command: bash .dev/bin/install-themecheck.sh
+      - run:
+          name: Run theme check
+          command: php /tmp/wp.phar themecheck --theme=$WP_THEME --no-interactive
+
+  deploy:
+    docker:
+      - image: circleci/golang:latest-node-browsers-legacy
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - run:
+          name: Install Grunt.js
+          command: sudo npm install -g grunt-cli
+      - run:
+          name: Install PHP
+          command: sudo apt-get install php libapache2-mod-php php-mbstring
+      - run:
+          name: Install WPCLI
+          command: |
+            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+            chmod +x wp-cli.phar
+            sudo mv wp-cli.phar /usr/local/bin/wp
+      - run:
+          name: Install ghr
+          command: |
+            go get -u github.com/tcnksm/ghr
+      - run:
+          name: Install node packages
+          command: npm install
+      - run:
+          name: Build the plugin
+          command: |
+            mkdir build
+            rsync -av --exclude-from ./.distignore ./build
+      - store_artifacts:
+          path: ./build
