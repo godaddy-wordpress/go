@@ -3,6 +3,7 @@
 	<description>Generally-applicable sniffs for WordPress themes</description>
 
 	<rule ref="WordPress">
+		<exclude name="Squiz.PHP.CommentedOutCode.Found"></exclude>
 	</rule>
 
 	<exclude-pattern>*/.dev/*</exclude-pattern>

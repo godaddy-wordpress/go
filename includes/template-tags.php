@@ -540,7 +540,7 @@ function load_inline_svg( $filename ) {
 	if ( file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
 
 		// Load and return the contents of the file.
-		return file_get_contents( MAVERICK_PATH . $svg_path . $filename );
+		return file_get_contents( MAVERICK_PATH . $svg_path . $filename ); // @codingStandardsIgnoreLine
 	}
 
 	// Return a blank string if we can't find the file.

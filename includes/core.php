@@ -571,7 +571,7 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'playful'        => [
+		'playful'     => [
 			'label'         => esc_html__( 'Playful', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
 			'editor_style'  => 'dist/css/design-styles/play-editor.css',

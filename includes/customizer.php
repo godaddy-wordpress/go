@@ -101,7 +101,8 @@ function customize_preview_init() {
 		'maverick-customizer-preview',
 		MAVERICK_TEMPLATE_URL . '/dist/js/admin/customize-preview.js',
 		[ 'jquery', 'customize-preview', 'wp-autop' ],
-		MAVERICK_VERSION
+		MAVERICK_VERSION,
+		true
 	);
 
 	wp_localize_script(
