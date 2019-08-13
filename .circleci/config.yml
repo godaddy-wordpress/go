@@ -92,7 +92,7 @@ jobs:
             - node_modules
       - run:
           name: Install theme check
-          command: bash .dev/bin/install-themecheck.sh
+          command: bash .dev/deploy-scripts/install-themecheck.sh
       - run:
           name: Run theme check
           command: php /tmp/wp.phar themecheck --theme=$WP_THEME --no-interactive
