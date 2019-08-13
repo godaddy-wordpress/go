@@ -2,3 +2,14 @@
 .content-area .wp-block-image + .wp-block-coblocks-gallery-masonry {
 	margin-top: 16px !important;
 }
+
+.wp-block-coblocks-gallery-masonry {
+
+	& figcaption {
+		font-size: var(--theme-caption--font-size);
+		font-style: var(--theme-caption--style);
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+		text-align: var(--theme-caption--alignment);
+	}
+}

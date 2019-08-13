@@ -106,7 +106,6 @@
 	& .site-header .site-search {
 		left: calc(var(--theme-block-padding-x) - 1rem);
 		opacity: 0;
-		padding: var(--theme-spacing-unit) var(--theme-spacing-unit-2);
 		pointer-events: none;
 		position: absolute;
 		right: calc(var(--theme-block-padding-x) - 1rem);

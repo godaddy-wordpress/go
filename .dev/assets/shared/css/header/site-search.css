@@ -10,7 +10,6 @@
 		@media (--large) {
 			left: 0;
 			opacity: 0;
-			padding: var(--theme-spacing-unit) var(--theme-spacing-unit-2);
 			pointer-events: none;
 			position: absolute;
 			right: -0.75rem;
