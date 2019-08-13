@@ -1,0 +1,7 @@
+/*! CoBlocks: Social */
+.wp-block-coblocks-social {
+
+	& a::after {
+		display: none;
+	}
+}

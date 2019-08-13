@@ -102,6 +102,7 @@
 @import url("coblocks/pricing-table.css");
 @import url("coblocks/services.css");
 @import url("coblocks/dynamic-separator.css");
+@import url("coblocks/social.css");
 
 /* WooCommerce */
 @import url("woocommerce/layout.css");
