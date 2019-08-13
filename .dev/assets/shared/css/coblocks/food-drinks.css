@@ -16,12 +16,12 @@
 	}
 
 	&.is-style-list .wp-block-coblocks-food-item {
-		margin-top: 1rem;
+		margin-top: var(--coblocks-food-drinks-item--spacing);
 	}
 }
 
 .wp-block-coblocks-food-item {
-	margin-top: 2rem;
+	margin-top: var(--coblocks-food-drinks-item--spacing);
 }
 
 .wp-block-coblocks-food-item__heading-wrapper {
