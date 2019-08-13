@@ -1,4 +1,4 @@
-/*! Paragraph */
+/* Paragraph */
 p.has-background {
 	@mixin blockWidthNoPadding;
 }
