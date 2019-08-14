@@ -146,13 +146,12 @@ jobs:
           name: Build the Maverick Theme
           command: |
             npm run build
-            mkdir build
-            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. build/
-            PACKAGE_VERSION=$(cat package.json \
-            | grep version \
-            | head -1 \
-            | awk -F: '{ print $2 }' \
-            | sed 's/[",]//g')
-            zip -r maverick-v{$PACKAGE_VERSION}.zip build/
+            mkdir -p build/maverick
+            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./build/maverick
+            PACKAGE_VERSION=$(jq -r ".version" < package.json)
+            zip -r maverick-v{$PACKAGE_VERSION}.zip ./build/maverick
+      - deploy:
+          name: Deploy to GitHub Releases
+          command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} /tmp/artifacts
       - store_artifacts:
           path: ./build/maverick.zip
