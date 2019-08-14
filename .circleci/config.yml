@@ -79,6 +79,9 @@ jobs:
           name: Update npm
           command: sudo npm install -g npm@latest
       - run:
+          name: Install rsync
+          command: sudo apt install rsync
+      - run:
           name: Install Grunt.js
           command: sudo npm install -g grunt-cli
       - restore_cache:
@@ -97,11 +100,14 @@ jobs:
             chmod +x wp-cli.phar
             sudo mv wp-cli.phar /usr/local/bin/wp
       - run:
+          name: Build the Maverick Theme
+          command: npm run build
+      - run:
           name: Install theme check
           command: bash .dev/deploy-scripts/install-themecheck.sh
       - run:
           name: Run theme check
-          command: php /tmp/wp.phar themecheck --theme=$WP_THEME --no-interactive
+          command: wp themecheck --theme=maverick --no-interactive
 
   deploy:
     docker:

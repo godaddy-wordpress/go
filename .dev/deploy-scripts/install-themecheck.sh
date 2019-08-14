@@ -16,6 +16,7 @@ wp config create \
 	--dbname=wordpress \
 	--dbuser=root \
 	--dbpass="" \
+	--dbhost=127.0.0.1 \
 	--skip-check
 
 wp db create
@@ -27,9 +28,9 @@ wp core install \
 	--admin_email=admin@test.dev \
 	--skip-email
 
-wp package install anhskohbo/wp-cli-themecheck
+php -d memory_limit=1024M "$(which wp)" package install anhskohbo/wp-cli-themecheck
 wp plugin install theme-check --activate
 
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/maverick
 mkdir -p $INSTALL_PATH
-rsync -av --exclude-from ./.distignore --delete ./ $INSTALL_PATH/
+rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
