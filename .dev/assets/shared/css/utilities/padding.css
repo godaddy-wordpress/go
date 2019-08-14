@@ -1,3 +1,4 @@
+/*! Editor Padding Sizes */
 .has-small-padding {
 	padding: calc(var(--editor-padding) / 4);
 

@@ -1,6 +1,6 @@
 /* stylelint-disable declaration-no-important */
 
-/* Text meant only for screen readers. */
+/*! Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -38,7 +38,7 @@
 
 /* stylelint-enable */
 
-/**
+/*!
  * Resources on prefers-reduced-motion:
  * https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
  * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion

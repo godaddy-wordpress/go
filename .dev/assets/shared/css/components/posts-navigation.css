@@ -1,8 +1,4 @@
-/**
- * Posts navigation
- * the_posts_navigation();
- */
-
+/*! Post Navigation */
 .posts-navigation .nav-links {
 	display: flex;
 	margin: 1rem 0;

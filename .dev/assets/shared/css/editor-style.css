@@ -1,8 +1,4 @@
-/**
- * Godaddy - Global Editor Styles
- */
-
-/* Setting global variables */
+/* Global variables */
 @import url("config/media-queries.css");
 @import url("config/mixins.css");
 
@@ -12,7 +8,7 @@
 @import url("elements/lists.css");
 @import url("elements/media.css");
 @import url("elements/page.css");
-@import url("elements/tables.css");
+@import url("blocks/table.css");
 
 /* Blocks */
 @import url("blocks/button.css");
