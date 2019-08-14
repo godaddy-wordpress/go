@@ -19,13 +19,13 @@ workflows:
       - deploy:
           requires:
             - php71-build
-          #   - php72-build
-          #   - theme-check
-          # filters:
-          #   tags:
-          #     only: /.*/
-          #   branches:
-          #     ignore: /.*/
+            - php72-build
+            - theme-check
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
 
 version: 2
 jobs:
@@ -146,8 +146,8 @@ jobs:
             rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./maverick
             PACKAGE_VERSION=$(jq -r ".version" < package.json)
             zip -r /tmp/artifacts/maverick-v$PACKAGE_VERSION.zip ./maverick
-      # - deploy:
-      #     name: Deploy to GitHub Releases
-      #     command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} ./maverick-v$PACKAGE_VERSION.zip
+      - deploy:
+          name: Deploy a new release to GitHub
+          command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} /tmp/artifacts
       - store_artifacts:
           path: /tmp/artifacts
