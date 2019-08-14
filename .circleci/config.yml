@@ -20,12 +20,6 @@ workflows:
           requires:
             - php71-build
             - php72-build
-            - theme-check
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              ignore: /.*/
 
 version: 2
 jobs:
@@ -146,12 +140,12 @@ jobs:
           name: Build the Maverick Theme
           command: |
             npm run build
-            mkdir -p build/maverick
-            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./build/maverick
-            PACKAGE_VERSION=$(jq -r ".version" < package.json)
-            zip -r maverick-v{$PACKAGE_VERSION}.zip ./build/maverick
-      - deploy:
-          name: Deploy to GitHub Releases
-          command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} /tmp/artifacts
+            mkdir -p maverick
+            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./maverick
+            export PACKAGE_VERSION=$(jq -r ".version" < package.json)
+            zip -r maverick-v$PACKAGE_VERSION.zip ./maverick
+      # - deploy:
+      #     name: Deploy to GitHub Releases
+      #     command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} ./maverick-v$PACKAGE_VERSION.zip
       - store_artifacts:
-          path: ./build/maverick.zip
+          path: maverick-v$PACKAGE_VERSION.zip
