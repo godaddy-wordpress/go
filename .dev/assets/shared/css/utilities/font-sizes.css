@@ -1,3 +1,4 @@
+/*! Editor Font Sizes */
 .has-small-font-size {
 	font-size: var(--editor-font-size-small);
 }

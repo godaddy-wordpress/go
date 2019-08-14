@@ -1,7 +1,3 @@
-/**
- * Shared styles.
- */
-
 /* Reset */
 @import url("normalize.css");
 
@@ -12,7 +8,6 @@
 @import url("config/mixins.css");
 
 /* Utilities */
-@import url("utilities/alignment.css");
 @import url("utilities/captions.css");
 @import url("utilities/accessibility.css");
 @import url("utilities/font-sizes.css");
@@ -27,7 +22,7 @@
 @import url("elements/lists.css");
 @import url("elements/media.css");
 @import url("elements/page.css");
-@import url("elements/tables.css");
+@import url("blocks/table.css");
 
 /* Layout */
 @import url("layout/content.css");
@@ -35,14 +30,12 @@
 @import url("layout/404.css");
 @import url("layout/not-found.css");
 
-/* Headers */
+/* Header */
+@import url("header/site-header.css");
 @import url("header/header-2.css");
 @import url("header/header-3.css");
 @import url("header/header-4.css");
 @import url("header/header-5.css");
-
-/* Header Components */
-@import url("header/site-header.css");
 @import url("header/site-branding.css");
 @import url("header/site-navigation.css");
 @import url("header/site-navigation__toggle.css");
@@ -51,25 +44,23 @@
 @import url("header/primary-menu.css");
 @import url("header/has-offscreen-nav.css");
 
-/* Footers */
+/* Footer */
 @import url("footer/footer-1.css");
 @import url("footer/footer-2.css");
 @import url("footer/footer-3.css");
 @import url("footer/footer-4.css");
-
-/* Footer Components */
 @import url("footer/site-footer.css");
-@import url("footer/social-icons.css");
 
 /* Misc Components */
 @import url("components/posts-navigation.css");
 @import url("components/comments.css");
+@import url("components/social-icons.css");
 
 /* Blogroll */
 @import url("templates/post.css");
 @import url("templates/blog.css");
 
-/* Blocks */
+/*! Blocks */
 @import url("blocks/button.css");
 @import url("blocks/separator.css");
 @import url("blocks/image.css");
@@ -91,7 +82,7 @@
 @import url("blocks/search.css");
 @import url("blocks/group.css");
 
-/* CoBlocks */
+/*! CoBlocks */
 @import url("coblocks/author.css");
 @import url("coblocks/form.css");
 @import url("coblocks/row.css");
@@ -108,7 +99,7 @@
 @import url("coblocks/alert.css");
 @import url("coblocks/hero.css");
 
-/* WooCommerce */
+/*! WooCommerce */
 @import url("woocommerce/layout.css");
 @import url("woocommerce/button.css");
 @import url("woocommerce/pagination.css");
@@ -120,19 +111,13 @@
 @import url("woocommerce/typography.css");
 @import url("woocommerce/checkbox.css");
 
-/* Gravity */
+/*! Gravity Forms */
 @import url("gravity/forms.css");
 @import url("gravity/checkbox.css");
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
 
-/* Everything below here still needs organizing */
-.u-informational {
-	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
-	border: 1px solid hsla(var(--theme-feedback-informational-color), 1);
-	color: hsla(var(--theme-feedback-informational-color), 1);
-}
-
+/*! Utility Classes */
 p {
 	margin: 0 0 1.25rem;
 
@@ -264,6 +249,12 @@ strong {
 .px-1 {
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
+}
+
+.u-informational {
+	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
+	border: 1px solid hsla(var(--theme-feedback-informational-color), 1);
+	color: hsla(var(--theme-feedback-informational-color), 1);
 }
 
 @media (--small) {
