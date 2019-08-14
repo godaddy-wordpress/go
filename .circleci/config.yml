@@ -42,7 +42,6 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: |
-            composer global require "phpunit/phpunit=5.7.*"
             composer global require wp-coding-standards/wpcs
             phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
       - run:
@@ -62,7 +61,6 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: |
-            composer global require "phpunit/phpunit=5.7.*"
             composer global require wp-coding-standards/wpcs
             phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
       - run:
@@ -115,10 +113,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Setup custom environment variables"
-          command: |
-            echo 'export PACKAGE_VERSION=$(jq -r ".version" < package.json)' >> $BASH_ENV
-      - run:
           name: Update npm
           command: sudo npm install -g npm@latest
       - run:
@@ -141,9 +135,6 @@ jobs:
           name: Install rsync
           command: sudo apt install rsync
       - run:
-          name: Install zip
-          command: sudo apt install zip
-      - run:
           name: Install node packages
           command: npm install
       - run:
@@ -151,10 +142,12 @@ jobs:
           command: |
             npm run build
             mkdir -p maverick
+            mkdir -p /tmp/artifacts
             rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./maverick
-            zip -r maverick-v$PACKAGE_VERSION.zip ./maverick
+            PACKAGE_VERSION=$(jq -r ".version" < package.json)
+            zip -r /tmp/artifacts/maverick-v$PACKAGE_VERSION.zip ./maverick
       # - deploy:
       #     name: Deploy to GitHub Releases
       #     command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} ./maverick-v$PACKAGE_VERSION.zip
       - store_artifacts:
-          path: maverick-v$PACKAGE_VERSION.zip
+          path: /tmp/artifacts
