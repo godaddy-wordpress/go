@@ -1,3 +1,4 @@
+maverick/
 .*
 *.yml
 *.xml
@@ -7,9 +8,6 @@ Gruntfile.js
 postcss.config.js
 package*.json
 README.md
-svn-username
 bin/
-dev-lib/
 languages/*.po
-tests/
 vendor/

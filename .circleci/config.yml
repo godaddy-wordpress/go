@@ -19,7 +19,13 @@ workflows:
       - deploy:
           requires:
             - php71-build
-            - php72-build
+          #   - php72-build
+          #   - theme-check
+          # filters:
+          #   tags:
+          #     only: /.*/
+          #   branches:
+          #     ignore: /.*/
 
 version: 2
 jobs:
@@ -109,6 +115,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Setup custom environment variables"
+          command: |
+            echo 'export PACKAGE_VERSION=$(jq -r ".version" < package.json)' >> $BASH_ENV
+      - run:
           name: Update npm
           command: sudo npm install -g npm@latest
       - run:
@@ -142,7 +152,6 @@ jobs:
             npm run build
             mkdir -p maverick
             rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./maverick
-            export PACKAGE_VERSION=$(jq -r ".version" < package.json)
             zip -r maverick-v$PACKAGE_VERSION.zip ./maverick
       # - deploy:
       #     name: Deploy to GitHub Releases
