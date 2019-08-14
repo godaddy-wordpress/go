@@ -107,7 +107,7 @@ jobs:
           command: bash .dev/deploy-scripts/install-themecheck.sh
       - run:
           name: Run theme check
-          command: wp themecheck --theme=maverick --no-interactive
+          command: wp themecheck --theme=maverick --no-interactive --path=/tmp/wordpress
 
   deploy:
     docker:
@@ -134,12 +134,20 @@ jobs:
           command: |
             go get -u github.com/tcnksm/ghr
       - run:
+          name: Install rsync
+          command: sudo apt install rsync
+      - run:
+          name: Install zip
+          command: sudo apt install zip
+      - run:
           name: Install node packages
           command: npm install
       - run:
-          name: Build the plugin
+          name: Build the Maverick Theme
           command: |
+            npm run build
             mkdir build
-            rsync -av --exclude-from ./.distignore ./build
+            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. build/
+            zip -r maverick.zip build/
       - store_artifacts:
-          path: ./build
+          path: ./build/maverick.zip
