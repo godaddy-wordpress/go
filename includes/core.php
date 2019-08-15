@@ -33,7 +33,7 @@ function setup() {
 	add_filter( 'body_class', $n( 'body_classes' ) );
 	add_filter( 'body_class', $n( 'body_data' ), 999 );
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
-	add_filter( 'comment_form_defaults', $n( 'custom_reply_title' ) );
+	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
 }
 
 /**
@@ -929,7 +929,7 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
  *
  * @return array Comment form arguments.
  */
-function custom_reply_title( $args ) {
+function comment_form_reply_title( $args ) {
 
 	$args['title_reply_before'] = '<h2 id="reply-title" class="comment-reply-title">';
 	$args['title_reply_after']  = '</h2>';
