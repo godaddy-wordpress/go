@@ -18,7 +18,7 @@
 		"postbuild": "mkdir temp && cp -a dist/* temp && NODE_ENV=development webpack --config .dev/config/webpack.dev.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/strip-css-comments.sh",
 		"dev": "NODE_ENV=development webpack --config .dev/config/webpack.dev.js",
 		"postdev": "mkdir temp && cp -a dist/* temp && NODE_ENV=production webpack --config .dev/config/webpack.prod.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/strip-css-comments.sh",
-		"watch": "watch 'npm run dev' ./.dev",
+		"watch": "NODE_ENV=development webpack --watch --config .dev/config/webpack.dev.js",
 		"build-release": "npm install && npm run build",
 		"lint-release": "npm install && composer install && npm run lint",
 		"lint-css": "stylelint 'assets/shared/css' '.dev/assets/design-styles/**/*.css'",
@@ -103,7 +103,6 @@
 	"dependencies": {
 		"css-vars-ponyfill": "^2.0.2",
 		"lodash.throttle": "^4.1.1",
-		"normalize.css": "^8.0.0",
-		"watch": "^1.0.2"
+		"normalize.css": "^8.0.0"
 	}
 }
