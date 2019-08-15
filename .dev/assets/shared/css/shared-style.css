@@ -118,6 +118,10 @@
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
 
+.hero-center-center-align .wp-block-coblocks-hero__box {
+	margin: 0 auto;
+}
+
 /*! Utility Classes */
 p {
 	margin: 0 0 1.25rem;

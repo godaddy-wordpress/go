@@ -140,8 +140,8 @@
 	--theme-caption--spacing-top: 1rem;
 
 	/* Links */
-	--theme-link--color: var(--theme-color-heading);
-	--theme-link--color-interactive: var(--theme-color-primary);
+	--theme-link--color: var(--theme-color-primary);
+	--theme-link--color-interactive: var(--theme-color-text);
 
 	/* Pullquote */
 	--theme-pullquote--font: serif;
@@ -370,6 +370,8 @@
 	## Core Blocks
 	--------------------------------------------------------------*/
 	--theme-separator--color: var(--theme-color-heading);
+	--theme-separator--dot-size: 1rem;
+
 	--theme-table--border-color: var(--theme-color-heading);
 
 

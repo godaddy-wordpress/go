@@ -2,7 +2,8 @@
 .content-area {
 
 	& div.wp-block-columns {
-		margin-bottom: calc(var(--theme-block-spacing) * -1) !important;
+
+		/* margin-bottom: calc(var(--theme-block-spacing) * -1) !important; */
 
 		& .wp-block-column {
 			margin-bottom: var(--theme-block-spacing);
@@ -18,7 +19,7 @@
 	}
 }
 
-.wp-block-column {
+.wp-block-columns {
 
 	& .wp-block-quote {
 		max-width: none;
