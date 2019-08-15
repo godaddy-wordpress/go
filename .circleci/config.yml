@@ -156,7 +156,7 @@ jobs:
           command: |
             RESULTS=$(npm run test-a11y)
             echo $RESULTS
-            if [[ $string != *"All accessibility tests have passed"* ]]; then
+            if [[ $RESULTS != *"All accessibility tests have passed"* ]]; then
               exit 1
             fi
 
