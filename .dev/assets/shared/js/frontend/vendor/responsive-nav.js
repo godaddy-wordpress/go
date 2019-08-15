@@ -110,7 +110,7 @@
 				// Stop events from bubbling up to parent elements
 				e.stopPropagation();
 
-				var parent_menu = target.closest( '.menu-item' );
+				var parent_menu = target.parentNode;
 				var sub_menu = parent_menu.querySelector( '.sub-menu' );
 				var all_open_menus = menu.querySelectorAll( '.child-has-focus' );
 				var all_open_menus_count = all_open_menus.length;
