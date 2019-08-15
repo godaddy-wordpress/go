@@ -3,6 +3,6 @@
  */
 
 @import url("../settings.css");
-@import url("blocks/button.css");
-@import url("coblocks/carousel.css");
-@import url("woocommerce/button.css");
+@import url("components/button.css");
+@import url("components/carousel.css");
+@import url("components/wc-button.css");

@@ -1,8 +1,4 @@
-/**
- * Comments Area for all Posts
- */
-
-/* Specificity to override */
+/*! Comments */
 body {
 
 	& .comment-form-cookies-consent input[type="checkbox"] + label {

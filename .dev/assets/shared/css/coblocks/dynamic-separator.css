@@ -1,0 +1,9 @@
+/*! CoBlocks: Dynamic Separator */
+.wp-block-coblocks-dynamic-separator {
+	width: auto;
+
+	&.is-style-fullwidth::before {
+		@mixin blockWidthNoPadding;
+		width: auto;
+	}
+}

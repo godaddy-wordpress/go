@@ -1,11 +1,4 @@
-/**
- * post.css
- *
- * Defines most styles for archives and single templates.
- *
- */
-
-/* Global styles */
+/*! Single Post */
 .post__categories {
 	text-transform: uppercase;
 
@@ -23,46 +16,10 @@
 	width: 100%;
 }
 
-/* Archive loop */
-.post--archive {
-	margin: 0 0 4rem;
-
-	& a {
-		font-weight: 400;
-		text-decoration: none;
-
-		&:active,
-		&:focus,
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	& .post__thumbnail {
-		margin: 0 0 2rem 0;
-		width: 100%;
-	}
-
-	@media (--medium) {
-		align-items: center;
-		display: flex;
-
-		& .post__thumbnail {
-			margin: 0 3rem 0 0;
-			width: 39%;
-		}
-
-		& .post__summary {
-			flex: 1;
-		}
-	}
-}
-
-/* Single post */
 .post--single {
 
 	& .post__hero {
-		background: hsl(var(--theme-color-secondary)); /* tmp make dynamic */
+		background: hsl(var(--theme-color-secondary));
 		margin: 0 0 2rem;
 
 		& .post__thumbnail {
@@ -101,18 +58,15 @@
 
 }
 
-/* Post meta typically includes things like: author, date, category. */
 .post__meta {
 	font-size: var(--theme-font-size-post-meta, 0.875rem);
 	letter-spacing: 2px;
 }
 
-/* Author */
 .post__author {
 	font-style: italic;
 }
 
-/* When no thumbnail available */
 .post--no-thumbnail {
 
 	& .post__hero {
@@ -136,8 +90,8 @@
 }
 
 /*
-* Overrides when left panel nav (is-header-nav-logo-search)
-*/
+ * Overrides when left panel nav (is-header-nav-logo-search)
+ */
 .is-header-nav-logo-search .post--no-thumbnail .post__hero {
 	padding: 0;
 }
