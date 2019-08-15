@@ -114,7 +114,7 @@ jobs:
 
   a11y-tests:
     docker:
-      - image: circleci/php:7.3.8-node-browsers
+      - image: circleci/php:7.3.8-apache-node-browsers
       - image: circleci/mysql:5.7
     steps:
       - checkout
