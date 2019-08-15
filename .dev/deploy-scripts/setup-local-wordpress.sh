@@ -34,11 +34,11 @@ if [ "$CIRCLE_JOB" == 'theme-check' ]; then
 fi
 
 if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
-	sudo rm /etc/apache2/mods-enabled/php5.load
+	# sudo rm /etc/apache2/mods-enabled/php5.load
 	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
 	sudo a2ensite apache-ci.conf
 	sudo service apache2 restart
-	wp db import ~/project/.dev/tests/a11y-test-db.sql
+	wp db import ~/project/.dev/tests/a11y-test-db.sql --path=/tmp/wordpress
 fi
 
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/maverick
