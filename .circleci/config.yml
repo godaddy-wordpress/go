@@ -153,7 +153,12 @@ jobs:
           command: bash .dev/deploy-scripts/setup-local-wordpress.sh
       - run:
           name: Run a11y tests
-          command: npm run test-a11y
+          command: |
+            RESULTS=$(npm run test-a11y)
+            echo $RESULTS
+            if [[ $string != *"All accessibility tests have passed"* ]]; then
+              exit 1
+            fi
 
   deploy:
     docker:
