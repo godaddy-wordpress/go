@@ -13,18 +13,19 @@ $has_background = Maverick\has_header_background();
 	<div class="site-header__inner flex items-center justify-between max-w-wide m-auto relative">
 
 		<?php Maverick\display_site_branding(); ?>
+
 		<?php Maverick\navigation_toggle(); ?>
 
 		<nav id="js-primary-menu" class="site-navigation c-site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
 			<?php
-				wp_nav_menu(
-					[
-						'theme_location' => 'primary',
-						'menu_class'     => 'primary-menu list-reset',
-						'container'      => false,
-					]
-				);
+			wp_nav_menu(
+				[
+					'theme_location' => 'primary',
+					'menu_class'     => 'primary-menu list-reset',
+					'container'      => false,
+				]
+			);
 			?>
 
 			<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
