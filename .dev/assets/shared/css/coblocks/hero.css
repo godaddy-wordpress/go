@@ -13,7 +13,7 @@
 		padding-right: var(--theme-block-padding-x);
 	}
 
-	& p ~ div {
+	& .wp-block-coblocks-buttons {
 		margin-top: 2rem;
 	}
 }
