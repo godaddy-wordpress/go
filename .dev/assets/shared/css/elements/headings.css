@@ -1,7 +1,4 @@
-/**
- * Global Headings - <h1> through </h6>
- */
-
+/*! Headings - <h1> through </h6> */
 h1,
 h2,
 h3,
@@ -11,18 +8,20 @@ h6 {
 	font-family: var(--theme-heading--font);
 	font-style: var(--theme-heading--style);
 	font-weight: var(--theme-heading--weight);
-	letter-spacing: var(--theme-heading--tracking);
 	line-height: var(--theme-heading--leading);
+	margin: 0 0 0.75rem;
 }
 
 h1 {
 	color: hsl(var(--theme-h1--color));
 	font-size: var(--theme-h1--font-size);
+	letter-spacing: var(--theme-heading--tracking);
 }
 
 h2 {
 	color: hsl(var(--theme-h2--color));
 	font-size: var(--theme-h2--font-size);
+	letter-spacing: var(--theme-heading--tracking);
 }
 
 h3 {

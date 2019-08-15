@@ -1,6 +1,4 @@
-/*
- * Add named breakpoints into the DOM for JS hooks
-*/
+/*! Add breakpoints into the DOM for JS hooks */
 body {
 
 	&::before {
@@ -13,9 +11,7 @@ body {
 	}
 }
 
-/**
- * Offscreen navigation
- */
+/*! Offscreen Navigation */
 .has-offscreen-nav {
 
 	& .site-navigation {

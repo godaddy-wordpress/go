@@ -1,32 +1,65 @@
 /*! CoBlocks: Food & Drinks */
 .wp-block-coblocks-food-and-drinks {
 
-	& h3,
-	& h4,
-	& h5 {
-		margin-bottom: 2rem;
+	& > h2,
+	& > h3,
+	& > h4,
+	& > h5,
+	& > h6 {
+		background-color: hsl(var(--coblocks-food-drinks-title--bg));
+		border-bottom: var(--coblocks-food-drinks-title--border-bottom);
+		color: hsl(var(--coblocks-food-drinks-title--color));
+		font-size: var(--coblocks-food-drinks-title--font-size);
+		font-style: var(--coblocks-food-drinks-title--style);
+		margin-bottom: var(--coblocks-food-drinks-title--margin-y);
+		padding: var(--coblocks-food-drinks-title--padding);
+	}
+
+	&.is-style-list .wp-block-coblocks-food-item {
+		margin-top: var(--coblocks-food-drinks-item--spacing);
 	}
 }
 
-.wp-block-coblocks-food-and-drinks.is-style-list .wp-block-coblocks-food-item {
-	margin-top: 1rem;
-}
-
 .wp-block-coblocks-food-item {
-	margin-top: 2rem;
-}
-
-.wp-block-coblocks-food-item__heading {
-	font-size: var(--theme-h6--font-size);
-	margin-bottom: 0 !important;
+	margin-top: var(--coblocks-food-drinks-item--spacing);
 }
 
 .wp-block-coblocks-food-item__heading-wrapper {
 	margin-bottom: 0;
 }
 
+.wp-block-coblocks-food-item__heading {
+	font-size: var(--coblocks-food-drinks-item--font-size);
+	font-weight: var(--coblocks-food-drinks-item--weight);
+	letter-spacing: var(--coblocks-food-drinks-item--tracking);
+	margin-bottom: 0.75rem;
+	text-transform: var(--coblocks-food-drinks-item--text-transform);
+}
+
+.wp-block-coblocks-food-item__attributes {
+	position: relative;
+	top: -5px;
+
+	& svg {
+		fill: hsl(var(--coblocks-food-drinks-item--fill));
+	}
+}
+
+.wp-block-coblocks-food-item__description {
+	font-size: var(--coblocks-food-drinks-desc--font-size);
+}
+
 .wp-block-coblocks-food-item__price {
-	color: hsl(var(--theme-color-text));
-	font-size: 0.9rem;
+	color: hsl(var(--coblocks-food-drinks-price--color));
+	font-size: var(--coblocks-food-drinks-price--font-size);
 	opacity: 1;
+}
+
+[class*="hint--"]::after {
+	background-color: hsl(var(--coblocks-food-drinks-hint--bg));
+	border-radius: hsl(var(--coblocks-food-drinks-hint--radius));
+}
+
+.hint--top::before {
+	border-top-color: hsl(var(--coblocks-food-drinks-hint--bg));
 }
