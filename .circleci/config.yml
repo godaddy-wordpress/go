@@ -155,9 +155,9 @@ jobs:
           name: Run a11y tests
           command: |
             RESULTS=$(npm run test-a11y)
+            # rerun tests to display the formatted output
+            npm run test-a11y
             if [[ $RESULTS != *"All accessibility tests have passed"* ]]; then
-              # rerun tests to display the formatted output
-              npm run test-a11y
               exit 1
             fi
 
