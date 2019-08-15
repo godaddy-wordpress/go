@@ -4,7 +4,7 @@
 
 const pa11y = require( 'pa11y' );
 const chalk = require( 'chalk' );
-const packageJson = require( '../../../package.json' );
+const packageJson = require( '../../../../package.json' );
 const testingUrls = packageJson.testing.urls;
 
 // Initialize variables
@@ -73,7 +73,7 @@ const config = {
  * @returns {object} test results
  */
 pa11y( url, config, ( error, results ) => {
-	
+
 	if( error ) {
 
 		return console.error( error );

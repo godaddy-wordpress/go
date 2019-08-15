@@ -21,15 +21,25 @@ wp config create \
 
 wp db create
 wp core install \
-	--url=http://test.dev \
+	--url=http://maverick.test \
 	--title="WordPress Site" \
 	--admin_user=admin \
 	--admin_password=password \
-	--admin_email=admin@test.dev \
+	--admin_email=admin@maverick.test \
 	--skip-email
 
-php -d memory_limit=1024M "$(which wp)" package install anhskohbo/wp-cli-themecheck
-wp plugin install theme-check --activate
+if [ "$CIRCLE_JOB" == 'theme-check' ]; then
+	php -d memory_limit=1024M "$(which wp)" package install anhskohbo/wp-cli-themecheck
+	wp plugin install theme-check --activate
+fi
+
+if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
+	sudo rm /etc/apache2/mods-enabled/php5.load
+	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
+	sudo a2ensite apache-ci.conf
+	sudo service apache2 restart
+	wp db import ~/project/.dev/tests/a11y-test-db.sql
+fi
 
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/maverick
 mkdir -p $INSTALL_PATH
