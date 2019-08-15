@@ -1,3 +1,4 @@
+/*! Layout: Content Area */
 .content-area > * {
 	margin-bottom: var(--theme-block-spacing);
 	margin-left: auto;

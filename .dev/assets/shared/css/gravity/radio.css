@@ -1,7 +1,4 @@
-/**
- * Overrides for Gravity forms - radio
- */
-
+/*! Gravity Forms: Radio */
 body .gform_wrapper .gfield_radio li input,
 body .gform_wrapper .gfield_radio li input[type="radio"] {
 	display: none;
