@@ -64,9 +64,11 @@
 		var currentTarget;
 		var target;
 		var i;
+		var z;
 
 		// Listener for the menu open/close action
 		function listener_menu( e ) {
+
 
 			// Stop links from firing
 			e.preventDefault();
@@ -98,14 +100,18 @@
 			currentTarget = e.currentTarget;
 			target = e.target;
 
-			if ( target.getAttribute( 'aria-haspopup' ) ) {
+			var closest = currentTarget.closest( '.menu-item > a' );
+
+			e.preventDefault();
+
+			if ( target.getAttribute( 'aria-haspopup' ) || closest.getAttribute( 'aria-haspopup' ) ) {
 				// Stop links from firing
 				e.preventDefault();
 
 				// Stop events from bubbling up to parent elements
 				e.stopPropagation();
 
-				var parent_menu = target.parentNode;
+				var parent_menu = target.closest( '.menu-item' );
 				var sub_menu = parent_menu.querySelector( '.sub-menu' );
 				var all_open_menus = menu.querySelectorAll( '.child-has-focus' );
 				var all_open_menus_count = all_open_menus.length;
@@ -126,10 +132,18 @@
 					} // if
 				} // if
 
-				if ( e.target.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) {
+				if ( ( e.target.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) || ( target.tagName === 'svg' && closest.classList.contains( 'submenu-is-open' ) ) ) {
+					if ( target.tagName === 'svg' ) {
+						target = closest;
+					}
 					// The menu is already open, so this should be a close action
 					menu_sub_close( target );
 				} else {
+
+					if ( target.tagName === 'svg' ) {
+						target = closest;
+					}
+
 					// The menu is closed, so this click should open it
 					menu_sub_open( target );
 
@@ -346,6 +360,15 @@
 			// If the screen is small or the action is set to click
 			if ( get_screen_size( 'has-offscreen-nav' ) || sub_menu_acion === 'click' ) {
 				menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
+
+				var svgElements = menu_items_with_children[i].querySelectorAll( 'svg' );
+
+				for ( z = 0; z < svgElements.length; z = z + 1 ) {
+
+					svgElements[z].addEventListener( 'click', listener_submenu_click );
+
+				}
+
 				menu.classList.add( 'uses-click' );
 			} else if ( sub_menu_acion !== 'click' ) {
 				if ( get_screen_size( 'has-full-nav' ) ) {
