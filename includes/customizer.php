@@ -119,6 +119,9 @@ function customize_preview_init() {
  * @return void
  */
 function enqueue_controls_assets() {
+
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 	wp_enqueue_script(
 		'maverick-customizer-controls',
 		MAVERICK_TEMPLATE_URL . '/dist/js/admin/customize-controls.js',
@@ -129,7 +132,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_style(
 		'maverick-customizer-styles',
-		MAVERICK_TEMPLATE_URL . '/dist/css/admin/customizer-styles.css',
+		MAVERICK_TEMPLATE_URL . "/dist/css/admin/customizer-styles{$suffix}.css",
 		[],
 		MAVERICK_VERSION
 	);

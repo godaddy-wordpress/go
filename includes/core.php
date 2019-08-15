@@ -277,9 +277,12 @@ function scripts() {
  * @return void
  */
 function editor_styles() {
+
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 	// Enqueue our shared Gutenberg editor styles.
 	add_editor_style(
-		'dist/css/editor-style.css'
+		"dist/css/editor-style{$suffix}.css"
 	);
 
 	$design_style = get_design_style();
@@ -300,6 +303,8 @@ function editor_styles() {
  */
 function styles() {
 
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 	wp_enqueue_style(
 		'maverick-fonts',
 		fonts_url(),
@@ -309,7 +314,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'styles',
-		MAVERICK_TEMPLATE_URL . '/dist/css/shared-style.css',
+		MAVERICK_TEMPLATE_URL . "/dist/css/shared-style{$suffix}.css",
 		[ 'maverick-fonts' ],
 		MAVERICK_VERSION
 	);
@@ -463,11 +468,14 @@ function get_default_design_style() {
  * @return array
  */
 function get_available_design_styles() {
+
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 	$default_design_styles = [
 		'modern'      => [
 			'label'         => esc_html__( 'Modern', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
-			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
+			'url'           => MAVERICK_TEMPLATE_URL . "/dist/css/design-styles/modern{$suffix}.css",
+			'editor_style'  => "dist/css/design-styles/modern-editor{$suffix}.css",
 			'color_schemes' => [
 				'default' => [
 					'label'      => esc_html__( 'Shade', 'maverick' ),
@@ -514,8 +522,8 @@ function get_available_design_styles() {
 		],
 		'traditional' => [
 			'label'         => esc_html__( 'Traditional', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
-			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
+			'url'           => MAVERICK_TEMPLATE_URL . "/dist/css/design-styles/traditional{$suffix}.css",
+			'editor_style'  => "dist/css/design-styles/traditional-editor{$suffix}.css",
 			'color_schemes' => [
 				'default' => [
 					'label'      => esc_html__( 'Light', 'maverick' ),
@@ -535,8 +543,8 @@ function get_available_design_styles() {
 		],
 		'trendy'      => [
 			'label'         => esc_html__( 'Trendy', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy.css',
-			'editor_style'  => 'dist/css/design-styles/trendy-editor.css',
+			'url'           => MAVERICK_TEMPLATE_URL . "/dist/css/design-styles/trendy{$suffix}.css",
+			'editor_style'  => "dist/css/design-styles/trendy-editor{$suffix}.css",
 			'color_schemes' => [
 				'default' => [
 					'label'      => esc_html__( 'Light', 'maverick' ),
@@ -556,8 +564,8 @@ function get_available_design_styles() {
 		],
 		'welcoming'   => [
 			'label'         => esc_html__( 'Welcoming', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/welcoming.css',
-			'editor_style'  => 'dist/css/design-styles/welcoming-editor.css',
+			'url'           => MAVERICK_TEMPLATE_URL . "/dist/css/design-styles/welcoming{$suffix}.css",
+			'editor_style'  => "dist/css/design-styles/welcoming-editor{$suffix}.css",
 			'color_schemes' => [
 				'default' => [
 					'label'      => esc_html__( 'Light', 'maverick' ),
@@ -577,8 +585,8 @@ function get_available_design_styles() {
 		],
 		'playful'        => [
 			'label'         => esc_html__( 'Playful', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
-			'editor_style'  => 'dist/css/design-styles/play-editor.css',
+			'url'           => MAVERICK_TEMPLATE_URL . "/dist/css/design-styles/play{$suffix}.css",
+			'editor_style'  => "dist/css/design-styles/play-editor{$suffix}.css",
 			'color_schemes' => [
 				'default' => [
 					'label'      => esc_html__( 'Light', 'maverick' ),
