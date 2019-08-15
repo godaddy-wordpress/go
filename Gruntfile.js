@@ -59,7 +59,31 @@ module.exports = function( grunt ) {
 				],
 				src: [ 'style.css' ]
 			}
-		}
+		},
+
+		clean: {
+			options: {
+				force: true
+			},
+			build: [ 'build/' ]
+		},
+
+		copy: {
+			theme: {
+				expand: true,
+				src: [
+					'*.php',
+					'dist/**',
+					'includes/**',
+					'partials/**',
+					'screenshot.png',
+					'style.css',
+					'readme.txt',
+					'languages/*.{mo,pot}',
+				],
+				dest: 'build/<%= pkg.name %>',
+			}
+		},
 
 	} );
 
@@ -67,6 +91,7 @@ module.exports = function( grunt ) {
 
 	grunt.registerTask( 'default', [ 'replace' ] );
 	grunt.registerTask( 'version', [ 'replace' ] );
+	grunt.registerTask( 'package', [ 'copy' ] );
 	grunt.registerTask( 'check',   [ 'devUpdate' ] );
 
 };

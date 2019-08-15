@@ -9,5 +9,6 @@ postcss.config.js
 package*.json
 README.md
 bin/
+build/
 languages/*.po
 vendor/
