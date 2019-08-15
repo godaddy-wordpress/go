@@ -64,7 +64,6 @@
 		var currentTarget;
 		var target;
 		var i;
-		var z;
 
 		// Listener for the menu open/close action
 		function listener_menu( e ) {
@@ -354,7 +353,7 @@
 
 				var svgElements = menu_items_with_children[i].querySelectorAll( 'svg' );
 
-				for ( z = 0; z < svgElements.length; z = z + 1 ) {
+				for ( var z = 0; z < svgElements.length; z = z + 1 ) {
 
 					svgElements[z].addEventListener( 'click', listener_submenu_click );
 
