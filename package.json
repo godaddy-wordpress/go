@@ -89,7 +89,9 @@
   },
   "testing": {
     "urls": {
-      "local": "http://maverick.test",
+      "local_home": "http://maverick.test",
+      "local_page": "https://maverick.test/sample-page/",
+      "local_blog_post": "https://maverick.test/template-comments/",
       "staging": "",
       "production": ""
     },
