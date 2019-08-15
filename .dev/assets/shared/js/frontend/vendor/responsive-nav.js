@@ -100,11 +100,11 @@
 			currentTarget = e.currentTarget;
 			target = e.target;
 
-			var closest = currentTarget.closest( '.menu-item > a' );
+			if ( target.tagName === 'svg' || target.tagName === 'path' ) {
+				target = currentTarget.closest( '.menu-item > a' );
+			}
 
-			e.preventDefault();
-
-			if ( target.getAttribute( 'aria-haspopup' ) || closest.getAttribute( 'aria-haspopup' ) ) {
+			if ( target.getAttribute( 'aria-haspopup' ) ) {
 				// Stop links from firing
 				e.preventDefault();
 
@@ -132,21 +132,12 @@
 					} // if
 				} // if
 
-				if ( ( e.target.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) || ( target.tagName === 'svg' && closest.classList.contains( 'submenu-is-open' ) ) ) {
-					if ( target.tagName === 'svg' ) {
-						target = closest;
-					}
+				if ( ( e.target.nodeName === 'A' || target.tagName === 'A' ) && target.classList.contains( 'submenu-is-open' ) ) {
 					// The menu is already open, so this should be a close action
 					menu_sub_close( target );
 				} else {
-
-					if ( target.tagName === 'svg' ) {
-						target = closest;
-					}
-
 					// The menu is closed, so this click should open it
 					menu_sub_open( target );
-
 					// Reset the focus
 					sub_menu.querySelectorAll('a')[0].focus();
 				}
