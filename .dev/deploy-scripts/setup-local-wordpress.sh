@@ -59,6 +59,6 @@ if [ "$CIRCLE_JOB" != 'unit-tests' ]; then
 fi
 
 if [ "$CIRCLE_JOB" == 'unit-tests' ]; then
-	.dev/bin/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+	.dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
 	rsync -av --delete ~/project/. $INSTALL_PATH/
 fi
