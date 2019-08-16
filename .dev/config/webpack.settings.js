@@ -31,7 +31,6 @@ module.exports = {
 	},
 	filename: {
 		js: 'js/[name].js',
-		css: 'css/[name].css'
 	},
 	paths: {
 		src: {

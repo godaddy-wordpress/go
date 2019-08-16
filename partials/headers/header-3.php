@@ -13,11 +13,9 @@ $has_background = Maverick\has_header_background();
 	<div class="site-header__inner flex lg:flex-column items-center justify-between max-w-wide m-auto relative">
 
 		<?php Maverick\display_site_branding(); ?>
+		<?php Maverick\navigation_toggle(); ?>
 
-		<?php if ( has_nav_menu( 'primary' ) ) { ?>
-
-			<?php Maverick\navigation_toggle(); ?>
-
+		<?php if ( has_nav_menu( 'primary' ) || is_customize_preview() ) : ?>
 			<nav id="js-primary-menu" class="site-navigation c-site-navigation lg:justify-center text-center" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
 				<?php
@@ -31,9 +29,8 @@ $has_background = Maverick\has_header_background();
 				?>
 
 			</nav>
-		<?php } else { ?>
-			<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a Primary menu to the header', 'maverick' ); ?></a></p>
-		<?php } ?>
+		<?php endif; ?>
+
 	</div>
 
 </header>
