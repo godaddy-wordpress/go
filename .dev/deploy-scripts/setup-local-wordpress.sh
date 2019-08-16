@@ -58,6 +58,9 @@ if [ "$CIRCLE_JOB" != 'unit-tests' ]; then
 	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
 fi
 
+echo $CIRCLE_JOB
+echo $INSTALL_PATH;
 if [ "$CIRCLE_JOB" == 'unit-tests' ]; then
 	rsync -av --delete ~/project/. $INSTALL_PATH/
+	ls -la $INSTALL_PATH
 fi
