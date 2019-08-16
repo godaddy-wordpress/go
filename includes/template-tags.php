@@ -397,7 +397,7 @@ function social_icons( $args = [] ) {
 			<?php if ( ! empty( $social_icon['url'] ) || is_customize_preview() ) : ?>
 				<li class="<?php echo esc_attr( sprintf( $args['li_class'], $key ) ) . esc_attr( $visibility ); ?>">
 					<a class="social-icons__icon" href="<?php echo esc_url( $social_icon['url'] ); ?>" aria-label="<?php echo esc_attr( $social_icon['label'] ); ?>" rel="noopener noreferrer">
-						<?php include_once( $social_icon['icon'] ); ?>
+						<?php include_once $social_icon['icon']; ?>
 					</a>
 				</li>
 			<?php endif; ?>
@@ -489,6 +489,6 @@ function load_inline_svg( $filename ) {
 
 	}
 
-	include_once( MAVERICK_PATH . $svg_path . $filename );
+	include_once MAVERICK_PATH . $svg_path . $filename;
 
 }
