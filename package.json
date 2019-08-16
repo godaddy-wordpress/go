@@ -1,107 +1,108 @@
 {
-  "name": "maverick",
-  "version": "0.2.0",
-  "description": "Project Description",
-  "homepage": "https://project-domain.tld",
-  "repository": {
-    "type": "git",
-    "url": "https://project-git-repo.tld"
-  },
-  "author": {
-    "name": "GoDaddy",
-    "url": "https://www.godaddy.com",
-    "role": "Developer"
-  },
-  "scripts": {
-    "start": "composer install && npm install && npm run build",
-    "build": "NODE_ENV=production webpack --config .dev/config/webpack.prod.js",
-    "dev": "NODE_ENV=development webpack --config .dev/config/webpack.dev.js",
-    "postdev": ".dev/deploy-scripts/strip-css-comments.sh",
-    "watch": "NODE_ENV=development webpack --watch --config .dev/config/webpack.dev.js",
-    "build-release": "npm install && npm run build",
-    "lint-release": "npm install && composer install && npm run lint",
-    "lint-css": "stylelint 'assets/shared/css' '.dev/assets/design-styles/**/*.css'",
-    "lint-js": "eslint assets/shared/js",
-    "lint-php": "composer run lint",
-    "format-js": "eslint --fix assets/shared/js",
-    "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
-    "format": "npm run format-js",
-    "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.css": [
-      "stylelint"
-    ],
-    "*.js": [
-      "eslint"
-    ],
-    "*.php": [
-      "./vendor/bin/phpcs --extensions=php --warning-severity=8 -s"
-    ]
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@10up/eslint-config": "^1.0.9",
-    "@10up/stylelint-config": "^1.0.3",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "babel-eslint": "^9.0.0",
-    "babel-loader": "^8.0.0",
-    "browser-sync": "^2.26.4",
-    "browser-sync-webpack-plugin": "^2.2.2",
-    "browserslist": "^4.1.0",
-    "caniuse-db": "^1.0.30000878",
-    "clean-webpack-plugin": "^2.0.1",
-    "copy-webpack-plugin": "^5.0.2",
-    "css-loader": "^2.1.1",
-    "cssnano": "^4.1.10",
-    "eslint": "^5.4.0",
-    "eslint-loader": "^2.1.2",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.3",
-    "mini-css-extract-plugin": "^0.5.0",
-    "pa11y": "^5.0.4",
-    "perfectionist": "^2.4.0",
-    "postcss-import": "^12.0.0",
-    "postcss-loader": "^3.0.0",
-    "postcss-mixins": "^6.2.1",
-    "postcss-preset-env": "^5.3.0",
-    "strip-css-comments-cli": "^2.0.2",
-    "stylelint": "^9.10.1",
-    "stylelint-config-wordpress": "^13.1.0",
-    "stylelint-declaration-use-variable": "^1.7.0",
-    "stylelint-order": "^1.0.0",
-    "stylelint-webpack-plugin": "^0.10.5",
-    "terser": "^3.17.0",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-fix-style-only-entries": "^0.2.1",
-    "webpack-merge": "^4.2.1",
-    "webpackbar": "^3.1.5"
-  },
-  "testing": {
-    "urls": {
-      "local": "http://maverick.test",
-      "staging": "",
-      "production": ""
-    },
-    "accessibility": {
-      "compliance": "WCAG2A"
-    }
-  },
-  "engineStrict": true,
-  "engines": {
-    "node": ">=8.11"
-  },
-  "dependencies": {
-    "css-vars-ponyfill": "^2.0.2",
-    "lodash.throttle": "^4.1.1",
-    "normalize.css": "^8.0.0"
-  }
+	"name": "maverick",
+	"version": "0.2.0",
+	"description": "Project Description",
+	"homepage": "https://project-domain.tld",
+	"repository": {
+		"type": "git",
+		"url": "https://project-git-repo.tld"
+	},
+	"author": {
+		"name": "GoDaddy",
+		"url": "https://www.godaddy.com",
+		"role": "Developer"
+	},
+	"scripts": {
+		"start": "composer install && npm install && npm run build",
+		"build": "NODE_ENV=production webpack --config .dev/config/webpack.prod.js",
+		"postbuild": "mkdir temp && cp -a dist/* temp && NODE_ENV=development webpack --config .dev/config/webpack.dev.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/strip-css-comments.sh",
+		"dev": "NODE_ENV=development webpack --config .dev/config/webpack.dev.js",
+		"postdev": "mkdir temp && cp -a dist/* temp && NODE_ENV=production webpack --config .dev/config/webpack.prod.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/strip-css-comments.sh",
+		"watch": "NODE_ENV=development webpack --watch --config .dev/config/webpack.dev.js",
+		"build-release": "npm install && npm run build",
+		"lint-release": "npm install && composer install && npm run lint",
+		"lint-css": "stylelint 'assets/shared/css' '.dev/assets/design-styles/**/*.css'",
+		"lint-js": "eslint assets/shared/js",
+		"lint-php": "composer run lint",
+		"format-js": "eslint --fix assets/shared/js",
+		"lint": "npm run lint-css && npm run lint-js && npm run lint-php",
+		"format": "npm run format-js",
+		"test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.css": [
+			"stylelint"
+		],
+		"*.js": [
+			"eslint"
+		],
+		"*.php": [
+			"./vendor/bin/phpcs --extensions=php --warning-severity=8 -s"
+		]
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@10up/eslint-config": "^1.0.9",
+		"@10up/stylelint-config": "^1.0.3",
+		"@babel/core": "^7.0.0",
+		"@babel/preset-env": "^7.0.0",
+		"@babel/register": "^7.0.0",
+		"babel-eslint": "^9.0.0",
+		"babel-loader": "^8.0.0",
+		"browser-sync": "^2.26.4",
+		"browser-sync-webpack-plugin": "^2.2.2",
+		"browserslist": "^4.1.0",
+		"caniuse-db": "^1.0.30000878",
+		"clean-webpack-plugin": "^2.0.1",
+		"copy-webpack-plugin": "^5.0.2",
+		"css-loader": "^2.1.1",
+		"cssnano": "^4.1.10",
+		"eslint": "^5.4.0",
+		"eslint-loader": "^2.1.2",
+		"husky": "^1.3.1",
+		"lint-staged": "^8.1.3",
+		"mini-css-extract-plugin": "^0.5.0",
+		"pa11y": "^5.0.4",
+		"perfectionist": "^2.4.0",
+		"postcss-import": "^12.0.0",
+		"postcss-loader": "^3.0.0",
+		"postcss-mixins": "^6.2.1",
+		"postcss-preset-env": "^5.3.0",
+		"strip-css-comments-cli": "^2.0.2",
+		"stylelint": "^9.10.1",
+		"stylelint-config-wordpress": "^13.1.0",
+		"stylelint-declaration-use-variable": "^1.7.0",
+		"stylelint-order": "^1.0.0",
+		"stylelint-webpack-plugin": "^0.10.5",
+		"terser": "^3.17.0",
+		"webpack": "^4.29.6",
+		"webpack-cli": "^3.3.0",
+		"webpack-fix-style-only-entries": "^0.2.1",
+		"webpack-merge": "^4.2.1",
+		"webpackbar": "^3.1.5"
+	},
+	"testing": {
+		"urls": {
+			"local": "http://maverick.test",
+			"staging": "",
+			"production": ""
+		},
+		"accessibility": {
+			"compliance": "WCAG2A"
+		}
+	},
+	"engineStrict": true,
+	"engines": {
+		"node": ">=8.11"
+	},
+	"dependencies": {
+		"css-vars-ponyfill": "^2.0.2",
+		"lodash.throttle": "^4.1.1",
+		"normalize.css": "^8.0.0"
+	}
 }
