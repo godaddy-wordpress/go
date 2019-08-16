@@ -2,6 +2,14 @@
 
 set -e
 
+download() {
+  if [ `which curl` ]; then
+      curl -s "$1" > "$2";
+  elif [ `which wget` ]; then
+      wget -nv -O "$2" "$1"
+  fi
+}
+
 sudo apt-get update && sudo apt-get install subversion
 sudo -E docker-php-ext-install mysqli
 sudo sh -c "printf '\ndeb http://ftp.us.debian.org/debian sid main\n' >> /etc/apt/sources.list"
@@ -51,5 +59,6 @@ if [ "$CIRCLE_JOB" != 'unit-tests' ]; then
 fi
 
 if [ "$CIRCLE_JOB" == 'unit-tests' ]; then
+	.dev/bin/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
 	rsync -av --delete ~/project/. $INSTALL_PATH/
 fi

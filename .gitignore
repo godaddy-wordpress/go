@@ -4,7 +4,6 @@ build
 release
 vendor
 temp
-phpunit.xml
 .idea
 .vscode
 
