@@ -25,16 +25,18 @@ $has_background = Maverick\has_header_background();
 		<nav id="js-primary-menu" class="site-navigation c-site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
 			<?php
-				wp_nav_menu(
-					[
-						'theme_location' => 'primary',
-						'menu_class'     => 'primary-menu list-reset',
-						'container'      => false,
-					]
-				);
-			?>
 
-			<?php get_search_form(); ?>
+			wp_nav_menu(
+				[
+					'theme_location' => 'primary',
+					'menu_class'     => 'primary-menu list-reset',
+					'container'      => false,
+				]
+			);
+
+			get_search_form();
+
+			?>
 
 		</nav>
 

@@ -90,7 +90,7 @@ function wp_nav_fallback( $args ) {
 		<?php
 		echo esc_html(
 			sprintf(
-				// translators: %s is the registered nav menu name
+				/* translators: %s is the registered nav menu name */
 				__( 'Please assign a menu to the %s menu location', 'maverick' ),
 				$registered_nav_menus[ $menu_slug ]
 			)
