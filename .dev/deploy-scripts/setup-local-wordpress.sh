@@ -33,11 +33,13 @@ if [ "$CIRCLE_JOB" == 'theme-check' ]; then
 	wp plugin install theme-check --activate
 fi
 
-if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
-	# sudo rm /etc/apache2/mods-enabled/php5.load
+if [ "$CIRCLE_JOB" == 'a11y-tests' ] || [ "$CIRCLE_JOB" == "unit-tests" ]; then
 	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
 	sudo a2ensite apache-ci.conf
 	sudo service apache2 restart
+fi
+
+if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
 	wp db import ~/project/.dev/tests/a11y-test-db.sql --path=/tmp/wordpress
 fi
 
