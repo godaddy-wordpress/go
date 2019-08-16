@@ -487,13 +487,24 @@ function load_inline_svg( $filename ) {
 	// Add the path to your SVG directory inside your theme.
 	$svg_path = 'dist/images/';
 
-	// Check the SVG file exists
-	if ( file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
+	// Determine the images dir from the editor_style dir.
+	$design_style = Core\get_design_style();
 
-		// Load and return the contents of the file
-		return file_get_contents( MAVERICK_PATH . $svg_path . $filename );
-	}
+	$design_style_svg_path = str_replace(
+		array( 'dist/css/', '-editor.css' ),
+		array( $svg_path, '' ),
+		$design_style['editor_style']
+	);
 
-	// Return a blank string if we can't find the file.
-	return '';
+	ob_start();
+	locate_template(
+		array(
+			trailingslashit( $design_style_svg_path ) . $filename,
+			$svg_path . $filename,
+		),
+		true
+	);
+	$output = ob_get_clean();
+
+	return $output;
 }
