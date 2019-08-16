@@ -307,7 +307,7 @@ function styles() {
 	);
 
 	wp_enqueue_style(
-		'maverick-styles',
+		'maverick-shared-styles',
 		MAVERICK_TEMPLATE_URL . '/dist/css/shared-style.css',
 		[ 'maverick-fonts' ],
 		MAVERICK_VERSION
@@ -317,9 +317,9 @@ function styles() {
 
 	if ( $design_style ) {
 		wp_enqueue_style(
-			'maverick-design-style',
+			'maverick-style-' . sanitize_title( $design_style['label'] ),
 			$design_style['url'],
-			[ 'maverick-styles' ],
+			[ 'maverick-shared-styles' ],
 			MAVERICK_VERSION
 		);
 	}
