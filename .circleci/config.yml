@@ -93,8 +93,13 @@ jobs:
           name: Install rsync
           command: sudo apt install rsync
       - run:
-          name: Install Grunt.js
-          command: sudo npm install -g grunt-cli
+          name: Setup local WordPress site
+          command: |
+            bash .dev/deploy-scripts/setup-local-wordpress.sh
+            cd /tmp/wordpress/wp-content/themes/maverick
+      - run:
+          name: Install Composer packages
+          command: composer install
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -104,20 +109,6 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run:
-          name: Install WPCLI
-          command: |
-            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-            chmod +x wp-cli.phar
-            sudo mv wp-cli.phar /usr/local/bin/wp
-      - run:
-          name: Build the Maverick Theme
-          command: npm run build
-      - run:
-          name: Setup local WordPress site
-          command: |
-            bash .dev/deploy-scripts/setup-local-wordpress.sh
-            composer install
       - run:
           name: "Run PHPUnit Unit Tests"
           command: npm run test-php

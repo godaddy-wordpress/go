@@ -43,4 +43,11 @@ fi
 
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/maverick
 mkdir -p $INSTALL_PATH
-rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
+
+if [ "$CIRCLE_JOB" != 'unit-tests' ]; then
+	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
+fi
+
+if [ "$CIRCLE_JOB" == 'unit-tests' ]; then
+	rsync -av --delete ~/project/. $INSTALL_PATH/
+fi
