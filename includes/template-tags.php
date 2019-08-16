@@ -479,16 +479,18 @@ function navigation_toggle() {
  */
 function load_inline_svg( $filename ) {
 
-	// Add the path to your SVG directory inside your theme.
 	$svg_path = 'dist/images/';
 
-	// Check the SVG file exists.
 	if ( ! file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
 
 		return;
 
 	}
 
-	include_once MAVERICK_PATH . $svg_path . $filename;
+	ob_start();
+
+	include MAVERICK_PATH . $svg_path . $filename;
+
+	return ob_get_clean();
 
 }
