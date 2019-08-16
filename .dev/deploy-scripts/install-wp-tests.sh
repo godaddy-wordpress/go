@@ -5,6 +5,11 @@ if [ $# -lt 3 ]; then
 	exit 1
 fi
 
+sudo apt-get update && sudo apt-get install subversion
+sudo -E docker-php-ext-install mysqli
+sudo sh -c "printf '\ndeb http://ftp.us.debian.org/debian sid main\n' >> /etc/apt/sources.list"
+sudo apt-get update && sudo apt-get install mysql-client-5.7
+
 DB_NAME=$1
 DB_USER=$2
 DB_PASS=$3

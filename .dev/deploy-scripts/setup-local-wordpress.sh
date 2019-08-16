@@ -2,14 +2,6 @@
 
 set -e
 
-download() {
-  if [ `which curl` ]; then
-      curl -s "$1" > "$2";
-  elif [ `which wget` ]; then
-      wget -nv -O "$2" "$1"
-  fi
-}
-
 sudo apt-get update && sudo apt-get install subversion
 sudo -E docker-php-ext-install mysqli
 sudo sh -c "printf '\ndeb http://ftp.us.debian.org/debian sid main\n' >> /etc/apt/sources.list"
