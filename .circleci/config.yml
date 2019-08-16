@@ -102,22 +102,27 @@ jobs:
           name: Setup local WordPress site
           command: |
             bash .dev/deploy-scripts/setup-local-wordpress.sh
-            cd /tmp/wordpress/wp-content/themes/maverick
       - run:
           name: Install Composer packages
           command: composer install
+          working_directory: cd /tmp/wordpress/wp-content/themes/maverick
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install node packages
           command: npm install
+          working_directory: cd /tmp/wordpress/wp-content/themes/maverick
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - run:
-          name: "Run PHPUnit Unit Tests"
-          command: npm run test-php
+          name: "Run PHPUnit - Generate Coverage Reports"
+          command: ./vendor/bin/phpunit --coverage-html=/tmp/artifacts/code-coverage/html --coverage-clover=/tmp/artifacts/code-coverage/clover --coverage-text
+          working_directory: cd /tmp/wordpress/wp-content/themes/maverick
+      - store_artifacts:
+          path: /tmp/artifacts/code-coverage/html
+          destination: phpunit-coverage
 
   theme-check:
     docker:
