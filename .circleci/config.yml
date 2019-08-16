@@ -4,33 +4,38 @@ workflows:
     jobs:
       # Support PHP Versions
       # http://php.net/supported-versions.php
-      - php71-build: # Will be deprecated on 1 Dec 2019
+      # - php71-build: # Will be deprecated on 1 Dec 2019
+      #     filters:
+      #       tags:
+      #         only: /.*/
+      # - php72-build: # Will be deprecated on 30 Nov 2020
+      #     filters:
+      #       tags:
+      #         only: /.*/
+      - unit-tests:
           filters:
             tags:
               only: /.*/
-      - php72-build: # Will be deprecated on 30 Nov 2020
-          filters:
-            tags:
-              only: /.*/
-      - theme-check:
-          filters:
-            tags:
-              only: /.*/
-      - a11y-tests:
-          filters:
-            tags:
-              only: /.*/
-      - deploy:
-          requires:
-            - php71-build
-            - php72-build
-            - theme-check
-            - a11y-tests
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              ignore: /.*/
+      # - theme-check:
+      #     filters:
+      #       tags:
+      #         only: /.*/
+      # - a11y-tests:
+      #     filters:
+      #       tags:
+      #         only: /.*/
+      # - deploy:
+      #     requires:
+      #       - php71-build
+      #       - php72-build
+      #       - unit-tests
+      #       - theme-check
+      #       - a11y-tests
+      #     filters:
+      #       tags:
+      #         only: /.*/
+      #       branches:
+      #         ignore: /.*/
 
 version: 2
 jobs:
@@ -71,6 +76,49 @@ jobs:
       - run:
           name: "Run PHPCS"
           command: phpcs --standard=phpcs.xml --extensions=php --colors -s -p -v .
+
+  unit-tests:
+    docker:
+      - image: circleci/php:7.2
+      - image: circleci/mysql:5.7
+    steps:
+      - checkout
+      - run:
+          name: Update hosts
+          command: echo 127.0.0.1 maverick.test | sudo tee -a /etc/hosts
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - run:
+          name: Install rsync
+          command: sudo apt install rsync
+      - run:
+          name: Install Grunt.js
+          command: sudo npm install -g grunt-cli
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Install WPCLI
+          command: |
+            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+            chmod +x wp-cli.phar
+            sudo mv wp-cli.phar /usr/local/bin/wp
+      - run:
+          name: Build the Maverick Theme
+          command: npm run build
+      - run:
+          name: Setup local WordPress site
+          command: bash .dev/deploy-scripts/setup-local-wordpress.sh
+      - run:
+          name: "Run PHPUnit Unit Tests"
+          command: npm run test-php
 
   theme-check:
     docker:

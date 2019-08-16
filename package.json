@@ -28,7 +28,8 @@
     "format-js": "eslint --fix assets/shared/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
-    "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js"
+    "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
+    "test-php": "./vendor/bin/phpunit"
   },
   "husky": {
     "hooks": {
