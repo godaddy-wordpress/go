@@ -254,7 +254,7 @@ function fonts_url() {
 function scripts() {
 
 	wp_enqueue_script(
-		'frontend',
+		'maverick-frontend',
 		MAVERICK_TEMPLATE_URL . '/dist/js/frontend.js',
 		[],
 		MAVERICK_VERSION,
@@ -262,7 +262,7 @@ function scripts() {
 	);
 
 	wp_localize_script(
-		'frontend',
+		'maverick-frontend',
 		'MaverickText',
 		[
 			'searchLabel' => esc_html__( 'Expand search field', 'maverick' ),
@@ -307,7 +307,7 @@ function styles() {
 	);
 
 	wp_enqueue_style(
-		'styles',
+		'maverick-styles',
 		MAVERICK_TEMPLATE_URL . '/dist/css/shared-style.css',
 		[ 'maverick-fonts' ],
 		MAVERICK_VERSION
@@ -317,9 +317,9 @@ function styles() {
 
 	if ( $design_style ) {
 		wp_enqueue_style(
-			'design-style',
+			'maverick-design-style',
 			$design_style['url'],
-			[ 'styles' ],
+			[ 'maverick-styles' ],
 			MAVERICK_VERSION
 		);
 	}
