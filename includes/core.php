@@ -275,6 +275,10 @@ function scripts() {
 			'searchLabel' => esc_html__( 'Expand search field', 'maverick' ),
 		]
 	);
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 
 /**
