@@ -479,7 +479,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
  */
 function maverick_customizer_radio_sanitize( $value, $setting ) {
 
-	$input = sanitize_key( $value );
+	$input = sanitize_title( $value );
 
 	$choices = $setting->manager->get_control( $setting->id . '_control' )->choices;
 
