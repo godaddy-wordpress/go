@@ -115,7 +115,9 @@ jobs:
           command: npm run build
       - run:
           name: Setup local WordPress site
-          command: bash .dev/deploy-scripts/setup-local-wordpress.sh
+          command: |
+            bash .dev/deploy-scripts/setup-local-wordpress.sh
+            composer install
       - run:
           name: "Run PHPUnit Unit Tests"
           command: npm run test-php
