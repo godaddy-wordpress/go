@@ -41,7 +41,7 @@ if [ "$CIRCLE_JOB" == 'theme-check' ]; then
 	wp plugin install theme-check --activate
 fi
 
-if [ "$CIRCLE_JOB" == 'a11y-tests' ] || [ "$CIRCLE_JOB" == "unit-tests" ]; then
+if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
 	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
 	sudo a2ensite apache-ci.conf
 	sudo service apache2 restart
@@ -53,14 +53,4 @@ fi
 
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/maverick
 mkdir -p $INSTALL_PATH
-
-if [ "$CIRCLE_JOB" != 'unit-tests' ]; then
-	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
-fi
-
-echo $CIRCLE_JOB
-echo $INSTALL_PATH;
-if [ "$CIRCLE_JOB" == 'unit-tests' ]; then
-	rsync -av --delete ~/project/. $INSTALL_PATH/
-	ls -la $INSTALL_PATH
-fi
+rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/

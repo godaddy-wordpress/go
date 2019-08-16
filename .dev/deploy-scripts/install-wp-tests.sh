@@ -152,3 +152,5 @@ install_db() {
 install_wp
 install_test_suite
 install_db
+
+rsync -av --delete ~/project/. /tmp/wordpress/wp-content/themes/maverick/
