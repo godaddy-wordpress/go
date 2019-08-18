@@ -498,13 +498,16 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Montserrat'    => [
+				'Montserrat'      => [
+					'400',
+					'700',
+				],
+				'Source Code Pro' => [
 					'400',
 					'400i',
 					'700',
-					'700i',
 				],
-				'IBM Plex Sans' => [
+				'PT Sans'         => [
 					'400',
 					'400i',
 					'700',

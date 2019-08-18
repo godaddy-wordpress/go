@@ -42,7 +42,7 @@
 	--theme-block-padding-x: 2rem;
 
 	@media (--medium) {
-		--theme-block-padding-x: 4rem;
+		--theme-block-padding-x: 5rem;
 	}
 
 	/* Block Padding */
@@ -77,13 +77,13 @@
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
-	--theme-body--font: "IBM Plex Sans", sans-serif;
-	--theme-body--font-size: 1rem;
+	--theme-body--font: "Source Code Pro", mono, sans-serif;
+	--theme-body--font-size: 0.9rem;
 	--theme-body--leading: 2;
 	--theme-body--weight: 400;
 
 	/* Headings */
-	--theme-heading--font: "Montserrat", sans-serif;
+	--theme-heading--font: "PT Sans", sans-serif;
 	--theme-heading--leading: 1.4;
 	--theme-heading--spacing: 1rem;
 	--theme-heading--style: normal;
