@@ -167,6 +167,7 @@ if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
 	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
 	sudo a2ensite apache-ci.conf
 	sudo service apache2 restart
+	wp config create --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --dbhost=$DB_HOST --skip-check --path=$WP_CORE_DIR
 	wp db import ~/project/.dev/tests/a11y-test-db.sql --path=$WP_CORE_DIR
 fi
 
