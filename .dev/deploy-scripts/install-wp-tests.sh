@@ -25,11 +25,11 @@ WP_CORE_DIR=${WP_CORE_DIR-$TMPDIR/wordpress/}
 rm -rf $WP_TESTS_DIR $WP_CORE_DIR
 
 download() {
-    if [ `which curl` ]; then
-        curl -s "$1" > "$2";
-    elif [ `which wget` ]; then
-        wget -nv -O "$2" "$1"
-    fi
+	if [ `which curl` ]; then
+		curl -s "$1" > "$2";
+	elif [ `which wget` ]; then
+		wget -nv -O "$2" "$1"
+	fi
 }
 
 if [[ $WP_VERSION =~ ^[0-9]+\.[0-9]+$ ]]; then
@@ -158,4 +158,24 @@ install_wp
 install_test_suite
 install_db
 
-rsync -av --delete ~/project/. /tmp/wordpress/wp-content/themes/maverick/
+if [ "$CIRCLE_JOB" == 'theme-check' ]; then
+	php -d memory_limit=1024M "$(which wp)" package install anhskohbo/wp-cli-themecheck
+	wp plugin install theme-check --activate
+fi
+
+if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
+	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
+	sudo a2ensite apache-ci.conf
+	sudo service apache2 restart
+	wp db import ~/project/.dev/tests/a11y-test-db.sql --path=/tmp/wordpress
+fi
+
+export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/maverick
+mkdir -p $INSTALL_PATH
+
+if [ "$CIRCLE_JOB" == 'unit-tests' ]; then
+	# Unit test job, copy entire directory including config files
+	rsync -av --delete ~/project/. $INSTALL_PATH/
+else
+	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
+fi
