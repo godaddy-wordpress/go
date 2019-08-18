@@ -160,6 +160,7 @@ install_db
 
 if [ "$CIRCLE_JOB" == 'theme-check' ]; then
 	php -d memory_limit=1024M "$(which wp)" package install anhskohbo/wp-cli-themecheck
+	wp config create --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --dbhost=$DB_HOST --skip-check --path=$WP_CORE_DIR
 	wp plugin install theme-check --activate --path=$WP_CORE_DIR
 fi
 
