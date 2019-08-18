@@ -105,7 +105,7 @@ setup_wp() {
 		--dbuser=$DB_USER \
 		--dbpass=$DB_PASS \
 		--dbhost=$DB_HOST \
-		--skip-check
+		--skip-check \
 		--path=$WP_CORE_DIR
 
 	wp db create --path=$WP_CORE_DIR
@@ -115,7 +115,7 @@ setup_wp() {
 		--admin_user=admin \
 		--admin_password=password \
 		--admin_email=admin@maverick.test \
-		--skip-email
+		--skip-email \
 		--path=$WP_CORE_DIR
 }
 
