@@ -31,9 +31,7 @@ function setup() {
 	add_action( 'customize_preview_init', $n( 'customize_preview_init' ) );
 	add_action( 'customize_controls_enqueue_scripts', $n( 'customize_preview_init' ) );
 	add_action( 'customize_preview_init', $n( 'enqueue_controls_assets' ) );
-
 	add_action( 'wp_head', $n( 'inline_css' ) );
-	add_action( 'wp_nav_menu_args', $n( 'wp_nav_register_fallback' ) );
 }
 
 
@@ -51,63 +49,6 @@ function register_control_types( \WP_Customize_Manager $wp_customize ) {
 
 	$wp_customize->register_control_type( Switcher_Control::class );
 	$wp_customize->register_control_type( Range_Control::class );
-}
-
-/**
- * Display a placeholder in the customizer if a menu has not been assigned,
- *
- * @param array $args Array of nav menu arguments.
- */
-function wp_nav_fallback( $args ) {
-	if ( ! is_customize_preview() ) {
-		return;
-	}
-
-	$registered_nav_menus = get_registered_nav_menus();
-
-	$menu_slug   = $args['theme_location'];
-	$instance_id = $args['customize_preview_nav_menus_args']['args_hmac'];
-	$attributes  = '';
-
-	$attrs = array(
-		'data-customize-partial-id'                => 'nav_menu_instance[' . esc_attr( $instance_id ) . ']',
-		'data-customize-partial-type'              => 'nav_menu_instance',
-		'data-customize-partial-placement-context' => esc_attr( wp_json_encode( $args['customize_preview_nav_menus_args'] ) ),
-	);
-
-	$attributes = implode(
-		' ',
-		array_map(
-			function( $key, $value ) {
-				return sprintf( '%s="%s"', $key, esc_attr( $value ) );
-			},
-			array_keys( $attrs ),
-			$attrs
-		)
-	);
-	?>
-	<p class="u-informational" <?php echo $attributes; // phpcs:ignore ?> id="menu-primary-navigation">
-		<?php
-		echo esc_html(
-			sprintf(
-				// translators: %s is the registered nav menu name
-				__( 'Please assign a menu to the %s menu location', 'maverick' ),
-				$registered_nav_menus[ $menu_slug ]
-			)
-		);
-		?>
-	</p>
-	<?php
-}
-
-/**
- * Filter the arguments used to display a navigation menu to add our own fallback callback.
- *
- * @param array $args Array of wp_nav_menu() arguments.
- */
-function wp_nav_register_fallback( $args ) {
-	$args['fallback_cb'] = __NAMESPACE__ . '\\wp_nav_fallback';
-	return $args;
 }
 
 /**
@@ -178,9 +119,6 @@ function customize_preview_init() {
  * @return void
  */
 function enqueue_controls_assets() {
-
-	$suffix = SCRIPT_DEBUG ? '' : '.min';
-
 	wp_enqueue_script(
 		'maverick-customizer-controls',
 		MAVERICK_TEMPLATE_URL . '/dist/js/admin/customize-controls.js',
@@ -191,7 +129,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_style(
 		'maverick-customizer-styles',
-		MAVERICK_TEMPLATE_URL . "/dist/css/admin/customizer-styles{$suffix}.css",
+		MAVERICK_TEMPLATE_URL . '/dist/css/admin/customizer-styles.css',
 		[],
 		MAVERICK_VERSION
 	);

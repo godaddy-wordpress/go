@@ -20,8 +20,8 @@ module.exports = {
 		// CSS Design Styles
 		'design-styles/modern': './.dev/assets/design-styles/modern/css/style-modern.css',
 		'design-styles/modern-editor': './.dev/assets/design-styles/modern/css/style-editor.css',
-		// 'design-styles/traditional': './.dev/assets/design-styles/traditional/css/traditional.css',
-		// 'design-styles/traditional-editor': './.dev/assets/design-styles/traditional/css/editor-style.css',
+		'design-styles/traditional': './.dev/assets/design-styles/traditional/css/style-traditional.css',
+		'design-styles/traditional-editor': './.dev/assets/design-styles/traditional/css/style-editor.css',
 		// 'design-styles/trendy-shop': './.dev/assets/design-styles/trendy-shop/css/trendy-shop.css',
 		// 'design-styles/trendy-shop-editor': './.dev/assets/design-styles/trendy-shop/css/editor-style.css',
 		// 'design-styles/welcoming': './.dev/assets/design-styles/welcoming/css/welcoming.css',
@@ -31,6 +31,7 @@ module.exports = {
 	},
 	filename: {
 		js: 'js/[name].js',
+		css: 'css/[name].css'
 	},
 	paths: {
 		src: {
@@ -41,8 +42,8 @@ module.exports = {
 			adminCss: './.dev/assets/admin/css',
 			modernBase: './.dev/assets/design-styles/modern/',
 			modernCss: './.dev/assets/design-styles/modern/css/',
-			// traditionalBase: './.dev/assets/design-styles/traditional/',
-			// traditionalCss: './.dev/assets/design-styles/traditional/css/',
+			traditionalBase: './.dev/assets/design-styles/traditional/',
+			traditionalCss: './.dev/assets/design-styles/traditional/css/',
 			// trendyShopBase: './.dev/assets/design-styles/trendy-shop/',
 			// trendyShopCss: './.dev/assets/design-styles/trendy-shop/css/',
 			// welcomingBase: '/.dev/assets/design-styles/welcoming/',

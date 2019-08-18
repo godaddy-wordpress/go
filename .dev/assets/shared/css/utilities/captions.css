@@ -8,6 +8,7 @@
 		font-size: var(--theme-caption--font-size);
 		font-style: var(--theme-caption--style);
 		margin-bottom: -0.6rem !important;
+		margin-top: var(--theme-caption--spacing-top);
 		text-align: var(--theme-caption--alignment);
 	}
 

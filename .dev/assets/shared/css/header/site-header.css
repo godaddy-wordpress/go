@@ -2,6 +2,11 @@
 .site-header {
 	background-color: hsla(var(--theme-header--bg), 1);
 	overflow: hidden;
+
+	& .u-informational {
+		display: inline-block;
+		padding: 0.3rem 0.5rem;
+	}
 }
 
 .site-header__inner {
