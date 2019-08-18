@@ -38,3 +38,11 @@ input[type="datetime-local"],
 input[type="color"] {
 	outline: none !important;
 }
+
+.flickity-prev-next-button {
+	border-radius: 3px;
+}
+
+.flickity-button-icon {
+	fill: hsl(var(--theme-color-primary));
+}
