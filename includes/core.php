@@ -502,14 +502,13 @@ function get_available_design_styles() {
 					'400',
 					'700',
 				],
-				'Source Code Pro' => [
+				'IBM Plex Mono' => [
 					'400',
 					'400i',
 					'700',
 				],
-				'PT Sans'         => [
+				'Heebo'           => [
 					'400',
-					'400i',
 					'700',
 				],
 			],

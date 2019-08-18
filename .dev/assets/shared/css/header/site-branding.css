@@ -3,6 +3,8 @@
 	flex: 1 0 50%;
 	line-height: 1.1;
 	max-width: 50%;
+	position: relative;
+	top: 3px;
 
 	& a {
 		text-decoration-color: transparent;
@@ -17,13 +19,17 @@
 	}
 }
 
+.wp-custom-logo .site-branding {
+	top: 0;
+}
+
 .site-branding__title {
 	color: hsla(var(--theme-site-title--color), 1);
 	font-family: var(--theme-site-title--font);
 	font-size: var(--theme-site-title--font-size);
 	font-weight: var(--theme-site-title--weight);
-	position: relative;
-	top: 4px;
+	letter-spacing: var(--theme-site-title--tracking);
+	text-transform: var(--theme-site-title--text-transform);
 }
 
 .site-branding__link {
