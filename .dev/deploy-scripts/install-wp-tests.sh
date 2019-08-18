@@ -100,9 +100,23 @@ install_wp() {
 }
 
 setup_wp() {
-	wp config create --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --dbhost=$DB_HOST --skip-check --path=$WP_CORE_DIR
+	wp config create \
+		--dbname=wordpress \
+		--dbuser=$DB_USER \
+		--dbpass=$DB_PASS \
+		--dbhost=$DB_HOST \
+		--skip-check
+		--path=$WP_CORE_DIR
+
 	wp db create --path=$WP_CORE_DIR
-	wp core install --url=http://maverick.test --title="WordPress Site" --admin_user=admin --admin_password=password --admin_email=admin@maverick.test --skip-email --path=$WP_CORE_DIR
+	wp core install \
+		--url=http://maverick.test \
+		--title="WordPress Site" \
+		--admin_user=admin \
+		--admin_password=password \
+		--admin_email=admin@maverick.test \
+		--skip-email
+		--path=$WP_CORE_DIR
 }
 
 install_test_suite() {
