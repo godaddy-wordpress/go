@@ -24,8 +24,7 @@
 
 		& .search-input__button {
 			background-color: hsl(var(--theme-search-submit--bg));
-			border: var(--theme-search-input__button-border);
-			border-radius: 0;
+			border-radius: var(--theme-search-submit--radius);
 			box-shadow: none;
 			color: inherit;
 			margin: 0 0 0 0.5rem;

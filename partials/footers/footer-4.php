@@ -17,7 +17,7 @@ $has_background   = Maverick\has_footer_background();
 
 			<?php Maverick\display_site_branding( array( 'description' => false ) ); ?>
 
-			<?php if ( has_nav_menu( 'footer-1' ) || is_customize_preview() ) : ?>
+			<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
 				<nav class="footer-navigation footer-navigation--1 text-sm" aria-label="<?php esc_attr_e( 'Primary Footer Menu', 'maverick' ); ?>">
 					<span class="footer-navigation__title bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-1' ) ); ?></span>
 
@@ -31,9 +31,11 @@ $has_background   = Maverick\has_footer_background();
 						);
 					?>
 				</nav>
-			<?php endif; ?>
+			<?php } else { ?>
+				<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #1', 'maverick' ); ?></a></p>
+			<?php } ?>
 
-			<?php if ( has_nav_menu( 'footer-2' ) || is_customize_preview() ) : ?>
+			<?php if ( has_nav_menu( 'footer-2' ) ) { ?>
 				<nav class="footer-navigation footer-navigation--2 text-sm" aria-label="<?php esc_attr_e( 'Secondary Footer Menu', 'maverick' ); ?>">
 					<span class="footer-navigation__title bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-2' ) ); ?></span>
 
@@ -47,9 +49,11 @@ $has_background   = Maverick\has_footer_background();
 						);
 					?>
 				</nav>
-			<?php endif; ?>
+			<?php } elseif ( is_customize_preview() ) { ?>
+				<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #2', 'maverick' ); ?></a></p>
+			<?php } ?>
 
-			<?php if ( has_nav_menu( 'footer-3' ) || is_customize_preview() ) : ?>
+			<?php if ( has_nav_menu( 'footer-3' ) ) { ?>
 				<nav class="footer-navigation footer-navigation--3 text-sm" aria-label="<?php esc_attr_e( 'Tertiary Footer Menu', 'maverick' ); ?>">
 					<span class="footer-navigation__title bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-3' ) ); ?></span>
 
@@ -63,7 +67,9 @@ $has_background   = Maverick\has_footer_background();
 						);
 					?>
 				</nav>
-			<?php endif; ?>
+			<?php } elseif ( is_customize_preview() ) { ?>
+				<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #3', 'maverick' ); ?></a></p>
+			<?php } ?>
 		</div>
 
 		<?php if ( $has_social_icons ) : ?>

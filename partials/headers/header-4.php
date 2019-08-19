@@ -20,25 +20,29 @@ $has_background = Maverick\has_header_background();
 		<?php get_search_form(); ?>
 
 		<?php Maverick\display_site_branding(); ?>
-		<?php Maverick\navigation_toggle(); ?>
 
-		<nav id="js-primary-menu" class="site-navigation c-site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+		<?php if ( has_nav_menu( 'primary' ) ) { ?>
 
-			<?php
+			<?php Maverick\navigation_toggle(); ?>
 
-			wp_nav_menu(
-				[
-					'theme_location' => 'primary',
-					'menu_class'     => 'primary-menu list-reset',
-					'container'      => false,
-				]
-			);
+			<nav id="js-primary-menu" class="site-navigation c-site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
-			get_search_form();
+				<?php
+					wp_nav_menu(
+						[
+							'theme_location' => 'primary',
+							'menu_class'     => 'primary-menu list-reset',
+							'container'      => false,
+						]
+					);
+				?>
 
-			?>
+				<?php get_search_form(); ?>
 
-		</nav>
+			</nav>
+		<?php } else { ?>
+			<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a Primary menu to the header', 'maverick' ); ?></a></p>
+		<?php } ?>
 
 	</div>
 

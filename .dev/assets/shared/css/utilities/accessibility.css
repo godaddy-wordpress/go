@@ -18,12 +18,16 @@
 		@mixin button;
 		@mixin outline;
 		background-color: hsl(var(--theme-button--bg));
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
 		clip: auto !important;
 		clip-path: none;
 		height: auto;
 		left: 0;
 		outline-offset: -5px;
-		padding: 0.85rem;
+		padding: 0.95rem;
+		position: absolute;
 		text-decoration: none;
 		top: 0;
 		width: auto;

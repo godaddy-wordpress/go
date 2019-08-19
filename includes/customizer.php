@@ -31,9 +31,7 @@ function setup() {
 	add_action( 'customize_preview_init', $n( 'customize_preview_init' ) );
 	add_action( 'customize_controls_enqueue_scripts', $n( 'customize_preview_init' ) );
 	add_action( 'customize_preview_init', $n( 'enqueue_controls_assets' ) );
-
 	add_action( 'wp_head', $n( 'inline_css' ) );
-	add_action( 'wp_nav_menu_args', $n( 'wp_nav_register_fallback' ) );
 }
 
 
@@ -379,7 +377,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 		'color_scheme',
 		[
 			'transport' => 'postMessage',
-			'default'   => 'default',
+			'default'   => 'one',
 		]
 	);
 

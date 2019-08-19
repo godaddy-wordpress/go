@@ -8,7 +8,7 @@
 		padding: var(--theme-social--spacing);
 
 		&:focus {
-			outline: 2px dotted hsla(var(--theme-outline-color), 1);
+			@mixin outline;
 		}
 	}
 
