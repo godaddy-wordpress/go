@@ -27,8 +27,7 @@ function setup() {
 	add_action( 'admin_init', $n( 'editor_styles' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
-	add_action( 'wp_print_footer_scripts', $n( 'skip_link_fo gmcus_fix' ) );
-
+	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
 	add_filter( 'body_class', $n( 'body_data' ), 999 );
