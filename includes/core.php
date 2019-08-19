@@ -931,6 +931,20 @@ function get_available_color_schemes() {
 }
 
 /**
+ * Returns the default color scheme
+ *
+ * @return string
+ */
+function get_default_color_scheme() {
+	/**
+	 * Filters the default color scheme.
+	 *
+	 * @param array $default_color_scheme The slug of the default color scheme.
+	 */
+	return apply_filters( 'maverick_default_color_scheme', 'one' );
+}
+
+/**
  * Add a dropdown icon to top-level menu items
  *
  * @param string $title The menu item's title.

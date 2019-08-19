@@ -379,7 +379,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 		'color_scheme',
 		[
 			'transport' => 'postMessage',
-			'default'   => 'one',
+			'default'   => \Maverick\Core\get_default_color_scheme(),
 		]
 	);
 
