@@ -82,7 +82,7 @@ module.exports = {
 				include: [
 					path.resolve( process.cwd(), settings.paths.src.sharedCss ),
 					path.resolve( process.cwd(), settings.paths.src.modernCss ),
-					// path.resolve( process.cwd(), settings.paths.src.traditionalCss ),
+					path.resolve( process.cwd(), settings.paths.src.traditionalCss ),
 					// path.resolve( process.cwd(), settings.paths.src.trendyShopCss ),
 					// path.resolve( process.cwd(), settings.paths.src.welcomingCss ),
 					// path.resolve( process.cwd(), settings.paths.src.playCss ),
@@ -126,7 +126,7 @@ module.exports = {
 
 		// Extract CSS into individual files.
 		new MiniCssExtractPlugin( {
-			filename: isProduction ? 'css/[name].min.css' : 'css/[name].css',
+			filename: settings.filename.css,
 			chunkFilename: '[id].css',
 		} ),
 

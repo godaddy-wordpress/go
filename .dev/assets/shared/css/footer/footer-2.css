@@ -42,7 +42,7 @@
 
 			&:focus {
 				@media (--medium) {
-					outline-offset: -16px;
+					outline-offset: -9px;
 				}
 			}
 		}

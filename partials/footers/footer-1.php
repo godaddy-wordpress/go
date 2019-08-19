@@ -14,7 +14,7 @@ $has_background = Maverick\has_footer_background();
 
 		<?php Maverick\social_icons( [ 'class' => 'social-icons list-reset' ] ); ?>
 
-		<?php if ( has_nav_menu( 'footer-1' ) || is_customize_preview() ) : ?>
+		<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
 			<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'maverick' ); ?>">
 				<?php
 					wp_nav_menu(
@@ -26,7 +26,9 @@ $has_background = Maverick\has_footer_background();
 					);
 				?>
 			</nav>
-		<?php endif; ?>
+		<?php } elseif ( is_customize_preview() ) { ?>
+			<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #1', 'maverick' ); ?></a></p>
+		<?php } ?>
 
 		<?php Maverick\copyright( [ 'class' => 'site-info text-sm mb-0' ] ); ?>
 
