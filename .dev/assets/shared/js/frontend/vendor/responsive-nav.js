@@ -83,6 +83,9 @@
 				menu.setAttribute( 'aria-hidden', 'false' );
 				menu_toggle.setAttribute( 'aria-expanded', 'true' );
 
+				// Set focus to the first link
+				menu.querySelectorAll( 'a' )[0].focus();
+
 				// Bubble to the document
 				document.body.classList.add( 'menu-is-open' );
 			}
@@ -133,6 +136,9 @@
 				} else {
 					// The menu is closed, so this click should open it
 					menu_sub_open( target );
+
+					// Reset the focus
+					sub_menu.querySelectorAll('a')[0].focus();
 				}
 			}
 		}; // listener_submenu_click()
@@ -190,6 +196,12 @@
 						menu_sub_close( open_menus[opn] );
 
 					} // for
+
+					// Return focus to the first open menu
+					if ( sub_menu_acion === 'click' ) {
+						open_menus[0].focus();
+					}
+
 				} // if
 
 			// If the event was a mouseup
