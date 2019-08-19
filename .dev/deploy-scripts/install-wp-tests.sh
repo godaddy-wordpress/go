@@ -104,7 +104,7 @@ setup_wp() {
 		--dbname=wordpress \
 		--dbuser=$DB_USER \
 		--dbpass=$DB_PASS \
-		--dbhost=$DB_HOST \
+		--dbhost=127.0.0.1 \
 		--skip-check \
 		--path=$WP_CORE_DIR
 
