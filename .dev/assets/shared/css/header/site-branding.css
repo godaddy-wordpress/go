@@ -22,6 +22,8 @@
 	font-family: var(--theme-site-title--font);
 	font-size: var(--theme-site-title--font-size);
 	font-weight: var(--theme-site-title--weight);
+	position: relative;
+	top: 4px;
 }
 
 .site-branding__link {

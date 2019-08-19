@@ -9,7 +9,11 @@ h6 {
 	font-style: var(--theme-heading--style);
 	font-weight: var(--theme-heading--weight);
 	line-height: var(--theme-heading--leading);
-	margin: 0 0 0.75rem;
+	margin: 0 0 var(--theme-heading--spacing);
+
+	& + .wp-block-button {
+		margin-top: var(--theme-heading--button-spacing);
+	}
 }
 
 h1 {
