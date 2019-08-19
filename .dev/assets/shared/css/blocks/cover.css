@@ -4,8 +4,17 @@
 	& .wp-block-cover {
 		width: auto;
 
+		&.alignwide {
+			@mixin blockWidthNoPaddingWide;
+		}
+
 		&:not(.alignwide):not(.alignfull):not(.alignleft) {
 			@mixin blockWidthNoPadding;
 		}
+	}
+
+	& .wp-block-cover__inner-container {
+		margin: 0 auto;
+		width: auto;
 	}
 }

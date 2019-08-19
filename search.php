@@ -11,7 +11,7 @@ get_header(); ?>
 	<h1 class="post__title">
 	<?php
 	/* translators: the search query */
-	printf( esc_html__( 'Search for: %s', 'tenup' ), '<span>' . esc_html( get_search_query() ) . '</span>' );
+	printf( esc_html__( 'Search for: %s', 'maverick' ), '<span>' . esc_html( get_search_query() ) . '</span>' );
 	?>
 	</h1>
 </header>
@@ -19,7 +19,8 @@ get_header(); ?>
 <div class="content-area m-auto">
 
 	<?php if ( have_posts() ) : ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
 			<?php get_template_part( 'partials/content', 'search' ); ?>
 		<?php endwhile; ?>
 		<?php the_posts_navigation(); ?>

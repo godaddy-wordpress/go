@@ -1,0 +1,14 @@
+maverick/
+.*
+*.yml
+*.xml
+node_modules/
+composer.*
+Gruntfile.js
+postcss.config.js
+package*.json
+README.md
+bin/
+build/
+languages/*.po
+vendor/
