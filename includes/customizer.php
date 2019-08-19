@@ -45,7 +45,7 @@ function setup() {
  * @return void
  */
 function register_control_types( \WP_Customize_Manager $wp_customize ) {
-	// Load custom controls
+	// Load custom controls.
 	require_once MAVERICK_PATH . '/includes/classes/customizer/class-switcher-control.php';
 	require_once MAVERICK_PATH . '/includes/classes/customizer/class-range-control.php';
 
@@ -90,7 +90,7 @@ function wp_nav_fallback( $args ) {
 		<?php
 		echo esc_html(
 			sprintf(
-				// translators: %s is the registered nav menu name
+				/* translators: %s is the registered nav menu name */
 				__( 'Please assign a menu to the %s menu location', 'maverick' ),
 				$registered_nav_menus[ $menu_slug ]
 			)
@@ -160,7 +160,8 @@ function customize_preview_init() {
 		'maverick-customizer-preview',
 		MAVERICK_TEMPLATE_URL . '/dist/js/admin/customize-preview.js',
 		[ 'jquery', 'customize-preview', 'wp-autop' ],
-		MAVERICK_VERSION
+		MAVERICK_VERSION,
+		true
 	);
 
 	wp_localize_script(
@@ -720,7 +721,7 @@ function inline_css() {
 	$footer_background    = hex_to_hsl( get_theme_mod( 'footer_background_color', false ), true );
 	$social_icon_color    = hex_to_hsl( get_theme_mod( 'social_icon_color', false ), true );
 
-	// Site logo width
+	// Site logo width.
 	$logo_width        = get_theme_mod( 'logo_width', '100' );
 	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', '100' );
 	?>

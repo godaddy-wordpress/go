@@ -1,15 +1,25 @@
 <?php
 /**
- * single.php (for permalinks or full articles)
+ * Partial: single.php
+ * Display permalinks or full articles
  *
  * @package Maverick
  */
 
+$post_thumbnail_class = ! has_post_thumbnail() ? ' post--no-thumbnail' : '';
+
 get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
-	<?php while ( have_posts() ) : the_post(); ?>
-		<article class="post post--single<?php if ( ! has_post_thumbnail() ) { ?> post--no-thumbnail<?php } ?>">
+	<?php
+
+	while ( have_posts() ) :
+
+		the_post();
+
+		?>
+
+		<article class="post post--single<?php echo esc_attr( $post_thumbnail_class ); ?>">
 			<div class="post__hero">
 				<div class="post__hero-inner">
 					<?php if ( has_post_thumbnail() ) : ?>
@@ -28,8 +38,11 @@ get_header(); ?>
 				<?php comments_template(); ?>
 			</div>
 		</article>
-	<?php endwhile; ?>
-<?php endif; ?>
 
-<?php
+		<?php
+
+	endwhile;
+
+endif;
+
 get_footer();

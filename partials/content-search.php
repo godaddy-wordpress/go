@@ -1,16 +1,18 @@
 <?php
 /**
- * content-search.php
+ * Partial: content-search.php
  * Displays each search result with an thumb and excerpt.
  *
  * @package Maverick
  */
 
-// Get the excerpt for class wrapping
-$excerpt = get_the_excerpt();
+// Get the excerpt for class wrapping.
+$excerpt              = get_the_excerpt();
+$post_thumbnail_class = ! has_post_thumbnail() ? ' post--no-thumbnail' : '';
+
 ?>
 
-<article itemscope itemtype="https://schema.org/Thing" class="post post--archive<?php if ( ! has_post_thumbnail() ) { ?> post--no-thumbnail<?php } ?>">
+<article itemscope itemtype="https://schema.org/Thing" class="post post--archive<?php echo esc_attr( $post_thumbnail_class ); ?>">
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="post__thumbnail">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -31,4 +33,3 @@ $excerpt = get_the_excerpt();
 		</p>
 	</div>
 </article>
-

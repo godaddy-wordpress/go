@@ -487,11 +487,11 @@ function load_inline_svg( $filename ) {
 	// Add the path to your SVG directory inside your theme.
 	$svg_path = 'dist/images/';
 
-	// Check the SVG file exists
+	// Check the SVG file exists.
 	if ( file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
 
-		// Load and return the contents of the file
-		return file_get_contents( MAVERICK_PATH . $svg_path . $filename );
+		// Load and return the contents of the file.
+		return file_get_contents( MAVERICK_PATH . $svg_path . $filename ); // @codingStandardsIgnoreLine
 	}
 
 	// Return a blank string if we can't find the file.

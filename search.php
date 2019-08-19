@@ -19,7 +19,8 @@ get_header(); ?>
 <div class="content-area m-auto">
 
 	<?php if ( have_posts() ) : ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
 			<?php get_template_part( 'partials/content', 'search' ); ?>
 		<?php endwhile; ?>
 		<?php the_posts_navigation(); ?>

@@ -136,9 +136,6 @@ function theme_setup() {
 		]
 	);
 
-	// Add support for editor styles.
-	// add_theme_support( 'editor-styles' );
-
 	// Add support for WooCommerce.
 	add_theme_support( 'woocommerce' );
 
@@ -400,7 +397,7 @@ function script_loader_tag( $tag, $handle ) {
  */
 function body_classes( $classes ) {
 
-	// Add class whenever a WooCommerce block is added to a page
+	// Add class whenever a WooCommerce block is added to a page.
 	if (
 		has_block( 'woocommerce/handpicked-products' )
 		|| has_block( 'woocommerce/product-best-sellers' )
@@ -934,13 +931,14 @@ function get_available_color_schemes() {
 }
 
 /**
- * Add a dropdown icon to top-level menu items.
- *
- * @param string $title  The menu item's title.
- * @param object $item   The current menu item.
- * @param object $args   An object of wp_nav_menu() arguments.
- * @param int    $depth  Depth of menu item. Used for padding.
  * Add a dropdown icon to top-level menu items
+ *
+ * @param string $title The menu item's title.
+ * @param object $item  The current menu item.
+ * @param object $args  An object of wp_nav_menu() arguments.
+ * @param int    $depth Depth of menu item (used for padding).
+ *
+ * Add a dropdown icon to top-level menu items.
  */
 function add_dropdown_icons( $title, $item, $args, $depth ) {
 
