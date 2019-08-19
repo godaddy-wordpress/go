@@ -8,6 +8,6 @@
 	}
 
 	&.is-style-dots::before {
-		font-size: 2rem;
+		font-size: var(--theme-separator--dot-size);
 	}
 }

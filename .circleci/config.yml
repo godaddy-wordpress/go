@@ -4,11 +4,15 @@ workflows:
     jobs:
       # Support PHP Versions
       # http://php.net/supported-versions.php
-      - php71-build: # Will be deprecated on 1 Dec 2019
+      - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Maverick
           filters:
             tags:
               only: /.*/
-      - php72-build: # Will be deprecated on 30 Nov 2020
+      - php73-phpcs: # Will be deprecated on 30 Nov 2020
+          filters:
+            tags:
+              only: /.*/
+      - unit-tests:
           filters:
             tags:
               only: /.*/
@@ -22,8 +26,9 @@ workflows:
               only: /.*/
       - deploy:
           requires:
-            - php71-build
-            - php72-build
+            - php56-phpcs
+            - php73-phpcs
+            - unit-tests
             - theme-check
             - a11y-tests
           filters:
@@ -34,9 +39,9 @@ workflows:
 
 version: 2
 jobs:
-  php71-build:
+  php56-phpcs:
     docker:
-      - image: circleci/php:7.1
+      - image: circleci/php:5.6
     steps:
       - checkout
       - run:
@@ -53,9 +58,9 @@ jobs:
           name: "Run PHPCS"
           command: phpcs --standard=phpcs.xml --extensions=php --colors -s -p -v .
 
-  php72-build:
+  php73-phpcs:
     docker:
-      - image: circleci/php:7.2
+      - image: circleci/php:7.3.8
     steps:
       - checkout
       - run:
@@ -71,6 +76,52 @@ jobs:
       - run:
           name: "Run PHPCS"
           command: phpcs --standard=phpcs.xml --extensions=php --colors -s -p -v .
+
+  unit-tests:
+    docker:
+      - image: circleci/php:7.3.8-apache-node-browsers
+      - image: circleci/mysql:5.7
+    steps:
+      - checkout
+      - run:
+          name: Update hosts
+          command: echo 127.0.0.1 maverick.test | sudo tee -a /etc/hosts
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - run:
+          name: Install rsync
+          command: sudo apt install rsync
+      - run:
+          name: Install WPCLI
+          command: |
+            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+            chmod +x wp-cli.phar
+            sudo mv wp-cli.phar /usr/local/bin/wp
+      - run:
+          name: Setup WordPress site
+          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+      - run:
+          name: Install Composer packages
+          command: composer install
+          working_directory: /tmp/wordpress/wp-content/themes/maverick
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+          working_directory: /tmp/wordpress/wp-content/themes/maverick
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: "Run PHPUnit - Generate Coverage Reports"
+          command: ./vendor/bin/phpunit --coverage-html=/tmp/artifacts/code-coverage/html --coverage-clover=/tmp/artifacts/code-coverage/clover --coverage-text
+          working_directory: /tmp/wordpress/wp-content/themes/maverick
+      - store_artifacts:
+          path: /tmp/artifacts/code-coverage/html
+          destination: phpunit-coverage
 
   theme-check:
     docker:
@@ -106,8 +157,8 @@ jobs:
           name: Build the Maverick Theme
           command: npm run build
       - run:
-          name: Install theme check
-          command: bash .dev/deploy-scripts/setup-local-wordpress.sh
+          name: Setup WordPress site and install the Theme Check package
+          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run:
           name: Run theme check
           command: wp themecheck --theme=maverick --no-interactive --path=/tmp/wordpress
@@ -149,8 +200,8 @@ jobs:
           name: Build the Maverick Theme
           command: npm run build
       - run:
-          name: Setup local WordPress site
-          command: bash .dev/deploy-scripts/setup-local-wordpress.sh
+          name: Setup WordPress site
+          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run:
           name: Run a11y tests
           command: |
