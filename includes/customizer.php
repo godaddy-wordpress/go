@@ -311,7 +311,8 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'page_titles',
 		[
-			'default' => true,
+			'default'           => true,
+			'sanitize_callback' => 'absint',
 		]
 	);
 
@@ -329,8 +330,9 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'copyright',
 		[
-			'default'   => \Maverick\Core\get_default_copyright(),
-			'transport' => 'postMessage',
+			'default'           => \Maverick\Core\get_default_copyright(),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 
@@ -357,8 +359,9 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'design_style',
 		[
-			'default'   => \Maverick\Core\get_default_design_style(),
-			'transport' => 'postMessage',
+			'default'           => \Maverick\Core\get_default_design_style(),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
 		]
 	);
 
@@ -378,8 +381,9 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'color_scheme',
 		[
-			'transport' => 'postMessage',
-			'default'   => 'one',
+			'transport'         => 'postMessage',
+			'default'           => 'default',
+			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
 		]
 	);
 
@@ -401,8 +405,9 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'primary_color',
 		[
-			'transport' => 'postMessage',
-			'default'   => \Maverick\get_default_palette_color( 'primary' ),
+			'transport'         => 'postMessage',
+			'default'           => \Maverick\get_default_palette_color( 'primary' ),
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -422,8 +427,9 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'secondary_color',
 		[
-			'transport' => 'postMessage',
-			'default'   => \Maverick\get_default_palette_color( 'secondary' ),
+			'transport'         => 'postMessage',
+			'default'           => \Maverick\get_default_palette_color( 'secondary' ),
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -443,8 +449,9 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'tertiary_color',
 		[
-			'transport' => 'postMessage',
-			'default'   => \Maverick\get_default_palette_color( 'tertiary' ),
+			'transport'         => 'postMessage',
+			'default'           => \Maverick\get_default_palette_color( 'tertiary' ),
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -460,6 +467,24 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 			]
 		)
 	);
+}
+
+/**
+ * Sanitize a radio field setting from the customizer.
+ *
+ * @param string $value   The radio field value being saved.
+ * @param string $setting The name of the setting being saved.
+ *
+ * @return string
+ */
+function maverick_customizer_radio_sanitize( $value, $setting ) {
+
+	$input = sanitize_title( $value );
+
+	$choices = $setting->manager->get_control( $setting->id . '_control' )->choices;
+
+	return array_key_exists( $input, $choices ) ? $input : $setting->default;
+
 }
 
 /**
@@ -482,15 +507,16 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'header_variation',
 		[
-			'default'   => \Maverick\Core\get_default_header_variation(),
-			'transport' => 'postMessage',
+			'default'           => \Maverick\Core\get_default_header_variation(),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
 		]
 	);
 
 	$wp_customize->add_control(
 		new Switcher_Control(
 			$wp_customize,
-			'header_variation',
+			'header_variation_control',
 			[
 				'label'       => esc_html__( 'Header', 'maverick' ),
 				'description' => esc_html__( 'Choose a header for every page on your site, then style it with the selectors below.', 'maverick' ),
@@ -504,7 +530,8 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'header_background_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -523,7 +550,8 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'header_text_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -560,15 +588,16 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_variation',
 		[
-			'default'   => \Maverick\Core\get_default_footer_variation(),
-			'transport' => 'postMessage',
+			'default'           => \Maverick\Core\get_default_footer_variation(),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
 		]
 	);
 
 	$wp_customize->add_control(
 		new Switcher_Control(
 			$wp_customize,
-			'footer_variation',
+			'footer_variation_control',
 			[
 				'label'       => esc_html__( 'Footer', 'maverick' ),
 				'description' => esc_html__( 'Choose a footer for every page on your site, then style it with the selectors below.', 'maverick' ),
@@ -582,7 +611,8 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_background_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -601,7 +631,8 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_heading_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -620,7 +651,8 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_text_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -683,7 +715,8 @@ function register_social_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'social_icon_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 

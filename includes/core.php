@@ -61,6 +61,15 @@ function i18n() {
  */
 function theme_setup() {
 
+	/**
+	 * Filters the theme content width global.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param integer $content_width The default content width for the theme.
+	 */
+	$GLOBALS['content_width'] = apply_filters( 'maverick_content_width', 980 );
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -264,6 +273,10 @@ function scripts() {
 			'searchLabel' => esc_html__( 'Expand search field', 'maverick' ),
 		]
 	);
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 
 /**
