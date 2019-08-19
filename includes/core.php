@@ -467,28 +467,28 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
 			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
 			'color_schemes' => [
-				'default' => [
+				'one' => [
 					'label'      => esc_html__( 'Shade', 'maverick' ),
 					'primary'    => '#000a12',
 					'secondary'  => '#455a64',
 					'tertiary'   => '#eceff1',
 					'background' => '#ffffff',
 				],
-				'blush'   => [
+				'two'   => [
 					'label'      => esc_html__( 'Blush', 'maverick' ),
 					'primary'    => '#c2185b', // 700
 					'secondary'  => '#ec407a', // 400
 					'tertiary'   => '#fce4ec', // 100
 					'background' => '#ffffff',
 				],
-				'indigo'  => [
+				'three'  => [
 					'label'      => esc_html__( 'Indigo', 'maverick' ),
 					'primary'    => '#303f9f', // 700
 					'secondary'  => '#5c6bc0', // 400
 					'tertiary'   => '#e8eaf6', // 100
 					'background' => '#ffffff',
 				],
-				'pacific' => [
+				'four' => [
 					'label'      => esc_html__( 'Pacific', 'maverick' ),
 					'primary'    => '#00796b', // 700
 					'secondary'  => '#26a69a', // 400
@@ -515,28 +515,28 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/traditional.css',
 			'editor_style'  => 'dist/css/design-styles/traditional-editor.css',
 			'color_schemes' => [
-				'default' => [
+				'one' => [
 					'label'      => esc_html__( 'Apricot', 'maverick' ),
 					'primary'    => '#c76919',
 					'secondary'  => '#122538',
 					'tertiary'   => '#f8f8f8',
 					'background' => '#ffffff',
 				],
-				'emerald' => [
+				'two' => [
 					'label'      => esc_html__( 'Emerald', 'maverick' ),
 					'primary'    => '#165153',
 					'secondary'  => '#212121',
 					'tertiary'   => '#f3f1f0',
 					'background' => '#ffffff',
 				],
-				'brick'   => [
+				'three'   => [
 					'label'      => esc_html__( 'Brick', 'maverick' ),
 					'primary'    => '#87200e',
 					'secondary'  => '#242611',
 					'tertiary'   => '#f9f2ef',
 					'background' => '#ffffff',
 				],
-				'bronze'  => [
+				'four'  => [
 					'label'      => esc_html__( 'Bronze', 'maverick' ),
 					'primary'    => '#a88548',
 					'secondary'  => '#05212d',
@@ -564,14 +564,14 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/trendy.css',
 			'editor_style'  => 'dist/css/design-styles/trendy-editor.css',
 			'color_schemes' => [
-				'default' => [
+				'one' => [
 					'label'      => esc_html__( 'Light', 'maverick' ),
 					'primary'    => '#fcfcfc',
 					'secondary'  => '#f3f0ed',
 					'tertiary'   => '#123456',
 					'background' => '#ffffff',
 				],
-				'dark'    => [
+				'two'    => [
 					'label'      => esc_html__( 'Dark', 'maverick' ),
 					'primary'    => '#f1f4f4',
 					'secondary'  => '#ebeeee',
@@ -585,14 +585,14 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/welcoming.css',
 			'editor_style'  => 'dist/css/design-styles/welcoming-editor.css',
 			'color_schemes' => [
-				'default' => [
+				'one' => [
 					'label'      => esc_html__( 'Light', 'maverick' ),
 					'primary'    => '#02392f',
 					'secondary'  => '#f1f1f1',
 					'tertiary'   => '#123456',
 					'background' => '#ffffff',
 				],
-				'dark'    => [
+				'two'    => [
 					'label'      => esc_html__( 'Dark', 'maverick' ),
 					'primary'    => '#49384d',
 					'secondary'  => '#f7f5e9',
@@ -606,14 +606,14 @@ function get_available_design_styles() {
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/play.css',
 			'editor_style'  => 'dist/css/design-styles/play-editor.css',
 			'color_schemes' => [
-				'default' => [
+				'one' => [
 					'label'      => esc_html__( 'Light', 'maverick' ),
 					'primary'    => '#254e9c',
 					'secondary'  => '#fcae6e',
 					'tertiary'   => '#123456',
 					'background' => '#ffffff',
 				],
-				'dark'    => [
+				'two'    => [
 					'label'      => esc_html__( 'Dark', 'maverick' ),
 					'primary'    => '#41b093',
 					'secondary'  => '#eecd94',
