@@ -9,5 +9,6 @@
 		font-weight: var(--theme-heading--weight);
 		letter-spacing: var(--theme-heading--tracking);
 		line-height: var(--theme-heading--leading);
+		text-align: var(--editor-title-block--alignment);
 	}
 }
