@@ -17,13 +17,15 @@ $has_background = Maverick\has_header_background();
 			<?php Maverick\navigation_toggle(); ?>
 
 			<?php
-				wp_nav_menu(
-					[
-						'theme_location' => 'primary',
-						'menu_class'     => 'primary-menu list-reset',
-						'container'      => false,
-					]
-				);
+
+			wp_nav_menu(
+				[
+					'theme_location' => 'primary',
+					'menu_class'     => 'primary-menu list-reset',
+					'container'      => false,
+				]
+			);
+
 			?>
 
 		</nav><!-- .site-navigation -->

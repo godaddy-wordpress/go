@@ -23,6 +23,10 @@ p.has-background,
 	}
 }
 
+.site-search__toggle {
+	top: 2px;
+}
+
 .wp-block-coblocks-pricing-table-item__title {
 	font-family: var(--theme-site-nav--font);
 	font-size: var(--theme-site-nav--font-size);

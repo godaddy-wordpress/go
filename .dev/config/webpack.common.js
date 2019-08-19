@@ -82,7 +82,7 @@ module.exports = {
 				include: [
 					path.resolve( process.cwd(), settings.paths.src.sharedCss ),
 					path.resolve( process.cwd(), settings.paths.src.modernCss ),
-					// path.resolve( process.cwd(), settings.paths.src.traditionalCss ),
+					path.resolve( process.cwd(), settings.paths.src.traditionalCss ),
 					// path.resolve( process.cwd(), settings.paths.src.trendyShopCss ),
 					// path.resolve( process.cwd(), settings.paths.src.welcomingCss ),
 					// path.resolve( process.cwd(), settings.paths.src.playCss ),

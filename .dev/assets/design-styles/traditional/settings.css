@@ -20,12 +20,12 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 46rem;
-	--theme-max-w-wide: 88rem;
+	--theme-max-w-base: 54rem;
+	--theme-max-w-wide: 76rem;
 
 	/* Below base width query */
-	@custom-media --base (max-width: 46rem);
-	@custom-media --wide (max-width: 88rem);
+	@custom-media --base (max-width: 54rem);
+	@custom-media --wide (max-width: 76rem);
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -34,26 +34,26 @@
 
 	@media (--large) {
 		--theme-block-spacing: 1.8rem;
-		--theme-block-spacing-larger: 2.3rem;
-		--theme-block-spacing-huge: 8.5rem;
+		--theme-block-spacing-larger: 2rem;
+		--theme-block-spacing-huge: 8rem;
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 2rem;
+	--theme-block-padding-x: 2.5rem;
 
 	@media (--medium) {
-		--theme-block-padding-x: 4rem;
+		--theme-block-padding-x: 5rem;
 	}
 
 	/* Block Padding */
-	--editor-padding: 8.5rem;
+	--editor-padding: 8rem;
 
 	/* Accessibility */
-	--theme-outline-color: var(--theme-color-primary);
+	--theme-outline-color: var(--theme-color-heading);
 	--theme-outline-style: dotted;
-	--theme-outline-width: 2px;
+	--theme-outline-width: 1px;
 
-	--theme-selection--color: var(--theme-color-primary);
+	--theme-selection--color: var(--theme-color-heading);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
@@ -66,9 +66,9 @@
 	--theme-color-body-bg: 0, 0%, 100%;
 
 	/* Text Colors */
-	--theme-color-heading: 207, 100%, 4%;
-	--theme-color-text: 0, 0%, 34%;
-	--theme-color-text-secondary: 0, 0%, 34%;
+	--theme-color-heading: var(--theme-color-secondary);
+	--theme-color-text: 218, 12%, 30%;
+	--theme-color-text-secondary: var(--theme-color-text);
 
 	/* Global Color Scheme Colors */
 	--theme-color-quaternary: var(--color-white);
@@ -77,31 +77,35 @@
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
-	--theme-body--font: "IBM Plex Sans", sans-serif;
-	--theme-body--font-size: 1rem;
-	--theme-body--leading: 2;
+	--theme-body--font: "Nunito Sans", sans-serif;
+	--theme-body--font-size: 1.025rem;
+	--theme-body--leading: 1.85;
 	--theme-body--weight: 400;
 
 	/* Headings */
-	--theme-heading--font: "Montserrat", sans-serif;
-	--theme-heading--leading: 1.4;
+	--theme-heading--font: "Crimson Text", serif;
+	--theme-heading--leading: 1.15;
 	--theme-heading--spacing: 1rem;
 	--theme-heading--style: normal;
 	--theme-heading--tracking: -0.025em;
 	--theme-heading--weight: 700;
 	--theme-heading--button-spacing: 1.75rem;
 
-	--theme-h1--font-size: 2rem;
-	--theme-h2--font-size: 1.85rem;
+	--theme-h1--font-size: 2.5rem;
+	--theme-h2--font-size: 1.75rem;
 	--theme-h3--font-size: 1.6rem;
 	--theme-h4--font-size: 1.5rem;
-	--theme-h5--font-size: 1.35rem;
+	--theme-h5--font-size: 1.25rem;
 	--theme-h6--font-size: 1.15rem;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.25rem;
+		--theme-h1--font-size: 3.45rem;
 		--theme-h2--font-size: 2.5rem;
-		--theme-h3--font-size: 1.85rem;
+		--theme-h3--font-size: 1.75rem;
+	}
+
+	@media (--large) {
+		--theme-h1--font-size: 4rem;
 	}
 
 	--theme-h1--color: var(--theme-color-heading);
@@ -113,15 +117,15 @@
 
 	/* Text Utilities */
 	--theme-text-xs: 82%;
-	--theme-text-sm: 83%;
+	--theme-text-sm: 85%;
 	--theme-text-sm--letter-spacing: 0.015em;
 
 	@media (--small) {
-		--theme-text-sm: 87%;
+		--theme-text-sm: 90%;
 	}
 
 	@media (--large) {
-		--theme-text-sm: 92%;
+		--theme-text-sm: 95%;
 	}
 
 	/* Drop Cap */
@@ -133,11 +137,11 @@
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
 	--theme-caption--style: normal;
-	--theme-caption--spacing-top: 0;
+	--theme-caption--spacing-top: 1rem;
 
 	/* Links */
-	--theme-link--color: var(--theme-color-heading);
-	--theme-link--color-interactive: var(--theme-color-primary);
+	--theme-link--color: var(--theme-color-primary);
+	--theme-link--color-interactive: var(--theme-color-text);
 
 	/* Pullquote */
 	--theme-pullquote--font: serif;
@@ -150,7 +154,7 @@
 	--theme-pullquote--leading: 1.25;
 	--theme-pullquote--padding-y: 0.75rem;
 	--theme-pullquote--padding-x: 1rem;
-	--theme-pullquote--style: italic;
+	--theme-pullquote--style: normal;
 	--theme-pullquote--weight: var(--theme-heading--weight);
 
 	/* Blockquote */
@@ -168,19 +172,19 @@
 	--theme-quote-large--color: var(--theme-color-heading);
 	--theme-quote-large--font-size: var(--theme-h1--font-size);
 	--theme-quote-large--leading: var(--theme-heading--leading);
-	--theme-quote-large--style: italic;
+	--theme-quote-large--style: normal;
 
 
 	/*--------------------------------------------------------------
 	## Forms
 	--------------------------------------------------------------*/
 	--theme-label--color: var(--theme-color-heading);
-	--theme-label--font-size: var(--theme-site-nav--font-size);
-	--theme-label--font: var(--theme-heading--font);
+	--theme-label--font-size: 1rem;
+	--theme-label--font: var(--theme-body--font);
 	--theme-label--tracking: var(--theme-site-nav--tracking);
-	--theme-label--transform: uppercase;
+	--theme-label--transform: normal;
 	--theme-label--weight: var(--theme-site-nav--weight);
-	--theme-label--spacing: 0.75rem;
+	--theme-label--spacing: 0.25rem;
 
 	/* Input */
 	--theme-input--bg: 0, 0%, 100%;
@@ -190,12 +194,12 @@
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style) hsl(var(--theme-input--border-color));
 	--theme-input--color: var(--theme-color-text);
-	--theme-input--font-size: 1rem;
-	--theme-input--padding-x: 1.25rem;
-	--theme-input--padding-y: 1.25rem;
-	--theme-input--radius: 0;
+	--theme-input--font-size: var(--theme-body--font-size);
+	--theme-input--padding-x: 0.85rem;
+	--theme-input--padding-y: 0.85rem;
+	--theme-input--radius: 4px;
 	--theme-input--shadow: none;
-	--theme-input--spacing: 2.25rem;
+	--theme-input--spacing: 2rem;
 	--theme-input--weight: 400;
 
 	/* Input Focus */
@@ -223,13 +227,13 @@
 	--theme-button--bg: var(--theme-color-primary);
 	--theme-button--bg-interactive: var(--theme-color-heading);
 	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-size: 0.75rem;
-	--theme-button--font: var(--theme-heading--font);
-	--theme-button--padding-x: 2rem;
-	--theme-button--padding-y: 1.6rem;
-	--theme-button--radius: 0;
-	--theme-button--text-transform: uppercase;
-	--theme-button--tracking: 3px;
+	--theme-button--font-size: 1.1rem;
+	--theme-button--font: var(--theme-body--font);
+	--theme-button--padding-x: 2.25rem;
+	--theme-button--padding-y: 1.3rem;
+	--theme-button--radius: 4px;
+	--theme-button--text-transform: normal;
+	--theme-button--tracking: 0;
 	--theme-button--weight: 600;
 
 	/* Disabled */
@@ -249,7 +253,7 @@
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: 1.5rem;
+	--theme-site-title--font-size: var(--theme-h2--font-size);
 	--theme-site-title--font: var(--theme-heading--font);
 	--theme-site-title--weight: 700;
 
@@ -260,12 +264,12 @@
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
-	--theme-site-nav--font: var(--theme-heading--font);
-	--theme-site-nav--font-size: 0.75rem;
-	--theme-site-nav--font-size-mobile: 1rem;
-	--theme-site-nav--weight: 700;
-	--theme-site-nav--text-transform: uppercase;
-	--theme-site-nav--tracking: 3px;
+	--theme-site-nav--font: var(--theme-body--font);
+	--theme-site-nav--font-size: 1.1rem;
+	--theme-site-nav--font-size-mobile: 1.5rem;
+	--theme-site-nav--weight: 600;
+	--theme-site-nav--text-transform: normal;
+	--theme-site-nav--tracking: 0;
 	--theme-site-nav--transition: var(--theme-link-transition);
 	--theme-site-nav--padding-x: 1rem;
 
@@ -315,13 +319,13 @@
 	## Header Search Toggle
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
-	--theme-search-toggle--color-interactive: var(--theme-color-heading);
+	--theme-search-toggle--color-interactive: var(--theme-color-primary);
 	--theme-search-toggle--size: 22px;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 	--theme-search-submit--color: var(--color-white);
-	--theme-search-submit--radius: 0;
+	--theme-search-submit--radius: 4px;
 
 
 	/*--------------------------------------------------------------
@@ -339,7 +343,7 @@
 	## Footer
 	--------------------------------------------------------------*/
 	--theme-footer--bg: "";
-	--theme-footer--color: var(--theme-color-text-secondary);
+	--theme-footer--color: var(--theme-color-heading);
 	--theme-footer-heading--color: var(--theme-color-heading);
 
 	/* Footer > Navigation */
@@ -351,18 +355,12 @@
 
 	@media (--medium) {
 		--theme-footer-nav--padding-y: 1.15rem;
-		--theme-footer-nav--padding-x: 1.75rem;
 	}
 
 	/* Footer > Social Icons */
 	--theme-social--color: var(--theme-color-heading);
 	--theme-social--size: 1.5rem;
-	--theme-social--spacing: 0.5rem;
-
-	@media (--medium) {
-		--theme-social--size: 1.75rem;
-		--theme-social--spacing: 1rem;
-	}
+	--theme-social--spacing: 1rem;
 
 	/* Footer Variations Specific */
 	--theme-footer-3-site-info--border-color: 0, 0%, 90%;
@@ -372,7 +370,7 @@
 	## Core Blocks
 	--------------------------------------------------------------*/
 	--theme-separator--color: var(--theme-color-heading);
-	--theme-separator--dot-size: 2rem;
+	--theme-separator--dot-size: 1rem;
 
 	--theme-table--border-color: var(--theme-color-heading);
 
@@ -401,19 +399,19 @@
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
 	--coblocks-food-drinks-hint--radius: 0;
 	--coblocks-food-drinks-item--fill: var(--theme-color-heading);
-	--coblocks-food-drinks-item--font-size: 0.8rem;
+	--coblocks-food-drinks-item--font-size: 1.5rem;
 	--coblocks-food-drinks-item--spacing: 2rem;
-	--coblocks-food-drinks-item--text-transform: uppercase;
-	--coblocks-food-drinks-item--tracking: 2px;
+	--coblocks-food-drinks-item--text-transform: normal;
+	--coblocks-food-drinks-item--tracking: 0;
 	--coblocks-food-drinks-item--weight: 700;
 	--coblocks-food-drinks-price--color: var(--theme-color-text-secondary);
 	--coblocks-food-drinks-price--font-size: var(--theme-text-sm);
-	--coblocks-food-drinks-title--bg: var(--theme-color-heading);
+	--coblocks-food-drinks-title--bg: var(--theme-color-primary);
 	--coblocks-food-drinks-title--border-bottom: none;
 	--coblocks-food-drinks-title--color: var(--color-white);
-	--coblocks-food-drinks-title--font-size: 1.25rem;
+	--coblocks-food-drinks-title--font-size: 1.5rem;
 	--coblocks-food-drinks-title--margin-y: 0.75rem;
-	--coblocks-food-drinks-title--padding: 0.3rem 0.25rem;
+	--coblocks-food-drinks-title--padding: 0.5rem 0.25rem 0.4rem;
 	--coblocks-food-drinks-title--style: normal;
 
 	--coblocks-pricing--bg: var(--color-white);

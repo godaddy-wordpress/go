@@ -8,7 +8,7 @@
 	}
 
 	& a {
-		color: hsl(var(--theme-footer-text-color));
+		color: hsl(var(--theme-footer--color));
 		text-decoration: none;
 		transition: var(--theme-footer-nav--transition);
 

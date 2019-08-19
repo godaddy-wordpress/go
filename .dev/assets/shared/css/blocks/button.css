@@ -22,6 +22,10 @@
 		&:hover {
 			@mixin button-hover;
 		}
+
+		&:focus {
+			@mixin button-hover;
+		}
 	}
 
 	&:not(.is-style-outline) .wp-block-button__link.has-tertiary-background-color:hover {
@@ -31,10 +35,10 @@
 
 .wp-block-button__link {
 	@mixin button;
-	outline-offset: 2px;
 	position: relative;
 
 	&:focus {
-		@mixin button-hover;
+		@mixin outline;
+		outline-offset: 2px;
 	}
 }

@@ -98,6 +98,7 @@
 @import url("coblocks/shape-divider.css");
 @import url("coblocks/alert.css");
 @import url("coblocks/hero.css");
+@import url("coblocks/features.css");
 
 /*! WooCommerce */
 @import url("woocommerce/layout.css");
@@ -126,6 +127,10 @@
 	padding: 0 0.5em;
 }
 
+.hero-center-center-align .wp-block-coblocks-hero__box {
+	margin: 0 auto;
+}
+
 /*! Utility Classes */
 p {
 	margin: 0 0 1.25rem;
@@ -135,8 +140,17 @@ p {
 	}
 }
 
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 strong {
 	color: hsl(var(--theme-h1--color));
+}
+
+.bypostauthor {
+	display: block;
 }
 
 .display-block {
@@ -202,6 +216,10 @@ strong {
 
 .justify-end {
 	justify-content: flex-end;
+}
+
+.sticky {
+	display: block;
 }
 
 .text-xs {
