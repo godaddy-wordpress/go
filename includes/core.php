@@ -27,7 +27,7 @@ function setup() {
 	add_action( 'admin_init', $n( 'editor_styles' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
-	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
+	add_action( 'wp_print_footer_scripts', $n( 'skip_link_fo gmcus_fix' ) );
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
@@ -254,7 +254,7 @@ function fonts_url() {
 function scripts() {
 
 	wp_enqueue_script(
-		'frontend',
+		'maverick-frontend',
 		MAVERICK_TEMPLATE_URL . '/dist/js/frontend.js',
 		[],
 		MAVERICK_VERSION,
@@ -262,7 +262,7 @@ function scripts() {
 	);
 
 	wp_localize_script(
-		'frontend',
+		'maverick-frontend',
 		'MaverickText',
 		[
 			'searchLabel' => esc_html__( 'Expand search field', 'maverick' ),
@@ -300,14 +300,7 @@ function editor_styles() {
 function styles() {
 
 	wp_enqueue_style(
-		'maverick-fonts',
-		fonts_url(),
-		[],
-		MAVERICK_VERSION
-	);
-
-	wp_enqueue_style(
-		'styles',
+		'maverick-style',
 		MAVERICK_TEMPLATE_URL . '/dist/css/shared-style.css',
 		[ 'maverick-fonts' ],
 		MAVERICK_VERSION
@@ -317,12 +310,19 @@ function styles() {
 
 	if ( $design_style ) {
 		wp_enqueue_style(
-			'design-style',
+			'maverick-style-' . sanitize_title( $design_style['label'] ),
 			$design_style['url'],
-			[ 'styles' ],
+			[ 'maverick-style' ],
 			MAVERICK_VERSION
 		);
 	}
+
+	wp_enqueue_style(
+		'maverick-fonts',
+		fonts_url(),
+		[],
+		MAVERICK_VERSION
+	);
 }
 
 /**
