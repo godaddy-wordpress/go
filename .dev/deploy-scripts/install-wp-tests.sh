@@ -190,6 +190,7 @@ if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
 	sudo service apache2 restart
 	wp db reset --yes --path=$WP_CORE_DIR
 	wp db import ~/project/.dev/tests/a11y-test-db.sql --path=$WP_CORE_DIR
+	wp search-replace https://maverick.test http://maverick.test --path=$WP_CORE_DIR
 fi
 
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/maverick
