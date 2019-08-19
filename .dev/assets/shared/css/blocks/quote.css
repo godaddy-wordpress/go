@@ -1,6 +1,6 @@
 /*! Blockquote */
 .wp-block-quote {
-	border: none;
+	@mixin blockWidthNoPadding;
 	margin-bottom: 0;
 
 	& p {
@@ -31,19 +31,25 @@
 		display: block;
 		font-size: var(--theme-caption--font-size);
 		font-style: var(--theme-caption--style);
-		margin-top: -2.5rem;
-		padding-bottom: 1.25rem;
 	}
 
 	&:not(.is-style-large) {
+		border-left: var(--theme-quote--border);
+		padding-left: 0;
+		padding-right: 0;
+
+		& p {
+			padding-left: 1.75rem;
+		}
 
 		& cite {
+			margin-left: 1.75rem;
 			margin-top: -2.5rem;
+			padding-bottom: 1rem;
 		}
 	}
 
 	&.is-style-large {
-		border-left: var(--theme-quote-large--border);
 		color: hsl(var(--theme-quote-large--color));
 		margin-left: auto;
 		margin-right: auto;
@@ -52,8 +58,9 @@
 		& p {
 			font-size: var(--theme-quote-large--font-size);
 			font-style: var(--theme-quote-large--style);
-			line-height: var(--theme-quote--leading);
-			padding-left: 2rem;
+			line-height: var(--theme-quote-large--leading);
+			margin: 0;
+			padding: 0;
 
 			&::after,
 			&::before {
@@ -64,7 +71,6 @@
 
 		& cite {
 			font-size: var(--theme-caption--font-size);
-			margin-left: 2rem;
 			text-align: inherit;
 
 			& em {

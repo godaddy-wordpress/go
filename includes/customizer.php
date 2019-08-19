@@ -319,7 +319,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 		'color_scheme',
 		[
 			'transport' => 'postMessage',
-			'default'   => 'default',
+			'default'   => 'one',
 		]
 	);
 

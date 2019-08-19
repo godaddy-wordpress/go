@@ -98,6 +98,7 @@
 @import url("coblocks/shape-divider.css");
 @import url("coblocks/alert.css");
 @import url("coblocks/hero.css");
+@import url("coblocks/features.css");
 
 /*! WooCommerce */
 @import url("woocommerce/layout.css");
@@ -117,6 +118,10 @@
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
 
+.hero-center-center-align .wp-block-coblocks-hero__box {
+	margin: 0 auto;
+}
+
 /*! Utility Classes */
 p {
 	margin: 0 0 1.25rem;
@@ -124,6 +129,11 @@ p {
 	&:last-child {
 		margin-bottom: 0;
 	}
+}
+
+figure {
+	margin-left: 0;
+	margin-right: 0;
 }
 
 strong {
