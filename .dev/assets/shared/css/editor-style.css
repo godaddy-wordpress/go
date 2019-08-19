@@ -1,4 +1,5 @@
 /*! Base */
 @import url("editor/widths.css");
+@import url("editor/title-block.css");
 @import url("elements/typography.css");
 @import url("elements/headings.css");
