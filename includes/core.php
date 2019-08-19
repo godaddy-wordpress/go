@@ -23,8 +23,9 @@ function setup() {
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
+	add_action( 'after_setup_theme', $n( 'editor_styles' ) );
+	add_action( 'enqueue_block_editor_assets', $n( 'editor_frame_styles' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
-	add_action( 'admin_init', $n( 'editor_styles' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
 	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
@@ -138,7 +139,7 @@ function theme_setup() {
 	);
 
 	// Add support for editor styles.
-	// add_theme_support( 'editor-styles' );
+	add_theme_support( 'editor-styles' );
 
 	// Add support for WooCommerce.
 	add_theme_support( 'woocommerce' );
@@ -276,11 +277,13 @@ function scripts() {
  * @return void
  */
 function editor_styles() {
+
 	// Enqueue our shared Gutenberg editor styles.
 	add_editor_style(
 		'dist/css/editor-style.css'
 	);
 
+	// Enqueue design style Gutenberg editor styles.
 	$design_style = get_design_style();
 
 	if ( $design_style && isset( $design_style['editor_style'] ) ) {
@@ -289,7 +292,16 @@ function editor_styles() {
 		);
 	}
 
+	// Enqueue fonts into the editor.
 	add_editor_style( fonts_url() );
+}
+
+/**
+ * Enqueues the editor frame styles.
+ *
+ * @return void
+ */
+function editor_frame_styles() {
 }
 
 /**
@@ -466,7 +478,7 @@ function get_available_design_styles() {
 		'modern'      => [
 			'label'         => esc_html__( 'Modern', 'maverick' ),
 			'url'           => MAVERICK_TEMPLATE_URL . '/dist/css/design-styles/modern.css',
-			'editor_style'  => 'dist/css/design-styles/modern-editor.css',
+			'editor_style'  => '/dist/css/design-styles/modern-editor.css',
 			'color_schemes' => [
 				'default' => [
 					'label'      => esc_html__( 'Shade', 'maverick' ),

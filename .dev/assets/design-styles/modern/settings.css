@@ -20,12 +20,12 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 46rem;
-	--theme-max-w-wide: 88rem;
+	--theme-max-w-base: 46em;
+	--theme-max-w-wide: 88em;
 
 	/* Below base width query */
-	@custom-media --base (max-width: 46rem);
-	@custom-media --wide (max-width: 88rem);
+	@custom-media --base (max-width: 46em);
+	@custom-media --wide (max-width: 88em);
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -39,10 +39,10 @@
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 2rem;
+	--theme-block-padding-x: 2em;
 
 	@media (--medium) {
-		--theme-block-padding-x: 4rem;
+		--theme-block-padding-x: 4em;
 	}
 
 	/* Block Padding */
@@ -91,17 +91,17 @@
 	--theme-heading--weight: 700;
 	--theme-heading--button-spacing: 1.75rem;
 
-	--theme-h1--font-size: 2rem;
-	--theme-h2--font-size: 1.85rem;
-	--theme-h3--font-size: 1.6rem;
-	--theme-h4--font-size: 1.5rem;
-	--theme-h5--font-size: 1.35rem;
-	--theme-h6--font-size: 1.15rem;
+	--theme-h1--font-size: 2em;
+	--theme-h2--font-size: 1.85em;
+	--theme-h3--font-size: 1.6em;
+	--theme-h4--font-size: 1.5em;
+	--theme-h5--font-size: 1.35em;
+	--theme-h6--font-size: 1.15em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.25rem;
-		--theme-h2--font-size: 2.5rem;
-		--theme-h3--font-size: 1.85rem;
+		--theme-h1--font-size: 3.25em;
+		--theme-h2--font-size: 2.5em;
+		--theme-h3--font-size: 1.85em;
 	}
 
 	--theme-h1--color: var(--theme-color-heading);
