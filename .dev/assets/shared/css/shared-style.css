@@ -118,6 +118,15 @@
 @import url("gravity/radio.css");
 @import url("gravity/button.css");
 
+/* Everything below here still needs organizing */
+.u-informational {
+	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
+	border: 1px solid hsla(var(--theme-feedback-informational-color), 1);
+	color: hsla(var(--theme-feedback-informational-color), 1);
+	line-height: 2;
+	padding: 0 0.5em;
+}
+
 .hero-center-center-align .wp-block-coblocks-hero__box {
 	margin: 0 auto;
 }
@@ -259,12 +268,6 @@ strong {
 .px-1 {
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
-}
-
-.u-informational {
-	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
-	border: 1px solid hsla(var(--theme-feedback-informational-color), 1);
-	color: hsla(var(--theme-feedback-informational-color), 1);
 }
 
 @media (--small) {
