@@ -126,7 +126,7 @@ module.exports = {
 
 		// Extract CSS into individual files.
 		new MiniCssExtractPlugin( {
-			filename: settings.filename.css,
+			filename: isProduction ? 'css/[name].min.css' : 'css/[name].css',
 			chunkFilename: '[id].css',
 		} ),
 

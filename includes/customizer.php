@@ -31,7 +31,9 @@ function setup() {
 	add_action( 'customize_preview_init', $n( 'customize_preview_init' ) );
 	add_action( 'customize_controls_enqueue_scripts', $n( 'customize_preview_init' ) );
 	add_action( 'customize_preview_init', $n( 'enqueue_controls_assets' ) );
+
 	add_action( 'wp_head', $n( 'inline_css' ) );
+	add_action( 'wp_nav_menu_args', $n( 'wp_nav_register_fallback' ) );
 }
 
 
@@ -43,12 +45,69 @@ function setup() {
  * @return void
  */
 function register_control_types( \WP_Customize_Manager $wp_customize ) {
-	// Load custom controls
+	// Load custom controls.
 	require_once MAVERICK_PATH . '/includes/classes/customizer/class-switcher-control.php';
 	require_once MAVERICK_PATH . '/includes/classes/customizer/class-range-control.php';
 
 	$wp_customize->register_control_type( Switcher_Control::class );
 	$wp_customize->register_control_type( Range_Control::class );
+}
+
+/**
+ * Display a placeholder in the customizer if a menu has not been assigned,
+ *
+ * @param array $args Array of nav menu arguments.
+ */
+function wp_nav_fallback( $args ) {
+	if ( ! is_customize_preview() ) {
+		return;
+	}
+
+	$registered_nav_menus = get_registered_nav_menus();
+
+	$menu_slug   = $args['theme_location'];
+	$instance_id = $args['customize_preview_nav_menus_args']['args_hmac'];
+	$attributes  = '';
+
+	$attrs = array(
+		'data-customize-partial-id'                => 'nav_menu_instance[' . esc_attr( $instance_id ) . ']',
+		'data-customize-partial-type'              => 'nav_menu_instance',
+		'data-customize-partial-placement-context' => esc_attr( wp_json_encode( $args['customize_preview_nav_menus_args'] ) ),
+	);
+
+	$attributes = implode(
+		' ',
+		array_map(
+			function( $key, $value ) {
+				return sprintf( '%s="%s"', $key, esc_attr( $value ) );
+			},
+			array_keys( $attrs ),
+			$attrs
+		)
+	);
+	?>
+	<p class="u-informational" <?php echo $attributes; // phpcs:ignore ?> id="menu-primary-navigation">
+		<?php
+		echo esc_html(
+			sprintf(
+				/* translators: %s is the registered nav menu name */
+				__( 'Please assign a menu to the %s menu location', 'maverick' ),
+				$registered_nav_menus[ $menu_slug ]
+			)
+		);
+		?>
+	</p>
+	<?php
+}
+
+/**
+ * Filter the arguments used to display a navigation menu to add our own fallback callback.
+ *
+ * @param array $args Array of wp_nav_menu() arguments.
+ */
+function wp_nav_register_fallback( $args ) {
+	$args['fallback_cb'] = __NAMESPACE__ . '\\wp_nav_fallback';
+	return $args;
 }
 
 /**
@@ -101,7 +160,8 @@ function customize_preview_init() {
 		'maverick-customizer-preview',
 		MAVERICK_TEMPLATE_URL . '/dist/js/admin/customize-preview.js',
 		[ 'jquery', 'customize-preview', 'wp-autop' ],
-		MAVERICK_VERSION
+		MAVERICK_VERSION,
+		true
 	);
 
 	wp_localize_script(
@@ -119,6 +179,9 @@ function customize_preview_init() {
  * @return void
  */
 function enqueue_controls_assets() {
+
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 	wp_enqueue_script(
 		'maverick-customizer-controls',
 		MAVERICK_TEMPLATE_URL . '/dist/js/admin/customize-controls.js',
@@ -129,7 +192,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_style(
 		'maverick-customizer-styles',
-		MAVERICK_TEMPLATE_URL . '/dist/css/admin/customizer-styles.css',
+		MAVERICK_TEMPLATE_URL . "/dist/css/admin/customizer-styles{$suffix}.css",
 		[],
 		MAVERICK_VERSION
 	);
@@ -248,7 +311,8 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'page_titles',
 		[
-			'default' => true,
+			'default'           => true,
+			'sanitize_callback' => 'absint',
 		]
 	);
 
@@ -266,8 +330,9 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'copyright',
 		[
-			'default'   => \Maverick\Core\get_default_copyright(),
-			'transport' => 'postMessage',
+			'default'           => \Maverick\Core\get_default_copyright(),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_text_field',
 		]
 	);
 
@@ -294,8 +359,9 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'design_style',
 		[
-			'default'   => \Maverick\Core\get_default_design_style(),
-			'transport' => 'postMessage',
+			'default'           => \Maverick\Core\get_default_design_style(),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
 		]
 	);
 
@@ -315,8 +381,9 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'color_scheme',
 		[
-			'transport' => 'postMessage',
-			'default'   => 'default',
+			'transport'         => 'postMessage',
+			'default'           => 'default',
+			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
 		]
 	);
 
@@ -338,8 +405,9 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'primary_color',
 		[
-			'transport' => 'postMessage',
-			'default'   => \Maverick\get_default_palette_color( 'primary' ),
+			'transport'         => 'postMessage',
+			'default'           => \Maverick\get_default_palette_color( 'primary' ),
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -359,8 +427,9 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'secondary_color',
 		[
-			'transport' => 'postMessage',
-			'default'   => \Maverick\get_default_palette_color( 'secondary' ),
+			'transport'         => 'postMessage',
+			'default'           => \Maverick\get_default_palette_color( 'secondary' ),
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -380,8 +449,9 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'tertiary_color',
 		[
-			'transport' => 'postMessage',
-			'default'   => \Maverick\get_default_palette_color( 'tertiary' ),
+			'transport'         => 'postMessage',
+			'default'           => \Maverick\get_default_palette_color( 'tertiary' ),
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -397,6 +467,24 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 			]
 		)
 	);
+}
+
+/**
+ * Sanitize a radio field setting from the customizer.
+ *
+ * @param string $value   The radio field value being saved.
+ * @param string $setting The name of the setting being saved.
+ *
+ * @return string
+ */
+function maverick_customizer_radio_sanitize( $value, $setting ) {
+
+	$input = sanitize_title( $value );
+
+	$choices = $setting->manager->get_control( $setting->id . '_control' )->choices;
+
+	return array_key_exists( $input, $choices ) ? $input : $setting->default;
+
 }
 
 /**
@@ -419,15 +507,16 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'header_variation',
 		[
-			'default'   => \Maverick\Core\get_default_header_variation(),
-			'transport' => 'postMessage',
+			'default'           => \Maverick\Core\get_default_header_variation(),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
 		]
 	);
 
 	$wp_customize->add_control(
 		new Switcher_Control(
 			$wp_customize,
-			'header_variation',
+			'header_variation_control',
 			[
 				'label'       => esc_html__( 'Header', 'maverick' ),
 				'description' => esc_html__( 'Choose a header for every page on your site, then style it with the selectors below.', 'maverick' ),
@@ -441,7 +530,8 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'header_background_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -460,7 +550,8 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'header_text_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -497,15 +588,16 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_variation',
 		[
-			'default'   => \Maverick\Core\get_default_footer_variation(),
-			'transport' => 'postMessage',
+			'default'           => \Maverick\Core\get_default_footer_variation(),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
 		]
 	);
 
 	$wp_customize->add_control(
 		new Switcher_Control(
 			$wp_customize,
-			'footer_variation',
+			'footer_variation_control',
 			[
 				'label'       => esc_html__( 'Footer', 'maverick' ),
 				'description' => esc_html__( 'Choose a footer for every page on your site, then style it with the selectors below.', 'maverick' ),
@@ -519,7 +611,8 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_background_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -538,7 +631,8 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_heading_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -557,7 +651,8 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_text_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -620,7 +715,8 @@ function register_social_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'social_icon_color',
 		[
-			'transport' => 'postMessage',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
 
@@ -658,7 +754,7 @@ function inline_css() {
 	$footer_background    = hex_to_hsl( get_theme_mod( 'footer_background_color', false ), true );
 	$social_icon_color    = hex_to_hsl( get_theme_mod( 'social_icon_color', false ), true );
 
-	// Site logo width
+	// Site logo width.
 	$logo_width        = get_theme_mod( 'logo_width', '100' );
 	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', '100' );
 	?>

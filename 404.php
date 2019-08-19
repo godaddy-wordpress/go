@@ -11,7 +11,7 @@ get_header();
 
 <div class="error-404 not-found max-w-base w-full m-auto">
 	<header class="entry-header">
-		<h1 class="page-title"><?php esc_html_e( 'That page can’t be found.', 'maverick' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( "That page can't be found.", 'maverick' ); ?></h1>
 	</header>
 	<div class="page-content">
 		<?php get_search_form(); ?>
