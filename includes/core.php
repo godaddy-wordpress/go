@@ -324,7 +324,7 @@ function styles() {
 
 	if ( $design_style ) {
 		wp_enqueue_style(
-			'maverick-style-' . sanitize_title( $design_style['label'] ),
+			'maverick-design-style-' . sanitize_title( $design_style['label'] ),
 			$design_style['url'],
 			[ 'maverick-style' ],
 			MAVERICK_VERSION
@@ -941,6 +941,20 @@ function get_available_color_schemes() {
 	 * @param array $design_style  The full design style object
 	 */
 	return apply_filters( 'maverick_color_schemes', $design_style['color_schemes'], $design_style );
+}
+
+/**
+ * Returns the default color scheme
+ *
+ * @return string
+ */
+function get_default_color_scheme() {
+	/**
+	 * Filters the default color scheme.
+	 *
+	 * @param array $default_color_scheme The slug of the default color scheme.
+	 */
+	return apply_filters( 'maverick_default_color_scheme', 'one' );
 }
 
 /**
