@@ -53,7 +53,7 @@ function init() {
  * @return void
  */
 function i18n() {
-	load_theme_textdomain( 'maverick', MAVERICK_PATH . '/languages' );
+	load_theme_textdomain( 'maverick', get_template_directory() . '/languages' );
 }
 
 /**
