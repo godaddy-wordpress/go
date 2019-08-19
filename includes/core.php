@@ -311,7 +311,7 @@ function styles() {
 
 	if ( $design_style ) {
 		wp_enqueue_style(
-			'maverick-style-' . sanitize_title( $design_style['label'] ),
+			'maverick-design-style-' . sanitize_title( $design_style['label'] ),
 			$design_style['url'],
 			[ 'maverick-style' ],
 			MAVERICK_VERSION
