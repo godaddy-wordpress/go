@@ -1,13 +1,14 @@
 <?php
 /**
- * content.php
+ * Partial: content.php
  * Displays each post with an thumb and excerpt.
  *
  * @package Maverick
  */
 
-// Get the excerpt for class wrapping
+// Get the excerpt for class wrapping.
 $excerpt = get_the_excerpt();
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'alignwide' ); ?>>
@@ -33,4 +34,3 @@ $excerpt = get_the_excerpt();
 		</p>
 	</div>
 </article>
-
