@@ -1,7 +1,4 @@
-/**
- * Site branding
- */
-
+/*! Header: Site Branding */
 .site-branding {
 	flex: 1 0 50%;
 	line-height: 1.1;
@@ -25,6 +22,8 @@
 	font-family: var(--theme-site-title--font);
 	font-size: var(--theme-site-title--font-size);
 	font-weight: var(--theme-site-title--weight);
+	position: relative;
+	top: 4px;
 }
 
 .site-branding__link {

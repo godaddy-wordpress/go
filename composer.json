@@ -30,7 +30,8 @@
     "php": ">=5.5",
     "wpackagist-plugin/coblocks": "dev-trunk",
     "wpackagist-plugin/woocommerce": "dev-trunk",
-    "oomphinc/composer-installers-extender": "^1.1"
+    "oomphinc/composer-installers-extender": "^1.1",
+    "phpunit/phpunit": "7.5.14"
   },
   "require-dev": {
     "10up/phpcs-composer": "dev-master"

@@ -1,6 +1,6 @@
 <?php
 /**
- * content-none.php
+ * Partial: content-none.php
  * Displays content not found.
  *
  * @package Maverick

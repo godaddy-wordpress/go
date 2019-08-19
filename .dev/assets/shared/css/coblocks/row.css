@@ -1,3 +1,10 @@
+/*! CoBlocks: Row */
+div.is-stacked-on-mobile.has-medium-gutter > [class*="wp-block-coblocks-"]:not(:last-child) {
+	@media (max-width: 600px) {
+		margin-bottom: var(--theme-block-spacing);
+	}
+}
+
 /**
  * Allows us to overlap an Shape Divider (SVG) block
  * on top of another block above it.

@@ -5,7 +5,6 @@
  * @package Maverick
  */
 
-$footer_copy_text = Maverick\footer_copy_text();
 $has_social_icons = Maverick\has_social_icons();
 $has_background   = Maverick\has_footer_background();
 ?>
@@ -18,7 +17,7 @@ $has_background   = Maverick\has_footer_background();
 
 			<?php Maverick\display_site_branding( array( 'description' => false ) ); ?>
 
-			<?php if ( has_nav_menu( 'footer-1' ) ) { ?>
+			<?php if ( has_nav_menu( 'footer-1' ) || is_customize_preview() ) : ?>
 				<nav class="footer-navigation footer-navigation--1 text-sm" aria-label="<?php esc_attr_e( 'Primary Footer Menu', 'maverick' ); ?>">
 					<span class="footer-navigation__title bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-1' ) ); ?></span>
 
@@ -32,11 +31,9 @@ $has_background   = Maverick\has_footer_background();
 						);
 					?>
 				</nav>
-			<?php } else { ?>
-				<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #1', 'maverick' ); ?></a></p>
-			<?php } ?>
+			<?php endif; ?>
 
-			<?php if ( has_nav_menu( 'footer-2' ) ) { ?>
+			<?php if ( has_nav_menu( 'footer-2' ) || is_customize_preview() ) : ?>
 				<nav class="footer-navigation footer-navigation--2 text-sm" aria-label="<?php esc_attr_e( 'Secondary Footer Menu', 'maverick' ); ?>">
 					<span class="footer-navigation__title bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-2' ) ); ?></span>
 
@@ -50,11 +47,9 @@ $has_background   = Maverick\has_footer_background();
 						);
 					?>
 				</nav>
-			<?php } elseif ( is_customize_preview() ) { ?>
-				<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #2', 'maverick' ); ?></a></p>
-			<?php } ?>
+			<?php endif; ?>
 
-			<?php if ( has_nav_menu( 'footer-3' ) ) { ?>
+			<?php if ( has_nav_menu( 'footer-3' ) || is_customize_preview() ) : ?>
 				<nav class="footer-navigation footer-navigation--3 text-sm" aria-label="<?php esc_attr_e( 'Tertiary Footer Menu', 'maverick' ); ?>">
 					<span class="footer-navigation__title bold"><?php echo esc_html( wp_get_nav_menu_name( 'footer-3' ) ); ?></span>
 
@@ -68,25 +63,12 @@ $has_background   = Maverick\has_footer_background();
 						);
 					?>
 				</nav>
-			<?php } elseif ( is_customize_preview() ) { ?>
-				<p class="u-informational"><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Please assign a menu to the Footer Menu #3', 'maverick' ); ?></a></p>
-			<?php } ?>
+			<?php endif; ?>
 		</div>
 
-		<?php if ( $has_social_icons || ! empty( $footer_copy_text ) ) : ?>
-			<div class="site-footer__row flex flex-column md:flex-row justify-between md:items-center">
-				<?php if ( ! empty( $footer_copy_text ) ) : ?>
-					<p class="site-info mb-0 text-xs">
-						<?php echo esc_html( $footer_copy_text ); ?>
-
-						<?php
-						if ( function_exists( 'the_privacy_policy_link' ) ) {
-							the_privacy_policy_link( '' );
-						}
-						?>
-					</p>
-				<?php endif; ?>
-
+		<?php if ( $has_social_icons ) : ?>
+			<div class="site-footer__row flex flex-column lg:flex-row justify-between lg:items-center">
+				<?php Maverick\copyright( [ 'class' => 'site-info text-sm mb-0' ] ); ?>
 				<?php Maverick\social_icons( [ 'class' => 'social-icons list-reset' ] ); ?>
 			</div>
 		<?php endif; ?>

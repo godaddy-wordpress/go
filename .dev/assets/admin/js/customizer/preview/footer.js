@@ -9,6 +9,12 @@ export default () => {
 		} );
 	} );
 
+	wp.customize( 'copyright', function( value ) {
+		value.bind( function( to ) {
+			$( '.copyright' ).html( to );
+		} );
+	} );
+
 	wp.customize( 'footer_background_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );

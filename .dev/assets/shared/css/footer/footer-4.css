@@ -1,7 +1,4 @@
-/**
- * Footer #4
- */
-
+/*! Footer: Footer 4 */
 [data-footer="footer-4"] {
 
 	& .site-footer {
@@ -59,15 +56,21 @@
 	& .footer-navigation--2 {
 		margin-bottom: 1.5rem;
 
-		@media (--medium) {
+		@media (--large) {
 			margin-bottom: 0;
 		}
 	}
 
+	& .site-info {
+		flex: 1 50%;
+	}
+
 	& .social-icons {
+		margin-left: calc(var(--theme-social--spacing) * -0.5);
 		margin-top: 1rem;
 
 		@media (--large) {
+			margin-left: 0;
 			margin-top: 0;
 		}
 

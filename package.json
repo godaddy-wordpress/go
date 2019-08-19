@@ -15,8 +15,11 @@
   "scripts": {
     "start": "composer install && npm install && npm run build",
     "build": "NODE_ENV=production webpack --config .dev/config/webpack.prod.js",
+    "postbuild": "mkdir temp && cp -a dist/* temp && NODE_ENV=development webpack --config .dev/config/webpack.dev.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/strip-css-comments.sh",
     "dev": "NODE_ENV=development webpack --config .dev/config/webpack.dev.js",
+    "postdev": "mkdir temp && cp -a dist/* temp && NODE_ENV=production webpack --config .dev/config/webpack.prod.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/strip-css-comments.sh",
     "watch": "NODE_ENV=development webpack --watch --config .dev/config/webpack.dev.js",
+    "package": "rm -rf build && mkdir -p build/maverick && npm run build && rsync -av --exclude-from .distignore --delete . build/maverick && cd build && zip -r maverick.zip ./maverick",
     "build-release": "npm install && npm run build",
     "lint-release": "npm install && composer install && npm run lint",
     "lint-css": "stylelint 'assets/shared/css' '.dev/assets/design-styles/**/*.css'",
@@ -25,7 +28,8 @@
     "format-js": "eslint --fix assets/shared/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
-    "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js"
+    "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
+    "test-php": "./vendor/bin/phpunit"
   },
   "husky": {
     "hooks": {
@@ -62,14 +66,19 @@
     "cssnano": "^4.1.10",
     "eslint": "^5.4.0",
     "eslint-loader": "^2.1.2",
+    "grunt": "^1.0.3",
+    "grunt-text-replace": "^0.4.0",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.3",
+    "matchdep": "^2.0.0",
     "mini-css-extract-plugin": "^0.5.0",
     "pa11y": "^5.0.4",
+    "perfectionist": "^2.4.0",
     "postcss-import": "^12.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-mixins": "^6.2.1",
     "postcss-preset-env": "^5.3.0",
+    "strip-css-comments-cli": "^2.0.2",
     "stylelint": "^9.6.0",
     "stylelint-config-wordpress": "^13.1.0",
     "stylelint-declaration-use-variable": "^1.7.0",

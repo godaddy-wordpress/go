@@ -1,7 +1,4 @@
-/**
- * Primary menu
- */
-
+/*! Header: Primary Menu */
 .primary-menu {
 
 	& .menu-item {
@@ -10,8 +7,8 @@
 
 		@media (--large) {
 			display: inline-block;
-			padding-left: calc(2 * var(--theme-spacing-unit));
-			padding-right: calc(2 * var(--theme-spacing-unit));
+			padding-left: var(--theme-site-nav--padding-x);
+			padding-right: var(--theme-site-nav--padding-x);
 			width: auto;
 		}
 	}
@@ -82,6 +79,7 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		z-index: 999;
 
 		@media (--large) {
 			display: none;

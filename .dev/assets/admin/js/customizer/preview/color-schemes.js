@@ -48,6 +48,7 @@ export default () => {
 
 			Object.entries( colors ).forEach( function ( [ setting, color ] ) {
 				const customizerSetting = wp.customize( `${setting}_color` );
+				const customizerControl = 'background' === setting ? `${setting}_color` : `${setting}_color_control`;
 
 				if ( 'label' === setting || 'undefined' === typeof customizerSetting || 'undefined' === typeof wp.customize.control ) {
 					return;
@@ -55,7 +56,7 @@ export default () => {
 
 				customizerSetting.set( color );
 
-				wp.customize.control( `${setting}_color_control` ).container.find( '.color-picker-hex' )
+				wp.customize.control( customizerControl ).container.find( '.color-picker-hex' )
 					.data( 'data-default-color', color )
 					.wpColorPicker( 'defaultColor', color );
 			} );
@@ -66,8 +67,8 @@ export default () => {
 	 * Control the visibility of the color schemes selections.
 	 */
 	const toggleColorSchemes = () => {
-		$( 'label[for^=maverick_color_scheme_control' ).hide();
-		$( `label[for^=maverick_color_scheme_control-${selectedDesignStyle}-` ).show();
+		$( 'label[for^=color_scheme_control]' ).hide();
+		$( `label[for^=color_scheme_control-${selectedDesignStyle}-]` ).show();
 	};
 
 	/**
@@ -88,12 +89,12 @@ export default () => {
 
 	wp.customize.bind( 'ready', () => toggleColorSchemes() );
 
-	wp.customize( 'maverick_design_style', ( value ) => {
+	wp.customize( 'design_style', ( value ) => {
 		selectedDesignStyle = value.get();
 		value.bind( ( to ) => {
 			selectedDesignStyle = to;
-			loadColorSchemes( 'default' );
-			$( `#maverick_color_scheme_control-${selectedDesignStyle}-default` ).prop( 'checked', true );
+			loadColorSchemes( 'one' );
+			$( `#color_scheme_control-${selectedDesignStyle}-one` ).prop( 'checked', true );
 		} );
 	} );
 

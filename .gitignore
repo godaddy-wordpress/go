@@ -1,8 +1,9 @@
 node_modules
 bower_components
+build
 release
 vendor
-phpunit.xml
+temp
 .idea
 .vscode
 

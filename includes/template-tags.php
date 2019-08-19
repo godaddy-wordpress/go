@@ -5,11 +5,6 @@
  * This file is for custom template tags only and it should not contain
  * functions that will be used for filtering or adding an action.
  *
- * All functions should be prefixed with Godaddy in order to prevent
- * pollution of the global namespace and potential conflicts with functions
- * from plugins.
- * Example: `tenup_function()`
- *
  * @package Maverick\Template_Tags
  */
 
@@ -18,51 +13,76 @@ namespace Maverick;
 use function Maverick\Core\get_available_color_schemes;
 
 /**
- * Extract colors from a CSS or Sass file
+ * Returns the color selected by the user.
  *
- * @param string $path the path to your CSS variables file
+ * @param string $color  Which color to return.
+ * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
+ *
+ * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
-function get_colors( $path ) {
+function get_palette_color( $color, $format = 'RBG' ) {
+	$default         = \Maverick\Core\get_default_color_scheme();
+	$color_scheme    = get_theme_mod( 'color_scheme', $default );
+	$override_colors = [
+		'primary'    => 'primary_color',
+		'secondary'  => 'secondary_color',
+		'tertiary'   => 'tertiary_color',
+		'background' => 'background_color',
+	];
 
-	$dir = get_stylesheet_directory();
+	$color_override = get_theme_mod( $override_colors[ $color ] );
 
-	if ( file_exists( $dir . $path ) ) {
-		$css_vars = file_get_contents( $dir . $path ); // phpcs:ignore WordPress.WP.AlternativeFunctions
-		preg_match_all( ' /#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?\b/', $css_vars, $matches );
-		return $matches[0];
+	$avaliable_color_schemes = get_available_color_schemes();
+
+	$the_color = false;
+
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
 	}
 
+	if ( $color_override ) {
+		$the_color = $color_override;
+	}
+
+	// Ensure we have a hash mark at the beginning of the hex value.
+	$the_color = '#' . ltrim( $the_color, '#' );
+
+	if ( 'HSL' === $format ) {
+		return hex_to_hsl( $the_color );
+	}
+
+	return $the_color;
 }
 
 /**
- * Adjust the brightness of a color (HEX)
+ * Returns the default color for the active color scheme.
  *
- * @param string $hex The hex code for the color
- * @param number $steps amount you want to change the brightness
- * @return string new color with brightness adjusted
+ * @param string $color  Which color to return.
+ * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
+ *
+ * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
-function adjust_brightness( $hex, $steps ) {
+function get_default_palette_color( $color, $format = 'RBG' ) {
+	$default                 = \Maverick\Core\get_default_color_scheme();
+	$color_scheme            = get_theme_mod( 'color_scheme', $default );
+	$avaliable_color_schemes = get_available_color_schemes();
 
-	// Steps should be between -255 and 255. Negative = darker, positive = lighter
-	$steps = max( -255, min( 255, $steps ) );
+	$the_color = false;
 
-	// Normalize into a six character long hex string
-	$hex = str_replace( '#', '', $hex );
-	if ( 3 === strlen( $hex ) ) {
-		$hex = str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
+	if ( $color_scheme && empty( $avaliable_color_schemes[ $color_scheme ] ) ) {
+		$color_scheme_keys = array_keys( $avaliable_color_schemes );
+		$color_scheme      = array_shift( $color_scheme_keys );
 	}
 
-	// Split into three parts: R, G and B
-	$color_parts = str_split( $hex, 2 );
-	$return      = '#';
-
-	foreach ( $color_parts as $color ) {
-		$color   = hexdec( $color ); // Convert to decimal
-		$color   = max( 0, min( 255, $color + $steps ) ); // Adjust color
-		$return .= str_pad( dechex( $color ), 2, '0', STR_PAD_LEFT ); // Make two char hex code
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
 	}
 
-	return $return;
+	if ( 'HSL' === $format ) {
+		return hex_to_hsl( $the_color );
+	}
+
+	return $the_color;
 }
 
 /**
@@ -140,6 +160,20 @@ function header_variation() {
 }
 
 /**
+ * Returns whether there is a footer background or not.
+ *
+ * @return boolean
+ */
+function has_header_background() {
+
+	$background_color = get_theme_mod( 'header_background_color', '' );
+
+	if ( $background_color ) {
+		return 'has-background';
+	}
+}
+
+/**
  * Includes the selected footer varation
  *
  * @return void
@@ -158,48 +192,7 @@ function footer_variation() {
 }
 
 /**
- * Returns the footer blurb text
- *
- * @return string
- */
-function footer_blurb_text() {
-	$blurb_text = get_theme_mod( 'maverick_footer_blurb_text_setting', \Maverick\Core\get_default_footer_blurb_text() );
-
-	/**
-	 * Filters the footer blurb text.
-	 *
-	 * @since 0.1.0
-	 *
-	 * @param string $footer_blurb_text The footer blurb text.
-	 */
-	return apply_filters( 'maverick_footer_blurb_text', wpautop( $blurb_text ) );
-}
-
-/**
- * Returns the footer blurb text
- *
- * @return string
- */
-function footer_copy_text() {
-
-	$year = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
-
-	$copy_text = get_theme_mod( 'maverick_footer_copy_text_setting', \Maverick\Core\get_default_footer_copy_text() );
-
-	$copyright = $year . $copy_text;
-
-	/**
-	 * Filters the footer copy text.
-	 *
-	 * @since 0.1.0
-	 *
-	 * @param string $footer_blurb_text The footer blurb text.
-	 */
-	return apply_filters( 'maverick_footer_copy_text', $copyright );
-}
-
-/**
- * Returns whether there are social icons set or not.
+ * Returns whether there is a footer background or not.
  *
  * @return boolean
  */
@@ -213,24 +206,61 @@ function has_footer_background() {
 }
 
 /**
- * Returns whether there are social icons set or not.
+ * Displays the footer copyright text.
  *
- * @param array $social_icons the array of social icons.
+ * @param array $args {
+ *   Optional. An array of arguments.
  *
- * @return boolean
+ *   @type string $class The div class. Default is .site-info
+ * }
+ *
+ * @return void
  */
-function has_social_icons( $social_icons = null ) {
-	if ( is_null( $social_icons ) ) {
-		$social_icons = \Maverick\Core\get_social_icons();
-	}
+function copyright( $args = [] ) {
 
-	return array_reduce(
-		$social_icons,
-		function( $previous, $social_icon ) {
-			return $previous || ! empty( $social_icon['url'] );
-		},
-		false
+	$args = wp_parse_args(
+		$args,
+		[
+			'class' => 'site-info',
+		]
 	);
+
+	$year      = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
+	$copyright = get_theme_mod( 'copyright', \Maverick\Core\get_default_copyright() );
+
+	$html = array(
+		'div'  => [
+			'class' => [],
+		],
+		'span' => [
+			'class' => [],
+		],
+		'a'    => [
+			'href'  => [],
+			'class' => [],
+		],
+	);
+	?>
+
+	<div class="<?php echo esc_attr( $args['class'] ); ?>">
+
+		<?php echo esc_html( $year ); ?>
+
+		<?php if ( $copyright || is_customize_preview() ) : ?>
+			<span class="copyright">
+				<?php echo wp_kses( $copyright, $html ); ?>
+			</span>
+		<?php endif; ?>
+
+		<?php
+		if ( function_exists( 'the_privacy_policy_link' ) ) {
+			the_privacy_policy_link( '' );
+		}
+		?>
+
+	</div>
+
+	<?php
 }
 
 /**
@@ -312,6 +342,27 @@ function maverick_page_title() {
 }
 
 /**
+ * Returns whether there are social icons set or not.
+ *
+ * @param array $social_icons the array of social icons.
+ *
+ * @return boolean
+ */
+function has_social_icons( $social_icons = null ) {
+	if ( is_null( $social_icons ) ) {
+		$social_icons = \Maverick\Core\get_social_icons();
+	}
+
+	return array_reduce(
+		$social_icons,
+		function( $previous, $social_icon ) {
+			return $previous || ! empty( $social_icon['url'] );
+		},
+		false
+	);
+}
+
+/**
  * Displays the social icons
  *
  * @param array $args {
@@ -348,7 +399,7 @@ function social_icons( $args = [] ) {
 			<?php if ( ! empty( $social_icon['url'] ) || is_customize_preview() ) : ?>
 				<li class="<?php echo esc_attr( sprintf( $args['li_class'], $key ) ) . esc_attr( $visibility ); ?>">
 					<a class="social-icons__icon" href="<?php echo esc_url( $social_icon['url'] ); ?>" aria-label="<?php echo esc_attr( $social_icon['label'] ); ?>" rel="noopener noreferrer">
-						<?php echo file_get_contents( $social_icon['icon'] ); // phpcs:ignore ?>
+						<?php include $social_icon['icon']; ?>
 					</a>
 				</li>
 			<?php endif; ?>
@@ -422,73 +473,6 @@ function navigation_toggle() {
 }
 
 /**
- * Returns the color selected by the user.
- *
- * @param string $color  Which color to return.
- * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
- *
- * @return string|array|bool A string with the RGB value or an array containing the HSL values.
- */
-function get_palette_color( $color, $format = 'RBG' ) {
-	$color_scheme    = get_theme_mod( 'color_scheme', 'default' );
-	$override_colors = [
-		'primary'   => 'primary_color',
-		'secondary' => 'secondary_color',
-		'tertiary'  => 'tertiary_color',
-	];
-
-	$color_override = get_theme_mod( $override_colors[ $color ] );
-
-	$avaliable_color_schemes = get_available_color_schemes();
-
-	$the_color = false;
-
-	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
-		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
-	}
-
-	if ( $color_override ) {
-		$the_color = $color_override;
-	}
-
-	if ( 'HSL' === $format ) {
-		return hex_to_hsl( $the_color );
-	}
-
-	return $the_color;
-}
-
-/**
- * Returns the default color for the active color scheme.
- *
- * @param string $color  Which color to return.
- * @param string $format The format to return the color. RGB (default) or HSL (returns an array).
- *
- * @return string|array|bool A string with the RGB value or an array containing the HSL values.
- */
-function get_default_palette_color( $color, $format = 'RBG' ) {
-	$color_scheme            = get_theme_mod( 'color_scheme', 'default' );
-	$avaliable_color_schemes = get_available_color_schemes();
-
-	$the_color = false;
-
-	if ( $color_scheme && empty( $avaliable_color_schemes[ $color_scheme ] ) ) {
-		$color_scheme_keys = array_keys( $avaliable_color_schemes );
-		$color_scheme      = array_shift( $color_scheme_keys );
-	}
-
-	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
-		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
-	}
-
-	if ( 'HSL' === $format ) {
-		return hex_to_hsl( $the_color );
-	}
-
-	return $the_color;
-}
-
-/**
  * Load an inline SVG.
  *
  * @param string $filename The filename of the SVG you want to load.
@@ -497,16 +481,18 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
  */
 function load_inline_svg( $filename ) {
 
-	// Add the path to your SVG directory inside your theme.
 	$svg_path = 'dist/images/';
 
-	// Check the SVG file exists
-	if ( file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
+	if ( ! file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
 
-		// Load and return the contents of the file
-		return file_get_contents( MAVERICK_PATH . $svg_path . $filename );
+		return;
+
 	}
 
-	// Return a blank string if we can't find the file.
-	return '';
+	ob_start();
+
+	include MAVERICK_PATH . $svg_path . $filename;
+
+	return ob_get_clean();
+
 }

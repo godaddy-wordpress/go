@@ -1,3 +1,4 @@
+/*! Header: Site Search: Toggle */
 .site-search__toggle {
 	background-color: transparent;
 	border: none;
@@ -9,7 +10,6 @@
 	line-height: 1;
 	padding: 0.1rem;
 	position: relative;
-	top: 2px;
 	transition: var(--theme-link-transition);
 	width: calc(var(--theme-search-toggle--size) * 2);
 	z-index: 1;

@@ -1,11 +1,4 @@
-/**
- * Godaddy - Global Editor Styles
- */
-
-/* Utilities */
-@import url("utilities/colorize.css");
-
-/* Setting global variables */
+/* Global variables */
 @import url("config/media-queries.css");
 @import url("config/mixins.css");
 
@@ -15,7 +8,7 @@
 @import url("elements/lists.css");
 @import url("elements/media.css");
 @import url("elements/page.css");
-@import url("elements/tables.css");
+@import url("blocks/table.css");
 
 /* Blocks */
 @import url("blocks/button.css");
@@ -31,8 +24,6 @@
 
 /* CoBlocks */
 @import url("coblocks/author.css");
-@import url("coblocks/hero.css");
-@import url("coblocks/pricing-table.css");
 @import url("coblocks/row.css");
 
 /* WooCommerce */

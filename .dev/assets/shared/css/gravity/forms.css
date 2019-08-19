@@ -1,10 +1,4 @@
-/**
- * Overrides for Gravity forms
- */
-
-@import url("checkbox.css");
-@import url("radio.css");
-
+/*! Gravity Forms */
 .gform_wrapper ul.gform_fields li.gfield select {
 	background-color: hsl(var(--theme-input--bg));
 	border: var(--theme-input--border);

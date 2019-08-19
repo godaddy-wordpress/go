@@ -1,7 +1,7 @@
 const $ = jQuery; // eslint-disable-line
 
 export default () => {
-	wp.customize( 'maverick_design_style', ( value ) => {
+	wp.customize( 'design_style', ( value ) => {
 		value.bind( ( to ) => {
 
 			if (
@@ -9,7 +9,7 @@ export default () => {
 				'undefined' !== MaverickPreviewData['design_styles'][ to ]
 			) {
 				const designStyle = MaverickPreviewData['design_styles'][ to ];
-				$( 'link#design-style-css' ).attr( 'href', designStyle['url'] );
+				$( 'link[id*="design-style"]' ).attr( 'href', designStyle['url'] );
 			}
 		} );
 	} );

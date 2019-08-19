@@ -1,3 +1,4 @@
+/*! Header: Header 4 */
 [data-header="header-4"] {
 
 	&::before {
@@ -60,12 +61,17 @@
 	}
 
 	& .site-header .site-search {
+		left: 0;
 		left: calc(var(--theme-block-padding-x) - 0.3rem);
-		right: calc(var(--theme-block-padding-x) - 0.3rem);
+		opacity: 0;
+		pointer-events: none;
+		position: absolute;
+		right: calc(var(--theme-block-padding-x) - 2rem);
 		transform: translateX(-100%);
+		transition: opacity 175ms ease-out 75ms, transform ease-out 175ms;
 		z-index: 310;
 
-		@media (--large) {
+		@media (--medium) {
 			right: auto;
 		}
 	}
