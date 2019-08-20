@@ -694,35 +694,35 @@ function get_default_header_variation() {
 function get_available_header_variations() {
 	$default_header_variations = [
 		'header-1' => [
-			'label'         => esc_html__( 'Logo + Nav + Search', 'maverick' ),
+			'label'         => esc_html__( 'Header 1', 'maverick' ),
 			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '1' );
 			},
 		],
 		'header-2' => [
-			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
+			'label'         => esc_html__( 'Header 2', 'maverick' ),
 			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
 		'header-3' => [
-			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
+			'label'         => esc_html__( 'Header 3', 'maverick' ),
 			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
 		],
 		'header-4' => [
-			'label'         => esc_html__( 'Search + Logo + Nav', 'maverick' ),
+			'label'         => esc_html__( 'Header 4', 'maverick' ),
 			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '4' );
 			},
 		],
 		'header-5' => [
-			'label'         => esc_html__( 'Nav + Logo + Search', 'maverick' ),
+			'label'         => esc_html__( 'Header 5', 'maverick' ),
 			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-5.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '5' );
@@ -769,28 +769,28 @@ function get_available_footer_variations() {
 	$default_footer_variations = [
 		'footer-1' => [
 			'label'         => esc_html__( 'Footer 1', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-1.svg',
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '1' );
 			},
 		],
 		'footer-2' => [
 			'label'         => esc_html__( 'Footer 2', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-2.svg',
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '2' );
 			},
 		],
 		'footer-3' => [
 			'label'         => esc_html__( 'Footer 3', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-3.svg',
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '3' );
 			},
 		],
 		'footer-4' => [
 			'label'         => esc_html__( 'Footer 4', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-4.svg',
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '4' );
 			},
