@@ -473,6 +473,18 @@ function navigation_toggle() {
 }
 
 /**
+ * Display the header search toggle button.
+ *
+ * @return void
+ */
+function search_toggle() {
+	echo '<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">';
+		echo load_inline_svg( 'search.svg' ); // phpcs:ignore
+		echo '<span class="screen-reader-text">' . esc_html__( 'Search Toggle', 'maverick' ) . '</span>';
+	echo '</button>';
+}
+
+/**
  * Load an inline SVG.
  *
  * @param string $filename The filename of the SVG you want to load.
