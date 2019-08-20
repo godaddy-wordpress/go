@@ -9,7 +9,6 @@
  * Theme constants.
  */
 define( 'MAVERICK_VERSION', '0.2.0' );
-define( 'MAVERICK_TEMPLATE_URL', get_template_directory_uri() );
 
 /**
  * Core setup, hooks, and filters.
