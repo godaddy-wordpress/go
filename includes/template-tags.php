@@ -481,29 +481,23 @@ function navigation_toggle() {
  */
 function load_inline_svg( $filename ) {
 
-	$suffix = SCRIPT_DEBUG ? '' : '.min';
-
-	$svg_path = 'dist/images/';
-
-	// Determine the images dir from the editor_style dir.
 	$design_style = Core\get_design_style();
-
-	$design_style_svg_path = str_replace(
-		[ 'dist/css/', "-editor{$suffix}.css" ],
-		[ $svg_path, '' ],
-		$design_style['editor_style']
-	);
 
 	ob_start();
 
 	locate_template(
 		[
-			trailingslashit( $design_style_svg_path ) . $filename,
-			$svg_path . $filename,
+			sprintf(
+				'dist/images/design-styles/%1$s/%2$s',
+				sanitize_title( $design_style['label'] ),
+				$filename
+			),
+			"dist/images/{$filename}",
 		],
 		true,
 		false
 	);
 
 	return ob_get_clean();
+
 }
