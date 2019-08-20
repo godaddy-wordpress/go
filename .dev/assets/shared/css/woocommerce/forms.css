@@ -5,11 +5,12 @@
 */
 
 .woocommerce form .form-row {
-	margin: 0 0 3.75rem;
+	margin: 0 0 2.5rem;
 }
 
 .woocommerce form .form-row textarea,
 .woocommerce form .form-row input.input-text {
+	border-color: hsl(var(--theme-color-primary));
 	font-size: var(--theme-input--font-size);
 	line-height: 1.25;
 }
@@ -20,7 +21,7 @@
 }
 
 .woocommerce form .form-row textarea:focus {
-	border-color: hsl(var(--theme-input--border-color-focus));
+	border-color: hsl(var(--theme-color-primary));
 	box-shadow: var(--heme-input--shadow-focus);
 }
 
