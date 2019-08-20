@@ -478,10 +478,38 @@ function navigation_toggle() {
  * @return void
  */
 function search_toggle() {
-	echo '<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">';
-		echo load_inline_svg( 'search.svg' ); // phpcs:ignore
-		echo '<span class="screen-reader-text">' . esc_html__( 'Search Toggle', 'maverick' ) . '</span>';
-	echo '</button>';
+
+	printf(
+		'<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
+			%1$s
+			<span class="screen-reader-text">%2$s</span>
+		</button>',
+		wp_kses(
+			load_inline_svg( 'search.svg' ),
+			array_merge(
+				wp_kses_allowed_html( 'post' ),
+				[
+					'svg'  => [
+						'width'   => true,
+						'height'  => true,
+						'fill'    => true,
+						'xmlns'   => true,
+						'viewbox' => true,
+					],
+					'path' => [
+						'd'    => true,
+						'fill' => true,
+					],
+					'g'    => [
+						'd'    => true,
+						'fill' => true,
+					],
+				]
+			)
+		),
+		esc_html__( 'Search Toggle', 'maverick' )
+	);
+
 }
 
 /**
