@@ -28,7 +28,7 @@ $has_background = Maverick\has_header_background();
 
 			?>
 
-		</nav><!-- .site-navigation -->
+		</nav>
 
 		<?php Maverick\display_site_branding(); ?>
 
@@ -38,4 +38,4 @@ $has_background = Maverick\has_header_background();
 
 	</div>
 
-</header><!-- #masthead .site-header -->
+</header>
