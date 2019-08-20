@@ -290,7 +290,7 @@ function editor_styles() {
 
 	// Enqueue our shared Gutenberg editor styles.
 	add_editor_style(
-		"dist/css/editor-style{$suffix}.css"
+		"dist/css/style-editor{$suffix}.css"
 	);
 
 	$design_style = get_design_style();

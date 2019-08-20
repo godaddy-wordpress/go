@@ -14,7 +14,7 @@ module.exports = {
 		'admin/customizer-styles': './.dev/assets/admin/css/customizer.css',
 
 		// CSS files.
-		'editor-style': './.dev/assets/shared/css/editor-style.css',
+		'style-editor': './.dev/assets/shared/css/style-editor.css',
 		'shared-style': './.dev/assets/shared/css/shared-style.css',
 
 		// CSS Design Styles
