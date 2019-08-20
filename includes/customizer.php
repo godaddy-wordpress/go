@@ -189,8 +189,8 @@ function enqueue_controls_assets() {
 	);
 
 	wp_enqueue_style(
-		'maverick-customize-styles',
-		get_theme_file_uri( "/dist/css/admin/customizer-styles{$suffix}.css" ),
+		'maverick-customize-style',
+		get_theme_file_uri( "/dist/css/admin/customize-style{$suffix}.css" ),
 		[],
 		MAVERICK_VERSION
 	);
