@@ -21,7 +21,8 @@ use function Maverick\Core\get_available_color_schemes;
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
 function get_palette_color( $color, $format = 'RBG' ) {
-	$color_scheme    = get_theme_mod( 'color_scheme', 'default' );
+	$default         = \Maverick\Core\get_default_color_scheme();
+	$color_scheme    = get_theme_mod( 'color_scheme', $default );
 	$override_colors = [
 		'primary'    => 'primary_color',
 		'secondary'  => 'secondary_color',
@@ -62,7 +63,8 @@ function get_palette_color( $color, $format = 'RBG' ) {
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
 function get_default_palette_color( $color, $format = 'RBG' ) {
-	$color_scheme            = get_theme_mod( 'color_scheme', 'default' );
+	$default                 = \Maverick\Core\get_default_color_scheme();
+	$color_scheme            = get_theme_mod( 'color_scheme', $default );
 	$avaliable_color_schemes = get_available_color_schemes();
 
 	$the_color = false;

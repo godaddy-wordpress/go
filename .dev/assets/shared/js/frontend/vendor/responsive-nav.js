@@ -98,6 +98,10 @@
 			currentTarget = e.currentTarget;
 			target = e.target;
 
+			if ( target.tagName === 'svg' || target.tagName === 'path' ) {
+				target = currentTarget.closest( '.menu-item > a' );
+			}
+
 			if ( target.getAttribute( 'aria-haspopup' ) ) {
 				// Stop links from firing
 				e.preventDefault();
@@ -126,7 +130,7 @@
 					} // if
 				} // if
 
-				if ( e.target.nodeName === 'A' && target.classList.contains( 'submenu-is-open' ) ) {
+				if ( ( e.target.nodeName === 'A' || target.tagName === 'A' ) && target.classList.contains( 'submenu-is-open' ) ) {
 					// The menu is already open, so this should be a close action
 					menu_sub_close( target );
 				} else {
@@ -346,6 +350,15 @@
 			// If the screen is small or the action is set to click
 			if ( get_screen_size( 'has-offscreen-nav' ) || sub_menu_acion === 'click' ) {
 				menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
+
+				var svgElements = menu_items_with_children[i].querySelectorAll( 'svg' );
+
+				for ( var z = 0; z < svgElements.length; z = z + 1 ) {
+
+					svgElements[z].addEventListener( 'click', listener_submenu_click );
+
+				}
+
 				menu.classList.add( 'uses-click' );
 			} else if ( sub_menu_acion !== 'click' ) {
 				if ( get_screen_size( 'has-full-nav' ) ) {
