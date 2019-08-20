@@ -155,9 +155,12 @@ function default_controls( \WP_Customize_Manager $wp_customize ) {
  * @return void
  */
 function customize_preview_init() {
+
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 	wp_enqueue_script(
 		'maverick-customizer-preview',
-		get_theme_file_uri( '/dist/js/admin/customize-preview.js' ),
+		get_theme_file_uri( "/dist/js/admin/customize-preview{$suffix}.js" ),
 		[ 'jquery', 'customize-preview', 'wp-autop' ],
 		MAVERICK_VERSION,
 		true

@@ -29,9 +29,6 @@ module.exports = {
 		// 'design-styles/play': './.dev/assets/design-styles/play/css/play.css',
 		// 'design-styles/play-editor': './.dev/assets/design-styles/play/css/editor-style.css',
 	},
-	filename: {
-		js: 'js/[name].js',
-	},
 	paths: {
 		src: {
 			base: './.dev/assets/',
