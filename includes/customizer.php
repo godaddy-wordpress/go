@@ -186,7 +186,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_script(
 		'maverick-customizer-controls',
-		get_theme_file_uri( '/dist/js/admin/customize-controls.js' ),
+		get_theme_file_uri( "/dist/js/admin/customize-controls{$suffix}.js" ),
 		[ 'jquery' ],
 		MAVERICK_VERSION,
 		true
