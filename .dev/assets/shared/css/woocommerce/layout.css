@@ -18,13 +18,3 @@
 		margin-bottom: 2rem;
 	}
 }
-
-.woocommerce .woocommerce-MyAccount-navigation ul {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-
-	& li.woocommerce-MyAccount-navigation-link {
-		margin-left: 0;
-	}
-}

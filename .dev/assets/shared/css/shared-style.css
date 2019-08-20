@@ -102,6 +102,7 @@
 
 /*! WooCommerce */
 @import url("woocommerce/layout.css");
+@import url("woocommerce/account.css");
 @import url("woocommerce/button.css");
 @import url("woocommerce/pagination.css");
 @import url("woocommerce/forms.css");

@@ -1,0 +1,16 @@
+.woocommerce-account {
+
+	& .woocommerce-MyAccount-navigation ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		& li.woocommerce-MyAccount-navigation-link {
+			margin-left: 0;
+		}
+	}
+
+	& .woocommerce-MyAccount-content {
+		width: 70%;
+	}
+}
