@@ -483,7 +483,7 @@ function load_inline_svg( $filename ) {
 
 	$svg_path = 'dist/images/';
 
-	if ( ! file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
+	if ( ! file_exists( get_theme_file_path( $svg_path . $filename ) ) ) {
 
 		return;
 
@@ -491,7 +491,7 @@ function load_inline_svg( $filename ) {
 
 	ob_start();
 
-	include MAVERICK_PATH . $svg_path . $filename;
+	include get_theme_file_path( $svg_path . $filename );
 
 	return ob_get_clean();
 

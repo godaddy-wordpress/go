@@ -53,7 +53,7 @@ function init() {
  * @return void
  */
 function i18n() {
-	load_theme_textdomain( 'maverick', MAVERICK_PATH . '/languages' );
+	load_theme_textdomain( 'maverick', get_template_directory() . '/languages' );
 }
 
 /**
@@ -260,7 +260,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'maverick-frontend',
-		MAVERICK_TEMPLATE_URL . '/dist/js/frontend.js',
+		get_theme_file_uri( '/dist/js/frontend.js' ),
 		[],
 		MAVERICK_VERSION,
 		true
@@ -315,7 +315,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'maverick-style',
-		MAVERICK_TEMPLATE_URL . "/dist/css/shared-style{$suffix}.css",
+		get_theme_file_uri( "/dist/css/shared-style{$suffix}.css" ),
 		[ 'maverick-fonts' ],
 		MAVERICK_VERSION
 	);
@@ -482,7 +482,7 @@ function get_available_design_styles() {
 	$default_design_styles = [
 		'modern'      => [
 			'label'         => esc_html__( 'Modern', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . "/dist/css/design-styles/modern{$suffix}.css",
+			'url'           => get_theme_file_uri( "/dist/css/design-styles/modern{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/modern-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
@@ -530,7 +530,7 @@ function get_available_design_styles() {
 		],
 		'traditional' => [
 			'label'         => esc_html__( 'Traditional', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . "/dist/css/design-styles/traditional{$suffix}.css",
+			'url'           => get_theme_file_uri( "/dist/css/design-styles/traditional{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/traditional-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
@@ -579,7 +579,7 @@ function get_available_design_styles() {
 		],
 		'trendy'      => [
 			'label'         => esc_html__( 'Trendy', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . "/dist/css/design-styles/trendy{$suffix}.css",
+			'url'           => get_theme_file_uri( "/dist/css/design-styles/trendy{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/trendy-editor{$suffix}.css",
 			'color_schemes' => [
 				'one' => [
@@ -600,7 +600,7 @@ function get_available_design_styles() {
 		],
 		'welcoming'   => [
 			'label'         => esc_html__( 'Welcoming', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . "/dist/css/design-styles/welcoming{$suffix}.css",
+			'url'           => get_theme_file_uri( "/dist/css/design-styles/welcoming{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/welcoming-editor{$suffix}.css",
 			'color_schemes' => [
 				'one' => [
@@ -621,7 +621,7 @@ function get_available_design_styles() {
 		],
 		'playful'     => [
 			'label'         => esc_html__( 'Playful', 'maverick' ),
-			'url'           => MAVERICK_TEMPLATE_URL . "/dist/css/design-styles/play{$suffix}.css",
+			'url'           => get_theme_file_uri( "/dist/css/design-styles/play{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/play-editor{$suffix}.css",
 			'color_schemes' => [
 				'one' => [
@@ -694,36 +694,36 @@ function get_default_header_variation() {
 function get_available_header_variations() {
 	$default_header_variations = [
 		'header-1' => [
-			'label'         => esc_html__( 'Logo + Nav + Search', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/header-1.svg',
+			'label'         => esc_html__( 'Header 1', 'maverick' ),
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '1' );
 			},
 		],
 		'header-2' => [
-			'label'         => esc_html__( 'Nav + Logo', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/header-2.svg',
+			'label'         => esc_html__( 'Header 2', 'maverick' ),
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
 		'header-3' => [
-			'label'         => esc_html__( 'Logo + Nav (Vertical)', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/header-3.svg',
+			'label'         => esc_html__( 'Header 3', 'maverick' ),
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
 		],
 		'header-4' => [
-			'label'         => esc_html__( 'Search + Logo + Nav', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/header-4.svg',
+			'label'         => esc_html__( 'Header 4', 'maverick' ),
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '4' );
 			},
 		],
 		'header-5' => [
-			'label'         => esc_html__( 'Nav + Logo + Search', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/header-5.svg',
+			'label'         => esc_html__( 'Header 5', 'maverick' ),
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-5.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '5' );
 			},
@@ -769,28 +769,28 @@ function get_available_footer_variations() {
 	$default_footer_variations = [
 		'footer-1' => [
 			'label'         => esc_html__( 'Footer 1', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-1.svg',
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '1' );
 			},
 		],
 		'footer-2' => [
 			'label'         => esc_html__( 'Footer 2', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-2.svg',
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '2' );
 			},
 		],
 		'footer-3' => [
 			'label'         => esc_html__( 'Footer 3', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-3.svg',
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '3' );
 			},
 		],
 		'footer-4' => [
 			'label'         => esc_html__( 'Footer 4', 'maverick' ),
-			'preview_image' => MAVERICK_TEMPLATE_URL . '/dist/images/admin/footer-4.svg',
+			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '4' );
 			},
@@ -827,7 +827,7 @@ function get_default_footer_variation() {
 }
 
 /**
- * Returns the current header variation.
+ * Returns the current footer variation.
  *
  * @return array
  */
@@ -869,32 +869,27 @@ function get_available_social_icons() {
 	$social_icons = [
 		'facebook'  => [
 			'label'       => esc_html__( 'Facebook', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/dist/images/social/facebook.svg',
-			'icon_class'  => '',
+			'icon'        => get_theme_file_path( 'dist/images/social/facebook.svg' ),
 			'placeholder' => 'https://facebook.com/user',
 		],
 		'twitter'   => [
 			'label'       => esc_html__( 'Twitter', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/dist/images/social/twitter.svg',
-			'icon_class'  => '',
+			'icon'        => get_theme_file_path( 'dist/images/social/twitter.svg' ),
 			'placeholder' => 'https://twitter.com/user',
 		],
 		'instagram' => [
 			'label'       => esc_html__( 'Instagram', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/dist/images/social/instagram.svg',
-			'icon_class'  => '',
+			'icon'        => get_theme_file_path( 'dist/images/social/instagram.svg' ),
 			'placeholder' => 'https://instagram.com/user',
 		],
 		'linkedin'  => [
 			'label'       => esc_html__( 'LinkedIn', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/dist/images/social/linkedin.svg',
-			'icon_class'  => '',
+			'icon'        => get_theme_file_path( 'dist/images/social/linkedin.svg' ),
 			'placeholder' => 'https://linkedin.com/in/user',
 		],
 		'pinterest' => [
 			'label'       => esc_html__( 'Pinterest', 'maverick' ),
-			'icon'        => MAVERICK_PATH . '/dist/images/social/pinterest.svg',
-			'icon_class'  => '',
+			'icon'        => get_theme_file_path( 'dist/images/social/pinterest.svg' ),
 			'placeholder' => 'https://pinterest.com/user',
 		],
 	];
