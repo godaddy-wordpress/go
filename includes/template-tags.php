@@ -228,7 +228,7 @@ function copyright( $args = [] ) {
 	$year      = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
 	$copyright = get_theme_mod( 'copyright', \Maverick\Core\get_default_copyright() );
 
-	$html = array(
+	$html = [
 		'div'  => [
 			'class' => [],
 		],
@@ -239,7 +239,7 @@ function copyright( $args = [] ) {
 			'href'  => [],
 			'class' => [],
 		],
-	);
+	];
 	?>
 
 	<div class="<?php echo esc_attr( $args['class'] ); ?>">
@@ -481,17 +481,22 @@ function navigation_toggle() {
  */
 function load_inline_svg( $filename ) {
 
-	$svg_path = 'dist/images/';
-
-	if ( ! file_exists( get_theme_file_path( $svg_path . $filename ) ) ) {
-
-		return;
-
-	}
+	$design_style = Core\get_design_style();
 
 	ob_start();
 
-	include get_theme_file_path( $svg_path . $filename );
+	locate_template(
+		[
+			sprintf(
+				'dist/images/design-styles/%1$s/%2$s',
+				sanitize_title( $design_style['label'] ),
+				$filename
+			),
+			"dist/images/{$filename}",
+		],
+		true,
+		false
+	);
 
 	return ob_get_clean();
 
