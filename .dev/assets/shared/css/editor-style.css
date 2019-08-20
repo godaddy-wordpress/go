@@ -40,7 +40,6 @@
 
 /* Templates - related to WordPress templates */
 @import url("templates/post.css");
-@import url("templates/blog.css");
 
 /* Start importing unique editor partials */
 @import url("editor/page.css");

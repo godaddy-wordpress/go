@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <header class="entry-header">
-	<h1 class="ppost__title max-w-base m-0 m-auto text-center">
+	<h1 class="post__title max-w-base m-0 m-auto text-center">
 		<?php
 		/* translators: the search query */
 		printf( esc_html__( 'Search for: %s', 'maverick' ), '<span>' . esc_html( get_search_query() ) . '</span>' );
@@ -32,10 +32,6 @@ get_header(); ?>
 		// Previous/next page navigation.
 		the_posts_navigation();
 
-	} else {
-
-		// If no content, include the "No posts found" template.
-		get_template_part( 'partials/content', 'none' );
 	}
 	?>
 

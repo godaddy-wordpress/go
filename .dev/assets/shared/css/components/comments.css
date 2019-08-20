@@ -7,10 +7,6 @@ body {
 
 	& .comments-area {
 
-		& input {
-			line-height: inherit;
-		}
-
 		/* Post Comment button */
 		& input[type="submit"] {
 			@mixin button;
@@ -76,8 +72,8 @@ body {
 		/* Actual response form */
 		& .comment-form {
 
-			& > p:not(.comment-notes) {
-				margin: 2rem 0;
+			& > p {
+				margin: 0;
 			}
 		}
 
