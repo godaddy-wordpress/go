@@ -156,7 +156,7 @@ function default_controls( \WP_Customize_Manager $wp_customize ) {
  */
 function customize_preview_init() {
 	wp_enqueue_script(
-		'maverick-customizer-preview',
+		'maverick-customize-preview',
 		get_theme_file_uri( '/dist/js/admin/customize-preview.js' ),
 		[ 'jquery', 'customize-preview', 'wp-autop' ],
 		MAVERICK_VERSION,
@@ -164,7 +164,7 @@ function customize_preview_init() {
 	);
 
 	wp_localize_script(
-		'maverick-customizer-preview',
+		'maverick-customize-preview',
 		'MaverickPreviewData',
 		[
 			'design_styles' => \Maverick\Core\get_available_design_styles(),
@@ -182,7 +182,7 @@ function enqueue_controls_assets() {
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 	wp_enqueue_script(
-		'maverick-customizer-controls',
+		'maverick-customize-controls',
 		get_theme_file_uri( '/dist/js/admin/customize-controls.js' ),
 		[ 'jquery' ],
 		MAVERICK_VERSION,
@@ -190,7 +190,7 @@ function enqueue_controls_assets() {
 	);
 
 	wp_enqueue_style(
-		'maverick-customizer-styles',
+		'maverick-customize-styles',
 		get_theme_file_uri( "/dist/css/admin/customizer-styles{$suffix}.css" ),
 		[],
 		MAVERICK_VERSION
