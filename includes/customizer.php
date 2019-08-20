@@ -190,7 +190,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_style(
 		'maverick-customize-style',
-		get_theme_file_uri( "/dist/css/admin/customize-style{$suffix}.css" ),
+		get_theme_file_uri( "/dist/css/admin/style-customize{$suffix}.css" ),
 		[],
 		MAVERICK_VERSION
 	);

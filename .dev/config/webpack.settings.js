@@ -11,7 +11,7 @@ module.exports = {
 		'admin/customize-preview': './.dev/assets/admin/js/customize-preview.js',
 
 		// admin css
-		'admin/customize-style': './.dev/assets/admin/css/customize.css',
+		'admin/style-customize': './.dev/assets/admin/css/style-customize.css',
 
 		// CSS files.
 		'editor-style': './.dev/assets/shared/css/editor-style.css',
