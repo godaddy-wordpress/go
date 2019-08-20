@@ -228,7 +228,7 @@ function copyright( $args = [] ) {
 	$year      = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
 	$copyright = get_theme_mod( 'copyright', \Maverick\Core\get_default_copyright() );
 
-	$html = array(
+	$html = [
 		'div'  => [
 			'class' => [],
 		],
@@ -239,7 +239,7 @@ function copyright( $args = [] ) {
 			'href'  => [],
 			'class' => [],
 		],
-	);
+	];
 	?>
 
 	<div class="<?php echo esc_attr( $args['class'] ); ?>">
@@ -487,17 +487,17 @@ function load_inline_svg( $filename ) {
 	$design_style = Core\get_design_style();
 
 	$design_style_svg_path = str_replace(
-		array( 'dist/css/', '-editor.css' ),
-		array( $svg_path, '' ),
+		[ 'dist/css/', '-editor.css' ],
+		[ $svg_path, '' ],
 		$design_style['editor_style']
 	);
 
 	ob_start();
 	locate_template(
-		array(
+		[
 			trailingslashit( $design_style_svg_path ) . $filename,
 			$svg_path . $filename,
-		),
+		],
 		true
 	);
 	$output = ob_get_clean();
