@@ -13,27 +13,27 @@ define( 'MAVERICK_VERSION', '0.2.0' );
 /**
  * Core setup, hooks, and filters.
  */
-require_once get_parent_theme_file_path( '/includes/core.php' );
+require_once get_parent_theme_file_path( 'includes/core.php' );
 
 /**
  * Customizer additions.
  */
-require_once get_parent_theme_file_path( '/includes/customizer.php' );
+require_once get_parent_theme_file_path( 'includes/customizer.php' );
 
 /**
  * Custom template tags for the theme.
  */
-require_once get_parent_theme_file_path( '/includes/template-tags.php' );
+require_once get_parent_theme_file_path( 'includes/template-tags.php' );
 
 /**
  * Pluggable functions.
  */
-require_once get_parent_theme_file_path( '/includes/pluggable.php' );
+require_once get_parent_theme_file_path( 'includes/pluggable.php' );
 
 /**
  * TGMPA plugin activation.
  */
-require_once get_parent_theme_file_path( '/includes/tgm.php' );
+require_once get_parent_theme_file_path( 'includes/tgm.php' );
 
 /**
  * Run setup functions.
