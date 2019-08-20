@@ -481,13 +481,15 @@ function navigation_toggle() {
  */
 function load_inline_svg( $filename ) {
 
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 	$svg_path = 'dist/images/';
 
 	// Determine the images dir from the editor_style dir.
 	$design_style = Core\get_design_style();
 
 	$design_style_svg_path = str_replace(
-		[ 'dist/css/', '-editor.css' ],
+		[ 'dist/css/', "-editor{$suffix}.css" ],
 		[ $svg_path, '' ],
 		$design_style['editor_style']
 	);
