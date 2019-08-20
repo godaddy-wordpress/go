@@ -45,8 +45,8 @@ function setup() {
  * @return void
  */
 function register_control_types( \WP_Customize_Manager $wp_customize ) {
-	require_once get_parent_theme_file_path( '/includes/classes/customizer/class-switcher-control.php' );
-	require_once get_parent_theme_file_path( '/includes/classes/customizer/class-range-control.php' );
+	require_once get_parent_theme_file_path( 'includes/classes/customizer/class-switcher-control.php' );
+	require_once get_parent_theme_file_path( 'includes/classes/customizer/class-range-control.php' );
 
 	$wp_customize->register_control_type( Switcher_Control::class );
 	$wp_customize->register_control_type( Range_Control::class );
