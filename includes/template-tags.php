@@ -499,6 +499,7 @@ function load_inline_svg( $filename ) {
 			trailingslashit( $design_style_svg_path ) . $filename,
 			$svg_path . $filename,
 		],
+		true,
 		false
 	);
 
