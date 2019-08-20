@@ -6,8 +6,6 @@ body {
 	}
 
 	& .comments-area {
-		border-top: 7px solid hsl(var(--color-athens-gray));
-		margin: 3rem 0;
 
 		& input {
 			line-height: inherit;

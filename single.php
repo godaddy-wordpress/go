@@ -6,55 +6,21 @@
  * @package Maverick
  */
 
-$post_thumbnail_class = ! has_post_thumbnail() ? ' post--no-thumbnail' : '';
-
 get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
-	<?php
+<?php
 
-	while ( have_posts() ) :
+// Start the Loop.
+while ( have_posts() ) :
+	the_post();
 
-		the_post();
+	get_template_part( 'partials/content' );
 
-		?>
+	// If comments are open or we have at least one comment, load up the comment template.
+	if ( comments_open() || get_comments_number() ) {
+		comments_template();
+	}
 
-		<article class="post post--single<?php echo esc_attr( $post_thumbnail_class ); ?>">
-			<div class="post__hero">
-				<div class="post__hero-inner">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<div class="post__thumbnail">
-							<?php the_post_thumbnail(); ?>
-						</div>
-					<?php endif; ?>
-					<div class="post__summary">
-						<h1 class="post__title"><?php the_title(); ?></h1>
-						<span class="post__author"><?php esc_html_e( 'by', 'maverick' ); ?> <?php the_author_posts_link(); ?></span>
-						<?php
-						if ( get_the_tag_list() ) {
-							the_tags(
-								sprintf(
-									'<span class="post__tags"><span class="screen-reader-text">%s</span> ',
-									esc_html_e( 'Tags:', 'maverick' )
-								),
-								', ',
-								'</span>'
-							);
-						}
-						?>
-					</div>
-				</div>
-			</div>
-			<div class="content-area">
-				<?php the_content(); ?>
-				<?php comments_template(); ?>
-			</div>
-		</article>
-
-		<?php
-
-	endwhile;
-
-endif;
+endwhile;
 
 get_footer();

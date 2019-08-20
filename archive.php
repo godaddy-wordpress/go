@@ -7,16 +7,32 @@
 
 get_header(); ?>
 
-	<div class="content-area m-auto">
-		<h1><?php the_archive_title(); ?></h1>
+	<header class="entry-header">
+		<?php
+			the_archive_title( '<h1 class="post__title max-w-base m-0 m-auto text-center">', '</h1>' );
+		?>
+	</header>
 
-		<?php if ( have_posts() ) : ?>
-			<?php while ( have_posts() ) : ?>
-				<?php the_post(); ?>
-				<?php get_template_part( 'partials/content' ); ?>
-			<?php endwhile; ?>
-			<?php the_posts_navigation(); ?>
-		<?php endif; ?>
+	<div class="content-area">
+
+		<?php
+		if ( have_posts() ) {
+
+			// Start the Loop.
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'partials/content', 'excerpt' );
+			endwhile;
+
+			// Previous/next page navigation.
+			the_posts_navigation();
+
+		} else {
+
+			// If no content, include the "No posts found" template.
+			get_template_part( 'partials/content', 'none' );
+		}
+		?>
 
 	</div>
 

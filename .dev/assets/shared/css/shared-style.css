@@ -273,7 +273,7 @@ strong {
 	flex-direction: column;
 }
 
-.px-1 {
+.px {
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
 }
