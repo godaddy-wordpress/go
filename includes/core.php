@@ -827,7 +827,7 @@ function get_default_footer_variation() {
 }
 
 /**
- * Returns the current header variation.
+ * Returns the current footer variation.
  *
  * @return array
  */
