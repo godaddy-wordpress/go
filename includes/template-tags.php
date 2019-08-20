@@ -473,6 +473,46 @@ function navigation_toggle() {
 }
 
 /**
+ * Display the header search toggle button.
+ *
+ * @return void
+ */
+function search_toggle() {
+
+	printf(
+		'<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
+			%1$s
+			<span class="screen-reader-text">%2$s</span>
+		</button>',
+		wp_kses(
+			load_inline_svg( 'search.svg' ),
+			array_merge(
+				wp_kses_allowed_html( 'post' ),
+				[
+					'svg'  => [
+						'width'   => true,
+						'height'  => true,
+						'fill'    => true,
+						'xmlns'   => true,
+						'viewbox' => true,
+					],
+					'path' => [
+						'd'    => true,
+						'fill' => true,
+					],
+					'g'    => [
+						'd'    => true,
+						'fill' => true,
+					],
+				]
+			)
+		),
+		esc_html__( 'Search Toggle', 'maverick' )
+	);
+
+}
+
+/**
  * Load an inline SVG.
  *
  * @param string $filename The filename of the SVG you want to load.
