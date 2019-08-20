@@ -8,14 +8,12 @@
 // Useful global constants.
 define( 'MAVERICK_VERSION', '0.2.0' );
 define( 'MAVERICK_TEMPLATE_URL', get_template_directory_uri() );
-define( 'MAVERICK_PATH', get_template_directory() . '/' );
-define( 'MAVERICK_INC', MAVERICK_PATH . 'includes/' );
 
-require_once MAVERICK_INC . 'core.php';
-require_once MAVERICK_INC . 'tgm.php';
-require_once MAVERICK_INC . 'customizer.php';
-require_once MAVERICK_INC . 'template-tags.php';
-require_once MAVERICK_INC . 'pluggable.php';
+require_once get_parent_theme_file_path( '/includes/core.php' );
+require_once get_parent_theme_file_path( '/includes/tgm.php' );
+require_once get_parent_theme_file_path( '/includes/customizer.php' );
+require_once get_parent_theme_file_path( '/includes/template-tags.php' );
+require_once get_parent_theme_file_path( '/includes/pluggable.php' );
 
 // Run the setup functions.
 Maverick\Core\setup();
