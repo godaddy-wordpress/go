@@ -1,9 +1,13 @@
 /*! Captions */
 .wp-block-image,
 .wp-block-embed,
-.wp-block-audio {
+.wp-block-audio,
+.gallery {
 
-	& figcaption {
+	& figcaption,
+	& .wp-caption,
+	& .wp-caption-text,
+	& .gallery-caption {
 		color: hsl(var(--theme-caption--color));
 		font-size: var(--theme-caption--font-size);
 		font-style: var(--theme-caption--style);

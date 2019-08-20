@@ -149,6 +149,10 @@ strong {
 	color: hsl(var(--theme-h1--color));
 }
 
+.bypostauthor {
+	display: block;
+}
+
 .display-block {
 	display: block;
 }
@@ -212,6 +216,10 @@ strong {
 
 .justify-end {
 	justify-content: flex-end;
+}
+
+.sticky {
+	display: block;
 }
 
 .text-xs {

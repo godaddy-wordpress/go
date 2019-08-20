@@ -30,6 +30,18 @@ get_header(); ?>
 					<div class="post__summary">
 						<h1 class="post__title"><?php the_title(); ?></h1>
 						<span class="post__author"><?php esc_html_e( 'by', 'maverick' ); ?> <?php the_author_posts_link(); ?></span>
+						<?php
+						if ( get_the_tag_list() ) {
+							the_tags(
+								sprintf(
+									'<span class="post__tags"><span class="screen-reader-text">%s</span> ',
+									esc_html_e( 'Tags:', 'maverick' )
+								),
+								', ',
+								'</span>'
+							);
+						}
+						?>
 					</div>
 				</div>
 			</div>

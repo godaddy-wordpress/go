@@ -5,11 +5,6 @@
  * This file is for custom template tags only and it should not contain
  * functions that will be used for filtering or adding an action.
  *
- * All functions should be prefixed with Godaddy in order to prevent
- * pollution of the global namespace and potential conflicts with functions
- * from plugins.
- * Example: `tenup_function()`
- *
  * @package Maverick\Template_Tags
  */
 
@@ -26,7 +21,8 @@ use function Maverick\Core\get_available_color_schemes;
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
 function get_palette_color( $color, $format = 'RBG' ) {
-	$color_scheme    = get_theme_mod( 'color_scheme', 'default' );
+	$default         = \Maverick\Core\get_default_color_scheme();
+	$color_scheme    = get_theme_mod( 'color_scheme', $default );
 	$override_colors = [
 		'primary'    => 'primary_color',
 		'secondary'  => 'secondary_color',
@@ -67,7 +63,8 @@ function get_palette_color( $color, $format = 'RBG' ) {
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
 function get_default_palette_color( $color, $format = 'RBG' ) {
-	$color_scheme            = get_theme_mod( 'color_scheme', 'default' );
+	$default                 = \Maverick\Core\get_default_color_scheme();
+	$color_scheme            = get_theme_mod( 'color_scheme', $default );
 	$avaliable_color_schemes = get_available_color_schemes();
 
 	$the_color = false;
@@ -402,7 +399,7 @@ function social_icons( $args = [] ) {
 			<?php if ( ! empty( $social_icon['url'] ) || is_customize_preview() ) : ?>
 				<li class="<?php echo esc_attr( sprintf( $args['li_class'], $key ) ) . esc_attr( $visibility ); ?>">
 					<a class="social-icons__icon" href="<?php echo esc_url( $social_icon['url'] ); ?>" aria-label="<?php echo esc_attr( $social_icon['label'] ); ?>" rel="noopener noreferrer">
-						<?php echo file_get_contents( $social_icon['icon'] ); // phpcs:ignore ?>
+						<?php include $social_icon['icon']; ?>
 					</a>
 				</li>
 			<?php endif; ?>
@@ -484,16 +481,18 @@ function navigation_toggle() {
  */
 function load_inline_svg( $filename ) {
 
-	// Add the path to your SVG directory inside your theme.
 	$svg_path = 'dist/images/';
 
-	// Check the SVG file exists.
-	if ( file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
+	if ( ! file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
 
-		// Load and return the contents of the file.
-		return file_get_contents( MAVERICK_PATH . $svg_path . $filename ); // @codingStandardsIgnoreLine
+		return;
+
 	}
 
-	// Return a blank string if we can't find the file.
-	return '';
+	ob_start();
+
+	include MAVERICK_PATH . $svg_path . $filename;
+
+	return ob_get_clean();
+
 }
