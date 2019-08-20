@@ -270,7 +270,7 @@ function copyright( $args = [] ) {
  *
  * @return mixed Markup for the page title
  */
-function maverick_page_title() {
+function page_title() {
 
 	if ( is_front_page() || ! get_theme_mod( 'page_titles', true ) ) {
 
@@ -286,7 +286,7 @@ function maverick_page_title() {
 	 * @var array
 	 */
 	$args = (array) apply_filters(
-		'maverick_page_title_args',
+		'page_title_args',
 		[
 			'title'   => get_the_title(),
 			'wrapper' => 'h1',
