@@ -870,31 +870,26 @@ function get_available_social_icons() {
 		'facebook'  => [
 			'label'       => esc_html__( 'Facebook', 'maverick' ),
 			'icon'        => get_theme_file_path( '/dist/images/social/facebook.svg' ),
-			'icon_class'  => '',
 			'placeholder' => 'https://facebook.com/user',
 		],
 		'twitter'   => [
 			'label'       => esc_html__( 'Twitter', 'maverick' ),
 			'icon'        => get_theme_file_path( '/dist/images/social/twitter.svg' ),
-			'icon_class'  => '',
 			'placeholder' => 'https://twitter.com/user',
 		],
 		'instagram' => [
 			'label'       => esc_html__( 'Instagram', 'maverick' ),
 			'icon'        => get_theme_file_path( '/dist/images/social/instagram.svg' ),
-			'icon_class'  => '',
 			'placeholder' => 'https://instagram.com/user',
 		],
 		'linkedin'  => [
 			'label'       => esc_html__( 'LinkedIn', 'maverick' ),
 			'icon'        => get_theme_file_path( '/dist/images/social/linkedin.svg' ),
-			'icon_class'  => '',
 			'placeholder' => 'https://linkedin.com/in/user',
 		],
 		'pinterest' => [
 			'label'       => esc_html__( 'Pinterest', 'maverick' ),
 			'icon'        => get_theme_file_path( '/dist/images/social/pinterest.svg' ),
-			'icon_class'  => '',
 			'placeholder' => 'https://pinterest.com/user',
 		],
 	];
