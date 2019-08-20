@@ -15,7 +15,7 @@ module.exports = {
 
 		// CSS files.
 		'style-editor': './.dev/assets/shared/css/style-editor.css',
-		'shared-style': './.dev/assets/shared/css/shared-style.css',
+		'style-shared': './.dev/assets/shared/css/style-shared.css',
 
 		// CSS Design Styles
 		'design-styles/modern': './.dev/assets/design-styles/modern/css/style-modern.css',

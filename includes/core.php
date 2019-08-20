@@ -315,7 +315,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'maverick-style',
-		get_theme_file_uri( "/dist/css/shared-style{$suffix}.css" ),
+		get_theme_file_uri( "/dist/css/style-shared{$suffix}.css" ),
 		[ 'maverick-fonts' ],
 		MAVERICK_VERSION
 	);
