@@ -7,7 +7,7 @@
 
 namespace Maverick\TGM;
 
-require_once MAVERICK_PATH . '/includes/classes/class-tgm-plugin-activation.php';
+require_once get_parent_theme_file_path( 'includes/classes/class-tgm-plugin-activation.php' );
 
 /**
  * Set up TGM hooks

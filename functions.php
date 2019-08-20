@@ -1,23 +1,43 @@
 <?php
 /**
- * WP Theme constants and setup functions
+ * Maverick functions and definitions
  *
  * @package Maverick
  */
 
-// Useful global constants.
+/**
+ * Theme constants.
+ */
 define( 'MAVERICK_VERSION', '0.2.0' );
-define( 'MAVERICK_TEMPLATE_URL', get_template_directory_uri() );
-define( 'MAVERICK_PATH', get_template_directory() . '/' );
-define( 'MAVERICK_INC', MAVERICK_PATH . 'includes/' );
 
-require_once MAVERICK_INC . 'core.php';
-require_once MAVERICK_INC . 'tgm.php';
-require_once MAVERICK_INC . 'customizer.php';
-require_once MAVERICK_INC . 'template-tags.php';
-require_once MAVERICK_INC . 'pluggable.php';
+/**
+ * Core setup, hooks, and filters.
+ */
+require_once get_parent_theme_file_path( 'includes/core.php' );
 
-// Run the setup functions.
+/**
+ * Customizer additions.
+ */
+require_once get_parent_theme_file_path( 'includes/customizer.php' );
+
+/**
+ * Custom template tags for the theme.
+ */
+require_once get_parent_theme_file_path( 'includes/template-tags.php' );
+
+/**
+ * Pluggable functions.
+ */
+require_once get_parent_theme_file_path( 'includes/pluggable.php' );
+
+/**
+ * TGMPA plugin activation.
+ */
+require_once get_parent_theme_file_path( 'includes/tgm.php' );
+
+/**
+ * Run setup functions.
+ */
 Maverick\Core\setup();
 Maverick\TGM\setup();
 Maverick\Customizer\setup();
