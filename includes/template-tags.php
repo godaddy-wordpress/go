@@ -502,7 +502,5 @@ function load_inline_svg( $filename ) {
 		false
 	);
 
-	$output = ob_get_clean();
-
-	return $output;
+	return ob_get_clean();
 }
