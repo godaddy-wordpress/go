@@ -184,7 +184,7 @@ function enqueue_controls_assets() {
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 	wp_enqueue_script(
-		'maverick-customizer-controls',
+		'maverick-customize-controls',
 		get_theme_file_uri( "/dist/js/admin/customize-controls{$suffix}.js" ),
 		[ 'jquery' ],
 		MAVERICK_VERSION,
