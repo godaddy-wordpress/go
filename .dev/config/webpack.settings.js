@@ -9,6 +9,7 @@ module.exports = {
 		// admin js
 		'admin/customize-controls': './.dev/assets/admin/js/customize-controls.js',
 		'admin/customize-preview': './.dev/assets/admin/js/customize-preview.js',
+		'admin/block-filters': './.dev/assets/admin/js/block-filters.js',
 
 		// admin css
 		'admin/style-customize': './.dev/assets/admin/css/style-customize.css',
