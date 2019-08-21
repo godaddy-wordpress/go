@@ -1,3 +1,13 @@
+var blouckIteration = 0;
+
+function incrementBlockIteration( reset ) {
+	if ( reset ) {
+		blouckIteration = 0;
+		return blouckIteration;
+	}
+	return blouckIteration++;
+}
+
 function addBlockClassNames( props, block ) {
 
 	var contentBlocks = wp.data.select( 'core/editor' ).getBlocks(),
@@ -9,28 +19,42 @@ function addBlockClassNames( props, block ) {
 
 	}
 
-	var first = contentBlocks[0],
-	    last  = contentBlocks[ contentBlocks.length - 1 ];
+	var blockNumber = incrementBlockIteration( false );
 
-	if (
-		block.name === first.name &&
-		first.attributes.content === props.value
-	) {
+	classes = classes.trim().split( ' ' );
 
-		classes += ' is-first';
+	var firstIndex = classes.indexOf( 'is-first' );
 
-	}
+	if ( firstIndex > -1 ) {
 
-	if (
-		block.name === last.name &&
-		last.attributes.content === props.value
-	) {
-
-		classes += ' is-last';
+		classes.splice( firstIndex, 1 );
 
 	}
 
-	var uniqueClasses = [ ...new Set( classes.trim().split( ' ' ) ) ];
+	var lastIndex = classes.indexOf( 'is-last' );
+
+	if ( lastIndex > -1 ) {
+
+		classes.splice( lastIndex, 1 );
+
+	}
+
+	if ( blockNumber === 0 ) {
+
+		classes.push( 'is-first' );
+
+	}
+
+	if ( blockNumber === ( contentBlocks.length - 1 ) ) {
+
+		classes.push( 'is-last' );
+
+		// Reset Increment Count
+		incrementBlockIteration( true );
+
+	}
+
+	var uniqueClasses = [ ...new Set( classes ) ];
 
 	return Object.assign( props, { className: uniqueClasses.join( ' ' ) } );
 
