@@ -982,7 +982,7 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
 }
 
 /**
- * Add a dropdown icon to top-level menu items
+ * Filter the page titles
  *
  * @param array $args Page title arguments.
  *
