@@ -1,8 +1,8 @@
-import DesignStylePreview from './customizer/preview/design-style';
-import HeaderColorsPreview from './customizer/preview/header';
-import FooterColorsPreview from './customizer/preview/footer';
-import ColorSchemePreview from './customizer/preview/color-schemes';
-import LogoSizingPreview from './customizer/preview/logo-sizing';
+import DesignStylePreview from './customize/preview/design-style';
+import HeaderColorsPreview from './customize/preview/header';
+import FooterColorsPreview from './customize/preview/footer';
+import ColorSchemePreview from './customize/preview/color-schemes';
+import LogoSizingPreview from './customize/preview/logo-sizing';
 
 DesignStylePreview();
 HeaderColorsPreview();

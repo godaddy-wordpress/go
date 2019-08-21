@@ -228,7 +228,7 @@ function copyright( $args = [] ) {
 	$year      = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
 	$copyright = get_theme_mod( 'copyright', \Maverick\Core\get_default_copyright() );
 
-	$html = array(
+	$html = [
 		'div'  => [
 			'class' => [],
 		],
@@ -239,7 +239,7 @@ function copyright( $args = [] ) {
 			'href'  => [],
 			'class' => [],
 		],
-	);
+	];
 	?>
 
 	<div class="<?php echo esc_attr( $args['class'] ); ?>">
@@ -270,7 +270,7 @@ function copyright( $args = [] ) {
  *
  * @return mixed Markup for the page title
  */
-function maverick_page_title() {
+function page_title() {
 
 	if ( is_front_page() || ! get_theme_mod( 'page_titles', true ) ) {
 
@@ -473,6 +473,46 @@ function navigation_toggle() {
 }
 
 /**
+ * Display the header search toggle button.
+ *
+ * @return void
+ */
+function search_toggle() {
+
+	printf(
+		'<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
+			%1$s
+			<span class="screen-reader-text">%2$s</span>
+		</button>',
+		wp_kses(
+			load_inline_svg( 'search.svg' ),
+			array_merge(
+				wp_kses_allowed_html( 'post' ),
+				[
+					'svg'  => [
+						'width'   => true,
+						'height'  => true,
+						'fill'    => true,
+						'xmlns'   => true,
+						'viewbox' => true,
+					],
+					'path' => [
+						'd'    => true,
+						'fill' => true,
+					],
+					'g'    => [
+						'd'    => true,
+						'fill' => true,
+					],
+				]
+			)
+		),
+		esc_html__( 'Search Toggle', 'maverick' )
+	);
+
+}
+
+/**
  * Load an inline SVG.
  *
  * @param string $filename The filename of the SVG you want to load.
@@ -481,17 +521,22 @@ function navigation_toggle() {
  */
 function load_inline_svg( $filename ) {
 
-	$svg_path = 'dist/images/';
-
-	if ( ! file_exists( MAVERICK_PATH . $svg_path . $filename ) ) {
-
-		return;
-
-	}
+	$design_style = Core\get_design_style();
 
 	ob_start();
 
-	include MAVERICK_PATH . $svg_path . $filename;
+	locate_template(
+		[
+			sprintf(
+				'dist/images/design-styles/%1$s/%2$s',
+				sanitize_title( $design_style['label'] ),
+				$filename
+			),
+			"dist/images/{$filename}",
+		],
+		true,
+		false
+	);
 
 	return ob_get_clean();
 
