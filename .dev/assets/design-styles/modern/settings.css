@@ -243,7 +243,7 @@
 	--theme-site-title--font-size: 1.5rem;
 	--theme-site-title--font: var(--theme-site-nav--font);
 	--theme-site-title--text-transform: uppercase;
-	--theme-site-title--tracking: 8px;
+	--theme-site-title--tracking: 5px;
 	--theme-site-title--weight: 700;
 
 	--theme-site-description--color: var(--theme-color-heading);
@@ -343,8 +343,8 @@
 	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
-		--theme-footer-nav--padding-y: 1.15rem;
 		--theme-footer-nav--padding-x: 1.75rem;
+		--theme-footer-nav--padding-y: 0.15rem;
 	}
 
 	/* Footer > Social Icons */
