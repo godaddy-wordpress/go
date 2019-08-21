@@ -25,6 +25,7 @@ function setup() {
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_init', $n( 'editor_styles' ) );
+	add_action( 'enqueue_block_editor_assets', $n( 'block_editor_assets' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
 	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
@@ -247,6 +248,23 @@ function fonts_url() {
 			],
 			'https://fonts.googleapis.com/css'
 		)
+	);
+
+}
+
+/**
+ * Enqueue block editor assets.
+ *
+ * @return void
+ */
+function block_editor_assets() {
+
+	wp_enqueue_script(
+		'maverick-block-filters',
+		get_theme_file_uri( '/dist/js/admin/block-filters.js' ),
+		[ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
+		MAVERICK_VERSION,
+		true
 	);
 
 }
