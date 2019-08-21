@@ -20,12 +20,12 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 46rem;
-	--theme-max-w-wide: 88rem;
+	--theme-max-w-base: 50rem;
+	--theme-max-w-wide: 100rem;
 
 	/* Below base width query */
-	@custom-media --base (max-width: 46rem);
-	@custom-media --wide (max-width: 88rem);
+	@custom-media --base (max-width: 50rem);
+	@custom-media --wide (max-width: 100rem);
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -39,10 +39,10 @@
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 2em;
+	--theme-block-padding-x: 2rem;
 
 	@media (--medium) {
-		--theme-block-padding-x: 4em;
+		--theme-block-padding-x: 6rem;
 	}
 
 	/* Block Padding */
