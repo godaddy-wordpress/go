@@ -297,6 +297,10 @@ function page_title() {
 		]
 	);
 
+	/**
+	 * When $args['custom'] is true, this function will short circuit and output
+	 * the value of $args['title']
+	 */
 	if ( $args['custom'] ) {
 
 		echo wp_kses_post( $args['title'] );
