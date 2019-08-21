@@ -36,7 +36,6 @@ function setup() {
 	add_action( 'wp_nav_menu_args', $n( 'wp_nav_register_fallback' ) );
 }
 
-
 /**
  * Register our custom control types.
  *
@@ -159,7 +158,7 @@ function customize_preview_init() {
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 	wp_enqueue_script(
-		'maverick-customizer-preview',
+		'maverick-customize-preview',
 		get_theme_file_uri( "/dist/js/admin/customize-preview{$suffix}.js" ),
 		[ 'jquery', 'customize-preview', 'wp-autop' ],
 		MAVERICK_VERSION,
@@ -167,7 +166,7 @@ function customize_preview_init() {
 	);
 
 	wp_localize_script(
-		'maverick-customizer-preview',
+		'maverick-customize-preview',
 		'MaverickPreviewData',
 		[
 			'design_styles' => \Maverick\Core\get_available_design_styles(),
@@ -193,8 +192,8 @@ function enqueue_controls_assets() {
 	);
 
 	wp_enqueue_style(
-		'maverick-customizer-styles',
-		get_theme_file_uri( "/dist/css/admin/customizer-styles{$suffix}.css" ),
+		'maverick-customize-style',
+		get_theme_file_uri( "/dist/css/admin/style-customize{$suffix}.css" ),
 		[],
 		MAVERICK_VERSION
 	);
@@ -363,7 +362,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 		[
 			'default'           => \Maverick\Core\get_default_design_style(),
 			'transport'         => 'postMessage',
-			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
+			'sanitize_callback' => __NAMESPACE__ . '\\sanitize_radio',
 		]
 	);
 
@@ -385,7 +384,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 		[
 			'transport'         => 'postMessage',
 			'default'           => \Maverick\Core\get_default_color_scheme(),
-			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
+			'sanitize_callback' => __NAMESPACE__ . '\\sanitize_radio',
 		]
 	);
 
@@ -472,24 +471,6 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 }
 
 /**
- * Sanitize a radio field setting from the customizer.
- *
- * @param string $value   The radio field value being saved.
- * @param string $setting The name of the setting being saved.
- *
- * @return string
- */
-function maverick_customizer_radio_sanitize( $value, $setting ) {
-
-	$input = sanitize_title( $value );
-
-	$choices = $setting->manager->get_control( $setting->id . '_control' )->choices;
-
-	return array_key_exists( $input, $choices ) ? $input : $setting->default;
-
-}
-
-/**
  * Register the Header Controls within Customize.
  *
  * @param \WP_Customize_Manager $wp_customize The customize manager object.
@@ -511,7 +492,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 		[
 			'default'           => \Maverick\Core\get_default_header_variation(),
 			'transport'         => 'postMessage',
-			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
+			'sanitize_callback' => __NAMESPACE__ . '\\sanitize_radio',
 		]
 	);
 
@@ -592,7 +573,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		[
 			'default'           => \Maverick\Core\get_default_footer_variation(),
 			'transport'         => 'postMessage',
-			'sanitize_callback' => __NAMESPACE__ . '\\maverick_customizer_radio_sanitize',
+			'sanitize_callback' => __NAMESPACE__ . '\\sanitize_radio',
 		]
 	);
 
@@ -733,6 +714,24 @@ function register_social_controls( \WP_Customize_Manager $wp_customize ) {
 			]
 		)
 	);
+}
+
+/**
+ * Sanitize a radio field setting from the customizer.
+ *
+ * @param string $value   The radio field value being saved.
+ * @param string $setting The name of the setting being saved.
+ *
+ * @return string
+ */
+function sanitize_radio( $value, $setting ) {
+
+	$input = sanitize_title( $value );
+
+	$choices = $setting->manager->get_control( $setting->id . '_control' )->choices;
+
+	return array_key_exists( $input, $choices ) ? $input : $setting->default;
+
 }
 
 /**
