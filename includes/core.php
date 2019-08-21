@@ -32,6 +32,7 @@ function setup() {
 	add_filter( 'body_class', $n( 'body_classes' ) );
 	add_filter( 'body_class', $n( 'body_data' ), 999 );
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
+	add_filter( 'maverick_page_title_args', $n( 'filter_page_titles' ) );
 }
 
 /**
@@ -978,4 +979,39 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
 	}
 
 	return $title;
+}
+
+/**
+ * Add a dropdown icon to top-level menu items
+ *
+ * @param array $args Page title arguments.
+ *
+ * @return $args Filtered page title arguments.
+ */
+function filter_page_titles( $args ) {
+
+	if ( is_404() ) {
+
+		$args['title'] = esc_html__( "That page can't be found.", 'maverick' );
+
+	}
+
+	if ( is_search() ) {
+
+		$args['custom'] = true;
+		$args['title']  = sprintf(
+			'<header class="entry-header">
+				<h1 class="post__title max-w-base m-0 m-auto text-center">%s</h1>
+			</header>',
+			sprintf(
+				/* translators: Search query term(s). */
+				__( 'Search for: %s', 'maverick' ),
+				'<span>' . esc_html( get_search_query() ) . '</span>'
+			)
+		);
+
+	}
+
+	return $args;
+
 }

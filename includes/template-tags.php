@@ -293,8 +293,17 @@ function page_title() {
 			'atts'    => [
 				'class' => 'post__title max-w-base m-0 m-auto text-center',
 			],
+			'custom'  => false,
 		]
 	);
+
+	if ( $args['custom'] ) {
+
+		echo wp_kses_post( $args['title'] );
+
+		return;
+
+	}
 
 	if ( empty( $args['title'] ) ) {
 
