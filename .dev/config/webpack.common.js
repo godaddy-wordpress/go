@@ -30,7 +30,7 @@ module.exports = {
 	entry: configureEntries(),
 	output: {
 		path: path.resolve( process.cwd(), settings.paths.dist.base ),
-		filename: settings.filename.js,
+		filename: isProduction ? 'js/[name].min.js' : 'js/[name].js',
 	},
 
 	// Console stats output.

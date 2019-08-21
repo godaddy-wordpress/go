@@ -11,7 +11,7 @@ module.exports = {
 		'admin/customize-preview': './.dev/assets/admin/js/customize-preview.js',
 
 		// admin css
-		'admin/customizer-styles': './.dev/assets/admin/css/customizer.css',
+		'admin/style-customize': './.dev/assets/admin/css/style-customize.css',
 
 		// CSS files.
 		'style-editor': './.dev/assets/shared/css/style-editor.css',
@@ -28,9 +28,6 @@ module.exports = {
 		// 'design-styles/welcoming-editor': './.dev/assets/design-styles/welcoming/css/editor-style.css',
 		// 'design-styles/play': './.dev/assets/design-styles/play/css/play.css',
 		// 'design-styles/play-editor': './.dev/assets/design-styles/play/css/editor-style.css',
-	},
-	filename: {
-		js: 'js/[name].js',
 	},
 	paths: {
 		src: {

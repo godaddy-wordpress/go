@@ -258,9 +258,11 @@ function fonts_url() {
  */
 function scripts() {
 
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 	wp_enqueue_script(
 		'maverick-frontend',
-		get_theme_file_uri( '/dist/js/frontend.js' ),
+		get_theme_file_uri( "/dist/js/frontend{$suffix}.js" ),
 		[],
 		MAVERICK_VERSION,
 		true

@@ -59,14 +59,51 @@ module.exports = function( grunt ) {
 				],
 				src: [ 'style.css' ]
 			}
+		},
+
+		makepot: {
+			target: {
+				options: {
+					domainPath: 'languages/',
+					include: [ '.+\.php' ],
+					exclude: [ '.dev/', 'build/', 'temp/', 'node_modules/', 'vendor/' ],
+					potComments: 'Copyright (c) {year} GoDaddy Operating Company, LLC. All Rights Reserved.',
+					potHeaders: {
+						'x-poedit-keywordslist': true
+					},
+					processPot: function( pot, options ) {
+						pot.headers['report-msgid-bugs-to'] = pkg.repository.url;
+						return pot;
+					},
+					type: 'wp-theme',
+					updatePoFiles: true
+				}
+			}
+		},
+
+		potomo: {
+			files: {
+				expand: true,
+				cwd: 'languages/',
+				src: [ '*.po' ],
+				dest: 'languages/',
+				ext: '.mo',
+				updatePoFiles: true,
+				rename: function( dest, src ) {
+					return dest + src.replace( pkg.name + '-', '' );
+				}
+			}
 		}
 
 	} );
 
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
-	grunt.registerTask( 'default', [ 'replace' ] );
-	grunt.registerTask( 'version', [ 'replace' ] );
-	grunt.registerTask( 'check',   [ 'devUpdate' ] );
+	grunt.registerTask( 'default',    [ 'replace' ] );
+	grunt.registerTask( 'version',    [ 'replace' ] );
+	grunt.registerTask( 'check',      [ 'devUpdate' ] );
+	grunt.registerTask( 'update-pot', [ 'makepot' ] );
+	grunt.registerTask( 'update-mo',  [ 'potomo' ] );
+	grunt.registerTask( 'l10n',  [ 'update-pot', 'update-mo' ] );
 
 };
