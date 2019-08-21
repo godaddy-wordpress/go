@@ -759,7 +759,6 @@ function inline_css() {
 	$logo_width        = get_theme_mod( 'logo_width', '100' );
 	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', '100' );
 	?>
-		<!-- Variable Overrides -->
 		<style>
 			:root {
 				/* Color Palette */

@@ -38,6 +38,10 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
+
+	&.mb-0 + div {
+		margin-top: 0 !important;
+	}
 }
 
 .content-area {

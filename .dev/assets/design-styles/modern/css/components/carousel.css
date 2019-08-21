@@ -3,8 +3,8 @@
 	background-color: transparent;
 	border: 2px solid hsl(var(--color-white)) !important;
 	border-radius: 0;
-	height: 36px;
-	width: 47px;
+	height: 37px;
+	width: 48px;
 
 	&::after {
 		background-image: url("../../../dist/images/design-styles/modern/carousel-arrow.svg");
@@ -66,5 +66,22 @@
 		&:hover::after {
 			transform: translateX(29px);
 		}
+	}
+}
+
+.has-aligned-cells {
+
+	& .flickity-button::before {
+		background: hsl(var(--theme-button--bg));
+		bottom: 0;
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100%;
+		z-index: -1;
 	}
 }

@@ -12,6 +12,10 @@
 		z-index: 19;
 	}
 
+	& .has-aligned-cells .coblocks-gallery--figure::before {
+		display: none;
+	}
+
 	& .coblocks-gallery--item:not(.is-selected) .coblocks-gallery--figure::before {
 		opacity: 1;
 	}
