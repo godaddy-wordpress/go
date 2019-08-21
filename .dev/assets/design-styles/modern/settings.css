@@ -99,7 +99,7 @@
 	--theme-h6--font-size: 1.15rem;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.75rem;
+		--theme-h1--font-size: 3.5rem;
 		--theme-h2--font-size: 2.75rem;
 		--theme-h3--font-size: 2rem;
 	}
