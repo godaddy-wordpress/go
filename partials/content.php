@@ -22,7 +22,7 @@ $excerpt = get_the_excerpt();
 	<div class="post__summary">
 		<div class="post__meta">
 			<span class="post__categories"><?php the_category( ' | ' ); ?></span>
-			<span class="post__author"> • <?php esc_html_e( 'by', 'maverick' ); ?> <?php the_author(); ?></span>
+			<span class="post__author"><?php esc_html_e( 'by', 'maverick' ); ?> <?php the_author(); ?></span>
 		</div>
 		<h2 class="h3 post__title">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
