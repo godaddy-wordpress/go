@@ -270,7 +270,7 @@ function copyright( $args = [] ) {
  *
  * @return mixed Markup for the page title
  */
-function maverick_page_title() {
+function page_title() {
 
 	if ( is_front_page() || ! get_theme_mod( 'page_titles', true ) ) {
 
