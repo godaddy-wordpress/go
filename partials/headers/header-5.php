@@ -28,17 +28,14 @@ $has_background = Maverick\has_header_background();
 
 			?>
 
-		</nav><!-- .site-navigation -->
+		</nav>
 
 		<?php Maverick\display_site_branding(); ?>
 
-		<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
-			<?php echo Maverick\load_inline_svg( 'search.svg' ); // phpcs:ignore ?>
-			<span class="screen-reader-text"><?php esc_html_e( 'Search Toggle', 'maverick' ); ?></span>
-		</button>
+		<?php Maverick\search_toggle(); ?>
 
 		<?php get_search_form(); ?>
 
 	</div>
 
-</header><!-- #masthead .site-header -->
+</header>
