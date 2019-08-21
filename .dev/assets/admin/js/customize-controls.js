@@ -64,7 +64,7 @@ import './customize/controls/range-control';
 		}
 
 		// Only show the Footer Header Color selector, if the footer variation is 2 or 4.
-		customizerOptionDisplay( 'footer_variation', 'footer_heading_color', 'footer-2', 'footer-4', 100 );
+		customizerOptionDisplay( 'footer_variation', 'footer_heading_color', 'footer-3', 'footer-4', 100 );
 
 		// Only show the following options, if a logo is uploaded.
 		customizerImageOptionDisplay( 'custom_logo', 'logo_width', 100 );

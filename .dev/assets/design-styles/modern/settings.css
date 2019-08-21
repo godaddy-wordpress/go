@@ -20,11 +20,11 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 46rem;
+	--theme-max-w-base: 50rem;
 	--theme-max-w-wide: 88rem;
 
 	/* Below base width query */
-	@custom-media --base (max-width: 46rem);
+	@custom-media --base (max-width: 50rem);
 	@custom-media --wide (max-width: 88rem);
 
 	/* Vertical Rhythm */
@@ -35,18 +35,18 @@
 	@media (--large) {
 		--theme-block-spacing: 1.8rem;
 		--theme-block-spacing-larger: 2.3rem;
-		--theme-block-spacing-huge: 8.5rem;
+		--theme-block-spacing-huge: 10rem;
 	}
 
 	/* Site Padding */
 	--theme-block-padding-x: 2rem;
 
 	@media (--medium) {
-		--theme-block-padding-x: 4rem;
+		--theme-block-padding-x: 6rem;
 	}
 
 	/* Block Padding */
-	--editor-padding: 8.5rem;
+	--editor-padding: 10rem;
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
@@ -67,7 +67,7 @@
 
 	/* Text Colors */
 	--theme-color-heading: 207, 100%, 4%;
-	--theme-color-text: 0, 0%, 34%;
+	--theme-color-text: 207, 100%, 4%;
 	--theme-color-text-secondary: 0, 0%, 34%;
 
 	/* Global Color Scheme Colors */
@@ -77,21 +77,21 @@
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
-	--theme-body--font: "IBM Plex Sans", sans-serif;
-	--theme-body--font-size: 1rem;
-	--theme-body--leading: 2;
+	--theme-body--font: "IBM Plex Mono", mono, sans-serif;
+	--theme-body--font-size: 0.85rem;
+	--theme-body--leading: 2.25;
 	--theme-body--weight: 400;
 
 	/* Headings */
-	--theme-heading--font: "Montserrat", sans-serif;
+	--theme-heading--font: "Heebo", sans-serif;
 	--theme-heading--leading: 1.4;
 	--theme-heading--spacing: 1rem;
 	--theme-heading--style: normal;
-	--theme-heading--tracking: -0.025em;
+	--theme-heading--tracking: -0.015em;
 	--theme-heading--weight: 700;
 	--theme-heading--button-spacing: 1.75rem;
 
-	--theme-h1--font-size: 2rem;
+	--theme-h1--font-size: 2.25rem;
 	--theme-h2--font-size: 1.85rem;
 	--theme-h3--font-size: 1.6rem;
 	--theme-h4--font-size: 1.5rem;
@@ -99,9 +99,9 @@
 	--theme-h6--font-size: 1.15rem;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.25rem;
-		--theme-h2--font-size: 2.5rem;
-		--theme-h3--font-size: 1.85rem;
+		--theme-h1--font-size: 3.5rem;
+		--theme-h2--font-size: 2.75rem;
+		--theme-h3--font-size: 2rem;
 	}
 
 	--theme-h1--color: var(--theme-color-heading);
@@ -112,17 +112,8 @@
 	--theme-h6--color: var(--theme-color-heading);
 
 	/* Text Utilities */
-	--theme-text-xs: 82%;
-	--theme-text-sm: 83%;
-	--theme-text-sm--letter-spacing: 0.015em;
-
-	@media (--small) {
-		--theme-text-sm: 87%;
-	}
-
-	@media (--large) {
-		--theme-text-sm: 92%;
-	}
+	--theme-text-sm: 100%;
+	--theme-text-sm--letter-spacing: 0;
 
 	/* Drop Cap */
 	--theme-dropcap--font-size: 5rem;
@@ -168,7 +159,7 @@
 	--theme-quote-large--color: var(--theme-color-heading);
 	--theme-quote-large--font-size: var(--theme-h1--font-size);
 	--theme-quote-large--leading: var(--theme-heading--leading);
-	--theme-quote-large--style: italic;
+	--theme-quote-large--style: normal;
 
 
 	/*--------------------------------------------------------------
@@ -176,7 +167,7 @@
 	--------------------------------------------------------------*/
 	--theme-label--color: var(--theme-color-heading);
 	--theme-label--font-size: var(--theme-site-nav--font-size);
-	--theme-label--font: var(--theme-heading--font);
+	--theme-label--font: var(--theme-site-nav--font);
 	--theme-label--tracking: var(--theme-site-nav--tracking);
 	--theme-label--transform: uppercase;
 	--theme-label--weight: var(--theme-site-nav--weight);
@@ -224,9 +215,9 @@
 	--theme-button--bg-interactive: var(--theme-color-heading);
 	--theme-button--color: 0, 0%, 100%;
 	--theme-button--font-size: 0.75rem;
-	--theme-button--font: var(--theme-heading--font);
+	--theme-button--font: var(--theme-site-nav--font);
 	--theme-button--padding-x: 2rem;
-	--theme-button--padding-y: 1.6rem;
+	--theme-button--padding-y: 1.8rem;
 	--theme-button--radius: 0;
 	--theme-button--text-transform: uppercase;
 	--theme-button--tracking: 3px;
@@ -250,7 +241,9 @@
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.5rem;
-	--theme-site-title--font: var(--theme-heading--font);
+	--theme-site-title--font: var(--theme-site-nav--font);
+	--theme-site-title--text-transform: uppercase;
+	--theme-site-title--tracking: 5px;
 	--theme-site-title--weight: 700;
 
 	--theme-site-description--color: var(--theme-color-heading);
@@ -260,7 +253,7 @@
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
-	--theme-site-nav--font: var(--theme-heading--font);
+	--theme-site-nav--font: "Montserrat", sans-serif;
 	--theme-site-nav--font-size: 0.75rem;
 	--theme-site-nav--font-size-mobile: 1rem;
 	--theme-site-nav--weight: 700;
@@ -339,19 +332,19 @@
 	## Footer
 	--------------------------------------------------------------*/
 	--theme-footer--bg: "";
-	--theme-footer--color: var(--theme-color-text-secondary);
+	--theme-footer--color: var(--theme-color-text);
 	--theme-footer-heading--color: var(--theme-color-heading);
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color-interactive: var(--theme-color-primary);
-	--theme-footer-nav--leading: 2.25;
+	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
 	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
-		--theme-footer-nav--padding-y: 1.15rem;
 		--theme-footer-nav--padding-x: 1.75rem;
+		--theme-footer-nav--padding-y: 0.15rem;
 	}
 
 	/* Footer > Social Icons */
@@ -395,7 +388,7 @@
 	--coblocks-carousel--bg-overlay: hsla(var(--theme-color-primary), 0.75);
 	--coblocks-carousel--border-color: var(--color-white);
 
-	--coblocks-features--icon-spacing: 2rem;
+	--coblocks-features--icon-spacing: 3rem;
 
 	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);

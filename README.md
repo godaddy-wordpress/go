@@ -39,8 +39,8 @@ Since we're dealing with mini-themes (aka design styles) within a theme. Here is
             |—— templates/ WordPress template specific
             |—— utilities/
             |—— woocommerce/
-            |—— editor-style.css Gutenberg editor styles
-            |—— shared-style.css Imports all of the above
+            |—— style-edtior.css Gutenberg editor styles
+            |—— style-shared.css Imports all of the above
         |—— images/
         |—— js/
             |—— frontend/
