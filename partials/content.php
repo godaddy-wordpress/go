@@ -31,7 +31,7 @@
 
 			<span class="post__categories"><?php the_category( ' | ' ); ?></span>
 
-			<span class="post__author"> • <?php esc_html_e( 'by', 'maverick' ); ?> <?php the_author(); ?></span>
+			<span class="post__author"><?php esc_html_e( 'by', 'maverick' ); ?> <?php the_author(); ?></span>
 
 			<?php
 			if ( is_singular() && get_the_tag_list() ) {

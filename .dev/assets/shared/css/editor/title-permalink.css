@@ -1,0 +1,11 @@
+/*! Editor Post Title Permalink */
+.editor-post-permalink__link {
+	box-shadow: none !important;
+	color: hsl(var(--editor-permalink--color));
+	text-decoration: underline;
+
+	&:active,
+	&:hover {
+		color: hsl(var(--editor-permalink--color-interactive));
+	}
+}

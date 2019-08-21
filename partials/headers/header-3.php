@@ -13,6 +13,7 @@ $has_background = Maverick\has_header_background();
 	<div class="site-header__inner flex lg:flex-column items-center justify-between max-w-wide m-auto relative">
 
 		<?php Maverick\display_site_branding(); ?>
+
 		<?php Maverick\navigation_toggle(); ?>
 
 		<?php if ( has_nav_menu( 'primary' ) || is_customize_preview() ) : ?>

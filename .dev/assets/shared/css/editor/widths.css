@@ -1,0 +1,15 @@
+.wp-block {
+	max-width: var(--editor-max-w-base);
+
+	& .wp-block {
+		width: 100%;
+	}
+}
+
+.wp-block[data-align="wide"] {
+	max-width: var(--editor-max-w-wide);
+}
+
+.wp-block[data-align="full"] {
+	max-width: none;
+}

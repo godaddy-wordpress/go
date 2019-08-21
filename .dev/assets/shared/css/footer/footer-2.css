@@ -3,7 +3,7 @@
 
 	& .site-footer {
 		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.4);
-		padding-top: var(--theme-block-spacing-huge);
+		padding-top: calc(var(--theme-block-spacing-huge) * 0.4);
 
 		&.has-background {
 			padding-top: calc(var(--theme-block-spacing-huge) * 0.4);
@@ -42,7 +42,7 @@
 
 			&:focus {
 				@media (--medium) {
-					outline-offset: -9px;
+					outline-offset: -1px;
 				}
 			}
 		}
@@ -78,7 +78,7 @@
 		text-align: center;
 
 		@media (--large) {
-			margin-top: 0;
+			margin-top: 0.75rem;
 			text-align: left;
 		}
 	}

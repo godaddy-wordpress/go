@@ -60,6 +60,8 @@ export default () => {
 					.data( 'data-default-color', color )
 					.wpColorPicker( 'defaultColor', color );
 			} );
+
+			resetColors();
 		}
 	};
 
@@ -69,6 +71,33 @@ export default () => {
 	const toggleColorSchemes = () => {
 		$( 'label[for^=color_scheme_control]' ).hide();
 		$( `label[for^=color_scheme_control-${selectedDesignStyle}-]` ).show();
+	};
+
+	/**
+	 * Reset the colors after a color scheme selection.
+	 */
+	const resetColors = () => {
+
+		if ( 'undefined' === typeof wp.customize.control ) {
+			return;
+		}
+
+		var resetControls = [
+			'header_text_color',
+			'footer_text_color',
+			'footer_heading_color',
+			'social_icon_color',
+		];
+
+		resetControls.forEach( function( setting ) {
+			var settingControl = ( setting !== 'header_text_color' ) ? setting : 'header_text_color_control';
+
+			wp.customize( setting ).set( '' );
+			wp.customize.control( settingControl ).container.find( '.color-picker-hex' )
+				.data( 'data-default-color', '' )
+				.wpColorPicker( 'defaultColor', '' )
+				.trigger( 'change' );
+		} );
 	};
 
 	/**

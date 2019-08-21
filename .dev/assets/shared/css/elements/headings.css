@@ -6,6 +6,8 @@ h4,
 h5,
 h6,
 .h1 {
+	clear: both;
+	display: block;
 	font-family: var(--theme-heading--font);
 	font-style: var(--theme-heading--style);
 	font-weight: var(--theme-heading--weight);

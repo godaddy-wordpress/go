@@ -21,11 +21,15 @@
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 54rem;
-	--theme-max-w-wide: 76rem;
+	--theme-max-w-wide: 80rem;
 
 	/* Below base width query */
 	@custom-media --base (max-width: 54rem);
-	@custom-media --wide (max-width: 76rem);
+	@custom-media --wide (max-width: 80rem);
+
+	/* Editor widths */
+	--editor-max-w-base: 702px;
+	--editor-max-w-wide: 1118px;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -42,7 +46,7 @@
 	--theme-block-padding-x: 2.5rem;
 
 	@media (--medium) {
-		--theme-block-padding-x: 5rem;
+		--theme-block-padding-x: 6rem;
 	}
 
 	/* Block Padding */

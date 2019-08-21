@@ -46,11 +46,6 @@ p.has-background,
 	box-shadow: inset 0 -3px 0 0 rgb(66, 66, 66);
 }
 
-.site-branding__title {
-	letter-spacing: 3px;
-	text-transform: uppercase;
-}
-
 .site-navigation {
 	@media (--large) {
 		margin-top: -0.3rem;

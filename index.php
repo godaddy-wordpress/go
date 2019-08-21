@@ -7,6 +7,7 @@
 
 get_header();
 
+
 if ( have_posts() ) {
 
 	// Start the Loop.
