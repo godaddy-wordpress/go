@@ -240,6 +240,26 @@ function fonts_url() {
 
 	}
 
+	if ( is_customize_preview() ) {
+
+		$fonts = [];
+
+		foreach ( $design_styles as $design_style => $data ) {
+
+			if ( ! isset( $data['fonts'] ) ) {
+
+				continue;
+
+			}
+
+			foreach ( $data['fonts'] as $font => $font_weights ) {
+
+				$fonts[] = sprintf( '%1$s: %2$s', $font, implode( ',', $font_weights ) );
+
+			}
+		}
+	}
+
 	return esc_url_raw(
 		add_query_arg(
 			[
