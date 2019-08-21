@@ -18,24 +18,22 @@ get_header(); ?>
 	</h1>
 </header>
 
-<div class="content-area">
-
-	<?php
-	if ( have_posts() ) {
-
-		// Start the Loop.
-		while ( have_posts() ) :
-			the_post();
-			get_template_part( 'partials/content', 'excerpt' );
-		endwhile;
-
-		// Previous/next page navigation.
-		the_posts_navigation();
-
-	}
-	?>
-
-</div>
-
 <?php
+if ( have_posts() ) {
+
+	// Start the Loop.
+	while ( have_posts() ) :
+		the_post();
+		get_template_part( 'partials/content', 'excerpt' );
+	endwhile;
+
+	// Previous/next page navigation.
+	the_posts_navigation();
+
+} else {
+
+	// If no content, include the "No posts found" template.
+	get_template_part( 'partials/content', 'none' );
+}
+
 get_footer();

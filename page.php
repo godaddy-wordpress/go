@@ -7,21 +7,18 @@
  * @package Maverick
  */
 
-get_header(); ?>
+get_header();
 
-	<?php Maverick\page_title(); ?>
+// Start the Loop.
+while ( have_posts() ) :
+	the_post();
+	get_template_part( 'partials/content', 'page' );
 
-	<div class="content-area">
-		<?php if ( have_posts() ) : ?>
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				the_content();
-				wp_link_pages();
-			endwhile;
-			?>
-		<?php endif; ?>
-	</div>
+	// If comments are open or we have at least one comment, load up the comment template.
+	if ( comments_open() || get_comments_number() ) {
+		comments_template();
+	}
 
-<?php
+endwhile;
+
 get_footer();

@@ -7,6 +7,8 @@
 
 get_header();
 
+// @todo, this should render the title of the blogroll page
+// Maverick\page_title();
 
 if ( have_posts() ) {
 
