@@ -18,16 +18,7 @@ html {
 }
 
 body {
-	background-color: hsl(var(--theme-color-body-bg));
-	color: hsl(var(--theme-color-text));
-	font-family: var(--theme-body--font);
-	font-size: var(--theme-body--font-size);
-	font-weight: var(--theme-body--weight);
-	letter-spacing: var(--theme-body--tracking);
-	line-height: var(--theme-body--leading);
 	overflow-x: hidden;
-	text-rendering: optimizeLegibility;
-	word-wrap: break-word;
 }
 
 input,

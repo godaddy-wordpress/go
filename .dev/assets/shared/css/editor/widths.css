@@ -1,0 +1,16 @@
+.wp-block {
+	--total-block-padding: calc(var(--theme-block-padding-x) * 1.5);
+	max-width: calc(var(--theme-max-w-base) - var(--total-block-padding));
+
+	& .wp-block {
+		width: 100%;
+	}
+}
+
+.wp-block[data-align="wide"] {
+	max-width: var(--theme-max-w-wide);
+}
+
+.wp-block[data-align="full"] {
+	max-width: none;
+}

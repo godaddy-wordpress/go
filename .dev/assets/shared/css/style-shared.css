@@ -15,13 +15,14 @@
 @import url("utilities/padding.css");
 
 /* Elements */
+@import url("elements/page.css");
+@import url("elements/typography.css");
 @import url("elements/buttons.css");
 @import url("elements/forms.css");
 @import url("elements/headings.css");
 @import url("elements/links.css");
 @import url("elements/lists.css");
 @import url("elements/media.css");
-@import url("elements/page.css");
 @import url("blocks/table.css");
 
 /* Layout */

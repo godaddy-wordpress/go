@@ -21,11 +21,11 @@
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 50rem;
-	--theme-max-w-wide: 88rem;
+	--theme-max-w-wide: 100rem;
 
 	/* Below base width query */
 	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 88rem);
+	@custom-media --wide (max-width: 100rem);
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -91,17 +91,17 @@
 	--theme-heading--weight: 700;
 	--theme-heading--button-spacing: 1.75rem;
 
-	--theme-h1--font-size: 2.25rem;
-	--theme-h2--font-size: 1.85rem;
-	--theme-h3--font-size: 1.6rem;
-	--theme-h4--font-size: 1.5rem;
-	--theme-h5--font-size: 1.35rem;
-	--theme-h6--font-size: 1.15rem;
+	--theme-h1--font-size: 2em;
+	--theme-h2--font-size: 1.85em;
+	--theme-h3--font-size: 1.6em;
+	--theme-h4--font-size: 1.5em;
+	--theme-h5--font-size: 1.35em;
+	--theme-h6--font-size: 1.15em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.5rem;
-		--theme-h2--font-size: 2.75rem;
-		--theme-h3--font-size: 2rem;
+		--theme-h1--font-size: 3.25em;
+		--theme-h2--font-size: 2.75em;
+		--theme-h3--font-size: 2em;
 	}
 
 	--theme-h1--color: var(--theme-color-heading);
@@ -415,4 +415,10 @@
 	--coblocks-pricing--color-title: var(--theme-color-heading);
 
 	--coblocks-shapedivider--bg: var(--theme-color-primary);
+
+
+	/*--------------------------------------------------------------
+	## Editor
+	--------------------------------------------------------------*/
+	--editor-title-block--alignment: center;
 }

@@ -23,8 +23,8 @@ function setup() {
 	add_action( 'init', $n( 'init' ) );
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'admin_init', $n( 'editor_styles' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'enqueue_block_editor_assets', $n( 'block_editor_assets' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
@@ -129,15 +129,6 @@ function theme_setup() {
 		]
 	);
 
-	// Add support for responsive embedded content.
-	add_theme_support( 'responsive-embeds' );
-
-	// Add support for Block Styles.
-	add_theme_support( 'wp-block-styles' );
-
-	// Add support for full and wide align images.
-	add_theme_support( 'align-wide' );
-
 	// Add support for custom background color.
 	add_theme_support(
 		'custom-background',
@@ -148,6 +139,18 @@ function theme_setup() {
 
 	// Add support for WooCommerce.
 	add_theme_support( 'woocommerce' );
+
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
+
+	// Add support for core block styles.
+	add_theme_support( 'wp-block-styles' );
 
 	// Add custom editor font sizes.
 	add_theme_support(
@@ -328,11 +331,12 @@ function editor_styles() {
 
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
-	// Enqueue our shared Gutenberg editor styles.
+	// Enqueue  shared editor styles.
 	add_editor_style(
 		"dist/css/style-editor{$suffix}.css"
 	);
 
+	// Enqueue design style editor styles.
 	$design_style = get_design_style();
 
 	if ( $design_style && isset( $design_style['editor_style'] ) ) {
@@ -341,6 +345,7 @@ function editor_styles() {
 		);
 	}
 
+	// Enqueue fonts into the editor.
 	add_editor_style( fonts_url() );
 }
 

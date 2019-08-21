@@ -1,52 +1,6 @@
-/* Global variables */
-@import url("config/media-queries.css");
-@import url("config/mixins.css");
-
-/* Elements - all the HTML elements coverage */
+@import url("editor/settings.css");
+@import url("editor/widths.css");
+@import url("editor/title-block.css");
+@import url("editor/title-permalink.css");
+@import url("elements/typography.css");
 @import url("elements/headings.css");
-@import url("elements/links.css");
-@import url("elements/lists.css");
-@import url("elements/media.css");
-@import url("elements/page.css");
-@import url("blocks/table.css");
-
-/* Blocks */
-@import url("blocks/button.css");
-@import url("blocks/separator.css");
-@import url("blocks/image.css");
-@import url("blocks/media.css");
-@import url("blocks/gallery.css");
-@import url("blocks/preformatted.css");
-@import url("blocks/pullquote.css");
-@import url("blocks/file.css");
-@import url("blocks/latest-posts.css");
-@import url("blocks/latest-comments.css");
-
-/* CoBlocks */
-@import url("coblocks/author.css");
-@import url("coblocks/row.css");
-
-/* WooCommerce */
-@import url("woocommerce/layout.css");
-@import url("woocommerce/button.css");
-@import url("woocommerce/pagination.css");
-@import url("woocommerce/forms.css");
-@import url("woocommerce/cart.css");
-@import url("woocommerce/shop.css");
-@import url("woocommerce/product.css");
-@import url("woocommerce/tabs.css");
-@import url("woocommerce/typography.css");
-@import url("woocommerce/checkbox.css");
-
-/* Templates - related to WordPress templates */
-@import url("templates/post.css");
-@import url("templates/blog.css");
-
-/* Start importing unique editor partials */
-@import url("editor/page.css");
-
-/* Gravity */
-@import url("gravity/forms.css");
-@import url("gravity/checkbox.css");
-@import url("gravity/radio.css");
-@import url("gravity/button.css");

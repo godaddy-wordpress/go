@@ -1,0 +1,14 @@
+/*! Editor Post Title */
+.editor-post-title__block {
+
+	& .editor-post-title__input {
+		color: hsl(var(--theme-h1--color));
+		font-family: var(--theme-heading--font);
+		font-size: var(--theme-h1--font-size);
+		font-style: var(--theme-heading--style);
+		font-weight: var(--theme-heading--weight);
+		letter-spacing: var(--theme-heading--tracking);
+		line-height: var(--theme-heading--leading);
+		text-align: var(--editor-title-block--alignment);
+	}
+}
