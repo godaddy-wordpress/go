@@ -1,7 +1,7 @@
 /*! CoBlocks: Hero */
 .wp-block-coblocks-hero {
 
-	& .wp-block-coblocks-hero__inner-wrapper {
+	& .wp-block-coblocks-hero__content-wrapper {
 		@mixin blockWidthNoPaddingWide;
 		margin-left: auto;
 		margin-right: auto;

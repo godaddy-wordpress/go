@@ -3,10 +3,28 @@
 
 	& div.wp-block-columns {
 
-		/* margin-bottom: calc(var(--theme-block-spacing) * -1) !important; */
-
 		& .wp-block-column {
-			margin-bottom: var(--theme-block-spacing);
+			margin-bottom: 0;
+			margin-top: var(--theme-block-spacing-larger);
+
+			@media (--small) {
+				margin-top: 0;
+				padding: 0 1em;
+			}
+
+			&:first-child {
+				margin-top: 0;
+				padding-left: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+				padding-right: 0;
+			}
+
+			&:empty {
+				margin: 0;
+			}
 
 			& > *:first-child {
 				margin-top: 0;
@@ -15,6 +33,10 @@
 			& > *:last-child {
 				margin-bottom: 0;
 			}
+		}
+
+		& .wp-block-column:empty + .wp-block-column {
+			margin-top: 0;
 		}
 	}
 }
@@ -36,5 +58,9 @@
 
 	& p ~ .wp-block-button {
 		margin-bottom: 0 !important;
+	}
+
+	& .wp-block-column > .wp-block-button:first-child {
+		margin-top: 0.75em !important;
 	}
 }

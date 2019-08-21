@@ -517,15 +517,17 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Montserrat'    => [
+				'Montserrat'      => [
+					'400',
+					'700',
+				],
+				'IBM Plex Mono' => [
 					'400',
 					'400i',
 					'700',
-					'700i',
 				],
-				'IBM Plex Sans' => [
+				'Heebo'           => [
 					'400',
-					'400i',
 					'700',
 				],
 			],
