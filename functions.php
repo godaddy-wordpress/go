@@ -42,11 +42,6 @@ Maverick\Core\setup();
 Maverick\TGM\setup();
 Maverick\Customizer\setup();
 
-// Require Composer autoloader if it exists.
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require_once 'vendor/autoload.php';
-}
-
 if ( ! function_exists( 'wp_body_open' ) ) {
 
 	/**
