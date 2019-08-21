@@ -8,7 +8,7 @@
 get_header(); ?>
 
 	<header class="entry-header">
-		<?php the_archive_title( '<h1 class="post__title max-w-base m-0 m-auto text-center">', '</h1>' ); ?>
+		<?php the_archive_title( '<h1 class="post__title max-w-base m-0 px m-auto text-center">', '</h1>' ); ?>
 	</header>
 
 	<?php
