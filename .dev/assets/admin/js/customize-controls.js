@@ -1,4 +1,4 @@
-import './customizer/controls/range-control';
+import './customize/controls/range-control';
 
 /**
  * Scripts within the customizer controls window.
