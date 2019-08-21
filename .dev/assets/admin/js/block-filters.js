@@ -10,7 +10,7 @@ function incrementBlockIteration( reset ) {
 
 function addBlockClassNames( props, block ) {
 
-	var contentBlocks = wp.data.select( 'core/editor' ).getBlocks(),
+	var contentBlocks = wp.data.select( 'core/block-editor' ).getBlocks(),
 	    classes       = ( 'undefined' === typeof props.className ) ? '' : props.className;
 
 	if ( ! contentBlocks.length ) {
