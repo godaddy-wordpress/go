@@ -27,6 +27,10 @@
 	@custom-media --base (max-width: 50rem);
 	@custom-media --wide (max-width: 100rem);
 
+	/* Editor widths */
+	--editor-max-w-base: 633px;
+	--editor-max-w-wide: 1438px;
+
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
 	--theme-block-spacing-larger: 1.75rem;
