@@ -104,5 +104,6 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'check',      [ 'devUpdate' ] );
 	grunt.registerTask( 'update-pot', [ 'makepot' ] );
 	grunt.registerTask( 'update-mo',  [ 'potomo' ] );
+	grunt.registerTask( 'l10n',  [ 'update-pot', 'update-mo' ] );
 
 };
