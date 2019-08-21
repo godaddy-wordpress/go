@@ -14,14 +14,14 @@ module.exports = {
 		'admin/style-customize': './.dev/assets/admin/css/style-customize.css',
 
 		// CSS files.
-		'editor-style': './.dev/assets/shared/css/editor-style.css',
-		'shared-style': './.dev/assets/shared/css/shared-style.css',
+		'style-editor': './.dev/assets/shared/css/style-editor.css',
+		'style-shared': './.dev/assets/shared/css/style-shared.css',
 
 		// CSS Design Styles
-		'design-styles/modern': './.dev/assets/design-styles/modern/css/style-modern.css',
-		'design-styles/modern-editor': './.dev/assets/design-styles/modern/css/style-editor.css',
-		'design-styles/traditional': './.dev/assets/design-styles/traditional/css/style-traditional.css',
-		'design-styles/traditional-editor': './.dev/assets/design-styles/traditional/css/style-editor.css',
+		'design-styles/style-modern': './.dev/assets/design-styles/modern/css/style-modern.css',
+		'design-styles/style-modern-editor': './.dev/assets/design-styles/modern/css/style-modern-editor.css',
+		'design-styles/style-traditional': './.dev/assets/design-styles/traditional/css/style-traditional.css',
+		'design-styles/style-traditional-editor': './.dev/assets/design-styles/traditional/css/style-traditional-editor.css',
 		// 'design-styles/trendy-shop': './.dev/assets/design-styles/trendy-shop/css/trendy-shop.css',
 		// 'design-styles/trendy-shop-editor': './.dev/assets/design-styles/trendy-shop/css/editor-style.css',
 		// 'design-styles/welcoming': './.dev/assets/design-styles/welcoming/css/welcoming.css',
