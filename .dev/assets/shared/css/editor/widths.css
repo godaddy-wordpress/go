@@ -1,5 +1,5 @@
 .wp-block {
-	max-width: var(--editor-max-w-wide);
+	max-width: var(--editor-max-w-base);
 
 	& .wp-block {
 		width: 100%;
