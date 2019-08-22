@@ -103,7 +103,7 @@
 	--theme-h6--font-size: 1.15em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.25em;
+		--theme-h1--font-size: 4em;
 		--theme-h2--font-size: 2.75em;
 		--theme-h3--font-size: 2em;
 	}
@@ -320,7 +320,7 @@
 	--theme-search-submit--color: var(--color-white);
 	--theme-search-submit--radius: 0;
 
-	--theme-not-found-width: 40rem;
+	--theme-not-found-width: 42rem;
 
 
 	/*--------------------------------------------------------------
