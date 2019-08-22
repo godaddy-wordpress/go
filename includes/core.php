@@ -1025,6 +1025,23 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
 }
 
 /**
+ * Check for search results.
+ *
+ * @return $result Whether or not there are search results.
+ */
+function is_search_no_results() {
+
+	if ( is_search() ) {
+
+		global $wp_query;
+
+		$result = ( 0 !== $wp_query->found_posts ) ? false : true;
+
+		return $result;
+	}
+}
+
+/**
  * Filter the page titles
  *
  * @param array $args Page title arguments.
@@ -1055,9 +1072,15 @@ function filter_page_titles( $args ) {
 
 		$args['title'] = sprintf(
 			/* translators: Search query term(s). */
-			__( 'Search for: %s', 'maverick' ),
+			esc_html__( 'Search for: %s', 'maverick' ),
 			esc_html( get_search_query() )
 		);
+	}
+
+	if ( is_search_no_results() ) {
+
+		$args['title'] = esc_html__( 'Nothing Found', 'maverick' );
+
 	}
 
 	return $args;
