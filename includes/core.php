@@ -1040,10 +1040,14 @@ function filter_page_titles( $args ) {
 	}
 
 	if ( is_archive() ) {
+
 		$args['title'] = get_the_archive_title();
+
 	}
 
 	if ( is_search() ) {
+
+		$args['title'] = esc_html__( "That page can't be found", 'maverick' );
 
 		$args['custom'] = true;
 		$args['title']  = sprintf(

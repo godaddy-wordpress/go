@@ -9,6 +9,10 @@
 
 ?>
 
+<header class="entry-header">
+	<h1 class="post__title max-w-base m-0 m-auto text-center"><?php esc_html_e( 'Nothing Found', 'maverick' ); ?></h1>
+</header>
+
 <div class="content-area no-results not-found">
 	<?php
 	if ( is_home() && current_user_can( 'publish_posts' ) ) :
@@ -35,7 +39,7 @@
 
 	else :
 		?>
-		<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'maverick' ); ?></p>
+		<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help you out.', 'maverick' ); ?></p>
 		<?php
 		get_search_form();
 
