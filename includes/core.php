@@ -283,12 +283,30 @@ function fonts_url() {
  */
 function block_editor_assets() {
 
+	require_once get_parent_theme_file_path( 'includes/customizer.php' );
+
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 	wp_enqueue_script(
 		'maverick-block-filters',
-		get_theme_file_uri( 'dist/js/admin/block-filters.js' ),
+		get_theme_file_uri( "dist/js/admin/block-filters{$suffix}.js" ),
 		[ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
 		MAVERICK_VERSION,
 		true
+	);
+
+	ob_start();
+
+	\Maverick\Customizer\inline_css();
+
+	$styles = ob_get_clean();
+
+	wp_localize_script(
+		'maverick-block-filters',
+		'MaverickBlockFilters',
+		[
+			'inlineStyles' => $styles,
+		]
 	);
 
 }
@@ -321,6 +339,7 @@ function scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 
 /**
