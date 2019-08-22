@@ -1059,7 +1059,6 @@ function comment_form_reply_title( $args ) {
 	return $args;
 
 }
-add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
 
 /**
  * Filter the page titles
