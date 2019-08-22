@@ -289,7 +289,7 @@ function block_editor_assets() {
 	wp_enqueue_script(
 		'maverick-block-filters',
 		get_theme_file_uri( "/dist/js/admin/block-filters{$suffix}.js" ),
-		[ 'jquery', 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
+		[ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
 		MAVERICK_VERSION,
 		true
 	);
