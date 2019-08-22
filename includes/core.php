@@ -1053,20 +1053,11 @@ function filter_page_titles( $args ) {
 
 	if ( is_search() ) {
 
-		$args['title'] = esc_html__( "That page can't be found", 'maverick' );
-
-		$args['custom'] = true;
-		$args['title']  = sprintf(
-			'<header class="entry-header">
-				<h1 class="post__title max-w-base m-0 m-auto text-center">%s</h1>
-			</header>',
-			sprintf(
-				/* translators: Search query term(s). */
-				__( 'Search for: %s', 'maverick' ),
-				'<span>' . esc_html( get_search_query() ) . '</span>'
-			)
+		$args['title'] = sprintf(
+			/* translators: Search query term(s). */
+			__( 'Search for: %s', 'maverick' ),
+			esc_html( get_search_query() )
 		);
-
 	}
 
 	return $args;
