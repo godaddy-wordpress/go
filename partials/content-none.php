@@ -1,16 +1,15 @@
 <?php
 /**
- * Partial: content-none.php
- * Displays content not found.
+ * Template part for displaying a message that posts cannot be found
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Maverick
  */
 
 ?>
 
-<h1 class="page__title"><?php esc_html_e( 'Nothing Found', 'maverick' ); ?></h1>
-
-<div class="content-area m-auto">
+<div class="content-area no-results not-found">
 	<?php
 	if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -32,13 +31,13 @@
 
 		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'maverick' ); ?></p>
 		<?php
-		get_template_part( 'partials/search' );
+		get_search_form();
 
 	else :
 		?>
 		<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'maverick' ); ?></p>
 		<?php
-		get_template_part( 'partials/search' );
+		get_search_form();
 
 	endif;
 	?>

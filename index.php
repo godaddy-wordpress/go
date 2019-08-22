@@ -5,21 +5,25 @@
  * @package Maverick
  */
 
-get_header(); ?>
+get_header();
 
-	<?php Maverick\page_title(); ?>
+// @todo, this should render the title of the blogroll page
+// Maverick\page_title();
 
-	<div class="content-area">
-		<?php if ( have_posts() ) : ?>
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				the_content();
-				wp_link_pages();
-			endwhile;
-			?>
-		<?php endif; ?>
-	</div>
+if ( have_posts() ) {
 
-<?php
+	// Start the Loop.
+	while ( have_posts() ) :
+		the_post();
+		get_template_part( 'partials/content' );
+	endwhile;
+
+	// Previous/next page navigation.
+	the_posts_navigation();
+} else {
+
+	// If no content, include the "No posts found" template.
+	get_template_part( 'partials/content', 'none' );
+}
+
 get_footer();

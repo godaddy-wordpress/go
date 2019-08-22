@@ -33,6 +33,7 @@ function setup() {
 	add_filter( 'body_class', $n( 'body_classes' ) );
 	add_filter( 'body_class', $n( 'body_data' ), 999 );
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
+	add_filter( 'maverick_page_title_args', $n( 'filter_page_titles' ) );
 }
 
 /**
@@ -288,7 +289,7 @@ function block_editor_assets() {
 
 	wp_enqueue_script(
 		'maverick-block-filters',
-		get_theme_file_uri( "/dist/js/admin/block-filters{$suffix}.js" ),
+    get_theme_file_uri( "/dist/js/admin/block-filters{$suffix}.js" ),
 		[ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
 		MAVERICK_VERSION,
 		true
@@ -321,7 +322,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'maverick-frontend',
-		get_theme_file_uri( "/dist/js/frontend{$suffix}.js" ),
+		get_theme_file_uri( "dist/js/frontend{$suffix}.js" ),
 		[],
 		MAVERICK_VERSION,
 		true
@@ -378,7 +379,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'maverick-style',
-		get_theme_file_uri( "/dist/css/style-shared{$suffix}.css" ),
+		get_theme_file_uri( "dist/css/style-shared{$suffix}.css" ),
 		[ 'maverick-fonts' ],
 		MAVERICK_VERSION
 	);
@@ -545,7 +546,7 @@ function get_available_design_styles() {
 	$default_design_styles = [
 		'modern'      => [
 			'label'         => esc_html__( 'Modern', 'maverick' ),
-			'url'           => get_theme_file_uri( "/dist/css/design-styles/style-modern{$suffix}.css" ),
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-modern{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-modern-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
@@ -595,7 +596,7 @@ function get_available_design_styles() {
 		],
 		'traditional' => [
 			'label'         => esc_html__( 'Traditional', 'maverick' ),
-			'url'           => get_theme_file_uri( "/dist/css/design-styles/style-traditional{$suffix}.css" ),
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
@@ -644,7 +645,7 @@ function get_available_design_styles() {
 		],
 		'trendy'      => [
 			'label'         => esc_html__( 'Trendy', 'maverick' ),
-			'url'           => get_theme_file_uri( "/dist/css/design-styles/style-trendy{$suffix}.css" ),
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
 				'one' => [
@@ -665,7 +666,7 @@ function get_available_design_styles() {
 		],
 		'welcoming'   => [
 			'label'         => esc_html__( 'Welcoming', 'maverick' ),
-			'url'           => get_theme_file_uri( "/dist/css/design-styles/style-welcoming{$suffix}.css" ),
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
 			'color_schemes' => [
 				'one' => [
@@ -686,7 +687,7 @@ function get_available_design_styles() {
 		],
 		'playful'     => [
 			'label'         => esc_html__( 'Playful', 'maverick' ),
-			'url'           => get_theme_file_uri( "/dist/css/design-styles/style-playful{$suffix}.css" ),
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
 			'color_schemes' => [
 				'one' => [
@@ -760,35 +761,35 @@ function get_available_header_variations() {
 	$default_header_variations = [
 		'header-1' => [
 			'label'         => esc_html__( 'Header 1', 'maverick' ),
-			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-1.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '1' );
 			},
 		],
 		'header-2' => [
 			'label'         => esc_html__( 'Header 2', 'maverick' ),
-			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-2.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
 		'header-3' => [
 			'label'         => esc_html__( 'Header 3', 'maverick' ),
-			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-3.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
 		],
 		'header-4' => [
 			'label'         => esc_html__( 'Header 4', 'maverick' ),
-			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-4.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '4' );
 			},
 		],
 		'header-5' => [
 			'label'         => esc_html__( 'Header 5', 'maverick' ),
-			'preview_image' => get_theme_file_uri( '/dist/images/admin/header-5.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-5.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '5' );
 			},
@@ -834,28 +835,28 @@ function get_available_footer_variations() {
 	$default_footer_variations = [
 		'footer-1' => [
 			'label'         => esc_html__( 'Footer 1', 'maverick' ),
-			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-1.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '1' );
 			},
 		],
 		'footer-2' => [
 			'label'         => esc_html__( 'Footer 2', 'maverick' ),
-			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-2.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '2' );
 			},
 		],
 		'footer-3' => [
 			'label'         => esc_html__( 'Footer 3', 'maverick' ),
-			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-3.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '3' );
 			},
 		],
 		'footer-4' => [
 			'label'         => esc_html__( 'Footer 4', 'maverick' ),
-			'preview_image' => get_theme_file_uri( '/dist/images/admin/footer-4.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '4' );
 			},
@@ -1039,4 +1040,43 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
 	}
 
 	return $title;
+}
+
+/**
+ * Filter the page titles
+ *
+ * @param array $args Page title arguments.
+ *
+ * @return $args Filtered page title arguments.
+ */
+function filter_page_titles( $args ) {
+
+	if ( is_404() ) {
+
+		$args['title'] = esc_html__( "That page can't be found.", 'maverick' );
+
+	}
+
+	if ( is_archive() ) {
+		$args['title'] = get_the_archive_title();
+	}
+
+	if ( is_search() ) {
+
+		$args['custom'] = true;
+		$args['title']  = sprintf(
+			'<header class="entry-header">
+				<h1 class="post__title max-w-base m-0 m-auto text-center">%s</h1>
+			</header>',
+			sprintf(
+				/* translators: Search query term(s). */
+				__( 'Search for: %s', 'maverick' ),
+				'<span>' . esc_html( get_search_query() ) . '</span>'
+			)
+		);
+
+	}
+
+	return $args;
+
 }
