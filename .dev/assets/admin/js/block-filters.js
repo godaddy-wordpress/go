@@ -65,3 +65,7 @@ wp.hooks.addFilter(
 	'maverick/block-class-names',
 	addBlockClassNames
 );
+
+wp.domReady( function() {
+	$( '.block-editor' ).append( MaverickBlockFilters.inlineStyles );
+} );
