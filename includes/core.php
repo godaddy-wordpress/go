@@ -475,6 +475,10 @@ function script_loader_tag( $tag, $handle ) {
  */
 function body_classes( $classes ) {
 
+	if ( ! has_nav_menu( 'footer-1' ) ) {
+		$classes[] = 'no-footer-menu';
+	}
+
 	// Add class whenever a WooCommerce block is added to a page.
 	if (
 		has_block( 'woocommerce/handpicked-products' )

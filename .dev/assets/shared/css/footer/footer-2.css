@@ -82,4 +82,20 @@
 			text-align: left;
 		}
 	}
+
+	&.no-footer-menu {
+
+		& .site-footer__inner {
+			justify-content: space-between;
+		}
+
+		& .site-info {
+			margin-top: 0;
+			order: 1;
+		}
+
+		& .social-icons {
+			order: 2;
+		}
+	}
 }
