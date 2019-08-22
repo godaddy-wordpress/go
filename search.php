@@ -2,26 +2,30 @@
 /**
  * The template for displaying search results pages.
  *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ *
  * @package Maverick
  */
 
-get_header(); ?>
+get_header();
 
-<?php Maverick\page_title(); ?>
+Maverick\page_title();
 
-<div class="content-area m-auto">
+if ( have_posts() ) {
 
-	<?php if ( have_posts() ) : ?>
-		<?php while ( have_posts() ) : ?>
-			<?php the_post(); ?>
-			<?php get_template_part( 'partials/content', 'search' ); ?>
-		<?php endwhile; ?>
-		<?php the_posts_navigation(); ?>
-	<?php else : ?>
-		<?php get_template_part( 'partials/content', 'none' ); ?>
-	<?php endif; ?>
+	// Start the Loop.
+	while ( have_posts() ) :
+		the_post();
+		get_template_part( 'partials/content', 'excerpt' );
+	endwhile;
 
-</div>
+	// Previous/next page navigation.
+	the_posts_navigation();
 
-<?php
+} else {
+
+	// If no content, include the "No posts found" template.
+	get_template_part( 'partials/content', 'none' );
+}
+
 get_footer();

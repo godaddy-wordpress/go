@@ -80,14 +80,3 @@ p.has-background,
 		transform-origin: right center;
 	}
 }
-
-.post--single {
-
-	& .post__hero {
-		background: hsl(var(--theme-color-secondary));
-
-		& * {
-			color: hsl(var(--theme-color-primary));
-		}
-	}
-}

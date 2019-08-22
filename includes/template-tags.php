@@ -291,7 +291,7 @@ function page_title() {
 			'title'   => get_the_title(),
 			'wrapper' => 'h1',
 			'atts'    => [
-				'class' => 'post__title max-w-base m-0 m-auto text-center',
+				'class' => 'post__title max-w-base m-0 px m-auto text-center',
 			],
 			'custom'  => false,
 		]
