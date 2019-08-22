@@ -1035,7 +1035,7 @@ function filter_page_titles( $args ) {
 
 	if ( is_404() ) {
 
-		$args['title'] = esc_html__( "That page can't be found.", 'maverick' );
+		$args['title'] = esc_html__( "That page can't be found", 'maverick' );
 
 	}
 

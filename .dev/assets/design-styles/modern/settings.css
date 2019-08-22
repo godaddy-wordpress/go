@@ -309,7 +309,7 @@
 
 
 	/*--------------------------------------------------------------
-	## Header Search Toggle
+	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-heading);
@@ -319,6 +319,8 @@
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 	--theme-search-submit--color: var(--color-white);
 	--theme-search-submit--radius: 0;
+
+	--theme-not-found-width: 40rem;
 
 
 	/*--------------------------------------------------------------

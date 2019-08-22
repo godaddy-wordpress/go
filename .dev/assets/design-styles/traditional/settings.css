@@ -320,7 +320,7 @@
 
 
 	/*--------------------------------------------------------------
-	## Header Search Toggle
+	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-primary);
@@ -331,6 +331,7 @@
 	--theme-search-submit--color: var(--color-white);
 	--theme-search-submit--radius: 4px;
 
+	--theme-not-found-width: 42rem;
 
 	/*--------------------------------------------------------------
 	## Entry Header

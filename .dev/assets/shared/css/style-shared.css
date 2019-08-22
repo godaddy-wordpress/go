@@ -29,7 +29,6 @@
 @import url("layout/content.css");
 @import url("layout/entry-header.css");
 @import url("layout/404.css");
-@import url("layout/not-found.css");
 
 /* Header */
 @import url("header/site-header.css");
@@ -129,6 +128,10 @@
 
 .hero-center-center-align .wp-block-coblocks-hero__box {
 	margin: 0 auto;
+}
+
+.max-w-sml {
+	max-width: 40em;
 }
 
 /*! Utility Classes */
