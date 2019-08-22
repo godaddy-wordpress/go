@@ -7,18 +7,10 @@
  * @package Maverick
  */
 
-get_header(); ?>
+get_header();
 
-<header class="entry-header">
-	<h1 class="post__title max-w-base m-0 px m-auto text-center">
-		<?php
-		/* translators: the search query */
-		printf( esc_html__( 'Search for: %s', 'maverick' ), '<span>' . esc_html( get_search_query() ) . '</span>' );
-		?>
-	</h1>
-</header>
+Maverick\page_title();
 
-<?php
 if ( have_posts() ) {
 
 	// Start the Loop.
