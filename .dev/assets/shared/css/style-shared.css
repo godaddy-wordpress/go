@@ -59,7 +59,6 @@
 
 /* Blogroll */
 @import url("templates/post.css");
-@import url("templates/blog.css");
 
 /*! Blocks */
 @import url("blocks/button.css");
@@ -274,7 +273,7 @@ strong {
 	flex-direction: column;
 }
 
-.px-1 {
+.px {
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
 }

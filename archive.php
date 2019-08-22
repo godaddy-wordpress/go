@@ -5,20 +5,25 @@
  * @package Maverick
  */
 
-get_header(); ?>
+get_header();
 
-	<div class="content-area m-auto">
-		<h1><?php the_archive_title(); ?></h1>
+Maverick\page_title();
 
-		<?php if ( have_posts() ) : ?>
-			<?php while ( have_posts() ) : ?>
-				<?php the_post(); ?>
-				<?php get_template_part( 'partials/content' ); ?>
-			<?php endwhile; ?>
-			<?php the_posts_navigation(); ?>
-		<?php endif; ?>
+if ( have_posts() ) {
 
-	</div>
+	// Start the Loop.
+	while ( have_posts() ) :
+		the_post();
+		get_template_part( 'partials/content', 'excerpt' );
+	endwhile;
 
-<?php
+	// Previous/next page navigation.
+	the_posts_navigation();
+
+} else {
+
+	// If no content, include the "No posts found" template.
+	get_template_part( 'partials/content', 'none' );
+}
+
 get_footer();

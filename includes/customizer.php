@@ -159,7 +159,7 @@ function customize_preview_init() {
 
 	wp_enqueue_script(
 		'maverick-customize-preview',
-		get_theme_file_uri( "/dist/js/admin/customize-preview{$suffix}.js" ),
+		get_theme_file_uri( "dist/js/admin/customize-preview{$suffix}.js" ),
 		[ 'jquery', 'customize-preview', 'wp-autop' ],
 		MAVERICK_VERSION,
 		true
@@ -185,7 +185,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_script(
 		'maverick-customize-controls',
-		get_theme_file_uri( "/dist/js/admin/customize-controls{$suffix}.js" ),
+		get_theme_file_uri( "dist/js/admin/customize-controls{$suffix}.js" ),
 		[ 'jquery' ],
 		MAVERICK_VERSION,
 		true
@@ -193,7 +193,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_style(
 		'maverick-customize-style',
-		get_theme_file_uri( "/dist/css/admin/style-customize{$suffix}.css" ),
+		get_theme_file_uri( "dist/css/admin/style-customize{$suffix}.css" ),
 		[],
 		MAVERICK_VERSION
 	);

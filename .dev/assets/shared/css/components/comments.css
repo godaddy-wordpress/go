@@ -6,12 +6,6 @@ body {
 	}
 
 	& .comments-area {
-		border-top: 7px solid hsl(var(--color-athens-gray));
-		margin: 3rem 0;
-
-		& input {
-			line-height: inherit;
-		}
 
 		/* Post Comment button */
 		& input[type="submit"] {
@@ -78,8 +72,8 @@ body {
 		/* Actual response form */
 		& .comment-form {
 
-			& > p:not(.comment-notes) {
-				margin: 2rem 0;
+			& > p {
+				margin: 0;
 			}
 		}
 

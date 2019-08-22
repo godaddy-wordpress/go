@@ -11,7 +11,7 @@ $has_background   = Maverick\has_footer_background();
 
 <footer id="colophon" class="site-footer site-footer--4 <?php echo esc_attr( $has_background ); ?>">
 
-	<div class="site-footer__inner m-auto max-w-wide px-1">
+	<div class="site-footer__inner m-auto max-w-wide px">
 
 		<div class="flex flex-wrap lg:justify-start lg:flex-nowrap">
 
