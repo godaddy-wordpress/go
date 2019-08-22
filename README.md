@@ -1,16 +1,16 @@
 # Maverick #
-**Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [richtabor](https://profiles.wordpress.org/richtabor), [eherman24](https://profiles.wordpress.org/eherman24), [jrtashjian](https://profiles.wordpress.org/jrtashjian)  
-**Tags:**              [one-column](https://wordpress.org/themes/tags/one-column/), [accessibility-ready](https://wordpress.org/themes/tags/accessibility-ready/), [custom-colors](https://wordpress.org/themes/tags/custom-colors/), [custom-logo](https://wordpress.org/themes/tags/custom-logo/), [custom-menu](https://wordpress.org/themes/tags/custom-menu/), [editor-style](https://wordpress.org/themes/tags/editor-style/), [theme-options](https://wordpress.org/themes/tags/theme-options/), [threaded-comments](https://wordpress.org/themes/tags/threaded-comments/), [translation-ready](https://wordpress.org/themes/tags/translation-ready/), [block-styles](https://wordpress.org/themes/tags/block-styles/), [wide-blocks](https://wordpress.org/themes/tags/wide-blocks/)  
-**Requires at least:** 5.0  
-**Tested up to:**      5.2  
-**Requires PHP:**      5.6.0  
-**Stable tag:**        0.2.0  
-**License:**           GPL-2.0  
-**License URI:**       https://www.gnu.org/licenses/gpl-2.0.html  
+**Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [richtabor](https://profiles.wordpress.org/richtabor), [eherman24](https://profiles.wordpress.org/eherman24), [jrtashjian](https://profiles.wordpress.org/jrtashjian)
+**Tags:**              [one-column](https://wordpress.org/themes/tags/one-column/), [accessibility-ready](https://wordpress.org/themes/tags/accessibility-ready/), [custom-colors](https://wordpress.org/themes/tags/custom-colors/), [custom-logo](https://wordpress.org/themes/tags/custom-logo/), [custom-menu](https://wordpress.org/themes/tags/custom-menu/), [editor-style](https://wordpress.org/themes/tags/editor-style/), [theme-options](https://wordpress.org/themes/tags/theme-options/), [threaded-comments](https://wordpress.org/themes/tags/threaded-comments/), [translation-ready](https://wordpress.org/themes/tags/translation-ready/), [block-styles](https://wordpress.org/themes/tags/block-styles/), [wide-blocks](https://wordpress.org/themes/tags/wide-blocks/)
+**Requires at least:** 5.0
+**Tested up to:**      5.2
+**Requires PHP:**      5.6.0
+**Stable tag:**        0.2.0
+**License:**           GPL-2.0
+**License URI:**       https://www.gnu.org/licenses/gpl-2.0.html
 
 Maverick is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowering makers to build beautifully rich websites with WordPress.
 
-[![CircleCI](https://circleci.com/gh/godaddy/wp-project-maverick.svg?style=svg)](https://circleci.com/gh/godaddy/wp-project-maverick) [![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/godaddy/wp-maverick-theme/blob/master/license.txt) [![PHP >= 5.6](https://img.shields.io/badge/php-%3E=%205.6-8892bf.svg)](https://secure.php.net/supported-versions.php) [![WordPress >= 5.0](https://img.shields.io/badge/wordpress-%3E=%205.0-blue.svg)](https://wordpress.org/download/release-archive/)  
+[![CircleCI](https://circleci.com/gh/godaddy/wp-project-maverick.svg?style=svg)](https://circleci.com/gh/godaddy/wp-project-maverick) [![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/godaddy/wp-maverick-theme/blob/master/license.txt) [![PHP >= 5.6](https://img.shields.io/badge/php-%3E=%205.6-8892bf.svg)](https://secure.php.net/supported-versions.php) [![WordPress >= 5.0](https://img.shields.io/badge/wordpress-%3E=%205.0-blue.svg)](https://wordpress.org/download/release-archive/)
 
 ## Description ##
 
@@ -54,10 +54,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 Maverick bundles the following third-party resources:
-
-Genericons icon font, Copyright 2013 Automattic, Inc.
-License: GPL-2.0 (or later)
-Source: https://genericons.com/
 
 ## Changelog ##
 

@@ -53,10 +53,6 @@ GNU General Public License for more details.
 
 Maverick bundles the following third-party resources:
 
-Genericons icon font, Copyright 2013 Automattic, Inc.
-License: GPL-2.0 (or later)
-Source: https://genericons.com/
-
 == Changelog ==
 
 = 1.0.0 =
