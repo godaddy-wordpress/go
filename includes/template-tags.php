@@ -272,7 +272,7 @@ function copyright( $args = [] ) {
  */
 function page_title() {
 
-	if ( is_front_page() || ! get_theme_mod( 'page_titles', true ) ) {
+	if ( is_front_page() || ( ! get_theme_mod( 'page_titles', true ) && ! is_404() && ! is_search() && ! is_archive() ) ) {
 
 		return;
 
@@ -293,8 +293,21 @@ function page_title() {
 			'atts'    => [
 				'class' => 'post__title max-w-base m-0 m-auto text-center',
 			],
+			'custom'  => false,
 		]
 	);
+
+	/**
+	 * When $args['custom'] is true, this function will short circuit and output
+	 * the value of $args['title']
+	 */
+	if ( $args['custom'] ) {
+
+		echo wp_kses_post( $args['title'] );
+
+		return;
+
+	}
 
 	if ( empty( $args['title'] ) ) {
 

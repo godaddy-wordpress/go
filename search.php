@@ -7,14 +7,7 @@
 
 get_header(); ?>
 
-<header class="entry-header">
-	<h1 class="post__title">
-	<?php
-	/* translators: the search query */
-	printf( esc_html__( 'Search for: %s', 'maverick' ), '<span>' . esc_html( get_search_query() ) . '</span>' );
-	?>
-	</h1>
-</header>
+<?php Maverick\page_title(); ?>
 
 <div class="content-area m-auto">
 
