@@ -4,3 +4,7 @@
 @import url("editor/title-permalink.css");
 @import url("elements/typography.css");
 @import url("elements/headings.css");
+@import url("utilities/padding.css");
+
+/* Blocks */
+@import url("editor/hero.css");

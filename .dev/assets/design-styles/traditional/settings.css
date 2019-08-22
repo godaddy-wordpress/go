@@ -95,17 +95,17 @@
 	--theme-heading--weight: 700;
 	--theme-heading--button-spacing: 1.75rem;
 
-	--theme-h1--font-size: 2.5rem;
-	--theme-h2--font-size: 1.75rem;
-	--theme-h3--font-size: 1.6rem;
-	--theme-h4--font-size: 1.5rem;
-	--theme-h5--font-size: 1.25rem;
-	--theme-h6--font-size: 1.15rem;
+	--theme-h1--font-size: 2.5em;
+	--theme-h2--font-size: 1.75em;
+	--theme-h3--font-size: 1.6em;
+	--theme-h4--font-size: 1.5em;
+	--theme-h5--font-size: 1.25em;
+	--theme-h6--font-size: 1.15em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.45rem;
-		--theme-h2--font-size: 2.5rem;
-		--theme-h3--font-size: 1.75rem;
+		--theme-h1--font-size: 3.45em;
+		--theme-h2--font-size: 2.5em;
+		--theme-h3--font-size: 1.75em;
 	}
 
 	@media (--large) {
@@ -424,4 +424,9 @@
 	--coblocks-pricing--color-title: var(--theme-color-heading);
 
 	--coblocks-shapedivider--bg: var(--theme-color-primary);
+
+	/*--------------------------------------------------------------
+	## Editor
+	--------------------------------------------------------------*/
+	--editor-title-block--alignment: center;
 }
