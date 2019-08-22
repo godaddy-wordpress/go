@@ -289,7 +289,7 @@ function block_editor_assets() {
 
 	wp_enqueue_script(
 		'maverick-block-filters',
-    get_theme_file_uri( "/dist/js/admin/block-filters{$suffix}.js" ),
+		get_theme_file_uri( "dist/js/admin/block-filters{$suffix}.js" ),
 		[ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
 		MAVERICK_VERSION,
 		true
@@ -339,6 +339,7 @@ function scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 
 /**
