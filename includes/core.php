@@ -1033,6 +1033,12 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
  */
 function filter_page_titles( $args ) {
 
+	if ( is_home() ) {
+
+		$args['title'] = get_the_title( get_option( 'page_for_posts', true ) );
+
+	}
+
 	if ( is_404() ) {
 
 		$args['title'] = esc_html__( "That page can't be found.", 'maverick' );
