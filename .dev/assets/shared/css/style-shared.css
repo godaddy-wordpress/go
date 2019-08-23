@@ -135,7 +135,7 @@
 p {
 	margin: 0 0 1.25rem;
 
-	&:last-child {
+	&:not(.is-last):last-child {
 		margin-bottom: 0;
 	}
 }
