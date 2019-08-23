@@ -7,13 +7,18 @@
 		justify-content: center;
 		padding: var(--theme-social--spacing);
 
+		&:hover svg {
+			fill: hsl(var(--theme-social--color-hover));
+		}
+
 		&:focus {
 			@mixin outline;
 		}
 	}
 
 	& svg {
-		fill: hsla(var(--theme-social--color), 1);
+		fill: hsl(var(--theme-social--color));
+		transition: var(--theme-button-transition);
 		vertical-align: middle;
 	}
 }
