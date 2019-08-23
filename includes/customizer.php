@@ -313,6 +313,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		'page_titles',
 		[
 			'default'           => true,
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint',
 		]
 	);
