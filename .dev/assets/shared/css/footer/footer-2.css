@@ -83,7 +83,7 @@
 		}
 	}
 
-	&.no-footer-menu {
+	&.has-no-footer-menu {
 
 		& .site-footer__inner {
 			justify-content: space-between;

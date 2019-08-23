@@ -475,8 +475,14 @@ function script_loader_tag( $tag, $handle ) {
  */
 function body_classes( $classes ) {
 
+	// Add class when a page or post has comments.
+	if ( comments_open() ) {
+		$classes[] = 'has-comments-open';
+	}
+
+	// Add class when there is not a footer menu.
 	if ( ! has_nav_menu( 'footer-1' ) ) {
-		$classes[] = 'no-footer-menu';
+		$classes[] = 'has-no-footer-menu';
 	}
 
 	// Add class whenever a WooCommerce block is added to a page.
