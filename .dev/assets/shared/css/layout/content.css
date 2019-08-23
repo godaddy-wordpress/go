@@ -8,7 +8,7 @@
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
 
-	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert) {
+	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion) {
 		margin-bottom: var(--theme-block-spacing-huge);
 		margin-top: var(--theme-block-spacing-huge);
 	}
@@ -50,7 +50,8 @@
 
 		& figure,
 		& blockquote,
-		& .wp-block-cover {
+		& .wp-block-cover,
+		& .wp-block-coblocks-accordion {
 
 			/* Remove huge spacing when right after a paragraph */
 			margin-bottom: var(--theme-block-spacing-larger) !important;
