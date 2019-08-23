@@ -1,5 +1,9 @@
 #!/bin/bash
 
+found_todos=''
+RED='\033[0;31m'
+NC='\033[0m'
+
 # If we have a STDIN, use it, otherwise get one
 if tty >/dev/null 2>&1; then
     TTY=$(tty)
@@ -9,7 +13,6 @@ fi
 
 IFS=$'\n'
 
-# http://djm.me/ask
 ask() {
     while true; do
 
@@ -48,41 +51,44 @@ check_file() {
     local file=$1
     local match_pattern=$2
 
-    local file_changes_with_context=$(git diff -U999999999 -p --cached --color=always -- $file)
+    # Scan the file contents for any matching patterns
+    local file_contents=$(cat $file | grep $match_pattern)
 
-    # From the diff, get the green lines starting with '+' and including '$match_pattern'
-    local matched_additions=$(echo "$file_changes_with_context" | grep -C4 $'^\e\\[32m\+.*'"$match_pattern")
+    if [ -n "$file_contents" ]; then
+        found_todos='true'
+        echo ""
+        echo -e "$file match '$match_pattern':" | tr -d '\n'
 
-    if [ -n "$matched_additions" ]; then
-        echo -e "\n$file additions match '$match_pattern':\n"
-
-        for matched_line in $matched_additions
+        for matched_line in $file_contents
         do
-            echo "$matched_line"
+            echo -e "${RED}"
+            echo -e "$matched_line" | sed -e 's/^[[:space:]]*//'
+            echo -e "${NC}"
         done
-
-        if ask "Include this in your commit?"; then
-            echo 'Including'
-        else
-            echo "Not committing, because $file matches $match_pattern"
-            exit 1
-        fi
     fi
 }
 
 # Actual hook logic:
+MATCH=( '@todo' '@TODO' )
+CSS_FILES=$(find . -type f -name '*.css' ! -name '*.min.css' -not -path "./node_modules/*" -not -path "./.dist/*")
+PHP_FILES=$(find . -type f -name '*.php' -not -path "./includes/classes/class-tgm-plugin-activation.php" -not -path "./node_modules/*")
+JS_FILES=$(find . -type f -name '*.js' ! -name '*.min.js' -not -path "./node_modules/*" -not -path "./.dist/*")
 
-MATCH=$(git config --get-all hooks.confirm.match)
-if [ -z "$MATCH" ]; then
-    echo "Git-Confirm: hooks.confirm.match not set, defaulting to 'TODO'"
-    echo 'Add matches with `git config --add hooks.confirm.match "string-to-match"`'
-    MATCH='TODO'
-fi
+# Combine all files into a single array
+FILES=("${CSS_FILES[@]}" "${PHP_FILES[@]}" "${JS_FILES[@]}")
 
-for file in `git diff --cached -p --name-status | cut -c3-`; do
-    for match_pattern in $MATCH
+for file in ${FILES[@]}; do
+    for match_pattern in ${MATCH[@]}
     do
         check_file $file $match_pattern
     done
 done
-exit
+
+if [ -n "$found_todos" ]; then
+    if ask "Found @todo comments. Should we continue with this commit?"; then
+        echo 'Continuing'
+    else
+        echo "Not committing. Finish the @todo's and re-commit."
+        exit 1
+    fi
+fi
