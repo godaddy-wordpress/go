@@ -44,6 +44,10 @@
 	}
 }
 
+body.has-footer-background .content-area > .is-last.alignfull:last-of-type {
+	margin-bottom: calc(-1 * var(--theme-block-spacing-huge)) !important;
+}
+
 .content-area {
 
 	& p ~ {
