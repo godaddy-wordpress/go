@@ -38,7 +38,7 @@
 
 	@media (--large) {
 		--theme-block-spacing: 1.8rem;
-		--theme-block-spacing-larger: 2rem;
+		--theme-block-spacing-larger: 2.25rem;
 		--theme-block-spacing-huge: 8rem;
 	}
 
@@ -382,12 +382,13 @@
 	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg: var(--color-white);
-	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.1);
+	--coblocks-accordion--bg: var(--theme-color-tertiary);
+	--coblocks-accordion--bg-hover: none;
 	--coblocks-accordion--border-color: var(--theme-color-heading);
-	--coblocks-accordion--border: 2px solid hsl(var(--coblocks-accordion--border-color));
+	--coblocks-accordion--border-width: 2px;
+	--coblocks-accordion--border: var(--coblocks-accordion--border-width) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-heading);
-	--coblocks-accordion--radius: 0;
+	--coblocks-accordion--radius: 3px;
 
 	--coblocks-author--bg: var(--theme-color-tertiary);
 	--coblocks-author--color-heading: var(--theme-color-text-secondary);
