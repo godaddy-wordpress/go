@@ -17,8 +17,12 @@
 		margin-top: 0 !important;
 	}
 
-	&:last-child {
-		margin-bottom: 0 !important;
+	&:not(.alignfull):last-child {
+		margin-bottom: var(--theme-block-spacing-huge) !important;
+	}
+
+	&.alignfull:last-child {
+		margin-bottom: calc(var(--theme-block-spacing-huge) * 0.4) !important;
 	}
 
 	& > *:first-child {
@@ -44,11 +48,15 @@
 	}
 }
 
+.has-footer-background .content-area > .alignfull:last-child {
+	margin-bottom: 0 !important;
+}
+
 .content-area {
 
 	& p ~ {
 
-		& figure,
+		& figure:not(.alignfull),
 		& blockquote,
 		& .wp-block-cover {
 

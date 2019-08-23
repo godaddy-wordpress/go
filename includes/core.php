@@ -475,8 +475,14 @@ function script_loader_tag( $tag, $handle ) {
  */
 function body_classes( $classes ) {
 
+	$footer_background_color = get_theme_mod( 'footer_background_color', false );
+
 	if ( ! has_nav_menu( 'footer-1' ) ) {
 		$classes[] = 'no-footer-menu';
+	}
+
+	if ( $footer_background_color ) {
+		$classes[] = 'has-footer-background';
 	}
 
 	// Add class whenever a WooCommerce block is added to a page.

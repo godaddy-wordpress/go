@@ -358,7 +358,7 @@
 	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
-		--theme-footer-nav--padding-y: 1.15rem;
+		--theme-footer-nav--padding-y: 0.1rem;
 	}
 
 	/* Footer > Social Icons */
