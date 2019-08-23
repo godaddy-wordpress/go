@@ -4,9 +4,11 @@
  * Global overrides to general layout
 */
 
-.content-area--woocommerce {
+.woocommerce-page .content-area {
 
 	& .page-title {
+		margin: 0 !important;
+		padding: var(--theme-block-spacing-larger) 0 !important;
 		text-align: center;
 	}
 }
