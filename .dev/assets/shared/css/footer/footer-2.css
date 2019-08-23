@@ -2,8 +2,8 @@
 [data-footer="footer-2"] {
 
 	& .site-footer {
+		margin-top: var(--theme-block-spacing-huge);
 		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.4);
-		padding-top: calc(var(--theme-block-spacing-huge) * 0.4);
 
 		&.has-background {
 			padding-top: calc(var(--theme-block-spacing-huge) * 0.4);
