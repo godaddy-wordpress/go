@@ -9,9 +9,9 @@
 
 get_header();
 
-Maverick\page_title();
-
 if ( have_posts() ) {
+
+	Maverick\page_title();
 
 	// Start the Loop.
 	while ( have_posts() ) :

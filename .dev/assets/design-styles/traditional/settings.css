@@ -38,7 +38,7 @@
 
 	@media (--large) {
 		--theme-block-spacing: 1.8rem;
-		--theme-block-spacing-larger: 2rem;
+		--theme-block-spacing-larger: 2.25rem;
 		--theme-block-spacing-huge: 8rem;
 	}
 
@@ -61,7 +61,7 @@
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
-	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1);
+	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1);
 
 
 	/*--------------------------------------------------------------
@@ -99,13 +99,13 @@
 	--theme-h2--font-size: 1.75em;
 	--theme-h3--font-size: 1.6em;
 	--theme-h4--font-size: 1.5em;
-	--theme-h5--font-size: 1.25em;
-	--theme-h6--font-size: 1.15em;
+	--theme-h5--font-size: 1.3em;
+	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
 		--theme-h1--font-size: 3.45em;
 		--theme-h2--font-size: 2.5em;
-		--theme-h3--font-size: 1.75em;
+		--theme-h3--font-size: 2em;
 	}
 
 	@media (--large) {
@@ -320,7 +320,7 @@
 
 
 	/*--------------------------------------------------------------
-	## Header Search Toggle
+	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-primary);
@@ -331,6 +331,7 @@
 	--theme-search-submit--color: var(--color-white);
 	--theme-search-submit--radius: 4px;
 
+	--theme-not-found-width: 42rem;
 
 	/*--------------------------------------------------------------
 	## Entry Header
@@ -363,12 +364,13 @@
 	}
 
 	/* Footer > Social Icons */
-	--theme-social--color: var(--theme-color-heading);
+	--theme-social--color: var(--theme-color-primary);
+	--theme-social--color-hover: var(--theme-color-heading);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 1rem;
 
 	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: 0, 0%, 90%;
+	--theme-footer-3-site-info--border-color: 0, 0%, 80%;
 
 
 	/*--------------------------------------------------------------
@@ -383,12 +385,13 @@
 	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg: var(--color-white);
-	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.1);
+	--coblocks-accordion--bg: var(--theme-color-tertiary);
+	--coblocks-accordion--bg-hover: none;
 	--coblocks-accordion--border-color: var(--theme-color-heading);
-	--coblocks-accordion--border: 2px solid hsl(var(--coblocks-accordion--border-color));
+	--coblocks-accordion--border-width: 2px;
+	--coblocks-accordion--border: var(--coblocks-accordion--border-width) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-heading);
-	--coblocks-accordion--radius: 0;
+	--coblocks-accordion--radius: 3px;
 
 	--coblocks-author--bg: var(--theme-color-tertiary);
 	--coblocks-author--color-heading: var(--theme-color-text-secondary);
@@ -399,6 +402,7 @@
 	--coblocks-carousel--border-color: var(--color-white);
 
 	--coblocks-features--icon-spacing: 2rem;
+	--coblocks-features--heading-spacing: 1rem;
 
 	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
@@ -425,6 +429,10 @@
 	--coblocks-pricing--color-title: var(--theme-color-heading);
 
 	--coblocks-shapedivider--bg: var(--theme-color-primary);
+
+	--coblocks-services--heading-margin-bottom: 1rem;
+	--coblocks-services--heading-margin-top: 2rem;
+
 
 	/*--------------------------------------------------------------
 	## Editor
