@@ -398,6 +398,7 @@
 	--coblocks-carousel--border-color: var(--color-white);
 
 	--coblocks-features--icon-spacing: 2rem;
+	--coblocks-features--heading-spacing: 1rem;
 
 	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
@@ -424,6 +425,7 @@
 	--coblocks-pricing--color-title: var(--theme-color-heading);
 
 	--coblocks-shapedivider--bg: var(--theme-color-primary);
+
 
 	/*--------------------------------------------------------------
 	## Editor
