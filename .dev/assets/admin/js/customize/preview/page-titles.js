@@ -1,11 +1,12 @@
 export default () => {
 
 	wp.customize( 'page_titles', ( value ) => {
+		const selectors = '#content > .entry-header, body.page article .entry-header';
 		value.bind( ( to ) => {
 			if ( to ) {
-				$( '#content > .entry-header' ).removeClass( 'display-none' );
+				$( selectors ).removeClass( 'display-none' );
 			} else {
-				$( '#content > .entry-header' ).addClass( 'display-none' );
+				$( selectors ).addClass( 'display-none' );
 			}
 		} );
 	} );
