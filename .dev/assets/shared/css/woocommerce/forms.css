@@ -163,6 +163,7 @@
 	line-height: 1.25;
 	max-height: 100%;
 	padding: calc(0.6 * var(--theme-button--padding-y) - 1px);
+	width: 4.5em;
 }
 
 /* Comment form p spacing */
