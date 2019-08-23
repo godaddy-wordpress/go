@@ -9,6 +9,11 @@ body {
 
 		& .coupon {
 			display: flex;
+
+			& #coupon_code {
+				padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+				width: auto !important;
+			}
 		}
 
 	}
