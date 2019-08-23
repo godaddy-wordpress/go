@@ -46,7 +46,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && .dev/deploy-scripts/check-todos.sh"
     }
   },
   "lint-staged": {
