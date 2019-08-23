@@ -5,6 +5,8 @@
 }
 
 .wp-block-coblocks-accordion-item__title {
+	border: var(--coblocks-accordion--border);
+	border-radius: var(--coblocks-accordion--radius);
 
 	&:not(.has-background) {
 		background: hsl(var(--coblocks-accordion--bg));
@@ -16,7 +18,7 @@
 
 	&:hover::after {
 		background: var(--coblocks-accordion--bg-hover);
-		border-radius: var(--coblocks-accordion--radius);
+		border-radius: var(--coblocks-accordion--radius) var(--coblocks-accordion--radius) 0 0;
 	}
 
 	&:focus {
@@ -25,16 +27,12 @@
 	}
 }
 
-.wp-block-coblocks-accordion-item__title,
 .wp-block-coblocks-accordion-item__content {
 	border: var(--coblocks-accordion--border);
-	border-radius: var(--coblocks-accordion--radius);
-}
-
-.wp-block-coblocks-accordion-item__content {
 	border-color: hsl(var(--coblocks-accordion--border-color)) !important;
+	margin-top: calc(var(--coblocks-accordion--border-width) * -1);
 }
 
 .wp-block-coblocks-accordion-item details[open] summary {
-	border-radius: var(--coblocks-accordion--radius);
+	border-radius: var(--coblocks-accordion--radius) var(--coblocks-accordion--radius) 0 0;
 }
