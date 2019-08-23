@@ -115,6 +115,10 @@ table.variations tbody tr:nth-child(odd) {
 
 		& .woocommerce-variation-add-to-cart {
 			display: flex;
+
+			& .quantity input {
+				margin-bottom: 0;
+			}
 		}
 
 		& .woocommerce-variation-price {
