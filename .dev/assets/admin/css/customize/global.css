@@ -13,6 +13,10 @@
 	transition: var(--theme-button-transition);
 }
 
+.site-footer {
+	transition: var(--theme-link-transition);
+}
+
 .customize-partial-edit-shortcut button {
 
 	&:hover,
