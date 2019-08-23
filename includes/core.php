@@ -34,6 +34,7 @@ function setup() {
 	add_filter( 'body_class', $n( 'body_data' ), 999 );
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
 	add_filter( 'maverick_page_title_args', $n( 'filter_page_titles' ) );
+	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
 }
 
 /**
@@ -283,12 +284,30 @@ function fonts_url() {
  */
 function block_editor_assets() {
 
+	require_once get_parent_theme_file_path( 'includes/customizer.php' );
+
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
 	wp_enqueue_script(
 		'maverick-block-filters',
-		get_theme_file_uri( 'dist/js/admin/block-filters.js' ),
+		get_theme_file_uri( "dist/js/admin/block-filters{$suffix}.js" ),
 		[ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
 		MAVERICK_VERSION,
 		true
+	);
+
+	ob_start();
+
+	\Maverick\Customizer\inline_css();
+
+	$styles = ob_get_clean();
+
+	wp_localize_script(
+		'maverick-block-filters',
+		'MaverickBlockFilters',
+		[
+			'inlineStyles' => $styles,
+		]
 	);
 
 }
@@ -321,6 +340,7 @@ function scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 
 /**
@@ -455,6 +475,10 @@ function script_loader_tag( $tag, $handle ) {
  * @return array
  */
 function body_classes( $classes ) {
+
+	if ( ! has_nav_menu( 'footer-1' ) ) {
+		$classes[] = 'no-footer-menu';
+	}
 
 	// Add class whenever a WooCommerce block is added to a page.
 	if (
@@ -1039,6 +1063,21 @@ function is_search_no_results() {
 
 		return $result;
 	}
+}
+
+/**
+ * Alter the reply title to an <h2> element. a11y fix.
+ *
+ * @param array $args Default arguments and form fields to override.
+ *
+ * @return $args Comment form arguments.
+ */
+function comment_form_reply_title( $args ) {
+
+	$args['title_reply_before'] = '<h2 id="reply-title" class="comment-reply-title">';
+	$args['title_reply_after']  = '</h2>';
+
+	return $args;
 }
 
 /**
