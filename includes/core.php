@@ -475,6 +475,22 @@ function script_loader_tag( $tag, $handle ) {
  */
 function body_classes( $classes ) {
 
+	$design_style     = get_theme_mod( 'design_style', get_default_design_style() );
+	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
+	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
+
+	if ( $design_style ) {
+		$classes[] = sprintf( 'is-style-%s', esc_attr( $design_style ) );
+	}
+
+	if ( $header_variation ) {
+		$classes[] = sprintf( 'has-%s', esc_attr( $header_variation ) );
+	}
+
+	if ( $footer_variation ) {
+		$classes[] = sprintf( 'has-%s', esc_attr( $footer_variation ) );
+	}
+
 	// Add class when a page or post has comments.
 	if ( comments_open() ) {
 		$classes[] = 'has-comments-open';
