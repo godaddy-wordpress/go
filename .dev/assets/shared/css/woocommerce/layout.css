@@ -6,6 +6,12 @@
 
 .woocommerce-page .content-area {
 
+	& > * {
+		max-width: var(--theme-max-w-wide);
+		padding-left: var(--theme-block-padding-x) !important;
+		padding-right: var(--theme-block-padding-x) !important;
+	}
+
 	& .page-title {
 		margin: 0 !important;
 		padding: var(--theme-block-spacing-larger) 0 !important;
