@@ -17,6 +17,14 @@
 		padding: var(--theme-block-spacing-larger) 0 !important;
 		text-align: center;
 	}
+
+	& .woocommerce-notices-wrapper {
+		margin: 0 !important;
+	}
+
+	& .woocommerce-ordering {
+		margin: 0 0 2.5em !important;
+	}
 }
 
 .woocommerce ul.products {
