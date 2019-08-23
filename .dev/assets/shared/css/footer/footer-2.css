@@ -1,6 +1,13 @@
 /*! Footer: Footer 2 */
 [data-footer="footer-2"] {
 
+	&.has-footer-background {
+
+		& .site-footer {
+			padding-top: calc(var(--theme-block-spacing-huge) * 0.4);
+		}
+	}
+
 	& .site-footer {
 		margin-top: var(--theme-block-spacing-huge);
 		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.4);
