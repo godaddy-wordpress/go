@@ -340,6 +340,7 @@
 	--theme-footer-heading--color: var(--theme-color-heading);
 
 	/* Footer > Navigation */
+	--theme-footer-nav--color: var(-theme-site-nav--color);
 	--theme-footer-nav--color-interactive: var(--theme-color-primary);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
@@ -362,7 +363,7 @@
 	}
 
 	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: 0, 0%, 90%;
+	--theme-footer-3-site-info--border-color: 0, 0%, 80%;
 
 
 	/*--------------------------------------------------------------
