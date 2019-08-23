@@ -58,7 +58,7 @@
 	line-height: 1.25;
 	margin: 0;
 	overflow: hidden;
-	padding: var(--theme-button--padding-y) calc(var(--theme-input--padding-x)) var(--theme-button--padding-y) var(--theme-input--padding-x);
+	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
 	text-overflow: ellipsis;
 	user-select: none;
 	white-space: nowrap;
