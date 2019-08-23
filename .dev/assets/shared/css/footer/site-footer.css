@@ -3,6 +3,10 @@
 	background-color: hsl(var(--theme-footer--bg));
 	color: hsl(var(--theme-footer--color));
 
+	&.has-background {
+		padding-top: var(--theme-block-spacing-huge);
+	}
+
 	& a {
 		color: hsl(var(--theme-footer--color));
 		text-decoration: none;

@@ -3,7 +3,6 @@
 
 	& .site-footer {
 		padding-bottom: var(--theme-block-spacing-huge);
-		padding-top: var(--theme-block-spacing-huge);
 	}
 
 	& .footer-navigation {

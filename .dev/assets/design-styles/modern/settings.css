@@ -338,6 +338,7 @@
 	--theme-footer--bg: "";
 	--theme-footer--color: var(--theme-color-text);
 	--theme-footer-heading--color: var(--theme-color-heading);
+	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color-interactive: var(--theme-color-primary);
