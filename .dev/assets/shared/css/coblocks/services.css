@@ -1,15 +1,21 @@
 /*! CoBlocks: Services */
-.wp-block-coblocks-services.alignfull {
-	padding-left: var(--theme-block-padding-x);
-	padding-right: var(--theme-block-padding-x);
-}
 
-.wp-block-coblocks-service h2,
-.wp-block-coblocks-service h3,
-.wp-block-coblocks-service h4,
-.wp-block-coblocks-service h5,
-.wp-block-coblocks-service h6 {
-	margin-top: 1.25em;
+
+.wp-block-coblocks-service {
+
+	&.alignfull {
+		padding-left: var(--theme-block-padding-x);
+		padding-right: var(--theme-block-padding-x);
+	}
+
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
+		margin-bottom: var(--coblocks-services--heading-margin-bottom);
+		margin-top: var(--coblocks-services--heading-margin-top);
+	}
 }
 
 .wp-block-coblocks-service__content {
