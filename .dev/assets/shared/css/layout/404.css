@@ -12,7 +12,7 @@
 		padding-bottom: 0;
 	}
 
-	&[data-footer="footer-2"] .site-footer {
+	&.has-footer-2 .site-footer {
 		padding-top: var(--theme-header--padding-y);
 	}
 }

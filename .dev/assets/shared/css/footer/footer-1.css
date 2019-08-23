@@ -1,5 +1,5 @@
 /*! Footer: Footer 1 */
-[data-footer="footer-1"] {
+.has-footer-1 {
 
 	& .site-footer {
 		padding-bottom: var(--theme-block-spacing-huge);
