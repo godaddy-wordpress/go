@@ -2,6 +2,7 @@
 .wp-block-group {
 
 	&.alignfull .wp-block-group__inner-container {
+		max-width: none;
 		padding-left: var(--theme-block-padding-x);
 		padding-right: var(--theme-block-padding-x);
 	}
