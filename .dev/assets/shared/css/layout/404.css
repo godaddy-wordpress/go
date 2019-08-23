@@ -8,7 +8,7 @@
 		margin-top: var(--theme-block-spacing-huge);
 	}
 
-	&[data-header="header-3"] .site-header__inner {
+	&.has-header-3 .site-header__inner {
 		padding-bottom: 0;
 	}
 

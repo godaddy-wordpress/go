@@ -1,5 +1,5 @@
 /*! Header: Header 4 */
-[data-header="header-4"] {
+.has-header-4 {
 
 	&::before {
 		content: "has-search-toggle has-offscreen-nav";

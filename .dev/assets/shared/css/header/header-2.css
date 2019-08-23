@@ -1,5 +1,5 @@
 /*! Header: Header 2 */
-[data-header="header-2"] {
+.has-header-2 {
 
 	& .site-header .site-branding {
 		flex: auto 0;
