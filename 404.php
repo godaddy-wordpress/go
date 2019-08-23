@@ -7,18 +7,12 @@
 
 get_header();
 
+Maverick\page_title();
 ?>
 
-<div class="error-404 not-found max-w-base w-full m-auto p-x">
-
-	<?php Maverick\page_title(); ?>
-
-	<div class="page-content">
-		<?php get_search_form(); ?>
-	</div>
-
+<div class="content-area not-found w-full m-auto p-x">
+	<?php get_search_form(); ?>
 </div>
 
 <?php
-
 get_footer();

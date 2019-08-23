@@ -103,7 +103,7 @@
 	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.25em;
+		--theme-h1--font-size: 4em;
 		--theme-h2--font-size: 2.75em;
 		--theme-h3--font-size: 2.5em;
 	}
@@ -309,7 +309,7 @@
 
 
 	/*--------------------------------------------------------------
-	## Header Search Toggle
+	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-heading);
@@ -319,6 +319,8 @@
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 	--theme-search-submit--color: var(--color-white);
 	--theme-search-submit--radius: 0;
+
+	--theme-not-found-width: 42rem;
 
 
 	/*--------------------------------------------------------------

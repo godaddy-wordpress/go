@@ -35,6 +35,7 @@ function setup() {
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
 	add_filter( 'maverick_page_title_args', $n( 'filter_page_titles' ) );
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
+
 }
 
 /**
@@ -43,7 +44,9 @@ function setup() {
  * @return void
  */
 function init() {
+
 	remove_post_type_support( 'page', 'thumbnail' );
+
 }
 
 /**
@@ -56,7 +59,9 @@ function init() {
  * @return void
  */
 function i18n() {
+
 	load_theme_textdomain( 'maverick', get_template_directory() . '/languages' );
+
 }
 
 /**
@@ -213,6 +218,7 @@ function theme_setup() {
 
 		add_theme_support( 'editor-color-palette', $color_palette );
 	}
+
 }
 
 /**
@@ -368,6 +374,7 @@ function editor_styles() {
 
 	// Enqueue fonts into the editor.
 	add_editor_style( fonts_url() );
+
 }
 
 /**
@@ -403,6 +410,7 @@ function styles() {
 		[],
 		MAVERICK_VERSION
 	);
+
 }
 
 /**
@@ -415,6 +423,7 @@ function styles() {
 function js_detection() {
 
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+
 }
 
 /**
@@ -466,6 +475,7 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	return $tag;
+
 }
 
 /**
@@ -495,6 +505,7 @@ function body_classes( $classes ) {
 	}
 
 	return $classes;
+
 }
 
 /**
@@ -522,6 +533,7 @@ function body_data( $classes ) {
 	}
 
 	return $classes;
+
 }
 
 /**
@@ -538,6 +550,7 @@ function get_default_design_style() {
 	 * @param array $default_design_style The slug of the default design style.
 	 */
 	return apply_filters( 'maverick_default_design_style', 'modern' );
+
 }
 
 /**
@@ -585,7 +598,7 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Montserrat'      => [
+				'Montserrat'    => [
 					'400',
 					'700',
 				],
@@ -594,7 +607,7 @@ function get_available_design_styles() {
 					'400i',
 					'700',
 				],
-				'Heebo'           => [
+				'Heebo'         => [
 					'400',
 					'700',
 				],
@@ -722,7 +735,9 @@ function get_available_design_styles() {
 	 * where the index is the slug of design style and value an array of options that sets up the design styles.
 	 */
 	$supported_design_styles = apply_filters( 'maverick_design_styles', $default_design_styles );
+
 	return $supported_design_styles;
+
 }
 
 /**
@@ -740,10 +755,11 @@ function get_design_style() {
 	}
 
 	return false;
+
 }
 
 /**
- * Returns the default design style
+ * Returns the default header variation.
  *
  * @return string
  */
@@ -756,6 +772,7 @@ function get_default_header_variation() {
 	 * @param array $default_header_variation The slug of the default header variation.
 	 */
 	return apply_filters( 'maverick_default_header', 'header-1' );
+
 }
 
 /**
@@ -813,6 +830,7 @@ function get_available_header_variations() {
 	$supported_header_variations = apply_filters( 'header_variations', $default_header_variations );
 
 	return $supported_header_variations;
+
 }
 
 /**
@@ -830,6 +848,7 @@ function get_header_variation() {
 	}
 
 	return false;
+
 }
 
 /**
@@ -880,6 +899,7 @@ function get_available_footer_variations() {
 	$supported_footer_variations = apply_filters( 'maverick_footer_variations', $default_footer_variations );
 
 	return $supported_footer_variations;
+
 }
 
 /**
@@ -896,6 +916,7 @@ function get_default_footer_variation() {
 	 * @param array $default_footer_variation The slug of the default footer variation.
 	 */
 	return apply_filters( 'maverick_default_footer_variation', 'footer-1' );
+
 }
 
 /**
@@ -913,6 +934,7 @@ function get_footer_variation() {
 	}
 
 	return false;
+
 }
 
 /**
@@ -930,6 +952,7 @@ function get_default_copyright() {
 	 */
 	/* translators: the theme author */
 	return apply_filters( 'maverick_default_copyright', sprintf( esc_html__( 'WordPress Theme by %s', 'maverick' ), 'GoDaddy' ) );
+
 }
 
 /**
@@ -974,6 +997,7 @@ function get_available_social_icons() {
 	 * @param array $social_icons Array containings the supported social icons.
 	 */
 	return apply_filters( 'maverick_avaliable_social_icons', $social_icons );
+
 }
 
 /**
@@ -989,6 +1013,7 @@ function get_social_icons() {
 	}
 
 	return $social_icons;
+
 }
 
 /**
@@ -1008,6 +1033,7 @@ function get_available_color_schemes() {
 	 * @param array $design_style  The full design style object
 	 */
 	return apply_filters( 'maverick_color_schemes', $design_style['color_schemes'], $design_style );
+
 }
 
 /**
@@ -1022,6 +1048,7 @@ function get_default_color_scheme() {
 	 * @param array $default_color_scheme The slug of the default color scheme.
 	 */
 	return apply_filters( 'maverick_default_color_scheme', 'one' );
+
 }
 
 /**
@@ -1046,6 +1073,7 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
 	}
 
 	return $title;
+
 }
 
 /**
@@ -1081,28 +1109,31 @@ function filter_page_titles( $args ) {
 
 	if ( is_404() ) {
 
-		$args['title'] = esc_html__( "That page can't be found.", 'maverick' );
+		$args['title'] = esc_html__( "That page can't be found", 'maverick' );
 
 	}
 
 	if ( is_archive() ) {
+
 		$args['title'] = get_the_archive_title();
+
 	}
 
 	if ( is_search() ) {
 
-		$args['custom'] = true;
-		$args['title']  = sprintf(
-			'<header class="entry-header">
-				<h1 class="post__title max-w-base m-0 m-auto text-center">%s</h1>
-			</header>',
-			sprintf(
-				/* translators: Search query term(s). */
-				__( 'Search for: %s', 'maverick' ),
-				'<span>' . esc_html( get_search_query() ) . '</span>'
-			)
+		$args['title'] = sprintf(
+			/* translators: Search query term(s). */
+			esc_html__( 'Search for: %s', 'maverick' ),
+			esc_html( get_search_query() )
 		);
 
+		global $wp_query;
+
+		if ( 0 === $wp_query->found_posts ) {
+
+			$args['title'] = esc_html__( 'Nothing Found', 'maverick' );
+
+		}
 	}
 
 	return $args;
