@@ -43,6 +43,7 @@ export default () => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : undefined;
 			document.querySelector( ':root' ).style.setProperty( '--theme-footer--color', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--theme-footer-nav--color', setTo );
 		} );
 	} );
 
