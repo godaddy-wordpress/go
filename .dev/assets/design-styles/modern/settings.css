@@ -95,17 +95,17 @@
 	--theme-heading--weight: 700;
 	--theme-heading--button-spacing: 1.75rem;
 
-	--theme-h1--font-size: 2em;
-	--theme-h2--font-size: 1.85em;
-	--theme-h3--font-size: 1.6em;
-	--theme-h4--font-size: 1.5em;
-	--theme-h5--font-size: 1.35em;
-	--theme-h6--font-size: 1.15em;
+	--theme-h1--font-size: 2.5em;
+	--theme-h2--font-size: 2em;
+	--theme-h3--font-size: 1.75em;
+	--theme-h4--font-size: 2em;
+	--theme-h5--font-size: 1.5em;
+	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
 		--theme-h1--font-size: 3.25em;
 		--theme-h2--font-size: 2.75em;
-		--theme-h3--font-size: 2em;
+		--theme-h3--font-size: 2.5em;
 	}
 
 	--theme-h1--color: var(--theme-color-heading);
@@ -394,7 +394,8 @@
 	--coblocks-carousel--bg-overlay: hsla(var(--theme-color-primary), 0.75);
 	--coblocks-carousel--border-color: var(--color-white);
 
-	--coblocks-features--icon-spacing: 3rem;
+	--coblocks-features--icon-spacing: 1.75rem;
+	--coblocks-features--heading-spacing: 1rem;
 
 	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
@@ -421,6 +422,9 @@
 	--coblocks-pricing--color-title: var(--theme-color-heading);
 
 	--coblocks-shapedivider--bg: var(--theme-color-primary);
+
+	--coblocks-services--heading-margin-bottom: 1rem;
+	--coblocks-services--heading-margin-top: 1.75rem;
 
 
 	/*--------------------------------------------------------------
