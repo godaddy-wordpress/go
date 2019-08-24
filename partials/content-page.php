@@ -9,6 +9,12 @@
 
 ?>
 
+<?php if ( has_post_thumbnail() ) : ?>
+	<figure class="post__thumbnail">
+		<?php the_post_thumbnail(); ?>
+	</figure>
+<?php endif; ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php Maverick\page_title(); ?>
