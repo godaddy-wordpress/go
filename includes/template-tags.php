@@ -44,11 +44,13 @@ function get_palette_color( $color, $format = 'RBG' ) {
 		$the_color = $color_override;
 	}
 
-	// Ensure we have a hash mark at the beginning of the hex value.
-	$the_color = '#' . ltrim( $the_color, '#' );
+	if ( ! empty( $the_color ) ) {
+			// Ensure we have a hash mark at the beginning of the hex value.
+		$the_color = '#' . ltrim( $the_color, '#' );
 
-	if ( 'HSL' === $format ) {
-		return hex_to_hsl( $the_color );
+		if ( 'HSL' === $format ) {
+			return hex_to_hsl( $the_color );
+		}
 	}
 
 	return $the_color;
@@ -78,8 +80,10 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
 		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
 	}
 
-	if ( 'HSL' === $format ) {
-		return hex_to_hsl( $the_color );
+	if ( ! empty( $the_color ) ) {
+		if ( 'HSL' === $format ) {
+			return hex_to_hsl( $the_color );
+		}
 	}
 
 	return $the_color;
