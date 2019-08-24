@@ -24,10 +24,12 @@ function get_palette_color( $color, $format = 'RBG' ) {
 	$default         = \Maverick\Core\get_default_color_scheme();
 	$color_scheme    = get_theme_mod( 'color_scheme', $default );
 	$override_colors = [
-		'primary'    => 'primary_color',
-		'secondary'  => 'secondary_color',
-		'tertiary'   => 'tertiary_color',
-		'background' => 'background_color',
+		'primary'           => 'primary_color',
+		'secondary'         => 'secondary_color',
+		'tertiary'          => 'tertiary_color',
+		'background'        => 'background_color',
+		'header_background' => 'header_background_color',
+		'footer_background' => 'footer_background_color',
 	];
 
 	$color_override = get_theme_mod( $override_colors[ $color ] );
