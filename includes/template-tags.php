@@ -36,7 +36,7 @@ function get_palette_color( $color, $format = 'RBG' ) {
 
 	$the_color = '';
 
-	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) && isset( $avaliable_color_schemes[ $color_scheme ][ $color ] ) ) {
 		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
 	}
 
@@ -74,7 +74,7 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
 		$color_scheme      = array_shift( $color_scheme_keys );
 	}
 
-	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) && isset( $avaliable_color_schemes[ $color_scheme ][ $color ] ) ) {
 		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
 	}
 
