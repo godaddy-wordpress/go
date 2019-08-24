@@ -515,6 +515,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 		[
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
+			'default'           => \Maverick\get_default_palette_color( 'header_background' ),
 		]
 	);
 
@@ -596,6 +597,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		[
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
+			'default'           => \Maverick\get_default_palette_color( 'footer_background' ),
 		]
 	);
 
