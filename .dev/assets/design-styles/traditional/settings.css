@@ -89,7 +89,7 @@
 	/* Headings */
 	--theme-heading--font: "Crimson Text", serif;
 	--theme-heading--leading: 1.15;
-	--theme-heading--spacing: 1rem;
+	--theme-heading--spacing: 1.75rem;
 	--theme-heading--style: normal;
 	--theme-heading--tracking: -0.025em;
 	--theme-heading--weight: 700;
@@ -287,7 +287,7 @@
 
 	/* Header Variations */
 	--theme-header-3--padding-y: 3.5rem;
-	--theme-header-3-nav--margin-top: 1.5rem;
+	--theme-header-3-nav--margin-top: 2.5rem;
 
 	@media (--large) {
 		--theme-header-3--padding-y: 8rem;

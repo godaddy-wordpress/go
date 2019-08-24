@@ -103,7 +103,7 @@
 	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 4em;
+		--theme-h1--font-size: 4.5em;
 		--theme-h2--font-size: 2.75em;
 		--theme-h3--font-size: 2.5em;
 	}

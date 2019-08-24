@@ -47,10 +47,6 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
-
-	&.mb-0 + div {
-		margin-top: 0 !important;
-	}
 }
 
 /* Remove .alignfull margin if there is a footer background enabled */
