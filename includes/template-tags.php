@@ -172,7 +172,7 @@ function header_variation() {
  */
 function has_header_background() {
 
-	$background_color = get_theme_mod( 'header_background_color', '' );
+	$background_color = get_palette_color( 'header_background' );
 
 	if ( $background_color ) {
 		return 'has-background';
@@ -204,7 +204,7 @@ function footer_variation() {
  */
 function has_footer_background() {
 
-	$background_color = get_theme_mod( 'footer_background_color', '' );
+	$background_color = get_palette_color( 'footer_background' );
 
 	if ( $background_color ) {
 		return 'has-background';
