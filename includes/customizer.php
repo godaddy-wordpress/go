@@ -604,7 +604,7 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'footer_background_color',
+			'footer_background_color_control',
 			[
 				'label'    => esc_html__( 'Background Color', 'maverick' ),
 				'section'  => 'maverick_footer_settings',
