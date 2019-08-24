@@ -750,11 +750,11 @@ function inline_css() {
 	$background_color = get_palette_color( 'background', 'HSL' );
 
 	// Customizer colors.
-	$header_background    = hex_to_hsl( get_theme_mod( 'header_background_color', false ), true );
+	$header_background    = get_palette_color( 'header_background', 'HSL' );
 	$header_text_color    = hex_to_hsl( get_theme_mod( 'header_text_color', false ), true );
 	$footer_text_color    = hex_to_hsl( get_theme_mod( 'footer_text_color', false ), true );
 	$footer_heading_color = hex_to_hsl( get_theme_mod( 'footer_heading_color', false ), true );
-	$footer_background    = hex_to_hsl( get_theme_mod( 'footer_background_color', false ), true );
+	$footer_background    = get_palette_color( 'footer_background', 'HSL' );
 	$social_icon_color    = hex_to_hsl( get_theme_mod( 'social_icon_color', false ), true );
 
 	// Site logo width.
@@ -780,7 +780,7 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $header_background ) : ?>
-					--theme-header--bg: <?php echo esc_attr( $header_background ); ?>;
+					--theme-header--bg: <?php echo esc_attr( $header_background[0] ) . ', ' . esc_attr( $header_background[1] ) . '%, ' . esc_attr( $header_background[2] ) . '%'; ?>;
 				<?php endif; ?>
 
 				<?php if ( $header_text_color ) : ?>
@@ -794,7 +794,7 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $footer_background ) : ?>
-					--theme-footer--bg: <?php echo esc_attr( $footer_background ); ?>;
+					--theme-footer--bg: <?php echo esc_attr( $footer_background[0] ) . ', ' . esc_attr( $footer_background[1] ) . '%, ' . esc_attr( $footer_background[2] ) . '%'; ?>;
 				<?php endif; ?>
 
 				<?php if ( $footer_heading_color ) : ?>
