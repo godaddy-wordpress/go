@@ -21,11 +21,11 @@
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 50rem;
-	--theme-max-w-wide: 100rem;
+	--theme-max-w-wide: 90rem;
 
 	/* Below base width query */
 	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 100rem);
+	@custom-media --wide (max-width: 90rem);
 
 	/* Editor widths */
 	--editor-max-w-base: 633px;
