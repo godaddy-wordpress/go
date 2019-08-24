@@ -1,5 +1,8 @@
 /*! Layout: Entry Header */
 .entry-header {
-	padding-bottom: var(--theme-block-spacing-larger);
-	padding-top: var(--theme-block-spacing-larger);
+	padding-top: calc(var(--theme-block-spacing-huge) * 0.55);
+}
+
+.has-featured-image .entry-header {
+	padding-top: var(--theme-entryheader--padding-top);
 }
