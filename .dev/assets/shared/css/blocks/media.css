@@ -1,13 +1,22 @@
 /*! Media & Text */
 .wp-block-media-text {
+	@media (max-width: 600px) {
+		grid-template-columns: 50% auto !important;
+	}
+
+	& .wp-block-media-text__content {
+
+		& p:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.wp-block-media-text.is-stacked-on-mobile {
 
 	& .wp-block-media-text__content {
 		@media (max-width: 600px) {
 			padding: 0;
-		}
-
-		& p:last-child {
-			margin-bottom: 0;
 		}
 	}
 }

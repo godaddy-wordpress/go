@@ -130,21 +130,17 @@
 	margin: 0 auto;
 }
 
-.has-media-on-the-right {
+.wp-block-media-text {
 
 	& .wp-block-media-text__content {
-		@media (--small) {
-			padding-left: 0;
-		}
+		padding-right: 0;
 	}
 }
 
-.has-media-on-the-left {
+.wp-block-media-text.has-media-on-the-right {
 
 	& .wp-block-media-text__content {
-		@media (--small) {
-			padding-right: 0;
-		}
+		padding-left: 0;
 	}
 }
 

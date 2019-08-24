@@ -91,12 +91,12 @@
 	--theme-heading--leading: 1.15;
 	--theme-heading--spacing: 1.75rem;
 	--theme-heading--style: normal;
-	--theme-heading--tracking: -0.025em;
-	--theme-heading--weight: 700;
+	--theme-heading--tracking: -0.02em;
+	--theme-heading--weight: 400;
 	--theme-heading--button-spacing: 1.75rem;
 
 	--theme-h1--font-size: 2.5em;
-	--theme-h2--font-size: 1.75em;
+	--theme-h2--font-size: 2em;
 	--theme-h3--font-size: 1.6em;
 	--theme-h4--font-size: 1.5em;
 	--theme-h5--font-size: 1.3em;
@@ -104,7 +104,7 @@
 
 	@media (--medium) {
 		--theme-h1--font-size: 3.45em;
-		--theme-h2--font-size: 2.5em;
+		--theme-h2--font-size: 2.75em;
 		--theme-h3--font-size: 2em;
 	}
 
@@ -191,7 +191,7 @@
 	--theme-label--spacing: 0.25rem;
 
 	/* Input */
-	--theme-input--bg: 0, 0%, 100%;
+	--theme-input--bg: var(--theme-color-body-bg);
 	--theme-input--bg-interactive: 0, 0%, 100%;
 	--theme-input--border-color: var(--theme-color-heading);
 	--theme-input--border-style: solid;
@@ -234,7 +234,7 @@
 	--theme-button--font-size: 1.1rem;
 	--theme-button--font: var(--theme-body--font);
 	--theme-button--padding-x: 2.25rem;
-	--theme-button--padding-y: 1.3rem;
+	--theme-button--padding-y: 1.45rem;
 	--theme-button--radius: 4px;
 	--theme-button--text-transform: normal;
 	--theme-button--tracking: 0;
@@ -252,14 +252,14 @@
 	--theme-header--padding-y: 1.25rem;
 
 	@media (--medium) {
-		--theme-header--padding-y: 2.55rem;
+		--theme-header--padding-y: 2.15rem;
 	}
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: var(--theme-h2--font-size);
 	--theme-site-title--font: var(--theme-heading--font);
-	--theme-site-title--weight: 700;
+	--theme-site-title--weight: 400;
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
@@ -336,12 +336,7 @@
 	/*--------------------------------------------------------------
 	## Entry Header
 	--------------------------------------------------------------*/
-	--theme-entryheader--padding-top: 4rem;
-	--theme-entryheader--padding-bottom: 7rem;
-
-	@media (--large) {
-		--theme-entryheader--padding-bottom: 8.5rem;
-	}
+	--theme-entryheader--padding-top: 3rem;
 
 
 	/*--------------------------------------------------------------
@@ -385,7 +380,7 @@
 	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg: var(--theme-color-tertiary);
+	--coblocks-accordion--bg: var(--theme-color-body-bg);
 	--coblocks-accordion--bg-hover: none;
 	--coblocks-accordion--border-color: var(--theme-color-heading);
 	--coblocks-accordion--border-width: 2px;

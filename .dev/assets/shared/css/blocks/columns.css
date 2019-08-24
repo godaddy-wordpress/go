@@ -5,6 +5,8 @@
 
 		& .wp-block-column {
 			margin-bottom: 0;
+			margin-left: 0;
+			margin-right: 0;
 			margin-top: var(--theme-block-spacing-larger);
 
 			@media (--small) {
