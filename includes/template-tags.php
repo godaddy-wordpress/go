@@ -273,8 +273,8 @@ function copyright( $args = [] ) {
 function page_title() {
 
 	if (
-		is_front_page() ||
-		( ! get_theme_mod( 'page_titles', true ) && ! is_404() && ! is_search() && ! is_archive() )
+		! is_customize_preview() || is_front_page() &&
+		( is_front_page() || ( ! get_theme_mod( 'page_titles', true ) && ! is_404() && ! is_search() && ! is_archive() ) )
 	) {
 
 		return;
@@ -346,7 +346,8 @@ function page_title() {
 	}
 
 	printf(
-		'<header class="entry-header">%s</header>',
+		'<header class="entry-header%1$s">%2$s</header>',
+		is_customize_preview() ? ( get_theme_mod( 'page_titles', true ) ? '' : ' display-none' ) : '',
 		wp_kses(
 			$html,
 			[
