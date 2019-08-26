@@ -42,26 +42,23 @@ export default () => {
 		const designStyle = getDesignStyle( selectedDesignStyle );
 		colorScheme = colorScheme.replace( `${selectedDesignStyle}-`, '' );
 
-		if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
+		if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] && 'undefined' !== typeof wp.customize.settings.controls ) {
 			const colors = designStyle.color_schemes[ colorScheme ];
 			toggleColorSchemes();
 
-			Object.entries( colors ).forEach( function ( [ setting, color ] ) {
-				const customizerSetting = wp.customize( `${setting}_color` );
-				const customizerControl = 'background' === setting ? `${setting}_color` : `${setting}_color_control`;
+			Object.entries( wp.customize.settings.controls )
+				.filter( ( [ _control, config ] ) => config.type === 'color' )
+				.forEach( ( [ customizerControl, config ] ) => {
+					const customizerSetting = wp.customize( config.settings.default );
+					const color = colors[ config.settings.default.replace( '_color', '' ) ] || '';
 
-				if ( 'label' === setting || 'undefined' === typeof customizerSetting || 'undefined' === typeof wp.customize.control ) {
-					return;
-				}
+					customizerSetting.set( color );
 
-				customizerSetting.set( color );
-
-				wp.customize.control( customizerControl ).container.find( '.color-picker-hex' )
-					.data( 'data-default-color', color )
-					.wpColorPicker( 'defaultColor', color );
-			} );
-
-			resetColors();
+					wp.customize.control( customizerControl ).container.find( '.color-picker-hex' )
+						.data( 'data-default-color', color )
+						.wpColorPicker( 'defaultColor', color )
+						.trigger( 'change' );
+				} );
 		}
 	};
 
@@ -71,33 +68,6 @@ export default () => {
 	const toggleColorSchemes = () => {
 		$( 'label[for^=color_scheme_control]' ).hide();
 		$( `label[for^=color_scheme_control-${selectedDesignStyle}-]` ).show();
-	};
-
-	/**
-	 * Reset the colors after a color scheme selection.
-	 */
-	const resetColors = () => {
-
-		if ( 'undefined' === typeof wp.customize.control ) {
-			return;
-		}
-
-		var resetControls = [
-			'header_text_color',
-			'footer_text_color',
-			'footer_heading_color',
-			'social_icon_color',
-		];
-
-		resetControls.forEach( function( setting ) {
-			var settingControl = ( setting !== 'header_text_color' ) ? setting : 'header_text_color_control';
-
-			wp.customize( setting ).set( '' );
-			wp.customize.control( settingControl ).container.find( '.color-picker-hex' )
-				.data( 'data-default-color', '' )
-				.wpColorPicker( 'defaultColor', '' )
-				.trigger( 'change' );
-		} );
 	};
 
 	/**
