@@ -23,8 +23,10 @@ export default () => {
 
 			// Add class if a background color is applied.
 			if ( to ) {
+				$( 'body' ).addClass( 'has-footer-background' );
 				$( '.site-footer' ).addClass( 'has-background' );
 			} else {
+				$( 'body' ).removeClass( 'has-footer-background' );
 				$( '.site-footer' ).removeClass( 'has-background' );
 			}
 		} );

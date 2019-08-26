@@ -18,3 +18,14 @@
 		width: auto;
 	}
 }
+
+.wp-block-cover {
+
+	& h2 {
+		font-size: var(--theme-h2--font-size);
+		letter-spacing: var(--theme-heading--tracking);
+		margin-bottom: var(--theme-heading--spacing);
+		max-width: none;
+		padding: 0;
+	}
+}

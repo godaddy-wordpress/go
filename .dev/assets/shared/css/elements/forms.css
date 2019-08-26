@@ -74,6 +74,7 @@ textarea {
 	width: 100%;
 
 	&:focus {
+		background: hsl(var(--theme-input--bg-interactive));
 		border-color: hsl(var(--theme-input--border-color-focus));
 		box-shadow: var(--theme-input--shadow-focus);
 		color: hsl(var(--theme-input--color-focus));

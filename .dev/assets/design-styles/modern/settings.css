@@ -21,11 +21,11 @@
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 50rem;
-	--theme-max-w-wide: 100rem;
+	--theme-max-w-wide: 90rem;
 
 	/* Below base width query */
 	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 100rem);
+	@custom-media --wide (max-width: 90rem);
 
 	/* Editor widths */
 	--editor-max-w-base: 633px;
@@ -103,7 +103,7 @@
 	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 4em;
+		--theme-h1--font-size: 4.5em;
 		--theme-h2--font-size: 2.75em;
 		--theme-h3--font-size: 2.5em;
 	}
@@ -340,6 +340,7 @@
 	--theme-footer--bg: "";
 	--theme-footer--color: var(--theme-color-text);
 	--theme-footer-heading--color: var(--theme-color-heading);
+	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color: var(-theme-site-nav--color);
@@ -381,7 +382,7 @@
 	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg: var(--color-white);
+	--coblocks-accordion--bg: var(--theme-color-body-bg);
 	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.1);
 	--coblocks-accordion--border-color: var(--theme-color-heading);
 	--coblocks-accordion--border-width: 2px;
@@ -404,8 +405,8 @@
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
 	--coblocks-food-drinks-hint--radius: 0;
 	--coblocks-food-drinks-item--fill: var(--theme-color-heading);
-	--coblocks-food-drinks-item--font-size: 0.8rem;
-	--coblocks-food-drinks-item--spacing: 2rem;
+	--coblocks-food-drinks-item--font-size: 0.95em;
+	--coblocks-food-drinks-item--spacing: 3.5em;
 	--coblocks-food-drinks-item--text-transform: uppercase;
 	--coblocks-food-drinks-item--tracking: 2px;
 	--coblocks-food-drinks-item--weight: 700;
@@ -414,9 +415,9 @@
 	--coblocks-food-drinks-title--bg: var(--theme-color-heading);
 	--coblocks-food-drinks-title--border-bottom: none;
 	--coblocks-food-drinks-title--color: var(--color-white);
-	--coblocks-food-drinks-title--font-size: 1.25rem;
-	--coblocks-food-drinks-title--margin-y: 0.75rem;
-	--coblocks-food-drinks-title--padding: 0.3rem 0.25rem;
+	--coblocks-food-drinks-title--font-size: 1.5em;
+	--coblocks-food-drinks-title--margin-y: 0.65em;
+	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
 	--coblocks-food-drinks-title--style: normal;
 
 	--coblocks-pricing--bg: var(--color-white);
