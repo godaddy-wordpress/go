@@ -19,6 +19,11 @@ p.has-background,
 	}
 }
 
+.site-branding__title {
+	position: relative;
+	top: -5px;
+}
+
 textarea,
 input[type="text"],
 input[type="email"],
@@ -44,4 +49,8 @@ input[type="color"] {
 
 .flickity-button-icon {
 	fill: hsl(var(--theme-color-primary));
+}
+
+.wp-block-coblocks-food-item__attributes {
+	top: 0;
 }

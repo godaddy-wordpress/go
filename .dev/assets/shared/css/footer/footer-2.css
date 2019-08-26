@@ -1,12 +1,15 @@
 /*! Footer: Footer 2 */
 [data-footer="footer-2"] {
 
+	& .content-area > .alignfull:last-child {
+		margin-bottom: var(--theme-footer-2--padding-y) !important;
+	}
+
 	& .site-footer {
-		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.4);
-		padding-top: calc(var(--theme-block-spacing-huge) * 0.4);
+		padding-bottom: var(--theme-footer-2--padding-y);
 
 		&.has-background {
-			padding-top: calc(var(--theme-block-spacing-huge) * 0.4);
+			padding-top: var(--theme-footer-2--padding-y);
 		}
 	}
 

@@ -13,3 +13,15 @@
 		margin-bottom: 16px !important;
 	}
 }
+
+/*! Gallery */
+.content-area .wp-block-gallery {
+	margin-bottom: calc(var(--theme-block-spacing-larger) - 35px) !important;
+	margin-top: var(--theme-block-spacing-larger);
+
+	&.alignfull,
+	&.alignwide {
+		margin-bottom: calc(var(--theme-block-spacing-huge) - 15px) !important;
+		margin-top: var(--theme-block-spacing-huge);
+	}
+}

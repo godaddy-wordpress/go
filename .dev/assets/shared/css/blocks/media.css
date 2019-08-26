@@ -1,13 +1,35 @@
 /*! Media & Text */
 .wp-block-media-text {
 
+	/* Fix 50% width */
+	@media (max-width: 600px) {
+		grid-template-columns: 50% auto !important;
+	}
+
+	&.has-media-on-the-right {
+
+		& .wp-block-media-text__content {
+			padding-left: 0;
+		}
+	}
+
 	& .wp-block-media-text__content {
 		@media (max-width: 600px) {
-			padding: 0;
+			padding-right: 0;
 		}
 
 		& p:last-child {
 			margin-bottom: 0;
 		}
 	}
+
+	&.is-stacked-on-mobile {
+
+		& .wp-block-media-text__content {
+			@media (max-width: 600px) {
+				padding: 0;
+			}
+		}
+	}
+
 }

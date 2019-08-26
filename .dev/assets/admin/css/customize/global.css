@@ -1,5 +1,4 @@
-.site-content,
-.site-footer {
+.site-content {
 	transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1), padding 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -13,8 +12,12 @@
 	transition: var(--theme-button-transition);
 }
 
+.has-footer-background .content-area > *:last-child {
+	transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 .site-footer {
-	transition: var(--theme-link-transition);
+	transition: padding 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .customize-partial-edit-shortcut button {
