@@ -4,9 +4,13 @@ export default () => {
 		const selectors = '#content > .entry-header, body.page article .entry-header';
 		value.bind( ( to ) => {
 			if ( to ) {
+				$( 'body' ).addClass( 'has-page-titles' );
 				$( selectors ).removeClass( 'display-none' );
+
 			} else {
+				$( 'body' ).removeClass( 'has-page-titles' );
 				$( selectors ).addClass( 'display-none' );
+
 			}
 		} );
 	} );
