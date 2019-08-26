@@ -7,6 +7,7 @@
  * @package Maverick
  */
 
+Maverick\page_title();
 ?>
 
 <div class="content-area no-results not-found">
@@ -29,13 +30,13 @@
 	elseif ( is_search() ) :
 		?>
 
-		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'maverick' ); ?></p>
+		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try searching again with some different keywords.', 'maverick' ); ?></p>
 		<?php
 		get_search_form();
 
 	else :
 		?>
-		<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'maverick' ); ?></p>
+		<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help you out.', 'maverick' ); ?></p>
 		<?php
 		get_search_form();
 

@@ -19,4 +19,8 @@
 	& .coblocks-gallery--item:not(.is-selected) .coblocks-gallery--figure::before {
 		opacity: 1;
 	}
+
+	& + .wp-block-coblocks-gallery-stacked {
+		margin-top: calc(var(--theme-block-spacing-huge) * -1) !important;
+	}
 }

@@ -313,6 +313,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		'page_titles',
 		[
 			'default'           => true,
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint',
 		]
 	);
@@ -515,6 +516,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 		[
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
+			'default'           => \Maverick\get_default_palette_color( 'header_background' ),
 		]
 	);
 
@@ -596,13 +598,14 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		[
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
+			'default'           => \Maverick\get_default_palette_color( 'footer_background' ),
 		]
 	);
 
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'footer_background_color',
+			'footer_background_color_control',
 			[
 				'label'    => esc_html__( 'Background Color', 'maverick' ),
 				'section'  => 'maverick_footer_settings',
@@ -748,11 +751,11 @@ function inline_css() {
 	$background_color = get_palette_color( 'background', 'HSL' );
 
 	// Customizer colors.
-	$header_background    = hex_to_hsl( get_theme_mod( 'header_background_color', false ), true );
+	$header_background    = get_palette_color( 'header_background', 'HSL' );
 	$header_text_color    = hex_to_hsl( get_theme_mod( 'header_text_color', false ), true );
 	$footer_text_color    = hex_to_hsl( get_theme_mod( 'footer_text_color', false ), true );
 	$footer_heading_color = hex_to_hsl( get_theme_mod( 'footer_heading_color', false ), true );
-	$footer_background    = hex_to_hsl( get_theme_mod( 'footer_background_color', false ), true );
+	$footer_background    = get_palette_color( 'footer_background', 'HSL' );
 	$social_icon_color    = hex_to_hsl( get_theme_mod( 'social_icon_color', false ), true );
 
 	// Site logo width.
@@ -761,7 +764,6 @@ function inline_css() {
 	?>
 		<style>
 			:root {
-				/* Color Palette */
 				<?php if ( $primary_color ) : ?>
 					--theme-color-primary: <?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>;
 				<?php endif; ?>
@@ -778,9 +780,8 @@ function inline_css() {
 					--theme-color-body-bg: <?php echo esc_attr( $background_color[0] ) . ', ' . esc_attr( $background_color[1] ) . '%, ' . esc_attr( $background_color[2] ) . '%'; ?>;
 				<?php endif; ?>
 
-				/* Header */
 				<?php if ( $header_background ) : ?>
-					--theme-header--bg: <?php echo esc_attr( $header_background ); ?>;
+					--theme-header--bg: <?php echo esc_attr( $header_background[0] ) . ', ' . esc_attr( $header_background[1] ) . '%, ' . esc_attr( $header_background[2] ) . '%'; ?>;
 				<?php endif; ?>
 
 				<?php if ( $header_text_color ) : ?>
@@ -793,9 +794,8 @@ function inline_css() {
 					--theme-search-submit--bg: <?php echo esc_attr( $header_text_color ); ?>;
 				<?php endif; ?>
 
-				/* Footer */
 				<?php if ( $footer_background ) : ?>
-					--theme-footer--bg: <?php echo esc_attr( $footer_background ); ?>;
+					--theme-footer--bg: <?php echo esc_attr( $footer_background[0] ) . ', ' . esc_attr( $footer_background[1] ) . '%, ' . esc_attr( $footer_background[2] ) . '%'; ?>;
 				<?php endif; ?>
 
 				<?php if ( $footer_heading_color ) : ?>
@@ -803,14 +803,14 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $footer_text_color ) : ?>
-					--theme-footer--color: <?php echo esc_attr( $footer_text_color ); ?>;;
+					--theme-footer--color: <?php echo esc_attr( $footer_text_color ); ?>;
+					--theme-footer-nav--color: <?php echo esc_attr( $footer_text_color ); ?>;
 				<?php endif; ?>
 
 				<?php if ( $social_icon_color ) : ?>
 					--theme-social--color: <?php echo esc_attr( $social_icon_color ); ?>;
 				<?php endif; ?>
 
-				/* Site Logo */
 				<?php if ( $logo_width ) : ?>
 					--theme-site-logo--width: <?php echo esc_attr( $logo_width ); ?>px;
 				<?php endif; ?>
