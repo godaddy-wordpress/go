@@ -126,31 +126,6 @@
 	padding: 0 0.5em;
 }
 
-.hero-center-center-align .wp-block-coblocks-hero__content {
-	margin: 0 auto;
-}
-
-.wp-block-media-text {
-
-	& .wp-block-media-text__content {
-		padding-right: 0;
-	}
-}
-
-.wp-block-media-text.has-media-on-the-right {
-
-	& .wp-block-media-text__content {
-		padding-left: 0;
-	}
-}
-
-.wp-block-group__inner-container > h3 {
-	@media (--small) {
-		padding-left: var(--theme-block-padding-x);
-		padding-right: var(--theme-block-padding-x);
-	}
-}
-
 .max-w-sml {
 	max-width: 40em;
 }

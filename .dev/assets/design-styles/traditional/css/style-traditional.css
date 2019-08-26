@@ -50,3 +50,7 @@ input[type="color"] {
 .flickity-button-icon {
 	fill: hsl(var(--theme-color-primary));
 }
+
+.wp-block-coblocks-food-item__attributes {
+	top: 0;
+}

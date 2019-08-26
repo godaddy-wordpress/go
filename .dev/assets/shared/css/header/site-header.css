@@ -13,7 +13,8 @@
 }
 
 [data-header="header-1"].has-featured-image,
-[data-header="header-2"].has-featured-image {
+[data-header="header-2"].has-featured-image,
+[data-header="header-3"].has-featured-image {
 
 	& .site-header {
 		position: absolute;

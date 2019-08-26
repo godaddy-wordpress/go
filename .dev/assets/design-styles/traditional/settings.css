@@ -268,10 +268,10 @@
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
-	--theme-site-nav--font: var(--theme-body--font);
-	--theme-site-nav--font-size: 1.1rem;
-	--theme-site-nav--font-size-mobile: 1.5rem;
-	--theme-site-nav--weight: 600;
+	--theme-site-nav--font: var(--theme-heading--font);
+	--theme-site-nav--font-size: 1.35rem;
+	--theme-site-nav--font-size-mobile: 1.65rem;
+	--theme-site-nav--weight: 400;
 	--theme-site-nav--text-transform: normal;
 	--theme-site-nav--tracking: 0;
 	--theme-site-nav--transition: var(--theme-link-transition);
@@ -403,19 +403,19 @@
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
 	--coblocks-food-drinks-hint--radius: 0;
 	--coblocks-food-drinks-item--fill: var(--theme-color-heading);
-	--coblocks-food-drinks-item--font-size: 1.5rem;
-	--coblocks-food-drinks-item--spacing: 2rem;
+	--coblocks-food-drinks-item--font-size: 1.5em;
+	--coblocks-food-drinks-item--spacing: 3em;
 	--coblocks-food-drinks-item--text-transform: normal;
 	--coblocks-food-drinks-item--tracking: 0;
-	--coblocks-food-drinks-item--weight: 700;
+	--coblocks-food-drinks-item--weight: 400;
 	--coblocks-food-drinks-price--color: var(--theme-color-text-secondary);
 	--coblocks-food-drinks-price--font-size: var(--theme-text-sm);
-	--coblocks-food-drinks-title--bg: var(--theme-color-primary);
+	--coblocks-food-drinks-title--bg: none;
 	--coblocks-food-drinks-title--border-bottom: none;
-	--coblocks-food-drinks-title--color: var(--color-white);
-	--coblocks-food-drinks-title--font-size: 1.5rem;
-	--coblocks-food-drinks-title--margin-y: 0.75rem;
-	--coblocks-food-drinks-title--padding: 0.5rem 0.25rem 0.4rem;
+	--coblocks-food-drinks-title--color: var(--theme-color-heading);
+	--coblocks-food-drinks-title--font-size: 2.25em;
+	--coblocks-food-drinks-title--margin-y: 0.5em;
+	--coblocks-food-drinks-title--padding: 0.5em 0.25em 0;
 	--coblocks-food-drinks-title--style: normal;
 
 	--coblocks-pricing--bg: var(--color-white);
