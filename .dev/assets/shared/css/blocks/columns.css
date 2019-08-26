@@ -3,8 +3,18 @@
 
 	& div.wp-block-columns {
 
+		&.is-medium-full .wp-block-column {
+			@media (max-width: 960px) {
+				flex-basis: 100%;
+				margin-top: var(--theme-block-spacing-larger);
+				padding: 0 !important;
+			}
+		}
+
 		& .wp-block-column {
 			margin-bottom: 0;
+			margin-left: 0;
+			margin-right: 0;
 			margin-top: var(--theme-block-spacing-larger);
 
 			@media (--small) {

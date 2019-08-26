@@ -13,10 +13,6 @@
 		color: hsl(var(--theme-color-primary));
 	}
 
-	&.is-style-outline:hover .wp-block-button__link {
-		color: hsl(var(--theme-button--bg-interactive));
-	}
-
 	&:not(.is-style-outline) .wp-block-button__link {
 
 		&:hover {

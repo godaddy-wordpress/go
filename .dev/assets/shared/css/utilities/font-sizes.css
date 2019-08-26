@@ -4,7 +4,11 @@
 }
 
 .has-medium-font-size {
-	font-size: var(--editor-font-size-medium);
+	font-size: var(--theme-body--font-size);
+
+	@media (--small) {
+		font-size: var(--editor-font-size-medium);
+	}
 }
 
 .has-large-font-size {

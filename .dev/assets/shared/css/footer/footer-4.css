@@ -2,12 +2,11 @@
 [data-footer="footer-4"] {
 
 	& .site-footer {
-		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.45);
-		padding-top: var(--theme-block-spacing-huge);
+		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.5);
 	}
 
 	& .site-footer__row {
-		margin-top: calc(var(--theme-block-spacing-huge) * 0.45);
+		margin-top: calc(var(--theme-block-spacing-huge) * 0.5);
 	}
 
 	& .site-footer .site-branding {

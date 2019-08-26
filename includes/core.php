@@ -20,7 +20,6 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'init', $n( 'init' ) );
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'admin_init', $n( 'editor_styles' ) );
@@ -35,17 +34,6 @@ function setup() {
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
 	add_filter( 'maverick_page_title_args', $n( 'filter_page_titles' ) );
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
-
-}
-
-/**
- * Runs code on init hook
- *
- * @return void
- */
-function init() {
-
-	remove_post_type_support( 'page', 'thumbnail' );
 
 }
 
@@ -488,6 +476,18 @@ function body_classes( $classes ) {
 
 	if ( ! has_nav_menu( 'footer-1' ) ) {
 		$classes[] = 'no-footer-menu';
+	}
+
+	if ( get_theme_mod( 'footer_background_color', false ) ) {
+		$classes[] = 'has-footer-background';
+	}
+
+	if ( get_theme_mod( 'page_titles', true ) ) {
+		$classes[] = 'has-page-titles';
+	}
+
+	if ( has_post_thumbnail() ) {
+		$classes[] = 'has-featured-image';
 	}
 
 	// Add class whenever a WooCommerce block is added to a page.
