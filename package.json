@@ -111,7 +111,7 @@
   },
   "testing": {
     "urls": {
-      "local": "http://maverick.wp/lorem-ipsum/",
+      "local": "http://maverick.test/lorem-ipsum/",
       "staging": "",
       "production": ""
     },
