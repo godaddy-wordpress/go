@@ -33,65 +33,17 @@
 	}
 }
 
-[data-header="header-1"] {
-
-	& .site-header:not(.site-header--1) {
-		display: none;
-	}
+.has-header-1 .site-header:not(.site-header--1),
+.has-header-2 .site-header:not(.site-header--2),
+.has-header-3 .site-header:not(.site-header--3),
+.has-header-4 .site-header:not(.site-header--4),
+.has-header-5 .site-header:not(.site-header--5) {
+	display: none;
 }
 
-[data-header="header-2"] {
-
-	& .site-header:not(.site-header--2) {
-		display: none;
-	}
-}
-
-[data-header="header-3"] {
-
-	& .site-header:not(.site-header--3) {
-		display: none;
-	}
-}
-
-[data-header="header-4"] {
-
-	& .site-header:not(.site-header--4) {
-		display: none;
-	}
-}
-
-[data-header="header-5"] {
-
-	& .site-header:not(.site-header--5) {
-		display: none;
-	}
-}
-
-[data-footer="footer-1"] {
-
-	& .site-footer:not(.site-footer--1) {
-		display: none;
-	}
-}
-
-[data-footer="footer-2"] {
-
-	& .site-footer:not(.site-footer--2) {
-		display: none;
-	}
-}
-
-[data-footer="footer-3"] {
-
-	& .site-footer:not(.site-footer--3) {
-		display: none;
-	}
-}
-
-[data-footer="footer-4"] {
-
-	& .site-footer:not(.site-footer--4) {
-		display: none;
-	}
+.has-footer-1 .site-footer:not(.site-footer--1),
+.has-footer-2 .site-footer:not(.site-footer--2),
+.has-footer-3 .site-footer:not(.site-footer--3),
+.has-footer-4 .site-footer:not(.site-footer--4) {
+	display: none;
 }

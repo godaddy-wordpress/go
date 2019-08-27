@@ -40,7 +40,7 @@
 	}
 }
 
-.admin-bar:not([data-header="header-5"]) .site-navigation {
+.admin-bar:not(.has-header-5) .site-navigation {
 	@media (--large) {
 		top: initial;
 	}

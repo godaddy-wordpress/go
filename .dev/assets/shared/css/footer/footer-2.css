@@ -1,5 +1,5 @@
 /*! Footer: Footer 2 */
-[data-footer="footer-2"] {
+.has-footer-2 {
 
 	& .content-area > .alignfull:last-child {
 		margin-bottom: var(--theme-footer-2--padding-y) !important;
@@ -86,7 +86,7 @@
 		}
 	}
 
-	&.no-footer-menu {
+	&.has-no-footer-menu {
 
 		& .site-footer__inner {
 			justify-content: space-between;

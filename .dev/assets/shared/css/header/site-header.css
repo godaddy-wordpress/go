@@ -12,27 +12,15 @@
 	padding: var(--theme-header--padding-y) var(--theme-block-padding-x);
 }
 
-[data-header="header-1"].has-featured-image,
-[data-header="header-2"].has-featured-image,
-[data-header="header-3"].has-featured-image {
+.has-header-1.has-featured-image,
+.has-header-2.has-featured-image,
+.has-header-3.has-featured-image {
 
 	& .site-header {
 		position: absolute;
 		top: 0;
 		width: 100%;
 	}
-
-	/* &:not(.has-featured-image) .site-content {
-		padding-top: calc(var(--theme-block-spacing) * 2.5);
-
-		@media (--medium) {
-			padding-top: calc(var(--theme-block-spacing) * 4);
-		}
-
-		@media (--large) {
-			padding-top: var(--theme-block-spacing);
-		}
-	} */
 }
 
 .post__thumbnail {

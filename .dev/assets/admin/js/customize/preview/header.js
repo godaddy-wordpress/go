@@ -5,7 +5,8 @@ const $ = jQuery; // eslint-disable-line
 export default () => {
 	wp.customize( 'header_variation', ( value ) => {
 		value.bind( ( to ) => {
-			$( 'body' ).attr( 'data-header', to );
+			$( 'body' ).removeClass( 'has-header-1 has-header-2 has-header-3 has-header-4 has-header-5' )
+           			   .addClass( 'has-' + to );
 		} );
 	} );
 

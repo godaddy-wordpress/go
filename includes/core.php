@@ -30,7 +30,6 @@ function setup() {
 	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
-	add_filter( 'body_class', $n( 'body_data' ), 999 );
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
 	add_filter( 'maverick_page_title_args', $n( 'filter_page_titles' ) );
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
@@ -474,8 +473,33 @@ function script_loader_tag( $tag, $handle ) {
  */
 function body_classes( $classes ) {
 
+	$design_style     = get_theme_mod( 'design_style', get_default_design_style() );
+	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
+	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
+
+	// Add class for the current design style.
+	if ( $design_style ) {
+		$classes[] = sprintf( 'is-style-%s', esc_attr( $design_style ) );
+	}
+
+	// Add class for the current header variation.
+	if ( $header_variation ) {
+		$classes[] = sprintf( 'has-%s', esc_attr( $header_variation ) );
+	}
+
+	// Add class for the current footer variation.
+	if ( $footer_variation ) {
+		$classes[] = sprintf( 'has-%s', esc_attr( $footer_variation ) );
+	}
+
+	// Add class when there is not a footer menu.
 	if ( ! has_nav_menu( 'footer-1' ) ) {
-		$classes[] = 'no-footer-menu';
+		$classes[] = 'has-no-footer-menu';
+	}
+
+	// Add class when a page or post has comments.
+	if ( comments_open() ) {
+		$classes[] = 'has-comments-open';
 	}
 
 	if ( get_theme_mod( 'footer_background_color', false ) ) {
@@ -502,34 +526,6 @@ function body_classes( $classes ) {
 		|| has_block( 'woocommerce/featured-product' )
 	) {
 		$classes[] = 'woocommerce-page';
-	}
-
-	return $classes;
-
-}
-
-/**
- * Adds data attributes to the body based on Customizer entries.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
-function body_data( $classes ) {
-
-	$design_style     = get_theme_mod( 'design_style', get_default_design_style() );
-	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
-	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
-
-	if ( $design_style ) {
-		$classes[] = sprintf( '" data-style="%s"', esc_attr( $design_style ) );
-	}
-
-	if ( $header_variation ) {
-		$classes[] = sprintf( 'data-header="%s"', esc_attr( $header_variation ) );
-	}
-
-	if ( $footer_variation ) {
-		$classes[] = sprintf( 'data-footer="%s"', esc_attr( $footer_variation ) );
 	}
 
 	return $classes;
