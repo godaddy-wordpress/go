@@ -5,9 +5,8 @@ const $ = jQuery; // eslint-disable-line
 export default () => {
 	wp.customize( 'footer_variation', ( value ) => {
 		value.bind( ( to ) => {
-			const toClass = 'has-' + to;
-			$( 'body' ).removeClass( 'has-footer-1 has-footer-2 has-footer-3 has-footer-4' );
-			$( 'body' ).addClass( toClass );
+			$( 'body' ).removeClass( 'has-footer-1 has-footer-2 has-footer-3 has-footer-4' )
+           			   .addClass( 'has-' + to );
 		} );
 	} );
 
