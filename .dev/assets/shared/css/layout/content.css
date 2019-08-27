@@ -75,7 +75,7 @@
 	}
 }
 
-[data-header="header-3"] .content-area > *:first-child {
+.is-header-3 .content-area > *:first-child {
 	margin-top: 0 !important;
 }
 
