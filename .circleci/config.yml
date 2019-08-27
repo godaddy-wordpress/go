@@ -137,7 +137,7 @@ jobs:
           command: sudo apt install rsync
       - run:
           name: Install gettext
-          command: apt-get install gettext
+          command: sudo apt-get install gettext
       - run:
           name: Install Grunt.js
           command: sudo npm install -g grunt-cli
@@ -183,7 +183,7 @@ jobs:
           command: sudo apt install rsync
       - run:
           name: Install gettext
-          command: apt-get install gettext
+          command: sudo apt-get install gettext
       - run:
           name: Install Grunt.js
           command: sudo npm install -g grunt-cli
