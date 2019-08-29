@@ -514,6 +514,7 @@ function search_toggle() {
 				[
 					'svg'  => [
 						'width'   => true,
+						'role'    => true,
 						'height'  => true,
 						'fill'    => true,
 						'xmlns'   => true,
