@@ -471,10 +471,9 @@ function site_branding( $args = [] ) {
 
 		if ( ! empty( $blog_name ) ) {
 			echo '<a class="site-branding__link" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
-			$html_tag = is_front_page() ? 'h1' : 'span';
 			printf(
 				'<%1$s class="site-branding__title">' . esc_html( $blog_name ) . '</%1$s>',
-				esc_html( $html_tag )
+				is_front_page() ? 'h1' : 'span'
 			);
 			echo '</a>';
 		}
