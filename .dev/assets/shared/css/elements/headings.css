@@ -1,5 +1,5 @@
 /*! Headings - <h1> through </h6> */
-h1:not(.site-branding__title),
+h1,
 h2,
 h3,
 h4,
@@ -27,6 +27,7 @@ h1:not(.site-branding__title),
 }
 
 h1.site-branding__title {
+	line-height: inherit;
 	margin: 0;
 }
 
