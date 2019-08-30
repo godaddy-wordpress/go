@@ -279,9 +279,8 @@ function copyright( $args = [] ) {
 function page_title() {
 
 	if (
-		! is_customize_preview() ||
-		is_front_page() &&
-		( ! get_theme_mod( 'page_titles', true ) && ! is_404() && ! is_search() && ! is_archive() )
+		! is_customize_preview() || is_front_page() &&
+		( is_front_page() || ( ! get_theme_mod( 'page_titles', true ) && ! is_404() && ! is_search() && ! is_archive() ) )
 	) {
 
 		return;
