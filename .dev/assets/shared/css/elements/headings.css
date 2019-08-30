@@ -1,5 +1,5 @@
 /*! Headings - <h1> through </h6> */
-h1,
+h1:not(.site-branding__title),
 h2,
 h3,
 h4,
@@ -19,11 +19,15 @@ h6,
 	}
 }
 
-h1,
+h1:not(.site-branding__title),
 .h1 {
 	color: hsl(var(--theme-h1--color));
 	font-size: var(--theme-h1--font-size);
 	letter-spacing: var(--theme-heading--tracking);
+}
+
+h1.site-branding__title {
+	margin: 0;
 }
 
 h2 {
