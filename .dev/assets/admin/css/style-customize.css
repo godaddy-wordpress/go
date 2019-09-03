@@ -18,3 +18,7 @@
 #customize-control-footer_background_color {
 	margin-top: 5px;
 }
+
+.home .entry-header.page-header {
+	display: none;
+}
