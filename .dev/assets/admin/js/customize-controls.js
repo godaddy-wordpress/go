@@ -15,6 +15,11 @@ import './customize/controls/range-control';
 		 * Function to hide/show Customizer options, based on another control.
 		 *
 		 * Parent option, Affected Control, Value which affects the control.
+		 *
+		 * @param {String} parentSetting The setting that will toggle the display of the control.
+		 * @param {String} affectedControl The control that will be toggled.
+		 * @param {Array} values The values the parentSetting must have for the affectedControl to be displayed.
+		 * @param {Integer} speed The speed of the toggle animation.
 		 */
 		function customizerOptionDisplay( parentSetting, affectedControl, values, speed = 100 ) {
 			wp.customize( parentSetting, function( setting ) {
@@ -40,6 +45,10 @@ import './customize/controls/range-control';
 		 * Function to hide/show Customizer options, based on another control.
 		 *
 		 * Parent option, Affected Control, Value which affects the control.
+		 *
+		 * @param {String} parentSetting The setting that will toggle the display of the control.
+		 * @param {String} affectedControl The control that will be toggled.
+		 * @param {Integer} speed The speed of the toggle animation.
 		 */
 		function customizerImageOptionDisplay( parentSetting, affectedControl, speed = 100 ) {
 			wp.customize( parentSetting, function( setting ) {
