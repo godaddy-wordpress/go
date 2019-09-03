@@ -16,7 +16,7 @@ import './customize/controls/range-control';
 		 *
 		 * Parent option, Affected Control, Value which affects the control.
 		 */
-		function customizerOptionDisplay( parentSetting, affectedControl, value, valueAlt = null, speed ) {
+		function customizerOptionDisplay( parentSetting, affectedControl, value, valueAlt = null, speed = 100 ) {
 			wp.customize( parentSetting, function( setting ) {
 				wp.customize.control( affectedControl, function ( control ) {
 					/**
@@ -43,7 +43,7 @@ import './customize/controls/range-control';
 		 *
 		 * Parent option, Affected Control, Value which affects the control.
 		 */
-		function customizerImageOptionDisplay( parentSetting, affectedControl, speed ) {
+		function customizerImageOptionDisplay( parentSetting, affectedControl, speed = 100 ) {
 			wp.customize( parentSetting, function( setting ) {
 				wp.customize.control( affectedControl, function ( control ) {
 					/**
@@ -64,15 +64,15 @@ import './customize/controls/range-control';
 		}
 
 		// Only show the Footer Header Color selector, if the footer variation is 2 or 4.
-		customizerOptionDisplay( 'footer_variation', 'footer_heading_color', 'footer-3', 'footer-4', 100 );
+		customizerOptionDisplay( 'footer_variation', 'footer_heading_color', 'footer-3', 'footer-4' );
 
 		// Footer nav locations #2 and #3 are only available on Footer Variation #3 and #4.
-		customizerOptionDisplay( 'footer_variation', 'nav_menu_locations[footer-2]', 'footer-3', 'footer-4', 100 );
-		customizerOptionDisplay( 'footer_variation', 'nav_menu_locations[footer-3]', 'footer-3', 'footer-4', 100 );
+		customizerOptionDisplay( 'footer_variation', 'nav_menu_locations[footer-2]', 'footer-3', 'footer-4' );
+		customizerOptionDisplay( 'footer_variation', 'nav_menu_locations[footer-3]', 'footer-3', 'footer-4' );
 
 		// Only show the following options, if a logo is uploaded.
-		customizerImageOptionDisplay( 'custom_logo', 'logo_width', 100 );
-		customizerImageOptionDisplay( 'custom_logo', 'logo_width_mobile', 100 );
+		customizerImageOptionDisplay( 'custom_logo', 'logo_width' );
+		customizerImageOptionDisplay( 'custom_logo', 'logo_width_mobile' );
 	} );
 
 } )( jQuery );
