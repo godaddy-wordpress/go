@@ -279,8 +279,7 @@ function copyright( $args = [] ) {
 function page_title() {
 
 	if (
-		! is_customize_preview() || is_front_page() &&
-		( is_front_page() || ( ! get_theme_mod( 'page_titles', true ) && ! is_404() && ! is_search() && ! is_archive() ) )
+		! is_customize_preview() && ( is_front_page() || ( ! get_theme_mod( 'page_titles', true ) && ! is_404() && ! is_search() && ! is_archive() ) )
 	) {
 
 		return;
@@ -352,7 +351,7 @@ function page_title() {
 	}
 
 	printf(
-		'<header class="entry-header%1$s">%2$s</header>',
+		'<header class="entry-header page-header %1$s">%2$s</header>',
 		is_customize_preview() ? ( get_theme_mod( 'page_titles', true ) ? '' : ' display-none' ) : '',
 		wp_kses(
 			$html,
@@ -471,7 +470,10 @@ function site_branding( $args = [] ) {
 
 		if ( ! empty( $blog_name ) ) {
 			echo '<a class="site-branding__link" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
-			echo '<span class="site-branding__title">' . esc_html( $blog_name ) . '</span>';
+			printf(
+				'<%1$s class="site-branding__title">' . esc_html( $blog_name ) . '</%1$s>',
+				( is_front_page() && ! did_action( 'get_footer' ) ) ? 'h1' : 'span'
+			);
 			echo '</a>';
 		}
 
@@ -514,6 +516,7 @@ function search_toggle() {
 				[
 					'svg'  => [
 						'width'   => true,
+						'role'    => true,
 						'height'  => true,
 						'fill'    => true,
 						'xmlns'   => true,
