@@ -27,9 +27,29 @@
 	margin: 0;
 	max-height: 10em;
 	overflow: hidden;
-	padding-bottom: var(--theme-featured-img--height);
+	padding-bottom: calc(var(--theme-featured-img--height) * 1.5);
 	position: relative;
 	z-index: -1;
+
+	@media (--medium) {
+		padding-bottom: var(--theme-featured-img--height);
+	}
+
+	@media (--xlarge) {
+		padding-bottom: calc(var(--theme-featured-img--height) / 1.5);
+	}
+
+	&::after {
+		background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0, transparent 40%);
+		bottom: 0;
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100%;
+	}
 
 	& img {
 		bottom: 0;
