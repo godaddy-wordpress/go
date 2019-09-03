@@ -21,6 +21,14 @@
 		top: 0;
 		width: 100%;
 	}
+
+	&.admin-bar .site-header {
+		top: 32px;
+
+		@media (--admin-bar-lg) {
+			top: 46px;
+		}
+	}
 }
 
 .post__thumbnail {
