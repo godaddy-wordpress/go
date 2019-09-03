@@ -1,36 +1,48 @@
-/**
- * WooCommerce Global - layout
- *
- * Global overrides to general layout
-*/
+.content-area .woocommerce {
+	max-width: var(--theme-max-w-wide);
+}
 
-.woocommerce-page .content-area {
+.woocommerce {
 
-	& > * {
-		max-width: var(--theme-max-w-wide);
-		padding-left: var(--theme-block-padding-x) !important;
-		padding-right: var(--theme-block-padding-x) !important;
-	}
-
-	& .page-title {
-		margin: 0 !important;
-		padding: var(--theme-block-spacing-larger) 0 !important;
-		text-align: center;
-	}
-
-	& .woocommerce-notices-wrapper {
-		margin: 0 !important;
+	& .woocommerce-result-count {
+		margin-top: 1em;
 	}
 
 	& .woocommerce-ordering {
-		margin: 0 0 2.5em !important;
+		margin: 0;
+	}
+
+	& .page-title {
+		text-align: center;
 	}
 }
 
-.woocommerce ul.products {
-	margin-bottom: 2rem;
+.woocommerce .product .onsale {
+	@mixin on-sale-badge;
 
-	@media (--medium) {
-		margin-bottom: 2rem;
+	left: 1em;
+	top: 1em;
+}
+
+.woocommerce.single-product .product > .onsale {
+	@media (--large) {
+		@mixin on-sale-badge-lg;
+
+		left: 30px;
+		top: 30px;
 	}
+}
+
+.woocommerce ul.products li.product .onsale {
+	right: 1em;
+	top: 1em;
+}
+
+.cart_item a,
+.shipping-calculator-button,
+.woocommerce .posted_in a,
+.woocommerce div.product p.price,
+.woocommerce div.product span.price,
+.woocommerce ul.products li.product .price {
+	color: hsl(var(--theme-color-primary));
 }

@@ -7,11 +7,12 @@
 /* Specificity to override nested styles from woo */
 body {
 
-	&.woocommerce-page .content-area {
+	&.woocommerce-page {
 
 		/* Primary Button */
 		& #respond input#submit.alt,
-		& .button.alt {
+		& .button.alt,
+		& .button {
 			@mixin button;
 
 			&:hover,
