@@ -231,14 +231,14 @@
 	--theme-button--bg: var(--theme-color-primary);
 	--theme-button--bg-interactive: var(--theme-color-heading);
 	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-size: 1.1rem;
-	--theme-button--font: var(--theme-body--font);
+	--theme-button--font-size: 1.3rem;
+	--theme-button--font: var(--theme-heading--font);
 	--theme-button--padding-x: 2.25rem;
-	--theme-button--padding-y: 1.45rem;
+	--theme-button--padding-y: 1.4rem;
 	--theme-button--radius: 4px;
 	--theme-button--text-transform: normal;
 	--theme-button--tracking: 0;
-	--theme-button--weight: 600;
+	--theme-button--weight: 500;
 
 	/* Disabled */
 	--theme-button--disabled-bg: 0, 2%, 89%;
@@ -299,6 +299,9 @@
 	@media (--large) {
 		--theme-header-5-nav--width: 100px;
 	}
+
+	/* Featured Image */
+	--theme-featured-img--height: 35%;
 
 
 	/*--------------------------------------------------------------

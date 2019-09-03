@@ -19,9 +19,9 @@ p.has-background,
 	}
 }
 
-.site-branding__title {
+.site-branding {
 	position: relative;
-	top: -5px;
+	top: -2px;
 }
 
 textarea,

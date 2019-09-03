@@ -45,7 +45,9 @@
 		width: 100%;
 
 		& a {
-			font-size: var(--theme-site-nav--font-size-mobile);
+			@media (--large) {
+				font-size: calc(var(--theme-site-nav--font-size) * 2);
+			}
 		}
 
 		& .menu-item {
