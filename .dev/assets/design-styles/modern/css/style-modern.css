@@ -55,7 +55,7 @@ p.has-background,
 
 	&::after {
 		background-color: currentColor;
-		bottom: -5px;
+		bottom: 0;
 		content: "";
 		height: 2px;
 		left: 0;
