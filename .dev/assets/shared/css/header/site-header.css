@@ -27,7 +27,7 @@
 	margin: 0;
 	max-height: 10em;
 	overflow: hidden;
-	padding-bottom: 40%;
+	padding-bottom: var(--theme-featured-img--height);
 	position: relative;
 	z-index: -1;
 

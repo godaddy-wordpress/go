@@ -12,10 +12,6 @@
 	margin: 0;
 }
 
-.post__thumbnail img {
-	width: 100%;
-}
-
 .post--single {
 
 	& .post__author {

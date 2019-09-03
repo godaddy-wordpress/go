@@ -300,6 +300,9 @@
 		--theme-header-5-nav--width: 100px;
 	}
 
+	/* Featured Image */
+	--theme-featured-img--height: 35%;
+
 
 	/*--------------------------------------------------------------
 	## Navigation Toggle
