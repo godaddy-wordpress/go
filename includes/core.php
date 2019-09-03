@@ -498,7 +498,7 @@ function body_classes( $classes ) {
 	}
 
 	// Add class when a page or post has comments.
-	if ( comments_open() ) {
+	if ( is_singular() && comments_open() ) {
 		$classes[] = 'has-comments-open';
 	}
 
