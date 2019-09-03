@@ -1,0 +1,41 @@
+/**
+ * Modern - Styles
+ */
+@import url("../../../shared/css/config/media-queries.css");
+@import url("../settings.css");
+@import url("components/button.css");
+@import url("components/carousel.css");
+
+.wp-block-code,
+.wp-block-verse,
+p.has-background,
+.wp-block-pullquote,
+.wp-block-coblocks-alert,
+.wp-block-separator.is-style-wide,
+.wp-block-group:not(.alignfull):not(.alignwide),
+.wp-block-cover:not(.alignwide):not(.alignfull),
+.wp-block-coblocks-dynamic-separator.is-style-fullwidth::before {
+	@media (--base) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
+
+.site-search__toggle {
+	top: 2px;
+}
+
+.wp-block-coblocks-pricing-table-item__title {
+	font-family: var(--theme-site-nav--font);
+	font-size: var(--theme-site-nav--font-size);
+	font-weight: var(--theme-site-nav--weight);
+	letter-spacing: var(--theme-site-nav--tracking);
+	text-transform: var(--theme-site-nav--text-transform);
+}
+
+.wp-block-group.has-background.alignwide {
+	@media (--wide) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}

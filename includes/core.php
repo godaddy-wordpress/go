@@ -663,19 +663,48 @@ function get_available_design_styles() {
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
-				'one' => [
-					'label'      => esc_html__( 'Light', 'maverick' ),
-					'primary'    => '#fcfcfc',
-					'secondary'  => '#f3f0ed',
-					'tertiary'   => '#123456',
+				'one'   => [
+					'label'      => esc_html__( 'Shade', 'maverick' ),
+					'primary'    => '#000a12',
+					'secondary'  => '#455a64',
+					'tertiary'   => '#eceff1',
 					'background' => '#ffffff',
 				],
-				'two' => [
-					'label'      => esc_html__( 'Dark', 'maverick' ),
-					'primary'    => '#f1f4f4',
-					'secondary'  => '#ebeeee',
-					'tertiary'   => '#123456',
+				'two'   => [
+					'label'      => esc_html__( 'Blush', 'maverick' ),
+					'primary'    => '#c2185b', // 700
+					'secondary'  => '#ec407a', // 400
+					'tertiary'   => '#fce4ec', // 100
 					'background' => '#ffffff',
+				],
+				'three' => [
+					'label'      => esc_html__( 'Indigo', 'maverick' ),
+					'primary'    => '#303f9f', // 700
+					'secondary'  => '#5c6bc0', // 400
+					'tertiary'   => '#e8eaf6', // 100
+					'background' => '#ffffff',
+				],
+				'four'  => [
+					'label'      => esc_html__( 'Pacific', 'maverick' ),
+					'primary'    => '#00796b', // 700
+					'secondary'  => '#26a69a', // 400
+					'tertiary'   => '#e0f2f1', // 100
+					'background' => '#ffffff',
+				],
+			],
+			'fonts'         => [
+				'Montserrat'    => [
+					'400',
+					'700',
+				],
+				'IBM Plex Mono' => [
+					'400',
+					'400i',
+					'700',
+				],
+				'Heebo'         => [
+					'400',
+					'700',
 				],
 			],
 		],
