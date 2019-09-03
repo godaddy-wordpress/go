@@ -9,7 +9,7 @@
 <div id="js-site-search" class="site-search" itemscope itemtype="http://schema.org/WebSite">
 	<form role="search" id="searchform" class="search-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<meta itemprop="target" content="<?php echo esc_url( home_url( '/' ) ); ?>/?s={s}" />
-		<label for="search-form__label">
+		<label for="search-field">
 			<span class="screen-reader-text"><?php echo esc_html_x( 'Search for:', 'label', 'maverick' ); ?></span>
 		</label>
 		<input itemprop="query-input" type="search" id="search-field" class="input input--search search-form__input" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'maverick' ); ?>" name="s" />
