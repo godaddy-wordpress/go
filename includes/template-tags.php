@@ -470,7 +470,10 @@ function site_branding( $args = [] ) {
 
 		if ( ! empty( $blog_name ) ) {
 			echo '<a class="site-branding__link" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
-			echo '<span class="site-branding__title">' . esc_html( $blog_name ) . '</span>';
+			printf(
+				'<%1$s class="site-branding__title">' . esc_html( $blog_name ) . '</%1$s>',
+				( is_front_page() && ! did_action( 'get_footer' ) ) ? 'h1' : 'span'
+			);
 			echo '</a>';
 		}
 
