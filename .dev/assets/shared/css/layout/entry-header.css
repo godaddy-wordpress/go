@@ -6,3 +6,9 @@
 .has-featured-image .entry-header {
 	padding-top: var(--theme-entryheader--padding-top);
 }
+
+.has-header-3:not(.has-featured-image) .entry-header {
+	@media (--large) {
+		padding-top: 0;
+	}
+}
