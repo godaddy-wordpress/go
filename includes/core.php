@@ -663,19 +663,51 @@ function get_available_design_styles() {
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
-				'one' => [
-					'label'      => esc_html__( 'Light', 'maverick' ),
-					'primary'    => '#fcfcfc',
-					'secondary'  => '#f3f0ed',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'one'   => [
+					'label'             => esc_html__( 'Avocado', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#02493b',
+					'tertiary'          => '#b4c6af',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
 				],
-				'two' => [
-					'label'      => esc_html__( 'Dark', 'maverick' ),
-					'primary'    => '#f1f4f4',
-					'secondary'  => '#ebeeee',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'two'   => [
+					'label'             => esc_html__( 'Steel', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#003c68',
+					'tertiary'          => '#c0c9d0',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
+				],
+				'three' => [
+					'label'             => esc_html__( 'Plum', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#4d0859',
+					'tertiary'          => '#ded9e2',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
+				],
+				'four'  => [
+					'label'             => esc_html__( 'Champagne', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#cc224f',
+					'tertiary'          => '#e5dede',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
+				],
+			],
+			'fonts'         => [
+				'Trocchi'    => [
+					'400',
+				],
+				'Open Sans'  => [
+					'400',
+					'400i',
+					'700',
+				],
+				'Montserrat' => [
+					'400',
+					'700',
 				],
 			],
 		],

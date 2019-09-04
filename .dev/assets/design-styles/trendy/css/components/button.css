@@ -1,0 +1,31 @@
+/*! Modern: Button */
+.wp-block-button__link,
+.wp-block-search__button {
+	box-shadow: 0.4em 0.4em 0 0 rgba(0, 0, 0, 0.075);
+	overflow: hidden;
+
+	&::after {
+		content: "→";
+		display: inline-block;
+		opacity: 0;
+		overflow: hidden;
+		position: relative;
+		top: 1px;
+		transition: width 100ms cubic-bezier(0.7, 0, 0.3, 1) 100ms, opacity 200ms cubic-bezier(0.7, 0, 0.3, 1), margin 200ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
+		width: 0;
+	}
+
+	&:focus,
+	&:hover {
+
+		&::after {
+			margin-left: 10px;
+			opacity: 1;
+			width: 10px;
+		}
+	}
+}
+
+.site-header .site-search .search-input__button {
+	box-shadow: 0.4em 0.4em 0 0 rgba(0, 0, 0, 0.075);
+}

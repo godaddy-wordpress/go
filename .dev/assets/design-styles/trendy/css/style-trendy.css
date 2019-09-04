@@ -1,0 +1,68 @@
+/**
+ * Modern - Styles
+ */
+@import url("../../../shared/css/config/media-queries.css");
+@import url("../settings.css");
+@import url("components/button.css");
+@import url("components/carousel.css");
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+.wp-block-code,
+.wp-block-verse,
+p.has-background,
+.wp-block-pullquote,
+.wp-block-coblocks-alert,
+.wp-block-separator.is-style-wide,
+.wp-block-group:not(.alignfull):not(.alignwide),
+.wp-block-cover:not(.alignwide):not(.alignfull),
+.wp-block-coblocks-dynamic-separator.is-style-fullwidth::before {
+	@media (--base) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
+
+.site-footer.has-background {
+	box-shadow: 0 -0.4em 0 0 rgba(0, 0, 0, 0.075);
+}
+
+.site-search__toggle {
+	top: 1px;
+}
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
+	outline: none !important;
+}
+
+.wp-block-coblocks-pricing-table-item__title {
+	font-family: var(--theme-site-nav--font);
+	font-size: var(--theme-site-nav--font-size);
+	font-weight: var(--theme-site-nav--weight);
+	letter-spacing: var(--theme-site-nav--tracking);
+	text-transform: var(--theme-site-nav--text-transform);
+}
+
+.wp-block-group.has-background.alignwide {
+	@media (--wide) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}

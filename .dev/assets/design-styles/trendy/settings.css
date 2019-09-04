@@ -21,11 +21,11 @@
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 50rem;
-	--theme-max-w-wide: 90rem;
+	--theme-max-w-wide: 82rem;
 
 	/* Below base width query */
 	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 90rem);
+	@custom-media --wide (max-width: 82rem);
 
 	/* Editor widths */
 	--editor-max-w-base: 633px;
@@ -53,15 +53,15 @@
 	--editor-padding: 10rem;
 
 	/* Accessibility */
-	--theme-outline-color: var(--theme-color-primary);
+	--theme-outline-color: var(--theme-color-secondary);
 	--theme-outline-style: dotted;
 	--theme-outline-width: 2px;
 
-	--theme-selection--color: var(--theme-color-primary);
+	--theme-selection--color: var(--theme-color-secondary);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
-	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1);
+	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), box-shadow 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1);
 
 
 	/*--------------------------------------------------------------
@@ -70,9 +70,9 @@
 	--theme-color-body-bg: 0, 0%, 100%;
 
 	/* Text Colors */
-	--theme-color-heading: 207, 100%, 4%;
-	--theme-color-text: 207, 100%, 4%;
-	--theme-color-text-secondary: 0, 0%, 34%;
+	--theme-color-heading: 0, 0%, 0%;
+	--theme-color-text: 0, 0%, 0%;
+	--theme-color-text-secondary: 0, 0%, 52%;
 
 	/* Global Color Scheme Colors */
 	--theme-color-quaternary: var(--color-white);
@@ -81,18 +81,18 @@
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
-	--theme-body--font: "IBM Plex Mono", mono, sans-serif;
-	--theme-body--font-size: 0.85rem;
-	--theme-body--leading: 2.25;
+	--theme-body--font: "Open Sans", sans-serif;
+	--theme-body--font-size: 1.1rem;
+	--theme-body--leading: 1.9;
 	--theme-body--weight: 400;
 
 	/* Headings */
-	--theme-heading--font: "Heebo", sans-serif;
-	--theme-heading--leading: 1.4;
-	--theme-heading--spacing: 1rem;
+	--theme-heading--font: "Trocchi", sans-serif;
+	--theme-heading--leading: 1.35;
+	--theme-heading--spacing: 1.25rem;
 	--theme-heading--style: normal;
-	--theme-heading--tracking: -0.015em;
-	--theme-heading--weight: 700;
+	--theme-heading--tracking: 0;
+	--theme-heading--weight: 400;
 	--theme-heading--button-spacing: 1.75rem;
 
 	--theme-h1--font-size: 2.5em;
@@ -103,7 +103,7 @@
 	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 4.5em;
+		--theme-h1--font-size: 3.65em;
 		--theme-h2--font-size: 2.75em;
 		--theme-h3--font-size: 2.5em;
 	}
@@ -116,7 +116,7 @@
 	--theme-h6--color: var(--theme-color-heading);
 
 	/* Text Utilities */
-	--theme-text-sm: 100%;
+	--theme-text-sm: 82.5%;
 	--theme-text-sm--letter-spacing: 0;
 
 	/* Drop Cap */
@@ -124,7 +124,7 @@
 	--theme-dropcap--weight: 700;
 
 	/* Captions */
-	--theme-caption--alignment: left;
+	--theme-caption--alignment: center;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
 	--theme-caption--style: normal;
@@ -151,7 +151,7 @@
 	/* Blockquote */
 	--theme-quote--border-color: var(--theme-color-primary);
 	--theme-quote--border-style: solid;
-	--theme-quote--border-width: 0.45rem;
+	--theme-quote--border-width: 0;
 	--theme-quote--border: var(--theme-quote--border-width) var(--theme-quote--border-style) hsl(var(--theme-quote--border-color));
 	--theme-quote--color: var(--theme-color-heading);
 	--theme-quote--font-size: var(--theme-h2--font-size);
@@ -175,27 +175,27 @@
 	--theme-label--tracking: var(--theme-site-nav--tracking);
 	--theme-label--transform: uppercase;
 	--theme-label--weight: var(--theme-site-nav--weight);
-	--theme-label--spacing: 0.75rem;
+	--theme-label--spacing: 0.5rem;
 
 	/* Input */
 	--theme-input--bg: 0, 0%, 100%;
-	--theme-input--bg-interactive: 0, 0%, 100%;
-	--theme-input--border-color: var(--theme-color-heading);
+	--theme-input--bg-interactive: var(--theme-color-tertiary);
+	--theme-input--border-color: var(--theme-color-text-secondary);
 	--theme-input--border-style: solid;
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style) hsl(var(--theme-input--border-color));
-	--theme-input--color: var(--theme-color-text);
-	--theme-input--font-size: 1rem;
-	--theme-input--padding-x: 1.25rem;
-	--theme-input--padding-y: 1.25rem;
+	--theme-input--color: var(--theme-color-text-secondary);
+	--theme-input--font-size: 1.1rem;
+	--theme-input--padding-x: 1.35rem;
+	--theme-input--padding-y: 1rem;
 	--theme-input--radius: 0;
 	--theme-input--shadow: none;
-	--theme-input--spacing: 2.25rem;
+	--theme-input--spacing: 2rem;
 	--theme-input--weight: 400;
 
 	/* Input Focus */
-	--theme-input--border-color-focus: var(--theme-color-primary);
-	--theme-input--color-focus: var(--theme-color-text);
+	--theme-input--border-color-focus: var(--theme-color-tertiary);
+	--theme-input--color-focus: var(--theme-color-heading);
 	--theme-input--shadow-focus: none;
 
 	/* Placeholder */
@@ -216,12 +216,12 @@
 	## Buttons
 	--------------------------------------------------------------*/
 	--theme-button--bg: var(--theme-color-primary);
-	--theme-button--bg-interactive: var(--theme-color-heading);
+	--theme-button--bg-interactive: var(--theme-color-secondary);
 	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-size: 0.75rem;
+	--theme-button--font-size: 0.725rem;
 	--theme-button--font: var(--theme-site-nav--font);
-	--theme-button--padding-x: 2rem;
-	--theme-button--padding-y: 1.8rem;
+	--theme-button--padding-x: 1.85rem;
+	--theme-button--padding-y: 1.65rem;
 	--theme-button--radius: 0;
 	--theme-button--text-transform: uppercase;
 	--theme-button--tracking: 3px;
@@ -256,15 +256,15 @@
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
-	--theme-site-nav--color-interactive: var(--theme-color-primary);
+	--theme-site-nav--color-interactive: var(--theme-color-text-secondary);
 	--theme-site-nav--font: "Montserrat", sans-serif;
-	--theme-site-nav--font-size: 0.75rem;
+	--theme-site-nav--font-size: 0.8rem;
 	--theme-site-nav--font-size-mobile: 1rem;
 	--theme-site-nav--weight: 700;
 	--theme-site-nav--text-transform: uppercase;
-	--theme-site-nav--tracking: 3px;
+	--theme-site-nav--tracking: 2px;
 	--theme-site-nav--transition: var(--theme-link-transition);
-	--theme-site-nav--padding-x: 1rem;
+	--theme-site-nav--padding-x: 1.35rem;
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);
@@ -314,9 +314,9 @@
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
-	--theme-search-toggle--color: var(--theme-color-heading);
-	--theme-search-toggle--color-interactive: var(--theme-color-heading);
-	--theme-search-toggle--size: 22px;
+	--theme-search-toggle--color: var(--theme-color-text-heading);
+	--theme-search-toggle--color-interactive: var(--theme-color-secondary);
+	--theme-search-toggle--size: 24px;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
@@ -340,14 +340,14 @@
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--bg: "";
-	--theme-footer--color: var(--theme-color-text);
-	--theme-footer-heading--color: var(--theme-color-heading);
+	--theme-footer--bg: var(--theme-color-tertiary);
+	--theme-footer--color: var(--theme-color-text-secondary);
+	--theme-footer-heading--color: var(--color-white);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color: var(--theme-site-nav--color);
-	--theme-footer-nav--color-interactive: var(--theme-color-primary);
+	--theme-footer-nav--color: var(--color-white);
+	--theme-footer-nav--color-interactive: var(--color-white);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
@@ -359,8 +359,8 @@
 	}
 
 	/* Footer > Social Icons */
-	--theme-social--color: var(--theme-color-heading);
-	--theme-social--color-hover: var(--theme-color-primary);
+	--theme-social--color: var(--color-white);
+	--theme-social--color-hover: var(--theme-color-text-secondary);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 
@@ -370,7 +370,7 @@
 	}
 
 	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: 0, 0%, 80%;
+	--theme-footer-3-site-info--border-color: 0, 0%, 20%;
 
 
 	/*--------------------------------------------------------------
@@ -401,8 +401,8 @@
 	--coblocks-carousel--bg-overlay: hsla(var(--theme-color-primary), 0.75);
 	--coblocks-carousel--border-color: var(--color-white);
 
-	--coblocks-features--icon-spacing: 1.75rem;
-	--coblocks-features--heading-spacing: 1rem;
+	--coblocks-features--icon-spacing: 2rem;
+	--coblocks-features--heading-spacing: 1.5rem;
 
 	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
