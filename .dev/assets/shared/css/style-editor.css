@@ -1,3 +1,4 @@
+@import url("config/mixins.css");
 @import url("editor/settings.css");
 @import url("editor/widths.css");
 @import url("editor/title-block.css");
