@@ -28,6 +28,10 @@
 	width: 100% !important;
 }
 
+.gform_wrapper .address_country input {
+	margin: 0;
+}
+
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_right select {
 	background-color: hsl(var(--theme-input--bg));
@@ -40,6 +44,10 @@
 	&:focus {
 		@mixin select-menu-focus;
 	}
+}
+
+.gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_right.address_country select {
+	margin: 0 0 var(--theme-input--spacing) 0;
 }
 
 .gform_wrapper ul.gform_fields li.gfield input[type="radio"] {
