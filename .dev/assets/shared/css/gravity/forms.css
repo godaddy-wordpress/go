@@ -99,7 +99,7 @@ body {
 		padding-top: 0;
 	}
 
-	& .gform_wrapper ul.gform_fields li.gfield {
+	& .gform_wrapper ul.gform_fields li.gfield:not(.gf_left_half):not(.gf_right_half) {
 		padding-right: 0;
 	}
 

@@ -8,3 +8,9 @@
 
 /* Blocks */
 @import url("editor/hero.css");
+
+/* Gravity Forms */
+@import url("gravity/forms.css");
+@import url("gravity/checkbox.css");
+@import url("gravity/radio.css");
+@import url("gravity/button.css");

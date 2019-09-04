@@ -1,0 +1,18 @@
+/*! Gravity Forms: Button */
+body {
+
+	& .gform_wrapper {
+
+		/* Primary Button */
+		& input[type="submit"] {
+			@mixin button;
+			height: inherit;
+
+			&:hover,
+			&:focus,
+			&:active {
+				@mixin button-hover;
+			}
+		}
+	}
+}
