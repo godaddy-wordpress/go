@@ -19,7 +19,11 @@
 	}
 }
 
-body .gform_wrapper .gfield_time_ampm select {
+.gform_wrapper .gfield_time_hour i {
+	margin-top: 25% !important;
+}
+
+.gform_wrapper .gfield_time_ampm select {
 	width: 100% !important;
 }
 
