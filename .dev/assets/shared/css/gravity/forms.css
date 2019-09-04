@@ -6,7 +6,7 @@
 	font-weight: var(--theme-input--weight);
 	line-height: 1.25;
 	margin-bottom: 0;
-	padding: var(--theme-button--padding-y) var(--theme-input--padding-x) var(--theme-button--padding-y) var(--theme-input--padding-x);
+	padding: var(--theme-button--padding-y) 10px;
 
 	&[multiple="multiple"] {
 		border-color: hsl(var(--theme-input--border-color));
