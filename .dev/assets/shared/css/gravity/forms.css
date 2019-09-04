@@ -6,7 +6,7 @@
 	font-weight: var(--theme-input--weight);
 	line-height: 1.25;
 	margin-bottom: 0;
-	padding: var(--theme-button--padding-y) calc(var(--theme-input--padding-x) * 2) var(--theme-button--padding-y) var(--theme-input--padding-x);
+	padding: var(--theme-button--padding-y) var(--theme-input--padding-x) var(--theme-button--padding-y) var(--theme-input--padding-x);
 
 	&[multiple="multiple"] {
 		border-color: hsl(var(--theme-input--border-color));
@@ -20,8 +20,7 @@
 }
 
 body .gform_wrapper .gfield_time_ampm select {
-	max-width: auto !important;
-	width: auto !important;
+	width: 100% !important;
 }
 
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
