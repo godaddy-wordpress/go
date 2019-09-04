@@ -17,6 +17,13 @@
 @import url("gravity/button.css");
 
 /* Editor Overrides */
-.gform_wrapper .gfield_time_hour i {
-	margin-top: 2px !important;
+.gform_wrapper {
+
+	& .gfield_time_hour i {
+		margin-top: 0 !important;
+	}
+
+	& .gfield_time_ampm select {
+		height: inherit !important;
+	}
 }

@@ -20,7 +20,8 @@
 }
 
 .gform_wrapper .gfield_time_hour i {
-	margin-top: 25% !important;
+	margin-top: 35% !important;
+	width: 12px !important;
 }
 
 .gform_wrapper .gfield_time_ampm select {
@@ -50,6 +51,10 @@
 
 .content-area table tbody tr.gfield_list_group.gfield_list_row_odd {
 	background: transparent;
+}
+
+.gform_wrapper .ginput_container_time input[type="text"] {
+	margin-bottom: 10px;
 }
 
 .gfield_list_icons {
