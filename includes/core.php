@@ -664,45 +664,48 @@ function get_available_design_styles() {
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'      => esc_html__( 'Shade', 'maverick' ),
-					'primary'    => '#000a12',
-					'secondary'  => '#455a64',
-					'tertiary'   => '#eceff1',
-					'background' => '#ffffff',
+					'label'             => esc_html__( 'Avocado', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#02493b',
+					'tertiary'          => '#b4c6af',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
 				],
 				'two'   => [
-					'label'      => esc_html__( 'Blush', 'maverick' ),
-					'primary'    => '#c2185b', // 700
-					'secondary'  => '#ec407a', // 400
-					'tertiary'   => '#fce4ec', // 100
-					'background' => '#ffffff',
+					'label'             => esc_html__( 'Steel', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#003c68',
+					'tertiary'          => '#c0c9d0',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
 				],
 				'three' => [
-					'label'      => esc_html__( 'Indigo', 'maverick' ),
-					'primary'    => '#303f9f', // 700
-					'secondary'  => '#5c6bc0', // 400
-					'tertiary'   => '#e8eaf6', // 100
-					'background' => '#ffffff',
+					'label'             => esc_html__( 'Plum', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#4d0859',
+					'tertiary'          => '#ded9e2',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
 				],
 				'four'  => [
-					'label'      => esc_html__( 'Pacific', 'maverick' ),
-					'primary'    => '#00796b', // 700
-					'secondary'  => '#26a69a', // 400
-					'tertiary'   => '#e0f2f1', // 100
-					'background' => '#ffffff',
+					'label'             => esc_html__( 'Champagne', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#cc224f',
+					'tertiary'          => '#e5dede',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
 				],
 			],
 			'fonts'         => [
-				'Montserrat'    => [
+				'Trocchi'    => [
 					'400',
-					'700',
 				],
-				'IBM Plex Mono' => [
+				'Open Sans'  => [
 					'400',
 					'400i',
 					'700',
 				],
-				'Heebo'         => [
+				'Montserrat' => [
 					'400',
 					'700',
 				],

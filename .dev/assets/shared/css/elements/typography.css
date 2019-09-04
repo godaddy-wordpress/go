@@ -13,4 +13,5 @@ body {
 
 p {
 	font-size: var(--theme-body--font-size);
+	font-weight: var(--theme-body--weight);
 }

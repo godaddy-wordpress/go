@@ -346,7 +346,7 @@
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color: var(-theme-site-nav--color);
+	--theme-footer-nav--color: var(--theme-site-nav--color);
 	--theme-footer-nav--color-interactive: var(--theme-color-primary);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
