@@ -82,12 +82,12 @@
 	background-color: hsl(var(--theme-checkbox-radio-fill));
 	content: "";
 	display: block;
-	height: 19px;
+	height: 18px;
 	left: 0;
 	mask-position: left bottom;
 	mask-repeat: no-repeat;
 	position: absolute;
-	width: 20px;
+	width: 19px;
 }
 
 @define-mixin checkbox-label-before {
@@ -143,4 +143,3 @@
 	--total-block-padding: calc(var(--theme-block-padding-x) * 2);
 	max-width: calc(var(--theme-max-w-wide) - var(--total-block-padding));
 }
-
