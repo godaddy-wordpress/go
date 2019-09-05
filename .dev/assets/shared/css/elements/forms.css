@@ -1,5 +1,4 @@
 /*! Forms */
-
 fieldset {
 	margin-top: 5rem;
 }
@@ -82,6 +81,7 @@ textarea {
 
 select {
 	@mixin select-menu;
+	margin-bottom: var(--theme-input--spacing);
 
 	/* CAUTION: IE hackery ahead */
 	&::-ms-expand {

@@ -236,9 +236,9 @@
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-primary);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
-	--theme-site-nav--font: "Work Sans", sans-serif;
-	--theme-site-nav--font-size: 0.95rem;
-	--theme-site-nav--font-size-mobile: 1rem;
+	--theme-site-nav--font: "Karla", sans-serif;
+	--theme-site-nav--font-size: 1rem;
+	--theme-site-nav--font-size-mobile: 1.75rem;
 	--theme-site-nav--weight: 400;
 	--theme-site-nav--text-transform: lowercase;
 	--theme-site-nav--tracking: 1px;
