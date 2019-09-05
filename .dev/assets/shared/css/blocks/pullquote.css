@@ -54,7 +54,7 @@
 		color: hsl(var(--theme-caption--color));
 		display: inline-block;
 		font-size: var(--theme-caption--font-size);
-		font-style: var(--theme-caption--style);
+		font-style: var(--theme-caption--style, normal);
 		margin-bottom: calc(var(--theme-pullquote--padding-y) + 0.5rem);
 		text-transform: none;
 	}
