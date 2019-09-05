@@ -18,7 +18,7 @@ body {
 .wp-block-code,
 .wp-block-verse,
 p.has-background,
-.wp-block-pullquote,
+.wp-block-pullquote:not(.alignfull):not(.alignwide),
 .wp-block-coblocks-alert,
 .wp-block-separator.is-style-wide,
 .wp-block-group:not(.alignfull):not(.alignwide),
@@ -48,25 +48,6 @@ p.has-background,
 
 .site-search__toggle {
 	top: 1px;
-}
-
-textarea,
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"] {
-	outline: none !important;
 }
 
 .primary-menu a {

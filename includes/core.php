@@ -726,7 +726,7 @@ function get_available_design_styles() {
 					'header_background' => '#ffffff',
 				],
 				'two'   => [
-					'label'             => esc_html__( '2', 'maverick' ),
+					'label'             => esc_html__( 'Spruce', 'maverick' ),
 					'primary'           => '#233a6b',
 					'secondary'         => '#01133d',
 					'tertiary'          => '#c9c9c9',
@@ -735,7 +735,7 @@ function get_available_design_styles() {
 					'header_background' => '#ffffff',
 				],
 				'three' => [
-					'label'             => esc_html__( '3', 'maverick' ),
+					'label'             => esc_html__( 'Mocha', 'maverick' ),
 					'primary'           => '#5b3f20',
 					'secondary'         => '#3f2404',
 					'tertiary'          => '#c9c9c9',
@@ -743,7 +743,7 @@ function get_available_design_styles() {
 					'header_background' => '#ffffff',
 				],
 				'four'  => [
-					'label'             => esc_html__( '4', 'maverick' ),
+					'label'             => esc_html__( 'Lavender', 'maverick' ),
 					'primary'           => '#443a82',
 					'secondary'         => '#2b226b',
 					'tertiary'          => '#c9c9c9',
@@ -770,19 +770,46 @@ function get_available_design_styles() {
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
 			'color_schemes' => [
-				'one' => [
-					'label'      => esc_html__( 'Light', 'maverick' ),
-					'primary'    => '#254e9c',
-					'secondary'  => '#fcae6e',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'one'   => [
+					'label'             => esc_html__( 'Frolic', 'maverick' ),
+					'primary'           => '#3f46ae',
+					'secondary'         => '#ecb43d',
+					'tertiary'          => '#f7fbff',
+					'header_background' => '#3f46ae',
+					'footer_background' => '#3f46ae',
 				],
-				'two' => [
-					'label'      => esc_html__( 'Dark', 'maverick' ),
-					'primary'    => '#41b093',
-					'secondary'  => '#eecd94',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'two'   => [
+					'label'             => esc_html__( 'Coral', 'maverick' ),
+					'primary'           => '#e06b6d',
+					'secondary'         => '#40896e',
+					'tertiary'          => '#fff7f7',
+					'header_background' => '#eb616a',
+					'footer_background' => '#eb616a',
+				],
+				'three' => [
+					'label'             => esc_html__( 'Organic', 'maverick' ),
+					'primary'           => '#3c896d',
+					'secondary'         => '#6b0369',
+					'tertiary'          => '#f2f9f7',
+					'header_background' => '#3c896d',
+					'footer_background' => '#3c896d',
+				],
+				'four'  => [
+					'label'             => esc_html__( 'Berry', 'maverick' ),
+					'primary'           => '#117495',
+					'secondary'         => '#d691c1',
+					'tertiary'          => '#f7feff',
+					'header_background' => '#117495',
+					'footer_background' => '#117495',
+				],
+			],
+			'fonts'         => [
+				'Quicksand' => [
+					'400',
+					'600',
+				],
+				'Poppins'   => [
+					'700',
 				],
 			],
 		],

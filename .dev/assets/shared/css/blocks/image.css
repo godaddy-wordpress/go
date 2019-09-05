@@ -24,3 +24,7 @@
 		margin-top: 0.7rem;
 	}
 }
+
+.is-style-bottom-wave::after {
+	background-color: hsl(var(--theme-color-body-bg, 0, 0%, 100%));
+}
