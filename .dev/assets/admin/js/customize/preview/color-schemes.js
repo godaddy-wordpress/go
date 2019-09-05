@@ -12,8 +12,6 @@ export default () => {
 	 */
 	const setColor = ( color, cssVar ) => {
 		const hsl = hexToHSL( color );
-		console.log( color );
-		console.log( cssVar );
 		document.querySelector( ':root' ).style.setProperty( `${cssVar}`, `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
 	};
 
