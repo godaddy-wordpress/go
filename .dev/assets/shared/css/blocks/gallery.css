@@ -3,7 +3,7 @@
 
 	& .blocks-gallery-item figcaption {
 		font-size: var(--theme-caption--font-size);
-		font-style: var(--theme-caption--style);
+		font-style: var(--theme-caption--style, normal);
 		padding-left: 15px;
 		padding-right: 15px;
 		text-align: var(--theme-caption--alignment);

@@ -108,15 +108,15 @@ option {
 }
 
 ::placeholder {
-	color: hsl(var(--theme-input-placeholder--color));
+	color: hsl(var(--theme-input-placeholder--color, 0, 0%, 47%));
 	line-height: 1.5;
 	opacity: 1;
 }
 
 ::-ms-input-placeholder {
-	color: hsl(var(--theme-input-placeholder--color));
+	color: hsl(var(--theme-input-placeholder--color, 0, 0%, 47%));
 }
 
 :-ms-input-placeholder {
-	color: hsl(var(--theme-input-placeholder--color));
+	color: hsl(var(--theme-input-placeholder--color, 0, 0%, 47%));
 }

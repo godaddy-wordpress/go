@@ -3,6 +3,7 @@
 }
 
 /* Add transitions for color changing elements */
+body,
 .has-background,
 .wp-block-coblocks-pricing-table-item,
 .wp-block-quote.is-style-large,

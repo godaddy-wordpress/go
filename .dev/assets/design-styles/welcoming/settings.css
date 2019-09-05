@@ -54,7 +54,6 @@
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
-	--theme-outline-style: dashed;
 	--theme-outline-width: 1px;
 
 	--theme-selection--color: var(--theme-color-primary);
@@ -104,26 +103,13 @@
 		--theme-h3--font-size: 2.5em;
 	}
 
-	--theme-h1--color: var(--theme-color-heading);
-	--theme-h2--color: var(--theme-color-heading);
-	--theme-h3--color: var(--theme-color-heading);
-	--theme-h4--color: var(--theme-color-heading);
-	--theme-h5--color: var(--theme-color-heading);
-	--theme-h6--color: var(--theme-color-heading);
-
 	/* Text Utilities */
 	--theme-text-sm: 90%;
-	--theme-text-sm--letter-spacing: 0;
-
-	/* Drop Cap */
-	--theme-dropcap--font-size: 5rem;
-	--theme-dropcap--weight: 700;
 
 	/* Captions */
 	--theme-caption--alignment: center;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
-	--theme-caption--style: normal;
 	--theme-caption--spacing-top: 0;
 
 	/* Links */
@@ -194,9 +180,6 @@
 	--theme-input--color-focus: var(--theme-color-heading);
 	--theme-input--shadow-focus: none;
 
-	/* Placeholder */
-	--theme-input-placeholder--color: 0, 0%, 47%;
-
 	/* Errors */
 	--theme-input-error--border-color: 0, 65%, 51%; /* #d32f2f */
 	--theme-input-error--color: 0, 65%, 51%; /* #d32f2f */
@@ -249,7 +232,6 @@
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
-	--theme-site-description--opacity: 0.65;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-primary);
@@ -263,17 +245,8 @@
 	--theme-site-nav--transition: var(--theme-link-transition);
 	--theme-site-nav--padding-x: 1.15rem;
 
-	/* Header > Navigation > Submenu */
-	--theme-submenu--bg: var(--theme-color-heading);
-	--theme-submenu--color: 0, 0%, 100%;
-
-	/* Header > Navigation > Submenu (Offscreen) */
-	--theme-offscreen-submenu--bg: var(--theme-color-heading);
-	--theme-offscreen-submenu--color: var(--color-white);
-
 	/* Header Variations */
 	--theme-header-3--padding-y: 3.5rem;
-	--theme-header-3-nav--margin-top: 1.5rem;
 
 	@media (--large) {
 		--theme-header-3--padding-y: 8rem;
@@ -285,9 +258,6 @@
 	@media (--large) {
 		--theme-header-5-nav--width: 100px;
 	}
-
-	/* Featured Image */
-	--theme-featured-img--height: 35%;
 
 
 	/*--------------------------------------------------------------
@@ -338,7 +308,6 @@
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--bg: "";
 	--theme-footer--color: 0, 0%, 40%;
 	--theme-footer-heading--color: var(--theme-color-heading);
 	--theme-footer-2--padding-y: 4rem;
@@ -373,15 +342,6 @@
 
 
 	/*--------------------------------------------------------------
-	## Core Blocks
-	--------------------------------------------------------------*/
-	--theme-separator--color: var(--theme-color-heading);
-	--theme-separator--dot-size: 2rem;
-
-	--theme-table--border-color: var(--theme-color-heading);
-
-
-	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
 	--coblocks-accordion--bg: var(--theme-color-body-bg);
@@ -395,10 +355,6 @@
 	--coblocks-author--bg: var(--theme-color-tertiary);
 	--coblocks-author--color-heading: var(--theme-color-text-secondary);
 	--coblocks-author--color-name: var(--theme-color-text-secondary);
-	--coblocks-author--radius: 0;
-
-	--coblocks-carousel--bg-overlay: hsla(var(--theme-color-primary), 0.75);
-	--coblocks-carousel--border-color: var(--color-white);
 
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1.5rem;
@@ -431,10 +387,4 @@
 
 	--coblocks-services--heading-margin-bottom: 1rem;
 	--coblocks-services--heading-margin-top: 1.75rem;
-
-
-	/*--------------------------------------------------------------
-	## Editor
-	--------------------------------------------------------------*/
-	--editor-title-block--alignment: center;
 }

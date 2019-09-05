@@ -7,7 +7,7 @@
 
 	& figcaption {
 		font-size: var(--theme-caption--font-size);
-		font-style: var(--theme-caption--style);
+		font-style: var(--theme-caption--style, normal);
 		padding-left: 15px !important;
 		padding-right: 15px !important;
 		text-align: var(--theme-caption--alignment);
