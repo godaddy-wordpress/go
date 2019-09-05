@@ -1,12 +1,15 @@
 /*! Gravity Forms */
+.gform_wrapper {
+	max-width: var(--theme-max-w-base) !important;
+}
+
 .gform_wrapper ul.gform_fields li.gfield select {
 	background-color: hsl(var(--theme-input--bg));
 	border: var(--theme-input--border);
 	font-size: var(--theme-input--font-size);
 	font-weight: var(--theme-input--weight);
-	line-height: 1.25;
-	margin-bottom: 0;
-	padding: var(--theme-button--padding-y) calc(var(--theme-input--padding-x) * 2) var(--theme-button--padding-y) var(--theme-input--padding-x);
+	line-height: 1;
+	padding: var(--theme-button--padding-y) 10px;
 
 	&[multiple="multiple"] {
 		border-color: hsl(var(--theme-input--border-color));
@@ -19,9 +22,28 @@
 	}
 }
 
-body .gform_wrapper .gfield_time_ampm select {
-	max-width: auto !important;
-	width: auto !important;
+body .gform_wrapper .top_label input.medium,
+body .gform_wrapper .top_label select.medium {
+	width: 100%;
+}
+
+.gform_wrapper ul.gfield_checkbox,
+.gform_wrapper ul.gfield_radio {
+	margin-bottom: var(--theme-input--spacing) !important;
+}
+
+.gform_wrapper .gfield_time_hour i {
+	margin-top: 35% !important;
+	width: 12px !important;
+}
+
+.gform_wrapper .gfield_time_ampm select {
+	width: 100% !important;
+}
+
+
+.gform_wrapper .address_country input {
+	margin: 0;
 }
 
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
@@ -30,7 +52,7 @@ body .gform_wrapper .gfield_time_ampm select {
 	border: var(--theme-input--border);
 	font-size: var(--theme-input--font-size);
 	font-weight: var(--theme-input--weight);
-	margin-bottom: 0;
+	margin: 0 0 var(--theme-input--spacing) 0;
 	padding: var(--theme-button--padding-y) calc(var(--theme-input--padding-x) * 2) var(--theme-button--padding-y) var(--theme-input--padding-x);
 
 	&:focus {
@@ -47,6 +69,14 @@ body .gform_wrapper .gfield_time_ampm select {
 
 .content-area table tbody tr.gfield_list_group.gfield_list_row_odd {
 	background: transparent;
+}
+
+.gform_wrapper .ginput_container_time input[type="text"] {
+	margin-bottom: 10px;
+}
+
+body .gform_body .gform_wrapper .top_label div.ginput_container {
+	margin-top: 0;
 }
 
 .gfield_list_icons {
@@ -81,14 +111,15 @@ body {
 	}
 
 	& .gform_wrapper ul li.gfield {
-		margin: 0 0 1.75rem;
+		margin: 0;
+		margin-top: 5px !important;
 	}
 
 	& .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
 		background-color: hsl(var(--theme-input--bg));
 		border-radius: var(--theme-input--radius);
 		font-size: var(--theme-input--font-size);
-		line-height: 1.25;
+		line-height: 1;
 		padding: var(--theme-button--padding-y) var(--theme-input--padding-x);
 	}
 
@@ -96,7 +127,7 @@ body {
 		padding-top: 0;
 	}
 
-	& .gform_wrapper ul.gform_fields li.gfield {
+	& .gform_wrapper ul.gform_fields li.gfield:not(.gf_left_half):not(.gf_right_half) {
 		padding-right: 0;
 	}
 

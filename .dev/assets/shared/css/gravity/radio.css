@@ -1,21 +1,27 @@
 /*! Gravity Forms: Radio */
-body .gform_wrapper .gfield_radio li input,
-body .gform_wrapper .gfield_radio li input[type="radio"] {
-	display: none;
-}
+body .gform_wrapper {
 
-.gform_wrapper .gfield_radio li input[type="radio"] + label {
-	@mixin checkbox-radio-label;
-
-	&::before {
-		@mixin checkbox-radio-label-before;
-		@mixin radio-label-before;
+	& .gfield_radio li input,
+	& .gfield_radio li input[type="radio"] {
+		display: none;
 	}
-}
 
-.gform_wrapper .gfield_radio li input[type="radio"]:checked + label {
+	& .gfield_radio li input[type="radio"] {
 
-	&::before {
-		@mixin radio-label-selected-before;
+		& + label {
+			@mixin checkbox-radio-label;
+
+			&::before {
+				@mixin checkbox-radio-label-before;
+				@mixin radio-label-before;
+			}
+		}
+
+		& :checked + label {
+
+			&::before {
+				@mixin radio-label-selected-before;
+			}
+		}
 	}
 }

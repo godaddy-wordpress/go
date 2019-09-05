@@ -143,4 +143,3 @@
 	--total-block-padding: calc(var(--theme-block-padding-x) * 2);
 	max-width: calc(var(--theme-max-w-wide) - var(--total-block-padding));
 }
-

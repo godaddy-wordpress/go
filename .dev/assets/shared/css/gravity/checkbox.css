@@ -32,6 +32,11 @@ body .gform_wrapper .gfield_checkbox li input[type="checkbox"] {
 	}
 }
 
+.gform_wrapper ul.gfield_radio li,
+.gform_wrapper ul.gfield_checkbox li {
+	overflow: visible !important;
+}
+
 .gform_wrapper ul.gfield_radio li::before,
 .gform_wrapper ul.gfield_checkbox li::before {
 	display: none;
