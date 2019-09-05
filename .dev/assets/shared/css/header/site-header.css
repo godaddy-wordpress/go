@@ -37,16 +37,16 @@
 	margin: 0;
 	max-height: 10em;
 	overflow: hidden;
-	padding-bottom: calc(var(--theme-featured-img--height) * 1.5);
+	padding-bottom: calc(var(--theme-featured-img--height, 35%) * 1.5);
 	position: relative;
 	z-index: -1;
 
 	@media (--medium) {
-		padding-bottom: var(--theme-featured-img--height);
+		padding-bottom: var(--theme-featured-img--height, 35%);
 	}
 
 	@media (--xlarge) {
-		padding-bottom: calc(var(--theme-featured-img--height) / 1.5);
+		padding-bottom: calc(var(--theme-featured-img--height, 35%) / 1.5);
 	}
 
 	&::after {

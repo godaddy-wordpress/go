@@ -12,7 +12,7 @@
 
 	& .wp-block-coblocks-pricing-table-item__features {
 		font-size: var(--theme-text-sm);
-		letter-spacing: var(--theme-text-sm--letter-spacing);
+		letter-spacing: var(--theme-text-sm--letter-spacing, 0);
 		margin-bottom: 2.5rem;
 	}
 

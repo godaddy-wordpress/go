@@ -41,14 +41,14 @@ body {
 		}
 
 		& .primary-menu .sub-menu {
-			background-color: hsl(var(--theme-offscreen-submenu--bg));
+			background-color: hsl(var(--theme-offscreen-submenu--bg, var(--theme-color-heading)));
 
 			&::before {
-				border-bottom: 10px solid hsl(var(--theme-offscreen-submenu--bg));
+				border-bottom: 10px solid hsl(var(--theme-offscreen-submenu--bg, var(--theme-color-heading)));
 			}
 
 			& a {
-				color: hsl(var(--theme-offscreen-submenu--color));
+				color: hsl(var(--theme-offscreen-submenu--color, var(--color-white)));
 			}
 		}
 	}
