@@ -6,33 +6,15 @@ export default () => {
 	let selectedDesignStyle;
 
 	/**
-	 * Set primary color
+	 * Set color
 	 *
 	 * @param {*} color
 	 */
-	const setPrimaryColor = ( color ) => {
+	const setColor = ( color, cssVar ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-primary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
-	};
-
-	/**
-	 * Set secondary color
-	 *
-	 * @param {*} color
-	 */
-	const setSecondaryColor = ( color ) => {
-		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-secondary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
-	};
-
-	/**
-	 * Set tertiary color
-	 *
-	 * @param {*} color
-	 */
-	const setTertiaryColor = ( color ) => {
-		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-tertiary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
+		console.log( color );
+		console.log( cssVar );
+		document.querySelector( ':root' ).style.setProperty( `${cssVar}`, `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
 	};
 
 	/**
@@ -101,15 +83,19 @@ export default () => {
 		value.bind( ( colorScheme ) => loadColorSchemes( colorScheme ) );
 	} );
 
+	wp.customize( 'background_color', ( value ) => {
+		value.bind( ( to ) => setColor( to, '--theme-color-body-bg' ) );
+	} );
+
 	wp.customize( 'primary_color', ( value ) => {
-		value.bind( ( to ) => setPrimaryColor( to ) );
+		value.bind( ( to ) => setColor( to, '--theme-color-primary' ) );
 	} );
 
 	wp.customize( 'secondary_color', ( value ) => {
-		value.bind( ( to ) => setSecondaryColor( to ) );
+		value.bind( ( to ) => setColor( to, '--theme-color-secondary' ) );
 	} );
 
 	wp.customize( 'tertiary_color', ( value ) => {
-		value.bind( ( to ) => setTertiaryColor( to ) );
+		value.bind( ( to ) => setColor( to, '--theme-color-tertiary' ) );
 	} );
 };
