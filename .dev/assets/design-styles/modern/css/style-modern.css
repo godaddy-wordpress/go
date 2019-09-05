@@ -2,6 +2,7 @@
  * Modern - Styles
  */
 @import url("../../../shared/css/config/media-queries.css");
+@import url("../../../shared/css/config/mixins.css");
 @import url("../settings.css");
 @import url("components/button.css");
 @import url("components/carousel.css");
