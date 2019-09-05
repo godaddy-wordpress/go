@@ -771,12 +771,11 @@ function get_available_design_styles() {
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'             => esc_html__( 'Forest', 'maverick' ),
-					'primary'           => '#165144',
+					'label'             => esc_html__( 'Tropaz', 'maverick' ),
+					'primary'           => '#244f9c',
 					'secondary'         => '#01332e',
 					'tertiary'          => '#c9c9c9',
-					'background'        => '#eeeeee',
-					'header_background' => '#ffffff',
+					'header_background' => '#244f9c',
 				],
 				'two'   => [
 					'label'             => esc_html__( '2', 'maverick' ),
@@ -784,7 +783,6 @@ function get_available_design_styles() {
 					'secondary'         => '#01133d',
 					'tertiary'          => '#c9c9c9',
 					'background'        => '#ffffff',
-					'background'        => '#eeeeee',
 					'header_background' => '#ffffff',
 				],
 				'three' => [
@@ -792,7 +790,6 @@ function get_available_design_styles() {
 					'primary'           => '#5b3f20',
 					'secondary'         => '#3f2404',
 					'tertiary'          => '#c9c9c9',
-					'background'        => '#eeeeee',
 					'header_background' => '#ffffff',
 				],
 				'four'  => [
@@ -800,13 +797,12 @@ function get_available_design_styles() {
 					'primary'           => '#443a82',
 					'secondary'         => '#2b226b',
 					'tertiary'          => '#c9c9c9',
-					'background'        => '#eeeeee',
 					'header_background' => '#ffffff',
 				],
 			],
 			'fonts'         => [
-				'Work Sans'  => [
-					'300',
+				'Baloo'      => [
+					'400',
 				],
 				'Karla'      => [
 					'400',
