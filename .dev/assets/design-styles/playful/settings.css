@@ -87,7 +87,7 @@
 	--theme-heading--weight: 600;
 	--theme-heading--button-spacing: 2rem;
 
-	--theme-h1--font-size: 2.5em;
+	--theme-h1--font-size: 2.25em;
 	--theme-h2--font-size: 2em;
 	--theme-h3--font-size: 1.75em;
 	--theme-h4--font-size: 2em;
@@ -95,13 +95,13 @@
 	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3em;
-		--theme-h2--font-size: 2.75em;
-		--theme-h3--font-size: 2.5em;
+		--theme-h1--font-size: 3.25em;
+		--theme-h2--font-size: 3em;
+		--theme-h3--font-size: 2em;
 	}
 
 	/* Text Utilities */
-	--theme-text-sm: 90%;
+	--theme-text-sm: 80%;
 
 	/* Captions */
 	--theme-caption--alignment: center;
@@ -114,7 +114,7 @@
 	--theme-link--color-interactive: var(--theme-color-primary);
 
 	/* Pullquote */
-	--theme-pullquote--font: serif;
+	--theme-pullquote--font: "Poppins", sans-serif;
 	--theme-pullquote--border-color: transparent;
 	--theme-pullquote--border-style: solid;
 	--theme-pullquote--border-width: 0;
@@ -124,8 +124,8 @@
 	--theme-pullquote--leading: 1.25;
 	--theme-pullquote--padding-y: 0.75rem;
 	--theme-pullquote--padding-x: 1rem;
-	--theme-pullquote--style: italic;
-	--theme-pullquote--weight: var(--theme-heading--weight);
+	--theme-pullquote--style: normal;
+	--theme-pullquote--weight: 700;
 
 	/* Blockquote */
 	--theme-quote--border-color: var(--theme-color-primary);
@@ -222,10 +222,10 @@
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--color-white);
 	--theme-site-title--font-size: 1.9rem;
-	--theme-site-title--font: var(--theme-heading--font);
+	--theme-site-title--font: "Poppins", sans-serif;
 	--theme-site-title--text-transform: none;
 	--theme-site-title--tracking: 0;
-	--theme-site-title--weight: 400;
+	--theme-site-title--weight: 700;
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
@@ -305,13 +305,13 @@
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--color: 0, 0%, 40%;
-	--theme-footer-heading--color: var(--theme-color-heading);
+	--theme-footer--color: var(--color-white);
+	--theme-footer-heading--color: var(--color-white);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color: var(--theme-color-heading);
-	--theme-footer-nav--color-interactive: var(--theme-color-heading);
+	--theme-footer-nav--color: var(--color-white);
+	--theme-footer-nav--color-interactive: var(--color-white);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
@@ -323,13 +323,12 @@
 	}
 
 	/* Footer > Social Icons */
-	--theme-social--color: var(--theme-color-heading);
-	--theme-social--color-hover: var(--theme-color-text);
+	--theme-social--color: var(--color-white);
+	--theme-social--color-hover: var(--theme-color-secondary);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 
 	@media (--medium) {
-		--theme-social--size: 2rem;
 		--theme-social--spacing: 1rem;
 	}
 
@@ -382,6 +381,6 @@
 
 	--coblocks-shapedivider--bg: var(--theme-color-primary);
 
-	--coblocks-services--heading-margin-bottom: 1rem;
-	--coblocks-services--heading-margin-top: 1.75rem;
+	--coblocks-services--heading-margin-bottom: 1.25rem;
+	--coblocks-services--heading-margin-top: 2rem;
 }

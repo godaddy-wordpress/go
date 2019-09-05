@@ -24,4 +24,8 @@
 		margin-bottom: calc(var(--theme-block-spacing-huge) - 15px) !important;
 		margin-top: var(--theme-block-spacing-huge);
 	}
+
+	&.mb-0 {
+		margin-bottom: -15px !important;
+	}
 }

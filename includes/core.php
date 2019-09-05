@@ -771,11 +771,12 @@ function get_available_design_styles() {
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'             => esc_html__( 'Tropaz', 'maverick' ),
+					'label'             => esc_html__( '1', 'maverick' ),
 					'primary'           => '#4245ab',
 					'secondary'         => '#ecb43d',
-					'tertiary'          => '#c9c9c9',
+					'tertiary'          => '#f2e2e3',
 					'header_background' => '#4245ab',
+					'footer_background' => '#4245ab',
 				],
 				'two'   => [
 					'label'             => esc_html__( '2', 'maverick' ),
@@ -801,16 +802,12 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Quicksand'      => [
-					'600',
-				],
-				'Karla'      => [
+				'Quicksand' => [
 					'400',
-					'400i',
-					'700',
-				],
-				'Hepta Slab' => [
 					'600',
+				],
+				'Poppins'   => [
+					'700',
 				],
 			],
 		],

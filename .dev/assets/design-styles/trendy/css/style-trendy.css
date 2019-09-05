@@ -13,7 +13,7 @@ body {
 .wp-block-code,
 .wp-block-verse,
 p.has-background,
-.wp-block-pullquote,
+.wp-block-pullquote:not(.alignfull):not(.alignwide),
 .wp-block-coblocks-alert,
 .wp-block-separator.is-style-wide,
 .wp-block-group:not(.alignfull):not(.alignwide),

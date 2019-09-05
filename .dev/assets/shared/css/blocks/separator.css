@@ -1,6 +1,8 @@
 /*! Separator */
 .wp-block-separator {
 	border-bottom-color: hsl(var(--theme-separator--color, var(--theme-color-heading)));
+	margin-bottom: var(--theme-block-spacing);
+	margin-top: var(--theme-block-spacing);
 
 	&.is-style-wide {
 		@mixin blockWidthNoPadding;
