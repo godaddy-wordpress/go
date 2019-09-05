@@ -234,7 +234,7 @@ function fonts_url() {
 
 	foreach ( $design_styles[ $design_style ]['fonts'] as $font => $font_weights ) {
 
-		$fonts[] = sprintf( '%1$s: %2$s', $font, implode( ',', $font_weights ) );
+		$fonts[] = sprintf( '%1$s:%2$s', $font, implode( ',', $font_weights ) );
 
 	}
 
@@ -252,7 +252,7 @@ function fonts_url() {
 
 			foreach ( $data['fonts'] as $font => $font_weights ) {
 
-				$fonts[] = sprintf( '%1$s: %2$s', $font, implode( ',', $font_weights ) );
+				$fonts[] = sprintf( '%1$s:%2$s', $font, implode( ',', $font_weights ) );
 
 			}
 		}
