@@ -18,6 +18,7 @@
 	}
 
 	&.is-style-outline .wp-block-button__link {
+		border-width: var(--theme-button--border-width);
 		padding: calc(var(--theme-button--padding-y) - 2px) calc(var(--theme-button--padding-x) - 2px);
 
 		&:hover {

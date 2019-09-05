@@ -130,6 +130,21 @@
 	max-width: 40em;
 }
 
+.wp-block-coblocks-pricing-table-item__title {
+	font-family: var(--theme-site-nav--font);
+	font-size: var(--theme-site-nav--font-size);
+	font-weight: var(--theme-site-nav--weight);
+	letter-spacing: var(--theme-site-nav--tracking);
+	text-transform: var(--theme-site-nav--text-transform);
+}
+
+.wp-block-group.has-background.alignwide {
+	@media (--wide) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
+
 /*! Utility Classes */
 p {
 	margin: 0 0 1.25rem;
