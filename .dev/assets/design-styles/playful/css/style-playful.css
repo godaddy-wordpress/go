@@ -3,12 +3,6 @@
  */
 @import url("../../../shared/css/config/media-queries.css");
 @import url("../settings.css");
-@import url("components/button.css");
-@import url("components/carousel.css");
-
-body {
-	-webkit-font-smoothing: antialiased;
-}
 
 .wp-block-code,
 .wp-block-verse,
@@ -25,10 +19,28 @@ p.has-background,
 	}
 }
 
-.site-footer.has-background {
-	box-shadow: 0 -0.4em 0 0 rgba(0, 0, 0, 0.075);
+.wp-block-separator {
+	background-color: hsl(var(--theme-color-secondary));
+	background-position: 50%;
+	background-repeat: repeat-x;
+	border: none;
+	height: 9pt;
+	mask-image: url("../../../dist/images/design-styles/playful/cross-stich-border.svg");
+	max-width: 113px;
 }
 
-.site-search__toggle {
-	top: 1px;
+.wp-block-pullquote p {
+	margin-left: 1em;
+
+	&::before {
+		content: "“";
+		font-size: 2em;
+		line-height: 1;
+		position: absolute;
+		transform: translate3d(-120%, 0, 0);
+
+		@media (--medium) {
+			font-size: 3em;
+		}
+	}
 }

@@ -234,7 +234,7 @@ function fonts_url() {
 
 	foreach ( $design_styles[ $design_style ]['fonts'] as $font => $font_weights ) {
 
-		$fonts[] = sprintf( '%1$s: %2$s', $font, implode( ',', $font_weights ) );
+		$fonts[] = sprintf( '%1$s:%2$s', $font, implode( ',', $font_weights ) );
 
 	}
 
@@ -252,7 +252,7 @@ function fonts_url() {
 
 			foreach ( $data['fonts'] as $font => $font_weights ) {
 
-				$fonts[] = sprintf( '%1$s: %2$s', $font, implode( ',', $font_weights ) );
+				$fonts[] = sprintf( '%1$s:%2$s', $font, implode( ',', $font_weights ) );
 
 			}
 		}
@@ -664,13 +664,14 @@ function get_available_design_styles() {
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'             => esc_html__( 'Avocado', 'maverick' ),
+					'label'             => esc_html__( 'Plum', 'maverick' ),
 					'primary'           => '#000000',
-					'secondary'         => '#02493b',
-					'tertiary'          => '#b4c6af',
+					'secondary'         => '#4d0859',
+					'tertiary'          => '#ded9e2',
 					'background'        => '#ffffff',
 					'footer_background' => '#000000',
 				],
+
 				'two'   => [
 					'label'             => esc_html__( 'Steel', 'maverick' ),
 					'primary'           => '#000000',
@@ -680,10 +681,10 @@ function get_available_design_styles() {
 					'footer_background' => '#000000',
 				],
 				'three' => [
-					'label'             => esc_html__( 'Plum', 'maverick' ),
+					'label'             => esc_html__( 'Avocado', 'maverick' ),
 					'primary'           => '#000000',
-					'secondary'         => '#4d0859',
-					'tertiary'          => '#ded9e2',
+					'secondary'         => '#02493b',
+					'tertiary'          => '#b4c6af',
 					'background'        => '#ffffff',
 					'footer_background' => '#000000',
 				],
@@ -716,19 +717,51 @@ function get_available_design_styles() {
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
 			'color_schemes' => [
-				'one' => [
-					'label'      => esc_html__( 'Light', 'maverick' ),
-					'primary'    => '#02392f',
-					'secondary'  => '#f1f1f1',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'one'   => [
+					'label'             => esc_html__( 'Forest', 'maverick' ),
+					'primary'           => '#165144',
+					'secondary'         => '#01332e',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
 				],
-				'two' => [
-					'label'      => esc_html__( 'Dark', 'maverick' ),
-					'primary'    => '#49384d',
-					'secondary'  => '#f7f5e9',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'two'   => [
+					'label'             => esc_html__( 'Spruce', 'maverick' ),
+					'primary'           => '#233a6b',
+					'secondary'         => '#01133d',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#ffffff',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
+				],
+				'three' => [
+					'label'             => esc_html__( 'Mocha', 'maverick' ),
+					'primary'           => '#5b3f20',
+					'secondary'         => '#3f2404',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
+				],
+				'four'  => [
+					'label'             => esc_html__( 'Lavender', 'maverick' ),
+					'primary'           => '#443a82',
+					'secondary'         => '#2b226b',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
+				],
+			],
+			'fonts'         => [
+				'Work Sans'  => [
+					'300',
+				],
+				'Karla'      => [
+					'400',
+					'400i',
+					'700',
+				],
+				'Hepta Slab' => [
+					'600',
 				],
 			],
 		],
@@ -737,19 +770,46 @@ function get_available_design_styles() {
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
 			'color_schemes' => [
-				'one' => [
-					'label'      => esc_html__( 'Light', 'maverick' ),
-					'primary'    => '#254e9c',
-					'secondary'  => '#fcae6e',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'one'   => [
+					'label'             => esc_html__( 'Frolic', 'maverick' ),
+					'primary'           => '#3f46ae',
+					'secondary'         => '#ecb43d',
+					'tertiary'          => '#f7fbff',
+					'header_background' => '#3f46ae',
+					'footer_background' => '#3f46ae',
 				],
-				'two' => [
-					'label'      => esc_html__( 'Dark', 'maverick' ),
-					'primary'    => '#41b093',
-					'secondary'  => '#eecd94',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'two'   => [
+					'label'             => esc_html__( 'Coral', 'maverick' ),
+					'primary'           => '#e06b6d',
+					'secondary'         => '#40896e',
+					'tertiary'          => '#fff7f7',
+					'header_background' => '#eb616a',
+					'footer_background' => '#eb616a',
+				],
+				'three' => [
+					'label'             => esc_html__( 'Organic', 'maverick' ),
+					'primary'           => '#3c896d',
+					'secondary'         => '#6b0369',
+					'tertiary'          => '#f2f9f7',
+					'header_background' => '#3c896d',
+					'footer_background' => '#3c896d',
+				],
+				'four'  => [
+					'label'             => esc_html__( 'Berry', 'maverick' ),
+					'primary'           => '#117495',
+					'secondary'         => '#d691c1',
+					'tertiary'          => '#f7feff',
+					'header_background' => '#117495',
+					'footer_background' => '#117495',
+				],
+			],
+			'fonts'         => [
+				'Quicksand' => [
+					'400',
+					'600',
+				],
+				'Poppins'   => [
+					'700',
 				],
 			],
 		],

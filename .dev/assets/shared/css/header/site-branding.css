@@ -49,7 +49,7 @@
 		color: hsla(var(--theme-site-description--color), 1);
 		line-height: var(--theme-site-description--leading);
 		margin-top: 0.25rem;
-		opacity: var(--theme-site-description--opacity);
+		opacity: var(--theme-site-description--opacity, 0.65);
 
 		@media (--small) {
 			margin-left: 0.5rem;

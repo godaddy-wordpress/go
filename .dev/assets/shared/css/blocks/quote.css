@@ -30,7 +30,7 @@
 		color: hsl(var(--theme-caption--color));
 		display: block;
 		font-size: var(--theme-caption--font-size);
-		font-style: var(--theme-caption--style);
+		font-style: var(--theme-caption--style, normal);
 	}
 
 	&:not(.is-style-large) {

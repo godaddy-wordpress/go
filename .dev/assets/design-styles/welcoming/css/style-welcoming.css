@@ -1,0 +1,78 @@
+/**
+ * Modern - Styles
+ */
+@import url("../../../shared/css/config/media-queries.css");
+@import url("../settings.css");
+@import url("components/button.css");
+@import url("components/carousel.css");
+
+html {
+	background-color: hsl(var(--theme-header--bg));
+}
+
+body {
+	border: 12px solid hsl(var(--theme-header--bg));
+	border-top: 0;
+}
+
+.wp-block-code,
+.wp-block-verse,
+p.has-background,
+.wp-block-pullquote:not(.alignfull):not(.alignwide),
+.wp-block-coblocks-alert,
+.wp-block-separator.is-style-wide,
+.wp-block-group:not(.alignfull):not(.alignwide),
+.wp-block-cover:not(.alignwide):not(.alignfull),
+.wp-block-coblocks-dynamic-separator.is-style-fullwidth::before {
+	@media (--base) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
+
+.site-footer.has-background {
+	border-top: 12px solid hsl(var(--theme-header--bg));
+}
+
+.has-footer-3 .site-footer__inner {
+	padding-bottom: var(--theme-block-padding-x);
+}
+
+.has-footer-3 .site-footer__row {
+	border-color: hsla(var(--theme-footer-3-site-info--border-color), 1);
+}
+
+.has-footer-3 .has-background .site-footer__row {
+	border-width: 2px;
+}
+
+.site-search__toggle {
+	top: 1px;
+}
+
+.primary-menu a {
+
+	&::after {
+		background-color: hsl(var(--theme-color-primary));
+		bottom: 0;
+		content: "";
+		height: 4px;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		transform-origin: left center;
+		transition: all 0.1s ease-in-out;
+		width: 100%;
+	}
+
+	@media (hover: hover) {
+
+		&:hover::after {
+			opacity: 1;
+		}
+	}
+
+	&:focus::after {
+		opacity: 1;
+	}
+}

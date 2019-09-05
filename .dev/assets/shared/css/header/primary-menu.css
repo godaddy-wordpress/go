@@ -55,7 +55,7 @@
 
 		/* Upward dark arrow on top of the flyout sub-menu */
 		&::before {
-			border-bottom: 10px solid hsl(var(--theme-submenu--bg));
+			border-bottom: 10px solid hsl(var(--theme-submenu--bg, var(--theme-color-heading)));
 			border-left: 10px solid transparent;
 			border-right: 10px solid transparent;
 			content: "";
@@ -75,7 +75,7 @@
 
 	/* All submenus */
 	& .sub-menu {
-		background-color: hsla(var(--theme-submenu--bg), 1);
+		background-color: hsl(var(--theme-submenu--bg, var(--theme-color-heading)));
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -101,7 +101,7 @@
 
 		/* All submenu links */
 		& a {
-			color: hsl(var(--theme-submenu--color));
+			color: hsl(var(--theme-submenu--color, 0, 0%, 100%));
 			width: 100%;
 
 			@media (--large) {
@@ -115,7 +115,7 @@
 
 			&:focus {
 				@mixin outline;
-				outline-color: hsla(var(--theme-submenu--color), 0.25);
+				outline-color: hsla(var(--theme-submenu--color, 0, 0%, 100%), 0.25);
 				outline-offset: 0;
 			}
 		}

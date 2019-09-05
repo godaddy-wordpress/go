@@ -25,10 +25,10 @@ module.exports = {
 		'design-styles/style-traditional-editor': './.dev/assets/design-styles/traditional/css/style-traditional-editor.css',
 		'design-styles/style-trendy': './.dev/assets/design-styles/trendy/css/style-trendy.css',
 		'design-styles/style-trendy-editor': './.dev/assets/design-styles/trendy/css/style-trendy-editor.css',
-		// 'design-styles/welcoming': './.dev/assets/design-styles/welcoming/css/welcoming.css',
-		// 'design-styles/welcoming-editor': './.dev/assets/design-styles/welcoming/css/editor-style.css',
-		// 'design-styles/play': './.dev/assets/design-styles/play/css/play.css',
-		// 'design-styles/play-editor': './.dev/assets/design-styles/play/css/editor-style.css',
+		'design-styles/style-welcoming': './.dev/assets/design-styles/welcoming/css/style-welcoming.css',
+		'design-styles/style-welcoming-editor': './.dev/assets/design-styles/welcoming/css/style-welcoming-editor.css',
+		'design-styles/style-playful': './.dev/assets/design-styles/playful/css/style-playful.css',
+		'design-styles/style-playful-editor': './.dev/assets/design-styles/playful/css/style-playful-editor.css',
 	},
 	paths: {
 		src: {
@@ -43,10 +43,10 @@ module.exports = {
 			traditionalCss: './.dev/assets/design-styles/traditional/css/',
 			trendyBase: './.dev/assets/design-styles/trendy/',
 			trendyCss: './.dev/assets/design-styles/trendy/css/',
-			// welcomingBase: '/.dev/assets/design-styles/welcoming/',
-			// welcomingCss: './.dev/assets/design-styles/welcoming/css/',
-			// playBase: './.dev/assets/design-styles/play/',
-			// playCss: './.dev/assets/design-styles/play/css/'
+			welcomingBase: '/.dev/assets/design-styles/welcoming/',
+			welcomingCss: './.dev/assets/design-styles/welcoming/css/',
+			playfulBase: './.dev/assets/design-styles/playful/',
+			playfulCss: './.dev/assets/design-styles/playful/css/'
 		},
 		dist: {
 			base: './dist/',

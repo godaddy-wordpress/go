@@ -1,7 +1,7 @@
 /*! CoBlocks: Author */
 .wp-block-coblocks-author {
 	background-color: hsl(var(--coblocks-author--bg));
-	border-radius: var(--coblocks-author--radius);
+	border-radius: var(--coblocks-author--radius, 0);
 	padding: 1rem;
 }
 
