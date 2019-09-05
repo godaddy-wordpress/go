@@ -60,14 +60,14 @@
 		display: block;
 		height: 2px;
 		position: absolute;
-		top: 10px;
+		top: var(--theme-site-nav-toggle--spacing, 14px);
 		transition: all 0.2s ease-in-out;
 		width: 100%;
 	}
 
 	&::after {
 		background: hsla(var(--theme-site-nav-toggle--color), 1);
-		bottom: 10px;
+		bottom: var(--theme-site-nav-toggle--spacing, 14px);
 		content: "";
 		display: block;
 		height: 2px;

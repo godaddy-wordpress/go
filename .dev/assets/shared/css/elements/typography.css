@@ -1,10 +1,10 @@
 /*! Body Typography */
 body {
-	background-color: hsl(var(--theme-color-body-bg));
+	background-color: hsl(var(--theme-color-body-bg, 0, 0%, 100%));
 	color: hsl(var(--theme-color-text));
 	font-family: var(--theme-body--font);
 	font-size: var(--theme-body--font-size);
-	font-weight: var(--theme-body--weight);
+	font-weight: var(--theme-body--weight, 400);
 	letter-spacing: var(--theme-body--tracking);
 	line-height: var(--theme-body--leading);
 	text-rendering: optimizeLegibility;
@@ -13,5 +13,4 @@ body {
 
 p {
 	font-size: var(--theme-body--font-size);
-	font-weight: var(--theme-body--weight);
 }

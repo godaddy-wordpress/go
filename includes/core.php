@@ -664,13 +664,14 @@ function get_available_design_styles() {
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'             => esc_html__( 'Avocado', 'maverick' ),
+					'label'             => esc_html__( 'Plum', 'maverick' ),
 					'primary'           => '#000000',
-					'secondary'         => '#02493b',
-					'tertiary'          => '#b4c6af',
+					'secondary'         => '#4d0859',
+					'tertiary'          => '#ded9e2',
 					'background'        => '#ffffff',
 					'footer_background' => '#000000',
 				],
+
 				'two'   => [
 					'label'             => esc_html__( 'Steel', 'maverick' ),
 					'primary'           => '#000000',
@@ -680,10 +681,10 @@ function get_available_design_styles() {
 					'footer_background' => '#000000',
 				],
 				'three' => [
-					'label'             => esc_html__( 'Plum', 'maverick' ),
+					'label'             => esc_html__( 'Avocado', 'maverick' ),
 					'primary'           => '#000000',
-					'secondary'         => '#4d0859',
-					'tertiary'          => '#ded9e2',
+					'secondary'         => '#02493b',
+					'tertiary'          => '#b4c6af',
 					'background'        => '#ffffff',
 					'footer_background' => '#000000',
 				],
@@ -716,19 +717,51 @@ function get_available_design_styles() {
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
 			'color_schemes' => [
-				'one' => [
-					'label'      => esc_html__( 'Light', 'maverick' ),
-					'primary'    => '#02392f',
-					'secondary'  => '#f1f1f1',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'one'   => [
+					'label'             => esc_html__( 'Forest', 'maverick' ),
+					'primary'           => '#165144',
+					'secondary'         => '#01332e',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
 				],
-				'two' => [
-					'label'      => esc_html__( 'Dark', 'maverick' ),
-					'primary'    => '#49384d',
-					'secondary'  => '#f7f5e9',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'two'   => [
+					'label'             => esc_html__( '2', 'maverick' ),
+					'primary'           => '#233a6b',
+					'secondary'         => '#01133d',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#ffffff',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
+				],
+				'three' => [
+					'label'             => esc_html__( '3', 'maverick' ),
+					'primary'           => '#5b3f20',
+					'secondary'         => '#3f2404',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
+				],
+				'four'  => [
+					'label'             => esc_html__( '4', 'maverick' ),
+					'primary'           => '#443a82',
+					'secondary'         => '#2b226b',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
+				],
+			],
+			'fonts'         => [
+				'Work Sans'  => [
+					'300',
+				],
+				'Karla'      => [
+					'400',
+					'400i',
+					'700',
+				],
+				'Hepta Slab' => [
+					'600',
 				],
 			],
 		],

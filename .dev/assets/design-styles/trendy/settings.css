@@ -65,17 +65,11 @@
 
 
 	/*--------------------------------------------------------------
-	## Colors
+	## Text Colors
 	--------------------------------------------------------------*/
-	--theme-color-body-bg: 0, 0%, 100%;
-
-	/* Text Colors */
 	--theme-color-heading: 0, 0%, 0%;
 	--theme-color-text: 0, 0%, 0%;
 	--theme-color-text-secondary: 0, 0%, 52%;
-
-	/* Global Color Scheme Colors */
-	--theme-color-quaternary: var(--color-white);
 
 
 	/*--------------------------------------------------------------
@@ -84,7 +78,6 @@
 	--theme-body--font: "Open Sans", sans-serif;
 	--theme-body--font-size: 1.1rem;
 	--theme-body--leading: 1.9;
-	--theme-body--weight: 400;
 
 	/* Headings */
 	--theme-heading--font: "Trocchi", sans-serif;
@@ -180,7 +173,7 @@
 	/* Input */
 	--theme-input--bg: 0, 0%, 100%;
 	--theme-input--bg-interactive: var(--theme-color-tertiary);
-	--theme-input--border-color: var(--theme-color-text-secondary);
+	--theme-input--border-color: var(--theme-color-heading);
 	--theme-input--border-style: solid;
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style) hsl(var(--theme-input--border-color));
@@ -217,6 +210,7 @@
 	--------------------------------------------------------------*/
 	--theme-button--bg: var(--theme-color-primary);
 	--theme-button--bg-interactive: var(--theme-color-secondary);
+	--theme-button--border-width: 2px;
 	--theme-button--color: 0, 0%, 100%;
 	--theme-button--font-size: 0.725rem;
 	--theme-button--font: var(--theme-site-nav--font);
@@ -371,6 +365,7 @@
 
 	/* Footer Variations Specific */
 	--theme-footer-3-site-info--border-color: 0, 0%, 20%;
+	--theme-footer-3-site-info--border-width: 1px;
 
 
 	/*--------------------------------------------------------------

@@ -26,21 +26,6 @@ p.has-background,
 	top: 2px;
 }
 
-.wp-block-coblocks-pricing-table-item__title {
-	font-family: var(--theme-site-nav--font);
-	font-size: var(--theme-site-nav--font-size);
-	font-weight: var(--theme-site-nav--weight);
-	letter-spacing: var(--theme-site-nav--tracking);
-	text-transform: var(--theme-site-nav--text-transform);
-}
-
-.wp-block-group.has-background.alignwide {
-	@media (--wide) {
-		margin-left: var(--theme-block-padding-x);
-		margin-right: var(--theme-block-padding-x);
-	}
-}
-
 .is-style-3d .wp-block-button__link {
 	box-shadow: inset 0 -3px 0 0 rgb(66, 66, 66);
 }

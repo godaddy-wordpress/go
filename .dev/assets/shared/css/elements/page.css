@@ -27,7 +27,7 @@ optgroup,
 textarea {
 	color: $color__text-main;
 	font-family: var(--theme-body--font);
-	font-weight: var(--theme-body--weight);
+	font-weight: var(--theme-body--weight, 400);
 	line-height: var(--theme-body--leading);
 	text-rendering: optimizeLegibility;
 }

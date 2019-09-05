@@ -20,89 +20,88 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 54rem;
-	--theme-max-w-wide: 80rem;
+	--theme-max-w-base: 50rem;
+	--theme-max-w-wide: 82rem;
 
 	/* Below base width query */
-	@custom-media --base (max-width: 54rem);
-	@custom-media --wide (max-width: 80rem);
+	@custom-media --base (max-width: 50rem);
+	@custom-media --wide (max-width: 82rem);
 
 	/* Editor widths */
-	--editor-max-w-base: 702px;
-	--editor-max-w-wide: 1118px;
+	--editor-max-w-base: 633px;
+	--editor-max-w-wide: 1438px;
 
 	/* Vertical Rhythm */
-	--theme-block-spacing: 1.15rem;
-	--theme-block-spacing-larger: 1.75rem;
-	--theme-block-spacing-huge: 4rem;
+	--theme-block-spacing: 1.75rem;
+	--theme-block-spacing-larger: 2.25rem;
+	--theme-block-spacing-huge: 6rem;
 
 	@media (--large) {
-		--theme-block-spacing: 1.8rem;
-		--theme-block-spacing-larger: 2.25rem;
-		--theme-block-spacing-huge: 8rem;
+		--theme-block-spacing: 2.25rem;
+		--theme-block-spacing-larger: 2.5rem;
+		--theme-block-spacing-huge: 12rem;
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 2.5rem;
+	--theme-block-padding-x: 2.25rem;
 
 	@media (--medium) {
-		--theme-block-padding-x: 6rem;
+		--theme-block-padding-x: 6.5rem;
 	}
 
 	/* Block Padding */
-	--editor-padding: 8rem;
+	--editor-padding: 10rem;
 
 	/* Accessibility */
-	--theme-outline-color: var(--theme-color-heading);
-	--theme-outline-style: dotted;
+	--theme-outline-color: var(--theme-color-primary);
+	--theme-outline-style: dashed;
 	--theme-outline-width: 1px;
 
-	--theme-selection--color: var(--theme-color-heading);
+	--theme-selection--color: var(--theme-color-primary);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
-	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1);
+	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), box-shadow 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1);
 
 
 	/*--------------------------------------------------------------
-	## Text Colors
+	## Colors
 	--------------------------------------------------------------*/
-	--theme-color-heading: var(--theme-color-secondary);
-	--theme-color-text: 218, 12%, 30%;
-	--theme-color-text-secondary: var(--theme-color-text);
+	--theme-color-body-bg: 0, 0%, 93%;
+
+	/* Text Colors */
+	--theme-color-heading: var(--theme-color-primary);
+	--theme-color-text: var(--theme-color-primary);
+	--theme-color-text-secondary: 0, 0%, 52%;
 
 
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
-	--theme-body--font: "Nunito Sans", sans-serif;
-	--theme-body--font-size: 1.025rem;
-	--theme-body--leading: 1.85;
+	--theme-body--font: "Karla", sans-serif;
+	--theme-body--font-size: 1rem;
+	--theme-body--leading: 1.8;
 
 	/* Headings */
-	--theme-heading--font: "Crimson Text", serif;
-	--theme-heading--leading: 1.15;
+	--theme-heading--font: "Work Sans", sans-serif;
+	--theme-heading--leading: 1.35;
 	--theme-heading--spacing: 1.75rem;
 	--theme-heading--style: normal;
-	--theme-heading--tracking: -0.02em;
-	--theme-heading--weight: 400;
-	--theme-heading--button-spacing: 1.75rem;
+	--theme-heading--tracking: 0;
+	--theme-heading--weight: 300;
+	--theme-heading--button-spacing: 2rem;
 
 	--theme-h1--font-size: 2.5em;
 	--theme-h2--font-size: 2em;
-	--theme-h3--font-size: 1.6em;
-	--theme-h4--font-size: 1.5em;
-	--theme-h5--font-size: 1.3em;
+	--theme-h3--font-size: 1.75em;
+	--theme-h4--font-size: 2em;
+	--theme-h5--font-size: 1.5em;
 	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.45em;
+		--theme-h1--font-size: 3.65em;
 		--theme-h2--font-size: 2.75em;
-		--theme-h3--font-size: 2em;
-	}
-
-	@media (--large) {
-		--theme-h1--font-size: 4rem;
+		--theme-h3--font-size: 2.5em;
 	}
 
 	--theme-h1--color: var(--theme-color-heading);
@@ -113,32 +112,23 @@
 	--theme-h6--color: var(--theme-color-heading);
 
 	/* Text Utilities */
-	--theme-text-xs: 82%;
-	--theme-text-sm: 85%;
-	--theme-text-sm--letter-spacing: 0.015em;
-
-	@media (--small) {
-		--theme-text-sm: 90%;
-	}
-
-	@media (--large) {
-		--theme-text-sm: 95%;
-	}
+	--theme-text-sm: 90%;
+	--theme-text-sm--letter-spacing: 0;
 
 	/* Drop Cap */
 	--theme-dropcap--font-size: 5rem;
 	--theme-dropcap--weight: 700;
 
 	/* Captions */
-	--theme-caption--alignment: left;
+	--theme-caption--alignment: center;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
 	--theme-caption--style: normal;
-	--theme-caption--spacing-top: 1rem;
+	--theme-caption--spacing-top: 0;
 
 	/* Links */
-	--theme-link--color: var(--theme-color-primary);
-	--theme-link--color-interactive: var(--theme-color-text);
+	--theme-link--color: var(--theme-color-heading);
+	--theme-link--color-interactive: var(--theme-color-primary);
 
 	/* Pullquote */
 	--theme-pullquote--font: serif;
@@ -151,13 +141,13 @@
 	--theme-pullquote--leading: 1.25;
 	--theme-pullquote--padding-y: 0.75rem;
 	--theme-pullquote--padding-x: 1rem;
-	--theme-pullquote--style: normal;
+	--theme-pullquote--style: italic;
 	--theme-pullquote--weight: var(--theme-heading--weight);
 
 	/* Blockquote */
 	--theme-quote--border-color: var(--theme-color-primary);
 	--theme-quote--border-style: solid;
-	--theme-quote--border-width: 0.45rem;
+	--theme-quote--border-width: 0;
 	--theme-quote--border: var(--theme-quote--border-width) var(--theme-quote--border-style) hsl(var(--theme-quote--border-color));
 	--theme-quote--color: var(--theme-color-heading);
 	--theme-quote--font-size: var(--theme-h2--font-size);
@@ -176,32 +166,32 @@
 	## Forms
 	--------------------------------------------------------------*/
 	--theme-label--color: var(--theme-color-heading);
-	--theme-label--font-size: 1rem;
-	--theme-label--font: var(--theme-body--font);
+	--theme-label--font-size: var(--theme-body--font-size);
+	--theme-label--font: var(--theme-site-nav--font);
 	--theme-label--tracking: var(--theme-site-nav--tracking);
-	--theme-label--transform: normal;
+	--theme-label--transform: lowercase;
 	--theme-label--weight: var(--theme-site-nav--weight);
-	--theme-label--spacing: 0.25rem;
+	--theme-label--spacing: 0.35rem;
 
 	/* Input */
-	--theme-input--bg: var(--theme-color-body-bg);
-	--theme-input--bg-interactive: 0, 0%, 100%;
-	--theme-input--border-color: var(--theme-color-heading);
+	--theme-input--bg: 0, 0%, 100%;
+	--theme-input--bg-interactive: var(--color-white);
+	--theme-input--border-color: var(--theme-color-primary);
 	--theme-input--border-style: solid;
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style) hsl(var(--theme-input--border-color));
-	--theme-input--color: var(--theme-color-text);
-	--theme-input--font-size: var(--theme-body--font-size);
-	--theme-input--padding-x: 0.85rem;
-	--theme-input--padding-y: 0.85rem;
-	--theme-input--radius: 4px;
+	--theme-input--color: var(--theme-color-text-secondary);
+	--theme-input--font-size: 1.1rem;
+	--theme-input--padding-x: 1.35rem;
+	--theme-input--padding-y: 1rem;
+	--theme-input--radius: 3px;
 	--theme-input--shadow: none;
-	--theme-input--spacing: 2rem;
+	--theme-input--spacing: 1.75rem;
 	--theme-input--weight: 400;
 
 	/* Input Focus */
-	--theme-input--border-color-focus: var(--theme-color-primary);
-	--theme-input--color-focus: var(--theme-color-text);
+	--theme-input--border-color-focus: var(--theme-color-secondary);
+	--theme-input--color-focus: var(--theme-color-heading);
 	--theme-input--shadow-focus: none;
 
 	/* Placeholder */
@@ -222,17 +212,17 @@
 	## Buttons
 	--------------------------------------------------------------*/
 	--theme-button--bg: var(--theme-color-primary);
-	--theme-button--bg-interactive: var(--theme-color-heading);
-	--theme-button--border-width: 2px;
+	--theme-button--bg-interactive: var(--theme-color-secondary);
+	--theme-button--border-width: 1px;
 	--theme-button--color: 0, 0%, 100%;
-	--theme-button--font-size: 1.3rem;
-	--theme-button--font: var(--theme-heading--font);
-	--theme-button--padding-x: 2.25rem;
-	--theme-button--padding-y: 1.4rem;
-	--theme-button--radius: 4px;
-	--theme-button--text-transform: normal;
-	--theme-button--tracking: 0;
-	--theme-button--weight: 500;
+	--theme-button--font-size: var(--theme-body--font-size);
+	--theme-button--font: var(--theme-site-nav--font);
+	--theme-button--padding-x: 1.85rem;
+	--theme-button--padding-y: 1.35rem;
+	--theme-button--radius: 3px;
+	--theme-button--text-transform: lowercase;
+	--theme-button--tracking: 2px;
+	--theme-button--weight: 600;
 
 	/* Disabled */
 	--theme-button--disabled-bg: 0, 2%, 89%;
@@ -246,30 +236,32 @@
 	--theme-header--padding-y: 1.25rem;
 
 	@media (--medium) {
-		--theme-header--padding-y: 2.15rem;
+		--theme-header--padding-y: 2.55rem;
 	}
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: var(--theme-h2--font-size);
-	--theme-site-title--font: var(--theme-heading--font);
-	--theme-site-title--weight: 400;
+	--theme-site-title--font-size: 1.5rem;
+	--theme-site-title--font: "Hepta Slab", sans-serif;
+	--theme-site-title--text-transform: uppercase;
+	--theme-site-title--tracking: 4px;
+	--theme-site-title--weight: 600;
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
 	--theme-site-description--opacity: 0.65;
 
 	/* Header > Navigation */
-	--theme-site-nav--color: var(--theme-color-heading);
+	--theme-site-nav--color: var(--theme-color-primary);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
-	--theme-site-nav--font: var(--theme-heading--font);
-	--theme-site-nav--font-size: 1.35rem;
-	--theme-site-nav--font-size-mobile: 1.65rem;
+	--theme-site-nav--font: "Work Sans", sans-serif;
+	--theme-site-nav--font-size: 0.95rem;
+	--theme-site-nav--font-size-mobile: 1rem;
 	--theme-site-nav--weight: 400;
-	--theme-site-nav--text-transform: normal;
-	--theme-site-nav--tracking: 0;
+	--theme-site-nav--text-transform: lowercase;
+	--theme-site-nav--tracking: 1px;
 	--theme-site-nav--transition: var(--theme-link-transition);
-	--theme-site-nav--padding-x: 1rem;
+	--theme-site-nav--padding-x: 1.15rem;
 
 	/* Header > Navigation > Submenu */
 	--theme-submenu--bg: var(--theme-color-heading);
@@ -281,7 +273,7 @@
 
 	/* Header Variations */
 	--theme-header-3--padding-y: 3.5rem;
-	--theme-header-3-nav--margin-top: 2.5rem;
+	--theme-header-3-nav--margin-top: 1.5rem;
 
 	@media (--large) {
 		--theme-header-3--padding-y: 8rem;
@@ -303,7 +295,8 @@
 	--------------------------------------------------------------*/
 	--theme-site-nav-toggle--color: var(--theme-color-heading);
 	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading);
-	--theme-site-nav-toggle--size: 2rem;
+	--theme-site-nav-toggle--size: 1.4rem;
+	--theme-site-nav-toggle--spacing: 8px;
 
 	/* Offscreen Navigation */
 	--theme-offscreen-nav--bg: var(--color-white);
@@ -320,57 +313,70 @@
 	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
-	--theme-search-toggle--color-interactive: var(--theme-color-primary);
-	--theme-search-toggle--size: 22px;
+	--theme-search-toggle--color-interactive: var(--theme-color-text);
+	--theme-search-toggle--size: 20px;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
-	--theme-search-submit--bg-interactive: var(--theme-color-heading);
+	--theme-search-submit--bg-interactive: var(--theme-color-text);
 	--theme-search-submit--color: var(--color-white);
-	--theme-search-submit--radius: 4px;
+	--theme-search-submit--radius: 3px;
 
 	--theme-not-found-width: 42rem;
+
 
 	/*--------------------------------------------------------------
 	## Entry Header
 	--------------------------------------------------------------*/
-	--theme-entryheader--padding-top: 3rem;
+	--theme-entryheader--padding-top: 4rem;
+	--theme-entryheader--padding-bottom: 7rem;
+
+	@media (--large) {
+		--theme-entryheader--padding-bottom: 8.5rem;
+	}
 
 
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
 	--theme-footer--bg: "";
-	--theme-footer--color: var(--theme-color-heading);
+	--theme-footer--color: 0, 0%, 40%;
 	--theme-footer-heading--color: var(--theme-color-heading);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color-interactive: var(--theme-color-primary);
-	--theme-footer-nav--leading: 2.25;
+	--theme-footer-nav--color: var(--theme-color-heading);
+	--theme-footer-nav--color-interactive: var(--theme-color-heading);
+	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
 	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
-		--theme-footer-nav--padding-y: 0.1rem;
+		--theme-footer-nav--padding-x: 1.75rem;
+		--theme-footer-nav--padding-y: 0.15rem;
 	}
 
 	/* Footer > Social Icons */
-	--theme-social--color: var(--theme-color-primary);
-	--theme-social--color-hover: var(--theme-color-heading);
+	--theme-social--color: var(--theme-color-heading);
+	--theme-social--color-hover: var(--theme-color-text);
 	--theme-social--size: 1.5rem;
-	--theme-social--spacing: 1rem;
+	--theme-social--spacing: 0.5rem;
+
+	@media (--medium) {
+		--theme-social--size: 2rem;
+		--theme-social--spacing: 1rem;
+	}
 
 	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: 0, 0%, 80%;
-	--theme-footer-3-site-info--border-width: 1px;
+	--theme-footer-3-site-info--border-color: var(--theme-header--bg);
+	--theme-footer-3-site-info--border-width: 10px;
 
 
 	/*--------------------------------------------------------------
 	## Core Blocks
 	--------------------------------------------------------------*/
 	--theme-separator--color: var(--theme-color-heading);
-	--theme-separator--dot-size: 1rem;
+	--theme-separator--dot-size: 2rem;
 
 	--theme-table--border-color: var(--theme-color-heading);
 
@@ -379,7 +385,7 @@
 	## CoBlocks
 	--------------------------------------------------------------*/
 	--coblocks-accordion--bg: var(--theme-color-body-bg);
-	--coblocks-accordion--bg-hover: none;
+	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.05);
 	--coblocks-accordion--border-color: var(--theme-color-heading);
 	--coblocks-accordion--border-width: 2px;
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width) solid hsl(var(--coblocks-accordion--border-color));
@@ -395,25 +401,25 @@
 	--coblocks-carousel--border-color: var(--color-white);
 
 	--coblocks-features--icon-spacing: 2rem;
-	--coblocks-features--heading-spacing: 1rem;
+	--coblocks-features--heading-spacing: 1.5rem;
 
 	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
 	--coblocks-food-drinks-hint--radius: 0;
 	--coblocks-food-drinks-item--fill: var(--theme-color-heading);
-	--coblocks-food-drinks-item--font-size: 1.5em;
-	--coblocks-food-drinks-item--spacing: 3em;
-	--coblocks-food-drinks-item--text-transform: normal;
-	--coblocks-food-drinks-item--tracking: 0;
-	--coblocks-food-drinks-item--weight: 400;
+	--coblocks-food-drinks-item--font-size: 0.95em;
+	--coblocks-food-drinks-item--spacing: 3.5em;
+	--coblocks-food-drinks-item--text-transform: uppercase;
+	--coblocks-food-drinks-item--tracking: 2px;
+	--coblocks-food-drinks-item--weight: 700;
 	--coblocks-food-drinks-price--color: var(--theme-color-text-secondary);
 	--coblocks-food-drinks-price--font-size: var(--theme-text-sm);
-	--coblocks-food-drinks-title--bg: none;
+	--coblocks-food-drinks-title--bg: var(--theme-color-heading);
 	--coblocks-food-drinks-title--border-bottom: none;
-	--coblocks-food-drinks-title--color: var(--theme-color-heading);
-	--coblocks-food-drinks-title--font-size: 2.25em;
-	--coblocks-food-drinks-title--margin-y: 0.5em;
-	--coblocks-food-drinks-title--padding: 0.5em 0.25em 0;
+	--coblocks-food-drinks-title--color: var(--color-white);
+	--coblocks-food-drinks-title--font-size: 1.5em;
+	--coblocks-food-drinks-title--margin-y: 0.65em;
+	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
 	--coblocks-food-drinks-title--style: normal;
 
 	--coblocks-pricing--bg: var(--color-white);
@@ -424,7 +430,7 @@
 	--coblocks-shapedivider--bg: var(--theme-color-primary);
 
 	--coblocks-services--heading-margin-bottom: 1rem;
-	--coblocks-services--heading-margin-top: 2rem;
+	--coblocks-services--heading-margin-top: 1.75rem;
 
 
 	/*--------------------------------------------------------------
