@@ -772,10 +772,10 @@ function get_available_design_styles() {
 			'color_schemes' => [
 				'one'   => [
 					'label'             => esc_html__( 'Tropaz', 'maverick' ),
-					'primary'           => '#244f9c',
-					'secondary'         => '#01332e',
+					'primary'           => '#4245ab',
+					'secondary'         => '#ecb43d',
 					'tertiary'          => '#c9c9c9',
-					'header_background' => '#244f9c',
+					'header_background' => '#4245ab',
 				],
 				'two'   => [
 					'label'             => esc_html__( '2', 'maverick' ),
@@ -801,8 +801,8 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Baloo'      => [
-					'400',
+				'Quicksand'      => [
+					'600',
 				],
 				'Karla'      => [
 					'400',
