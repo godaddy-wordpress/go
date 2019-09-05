@@ -64,3 +64,26 @@ p.has-background,
 		transform-origin: right center;
 	}
 }
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
+
+	&:focus {
+		@mixin outline;
+		outline-offset: 2px;
+	}
+}

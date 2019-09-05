@@ -48,9 +48,7 @@ input[type="color"] {
 		border-color: hsl(var(--theme-input--border-color-focus));
 		box-shadow: var(--theme-input--shadow-focus);
 		color: hsl(var(--theme-input--color-focus));
-
-		@mixin outline;
-		outline-offset: 2px;
+		outline: none;
 	}
 }
 
@@ -78,9 +76,7 @@ textarea {
 		border-color: hsl(var(--theme-input--border-color-focus));
 		box-shadow: var(--theme-input--shadow-focus);
 		color: hsl(var(--theme-input--color-focus));
-
-		@mixin outline;
-		outline-offset: 2px;
+		outline: none;
 	}
 }
 

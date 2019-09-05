@@ -3,7 +3,7 @@
 
 	& .wp-block-pullquote {
 
-		&:not(.alignwide):not(.alignfull):not(.alignleft) {
+		&:not([class*="align"]) {
 			@mixin blockWidthNoPadding;
 		}
 
@@ -66,8 +66,8 @@
 
 		& blockquote {
 			max-width: 100%;
-			padding-bottom: calc(var(--editor-padding) / 4);
-			padding-top: calc(var(--editor-padding) / 4);
+			padding-bottom: calc(var(--editor-padding) / 3);
+			padding-top: calc(var(--editor-padding) / 3);
 
 			@media (--medium) {
 				padding-bottom: calc(var(--editor-padding) / 2);
@@ -103,11 +103,8 @@
 	& > blockquote {
 		margin-left: auto;
 		margin-right: auto;
-
-		@media (--large) {
-			max-width: var(--theme-max-w-wide);
-			padding-left: var(--theme-block-padding-x);
-			padding-right: var(--theme-block-padding-x);
-		}
+		max-width: var(--theme-max-w-wide);
+		padding-left: var(--theme-block-padding-x);
+		padding-right: var(--theme-block-padding-x);
 	}
 }
