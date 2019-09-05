@@ -755,7 +755,7 @@ function get_available_design_styles() {
 				'Work Sans'  => [
 					'300',
 				],
-				'Karla'  => [
+				'Karla'      => [
 					'400',
 					'400i',
 					'700',
