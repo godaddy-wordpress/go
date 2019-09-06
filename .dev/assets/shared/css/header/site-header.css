@@ -15,8 +15,7 @@
 .has-header-1.has-featured-image:not(.woocommerce-page),
 .has-header-2.has-featured-image:not(.woocommerce-page),
 .has-header-3.has-featured-image:not(.woocommerce-page),
-.has-header-4.has-featured-image:not(.woocommerce-page),
-.has-header-5.has-featured-image:not(.woocommerce-page) {
+.has-header-4.has-featured-image:not(.woocommerce-page) {
 
 	& .site-header {
 		position: absolute;

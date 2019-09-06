@@ -37,9 +37,7 @@
 	@media (--admin-bar-lg) {
 		top: 46px;
 	}
-}
 
-.admin-bar:not(.has-header-5) .site-navigation {
 	@media (--large) {
 		top: initial;
 	}

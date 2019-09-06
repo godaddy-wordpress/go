@@ -905,13 +905,6 @@ function get_available_header_variations() {
 				return get_template_part( 'partials/headers/header', '4' );
 			},
 		],
-		'header-5' => [
-			'label'         => esc_html__( 'Header 5', 'maverick' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-5.svg' ),
-			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', '5' );
-			},
-		],
 	];
 
 	/**

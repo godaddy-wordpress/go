@@ -262,14 +262,6 @@
 		--theme-header-3--padding-y: 8rem;
 	}
 
-	--theme-header-5-nav--width: 70px;
-	--theme-header-5--shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-
-	@media (--large) {
-		--theme-header-5-nav--width: 100px;
-	}
-
-
 	/*--------------------------------------------------------------
 	## Navigation Toggle
 	--------------------------------------------------------------*/
@@ -282,11 +274,6 @@
 	--theme-offscreen-nav--color: var(--theme-color-heading);
 	--theme-offscreen-nav-overlay--color: hsla(var(--color-black), 0.15);
 	--theme-offscreen-nav-padding: 2rem;
-
-	/* Header 5 > Offscreen Navigation */
-	--theme-header-5-offscreen-nav--bg: var(--color-white);
-	--theme-header-5-offscreen-nav--color: var(--theme-color-heading);
-
 
 	/*--------------------------------------------------------------
 	## Search
