@@ -1,8 +1,9 @@
 /**
- * Trendy - Editor Styles
+ * Playful - Editor Styles
  */
 @import url("../../../shared/css/config/media-queries.css");
 @import url("../settings.css");
+@import url("components/carousel.css");
 
 /*! Separator */
 .wp-block-separator:not(.is-style-dots) {

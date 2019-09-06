@@ -1,0 +1,25 @@
+/*! Playful: CoBlocks Carousel */
+.wp-block-coblocks-gallery-carousel .coblocks-gallery--item {
+	transition: opacity 0.75s;
+
+	&:not(.is-selected) {
+		opacity: 0.25;
+	}
+}
+
+.wp-block-coblocks-gallery-carousel .coblocks-gallery--figure::before {
+	display: none;
+}
+
+.flickity-button,
+.flickity-button:hover {
+	background: hsl(var(--theme-color-primary));
+}
+
+.flickity-prev-next-button {
+	border-radius: var(--theme-button--radius);
+}
+
+.flickity-button-icon {
+	fill: hsl(var(--color-white));
+}

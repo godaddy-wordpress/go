@@ -57,8 +57,7 @@
 /* Account for the first block being .alignfull */
 .content-area > *.alignfull:first-child,
 .content-area > *figure:first-child,
-.content-area > *.wp-block-gallery:first-child,
-.content-area > *.wp-block-coblocks-gallery-carousel:first-child {
+.content-area > *.wp-block-gallery:first-child {
 	margin-top: 0 !important;
 }
 

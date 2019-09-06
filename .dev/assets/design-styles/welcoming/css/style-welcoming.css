@@ -4,6 +4,7 @@
 @import url("../../../shared/css/config/media-queries.css");
 @import url("../settings.css");
 @import url("components/button.css");
+@import url("components/carousel.css");
 
 html {
 	background-color: hsl(var(--theme-header--bg));
