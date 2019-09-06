@@ -39,6 +39,58 @@
 @import url("coblocks/carousel.css");
 @import url("coblocks/food-drinks.css");
 
+/* Vertical Spacing */
+.block-editor-block-list__layout {
+
+	& > .wp-block:not(.editor-post-title__block):not([data-type="core/list"]):not([data-type="core/paragraph"]):not([data-type="core/spacer"]):not([data-type="core/image"]):not([data-type="core/file"]):not([data-type="core/preformatted"]):not([data-type="core/verse"]):not([data-type="core/archives-dropdown"]):not([data-type="core/categories-dropdown"]):not([data-type="core/code"]):not([data-type="coblocks/alert"]):not([data-type="coblocks/alert"]):not([data-type="coblocks/accordion"]):not([data-type="coblocks/accordion-item"]):not([data-type="coblocks/author"]) {
+		margin-bottom: var(--theme-block-spacing-huge);
+		margin-top: var(--theme-block-spacing-huge);
+	}
+}
+
+.wp-block .wp-block {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+}
+
+.components-placeholder {
+	margin-bottom: 0;
+}
+
+[data-type="core/heading"] + [data-type="core/paragraph"] {
+	margin-top: calc(-0.825 * var(--theme-block-spacing-huge)) !important;
+}
+
+[data-type="core/heading"] + [data-type="core/button"] {
+	margin-top: calc(-0.65 * var(--theme-block-spacing-huge)) !important;
+}
+
+[data-type="core/paragraph"] ~ [data-type="core/cover"] {
+	margin-bottom: var(--theme-block-spacing-larger) !important;
+	margin-top: var(--theme-block-spacing-larger) !important;
+}
+
+.block-editor-block-list__layout .wp-block:first-of-type {
+	margin-top: 0 !important;
+}
+
+/* Image */
+.wp-block[data-type="core/image"][data-align="full"],
+.wp-block[data-type="core/image"][data-align="wide"] {
+	margin-bottom: var(--theme-block-spacing-huge);
+	margin-top: var(--theme-block-spacing-huge);
+}
+
+/* Captions */
+.wp-block figcaption {
+	margin-top: 0 !important;
+}
+
+[data-align="full"] figcaption {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+
 /*  Author */
 .wp-block-coblocks-author {
 	padding: var(--coblocks-author--padding, 2.5rem);

@@ -113,16 +113,6 @@
 			margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5) !important;
 			margin-top: calc(var(--theme-block-spacing-larger) * 1.5) !important;
 		}
-
-		/* & .wp-block-gallery:not(.alignfull):not(.alignwide) {
-			--spacing: calc((var(--theme-block-spacing-larger) * 1.5));
-			margin-bottom: calc(var(--spacing) - 15px);
-			margin-top: var(--spacing);
-
-			@media (--large) {
-				margin-bottom: calc(var(--spacing) - 20px);
-			}
-		} */
 	}
 
 	& > h1,
