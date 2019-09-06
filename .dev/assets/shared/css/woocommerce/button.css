@@ -1,17 +1,12 @@
-/**
- * WooCommerce Global - buttons
- *
- * Global overrides to buttons
-*/
-
-/* Specificity to override nested styles from woo */
+/*! WooCommerce: Button */
 body {
 
-	&.woocommerce-page .content-area {
+	&.woocommerce-page {
 
 		/* Primary Button */
 		& #respond input#submit.alt,
-		& .button.alt {
+		& .button.alt,
+		& .button {
 			@mixin button;
 
 			&:hover,
@@ -82,6 +77,10 @@ body {
 			&:active {
 				@mixin button-disabled;
 			}
+		}
+
+		& .woocommerce button.button:disabled {
+			padding: var(--theme-button--padding-y) var(--theme-button--padding-x);
 		}
 	}
 }
