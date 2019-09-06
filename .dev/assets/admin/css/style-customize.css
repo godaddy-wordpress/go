@@ -2,6 +2,14 @@
 @import url("customize/switcher-control.css");
 @import url("customize/range-control.css");
 
+#customize-preview.is-loading {
+	opacity: 0;
+}
+
+.wp-full-overlay {
+	background: #fff;
+}
+
 .customize-control-design_style_control {
 
 	& .customize-control-title {
