@@ -1,10 +1,4 @@
-/**
- * WooCommerce Global - product template
- *
- * Global overrides to product template
-*/
-
-/* Override margin bottom for better vertical layout */
+/*! WooCommerce: Product */
 .woocommerce ul.products li.product,
 .woocommerce-page ul.products li.product,
 .woocommerce-page ul.wc-block-grid__products li.wc-block-grid__product {
@@ -115,6 +109,10 @@ table.variations tbody tr:nth-child(odd) {
 
 		& .woocommerce-variation-add-to-cart {
 			display: flex;
+
+			& .quantity input {
+				margin-bottom: 0;
+			}
 		}
 
 		& .woocommerce-variation-price {

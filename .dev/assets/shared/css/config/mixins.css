@@ -58,7 +58,7 @@
 	line-height: 1.25;
 	margin: 0;
 	overflow: hidden;
-	padding: var(--theme-button--padding-y) calc(var(--theme-input--padding-x)) var(--theme-button--padding-y) var(--theme-input--padding-x);
+	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
 	text-overflow: ellipsis;
 	user-select: none;
 	white-space: nowrap;
@@ -114,19 +114,21 @@
 	background-color: hsl(var(--theme-color-primary));
 	border-radius: 50%;
 	display: flex;
+	font-size: 0.75rem;
 	font-weight: 400;
 	height: 65px;
 	justify-content: center;
 	letter-spacing: 1px;
-	margin: 0;
+	margin: 0 !important;
 	pointer-events: none;
 	text-transform: uppercase;
 	width: 65px;
 }
 
 @define-mixin on-sale-badge-lg {
-	height: 110px;
-	width: 110px;
+	font-size: 1rem;
+	height: 100px;
+	width: 100px;
 }
 
 @define-mixin blockWidthNoPadding {
