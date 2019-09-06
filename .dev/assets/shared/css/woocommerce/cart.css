@@ -12,6 +12,19 @@ body {
 			}
 		}
 
+		& td.product-remove a {
+			margin: 0 auto;
+		}
+
+		& table.cart th,
+		& table.cart td {
+			text-align: center;
+		}
+
+		& .product-thumbnail img {
+			width: 150px;
+		}
+
 	}
 
 	&.woocommerce,

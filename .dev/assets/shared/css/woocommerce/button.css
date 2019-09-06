@@ -78,6 +78,10 @@ body {
 				@mixin button-disabled;
 			}
 		}
+
+		& .woocommerce button.button:disabled {
+			padding: var(--theme-button--padding-y) var(--theme-button--padding-x);
+		}
 	}
 }
 
