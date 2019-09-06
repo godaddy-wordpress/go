@@ -39,11 +39,18 @@
 	top: 1em;
 }
 
+.woocommerce .woocommerce-thankyou-order-details {
+	padding-left: 0;
+}
+
 .cart_item a,
 .shipping-calculator-button,
 .woocommerce .posted_in a,
 .woocommerce div.product p.price,
 .woocommerce div.product span.price,
-.woocommerce ul.products li.product .price {
+.woocommerce ul.products li.product .price,
+.woocommerce .woocommerce-MyAccount-navigation a,
+.woocommerce .woocommerce-MyAccount-content a,
+.woocommerce .woocommerce-order a {
 	color: hsl(var(--theme-color-primary));
 }
