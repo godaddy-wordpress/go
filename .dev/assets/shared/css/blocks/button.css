@@ -5,16 +5,25 @@
 		background-color: hsl(var(--theme-button--bg));
 	}
 
-	&.is-style-outline .wp-block-button__link {
-		padding: calc(var(--theme-button--padding-y) - 2px) calc(var(--theme-button--padding-x) - 2px);
+	&.is-style-outline .wp-block-button__link.has-primary-color:hover {
+		color: hsl(var(--theme-color-secondary));
+	}
+
+	&.is-style-outline .wp-block-button__link.has-secondary-color:hover {
+		color: hsl(var(--theme-color-primary));
 	}
 
 	&.is-style-outline .wp-block-button__link:not(.has-text-color) {
 		color: hsl(var(--theme-color-primary));
 	}
 
-	&.is-style-outline:hover .wp-block-button__link {
-		color: hsl(var(--theme-button--bg-interactive));
+	&.is-style-outline .wp-block-button__link {
+		border-width: var(--theme-button--border-width);
+		padding: calc(var(--theme-button--padding-y) - 2px) calc(var(--theme-button--padding-x) - 2px);
+
+		&:hover {
+			color: hsl(var(--theme-color-secondary));
+		}
 	}
 
 	&:not(.is-style-outline) .wp-block-button__link {

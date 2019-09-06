@@ -6,33 +6,13 @@ export default () => {
 	let selectedDesignStyle;
 
 	/**
-	 * Set primary color
+	 * Set color
 	 *
 	 * @param {*} color
 	 */
-	const setPrimaryColor = ( color ) => {
+	const setColor = ( color, cssVar ) => {
 		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-primary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
-	};
-
-	/**
-	 * Set secondary color
-	 *
-	 * @param {*} color
-	 */
-	const setSecondaryColor = ( color ) => {
-		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-secondary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
-	};
-
-	/**
-	 * Set tertiary color
-	 *
-	 * @param {*} color
-	 */
-	const setTertiaryColor = ( color ) => {
-		const hsl = hexToHSL( color );
-		document.documentElement.style.setProperty( '--theme-color-tertiary', `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
+		document.querySelector( ':root' ).style.setProperty( `${cssVar}`, `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
 	};
 
 	/**
@@ -42,26 +22,23 @@ export default () => {
 		const designStyle = getDesignStyle( selectedDesignStyle );
 		colorScheme = colorScheme.replace( `${selectedDesignStyle}-`, '' );
 
-		if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] ) {
+		if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] && 'undefined' !== typeof wp.customize.settings.controls ) {
 			const colors = designStyle.color_schemes[ colorScheme ];
 			toggleColorSchemes();
 
-			Object.entries( colors ).forEach( function ( [ setting, color ] ) {
-				const customizerSetting = wp.customize( `${setting}_color` );
-				const customizerControl = 'background' === setting ? `${setting}_color` : `${setting}_color_control`;
+			Object.entries( wp.customize.settings.controls )
+				.filter( ( [ _control, config ] ) => config.type === 'color' )
+				.forEach( ( [ customizerControl, config ] ) => {
+					const customizerSetting = wp.customize( config.settings.default );
+					const color = colors[ config.settings.default.replace( '_color', '' ) ] || '';
 
-				if ( 'label' === setting || 'undefined' === typeof customizerSetting || 'undefined' === typeof wp.customize.control ) {
-					return;
-				}
+					customizerSetting.set( color );
 
-				customizerSetting.set( color );
-
-				wp.customize.control( customizerControl ).container.find( '.color-picker-hex' )
-					.data( 'data-default-color', color )
-					.wpColorPicker( 'defaultColor', color );
-			} );
-
-			resetColors();
+					wp.customize.control( customizerControl ).container.find( '.color-picker-hex' )
+						.data( 'data-default-color', color )
+						.wpColorPicker( 'defaultColor', color )
+						.trigger( 'change' );
+				} );
 		}
 	};
 
@@ -71,33 +48,6 @@ export default () => {
 	const toggleColorSchemes = () => {
 		$( 'label[for^=color_scheme_control]' ).hide();
 		$( `label[for^=color_scheme_control-${selectedDesignStyle}-]` ).show();
-	};
-
-	/**
-	 * Reset the colors after a color scheme selection.
-	 */
-	const resetColors = () => {
-
-		if ( 'undefined' === typeof wp.customize.control ) {
-			return;
-		}
-
-		var resetControls = [
-			'header_text_color',
-			'footer_text_color',
-			'footer_heading_color',
-			'social_icon_color',
-		];
-
-		resetControls.forEach( function( setting ) {
-			var settingControl = ( setting !== 'header_text_color' ) ? setting : 'header_text_color_control';
-
-			wp.customize( setting ).set( '' );
-			wp.customize.control( settingControl ).container.find( '.color-picker-hex' )
-				.data( 'data-default-color', '' )
-				.wpColorPicker( 'defaultColor', '' )
-				.trigger( 'change' );
-		} );
 	};
 
 	/**
@@ -131,15 +81,19 @@ export default () => {
 		value.bind( ( colorScheme ) => loadColorSchemes( colorScheme ) );
 	} );
 
+	wp.customize( 'background_color', ( value ) => {
+		value.bind( ( to ) => setColor( to, '--theme-color-body-bg' ) );
+	} );
+
 	wp.customize( 'primary_color', ( value ) => {
-		value.bind( ( to ) => setPrimaryColor( to ) );
+		value.bind( ( to ) => setColor( to, '--theme-color-primary' ) );
 	} );
 
 	wp.customize( 'secondary_color', ( value ) => {
-		value.bind( ( to ) => setSecondaryColor( to ) );
+		value.bind( ( to ) => setColor( to, '--theme-color-secondary' ) );
 	} );
 
 	wp.customize( 'tertiary_color', ( value ) => {
-		value.bind( ( to ) => setTertiaryColor( to ) );
+		value.bind( ( to ) => setColor( to, '--theme-color-tertiary' ) );
 	} );
 };

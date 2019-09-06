@@ -31,15 +31,15 @@
 
 @define-mixin outline {
 	outline-color: hsla(var(--theme-outline-color), 1);
-	outline-style: var(--theme-outline-style);
-	outline-width: var(--theme-outline-width);
+	outline-style: var(--theme-outline-style, dotted);
+	outline-width: var(--theme-outline-width, 2px);
 }
 
 @define-mixin outline-text-link {
 	border: 0;
 	border-bottom-width: var(--theme-outline-width);
 	border-color: hsla(var(--theme-outline-color), 1);
-	border-style: var(--theme-outline-style);
+	border-style: var(--theme-outline-style, dotted);
 	outline: none;
 }
 
@@ -145,4 +145,3 @@
 	--total-block-padding: calc(var(--theme-block-padding-x) * 2);
 	max-width: calc(var(--theme-max-w-wide) - var(--total-block-padding));
 }
-

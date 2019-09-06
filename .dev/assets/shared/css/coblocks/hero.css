@@ -17,3 +17,7 @@
 	margin-right: auto;
 	width: 100%;
 }
+
+.hero-center-center-align .wp-block-coblocks-hero__content {
+	margin: 0 auto;
+}

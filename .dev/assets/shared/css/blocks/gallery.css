@@ -3,7 +3,7 @@
 
 	& .blocks-gallery-item figcaption {
 		font-size: var(--theme-caption--font-size);
-		font-style: var(--theme-caption--style);
+		font-style: var(--theme-caption--style, normal);
 		padding-left: 15px;
 		padding-right: 15px;
 		text-align: var(--theme-caption--alignment);
@@ -11,5 +11,21 @@
 
 	& .blocks-gallery-item:last-child {
 		margin-bottom: 16px !important;
+	}
+}
+
+/*! Gallery */
+.content-area .wp-block-gallery {
+	margin-bottom: calc(var(--theme-block-spacing-larger) - 35px) !important;
+	margin-top: var(--theme-block-spacing-larger);
+
+	&.alignfull,
+	&.alignwide {
+		margin-bottom: calc(var(--theme-block-spacing-huge) - 15px) !important;
+		margin-top: var(--theme-block-spacing-huge);
+	}
+
+	&.mb-0 {
+		margin-bottom: -15px !important;
 	}
 }

@@ -2,7 +2,7 @@
 .wp-block-coblocks-gallery-carousel {
 
 	& .coblocks-gallery--figure::before {
-		background-color: var(--coblocks-carousel--bg-overlay);
+		background-color: var(--coblocks-carousel--bg-overlay, 0.75);
 		content: "";
 		height: 100%;
 		opacity: 0;
@@ -18,5 +18,9 @@
 
 	& .coblocks-gallery--item:not(.is-selected) .coblocks-gallery--figure::before {
 		opacity: 1;
+	}
+
+	& + .wp-block-coblocks-gallery-stacked {
+		margin-top: calc(var(--theme-block-spacing-huge) * -1) !important;
 	}
 }

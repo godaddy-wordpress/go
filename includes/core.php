@@ -20,7 +20,6 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'init', $n( 'init' ) );
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'admin_init', $n( 'editor_styles' ) );
@@ -31,21 +30,9 @@ function setup() {
 	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
-	add_filter( 'body_class', $n( 'body_data' ), 999 );
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
 	add_filter( 'maverick_page_title_args', $n( 'filter_page_titles' ) );
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
-
-}
-
-/**
- * Runs code on init hook
- *
- * @return void
- */
-function init() {
-
-	remove_post_type_support( 'page', 'thumbnail' );
 
 }
 
@@ -250,7 +237,7 @@ function fonts_url() {
 
 	foreach ( $design_styles[ $design_style ]['fonts'] as $font => $font_weights ) {
 
-		$fonts[] = sprintf( '%1$s: %2$s', $font, implode( ',', $font_weights ) );
+		$fonts[] = sprintf( '%1$s:%2$s', $font, implode( ',', $font_weights ) );
 
 	}
 
@@ -268,7 +255,7 @@ function fonts_url() {
 
 			foreach ( $data['fonts'] as $font => $font_weights ) {
 
-				$fonts[] = sprintf( '%1$s: %2$s', $font, implode( ',', $font_weights ) );
+				$fonts[] = sprintf( '%1$s:%2$s', $font, implode( ',', $font_weights ) );
 
 			}
 		}
@@ -489,8 +476,45 @@ function script_loader_tag( $tag, $handle ) {
  */
 function body_classes( $classes ) {
 
+	$design_style     = get_theme_mod( 'design_style', get_default_design_style() );
+	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
+	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
+
+	// Add class for the current design style.
+	if ( $design_style ) {
+		$classes[] = sprintf( 'is-style-%s', esc_attr( $design_style ) );
+	}
+
+	// Add class for the current header variation.
+	if ( $header_variation ) {
+		$classes[] = sprintf( 'has-%s', esc_attr( $header_variation ) );
+	}
+
+	// Add class for the current footer variation.
+	if ( $footer_variation ) {
+		$classes[] = sprintf( 'has-%s', esc_attr( $footer_variation ) );
+	}
+
+	// Add class when there is not a footer menu.
 	if ( ! has_nav_menu( 'footer-1' ) ) {
-		$classes[] = 'no-footer-menu';
+		$classes[] = 'has-no-footer-menu';
+	}
+
+	// Add class when a page or post has comments.
+	if ( is_singular() && comments_open() ) {
+		$classes[] = 'has-comments-open';
+	}
+
+	if ( get_theme_mod( 'footer_background_color', false ) ) {
+		$classes[] = 'has-footer-background';
+	}
+
+	if ( get_theme_mod( 'page_titles', true ) ) {
+		$classes[] = 'has-page-titles';
+	}
+
+	if ( has_post_thumbnail() ) {
+		$classes[] = 'has-featured-image';
 	}
 
 	// Add class whenever a WooCommerce block is added to a page.
@@ -505,34 +529,6 @@ function body_classes( $classes ) {
 		|| has_block( 'woocommerce/featured-product' )
 	) {
 		$classes[] = 'woocommerce-page';
-	}
-
-	return $classes;
-
-}
-
-/**
- * Adds data attributes to the body based on Customizer entries.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
-function body_data( $classes ) {
-
-	$design_style     = get_theme_mod( 'design_style', get_default_design_style() );
-	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
-	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
-
-	if ( $design_style ) {
-		$classes[] = sprintf( '" data-style="%s"', esc_attr( $design_style ) );
-	}
-
-	if ( $header_variation ) {
-		$classes[] = sprintf( 'data-header="%s"', esc_attr( $header_variation ) );
-	}
-
-	if ( $footer_variation ) {
-		$classes[] = sprintf( 'data-footer="%s"', esc_attr( $footer_variation ) );
 	}
 
 	return $classes;
@@ -670,19 +666,52 @@ function get_available_design_styles() {
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
-				'one' => [
-					'label'      => esc_html__( 'Light', 'maverick' ),
-					'primary'    => '#fcfcfc',
-					'secondary'  => '#f3f0ed',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'one'   => [
+					'label'             => esc_html__( 'Plum', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#4d0859',
+					'tertiary'          => '#ded9e2',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
 				],
-				'two' => [
-					'label'      => esc_html__( 'Dark', 'maverick' ),
-					'primary'    => '#f1f4f4',
-					'secondary'  => '#ebeeee',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+
+				'two'   => [
+					'label'             => esc_html__( 'Steel', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#003c68',
+					'tertiary'          => '#c0c9d0',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
+				],
+				'three' => [
+					'label'             => esc_html__( 'Avocado', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#02493b',
+					'tertiary'          => '#b4c6af',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
+				],
+				'four'  => [
+					'label'             => esc_html__( 'Champagne', 'maverick' ),
+					'primary'           => '#000000',
+					'secondary'         => '#cc224f',
+					'tertiary'          => '#e5dede',
+					'background'        => '#ffffff',
+					'footer_background' => '#000000',
+				],
+			],
+			'fonts'         => [
+				'Trocchi'    => [
+					'400',
+				],
+				'Open Sans'  => [
+					'400',
+					'400i',
+					'700',
+				],
+				'Montserrat' => [
+					'400',
+					'700',
 				],
 			],
 		],
@@ -691,19 +720,51 @@ function get_available_design_styles() {
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
 			'color_schemes' => [
-				'one' => [
-					'label'      => esc_html__( 'Light', 'maverick' ),
-					'primary'    => '#02392f',
-					'secondary'  => '#f1f1f1',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'one'   => [
+					'label'             => esc_html__( 'Forest', 'maverick' ),
+					'primary'           => '#165144',
+					'secondary'         => '#01332e',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
 				],
-				'two' => [
-					'label'      => esc_html__( 'Dark', 'maverick' ),
-					'primary'    => '#49384d',
-					'secondary'  => '#f7f5e9',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'two'   => [
+					'label'             => esc_html__( 'Spruce', 'maverick' ),
+					'primary'           => '#233a6b',
+					'secondary'         => '#01133d',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#ffffff',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
+				],
+				'three' => [
+					'label'             => esc_html__( 'Mocha', 'maverick' ),
+					'primary'           => '#5b3f20',
+					'secondary'         => '#3f2404',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
+				],
+				'four'  => [
+					'label'             => esc_html__( 'Lavender', 'maverick' ),
+					'primary'           => '#443a82',
+					'secondary'         => '#2b226b',
+					'tertiary'          => '#c9c9c9',
+					'background'        => '#eeeeee',
+					'header_background' => '#ffffff',
+				],
+			],
+			'fonts'         => [
+				'Work Sans'  => [
+					'300',
+				],
+				'Karla'      => [
+					'400',
+					'400i',
+					'700',
+				],
+				'Hepta Slab' => [
+					'600',
 				],
 			],
 		],
@@ -712,19 +773,50 @@ function get_available_design_styles() {
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
 			'color_schemes' => [
-				'one' => [
-					'label'      => esc_html__( 'Light', 'maverick' ),
-					'primary'    => '#254e9c',
-					'secondary'  => '#fcae6e',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'one'   => [
+					'label'             => esc_html__( 'Frolic', 'maverick' ),
+					'primary'           => '#3f46ae',
+					'secondary'         => '#ecb43d',
+					'tertiary'          => '#f7fbff',
+					'background'        => '#ffffff',
+					'header_background' => '#3f46ae',
+					'footer_background' => '#3f46ae',
 				],
-				'two' => [
-					'label'      => esc_html__( 'Dark', 'maverick' ),
-					'primary'    => '#41b093',
-					'secondary'  => '#eecd94',
-					'tertiary'   => '#123456',
-					'background' => '#ffffff',
+				'two'   => [
+					'label'             => esc_html__( 'Coral', 'maverick' ),
+					'primary'           => '#e06b6d',
+					'secondary'         => '#40896e',
+					'tertiary'          => '#fff7f7',
+					'background'        => '#ffffff',
+					'header_background' => '#eb616a',
+					'footer_background' => '#eb616a',
+				],
+				'three' => [
+					'label'             => esc_html__( 'Organic', 'maverick' ),
+					'primary'           => '#3c896d',
+					'secondary'         => '#6b0369',
+					'tertiary'          => '#f2f9f7',
+					'background'        => '#ffffff',
+					'header_background' => '#3c896d',
+					'footer_background' => '#3c896d',
+				],
+				'four'  => [
+					'label'             => esc_html__( 'Berry', 'maverick' ),
+					'primary'           => '#117495',
+					'secondary'         => '#d691c1',
+					'tertiary'          => '#f7feff',
+					'background'        => '#ffffff',
+					'header_background' => '#117495',
+					'footer_background' => '#117495',
+				],
+			],
+			'fonts'         => [
+				'Quicksand' => [
+					'400',
+					'600',
+				],
+				'Poppins'   => [
+					'700',
 				],
 			],
 		],

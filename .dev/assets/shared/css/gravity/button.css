@@ -6,6 +6,7 @@ body {
 		/* Primary Button */
 		& input[type="submit"] {
 			@mixin button;
+			height: inherit;
 
 			&:hover,
 			&:focus,

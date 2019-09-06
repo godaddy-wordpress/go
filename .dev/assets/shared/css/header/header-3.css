@@ -1,5 +1,5 @@
 /*! Header: Header 3 */
-[data-header="header-3"] {
+.has-header-3 {
 
 	& .site-header__inner {
 		@media (--small) {
@@ -10,7 +10,7 @@
 
 	& .site-navigation {
 		@media (--large) {
-			margin-top: calc(var(--theme-header-3-nav--margin-top));
+			margin-top: calc(var(--theme-header-3-nav--margin-top, 1.5rem));
 		}
 	}
 

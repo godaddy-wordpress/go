@@ -1,5 +1,5 @@
 /*! Header: Header 4 */
-[data-header="header-4"] {
+.has-header-4 {
 
 	&::before {
 		content: "has-search-toggle has-offscreen-nav";
@@ -45,7 +45,9 @@
 		width: 100%;
 
 		& a {
-			font-size: var(--theme-site-nav--font-size-mobile);
+			@media (--large) {
+				font-size: calc(var(--theme-site-nav--font-size) * 2);
+			}
 		}
 
 		& .menu-item {

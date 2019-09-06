@@ -117,7 +117,6 @@
 @import url("gravity/forms.css");
 @import url("gravity/checkbox.css");
 @import url("gravity/radio.css");
-@import url("gravity/button.css");
 
 /* Everything below here still needs organizing */
 .u-informational {
@@ -128,12 +127,23 @@
 	padding: 0 0.5em;
 }
 
-.hero-center-center-align .wp-block-coblocks-hero__box {
-	margin: 0 auto;
-}
-
 .max-w-sml {
 	max-width: 40em;
+}
+
+.wp-block-coblocks-pricing-table-item__title {
+	font-family: var(--theme-site-nav--font);
+	font-size: var(--theme-site-nav--font-size);
+	font-weight: var(--theme-site-nav--weight);
+	letter-spacing: var(--theme-site-nav--tracking);
+	text-transform: var(--theme-site-nav--text-transform);
+}
+
+.wp-block-group.has-background.alignwide {
+	@media (--wide) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
 }
 
 /*! Utility Classes */
@@ -151,7 +161,7 @@ figure {
 }
 
 strong {
-	color: hsl(var(--theme-h1--color));
+	color: hsl(var(--theme-h1--color, var(--theme-color-heading)));
 }
 
 .bypostauthor {
@@ -233,7 +243,7 @@ strong {
 
 .text-sm {
 	font-size: var(--theme-text-sm);
-	letter-spacing: var(--theme-text-sm--letter-spacing);
+	letter-spacing: var(--theme-text-sm--letter-spacing, 0);
 }
 
 .relative {

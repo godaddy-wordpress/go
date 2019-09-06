@@ -21,11 +21,11 @@
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 50rem;
-	--theme-max-w-wide: 100rem;
+	--theme-max-w-wide: 90rem;
 
 	/* Below base width query */
 	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 100rem);
+	@custom-media --wide (max-width: 90rem);
 
 	/* Editor widths */
 	--editor-max-w-base: 633px;
@@ -54,9 +54,6 @@
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
-	--theme-outline-style: dotted;
-	--theme-outline-width: 2px;
-
 	--theme-selection--color: var(--theme-color-primary);
 
 	/* Transitions */
@@ -65,17 +62,11 @@
 
 
 	/*--------------------------------------------------------------
-	## Colors
+	## Text Colors
 	--------------------------------------------------------------*/
-	--theme-color-body-bg: 0, 0%, 100%;
-
-	/* Text Colors */
 	--theme-color-heading: 207, 100%, 4%;
 	--theme-color-text: 207, 100%, 4%;
 	--theme-color-text-secondary: 0, 0%, 34%;
-
-	/* Global Color Scheme Colors */
-	--theme-color-quaternary: var(--color-white);
 
 
 	/*--------------------------------------------------------------
@@ -84,7 +75,6 @@
 	--theme-body--font: "IBM Plex Mono", mono, sans-serif;
 	--theme-body--font-size: 0.85rem;
 	--theme-body--leading: 2.25;
-	--theme-body--weight: 400;
 
 	/* Headings */
 	--theme-heading--font: "Heebo", sans-serif;
@@ -103,31 +93,18 @@
 	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 4em;
-		--theme-h2--font-size: 2.75em;
+		--theme-h1--font-size: 4.5em;
+		--theme-h2--font-size: 3em;
 		--theme-h3--font-size: 2.5em;
 	}
 
-	--theme-h1--color: var(--theme-color-heading);
-	--theme-h2--color: var(--theme-color-heading);
-	--theme-h3--color: var(--theme-color-heading);
-	--theme-h4--color: var(--theme-color-heading);
-	--theme-h5--color: var(--theme-color-heading);
-	--theme-h6--color: var(--theme-color-heading);
-
 	/* Text Utilities */
 	--theme-text-sm: 100%;
-	--theme-text-sm--letter-spacing: 0;
-
-	/* Drop Cap */
-	--theme-dropcap--font-size: 5rem;
-	--theme-dropcap--weight: 700;
 
 	/* Captions */
 	--theme-caption--alignment: left;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
-	--theme-caption--style: normal;
 	--theme-caption--spacing-top: 0;
 
 	/* Links */
@@ -198,9 +175,6 @@
 	--theme-input--color-focus: var(--theme-color-text);
 	--theme-input--shadow-focus: none;
 
-	/* Placeholder */
-	--theme-input-placeholder--color: 0, 0%, 47%;
-
 	/* Errors */
 	--theme-input-error--border-color: 0, 65%, 51%; /* #d32f2f */
 	--theme-input-error--color: 0, 65%, 51%; /* #d32f2f */
@@ -217,6 +191,7 @@
 	--------------------------------------------------------------*/
 	--theme-button--bg: var(--theme-color-primary);
 	--theme-button--bg-interactive: var(--theme-color-heading);
+	--theme-button--border-width: 2px;
 	--theme-button--color: 0, 0%, 100%;
 	--theme-button--font-size: 0.75rem;
 	--theme-button--font: var(--theme-site-nav--font);
@@ -235,7 +210,6 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
-	--theme-header--bg: "";
 	--theme-header--padding-y: 1.25rem;
 
 	@media (--medium) {
@@ -252,7 +226,6 @@
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
-	--theme-site-description--opacity: 0.65;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
@@ -266,17 +239,8 @@
 	--theme-site-nav--transition: var(--theme-link-transition);
 	--theme-site-nav--padding-x: 1rem;
 
-	/* Header > Navigation > Submenu */
-	--theme-submenu--bg: var(--theme-color-heading);
-	--theme-submenu--color: 0, 0%, 100%;
-
-	/* Header > Navigation > Submenu (Offscreen) */
-	--theme-offscreen-submenu--bg: var(--theme-color-heading);
-	--theme-offscreen-submenu--color: var(--color-white);
-
 	/* Header Variations */
 	--theme-header-3--padding-y: 3.5rem;
-	--theme-header-3-nav--margin-top: 1.5rem;
 
 	@media (--large) {
 		--theme-header-3--padding-y: 8rem;
@@ -337,12 +301,12 @@
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--bg: "";
 	--theme-footer--color: var(--theme-color-text);
 	--theme-footer-heading--color: var(--theme-color-heading);
+	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color: var(-theme-site-nav--color);
+	--theme-footer-nav--color: var(--theme-site-nav--color);
 	--theme-footer-nav--color-interactive: var(--theme-color-primary);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
@@ -370,18 +334,9 @@
 
 
 	/*--------------------------------------------------------------
-	## Core Blocks
-	--------------------------------------------------------------*/
-	--theme-separator--color: var(--theme-color-heading);
-	--theme-separator--dot-size: 2rem;
-
-	--theme-table--border-color: var(--theme-color-heading);
-
-
-	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg: var(--color-white);
+	--coblocks-accordion--bg: var(--theme-color-body-bg);
 	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.1);
 	--coblocks-accordion--border-color: var(--theme-color-heading);
 	--coblocks-accordion--border-width: 2px;
@@ -392,10 +347,6 @@
 	--coblocks-author--bg: var(--theme-color-tertiary);
 	--coblocks-author--color-heading: var(--theme-color-text-secondary);
 	--coblocks-author--color-name: var(--theme-color-text-secondary);
-	--coblocks-author--radius: 0;
-
-	--coblocks-carousel--bg-overlay: hsla(var(--theme-color-primary), 0.75);
-	--coblocks-carousel--border-color: var(--color-white);
 
 	--coblocks-features--icon-spacing: 1.75rem;
 	--coblocks-features--heading-spacing: 1rem;
@@ -404,8 +355,8 @@
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
 	--coblocks-food-drinks-hint--radius: 0;
 	--coblocks-food-drinks-item--fill: var(--theme-color-heading);
-	--coblocks-food-drinks-item--font-size: 0.8rem;
-	--coblocks-food-drinks-item--spacing: 2rem;
+	--coblocks-food-drinks-item--font-size: 0.95em;
+	--coblocks-food-drinks-item--spacing: 3.5em;
 	--coblocks-food-drinks-item--text-transform: uppercase;
 	--coblocks-food-drinks-item--tracking: 2px;
 	--coblocks-food-drinks-item--weight: 700;
@@ -414,9 +365,9 @@
 	--coblocks-food-drinks-title--bg: var(--theme-color-heading);
 	--coblocks-food-drinks-title--border-bottom: none;
 	--coblocks-food-drinks-title--color: var(--color-white);
-	--coblocks-food-drinks-title--font-size: 1.25rem;
-	--coblocks-food-drinks-title--margin-y: 0.75rem;
-	--coblocks-food-drinks-title--padding: 0.3rem 0.25rem;
+	--coblocks-food-drinks-title--font-size: 1.5em;
+	--coblocks-food-drinks-title--margin-y: 0.65em;
+	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
 	--coblocks-food-drinks-title--style: normal;
 
 	--coblocks-pricing--bg: var(--color-white);
@@ -428,10 +379,4 @@
 
 	--coblocks-services--heading-margin-bottom: 1rem;
 	--coblocks-services--heading-margin-top: 1.75rem;
-
-
-	/*--------------------------------------------------------------
-	## Editor
-	--------------------------------------------------------------*/
-	--editor-title-block--alignment: center;
 }

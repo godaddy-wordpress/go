@@ -24,19 +24,21 @@ function get_palette_color( $color, $format = 'RBG' ) {
 	$default         = \Maverick\Core\get_default_color_scheme();
 	$color_scheme    = get_theme_mod( 'color_scheme', $default );
 	$override_colors = [
-		'primary'    => 'primary_color',
-		'secondary'  => 'secondary_color',
-		'tertiary'   => 'tertiary_color',
-		'background' => 'background_color',
+		'primary'           => 'primary_color',
+		'secondary'         => 'secondary_color',
+		'tertiary'          => 'tertiary_color',
+		'background'        => 'background_color',
+		'header_background' => 'header_background_color',
+		'footer_background' => 'footer_background_color',
 	];
 
 	$color_override = get_theme_mod( $override_colors[ $color ] );
 
 	$avaliable_color_schemes = get_available_color_schemes();
 
-	$the_color = false;
+	$the_color = '';
 
-	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) && isset( $avaliable_color_schemes[ $color_scheme ][ $color ] ) ) {
 		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
 	}
 
@@ -44,11 +46,13 @@ function get_palette_color( $color, $format = 'RBG' ) {
 		$the_color = $color_override;
 	}
 
-	// Ensure we have a hash mark at the beginning of the hex value.
-	$the_color = '#' . ltrim( $the_color, '#' );
+	if ( ! empty( $the_color ) ) {
+			// Ensure we have a hash mark at the beginning of the hex value.
+		$the_color = '#' . ltrim( $the_color, '#' );
 
-	if ( 'HSL' === $format ) {
-		return hex_to_hsl( $the_color );
+		if ( 'HSL' === $format ) {
+			return hex_to_hsl( $the_color );
+		}
 	}
 
 	return $the_color;
@@ -67,19 +71,21 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
 	$color_scheme            = get_theme_mod( 'color_scheme', $default );
 	$avaliable_color_schemes = get_available_color_schemes();
 
-	$the_color = false;
+	$the_color = '';
 
 	if ( $color_scheme && empty( $avaliable_color_schemes[ $color_scheme ] ) ) {
 		$color_scheme_keys = array_keys( $avaliable_color_schemes );
 		$color_scheme      = array_shift( $color_scheme_keys );
 	}
 
-	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) ) {
+	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) && isset( $avaliable_color_schemes[ $color_scheme ][ $color ] ) ) {
 		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
 	}
 
-	if ( 'HSL' === $format ) {
-		return hex_to_hsl( $the_color );
+	if ( ! empty( $the_color ) ) {
+		if ( 'HSL' === $format ) {
+			return hex_to_hsl( $the_color );
+		}
 	}
 
 	return $the_color;
@@ -166,7 +172,7 @@ function header_variation() {
  */
 function has_header_background() {
 
-	$background_color = get_theme_mod( 'header_background_color', '' );
+	$background_color = get_palette_color( 'header_background' );
 
 	if ( $background_color ) {
 		return 'has-background';
@@ -198,7 +204,7 @@ function footer_variation() {
  */
 function has_footer_background() {
 
-	$background_color = get_theme_mod( 'footer_background_color', '' );
+	$background_color = get_palette_color( 'footer_background' );
 
 	if ( $background_color ) {
 		return 'has-background';
@@ -273,8 +279,7 @@ function copyright( $args = [] ) {
 function page_title() {
 
 	if (
-		is_front_page() ||
-		( ! get_theme_mod( 'page_titles', true ) && ! is_404() && ! is_search() && ! is_archive() )
+		! is_customize_preview() && ( is_front_page() || ( ! get_theme_mod( 'page_titles', true ) && ! is_404() && ! is_search() && ! is_archive() ) )
 	) {
 
 		return;
@@ -346,7 +351,8 @@ function page_title() {
 	}
 
 	printf(
-		'<header class="entry-header">%s</header>',
+		'<header class="entry-header page-header %1$s">%2$s</header>',
+		is_customize_preview() ? ( get_theme_mod( 'page_titles', true ) ? '' : ' display-none' ) : '',
 		wp_kses(
 			$html,
 			[
@@ -464,7 +470,10 @@ function site_branding( $args = [] ) {
 
 		if ( ! empty( $blog_name ) ) {
 			echo '<a class="site-branding__link" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
-			echo '<span class="site-branding__title">' . esc_html( $blog_name ) . '</span>';
+			printf(
+				'<%1$s class="site-branding__title">' . esc_html( $blog_name ) . '</%1$s>',
+				( is_front_page() && ! did_action( 'get_footer' ) ) ? 'h1' : 'span'
+			);
 			echo '</a>';
 		}
 
@@ -507,6 +516,7 @@ function search_toggle() {
 				[
 					'svg'  => [
 						'width'   => true,
+						'role'    => true,
 						'height'  => true,
 						'fill'    => true,
 						'xmlns'   => true,

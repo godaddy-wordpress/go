@@ -1,0 +1,46 @@
+/**
+ * Modern - Styles
+ */
+@import url("../../../shared/css/config/media-queries.css");
+@import url("../settings.css");
+
+.wp-block-code,
+.wp-block-verse,
+p.has-background,
+.wp-block-pullquote:not(.alignfull):not(.alignwide),
+.wp-block-coblocks-alert,
+.wp-block-separator.is-style-wide,
+.wp-block-group:not(.alignfull):not(.alignwide),
+.wp-block-cover:not(.alignwide):not(.alignfull),
+.wp-block-coblocks-dynamic-separator.is-style-fullwidth::before {
+	@media (--base) {
+		margin-left: var(--theme-block-padding-x);
+		margin-right: var(--theme-block-padding-x);
+	}
+}
+
+.wp-block-separator {
+	background-color: hsl(var(--theme-color-secondary));
+	background-position: 50%;
+	background-repeat: repeat-x;
+	border: none;
+	height: 9pt;
+	mask-image: url("../../../dist/images/design-styles/playful/cross-stich-border.svg");
+	max-width: 113px;
+}
+
+.wp-block-pullquote p {
+	margin-left: 1em;
+
+	&::before {
+		content: "“";
+		font-size: 2em;
+		line-height: 1;
+		position: absolute;
+		transform: translate3d(-120%, 0, 0);
+
+		@media (--medium) {
+			font-size: 3em;
+		}
+	}
+}

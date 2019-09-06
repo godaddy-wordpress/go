@@ -1,5 +1,4 @@
 /*! Forms */
-
 fieldset {
 	margin-top: 5rem;
 }
@@ -48,9 +47,7 @@ input[type="color"] {
 		border-color: hsl(var(--theme-input--border-color-focus));
 		box-shadow: var(--theme-input--shadow-focus);
 		color: hsl(var(--theme-input--color-focus));
-
-		@mixin outline;
-		outline-offset: 2px;
+		outline: none;
 	}
 }
 
@@ -74,17 +71,17 @@ textarea {
 	width: 100%;
 
 	&:focus {
+		background: hsl(var(--theme-input--bg-interactive));
 		border-color: hsl(var(--theme-input--border-color-focus));
 		box-shadow: var(--theme-input--shadow-focus);
 		color: hsl(var(--theme-input--color-focus));
-
-		@mixin outline;
-		outline-offset: 2px;
+		outline: none;
 	}
 }
 
 select {
 	@mixin select-menu;
+	margin-bottom: var(--theme-input--spacing);
 
 	/* CAUTION: IE hackery ahead */
 	&::-ms-expand {
@@ -107,15 +104,15 @@ option {
 }
 
 ::placeholder {
-	color: hsl(var(--theme-input-placeholder--color));
+	color: hsl(var(--theme-input-placeholder--color, 0, 0%, 47%));
 	line-height: 1.5;
 	opacity: 1;
 }
 
 ::-ms-input-placeholder {
-	color: hsl(var(--theme-input-placeholder--color));
+	color: hsl(var(--theme-input-placeholder--color, 0, 0%, 47%));
 }
 
 :-ms-input-placeholder {
-	color: hsl(var(--theme-input-placeholder--color));
+	color: hsl(var(--theme-input-placeholder--color, 0, 0%, 47%));
 }

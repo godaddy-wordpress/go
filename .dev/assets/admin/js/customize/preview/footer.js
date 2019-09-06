@@ -5,7 +5,8 @@ const $ = jQuery; // eslint-disable-line
 export default () => {
 	wp.customize( 'footer_variation', ( value ) => {
 		value.bind( ( to ) => {
-			$( 'body' ).attr( 'data-footer', to );
+			$( 'body' ).removeClass( 'has-footer-1 has-footer-2 has-footer-3 has-footer-4' )
+           			   .addClass( 'has-' + to );
 		} );
 	} );
 
@@ -23,8 +24,10 @@ export default () => {
 
 			// Add class if a background color is applied.
 			if ( to ) {
+				$( 'body' ).addClass( 'has-footer-background' );
 				$( '.site-footer' ).addClass( 'has-background' );
 			} else {
+				$( 'body' ).removeClass( 'has-footer-background' );
 				$( '.site-footer' ).removeClass( 'has-background' );
 			}
 		} );
