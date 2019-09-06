@@ -16,3 +16,18 @@
 		}
 	}
 }
+
+.wp-block-file a {
+	color: hsl(var(--theme-link--color));
+
+	&:hover,
+	&:active {
+		color: hsl(var(--theme-link--color-interactive));
+		outline: 0;
+	}
+
+	&:focus {
+		@mixin outline;
+		outline-width: thin;
+	}
+}

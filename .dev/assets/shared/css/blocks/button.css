@@ -42,7 +42,8 @@
 	}
 }
 
-.wp-block-button__link {
+.wp-block-button__link,
+.wp-block-search__button {
 	@mixin button;
 	position: relative;
 

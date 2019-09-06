@@ -110,7 +110,6 @@
 	--theme-caption--alignment: center;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
-	--theme-caption--spacing-top: 0;
 
 	/* Links */
 	--theme-link--color: var(--theme-color-heading);

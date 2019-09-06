@@ -1,21 +1,48 @@
+@import url("config/media-queries.css");
 @import url("config/mixins.css");
 @import url("editor/settings.css");
 @import url("editor/widths.css");
 @import url("editor/title-block.css");
 @import url("editor/title-permalink.css");
-@import url("elements/typography.css");
-@import url("elements/forms.css");
 @import url("elements/headings.css");
+@import url("elements/typography.css");
 @import url("utilities/padding.css");
 
-/* Blocks */
+/* Custom Editor Block Styles */
 @import url("editor/hero.css");
+@import url("editor/group.css");
 
-/* Gravity Forms */
-@import url("gravity/forms.css");
-@import url("gravity/checkbox.css");
-@import url("gravity/radio.css");
-@import url("gravity/button.css");
+/** === Utitlities === */
+@import url("utilities/captions.css");
+
+/* Core */
+@import url("blocks/paragraph.css");
+@import url("blocks/audio-video.css");
+@import url("blocks/code.css");
+@import url("blocks/cover.css");
+@import url("blocks/file.css");
+@import url("blocks/search.css");
+
+/* CoBlocks */
+@import url("coblocks/accordion.css");
+
+/* Forms */
+
+/* @import url("elements/forms.css"); */
+
+/* @import url("gravity/forms.css"); */
+
+/* @import url("gravity/checkbox.css"); */
+
+/* @import url("gravity/radio.css"); */
+
+/* @import url("gravity/button.css"); */
+
+/* Default Appender */
+.editor-default-block-appender .editor-default-block-appender__content {
+	font-family: var(--theme-body--font);
+	font-size: var(--theme-body--font-size);
+}
 
 /* Editor Overrides */
 .gform_wrapper {
@@ -28,3 +55,32 @@
 		height: inherit !important;
 	}
 }
+
+/*! Table */
+.wp-block-table {
+
+	& table td,
+	& table th {
+		border: 2px solid hsl(var(--theme-table--border-color, var(--theme-color-heading)));
+	}
+}
+
+/*! Separator */
+.wp-block[data-type="core/separator"] {
+	margin-bottom: var(--editor-block-spacing);
+	margin-top: var(--editor-block-spacing);
+}
+
+.wp-block-separator {
+	border-bottom-color: hsl(var(--theme-separator--color, var(--theme-color-heading)));
+	padding: 0;
+
+	&.is-style-wide {
+		max-width: 100%;
+	}
+
+	&.is-style-dots::before {
+		font-size: var(--theme-separator--dot-size, 2rem);
+	}
+}
+

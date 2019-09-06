@@ -120,7 +120,6 @@
 	--theme-caption--alignment: left;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
-	--theme-caption--spacing-top: 1rem;
 
 	/* Links */
 	--theme-link--color: var(--theme-color-primary);

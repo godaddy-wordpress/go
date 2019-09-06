@@ -18,8 +18,16 @@
 
 
 	/*--------------------------------------------------------------
+	## Editor
+	--------------------------------------------------------------*/
+	--editor-title--font-size: 3.75em;
+	--editor-block-spacing: 4em;
+
+
+	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
+
 	--theme-max-w-base: 50rem;
 	--theme-max-w-wide: 90rem;
 
@@ -27,9 +35,9 @@
 	@custom-media --base (max-width: 50rem);
 	@custom-media --wide (max-width: 90rem);
 
-	/* Editor widths */
+	/* Editor widths - 28px */
 	--editor-max-w-base: 633px;
-	--editor-max-w-wide: 1438px;
+	--editor-max-w-wide: 1220px;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -50,7 +58,7 @@
 	}
 
 	/* Block Padding */
-	--editor-padding: 10rem;
+	--editor-padding: 10em;
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);

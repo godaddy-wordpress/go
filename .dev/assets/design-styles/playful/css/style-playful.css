@@ -19,7 +19,7 @@ p.has-background,
 	}
 }
 
-.wp-block-separator {
+.wp-block-separator:not(.is-style-dots) {
 	background-color: hsl(var(--theme-color-secondary));
 	background-position: 50%;
 	background-repeat: repeat-x;
@@ -27,6 +27,10 @@ p.has-background,
 	height: 9pt;
 	mask-image: url("../../../dist/images/design-styles/playful/cross-stich-border.svg");
 	max-width: 113px;
+}
+
+.wp-block-separator.is-style-dots:not(.has-text-color)::before {
+	color: hsl(var(--theme-color-secondary));
 }
 
 .wp-block-pullquote p {

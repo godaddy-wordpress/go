@@ -9,3 +9,9 @@
 		vertical-align: inherit;
 	}
 }
+
+.wp-block-file__content-wrapper {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
