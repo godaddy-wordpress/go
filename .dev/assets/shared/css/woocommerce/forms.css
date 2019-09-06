@@ -202,14 +202,14 @@
 	}
 }
 
-.woocommerce-MyAccount-navigation {
-	margin-bottom: 3rem;
-}
-
 .woocommerce-Address {
 	border-top: 1px solid hsl(var(--theme-input--border-color));
 	margin: 1.5rem 0;
 	padding-top: 0.5rem;
+}
+
+.woocommerce-ResetPassword .woocommerce-form-row {
+	width: 100% !important;
 }
 
 @media only screen and (max-width: 480px) {

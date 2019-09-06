@@ -1,9 +1,13 @@
 /*! WooCommerce: Account */
 .woocommerce-account {
 
-	& nav.woocommerce-MyAccount-navigation ul {
-		margin-top: 0;
-		padding-left: 0;
+	& nav.woocommerce-MyAccount-navigation {
+		margin-bottom: 3rem;
+
+		& ul {
+			margin-top: 0;
+			padding-left: 0;
+		}
 	}
 
 	& .col2-set.addresses {
