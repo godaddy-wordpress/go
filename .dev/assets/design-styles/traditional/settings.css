@@ -18,6 +18,13 @@
 
 
 	/*--------------------------------------------------------------
+	## Editor
+	--------------------------------------------------------------*/
+	--editor-max-w-base: 702px;
+	--editor-max-w-wide: 1118px;
+
+
+	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 54rem;
@@ -26,10 +33,6 @@
 	/* Below base width query */
 	@custom-media --base (max-width: 54rem);
 	@custom-media --wide (max-width: 80rem);
-
-	/* Editor widths */
-	--editor-max-w-base: 702px;
-	--editor-max-w-wide: 1118px;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -132,7 +135,7 @@
 	--theme-pullquote--border-width: 0;
 	--theme-pullquote--border: var(--theme-pullquote--border-width) var(--theme-pullquote--border-style) hsl(var(--theme-pullquote--border-color));
 	--theme-pullquote--color: var(--theme-color-heading);
-	--theme-pullquote--font-size: var(--theme-h1--font-size);
+	--theme-pullquote--font-size: var(--theme-h2--font-size);
 	--theme-pullquote--leading: 1.25;
 	--theme-pullquote--padding-y: 0.75rem;
 	--theme-pullquote--padding-x: 1rem;

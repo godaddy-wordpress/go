@@ -1,3 +1,5 @@
+/* Vertical Rhythm */
+@import url("editor/vertical-rhythm.css");
 @import url("config/media-queries.css");
 @import url("config/mixins.css");
 @import url("config/colors.css");
@@ -8,9 +10,6 @@
 @import url("utilities/padding.css");
 @import url("elements/headings.css");
 @import url("elements/typography.css");
-
-/* Vertical Rhythm */
-@import url("editor/vertical-rhythm.css");
 
 /* Custom Editor Styles */
 @import url("editor/hero.css");
@@ -275,8 +274,8 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 
 /*! Separator */
 .wp-block[data-type="core/separator"] {
-	margin-bottom: var(--editor-block-spacing);
-	margin-top: var(--editor-block-spacing);
+	margin-bottom: var(--editor-block-spacing, 4em);
+	margin-top: var(--editor-block-spacing, 4em);
 }
 
 .wp-block-separator {

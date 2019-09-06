@@ -21,9 +21,9 @@
 	## Editor
 	--------------------------------------------------------------*/
 	--editor-title--font-size: 3.75em;
-	--editor-block-spacing: 4em;
 	--editor-max-w-base: 633px;
 	--editor-max-w-wide: 1280px;
+
 
 	/*--------------------------------------------------------------
 	## Base
@@ -123,7 +123,7 @@
 	--theme-pullquote--border-width: 0;
 	--theme-pullquote--border: var(--theme-pullquote--border-width) var(--theme-pullquote--border-style) hsl(var(--theme-pullquote--border-color));
 	--theme-pullquote--color: var(--theme-color-heading);
-	--theme-pullquote--font-size: var(--theme-h1--font-size);
+	--theme-pullquote--font-size: var(--theme-h2--font-size);
 	--theme-pullquote--leading: 1.25;
 	--theme-pullquote--padding-y: 0.75rem;
 	--theme-pullquote--padding-x: 1rem;

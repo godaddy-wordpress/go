@@ -20,8 +20,8 @@
 	/*--------------------------------------------------------------
 	## Editor
 	--------------------------------------------------------------*/
-	--editor-title--font-size: 3.5em;
-	--editor-block-spacing: 4em;
+	--editor-max-w-base: 622px;
+	--editor-max-w-wide: 942px;
 
 
 	/*--------------------------------------------------------------
@@ -33,10 +33,6 @@
 	/* Below base width query */
 	@custom-media --base (max-width: 50rem);
 	@custom-media --wide (max-width: 70rem);
-
-	/* Editor widths */
-	--editor-max-w-base: 633px;
-	--editor-max-w-wide: 1438px;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.75rem;

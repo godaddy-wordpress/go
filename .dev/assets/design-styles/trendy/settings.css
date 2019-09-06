@@ -18,18 +18,21 @@
 
 
 	/*--------------------------------------------------------------
+	## Editor
+	--------------------------------------------------------------*/
+	--editor-max-w-base: 638px;
+	--editor-max-w-wide: 1118px;
+
+
+	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 50rem;
-	--theme-max-w-wide: 82rem;
+	--theme-max-w-wide: 80rem;
 
 	/* Below base width query */
 	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 82rem);
-
-	/* Editor widths */
-	--editor-max-w-base: 633px;
-	--editor-max-w-wide: 1438px;
+	@custom-media --wide (max-width: 80rem);
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -95,7 +98,7 @@
 	@media (--medium) {
 		--theme-h1--font-size: 3.65em;
 		--theme-h2--font-size: 2.75em;
-		--theme-h3--font-size: 2.5em;
+		--theme-h3--font-size: 2.25em;
 	}
 
 	/* Text Utilities */
