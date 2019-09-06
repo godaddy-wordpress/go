@@ -13,6 +13,8 @@
 p.has-background,
 .wp-block-pullquote:not(.alignfull):not(.alignwide),
 .wp-block-coblocks-alert,
+.wp-block-quote,
+.wp-block-quote.is-style-large,
 .wp-block-separator.is-style-wide,
 .wp-block-group:not(.alignfull):not(.alignwide),
 .wp-block-cover:not(.alignwide):not(.alignfull),

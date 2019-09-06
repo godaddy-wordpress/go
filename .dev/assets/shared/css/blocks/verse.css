@@ -1,6 +1,12 @@
 /*! Verse */
+.content-area {
+
+	& .wp-block-verse {
+		@mixin blockWidthNoPadding;
+	}
+}
+
 .wp-block-verse {
-	font-size: 0.925rem;
-	max-width: var(--theme-max-w-base) !important;
-	padding: 0 !important;
+	background: hsl(var(--theme-color-tertiary));
+	padding: 14px 18px;
 }

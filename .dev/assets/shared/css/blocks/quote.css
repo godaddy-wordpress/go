@@ -11,7 +11,7 @@
 		font-weight: var(--theme-quote--weight);
 		line-height: var(--theme-quote--leading);
 		margin: 0 0 2rem;
-		padding: 1.5rem 0;
+		padding: 0.5rem 0;
 		position: relative;
 
 		&::before {
@@ -26,7 +26,8 @@
 		}
 	}
 
-	& cite {
+	& cite,
+	& .wp-block-quote__citation {
 		color: hsl(var(--theme-caption--color));
 		display: block;
 		font-size: var(--theme-caption--font-size);
@@ -39,17 +40,26 @@
 		padding-right: 0;
 
 		& p {
-			padding-left: 1.75rem;
+			padding-left: 1.5rem;
+
+			@media (--medium) {
+				padding-left: 2.75rem;
+			}
 		}
 
-		& cite {
-			margin-left: 1.75rem;
-			margin-top: -2.5rem;
-			padding-bottom: 1rem;
+		& cite,
+		& .wp-block-quote__citation {
+			margin-left: 1.5rem;
+			margin-top: -2rem;
+
+			@media (--medium) {
+				margin-left: 2.75rem;
+			}
 		}
 	}
 
 	&.is-style-large {
+		@mixin blockWidthNoPadding;
 		color: hsl(var(--theme-quote-large--color));
 		margin-left: auto;
 		margin-right: auto;
@@ -69,7 +79,8 @@
 			}
 		}
 
-		& cite {
+		& cite,
+		& .wp-block-quote__citation {
 			font-size: var(--theme-caption--font-size);
 			text-align: inherit;
 

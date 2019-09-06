@@ -9,3 +9,7 @@
 		display: none;
 	}
 }
+
+.wp-block-coblocks-social__button {
+	font-size: inherit;
+}
