@@ -17,7 +17,13 @@
 		color: hsl(var(--theme-color-primary));
 	}
 
+	&.is-style-outline .wp-block-button__link:not(.has-background) {
+		background-color: transparent;
+	}
+
 	&.is-style-outline .wp-block-button__link {
+		border-color: currentColor;
+		border-style: solid;
 		border-width: var(--theme-button--border-width);
 		padding: calc(var(--theme-button--padding-y) - 2px) calc(var(--theme-button--padding-x) - 2px);
 
@@ -42,7 +48,8 @@
 	}
 }
 
-.wp-block-button__link {
+.wp-block-search__button,
+.wp-block-button__link:not(.wp-block-coblocks-social__button) {
 	@mixin button;
 	position: relative;
 

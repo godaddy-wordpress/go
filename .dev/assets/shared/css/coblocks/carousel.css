@@ -2,7 +2,7 @@
 .wp-block-coblocks-gallery-carousel {
 
 	& .coblocks-gallery--figure::before {
-		background-color: var(--coblocks-carousel--bg-overlay, 0.75);
+		background-color: var(--coblocks-carousel--bg-overlay, hsla(var(--theme-color-primary), 0.66));
 		content: "";
 		height: 100%;
 		opacity: 0;

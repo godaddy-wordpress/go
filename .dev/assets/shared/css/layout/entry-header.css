@@ -3,7 +3,7 @@
 	padding-top: calc(var(--theme-block-spacing-huge) * 0.55);
 }
 
-.has-featured-image .entry-header {
+.has-featured-image:not(.woocommerce-page) .entry-header {
 	padding-top: var(--theme-entryheader--padding-top);
 }
 

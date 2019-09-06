@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div class="content-area content-area--woocommerce m-auto m-w-full">
+	<div class="max-w-wide w-full m-auto px">
 		<?php woocommerce_content(); ?>
 	</div>
 

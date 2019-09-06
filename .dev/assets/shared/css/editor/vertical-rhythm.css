@@ -1,0 +1,47 @@
+/* Vertical Spacing */
+.editor-writing-flow > div > div > div > .block-editor-block-list__layout > .wp-block:not(.editor-post-title__block):not([data-type="core/list"]):not([data-type="core/paragraph"]):not([data-type="core/spacer"]):not([data-type="core/image"]):not([data-type="core/file"]):not([data-type="core/preformatted"]):not([data-type="core/verse"]):not([data-type="core/archives-dropdown"]):not([data-type="core/categories-dropdown"]):not([data-type="core/code"]):not([data-type="coblocks/alert"]):not([data-type="coblocks/alert"]):not([data-type="coblocks/accordion"]):not([data-type="coblocks/accordion-item"]):not([data-type="coblocks/author"]):not([data-type="core/gallery"]) {
+	margin-bottom: var(--theme-block-spacing-huge);
+	margin-top: var(--theme-block-spacing-huge);
+}
+
+.editor-writing-flow > div > div > div > .block-editor-block-list__layout > {
+
+	& [data-type="core/heading"] + [data-type="core/paragraph"] {
+		margin-top: calc(-0.825 * var(--theme-block-spacing-huge)) !important;
+	}
+
+	& [data-type="core/heading"] + [data-type="core/button"] {
+		margin-top: calc(-0.65 * var(--theme-block-spacing-huge)) !important;
+	}
+
+	& [data-type="core/paragraph"] ~ [data-type="core/cover"] {
+		margin-bottom: var(--theme-block-spacing-larger) !important;
+		margin-top: var(--theme-block-spacing-larger) !important;
+	}
+}
+
+.wp-block[data-type="core/image"][data-align="full"],
+.wp-block[data-type="core/image"][data-align="wide"],
+.wp-block[data-type="core/gallery"][data-align="full"],
+.wp-block[data-type="core/gallery"][data-align="wide"] {
+	margin-bottom: var(--theme-block-spacing-huge);
+	margin-top: var(--theme-block-spacing-huge);
+}
+
+.wp-block .wp-block {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+}
+
+.components-placeholder {
+	margin-bottom: 0;
+}
+
+/* Remove spacing from the first and last blocks */
+.block-editor-block-list__layout .wp-block.block-editor-block-list__block:first-of-type {
+	margin-top: 0 !important;
+}
+
+.block-editor-block-list__layout .wp-block.block-editor-block-list__block:last-of-type {
+	margin-top: 0 !important;
+}

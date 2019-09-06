@@ -1,9 +1,4 @@
-/**
- * WooCommerce Global - tabs
- *
- * Global overrides to tabs element
-*/
-
+/*! WooCommerce: Tabs */
 .woocommerce div.product .woocommerce-tabs ul.tabs {
 	margin: 0;
 	padding: 0;
@@ -51,4 +46,3 @@
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
 	border-bottom: 2px solid hsl(var(--color-shark));
 }
-

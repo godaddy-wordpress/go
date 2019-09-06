@@ -18,18 +18,23 @@
 
 
 	/*--------------------------------------------------------------
+	## Editor
+	--------------------------------------------------------------*/
+	--editor-title--font-size: 3.75em;
+	--editor-max-w-base: 633px;
+	--editor-max-w-wide: 1280px;
+
+
+	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
+
 	--theme-max-w-base: 50rem;
 	--theme-max-w-wide: 90rem;
 
 	/* Below base width query */
 	@custom-media --base (max-width: 50rem);
 	@custom-media --wide (max-width: 90rem);
-
-	/* Editor widths */
-	--editor-max-w-base: 633px;
-	--editor-max-w-wide: 1438px;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -50,7 +55,7 @@
 	}
 
 	/* Block Padding */
-	--editor-padding: 10rem;
+	--editor-padding: 10em;
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
@@ -104,8 +109,7 @@
 	/* Captions */
 	--theme-caption--alignment: left;
 	--theme-caption--color: var(--theme-color-text-secondary);
-	--theme-caption--font-size: 0.85rem;
-	--theme-caption--spacing-top: 0;
+	--theme-caption--font-size: 0.75rem;
 
 	/* Links */
 	--theme-link--color: var(--theme-color-heading);
@@ -118,7 +122,7 @@
 	--theme-pullquote--border-width: 0;
 	--theme-pullquote--border: var(--theme-pullquote--border-width) var(--theme-pullquote--border-style) hsl(var(--theme-pullquote--border-color));
 	--theme-pullquote--color: var(--theme-color-heading);
-	--theme-pullquote--font-size: var(--theme-h1--font-size);
+	--theme-pullquote--font-size: var(--theme-h2--font-size);
 	--theme-pullquote--leading: 1.25;
 	--theme-pullquote--padding-y: 0.75rem;
 	--theme-pullquote--padding-x: 1rem;
@@ -131,14 +135,14 @@
 	--theme-quote--border-width: 0.45rem;
 	--theme-quote--border: var(--theme-quote--border-width) var(--theme-quote--border-style) hsl(var(--theme-quote--border-color));
 	--theme-quote--color: var(--theme-color-heading);
-	--theme-quote--font-size: var(--theme-h2--font-size);
+	--theme-quote--font-size: var(--theme-h3--font-size);
 	--theme-quote--leading: var(--theme-heading--leading);
 	--theme-quote--style: normal;
 	--theme-quote--weight: var(--theme-heading--weight);
 
 	/* Blockquote (Large) */
 	--theme-quote-large--color: var(--theme-color-heading);
-	--theme-quote-large--font-size: var(--theme-h1--font-size);
+	--theme-quote-large--font-size: var(--theme-h2--font-size);
 	--theme-quote-large--leading: var(--theme-heading--leading);
 	--theme-quote-large--style: normal;
 
@@ -260,6 +264,7 @@
 	--theme-site-nav-toggle--color: var(--theme-color-heading);
 	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading);
 	--theme-site-nav-toggle--size: 2rem;
+	--theme-site-nav-toggle--spacing: 10px;
 
 	/* Offscreen Navigation */
 	--theme-offscreen-nav--bg: var(--color-white);
@@ -343,10 +348,6 @@
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-heading);
 	--coblocks-accordion--radius: 0;
-
-	--coblocks-author--bg: var(--theme-color-tertiary);
-	--coblocks-author--color-heading: var(--theme-color-text-secondary);
-	--coblocks-author--color-name: var(--theme-color-text-secondary);
 
 	--coblocks-features--icon-spacing: 1.75rem;
 	--coblocks-features--heading-spacing: 1rem;

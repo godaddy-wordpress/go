@@ -9,7 +9,7 @@
 	& table td,
 	& table th {
 		border: 2px solid hsl(var(--theme-table--border-color, var(--theme-color-heading)));
-		padding: 0.5em;
+		padding: 1em;
 		word-break: break-all;
 	}
 }

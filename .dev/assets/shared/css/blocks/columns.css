@@ -19,7 +19,7 @@
 
 			@media (--small) {
 				margin-top: 0;
-				padding: 0 1em;
+				padding: 0 1.15em;
 			}
 
 			&:first-child {
@@ -59,10 +59,6 @@
 		&.is-style-large {
 			margin-left: 0;
 			margin-right: 0;
-		}
-
-		& p {
-			padding-top: 0;
 		}
 	}
 

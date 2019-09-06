@@ -1,14 +1,33 @@
-/**
- * WooCommerce Global - cart
- */
-
-/* Specificity to override nested styles from woo */
+/*! WooCommerce: Cart */
 body {
 
 	&.woocommerce-cart {
 
 		& .coupon {
 			display: flex;
+
+			& #coupon_code {
+				padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+				width: auto !important;
+			}
+		}
+
+		& td.product-remove a {
+			color: hsl(var(--theme-color-primary)) !important;
+			margin: 0 auto;
+
+			&:hover {
+				background: hsl(var(--theme-color-primary));
+			}
+		}
+
+		& table.cart th,
+		& table.cart td {
+			text-align: center;
+		}
+
+		& .product-thumbnail img {
+			width: 150px;
 		}
 
 	}

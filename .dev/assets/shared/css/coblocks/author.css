@@ -1,14 +1,15 @@
 /*! CoBlocks: Author */
 .wp-block-coblocks-author {
-	background-color: hsl(var(--coblocks-author--bg));
+	@mixin blockWidthNoPadding;
 	border-radius: var(--coblocks-author--radius, 0);
-	padding: 1rem;
-}
+	padding: var(--coblocks-author--padding, 2.5rem);
 
-.wp-block-coblocks-author__heading {
-	color: hsla(var(--coblocks-author--color-heading), 1);
+	& p ~ .wp-block-button {
+		margin-bottom: 10px !important;
+		margin-top: 1.5em !important;
+	}
 }
 
 .wp-block-coblocks-author__name {
-	color: hsla(var(--coblocks-author--color-name), 1);
+	color: hsl(var(--coblocks-author--color-name, var(--theme-color-heading)));
 }

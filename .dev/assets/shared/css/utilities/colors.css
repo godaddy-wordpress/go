@@ -1,49 +1,48 @@
 /*! Color Utility Classes */
-.content-area {
+.has-primary-background-color {
+	background-color: hsl(var(--theme-color-primary));
 
-	& .has-primary-background-color,
-	& .has-secondary-background-color {
-
-		&,
-		& a:not(.wp-block-button__link) {
-			color: hsl(var(--color-white));
-		}
-	}
-
-	& .has-primary-background-color {
-		background-color: hsl(var(--theme-color-primary));
-	}
-
-	& .has-primary-color {
-		color: hsl(var(--theme-color-primary));
-	}
-
-	& .has-secondary-background-color {
-		background-color: hsl(var(--theme-color-secondary));
-	}
-
-	& .has-secondary-color {
-		color: hsl(var(--theme-color-secondary));
-	}
-
-	& .has-tertiary-background-color {
-		background-color: hsl(var(--theme-color-tertiary));
-
-		&,
-		& a:not(.wp-block-button__link) {
-			color: hsl(var(--theme-color-heading));
-		}
-	}
-
-	& .has-tertiary-color {
-		color: hsl(var(--theme-color-tertiary));
-	}
-
-	& .has-quaternary-background-color {
-		background-color: hsl(var(--color-white));
-	}
-
-	& .has-quaternary-color {
+	&,
+	& h1:not([class*="color"]),
+	& h2:not([class*="color"]),
+	& h3:not([class*="color"]),
+	& h4:not([class*="color"]),
+	& h5:not([class*="color"]),
+	& h6:not([class*="color"]),
+	& a:not(.wp-block-button__link) {
 		color: hsl(var(--color-white));
 	}
+}
+
+.has-primary-color {
+	color: hsl(var(--theme-color-primary));
+}
+
+.has-secondary-background-color {
+	background-color: hsl(var(--theme-color-secondary));
+}
+
+.has-secondary-color {
+	color: hsl(var(--theme-color-secondary));
+}
+
+.has-tertiary-background-color {
+	background-color: hsl(var(--theme-color-tertiary));
+
+	&,
+	& a:not(.wp-block-button__link) {
+		color: hsl(var(--theme-color-heading));
+	}
+}
+
+.has-tertiary-color {
+	color: hsl(var(--theme-color-tertiary));
+}
+
+.has-quaternary-background-color {
+	background-color: hsl(var(--color-white));
+}
+
+.has-quaternary-color {
+	color: hsl(var(--color-white));
 }

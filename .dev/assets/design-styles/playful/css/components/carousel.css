@@ -1,4 +1,4 @@
-/*! Welcoming: CoBlocks Carousel */
+/*! Playful: CoBlocks Carousel */
 .wp-block-coblocks-gallery-carousel .coblocks-gallery--item {
 	transition: opacity 0.75s;
 
@@ -11,14 +11,15 @@
 	display: none;
 }
 
-.flickity-button {
-	background: hsl(var(--color-white));
+.flickity-button,
+.flickity-button:hover {
+	background: hsl(var(--theme-color-primary));
 }
 
 .flickity-prev-next-button {
-	border-radius: 0;
+	border-radius: var(--theme-button--radius);
 }
 
 .flickity-button-icon {
-	fill: hsl(var(--theme-color-primary));
+	fill: hsl(var(--color-white));
 }

@@ -133,6 +133,9 @@ function theme_setup() {
 
 	// Add support for WooCommerce.
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-slider' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-zoom' );
 
 	// Add support for responsive embedded content.
 	add_theme_support( 'responsive-embeds' );

@@ -1,11 +1,6 @@
-/**
- * WooCommerce Global - forms
- *
- * Global overrides to forms
-*/
-
+/*! WooCommerce: Forms */
 .woocommerce form .form-row {
-	margin: 0 0 3.75rem;
+	margin: 0 0 var(--theme-input--spacing);
 }
 
 .woocommerce form .form-row textarea,
@@ -30,10 +25,11 @@
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border: var(--theme-input--border);
+	border-radius: 0;
 	font-weight: var(--theme-input--weight);
 	height: initial;
 	line-height: 1;
-	padding: var(--theme-button--padding-y) var(--theme-input--padding-x);
+	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -52,6 +48,8 @@
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
 	color: hsl(var(--theme-input--color));
+	font-size: var(--theme-input--font-size);
+	line-height: 1.25;
 }
 
 .select2-results__option {
@@ -69,15 +67,15 @@
 
 .select2-dropdown {
 	border-color: hsl(var(--theme-input--border-color-focus));
-	border-radius: var(--theme-input--radius);
+	border-radius: 0;
 	border-width: var(--theme-input--border-width);
 	line-height: 1.25;
-	padding: 0.5rem;
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
 	border-color: hsl(var(--theme-input--border-color));
-	padding: var(--theme-button--padding-y) var(--theme-input--padding-x);
+	margin-bottom: 0;
+	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
 }
 
 .woocommerce form.checkout_coupon,
@@ -163,6 +161,7 @@
 	line-height: 1.25;
 	max-height: 100%;
 	padding: calc(0.6 * var(--theme-button--padding-y) - 1px);
+	width: 4.5em;
 }
 
 /* Comment form p spacing */
@@ -203,14 +202,14 @@
 	}
 }
 
-.woocommerce-MyAccount-navigation {
-	margin-bottom: 3rem;
-}
-
 .woocommerce-Address {
 	border-top: 1px solid hsl(var(--theme-input--border-color));
 	margin: 1.5rem 0;
 	padding-top: 0.5rem;
+}
+
+.woocommerce-ResetPassword .woocommerce-form-row {
+	width: 100% !important;
 }
 
 @media only screen and (max-width: 480px) {

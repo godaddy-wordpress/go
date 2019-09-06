@@ -1,16 +1,16 @@
 /*! Links */
 .site-content {
 
-	& p a {
+	& a {
 		color: hsl(var(--theme-link--color));
 
-		&:hover,
-		&:active {
+		&:not(.wp-block-button__link):hover,
+		&:not(.wp-block-button__link):active {
 			color: hsl(var(--theme-link--color-interactive));
 			outline: 0;
 		}
 
-		&:focus {
+		&:not(.wp-block-button__link):focus {
 			@mixin outline;
 			outline-width: thin;
 		}
