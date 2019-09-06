@@ -101,15 +101,16 @@
 
 /*! WooCommerce */
 @import url("woocommerce/layout.css");
+@import url("woocommerce/account.css");
 @import url("woocommerce/button.css");
-@import url("woocommerce/pagination.css");
-@import url("woocommerce/forms.css");
 @import url("woocommerce/cart.css");
-@import url("woocommerce/shop.css");
+@import url("woocommerce/checkbox.css");
+@import url("woocommerce/forms.css");
 @import url("woocommerce/product.css");
+@import url("woocommerce/pagination.css");
+@import url("woocommerce/shop.css");
 @import url("woocommerce/tabs.css");
 @import url("woocommerce/typography.css");
-@import url("woocommerce/checkbox.css");
 
 /*! Gravity Forms */
 @import url("gravity/forms.css");
