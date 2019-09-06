@@ -3,3 +3,6 @@
  */
 @import url("../../../shared/css/config/media-queries.css");
 @import url("../settings.css");
+
+/* Blocks */
+@import url("components/carousel.css");

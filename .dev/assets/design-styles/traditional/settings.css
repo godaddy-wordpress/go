@@ -344,10 +344,6 @@
 	--coblocks-accordion--color: var(--theme-color-primary);
 	--coblocks-accordion--radius: 4px;
 
-	--coblocks-author--bg: var(--theme-color-tertiary);
-	--coblocks-author--color-heading: var(--theme-color-text-secondary);
-	--coblocks-author--color-name: var(--theme-color-text-secondary);
-
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1rem;
 
