@@ -1,10 +1,4 @@
-/**
- * WooCommerce Global - buttons
- *
- * Global overrides to buttons
-*/
-
-/* Specificity to override nested styles from woo */
+/*! WooCommerce: Button */
 body {
 
 	&.woocommerce-page {

@@ -1,9 +1,4 @@
-/**
- * WooCommerce Global - forms
- *
- * Global overrides to forms
-*/
-
+/*! WooCommerce: Forms */
 .woocommerce form .form-row {
 	margin: 0 0 var(--theme-input--spacing);
 }

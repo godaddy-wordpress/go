@@ -1,9 +1,4 @@
-/**
- * WooCommerce Global - typography
- *
- * Global overrides to typography
-*/
-
+/*! WooCommerce: Typography */
 .related.products h2 {
 	font-family: var(--theme-body--font);
 	font-size: var(--theme-h5--font-size);

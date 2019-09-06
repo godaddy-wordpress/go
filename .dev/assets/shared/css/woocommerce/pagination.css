@@ -1,9 +1,4 @@
-/**
- * WooCommerce Global - pagination
- *
- * Global overrides to pagination element
-*/
-
+/*! WooCommerce: Pagination */
 .woocommerce nav.woocommerce-pagination {
 	text-align: center;
 

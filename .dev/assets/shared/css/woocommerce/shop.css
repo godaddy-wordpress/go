@@ -1,9 +1,4 @@
-/**
- * WooCommerce Global - shop template
- *
- * Global overrides to shop template
-*/
-
+/*! WooCommerce: Shop */
 .woocommerce .content-area ins {
 	text-decoration: none;
 }

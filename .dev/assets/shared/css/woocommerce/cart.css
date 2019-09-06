@@ -1,8 +1,4 @@
-/**
- * WooCommerce Global - cart
- */
-
-/* Specificity to override nested styles from woo */
+/*! WooCommerce: Cart */
 body {
 
 	&.woocommerce-cart {
