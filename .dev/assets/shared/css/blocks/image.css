@@ -28,3 +28,7 @@
 .is-style-bottom-wave::after {
 	background-color: hsl(var(--theme-color-body-bg, 0, 0%, 100%));
 }
+
+.wp-block-coblocks-pricing-table-item {
+	width: 100%;
+}

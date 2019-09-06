@@ -18,6 +18,13 @@
 
 
 	/*--------------------------------------------------------------
+	## Editor
+	--------------------------------------------------------------*/
+	--editor-max-w-base: 622px;
+	--editor-max-w-wide: 1134px;
+
+
+	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 50rem;
@@ -26,10 +33,6 @@
 	/* Below base width query */
 	@custom-media --base (max-width: 50rem);
 	@custom-media --wide (max-width: 82rem);
-
-	/* Editor widths */
-	--editor-max-w-base: 633px;
-	--editor-max-w-wide: 1438px;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.75rem;
@@ -110,14 +113,13 @@
 	--theme-caption--alignment: center;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
-	--theme-caption--spacing-top: 0;
 
 	/* Links */
 	--theme-link--color: var(--theme-color-heading);
 	--theme-link--color-interactive: var(--theme-color-primary);
 
 	/* Pullquote */
-	--theme-pullquote--font: serif;
+	--theme-pullquote--font: var(--theme-heading--font);
 	--theme-pullquote--border-color: transparent;
 	--theme-pullquote--border-style: solid;
 	--theme-pullquote--border-width: 0;
@@ -136,14 +138,14 @@
 	--theme-quote--border-width: 0;
 	--theme-quote--border: var(--theme-quote--border-width) var(--theme-quote--border-style) hsl(var(--theme-quote--border-color));
 	--theme-quote--color: var(--theme-color-heading);
-	--theme-quote--font-size: var(--theme-h2--font-size);
+	--theme-quote--font-size: var(--theme-h3--font-size);
 	--theme-quote--leading: var(--theme-heading--leading);
 	--theme-quote--style: normal;
 	--theme-quote--weight: var(--theme-heading--weight);
 
 	/* Blockquote (Large) */
 	--theme-quote-large--color: var(--theme-color-heading);
-	--theme-quote-large--font-size: var(--theme-h1--font-size);
+	--theme-quote-large--font-size: var(--theme-h2--font-size);
 	--theme-quote-large--leading: var(--theme-heading--leading);
 	--theme-quote-large--style: normal;
 
@@ -351,10 +353,6 @@
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-heading);
 	--coblocks-accordion--radius: 3px;
-
-	--coblocks-author--bg: var(--theme-color-tertiary);
-	--coblocks-author--color-heading: var(--theme-color-text-secondary);
-	--coblocks-author--color-name: var(--theme-color-text-secondary);
 
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1.5rem;

@@ -1,6 +1,4 @@
 /*! CoBlocks: Services */
-
-
 .wp-block-coblocks-service {
 
 	&.alignfull {
@@ -26,7 +24,7 @@
 }
 
 .wp-block-coblocks-services[data-columns="2"] > .wp-block-coblocks-service {
-	@media (--large) {
+	@media (--medium) {
 		max-width: calc(100% / 2 - 2em);
 	}
 }
@@ -36,3 +34,14 @@
 		max-width: calc(100% / 3 - 2em);
 	}
 }
+
+.wp-block-coblocks-services[data-columns="4"] > .wp-block-coblocks-service {
+	@media (--small) {
+		max-width: calc(100% / 2 - 2em);
+	}
+
+	@media (--large) {
+		max-width: calc(100% / 4 - 2em);
+	}
+}
+

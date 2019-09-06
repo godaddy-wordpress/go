@@ -1,4 +1,18 @@
 /*! Latest Posts */
+.content-area {
+
+	& .wp-block-latest-posts {
+
+		&:not([class*="align"]) {
+			@mixin blockWidthNoPadding;
+		}
+
+		&.alignwide {
+			@mixin blockWidthNoPaddingWide;
+		}
+	}
+}
+
 ul.wp-block-latest-posts {
 
 	& li {

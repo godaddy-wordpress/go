@@ -8,7 +8,7 @@
 		}
 
 		&.alignwide {
-			max-width: calc(var(--theme-max-w-wide) * 0.75);
+			@mixin blockWidthNoPaddingWide;
 		}
 	}
 }
@@ -45,7 +45,8 @@
 		line-height: var(--theme-pullquote--leading);
 	}
 
-	& cite {
+	& cite,
+	& .wp-block-pullquote__citation {
 		color: hsl(var(--theme-caption--color));
 		display: inline-block;
 		font-size: var(--theme-caption--font-size);
@@ -74,27 +75,18 @@
 				padding-top: calc(var(--editor-padding) / 2);
 			}
 
-			@media (--large) {
-				padding-bottom: var(--editor-padding);
-				padding-top: var(--editor-padding);
-			}
-
 			& p {
 				font-size: var(--theme-pullquote--font-size);
 			}
 
-			& cite {
+			& cite,
+			& .wp-block-pullquote__citation {
 				color: currentColor;
 				margin-bottom: 0;
 				margin-top: 1rem;
 				opacity: 0.65;
 			}
 		}
-	}
-
-	&.is-style-solid-color:not(.alignfull) blockquote {
-		padding-left: 0.75rem;
-		padding-right: 0.75rem;
 	}
 }
 
@@ -106,5 +98,10 @@
 		max-width: var(--theme-max-w-wide);
 		padding-left: var(--theme-block-padding-x);
 		padding-right: var(--theme-block-padding-x);
+
+		@media (--large) {
+			padding-bottom: var(--editor-padding);
+			padding-top: var(--editor-padding);
+		}
 	}
 }

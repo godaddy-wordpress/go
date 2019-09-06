@@ -1,0 +1,10 @@
+label {
+	color: hsl(var(--theme-label--color));
+	display: block;
+	font-family: var(--theme-label--font);
+	font-size: var(--theme-label--font-size);
+	font-weight: var(--theme-label--weight);
+	letter-spacing: var(--theme-label--tracking);
+	margin-bottom: var(--theme-label--spacing);
+	text-transform: var(--theme-label--transform);
+}

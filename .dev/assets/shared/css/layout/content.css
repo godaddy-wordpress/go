@@ -8,7 +8,7 @@
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
 
-	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion) {
+	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
 		margin-bottom: var(--theme-block-spacing-huge);
 		margin-top: var(--theme-block-spacing-huge);
 	}
@@ -46,10 +46,6 @@
 		max-width: 100%;
 		padding-left: 0;
 		padding-right: 0;
-
-		& + .alignfull {
-			margin-top: 0 !important;
-		}
 	}
 }
 
@@ -61,8 +57,7 @@
 /* Account for the first block being .alignfull */
 .content-area > *.alignfull:first-child,
 .content-area > *figure:first-child,
-.content-area > *.wp-block-gallery:first-child,
-.content-area > *.wp-block-coblocks-gallery-carousel:first-child {
+.content-area > *.wp-block-gallery:first-child {
 	margin-top: 0 !important;
 }
 
@@ -91,6 +86,7 @@
 		& blockquote,
 		& .wp-block-cover,
 		& .wp-block-coblocks-accordion,
+		& .wp-block-coblocks-author,
 		& figure:not(.alignfull):not(.alignwide) {
 
 			/* Remove huge spacing when right after a paragraph */
@@ -112,16 +108,6 @@
 			margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5) !important;
 			margin-top: calc(var(--theme-block-spacing-larger) * 1.5) !important;
 		}
-
-		/* & .wp-block-gallery:not(.alignfull):not(.alignwide) {
-			--spacing: calc((var(--theme-block-spacing-larger) * 1.5));
-			margin-bottom: calc(var(--spacing) - 15px);
-			margin-top: var(--spacing);
-
-			@media (--large) {
-				margin-bottom: calc(var(--spacing) - 20px);
-			}
-		} */
 	}
 
 	& > h1,

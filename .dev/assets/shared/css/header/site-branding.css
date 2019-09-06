@@ -32,6 +32,12 @@
 	text-transform: var(--theme-site-title--text-transform);
 }
 
+h1.site-branding__title {
+	color: hsla(var(--theme-site-title--color), 1);
+	line-height: inherit;
+	margin: 0;
+}
+
 .site-branding__link {
 	display: block;
 	line-height: 1;

@@ -18,6 +18,13 @@
 
 
 	/*--------------------------------------------------------------
+	## Editor
+	--------------------------------------------------------------*/
+	--editor-max-w-base: 702px;
+	--editor-max-w-wide: 1118px;
+
+
+	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 54rem;
@@ -26,10 +33,6 @@
 	/* Below base width query */
 	@custom-media --base (max-width: 54rem);
 	@custom-media --wide (max-width: 80rem);
-
-	/* Editor widths */
-	--editor-max-w-base: 702px;
-	--editor-max-w-wide: 1118px;
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
@@ -96,7 +99,7 @@
 	@media (--medium) {
 		--theme-h1--font-size: 3.45em;
 		--theme-h2--font-size: 2.75em;
-		--theme-h3--font-size: 2em;
+		--theme-h3--font-size: 2.15em;
 	}
 
 	@media (--large) {
@@ -120,7 +123,6 @@
 	--theme-caption--alignment: left;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
-	--theme-caption--spacing-top: 1rem;
 
 	/* Links */
 	--theme-link--color: var(--theme-color-primary);
@@ -133,7 +135,7 @@
 	--theme-pullquote--border-width: 0;
 	--theme-pullquote--border: var(--theme-pullquote--border-width) var(--theme-pullquote--border-style) hsl(var(--theme-pullquote--border-color));
 	--theme-pullquote--color: var(--theme-color-heading);
-	--theme-pullquote--font-size: var(--theme-h1--font-size);
+	--theme-pullquote--font-size: var(--theme-h2--font-size);
 	--theme-pullquote--leading: 1.25;
 	--theme-pullquote--padding-y: 0.75rem;
 	--theme-pullquote--padding-x: 1rem;
@@ -146,14 +148,14 @@
 	--theme-quote--border-width: 0.45rem;
 	--theme-quote--border: var(--theme-quote--border-width) var(--theme-quote--border-style) hsl(var(--theme-quote--border-color));
 	--theme-quote--color: var(--theme-color-heading);
-	--theme-quote--font-size: var(--theme-h2--font-size);
+	--theme-quote--font-size: var(--theme-h3--font-size);
 	--theme-quote--leading: var(--theme-heading--leading);
 	--theme-quote--style: normal;
 	--theme-quote--weight: var(--theme-heading--weight);
 
 	/* Blockquote (Large) */
 	--theme-quote-large--color: var(--theme-color-heading);
-	--theme-quote-large--font-size: var(--theme-h1--font-size);
+	--theme-quote-large--font-size: var(--theme-h2--font-size);
 	--theme-quote-large--leading: var(--theme-heading--leading);
 	--theme-quote-large--style: normal;
 
@@ -345,10 +347,6 @@
 	--coblocks-accordion--color: var(--theme-color-primary);
 	--coblocks-accordion--radius: 4px;
 
-	--coblocks-author--bg: var(--theme-color-tertiary);
-	--coblocks-author--color-heading: var(--theme-color-text-secondary);
-	--coblocks-author--color-name: var(--theme-color-text-secondary);
-
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1rem;
 
@@ -378,6 +376,6 @@
 
 	--coblocks-shapedivider--bg: var(--theme-color-primary);
 
-	--coblocks-services--heading-margin-bottom: 1rem;
+	--coblocks-services--heading-margin-bottom: 1.25rem;
 	--coblocks-services--heading-margin-top: 2rem;
 }
