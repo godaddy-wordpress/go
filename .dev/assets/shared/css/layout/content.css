@@ -54,7 +54,7 @@
 }
 
 /* Account for the first block if we have a featured image. */
-.has-featured-image .content-area > *:first-child {
+.has-featured-image:not(.woocommerce-page) .content-area > *:first-child {
 	margin-top: calc(var(--theme-block-spacing-huge) * 1) !important;
 }
 
