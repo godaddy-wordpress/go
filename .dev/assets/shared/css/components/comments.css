@@ -2,10 +2,17 @@
 body {
 
 	& .comment-form-cookies-consent input[type="checkbox"] + label {
+		font-family: var(--theme-body--font);
+		font-size: var(--theme-font-size-cookies, 0.8rem);
+		font-weight: var(--theme-body--weight, 400);
+		letter-spacing: 0;
+		line-height: var(--theme-body--leading);
 		padding-left: 35px;
+		text-transform: none;
 	}
 
 	& .comments-area {
+		margin-bottom: var(--theme-block-spacing-huge);
 
 		/* Post Comment button */
 		& input[type="submit"] {
@@ -75,6 +82,15 @@ body {
 			& > p {
 				margin: 0;
 			}
+
+			& .form-submit {
+				margin-top: 2.5rem;
+			}
+		}
+
+		& p.comment-notes {
+			font-size: var(--theme-font-size-post-meta, 0.975rem);
+			margin-bottom: 2.25rem;
 		}
 
 		@media (--medium) {

@@ -1,6 +1,7 @@
 /*! Layout: Entry Header */
 .entry-header {
 	padding-top: calc(var(--theme-block-spacing-huge) * 0.55);
+	text-align: center;
 }
 
 .has-featured-image:not(.woocommerce-page) .entry-header {
