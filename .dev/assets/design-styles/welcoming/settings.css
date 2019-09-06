@@ -119,7 +119,7 @@
 	--theme-link--color-interactive: var(--theme-color-primary);
 
 	/* Pullquote */
-	--theme-pullquote--font: serif;
+	--theme-pullquote--font: var(--theme-heading--font);
 	--theme-pullquote--border-color: transparent;
 	--theme-pullquote--border-style: solid;
 	--theme-pullquote--border-width: 0;

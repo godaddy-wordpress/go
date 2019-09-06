@@ -99,7 +99,7 @@
 	@media (--medium) {
 		--theme-h1--font-size: 3.45em;
 		--theme-h2--font-size: 2.75em;
-		--theme-h3--font-size: 2em;
+		--theme-h3--font-size: 2.15em;
 	}
 
 	@media (--large) {
@@ -376,6 +376,6 @@
 
 	--coblocks-shapedivider--bg: var(--theme-color-primary);
 
-	--coblocks-services--heading-margin-bottom: 1rem;
+	--coblocks-services--heading-margin-bottom: 1.25rem;
 	--coblocks-services--heading-margin-top: 2rem;
 }

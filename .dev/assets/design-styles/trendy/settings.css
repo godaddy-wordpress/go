@@ -108,20 +108,19 @@
 	--theme-caption--alignment: center;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
-	--theme-caption--spacing-top: 0;
 
 	/* Links */
 	--theme-link--color: var(--theme-color-heading);
 	--theme-link--color-interactive: var(--theme-color-primary);
 
 	/* Pullquote */
-	--theme-pullquote--font: serif;
+	--theme-pullquote--font: var(--theme-heading--font);
 	--theme-pullquote--border-color: transparent;
 	--theme-pullquote--border-style: solid;
 	--theme-pullquote--border-width: 0;
 	--theme-pullquote--border: var(--theme-pullquote--border-width) var(--theme-pullquote--border-style) hsl(var(--theme-pullquote--border-color));
 	--theme-pullquote--color: var(--theme-color-heading);
-	--theme-pullquote--font-size: var(--theme-h1--font-size);
+	--theme-pullquote--font-size: var(--theme-h2--font-size);
 	--theme-pullquote--leading: 1.25;
 	--theme-pullquote--padding-y: 0.75rem;
 	--theme-pullquote--padding-x: 1rem;

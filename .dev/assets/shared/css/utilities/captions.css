@@ -11,7 +11,7 @@
 		color: hsl(var(--theme-caption--color));
 		font-size: var(--theme-caption--font-size);
 		font-style: var(--theme-caption--style, normal);
-		margin-top: var(--theme-caption--spacing-top, 0);
+		margin-top: var(--theme-caption--spacing-top, 0.75em);
 		text-align: var(--theme-caption--alignment);
 	}
 

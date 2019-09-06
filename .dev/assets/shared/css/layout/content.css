@@ -46,10 +46,6 @@
 		max-width: 100%;
 		padding-left: 0;
 		padding-right: 0;
-
-		& + .alignfull {
-			margin-top: 0 !important;
-		}
 	}
 }
 
