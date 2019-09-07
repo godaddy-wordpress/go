@@ -79,6 +79,10 @@
 	margin-bottom: 0 !important;
 }
 
+.single-post.has-comments-open .content-area > *:last-child {
+	margin-bottom: var(--theme-block-spacing-huge) !important;
+}
+
 .content-area {
 
 	& p ~ {

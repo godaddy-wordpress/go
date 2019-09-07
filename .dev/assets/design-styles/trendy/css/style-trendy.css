@@ -32,3 +32,32 @@ p.has-background,
 .site-search__toggle {
 	top: 1px;
 }
+
+.single-post:not(.has-featured-image) .entry-header::before {
+	background: hsl(var(--theme-color-tertiary));
+	content: "";
+	height: var(--theme-post-header-before--height, 145px);
+	left: 0;
+	opacity: 0.33;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+
+	@media (--medium) {
+		height: var(--theme-post-header-before--height, 205px);
+	}
+
+	@media (--large) {
+		height: var(--theme-post-header-before--height, 265px);
+	}
+}
+
+.admin-bar.single-post:not(.has-featured-image) .entry-header::before {
+	top: 32px;
+
+	@media (--admin-bar-lg) {
+		top: 46px;
+	}
+}
+

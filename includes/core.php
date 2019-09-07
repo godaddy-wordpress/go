@@ -517,6 +517,14 @@ function body_classes( $classes ) {
 		$classes[] = 'has-featured-image';
 	}
 
+	if ( is_singular() ) {
+		// Adds `singular` to singular pages.
+		$classes[] = 'singular';
+	} else {
+		// Adds `hfeed` to non singular pages.
+		$classes[] = 'hfeed';
+	}
+
 	// Add class whenever a WooCommerce block is added to a page.
 	if (
 		has_block( 'woocommerce/handpicked-products' )

@@ -53,7 +53,6 @@ textarea {
 	display: block;
 	font-size: var(--theme-input--font-size);
 	font-weight: var(--theme-input--weight);
-	line-height: 1;
 	margin-bottom: var(--theme-input--spacing);
 	min-height: calc(0.5rem * 10);
 	padding: var(--theme-input--padding-x) var(--theme-input--padding-x);
