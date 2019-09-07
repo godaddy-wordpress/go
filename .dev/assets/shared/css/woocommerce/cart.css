@@ -30,6 +30,18 @@ body {
 			width: 150px;
 		}
 
+		& .cart-empty-icon {
+			margin: 0 auto;
+			max-width: 75px;
+			text-align: center;
+			width: 100%;
+		}
+
+		& .return-to-shop {
+			margin-top: 1em;
+			text-align: center;
+		}
+
 	}
 
 	&.woocommerce,
