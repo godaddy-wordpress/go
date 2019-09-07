@@ -9,8 +9,8 @@
 	padding-right: var(--theme-block-padding-x);
 
 	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
-		margin-bottom: var(--theme-block-spacing-huge);
-		margin-top: var(--theme-block-spacing-huge);
+		margin-bottom: var(--vertical-rhythm--large);
+		margin-top: var(--vertical-rhythm--large);
 	}
 
 	/* Remove margin from nested child blocks */
@@ -24,17 +24,17 @@
 
 	/* Remove margin from the very first block */
 	&:first-child {
-		margin-top: calc(var(--theme-block-spacing-huge) * 0.55) !important;
+		margin-top: calc(var(--vertical-rhythm--large) * 0.55) !important;
 	}
 
 	/* Apply the largest spacing value to the last item that is not .alignfull */
 	&:not(.alignfull):last-child {
-		margin-bottom: var(--theme-block-spacing-huge) !important;
+		margin-bottom: var(--vertical-rhythm--large) !important;
 	}
 
 	/*! Account for the last block being .alignfull */
 	& > .alignfull:last-child {
-		margin-bottom: var(--theme-block-spacing-huge) !important;
+		margin-bottom: var(--vertical-rhythm--large) !important;
 	}
 
 	/* Set alignments for wide and full */
@@ -51,7 +51,7 @@
 
 /* Account for the first block if we have a featured image. */
 .has-featured-image:not(.woocommerce-page) .content-area > *:first-child {
-	margin-top: calc(var(--theme-block-spacing-huge) * 1) !important;
+	margin-top: var(--vertical-rhythm--large) !important;
 }
 
 /* Account for the first block being .alignfull */
@@ -63,10 +63,10 @@
 
 /* Account for page titles. */
 .has-page-titles:not(.home) .content-area > *:first-child {
-	margin-top: var(--theme-block-spacing-huge) !important;
+	margin-top: var(--vertical-rhythm--large) !important;
 
 	@media (--large) {
-		margin-top: calc(var(--theme-block-spacing-huge) - var(--theme-header--padding-y)) !important;
+		margin-top: calc(var(--vertical-rhythm--large) - var(--theme-header--padding-y)) !important;
 	}
 }
 
@@ -120,13 +120,13 @@
 		& + p {
 
 			/* Remove space between headings and paragraphs */
-			margin-top: calc(-0.825 * var(--theme-block-spacing-huge)) !important;
+			margin-top: calc(var(--vertical-rhythm--large) * -0.825) !important;
 		}
 
 		& + .wp-block-button {
 
 			/* Remove space between headings and button blocks */
-			margin-top: calc(-0.65 * var(--theme-block-spacing-huge)) !important;
+			margin-top: calc(var(--vertical-rhythm--large) * -0.65) !important;
 		}
 	}
 }

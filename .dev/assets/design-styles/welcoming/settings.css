@@ -37,12 +37,12 @@
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.75rem;
 	--theme-block-spacing-larger: 2.25rem;
-	--theme-block-spacing-huge: 6rem;
+	--vertical-rhythm--large: 6rem;
 
 	@media (--large) {
 		--theme-block-spacing: 2.25rem;
 		--theme-block-spacing-larger: 2.5rem;
-		--theme-block-spacing-huge: 12rem;
+		--vertical-rhythm--large: 12rem;
 	}
 
 	/* Site Padding */

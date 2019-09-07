@@ -21,8 +21,8 @@
 
 	&.alignfull,
 	&.alignwide {
-		margin-bottom: calc(var(--theme-block-spacing-huge) - 15px) !important;
-		margin-top: var(--theme-block-spacing-huge);
+		margin-bottom: calc(var(--vertical-rhythm--large) - 15px) !important;
+		margin-top: var(--vertical-rhythm--large);
 	}
 
 	&.mb-0 {

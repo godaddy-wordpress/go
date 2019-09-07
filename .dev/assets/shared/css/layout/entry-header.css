@@ -1,6 +1,6 @@
 /*! Layout: Entry Header */
 .entry-header {
-	padding-top: calc(var(--theme-block-spacing-huge) * 0.55);
+	padding-top: calc(var(--vertical-rhythm--large) * 0.55);
 }
 
 .has-featured-image:not(.woocommerce-page) .entry-header {
