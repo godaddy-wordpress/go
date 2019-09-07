@@ -35,12 +35,12 @@
 	@custom-media --wide (max-width: 70rem);
 
 	/* Vertical Rhythm */
-	--theme-block-spacing: 1.75rem;
+	--vertical-rhythm: 1.75rem;
 	--vertical-rhythm--med: 2.25rem;
 	--vertical-rhythm--large: 5rem;
 
 	@media (--large) {
-		--theme-block-spacing: 2.25rem;
+		--vertical-rhythm: 2.25rem;
 		--vertical-rhythm--med: 2.5rem;
 		--vertical-rhythm--large: 10rem;
 	}

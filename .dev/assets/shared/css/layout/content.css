@@ -1,9 +1,9 @@
 /*! Layout: Content Area */
 .content-area > * {
-	margin-bottom: var(--theme-block-spacing);
+	margin-bottom: var(--vertical-rhythm);
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: var(--theme-block-spacing);
+	margin-top: var(--vertical-rhythm);
 	max-width: var(--theme-max-w-base);
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
@@ -96,8 +96,8 @@
 
 		& .wp-block-columns,
 		& .wp-block-coblocks-row {
-			margin-bottom: var(--theme-block-spacing) !important;
-			margin-top: var(--theme-block-spacing) !important;
+			margin-bottom: var(--vertical-rhythm) !important;
+			margin-top: var(--vertical-rhythm) !important;
 		}
 
 		& .coblocks-form,
