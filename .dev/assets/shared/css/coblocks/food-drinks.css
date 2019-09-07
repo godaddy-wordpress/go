@@ -57,7 +57,7 @@
 
 [class*="hint--"]::after {
 	background-color: hsl(var(--coblocks-food-drinks-hint--bg));
-	border-radius: hsl(var(--coblocks-food-drinks-hint--radius));
+	border-radius: hsl(var(--coblocks-food-drinks-hint--radius, 0));
 }
 
 .hint--top::before {

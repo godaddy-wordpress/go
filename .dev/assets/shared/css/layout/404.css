@@ -3,7 +3,7 @@
 	text-align: center;
 
 	& > * {
-		max-width: var(--theme-not-found-width);
+		max-width: var(--theme-not-found-width, 42rem);
 	}
 
 	& p {
