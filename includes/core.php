@@ -513,7 +513,7 @@ function body_classes( $classes ) {
 		$classes[] = 'has-page-titles';
 	}
 
-	if ( has_post_thumbnail() ) {
+	if ( has_post_thumbnail() && ( is_singular( 'post' ) || is_single( 'page' ) ) ) {
 		$classes[] = 'has-featured-image';
 	}
 
