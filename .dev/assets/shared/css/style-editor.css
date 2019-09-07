@@ -181,8 +181,8 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 .wp-block[data-type="coblocks/form"] .components-textarea-control__input {
 	background-color: hsl(var(--theme-input--bg));
 	border: var(--theme-input--border);
-	border-radius: var(--theme-input--radius);
-	box-shadow: var(--theme-input--shadow);
+	border-radius: var(--theme-input--radius, var(--theme-button--radius));
+	box-shadow: var(--theme-input--shadow, none);
 	color: hsl(var(--theme-input--color));
 	font-size: var(--theme-input--font-size);
 	font-weight: var(--theme-input--weight);

@@ -4,7 +4,7 @@
 	color: hsl(var(--theme-footer--color));
 
 	&.has-background {
-		padding-top: var(--theme-block-spacing-huge);
+		padding-top: var(--vertical-rhythm--lrg);
 	}
 
 	& a {

@@ -2,17 +2,17 @@
 .has-footer-4 {
 
 	& .site-footer {
-		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.5);
+		padding-bottom: calc(var(--vertical-rhythm--lrg) * 0.5);
 	}
 
 	& .site-footer__row {
-		margin-top: calc(var(--theme-block-spacing-huge) * 0.5);
+		margin-top: calc(var(--vertical-rhythm--lrg) * 0.5);
 	}
 
 	& .site-footer .site-branding {
 		align-items: flex-start;
 		flex: 0 0 100%;
-		margin-bottom: calc(var(--theme-block-spacing-huge) * 0.55);
+		margin-bottom: calc(var(--vertical-rhythm--lrg) * 0.55);
 		max-width: 100%;
 
 		@media (--large) {

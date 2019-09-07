@@ -1,6 +1,6 @@
 /*! Layout: Entry Header */
 .entry-header {
-	padding-top: calc(var(--theme-block-spacing-huge) * 0.55);
+	padding-top: calc(var(--vertical-rhythm--lrg) * 0.55);
 	text-align: center;
 }
 

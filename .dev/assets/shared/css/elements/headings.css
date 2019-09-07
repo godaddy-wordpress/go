@@ -9,7 +9,7 @@ h6,
 	clear: both;
 	display: block;
 	font-family: var(--theme-heading--font);
-	font-style: var(--theme-heading--style);
+	font-style: var(--theme-heading--style, normal);
 	font-weight: var(--theme-heading--weight);
 	line-height: var(--theme-heading--leading);
 	margin: 0 0 var(--theme-heading--spacing);

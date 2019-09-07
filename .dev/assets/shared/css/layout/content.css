@@ -1,16 +1,16 @@
 /*! Layout: Content Area */
 .content-area > * {
-	margin-bottom: var(--theme-block-spacing);
+	margin-bottom: var(--vertical-rhythm);
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: var(--theme-block-spacing);
+	margin-top: var(--vertical-rhythm);
 	max-width: var(--theme-max-w-base);
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
 
 	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
-		margin-bottom: var(--theme-block-spacing-huge);
-		margin-top: var(--theme-block-spacing-huge);
+		margin-bottom: var(--vertical-rhythm--lrg);
+		margin-top: var(--vertical-rhythm--lrg);
 	}
 
 	/* Remove margin from nested child blocks */
@@ -24,17 +24,17 @@
 
 	/* Remove margin from the very first block */
 	&:first-child {
-		margin-top: calc(var(--theme-block-spacing-huge) * 0.55) !important;
+		margin-top: calc(var(--vertical-rhythm--lrg) * 0.55) !important;
 	}
 
 	/* Apply the largest spacing value to the last item that is not .alignfull */
 	&:not(.alignfull):last-child {
-		margin-bottom: var(--theme-block-spacing-huge) !important;
+		margin-bottom: var(--vertical-rhythm--lrg) !important;
 	}
 
 	/*! Account for the last block being .alignfull */
 	& > .alignfull:last-child {
-		margin-bottom: var(--theme-block-spacing-huge) !important;
+		margin-bottom: var(--vertical-rhythm--lrg) !important;
 	}
 
 	/* Set alignments for wide and full */
@@ -63,10 +63,10 @@
 
 /* Account for page titles. */
 .has-page-titles:not(.home) .content-area > *:first-child {
-	margin-top: var(--theme-block-spacing-huge) !important;
+	margin-top: var(--vertical-rhythm--lrg) !important;
 
 	@media (--large) {
-		margin-top: calc(var(--theme-block-spacing-huge) - var(--theme-header--padding-y)) !important;
+		margin-top: calc(var(--vertical-rhythm--lrg) - var(--theme-header--padding-y)) !important;
 	}
 }
 
@@ -94,14 +94,14 @@
 		& figure:not(.alignfull):not(.alignwide) {
 
 			/* Remove huge spacing when right after a paragraph */
-			margin-bottom: var(--theme-block-spacing-larger) !important;
-			margin-top: var(--theme-block-spacing-larger) !important;
+			margin-bottom: var(--vertical-rhythm--med) !important;
+			margin-top: var(--vertical-rhythm--med) !important;
 		}
 
 		& .wp-block-columns,
 		& .wp-block-coblocks-row {
-			margin-bottom: var(--theme-block-spacing) !important;
-			margin-top: var(--theme-block-spacing) !important;
+			margin-bottom: var(--vertical-rhythm) !important;
+			margin-top: var(--vertical-rhythm) !important;
 		}
 
 		& .coblocks-form,
@@ -109,8 +109,8 @@
 		& .wp-block-separator,
 		& .wp-block-coblocks-dynamic-separator,
 		& .wp-block-pullquote:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
-			margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5) !important;
-			margin-top: calc(var(--theme-block-spacing-larger) * 1.5) !important;
+			margin-bottom: calc(var(--vertical-rhythm--med) * 1.5) !important;
+			margin-top: calc(var(--vertical-rhythm--med) * 1.5) !important;
 		}
 	}
 
@@ -124,13 +124,13 @@
 		& + p {
 
 			/* Remove space between headings and paragraphs */
-			margin-top: calc(-0.825 * var(--theme-block-spacing-huge)) !important;
+			margin-top: calc(var(--vertical-rhythm--lrg) * -0.825) !important;
 		}
 
 		& + .wp-block-button {
 
 			/* Remove space between headings and button blocks */
-			margin-top: calc(-0.65 * var(--theme-block-spacing-huge)) !important;
+			margin-top: calc(var(--vertical-rhythm--lrg) * -0.65) !important;
 		}
 	}
 }

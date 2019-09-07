@@ -35,14 +35,14 @@
 	@custom-media --wide (max-width: 80rem);
 
 	/* Vertical Rhythm */
-	--theme-block-spacing: 1.15rem;
-	--theme-block-spacing-larger: 1.75rem;
-	--theme-block-spacing-huge: 4rem;
+	--vertical-rhythm: 1.15rem;
+	--vertical-rhythm--med: 1.75rem;
+	--vertical-rhythm--lrg: 4rem;
 
 	@media (--large) {
-		--theme-block-spacing: 1.8rem;
-		--theme-block-spacing-larger: 2.25rem;
-		--theme-block-spacing-huge: 8rem;
+		--vertical-rhythm: 1.8rem;
+		--vertical-rhythm--med: 2.25rem;
+		--vertical-rhythm--lrg: 8rem;
 	}
 
 	/* Site Padding */
@@ -84,7 +84,6 @@
 	--theme-heading--font: "Crimson Text", serif;
 	--theme-heading--leading: 1.15;
 	--theme-heading--spacing: 1.75rem;
-	--theme-heading--style: normal;
 	--theme-heading--tracking: -0.02em;
 	--theme-heading--weight: 400;
 	--theme-heading--button-spacing: 1.75rem;
@@ -182,15 +181,12 @@
 	--theme-input--font-size: var(--theme-body--font-size);
 	--theme-input--padding-x: 0.85rem;
 	--theme-input--padding-y: 0.85rem;
-	--theme-input--radius: 4px;
-	--theme-input--shadow: none;
 	--theme-input--spacing: 2rem;
 	--theme-input--weight: 400;
 
 	/* Input Focus */
 	--theme-input--border-color-focus: var(--theme-color-primary);
 	--theme-input--color-focus: var(--theme-color-text);
-	--theme-input--shadow-focus: none;
 
 	/* Errors */
 	--theme-input-error--border-color: 0, 65%, 51%; /* #d32f2f */
@@ -209,7 +205,6 @@
 	--theme-button--bg: var(--theme-color-primary);
 	--theme-button--bg-interactive: var(--theme-color-heading);
 	--theme-button--border-width: 2px;
-	--theme-button--color: 0, 0%, 100%;
 	--theme-button--font-size: 1.3rem;
 	--theme-button--font: var(--theme-heading--font);
 	--theme-button--padding-x: 2.25rem;
@@ -285,9 +280,7 @@
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 	--theme-search-submit--color: var(--color-white);
-	--theme-search-submit--radius: 4px;
 
-	--theme-not-found-width: 42rem;
 
 	/*--------------------------------------------------------------
 	## Entry Header
@@ -326,20 +319,16 @@
 	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg: var(--theme-color-body-bg);
 	--coblocks-accordion--bg-hover: none;
 	--coblocks-accordion--border-color: var(--theme-color-primary);
-	--coblocks-accordion--border-width: 2px;
-	--coblocks-accordion--border: var(--coblocks-accordion--border-width) solid hsl(var(--coblocks-accordion--border-color));
+	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-primary);
-	--coblocks-accordion--radius: 4px;
 
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1rem;
 
 	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
-	--coblocks-food-drinks-hint--radius: 0;
 	--coblocks-food-drinks-item--fill: var(--theme-color-heading);
 	--coblocks-food-drinks-item--font-size: 1.5em;
 	--coblocks-food-drinks-item--spacing: 3em;
