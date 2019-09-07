@@ -1,7 +1,7 @@
 .posts-navigation {
+	margin-bottom: var(--vertical-rhythm--lrg);
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: var(--theme-block-spacing);
 	max-width: var(--theme-max-w-base);
 	padding-left: var(--theme-block-padding-x);
 	padding-right: var(--theme-block-padding-x);
