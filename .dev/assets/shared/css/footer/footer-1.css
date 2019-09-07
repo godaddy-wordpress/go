@@ -2,11 +2,11 @@
 .has-footer-1 {
 
 	& .site-footer {
-		padding-bottom: var(--theme-block-spacing-huge);
+		padding-bottom: var(--vertical-rhythm--lrg);
 	}
 
 	& .footer-navigation {
-		margin-bottom: calc(var(--theme-block-spacing-huge) * 0.5);
+		margin-bottom: calc(var(--vertical-rhythm--lrg) * 0.5);
 
 		& li {
 			display: inline-block;
@@ -34,7 +34,7 @@
 	}
 
 	& .social-icons {
-		margin-bottom: calc(var(--theme-block-spacing-huge) * 0.5);
+		margin-bottom: calc(var(--vertical-rhythm--lrg) * 0.5);
 
 		& svg {
 			height: var(--theme-social--size);

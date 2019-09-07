@@ -2,12 +2,12 @@
 .has-footer-3 {
 
 	& .site-footer__inner {
-		padding-bottom: calc(var(--theme-block-spacing-huge) * 0.25);
+		padding-bottom: calc(var(--vertical-rhythm--lrg) * 0.25);
 	}
 
 	& .site-footer__row {
 		border-top: var(--theme-footer-3-site-info--border-width, 1px) solid hsla(var(--theme-footer-3-site-info--border-color), 0.5);
-		margin-top: calc(var(--theme-block-spacing-huge) * 0.75);
+		margin-top: calc(var(--vertical-rhythm--lrg) * 0.75);
 		padding: 2rem 0 1rem;
 		text-align: center;
 
@@ -45,7 +45,7 @@
 	& .site-footer .site-branding {
 		align-items: flex-start;
 		flex: 0 0 100%;
-		margin-bottom: calc(var(--theme-block-spacing-huge) * 0.75);
+		margin-bottom: calc(var(--vertical-rhythm--lrg) * 0.75);
 		max-width: 100%;
 
 		@media (--large) {

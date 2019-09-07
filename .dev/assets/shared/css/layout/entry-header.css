@@ -1,14 +1,14 @@
 /*! Layout: Entry Header */
 .entry-header {
-	padding-top: calc(var(--theme-block-spacing-huge) * 0.55);
+	padding-top: calc(var(--vertical-rhythm--lrg) * 0.55);
 	text-align: center;
 }
 
-.has-featured-image:not(.woocommerce-page) .entry-header {
+.has-featured-image .entry-header {
 	padding-top: var(--theme-entryheader--padding-top);
 }
 
-.has-header-3:not(.has-featured-image) .entry-header {
+.has-header-3 .entry-header {
 	@media (--large) {
 		padding-top: 0;
 	}

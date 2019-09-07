@@ -6,7 +6,7 @@
 		&.is-medium-full .wp-block-column {
 			@media (max-width: 960px) {
 				flex-basis: 100%;
-				margin-top: var(--theme-block-spacing-larger);
+				margin-top: var(--vertical-rhythm--med);
 				padding: 0 !important;
 			}
 		}
@@ -15,7 +15,7 @@
 			margin-bottom: 0;
 			margin-left: 0;
 			margin-right: 0;
-			margin-top: var(--theme-block-spacing-larger);
+			margin-top: var(--vertical-rhythm--med);
 
 			@media (--small) {
 				margin-top: 0;

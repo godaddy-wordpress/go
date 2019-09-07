@@ -16,13 +16,13 @@
 
 /*! Gallery */
 .content-area .wp-block-gallery {
-	margin-bottom: calc(var(--theme-block-spacing-larger) - 35px) !important;
-	margin-top: var(--theme-block-spacing-larger);
+	margin-bottom: calc(var(--vertical-rhythm--med) - 35px) !important;
+	margin-top: var(--vertical-rhythm--med);
 
 	&.alignfull,
 	&.alignwide {
-		margin-bottom: calc(var(--theme-block-spacing-huge) - 15px) !important;
-		margin-top: var(--theme-block-spacing-huge);
+		margin-bottom: calc(var(--vertical-rhythm--lrg) - 15px) !important;
+		margin-top: var(--vertical-rhythm--lrg);
 	}
 
 	&.mb-0 {

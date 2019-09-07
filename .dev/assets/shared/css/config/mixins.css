@@ -4,7 +4,7 @@
 	border: none;
 	border-radius: var(--theme-button--radius);
 	box-sizing: border-box;
-	color: hsl(var(--theme-button--color));
+	color: hsl(var(--theme-button--color, 0, 0%, 100%));
 	display: inline-block;
 	font-family: var(--theme-button--font);
 	font-size: var(--theme-button--font-size);

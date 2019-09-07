@@ -35,14 +35,14 @@
 	@custom-media --wide (max-width: 82rem);
 
 	/* Vertical Rhythm */
-	--theme-block-spacing: 1.75rem;
-	--theme-block-spacing-larger: 2.25rem;
-	--theme-block-spacing-huge: 6rem;
+	--vertical-rhythm: 1.75rem;
+	--vertical-rhythm--med: 2.25rem;
+	--vertical-rhythm--lrg: 6rem;
 
 	@media (--large) {
-		--theme-block-spacing: 2.25rem;
-		--theme-block-spacing-larger: 2.5rem;
-		--theme-block-spacing-huge: 12rem;
+		--vertical-rhythm: 2.25rem;
+		--vertical-rhythm--med: 2.5rem;
+		--vertical-rhythm--lrg: 12rem;
 	}
 
 	/* Site Padding */
@@ -88,7 +88,6 @@
 	--theme-heading--font: "Work Sans", sans-serif;
 	--theme-heading--leading: 1.35;
 	--theme-heading--spacing: 1.75rem;
-	--theme-heading--style: normal;
 	--theme-heading--tracking: 0;
 	--theme-heading--weight: 300;
 	--theme-heading--button-spacing: 2rem;
@@ -172,15 +171,12 @@
 	--theme-input--font-size: 1.1rem;
 	--theme-input--padding-x: 1.35rem;
 	--theme-input--padding-y: 1rem;
-	--theme-input--radius: 3px;
-	--theme-input--shadow: none;
 	--theme-input--spacing: 1.75rem;
 	--theme-input--weight: 400;
 
 	/* Input Focus */
 	--theme-input--border-color-focus: var(--theme-color-secondary);
 	--theme-input--color-focus: var(--theme-color-heading);
-	--theme-input--shadow-focus: none;
 
 	/* Errors */
 	--theme-input-error--border-color: 0, 65%, 51%; /* #d32f2f */
@@ -199,7 +195,6 @@
 	--theme-button--bg: var(--theme-color-primary);
 	--theme-button--bg-interactive: var(--theme-color-secondary);
 	--theme-button--border-width: 1px;
-	--theme-button--color: 0, 0%, 100%;
 	--theme-button--font-size: var(--theme-body--font-size);
 	--theme-button--font: var(--theme-site-nav--font);
 	--theme-button--padding-x: 1.85rem;
@@ -278,9 +273,6 @@
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-text);
 	--theme-search-submit--color: var(--color-white);
-	--theme-search-submit--radius: 3px;
-
-	--theme-not-found-width: 42rem;
 
 
 	/*--------------------------------------------------------------
@@ -333,20 +325,16 @@
 	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg: var(--theme-color-body-bg);
 	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.05);
 	--coblocks-accordion--border-color: var(--theme-color-heading);
-	--coblocks-accordion--border-width: 2px;
-	--coblocks-accordion--border: var(--coblocks-accordion--border-width) solid hsl(var(--coblocks-accordion--border-color));
+	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-heading);
-	--coblocks-accordion--radius: 3px;
 
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1.5rem;
 
 	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
 	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
-	--coblocks-food-drinks-hint--radius: 0;
 	--coblocks-food-drinks-item--fill: var(--theme-color-heading);
 	--coblocks-food-drinks-item--font-size: 0.95em;
 	--coblocks-food-drinks-item--spacing: 3.5em;
