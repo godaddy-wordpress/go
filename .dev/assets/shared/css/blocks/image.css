@@ -3,7 +3,7 @@
 
 	&.alignfull,
 	&.alignwide {
-		margin: var(--vertical-rhythm--large) auto;
+		margin: var(--vertical-rhythm--lrg) auto;
 	}
 
 	& img {

@@ -21,8 +21,8 @@
 
 	&.alignfull,
 	&.alignwide {
-		margin-bottom: calc(var(--vertical-rhythm--large) - 15px) !important;
-		margin-top: var(--vertical-rhythm--large);
+		margin-bottom: calc(var(--vertical-rhythm--lrg) - 15px) !important;
+		margin-top: var(--vertical-rhythm--lrg);
 	}
 
 	&.mb-0 {

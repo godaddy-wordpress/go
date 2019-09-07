@@ -37,12 +37,12 @@
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.75rem;
 	--vertical-rhythm--med: 2.25rem;
-	--vertical-rhythm--large: 5rem;
+	--vertical-rhythm--lrg: 5rem;
 
 	@media (--large) {
 		--vertical-rhythm: 2.25rem;
 		--vertical-rhythm--med: 2.5rem;
-		--vertical-rhythm--large: 10rem;
+		--vertical-rhythm--lrg: 10rem;
 	}
 
 	/* Site Padding */
