@@ -36,12 +36,12 @@
 
 	/* Vertical Rhythm */
 	--theme-block-spacing: 1.15rem;
-	--theme-block-spacing-larger: 1.75rem;
+	--vertical-rhythm--med: 1.75rem;
 	--vertical-rhythm--large: 4rem;
 
 	@media (--large) {
 		--theme-block-spacing: 1.8rem;
-		--theme-block-spacing-larger: 2.25rem;
+		--vertical-rhythm--med: 2.25rem;
 		--vertical-rhythm--large: 8rem;
 	}
 

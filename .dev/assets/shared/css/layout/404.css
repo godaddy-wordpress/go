@@ -7,7 +7,7 @@
 	}
 
 	& p {
-		margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5);
+		margin-bottom: calc(var(--vertical-rhythm--med) * 1.5);
 	}
 
 	& .site-search {

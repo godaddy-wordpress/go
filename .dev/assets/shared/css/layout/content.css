@@ -90,8 +90,8 @@
 		& figure:not(.alignfull):not(.alignwide) {
 
 			/* Remove huge spacing when right after a paragraph */
-			margin-bottom: var(--theme-block-spacing-larger) !important;
-			margin-top: var(--theme-block-spacing-larger) !important;
+			margin-bottom: var(--vertical-rhythm--med) !important;
+			margin-top: var(--vertical-rhythm--med) !important;
 		}
 
 		& .wp-block-columns,
@@ -105,8 +105,8 @@
 		& .wp-block-separator,
 		& .wp-block-coblocks-dynamic-separator,
 		& .wp-block-pullquote:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
-			margin-bottom: calc(var(--theme-block-spacing-larger) * 1.5) !important;
-			margin-top: calc(var(--theme-block-spacing-larger) * 1.5) !important;
+			margin-bottom: calc(var(--vertical-rhythm--med) * 1.5) !important;
+			margin-top: calc(var(--vertical-rhythm--med) * 1.5) !important;
 		}
 	}
 

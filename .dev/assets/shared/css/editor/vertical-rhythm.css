@@ -15,8 +15,8 @@
 	}
 
 	& [data-type="core/paragraph"] ~ [data-type="core/cover"] {
-		margin-bottom: var(--theme-block-spacing-larger) !important;
-		margin-top: var(--theme-block-spacing-larger) !important;
+		margin-bottom: var(--vertical-rhythm--med) !important;
+		margin-top: var(--vertical-rhythm--med) !important;
 	}
 }
 

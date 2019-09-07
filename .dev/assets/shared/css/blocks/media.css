@@ -27,13 +27,13 @@
 
 		&.has-media-on-the-right .wp-block-media-text__media {
 			@media (max-width: 600px) {
-				margin-top: var(--theme-block-spacing-larger);
+				margin-top: var(--vertical-rhythm--med);
 			}
 		}
 
 		&:not(.has-media-on-the-right) .wp-block-media-text__media {
 			@media (max-width: 600px) {
-				margin-bottom: var(--theme-block-spacing-larger);
+				margin-bottom: var(--vertical-rhythm--med);
 			}
 		}
 
@@ -58,7 +58,7 @@
 		order: 2;
 
 		@media (max-width: 600px) {
-			margin-top: var(--theme-block-spacing-larger);
+			margin-top: var(--vertical-rhythm--med);
 		}
 	}
 }
