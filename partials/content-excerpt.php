@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( has_post_thumbnail() ) : ?>
+	<?php if ( is_singular() && has_post_thumbnail() ) : ?>
 		<div class="post__thumbnail">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<?php the_post_thumbnail(); ?>
@@ -27,6 +27,32 @@
 
 		the_title( sprintf( '<h2 class="entry-title h1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		?>
+
+		<?php if ( ! is_search() ) { ?>
+
+			<div class="post__meta">
+
+				<span class="post__categories"><?php the_category( ' | ' ); ?></span>
+
+				<span class="post__author"><?php esc_html_e( 'by', 'maverick' ); ?> <?php the_author(); ?></span>
+
+				<?php
+				if ( is_singular() && get_the_tag_list() ) {
+					the_tags(
+						sprintf(
+							'<span class="post__tags"><span class="screen-reader-text">%s</span> ',
+							esc_html_e( 'Tags:', 'maverick' )
+						),
+						', ',
+						'</span>'
+					);
+				}
+				?>
+
+			</div>
+
+		<?php } ?>
+
 	</header>
 
 	<div class="content-area">

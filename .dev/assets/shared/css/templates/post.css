@@ -1,6 +1,13 @@
 /*! Single Post */
+.post__title {
+	margin: 0;
+
+	& a {
+		text-decoration: none;
+	}
+}
+
 .post__categories {
-	text-transform: uppercase;
 
 	& li,
 	& a {
@@ -8,29 +15,11 @@
 	}
 }
 
-.post__title {
-	margin: 0;
-}
-
-.post--single {
-
-	& .post__author {
-		display: block;
-		margin: 3rem 0 0;
-	}
-
-}
-
 .post__meta {
-	font-size: var(--theme-font-size-post-meta, 0.875rem);
-	letter-spacing: 2px;
+	font-size: var(--theme-font-size-post-meta, 0.975rem);
+	margin-top: 1.25em;
 }
 
 .post__author {
 	font-style: italic;
-}
-
-.post__excerpt {
-	line-height: 1.89;
-	margin-top: 0.375rem;
 }
