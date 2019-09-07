@@ -29,6 +29,8 @@
 /* Layout */
 @import url("layout/content.css");
 @import url("layout/entry-header.css");
+@import url("layout/post.css");
+@import url("layout/pagination.css");
 @import url("layout/404.css");
 
 /* Header */
@@ -55,9 +57,6 @@
 @import url("components/posts-navigation.css");
 @import url("components/comments.css");
 @import url("components/social-icons.css");
-
-/* Blogroll */
-@import url("templates/post.css");
 
 /*! Blocks */
 @import url("blocks/button.css");
