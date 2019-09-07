@@ -12,10 +12,10 @@
 	padding: var(--theme-header--padding-y) var(--theme-block-padding-x);
 }
 
-.has-header-1.has-featured-image:not(.woocommerce-page),
-.has-header-2.has-featured-image:not(.woocommerce-page),
-.has-header-3.has-featured-image:not(.woocommerce-page),
-.has-header-4.has-featured-image:not(.woocommerce-page) {
+.has-header-1.has-featured-image,
+.has-header-2.has-featured-image,
+.has-header-3.has-featured-image,
+.has-header-4.has-featured-image {
 
 	& .site-header {
 		position: absolute;
@@ -70,7 +70,7 @@
 	}
 }
 
-.has-featured-image:not(.woocommerce-page) {
+.has-featured-image {
 
 	& .site-branding__title,
 	& .site-header .primary-menu a {

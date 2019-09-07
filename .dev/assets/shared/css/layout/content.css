@@ -50,8 +50,8 @@
 }
 
 /* Account for the first block if we have a featured image. */
-.has-featured-image:not(.woocommerce-page) .content-area > *:first-child {
-	margin-top: calc(var(--theme-block-spacing-huge) * 1) !important;
+.has-featured-image .content-area > *:first-child {
+	margin-top: var(--vertical-rhythm--lrg) !important;
 }
 
 /* Account for the first block being .alignfull */
