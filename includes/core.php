@@ -717,7 +717,7 @@ function get_available_design_styles() {
 					'400i',
 					'700',
 				],
-				'Montserrat' => [
+				'Source Code Pro' => [
 					'400',
 					'700',
 				],
@@ -771,8 +771,8 @@ function get_available_design_styles() {
 					'400i',
 					'700',
 				],
-				'Hepta Slab' => [
-					'600',
+				'Abril Fatface' => [
+					'400',
 				],
 			],
 		],

@@ -1,7 +1,6 @@
 /*! Welcoming: Button */
 .wp-block-search__button,
 .wp-block-button__link:not(.wp-block-coblocks-social__button) {
-	box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.075);
 	padding-right: calc(var(--theme-button--padding-x) + 40px) !important;
 	position: relative;
 

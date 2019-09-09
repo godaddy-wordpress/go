@@ -18,6 +18,7 @@
 	width: 100%;
 }
 
+.hero-top-center-align .wp-block-coblocks-hero__content,
 .hero-center-center-align .wp-block-coblocks-hero__content {
 	margin: 0 auto;
 }

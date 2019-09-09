@@ -201,8 +201,8 @@
 	--theme-button--padding-y: 1.35rem;
 	--theme-button--radius: 3px;
 	--theme-button--text-transform: lowercase;
-	--theme-button--tracking: 2px;
-	--theme-button--weight: 600;
+	--theme-button--tracking: 1px;
+	--theme-button--weight: 400;
 
 	/* Disabled */
 	--theme-button--disabled-bg: 0, 2%, 89%;
@@ -221,11 +221,11 @@
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: 1.5rem;
-	--theme-site-title--font: "Hepta Slab", sans-serif;
-	--theme-site-title--text-transform: uppercase;
-	--theme-site-title--tracking: 4px;
-	--theme-site-title--weight: 600;
+	--theme-site-title--font-size: 2.25rem;
+	--theme-site-title--font: "Abril Fatface", sans-serif;
+	--theme-site-title--text-transform: normal;
+	--theme-site-title--tracking: 0;
+	--theme-site-title--weight: 400;
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
