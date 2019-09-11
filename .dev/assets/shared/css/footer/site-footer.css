@@ -2,6 +2,7 @@
 .site-footer {
 	background-color: hsl(var(--theme-footer--bg));
 	color: hsl(var(--theme-footer--color));
+	font-family: var(--theme-footer--font-family, inherit);
 
 	&.has-background {
 		padding-top: var(--vertical-rhythm--lrg);

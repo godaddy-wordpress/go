@@ -75,7 +75,7 @@
 }
 
 /* Remove .alignfull margin if there is a footer background enabled */
-.has-footer-background .content-area > .alignfull:last-child {
+.has-footer-background .content-area > .alignfull:not(.wp-block-coblocks-gallery-masonry):last-child {
 	margin-bottom: 0 !important;
 }
 
@@ -100,7 +100,6 @@
 
 		& .wp-block-columns,
 		& .wp-block-coblocks-row {
-			margin-bottom: var(--vertical-rhythm) !important;
 			margin-top: var(--vertical-rhythm) !important;
 		}
 

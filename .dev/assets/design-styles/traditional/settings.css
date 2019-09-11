@@ -96,13 +96,9 @@
 	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.45em;
+		--theme-h1--font-size: 4em;
 		--theme-h2--font-size: 2.75em;
 		--theme-h3--font-size: 2.15em;
-	}
-
-	@media (--large) {
-		--theme-h1--font-size: 4rem;
 	}
 
 	/* Text Utilities */
@@ -263,6 +259,7 @@
 	--theme-site-nav-toggle--color: var(--theme-color-heading);
 	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading);
 	--theme-site-nav-toggle--size: 2rem;
+	--theme-site-nav-toggle--spacing: 10px;
 
 	/* Offscreen Navigation */
 	--theme-offscreen-nav--bg: var(--color-white);

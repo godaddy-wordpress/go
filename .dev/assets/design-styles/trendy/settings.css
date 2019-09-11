@@ -56,8 +56,9 @@
 	--editor-padding: 10rem;
 
 	/* Accessibility */
-	--theme-outline-color: var(--theme-color-secondary);
-	--theme-selection--color: var(--theme-color-secondary);
+	--theme-outline-width: 1px;
+	--theme-outline-color: var(--theme-color-primary);
+	--theme-selection--color: var(--theme-color-primary);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
@@ -101,6 +102,7 @@
 	}
 
 	/* Text Utilities */
+	--theme-text-xs: 78%;
 	--theme-text-sm: 82.5%;
 
 	/* Captions */
@@ -227,12 +229,12 @@
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-text-secondary);
-	--theme-site-nav--font: "Montserrat", sans-serif;
-	--theme-site-nav--font-size: 0.8rem;
+	--theme-site-nav--font: "Source Code Pro", sans-serif;
+	--theme-site-nav--font-size: 0.9rem;
 	--theme-site-nav--font-size-mobile: 1rem;
-	--theme-site-nav--weight: 700;
-	--theme-site-nav--text-transform: uppercase;
-	--theme-site-nav--tracking: 2px;
+	--theme-site-nav--weight: 400;
+	--theme-site-nav--text-transform: normal;
+	--theme-site-nav--tracking: 0;
 	--theme-site-nav--transition: var(--theme-link-transition);
 	--theme-site-nav--padding-x: 1.35rem;
 
@@ -248,7 +250,8 @@
 	--------------------------------------------------------------*/
 	--theme-site-nav-toggle--color: var(--theme-color-heading);
 	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading);
-	--theme-site-nav-toggle--size: 2rem;
+	--theme-site-nav-toggle--size: 1.75rem;
+	--theme-site-nav-toggle--spacing: 8px;
 
 	/* Offscreen Navigation */
 	--theme-offscreen-nav--bg: var(--color-white);
@@ -261,7 +264,7 @@
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-text-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-secondary);
-	--theme-search-toggle--size: 24px;
+	--theme-search-toggle--size: 20px;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
@@ -284,6 +287,7 @@
 	--------------------------------------------------------------*/
 	--theme-footer--bg: var(--theme-color-tertiary);
 	--theme-footer--color: var(--theme-color-text-secondary);
+	--theme-footer--font-family: "Source Code Pro", sans-serif;
 	--theme-footer-heading--color: var(--color-white);
 	--theme-footer-2--padding-y: 4rem;
 
@@ -307,7 +311,7 @@
 	--theme-social--spacing: 0.5rem;
 
 	@media (--medium) {
-		--theme-social--size: 1.75rem;
+		--theme-social--size: 1.65rem;
 		--theme-social--spacing: 1rem;
 	}
 

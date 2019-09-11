@@ -13,3 +13,7 @@
 	}
 
 }
+
+.wp-block-coblocks-features .wp-block-coblocks-feature *:last-child {
+	margin-bottom: 0 !important;
+}

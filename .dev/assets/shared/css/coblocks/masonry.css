@@ -5,6 +5,10 @@
 
 .wp-block-coblocks-gallery-masonry {
 
+	& ul {
+		margin: 0;
+	}
+
 	& figcaption {
 		font-size: var(--theme-caption--font-size);
 		font-style: var(--theme-caption--style, normal);

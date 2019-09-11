@@ -1,7 +1,7 @@
 /*! Links */
 .site-content {
 
-	& a {
+	& a:not(.wp-block-button__link) {
 		color: hsl(var(--theme-link--color));
 
 		&:not(.wp-block-button__link):hover,

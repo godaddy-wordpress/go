@@ -7,13 +7,6 @@
 @import url("config/editor-font-sizes.css");
 @import url("config/mixins.css");
 
-/* Utilities */
-@import url("utilities/captions.css");
-@import url("utilities/accessibility.css");
-@import url("utilities/font-sizes.css");
-@import url("utilities/colors.css");
-@import url("utilities/padding.css");
-
 /* Elements */
 @import url("elements/page.css");
 @import url("elements/typography.css");
@@ -115,6 +108,13 @@
 @import url("gravity/forms.css");
 @import url("gravity/checkbox.css");
 @import url("gravity/radio.css");
+
+/* Utilities */
+@import url("utilities/captions.css");
+@import url("utilities/accessibility.css");
+@import url("utilities/font-sizes.css");
+@import url("utilities/colors.css");
+@import url("utilities/padding.css");
 
 /* Everything below here still needs organizing */
 .u-informational {
@@ -287,8 +287,8 @@ strong {
 }
 
 .px {
-	padding-left: var(--theme-block-padding-x);
-	padding-right: var(--theme-block-padding-x);
+	padding-left: var(--theme-block-padding-x) !important;
+	padding-right: var(--theme-block-padding-x) !important;
 }
 
 @media (--small) {

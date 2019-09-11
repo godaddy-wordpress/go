@@ -49,7 +49,7 @@
 }
 
 .wp-block-search__button,
-.wp-block-button__link:not(.wp-block-coblocks-social__button) {
+.wp-block-button__link {
 	@mixin button;
 	position: relative;
 
