@@ -6,6 +6,11 @@
 @import url("components/button.css");
 @import url("components/carousel.css");
 
+/**
+ * WooCommerce overrides
+ */
+@import url("woocommerce/tabs.css");
+
 html {
 	background-color: hsl(var(--theme-header--bg));
 }

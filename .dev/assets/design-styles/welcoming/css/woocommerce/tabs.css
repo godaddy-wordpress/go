@@ -1,0 +1,7 @@
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	margin: 0 2rem 1.5rem 0;
+
+	& a {
+		padding: 5px 10px;
+	}
+}
