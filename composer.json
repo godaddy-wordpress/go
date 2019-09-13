@@ -10,7 +10,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Maverick\\": "includes/classes/"
+      "Go\\": "includes/classes/"
     }
   },
   "repositories": [

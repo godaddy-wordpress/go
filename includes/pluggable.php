@@ -2,7 +2,7 @@
 /**
  * WP Theme pluggable functions
  *
- * @package Maverick
+ * @package Go
  */
 
 if ( ! function_exists( 'go_comment' ) ) :

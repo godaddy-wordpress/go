@@ -4,10 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Maverick
+ * @package Go
  */
 
-Maverick\page_title();
+Go\page_title();
 ?>
 
 <div class="content-area no-results not-found">

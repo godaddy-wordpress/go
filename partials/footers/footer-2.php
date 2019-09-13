@@ -2,10 +2,10 @@
 /**
  * Footer #3
  *
- * @package Maverick
+ * @package Go
  */
 
-$has_background = Maverick\has_footer_background();
+$has_background = Go\has_footer_background();
 ?>
 
 <footer id="colophon" class="site-footer site-footer--2 <?php echo esc_attr( $has_background ); ?>">
@@ -26,9 +26,9 @@ $has_background = Maverick\has_footer_background();
 			</nav>
 		<?php endif; ?>
 
-		<?php Maverick\social_icons( [ 'class' => 'social-icons list-reset' ] ); ?>
+		<?php Go\social_icons( [ 'class' => 'social-icons list-reset' ] ); ?>
 
-		<?php Maverick\copyright( [ 'class' => 'site-info text-xs mb-0 lg:w-full' ] ); ?>
+		<?php Go\copyright( [ 'class' => 'site-info text-xs mb-0 lg:w-full' ] ); ?>
 
 	</div>
 

@@ -4,7 +4,7 @@ workflows:
     jobs:
       # Support PHP Versions
       # http://php.net/supported-versions.php
-      - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Maverick
+      - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
           filters:
             tags:
               only: /.*/
@@ -157,7 +157,7 @@ jobs:
             chmod +x wp-cli.phar
             sudo mv wp-cli.phar /usr/local/bin/wp
       - run:
-          name: Build the Maverick Theme
+          name: Build the Go Theme
           command: npm run build
       - run:
           name: Setup WordPress site and install the Theme Check package
@@ -203,7 +203,7 @@ jobs:
             chmod +x wp-cli.phar
             sudo mv wp-cli.phar /usr/local/bin/wp
       - run:
-          name: Build the Maverick Theme
+          name: Build the Go Theme
           command: npm run build
       - run:
           name: Setup WordPress site
@@ -249,7 +249,7 @@ jobs:
           name: Install node packages
           command: npm install
       - run:
-          name: Build the Maverick Theme
+          name: Build the Go Theme
           command: |
             npm run build
             mkdir -p go

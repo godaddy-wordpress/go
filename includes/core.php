@@ -2,13 +2,13 @@
 /**
  * Core setup, site hooks and filters.
  *
- * @package Maverick\Core
+ * @package Go\Core
  */
 
-namespace Maverick\Core;
+namespace Go\Core;
 
-use function Maverick\hex_to_hsl;
-use function Maverick\load_inline_svg;
+use function Go\hex_to_hsl;
+use function Go\load_inline_svg;
 
 /**
  * Set up theme defaults and register supported WordPress features.
@@ -127,7 +127,7 @@ function theme_setup() {
 	add_theme_support(
 		'custom-background',
 		[
-			'default-color' => \Maverick\get_palette_color( 'background' ),
+			'default-color' => \Go\get_palette_color( 'background' ),
 		]
 	);
 
@@ -187,17 +187,17 @@ function theme_setup() {
 			[
 				'name'  => esc_html__( 'Primary', 'go' ),
 				'slug'  => 'primary',
-				'color' => \Maverick\get_palette_color( 'primary' ),
+				'color' => \Go\get_palette_color( 'primary' ),
 			],
 			[
 				'name'  => esc_html__( 'Secondary', 'go' ),
 				'slug'  => 'secondary',
-				'color' => \Maverick\get_palette_color( 'secondary' ),
+				'color' => \Go\get_palette_color( 'secondary' ),
 			],
 			[
 				'name'  => esc_html__( 'Tertiary', 'go' ),
 				'slug'  => 'tertiary',
-				'color' => \Maverick\get_palette_color( 'tertiary' ),
+				'color' => \Go\get_palette_color( 'tertiary' ),
 			],
 			[
 				'name'  => esc_html__( 'Quaternary', 'go' ),
@@ -294,13 +294,13 @@ function block_editor_assets() {
 
 	ob_start();
 
-	\Maverick\Customizer\inline_css();
+	\Go\Customizer\inline_css();
 
 	$styles = ob_get_clean();
 
 	wp_localize_script(
 		'go-block-filters',
-		'MaverickBlockFilters',
+		'GoBlockFilters',
 		[
 			'inlineStyles' => $styles,
 		]
@@ -327,7 +327,7 @@ function scripts() {
 
 	wp_localize_script(
 		'go-frontend',
-		'MaverickText',
+		'GoText',
 		[
 			'searchLabel' => esc_html__( 'Expand search field', 'go' ),
 		]

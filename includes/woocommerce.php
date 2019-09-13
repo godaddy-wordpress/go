@@ -2,12 +2,12 @@
 /**
  * WooCommerce Setup
  *
- * @package Maverick\WooCommerce
+ * @package Go\WooCommerce
  */
 
-namespace Maverick\WooCommerce;
+namespace Go\WooCommerce;
 
-use function Maverick\load_inline_svg;
+use function Go\load_inline_svg;
 
 /**
  * Set up WooCommerce hooks

@@ -2,10 +2,10 @@
 /**
  * Range Customizer Control.
  *
- * @package Maverick\Customizer
+ * @package Go\Customizer
  */
 
-namespace Maverick\Customizer;
+namespace Go\Customizer;
 
 /**
  * This class is for the range control in the Customizer.

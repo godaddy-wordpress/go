@@ -2,10 +2,10 @@
 /**
  * Switcher Customizer Control.
  *
- * @package Maverick\Customizer
+ * @package Go\Customizer
  */
 
-namespace Maverick\Customizer;
+namespace Go\Customizer;
 
 /**
  * Switcher Control Class.

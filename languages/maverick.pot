@@ -1,7 +1,7 @@
 # Copyright (c) 2019 GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: Maverick 0.2.0\n"
+"Project-Id-Version: Go 0.2.0\n"
 "Report-Msgid-Bugs-To: https://project-git-repo.tld\n"
 "POT-Creation-Date: 2019-09-07 01:21:11+00:00\n"
 "MIME-Version: 1.0\n"
@@ -798,7 +798,7 @@ msgid "Tertiary Footer Menu"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Maverick"
+msgid "Go"
 msgstr ""
 
 #. Theme URI of the plugin/theme
@@ -807,7 +807,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Maverick is an innovative, Gutenberg-first WordPress theme, hyper-focused "
+"Go is an innovative, Gutenberg-first WordPress theme, hyper-focused "
 "on empowering makers to build beautifully rich websites with WordPress."
 msgstr ""
 

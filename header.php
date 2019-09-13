@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Maverick
+ * @package Go
  */
 
 ?><!doctype html>
@@ -26,6 +26,6 @@
 
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'go' ); ?></a>
 
-		<?php Maverick\header_variation(); ?>
+		<?php Go\header_variation(); ?>
 
 		<div id="content" class="site-content">

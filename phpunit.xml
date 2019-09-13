@@ -7,7 +7,7 @@
 	convertWarningsToExceptions="true"
 	>
 	<testsuites>
-		<testsuite name="Maverick Test Suite">
+		<testsuite name="Go Test Suite">
 			<directory prefix="test-" suffix=".php">./.dev/tests/php/</directory>
 		</testsuite>
 	</testsuites>

@@ -2,12 +2,12 @@
 /**
  * File: archive.php (for archives and blog landing).
  *
- * @package Maverick
+ * @package Go
  */
 
 get_header();
 
-Maverick\page_title();
+Go\page_title();
 
 if ( have_posts() ) {
 

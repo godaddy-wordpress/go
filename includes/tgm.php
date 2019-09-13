@@ -2,10 +2,10 @@
 /**
  * TGM setup
  *
- * @package Maverick\TGM
+ * @package Go\TGM
  */
 
-namespace Maverick\TGM;
+namespace Go\TGM;
 
 require_once get_parent_theme_file_path( 'includes/classes/class-tgm-plugin-activation.php' );
 
