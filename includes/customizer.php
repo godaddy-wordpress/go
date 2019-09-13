@@ -161,7 +161,7 @@ function customize_preview_init() {
 		'go-customize-preview',
 		get_theme_file_uri( "dist/js/admin/customize-preview{$suffix}.js" ),
 		[ 'jquery', 'customize-preview', 'wp-autop' ],
-		MAVERICK_VERSION,
+		GO_VERSION,
 		true
 	);
 
@@ -187,7 +187,7 @@ function enqueue_controls_assets() {
 		'go-customize-controls',
 		get_theme_file_uri( "dist/js/admin/customize-controls{$suffix}.js" ),
 		[ 'jquery' ],
-		MAVERICK_VERSION,
+		GO_VERSION,
 		true
 	);
 
@@ -195,7 +195,7 @@ function enqueue_controls_assets() {
 		'go-customize-style',
 		get_theme_file_uri( "dist/css/admin/style-customize{$suffix}.css" ),
 		[],
-		MAVERICK_VERSION
+		GO_VERSION
 	);
 }
 

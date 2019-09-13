@@ -288,7 +288,7 @@ function block_editor_assets() {
 		'go-block-filters',
 		get_theme_file_uri( "dist/js/admin/block-filters{$suffix}.js" ),
 		[ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
-		MAVERICK_VERSION,
+		GO_VERSION,
 		true
 	);
 
@@ -321,7 +321,7 @@ function scripts() {
 		'go-frontend',
 		get_theme_file_uri( "dist/js/frontend{$suffix}.js" ),
 		[],
-		MAVERICK_VERSION,
+		GO_VERSION,
 		true
 	);
 
@@ -380,7 +380,7 @@ function styles() {
 		'go-style',
 		get_theme_file_uri( "dist/css/style-shared{$suffix}.css" ),
 		[ 'go-fonts' ],
-		MAVERICK_VERSION
+		GO_VERSION
 	);
 
 	$design_style = get_design_style();
@@ -390,7 +390,7 @@ function styles() {
 			'go-design-style-' . sanitize_title( $design_style['label'] ),
 			$design_style['url'],
 			[ 'go-style' ],
-			MAVERICK_VERSION
+			GO_VERSION
 		);
 	}
 
@@ -398,7 +398,7 @@ function styles() {
 		'go-fonts',
 		fonts_url(),
 		[],
-		MAVERICK_VERSION
+		GO_VERSION
 	);
 
 }
