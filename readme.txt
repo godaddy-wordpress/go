@@ -26,7 +26,7 @@ Maverick is an innovative, Gutenberg-first WordPress theme, hyper-focused on emp
 
 **Contributing**
 
-You can fork and contribute back to Maverick by visiting [our public repo on GitHub](https://github.com/godaddy/wp-maverick-theme).
+You can fork and contribute back to Maverick by visiting [our public repo on GitHub](https://github.com/godaddy/wp-go-theme).
 
 == Installation ==
 

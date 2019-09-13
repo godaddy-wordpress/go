@@ -802,7 +802,7 @@ msgid "Maverick"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/godaddy/wp-maverick-theme"
+msgid "https://github.com/godaddy/wp-go-theme"
 msgstr ""
 
 #. Description of the plugin/theme

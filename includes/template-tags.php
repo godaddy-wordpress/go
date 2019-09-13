@@ -294,7 +294,7 @@ function page_title() {
 	 * @var array
 	 */
 	$args = (array) apply_filters(
-		'maverick_page_title_args',
+		'go_page_title_args',
 		[
 			'title'   => get_the_title(),
 			'wrapper' => 'h1',
@@ -493,7 +493,7 @@ function navigation_toggle() {
 		echo '<div class="site-navigation__toggle-icon">';
 			echo '<div class="site-navigation__toggle-icon-inner"></div>';
 		echo '</div>';
-		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'maverick' ) . '</span>';
+		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'go' ) . '</span>';
 	echo '</button>';
 }
 
@@ -533,7 +533,7 @@ function search_toggle() {
 				]
 			)
 		),
-		esc_html__( 'Search Toggle', 'maverick' )
+		esc_html__( 'Search Toggle', 'go' )
 	);
 
 }
