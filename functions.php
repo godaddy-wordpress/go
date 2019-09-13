@@ -36,11 +36,17 @@ require_once get_parent_theme_file_path( 'includes/pluggable.php' );
 require_once get_parent_theme_file_path( 'includes/tgm.php' );
 
 /**
+ * WooCommerce functions.
+ */
+require_once get_parent_theme_file_path( 'includes/woocommerce.php' );
+
+/**
  * Run setup functions.
  */
 Maverick\Core\setup();
 Maverick\TGM\setup();
 Maverick\Customizer\setup();
+Maverick\WooCommerce\setup();
 
 if ( ! function_exists( 'wp_body_open' ) ) {
 
