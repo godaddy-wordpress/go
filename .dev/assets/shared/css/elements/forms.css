@@ -70,6 +70,7 @@ textarea {
 select {
 	@mixin select-menu;
 	margin-bottom: var(--theme-input--spacing);
+	padding: var(--theme-input--padding-y) var(--theme-input--padding-x) !important;
 
 	/* CAUTION: IE hackery ahead */
 	&::-ms-expand {
