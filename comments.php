@@ -78,5 +78,4 @@ if ( post_password_required() ) {
 
 	<?php comment_form(); ?>
 
-</div><!-- #comments .comments-area -->
 </div>
