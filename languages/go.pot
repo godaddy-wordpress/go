@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Go 0.2.0\n"
 "Report-Msgid-Bugs-To: https://project-git-repo.tld\n"
-"POT-Creation-Date: 2019-09-14 14:49:23+00:00\n"
+"POT-Creation-Date: 2019-09-14 14:54:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -751,7 +751,7 @@ msgstr ""
 msgid "Search Toggle"
 msgstr ""
 
-#: includes/woocommerce.php:76
+#: includes/woocommerce.php:80
 msgid "Your cart is currently empty."
 msgstr ""
 
