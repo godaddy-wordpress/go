@@ -6,3 +6,10 @@ img {
 	/* Removes the whitespace under img, safer than `display: block;`. */
 	vertical-align: middle;
 }
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
