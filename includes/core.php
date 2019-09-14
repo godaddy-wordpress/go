@@ -280,6 +280,8 @@ function fonts_url() {
  */
 function block_editor_assets() {
 
+	// This file provides our Customizer setup, not template partials.
+	// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	require_once get_parent_theme_file_path( 'includes/customizer.php' );
 
 	$suffix = SCRIPT_DEBUG ? '' : '.min';

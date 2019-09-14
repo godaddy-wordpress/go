@@ -7,6 +7,8 @@
 
 namespace Go\TGM;
 
+// This file contains the TMGPA class for installing plugins, not template partials.
+// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 require_once get_parent_theme_file_path( 'includes/classes/class-tgm-plugin-activation.php' );
 
 /**

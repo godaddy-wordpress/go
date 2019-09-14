@@ -44,7 +44,12 @@ function setup() {
  * @return void
  */
 function register_control_types( \WP_Customize_Manager $wp_customize ) {
+	// This file is a class for our Customizer switcher control, not template partials.
+	// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	require_once get_parent_theme_file_path( 'includes/classes/customizer/class-switcher-control.php' );
+
+	// This file is a class for our Customizer range control, not template partials.
+	// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	require_once get_parent_theme_file_path( 'includes/classes/customizer/class-range-control.php' );
 
 	$wp_customize->register_control_type( Switcher_Control::class );
