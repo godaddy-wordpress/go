@@ -709,10 +709,10 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Trocchi'    => [
+				'Trocchi'         => [
 					'400',
 				],
-				'Open Sans'  => [
+				'Open Sans'       => [
 					'400',
 					'400i',
 					'700',
