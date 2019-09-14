@@ -73,7 +73,7 @@ function custom_empty_cart_message() {
 				]
 			)
 		),
-		esc_html( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'woocommerce' ) ) )
+		esc_html( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'go' ) ) )
 	);
 
 }
