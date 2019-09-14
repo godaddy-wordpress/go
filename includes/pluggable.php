@@ -80,6 +80,7 @@ if ( ! function_exists( 'go_comment' ) ) :
 			</article><!-- #comment-## -->
 				<?php
 				break;
+
 		endswitch; // end comment_type check.
 	}
 endif;

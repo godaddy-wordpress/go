@@ -74,8 +74,9 @@ if ( post_password_required() ) {
 		<p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'go' ); ?></p>
 		<?php endif; ?>
 
-	<?php endif; // have_comments(). ?>
+	<?php endif; ?>
 
 	<?php comment_form(); ?>
 
 </div><!-- #comments .comments-area -->
+</div>

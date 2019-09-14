@@ -40,7 +40,7 @@ function setup() {
  * Makes Theme available for translation.
  *
  * Translations can be added to the /languages directory.
- * If you're building a theme based on "godaddy", change the
+ * If you're building a theme based on Go, change the
  * filename of '/languages/go.pot' to the name of your project.
  *
  * @return void
@@ -56,14 +56,9 @@ function i18n() {
  */
 function theme_setup() {
 
-	/**
-	 * Filters the theme content width global.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param integer $content_width The default content width for the theme.
-	 */
-	$GLOBALS['content_width'] = apply_filters( 'go_content_width', 980 );
+	// Filters the theme content width global; intended to be overruled from themes.
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
+	$GLOBALS['content_width'] = apply_filters( 'go_content_width', 660 );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -925,7 +920,7 @@ function get_available_header_variations() {
 	 * @param array $header_variations Array containings the supported header variations,
 	 * where the index is the slug of header variation and the value an array of options that sets up the header variation.
 	 */
-	$supported_header_variations = apply_filters( 'header_variations', $default_header_variations );
+	$supported_header_variations = apply_filters( 'go_header_variations', $default_header_variations );
 
 	return $supported_header_variations;
 
