@@ -59,7 +59,7 @@
 	--theme-outline-color: var(--theme-color-primary);
 	--theme-outline-width: 1px;
 
-	--theme-selection--color: var(--theme-color-primary);
+	--theme-selection--bg: var(--theme-color-primary);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
@@ -268,7 +268,7 @@
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-text);
-	--theme-search-toggle--size: 20px;
+	--theme-search-toggle--size: 2rem;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-text);
@@ -325,7 +325,7 @@
 	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.05);
+	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--bg), 0.05);
 	--coblocks-accordion--border-color: var(--theme-color-heading);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-heading);

@@ -61,15 +61,6 @@
 	margin-top: 0 !important;
 }
 
-/* Account for page titles. */
-.has-page-titles:not(.home) .content-area > *:first-child {
-	margin-top: var(--vertical-rhythm--lrg) !important;
-
-	@media (--large) {
-		margin-top: calc(var(--vertical-rhythm--lrg) - var(--theme-header--padding-y)) !important;
-	}
-}
-
 .is-header-3 .content-area > *:first-child {
 	margin-top: 0 !important;
 }

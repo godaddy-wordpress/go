@@ -15,5 +15,5 @@
 }
 
 .hfeed article .content-area > :first-child {
-	margin-top: 3rem !important;
+	margin-top: calc(var(--vertical-rhythm--lrg) * 0.55) !important;
 }

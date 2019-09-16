@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Maverick 0.2.0\n"
 "Report-Msgid-Bugs-To: https://project-git-repo.tld\n"
-"POT-Creation-Date: 2019-09-07 01:21:11+00:00\n"
+"POT-Creation-Date: 2019-09-16 13:25:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -521,113 +521,113 @@ msgstr ""
 msgid "Champagne"
 msgstr ""
 
-#: includes/core.php:727
+#: includes/core.php:728
 msgid "Welcoming"
 msgstr ""
 
-#: includes/core.php:732
+#: includes/core.php:733
 msgid "Forest"
 msgstr ""
 
-#: includes/core.php:740
+#: includes/core.php:741
 msgid "Spruce"
 msgstr ""
 
-#: includes/core.php:749
+#: includes/core.php:750
 msgid "Mocha"
 msgstr ""
 
-#: includes/core.php:757
+#: includes/core.php:758
 msgid "Lavender"
 msgstr ""
 
-#: includes/core.php:780
+#: includes/core.php:781
 msgid "Playful"
 msgstr ""
 
-#: includes/core.php:785
+#: includes/core.php:786
 msgid "Frolic"
 msgstr ""
 
-#: includes/core.php:794
+#: includes/core.php:795
 msgid "Coral"
 msgstr ""
 
-#: includes/core.php:803
+#: includes/core.php:804
 msgid "Organic"
 msgstr ""
 
-#: includes/core.php:812
+#: includes/core.php:813
 msgid "Berry"
 msgstr ""
 
-#: includes/core.php:889
+#: includes/core.php:890
 msgid "Header 1"
 msgstr ""
 
-#: includes/core.php:896
+#: includes/core.php:897
 msgid "Header 2"
 msgstr ""
 
-#: includes/core.php:903
+#: includes/core.php:904
 msgid "Header 3"
 msgstr ""
 
-#: includes/core.php:910
+#: includes/core.php:911
 msgid "Header 4"
 msgstr ""
 
-#: includes/core.php:958
+#: includes/core.php:959
 msgid "Footer 1"
 msgstr ""
 
-#: includes/core.php:965
+#: includes/core.php:966
 msgid "Footer 2"
 msgstr ""
 
-#: includes/core.php:972
+#: includes/core.php:973
 msgid "Footer 3"
 msgstr ""
 
-#: includes/core.php:979
+#: includes/core.php:980
 msgid "Footer 4"
 msgstr ""
 
-#: includes/core.php:1050
+#: includes/core.php:1051
 #. translators: the theme author
 msgid "WordPress Theme by %s"
 msgstr ""
 
-#: includes/core.php:1062
+#: includes/core.php:1063
 msgid "Facebook"
 msgstr ""
 
-#: includes/core.php:1067
+#: includes/core.php:1068
 msgid "Twitter"
 msgstr ""
 
-#: includes/core.php:1072
+#: includes/core.php:1073
 msgid "Instagram"
 msgstr ""
 
-#: includes/core.php:1077
+#: includes/core.php:1078
 msgid "LinkedIn"
 msgstr ""
 
-#: includes/core.php:1082
+#: includes/core.php:1083
 msgid "Pinterest"
 msgstr ""
 
-#: includes/core.php:1208
+#: includes/core.php:1209
 msgid "That page can't be found"
 msgstr ""
 
-#: includes/core.php:1222
+#: includes/core.php:1223
 #. translators: Search query term(s).
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1230
+#: includes/core.php:1231
 msgid "Nothing Found"
 msgstr ""
 
@@ -751,6 +751,10 @@ msgstr ""
 msgid "Search Toggle"
 msgstr ""
 
+#: includes/woocommerce.php:76
+msgid "Your cart is currently empty."
+msgstr ""
+
 #: partials/content-excerpt.php:37 partials/content.php:34
 msgid "by"
 msgstr ""
@@ -795,6 +799,14 @@ msgstr ""
 
 #: partials/footers/footer-3.php:51 partials/footers/footer-4.php:53
 msgid "Tertiary Footer Menu"
+msgstr ""
+
+#: partials/pagniation.php:21
+msgid "Newer <span class=\"nav-short\">Posts</span>"
+msgstr ""
+
+#: partials/pagniation.php:25
+msgid "Older <span class=\"nav-short\">Posts</span>"
 msgstr ""
 
 #. Theme Name of the plugin/theme

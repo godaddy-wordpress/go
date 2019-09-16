@@ -27,7 +27,7 @@
 	color: hsla(var(--theme-site-title--color), 1);
 	font-family: var(--theme-site-title--font);
 	font-size: var(--theme-site-title--font-size);
-	font-weight: var(--theme-site-title--weight);
+	font-weight: var(--theme-site-title--weight, var(--theme-heading--weight));
 	letter-spacing: var(--theme-site-title--tracking);
 	text-transform: var(--theme-site-title--text-transform);
 }
@@ -53,27 +53,16 @@ h1.site-branding__title {
 
 	& + .site-branding__description {
 		color: hsla(var(--theme-site-description--color), 1);
+		display: none;
+		font-size: var(--theme-site-description--font-size);
+		font-weight: var(--theme-site-description--font-weight, 400);
 		line-height: var(--theme-site-description--leading);
-		margin-top: 0.25rem;
+		margin-top: var(--theme-site-description--mt, 0.25rem);
 		opacity: var(--theme-site-description--opacity, 0.65);
 
-		@media (--small) {
-			margin-left: 0.5rem;
-			margin-top: 0;
-			padding-left: 1.75rem;
-		}
-
-		&::before {
-			@media (--small) {
-				background-color: currentColor;
-				content: "";
-				display: block;
-				height: 100%;
-				left: 10px;
-				opacity: 0.25;
-				position: absolute;
-				width: 1px;
-			}
+		@media (--medium) {
+			display: block;
+			margin-left: 1.5rem;
 		}
 	}
 }

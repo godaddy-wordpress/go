@@ -4,15 +4,12 @@ const merge = require( 'webpack-merge' );
 const common = require( './webpack.common.js' );
 const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-
-// Config files.
 const settings = require( './webpack.settings.js' );
 
 module.exports = merge( common, {
 	mode: 'development',
 	devtool: 'inline-cheap-module-source-map',
 	plugins: [
-		// Run BrowserSync.
 		new BrowserSyncPlugin(
 			{
 				host: settings.BrowserSyncConfig.host,
@@ -26,7 +23,6 @@ module.exports = merge( common, {
 				reload: false,
 			}
 		),
-
 		new OptimizeCssAssetsPlugin( {
 			assetNameRegExp: /\.*\.css$/g,
 			cssProcessor: require( 'cssnano' ),

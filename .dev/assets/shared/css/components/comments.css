@@ -100,12 +100,12 @@
 	}
 
 	& p.comment-notes {
-		font-size: var(--theme-font-size-post-meta, 0.975rem);
+		font-size: var(--theme-meta--font-size, 0.975rem);
 		margin-bottom: 2.25rem;
 	}
 
 	& p.logged-in-as {
-		font-size: var(--theme-font-size-post-meta, 0.975rem);
+		font-size: var(--theme-meta--font-size, 0.975rem);
 		margin-bottom: 2.25rem;
 	}
 

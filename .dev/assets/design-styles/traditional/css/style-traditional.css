@@ -35,3 +35,12 @@ p.has-background,
 .wp-block-coblocks-food-item__attributes {
 	top: 0;
 }
+
+.meta-icon {
+	position: relative;
+	top: 1px;
+}
+
+.post-date .meta-icon {
+	top: 3px;
+}

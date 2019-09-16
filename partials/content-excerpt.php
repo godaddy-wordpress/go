@@ -25,7 +25,7 @@
 			printf( '<span class="sticky-post">%s</span>', esc_html_x( 'Featured', 'post', 'maverick' ) );
 		}
 
-		the_title( sprintf( '<h2 class="entry-title h1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		the_title( sprintf( '<h2 class="entry-title h1"><a href="%s" rel="bookmark" class="no-underline no-color">', esc_url( get_permalink() ) ), '</a></h2>' );
 		?>
 
 		<?php if ( ! is_search() ) { ?>

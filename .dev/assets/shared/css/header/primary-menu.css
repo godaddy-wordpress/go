@@ -31,7 +31,7 @@
 		}
 
 		&:hover {
-			color: hsl(var(--theme-site-nav--color-interactive));
+			text-decoration: underline;
 		}
 
 		&:focus {

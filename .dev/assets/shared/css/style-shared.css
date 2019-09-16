@@ -244,6 +244,10 @@ strong {
 	letter-spacing: var(--theme-text-sm--letter-spacing, 0);
 }
 
+.no-underline {
+	text-decoration: none;
+}
+
 .relative {
 	position: relative;
 }

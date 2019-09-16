@@ -14,7 +14,7 @@
 		transition: var(--theme-footer-nav--transition);
 
 		&:hover {
-			color: hsl(var(--theme-footer-nav--color-interactive));
+			text-decoration: underline;
 		}
 	}
 

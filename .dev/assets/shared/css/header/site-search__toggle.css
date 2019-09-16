@@ -6,12 +6,12 @@
 	box-shadow: none;
 	color: hsl(var(--theme-search-toggle--color));
 	display: inline-block;
-	height: calc(var(--theme-search-toggle--size) * 2);
+	height: calc(var(--theme-search-toggle--size, 1.5rem) * 2);
 	line-height: 1;
 	padding: 0.1rem;
 	position: relative;
 	transition: var(--theme-link-transition);
-	width: calc(var(--theme-search-toggle--size) * 2);
+	width: calc(var(--theme-search-toggle--size, 1.5rem) * 2);
 	z-index: 1;
 
 	@media (--large) {
@@ -26,13 +26,16 @@
 		box-shadow: none;
 	}
 
-	&:hover {
-		color: hsl(var(--theme-site-nav--color-interactive));
+	&:hover svg,
+	&:focus svg {
+		outline: none;
+		transform: scale(1.125);
 	}
 
 	& svg {
 		fill: currentColor;
-		width: var(--theme-search-toggle--size);
+		transition: transform 0.15s linear;
+		width: var(--theme-search-toggle--size, 1.5rem);
 	}
 }
 
