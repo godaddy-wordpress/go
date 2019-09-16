@@ -15,6 +15,10 @@
 	max-width: var(--theme-entry-header--width, 78rem);
 }
 
+.post-edit-link {
+	margin-bottom: var(--vertical-rhythm--large);
+}
+
 /*! Post Meta */
 .post__meta--wrapper {
 	margin-top: 2rem;

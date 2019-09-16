@@ -41,6 +41,10 @@
 @import url("coblocks/carousel.css");
 @import url("coblocks/food-drinks.css");
 
+.block-editor-block-list__block[data-type="core/paragraph"] p {
+	line-height: var(--theme-body--leading);
+}
+
 /* Captions */
 .wp-block figcaption {
 	margin-top: 0 !important;

@@ -5,21 +5,6 @@
 @import url("../settings.css");
 @import url("components/carousel.css");
 
-.wp-block-code,
-.wp-block-verse,
-p.has-background,
-.wp-block-pullquote:not(.alignfull):not(.alignwide),
-.wp-block-coblocks-alert,
-.wp-block-separator.is-style-wide,
-.wp-block-group:not(.alignfull):not(.alignwide),
-.wp-block-cover:not(.alignwide):not(.alignfull),
-.wp-block-coblocks-dynamic-separator.is-style-fullwidth::before {
-	@media (--base) {
-		margin-left: var(--theme-block-padding-x);
-		margin-right: var(--theme-block-padding-x);
-	}
-}
-
 .wp-block-separator:not(.is-style-dots) {
 	background-color: hsl(var(--theme-color-secondary));
 	background-position: 50%;

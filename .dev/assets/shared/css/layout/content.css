@@ -14,7 +14,7 @@
 	margin-bottom: var(--vertical-rhythm);
 	margin-top: var(--vertical-rhythm);
 
-	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
+	&:not(p):not(ul):not(ol):not(address):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
 		margin-bottom: var(--vertical-rhythm--lrg);
 		margin-top: var(--vertical-rhythm--lrg);
 	}
@@ -106,9 +106,10 @@
 	& > h5,
 	& > h6 {
 
-		& + p {
-
-			/* Remove space between headings and paragraphs */
+		& + p,
+		& + ol,
+		& + ul,
+		& + dl {
 			margin-top: calc(var(--vertical-rhythm--lrg) * -0.825) !important;
 		}
 

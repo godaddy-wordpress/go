@@ -5,10 +5,6 @@
 @import url("../settings.css");
 @import url("components/button.css");
 @import url("components/carousel.css");
-
-/**
- * WooCommerce overrides
- */
 @import url("woocommerce/tabs.css");
 
 html {
@@ -18,21 +14,6 @@ html {
 body {
 	border: 12px solid hsl(var(--theme-header--bg));
 	border-top: 0;
-}
-
-.wp-block-code,
-.wp-block-verse,
-p.has-background,
-.wp-block-pullquote:not(.alignfull):not(.alignwide),
-.wp-block-coblocks-alert,
-.wp-block-separator.is-style-wide,
-.wp-block-group:not(.alignfull):not(.alignwide),
-.wp-block-cover:not(.alignwide):not(.alignfull),
-.wp-block-coblocks-dynamic-separator.is-style-fullwidth::before {
-	@media (--base) {
-		margin-left: var(--theme-block-padding-x);
-		margin-right: var(--theme-block-padding-x);
-	}
 }
 
 .site-footer.has-background {
