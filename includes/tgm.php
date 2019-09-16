@@ -2,11 +2,13 @@
 /**
  * TGM setup
  *
- * @package Maverick\TGM
+ * @package Go\TGM
  */
 
-namespace Maverick\TGM;
+namespace Go\TGM;
 
+// This file contains the TMGPA class for installing plugins, not template partials.
+// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 require_once get_parent_theme_file_path( 'includes/classes/class-tgm-plugin-activation.php' );
 
 /**
@@ -43,10 +45,10 @@ function register_required_plugins() {
 	 *
 	 * @param array $plugins Array containings the plugin dependencies in the TGM format.
 	 */
-	$plugins = apply_filters( 'maverick_plugin_dependencies', $plugins );
+	$plugins = apply_filters( 'go_plugin_dependencies', $plugins );
 
 	$config = [
-		'id'           => 'maverick',              // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'go',              // Unique ID for hashing notices for multiple instances of TGMPA.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'has_notices'  => true,                    // Show admin notices or not.
 		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.

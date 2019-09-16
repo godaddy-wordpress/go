@@ -1,4 +1,4 @@
-maverick/
+go/
 .*
 *.yml
 *.xml

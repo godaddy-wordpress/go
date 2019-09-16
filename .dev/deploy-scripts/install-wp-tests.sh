@@ -110,11 +110,11 @@ setup_wp() {
 
 	wp db create --path=$WP_CORE_DIR
 	wp core install \
-		--url=http://maverick.test \
+		--url=http://go.test \
 		--title="WordPress Site" \
 		--admin_user=admin \
 		--admin_password=password \
-		--admin_email=admin@maverick.test \
+		--admin_email=admin@go.test \
 		--skip-email \
 		--path=$WP_CORE_DIR
 }
@@ -190,10 +190,10 @@ if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
 	sudo service apache2 restart
 	wp db reset --yes --path=$WP_CORE_DIR
 	wp db import ~/project/.dev/tests/a11y-test-db.sql --path=$WP_CORE_DIR
-	wp search-replace https://maverick.test http://maverick.test --path=$WP_CORE_DIR
+	wp search-replace https://go.test http://go.test --path=$WP_CORE_DIR
 fi
 
-export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/maverick
+export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/go
 mkdir -p $INSTALL_PATH
 
 if [ "$CIRCLE_JOB" == 'unit-tests' ]; then

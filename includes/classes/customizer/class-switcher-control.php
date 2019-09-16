@@ -2,10 +2,10 @@
 /**
  * Switcher Customizer Control.
  *
- * @package Maverick\Customizer
+ * @package Go\Customizer
  */
 
-namespace Maverick\Customizer;
+namespace Go\Customizer;
 
 /**
  * Switcher Control Class.
@@ -24,7 +24,7 @@ class Switcher_Control extends \WP_Customize_Control {
 	 *
 	 * @var string
 	 */
-	public $type = 'maverick_switcher_control';
+	public $type = 'go_switcher_control';
 
 	/**
 	 * Constructor.

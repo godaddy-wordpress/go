@@ -2,10 +2,10 @@
 /**
  * Range Customizer Control.
  *
- * @package Maverick\Customizer
+ * @package Go\Customizer
  */
 
-namespace Maverick\Customizer;
+namespace Go\Customizer;
 
 /**
  * This class is for the range control in the Customizer.
@@ -17,7 +17,7 @@ class Range_Control extends \WP_Customize_Control {
 	 *
 	 * @var string
 	 */
-	public $type = 'maverick_range_control';
+	public $type = 'go_range_control';
 
 	/**
 	 * Enqueues required JS and CSS

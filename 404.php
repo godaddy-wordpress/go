@@ -2,12 +2,12 @@
 /**
  * The 404 template file
  *
- * @package Maverick
+ * @package Go
  */
 
 get_header();
 
-Maverick\page_title();
+Go\page_title();
 ?>
 
 <div class="content-area__wrapper">

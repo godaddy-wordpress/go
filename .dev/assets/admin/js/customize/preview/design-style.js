@@ -7,13 +7,13 @@ export default () => {
 			$( '#customize-preview' ).addClass( 'is-loading' );
 
 			if (
-				'undefined' !== typeof MaverickPreviewData['design_styles'] &&
-				'undefined' !== MaverickPreviewData['design_styles'][ to ]
+				'undefined' !== typeof GoPreviewData['design_styles'] &&
+				'undefined' !== GoPreviewData['design_styles'][ to ]
 			) {
 
 				setTimeout( function() {
 					// wp.customize.previewer.refresh();
-					const designStyle = MaverickPreviewData['design_styles'][ to ];
+					const designStyle = GoPreviewData['design_styles'][ to ];
 					$( 'link[id*="design-style"]' ).attr( 'href', designStyle['url'] );
 
 					setTimeout( function() {
