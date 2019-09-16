@@ -295,7 +295,6 @@
 
 	/* Footer > Social Icons */
 	--theme-social--color: var(--color-white);
-	--theme-social--color-hover: var(--theme-color-secondary);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 

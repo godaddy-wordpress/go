@@ -299,7 +299,6 @@
 
 	/* Footer > Social Icons */
 	--theme-social--color: var(--theme-color-heading);
-	--theme-social--color-hover: var(--theme-color-text);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 
