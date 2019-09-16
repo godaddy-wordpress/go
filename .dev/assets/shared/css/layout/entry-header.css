@@ -1,5 +1,6 @@
 /*! Layout: Entry Header */
 .entry-header {
+	max-width: var(--theme-entry-header--width, 78rem);
 	padding-top: calc(var(--vertical-rhythm--lrg) * 0.55);
 	text-align: center;
 }

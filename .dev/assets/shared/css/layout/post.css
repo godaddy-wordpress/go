@@ -11,10 +11,6 @@
 	}
 }
 
-.entry-header {
-	max-width: var(--theme-entry-header--width, 78rem);
-}
-
 /*! Post Meta */
 .post__meta--wrapper {
 	margin-top: 2rem;
