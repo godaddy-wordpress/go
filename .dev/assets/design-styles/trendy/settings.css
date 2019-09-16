@@ -36,10 +36,6 @@
 	--theme-max-w-base: 50rem;
 	--theme-max-w-wide: 80rem;
 
-	/* Below base width query */
-	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 80rem);
-
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.15rem;
 	--vertical-rhythm--med: 1.75rem;

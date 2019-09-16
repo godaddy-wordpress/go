@@ -21,6 +21,6 @@
 	}
 
 	& + .wp-block-coblocks-gallery-stacked {
-		margin-top: calc(var(--vertical-rhythm--lrg) * -1) !important;
+		margin-top: 0 !important;
 	}
 }

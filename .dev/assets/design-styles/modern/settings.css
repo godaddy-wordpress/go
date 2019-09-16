@@ -28,13 +28,8 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-
 	--theme-max-w-base: 50rem;
 	--theme-max-w-wide: 90rem;
-
-	/* Below base width query */
-	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 90rem);
 
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.15rem;
@@ -98,8 +93,8 @@
 
 	@media (--medium) {
 		--theme-h1--font-size: 4.5em;
-		--theme-h2--font-size: 3em;
-		--theme-h3--font-size: 2.5em;
+		--theme-h2--font-size: 3.5em;
+		--theme-h3--font-size: 2.75em;
 	}
 
 	/* Text Utilities */

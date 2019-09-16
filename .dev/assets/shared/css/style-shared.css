@@ -138,13 +138,6 @@
 	text-transform: var(--theme-site-nav--text-transform);
 }
 
-.wp-block-group.has-background.alignwide {
-	@media (--wide) {
-		margin-left: var(--theme-block-padding-x);
-		margin-right: var(--theme-block-padding-x);
-	}
-}
-
 /*! Utility Classes */
 p {
 	margin: 0 0 1.25rem;
