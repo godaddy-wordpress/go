@@ -140,7 +140,6 @@
 
 	/* Blockquote (Large) */
 	--theme-quote-large--color: var(--theme-color-heading);
-	--theme-quote-large--font-size: var(--theme-h2--font-size);
 	--theme-quote-large--leading: var(--theme-heading--leading);
 	--theme-quote-large--style: normal;
 
