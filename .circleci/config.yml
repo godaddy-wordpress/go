@@ -4,7 +4,7 @@ workflows:
     jobs:
       # Support PHP Versions
       # http://php.net/supported-versions.php
-      - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Maverick
+      - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
           filters:
             tags:
               only: /.*/
@@ -85,7 +85,7 @@ jobs:
       - checkout
       - run:
           name: Update hosts
-          command: echo 127.0.0.1 maverick.test | sudo tee -a /etc/hosts
+          command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - run:
           name: Update npm
           command: sudo npm install -g npm@latest
@@ -104,13 +104,13 @@ jobs:
       - run:
           name: Install Composer packages
           command: composer install
-          working_directory: /tmp/wordpress/wp-content/themes/maverick
+          working_directory: /tmp/wordpress/wp-content/themes/go
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install node packages
           command: npm install
-          working_directory: /tmp/wordpress/wp-content/themes/maverick
+          working_directory: /tmp/wordpress/wp-content/themes/go
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -118,7 +118,7 @@ jobs:
       - run:
           name: "Run PHPUnit - Generate Coverage Reports"
           command: ./vendor/bin/phpunit --coverage-html=/tmp/artifacts/code-coverage/html --coverage-clover=/tmp/artifacts/code-coverage/clover --coverage-text
-          working_directory: /tmp/wordpress/wp-content/themes/maverick
+          working_directory: /tmp/wordpress/wp-content/themes/go
       - store_artifacts:
           path: /tmp/artifacts/code-coverage/html
           destination: phpunit-coverage
@@ -157,14 +157,14 @@ jobs:
             chmod +x wp-cli.phar
             sudo mv wp-cli.phar /usr/local/bin/wp
       - run:
-          name: Build the Maverick Theme
+          name: Build the Go Theme
           command: npm run build
       - run:
           name: Setup WordPress site and install the Theme Check package
           command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run:
           name: Run theme check
-          command: wp themecheck --theme=maverick --no-interactive --path=/tmp/wordpress
+          command: wp themecheck --theme=go --no-interactive --path=/tmp/wordpress
 
   a11y-tests:
     docker:
@@ -174,7 +174,7 @@ jobs:
       - checkout
       - run:
           name: Update hosts
-          command: echo 127.0.0.1 maverick.test | sudo tee -a /etc/hosts
+          command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - run:
           name: Update npm
           command: sudo npm install -g npm@latest
@@ -203,7 +203,7 @@ jobs:
             chmod +x wp-cli.phar
             sudo mv wp-cli.phar /usr/local/bin/wp
       - run:
-          name: Build the Maverick Theme
+          name: Build the Go Theme
           command: npm run build
       - run:
           name: Setup WordPress site
@@ -249,14 +249,14 @@ jobs:
           name: Install node packages
           command: npm install
       - run:
-          name: Build the Maverick Theme
+          name: Build the Go Theme
           command: |
             npm run build
-            mkdir -p maverick
+            mkdir -p go
             mkdir -p /tmp/artifacts
-            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./maverick
+            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
             PACKAGE_VERSION=$(jq -r ".version" < package.json)
-            zip -r /tmp/artifacts/maverick-v$PACKAGE_VERSION.zip ./maverick
+            zip -r /tmp/artifacts/go-v$PACKAGE_VERSION.zip ./go
       - deploy:
           name: Deploy a new release to GitHub
           command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} /tmp/artifacts

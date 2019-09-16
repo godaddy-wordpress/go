@@ -9,12 +9,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Maverick
+ * @package Go
  */
 
 get_header();
 
-Maverick\page_title();
+Go\page_title();
 
 if ( have_posts() ) {
 

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Maverick
+ * @package Go
  */
 
 ?>
@@ -31,14 +31,14 @@
 
 			<span class="post__categories"><?php the_category( ' | ' ); ?></span>
 
-			<span class="post__author"><?php esc_html_e( 'by', 'maverick' ); ?> <?php the_author(); ?></span>
+			<span class="post__author"><?php esc_html_e( 'by', 'go' ); ?> <?php the_author(); ?></span>
 
 			<?php
 			if ( is_singular() && get_the_tag_list() ) {
 				the_tags(
 					sprintf(
 						'<span class="post__tags"><span class="screen-reader-text">%s</span> ',
-						esc_html_e( 'Tags:', 'maverick' )
+						esc_html_e( 'Tags:', 'go' )
 					),
 					', ',
 					'</span>'
@@ -56,7 +56,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'maverick' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'go' ),
 					array(
 						'span' => array(
 							'class' => array(),

@@ -2,13 +2,13 @@
 /**
  * Core setup, site hooks and filters.
  *
- * @package Maverick\Core
+ * @package Go\Core
  */
 
-namespace Maverick\Core;
+namespace Go\Core;
 
-use function Maverick\hex_to_hsl;
-use function Maverick\load_inline_svg;
+use function Go\hex_to_hsl;
+use function Go\load_inline_svg;
 
 /**
  * Set up theme defaults and register supported WordPress features.
@@ -31,7 +31,7 @@ function setup() {
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
-	add_filter( 'maverick_page_title_args', $n( 'filter_page_titles' ) );
+	add_filter( 'go_page_title_args', $n( 'filter_page_titles' ) );
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
 
 }
@@ -40,14 +40,14 @@ function setup() {
  * Makes Theme available for translation.
  *
  * Translations can be added to the /languages directory.
- * If you're building a theme based on "godaddy", change the
- * filename of '/languages/maverick.pot' to the name of your project.
+ * If you're building a theme based on Go, change the
+ * filename of '/languages/go.pot' to the name of your project.
  *
  * @return void
  */
 function i18n() {
 
-	load_theme_textdomain( 'maverick', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'go', get_template_directory() . '/languages' );
 
 }
 
@@ -56,14 +56,9 @@ function i18n() {
  */
 function theme_setup() {
 
-	/**
-	 * Filters the theme content width global.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param integer $content_width The default content width for the theme.
-	 */
-	$GLOBALS['content_width'] = apply_filters( 'maverick_content_width', 980 );
+	// Filters the theme content width global; intended to be overruled from themes.
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
+	$GLOBALS['content_width'] = apply_filters( 'go_content_width', 660 );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -86,10 +81,10 @@ function theme_setup() {
 	// This theme uses wp_nav_menu() in up to four locations.
 	register_nav_menus(
 		[
-			'primary'  => esc_html__( 'Primary', 'maverick' ),
-			'footer-1' => esc_html__( 'Footer Menu #1', 'maverick' ),
-			'footer-2' => esc_html__( 'Footer Menu #2', 'maverick' ),
-			'footer-3' => esc_html__( 'Footer Menu #3', 'maverick' ),
+			'primary'  => esc_html__( 'Primary', 'go' ),
+			'footer-1' => esc_html__( 'Footer Menu #1', 'go' ),
+			'footer-2' => esc_html__( 'Footer Menu #2', 'go' ),
+			'footer-3' => esc_html__( 'Footer Menu #3', 'go' ),
 		]
 	);
 
@@ -127,7 +122,7 @@ function theme_setup() {
 	add_theme_support(
 		'custom-background',
 		[
-			'default-color' => \Maverick\get_palette_color( 'background' ),
+			'default-color' => \Go\get_palette_color( 'background' ),
 		]
 	);
 
@@ -154,26 +149,26 @@ function theme_setup() {
 		'editor-font-sizes',
 		[
 			[
-				'name'      => esc_html__( 'Small', 'maverick' ),
-				'shortName' => esc_html__( 'S', 'maverick' ),
+				'name'      => esc_html__( 'Small', 'go' ),
+				'shortName' => esc_html__( 'S', 'go' ),
 				'size'      => 17,
 				'slug'      => 'small',
 			],
 			[
-				'name'      => esc_html__( 'Medium', 'maverick' ),
-				'shortName' => esc_html__( 'M', 'maverick' ),
+				'name'      => esc_html__( 'Medium', 'go' ),
+				'shortName' => esc_html__( 'M', 'go' ),
 				'size'      => 21,
 				'slug'      => 'medium',
 			],
 			[
-				'name'      => esc_html__( 'Large', 'maverick' ),
-				'shortName' => esc_html__( 'L', 'maverick' ),
+				'name'      => esc_html__( 'Large', 'go' ),
+				'shortName' => esc_html__( 'L', 'go' ),
 				'size'      => 24,
 				'slug'      => 'large',
 			],
 			[
-				'name'      => esc_html__( 'Huge', 'maverick' ),
-				'shortName' => esc_html__( 'XL', 'maverick' ),
+				'name'      => esc_html__( 'Huge', 'go' ),
+				'shortName' => esc_html__( 'XL', 'go' ),
 				'size'      => 30,
 				'slug'      => 'huge',
 			],
@@ -185,22 +180,22 @@ function theme_setup() {
 	if ( $design_style ) {
 		$color_palette = [
 			[
-				'name'  => esc_html__( 'Primary', 'maverick' ),
+				'name'  => esc_html__( 'Primary', 'go' ),
 				'slug'  => 'primary',
-				'color' => \Maverick\get_palette_color( 'primary' ),
+				'color' => \Go\get_palette_color( 'primary' ),
 			],
 			[
-				'name'  => esc_html__( 'Secondary', 'maverick' ),
+				'name'  => esc_html__( 'Secondary', 'go' ),
 				'slug'  => 'secondary',
-				'color' => \Maverick\get_palette_color( 'secondary' ),
+				'color' => \Go\get_palette_color( 'secondary' ),
 			],
 			[
-				'name'  => esc_html__( 'Tertiary', 'maverick' ),
+				'name'  => esc_html__( 'Tertiary', 'go' ),
 				'slug'  => 'tertiary',
-				'color' => \Maverick\get_palette_color( 'tertiary' ),
+				'color' => \Go\get_palette_color( 'tertiary' ),
 			],
 			[
-				'name'  => esc_html__( 'Quaternary', 'maverick' ),
+				'name'  => esc_html__( 'Quaternary', 'go' ),
 				'slug'  => 'quaternary',
 				'color' => '#ffffff',
 			],
@@ -280,27 +275,29 @@ function fonts_url() {
  */
 function block_editor_assets() {
 
+	// This file provides our Customizer setup, not template partials.
+	// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	require_once get_parent_theme_file_path( 'includes/customizer.php' );
 
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 	wp_enqueue_script(
-		'maverick-block-filters',
+		'go-block-filters',
 		get_theme_file_uri( "dist/js/admin/block-filters{$suffix}.js" ),
 		[ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
-		MAVERICK_VERSION,
+		GO_VERSION,
 		true
 	);
 
 	ob_start();
 
-	\Maverick\Customizer\inline_css();
+	\Go\Customizer\inline_css();
 
 	$styles = ob_get_clean();
 
 	wp_localize_script(
-		'maverick-block-filters',
-		'MaverickBlockFilters',
+		'go-block-filters',
+		'GoBlockFilters',
 		[
 			'inlineStyles' => $styles,
 		]
@@ -318,18 +315,18 @@ function scripts() {
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 	wp_enqueue_script(
-		'maverick-frontend',
+		'go-frontend',
 		get_theme_file_uri( "dist/js/frontend{$suffix}.js" ),
 		[],
-		MAVERICK_VERSION,
+		GO_VERSION,
 		true
 	);
 
 	wp_localize_script(
-		'maverick-frontend',
-		'MaverickText',
+		'go-frontend',
+		'GoText',
 		[
-			'searchLabel' => esc_html__( 'Expand search field', 'maverick' ),
+			'searchLabel' => esc_html__( 'Expand search field', 'go' ),
 		]
 	);
 
@@ -377,28 +374,28 @@ function styles() {
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 	wp_enqueue_style(
-		'maverick-style',
+		'go-style',
 		get_theme_file_uri( "dist/css/style-shared{$suffix}.css" ),
-		[ 'maverick-fonts' ],
-		MAVERICK_VERSION
+		[ 'go-fonts' ],
+		GO_VERSION
 	);
 
 	$design_style = get_design_style();
 
 	if ( $design_style ) {
 		wp_enqueue_style(
-			'maverick-design-style-' . sanitize_title( $design_style['label'] ),
+			'go-design-style-' . sanitize_title( $design_style['label'] ),
 			$design_style['url'],
-			[ 'maverick-style' ],
-			MAVERICK_VERSION
+			[ 'go-style' ],
+			GO_VERSION
 		);
 	}
 
 	wp_enqueue_style(
-		'maverick-fonts',
+		'go-fonts',
 		fonts_url(),
 		[],
-		MAVERICK_VERSION
+		GO_VERSION
 	);
 
 }
@@ -556,7 +553,7 @@ function get_default_design_style() {
 	 *
 	 * @param array $default_design_style The slug of the default design style.
 	 */
-	return apply_filters( 'maverick_default_design_style', 'modern' );
+	return apply_filters( 'go_default_design_style', 'modern' );
 
 }
 
@@ -571,33 +568,33 @@ function get_available_design_styles() {
 
 	$default_design_styles = [
 		'modern'      => [
-			'label'         => esc_html__( 'Modern', 'maverick' ),
+			'label'         => esc_html__( 'Modern', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-modern{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-modern-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'      => esc_html__( 'Shade', 'maverick' ),
+					'label'      => esc_html__( 'Shade', 'go' ),
 					'primary'    => '#000a12',
 					'secondary'  => '#455a64',
 					'tertiary'   => '#eceff1',
 					'background' => '#ffffff',
 				],
 				'two'   => [
-					'label'      => esc_html__( 'Blush', 'maverick' ),
+					'label'      => esc_html__( 'Blush', 'go' ),
 					'primary'    => '#c2185b', // 700
 					'secondary'  => '#ec407a', // 400
 					'tertiary'   => '#fce4ec', // 100
 					'background' => '#ffffff',
 				],
 				'three' => [
-					'label'      => esc_html__( 'Indigo', 'maverick' ),
+					'label'      => esc_html__( 'Indigo', 'go' ),
 					'primary'    => '#303f9f', // 700
 					'secondary'  => '#5c6bc0', // 400
 					'tertiary'   => '#e8eaf6', // 100
 					'background' => '#ffffff',
 				],
 				'four'  => [
-					'label'      => esc_html__( 'Pacific', 'maverick' ),
+					'label'      => esc_html__( 'Pacific', 'go' ),
 					'primary'    => '#00796b', // 700
 					'secondary'  => '#26a69a', // 400
 					'tertiary'   => '#e0f2f1', // 100
@@ -621,33 +618,33 @@ function get_available_design_styles() {
 			],
 		],
 		'traditional' => [
-			'label'         => esc_html__( 'Traditional', 'maverick' ),
+			'label'         => esc_html__( 'Traditional', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'      => esc_html__( 'Apricot', 'maverick' ),
+					'label'      => esc_html__( 'Apricot', 'go' ),
 					'primary'    => '#c76919',
 					'secondary'  => '#122538',
 					'tertiary'   => '#f8f8f8',
 					'background' => '#ffffff',
 				],
 				'two'   => [
-					'label'      => esc_html__( 'Emerald', 'maverick' ),
+					'label'      => esc_html__( 'Emerald', 'go' ),
 					'primary'    => '#165153',
 					'secondary'  => '#212121',
 					'tertiary'   => '#f3f1f0',
 					'background' => '#ffffff',
 				],
 				'three' => [
-					'label'      => esc_html__( 'Brick', 'maverick' ),
+					'label'      => esc_html__( 'Brick', 'go' ),
 					'primary'    => '#87200e',
 					'secondary'  => '#242611',
 					'tertiary'   => '#f9f2ef',
 					'background' => '#ffffff',
 				],
 				'four'  => [
-					'label'      => esc_html__( 'Bronze', 'maverick' ),
+					'label'      => esc_html__( 'Bronze', 'go' ),
 					'primary'    => '#a88548',
 					'secondary'  => '#05212d',
 					'tertiary'   => '#f9f4ef',
@@ -670,12 +667,12 @@ function get_available_design_styles() {
 			],
 		],
 		'trendy'      => [
-			'label'         => esc_html__( 'Trendy', 'maverick' ),
+			'label'         => esc_html__( 'Trendy', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'             => esc_html__( 'Plum', 'maverick' ),
+					'label'             => esc_html__( 'Plum', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#4d0859',
 					'tertiary'          => '#ded9e2',
@@ -684,7 +681,7 @@ function get_available_design_styles() {
 				],
 
 				'two'   => [
-					'label'             => esc_html__( 'Steel', 'maverick' ),
+					'label'             => esc_html__( 'Steel', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#003c68',
 					'tertiary'          => '#c0c9d0',
@@ -692,7 +689,7 @@ function get_available_design_styles() {
 					'footer_background' => '#000000',
 				],
 				'three' => [
-					'label'             => esc_html__( 'Avocado', 'maverick' ),
+					'label'             => esc_html__( 'Avocado', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#02493b',
 					'tertiary'          => '#b4c6af',
@@ -700,7 +697,7 @@ function get_available_design_styles() {
 					'footer_background' => '#000000',
 				],
 				'four'  => [
-					'label'             => esc_html__( 'Champagne', 'maverick' ),
+					'label'             => esc_html__( 'Champagne', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#cc224f',
 					'tertiary'          => '#e5dede',
@@ -709,10 +706,10 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Trocchi'    => [
+				'Trocchi'         => [
 					'400',
 				],
-				'Open Sans'  => [
+				'Open Sans'       => [
 					'400',
 					'400i',
 					'700',
@@ -724,12 +721,12 @@ function get_available_design_styles() {
 			],
 		],
 		'welcoming'   => [
-			'label'         => esc_html__( 'Welcoming', 'maverick' ),
+			'label'         => esc_html__( 'Welcoming', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'             => esc_html__( 'Forest', 'maverick' ),
+					'label'             => esc_html__( 'Forest', 'go' ),
 					'primary'           => '#165144',
 					'secondary'         => '#01332e',
 					'tertiary'          => '#c9c9c9',
@@ -737,7 +734,7 @@ function get_available_design_styles() {
 					'header_background' => '#ffffff',
 				],
 				'two'   => [
-					'label'             => esc_html__( 'Spruce', 'maverick' ),
+					'label'             => esc_html__( 'Spruce', 'go' ),
 					'primary'           => '#233a6b',
 					'secondary'         => '#01133d',
 					'tertiary'          => '#c9c9c9',
@@ -746,7 +743,7 @@ function get_available_design_styles() {
 					'header_background' => '#ffffff',
 				],
 				'three' => [
-					'label'             => esc_html__( 'Mocha', 'maverick' ),
+					'label'             => esc_html__( 'Mocha', 'go' ),
 					'primary'           => '#5b3f20',
 					'secondary'         => '#3f2404',
 					'tertiary'          => '#c9c9c9',
@@ -754,7 +751,7 @@ function get_available_design_styles() {
 					'header_background' => '#ffffff',
 				],
 				'four'  => [
-					'label'             => esc_html__( 'Lavender', 'maverick' ),
+					'label'             => esc_html__( 'Lavender', 'go' ),
 					'primary'           => '#443a82',
 					'secondary'         => '#2b226b',
 					'tertiary'          => '#c9c9c9',
@@ -763,10 +760,10 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Work Sans'  => [
+				'Work Sans'     => [
 					'300',
 				],
-				'Karla'      => [
+				'Karla'         => [
 					'400',
 					'400i',
 					'700',
@@ -777,12 +774,12 @@ function get_available_design_styles() {
 			],
 		],
 		'playful'     => [
-			'label'         => esc_html__( 'Playful', 'maverick' ),
+			'label'         => esc_html__( 'Playful', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'             => esc_html__( 'Frolic', 'maverick' ),
+					'label'             => esc_html__( 'Frolic', 'go' ),
 					'primary'           => '#3f46ae',
 					'secondary'         => '#ecb43d',
 					'tertiary'          => '#f7fbff',
@@ -791,7 +788,7 @@ function get_available_design_styles() {
 					'footer_background' => '#3f46ae',
 				],
 				'two'   => [
-					'label'             => esc_html__( 'Coral', 'maverick' ),
+					'label'             => esc_html__( 'Coral', 'go' ),
 					'primary'           => '#e06b6d',
 					'secondary'         => '#40896e',
 					'tertiary'          => '#fff7f7',
@@ -800,7 +797,7 @@ function get_available_design_styles() {
 					'footer_background' => '#eb616a',
 				],
 				'three' => [
-					'label'             => esc_html__( 'Organic', 'maverick' ),
+					'label'             => esc_html__( 'Organic', 'go' ),
 					'primary'           => '#3c896d',
 					'secondary'         => '#6b0369',
 					'tertiary'          => '#f2f9f7',
@@ -809,7 +806,7 @@ function get_available_design_styles() {
 					'footer_background' => '#3c896d',
 				],
 				'four'  => [
-					'label'             => esc_html__( 'Berry', 'maverick' ),
+					'label'             => esc_html__( 'Berry', 'go' ),
 					'primary'           => '#117495',
 					'secondary'         => '#d691c1',
 					'tertiary'          => '#f7feff',
@@ -837,7 +834,7 @@ function get_available_design_styles() {
 	 * @param array $design_styles Array containings the supported design styles,
 	 * where the index is the slug of design style and value an array of options that sets up the design styles.
 	 */
-	$supported_design_styles = apply_filters( 'maverick_design_styles', $default_design_styles );
+	$supported_design_styles = apply_filters( 'go_design_styles', $default_design_styles );
 
 	return $supported_design_styles;
 
@@ -874,7 +871,7 @@ function get_default_header_variation() {
 	 *
 	 * @param array $default_header_variation The slug of the default header variation.
 	 */
-	return apply_filters( 'maverick_default_header', 'header-1' );
+	return apply_filters( 'go_default_header', 'header-1' );
 
 }
 
@@ -886,28 +883,28 @@ function get_default_header_variation() {
 function get_available_header_variations() {
 	$default_header_variations = [
 		'header-1' => [
-			'label'         => esc_html__( 'Header 1', 'maverick' ),
+			'label'         => esc_html__( 'Header 1', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '1' );
 			},
 		],
 		'header-2' => [
-			'label'         => esc_html__( 'Header 2', 'maverick' ),
+			'label'         => esc_html__( 'Header 2', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
 		'header-3' => [
-			'label'         => esc_html__( 'Header 3', 'maverick' ),
+			'label'         => esc_html__( 'Header 3', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
 		],
 		'header-4' => [
-			'label'         => esc_html__( 'Header 4', 'maverick' ),
+			'label'         => esc_html__( 'Header 4', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '4' );
@@ -923,7 +920,7 @@ function get_available_header_variations() {
 	 * @param array $header_variations Array containings the supported header variations,
 	 * where the index is the slug of header variation and the value an array of options that sets up the header variation.
 	 */
-	$supported_header_variations = apply_filters( 'header_variations', $default_header_variations );
+	$supported_header_variations = apply_filters( 'go_header_variations', $default_header_variations );
 
 	return $supported_header_variations;
 
@@ -955,28 +952,28 @@ function get_header_variation() {
 function get_available_footer_variations() {
 	$default_footer_variations = [
 		'footer-1' => [
-			'label'         => esc_html__( 'Footer 1', 'maverick' ),
+			'label'         => esc_html__( 'Footer 1', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '1' );
 			},
 		],
 		'footer-2' => [
-			'label'         => esc_html__( 'Footer 2', 'maverick' ),
+			'label'         => esc_html__( 'Footer 2', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '2' );
 			},
 		],
 		'footer-3' => [
-			'label'         => esc_html__( 'Footer 3', 'maverick' ),
+			'label'         => esc_html__( 'Footer 3', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '3' );
 			},
 		],
 		'footer-4' => [
-			'label'         => esc_html__( 'Footer 4', 'maverick' ),
+			'label'         => esc_html__( 'Footer 4', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '4' );
@@ -992,7 +989,7 @@ function get_available_footer_variations() {
 	 * @param array $footer_variations Array containings the supported header variations,
 	 * where the index is the slug of header variation and the value an array of options that sets up the header variation.
 	 */
-	$supported_footer_variations = apply_filters( 'maverick_footer_variations', $default_footer_variations );
+	$supported_footer_variations = apply_filters( 'go_footer_variations', $default_footer_variations );
 
 	return $supported_footer_variations;
 
@@ -1011,7 +1008,7 @@ function get_default_footer_variation() {
 	 *
 	 * @param array $default_footer_variation The slug of the default footer variation.
 	 */
-	return apply_filters( 'maverick_default_footer_variation', 'footer-1' );
+	return apply_filters( 'go_default_footer_variation', 'footer-1' );
 
 }
 
@@ -1047,7 +1044,7 @@ function get_default_copyright() {
 	 * @param string $copyright The default text for copyright.
 	 */
 	/* translators: the theme author */
-	return apply_filters( 'maverick_default_copyright', sprintf( esc_html__( 'WordPress Theme by %s', 'maverick' ), 'GoDaddy' ) );
+	return apply_filters( 'go_default_copyright', sprintf( esc_html__( 'WordPress Theme by %s', 'go' ), 'GoDaddy' ) );
 
 }
 
@@ -1059,27 +1056,27 @@ function get_default_copyright() {
 function get_available_social_icons() {
 	$social_icons = [
 		'facebook'  => [
-			'label'       => esc_html__( 'Facebook', 'maverick' ),
+			'label'       => esc_html__( 'Facebook', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/facebook.svg' ),
 			'placeholder' => 'https://facebook.com/user',
 		],
 		'twitter'   => [
-			'label'       => esc_html__( 'Twitter', 'maverick' ),
+			'label'       => esc_html__( 'Twitter', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/twitter.svg' ),
 			'placeholder' => 'https://twitter.com/user',
 		],
 		'instagram' => [
-			'label'       => esc_html__( 'Instagram', 'maverick' ),
+			'label'       => esc_html__( 'Instagram', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/instagram.svg' ),
 			'placeholder' => 'https://instagram.com/user',
 		],
 		'linkedin'  => [
-			'label'       => esc_html__( 'LinkedIn', 'maverick' ),
+			'label'       => esc_html__( 'LinkedIn', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/linkedin.svg' ),
 			'placeholder' => 'https://linkedin.com/in/user',
 		],
 		'pinterest' => [
-			'label'       => esc_html__( 'Pinterest', 'maverick' ),
+			'label'       => esc_html__( 'Pinterest', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/pinterest.svg' ),
 			'placeholder' => 'https://pinterest.com/user',
 		],
@@ -1092,7 +1089,7 @@ function get_available_social_icons() {
 	 *
 	 * @param array $social_icons Array containings the supported social icons.
 	 */
-	return apply_filters( 'maverick_avaliable_social_icons', $social_icons );
+	return apply_filters( 'go_avaliable_social_icons', $social_icons );
 
 }
 
@@ -1128,7 +1125,7 @@ function get_available_color_schemes() {
 	 * @param array $color_schemes The array containing the color schemes
 	 * @param array $design_style  The full design style object
 	 */
-	return apply_filters( 'maverick_color_schemes', $design_style['color_schemes'], $design_style );
+	return apply_filters( 'go_color_schemes', $design_style['color_schemes'], $design_style );
 
 }
 
@@ -1143,7 +1140,7 @@ function get_default_color_scheme() {
 	 *
 	 * @param array $default_color_scheme The slug of the default color scheme.
 	 */
-	return apply_filters( 'maverick_default_color_scheme', 'one' );
+	return apply_filters( 'go_default_color_scheme', 'one' );
 
 }
 
@@ -1205,7 +1202,7 @@ function filter_page_titles( $args ) {
 
 	if ( is_404() ) {
 
-		$args['title'] = esc_html__( "That page can't be found", 'maverick' );
+		$args['title'] = esc_html__( "That page can't be found", 'go' );
 
 	}
 
@@ -1219,7 +1216,7 @@ function filter_page_titles( $args ) {
 
 		$args['title'] = sprintf(
 			/* translators: Search query term(s). */
-			esc_html__( 'Search for: %s', 'maverick' ),
+			esc_html__( 'Search for: %s', 'go' ),
 			esc_html( get_search_query() )
 		);
 
@@ -1227,7 +1224,7 @@ function filter_page_titles( $args ) {
 
 		if ( 0 === $wp_query->found_posts ) {
 
-			$args['title'] = esc_html__( 'Nothing Found', 'maverick' );
+			$args['title'] = esc_html__( 'Nothing Found', 'go' );
 
 		}
 	}

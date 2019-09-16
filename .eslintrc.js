@@ -10,6 +10,6 @@ module.exports = {
 		document: true,
 		wp: true,
 		jQuery: true,
-		MaverickPreviewData: true,
+		GoPreviewData: true,
 	}
 };

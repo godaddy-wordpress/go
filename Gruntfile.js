@@ -43,8 +43,8 @@ module.exports = function( grunt ) {
 						to: '<%= pkg.version %>'
 					},
 					{
-						from: /'MAVERICK_VERSION',(\s*)'[\w.+-]+'/,
-						to: "'MAVERICK_VERSION',$1'<%= pkg.version %>'"
+						from: /'GO_VERSION',(\s*)'[\w.+-]+'/,
+						to: "'GO_VERSION',$1'<%= pkg.version %>'"
 					}
 				],
 				src: [ '*.php', '**/*.php' ]

@@ -2,12 +2,12 @@
 /**
  * WooCommerce Setup
  *
- * @package Maverick\WooCommerce
+ * @package Go\WooCommerce
  */
 
-namespace Maverick\WooCommerce;
+namespace Go\WooCommerce;
 
-use function Maverick\load_inline_svg;
+use function Go\load_inline_svg;
 
 /**
  * Set up WooCommerce hooks
@@ -28,7 +28,7 @@ function setup() {
 
 	remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
 
-	add_action( 'woocommerce_cart_is_empty', $n( 'custom_empty_cart_message' ), 10 );
+	add_action( 'woocommerce_cart_is_empty', $n( 'empty_cart_message' ), 10 );
 
 }
 
@@ -37,7 +37,7 @@ function setup() {
  *
  * @return mixed Markup for empty cart notice.
  */
-function custom_empty_cart_message() {
+function empty_cart_message() {
 
 	printf(
 		'<div class="max-w-base m-0 px m-auto text-center">
@@ -73,7 +73,7 @@ function custom_empty_cart_message() {
 				]
 			)
 		),
-		esc_html( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'woocommerce' ) ) )
+		esc_html( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'go' ) ) )
 	);
 
 }

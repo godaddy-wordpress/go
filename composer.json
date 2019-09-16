@@ -1,5 +1,5 @@
 {
-  "name": "godaddy/maverick",
+  "name": "godaddy/go",
   "type": "wordpress-theme",
   "authors": [
     {
@@ -10,7 +10,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Maverick\\": "includes/classes/"
+      "Go\\": "includes/classes/"
     }
   },
   "repositories": [
