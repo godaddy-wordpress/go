@@ -44,6 +44,15 @@
 	}
 }
 
+/* Account for vertical spacing on hfeed. */
+.hfeed article .content-area > *:first-child {
+	margin-top: calc(var(--vertical-rhythm--lrg) * 0.55) !important;
+}
+
+.hfeed article .content-area > *:last-child {
+	margin-bottom: calc(var(--vertical-rhythm--lrg) * 0.55) !important;
+}
+
 /* Account for the first block if we have a featured image. */
 .has-featured-image .content-area > *:first-child {
 	margin-top: var(--vertical-rhythm--lrg) !important;

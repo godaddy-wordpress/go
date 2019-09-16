@@ -13,7 +13,3 @@
 		padding-top: 0;
 	}
 }
-
-.hfeed article .content-area > :first-child {
-	margin-top: calc(var(--vertical-rhythm--lrg) * 0.55) !important;
-}
