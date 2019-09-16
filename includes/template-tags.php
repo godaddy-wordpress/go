@@ -13,13 +13,12 @@ namespace Maverick;
 use function Maverick\Core\get_available_color_schemes;
 
 /**
- * Get and Output Post Meta.
- * If it's a single post, output the post meta values.
+ * Return the Post Meta.
  *
  * @param int    $post_id The ID of the post for which the post meta should be output.
- * @param string $location Which post meta location to output – single or preview.
+ * @param string $location Which post meta location to output.
  */
-function post_meta( $post_id = null, $location = 'single-top' ) {
+function post_meta( $post_id = null, $location = 'top' ) {
 
 	echo get_post_meta( $post_id, $location ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in get_post_meta().
 
@@ -31,7 +30,7 @@ function post_meta( $post_id = null, $location = 'single-top' ) {
  * @param int    $post_id The iD of the post.
  * @param string $location The location where the meta is shown.
  */
-function get_post_meta( $post_id = null, $location = 'single-top' ) {
+function get_post_meta( $post_id = null, $location = 'top' ) {
 
 	// Require post ID.
 	if ( ! $post_id ) {
@@ -50,7 +49,7 @@ function get_post_meta( $post_id = null, $location = 'single-top' ) {
 	$post_meta_classes         = '';
 
 	// Get the post meta settings for the location specified.
-	if ( 'single-top' === $location ) {
+	if ( 'top' === $location ) {
 
 		$post_meta                 = apply_filters(
 			'go_post_meta_location_single_top',
@@ -58,9 +57,10 @@ function get_post_meta( $post_id = null, $location = 'single-top' ) {
 				'author',
 				'post-date',
 				'comments',
+				'sticky',
 			)
 		);
-		$post_meta_wrapper_classes = ' post__meta--single post__meta--single-top';
+		$post_meta_wrapper_classes = ' post__meta--single post__meta--top';
 
 	} elseif ( 'single-bottom' === $location ) {
 

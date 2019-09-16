@@ -29,7 +29,7 @@
 	--------------------------------------------------------------*/
 	--theme-meta--font-size: 1.1rem;
 
-	@media (--medium) {
+	@media (--large) {
 		--theme-meta--font-size: 1.25rem;
 	}
 

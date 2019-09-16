@@ -15,10 +15,6 @@
 	max-width: var(--theme-entry-header--width, 78rem);
 }
 
-.post-edit-link {
-	margin-bottom: var(--vertical-rhythm--large);
-}
-
 /*! Post Meta */
 .post__meta--wrapper {
 	margin-top: 2rem;
@@ -39,6 +35,10 @@
 		flex-shrink: 0;
 		margin: 0 0 1rem 2rem;
 		max-width: calc(100% - 2rem);
+
+		&:first-child {
+			margin-left: 0;
+		}
 	}
 
 	& .meta-wrapper {
@@ -51,6 +51,7 @@
 	& .meta-icon {
 		flex-shrink: 0;
 		margin-right: 0.75rem;
+		position: relative;
 
 		& svg {
 			fill: currentColor;
@@ -67,6 +68,31 @@
 	}
 }
 
-.post__meta--single-top .post__meta {
+.post-author .meta-icon {
+	top: 2px;
+}
+
+.post-comment-link .meta-icon {
+	top: 3px;
+}
+
+.post-tags .meta-icon {
+	top: 4px;
+}
+
+.post-sticky .meta-icon {
+	top: 2px;
+}
+
+.post__meta--top .post__meta {
 	justify-content: center;
+}
+
+.post__meta--single-bottom {
+	margin-bottom: var(--vertical-rhythm--lrg);
+	margin-top: 0;
+
+	& .post-tags {
+		margin-bottom: 0;
+	}
 }

@@ -44,13 +44,17 @@
 	}
 }
 
+.hfeed article {
+	margin-bottom: var(--vertical-rhythm--lrg);
+}
+
 /* Account for vertical spacing on hfeed. */
 .hfeed article .content-area > *:first-child {
 	margin-top: calc(var(--vertical-rhythm--lrg) * 0.55) !important;
 }
 
 .hfeed article .content-area > *:last-child {
-	margin-bottom: calc(var(--vertical-rhythm--lrg) * 0.55) !important;
+	margin-bottom: 0 !important;
 }
 
 /* Account for the first block if we have a featured image. */
@@ -59,10 +63,12 @@
 }
 
 /* Account for the first block being .alignfull */
-.content-area > *.alignfull:first-child,
-.content-area > *figure:first-child,
-.content-area > *.wp-block-gallery:first-child {
-	margin-top: 0 !important;
+body:not(.single-post) {
+
+	& .content-area > *:first-child.alignfull,
+	& .content-area > *:first-child.wp-block-gallery {
+		margin-top: 0 !important;
+	}
 }
 
 .is-header-3 .content-area > *:first-child {
@@ -87,8 +93,6 @@
 		& .wp-block-coblocks-accordion,
 		& .wp-block-coblocks-author,
 		& figure:not(.alignfull):not(.alignwide) {
-
-			/* Remove huge spacing when right after a paragraph */
 			margin-bottom: var(--vertical-rhythm--med) !important;
 			margin-top: var(--vertical-rhythm--med) !important;
 		}

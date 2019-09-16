@@ -1,7 +1,7 @@
 /*! Comments */
 .comment-form-cookies-consent input[type="checkbox"] + label {
 	font-family: var(--theme-body--font);
-	font-size: var(--theme-font-size-cookies, 0.8rem);
+	font-size: var(--theme-cookie-consent--font-size, 0.85rem);
 	font-weight: var(--theme-body--weight, 400);
 	letter-spacing: 0;
 	line-height: var(--theme-body--leading);
@@ -40,11 +40,11 @@
 	}
 
 	& .comments-title {
-		font-size: var(--theme-h4--font-size);
+		font-size: var(--theme-h3--font-size);
 	}
 
 	& .comment-reply-title {
-		font-size: var(--theme-h4--font-size);
+		font-size: var(--theme-h3--font-size);
 
 		& small {
 			font-size: 50%;

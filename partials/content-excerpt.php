@@ -19,13 +19,13 @@
 		</div>
 	<?php endif; ?>
 
-	<header class="entry-header max-w-base m-auto px">
+	<header class="entry-header m-auto">
 		<?php
 		if ( is_sticky() && is_home() && ! is_paged() ) {
 			printf( '<span class="sticky-post">%s</span>', esc_html_x( 'Featured', 'post', 'maverick' ) );
 		}
 
-		the_title( sprintf( '<h2 class="entry-title h1"><a href="%s" rel="bookmark" class="no-underline no-color">', esc_url( get_permalink() ) ), '</a></h2>' );
+		the_title( sprintf( '<h2 class="post__title entry-title h1"><a href="%s" rel="bookmark" class="no-underline no-color">', esc_url( get_permalink() ) ), '</a></h2>' );
 		?>
 
 		<?php if ( ! is_search() ) { ?>

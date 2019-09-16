@@ -21,13 +21,13 @@
 
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="post__title m-0 entry-title">', '</h1>' );
+			the_title( '<h1 class="post__title entry-title m-0">', '</h1>' );
 		else :
-			the_title( sprintf( '<h2 class="post__title m-0 entry-title h1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+			the_title( sprintf( '<h2 class="post__title entry-title m-0 h1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		endif;
 		?>
 
-		<?php Maverick\post_meta( get_the_ID(), 'single-top' ); ?>
+		<?php Maverick\post_meta( get_the_ID(), 'top' ); ?>
 
 	</header>
 
@@ -47,10 +47,10 @@
 					'after'  => '</nav>',
 				)
 			);
-
-			edit_post_link();
 			?>
 		</div>
+
+		<?php Maverick\post_meta( get_the_ID(), 'single-bottom' ); ?>
 
 	</div>
 

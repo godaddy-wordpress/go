@@ -1,5 +1,6 @@
 .pagination-wrapper {
 	margin-bottom: var(--vertical-rhythm--lrg);
+	margin-top: var(--vertical-rhythm--lrg);
 }
 
 .pagination .nav-links {
