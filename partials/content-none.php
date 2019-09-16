@@ -4,21 +4,21 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Maverick
+ * @package Go
  */
 
-Maverick\page_title();
+Go\page_title();
 ?>
 
 <div class="content-area__wrapper">
+
 	<div class="content-area no-results not-found">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
-
 			printf(
 				'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'maverick' ),
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'go' ),
 					[
 						'a' => [
 							'href' => [],
@@ -27,21 +27,20 @@ Maverick\page_title();
 				) . '</p>',
 				esc_url( admin_url( 'post-new.php' ) )
 			);
-
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try searching again with some different keywords.', 'maverick' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try searching again with some different keywords.', 'go' ); ?></p>
 			<?php
 			get_search_form();
-
 		else :
 			?>
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help you out.', 'maverick' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help you out.', 'go' ); ?></p>
 			<?php
 			get_search_form();
-
 		endif;
 		?>
+
 	</div>
+
 </div>
