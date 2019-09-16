@@ -568,33 +568,33 @@ function get_available_design_styles() {
 
 	$default_design_styles = [
 		'traditional' => [
-			'label'         => esc_html__( 'Traditional', 'maverick' ),
+			'label'         => esc_html__( 'Traditional', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'      => esc_html__( 'Apricot', 'maverick' ),
+					'label'      => esc_html__( 'Apricot', 'go' ),
 					'primary'    => '#c76919',
 					'secondary'  => '#122538',
 					'tertiary'   => '#f8f8f8',
 					'background' => '#ffffff',
 				],
 				'two'   => [
-					'label'      => esc_html__( 'Emerald', 'maverick' ),
+					'label'      => esc_html__( 'Emerald', 'go' ),
 					'primary'    => '#165153',
 					'secondary'  => '#212121',
 					'tertiary'   => '#f3f1f0',
 					'background' => '#ffffff',
 				],
 				'three' => [
-					'label'      => esc_html__( 'Brick', 'maverick' ),
+					'label'      => esc_html__( 'Brick', 'go' ),
 					'primary'    => '#87200e',
 					'secondary'  => '#242611',
 					'tertiary'   => '#f9f2ef',
 					'background' => '#ffffff',
 				],
 				'four'  => [
-					'label'      => esc_html__( 'Bronze', 'maverick' ),
+					'label'      => esc_html__( 'Bronze', 'go' ),
 					'primary'    => '#a88548',
 					'secondary'  => '#05212d',
 					'tertiary'   => '#f9f4ef',
