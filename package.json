@@ -1,12 +1,12 @@
 {
-  "name": "maverick",
+  "name": "go",
   "version": "0.2.0",
-  "description": "Project Description",
-  "homepage": "https://project-domain.tld",
+  "description": "Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowering makers to build beautifully rich websites with WordPress.",
+  "homepage": "https://github.com/godaddy/wp-go-theme",
   "repository": {
     "type": "git",
-    "url": "https://project-git-repo.tld",
-    "base": "godaddy/wp-maverick-theme"
+    "url": "https://github.com/godaddy/wp-go-theme",
+    "base": "godaddy/wp-go-theme"
   },
   "author": {
     "name": "GoDaddy",
@@ -20,7 +20,7 @@
     "wordpress": ">= 5.0"
   },
   "badges": [
-    "[![CircleCI](https://circleci.com/gh/godaddy/wp-project-maverick.svg?style=svg)](https://circleci.com/gh/godaddy/wp-project-maverick)",
+    "[![CircleCI](https://circleci.com/gh/godaddy/wp-go-theme.svg?style=svg)](https://circleci.com/gh/godaddy/wp-go-theme)",
     "[![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/<%= pkg.repository.base %>/blob/master/license.txt)",
     "[![PHP <%= pkg.engines.php %>](https://img.shields.io/badge/php-<% print(encodeURI(pkg.engines.php)) %>-8892bf.svg)](https://secure.php.net/supported-versions.php)",
     "[![WordPress <%= pkg.engines.wordpress %>](https://img.shields.io/badge/wordpress-<% print(encodeURI(pkg.engines.wordpress)) %>-blue.svg)](https://wordpress.org/download/release-archive/)"
@@ -32,7 +32,7 @@
     "dev": "NODE_ENV=development webpack --config .dev/config/webpack.dev.js",
     "postdev": "mkdir temp && cp -a dist/* temp && NODE_ENV=production webpack --config .dev/config/webpack.prod.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
     "watch": "NODE_ENV=development webpack --watch --config .dev/config/webpack.dev.js",
-    "package": "rm -rf build && mkdir -p build/maverick && npm run build && rsync -av --exclude-from .distignore --delete . build/maverick && cd build && zip -r maverick.zip ./maverick",
+    "package": "rm -rf build && mkdir -p build/go && npm run build && rsync -av --exclude-from .distignore --delete . build/go && cd build && zip -r go.zip ./go",
     "build-release": "npm install && npm run build",
     "lint-release": "npm install && composer install && npm run lint",
     "lint-css": "stylelint 'assets/shared/css' '.dev/assets/design-styles/**/*.css'",
@@ -111,7 +111,7 @@
   },
   "testing": {
     "urls": {
-      "local": "http://maverick.test",
+      "local": "http://go.test",
       "staging": "",
       "production": ""
     },

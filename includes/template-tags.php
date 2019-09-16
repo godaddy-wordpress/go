@@ -5,12 +5,12 @@
  * This file is for custom template tags only and it should not contain
  * functions that will be used for filtering or adding an action.
  *
- * @package Maverick\Template_Tags
+ * @package Go\Template_Tags
  */
 
-namespace Maverick;
+namespace Go;
 
-use function Maverick\Core\get_available_color_schemes;
+use function Go\Core\get_available_color_schemes;
 
 /**
  * Returns the color selected by the user.
@@ -21,7 +21,7 @@ use function Maverick\Core\get_available_color_schemes;
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
 function get_palette_color( $color, $format = 'RBG' ) {
-	$default         = \Maverick\Core\get_default_color_scheme();
+	$default         = \Go\Core\get_default_color_scheme();
 	$color_scheme    = get_theme_mod( 'color_scheme', $default );
 	$override_colors = [
 		'primary'           => 'primary_color',
@@ -67,7 +67,7 @@ function get_palette_color( $color, $format = 'RBG' ) {
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
 function get_default_palette_color( $color, $format = 'RBG' ) {
-	$default                 = \Maverick\Core\get_default_color_scheme();
+	$default                 = \Go\Core\get_default_color_scheme();
 	$color_scheme            = get_theme_mod( 'color_scheme', $default );
 	$avaliable_color_schemes = get_available_color_schemes();
 
@@ -153,8 +153,8 @@ function hex_to_hsl( $hex, $string_output = false ) {
  * @return void
  */
 function header_variation() {
-	$variations         = \Maverick\Core\get_available_header_variations();
-	$selected_variation = \Maverick\Core\get_header_variation();
+	$variations         = \Go\Core\get_available_header_variations();
+	$selected_variation = \Go\Core\get_header_variation();
 
 	if ( is_customize_preview() ) {
 		foreach ( $variations as $variation ) {
@@ -185,8 +185,8 @@ function has_header_background() {
  * @return void
  */
 function footer_variation() {
-	$variations         = \Maverick\Core\get_available_footer_variations();
-	$selected_variation = \Maverick\Core\get_footer_variation();
+	$variations         = \Go\Core\get_available_footer_variations();
+	$selected_variation = \Go\Core\get_footer_variation();
 
 	if ( is_customize_preview() ) {
 		foreach ( $variations as $variation ) {
@@ -232,7 +232,7 @@ function copyright( $args = [] ) {
 	);
 
 	$year      = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
-	$copyright = get_theme_mod( 'copyright', \Maverick\Core\get_default_copyright() );
+	$copyright = get_theme_mod( 'copyright', \Go\Core\get_default_copyright() );
 
 	$html = [
 		'div'  => [
@@ -294,7 +294,7 @@ function page_title() {
 	 * @var array
 	 */
 	$args = (array) apply_filters(
-		'maverick_page_title_args',
+		'go_page_title_args',
 		[
 			'title'   => get_the_title(),
 			'wrapper' => 'h1',
@@ -372,7 +372,7 @@ function page_title() {
  */
 function has_social_icons( $social_icons = null ) {
 	if ( is_null( $social_icons ) ) {
-		$social_icons = \Maverick\Core\get_social_icons();
+		$social_icons = \Go\Core\get_social_icons();
 	}
 
 	return array_reduce(
@@ -405,7 +405,7 @@ function social_icons( $args = [] ) {
 		]
 	);
 
-	$social_icons     = \Maverick\Core\get_social_icons();
+	$social_icons     = \Go\Core\get_social_icons();
 	$has_social_cions = has_social_icons( $social_icons );
 
 	if ( ! $has_social_cions && ! is_customize_preview() ) {
@@ -421,7 +421,11 @@ function social_icons( $args = [] ) {
 			<?php if ( ! empty( $social_icon['url'] ) || is_customize_preview() ) : ?>
 				<li class="<?php echo esc_attr( sprintf( $args['li_class'], $key ) ) . esc_attr( $visibility ); ?>">
 					<a class="social-icons__icon" href="<?php echo esc_url( $social_icon['url'] ); ?>" aria-label="<?php echo esc_attr( $social_icon['label'] ); ?>" rel="noopener noreferrer">
-						<?php include $social_icon['icon']; ?>
+						<?php
+						// Including SVGs, not template files.
+						// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+						include $social_icon['icon'];
+						?>
 					</a>
 				</li>
 			<?php endif; ?>
@@ -493,7 +497,7 @@ function navigation_toggle() {
 		echo '<div class="site-navigation__toggle-icon">';
 			echo '<div class="site-navigation__toggle-icon-inner"></div>';
 		echo '</div>';
-		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'maverick' ) . '</span>';
+		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'go' ) . '</span>';
 	echo '</button>';
 }
 
@@ -533,7 +537,7 @@ function search_toggle() {
 				]
 			)
 		),
-		esc_html__( 'Search Toggle', 'maverick' )
+		esc_html__( 'Search Toggle', 'go' )
 	);
 
 }

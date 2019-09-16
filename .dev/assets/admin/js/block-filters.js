@@ -1,3 +1,3 @@
 wp.domReady( function() {
-	$( '.block-editor' ).append( MaverickBlockFilters.inlineStyles );
+	$( '.block-editor' ).append( GoBlockFilters.inlineStyles );
 } );

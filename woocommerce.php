@@ -2,7 +2,7 @@
 /**
  * WooCommerce main template file
  *
- * @package Maverick
+ * @package Go
  */
 
 get_header(); ?>

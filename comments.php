@@ -4,10 +4,10 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to maverick_comment() which is
+ * handled by a callback to go_comment() which is
  * located in the functions.php file.
  *
- * @package maverick
+ * @package go
  */
 
 /*
@@ -28,14 +28,14 @@ if ( post_password_required() ) {
 			if ( 1 === get_comments_number() ) {
 				printf(
 					/* translators: %s: The post title. */
-					esc_html__( 'One thought on &ldquo;%s&rdquo;', 'maverick' ),
+					esc_html__( 'One thought on &ldquo;%s&rdquo;', 'go' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf(
 					esc_attr(
 						/* translators: %1$s: The number of comments. %2$s: The post title. */
-						_n( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'maverick' )
+						_n( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'go' )
 					),
 					esc_html( number_format_i18n( get_comments_number() ) ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
@@ -48,7 +48,7 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments(
 				array(
-					'callback' => 'maverick_comment',
+					'callback' => 'go_comment',
 					'style'    => 'ol',
 				)
 			);
@@ -57,9 +57,9 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through. ?>
 		<nav id="comment-nav-below" class="navigation" role="navigation">
-			<h1 class="assistive-text section-heading"><?php esc_html_e( 'Comment navigation', 'maverick' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( esc_html_e( '&larr; Older Comments', 'maverick' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( esc_html_e( 'Newer Comments &rarr;', 'maverick' ) ); ?></div>
+			<h1 class="assistive-text section-heading"><?php esc_html_e( 'Comment navigation', 'go' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( esc_html_e( '&larr; Older Comments', 'go' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( esc_html_e( 'Newer Comments &rarr;', 'go' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation. ?>
 
@@ -71,11 +71,11 @@ if ( post_password_required() ) {
 		 */
 		if ( ! comments_open() && get_comments_number() ) :
 			?>
-		<p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'maverick' ); ?></p>
+		<p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'go' ); ?></p>
 		<?php endif; ?>
 
-	<?php endif; // have_comments(). ?>
+	<?php endif; ?>
 
 	<?php comment_form(); ?>
 
-</div><!-- #comments .comments-area -->
+</div>

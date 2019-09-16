@@ -1,4 +1,4 @@
-/* global MaverickText */
+/* global GoText */
 import getScreenSize from '../utility/get-screen-size.js';
 import _throttle from 'lodash/throttle'; // we need an aliast for throttle otherwise it conflicts with customizer
 
@@ -68,7 +68,7 @@ const searchToggle = () => {
  * @param {string} focusableElementsString Class or attribute list of focusable elements.
  */
 const createToggle = ( searchForm, searchToggle, focusableElementsString ) => {
-	searchToggle.setAttribute( 'aria-label', MaverickText.searchLabel );
+	searchToggle.setAttribute( 'aria-label', GoText.searchLabel );
 	searchToggle.setAttribute( 'aria-expanded', 'false' );
 	searchToggle.setAttribute( 'aria-haspopup', 'true' );
 

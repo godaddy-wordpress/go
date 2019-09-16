@@ -1,9 +1,9 @@
 # Copyright (c) 2019 GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: Maverick 0.2.0\n"
+"Project-Id-Version: Go 0.2.0\n"
 "Report-Msgid-Bugs-To: https://project-git-repo.tld\n"
-"POT-Creation-Date: 2019-09-07 01:21:11+00:00\n"
+"POT-Creation-Date: 2019-09-14 14:54:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -397,320 +397,320 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/core.php:89 includes/core.php:188 includes/customizer.php:421
+#: includes/core.php:84 includes/core.php:183 includes/customizer.php:426
 msgid "Primary"
 msgstr ""
 
-#: includes/core.php:90
+#: includes/core.php:85
 msgid "Footer Menu #1"
 msgstr ""
 
-#: includes/core.php:91
+#: includes/core.php:86
 msgid "Footer Menu #2"
 msgstr ""
 
-#: includes/core.php:92
+#: includes/core.php:87
 msgid "Footer Menu #3"
 msgstr ""
 
-#: includes/core.php:157
+#: includes/core.php:152
 msgid "Small"
 msgstr ""
 
-#: includes/core.php:158
+#: includes/core.php:153
 msgid "S"
 msgstr ""
 
-#: includes/core.php:163
+#: includes/core.php:158
 msgid "Medium"
 msgstr ""
 
-#: includes/core.php:164
+#: includes/core.php:159
 msgid "M"
 msgstr ""
 
-#: includes/core.php:169
+#: includes/core.php:164
 msgid "Large"
 msgstr ""
 
-#: includes/core.php:170
+#: includes/core.php:165
 msgid "L"
 msgstr ""
 
-#: includes/core.php:175
+#: includes/core.php:170
 msgid "Huge"
 msgstr ""
 
-#: includes/core.php:176
+#: includes/core.php:171
 msgid "XL"
 msgstr ""
 
-#: includes/core.php:193 includes/customizer.php:443
+#: includes/core.php:188 includes/customizer.php:448
 msgid "Secondary"
 msgstr ""
 
-#: includes/core.php:198 includes/customizer.php:465
+#: includes/core.php:193 includes/customizer.php:470
 msgid "Tertiary"
 msgstr ""
 
-#: includes/core.php:203
+#: includes/core.php:198
 msgid "Quaternary"
 msgstr ""
 
-#: includes/core.php:332
+#: includes/core.php:329
 msgid "Expand search field"
 msgstr ""
 
-#: includes/core.php:574
+#: includes/core.php:571
 msgid "Modern"
 msgstr ""
 
-#: includes/core.php:579
+#: includes/core.php:576
 msgid "Shade"
 msgstr ""
 
-#: includes/core.php:586
+#: includes/core.php:583
 msgid "Blush"
 msgstr ""
 
-#: includes/core.php:593
+#: includes/core.php:590
 msgid "Indigo"
 msgstr ""
 
-#: includes/core.php:600
+#: includes/core.php:597
 msgid "Pacific"
 msgstr ""
 
-#: includes/core.php:624
+#: includes/core.php:621
 msgid "Traditional"
 msgstr ""
 
-#: includes/core.php:629
+#: includes/core.php:626
 msgid "Apricot"
 msgstr ""
 
-#: includes/core.php:636
+#: includes/core.php:633
 msgid "Emerald"
 msgstr ""
 
-#: includes/core.php:643
+#: includes/core.php:640
 msgid "Brick"
 msgstr ""
 
-#: includes/core.php:650
+#: includes/core.php:647
 msgid "Bronze"
 msgstr ""
 
-#: includes/core.php:673
+#: includes/core.php:670
 msgid "Trendy"
 msgstr ""
 
-#: includes/core.php:678
+#: includes/core.php:675
 msgid "Plum"
 msgstr ""
 
-#: includes/core.php:687
+#: includes/core.php:684
 msgid "Steel"
 msgstr ""
 
-#: includes/core.php:695
+#: includes/core.php:692
 msgid "Avocado"
 msgstr ""
 
-#: includes/core.php:703
+#: includes/core.php:700
 msgid "Champagne"
 msgstr ""
 
-#: includes/core.php:727
+#: includes/core.php:724
 msgid "Welcoming"
 msgstr ""
 
-#: includes/core.php:732
+#: includes/core.php:729
 msgid "Forest"
 msgstr ""
 
-#: includes/core.php:740
+#: includes/core.php:737
 msgid "Spruce"
 msgstr ""
 
-#: includes/core.php:749
+#: includes/core.php:746
 msgid "Mocha"
 msgstr ""
 
-#: includes/core.php:757
+#: includes/core.php:754
 msgid "Lavender"
 msgstr ""
 
-#: includes/core.php:780
+#: includes/core.php:777
 msgid "Playful"
 msgstr ""
 
-#: includes/core.php:785
+#: includes/core.php:782
 msgid "Frolic"
 msgstr ""
 
-#: includes/core.php:794
+#: includes/core.php:791
 msgid "Coral"
 msgstr ""
 
-#: includes/core.php:803
+#: includes/core.php:800
 msgid "Organic"
 msgstr ""
 
-#: includes/core.php:812
+#: includes/core.php:809
 msgid "Berry"
 msgstr ""
 
-#: includes/core.php:889
+#: includes/core.php:886
 msgid "Header 1"
 msgstr ""
 
-#: includes/core.php:896
+#: includes/core.php:893
 msgid "Header 2"
 msgstr ""
 
-#: includes/core.php:903
+#: includes/core.php:900
 msgid "Header 3"
 msgstr ""
 
-#: includes/core.php:910
+#: includes/core.php:907
 msgid "Header 4"
 msgstr ""
 
-#: includes/core.php:958
+#: includes/core.php:955
 msgid "Footer 1"
 msgstr ""
 
-#: includes/core.php:965
+#: includes/core.php:962
 msgid "Footer 2"
 msgstr ""
 
-#: includes/core.php:972
+#: includes/core.php:969
 msgid "Footer 3"
 msgstr ""
 
-#: includes/core.php:979
+#: includes/core.php:976
 msgid "Footer 4"
 msgstr ""
 
-#: includes/core.php:1050
+#: includes/core.php:1047
 #. translators: the theme author
 msgid "WordPress Theme by %s"
 msgstr ""
 
-#: includes/core.php:1062
+#: includes/core.php:1059
 msgid "Facebook"
 msgstr ""
 
-#: includes/core.php:1067
+#: includes/core.php:1064
 msgid "Twitter"
 msgstr ""
 
-#: includes/core.php:1072
+#: includes/core.php:1069
 msgid "Instagram"
 msgstr ""
 
-#: includes/core.php:1077
+#: includes/core.php:1074
 msgid "LinkedIn"
 msgstr ""
 
-#: includes/core.php:1082
+#: includes/core.php:1079
 msgid "Pinterest"
 msgstr ""
 
-#: includes/core.php:1208
+#: includes/core.php:1205
 msgid "That page can't be found"
 msgstr ""
 
-#: includes/core.php:1222
+#: includes/core.php:1219
 #. translators: Search query term(s).
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1230
+#: includes/core.php:1227
 msgid "Nothing Found"
 msgstr ""
 
-#: includes/customizer.php:92
+#: includes/customizer.php:97
 #. translators: %s is the registered nav menu name
 msgid "Please assign a menu to the %s menu location"
 msgstr ""
 
-#: includes/customizer.php:252
+#: includes/customizer.php:257
 msgid "Width"
 msgstr ""
 
-#: includes/customizer.php:281
+#: includes/customizer.php:286
 msgid "Mobile Width"
 msgstr ""
 
-#: includes/customizer.php:307
+#: includes/customizer.php:312
 msgid "Site Settings"
 msgstr ""
 
-#: includes/customizer.php:324
+#: includes/customizer.php:329
 msgid "Page Titles"
 msgstr ""
 
-#: includes/customizer.php:325
+#: includes/customizer.php:330
 msgid "Display page titles on individual pages."
 msgstr ""
 
-#: includes/customizer.php:344
+#: includes/customizer.php:349
 msgid "Copyright Text"
 msgstr ""
 
-#: includes/customizer.php:373
+#: includes/customizer.php:378
 msgid "Design Style"
 msgstr ""
 
-#: includes/customizer.php:374
+#: includes/customizer.php:379
 msgid ""
 "Choose a style, select a color scheme and customize colors to personalize "
 "your site."
 msgstr ""
 
-#: includes/customizer.php:397
+#: includes/customizer.php:402
 msgid "Color Scheme"
 msgstr ""
 
-#: includes/customizer.php:486 includes/customizer.php:505
+#: includes/customizer.php:491 includes/customizer.php:510
 msgid "Header"
 msgstr ""
 
-#: includes/customizer.php:506
+#: includes/customizer.php:511
 msgid ""
 "Choose a header for every page on your site, then style it with the "
 "selectors below."
 msgstr ""
 
-#: includes/customizer.php:528 includes/customizer.php:610
+#: includes/customizer.php:533 includes/customizer.php:615
 msgid "Background Color"
 msgstr ""
 
-#: includes/customizer.php:548 includes/customizer.php:650
+#: includes/customizer.php:553 includes/customizer.php:655
 msgid "Text Color"
 msgstr ""
 
-#: includes/customizer.php:568 includes/customizer.php:587
+#: includes/customizer.php:573 includes/customizer.php:592
 msgid "Footer"
 msgstr ""
 
-#: includes/customizer.php:588
+#: includes/customizer.php:593
 msgid ""
 "Choose a footer for every page on your site, then style it with the "
 "selectors below."
 msgstr ""
 
-#: includes/customizer.php:630
+#: includes/customizer.php:635
 msgid "Heading Color"
 msgstr ""
 
-#: includes/customizer.php:670
+#: includes/customizer.php:675
 msgid "Social"
 msgstr ""
 
-#: includes/customizer.php:714
+#: includes/customizer.php:719
 msgid "Icon Color"
 msgstr ""
 
@@ -743,12 +743,16 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: includes/template-tags.php:496
+#: includes/template-tags.php:500
 msgid "Menu"
 msgstr ""
 
-#: includes/template-tags.php:536
+#: includes/template-tags.php:540
 msgid "Search Toggle"
+msgstr ""
+
+#: includes/woocommerce.php:80
+msgid "Your cart is currently empty."
 msgstr ""
 
 #: partials/content-excerpt.php:37 partials/content.php:34
@@ -798,17 +802,17 @@ msgid "Tertiary Footer Menu"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Maverick"
+msgid "Go"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/godaddy/wp-maverick-theme"
+msgid "https://github.com/godaddy/wp-go-theme"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Maverick is an innovative, Gutenberg-first WordPress theme, hyper-focused "
-"on empowering makers to build beautifully rich websites with WordPress."
+"Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on "
+"empowering makers to build beautifully rich websites with WordPress."
 msgstr ""
 
 #. Author of the plugin/theme

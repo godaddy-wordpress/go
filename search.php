@@ -4,14 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Maverick
+ * @package Go
  */
 
 get_header();
 
 if ( have_posts() ) {
 
-	Maverick\page_title();
+	Go\page_title();
 
 	// Start the Loop.
 	while ( have_posts() ) :

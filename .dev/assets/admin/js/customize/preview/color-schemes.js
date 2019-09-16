@@ -57,10 +57,10 @@ export default () => {
 	 */
 	const getDesignStyle = ( designStyle ) => {
 		if (
-			'undefined' !== typeof MaverickPreviewData['design_styles'] &&
-			'undefined' !== MaverickPreviewData['design_styles'][ designStyle ]
+			'undefined' !== typeof GoPreviewData['design_styles'] &&
+			'undefined' !== GoPreviewData['design_styles'][ designStyle ]
 		) {
-			return MaverickPreviewData['design_styles'][ designStyle ];
+			return GoPreviewData['design_styles'][ designStyle ];
 		}
 
 		return false;

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Maverick
+ * @package Go
  */
 
 ?>
@@ -17,7 +17,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php Maverick\page_title(); ?>
+	<?php Go\page_title(); ?>
 
 	<div class="content-area">
 		<?php the_content(); ?>

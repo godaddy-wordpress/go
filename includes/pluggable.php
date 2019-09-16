@@ -2,15 +2,15 @@
 /**
  * WP Theme pluggable functions
  *
- * @package Maverick
+ * @package Go
  */
 
-if ( ! function_exists( 'maverick_comment' ) ) :
+if ( ! function_exists( 'go_comment' ) ) :
 	/**
 	 * Template for comments and pingbacks.
 	 *
 	 * To override this walker in a child theme without modifying the comments template
-	 * simply create your own maverick_comment(), and that function will be used instead.
+	 * simply create your own go_comment(), and that function will be used instead.
 	 *
 	 * Used as a callback by wp_list_comments() for displaying the comments.
 	 *
@@ -18,14 +18,14 @@ if ( ! function_exists( 'maverick_comment' ) ) :
 	 * @param array  $args    Array of arguments.
 	 * @param int    $depth   Depth of comments to show.
 	 */
-	function maverick_comment( $comment, $args, $depth ) {
+	function go_comment( $comment, $args, $depth ) {
 		switch ( $comment->comment_type ) :
 			case 'pingback':
 			case 'trackback':
 				// Display trackbacks differently than normal comments.
 				?>
 		<li <?php comment_class(); ?> id="comment-<?php esc_attr( comment_ID() ); ?>">
-		<p><?php esc_html_e( 'Pingback:', 'maverick' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'maverick' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php esc_html_e( 'Pingback:', 'go' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'go' ), '<span class="edit-link">', '</span>' ); ?></p>
 				<?php
 				break;
 			default:
@@ -41,25 +41,25 @@ if ( ! function_exists( 'maverick_comment' ) ) :
 						'<cite><b class="fn">%1$s</b> %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
-						( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author', 'maverick' ) . '</span>' : ''
+						( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author', 'go' ) . '</span>' : ''
 					);
 					printf(
 						'<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						esc_html( get_comment_time( 'c' ) ),
 						/* translators: 1: date, 2: time */
-						sprintf( esc_html__( '%1$s at %2$s', 'maverick' ), esc_html( get_comment_date() ), esc_html( get_comment_time() ) )
+						sprintf( esc_html__( '%1$s at %2$s', 'go' ), esc_html( get_comment_date() ), esc_html( get_comment_time() ) )
 					);
 				?>
 				</header><!-- .comment-meta -->
 
 				<?php if ( '0' === $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php esc_html__( 'Your comment is awaiting moderation.', 'maverick' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php esc_html__( 'Your comment is awaiting moderation.', 'go' ); ?></p>
 			<?php endif; ?>
 
 				<section class="comment-content comment">
 				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit', 'maverick' ), '<p class="edit-link">', '</p>' ); ?>
+				<?php edit_comment_link( __( 'Edit', 'go' ), '<p class="edit-link">', '</p>' ); ?>
 				</section><!-- .comment-content -->
 
 				<div class="reply">
@@ -68,7 +68,7 @@ if ( ! function_exists( 'maverick_comment' ) ) :
 					array_merge(
 						$args,
 						[
-							'reply_text' => __( 'Reply', 'maverick' ),
+							'reply_text' => __( 'Reply', 'go' ),
 							'after'      => ' <span>&darr;</span>',
 							'depth'      => $depth,
 							'max_depth'  => $args['max_depth'],
@@ -80,6 +80,7 @@ if ( ! function_exists( 'maverick_comment' ) ) :
 			</article><!-- #comment-## -->
 				<?php
 				break;
+
 		endswitch; // end comment_type check.
 	}
 endif;

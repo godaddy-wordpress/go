@@ -2,14 +2,14 @@
 /**
  * The template for displaying the footer.
  *
- * @package Maverick
+ * @package Go
  */
 
 ?>
 
 	</div>
 
-	<?php Maverick\footer_variation(); ?>
+	<?php Go\footer_variation(); ?>
 
 	</div>
 

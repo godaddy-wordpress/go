@@ -3,7 +3,7 @@
  * Partial: single.php
  * Display permalinks or full articles
  *
- * @package Maverick
+ * @package Go
  */
 
 get_header();
