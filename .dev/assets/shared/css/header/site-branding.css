@@ -38,6 +38,15 @@ h1.site-branding__title {
 	margin: 0;
 }
 
+.site-branding__description {
+	color: hsla(var(--theme-site-description--color), 1);
+	font-size: var(--theme-site-description--font-size);
+	font-weight: var(--theme-site-description--font-weight, 400);
+	line-height: var(--theme-site-description--leading);
+	margin-top: var(--theme-site-description--mt, 0.25rem);
+	opacity: var(--theme-site-description--opacity, 0.65);
+}
+
 .site-branding__link {
 	display: block;
 	line-height: 1;
@@ -52,13 +61,7 @@ h1.site-branding__title {
 	}
 
 	& + .site-branding__description {
-		color: hsla(var(--theme-site-description--color), 1);
 		display: none;
-		font-size: var(--theme-site-description--font-size);
-		font-weight: var(--theme-site-description--font-weight, 400);
-		line-height: var(--theme-site-description--leading);
-		margin-top: var(--theme-site-description--mt, 0.25rem);
-		opacity: var(--theme-site-description--opacity, 0.65);
 
 		@media (--medium) {
 			display: block;

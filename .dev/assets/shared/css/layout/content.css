@@ -1,12 +1,18 @@
 /*! Layout: Content Area */
-.content-area > * {
-	margin-bottom: var(--vertical-rhythm);
+.content-area__wrapper {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: var(--vertical-rhythm);
 	max-width: var(--theme-max-w-base);
-	padding-left: var(--theme-block-padding-x);
-	padding-right: var(--theme-block-padding-x);
+	width: calc(100% - var(--theme-block-padding-x));
+
+	@media (--large) {
+		width: calc(100% - var(--theme-block-padding-x));
+	}
+}
+
+.content-area > * {
+	margin-bottom: var(--vertical-rhythm);
+	margin-top: var(--vertical-rhythm);
 
 	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
 		margin-bottom: var(--vertical-rhythm--lrg);
@@ -36,17 +42,6 @@
 	& > .alignfull:last-child {
 		margin-bottom: var(--vertical-rhythm--lrg) !important;
 	}
-
-	/* Set alignments for wide and full */
-	&.alignwide {
-		max-width: var(--theme-max-w-wide);
-	}
-
-	&.alignfull {
-		max-width: 100%;
-		padding-left: 0;
-		padding-right: 0;
-	}
 }
 
 /* Account for the first block if we have a featured image. */
@@ -71,7 +66,7 @@
 }
 
 .single-post.has-comments-open .content-area > *:last-child {
-	margin-bottom: var(--theme-block-spacing-huge) !important;
+	margin-bottom: var(--vertical-rhythm--lrg) !important;
 }
 
 .content-area {

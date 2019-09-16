@@ -9,8 +9,19 @@
 	text-transform: none;
 }
 
+.comments-area__wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--theme-max-w-base);
+	width: calc(100% - var(--theme-block-padding-x));
+
+	@media (--large) {
+		width: calc(100% - var(--theme-block-padding-x));
+	}
+}
+
 .comments-area {
-	margin-bottom: var(--theme-block-spacing-huge);
+	margin-bottom: var(--vertical-rhythm--lrg);
 
 	/* Post Comment button */
 	& input[type="submit"] {

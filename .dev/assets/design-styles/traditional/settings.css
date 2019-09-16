@@ -41,11 +41,11 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 54rem;
+	--theme-max-w-base: 42rem;
 	--theme-max-w-wide: 80rem;
 
 	/* Below base width query */
-	@custom-media --base (max-width: 54rem);
+	@custom-media --base (max-width: 42rem);
 	@custom-media --wide (max-width: 80rem);
 
 	/* Vertical Rhythm */
@@ -120,7 +120,7 @@
 	}
 
 	@media (--xlarge) {
-		--theme-h1--font-size: 5.5em;
+		--theme-h1--font-size: 5.25em;
 	}
 
 	/* Text Utilities */
@@ -263,7 +263,7 @@
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font: var(--theme-heading--font);
-	--theme-site-nav--font-size: 1.35rem;
+	--theme-site-nav--font-size: 1.225rem;
 	--theme-site-nav--font-size-mobile: 1.65rem;
 	--theme-site-nav--weight: 400;
 	--theme-site-nav--text-transform: normal;

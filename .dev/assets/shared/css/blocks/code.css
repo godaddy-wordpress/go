@@ -1,11 +1,4 @@
 /*! Code */
-.content-area {
-
-	& .wp-block-code {
-		@mixin blockWidthNoPadding;
-	}
-}
-
 .wp-block-code {
 	padding: 10px 20px !important;
 

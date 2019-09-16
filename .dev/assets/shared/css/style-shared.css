@@ -21,6 +21,7 @@
 
 /* Layout */
 @import url("layout/content.css");
+@import url("layout/alignments.css");
 @import url("layout/entry-header.css");
 @import url("layout/post.css");
 @import url("layout/pagination.css");

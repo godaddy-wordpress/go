@@ -31,23 +31,27 @@
 
 	</header>
 
-	<div class="content-area">
-		<?php
-		if ( is_search() ) {
-			the_excerpt();
-		} else {
-			the_content();
-		}
+	<div class="content-area__wrapper">
 
-		wp_link_pages(
-			array(
-				'before' => '<nav class="post-nav-links" aria-label="' . esc_attr__( 'Page', 'go' ) . '"><span class="label">' . __( 'Pages:', 'go' ) . '</span>',
-				'after'  => '</nav>',
-			)
-		);
+		<div class="content-area">
+			<?php
+			if ( is_search() ) {
+				the_excerpt();
+			} else {
+				the_content();
+			}
 
-		edit_post_link();
-		?>
+			wp_link_pages(
+				array(
+					'before' => '<nav class="post-nav-links" aria-label="' . esc_attr__( 'Page', 'go' ) . '"><span class="label">' . __( 'Pages:', 'go' ) . '</span>',
+					'after'  => '</nav>',
+				)
+			);
+
+			edit_post_link();
+			?>
+		</div>
+
 	</div>
 
 </article>

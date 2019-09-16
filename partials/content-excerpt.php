@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<?php if ( is_singular() && has_post_thumbnail() ) : ?>
 		<div class="post__thumbnail">
@@ -55,8 +55,10 @@
 
 	</header>
 
-	<div class="content-area">
-		<?php the_excerpt(); ?>
+	<div class="content-area__wrapper">
+		<div class="content-area">
+			<?php the_excerpt(); ?>
+		</div>
 	</div>
 
 </article>
