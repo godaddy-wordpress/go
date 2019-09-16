@@ -20,7 +20,7 @@ if ( have_posts() ) {
 	endwhile;
 
 	// Previous/next page navigation.
-	the_posts_navigation();
+	get_template_part( 'partials/pagination' );
 
 } else {
 
