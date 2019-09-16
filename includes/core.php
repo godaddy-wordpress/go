@@ -553,8 +553,8 @@ function get_default_design_style() {
 	 *
 	 * @param array $default_design_style The slug of the default design style.
 	 */
-	return apply_filters( 'go_default_design_style', 'modern' );
 
+	return apply_filters( 'go_default_design_style', 'traditional' );
 }
 
 /**
@@ -567,8 +567,57 @@ function get_available_design_styles() {
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 	$default_design_styles = [
+		'traditional' => [
+			'label'         => _x( 'Traditional', 'design style name', 'go' ),
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$suffix}.css" ),
+			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$suffix}.css",
+			'color_schemes' => [
+				'one'   => [
+					'label'      => esc_html__( 'Apricot', 'go' ),
+					'primary'    => '#c76919',
+					'secondary'  => '#122538',
+					'tertiary'   => '#f8f8f8',
+					'background' => '#ffffff',
+				],
+				'two'   => [
+					'label'      => esc_html__( 'Emerald', 'go' ),
+					'primary'    => '#165153',
+					'secondary'  => '#212121',
+					'tertiary'   => '#f3f1f0',
+					'background' => '#ffffff',
+				],
+				'three' => [
+					'label'      => esc_html__( 'Brick', 'go' ),
+					'primary'    => '#87200e',
+					'secondary'  => '#242611',
+					'tertiary'   => '#f9f2ef',
+					'background' => '#ffffff',
+				],
+				'four'  => [
+					'label'      => esc_html__( 'Bronze', 'go' ),
+					'primary'    => '#a88548',
+					'secondary'  => '#05212d',
+					'tertiary'   => '#f9f4ef',
+					'background' => '#ffffff',
+				],
+			],
+			'fonts'         => [
+				'Crimson Text' => [
+					'400',
+					'400i',
+					'700',
+					'700i',
+				],
+				'Nunito Sans'  => [
+					'400',
+					'400i',
+					'600',
+					'700',
+				],
+			],
+		],
 		'modern'      => [
-			'label'         => esc_html__( 'Modern', 'go' ),
+			'label'         => _x( 'Modern', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-modern{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-modern-editor{$suffix}.css",
 			'color_schemes' => [
@@ -617,57 +666,8 @@ function get_available_design_styles() {
 				],
 			],
 		],
-		'traditional' => [
-			'label'         => esc_html__( 'Traditional', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$suffix}.css",
-			'color_schemes' => [
-				'one'   => [
-					'label'      => esc_html__( 'Apricot', 'go' ),
-					'primary'    => '#c76919',
-					'secondary'  => '#122538',
-					'tertiary'   => '#f8f8f8',
-					'background' => '#ffffff',
-				],
-				'two'   => [
-					'label'      => esc_html__( 'Emerald', 'go' ),
-					'primary'    => '#165153',
-					'secondary'  => '#212121',
-					'tertiary'   => '#f3f1f0',
-					'background' => '#ffffff',
-				],
-				'three' => [
-					'label'      => esc_html__( 'Brick', 'go' ),
-					'primary'    => '#87200e',
-					'secondary'  => '#242611',
-					'tertiary'   => '#f9f2ef',
-					'background' => '#ffffff',
-				],
-				'four'  => [
-					'label'      => esc_html__( 'Bronze', 'go' ),
-					'primary'    => '#a88548',
-					'secondary'  => '#05212d',
-					'tertiary'   => '#f9f4ef',
-					'background' => '#ffffff',
-				],
-			],
-			'fonts'         => [
-				'Crimson Text' => [
-					'400',
-					'400i',
-					'700',
-					'700i',
-				],
-				'Nunito Sans'  => [
-					'400',
-					'400i',
-					'600',
-					'700',
-				],
-			],
-		],
 		'trendy'      => [
-			'label'         => esc_html__( 'Trendy', 'go' ),
+			'label'         => _x( 'Trendy', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
@@ -721,7 +721,7 @@ function get_available_design_styles() {
 			],
 		],
 		'welcoming'   => [
-			'label'         => esc_html__( 'Welcoming', 'go' ),
+			'label'         => _x( 'Welcoming', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
 			'color_schemes' => [
@@ -774,7 +774,7 @@ function get_available_design_styles() {
 			],
 		],
 		'playful'     => [
-			'label'         => esc_html__( 'Playful', 'go' ),
+			'label'         => _x( 'Playful', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
 			'color_schemes' => [
