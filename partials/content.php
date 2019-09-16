@@ -4,11 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Maverick
+ * @package Go
  */
 
 ?>
-
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<?php if ( is_singular() && has_post_thumbnail() ) : ?>
@@ -27,7 +26,7 @@
 		endif;
 		?>
 
-		<?php Maverick\post_meta( get_the_ID(), 'top' ); ?>
+		<?php Go\post_meta( get_the_ID(), 'top' ); ?>
 
 	</header>
 
@@ -40,7 +39,6 @@
 			} else {
 				the_content();
 			}
-
 			wp_link_pages(
 				array(
 					'before' => '<nav class="post-nav-links" aria-label="' . esc_attr__( 'Page', 'go' ) . '"><span class="label">' . __( 'Pages:', 'go' ) . '</span>',
@@ -50,7 +48,7 @@
 			?>
 		</div>
 
-		<?php Maverick\post_meta( get_the_ID(), 'single-bottom' ); ?>
+		<?php Go\post_meta( get_the_ID(), 'single-bottom' ); ?>
 
 	</div>
 
