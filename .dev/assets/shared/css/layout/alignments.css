@@ -1,3 +1,31 @@
+.alignnone,
+.aligncenter,
+.alignleft,
+.alignright {
+	max-width: 100%;
+}
+
+.aligncenter,
+.aligncenter img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft,
+.alignright {
+	max-width: 50%;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 2rem 2rem 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 2rem 2rem;
+}
+
 .alignwide {
 	--half-padding: calc(var(--theme-block-padding-x) * 0.5);
 	--double-padding: calc(var(--theme-block-padding-x) * 3);

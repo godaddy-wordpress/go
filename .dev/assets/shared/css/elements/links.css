@@ -1,7 +1,13 @@
 /*! Links */
 a {
-	color: hsl(var(--theme-link--color));
+	color: hsl(var(--theme-link--color, var(--theme-color-primary)));
 	text-decoration: underline;
+
+	&:hover,
+	&:active {
+		color: hsl(var(--theme-link--color-interactive, var(--theme-color-text)));
+		outline: 0;
+	}
 
 	&:not(.wp-block-button__link):focus {
 		@mixin outline;

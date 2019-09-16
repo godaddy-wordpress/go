@@ -110,10 +110,6 @@
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
 
-	/* Links */
-	--theme-link--color: var(--theme-color-heading);
-	--theme-link--color-interactive: var(--theme-color-primary);
-
 	/* Pullquote */
 	--theme-pullquote--font: "Poppins", sans-serif;
 	--theme-pullquote--border-color: transparent;

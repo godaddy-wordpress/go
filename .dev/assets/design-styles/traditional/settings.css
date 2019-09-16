@@ -141,10 +141,6 @@
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
 
-	/* Links */
-	--theme-link--color: var(--theme-color-primary);
-	--theme-link--color-interactive: var(--theme-color-text);
-
 	/* Pullquote */
 	--theme-pullquote--font: serif;
 	--theme-pullquote--border-color: transparent;

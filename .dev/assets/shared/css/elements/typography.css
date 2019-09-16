@@ -17,7 +17,7 @@ p {
 	line-height: var(--theme-body--leading);
 }
 
-blockquote {
+.content-area > blockquote {
 	border-left: var(--theme-quote--border);
 	margin: 0;
 	padding-left: 0;
