@@ -1,8 +1,4 @@
 /*! Paragraph */
-p.has-background {
-	@mixin blockWidthNoPadding;
-}
-
 .has-drop-cap:not(:focus) {
 
 	&::first-letter {

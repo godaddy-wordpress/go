@@ -1,11 +1,4 @@
 /*! Verse */
-.content-area {
-
-	& .wp-block-verse {
-		@mixin blockWidthNoPadding;
-	}
-}
-
 .wp-block-verse {
 	background: hsl(var(--theme-color-tertiary));
 	padding: 14px 18px;

@@ -1,18 +1,4 @@
 /*! Pullquote */
-.content-area {
-
-	& .wp-block-pullquote {
-
-		&:not([class*="align"]) {
-			@mixin blockWidthNoPadding;
-		}
-
-		&.alignwide {
-			@mixin blockWidthNoPaddingWide;
-		}
-	}
-}
-
 .wp-block-pullquote {
 	border-bottom: var(--theme-pullquote--border);
 	border-top: var(--theme-pullquote--border);

@@ -1,14 +1,6 @@
 /*! Separator */
 .wp-block-separator {
 	border-bottom-color: hsl(var(--theme-separator--color, var(--theme-color-heading)));
-	margin-bottom: var(--vertical-rhythm);
-	margin-top: var(--vertical-rhythm);
-	padding: 0;
-
-	&.is-style-wide {
-		@mixin blockWidthNoPadding;
-		padding: 0;
-	}
 
 	&.is-style-dots::before {
 		font-size: var(--theme-separator--dot-size, 2rem);

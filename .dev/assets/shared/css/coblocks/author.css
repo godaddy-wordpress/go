@@ -1,6 +1,5 @@
 /*! CoBlocks: Author */
 .wp-block-coblocks-author {
-	@mixin blockWidthNoPadding;
 	border-radius: var(--coblocks-author--radius, 0);
 	padding: var(--coblocks-author--padding, 2.5rem);
 
