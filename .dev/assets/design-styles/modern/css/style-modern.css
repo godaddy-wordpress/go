@@ -45,6 +45,10 @@
 		}
 	}
 
+	&:hover {
+		text-decoration: none;
+	}
+
 	&:focus::after {
 		transform: scaleX(0);
 		transform-origin: right center;
