@@ -568,7 +568,7 @@ function get_available_design_styles() {
 
 	$default_design_styles = [
 		'traditional' => [
-			'label'         => esc_html__( 'Traditional', 'go' ),
+			'label'         => _x( 'Traditional', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$suffix}.css",
 			'color_schemes' => [
@@ -617,7 +617,7 @@ function get_available_design_styles() {
 			],
 		],
 		'modern'      => [
-			'label'         => esc_html__( 'Modern', 'go' ),
+			'label'         => _x( 'Modern', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-modern{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-modern-editor{$suffix}.css",
 			'color_schemes' => [
@@ -667,7 +667,7 @@ function get_available_design_styles() {
 			],
 		],
 		'trendy'      => [
-			'label'         => esc_html__( 'Trendy', 'go' ),
+			'label'         => _x( 'Trendy', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
@@ -721,7 +721,7 @@ function get_available_design_styles() {
 			],
 		],
 		'welcoming'   => [
-			'label'         => esc_html__( 'Welcoming', 'go' ),
+			'label'         => _x( 'Welcoming', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
 			'color_schemes' => [
@@ -774,7 +774,7 @@ function get_available_design_styles() {
 			],
 		],
 		'playful'     => [
-			'label'         => esc_html__( 'Playful', 'go' ),
+			'label'         => _x( 'Playful', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
 			'color_schemes' => [
