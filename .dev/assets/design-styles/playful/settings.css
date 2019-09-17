@@ -221,7 +221,6 @@
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--color-white);
-	--theme-site-nav--color-interactive: var(--color-white);
 	--theme-site-nav--font: var(--theme-body--font);
 	--theme-site-nav--font-size: 1.1rem;
 	--theme-site-nav--font-size-mobile: 1.4rem;

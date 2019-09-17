@@ -226,7 +226,6 @@
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
-	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font: "Montserrat", sans-serif;
 	--theme-site-nav--font-size: 0.75rem;
 	--theme-site-nav--font-size-mobile: 1rem;

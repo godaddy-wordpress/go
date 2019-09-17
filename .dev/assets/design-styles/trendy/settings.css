@@ -233,7 +233,6 @@
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
-	--theme-site-nav--color-interactive: var(--theme-color-text-secondary);
 	--theme-site-nav--font: "Source Code Pro", monospace;
 	--theme-site-nav--font-size: 0.9rem;
 	--theme-site-nav--font-size-mobile: 1rem;
@@ -289,7 +288,7 @@
 	## Footer
 	--------------------------------------------------------------*/
 	--theme-footer--bg: var(--theme-color-tertiary);
-	--theme-footer--color: var(--theme-color-text-secondary);
+	--theme-footer--color: 0, 0%, 55%;
 	--theme-footer--font-family: "Source Code Pro", sans-serif;
 	--theme-footer-heading--color: var(--color-white);
 	--theme-footer-2--padding-y: 4rem;

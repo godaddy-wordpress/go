@@ -794,7 +794,6 @@ function inline_css() {
 					--theme-site-description--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-title--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-search-toggle--color: <?php echo esc_attr( $header_text_color ); ?>;
-					--theme-site-nav--color-interactive: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-nav-toggle--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-search-submit--bg: <?php echo esc_attr( $header_text_color ); ?>;
 				<?php endif; ?>

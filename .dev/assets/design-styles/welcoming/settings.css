@@ -225,7 +225,6 @@
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-primary);
-	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font: "Karla", sans-serif;
 	--theme-site-nav--font-size: 1rem;
 	--theme-site-nav--font-size-mobile: 1.75rem;

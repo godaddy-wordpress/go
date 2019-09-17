@@ -18,3 +18,11 @@ body {
 .site-search__toggle {
 	top: 1px;
 }
+
+.has-footer-1 .footer-navigation a {
+	color: hsl(var(--theme-footer--color));
+}
+
+.has-footer-1 .site-info {
+	opacity: 0.65;
+}
