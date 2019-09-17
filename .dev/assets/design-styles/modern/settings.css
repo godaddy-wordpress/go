@@ -223,6 +223,11 @@
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
 	--theme-site-description--opacity: 1;
+	--theme-site-description--font-size: 0.65rem;
+	--theme-site-description--font: "Montserrat", sans-serif;
+	--theme-site-description--weight: 700;
+	--theme-site-description--tracking: 10px;
+	--theme-site-nav--text-transform: uppercase;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
