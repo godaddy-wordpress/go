@@ -48,7 +48,11 @@
 			?>
 		</div>
 
-		<?php Go\post_meta( get_the_ID(), 'single-bottom' ); ?>
+		<?php
+		if ( is_singular() ) {
+			Go\post_meta( get_the_ID(), 'single-bottom' );
+		}
+		?>
 
 	</div>
 
