@@ -7,10 +7,7 @@ const FixStyleOnlyEntriesPlugin = require( 'webpack-fix-style-only-entries' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const WebpackBar = require( 'webpackbar' );
-
 const isProduction = 'production' === process.env.NODE_ENV;
-
-// Config files.
 const settings = require( './webpack.settings.js' );
 
 /**
@@ -96,7 +93,6 @@ module.exports = {
 						loader: 'css-loader',
 						options: {
 							sourceMap: ! isProduction,
-							// We copy fonts etc. using CopyWebpackPlugin.
 							url: false,
 						},
 					},

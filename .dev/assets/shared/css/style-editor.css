@@ -14,7 +14,6 @@
 /* Custom Editor Styles */
 @import url("editor/hero.css");
 @import url("editor/group.css");
-@import url("editor/links.css");
 
 /* Utitlities */
 @import url("utilities/captions.css");
@@ -40,6 +39,10 @@
 @import url("coblocks/features.css");
 @import url("coblocks/carousel.css");
 @import url("coblocks/food-drinks.css");
+
+.block-editor-block-list__block[data-type="core/paragraph"] p {
+	line-height: var(--theme-body--leading);
+}
 
 /* Captions */
 .wp-block figcaption {

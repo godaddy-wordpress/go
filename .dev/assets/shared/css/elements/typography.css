@@ -17,7 +17,63 @@ p {
 	line-height: var(--theme-body--leading);
 }
 
-/* Override for Gutenberg */
-.block-editor-block-list__block[data-type="core/paragraph"] p {
-	line-height: var(--theme-body--leading);
+.content-area > blockquote {
+	border-left: var(--theme-quote--border);
+	margin: 0;
+	padding-left: 0;
+	padding-right: 0;
+
+	& p {
+		color: hsl(var(--theme-quote--color));
+		font-family: var(--theme-heading--font);
+		font-size: var(--theme-quote--font-size);
+		font-style: var(--theme-quote--style);
+		font-weight: var(--theme-quote--weight);
+		line-height: var(--theme-quote--leading);
+		margin: 0 0 2rem;
+		padding: 0.5rem 0 0.5rem 1.5rem;
+		position: relative;
+
+		@media (--medium) {
+			padding-left: 2.75rem;
+		}
+
+		&::before {
+			content: "“";
+			line-height: 1;
+			position: absolute;
+			transform: translate3d(-120%, 20%, 0);
+		}
+
+		&::after {
+			content: "”";
+		}
+	}
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0 0 1rem;
+	width: 100%;
+
+	& td,
+	& th {
+		border: 2px solid hsl(var(--theme-table--border-color, var(--theme-color-heading)));
+		padding: 1em;
+		word-break: break-all;
+	}
+}
+
+code {
+	font-family: monospace;
+	font-size: 1em;
+	word-wrap: break-word;
+}
+
+pre {
+	border: 0.1rem solid hsl(var(--theme-table--border-color, var(--theme-color-heading)));
+	line-height: 1.5;
+	overflow: auto;
+	padding: 3rem 2rem;
+	text-align: left;
 }

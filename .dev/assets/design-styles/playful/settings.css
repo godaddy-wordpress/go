@@ -20,19 +20,15 @@
 	/*--------------------------------------------------------------
 	## Editor
 	--------------------------------------------------------------*/
-	--editor-max-w-base: 622px;
+	--editor-max-w-base: 702px;
 	--editor-max-w-wide: 942px;
 
 
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 50rem;
+	--theme-max-w-base: 42rem;
 	--theme-max-w-wide: 70rem;
-
-	/* Below base width query */
-	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 70rem);
 
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.75rem;
@@ -59,7 +55,7 @@
 	--theme-outline-color: var(--theme-color-primary);
 	--theme-outline-width: 1px;
 
-	--theme-selection--color: var(--theme-color-primary);
+	--theme-selection--bg: var(--theme-color-primary);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
@@ -104,15 +100,12 @@
 
 	/* Text Utilities */
 	--theme-text-sm: 80%;
+	--theme-text-xs: 80%;
 
 	/* Captions */
 	--theme-caption--alignment: center;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
-
-	/* Links */
-	--theme-link--color: var(--theme-color-heading);
-	--theme-link--color-interactive: var(--theme-color-primary);
 
 	/* Pullquote */
 	--theme-pullquote--font: "Poppins", sans-serif;
@@ -141,7 +134,6 @@
 
 	/* Blockquote (Large) */
 	--theme-quote-large--color: var(--theme-color-heading);
-	--theme-quote-large--font-size: var(--theme-h2--font-size);
 	--theme-quote-large--leading: var(--theme-heading--leading);
 	--theme-quote-large--style: normal;
 
@@ -153,7 +145,7 @@
 	--theme-label--font-size: var(--theme-body--font-size);
 	--theme-label--font: var(--theme-site-nav--font);
 	--theme-label--tracking: var(--theme-site-nav--tracking);
-	--theme-label--transform: lowercase;
+	--theme-label--transform: normal;
 	--theme-label--weight: 600;
 	--theme-label--spacing: 0.35rem;
 
@@ -223,14 +215,12 @@
 	--theme-site-title--font: "Poppins", sans-serif;
 	--theme-site-title--text-transform: none;
 	--theme-site-title--tracking: 0;
-	--theme-site-title--weight: 700;
 
-	--theme-site-description--color: var(--theme-color-heading);
+	--theme-site-description--color: var(--color-white);
 	--theme-site-description--leading: 1.4;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--color-white);
-	--theme-site-nav--color-interactive: var(--color-white);
 	--theme-site-nav--font: var(--theme-body--font);
 	--theme-site-nav--font-size: 1.1rem;
 	--theme-site-nav--font-size-mobile: 1.4rem;
@@ -266,7 +256,6 @@
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--color-white);
 	--theme-search-toggle--color-interactive: var(--color-white);
-	--theme-search-toggle--size: 20px;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-primary);
@@ -293,11 +282,9 @@
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color: var(--color-white);
-	--theme-footer-nav--color-interactive: var(--color-white);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
-	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-x: 1.75rem;
@@ -306,7 +293,6 @@
 
 	/* Footer > Social Icons */
 	--theme-social--color: var(--color-white);
-	--theme-social--color-hover: var(--theme-color-secondary);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 
@@ -317,6 +303,14 @@
 	/* Footer Variations Specific */
 	--theme-footer-3-site-info--border-color: var(--theme-header--bg);
 	--theme-footer-3-site-info--border-width: 10px;
+
+
+	/*--------------------------------------------------------------
+	## Post
+	--------------------------------------------------------------*/
+	--theme-entry-header--width: 70rem;
+	--theme-meta--color: var(--theme-color-primary);
+	--theme-comment-p--font-size: 0.95rem;
 
 
 	/*--------------------------------------------------------------

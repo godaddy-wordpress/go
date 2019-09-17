@@ -3,7 +3,6 @@
 	width: auto;
 
 	&.is-style-fullwidth::before {
-		@mixin blockWidthNoPadding;
 		width: auto;
 	}
 }

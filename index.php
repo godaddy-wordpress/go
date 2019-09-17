@@ -21,11 +21,12 @@ if ( have_posts() ) {
 	// Start the Loop.
 	while ( have_posts() ) :
 		the_post();
-		get_template_part( 'partials/content', 'excerpt' );
+		get_template_part( 'partials/content' );
 	endwhile;
 
 	// Previous/next page navigation.
-	the_posts_navigation();
+	get_template_part( 'partials/pagination' );
+
 } else {
 
 	// If no content, include the "No posts found" template.

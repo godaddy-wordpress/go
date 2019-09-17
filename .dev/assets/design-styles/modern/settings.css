@@ -20,21 +20,20 @@
 	/*--------------------------------------------------------------
 	## Editor
 	--------------------------------------------------------------*/
-	--editor-title--font-size: 3.75em;
+	--editor-title--font-size: 2em;
 	--editor-max-w-base: 633px;
 	--editor-max-w-wide: 1280px;
+
+	@media (--medium) {
+		--editor-title--font-size: 3.65em;
+	}
 
 
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-
-	--theme-max-w-base: 50rem;
+	--theme-max-w-base: 38rem;
 	--theme-max-w-wide: 90rem;
-
-	/* Below base width query */
-	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 90rem);
 
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.15rem;
@@ -59,7 +58,7 @@
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
-	--theme-selection--color: var(--theme-color-primary);
+	--theme-selection--bg: var(--theme-color-primary);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
@@ -98,8 +97,8 @@
 
 	@media (--medium) {
 		--theme-h1--font-size: 4.5em;
-		--theme-h2--font-size: 3em;
-		--theme-h3--font-size: 2.5em;
+		--theme-h2--font-size: 3.5em;
+		--theme-h3--font-size: 2.75em;
 	}
 
 	/* Text Utilities */
@@ -141,7 +140,6 @@
 
 	/* Blockquote (Large) */
 	--theme-quote-large--color: var(--theme-color-heading);
-	--theme-quote-large--font-size: var(--theme-h2--font-size);
 	--theme-quote-large--leading: var(--theme-heading--leading);
 	--theme-quote-large--style: normal;
 
@@ -221,14 +219,13 @@
 	--theme-site-title--font: var(--theme-site-nav--font);
 	--theme-site-title--text-transform: uppercase;
 	--theme-site-title--tracking: 5px;
-	--theme-site-title--weight: 700;
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
+	--theme-site-description--opacity: 1;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
-	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font: "Montserrat", sans-serif;
 	--theme-site-nav--font-size: 0.75rem;
 	--theme-site-nav--font-size-mobile: 1rem;
@@ -264,7 +261,6 @@
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-heading);
-	--theme-search-toggle--size: 22px;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
@@ -291,11 +287,9 @@
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color: var(--theme-site-nav--color);
-	--theme-footer-nav--color-interactive: var(--theme-color-primary);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
-	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-x: 1.75rem;
@@ -304,7 +298,6 @@
 
 	/* Footer > Social Icons */
 	--theme-social--color: var(--theme-color-heading);
-	--theme-social--color-hover: var(--theme-color-primary);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 
@@ -318,9 +311,18 @@
 
 
 	/*--------------------------------------------------------------
+	## Post
+	--------------------------------------------------------------*/
+	--theme-entry-header--width: 70rem;
+	--theme-meta--color: var(--theme-color-heading);
+	--theme-meta--font: var(--theme-body--font);
+	--theme-meta--font-size: var(--theme-body--font-size);
+
+
+	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.1);
+	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--bg), 0.1);
 	--coblocks-accordion--border-color: var(--theme-color-heading);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-heading);

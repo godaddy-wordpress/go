@@ -8,23 +8,6 @@
 @import url("components/carousel.css");
 @import url("components/wc-button.css");
 
-.wp-block-code,
-.wp-block-verse,
-p.has-background,
-.wp-block-pullquote:not(.alignfull):not(.alignwide),
-.wp-block-coblocks-alert,
-.wp-block-quote,
-.wp-block-quote.is-style-large,
-.wp-block-separator.is-style-wide,
-.wp-block-group:not(.alignfull):not(.alignwide),
-.wp-block-cover:not(.alignwide):not(.alignfull),
-.wp-block-coblocks-dynamic-separator.is-style-fullwidth::before {
-	@media (--base) {
-		margin-left: var(--theme-block-padding-x);
-		margin-right: var(--theme-block-padding-x);
-	}
-}
-
 .site-search__toggle {
 	top: 2px;
 }
@@ -62,10 +45,18 @@ p.has-background,
 		}
 	}
 
+	&:hover {
+		text-decoration: none;
+	}
+
 	&:focus::after {
 		transform: scaleX(0);
 		transform-origin: right center;
 	}
+}
+
+.post-tags .meta-icon {
+	top: 2px;
 }
 
 textarea,

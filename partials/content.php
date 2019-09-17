@@ -8,8 +8,7 @@
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<?php if ( is_singular() && has_post_thumbnail() ) : ?>
 		<div class="post__thumbnail">
@@ -17,58 +16,44 @@
 		</div>
 	<?php endif; ?>
 
-	<header class="entry-header max-w-base m-auto px">
+	<header class="entry-header m-auto px">
 
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="post__title">', '</h1>' );
+			the_title( '<h1 class="post__title entry-title m-0">', '</h1>' );
 		else :
-			the_title( sprintf( '<h2 class="post__title h1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+			the_title( sprintf( '<h2 class="post__title entry-title m-0 h1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		endif;
 		?>
 
-		<div class="post__meta">
-
-			<span class="post__categories"><?php the_category( ' | ' ); ?></span>
-
-			<span class="post__author"><?php esc_html_e( 'by', 'go' ); ?> <?php the_author(); ?></span>
-
-			<?php
-			if ( is_singular() && get_the_tag_list() ) {
-				the_tags(
-					sprintf(
-						'<span class="post__tags"><span class="screen-reader-text">%s</span> ',
-						esc_html_e( 'Tags:', 'go' )
-					),
-					', ',
-					'</span>'
-				);
-			}
-			?>
-
-		</div>
+		<?php Go\post_meta( get_the_ID(), 'top' ); ?>
 
 	</header>
 
-	<div class="content-area">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'go' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
+	<div class="content-area__wrapper">
 
-		wp_link_pages();
+		<div class="content-area">
+			<?php
+			if ( is_search() ) {
+				the_excerpt();
+			} else {
+				the_content();
+			}
+			wp_link_pages(
+				array(
+					'before' => '<nav class="post-nav-links" aria-label="' . esc_attr__( 'Page', 'go' ) . '"><span class="label">' . __( 'Pages:', 'go' ) . '</span>',
+					'after'  => '</nav>',
+				)
+			);
+			?>
+		</div>
+
+		<?php
+		if ( is_singular() ) {
+			Go\post_meta( get_the_ID(), 'single-bottom' );
+		}
 		?>
+
 	</div>
 
 </article>

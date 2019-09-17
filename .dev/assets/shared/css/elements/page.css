@@ -4,11 +4,14 @@ html {
 }
 
 ::-moz-selection {
-	background-color: hsla(var(--theme-selection--color, var(--theme-color-primary)), 0.1);
+	background-color: hsl(var(--theme-selection--bg, var(--theme-color-primary)));
+	color: hsl(var(--theme-selection--color, inherit));
 }
 
 ::selection {
-	background-color: hsla(var(--theme-selection--color, var(--theme-color-primary)), 0.1);
+	background-color: hsl(var(--theme-selection--bg, var(--theme-color-primary)));
+	color: hsl(var(--theme-selection--color, var(--color-white)));
+
 }
 
 *,

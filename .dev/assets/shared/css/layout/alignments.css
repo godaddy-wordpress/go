@@ -1,0 +1,56 @@
+.alignnone,
+.aligncenter,
+.alignleft,
+.alignright {
+	max-width: 100%;
+}
+
+.aligncenter,
+.aligncenter img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft,
+.alignright {
+	max-width: 50%;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 2rem 2rem 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 2rem 2rem;
+}
+
+.alignwide {
+	--double-padding: calc(var(--theme-block-padding-x) * 2);
+	--half-width: calc(var(--theme-max-w-wide) * 0.5);
+
+	left: calc(50% - 50vw + var(--theme-block-padding-x));
+	max-width: calc(100vw - var(--theme-block-padding-x));
+	position: relative;
+	width: calc(100vw - var(--double-padding));
+
+	@media (--large) {
+		left: calc(50% - 50vw + var(--theme-block-padding-x));
+		max-width: calc(100vw - var(--double-padding));
+		width: calc(100vw - var(--double-padding));
+	}
+
+	@media (--xlarge) {
+		left: calc(50% - var(--half-width) + var(--theme-block-padding-x));
+		max-width: calc(var(--theme-max-w-wide) - var(--double-padding));
+		width: calc(var(--theme-max-w-wide) - var(--double-padding));
+	}
+}
+
+.alignfull {
+	left: calc(50% - 50vw);
+	max-width: 100vw;
+	position: relative;
+	width: 100vw;
+}

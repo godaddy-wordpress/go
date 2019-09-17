@@ -15,13 +15,15 @@
 	</figure>
 <?php endif; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<?php Go\page_title(); ?>
 
-	<div class="content-area">
-		<?php the_content(); ?>
-		<?php wp_link_pages(); ?>
+	<div class="content-area__wrapper">
+		<div class="content-area">
+			<?php the_content(); ?>
+			<?php wp_link_pages(); ?>
+		</div>
 	</div>
 
 </article>

@@ -13,6 +13,226 @@ namespace Go;
 use function Go\Core\get_available_color_schemes;
 
 /**
+ * Return the Post Meta.
+ *
+ * @param int    $post_id The ID of the post for which the post meta should be output.
+ * @param string $location Which post meta location to output.
+ */
+function post_meta( $post_id = null, $location = 'top' ) {
+
+	echo get_post_meta( $post_id, $location ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in get_post_meta().
+
+}
+
+/**
+ * Get the post meta.
+ *
+ * @param int    $post_id The iD of the post.
+ * @param string $location The location where the meta is shown.
+ */
+function get_post_meta( $post_id = null, $location = 'top' ) {
+
+	// Require post ID.
+	if ( ! $post_id ) {
+		return;
+	}
+
+	$page_template = get_page_template_slug( $post_id );
+
+	// Check whether the post type is allowed to output post meta.
+	$disallowed_post_types = apply_filters( 'go_disallowed_post_types_for_meta_output', array( 'page' ) );
+	if ( in_array( get_post_type( $post_id ), $disallowed_post_types, true ) ) {
+		return;
+	}
+
+	$post_meta_wrapper_classes = '';
+	$post_meta_classes         = '';
+
+	// Get the post meta settings for the location specified.
+	if ( 'top' === $location ) {
+
+		$post_meta                 = apply_filters(
+			'go_post_meta_location_single_top',
+			array(
+				'author',
+				'post-date',
+				'comments',
+				'sticky',
+			)
+		);
+		$post_meta_wrapper_classes = ' post__meta--single post__meta--top';
+
+	} elseif ( 'single-bottom' === $location ) {
+
+		$post_meta                 = apply_filters(
+			'go_post_meta_location_single_bottom',
+			array(
+				'tags',
+			)
+		);
+		$post_meta_wrapper_classes = ' post__meta--single post__meta--single-bottom';
+
+	}
+
+	// If the post meta setting has the value 'empty', it's explicitly empty and the default post meta shouldn't be output.
+	if ( $post_meta && ! in_array( 'empty', $post_meta, true ) ) {
+
+		// Make sure we don't output an empty container.
+		$has_meta = false;
+
+		global $post;
+		$the_post = get_post( $post_id );
+		setup_postdata( $the_post );
+
+		ob_start();
+
+		?>
+
+		<div class="post__meta--wrapper<?php echo esc_attr( $post_meta_wrapper_classes ); ?>">
+
+			<ul class="post__meta list-reset<?php echo esc_attr( $post_meta_classes ); ?>">
+
+				<?php
+
+				// Allow output of additional meta items to be added by child themes and plugins.
+				do_action( 'go_start_of_post_meta_list', $post_meta, $post_id );
+
+				// Author.
+				if ( in_array( 'author', $post_meta, true ) ) {
+
+					$has_meta = true;
+					?>
+					<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text"><?php esc_html_e( 'Post author', 'go' ); ?></span>
+							<?php echo load_inline_svg( 'author.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+						</span>
+						<span class="meta-text">
+							<?php
+							// Translators: %s = the author name.
+							printf( esc_html_x( 'By %s', '%s = author name', 'go' ), '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'nickname' ) ) . '</a>' );
+							?>
+						</span>
+					</li>
+					<?php
+
+				}
+
+				// Post date.
+				if ( in_array( 'post-date', $post_meta, true ) ) {
+
+					$has_meta = true;
+					?>
+					<li class="post-date">
+						<a class="meta-wrapper" href="<?php the_permalink(); ?>">
+							<span class="meta-icon">
+								<span class="screen-reader-text"><?php esc_html_e( 'Post date', 'go' ); ?></span>
+								<?php echo load_inline_svg( 'calendar.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+							</span>
+							<span class="meta-text">
+								<?php the_time( get_option( 'date_format' ) ); ?>
+							</span>
+						</a>
+					</li>
+					<?php
+
+				}
+
+				// Categories.
+				if ( in_array( 'categories', $post_meta, true ) && has_category() ) {
+
+					$has_meta = true;
+					?>
+					<li class="post-categories meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text"><?php esc_html_e( 'Categories', 'go' ); ?></span>
+							<?php echo load_inline_svg( 'categories.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+						</span>
+						<span class="meta-text">
+							<?php esc_html_e( 'In', 'go' ); ?> <?php the_category( ', ' ); ?>
+						</span>
+					</li>
+					<?php
+
+				}
+
+				// Tags.
+				if ( in_array( 'tags', $post_meta, true ) && has_tag() ) {
+
+					$has_meta = true;
+					?>
+					<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text"><?php esc_html_e( 'Tags', 'go' ); ?></span>
+							<?php echo load_inline_svg( 'tags.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+						</span>
+						<span class="meta-text">
+							<?php the_tags( '', ', ', '' ); ?>
+						</span>
+					</li>
+					<?php
+
+				}
+
+				// Comments link.
+				if ( in_array( 'comments', $post_meta, true ) && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+
+					$has_meta = true;
+					?>
+					<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<?php echo load_inline_svg( 'comments.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+						</span>
+						<span class="meta-text">
+							<?php comments_popup_link(); ?>
+						</span>
+					</li>
+					<?php
+
+				}
+
+				// Sticky.
+				if ( in_array( 'sticky', $post_meta, true ) && is_sticky() ) {
+
+					$has_meta = true;
+					?>
+					<li class="post-sticky meta-wrapper">
+						<span class="meta-icon">
+							<?php echo load_inline_svg( 'bookmark.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+						</span>
+						<span class="meta-text">
+							<?php esc_html_e( 'Featured', 'go' ); ?>
+						</span>
+					</li>
+					<?php
+
+				}
+
+				// Allow output of additional post meta types to be added by child themes and plugins.
+				do_action( 'go_end_of_post_meta_list', $post_meta, $post_id );
+				?>
+
+			</ul>
+
+		</div>
+
+		<?php
+
+		wp_reset_postdata();
+
+		$meta_output = ob_get_clean();
+
+		// If there is meta to output, return it.
+		if ( $has_meta && $meta_output ) {
+
+			return $meta_output;
+
+		}
+	}
+}
+
+
+/**
  * Returns the color selected by the user.
  *
  * @param string $color  Which color to return.
@@ -299,7 +519,7 @@ function page_title() {
 			'title'   => get_the_title(),
 			'wrapper' => 'h1',
 			'atts'    => [
-				'class' => 'post__title max-w-base m-0 px m-auto text-center',
+				'class' => 'post__title m-0 text-center',
 			],
 			'custom'  => false,
 		]
@@ -351,7 +571,7 @@ function page_title() {
 	}
 
 	printf(
-		'<header class="entry-header page-header %1$s">%2$s</header>',
+		'<header class="page-header entry-header m-auto px %1$s">%2$s</header>',
 		is_customize_preview() ? ( get_theme_mod( 'page_titles', true ) ? '' : ' display-none' ) : '',
 		wp_kses(
 			$html,

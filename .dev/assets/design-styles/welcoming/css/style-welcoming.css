@@ -5,10 +5,6 @@
 @import url("../settings.css");
 @import url("components/button.css");
 @import url("components/carousel.css");
-
-/**
- * WooCommerce overrides
- */
 @import url("woocommerce/tabs.css");
 
 html {
@@ -16,27 +12,24 @@ html {
 }
 
 body {
-	border: 12px solid hsl(var(--theme-header--bg));
+	border: 0.75rem solid hsl(var(--theme-header--bg));
 	border-top: 0;
 }
 
-.wp-block-code,
-.wp-block-verse,
-p.has-background,
-.wp-block-pullquote:not(.alignfull):not(.alignwide),
-.wp-block-coblocks-alert,
-.wp-block-separator.is-style-wide,
-.wp-block-group:not(.alignfull):not(.alignwide),
-.wp-block-cover:not(.alignwide):not(.alignfull),
-.wp-block-coblocks-dynamic-separator.is-style-fullwidth::before {
-	@media (--base) {
-		margin-left: var(--theme-block-padding-x);
-		margin-right: var(--theme-block-padding-x);
-	}
+.site-branding {
+	top: 0;
+}
+
+.site-content article {
+	overflow: hidden;
+}
+
+.site-search__toggle {
+	top: 0.1rem;
 }
 
 .site-footer.has-background {
-	border-top: 12px solid hsl(var(--theme-header--bg));
+	border-top: 0.75rem solid hsl(var(--theme-header--bg));
 }
 
 .has-footer-3 .site-footer__inner {
@@ -51,17 +44,13 @@ p.has-background,
 	border-width: 2px;
 }
 
-.site-search__toggle {
-	top: 1px;
-}
-
 .primary-menu a {
 
 	&::after {
 		background-color: hsl(var(--theme-color-primary));
-		bottom: 0;
+		bottom: -0.2rem;
 		content: "";
-		height: 4px;
+		height: 0.2rem;
 		left: 0;
 		opacity: 0;
 		position: absolute;
@@ -75,6 +64,10 @@ p.has-background,
 		&:hover::after {
 			opacity: 1;
 		}
+	}
+
+	&:hover {
+		text-decoration: none;
 	}
 
 	&:focus::after {

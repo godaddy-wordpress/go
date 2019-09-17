@@ -27,12 +27,8 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 50rem;
+	--theme-max-w-base: 38rem;
 	--theme-max-w-wide: 80rem;
-
-	/* Below base width query */
-	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 80rem);
 
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.15rem;
@@ -58,7 +54,8 @@
 	/* Accessibility */
 	--theme-outline-width: 1px;
 	--theme-outline-color: var(--theme-color-primary);
-	--theme-selection--color: var(--theme-color-primary);
+	--theme-selection--bg: var(--theme-color-heading);
+	--theme-selection--color: var(--color-white);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
@@ -70,13 +67,13 @@
 	--------------------------------------------------------------*/
 	--theme-color-heading: 0, 0%, 0%;
 	--theme-color-text: 0, 0%, 0%;
-	--theme-color-text-secondary: 0, 0%, 52%;
+	--theme-color-text-secondary: 0, 0%, 43%;
 
 
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
-	--theme-body--font: "Open Sans", sans-serif;
+	--theme-body--font: "Noto Sans", sans-serif;
 	--theme-body--font-size: 1.1rem;
 	--theme-body--leading: 1.9;
 
@@ -88,7 +85,7 @@
 	--theme-heading--weight: 400;
 	--theme-heading--button-spacing: 1.75rem;
 
-	--theme-h1--font-size: 2.25em;
+	--theme-h1--font-size: 2.15em;
 	--theme-h2--font-size: 2em;
 	--theme-h3--font-size: 1.75em;
 	--theme-h4--font-size: 2em;
@@ -96,9 +93,13 @@
 	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.5em;
+		--theme-h1--font-size: 3.25em;
 		--theme-h2--font-size: 2.5em;
 		--theme-h3--font-size: 2.25em;
+	}
+
+	@media (--xlarge) {
+		--theme-h1--font-size: 4em;
 	}
 
 	/* Text Utilities */
@@ -217,23 +218,24 @@
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: 1.5rem;
-	--theme-site-title--font: var(--theme-site-nav--font);
-	--theme-site-title--text-transform: uppercase;
-	--theme-site-title--tracking: 5px;
-	--theme-site-title--weight: 700;
+	--theme-site-title--font-size: 2rem;
+	--theme-site-title--font: var(--theme-heading--font);
+	--theme-site-title--tracking: 0.033em;
+	--theme-site-title--weight: 400;
 
 	--theme-site-description--color: var(--theme-color-heading);
+	--theme-site-description--font: "Source Code Pro", monospace;
+	--theme-site-description--font-size: 0.9rem;
 	--theme-site-description--leading: 1.4;
+	--theme-site-description--font-weight: 400;
+	--theme-site-description--opacity: 1;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
-	--theme-site-nav--color-interactive: var(--theme-color-text-secondary);
-	--theme-site-nav--font: "Source Code Pro", sans-serif;
+	--theme-site-nav--font: "Source Code Pro", monospace;
 	--theme-site-nav--font-size: 0.9rem;
 	--theme-site-nav--font-size-mobile: 1rem;
 	--theme-site-nav--weight: 400;
-	--theme-site-nav--text-transform: normal;
 	--theme-site-nav--tracking: 0;
 	--theme-site-nav--transition: var(--theme-link-transition);
 	--theme-site-nav--padding-x: 1.35rem;
@@ -264,7 +266,6 @@
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-text-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-secondary);
-	--theme-search-toggle--size: 20px;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
@@ -286,18 +287,16 @@
 	## Footer
 	--------------------------------------------------------------*/
 	--theme-footer--bg: var(--theme-color-tertiary);
-	--theme-footer--color: var(--theme-color-text-secondary);
+	--theme-footer--color: 0, 0%, 55%;
 	--theme-footer--font-family: "Source Code Pro", sans-serif;
 	--theme-footer-heading--color: var(--color-white);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color: var(--color-white);
-	--theme-footer-nav--color-interactive: var(--color-white);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
-	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-x: 1.75rem;
@@ -306,7 +305,6 @@
 
 	/* Footer > Social Icons */
 	--theme-social--color: var(--color-white);
-	--theme-social--color-hover: var(--theme-color-text-secondary);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 
@@ -321,9 +319,17 @@
 
 
 	/*--------------------------------------------------------------
+	## Post
+	--------------------------------------------------------------*/
+	--theme-meta--color: var(--theme-color-heading);
+	--theme-meta--font-size: 0.9rem;
+	--theme-comment-p--font-size: 0.95rem;
+
+
+	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.1);
+	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--bg), 0.1);
 	--coblocks-accordion--border-color: var(--theme-color-heading);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-heading);

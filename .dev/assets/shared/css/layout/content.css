@@ -1,14 +1,17 @@
 /*! Layout: Content Area */
-.content-area > * {
-	margin-bottom: var(--vertical-rhythm);
+.content-area__wrapper {
+	--double-padding: calc(var(--theme-block-padding-x) * 2);
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: var(--vertical-rhythm);
 	max-width: var(--theme-max-w-base);
-	padding-left: var(--theme-block-padding-x);
-	padding-right: var(--theme-block-padding-x);
+	width: calc(100% - var(--double-padding));
+}
 
-	&:not(p):not(ul):not(ol):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
+.content-area > * {
+	margin-bottom: var(--vertical-rhythm);
+	margin-top: var(--vertical-rhythm);
+
+	&:not(p):not(ul):not(ol):not(address):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
 		margin-bottom: var(--vertical-rhythm--lrg);
 		margin-top: var(--vertical-rhythm--lrg);
 	}
@@ -37,16 +40,27 @@
 		margin-bottom: var(--vertical-rhythm--lrg) !important;
 	}
 
-	/* Set alignments for wide and full */
-	&.alignwide {
-		max-width: var(--theme-max-w-wide);
+	&.mt-0 {
+		margin-top: 0 !important;
 	}
 
-	&.alignfull {
-		max-width: 100%;
-		padding-left: 0;
-		padding-right: 0;
+	&.alignleft,
+	&.alignright {
+		margin-top: 0 !important;
 	}
+}
+
+.hfeed article {
+	margin-bottom: var(--vertical-rhythm--lrg);
+}
+
+/* Account for vertical spacing on hfeed. */
+.hfeed article .content-area > *:first-child {
+	margin-top: calc(var(--vertical-rhythm--lrg) * 0.55) !important;
+}
+
+.hfeed article .content-area > *:last-child {
+	margin-bottom: 0 !important;
 }
 
 /* Account for the first block if we have a featured image. */
@@ -55,18 +69,20 @@
 }
 
 /* Account for the first block being .alignfull */
-.content-area > *.alignfull:first-child,
-.content-area > *figure:first-child,
-.content-area > *.wp-block-gallery:first-child {
-	margin-top: 0 !important;
+body:not(.single-post):not(.has-page-titles) {
+
+	& .content-area > *:first-child.alignfull,
+	& .content-area > *:first-child.alignwide,
+	& .content-area > *:first-child.wp-block-gallery {
+		margin-top: 0 !important;
+	}
 }
 
-/* Account for page titles. */
-.has-page-titles:not(.home) .content-area > *:first-child {
-	margin-top: var(--vertical-rhythm--lrg) !important;
+/* The page title is never shown on the homepage. */
+body.home {
 
-	@media (--large) {
-		margin-top: calc(var(--vertical-rhythm--lrg) - var(--theme-header--padding-y)) !important;
+	& .content-area > *:first-child.alignfull {
+		margin-top: 0 !important;
 	}
 }
 
@@ -80,7 +96,7 @@
 }
 
 .single-post.has-comments-open .content-area > *:last-child {
-	margin-bottom: var(--theme-block-spacing-huge) !important;
+	margin-bottom: var(--vertical-rhythm--lrg) !important;
 }
 
 .content-area {
@@ -92,8 +108,6 @@
 		& .wp-block-coblocks-accordion,
 		& .wp-block-coblocks-author,
 		& figure:not(.alignfull):not(.alignwide) {
-
-			/* Remove huge spacing when right after a paragraph */
 			margin-bottom: var(--vertical-rhythm--med) !important;
 			margin-top: var(--vertical-rhythm--med) !important;
 		}
@@ -106,6 +120,7 @@
 		& .coblocks-form,
 		& .wp-block-button,
 		& .wp-block-separator,
+		& .wp-block-coblocks-buttons,
 		& .wp-block-coblocks-dynamic-separator,
 		& .wp-block-pullquote:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
 			margin-bottom: calc(var(--vertical-rhythm--med) * 1.5) !important;
@@ -120,15 +135,19 @@
 	& > h5,
 	& > h6 {
 
-		& + p {
-
-			/* Remove space between headings and paragraphs */
+		& + p,
+		& + ol,
+		& + ul,
+		& + dl {
 			margin-top: calc(var(--vertical-rhythm--lrg) * -0.825) !important;
 		}
 
-		& + .wp-block-button {
+		& + .wp-block-button,
+		& + .wp-block-coblocks-buttons {
+			margin-top: calc(var(--vertical-rhythm--lrg) * -0.65) !important;
+		}
 
-			/* Remove space between headings and button blocks */
+		& + .wp-block-coblocks-logos {
 			margin-top: calc(var(--vertical-rhythm--lrg) * -0.65) !important;
 		}
 	}

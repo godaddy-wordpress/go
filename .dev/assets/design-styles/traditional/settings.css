@@ -27,12 +27,8 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 54rem;
-	--theme-max-w-wide: 80rem;
-
-	/* Below base width query */
-	@custom-media --base (max-width: 54rem);
-	@custom-media --wide (max-width: 80rem);
+	--theme-max-w-base: 42rem;
+	--theme-max-w-wide: 84rem;
 
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.15rem;
@@ -58,7 +54,7 @@
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-heading);
 	--theme-outline-width: 1px;
-	--theme-selection--color: var(--theme-color-heading);
+	--theme-selection--bg: var(--theme-color-heading);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
@@ -70,14 +66,14 @@
 	--------------------------------------------------------------*/
 	--theme-color-heading: var(--theme-color-secondary);
 	--theme-color-text: 218, 12%, 30%;
-	--theme-color-text-secondary: var(--theme-color-text);
+	--theme-color-text-secondary: 0, 0%, 43%;
 
 
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
 	--theme-body--font: "Nunito Sans", sans-serif;
-	--theme-body--font-size: 1.025rem;
+	--theme-body--font-size: 1.05rem;
 	--theme-body--leading: 1.85;
 
 	/* Headings */
@@ -96,9 +92,18 @@
 	--theme-h6--font-size: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 4em;
+		--theme-h1--font-size: 3.35em;
+	}
+
+	@media (--large) {
+		--theme-h1--font-size: 4.35em;
 		--theme-h2--font-size: 2.75em;
-		--theme-h3--font-size: 2.15em;
+		--theme-h3--font-size: 2.5em;
+	}
+
+	@media (--xlarge) {
+		--theme-h1--font-size: 4.75em;
+		--theme-h2--font-size: 3em;
 	}
 
 	/* Text Utilities */
@@ -111,17 +116,13 @@
 	}
 
 	@media (--large) {
-		--theme-text-sm: 95%;
+		--theme-text-sm: 97%;
 	}
 
 	/* Captions */
 	--theme-caption--alignment: left;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
-
-	/* Links */
-	--theme-link--color: var(--theme-color-primary);
-	--theme-link--color-interactive: var(--theme-color-text);
 
 	/* Pullquote */
 	--theme-pullquote--font: serif;
@@ -150,9 +151,13 @@
 
 	/* Blockquote (Large) */
 	--theme-quote-large--color: var(--theme-color-heading);
-	--theme-quote-large--font-size: var(--theme-h2--font-size);
+	--theme-quote-large--font-size: 2.5em;
 	--theme-quote-large--leading: var(--theme-heading--leading);
 	--theme-quote-large--style: normal;
+
+	@media (--medium) {
+		--theme-quote-large--font-size: 3.75em;
+	}
 
 
 	/*--------------------------------------------------------------
@@ -226,18 +231,21 @@
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: var(--theme-h2--font-size);
+	--theme-site-title--font-size: 2rem;
 	--theme-site-title--font: var(--theme-heading--font);
-	--theme-site-title--weight: 400;
+	--theme-site-description--mt: 0.95rem;
+
+	@media (--medium) {
+		--theme-site-title--font-size: 2.5rem;
+	}
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
-	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font: var(--theme-heading--font);
-	--theme-site-nav--font-size: 1.35rem;
+	--theme-site-nav--font-size: 1.3rem;
 	--theme-site-nav--font-size-mobile: 1.65rem;
 	--theme-site-nav--weight: 400;
 	--theme-site-nav--text-transform: normal;
@@ -272,7 +280,6 @@
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-primary);
-	--theme-search-toggle--size: 22px;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
@@ -293,11 +300,9 @@
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color-interactive: var(--theme-color-primary);
 	--theme-footer-nav--leading: 2.25;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
-	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-y: 0.1rem;
@@ -305,12 +310,22 @@
 
 	/* Footer > Social Icons */
 	--theme-social--color: var(--theme-color-primary);
-	--theme-social--color-hover: var(--theme-color-heading);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 1rem;
 
 	/* Footer Variations Specific */
 	--theme-footer-3-site-info--border-color: 0, 0%, 80%;
+
+
+	/*--------------------------------------------------------------
+	## Post
+	--------------------------------------------------------------*/
+	--theme-entry-header--width: 70rem;
+	--theme-meta--font: var(--theme-body--font);
+	--theme-meta--font-size: 1rem;
+	--theme-meta--color: var(--theme-color-heading);
+	--theme-meta--opacity: 0.65;
+	--theme-comment-p--font-size: 0.95rem;
 
 
 	/*--------------------------------------------------------------

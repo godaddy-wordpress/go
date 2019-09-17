@@ -10,17 +10,18 @@
 /* Elements */
 @import url("elements/page.css");
 @import url("elements/typography.css");
+@import url("elements/links.css");
 @import url("elements/buttons.css");
 @import url("elements/labels.css");
 @import url("elements/forms.css");
 @import url("elements/headings.css");
-@import url("elements/links.css");
 @import url("elements/lists.css");
 @import url("elements/media.css");
 @import url("blocks/table.css");
 
 /* Layout */
 @import url("layout/content.css");
+@import url("layout/alignments.css");
 @import url("layout/entry-header.css");
 @import url("layout/post.css");
 @import url("layout/pagination.css");
@@ -137,13 +138,6 @@
 	text-transform: var(--theme-site-nav--text-transform);
 }
 
-.wp-block-group.has-background.alignwide {
-	@media (--wide) {
-		margin-left: var(--theme-block-padding-x);
-		margin-right: var(--theme-block-padding-x);
-	}
-}
-
 /*! Utility Classes */
 p {
 	margin: 0 0 1.25rem;
@@ -242,6 +236,10 @@ strong {
 .text-sm {
 	font-size: var(--theme-text-sm);
 	letter-spacing: var(--theme-text-sm--letter-spacing, 0);
+}
+
+.no-underline {
+	text-decoration: none;
 }
 
 .relative {

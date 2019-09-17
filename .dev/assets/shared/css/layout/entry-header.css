@@ -1,5 +1,6 @@
 /*! Layout: Entry Header */
 .entry-header {
+	max-width: var(--theme-entry-header--width, 78rem);
 	padding-top: calc(var(--vertical-rhythm--lrg) * 0.55);
 	text-align: center;
 }
@@ -12,8 +13,4 @@
 	@media (--large) {
 		padding-top: 0;
 	}
-}
-
-.hfeed article .content-area > :first-child {
-	margin-top: 3rem !important;
 }

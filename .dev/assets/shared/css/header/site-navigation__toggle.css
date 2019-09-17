@@ -25,14 +25,14 @@
 		box-shadow: none;
 	}
 
-	&:hover {
+	/* &:hover {
 
 		& .site-navigation__toggle-icon-inner,
 		& .site-navigation__toggle-icon-inner::before,
 		& .site-navigation__toggle-icon-inner::after {
-			background-color: hsl(var(--theme-site-nav--color-interactive));
+			background-color: initial;
 		}
-	}
+	} */
 }
 
 .site-navigation__toggle-icon {

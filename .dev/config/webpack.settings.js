@@ -3,22 +3,14 @@
 // Webpack settings exports.
 module.exports = {
 	entries: {
-		// JS files.
+		// JS.
 		'frontend': './.dev/assets/shared/js/frontend/frontend.js',
 
-		// admin js
-		'admin/customize-controls': './.dev/assets/admin/js/customize-controls.js',
-		'admin/customize-preview': './.dev/assets/admin/js/customize-preview.js',
-		'admin/block-filters': './.dev/assets/admin/js/block-filters.js',
-
-		// admin css
-		'admin/style-customize': './.dev/assets/admin/css/style-customize.css',
-
-		// CSS files.
+		// CSS.
 		'style-editor': './.dev/assets/shared/css/style-editor.css',
 		'style-shared': './.dev/assets/shared/css/style-shared.css',
 
-		// CSS Design Styles
+		// Design Style CSS.
 		'design-styles/style-modern': './.dev/assets/design-styles/modern/css/style-modern.css',
 		'design-styles/style-modern-editor': './.dev/assets/design-styles/modern/css/style-modern-editor.css',
 		'design-styles/style-traditional': './.dev/assets/design-styles/traditional/css/style-traditional.css',
@@ -29,6 +21,14 @@ module.exports = {
 		'design-styles/style-welcoming-editor': './.dev/assets/design-styles/welcoming/css/style-welcoming-editor.css',
 		'design-styles/style-playful': './.dev/assets/design-styles/playful/css/style-playful.css',
 		'design-styles/style-playful-editor': './.dev/assets/design-styles/playful/css/style-playful-editor.css',
+
+		// Admin JS.
+		'admin/customize-controls': './.dev/assets/admin/js/customize-controls.js',
+		'admin/customize-preview': './.dev/assets/admin/js/customize-preview.js',
+		'admin/block-filters': './.dev/assets/admin/js/block-filters.js',
+
+		// Admin CSS.
+		'admin/style-customize': './.dev/assets/admin/css/style-customize.css',
 	},
 	paths: {
 		src: {
@@ -54,13 +54,11 @@ module.exports = {
 		},
 	},
 	stats: {
-		// Copied from `'minimal'`.
 		all: false,
 		errors: true,
 		maxModules: 0,
 		modules: true,
 		warnings: true,
-		// Our additional options.
 		assets: true,
 		errorDetails: true,
 		excludeAssets: /\.(jpe?g|png|gif|svg|woff|woff2|ttf)$/i,
@@ -77,7 +75,7 @@ module.exports = {
 	BrowserSyncConfig: {
 		host: 'localhost',
 		port: 3000,
-		proxy: 'http://go.test',
+		proxy: 'https://go.test',
 		open: true,
 		files: [
 			'**/*.php',

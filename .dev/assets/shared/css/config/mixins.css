@@ -75,7 +75,7 @@
 @define-mixin checkbox-radio-label {
 	align-items: center;
 	display: flex;
-	padding-left: 30px;
+	padding-left: 2.5rem;
 }
 
 @define-mixin checkbox-radio-label-before {
@@ -131,17 +131,7 @@
 	width: 100px;
 }
 
-@define-mixin blockWidthNoPadding {
-	--total-block-padding: calc(var(--theme-block-padding-x) * 2);
-	max-width: calc(var(--theme-max-w-base) - var(--total-block-padding));
-}
-
 @define-mixin blockWidthNoPaddingWide {
-	--total-block-padding: calc(var(--theme-block-padding-x) * 2);
-	max-width: calc(var(--theme-max-w-wide) - var(--total-block-padding));
-}
-
-@define-mixin blockWidthNoPaddingFull {
 	--total-block-padding: calc(var(--theme-block-padding-x) * 2);
 	max-width: calc(var(--theme-max-w-wide) - var(--total-block-padding));
 }

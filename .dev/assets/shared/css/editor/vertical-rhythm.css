@@ -10,13 +10,21 @@
 		margin-top: calc(-0.825 * var(--vertical-rhythm--lrg)) !important;
 	}
 
-	& [data-type="core/heading"] + [data-type="core/button"] {
+	& [data-type="core/heading"] + [data-type="core/button"],
+	& [data-type="core/heading"] + [data-type="coblocks/buttons"],
+	& [data-type="core/heading"] + [data-type="coblocks/logos"] {
 		margin-top: calc(-0.65 * var(--vertical-rhythm--lrg)) !important;
 	}
 
 	& [data-type="core/paragraph"] ~ [data-type="core/cover"] {
 		margin-bottom: var(--vertical-rhythm--med) !important;
 		margin-top: var(--vertical-rhythm--med) !important;
+	}
+
+	& [data-type="core/paragraph"] + [data-type="core/button"],
+	& [data-type="core/paragraph"] + [data-type="coblocks/buttons"],
+	& [data-type="core/paragraph"] + [data-type="coblocks/form"] {
+		margin-top: calc(0.35 * var(--vertical-rhythm--lrg)) !important;
 	}
 }
 

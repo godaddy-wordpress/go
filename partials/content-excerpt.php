@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<?php if ( is_singular() && has_post_thumbnail() ) : ?>
 		<div class="post__thumbnail">
@@ -19,13 +19,13 @@
 		</div>
 	<?php endif; ?>
 
-	<header class="entry-header max-w-base m-auto px">
+	<header class="entry-header m-auto">
 		<?php
 		if ( is_sticky() && is_home() && ! is_paged() ) {
 			printf( '<span class="sticky-post">%s</span>', esc_html_x( 'Featured', 'post', 'go' ) );
 		}
 
-		the_title( sprintf( '<h2 class="entry-title h1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		the_title( sprintf( '<h2 class="post__title entry-title h1"><a href="%s" rel="bookmark" class="no-underline no-color">', esc_url( get_permalink() ) ), '</a></h2>' );
 		?>
 
 		<?php if ( ! is_search() ) { ?>
@@ -55,8 +55,10 @@
 
 	</header>
 
-	<div class="content-area">
-		<?php the_excerpt(); ?>
+	<div class="content-area__wrapper">
+		<div class="content-area">
+			<?php the_excerpt(); ?>
+		</div>
 	</div>
 
 </article>

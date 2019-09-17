@@ -1,18 +1,4 @@
 /*! Pullquote */
-.content-area {
-
-	& .wp-block-pullquote {
-
-		&:not([class*="align"]) {
-			@mixin blockWidthNoPadding;
-		}
-
-		&.alignwide {
-			@mixin blockWidthNoPaddingWide;
-		}
-	}
-}
-
 .wp-block-pullquote {
 	border-bottom: var(--theme-pullquote--border);
 	border-top: var(--theme-pullquote--border);
@@ -67,12 +53,10 @@
 
 		& blockquote {
 			max-width: 100%;
-			padding-bottom: calc(var(--editor-padding) / 3);
-			padding-top: calc(var(--editor-padding) / 3);
+			padding: calc(var(--editor-padding) / 3) calc(var(--editor-padding) / 2);
 
 			@media (--medium) {
-				padding-bottom: calc(var(--editor-padding) / 2);
-				padding-top: calc(var(--editor-padding) / 2);
+				padding: calc(var(--editor-padding) / 2) calc(var(--editor-padding) * 0.75);
 			}
 
 			& p {

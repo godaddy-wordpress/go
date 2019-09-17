@@ -20,19 +20,15 @@
 	/*--------------------------------------------------------------
 	## Editor
 	--------------------------------------------------------------*/
-	--editor-max-w-base: 622px;
+	--editor-max-w-base: 702px;
 	--editor-max-w-wide: 1134px;
 
 
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 50rem;
+	--theme-max-w-base: 42rem;
 	--theme-max-w-wide: 82rem;
-
-	/* Below base width query */
-	@custom-media --base (max-width: 50rem);
-	@custom-media --wide (max-width: 82rem);
 
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.75rem;
@@ -59,7 +55,7 @@
 	--theme-outline-color: var(--theme-color-primary);
 	--theme-outline-width: 1px;
 
-	--theme-selection--color: var(--theme-color-primary);
+	--theme-selection--bg: var(--theme-color-primary);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
@@ -113,10 +109,6 @@
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
 
-	/* Links */
-	--theme-link--color: var(--theme-color-heading);
-	--theme-link--color-interactive: var(--theme-color-primary);
-
 	/* Pullquote */
 	--theme-pullquote--font: var(--theme-heading--font);
 	--theme-pullquote--border-color: transparent;
@@ -144,7 +136,6 @@
 
 	/* Blockquote (Large) */
 	--theme-quote-large--color: var(--theme-color-heading);
-	--theme-quote-large--font-size: var(--theme-h2--font-size);
 	--theme-quote-large--leading: var(--theme-heading--leading);
 	--theme-quote-large--style: normal;
 
@@ -222,17 +213,18 @@
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 2.25rem;
-	--theme-site-title--font: "Abril Fatface", sans-serif;
+	--theme-site-title--font: "Work Sans", sans-serif;
 	--theme-site-title--text-transform: normal;
 	--theme-site-title--tracking: 0;
-	--theme-site-title--weight: 400;
+	--theme-site-title--weight: 600;
 
-	--theme-site-description--color: var(--theme-color-heading);
+	--theme-site-description--color: var(--theme-color-primary);
 	--theme-site-description--leading: 1.4;
+	--theme-site-description--mt: 0.95rem;
+	--theme-site-description--opacity: 1;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-primary);
-	--theme-site-nav--color-interactive: var(--theme-color-primary);
 	--theme-site-nav--font: "Karla", sans-serif;
 	--theme-site-nav--font-size: 1rem;
 	--theme-site-nav--font-size-mobile: 1.75rem;
@@ -268,7 +260,6 @@
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-text);
-	--theme-search-toggle--size: 20px;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-text);
@@ -289,17 +280,15 @@
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--color: 0, 0%, 40%;
+	--theme-footer--color: var(--theme-color-primary);
 	--theme-footer-heading--color: var(--theme-color-heading);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color: var(--theme-color-heading);
-	--theme-footer-nav--color-interactive: var(--theme-color-heading);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
-	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-x: 1.75rem;
@@ -308,7 +297,6 @@
 
 	/* Footer > Social Icons */
 	--theme-social--color: var(--theme-color-heading);
-	--theme-social--color-hover: var(--theme-color-text);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 
@@ -323,9 +311,17 @@
 
 
 	/*--------------------------------------------------------------
+	## Post
+	--------------------------------------------------------------*/
+	--theme-entry-header--width: 70rem;
+	--theme-meta--color: var(--theme-color-primary);
+	--theme-comment-p--font-size: 0.95rem;
+
+
+	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--color), 0.05);
+	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--bg), 0.05);
 	--coblocks-accordion--border-color: var(--theme-color-heading);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-heading);

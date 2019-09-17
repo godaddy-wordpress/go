@@ -1,12 +1,8 @@
 /*! Verse */
-.content-area {
-
-	& .wp-block-verse {
-		@mixin blockWidthNoPadding;
-	}
-}
-
-.wp-block-verse {
-	background: hsl(var(--theme-color-tertiary));
-	padding: 14px 18px;
+pre {
+	border: 0.1rem solid hsl(var(--theme-table--border-color, var(--theme-color-heading)));
+	line-height: 1.5;
+	overflow: auto;
+	padding: 3rem 2rem;
+	text-align: left;
 }

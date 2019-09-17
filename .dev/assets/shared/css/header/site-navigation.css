@@ -5,6 +5,7 @@
 	flex-direction: column;
 	height: 0;
 	left: 0;
+	min-width: 18em;
 	opacity: 0;
 	overflow-y: scroll;
 	position: fixed;

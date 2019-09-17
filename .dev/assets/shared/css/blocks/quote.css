@@ -1,6 +1,5 @@
 /*! Blockquote */
 .wp-block-quote {
-	@mixin blockWidthNoPadding;
 	margin-bottom: 0;
 
 	& p {
@@ -59,14 +58,13 @@
 	}
 
 	&.is-style-large {
-		@mixin blockWidthNoPadding;
 		color: hsl(var(--theme-quote-large--color));
 		margin-left: auto;
 		margin-right: auto;
 		padding: 0;
 
 		& p {
-			font-size: var(--theme-quote-large--font-size);
+			font-size: var(--theme-quote-large--font-size, var(--theme-h2--font-size));
 			font-style: var(--theme-quote-large--style);
 			line-height: var(--theme-quote-large--leading);
 			margin: 0;
