@@ -120,6 +120,7 @@ body.home {
 		& .coblocks-form,
 		& .wp-block-button,
 		& .wp-block-separator,
+		& .wp-block-coblocks-buttons,
 		& .wp-block-coblocks-dynamic-separator,
 		& .wp-block-pullquote:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
 			margin-bottom: calc(var(--vertical-rhythm--med) * 1.5) !important;
@@ -141,9 +142,12 @@ body.home {
 			margin-top: calc(var(--vertical-rhythm--lrg) * -0.825) !important;
 		}
 
-		& + .wp-block-button {
+		& + .wp-block-button,
+		& + .wp-block-coblocks-buttons {
+			margin-top: calc(var(--vertical-rhythm--lrg) * -0.65) !important;
+		}
 
-			/* Remove space between headings and button blocks */
+		& + .wp-block-coblocks-logos {
 			margin-top: calc(var(--vertical-rhythm--lrg) * -0.65) !important;
 		}
 	}

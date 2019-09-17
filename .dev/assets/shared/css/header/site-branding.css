@@ -40,7 +40,7 @@ h1.site-branding__title {
 	font-size: var(--theme-site-description--font-size);
 	font-weight: var(--theme-site-description--font-weight, 400);
 	line-height: var(--theme-site-description--leading);
-	margin-top: var(--theme-site-description--mt, 0.25rem);
+	margin-top: var(--theme-site-description--mt, 0);
 	opacity: var(--theme-site-description--opacity, 0.65);
 }
 

@@ -218,7 +218,7 @@
 	--theme-site-title--tracking: 0;
 	--theme-site-title--weight: 600;
 
-	--theme-site-description--color: var(--color-white);
+	--theme-site-description--color: var(--theme-color-primary);
 	--theme-site-description--leading: 1.4;
 	--theme-site-description--mt: 0.95rem;
 	--theme-site-description--opacity: 1;
