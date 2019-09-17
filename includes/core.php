@@ -559,28 +559,28 @@ function get_available_design_styles() {
 			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'      => esc_html__( 'Apricot', 'go' ),
+					'label'      => _x( 'Apricot', 'color palette name', 'go' ),
 					'primary'    => '#c76919',
 					'secondary'  => '#122538',
 					'tertiary'   => '#f8f8f8',
 					'background' => '#ffffff',
 				],
 				'two'   => [
-					'label'      => esc_html__( 'Emerald', 'go' ),
+					'label'      => _x( 'Emerald', 'color palette name', 'go' ),
 					'primary'    => '#165153',
 					'secondary'  => '#212121',
 					'tertiary'   => '#f3f1f0',
 					'background' => '#ffffff',
 				],
 				'three' => [
-					'label'      => esc_html__( 'Brick', 'go' ),
+					'label'      => _x( 'Brick', 'color palette name', 'go' ),
 					'primary'    => '#87200e',
 					'secondary'  => '#242611',
 					'tertiary'   => '#f9f2ef',
 					'background' => '#ffffff',
 				],
 				'four'  => [
-					'label'      => esc_html__( 'Bronze', 'go' ),
+					'label'      => _x( 'Bronze', 'color palette name', 'go' ),
 					'primary'    => '#a88548',
 					'secondary'  => '#05212d',
 					'tertiary'   => '#f9f4ef',
@@ -608,31 +608,31 @@ function get_available_design_styles() {
 			'editor_style'  => "dist/css/design-styles/style-modern-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'      => esc_html__( 'Shade', 'go' ),
+					'label'      => _x( 'Shade', 'color palette name', 'go' ),
 					'primary'    => '#000a12',
 					'secondary'  => '#455a64',
 					'tertiary'   => '#eceff1',
 					'background' => '#ffffff',
 				],
 				'two'   => [
-					'label'      => esc_html__( 'Blush', 'go' ),
-					'primary'    => '#c2185b', // 700
-					'secondary'  => '#ec407a', // 400
-					'tertiary'   => '#fce4ec', // 100
+					'label'      => _x( 'Blush', 'color palette name', 'go' ),
+					'primary'    => '#c2185b',
+					'secondary'  => '#ec407a',
+					'tertiary'   => '#fce4ec',
 					'background' => '#ffffff',
 				],
 				'three' => [
-					'label'      => esc_html__( 'Indigo', 'go' ),
-					'primary'    => '#303f9f', // 700
-					'secondary'  => '#5c6bc0', // 400
-					'tertiary'   => '#e8eaf6', // 100
+					'label'      => _x( 'Indigo', 'color palette name', 'go' ),
+					'primary'    => '#303f9f',
+					'secondary'  => '#5c6bc0',
+					'tertiary'   => '#e8eaf6',
 					'background' => '#ffffff',
 				],
 				'four'  => [
-					'label'      => esc_html__( 'Pacific', 'go' ),
-					'primary'    => '#00796b', // 700
-					'secondary'  => '#26a69a', // 400
-					'tertiary'   => '#e0f2f1', // 100
+					'label'      => _x( 'Pacific', 'color palette name', 'go' ),
+					'primary'    => '#00796b',
+					'secondary'  => '#26a69a',
+					'tertiary'   => '#e0f2f1',
 					'background' => '#ffffff',
 				],
 			],
@@ -658,7 +658,7 @@ function get_available_design_styles() {
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'             => esc_html__( 'Plum', 'go' ),
+					'label'             => _x( 'Plum', 'color palette name', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#4d0859',
 					'tertiary'          => '#ded9e2',
@@ -667,7 +667,7 @@ function get_available_design_styles() {
 				],
 
 				'two'   => [
-					'label'             => esc_html__( 'Steel', 'go' ),
+					'label'             => _x( 'Steel', 'color palette name', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#003c68',
 					'tertiary'          => '#c0c9d0',
@@ -675,7 +675,7 @@ function get_available_design_styles() {
 					'footer_background' => '#000000',
 				],
 				'three' => [
-					'label'             => esc_html__( 'Avocado', 'go' ),
+					'label'             => _x( 'Avocado', 'color palette name', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#02493b',
 					'tertiary'          => '#b4c6af',
@@ -683,7 +683,7 @@ function get_available_design_styles() {
 					'footer_background' => '#000000',
 				],
 				'four'  => [
-					'label'             => esc_html__( 'Champagne', 'go' ),
+					'label'             => _x( 'Champagne', 'color palette name', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#cc224f',
 					'tertiary'          => '#e5dede',
@@ -713,7 +713,7 @@ function get_available_design_styles() {
 			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'             => esc_html__( 'Forest', 'go' ),
+					'label'             => _x( 'Forest', 'color palette name', 'go' ),
 					'primary'           => '#165144',
 					'secondary'         => '#01332e',
 					'tertiary'          => '#c9c9c9',
@@ -721,7 +721,7 @@ function get_available_design_styles() {
 					'header_background' => '#ffffff',
 				],
 				'two'   => [
-					'label'             => esc_html__( 'Spruce', 'go' ),
+					'label'             => _x( 'Spruce', 'color palette name', 'go' ),
 					'primary'           => '#233a6b',
 					'secondary'         => '#01133d',
 					'tertiary'          => '#c9c9c9',
@@ -730,7 +730,7 @@ function get_available_design_styles() {
 					'header_background' => '#ffffff',
 				],
 				'three' => [
-					'label'             => esc_html__( 'Mocha', 'go' ),
+					'label'             => _x( 'Mocha', 'color palette name', 'go' ),
 					'primary'           => '#5b3f20',
 					'secondary'         => '#3f2404',
 					'tertiary'          => '#c9c9c9',
@@ -738,7 +738,7 @@ function get_available_design_styles() {
 					'header_background' => '#ffffff',
 				],
 				'four'  => [
-					'label'             => esc_html__( 'Lavender', 'go' ),
+					'label'             => _x( 'Lavender', 'color palette name', 'go' ),
 					'primary'           => '#443a82',
 					'secondary'         => '#2b226b',
 					'tertiary'          => '#c9c9c9',
@@ -764,7 +764,7 @@ function get_available_design_styles() {
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
 			'color_schemes' => [
 				'one'   => [
-					'label'             => esc_html__( 'Frolic', 'go' ),
+					'label'             => _x( 'Frolic', 'color palette name', 'go' ),
 					'primary'           => '#3f46ae',
 					'secondary'         => '#ecb43d',
 					'tertiary'          => '#f7fbff',
@@ -773,7 +773,7 @@ function get_available_design_styles() {
 					'footer_background' => '#3f46ae',
 				],
 				'two'   => [
-					'label'             => esc_html__( 'Coral', 'go' ),
+					'label'             => _x( 'Coral', 'color palette name', 'go' ),
 					'primary'           => '#e06b6d',
 					'secondary'         => '#40896e',
 					'tertiary'          => '#fff7f7',
@@ -782,7 +782,7 @@ function get_available_design_styles() {
 					'footer_background' => '#eb616a',
 				],
 				'three' => [
-					'label'             => esc_html__( 'Organic', 'go' ),
+					'label'             => _x( 'Organic', 'color palette name', 'go' ),
 					'primary'           => '#3c896d',
 					'secondary'         => '#6b0369',
 					'tertiary'          => '#f2f9f7',
@@ -791,7 +791,7 @@ function get_available_design_styles() {
 					'footer_background' => '#3c896d',
 				],
 				'four'  => [
-					'label'             => esc_html__( 'Berry', 'go' ),
+					'label'             => _x( 'Berry', 'color palette name', 'go' ),
 					'primary'           => '#117495',
 					'secondary'         => '#d691c1',
 					'tertiary'          => '#f7feff',
