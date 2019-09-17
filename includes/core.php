@@ -26,7 +26,6 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'enqueue_block_editor_assets', $n( 'block_editor_assets' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
-	add_action( 'wp_head', $n( 'js_detection' ), 0 );
 	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
@@ -397,19 +396,6 @@ function styles() {
 		[],
 		GO_VERSION
 	);
-
-}
-
-/**
- * Handles JavaScript detection.
- *
- * Adds a `js` class to the root `<html>` element when JavaScript is detected.
- *
- * @return void
- */
-function js_detection() {
-
-	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 
 }
 
