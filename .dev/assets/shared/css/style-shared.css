@@ -235,7 +235,6 @@ strong {
 
 .text-sm {
 	font-size: var(--theme-text-sm);
-	letter-spacing: var(--theme-text-sm--letter-spacing, 0);
 }
 
 .no-underline {
