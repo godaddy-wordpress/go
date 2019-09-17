@@ -15,12 +15,6 @@ module.exports = {
 		'design-styles/style-modern-editor': './.dev/assets/design-styles/modern/css/style-modern-editor.css',
 		'design-styles/style-traditional': './.dev/assets/design-styles/traditional/css/style-traditional.css',
 		'design-styles/style-traditional-editor': './.dev/assets/design-styles/traditional/css/style-traditional-editor.css',
-		'design-styles/style-trendy': './.dev/assets/design-styles/trendy/css/style-trendy.css',
-		'design-styles/style-trendy-editor': './.dev/assets/design-styles/trendy/css/style-trendy-editor.css',
-		'design-styles/style-welcoming': './.dev/assets/design-styles/welcoming/css/style-welcoming.css',
-		'design-styles/style-welcoming-editor': './.dev/assets/design-styles/welcoming/css/style-welcoming-editor.css',
-		'design-styles/style-playful': './.dev/assets/design-styles/playful/css/style-playful.css',
-		'design-styles/style-playful-editor': './.dev/assets/design-styles/playful/css/style-playful-editor.css',
 
 		// Admin JS.
 		'admin/customize-controls': './.dev/assets/admin/js/customize-controls.js',
@@ -41,12 +35,6 @@ module.exports = {
 			modernCss: './.dev/assets/design-styles/modern/css/',
 			traditionalBase: './.dev/assets/design-styles/traditional/',
 			traditionalCss: './.dev/assets/design-styles/traditional/css/',
-			trendyBase: './.dev/assets/design-styles/trendy/',
-			trendyCss: './.dev/assets/design-styles/trendy/css/',
-			welcomingBase: '/.dev/assets/design-styles/welcoming/',
-			welcomingCss: './.dev/assets/design-styles/welcoming/css/',
-			playfulBase: './.dev/assets/design-styles/playful/',
-			playfulCss: './.dev/assets/design-styles/playful/css/'
 		},
 		dist: {
 			base: './dist/',

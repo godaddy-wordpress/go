@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Go 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/godaddy/wp-go-theme\n"
-"POT-Creation-Date: 2019-09-17 18:03:46+00:00\n"
+"POT-Creation-Date: 2019-09-17 20:39:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -461,73 +461,73 @@ msgstr ""
 msgid "Expand search field"
 msgstr ""
 
-#: includes/core.php:871
+#: includes/core.php:713
 msgid "Header 1"
 msgstr ""
 
-#: includes/core.php:878
+#: includes/core.php:720
 msgid "Header 2"
 msgstr ""
 
-#: includes/core.php:885
+#: includes/core.php:727
 msgid "Header 3"
 msgstr ""
 
-#: includes/core.php:892
+#: includes/core.php:734
 msgid "Header 4"
 msgstr ""
 
-#: includes/core.php:940
+#: includes/core.php:782
 msgid "Footer 1"
 msgstr ""
 
-#: includes/core.php:947
+#: includes/core.php:789
 msgid "Footer 2"
 msgstr ""
 
-#: includes/core.php:954
+#: includes/core.php:796
 msgid "Footer 3"
 msgstr ""
 
-#: includes/core.php:961
+#: includes/core.php:803
 msgid "Footer 4"
 msgstr ""
 
-#: includes/core.php:1032
+#: includes/core.php:874
 #. translators: the theme author
 msgid "WordPress Theme by %s"
 msgstr ""
 
-#: includes/core.php:1044
+#: includes/core.php:886
 msgid "Facebook"
 msgstr ""
 
-#: includes/core.php:1049
+#: includes/core.php:891
 msgid "Twitter"
 msgstr ""
 
-#: includes/core.php:1054
+#: includes/core.php:896
 msgid "Instagram"
 msgstr ""
 
-#: includes/core.php:1059
+#: includes/core.php:901
 msgid "LinkedIn"
 msgstr ""
 
-#: includes/core.php:1064
+#: includes/core.php:906
 msgid "Pinterest"
 msgstr ""
 
-#: includes/core.php:1190
+#: includes/core.php:1032
 msgid "That page can't be found"
 msgstr ""
 
-#: includes/core.php:1204
+#: includes/core.php:1046
 #. translators: Search query term(s).
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1212
+#: includes/core.php:1054
 msgid "Nothing Found"
 msgstr ""
 
@@ -789,21 +789,6 @@ msgctxt "design style name"
 msgid "Modern"
 msgstr ""
 
-#: includes/core.php:656
-msgctxt "design style name"
-msgid "Trendy"
-msgstr ""
-
-#: includes/core.php:711
-msgctxt "design style name"
-msgid "Welcoming"
-msgstr ""
-
-#: includes/core.php:762
-msgctxt "design style name"
-msgid "Playful"
-msgstr ""
-
 #: includes/core.php:562
 msgctxt "color palette name"
 msgid "Apricot"
@@ -842,66 +827,6 @@ msgstr ""
 #: includes/core.php:632
 msgctxt "color palette name"
 msgid "Pacific"
-msgstr ""
-
-#: includes/core.php:661
-msgctxt "color palette name"
-msgid "Plum"
-msgstr ""
-
-#: includes/core.php:670
-msgctxt "color palette name"
-msgid "Steel"
-msgstr ""
-
-#: includes/core.php:678
-msgctxt "color palette name"
-msgid "Avocado"
-msgstr ""
-
-#: includes/core.php:686
-msgctxt "color palette name"
-msgid "Champagne"
-msgstr ""
-
-#: includes/core.php:716
-msgctxt "color palette name"
-msgid "Forest"
-msgstr ""
-
-#: includes/core.php:724
-msgctxt "color palette name"
-msgid "Spruce"
-msgstr ""
-
-#: includes/core.php:733
-msgctxt "color palette name"
-msgid "Mocha"
-msgstr ""
-
-#: includes/core.php:741
-msgctxt "color palette name"
-msgid "Lavender"
-msgstr ""
-
-#: includes/core.php:767
-msgctxt "color palette name"
-msgid "Frolic"
-msgstr ""
-
-#: includes/core.php:776
-msgctxt "color palette name"
-msgid "Coral"
-msgstr ""
-
-#: includes/core.php:785
-msgctxt "color palette name"
-msgid "Organic"
-msgstr ""
-
-#: includes/core.php:794
-msgctxt "color palette name"
-msgid "Berry"
 msgstr ""
 
 #: includes/template-tags.php:113
