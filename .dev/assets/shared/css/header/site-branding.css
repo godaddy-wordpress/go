@@ -37,11 +37,13 @@ h1.site-branding__title {
 .site-branding__description {
 	color: hsl(var(--theme-site-description--color));
 	font-family: var(--theme-site-description--font);
-	font-size: var(--theme-site-description--font-size);
-	font-weight: var(--theme-site-description--font-weight, 400);
-	line-height: var(--theme-site-description--leading);
+	font-size: var(--theme-site-description--font-size) !important;
+	font-weight: var(--theme-site-description--weight, 400);
+	letter-spacing: var(--theme-site-nav--tracking);
+	line-height: var(--theme-site-description--leading) !important;
 	margin-top: var(--theme-site-description--mt, 0);
 	opacity: var(--theme-site-description--opacity, 0.65);
+	text-transform: var(--theme-site-nav--text-transform, normal);
 }
 
 .site-branding__link {
