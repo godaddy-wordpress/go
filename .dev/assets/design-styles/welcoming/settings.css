@@ -218,7 +218,7 @@
 	--theme-site-title--tracking: 0;
 	--theme-site-title--weight: 600;
 
-	--theme-site-description--color: var(--theme-color-heading);
+	--theme-site-description--color: var(--color-white);
 	--theme-site-description--leading: 1.4;
 	--theme-site-description--mt: 0.95rem;
 	--theme-site-description--opacity: 1;
@@ -281,7 +281,7 @@
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--color: 0, 0%, 40%;
+	--theme-footer--color: var(--theme-color-primary);
 	--theme-footer-heading--color: var(--theme-color-heading);
 	--theme-footer-2--padding-y: 4rem;
 
@@ -309,6 +309,14 @@
 	/* Footer Variations Specific */
 	--theme-footer-3-site-info--border-color: var(--theme-header--bg);
 	--theme-footer-3-site-info--border-width: 10px;
+
+
+	/*--------------------------------------------------------------
+	## Post
+	--------------------------------------------------------------*/
+	--theme-entry-header--width: 70rem;
+	--theme-meta--color: var(--theme-color-primary);
+	--theme-comment-p--font-size: 0.95rem;
 
 
 	/*--------------------------------------------------------------

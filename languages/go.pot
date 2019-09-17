@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Go 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/godaddy/wp-go-theme\n"
-"POT-Creation-Date: 2019-09-16 21:17:38+00:00\n"
+"POT-Creation-Date: 2019-09-17 14:16:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -525,89 +525,89 @@ msgstr ""
 msgid "Lavender"
 msgstr ""
 
-#: includes/core.php:783
+#: includes/core.php:781
 msgid "Frolic"
 msgstr ""
 
-#: includes/core.php:792
+#: includes/core.php:790
 msgid "Coral"
 msgstr ""
 
-#: includes/core.php:801
+#: includes/core.php:799
 msgid "Organic"
 msgstr ""
 
-#: includes/core.php:810
+#: includes/core.php:808
 msgid "Berry"
 msgstr ""
 
-#: includes/core.php:887
+#: includes/core.php:885
 msgid "Header 1"
 msgstr ""
 
-#: includes/core.php:894
+#: includes/core.php:892
 msgid "Header 2"
 msgstr ""
 
-#: includes/core.php:901
+#: includes/core.php:899
 msgid "Header 3"
 msgstr ""
 
-#: includes/core.php:908
+#: includes/core.php:906
 msgid "Header 4"
 msgstr ""
 
-#: includes/core.php:956
+#: includes/core.php:954
 msgid "Footer 1"
 msgstr ""
 
-#: includes/core.php:963
+#: includes/core.php:961
 msgid "Footer 2"
 msgstr ""
 
-#: includes/core.php:970
+#: includes/core.php:968
 msgid "Footer 3"
 msgstr ""
 
-#: includes/core.php:977
+#: includes/core.php:975
 msgid "Footer 4"
 msgstr ""
 
-#: includes/core.php:1048
+#: includes/core.php:1046
 #. translators: the theme author
 msgid "WordPress Theme by %s"
 msgstr ""
 
-#: includes/core.php:1060
+#: includes/core.php:1058
 msgid "Facebook"
 msgstr ""
 
-#: includes/core.php:1065
+#: includes/core.php:1063
 msgid "Twitter"
 msgstr ""
 
-#: includes/core.php:1070
+#: includes/core.php:1068
 msgid "Instagram"
 msgstr ""
 
-#: includes/core.php:1075
+#: includes/core.php:1073
 msgid "LinkedIn"
 msgstr ""
 
-#: includes/core.php:1080
+#: includes/core.php:1078
 msgid "Pinterest"
 msgstr ""
 
-#: includes/core.php:1206
+#: includes/core.php:1204
 msgid "That page can't be found"
 msgstr ""
 
-#: includes/core.php:1220
+#: includes/core.php:1218
 #. translators: Search query term(s).
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1228
+#: includes/core.php:1226
 msgid "Nothing Found"
 msgstr ""
 
@@ -879,7 +879,7 @@ msgctxt "design style name"
 msgid "Welcoming"
 msgstr ""
 
-#: includes/core.php:778
+#: includes/core.php:776
 msgctxt "design style name"
 msgid "Playful"
 msgstr ""

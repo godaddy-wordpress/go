@@ -9,8 +9,17 @@ a {
 		outline: 0;
 	}
 
-	&:not(.wp-block-button__link):focus {
+	&:focus {
 		@mixin outline;
+	}
+}
+
+p,
+li,
+ul,
+ol {
+
+	& a:focus {
 		outline-width: thin;
 	}
 }

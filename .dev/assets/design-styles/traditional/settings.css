@@ -25,20 +25,6 @@
 
 
 	/*--------------------------------------------------------------
-	## Post
-	--------------------------------------------------------------*/
-	--theme-meta--font-size: 1.1rem;
-
-	@media (--large) {
-		--theme-meta--font-size: 1.25rem;
-	}
-
-	--theme-meta--color: var(--theme-color-heading);
-	--theme-entry-header--width: 70rem;
-	--theme-meta--opacity: 0.65;
-
-
-	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 42rem;
@@ -330,6 +316,17 @@
 
 	/* Footer Variations Specific */
 	--theme-footer-3-site-info--border-color: 0, 0%, 80%;
+
+
+	/*--------------------------------------------------------------
+	## Post
+	--------------------------------------------------------------*/
+	--theme-entry-header--width: 70rem;
+	--theme-meta--font: var(--theme-body--font);
+	--theme-meta--font-size: 1rem;
+	--theme-meta--color: var(--theme-color-heading);
+	--theme-meta--opacity: 0.65;
+	--theme-comment-p--font-size: 0.95rem;
 
 
 	/*--------------------------------------------------------------

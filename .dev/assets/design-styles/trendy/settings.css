@@ -25,12 +25,6 @@
 
 
 	/*--------------------------------------------------------------
-	## Post
-	--------------------------------------------------------------*/
-	--theme-meta--color: var(--theme-color-heading);
-
-
-	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 38rem;
@@ -230,14 +224,17 @@
 	--theme-site-title--weight: 400;
 
 	--theme-site-description--color: var(--theme-color-heading);
-	--theme-site-description--font-size: 1rem;
+	--theme-site-description--font: "Source Code Pro", monospace;
+	--theme-site-description--font-size: 0.9rem;
 	--theme-site-description--leading: 1.4;
 	--theme-site-description--font-weight: 400;
+	--theme-site-description--mt: 0.95rem;
+	--theme-site-description--opacity: 1;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
 	--theme-site-nav--color-interactive: var(--theme-color-text-secondary);
-	--theme-site-nav--font: "Source Code Pro", sans-serif;
+	--theme-site-nav--font: "Source Code Pro", monospace;
 	--theme-site-nav--font-size: 0.9rem;
 	--theme-site-nav--font-size-mobile: 1rem;
 	--theme-site-nav--weight: 400;
@@ -321,6 +318,14 @@
 	/* Footer Variations Specific */
 	--theme-footer-3-site-info--border-color: 0, 0%, 20%;
 	--theme-footer-3-site-info--border-width: 1px;
+
+
+	/*--------------------------------------------------------------
+	## Post
+	--------------------------------------------------------------*/
+	--theme-meta--color: var(--theme-color-heading);
+	--theme-meta--font-size: 0.9rem;
+	--theme-comment-p--font-size: 0.95rem;
 
 
 	/*--------------------------------------------------------------

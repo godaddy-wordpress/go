@@ -75,7 +75,7 @@
 @define-mixin checkbox-radio-label {
 	align-items: center;
 	display: flex;
-	padding-left: 30px;
+	padding-left: 2.5rem;
 }
 
 @define-mixin checkbox-radio-label-before {

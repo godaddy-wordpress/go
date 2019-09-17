@@ -100,6 +100,7 @@
 
 	/* Text Utilities */
 	--theme-text-sm: 80%;
+	--theme-text-xs: 80%;
 
 	/* Captions */
 	--theme-caption--alignment: center;
@@ -144,7 +145,7 @@
 	--theme-label--font-size: var(--theme-body--font-size);
 	--theme-label--font: var(--theme-site-nav--font);
 	--theme-label--tracking: var(--theme-site-nav--tracking);
-	--theme-label--transform: lowercase;
+	--theme-label--transform: normal;
 	--theme-label--weight: 600;
 	--theme-label--spacing: 0.35rem;
 
@@ -215,7 +216,7 @@
 	--theme-site-title--text-transform: none;
 	--theme-site-title--tracking: 0;
 
-	--theme-site-description--color: var(--theme-color-heading);
+	--theme-site-description--color: var(--color-white);
 	--theme-site-description--leading: 1.4;
 
 	/* Header > Navigation */
@@ -303,6 +304,14 @@
 	/* Footer Variations Specific */
 	--theme-footer-3-site-info--border-color: var(--theme-header--bg);
 	--theme-footer-3-site-info--border-width: 10px;
+
+
+	/*--------------------------------------------------------------
+	## Post
+	--------------------------------------------------------------*/
+	--theme-entry-header--width: 70rem;
+	--theme-meta--color: var(--theme-color-primary);
+	--theme-comment-p--font-size: 0.95rem;
 
 
 	/*--------------------------------------------------------------

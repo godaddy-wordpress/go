@@ -1,4 +1,5 @@
 :root {
 	--editor-permalink--color: 209, 9%, 54%;
 	--editor-permalink--color-interactive: 194, 100%, 41%;
+	--editor-title-max-w: calc(var(--theme-entry-header--width, 78rem) - var(--theme-block-padding-x) - var(--theme-block-padding-x));
 }

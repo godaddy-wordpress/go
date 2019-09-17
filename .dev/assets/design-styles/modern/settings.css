@@ -20,9 +20,13 @@
 	/*--------------------------------------------------------------
 	## Editor
 	--------------------------------------------------------------*/
-	--editor-title--font-size: 3.75em;
+	--editor-title--font-size: 2em;
 	--editor-max-w-base: 633px;
 	--editor-max-w-wide: 1280px;
+
+	@media (--medium) {
+		--editor-title--font-size: 3.65em;
+	}
 
 
 	/*--------------------------------------------------------------
@@ -218,6 +222,7 @@
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
+	--theme-site-description--opacity: 1;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-heading);
@@ -304,6 +309,15 @@
 
 	/* Footer Variations Specific */
 	--theme-footer-3-site-info--border-color: 0, 0%, 80%;
+
+
+	/*--------------------------------------------------------------
+	## Post
+	--------------------------------------------------------------*/
+	--theme-entry-header--width: 70rem;
+	--theme-meta--color: var(--theme-color-heading);
+	--theme-meta--font: var(--theme-body--font);
+	--theme-meta--font-size: var(--theme-body--font-size);
 
 
 	/*--------------------------------------------------------------

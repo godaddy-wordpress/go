@@ -55,6 +55,10 @@
 	}
 }
 
+.post-tags .meta-icon {
+	top: 2px;
+}
+
 textarea,
 input[type="text"],
 input[type="email"],

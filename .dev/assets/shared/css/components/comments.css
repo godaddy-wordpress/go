@@ -1,11 +1,13 @@
 /*! Comments */
 .comment-form-cookies-consent input[type="checkbox"] + label {
 	font-family: var(--theme-body--font);
-	font-size: var(--theme-cookie-consent--font-size, 0.85rem);
+	font-size: var(--theme-comment-p--font-size, 0.85rem);
 	font-weight: var(--theme-body--weight, 400);
 	letter-spacing: 0;
+	line-height: 1.4;
 	line-height: var(--theme-body--leading);
-	padding-left: 35px;
+	max-width: 25rem;
+	padding-left: 10rem;
 	text-transform: none;
 }
 
@@ -111,12 +113,12 @@
 	}
 
 	& p.comment-notes {
-		font-size: var(--theme-meta--font-size, 0.975rem);
+		font-size: var(--theme-comment-p--font-size, 0.8rem);
 		margin-bottom: 2.25rem;
 	}
 
 	& p.logged-in-as {
-		font-size: var(--theme-meta--font-size, 0.975rem);
+		font-size: var(--theme-comment-p--font-size, 0.8rem);
 		margin-bottom: 2.25rem;
 	}
 

@@ -56,6 +56,7 @@
 
 	& a {
 		color: hsl(var(--theme-meta--color, var(--theme-color-text-secondary)));
+		outline-offset: 4px;
 		text-decoration: none;
 
 		&:hover {
