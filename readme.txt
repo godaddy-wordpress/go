@@ -1,6 +1,6 @@
 === Go ===
 Contributors: godaddy, richtabor, eherman24, jrtashjian
-Tags: one-column, accessibility-ready, custom-colors, custom-logo, custom-menu, editor-style, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
+Tags: one-column, custom-colors, custom-logo, custom-menu, editor-style, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
 Requires at least: 5.0
 Tested up to: 5.2
 Requires PHP: 5.6.0
@@ -52,6 +52,14 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 Go bundles the following third-party resources:
+
+TGM-Plugin-Activation, Copyright 2011, Thomas Griffin
+License: GPLv2 or later
+Source: http://tgmpluginactivation.com
+
+Screenshot image #1, Copyright Negative Space
+License: CC0 1.0 Universal (CC0 1.0) (https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://stocksnap.io/photo/RCFX768X06
 
 == Changelog ==
 
