@@ -116,7 +116,7 @@
 	}
 
 	@media (--xlarge) {
-		--theme-h1--font-size: 5em;
+		--theme-h1--font-size: 4.75em;
 		--theme-h2--font-size: 3em;
 	}
 
@@ -315,11 +315,9 @@
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color-interactive: var(--theme-color-primary);
 	--theme-footer-nav--leading: 2.25;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
-	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-y: 0.1rem;

@@ -73,6 +73,14 @@ body:not(.single-post):not(.has-page-titles) {
 	}
 }
 
+/* The page title is never shown on the homepage. */
+body.home {
+
+	& .content-area > *:first-child.alignfull {
+		margin-top: 0 !important;
+	}
+}
+
 .is-header-3 .content-area > *:first-child {
 	margin-top: 0 !important;
 }

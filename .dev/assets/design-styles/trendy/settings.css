@@ -33,7 +33,7 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 50rem;
+	--theme-max-w-base: 38rem;
 	--theme-max-w-wide: 80rem;
 
 	/* Vertical Rhythm */
@@ -227,7 +227,7 @@
 	--theme-site-title--font-size: 2rem;
 	--theme-site-title--font: var(--theme-heading--font);
 	--theme-site-title--tracking: 0.033em;
-	--theme-site-title--weight: 600;
+	--theme-site-title--weight: 400;
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--font-size: 1rem;
@@ -299,11 +299,9 @@
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color: var(--color-white);
-	--theme-footer-nav--color-interactive: var(--color-white);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
-	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-x: 1.75rem;

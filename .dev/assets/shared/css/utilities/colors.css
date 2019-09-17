@@ -45,4 +45,8 @@
 
 .has-quaternary-color {
 	color: hsl(var(--color-white));
+
+	&.wp-block-button__link {
+		color: hsl(var(--color-white)) !important;
+	}
 }

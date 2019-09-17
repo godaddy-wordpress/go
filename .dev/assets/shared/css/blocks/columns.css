@@ -54,11 +54,20 @@
 .wp-block-columns {
 
 	& .wp-block-quote {
+		border: none !important;
 		max-width: none;
 
 		&.is-style-large {
 			margin-left: 0;
 			margin-right: 0;
+		}
+
+		& p {
+			padding: 0 !important;
+		}
+
+		& cite {
+			margin-left: 0 !important;
 		}
 	}
 

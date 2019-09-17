@@ -761,16 +761,14 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Work Sans'     => [
+				'Work Sans' => [
 					'300',
+					'700',
 				],
-				'Karla'         => [
+				'Karla'     => [
 					'400',
 					'400i',
 					'700',
-				],
-				'Abril Fatface' => [
-					'400',
 				],
 			],
 		],

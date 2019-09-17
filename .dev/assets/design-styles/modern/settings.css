@@ -28,7 +28,7 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 50rem;
+	--theme-max-w-base: 38rem;
 	--theme-max-w-wide: 90rem;
 
 	/* Vertical Rhythm */
@@ -283,11 +283,9 @@
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color: var(--theme-site-nav--color);
-	--theme-footer-nav--color-interactive: var(--theme-color-primary);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
-	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-x: 1.75rem;

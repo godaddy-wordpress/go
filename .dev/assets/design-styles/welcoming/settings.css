@@ -20,14 +20,14 @@
 	/*--------------------------------------------------------------
 	## Editor
 	--------------------------------------------------------------*/
-	--editor-max-w-base: 622px;
+	--editor-max-w-base: 702px;
 	--editor-max-w-wide: 1134px;
 
 
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 50rem;
+	--theme-max-w-base: 42rem;
 	--theme-max-w-wide: 82rem;
 
 	/* Vertical Rhythm */
@@ -213,13 +213,15 @@
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 2.25rem;
-	--theme-site-title--font: "Abril Fatface", sans-serif;
+	--theme-site-title--font: "Work Sans", sans-serif;
 	--theme-site-title--text-transform: normal;
 	--theme-site-title--tracking: 0;
-	--theme-site-title--weight: 400;
+	--theme-site-title--weight: 600;
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
+	--theme-site-description--mt: 0.95rem;
+	--theme-site-description--opacity: 1;
 
 	/* Header > Navigation */
 	--theme-site-nav--color: var(--theme-color-primary);
@@ -259,7 +261,6 @@
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-text);
-	--theme-search-toggle--size: 2rem;
 
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-text);
@@ -286,11 +287,9 @@
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color: var(--theme-color-heading);
-	--theme-footer-nav--color-interactive: var(--theme-color-heading);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
-	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-x: 1.75rem;

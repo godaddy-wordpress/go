@@ -57,7 +57,7 @@ h1.site-branding__title {
 	}
 
 	&:hover {
-		text-decoration: none;
+		text-decoration: none !important;
 	}
 
 	& + .site-branding__description {

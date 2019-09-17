@@ -20,14 +20,14 @@
 	/*--------------------------------------------------------------
 	## Editor
 	--------------------------------------------------------------*/
-	--editor-max-w-base: 622px;
+	--editor-max-w-base: 702px;
 	--editor-max-w-wide: 942px;
 
 
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--theme-max-w-base: 50rem;
+	--theme-max-w-base: 42rem;
 	--theme-max-w-wide: 70rem;
 
 	/* Vertical Rhythm */
@@ -282,11 +282,9 @@
 
 	/* Footer > Navigation */
 	--theme-footer-nav--color: var(--color-white);
-	--theme-footer-nav--color-interactive: var(--color-white);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
-	--theme-footer-nav--transition: var(--theme-link-transition);
 
 	@media (--medium) {
 		--theme-footer-nav--padding-x: 1.75rem;
