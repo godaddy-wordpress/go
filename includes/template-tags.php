@@ -120,8 +120,8 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 
 				// Post date.
 				if ( in_array( 'post-date', $post_meta, true ) ) {
-
 					$has_meta = true;
+
 					?>
 					<li class="post-date">
 						<a class="meta-wrapper" href="<?php the_permalink(); ?>">
@@ -130,7 +130,23 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 								<?php echo load_inline_svg( 'calendar.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
 							</span>
 							<span class="meta-text">
-								<?php the_time( get_option( 'date_format' ) ); ?>
+								<?php
+								echo wp_kses(
+									sprintf(
+										'<time datetime="%1$s">%2$s</time>',
+										esc_attr( get_the_date( DATE_W3C ) ),
+										esc_html( get_the_date() )
+									),
+									array_merge(
+										wp_kses_allowed_html( 'post' ),
+										[
+											'time' => [
+												'datetime' => true,
+											],
+										]
+									)
+								);
+								?>
 							</span>
 						</a>
 					</li>
