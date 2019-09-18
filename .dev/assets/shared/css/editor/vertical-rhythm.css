@@ -26,6 +26,10 @@
 	& [data-type="core/paragraph"] + [data-type="coblocks/form"] {
 		margin-top: calc(0.35 * var(--vertical-rhythm--lrg)) !important;
 	}
+
+	& [data-type="core/heading"] + [data-type="coblocks/features"] {
+		margin-top: calc(-0.65 * var(--vertical-rhythm--lrg)) !important;
+	}
 }
 
 .wp-block[data-type="core/image"][data-align="full"],
