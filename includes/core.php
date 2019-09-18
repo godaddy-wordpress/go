@@ -1151,7 +1151,7 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
 	if ( 'primary' === $args->theme_location && 0 === $depth ) {
 		foreach ( $item->classes as $value ) {
 			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
-				$title = $title . $icon; // phpcs:ignore;
+				$title = $title . $icon;
 			}
 		}
 	}
