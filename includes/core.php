@@ -1141,11 +1141,17 @@ function get_default_color_scheme() {
  */
 function add_dropdown_icons( $title, $item, $args, $depth ) {
 
+	ob_start();
+
+	load_inline_svg( 'arrow-down.svg' );
+
+	$icon = ob_get_clean();
+
 	// Only add class to 'top level' items on the 'primary' menu.
 	if ( 'primary' === $args->theme_location && 0 === $depth ) {
 		foreach ( $item->classes as $value ) {
 			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
-				$title = $title . load_inline_svg( 'arrow-down.svg' ); // phpcs:ignore;
+				$title = $title . $icon;
 			}
 		}
 	}

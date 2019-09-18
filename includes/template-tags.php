@@ -105,7 +105,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 					<li class="post-author meta-wrapper">
 						<span class="meta-icon">
 							<span class="screen-reader-text"><?php esc_html_e( 'Post author', 'go' ); ?></span>
-							<?php echo load_inline_svg( 'author.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+							<?php load_inline_svg( 'author.svg' ); ?>
 						</span>
 						<span class="meta-text">
 							<?php
@@ -127,7 +127,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 						<a class="meta-wrapper" href="<?php the_permalink(); ?>">
 							<span class="meta-icon">
 								<span class="screen-reader-text"><?php esc_html_e( 'Post date', 'go' ); ?></span>
-								<?php echo load_inline_svg( 'calendar.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+								<?php load_inline_svg( 'calendar.svg' ); ?>
 							</span>
 							<span class="meta-text">
 								<?php
@@ -162,7 +162,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 					<li class="post-categories meta-wrapper">
 						<span class="meta-icon">
 							<span class="screen-reader-text"><?php esc_html_e( 'Categories', 'go' ); ?></span>
-							<?php echo load_inline_svg( 'categories.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+							<?php load_inline_svg( 'categories.svg' ); ?>
 						</span>
 						<span class="meta-text">
 							<?php esc_html_e( 'In', 'go' ); ?> <?php the_category( ', ' ); ?>
@@ -180,7 +180,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 					<li class="post-tags meta-wrapper">
 						<span class="meta-icon">
 							<span class="screen-reader-text"><?php esc_html_e( 'Tags', 'go' ); ?></span>
-							<?php echo load_inline_svg( 'tags.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+							<?php load_inline_svg( 'tags.svg' ); ?>
 						</span>
 						<span class="meta-text">
 							<?php the_tags( '', ', ', '' ); ?>
@@ -197,7 +197,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 					?>
 					<li class="post-comment-link meta-wrapper">
 						<span class="meta-icon">
-							<?php echo load_inline_svg( 'comments.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+							<?php load_inline_svg( 'comments.svg' ); ?>
 						</span>
 						<span class="meta-text">
 							<?php comments_popup_link(); ?>
@@ -214,7 +214,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 					?>
 					<li class="post-sticky meta-wrapper">
 						<span class="meta-icon">
-							<?php echo load_inline_svg( 'bookmark.svg' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped when generated(). ?>
+							<?php load_inline_svg( 'bookmark.svg' ); ?>
 						</span>
 						<span class="meta-text">
 							<?php esc_html_e( 'Featured', 'go' ); ?>
@@ -744,13 +744,19 @@ function navigation_toggle() {
  */
 function search_toggle() {
 
+	ob_start();
+
+	load_inline_svg( 'search.svg' );
+
+	$search_icon = ob_get_clean();
+
 	printf(
 		'<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
 			%1$s
 			<span class="screen-reader-text">%2$s</span>
 		</button>',
 		wp_kses(
-			load_inline_svg( 'search.svg' ),
+			$search_icon,
 			array_merge(
 				wp_kses_allowed_html( 'post' ),
 				[
@@ -779,11 +785,11 @@ function search_toggle() {
 }
 
 /**
- * Load an inline SVG.
+ * Output an inline SVG.
  *
  * @param string $filename The filename of the SVG you want to load.
  *
- * @return string The content of the SVG you want to load.
+ * @return void
  */
 function load_inline_svg( $filename ) {
 
@@ -804,6 +810,33 @@ function load_inline_svg( $filename ) {
 		false
 	);
 
-	return ob_get_clean();
+	echo wp_kses(
+		ob_get_clean(),
+		array_merge(
+			wp_kses_allowed_html( 'post' ),
+			[
+				'svg'  => [
+					'role'    => true,
+					'width'   => true,
+					'height'  => true,
+					'fill'    => true,
+					'xmlns'   => true,
+					'viewbox' => true,
+				],
+				'path' => [
+					'd'              => true,
+					'fill'           => true,
+					'fill-rule'      => true,
+					'stroke'         => true,
+					'stroke-width'   => true,
+					'stroke-linecap' => true,
+				],
+				'g'    => [
+					'd'    => true,
+					'fill' => true,
+				],
+			]
+		)
+	);
 
 }
