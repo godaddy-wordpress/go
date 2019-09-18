@@ -22,6 +22,9 @@
 		if ( is_singular() ) :
 			the_title( '<h1 class="post__title entry-title m-0">', '</h1>' );
 		else :
+			if ( is_sticky() && is_home() && ! is_paged() ) {
+				printf( '<span class="featured-badge">%s</span>', esc_html_x( 'Featured', 'post', 'go' ) );
+			}
 			the_title( sprintf( '<h2 class="post__title entry-title m-0 h1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		endif;
 		?>
