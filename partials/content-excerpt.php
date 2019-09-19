@@ -19,40 +19,20 @@
 		</div>
 	<?php endif; ?>
 
-	<header class="entry-header m-auto">
+	<header class="entry-header m-auto px">
 		<?php
 		if ( is_sticky() && is_home() && ! is_paged() ) {
 			printf( '<span class="sticky-post">%s</span>', esc_html_x( 'Featured', 'post', 'go' ) );
 		}
 
-		the_title( sprintf( '<h2 class="post__title entry-title h1"><a href="%s" rel="bookmark" class="no-underline no-color">', esc_url( get_permalink() ) ), '</a></h2>' );
+		if ( is_singular() ) :
+			the_title( '<h1 class="post__title entry-title m-0">', '</h1>' );
+		else :
+			the_title( sprintf( '<h2 class="post__title entry-title m-0 h1"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		endif;
+
+		Go\post_meta( get_the_ID(), 'top' );
 		?>
-
-		<?php if ( ! is_search() ) { ?>
-
-			<div class="post__meta">
-
-				<span class="post__categories"><?php the_category( ' | ' ); ?></span>
-
-				<span class="post__author"><?php esc_html_e( 'by', 'go' ); ?> <?php the_author(); ?></span>
-
-				<?php
-				if ( is_singular() && get_the_tag_list() ) {
-					the_tags(
-						sprintf(
-							'<span class="post__tags"><span class="screen-reader-text">%s</span> ',
-							esc_html_e( 'Tags:', 'go' )
-						),
-						', ',
-						'</span>'
-					);
-				}
-				?>
-
-			</div>
-
-		<?php } ?>
-
 	</header>
 
 	<div class="content-area__wrapper">
