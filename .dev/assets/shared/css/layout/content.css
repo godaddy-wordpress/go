@@ -72,7 +72,6 @@
 body:not(.single-post):not(.has-page-titles) {
 
 	& .content-area > *:first-child.alignfull,
-	& .content-area > *:first-child.alignwide,
 	& .content-area > *:first-child.wp-block-gallery {
 		margin-top: 0 !important;
 	}
@@ -86,7 +85,7 @@ body.home {
 	}
 }
 
-.has-header-3 .content-area > *:first-child {
+.has-header-3:not(.has-header-background) .content-area > *:first-child {
 	margin-top: 0 !important;
 }
 
@@ -137,7 +136,7 @@ body.home {
 
 		& + p,
 		& + ol,
-		& + ul,
+		& + ul:not(.wp-block-gallery),
 		& + dl {
 			margin-top: calc(var(--vertical-rhythm--lrg) * -0.825) !important;
 		}

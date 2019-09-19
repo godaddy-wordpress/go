@@ -29,3 +29,7 @@
 		margin-bottom: -15px !important;
 	}
 }
+
+.wp-block-gallery.alignfull + .wp-block-cover.alignfull {
+	margin-top: 16px !important;
+}
