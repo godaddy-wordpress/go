@@ -41,3 +41,11 @@
 .wp-block-image.alignfull + .wp-block-gallery.alignfull {
 	margin-top: calc(var(--vertical-rhythm--lrg) * -1 + 16px) !important;
 }
+
+.wp-block-group.alignfull + .wp-block-gallery.alignfull {
+	margin-top: calc(var(--vertical-rhythm--lrg) * -1 + 16px) !important;
+}
+
+.wp-block-gallery.alignfull + .wp-block-group.alignfull {
+	margin-top: calc(var(--vertical-rhythm--lrg) * -1 + 16px) !important;
+}

@@ -17,6 +17,12 @@
 		width: auto;
 	}
 
+	& p.has-secondary-color,
+	& h1.has-secondary-color,
+	& h2.has-secondary-color {
+		color: hsl(var(--theme-color-secondary));
+	}
+
 	&.alignfull > div {
 		padding-bottom: calc(var(--editor-padding) / 4);
 		padding-top: calc(var(--editor-padding) / 4);

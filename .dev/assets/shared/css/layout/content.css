@@ -127,6 +127,11 @@ body.home {
 		}
 	}
 
+	& .wp-block-columns + .wp-block-button,
+	& .wp-block-columns + .wp-block-coblocks-buttons {
+		margin-top: calc(var(--vertical-rhythm--lrg) * -0.65) !important;
+	}
+
 	& > h1,
 	& > h2,
 	& > h3,
