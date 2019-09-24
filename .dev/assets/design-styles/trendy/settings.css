@@ -88,7 +88,7 @@
 	--theme-h1--font-size: 2.15em;
 	--theme-h2--font-size: 2em;
 	--theme-h3--font-size: 1.75em;
-	--theme-h4--font-size: 2em;
+	--theme-h4--font-size: 1.65em;
 	--theme-h5--font-size: 1.5em;
 	--theme-h6--font-size: 1.25em;
 
@@ -314,7 +314,7 @@
 	}
 
 	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: 0, 0%, 20%;
+	--theme-footer-3-site-info--border-color: 0, 0%, 100%;
 	--theme-footer-3-site-info--border-width: 1px;
 
 

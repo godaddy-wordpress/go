@@ -488,6 +488,10 @@ function body_classes( $classes ) {
 		$classes[] = 'has-comments-open';
 	}
 
+	if ( get_theme_mod( 'header_background_color', false ) ) {
+		$classes[] = 'has-header-background';
+	}
+
 	if ( get_theme_mod( 'footer_background_color', false ) ) {
 		$classes[] = 'has-footer-background';
 	}

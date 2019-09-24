@@ -21,14 +21,14 @@
 	## Editor
 	--------------------------------------------------------------*/
 	--editor-max-w-base: 702px;
-	--editor-max-w-wide: 942px;
+	--editor-max-w-wide: 1118px;
 
 
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
 	--theme-max-w-base: 42rem;
-	--theme-max-w-wide: 70rem;
+	--theme-max-w-wide: 84rem;
 
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.75rem;

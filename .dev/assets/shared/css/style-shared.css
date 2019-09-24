@@ -152,10 +152,6 @@ figure {
 	margin-right: 0;
 }
 
-strong {
-	color: hsl(var(--theme-h1--color, var(--theme-color-heading)));
-}
-
 .bypostauthor {
 	display: block;
 }
