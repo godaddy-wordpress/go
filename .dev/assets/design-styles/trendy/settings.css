@@ -244,7 +244,7 @@
 	--theme-header-3--padding-y: 3.5rem;
 
 	@media (--large) {
-		--theme-header-3--padding-y: 8rem;
+		--theme-header-3--padding-y: 6rem;
 	}
 
 	/*--------------------------------------------------------------

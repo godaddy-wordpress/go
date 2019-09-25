@@ -22,3 +22,7 @@
 .hero-center-center-align .wp-block-coblocks-hero__content {
 	margin: 0 auto;
 }
+
+.wp-block-coblocks-map.alignfull + .wp-block-pullquote.alignfull {
+	margin-top: 0 !important;
+}

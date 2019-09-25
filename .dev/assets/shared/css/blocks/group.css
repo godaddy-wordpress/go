@@ -52,6 +52,10 @@
 	}
 }
 
+.content-area > *:first-child.wp-block-group.has-background.alignfull .wp-block-group__inner-container {
+	padding-top: calc(var(--editor-padding) / 4);
+}
+
 .wp-block-group__inner-container {
 	margin-left: auto;
 	margin-right: auto;
