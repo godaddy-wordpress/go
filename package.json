@@ -2,10 +2,10 @@
   "name": "go",
   "version": "0.2.0",
   "description": "Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowering makers to build beautifully rich websites with WordPress.",
-  "homepage": "https://github.com/godaddy/wp-go-theme",
+  "homepage": "https://github.com/godaddy-wordpress/go",
   "repository": {
     "type": "git",
-    "url": "https://github.com/godaddy/wp-go-theme",
+    "url": "https://github.com/godaddy-wordpress/go",
     "base": "godaddy/wp-go-theme"
   },
   "author": {

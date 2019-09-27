@@ -26,7 +26,7 @@ Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowerin
 
 **Contributing**
 
-You can fork and contribute back to Go by visiting [our public repo on GitHub](https://github.com/godaddy/wp-go-theme).
+You can fork and contribute back to Go by visiting [our public repo on GitHub](https://github.com/godaddy-wordpress/go).
 
 == Installation ==
 
