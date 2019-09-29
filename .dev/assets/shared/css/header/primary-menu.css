@@ -40,10 +40,6 @@
 		}
 	}
 
-	& .current-menu-item a {
-		color: hsl(var(--theme-color-primary));
-	}
-
 	/* First submenu (second level) */
 	& > li > .sub-menu {
 		position: relative;

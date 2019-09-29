@@ -8,9 +8,33 @@
 		max-width: none;
 		padding: 0;
 	}
-}
 
-.wp-block-cover__inner-container {
-	margin: 0 auto;
-	width: auto;
+	& .wp-block-cover__inner-container {
+		margin: 0 auto;
+		max-width: calc(var(--theme-max-w-base));
+		padding-left: 1rem;
+		padding-right: 1rem;
+		width: auto;
+	}
+
+	& p.has-secondary-color,
+	& h1.has-secondary-color,
+	& h2.has-secondary-color {
+		color: hsl(var(--theme-color-secondary));
+	}
+
+	&.alignfull > div {
+		padding-bottom: calc(var(--editor-padding) / 4);
+		padding-top: calc(var(--editor-padding) / 4);
+
+		@media (--medium) {
+			padding-bottom: calc(var(--editor-padding) / 2);
+			padding-top: calc(var(--editor-padding) / 2);
+		}
+
+		@media (--large) {
+			padding-bottom: var(--editor-padding);
+			padding-top: var(--editor-padding);
+		}
+	}
 }

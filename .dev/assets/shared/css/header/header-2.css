@@ -36,6 +36,10 @@
 		}
 	}
 
+	& .site-navigation {
+		min-width: initial;
+	}
+
 	& .site-navigation__toggle {
 		margin-left: -0.5rem;
 		margin-right: calc(var(--theme-block-padding-x) * 0.65);

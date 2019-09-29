@@ -1,5 +1,5 @@
 /*! Trendy: CoBlocks Carousel */
-.wp-block-coblocks-gallery-carousel .coblocks-gallery--item {
+.wp-block-coblocks-gallery-carousel .has-carousel:not(.has-aligned-cells) .coblocks-gallery--item {
 	transition: opacity 0.75s, transform 0.75s;
 
 	&:not(.is-selected) {
