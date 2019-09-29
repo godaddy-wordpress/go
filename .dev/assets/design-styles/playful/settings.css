@@ -211,10 +211,14 @@
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--color-white);
-	--theme-site-title--font-size: 1.9rem;
+	--theme-site-title--font-size: 1.4rem;
 	--theme-site-title--font: "Poppins", sans-serif;
 	--theme-site-title--text-transform: none;
 	--theme-site-title--tracking: 0;
+
+	@media (--medium) {
+		--theme-site-title--font-size: 1.8rem;
+	}
 
 	--theme-site-description--color: var(--color-white);
 	--theme-site-description--leading: 1.4;
@@ -234,7 +238,7 @@
 	--theme-header-3--padding-y: 3.5rem;
 
 	@media (--large) {
-		--theme-header-3--padding-y: 8rem;
+		--theme-header-3--padding-y: 6rem;
 	}
 
 	/*--------------------------------------------------------------

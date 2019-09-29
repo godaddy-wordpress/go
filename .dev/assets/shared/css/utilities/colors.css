@@ -3,6 +3,7 @@
 	background-color: hsl(var(--theme-color-primary));
 
 	&,
+	& label,
 	& h1:not([class*="color"]),
 	& h2:not([class*="color"]),
 	& h3:not([class*="color"]),
