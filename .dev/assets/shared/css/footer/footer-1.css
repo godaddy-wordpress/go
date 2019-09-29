@@ -18,7 +18,6 @@
 		}
 
 		& a {
-			color: hsla(var(--theme-site-nav--color), 1);
 			display: block;
 			font-family: var(--theme-site-nav--font);
 			font-size: var(--theme-site-nav--font-size);
@@ -26,10 +25,6 @@
 			letter-spacing: var(--theme-site-nav--tracking);
 			padding: var(--theme-footer-nav--padding-y) var(--theme-footer-nav--padding-x);
 			text-transform: var(--theme-site-nav--text-transform);
-
-			&:focus {
-				outline-offset: -16px;
-			}
 		}
 	}
 

@@ -218,10 +218,14 @@
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: 2rem;
+	--theme-site-title--font-size: 1.5rem;
 	--theme-site-title--font: var(--theme-heading--font);
 	--theme-site-title--tracking: 0.033em;
 	--theme-site-title--weight: 400;
+
+	@media (--medium) {
+		--theme-site-title--font-size: 2rem;
+	}
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--font: "Source Code Pro", monospace;
@@ -244,7 +248,7 @@
 	--theme-header-3--padding-y: 3.5rem;
 
 	@media (--large) {
-		--theme-header-3--padding-y: 8rem;
+		--theme-header-3--padding-y: 6rem;
 	}
 
 	/*--------------------------------------------------------------

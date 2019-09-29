@@ -24,3 +24,7 @@
 		margin-top: 0 !important;
 	}
 }
+
+.wp-block-coblocks-gallery-carousel.alignfull + .wp-block-cover.alignfull {
+	margin-top: calc(var(--vertical-rhythm--lrg) * -1) !important;
+}

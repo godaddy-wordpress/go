@@ -11,7 +11,7 @@
 	margin-bottom: var(--vertical-rhythm);
 	margin-top: var(--vertical-rhythm);
 
-	&:not(p):not(ul):not(ol):not(address):not(.wp-block-spacer):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
+	&:not(p):not(ul):not(ol):not(address):not(.wp-block-spacer):not(.wp-block-separator):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
 		margin-bottom: var(--vertical-rhythm--lrg);
 		margin-top: var(--vertical-rhythm--lrg);
 	}
@@ -157,6 +157,10 @@ body.home {
 
 		& + .wp-block-coblocks-features {
 			margin-top: calc(var(--vertical-rhythm--lrg) * -0.5) !important;
+		}
+
+		& + .wp-block-separator {
+			margin-top: calc(var(--vertical-rhythm--lrg) * -0.75) !important;
 		}
 	}
 }

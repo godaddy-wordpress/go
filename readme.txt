@@ -16,16 +16,18 @@ Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowerin
 
 * Gutenberg-First
 * Responsive Layout
-* Design Styles
+* Customize Colors
+* Multiple Design Styles
 * Header Variations
 * Footer Variations
-* Customize Color Palettes
 * Social Links Menu
 * WooCommerce-Ready
+* Available in 29 Languages
+* RTL Language Support
 
 **Contributing**
 
-You can fork and contribute back to Go by visiting [our public repo on GitHub](https://github.com/godaddy/wp-go-theme).
+You can fork and contribute back to Go by visiting [our public repo on GitHub](https://github.com/godaddy-wordpress/go).
 
 == Installation ==
 
@@ -62,5 +64,5 @@ Source: https://stocksnap.io/photo/RCFX768X06
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.1.0 =
 * Initial release.

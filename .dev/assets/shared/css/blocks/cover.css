@@ -17,6 +17,12 @@
 		width: auto;
 	}
 
+	& p.has-primary-color,
+	& h1.has-primary-color,
+	& h2.has-primary-color {
+		color: hsl(var(--theme-color-primary));
+	}
+
 	& p.has-secondary-color,
 	& h1.has-secondary-color,
 	& h2.has-secondary-color {
