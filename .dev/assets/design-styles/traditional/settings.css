@@ -258,7 +258,7 @@
 	--theme-header-3-nav--margin-top: 2.5rem;
 
 	@media (--large) {
-		--theme-header-3--padding-y: 8rem;
+		--theme-header-3--padding-y: 6rem;
 	}
 
 	/*--------------------------------------------------------------

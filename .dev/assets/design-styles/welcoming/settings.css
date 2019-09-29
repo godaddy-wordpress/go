@@ -65,9 +65,6 @@
 	/*--------------------------------------------------------------
 	## Colors
 	--------------------------------------------------------------*/
-	--theme-color-body-bg: 0, 0%, 93%;
-
-	/* Text Colors */
 	--theme-color-heading: var(--theme-color-primary);
 	--theme-color-text: var(--theme-color-primary);
 	--theme-color-text-secondary: 0, 0%, 52%;
@@ -212,11 +209,15 @@
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: 2.25rem;
+	--theme-site-title--font-size: 1.85rem;
 	--theme-site-title--font: "Work Sans", sans-serif;
 	--theme-site-title--text-transform: normal;
 	--theme-site-title--tracking: 0;
 	--theme-site-title--weight: 600;
+
+	@media (--medium) {
+		--theme-site-title--font-size: 2.25rem;
+	}
 
 	--theme-site-description--color: var(--theme-color-primary);
 	--theme-site-description--leading: 1.4;
@@ -238,7 +239,7 @@
 	--theme-header-3--padding-y: 3.5rem;
 
 	@media (--large) {
-		--theme-header-3--padding-y: 8rem;
+		--theme-header-3--padding-y: 6rem;
 	}
 
 	/*--------------------------------------------------------------
