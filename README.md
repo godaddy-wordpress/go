@@ -10,7 +10,7 @@
 
 Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowering makers to build beautifully rich websites with WordPress.
 
-[![CircleCI](https://circleci.com/gh/godaddy/wp-go-theme.svg?style=svg)](https://circleci.com/gh/godaddy/wp-go-theme) [![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/godaddy/wp-go-theme/blob/master/license.txt) [![PHP >= 5.6](https://img.shields.io/badge/php-%3E=%205.6-8892bf.svg)](https://secure.php.net/supported-versions.php) [![WordPress >= 5.0](https://img.shields.io/badge/wordpress-%3E=%205.0-blue.svg)](https://wordpress.org/download/release-archive/)
+[![CircleCI](https://circleci.com/gh/godaddy/wp-go-theme.svg?style=svg)](https://circleci.com/gh/godaddy/wp-go-theme) [![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/godaddy-wordpress/go/blob/master/license.txt) [![PHP >= 5.6](https://img.shields.io/badge/php-%3E=%205.6-8892bf.svg)](https://secure.php.net/supported-versions.php) [![WordPress >= 5.0](https://img.shields.io/badge/wordpress-%3E=%205.0-blue.svg)](https://wordpress.org/download/release-archive/)
 
 ## Description ##
 
@@ -28,7 +28,7 @@ Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowerin
 
 **Contributing**
 
-You can fork and contribute back to Go by visiting [our public repo on GitHub](https://github.com/godaddy/wp-go-theme).
+You can fork and contribute back to Go by visiting [our public repo on GitHub](https://github.com/godaddy-wordpress/go).
 
 ## Installation ##
 

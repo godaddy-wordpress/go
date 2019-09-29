@@ -729,7 +729,7 @@ msgid "Go"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/godaddy/wp-go-theme"
+msgid "https://github.com/godaddy-wordpress/go"
 msgstr ""
 
 #. Description of the plugin/theme
