@@ -14,11 +14,12 @@ Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowerin
 
 **Features**
 
+* Gutenberg-First
 * Responsive Layout
-* Multiple Design Styles
 * Customize Colors
-* Customize Fonts
 * Multiple Design Styles
+* Header Variations
+* Footer Variations
 * Social Links Menu
 * WooCommerce-Ready
 * Available in 29 Languages
@@ -63,5 +64,5 @@ Source: https://stocksnap.io/photo/RCFX768X06
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.1.0 =
 * Initial release.
