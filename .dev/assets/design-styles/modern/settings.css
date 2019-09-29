@@ -215,10 +215,14 @@
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: 1.5rem;
+	--theme-site-title--font-size: 1.15rem;
 	--theme-site-title--font: var(--theme-site-nav--font);
 	--theme-site-title--text-transform: uppercase;
 	--theme-site-title--tracking: 5px;
+
+	@media (--medium) {
+		--theme-site-title--font-size: 1.5rem;
+	}
 
 	--theme-site-description--color: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
@@ -244,7 +248,7 @@
 	--theme-header-3--padding-y: 3.5rem;
 
 	@media (--large) {
-		--theme-header-3--padding-y: 8rem;
+		--theme-header-3--padding-y: 6rem;
 	}
 
 	/*--------------------------------------------------------------
