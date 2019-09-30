@@ -81,6 +81,6 @@
 
 /* Override aria defaults */
 .site-navigation .site-search[aria-hidden="true"] {
-	display: block;
+	display: none;
 	visibility: visible;
 }
