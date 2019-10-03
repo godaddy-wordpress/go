@@ -148,26 +148,26 @@ function theme_setup() {
 		'editor-font-sizes',
 		[
 			[
-				'name'      => esc_html__( 'Small', 'go' ),
-				'shortName' => esc_html__( 'S', 'go' ),
+				'name'      => esc_html_x( 'Small', 'font size option label', 'go' ),
+				'shortName' => esc_html_x( 'S', 'abbreviation of the font size option label', 'go' ),
 				'size'      => 17,
 				'slug'      => 'small',
 			],
 			[
-				'name'      => esc_html__( 'Medium', 'go' ),
-				'shortName' => esc_html__( 'M', 'go' ),
+				'name'      => esc_html_x( 'Medium', 'font size option label', 'go' ),
+				'shortName' => esc_html_x( 'M', 'abbreviation of the font size option label', 'go' ),
 				'size'      => 21,
 				'slug'      => 'medium',
 			],
 			[
-				'name'      => esc_html__( 'Large', 'go' ),
-				'shortName' => esc_html__( 'L', 'go' ),
+				'name'      => esc_html_x( 'Large', 'font size option label', 'go' ),
+				'shortName' => esc_html_x( 'L', 'abbreviation of the font size option label', 'go' ),
 				'size'      => 24,
 				'slug'      => 'large',
 			],
 			[
-				'name'      => esc_html__( 'Huge', 'go' ),
-				'shortName' => esc_html__( 'XL', 'go' ),
+				'name'      => esc_html_x( 'Huge', 'font size option label', 'go' ),
+				'shortName' => esc_html_x( 'XL', 'abbreviation of the font size option label', 'go' ),
 				'size'      => 30,
 				'slug'      => 'huge',
 			],
@@ -179,22 +179,22 @@ function theme_setup() {
 	if ( $design_style ) {
 		$color_palette = [
 			[
-				'name'  => esc_html__( 'Primary', 'go' ),
+				'name'  => esc_html_x( 'Primary', 'name of the first color palette selection', 'go' ),
 				'slug'  => 'primary',
 				'color' => \Go\get_palette_color( 'primary' ),
 			],
 			[
-				'name'  => esc_html__( 'Secondary', 'go' ),
+				'name'  => esc_html_x( 'Secondary', 'name of the second color palette selection', 'go' ),
 				'slug'  => 'secondary',
 				'color' => \Go\get_palette_color( 'secondary' ),
 			],
 			[
-				'name'  => esc_html__( 'Tertiary', 'go' ),
+				'name'  => esc_html_x( 'Tertiary', 'name of the third color palette selection', 'go' ),
 				'slug'  => 'tertiary',
 				'color' => \Go\get_palette_color( 'tertiary' ),
 			],
 			[
-				'name'  => esc_html__( 'Quaternary', 'go' ),
+				'name'  => esc_html_x( 'Quaternary', 'name of the fourth color palette selection', 'go' ),
 				'slug'  => 'quaternary',
 				'color' => '#ffffff',
 			],
@@ -872,28 +872,28 @@ function get_default_header_variation() {
 function get_available_header_variations() {
 	$default_header_variations = [
 		'header-1' => [
-			'label'         => esc_html__( 'Header 1', 'go' ),
+			'label'         => esc_html_x( 'Header 1', 'name of the first header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '1' );
 			},
 		],
 		'header-2' => [
-			'label'         => esc_html__( 'Header 2', 'go' ),
+			'label'         => esc_html_x( 'Header 2', 'name of the second header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
 		],
 		'header-3' => [
-			'label'         => esc_html__( 'Header 3', 'go' ),
+			'label'         => esc_html_x( 'Header 3', 'name of the third header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
 		],
 		'header-4' => [
-			'label'         => esc_html__( 'Header 4', 'go' ),
+			'label'         => esc_html_x( 'Header 4', 'name of the fourth header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '4' );
@@ -941,28 +941,28 @@ function get_header_variation() {
 function get_available_footer_variations() {
 	$default_footer_variations = [
 		'footer-1' => [
-			'label'         => esc_html__( 'Footer 1', 'go' ),
+			'label'         => esc_html_x( 'Footer 1', 'name of the first footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '1' );
 			},
 		],
 		'footer-2' => [
-			'label'         => esc_html__( 'Footer 2', 'go' ),
+			'label'         => esc_html_x( 'Footer 2', 'name of the second footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '2' );
 			},
 		],
 		'footer-3' => [
-			'label'         => esc_html__( 'Footer 3', 'go' ),
+			'label'         => esc_html_x( 'Footer 3', 'name of the third footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '3' );
 			},
 		],
 		'footer-4' => [
-			'label'         => esc_html__( 'Footer 4', 'go' ),
+			'label'         => esc_html_x( 'Footer 4', 'name of the fourth footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '4' );
