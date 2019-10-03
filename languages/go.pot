@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Go 0.2.0\n"
-"Report-Msgid-Bugs-To: https://github.com/godaddy/wp-go-theme\n"
-"POT-Creation-Date: 2019-09-28 00:49:41+00:00\n"
+"Report-Msgid-Bugs-To: https://github.com/godaddy-wordpress/go\n"
+"POT-Creation-Date: 2019-10-03 03:42:11+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -397,7 +397,7 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/core.php:83 includes/core.php:182 includes/customizer.php:426
+#: includes/core.php:83 includes/customizer.php:426
 msgid "Primary"
 msgstr ""
 
@@ -413,84 +413,8 @@ msgstr ""
 msgid "Footer Menu #3"
 msgstr ""
 
-#: includes/core.php:151
-msgid "Small"
-msgstr ""
-
-#: includes/core.php:152
-msgid "S"
-msgstr ""
-
-#: includes/core.php:157
-msgid "Medium"
-msgstr ""
-
-#: includes/core.php:158
-msgid "M"
-msgstr ""
-
-#: includes/core.php:163
-msgid "Large"
-msgstr ""
-
-#: includes/core.php:164
-msgid "L"
-msgstr ""
-
-#: includes/core.php:169
-msgid "Huge"
-msgstr ""
-
-#: includes/core.php:170
-msgid "XL"
-msgstr ""
-
-#: includes/core.php:187 includes/customizer.php:448
-msgid "Secondary"
-msgstr ""
-
-#: includes/core.php:192 includes/customizer.php:470
-msgid "Tertiary"
-msgstr ""
-
-#: includes/core.php:197
-msgid "Quaternary"
-msgstr ""
-
 #: includes/core.php:328
 msgid "Expand search field"
-msgstr ""
-
-#: includes/core.php:875
-msgid "Header 1"
-msgstr ""
-
-#: includes/core.php:882
-msgid "Header 2"
-msgstr ""
-
-#: includes/core.php:889
-msgid "Header 3"
-msgstr ""
-
-#: includes/core.php:896
-msgid "Header 4"
-msgstr ""
-
-#: includes/core.php:944
-msgid "Footer 1"
-msgstr ""
-
-#: includes/core.php:951
-msgid "Footer 2"
-msgstr ""
-
-#: includes/core.php:958
-msgid "Footer 3"
-msgstr ""
-
-#: includes/core.php:965
-msgid "Footer 4"
 msgstr ""
 
 #: includes/core.php:1036
@@ -572,6 +496,14 @@ msgstr ""
 
 #: includes/customizer.php:402
 msgid "Color Scheme"
+msgstr ""
+
+#: includes/customizer.php:448
+msgid "Secondary"
+msgstr ""
+
+#: includes/customizer.php:470
+msgid "Tertiary"
 msgstr ""
 
 #: includes/customizer.php:491 includes/customizer.php:510
@@ -771,6 +703,66 @@ msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
+#: includes/core.php:151
+msgctxt "font size option label"
+msgid "Small"
+msgstr ""
+
+#: includes/core.php:157
+msgctxt "font size option label"
+msgid "Medium"
+msgstr ""
+
+#: includes/core.php:163
+msgctxt "font size option label"
+msgid "Large"
+msgstr ""
+
+#: includes/core.php:169
+msgctxt "font size option label"
+msgid "Huge"
+msgstr ""
+
+#: includes/core.php:152
+msgctxt "abbreviation of the font size option label"
+msgid "S"
+msgstr ""
+
+#: includes/core.php:158
+msgctxt "abbreviation of the font size option label"
+msgid "M"
+msgstr ""
+
+#: includes/core.php:164
+msgctxt "abbreviation of the font size option label"
+msgid "L"
+msgstr ""
+
+#: includes/core.php:170
+msgctxt "abbreviation of the font size option label"
+msgid "XL"
+msgstr ""
+
+#: includes/core.php:182
+msgctxt "name of the first color palette selection"
+msgid "Primary"
+msgstr ""
+
+#: includes/core.php:187
+msgctxt "name of the second color palette selection"
+msgid "Secondary"
+msgstr ""
+
+#: includes/core.php:192
+msgctxt "name of the third color palette selection"
+msgid "Tertiary"
+msgstr ""
+
+#: includes/core.php:197
+msgctxt "name of the fourth color palette selection"
+msgid "Quaternary"
+msgstr ""
+
 #: includes/core.php:561
 msgctxt "design style name"
 msgid "Traditional"
@@ -894,6 +886,46 @@ msgstr ""
 #: includes/core.php:798
 msgctxt "color palette name"
 msgid "Berry"
+msgstr ""
+
+#: includes/core.php:875
+msgctxt "name of the first header variation option"
+msgid "Header 1"
+msgstr ""
+
+#: includes/core.php:882
+msgctxt "name of the second header variation option"
+msgid "Header 2"
+msgstr ""
+
+#: includes/core.php:889
+msgctxt "name of the third header variation option"
+msgid "Header 3"
+msgstr ""
+
+#: includes/core.php:896
+msgctxt "name of the fourth header variation option"
+msgid "Header 4"
+msgstr ""
+
+#: includes/core.php:944
+msgctxt "name of the first footer variation option"
+msgid "Footer 1"
+msgstr ""
+
+#: includes/core.php:951
+msgctxt "name of the second footer variation option"
+msgid "Footer 2"
+msgstr ""
+
+#: includes/core.php:958
+msgctxt "name of the third footer variation option"
+msgid "Footer 3"
+msgstr ""
+
+#: includes/core.php:965
+msgctxt "name of the fourth footer variation option"
+msgid "Footer 4"
 msgstr ""
 
 #: includes/template-tags.php:113
