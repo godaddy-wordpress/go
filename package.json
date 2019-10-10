@@ -44,6 +44,33 @@
     "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
     "test-php": "./vendor/bin/phpunit"
   },
+  "locales": {
+    "da_DK": "Dansk",
+    "de_DE": "Deutsch",
+    "el": "Ελληνικά",
+    "es_ES": "Español",
+    "fi": "Suomi",
+    "fr_FR": "Français",
+    "hi_IN": "हिन्दी",
+    "id_ID": "Bahasa Indonesia",
+    "it_IT": "Italiano",
+    "ja": "日本語",
+    "ko_KR": "한국어",
+    "mr": "मराठी",
+    "nb_NO": "Norsk bokmål",
+    "nl_NL": "Nederlands",
+    "pl_PL": "Polski",
+    "pt_BR": "Português do Brasil",
+    "pt_PT": "Português",
+    "ru_RU": "Русский",
+    "sv_SE": "Svenska",
+    "th": "ไทย",
+    "tr_TR": "Türkçe",
+    "uk": "Українська",
+    "vi": "Tiếng Việt",
+    "zh_CN": "简体中文",
+    "zh_TW": "繁體中文"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
