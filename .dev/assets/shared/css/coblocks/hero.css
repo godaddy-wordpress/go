@@ -10,6 +10,10 @@
 		margin-bottom: 0 !important;
 		margin-top: 2rem;
 	}
+
+	& .wp-block-coblocks-hero__content *:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .wp-block-coblocks-hero__content-wrapper {

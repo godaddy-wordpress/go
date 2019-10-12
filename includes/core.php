@@ -641,18 +641,18 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Montserrat'    => [
+				'Montserrat' => [
 					'400',
 					'700',
 				],
-				'Fira Code'     => [
+				'Fira Code'  => [
 					'400',
 					'400i',
 					'700',
 				],
-				'Heebo'         => [
+				'Heebo'      => [
 					'400',
-					'700',
+					'800',
 				],
 			],
 		],
