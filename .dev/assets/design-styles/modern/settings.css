@@ -260,7 +260,7 @@
 	--------------------------------------------------------------*/
 	--theme-site-nav-toggle--color: var(--theme-color-heading);
 	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading);
-	--theme-site-nav-toggle--size: 2rem;
+	--theme-site-nav-toggle--size: 1.8rem;
 	--theme-site-nav-toggle--spacing: 10px;
 
 	/* Offscreen Navigation */
