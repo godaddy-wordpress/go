@@ -1,0 +1,981 @@
+# Copyright (c) 2019 GoDaddy Operating Company, LLC. All Rights Reserved.
+msgid ""
+msgstr ""
+"Project-Id-Version: Go 0.2.0\n"
+"Report-Msgid-Bugs-To: https://github.com/godaddy-wordpress/go\n"
+"POT-Creation-Date: 2019-10-03 03:42:11+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: comments.php:32
+#. translators: %s: The post title.
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "⌠2030284⌡Òné thòüght òn &ldquo;%s&rdquo;⌠2030284⌡"
+
+#: comments.php:39
+#. translators: %1$s: The number of comments. %2$s: The post title.
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "⌠2030285⌡%1$s thòüght òn &ldquo;%2$s&rdquo;⌠2030285⌡"
+msgstr[1] "⌠2030286⌡%1$s thòüghts òn &ldquo;%2$s&rdquo;⌠2030286⌡"
+
+#: comments.php:61
+msgid "Comment navigation"
+msgstr "⌠2030287⌡Còmmént nåvîgåtîòn⌠2030287⌡"
+
+#: comments.php:62
+msgid "&larr; Older Comments"
+msgstr "⌠2030288⌡&larr; Òldér Còmménts⌠2030288⌡"
+
+#: comments.php:63
+msgid "Newer Comments &rarr;"
+msgstr "⌠2030289⌡Néwér Còmménts &rarr;⌠2030289⌡"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "⌠2030290⌡Còmménts åré clòséd.⌠2030290⌡"
+
+#: header.php:27
+msgid "Skip to content"
+msgstr "⌠2030291⌡Skîp tò còntént⌠2030291⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:325
+msgid "Install Required Plugins"
+msgstr "⌠2030292⌡Înståll Réqüîréd Plügîns⌠2030292⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:326
+msgid "Install Plugins"
+msgstr "⌠2030293⌡Înståll Plügîns⌠2030293⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:328
+#. translators: %s: plugin name.
+msgid "Installing Plugin: %s"
+msgstr "⌠2030294⌡Înstållîng Plügîn: %s⌠2030294⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:330
+#. translators: %s: plugin name.
+msgid "Updating Plugin: %s"
+msgstr "⌠2030295⌡Üpdåtîng Plügîn: %s⌠2030295⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:331
+msgid "Something went wrong with the plugin API."
+msgstr "⌠2030296⌡Sòméthîng wént wròng wîth thé plügîn ÅPÎ.⌠2030296⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:368
+#. translators: 1: plugin name(s).
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "⌠2030297⌡Bégîn înstållîng plügîn⌠2030297⌡"
+msgstr[1] "⌠2030298⌡Bégîn înstållîng plügîns⌠2030298⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:373
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "⌠2030299⌡Bégîn üpdåtîng plügîn⌠2030299⌡"
+msgstr[1] "⌠2030300⌡Bégîn üpdåtîng plügîns⌠2030300⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:378
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "⌠2030301⌡Bégîn åctîvåtîng plügîn⌠2030301⌡"
+msgstr[1] "⌠2030302⌡Bégîn åctîvåtîng plügîns⌠2030302⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:383
+msgid "Return to Required Plugins Installer"
+msgstr "⌠2030303⌡Rétürn tò Réqüîréd Plügîns Înstållér⌠2030303⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:384
+#: includes/classes/class-tgm-plugin-activation.php:825
+#: includes/classes/class-tgm-plugin-activation.php:2531
+#: includes/classes/class-tgm-plugin-activation.php:3578
+msgid "Return to the Dashboard"
+msgstr "⌠2030304⌡Rétürn tò thé Dåshbòård⌠2030304⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:385
+#: includes/classes/class-tgm-plugin-activation.php:3157
+msgid "Plugin activated successfully."
+msgstr "⌠2030305⌡Plügîn åctîvåtéd süccéssfülly.⌠2030305⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:386
+#: includes/classes/class-tgm-plugin-activation.php:2950
+msgid "The following plugin was activated successfully:"
+msgstr "⌠2030306⌡Thé fòllòwîng plügîn wås åctîvåtéd süccéssfülly:⌠2030306⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:388
+#. translators: 1: plugin name.
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "⌠2030307⌡Nò åctîòn tåkén. Plügîn %1$s wås ålréådy åctîvé.⌠2030307⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:390
+#. translators: 1: plugin name.
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"⌠2030308⌡Plügîn nòt åctîvåtéd. Å hîghér vérsîòn òf %s îs néédéd fòr thîs "
+"thémé. Pléåsé üpdåté thé plügîn.⌠2030308⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:392
+#. translators: 1: dashboard link.
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "⌠2030309⌡Åll plügîns înstålléd ånd åctîvåtéd süccéssfülly. %1$s⌠2030309⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:393
+msgid "Dismiss this notice"
+msgstr "⌠2030310⌡Dîsmîss thîs nòtîcé⌠2030310⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:394
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+"⌠2030311⌡Théré åré òné òr mòré réqüîréd òr récòmméndéd plügîns tò înståll, "
+"üpdåté òr åctîvåté.⌠2030311⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:395
+msgid "Please contact the administrator of this site for help."
+msgstr "⌠2030312⌡Pléåsé còntåct thé ådmînîstråtòr òf thîs sîté fòr hélp.⌠2030312⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:520
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr "⌠2030313⌡Thîs plügîn nééds tò bé üpdåtéd tò bé còmpåtîblé wîth yòür thémé.⌠2030313⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:521
+msgid "Update Required"
+msgstr "⌠2030314⌡Üpdåté Réqüîréd⌠2030314⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:932
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"⌠2030315⌡Thé rémòté plügîn påckågé dòés nòt còntåîn å fòldér wîth thé désîréd "
+"slüg ånd rénåmîng dîd nòt wòrk.⌠2030315⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:932
+#: includes/classes/class-tgm-plugin-activation.php:935
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+"⌠2030316⌡Pléåsé còntåct thé plügîn pròvîdér ånd åsk thém tò påckågé théîr "
+"plügîn åccòrdîng tò thé WòrdPréss güîdélînés.⌠2030316⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:935
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"⌠2030317⌡Thé rémòté plügîn påckågé cònsîsts òf mòré thån òné fîlé, büt thé "
+"fîlés åré nòt påckågéd în å fòldér.⌠2030317⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:1980
+#. translators: %s: version number
+msgid "TGMPA v%s"
+msgstr "⌠2030318⌡TGMPÅ v%s⌠2030318⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2271
+msgid "Required"
+msgstr "⌠2030319⌡Réqüîréd⌠2030319⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2274
+msgid "Recommended"
+msgstr "⌠2030320⌡Récòmméndéd⌠2030320⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2290
+msgid "WordPress Repository"
+msgstr "⌠2030321⌡WòrdPréss Répòsîtòry⌠2030321⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2293
+msgid "External Source"
+msgstr "⌠2030322⌡Éxtérnål Sòürcé⌠2030322⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2296
+msgid "Pre-Packaged"
+msgstr "⌠2030323⌡Pré-Påckågéd⌠2030323⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2313
+msgid "Not Installed"
+msgstr "⌠2030324⌡Nòt Înstålléd⌠2030324⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2317
+msgid "Installed But Not Activated"
+msgstr "⌠2030325⌡Înstålléd Büt Nòt Åctîvåtéd⌠2030325⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2319
+msgid "Active"
+msgstr "⌠2030326⌡Åctîvé⌠2030326⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2325
+msgid "Required Update not Available"
+msgstr "⌠2030327⌡Réqüîréd Üpdåté nòt Åvåîlåblé⌠2030327⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2328
+msgid "Requires Update"
+msgstr "⌠2030328⌡Réqüîrés Üpdåté⌠2030328⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2331
+msgid "Update recommended"
+msgstr "⌠2030329⌡Üpdåté récòmméndéd⌠2030329⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2390
+#. translators: 1: number of plugins.
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "⌠2030330⌡Tò Înståll <span class=\"count\">(%s)</span>⌠2030330⌡"
+msgstr[1] "⌠2030331⌡Tò Înståll <span class=\"count\">(%s)</span>⌠2030331⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2394
+#. translators: 1: number of plugins.
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "⌠2030332⌡Üpdåté Åvåîlåblé <span class=\"count\">(%s)</span>⌠2030332⌡"
+msgstr[1] "⌠2030333⌡Üpdåté Åvåîlåblé <span class=\"count\">(%s)</span>⌠2030333⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2398
+#. translators: 1: number of plugins.
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "⌠2030334⌡Tò Åctîvåté <span class=\"count\">(%s)</span>⌠2030334⌡"
+msgstr[1] "⌠2030335⌡Tò Åctîvåté <span class=\"count\">(%s)</span>⌠2030335⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2488
+msgid "Installed version:"
+msgstr "⌠2030336⌡Înstålléd vérsîòn:⌠2030336⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2496
+msgid "Minimum required version:"
+msgstr "⌠2030337⌡Mînîmüm réqüîréd vérsîòn:⌠2030337⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2508
+msgid "Available version:"
+msgstr "⌠2030338⌡Åvåîlåblé vérsîòn:⌠2030338⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2531
+msgid "No plugins to install, update or activate."
+msgstr "⌠2030339⌡Nò plügîns tò înståll, üpdåté òr åctîvåté.⌠2030339⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2545
+msgid "Plugin"
+msgstr "⌠2030340⌡Plügîn⌠2030340⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2546
+msgid "Source"
+msgstr "⌠2030341⌡Sòürcé⌠2030341⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2547
+msgid "Type"
+msgstr "⌠2030342⌡Typé⌠2030342⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2551
+msgid "Version"
+msgstr "⌠2030343⌡Vérsîòn⌠2030343⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2552
+msgid "Status"
+msgstr "⌠2030344⌡Ståtüs⌠2030344⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2601
+#. translators: %2$s: plugin name in screen reader markup
+msgid "Install %2$s"
+msgstr "⌠2030345⌡Înståll %2$s⌠2030345⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2606
+#. translators: %2$s: plugin name in screen reader markup
+msgid "Update %2$s"
+msgstr "⌠2030346⌡Üpdåté %2$s⌠2030346⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2612
+#. translators: %2$s: plugin name in screen reader markup
+msgid "Activate %2$s"
+msgstr "⌠2030347⌡Åctîvåté %2$s⌠2030347⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2682
+msgid "Upgrade message from the plugin author:"
+msgstr "⌠2030348⌡Üpgrådé méssågé fròm thé plügîn åüthòr:⌠2030348⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2715
+msgid "Install"
+msgstr "⌠2030349⌡Înståll⌠2030349⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2721
+msgid "Update"
+msgstr "⌠2030350⌡Üpdåté⌠2030350⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2724
+msgid "Activate"
+msgstr "⌠2030351⌡Åctîvåté⌠2030351⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2755
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "⌠2030352⌡Nò plügîns wéré séléctéd tò bé înstålléd. Nò åctîòn tåkén.⌠2030352⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "⌠2030353⌡Nò plügîns wéré séléctéd tò bé üpdåtéd. Nò åctîòn tåkén.⌠2030353⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2798
+msgid "No plugins are available to be installed at this time."
+msgstr "⌠2030354⌡Nò plügîns åré åvåîlåblé tò bé înstålléd åt thîs tîmé.⌠2030354⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be updated at this time."
+msgstr "⌠2030355⌡Nò plügîns åré åvåîlåblé tò bé üpdåtéd åt thîs tîmé.⌠2030355⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2906
+msgid "No plugins were selected to be activated. No action taken."
+msgstr "⌠2030356⌡Nò plügîns wéré séléctéd tò bé åctîvåtéd. Nò åctîòn tåkén.⌠2030356⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2932
+msgid "No plugins are available to be activated at this time."
+msgstr "⌠2030357⌡Nò plügîns åré åvåîlåblé tò bé åctîvåtéd åt thîs tîmé.⌠2030357⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3156
+msgid "Plugin activation failed."
+msgstr "⌠2030358⌡Plügîn åctîvåtîòn fåîléd.⌠2030358⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3496
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "⌠2030359⌡Üpdåtîng Plügîn %1$s (%2$d/%3$d)⌠2030359⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3499
+#. translators: 1: plugin name, 2: error message.
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "⌠2030360⌡Ån érròr òccürréd whîlé înstållîng %1$s: <strong>%2$s</strong>.⌠2030360⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3501
+#. translators: 1: plugin name.
+msgid "The installation of %1$s failed."
+msgstr "⌠2030361⌡Thé înstållåtîòn òf %1$s fåîléd.⌠2030361⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3505
+msgid ""
+"The installation and activation process is starting. This process may take "
+"a while on some hosts, so please be patient."
+msgstr ""
+"⌠2030362⌡Thé înstållåtîòn ånd åctîvåtîòn pròcéss îs stårtîng. Thîs pròcéss "
+"måy tåké å whîlé òn sòmé hòsts, sò pléåsé bé påtîént.⌠2030362⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3507
+#. translators: 1: plugin name.
+msgid "%1$s installed and activated successfully."
+msgstr "⌠2030363⌡%1$s înstålléd ånd åctîvåtéd süccéssfülly.⌠2030363⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3507
+#: includes/classes/class-tgm-plugin-activation.php:3515
+msgid "Show Details"
+msgstr "⌠2030364⌡Shòw Détåîls⌠2030364⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3507
+#: includes/classes/class-tgm-plugin-activation.php:3515
+msgid "Hide Details"
+msgstr "⌠2030365⌡Hîdé Détåîls⌠2030365⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3508
+msgid "All installations and activations have been completed."
+msgstr "⌠2030366⌡Åll înstållåtîòns ånd åctîvåtîòns håvé béén còmplétéd.⌠2030366⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3510
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "⌠2030367⌡Înstållîng ånd Åctîvåtîng Plügîn %1$s (%2$d/%3$d)⌠2030367⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3513
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"⌠2030368⌡Thé înstållåtîòn pròcéss îs stårtîng. Thîs pròcéss måy tåké å whîlé "
+"òn sòmé hòsts, sò pléåsé bé påtîént.⌠2030368⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3515
+#. translators: 1: plugin name.
+msgid "%1$s installed successfully."
+msgstr "⌠2030369⌡%1$s înstålléd süccéssfülly.⌠2030369⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3516
+msgid "All installations have been completed."
+msgstr "⌠2030370⌡Åll înstållåtîòns håvé béén còmplétéd.⌠2030370⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:3518
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "⌠2030371⌡Înstållîng Plügîn %1$s (%2$d/%3$d)⌠2030371⌡"
+
+#: includes/core.php:83 includes/customizer.php:426
+msgid "Primary"
+msgstr "⌠2030372⌡Prîmåry⌠2030372⌡"
+
+#: includes/core.php:84
+msgid "Footer Menu #1"
+msgstr "⌠2030373⌡Fòòtér Ménü #1⌠2030373⌡"
+
+#: includes/core.php:85
+msgid "Footer Menu #2"
+msgstr "⌠2030374⌡Fòòtér Ménü #2⌠2030374⌡"
+
+#: includes/core.php:86
+msgid "Footer Menu #3"
+msgstr "⌠2030375⌡Fòòtér Ménü #3⌠2030375⌡"
+
+#: includes/core.php:328
+msgid "Expand search field"
+msgstr "⌠2030376⌡Éxpånd séårch fîéld⌠2030376⌡"
+
+#: includes/core.php:1036
+#. translators: the theme author
+msgid "WordPress Theme by %s"
+msgstr "⌠2030377⌡WòrdPréss Thémé by %s⌠2030377⌡"
+
+#: includes/core.php:1048
+msgid "Facebook"
+msgstr "⌠2030378⌡Fåcébòòk⌠2030378⌡"
+
+#: includes/core.php:1053
+msgid "Twitter"
+msgstr "⌠2030379⌡Twîttér⌠2030379⌡"
+
+#: includes/core.php:1058
+msgid "Instagram"
+msgstr "⌠2030380⌡Înstågråm⌠2030380⌡"
+
+#: includes/core.php:1063
+msgid "LinkedIn"
+msgstr "⌠2030381⌡LînkédÎn⌠2030381⌡"
+
+#: includes/core.php:1068
+msgid "Pinterest"
+msgstr "⌠2030382⌡Pîntérést⌠2030382⌡"
+
+#: includes/core.php:1200
+msgid "That page can't be found"
+msgstr "⌠2030383⌡Thåt pågé cån't bé fòünd⌠2030383⌡"
+
+#: includes/core.php:1214
+#. translators: Search query term(s).
+msgid "Search for: %s"
+msgstr "⌠2030384⌡Séårch fòr: %s⌠2030384⌡"
+
+#: includes/core.php:1222
+msgid "Nothing Found"
+msgstr "⌠2030385⌡Nòthîng Fòünd⌠2030385⌡"
+
+#: includes/customizer.php:97
+#. translators: %s is the registered nav menu name
+msgid "Please assign a menu to the %s menu location"
+msgstr "⌠2030386⌡Pléåsé åssîgn å ménü tò thé %s ménü lòcåtîòn⌠2030386⌡"
+
+#: includes/customizer.php:257
+msgid "Width"
+msgstr "⌠2030387⌡Wîdth⌠2030387⌡"
+
+#: includes/customizer.php:286
+msgid "Mobile Width"
+msgstr "⌠2030388⌡Mòbîlé Wîdth⌠2030388⌡"
+
+#: includes/customizer.php:312
+msgid "Site Settings"
+msgstr "⌠2030389⌡Sîté Séttîngs⌠2030389⌡"
+
+#: includes/customizer.php:329
+msgid "Page Titles"
+msgstr "⌠2030390⌡Pågé Tîtlés⌠2030390⌡"
+
+#: includes/customizer.php:330
+msgid "Display page titles on individual pages."
+msgstr "⌠2030391⌡Dîsplåy pågé tîtlés òn îndîvîdüål pågés.⌠2030391⌡"
+
+#: includes/customizer.php:349
+msgid "Copyright Text"
+msgstr "⌠2030392⌡Còpyrîght Téxt⌠2030392⌡"
+
+#: includes/customizer.php:378
+msgid "Design Style"
+msgstr "⌠2030393⌡Désîgn Stylé⌠2030393⌡"
+
+#: includes/customizer.php:379
+msgid ""
+"Choose a style, select a color scheme and customize colors to personalize "
+"your site."
+msgstr ""
+"⌠2030394⌡Chòòsé å stylé, séléct å còlòr schémé ånd cüstòmîzé còlòrs tò "
+"pérsònålîzé yòür sîté.⌠2030394⌡"
+
+#: includes/customizer.php:402
+msgid "Color Scheme"
+msgstr "⌠2030395⌡Còlòr Schémé⌠2030395⌡"
+
+#: includes/customizer.php:448
+msgid "Secondary"
+msgstr "⌠2030396⌡Sécòndåry⌠2030396⌡"
+
+#: includes/customizer.php:470
+msgid "Tertiary"
+msgstr "⌠2030397⌡Tértîåry⌠2030397⌡"
+
+#: includes/customizer.php:491 includes/customizer.php:510
+msgid "Header"
+msgstr "⌠2030398⌡Héådér⌠2030398⌡"
+
+#: includes/customizer.php:511
+msgid ""
+"Choose a header for every page on your site, then style it with the "
+"selectors below."
+msgstr ""
+"⌠2030399⌡Chòòsé å héådér fòr évéry pågé òn yòür sîté, thén stylé ît wîth thé "
+"séléctòrs bélòw.⌠2030399⌡"
+
+#: includes/customizer.php:533 includes/customizer.php:615
+msgid "Background Color"
+msgstr "⌠2030400⌡Båckgròünd Còlòr⌠2030400⌡"
+
+#: includes/customizer.php:553 includes/customizer.php:655
+msgid "Text Color"
+msgstr "⌠2030401⌡Téxt Còlòr⌠2030401⌡"
+
+#: includes/customizer.php:573 includes/customizer.php:592
+msgid "Footer"
+msgstr "⌠2030402⌡Fòòtér⌠2030402⌡"
+
+#: includes/customizer.php:593
+msgid ""
+"Choose a footer for every page on your site, then style it with the "
+"selectors below."
+msgstr ""
+"⌠2030403⌡Chòòsé å fòòtér fòr évéry pågé òn yòür sîté, thén stylé ît wîth thé "
+"séléctòrs bélòw.⌠2030403⌡"
+
+#: includes/customizer.php:635
+msgid "Heading Color"
+msgstr "⌠2030404⌡Héådîng Còlòr⌠2030404⌡"
+
+#: includes/customizer.php:675
+msgid "Social"
+msgstr "⌠2030405⌡Sòcîål⌠2030405⌡"
+
+#: includes/customizer.php:719
+msgid "Icon Color"
+msgstr "⌠2030406⌡Îcòn Còlòr⌠2030406⌡"
+
+#: includes/pluggable.php:28
+msgid "Pingback:"
+msgstr "⌠2030407⌡Pîngbåck:⌠2030407⌡"
+
+#: includes/pluggable.php:28
+msgid "(Edit)"
+msgstr "⌠2030408⌡(Édît)⌠2030408⌡"
+
+#: includes/pluggable.php:44 includes/template-tags.php:107
+msgid "Post author"
+msgstr "⌠2030409⌡Pòst åüthòr⌠2030409⌡"
+
+#: includes/pluggable.php:51
+#. translators: 1: date, 2: time
+msgid "%1$s at %2$s"
+msgstr "⌠2030410⌡%1$s åt %2$s⌠2030410⌡"
+
+#: includes/pluggable.php:57
+msgid "Your comment is awaiting moderation."
+msgstr "⌠2030411⌡Yòür còmmént îs åwåîtîng mòdéråtîòn.⌠2030411⌡"
+
+#: includes/pluggable.php:62
+msgid "Edit"
+msgstr "⌠2030412⌡Édît⌠2030412⌡"
+
+#: includes/pluggable.php:71
+msgid "Reply"
+msgstr "⌠2030413⌡Réply⌠2030413⌡"
+
+#: includes/template-tags.php:129
+msgid "Post date"
+msgstr "⌠2030414⌡Pòst dåté⌠2030414⌡"
+
+#: includes/template-tags.php:164
+msgid "Categories"
+msgstr "⌠2030415⌡Cåtégòrîés⌠2030415⌡"
+
+#: includes/template-tags.php:168
+msgid "In"
+msgstr "⌠2030416⌡În⌠2030416⌡"
+
+#: includes/template-tags.php:182
+msgid "Tags"
+msgstr "⌠2030417⌡Tågs⌠2030417⌡"
+
+#: includes/template-tags.php:220
+msgid "Featured"
+msgstr "⌠2030418⌡Féåtüréd⌠2030418⌡"
+
+#: includes/template-tags.php:736
+msgid "Menu"
+msgstr "⌠2030419⌡Ménü⌠2030419⌡"
+
+#: includes/template-tags.php:782
+msgid "Search Toggle"
+msgstr "⌠2030420⌡Séårch Tògglé⌠2030420⌡"
+
+#: includes/woocommerce.php:76
+msgid "Your cart is currently empty."
+msgstr "⌠2030421⌡Yòür cårt îs cürréntly émpty.⌠2030421⌡"
+
+#: partials/content-none.php:21
+#. translators: 1: link to WP admin new post page.
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "⌠2030422⌡Réådy tò püblîsh yòür fîrst pòst? <a href=\"%1$s\">Gét stårtéd héré</a>.⌠2030422⌡"
+
+#: partials/content-none.php:33
+msgid ""
+"Sorry, but nothing matched your search terms. Please try searching again "
+"with some different keywords."
+msgstr ""
+"⌠2030423⌡Sòrry, büt nòthîng måtchéd yòür séårch térms. Pléåsé try séårchîng "
+"ågåîn wîth sòmé dîfférént kéywòrds.⌠2030423⌡"
+
+#: partials/content-none.php:38
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help you out."
+msgstr ""
+"⌠2030424⌡Ît sééms wé cån&rsquo;t fînd whåt yòü&rsquo;ré lòòkîng fòr. Pérhåps "
+"séårchîng cån hélp yòü òüt.⌠2030424⌡"
+
+#: partials/content.php:44
+msgid "Page"
+msgstr "⌠2030425⌡Pågé⌠2030425⌡"
+
+#: partials/content.php:44
+msgid "Pages:"
+msgstr "⌠2030426⌡Pågés:⌠2030426⌡"
+
+#: partials/footers/footer-1.php:18 partials/footers/footer-2.php:16
+msgid "Footer Menu"
+msgstr "⌠2030427⌡Fòòtér Ménü⌠2030427⌡"
+
+#: partials/footers/footer-3.php:21 partials/footers/footer-4.php:21
+msgid "Primary Footer Menu"
+msgstr "⌠2030428⌡Prîmåry Fòòtér Ménü⌠2030428⌡"
+
+#: partials/footers/footer-3.php:36 partials/footers/footer-4.php:37
+msgid "Secondary Footer Menu"
+msgstr "⌠2030429⌡Sécòndåry Fòòtér Ménü⌠2030429⌡"
+
+#: partials/footers/footer-3.php:51 partials/footers/footer-4.php:53
+msgid "Tertiary Footer Menu"
+msgstr "⌠2030430⌡Tértîåry Fòòtér Ménü⌠2030430⌡"
+
+#: partials/pagination.php:21
+msgid "Newer <span class=\"nav-short\">Posts</span>"
+msgstr "⌠2030431⌡Néwér <span class=\"nav-short\">Pòsts</span>⌠2030431⌡"
+
+#: partials/pagination.php:25
+msgid "Older <span class=\"nav-short\">Posts</span>"
+msgstr "⌠2030432⌡Òldér <span class=\"nav-short\">Pòsts</span>⌠2030432⌡"
+
+#. Theme Name of the plugin/theme
+msgid "Go"
+msgstr "⌠2030433⌡Gò⌠2030433⌡"
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/godaddy-wordpress/go"
+msgstr "⌠2030434⌡https://github.com/godaddy-wordpress/go⌠2030434⌡"
+
+#. Description of the plugin/theme
+msgid ""
+"Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on "
+"empowering makers to build beautifully rich websites with WordPress."
+msgstr ""
+"⌠2030435⌡Gò îs ån înnòvåtîvé, Güténbérg-fîrst WòrdPréss thémé, hypér-fòcüséd "
+"òn émpòwérîng måkérs tò büîld béåütîfülly rîch wébsîtés wîth WòrdPréss.⌠2030435⌡"
+
+#. Author of the plugin/theme
+msgid "GoDaddy"
+msgstr "⌠2030436⌡GòDåddy⌠2030436⌡"
+
+#. Author URI of the plugin/theme
+msgid "https://www.godaddy.com"
+msgstr "⌠2030437⌡https://www.godaddy.com⌠2030437⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:1119
+#: includes/classes/class-tgm-plugin-activation.php:2946
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr "⌠2030438⌡ånd⌠2030438⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2340
+#. translators: 1: install status, 2: update status
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "⌠2030439⌡%1$s, %2$s⌠2030439⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2386
+#. translators: 1: number of plugins.
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "⌠2030440⌡Åll <span class=\"count\">(%s)</span>⌠2030440⌡"
+msgstr[1] "⌠2030441⌡Åll <span class=\"count\">(%s)</span>⌠2030441⌡"
+
+#: includes/classes/class-tgm-plugin-activation.php:2480
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "⌠2030442⌡ünknòwn⌠2030442⌡"
+
+#: includes/core.php:151
+msgctxt "font size option label"
+msgid "Small"
+msgstr "⌠2030443⌡Småll⌠2030443⌡"
+
+#: includes/core.php:157
+msgctxt "font size option label"
+msgid "Medium"
+msgstr "⌠2030444⌡Médîüm⌠2030444⌡"
+
+#: includes/core.php:163
+msgctxt "font size option label"
+msgid "Large"
+msgstr "⌠2030445⌡Lårgé⌠2030445⌡"
+
+#: includes/core.php:169
+msgctxt "font size option label"
+msgid "Huge"
+msgstr "⌠2030446⌡Hügé⌠2030446⌡"
+
+#: includes/core.php:152
+msgctxt "abbreviation of the font size option label"
+msgid "S"
+msgstr "⌠2030447⌡S⌠2030447⌡"
+
+#: includes/core.php:158
+msgctxt "abbreviation of the font size option label"
+msgid "M"
+msgstr "⌠2030448⌡M⌠2030448⌡"
+
+#: includes/core.php:164
+msgctxt "abbreviation of the font size option label"
+msgid "L"
+msgstr "⌠2030449⌡L⌠2030449⌡"
+
+#: includes/core.php:170
+msgctxt "abbreviation of the font size option label"
+msgid "XL"
+msgstr "⌠2030450⌡XL⌠2030450⌡"
+
+#: includes/core.php:182
+msgctxt "name of the first color palette selection"
+msgid "Primary"
+msgstr "⌠2030451⌡Prîmåry⌠2030451⌡"
+
+#: includes/core.php:187
+msgctxt "name of the second color palette selection"
+msgid "Secondary"
+msgstr "⌠2030452⌡Sécòndåry⌠2030452⌡"
+
+#: includes/core.php:192
+msgctxt "name of the third color palette selection"
+msgid "Tertiary"
+msgstr "⌠2030453⌡Tértîåry⌠2030453⌡"
+
+#: includes/core.php:197
+msgctxt "name of the fourth color palette selection"
+msgid "Quaternary"
+msgstr "⌠2030454⌡Qüåtérnåry⌠2030454⌡"
+
+#: includes/core.php:561
+msgctxt "design style name"
+msgid "Traditional"
+msgstr "⌠2030455⌡Trådîtîònål⌠2030455⌡"
+
+#: includes/core.php:610
+msgctxt "design style name"
+msgid "Modern"
+msgstr "⌠2030456⌡Mòdérn⌠2030456⌡"
+
+#: includes/core.php:660
+msgctxt "design style name"
+msgid "Trendy"
+msgstr "⌠2030457⌡Tréndy⌠2030457⌡"
+
+#: includes/core.php:715
+msgctxt "design style name"
+msgid "Welcoming"
+msgstr "⌠2030458⌡Wélcòmîng⌠2030458⌡"
+
+#: includes/core.php:766
+msgctxt "design style name"
+msgid "Playful"
+msgstr "⌠2030459⌡Plåyfül⌠2030459⌡"
+
+#: includes/core.php:566
+msgctxt "color palette name"
+msgid "Apricot"
+msgstr "⌠2030460⌡Åprîcòt⌠2030460⌡"
+
+#: includes/core.php:573
+msgctxt "color palette name"
+msgid "Emerald"
+msgstr "⌠2030461⌡Éméråld⌠2030461⌡"
+
+#: includes/core.php:580
+msgctxt "color palette name"
+msgid "Brick"
+msgstr "⌠2030462⌡Brîck⌠2030462⌡"
+
+#: includes/core.php:587
+msgctxt "color palette name"
+msgid "Bronze"
+msgstr "⌠2030463⌡Brònzé⌠2030463⌡"
+
+#: includes/core.php:615
+msgctxt "color palette name"
+msgid "Shade"
+msgstr "⌠2030464⌡Shådé⌠2030464⌡"
+
+#: includes/core.php:622
+msgctxt "color palette name"
+msgid "Blush"
+msgstr "⌠2030465⌡Blüsh⌠2030465⌡"
+
+#: includes/core.php:629
+msgctxt "color palette name"
+msgid "Indigo"
+msgstr "⌠2030466⌡Îndîgò⌠2030466⌡"
+
+#: includes/core.php:636
+msgctxt "color palette name"
+msgid "Pacific"
+msgstr "⌠2030467⌡Påcîfîc⌠2030467⌡"
+
+#: includes/core.php:665
+msgctxt "color palette name"
+msgid "Plum"
+msgstr "⌠2030468⌡Plüm⌠2030468⌡"
+
+#: includes/core.php:674
+msgctxt "color palette name"
+msgid "Steel"
+msgstr "⌠2030260⌡Stéél⌠2030260⌡"
+
+#: includes/core.php:682
+msgctxt "color palette name"
+msgid "Avocado"
+msgstr "⌠2030261⌡Åvòcådò⌠2030261⌡"
+
+#: includes/core.php:690
+msgctxt "color palette name"
+msgid "Champagne"
+msgstr "⌠2030262⌡Chåmpågné⌠2030262⌡"
+
+#: includes/core.php:720
+msgctxt "color palette name"
+msgid "Forest"
+msgstr "⌠2030263⌡Fòrést⌠2030263⌡"
+
+#: includes/core.php:728
+msgctxt "color palette name"
+msgid "Spruce"
+msgstr "⌠2030264⌡Sprücé⌠2030264⌡"
+
+#: includes/core.php:737
+msgctxt "color palette name"
+msgid "Mocha"
+msgstr "⌠2030265⌡Mòchå⌠2030265⌡"
+
+#: includes/core.php:745
+msgctxt "color palette name"
+msgid "Lavender"
+msgstr "⌠2030266⌡Låvéndér⌠2030266⌡"
+
+#: includes/core.php:771
+msgctxt "color palette name"
+msgid "Frolic"
+msgstr "⌠2030267⌡Fròlîc⌠2030267⌡"
+
+#: includes/core.php:780
+msgctxt "color palette name"
+msgid "Coral"
+msgstr "⌠2030268⌡Còrål⌠2030268⌡"
+
+#: includes/core.php:789
+msgctxt "color palette name"
+msgid "Organic"
+msgstr "⌠2030269⌡Òrgånîc⌠2030269⌡"
+
+#: includes/core.php:798
+msgctxt "color palette name"
+msgid "Berry"
+msgstr "⌠2030270⌡Bérry⌠2030270⌡"
+
+#: includes/core.php:875
+msgctxt "name of the first header variation option"
+msgid "Header 1"
+msgstr "⌠2030271⌡Héådér 1⌠2030271⌡"
+
+#: includes/core.php:882
+msgctxt "name of the second header variation option"
+msgid "Header 2"
+msgstr "⌠2030272⌡Héådér 2⌠2030272⌡"
+
+#: includes/core.php:889
+msgctxt "name of the third header variation option"
+msgid "Header 3"
+msgstr "⌠2030273⌡Héådér 3⌠2030273⌡"
+
+#: includes/core.php:896
+msgctxt "name of the fourth header variation option"
+msgid "Header 4"
+msgstr "⌠2030274⌡Héådér 4⌠2030274⌡"
+
+#: includes/core.php:944
+msgctxt "name of the first footer variation option"
+msgid "Footer 1"
+msgstr "⌠2030275⌡Fòòtér 1⌠2030275⌡"
+
+#: includes/core.php:951
+msgctxt "name of the second footer variation option"
+msgid "Footer 2"
+msgstr "⌠2030276⌡Fòòtér 2⌠2030276⌡"
+
+#: includes/core.php:958
+msgctxt "name of the third footer variation option"
+msgid "Footer 3"
+msgstr "⌠2030277⌡Fòòtér 3⌠2030277⌡"
+
+#: includes/core.php:965
+msgctxt "name of the fourth footer variation option"
+msgid "Footer 4"
+msgstr "⌠2030278⌡Fòòtér 4⌠2030278⌡"
+
+#: includes/template-tags.php:113
+#. Translators: %s = the author name.
+msgctxt "%s = author name"
+msgid "By %s"
+msgstr "⌠2030279⌡By %s⌠2030279⌡"
+
+#: partials/content-excerpt.php:25
+msgctxt "post"
+msgid "Featured"
+msgstr "⌠2030280⌡Féåtüréd⌠2030280⌡"
+
+#: searchform.php:13
+msgctxt "label"
+msgid "Search for:"
+msgstr "⌠2030281⌡Séårch fòr:⌠2030281⌡"
+
+#: searchform.php:15
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "⌠2030282⌡Séårch &hellip;⌠2030282⌡"
+
+#: searchform.php:17
+msgctxt "submit button"
+msgid "Submit"
+msgstr "⌠2030283⌡Sübmît⌠2030283⌡"
