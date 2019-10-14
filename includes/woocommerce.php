@@ -30,9 +30,9 @@ function setup() {
 
 	add_action( 'woocommerce_cart_is_empty', $n( 'empty_cart_message' ), 10 );
 
-	add_filter( 'woocommerce_show_page_title', $n( 'shop_page_title_visibility' ) );
+	add_filter( 'woocommerce_show_page_title', $n( 'page_title_visibility' ) );
 
-	add_action( 'woocommerce_archive_description', $n( 'woocommerce_shop_title' ) );
+	add_action( 'woocommerce_archive_description', $n( 'shop_title' ) );
 
 }
 
@@ -85,11 +85,11 @@ function empty_cart_message() {
 /**
  * Toggle the visibility of WooCommerce shop page titles
  *
- * @param  bool $show_title Whether or not to display the shop title.
+ * @param  bool $show_title Whether or not to display the WooCommerce page title.
  *
- * @return bool             True when shop page and page_titles theme mod is enabled, else false.
+ * @return bool False when shop page, else true.
  */
-function shop_page_title_visibility( $show_title ) {
+function page_title_visibility( $show_title ) {
 
 	return is_shop() ? false : $show_title;
 
@@ -100,7 +100,7 @@ function shop_page_title_visibility( $show_title ) {
  *
  * @return mixed Markup for the shop page title
  */
-function woocommerce_shop_title() {
+function shop_title() {
 
 	if ( ! is_shop() ) {
 
