@@ -19,6 +19,7 @@
 
 	& .site-navigation__toggle {
 		display: block;
+		right: calc(var(--theme-block-padding-x) - 1.75rem);
 	}
 
 	& .site-navigation {
@@ -62,8 +63,17 @@
 		}
 	}
 
+	& .site-search__toggle {
+		height: 100%;
+		left: calc(var(--theme-block-padding-x) - 2.25rem);
+		outline-offset: -4px;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		width: 5rem;
+	}
+
 	& .site-header .site-search {
-		left: 0;
 		left: calc(var(--theme-block-padding-x) - 0.3rem);
 		opacity: 0;
 		pointer-events: none;

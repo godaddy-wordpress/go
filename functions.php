@@ -60,3 +60,38 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+
+
+
+
+
+
+
+
+if ( ! function_exists( 'go_sorting_wrapper' ) ) {
+	/**
+	 * Sorting wrapper
+	 *
+	 * @return  void
+	 */
+	function go_sorting_wrapper() {
+		echo '<div class="go-sorting">';
+	}
+}
+
+if ( ! function_exists( 'go_sorting_wrapper_close' ) ) {
+	/**
+	 * Sorting wrapper close
+	 *
+	 * @return  void
+	 */
+	function go_sorting_wrapper_close() {
+		echo '</div>';
+	}
+}
+
+add_action( 'woocommerce_before_shop_loop', 'go_sorting_wrapper', 9 );
+add_action( 'woocommerce_after_shop_loop', 'go_sorting_wrapper', 9 );
+add_action( 'woocommerce_after_shop_loop', 'go_sorting_wrapper_close', 31 );
+add_action( 'woocommerce_before_shop_loop', 'go_sorting_wrapper_close', 31 );
