@@ -91,7 +91,7 @@ function empty_cart_message() {
  */
 function shop_page_title_visibility( $show_title ) {
 
-	return ! is_shop();
+	return is_shop() ? false : $show_title;
 
 }
 
@@ -119,7 +119,7 @@ function woocommerce_shop_title() {
 /**
  * Filter the WooCommerce shop page title attributes
  *
- * @param  array $atts Title attributes.
+ * @param array $atts Title attributes.
  *
  * @return array Title attributes array
  */
