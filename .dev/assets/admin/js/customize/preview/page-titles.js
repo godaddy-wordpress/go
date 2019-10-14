@@ -1,7 +1,7 @@
 export default () => {
 
 	wp.customize( 'page_titles', ( value ) => {
-		const selectors = '#content > .entry-header, body.page article .entry-header';
+		const selectors = '#content > .entry-header, body.page article .entry-header, body.woocommerce .entry-header';
 		value.bind( ( to ) => {
 			if ( to ) {
 				$( 'body' ).addClass( 'has-page-titles' );
