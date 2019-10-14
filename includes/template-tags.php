@@ -516,14 +516,10 @@ function page_title() {
 
 	$show_titles = get_theme_mod( 'page_titles', true );
 
-	if ( ! $show_titles && function_exists( 'is_shop' ) && is_shop() && ! is_customize_preview() ) {
-
-		return;
-
-	}
-
 	if (
-		! is_customize_preview() && ( is_front_page() || ( ! $show_titles && ! is_404() && ! is_search() && ! is_archive() ) )
+		! is_customize_preview() && ( is_front_page() ||
+		( ! $show_titles && ! is_404() && ! is_search() && ! is_archive() ) ||
+		( ! $show_titles && ( function_exists( 'is_shop' ) && is_shop() ) ) ) // WooCommerce shop.
 	) {
 
 		return;
