@@ -63,7 +63,6 @@ if ( post_password_required() ) {
 				<div class="nav-next"><?php next_comments_link( esc_html_e( 'Newer Comments &rarr;', 'go' ) ); ?></div>
 			</nav>
 			<?php endif; // check for comment navigation. ?>
-
 			<?php
 
 			/*
