@@ -10,6 +10,7 @@ temp
 # Project Files
 dist
 !.dev/assets/shared/js/frontend/vendor/
+*.mo
 
 # Editors
 *.esproj
