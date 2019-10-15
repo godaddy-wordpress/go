@@ -258,8 +258,7 @@ jobs:
             mkdir -p go
             mkdir -p /tmp/artifacts
             rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
-            PACKAGE_VERSION=$(jq -r ".version" < package.json)
-            zip -r /tmp/artifacts/go-v$PACKAGE_VERSION.zip ./go
+            zip -r /tmp/artifacts/go.zip ./go
       - deploy:
           name: Deploy a new release to GitHub
           command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} /tmp/artifacts
