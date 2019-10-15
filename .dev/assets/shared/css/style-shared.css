@@ -138,6 +138,10 @@
 	text-transform: var(--theme-site-nav--text-transform);
 }
 
+div[class*="wp-block"].mb-0 {
+	margin-bottom: 0 !important;
+}
+
 /*! Utility Classes */
 p {
 	margin: 0 0 1.25rem;

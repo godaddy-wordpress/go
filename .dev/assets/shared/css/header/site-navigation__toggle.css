@@ -44,3 +44,7 @@
 		width: var(--theme-site-nav-toggle--size);
 	}
 }
+
+body:not(.menu-is-open) .site-navigation__toggle-icon svg {
+	fill: hsl(var(--theme-site-nav--color));
+}

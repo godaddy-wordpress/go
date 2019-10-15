@@ -43,12 +43,10 @@
 }
 
 .woocommerce-store-notice.demo_store {
-	align-items: center;
 	background-color: hsl(var(--theme-color-primary));
 	bottom: 0;
 	color: hsl(var(--color-white));
 	font-size: 80%;
-	justify-content: center;
 	left: 0;
 	margin: 0;
 	padding: 0.75rem 1rem;
@@ -56,10 +54,6 @@
 	right: 0;
 	top: inherit;
 	z-index: 9998;
-
-	@media (--medium) {
-		display: flex !important;
-	}
 
 	& a {
 		color: hsl(var(--color-white));
