@@ -27,7 +27,7 @@
     }
   },
   "require": {
-    "php": ">=5.5",
+    "php": ">=5.6",
     "wpackagist-plugin/coblocks": "dev-trunk",
     "wpackagist-plugin/woocommerce": "dev-trunk",
     "oomphinc/composer-installers-extender": "^1.1",

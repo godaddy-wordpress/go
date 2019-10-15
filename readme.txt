@@ -4,7 +4,7 @@ Tags: one-column, custom-colors, custom-logo, custom-menu, editor-style, theme-o
 Requires at least: 5.0
 Tested up to: 5.2
 Requires PHP: 5.6.0
-Stable tag: 0.2.0
+Stable tag: 1.1.0
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -14,12 +14,11 @@ Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowerin
 
 **Features**
 
-* Gutenberg-First
 * Responsive Layout
-* Customize Colors
 * Multiple Design Styles
-* Header Variations
-* Footer Variations
+* Customize Colors
+* Customize Fonts
+* Multiple Design Styles
 * Social Links Menu
 * WooCommerce-Ready
 * Available in 29 Languages
@@ -63,6 +62,9 @@ License: CC0 1.0 Universal (CC0 1.0) (https://creativecommons.org/publicdomain/z
 Source: https://stocksnap.io/photo/RCFX768X06
 
 == Changelog ==
+
+= 1.1.1 =
+* Introduce additional design styles.
 
 = 1.1.0 =
 * Initial release.

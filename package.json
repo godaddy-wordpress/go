@@ -1,12 +1,12 @@
 {
   "name": "go",
-  "version": "0.2.0",
+  "version": "1.1.0",
   "description": "Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowering makers to build beautifully rich websites with WordPress.",
   "homepage": "https://github.com/godaddy-wordpress/go",
   "repository": {
     "type": "git",
     "url": "https://github.com/godaddy-wordpress/go",
-    "base": "godaddy/wp-go-theme"
+    "base": "godaddy-wordpress/go"
   },
   "author": {
     "name": "GoDaddy",
@@ -20,7 +20,7 @@
     "wordpress": ">= 5.0"
   },
   "badges": [
-    "[![CircleCI](https://circleci.com/gh/godaddy/wp-go-theme.svg?style=svg)](https://circleci.com/gh/godaddy/wp-go-theme)",
+    "[![CircleCI](https://circleci.com/gh/godaddy-wordpress/go.svg?style=svg)](https://circleci.com/gh/godaddy-wordpress/go)",
     "[![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/<%= pkg.repository.base %>/blob/master/license.txt)",
     "[![PHP <%= pkg.engines.php %>](https://img.shields.io/badge/php-<% print(encodeURI(pkg.engines.php)) %>-8892bf.svg)](https://secure.php.net/supported-versions.php)",
     "[![WordPress <%= pkg.engines.wordpress %>](https://img.shields.io/badge/wordpress-<% print(encodeURI(pkg.engines.wordpress)) %>-blue.svg)](https://wordpress.org/download/release-archive/)"
