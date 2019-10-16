@@ -1,0 +1,145 @@
+@keyframes iconLeft {
+
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	50% {
+		transform: translate3d(-2px, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes iconRight {
+
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	50% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.woocommerce {
+
+	&.single-product {
+
+		& .product-navigation-wrapper {
+			display: none;
+			font-size: 11px;
+			letter-spacing: 0.15em;
+			line-height: 1;
+			padding: 30px 0 50px;
+			text-transform: uppercase;
+			width: 100%;
+
+			@media (--medium) {
+				display: inline-block;
+			}
+
+			& @media (--medium) {
+				padding: 45px 0 30px;
+			}
+
+			& svg {
+				display: inline-block;
+				height: 1.25em;
+				position: relative;
+				top: -0.0015em;
+				vertical-align: middle;
+				width: 1.25em;
+			}
+
+			& .back-to-shop {
+				display: inline-block;
+
+				@media (--large) {
+					display: none;
+				}
+
+				&:hover svg {
+					animation: iconLeft 1s infinite;
+				}
+
+				& svg {
+					margin-right: 2px;
+					top: -1px;
+				}
+			}
+		}
+
+		& .post-navigation {
+			float: right;
+			text-align: right;
+
+			& div {
+				display: inline-block;
+			}
+
+			& svg {
+				top: -0.13em;
+				transition: transform 300ms;
+			}
+
+			& .nav-previous {
+				margin-right: 3px;
+
+				&:hover {
+
+					& svg {
+						animation: iconLeft 1s infinite;
+					}
+				}
+
+				& .nav-title-icon-wrapper svg {
+					margin-right: 5px;
+				}
+			}
+
+			& .nav-next {
+				margin-left: 5px;
+
+				&::before {
+					content: "\002F";
+					opacity: 0.25;
+					padding-left: 1px;
+					padding-right: 4px;
+
+					@media (--medium) {
+						padding-left: 5px;
+						padding-right: 10px;
+					}
+				}
+
+				&:hover svg {
+					animation: iconRight 1s infinite;
+				}
+
+				& .nav-title-icon-wrapper svg {
+					margin-left: 5px;
+				}
+			}
+		}
+
+		& .woocommerce-breadcrumb {
+			display: none;
+			float: left;
+
+			& .sep {
+				margin: 0 5px;
+			}
+
+			@media (--large) {
+				display: inline-block;
+			}
+		}
+	}
+}
