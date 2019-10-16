@@ -18,6 +18,13 @@
 	width: 4.5rem;
 }
 
+.woocommerce ul.products li.product .onsale {
+	left: 1em;
+	margin: 0;
+	right: auto;
+	top: 1em;
+}
+
 .single-product .product > .onsale {
 	@media (--large) {
 		height: 6rem;

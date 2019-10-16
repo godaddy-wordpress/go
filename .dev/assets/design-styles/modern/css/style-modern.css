@@ -59,7 +59,8 @@
 	top: 2px;
 }
 
-.woocommerce .product .onsale {
+.woocommerce .product .onsale,
+.woocommerce ul.products li.product .onsale {
 	border-radius: 0;
 	left: 0;
 	top: 0;

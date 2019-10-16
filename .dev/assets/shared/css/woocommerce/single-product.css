@@ -30,7 +30,7 @@
 	@media (--large) {
 		clear: none;
 		float: right;
-		padding: 4rem 0 var(--theme-block-padding-x) 0;
+		padding: 4rem 0 0 var(--theme-block-padding-x);
 		width: 40%;
 	}
 }
@@ -46,7 +46,8 @@
 
 /* Prices */
 .woocommerce div.product p.price,
-.woocommerce div.product span.price {
+.woocommerce div.product span.price,
+.woocommerce ul.products li.product .price ins {
 	color: hsl(var(--theme-color-text-secondary));
 }
 

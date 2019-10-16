@@ -1,0 +1,7 @@
+.wc-block-grid.alignwide li {
+	text-align: center;
+}
+
+h2 + .wc-block-grid {
+	margin-top: 3rem;
+}
