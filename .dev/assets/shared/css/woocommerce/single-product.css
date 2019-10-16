@@ -127,6 +127,17 @@
 					margin-left: 5px;
 				}
 			}
+
+			& .nav-links {
+
+				& .nav-next::before {
+					display: none;
+				}
+
+				& .nav-previous + .nav-next::before {
+					display: inline-block;
+				}
+			}
 		}
 
 		& .woocommerce-breadcrumb {
