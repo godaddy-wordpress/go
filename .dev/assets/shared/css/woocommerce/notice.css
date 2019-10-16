@@ -25,3 +25,7 @@
 		}
 	}
 }
+
+body.admin-bar .woocommerce-store-notice.demo_store {
+	top: initial;
+}
