@@ -162,10 +162,10 @@
 }
 
 .woocommerce .quantity .qty {
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 	max-height: 100%;
-	padding: 1rem;
-	width: 5rem;
+	padding: 0.5rem;
+	width: 4rem;
 }
 
 /* Comment form p spacing */

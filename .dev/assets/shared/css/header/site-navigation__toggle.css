@@ -16,8 +16,13 @@
 	right: 0;
 	top: 0;
 	user-select: none;
-	width: 5rem;
+	width: 6rem;
 	z-index: 9998;
+
+	@media (--medium) {
+		right: var(--theme-block-padding-x);
+		transform: translateX(33%);
+	}
 
 	@media (--large) {
 		display: none;
@@ -41,7 +46,6 @@
 
 	& svg {
 		height: var(--theme-site-nav-toggle--size);
-		width: var(--theme-site-nav-toggle--size);
 	}
 }
 
