@@ -46,47 +46,6 @@
 	}
 }
 
-/* .woocommerce ul.products,
-.woocommerce-page ul.products,
-.woocommerce-page ul.wc-block-grid__products {
-	display: block;
-
-	@media (--medium) {
-		align-content: space-between;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-
-		&::after {
-			content: "";
-			flex: 1 0 29%;
-			margin-left: 0;
-			margin-right: 0;
-			max-width: 100%;
-		}
-	}
-}
-
-.wc-block-grid.has-3-columns {
-
-	& ul.wc-block-grid__products,
-	& ul.products {
-
-		& li.wc-block-grid__product,
-		& li.product {
-			max-width: 100%;
-
-			@media (--medium) {
-				flex: 1 0 29%;
-				margin-left: 0;
-				margin-right: 0;
-				max-width: 29%;
-			}
-		}
-	}
-}
- */
-
 .woocommerce ul.products,
 .wc-block-grid__products {
 

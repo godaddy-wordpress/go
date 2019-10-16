@@ -5,3 +5,39 @@
 h2 + .wc-block-grid {
 	margin-top: 3rem;
 }
+
+.wc-block-grid {
+
+	& ul {
+		justify-content: space-between;
+		max-width: 100%;
+		width: 100%;
+	}
+
+	&.has-2-columns > ul > .wc-block-grid__product,
+	&.has-3-columns > ul > .wc-block-grid__product,
+	&.has-4-columns > ul > .wc-block-grid__product {
+		flex-basis: 50%;
+		margin: 0;
+		max-width: calc(100% / 2 - 1rem);
+
+		@media (--medium) {
+			max-width: calc(100% / 2 - 2rem);
+		}
+	}
+
+	&.has-3-columns > ul > .wc-block-grid__product,
+	&.has-4-columns > ul > .wc-block-grid__product {
+		@media (--large) {
+			flex-basis: 33.33%;
+			max-width: calc(100% / 3 - 2rem);
+		}
+	}
+
+	&.has-4-columns > ul > .wc-block-grid__product {
+		@media (--large) {
+			flex-basis: 25%;
+			max-width: calc(100% / 4 - 2rem);
+		}
+	}
+}
