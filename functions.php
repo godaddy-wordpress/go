@@ -66,8 +66,8 @@ endif;
 
 
 
-
-
+add_filter( 'woocommerce_product_description_heading', '__return_null' );
+add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
 
 if ( ! function_exists( 'go_sorting_wrapper' ) ) {
 	/**
