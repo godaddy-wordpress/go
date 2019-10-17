@@ -18,938 +18,939 @@ msgstr ""
 #: comments.php:32
 #. translators: %s: The post title.
 msgid "One thought on &ldquo;%s&rdquo;"
-msgstr ""
+msgstr "對「%s」的 1 項看法"
 
 #: comments.php:39
 #. translators: %1$s: The number of comments. %2$s: The post title.
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "對「%1$s」的 %2$s 項看法"
+msgstr[1] "%1$s 對於 &ldquo;%2$s&rdquo; 的看法"
 
 #: comments.php:61
 msgid "Comment navigation"
-msgstr ""
+msgstr "評論瀏覽"
 
 #: comments.php:62
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "&larr; 較舊的評論"
 
 #: comments.php:63
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "較新的評論 &rarr;"
 
 #: comments.php:75
 msgid "Comments are closed."
-msgstr ""
+msgstr "意見已關閉。"
 
 #: header.php:27
 msgid "Skip to content"
-msgstr ""
+msgstr "略過內容"
 
 #: includes/classes/class-tgm-plugin-activation.php:325
 msgid "Install Required Plugins"
-msgstr ""
+msgstr "安裝必要外掛程式"
 
 #: includes/classes/class-tgm-plugin-activation.php:326
 msgid "Install Plugins"
-msgstr ""
+msgstr "安裝外掛程式"
 
 #: includes/classes/class-tgm-plugin-activation.php:328
 #. translators: %s: plugin name.
 msgid "Installing Plugin: %s"
-msgstr ""
+msgstr "正在安裝外掛程式：%s"
 
 #: includes/classes/class-tgm-plugin-activation.php:330
 #. translators: %s: plugin name.
 msgid "Updating Plugin: %s"
-msgstr ""
+msgstr "正在更新外掛程式：%s"
 
 #: includes/classes/class-tgm-plugin-activation.php:331
 msgid "Something went wrong with the plugin API."
-msgstr ""
+msgstr "外掛程式 API 發生問題。"
 
 #: includes/classes/class-tgm-plugin-activation.php:368
 #. translators: 1: plugin name(s).
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "開始安裝外掛程式"
+msgstr[1] "開始安裝外掛程式"
 
 #: includes/classes/class-tgm-plugin-activation.php:373
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "開始更新外掛程式"
+msgstr[1] "開始更新外掛程式"
 
 #: includes/classes/class-tgm-plugin-activation.php:378
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "開始啟用外掛程式"
+msgstr[1] "開始啟用外掛程式"
 
 #: includes/classes/class-tgm-plugin-activation.php:383
 msgid "Return to Required Plugins Installer"
-msgstr ""
+msgstr "返回必要外掛程式安裝工具"
 
 #: includes/classes/class-tgm-plugin-activation.php:384
 #: includes/classes/class-tgm-plugin-activation.php:825
 #: includes/classes/class-tgm-plugin-activation.php:2531
 #: includes/classes/class-tgm-plugin-activation.php:3578
 msgid "Return to the Dashboard"
-msgstr ""
+msgstr "返回儀表板"
 
 #: includes/classes/class-tgm-plugin-activation.php:385
 #: includes/classes/class-tgm-plugin-activation.php:3157
 msgid "Plugin activated successfully."
-msgstr ""
+msgstr "外掛程式啟用成功。"
 
 #: includes/classes/class-tgm-plugin-activation.php:386
 #: includes/classes/class-tgm-plugin-activation.php:2950
 msgid "The following plugin was activated successfully:"
-msgstr ""
+msgstr "以下外掛程式啟用成功："
 
 #: includes/classes/class-tgm-plugin-activation.php:388
 #. translators: 1: plugin name.
 msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
+msgstr "系統未進行操作。外掛程式 %1$s 已是啟用狀態。"
 
 #: includes/classes/class-tgm-plugin-activation.php:390
 #. translators: 1: plugin name.
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
-msgstr ""
+msgstr "未啟用外掛程式。本主題需使用更新版本的 %s。請更新外掛程式。"
 
 #: includes/classes/class-tgm-plugin-activation.php:392
 #. translators: 1: dashboard link.
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
+msgstr "所有外掛程式皆已成功安裝並啟用。%1$s"
 
 #: includes/classes/class-tgm-plugin-activation.php:393
 msgid "Dismiss this notice"
-msgstr ""
+msgstr "關閉此通知"
 
 #: includes/classes/class-tgm-plugin-activation.php:394
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
-msgstr ""
+msgstr "您需要安裝、更新或啟用必要或推薦使用的外掛程式。"
 
 #: includes/classes/class-tgm-plugin-activation.php:395
 msgid "Please contact the administrator of this site for help."
-msgstr ""
+msgstr "請洽此網站的管理員尋求協助。"
 
 #: includes/classes/class-tgm-plugin-activation.php:520
 msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
+msgstr "您需要更新此外掛程式之後，才能和您的主題相容。"
 
 #: includes/classes/class-tgm-plugin-activation.php:521
 msgid "Update Required"
-msgstr ""
+msgstr "須更新"
 
 #: includes/classes/class-tgm-plugin-activation.php:932
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
-msgstr ""
+msgstr "遠端外掛程式套件內無具備需要之動態資料欄位的資料夾，重新命名也無效。"
 
 #: includes/classes/class-tgm-plugin-activation.php:932
 #: includes/classes/class-tgm-plugin-activation.php:935
 msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
-msgstr ""
+msgstr "請聯絡外掛程式的提供者，要求對方按照 WordPress 的指南封裝外掛程式。"
 
 #: includes/classes/class-tgm-plugin-activation.php:935
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
-msgstr ""
+msgstr "遠端外掛程式套件內有多個檔案，但是檔案並未封裝於同一個資料夾內。"
 
 #: includes/classes/class-tgm-plugin-activation.php:1980
 #. translators: %s: version number
 msgid "TGMPA v%s"
-msgstr ""
+msgstr "TGMPA v%s"
 
 #: includes/classes/class-tgm-plugin-activation.php:2271
 msgid "Required"
-msgstr ""
+msgstr "必填"
 
 #: includes/classes/class-tgm-plugin-activation.php:2274
 msgid "Recommended"
-msgstr ""
+msgstr "推薦"
 
 #: includes/classes/class-tgm-plugin-activation.php:2290
 msgid "WordPress Repository"
-msgstr ""
+msgstr "WordPress 儲存庫"
 
 #: includes/classes/class-tgm-plugin-activation.php:2293
 msgid "External Source"
-msgstr ""
+msgstr "外部來源"
 
 #: includes/classes/class-tgm-plugin-activation.php:2296
 msgid "Pre-Packaged"
-msgstr ""
+msgstr "預先包裝"
 
 #: includes/classes/class-tgm-plugin-activation.php:2313
 msgid "Not Installed"
-msgstr ""
+msgstr "未安裝"
 
 #: includes/classes/class-tgm-plugin-activation.php:2317
 msgid "Installed But Not Activated"
-msgstr ""
+msgstr "已安裝，但尚未啟用"
 
 #: includes/classes/class-tgm-plugin-activation.php:2319
 msgid "Active"
-msgstr ""
+msgstr "已啟用"
 
 #: includes/classes/class-tgm-plugin-activation.php:2325
 msgid "Required Update not Available"
-msgstr ""
+msgstr "無必要之更新"
 
 #: includes/classes/class-tgm-plugin-activation.php:2328
 msgid "Requires Update"
-msgstr ""
+msgstr "須更新"
 
 #: includes/classes/class-tgm-plugin-activation.php:2331
 msgid "Update recommended"
-msgstr ""
+msgstr "推薦更新"
 
 #: includes/classes/class-tgm-plugin-activation.php:2390
 #. translators: 1: number of plugins.
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "安裝 <span class=\"count\">(%s)</span>"
+msgstr[1] "安裝 <span class=\"count\">(%s)</span>"
 
 #: includes/classes/class-tgm-plugin-activation.php:2394
 #. translators: 1: number of plugins.
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "有可用更新 <span class=\"count\">(%s)</span>"
+msgstr[1] "有可用更新 <span class=\"count\">(%s)</span>"
 
 #: includes/classes/class-tgm-plugin-activation.php:2398
 #. translators: 1: number of plugins.
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "啟用 <span class=\"count\">(%s)</span>"
+msgstr[1] "啟用 <span class=\"count\">(%s)</span>"
 
 #: includes/classes/class-tgm-plugin-activation.php:2488
 msgid "Installed version:"
-msgstr ""
+msgstr "已安裝版本："
 
 #: includes/classes/class-tgm-plugin-activation.php:2496
 msgid "Minimum required version:"
-msgstr ""
+msgstr "最低需求版本："
 
 #: includes/classes/class-tgm-plugin-activation.php:2508
 msgid "Available version:"
-msgstr ""
+msgstr "可用版本："
 
 #: includes/classes/class-tgm-plugin-activation.php:2531
 msgid "No plugins to install, update or activate."
-msgstr ""
+msgstr "無可供安裝、更新或啟用的外掛程式。"
 
 #: includes/classes/class-tgm-plugin-activation.php:2545
 msgid "Plugin"
-msgstr ""
+msgstr "外掛程式"
 
 #: includes/classes/class-tgm-plugin-activation.php:2546
 msgid "Source"
-msgstr ""
+msgstr "來源"
 
 #: includes/classes/class-tgm-plugin-activation.php:2547
 msgid "Type"
-msgstr ""
+msgstr "類型"
 
 #: includes/classes/class-tgm-plugin-activation.php:2551
 msgid "Version"
-msgstr ""
+msgstr "版本"
 
 #: includes/classes/class-tgm-plugin-activation.php:2552
 msgid "Status"
-msgstr ""
+msgstr "狀態"
 
 #: includes/classes/class-tgm-plugin-activation.php:2601
 #. translators: %2$s: plugin name in screen reader markup
 msgid "Install %2$s"
-msgstr ""
+msgstr "安裝 %2$s"
 
 #: includes/classes/class-tgm-plugin-activation.php:2606
 #. translators: %2$s: plugin name in screen reader markup
 msgid "Update %2$s"
-msgstr ""
+msgstr "更新 %2$s"
 
 #: includes/classes/class-tgm-plugin-activation.php:2612
 #. translators: %2$s: plugin name in screen reader markup
 msgid "Activate %2$s"
-msgstr ""
+msgstr "啟用 %2$s"
 
 #: includes/classes/class-tgm-plugin-activation.php:2682
 msgid "Upgrade message from the plugin author:"
-msgstr ""
+msgstr "更新外掛程式作者訊息："
 
 #: includes/classes/class-tgm-plugin-activation.php:2715
 msgid "Install"
-msgstr ""
+msgstr "安裝"
 
 #: includes/classes/class-tgm-plugin-activation.php:2721
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 #: includes/classes/class-tgm-plugin-activation.php:2724
 msgid "Activate"
-msgstr ""
+msgstr "啟用"
 
 #: includes/classes/class-tgm-plugin-activation.php:2755
 msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
+msgstr "未選擇任何要安裝的外掛程式。系統未進行操作。"
 
 #: includes/classes/class-tgm-plugin-activation.php:2757
 msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
+msgstr "未選擇任何要更新的外掛程式。系統未進行操作。"
 
 #: includes/classes/class-tgm-plugin-activation.php:2798
 msgid "No plugins are available to be installed at this time."
-msgstr ""
+msgstr "目前尚無可供安裝的外掛程式。"
 
 #: includes/classes/class-tgm-plugin-activation.php:2800
 msgid "No plugins are available to be updated at this time."
-msgstr ""
+msgstr "目前尚無可供更新的外掛程式。"
 
 #: includes/classes/class-tgm-plugin-activation.php:2906
 msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
+msgstr "未選擇任何要啟用的外掛程式。系統未進行操作。"
 
 #: includes/classes/class-tgm-plugin-activation.php:2932
 msgid "No plugins are available to be activated at this time."
-msgstr ""
+msgstr "目前尚無可供啟用的外掛程式。"
 
 #: includes/classes/class-tgm-plugin-activation.php:3156
 msgid "Plugin activation failed."
-msgstr ""
+msgstr "外掛程式啟用失敗。"
 
 #: includes/classes/class-tgm-plugin-activation.php:3496
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "正在更新外掛程式 %1$s (%2$d/%3$d)"
 
 #: includes/classes/class-tgm-plugin-activation.php:3499
 #. translators: 1: plugin name, 2: error message.
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
+msgstr "安裝 %1$s 時發生錯誤：<strong>%2$s</strong>"
 
 #: includes/classes/class-tgm-plugin-activation.php:3501
 #. translators: 1: plugin name.
 msgid "The installation of %1$s failed."
-msgstr ""
+msgstr "%1$s 安裝失敗。"
 
 #: includes/classes/class-tgm-plugin-activation.php:3505
 msgid ""
 "The installation and activation process is starting. This process may take "
 "a while on some hosts, so please be patient."
-msgstr ""
+msgstr "正在啟動安裝及啟用程序。這項程序可能需要花一點時間在多個主機上進行，請您耐心等候。"
 
 #: includes/classes/class-tgm-plugin-activation.php:3507
 #. translators: 1: plugin name.
 msgid "%1$s installed and activated successfully."
-msgstr ""
+msgstr "%1$s 已成功安裝並啟用。"
 
 #: includes/classes/class-tgm-plugin-activation.php:3507
 #: includes/classes/class-tgm-plugin-activation.php:3515
 msgid "Show Details"
-msgstr ""
+msgstr "顯示詳細資訊"
 
 #: includes/classes/class-tgm-plugin-activation.php:3507
 #: includes/classes/class-tgm-plugin-activation.php:3515
 msgid "Hide Details"
-msgstr ""
+msgstr "隱藏詳細資訊"
 
 #: includes/classes/class-tgm-plugin-activation.php:3508
 msgid "All installations and activations have been completed."
-msgstr ""
+msgstr "所有安裝及啟用工作皆已處理完畢。"
 
 #: includes/classes/class-tgm-plugin-activation.php:3510
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "正在安裝及啟用外掛程式 %1$s (%2$d/%3$d)"
 
 #: includes/classes/class-tgm-plugin-activation.php:3513
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
-msgstr ""
+msgstr "正在啟動安裝程序。這項程序可能需要花一點時間在多個主機上進行，請您耐心等候。"
 
 #: includes/classes/class-tgm-plugin-activation.php:3515
 #. translators: 1: plugin name.
 msgid "%1$s installed successfully."
-msgstr ""
+msgstr "%1$s 安裝成功。"
 
 #: includes/classes/class-tgm-plugin-activation.php:3516
 msgid "All installations have been completed."
-msgstr ""
+msgstr "所有安裝工作皆已處理完畢。"
 
 #: includes/classes/class-tgm-plugin-activation.php:3518
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "正在安裝外掛程式 %1$s (%2$d/%3$d)"
 
 #: includes/core.php:83 includes/customizer.php:426
 msgid "Primary"
-msgstr ""
+msgstr "主要"
 
 #: includes/core.php:84
 msgid "Footer Menu #1"
-msgstr ""
+msgstr "頁尾選單 #1"
 
 #: includes/core.php:85
 msgid "Footer Menu #2"
-msgstr ""
+msgstr "頁尾選單 #2"
 
 #: includes/core.php:86
 msgid "Footer Menu #3"
-msgstr ""
+msgstr "頁尾選單 #3"
 
 #: includes/core.php:328
 msgid "Expand search field"
-msgstr ""
+msgstr "展開搜尋欄位"
 
 #: includes/core.php:1036
 #. translators: the theme author
 msgid "WordPress Theme by %s"
-msgstr ""
+msgstr "WordPress 主題作者：%s"
 
 #: includes/core.php:1048
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: includes/core.php:1053
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: includes/core.php:1058
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #: includes/core.php:1063
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: includes/core.php:1068
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: includes/core.php:1200
 msgid "That page can't be found"
-msgstr ""
+msgstr "系統找不到該頁面"
 
 #: includes/core.php:1214
 #. translators: Search query term(s).
 msgid "Search for: %s"
-msgstr ""
+msgstr "搜尋：%s"
 
 #: includes/core.php:1222
 msgid "Nothing Found"
-msgstr ""
+msgstr "找不到項目"
 
 #: includes/customizer.php:97
 #. translators: %s is the registered nav menu name
 msgid "Please assign a menu to the %s menu location"
-msgstr ""
+msgstr "請為 %s 選單位置指定選單"
 
 #: includes/customizer.php:257
 msgid "Width"
-msgstr ""
+msgstr "寬度"
 
 #: includes/customizer.php:286
 msgid "Mobile Width"
-msgstr ""
+msgstr "行動版寬度"
 
 #: includes/customizer.php:312
 msgid "Site Settings"
-msgstr ""
+msgstr "網站設定"
 
 #: includes/customizer.php:329
 msgid "Page Titles"
-msgstr ""
+msgstr "頁面標題"
 
 #: includes/customizer.php:330
 msgid "Display page titles on individual pages."
-msgstr ""
+msgstr "在個別頁面顯示頁面標題。"
 
 #: includes/customizer.php:349
 msgid "Copyright Text"
-msgstr ""
+msgstr "著作權文字"
 
 #: includes/customizer.php:378
 msgid "Design Style"
-msgstr ""
+msgstr "設計風格"
 
 #: includes/customizer.php:379
 msgid ""
 "Choose a style, select a color scheme and customize colors to personalize "
 "your site."
-msgstr ""
+msgstr "選擇樣式、色彩配置，並自訂色彩，讓您的網站充滿個人風格。"
 
 #: includes/customizer.php:402
 msgid "Color Scheme"
-msgstr ""
+msgstr "色彩配置"
 
 #: includes/customizer.php:448
 msgid "Secondary"
-msgstr ""
+msgstr "次要"
 
 #: includes/customizer.php:470
 msgid "Tertiary"
-msgstr ""
+msgstr "第三級"
 
 #: includes/customizer.php:491 includes/customizer.php:510
 msgid "Header"
-msgstr ""
+msgstr "標題"
 
 #: includes/customizer.php:511
 msgid ""
 "Choose a header for every page on your site, then style it with the "
 "selectors below."
-msgstr ""
+msgstr "為網站的所有頁面挑選標頭，再用下方的選取工具調整樣式。"
 
 #: includes/customizer.php:533 includes/customizer.php:615
 msgid "Background Color"
-msgstr ""
+msgstr "背景色彩"
 
 #: includes/customizer.php:553 includes/customizer.php:655
 msgid "Text Color"
-msgstr ""
+msgstr "文字色彩"
 
 #: includes/customizer.php:573 includes/customizer.php:592
 msgid "Footer"
-msgstr ""
+msgstr "頁尾"
 
 #: includes/customizer.php:593
 msgid ""
 "Choose a footer for every page on your site, then style it with the "
 "selectors below."
-msgstr ""
+msgstr "為網站的所有頁面挑選頁尾，再用下方的選取工具調整樣式。"
 
 #: includes/customizer.php:635
 msgid "Heading Color"
-msgstr ""
+msgstr "標題色彩"
 
 #: includes/customizer.php:675
 msgid "Social"
-msgstr ""
+msgstr "社交"
 
 #: includes/customizer.php:719
 msgid "Icon Color"
-msgstr ""
+msgstr "圖示色彩"
 
 #: includes/pluggable.php:28
 msgid "Pingback:"
-msgstr ""
+msgstr "通告"
 
 #: includes/pluggable.php:28
 msgid "(Edit)"
-msgstr ""
+msgstr "(編輯)"
 
 #: includes/pluggable.php:44 includes/template-tags.php:107
 msgid "Post author"
-msgstr ""
+msgstr "貼文作者"
 
 #: includes/pluggable.php:51
 #. translators: 1: date, 2: time
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s請撥打%2$s"
 
 #: includes/pluggable.php:57
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "您的意見正等待審核。"
 
 #: includes/pluggable.php:62
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: includes/pluggable.php:71
 msgid "Reply"
-msgstr ""
+msgstr "回覆"
 
 #: includes/template-tags.php:129
 msgid "Post date"
-msgstr ""
+msgstr "貼文日期"
 
 #: includes/template-tags.php:164
 msgid "Categories"
-msgstr ""
+msgstr "類別"
 
 #: includes/template-tags.php:168
 msgid "In"
-msgstr ""
+msgstr "於"
 
 #: includes/template-tags.php:182
 msgid "Tags"
-msgstr ""
+msgstr "標籤"
 
 #: includes/template-tags.php:220
 msgid "Featured"
-msgstr ""
+msgstr "特色"
 
 #: includes/template-tags.php:736
 msgid "Menu"
-msgstr ""
+msgstr "功能表"
 
 #: includes/template-tags.php:782
 msgid "Search Toggle"
-msgstr ""
+msgstr "搜尋開關"
 
 #: includes/woocommerce.php:76
 msgid "Your cart is currently empty."
-msgstr ""
+msgstr "您的購物車目前是空的。"
 
 #: partials/content-none.php:21
 #. translators: 1: link to WP admin new post page.
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "準備好發佈第一則貼文嗎？ <a href=\"%1$s\">立即開始</a>。"
 
 #: partials/content-none.php:33
 msgid ""
 "Sorry, but nothing matched your search terms. Please try searching again "
 "with some different keywords."
-msgstr ""
+msgstr "抱歉，沒有與您的搜尋相符的項目。請用其他關鍵字再搜尋一次。"
 
 #: partials/content-none.php:38
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help you out."
-msgstr ""
+msgstr "我們找不到您要尋找的項目。請試試搜尋功能。"
 
 #: partials/content.php:44
 msgid "Page"
-msgstr ""
+msgstr "網頁"
 
 #: partials/content.php:44
 msgid "Pages:"
-msgstr ""
+msgstr "網頁："
 
 #: partials/footers/footer-1.php:18 partials/footers/footer-2.php:16
 msgid "Footer Menu"
-msgstr ""
+msgstr "結尾功能表"
 
 #: partials/footers/footer-3.php:21 partials/footers/footer-4.php:21
 msgid "Primary Footer Menu"
-msgstr ""
+msgstr "主要頁尾選單"
 
 #: partials/footers/footer-3.php:36 partials/footers/footer-4.php:37
 msgid "Secondary Footer Menu"
-msgstr ""
+msgstr "次要頁尾選單"
 
 #: partials/footers/footer-3.php:51 partials/footers/footer-4.php:53
 msgid "Tertiary Footer Menu"
-msgstr ""
+msgstr "第三級頁尾選單"
 
 #: partials/pagination.php:21
 msgid "Newer <span class=\"nav-short\">Posts</span>"
-msgstr ""
+msgstr "較新的<span class=\"nav-short\">貼文</span>"
 
 #: partials/pagination.php:25
 msgid "Older <span class=\"nav-short\">Posts</span>"
-msgstr ""
+msgstr "較舊的<span class=\"nav-short\">貼文</span>"
 
 #. Theme Name of the plugin/theme
 msgid "Go"
-msgstr ""
+msgstr "進行"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/godaddy-wordpress/go"
-msgstr ""
+msgstr "https://github.com/godaddy-wordpress/go"
 
 #. Description of the plugin/theme
 msgid ""
 "Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on "
 "empowering makers to build beautifully rich websites with WordPress."
 msgstr ""
+"Go 是創新且以 Gutenberg 為優先的 WordPress 主題，專門為了讓製作者可以用 WordPress 建立美觀、豐富的網站而設計。"
 
 #. Author of the plugin/theme
 msgid "GoDaddy"
-msgstr ""
+msgstr "GoDaddy"
 
 #. Author URI of the plugin/theme
 msgid "https://www.godaddy.com"
-msgstr ""
+msgstr "https://www.godaddy.com"
 
 #: includes/classes/class-tgm-plugin-activation.php:1119
 #: includes/classes/class-tgm-plugin-activation.php:2946
 msgctxt "plugin A *and* plugin B"
 msgid "and"
-msgstr ""
+msgstr "及"
 
 #: includes/classes/class-tgm-plugin-activation.php:2340
 #. translators: 1: install status, 2: update status
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
-msgstr ""
+msgstr "%1$s，%2$s"
 
 #: includes/classes/class-tgm-plugin-activation.php:2386
 #. translators: 1: number of plugins.
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "全部 <span class=\"count\">(%s)</span>"
+msgstr[1] "全部 <span class=\"count\">(%s)</span>"
 
 #: includes/classes/class-tgm-plugin-activation.php:2480
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
-msgstr ""
+msgstr "未知"
 
 #: includes/core.php:151
 msgctxt "font size option label"
 msgid "Small"
-msgstr ""
+msgstr "小"
 
 #: includes/core.php:157
 msgctxt "font size option label"
 msgid "Medium"
-msgstr ""
+msgstr "中"
 
 #: includes/core.php:163
 msgctxt "font size option label"
 msgid "Large"
-msgstr ""
+msgstr "大"
 
 #: includes/core.php:169
 msgctxt "font size option label"
 msgid "Huge"
-msgstr ""
+msgstr "大型"
 
 #: includes/core.php:152
 msgctxt "abbreviation of the font size option label"
 msgid "S"
-msgstr ""
+msgstr "秒"
 
 #: includes/core.php:158
 msgctxt "abbreviation of the font size option label"
 msgid "M"
-msgstr ""
+msgstr "公尺 (m)"
 
 #: includes/core.php:164
 msgctxt "abbreviation of the font size option label"
 msgid "L"
-msgstr ""
+msgstr "大"
 
 #: includes/core.php:170
 msgctxt "abbreviation of the font size option label"
 msgid "XL"
-msgstr ""
+msgstr "特大"
 
 #: includes/core.php:182
 msgctxt "name of the first color palette selection"
 msgid "Primary"
-msgstr ""
+msgstr "主要"
 
 #: includes/core.php:187
 msgctxt "name of the second color palette selection"
 msgid "Secondary"
-msgstr ""
+msgstr "次要"
 
 #: includes/core.php:192
 msgctxt "name of the third color palette selection"
 msgid "Tertiary"
-msgstr ""
+msgstr "第三級"
 
 #: includes/core.php:197
 msgctxt "name of the fourth color palette selection"
 msgid "Quaternary"
-msgstr ""
+msgstr "第四級"
 
 #: includes/core.php:561
 msgctxt "design style name"
 msgid "Traditional"
-msgstr ""
+msgstr "傳統"
 
 #: includes/core.php:610
 msgctxt "design style name"
 msgid "Modern"
-msgstr ""
+msgstr "新型"
 
 #: includes/core.php:660
 msgctxt "design style name"
 msgid "Trendy"
-msgstr ""
+msgstr "流行內容"
 
 #: includes/core.php:715
 msgctxt "design style name"
 msgid "Welcoming"
-msgstr ""
+msgstr "歡迎"
 
 #: includes/core.php:766
 msgctxt "design style name"
 msgid "Playful"
-msgstr ""
+msgstr "好玩的"
 
 #: includes/core.php:566
 msgctxt "color palette name"
 msgid "Apricot"
-msgstr ""
+msgstr "杏桃"
 
 #: includes/core.php:573
 msgctxt "color palette name"
 msgid "Emerald"
-msgstr ""
+msgstr "祖母綠"
 
 #: includes/core.php:580
 msgctxt "color palette name"
 msgid "Brick"
-msgstr ""
+msgstr "磚頭"
 
 #: includes/core.php:587
 msgctxt "color palette name"
 msgid "Bronze"
-msgstr ""
+msgstr "銅牌"
 
 #: includes/core.php:615
 msgctxt "color palette name"
 msgid "Shade"
-msgstr ""
+msgstr "陰影"
 
 #: includes/core.php:622
 msgctxt "color palette name"
 msgid "Blush"
-msgstr ""
+msgstr "筆刷"
 
 #: includes/core.php:629
 msgctxt "color palette name"
 msgid "Indigo"
-msgstr ""
+msgstr "靛青"
 
 #: includes/core.php:636
 msgctxt "color palette name"
 msgid "Pacific"
-msgstr ""
+msgstr "太平洋"
 
 #: includes/core.php:665
 msgctxt "color palette name"
 msgid "Plum"
-msgstr ""
+msgstr "梅紅"
 
 #: includes/core.php:674
 msgctxt "color palette name"
 msgid "Steel"
-msgstr ""
+msgstr "鋼鐵"
 
 #: includes/core.php:682
 msgctxt "color palette name"
 msgid "Avocado"
-msgstr ""
+msgstr "酪梨"
 
 #: includes/core.php:690
 msgctxt "color palette name"
 msgid "Champagne"
-msgstr ""
+msgstr "香檳"
 
 #: includes/core.php:720
 msgctxt "color palette name"
 msgid "Forest"
-msgstr ""
+msgstr "森林"
 
 #: includes/core.php:728
 msgctxt "color palette name"
 msgid "Spruce"
-msgstr ""
+msgstr "杉木"
 
 #: includes/core.php:737
 msgctxt "color palette name"
 msgid "Mocha"
-msgstr ""
+msgstr "抹茶"
 
 #: includes/core.php:745
 msgctxt "color palette name"
 msgid "Lavender"
-msgstr ""
+msgstr "淡紫"
 
 #: includes/core.php:771
 msgctxt "color palette name"
 msgid "Frolic"
-msgstr ""
+msgstr "歡樂"
 
 #: includes/core.php:780
 msgctxt "color palette name"
 msgid "Coral"
-msgstr ""
+msgstr "珊瑚紅"
 
 #: includes/core.php:789
 msgctxt "color palette name"
 msgid "Organic"
-msgstr ""
+msgstr "有機"
 
 #: includes/core.php:798
 msgctxt "color palette name"
 msgid "Berry"
-msgstr ""
+msgstr "莓果"
 
 #: includes/core.php:875
 msgctxt "name of the first header variation option"
 msgid "Header 1"
-msgstr ""
+msgstr "標頭 1"
 
 #: includes/core.php:882
 msgctxt "name of the second header variation option"
 msgid "Header 2"
-msgstr ""
+msgstr "標頭 2"
 
 #: includes/core.php:889
 msgctxt "name of the third header variation option"
 msgid "Header 3"
-msgstr ""
+msgstr "標頭 3"
 
 #: includes/core.php:896
 msgctxt "name of the fourth header variation option"
 msgid "Header 4"
-msgstr ""
+msgstr "標頭 4"
 
 #: includes/core.php:944
 msgctxt "name of the first footer variation option"
 msgid "Footer 1"
-msgstr ""
+msgstr "結尾 1"
 
 #: includes/core.php:951
 msgctxt "name of the second footer variation option"
 msgid "Footer 2"
-msgstr ""
+msgstr "結尾 2"
 
 #: includes/core.php:958
 msgctxt "name of the third footer variation option"
 msgid "Footer 3"
-msgstr ""
+msgstr "結尾 3"
 
 #: includes/core.php:965
 msgctxt "name of the fourth footer variation option"
 msgid "Footer 4"
-msgstr ""
+msgstr "頁尾 4"
 
 #: includes/template-tags.php:113
 #. Translators: %s = the author name.
 msgctxt "%s = author name"
 msgid "By %s"
-msgstr ""
+msgstr "作者：%s"
 
 #: partials/content-excerpt.php:25
 msgctxt "post"
 msgid "Featured"
-msgstr ""
+msgstr "特色"
 
 #: searchform.php:13
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "搜尋："
 
 #: searchform.php:15
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "搜尋&hellip;"
 
 #: searchform.php:17
 msgctxt "submit button"
 msgid "Submit"
-msgstr ""
+msgstr "提交"
