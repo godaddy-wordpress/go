@@ -1203,7 +1203,11 @@ function filter_page_titles( $args ) {
 
 	if ( is_archive() ) {
 
-		$args['title'] = get_the_archive_title();
+		$args['custom'] = true;
+		$args['title']  = sprintf(
+			'<h1 class="post__title m-0 text-center">%s</h1>',
+			get_the_archive_title()
+		);
 
 	}
 
