@@ -27,7 +27,7 @@
 			}
 
 			&:first-child a {
-				@media (--medium) {
+				@media (--large) {
 					margin-left: calc(-1 * var(--theme-footer-nav--padding-x));
 				}
 			}
@@ -52,11 +52,7 @@
 	}
 
 	& .social-icons {
-		margin-top: 1.5rem;
-
-		@media (--medium) {
-			margin-top: 1.25rem;
-		}
+		margin-top: 2rem;
 
 		@media (--large) {
 			margin-top: 0;
@@ -77,11 +73,11 @@
 
 	& .site-info {
 		flex: 1 65%;
-		margin-bottom: calc(var(--theme-footer-nav--padding-y) * 0.85);
-		margin-top: 1.85rem;
+		margin-top: 2rem;
 		text-align: center;
 
 		@media (--large) {
+			margin-bottom: calc(var(--theme-footer-nav--padding-y) * 0.85);
 			margin-top: 0.75rem;
 			text-align: left;
 		}

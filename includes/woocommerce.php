@@ -32,6 +32,18 @@ function setup() {
 
 	add_action( 'woocommerce_before_single_product', $n( 'single_product_header' ), 5 );
 
+	add_action( 'woocommerce_before_shop_loop', $n( 'sorting_wrapper' ), 9 );
+
+	add_action( 'woocommerce_after_shop_loop', $n( 'sorting_wrapper' ), 9 );
+
+	add_action( 'woocommerce_after_shop_loop', $n( 'sorting_wrapper_close' ), 31 );
+
+	add_action( 'woocommerce_before_shop_loop', $n( 'sorting_wrapper_close' ), 31 );
+
+	add_filter( 'woocommerce_product_description_heading', '__return_null' );
+
+	add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
+
 	add_filter( 'woocommerce_breadcrumb_home_url', $n( 'breadcrumb_home_url' ) );
 
 }
@@ -174,5 +186,27 @@ function single_product_back_to_shop() {
 function breadcrumb_home_url() {
 
 	return get_permalink( wc_get_page_id( 'shop' ) );
+
+}
+
+/**
+ * Sorting wrapper
+ *
+ * @return  void
+ */
+function sorting_wrapper() {
+
+	echo '<div class="go-sorting">';
+
+}
+
+/**
+ * Sorting wrapper close
+ *
+ * @return  void
+ */
+function sorting_wrapper_close() {
+
+	echo '</div>';
 
 }

@@ -143,7 +143,6 @@
 	& .components-base-control__field {
 		align-content: center;
 		align-items: center;
-		display: flex;
 	}
 
 	& .components-form-toggle {

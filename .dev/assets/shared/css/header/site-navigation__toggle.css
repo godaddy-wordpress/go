@@ -3,15 +3,26 @@
 	background-color: transparent;
 	border: none;
 	border-radius: 0;
+	bottom: 0;
 	box-shadow: none;
 	cursor: pointer;
+	display: flex;
 	height: 100%;
+	justify-content: center;
 	line-height: 1;
-	margin-right: -0.5rem;
-	padding: 0.5rem 0.5rem 0;
-	position: relative;
+	outline-offset: -4px;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
 	user-select: none;
+	width: 6rem;
 	z-index: 9998;
+
+	@media (--medium) {
+		right: var(--theme-block-padding-x);
+		transform: translateX(33%);
+	}
 
 	@media (--large) {
 		display: none;
@@ -24,77 +35,32 @@
 		border: none;
 		box-shadow: none;
 	}
-
-	/* &:hover {
-
-		& .site-navigation__toggle-icon-inner,
-		& .site-navigation__toggle-icon-inner::before,
-		& .site-navigation__toggle-icon-inner::after {
-			background-color: initial;
-		}
-	} */
 }
 
 .site-navigation__toggle-icon {
-	display: inline-block;
-	height: var(--theme-site-nav-toggle--size);
-	position: relative;
-	top: 1px;
-	width: var(--theme-site-nav-toggle--size);
-}
-
-.site-navigation__toggle-icon-inner {
-	background-color: hsla(var(--theme-site-nav-toggle--color), 1);
-	height: 2px;
-	margin-top: -5px;
-	opacity: 1;
-	position: absolute;
-	right: 0;
-	top: 50%;
-	transition: all 0.1s ease-in-out;
+	align-items: center;
+	display: flex;
+	height: 100%;
+	justify-content: center;
 	width: 100%;
 
-	&::before {
-		background-color: hsla(var(--theme-site-nav-toggle--color), 1);
-		content: "";
-		display: block;
-		height: 2px;
-		position: absolute;
-		top: var(--theme-site-nav-toggle--spacing, 14px);
-		transition: all 0.2s ease-in-out;
-		width: 100%;
+	& svg {
+		height: var(--theme-site-nav-toggle--size);
 	}
+}
 
-	&::after {
-		background: hsla(var(--theme-site-nav-toggle--color), 1);
-		bottom: var(--theme-site-nav-toggle--spacing, 14px);
-		content: "";
-		display: block;
-		height: 2px;
-		position: absolute;
-		transition: all 0.1s ease-in-out;
-		width: 100%;
-	}
+.site-navigation__toggle-icon--close {
+	display: none;
+}
 
-	/* Alter appearance when menu is opened */
-	@nest .menu-is-open & {
-		background-color: transparent !important;
+body.menu-is-open .site-navigation__toggle-icon--close {
+	display: flex;
+}
 
-		&::after,
-		&::before {
-			transition: all 0.1s ease-in-out;
-		}
+body.menu-is-open .site-navigation__toggle-icon:not(.site-navigation__toggle-icon--close) {
+	display: none;
+}
 
-		&::before {
-			top: 0;
-			transform: rotate(45deg);
-			transition: all 0.1s ease-in-out;
-		}
-
-		&::after {
-			bottom: 0;
-			transform: rotate(-45deg);
-			transition: all 0.1s ease-in-out;
-		}
-	}
+body:not(.menu-is-open) .site-navigation__toggle-icon svg {
+	fill: hsl(var(--theme-site-nav--color));
 }

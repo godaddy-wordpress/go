@@ -1,5 +1,6 @@
 @custom-media --small (min-width: 600px);
 @custom-media --medium (min-width: 40em);
+@custom-media --mediumMax (max-width: 67em);
 @custom-media --large (min-width: 68em);
 @custom-media --xlarge (min-width: 88em);
 @custom-media --admin-bar-sm (max-width: 600px);

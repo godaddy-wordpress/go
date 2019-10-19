@@ -148,6 +148,11 @@
 	}
 }
 
+.single-product div.product form.cart div.quantity {
+	float: none;
+	margin: 0 0 0 0;
+}
+
 .woocommerce div.product form.cart .button {
 	margin-bottom: 0;
 }
@@ -157,11 +162,10 @@
 }
 
 .woocommerce .quantity .qty {
-	height: 100%;
-	line-height: 1.25;
+	margin-bottom: 1.5rem;
 	max-height: 100%;
-	padding: calc(0.6 * var(--theme-button--padding-y) - 1px);
-	width: 4.5em;
+	padding: 0.5rem;
+	width: 4rem;
 }
 
 /* Comment form p spacing */

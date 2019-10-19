@@ -56,7 +56,7 @@ body.has-header-background .content-area > *:first-child.wp-block-group.has-back
 	padding-top: calc(var(--editor-padding) / 4);
 }
 
-.wp-block-group.has-background.alignfull + .alignfull {
+.wp-block-group.has-background.alignfull + .alignfull:not(.wp-block-gallery) {
 	margin-top: 0 !important;
 }
 

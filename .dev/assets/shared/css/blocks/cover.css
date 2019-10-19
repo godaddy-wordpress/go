@@ -43,4 +43,13 @@
 			padding-top: var(--editor-padding);
 		}
 	}
+
+	& .wp-block-verse {
+		white-space: normal;
+	}
+
+	& ul,
+	& ol {
+		padding-left: 0;
+	}
 }

@@ -9,12 +9,12 @@
 }
 
 .woocommerce div.product .woocommerce-tabs .panel {
-	background-color: hsl(var(--color-white));
-	padding: 2rem;
+	margin-bottom: 0;
+	padding: 2rem 0 0;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li {
-	background-color: hsl(var(--color-white));
+	background-color: transparent;
 	border: none;
 	display: block;
 	margin: 0 2rem 1rem 0;
@@ -44,5 +44,5 @@
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
-	border-bottom: 2px solid hsl(var(--color-shark));
+	border-bottom: 2px solid currentColor;
 }
