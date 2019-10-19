@@ -127,10 +127,6 @@
 
 .single-product .content-area--woocommerce {
 	margin-bottom: var(--vertical-rhythm--lrg);
-
-	@media (--large) {
-		margin-top: var(--vertical-rhythm);
-	}
 }
 
 /* Override core WooCommerce for an improved layout. */
