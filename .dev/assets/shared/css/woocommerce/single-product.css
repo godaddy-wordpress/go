@@ -1,9 +1,120 @@
+.woocommerce {
+
+	&.single-product {
+
+		& .product-navigation-wrapper {
+			display: none;
+			font-size: var(--theme-text-sm);
+			line-height: 1;
+			padding: 2rem 0 2.75rem;
+			width: 100%;
+
+			@media (--medium) {
+				display: inline-block;
+			}
+
+			& svg {
+				display: inline-block;
+				height: 1.5rem;
+				position: relative;
+				top: -0.0015em;
+				vertical-align: middle;
+				width: 1.5rem;
+			}
+
+			& .back-to-shop {
+				display: inline-block;
+				text-decoration: none;
+
+				@media (--large) {
+					display: none;
+				}
+
+				& svg {
+					margin-right: 2px;
+					top: -1px;
+				}
+			}
+		}
+
+		& .post-navigation {
+			float: right;
+			text-align: right;
+
+			& div {
+				display: inline-block;
+			}
+
+			& svg {
+				top: -0.13em;
+				transition: transform 300ms;
+			}
+
+			& .nav-previous {
+				margin-right: 3px;
+
+				& .nav-title-icon-wrapper svg {
+					margin-right: 5px;
+				}
+			}
+
+			& .nav-next {
+				margin-left: 5px;
+
+				&::before {
+					content: "\002F";
+					opacity: 0.25;
+					padding-left: 1px;
+					padding-right: 4px;
+
+					@media (--medium) {
+						padding-left: 5px;
+						padding-right: 10px;
+					}
+				}
+
+				& .nav-title-icon-wrapper svg {
+					margin-left: 5px;
+				}
+			}
+
+			& .nav-links {
+
+				& .nav-next::before {
+					display: none;
+				}
+
+				& .nav-previous + .nav-next::before {
+					display: inline-block;
+				}
+			}
+		}
+
+		& .woocommerce-breadcrumb {
+			display: none;
+			float: left;
+
+			& .sep {
+				margin: 0 5px;
+			}
+
+			@media (--large) {
+				display: inline-block;
+			}
+
+			& a {
+				color: hsl(var(--theme-color-text-secondary));
+
+				&:hover {
+					color: hsl(var(--theme-color-heading));
+				}
+			}
+		}
+	}
+}
+
 .single-product .content-area--woocommerce {
 	margin-bottom: var(--vertical-rhythm--lrg);
-
-	@media (--large) {
-		margin-top: var(--vertical-rhythm);
-	}
 }
 
 /* Override core WooCommerce for an improved layout. */
@@ -57,7 +168,12 @@
 
 /* Details under the single post "Add to Cart" button */
 .product_meta {
+	color: hsl(var(--theme-color-text-secondary));
 	margin-top: 2.5rem;
+
+	& a {
+		color: hsl(var(--theme-color-text-secondary));
+	}
 
 	& > span {
 		display: block;
