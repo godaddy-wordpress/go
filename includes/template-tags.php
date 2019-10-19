@@ -600,6 +600,26 @@ function page_title() {
 }
 
 /**
+ * Output the content wrapper class
+ *
+ * @param string $class Class names.
+ */
+function content_wrapper_class( $class = '' ) {
+
+	if (
+		( function_exists( 'is_cart' ) && is_cart() ) ||
+		( function_exists( 'is_checkout' ) && is_checkout() )
+	) {
+
+		$class .= ' max-w-wide w-full m-auto px';
+
+	}
+
+	echo esc_attr( $class );
+
+}
+
+/**
  * Returns whether there are social icons set or not.
  *
  * @param array $social_icons the array of social icons.

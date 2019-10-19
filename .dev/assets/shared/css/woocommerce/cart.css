@@ -52,3 +52,11 @@ body {
 		}
 	}
 }
+
+.woocommerce table.shop_table {
+	border-radius: 0 !important;
+}
+
+.woocommerce table.shop_table td {
+	border-top: 0 !important;
+}

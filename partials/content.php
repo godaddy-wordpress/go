@@ -30,7 +30,7 @@
 
 	</header>
 
-	<div class="content-area__wrapper">
+	<div class="<?php Go\content_wrapper_class( 'content-area__wrapper' ); ?>">
 
 		<div class="content-area">
 			<?php
