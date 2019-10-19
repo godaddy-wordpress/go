@@ -20,6 +20,10 @@
 	}
 }
 
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+	background: transparent;
+}
+
 .woocommerce-Reviews-title {
 	display: none;
 }

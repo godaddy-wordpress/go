@@ -53,6 +53,10 @@
 		margin-bottom: 5rem !important;
 		text-align: center;
 
+		@media (--small ) {
+			margin-bottom: 5rem !important;
+		}
+
 		& a {
 
 			& img {
