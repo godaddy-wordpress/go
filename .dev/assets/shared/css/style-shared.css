@@ -107,6 +107,7 @@
 @import url("woocommerce/typography.css");
 @import url("woocommerce/thank-you.css");
 @import url("woocommerce/blocks.css");
+@import url("woocommerce/single-product.css");
 
 /*! Gravity Forms */
 @import url("gravity/forms.css");
