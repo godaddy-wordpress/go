@@ -1,0 +1,66 @@
+.single-product .content-area--woocommerce {
+	margin-bottom: var(--vertical-rhythm--lrg);
+
+	@media (--large) {
+		margin-top: var(--vertical-rhythm);
+	}
+}
+
+/* Override core WooCommerce for an improved layout. */
+.woocommerce #content div.product div.images,
+.woocommerce div.product div.images,
+.woocommerce-page #content div.product div.images,
+.woocommerce-page div.product div.images {
+	float: none;
+	width: 100%;
+
+	@media (--large) {
+		float: left;
+		width: 60%;
+	}
+}
+
+.woocommerce #content div.product div.summary,
+.woocommerce div.product div.summary,
+.woocommerce-page #content div.product div.summary,
+.woocommerce-page div.product div.summary {
+	float: none;
+	width: 100%;
+
+	@media (--large) {
+		clear: none;
+		float: right;
+		padding: 4rem 0 0 var(--theme-block-padding-x);
+		width: 40%;
+	}
+}
+
+/* Small text under the product title. */
+.single-product .entry-summary {
+	text-align: center;
+
+	& .product_title {
+		font-size: var(--theme-h2--font-size);
+	}
+}
+
+/* Prices */
+.woocommerce div.product p.price,
+.woocommerce div.product span.price,
+.woocommerce ul.products li.product .price ins {
+	color: hsl(var(--theme-color-text-secondary));
+}
+
+.woocommerce-Price-amount {
+	color: hsl(var(--theme-color-heading));
+}
+
+/* Details under the single post "Add to Cart" button */
+.product_meta {
+	margin-top: 2.5rem;
+
+	& > span {
+		display: block;
+		font-size: var(--theme-text-sm);
+	}
+}

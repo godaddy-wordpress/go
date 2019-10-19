@@ -9,7 +9,13 @@
 }
 
 .site-header__inner {
-	padding: var(--theme-header--padding-y) var(--theme-block-padding-x);
+	padding-bottom: var(--theme-header--padding-y);
+	padding-left: var(--theme-block-padding-x);
+	padding-top: var(--theme-header--padding-y);
+
+	@media (--large) {
+		padding: var(--theme-header--padding-y) var(--theme-block-padding-x);
+	}
 }
 
 .has-header-1.has-featured-image,

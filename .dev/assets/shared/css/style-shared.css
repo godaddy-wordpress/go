@@ -93,7 +93,8 @@
 @import url("coblocks/features.css");
 
 /*! WooCommerce */
-@import url("woocommerce/layout.css");
+@import url("woocommerce/notice.css");
+@import url("woocommerce/onsale.css");
 @import url("woocommerce/account.css");
 @import url("woocommerce/button.css");
 @import url("woocommerce/cart.css");
@@ -104,6 +105,9 @@
 @import url("woocommerce/shop.css");
 @import url("woocommerce/tabs.css");
 @import url("woocommerce/typography.css");
+@import url("woocommerce/single-product.css");
+@import url("woocommerce/thank-you.css");
+@import url("woocommerce/blocks.css");
 
 /*! Gravity Forms */
 @import url("gravity/forms.css");
@@ -136,6 +140,10 @@
 	font-weight: var(--theme-site-nav--weight);
 	letter-spacing: var(--theme-site-nav--tracking);
 	text-transform: var(--theme-site-nav--text-transform);
+}
+
+div[class*="wp-block"].mb-0 {
+	margin-bottom: 0 !important;
 }
 
 /*! Utility Classes */

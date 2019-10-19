@@ -6,6 +6,7 @@
 		display: flex;
 		justify-content: center;
 		padding: var(--theme-social--spacing);
+		transform: translate3d(0);
 
 		&:focus {
 			@mixin outline;
@@ -20,6 +21,7 @@
 
 	& svg {
 		fill: hsl(var(--theme-social--color));
+		transform: translate3d(0);
 		transition: transform 0.15s linear;
 		vertical-align: middle;
 	}

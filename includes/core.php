@@ -613,7 +613,7 @@ function get_available_design_styles() {
 			'color_schemes' => [
 				'one'   => [
 					'label'      => _x( 'Shade', 'color palette name', 'go' ),
-					'primary'    => '#000a12',
+					'primary'    => '#000000',
 					'secondary'  => '#455a64',
 					'tertiary'   => '#eceff1',
 					'background' => '#ffffff',
@@ -641,18 +641,18 @@ function get_available_design_styles() {
 				],
 			],
 			'fonts'         => [
-				'Montserrat'    => [
+				'Montserrat' => [
 					'400',
 					'700',
 				],
-				'IBM Plex Mono' => [
+				'Fira Code'  => [
 					'400',
 					'400i',
 					'700',
 				],
-				'Heebo'         => [
+				'Heebo'      => [
 					'400',
-					'700',
+					'800',
 				],
 			],
 		],
