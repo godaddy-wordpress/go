@@ -733,6 +733,9 @@ function navigation_toggle() {
 		echo '<div class="site-navigation__toggle-icon">';
 			load_inline_svg( 'menu.svg' );
 		echo '</div>';
+		echo '<div class="site-navigation__toggle-icon site-navigation__toggle-icon--close">';
+			load_inline_svg( 'close.svg' );
+		echo '</div>';
 		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'go' ) . '</span>';
 	echo '</button>';
 }

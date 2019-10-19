@@ -49,6 +49,18 @@
 	}
 }
 
+.site-navigation__toggle-icon--close {
+	display: none;
+}
+
+body.menu-is-open .site-navigation__toggle-icon--close {
+	display: flex;
+}
+
+body.menu-is-open .site-navigation__toggle-icon:not(.site-navigation__toggle-icon--close) {
+	display: none;
+}
+
 body:not(.menu-is-open) .site-navigation__toggle-icon svg {
 	fill: hsl(var(--theme-site-nav--color));
 }
