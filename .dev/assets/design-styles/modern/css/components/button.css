@@ -28,3 +28,7 @@
 		}
 	}
 }
+
+.single_add_to_cart_button::after {
+	display: none !important;
+}

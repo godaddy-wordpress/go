@@ -611,7 +611,7 @@ msgstr "Теги"
 
 #: includes/template-tags.php:220
 msgid "Featured"
-msgstr "Рекомендовані\n"
+msgstr "Рекомендовані"
 
 #: includes/template-tags.php:736
 msgid "Menu"
@@ -960,7 +960,7 @@ msgstr "Автор: %s"
 #: partials/content-excerpt.php:25
 msgctxt "post"
 msgid "Featured"
-msgstr "Рекомендовані\n"
+msgstr "Рекомендовані"
 
 #: searchform.php:13
 msgctxt "label"

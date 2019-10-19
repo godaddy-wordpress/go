@@ -49,16 +49,16 @@ msgstr "Ir direto para o conteúdo"
 
 #: includes/classes/class-tgm-plugin-activation.php:325
 msgid "Install Required Plugins"
-msgstr "\nInstalar plugins necessários"
+msgstr "Instalar plugins necessários"
 
 #: includes/classes/class-tgm-plugin-activation.php:326
 msgid "Install Plugins"
-msgstr "\nInstalar plugins"
+msgstr "Instalar plugins"
 
 #: includes/classes/class-tgm-plugin-activation.php:328
 #. translators: %s: plugin name.
 msgid "Installing Plugin: %s"
-msgstr "\nInstalar plugin: %s"
+msgstr "Instalar plugin: %s"
 
 #: includes/classes/class-tgm-plugin-activation.php:330
 #. translators: %s: plugin name.
@@ -90,7 +90,7 @@ msgstr[1] "Iniciar a ativação dos plugins"
 
 #: includes/classes/class-tgm-plugin-activation.php:383
 msgid "Return to Required Plugins Installer"
-msgstr "\nVoltar para o instalador de plugins necessários"
+msgstr "Voltar para o instalador de plugins necessários"
 
 #: includes/classes/class-tgm-plugin-activation.php:384
 #: includes/classes/class-tgm-plugin-activation.php:825
@@ -107,7 +107,7 @@ msgstr "Plugin ativado."
 #: includes/classes/class-tgm-plugin-activation.php:386
 #: includes/classes/class-tgm-plugin-activation.php:2950
 msgid "The following plugin was activated successfully:"
-msgstr "\nO seguinte plugin foi ativado:"
+msgstr "O seguinte plugin foi ativado:"
 
 #: includes/classes/class-tgm-plugin-activation.php:388
 #. translators: 1: plugin name.
@@ -126,7 +126,7 @@ msgstr ""
 #: includes/classes/class-tgm-plugin-activation.php:392
 #. translators: 1: dashboard link.
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr "\nTodos os plugins foram instalados e ativados. %1$s"
+msgstr "Todos os plugins foram instalados e ativados. %1$s"
 
 #: includes/classes/class-tgm-plugin-activation.php:393
 msgid "Dismiss this notice"
@@ -140,7 +140,7 @@ msgstr "É necessário instalar, atualizar ou ativar um ou mais plugins."
 
 #: includes/classes/class-tgm-plugin-activation.php:395
 msgid "Please contact the administrator of this site for help."
-msgstr "\nEntre em contato com o administrador deste site para obter ajuda."
+msgstr "Entre em contato com o administrador deste site para obter ajuda."
 
 #: includes/classes/class-tgm-plugin-activation.php:520
 msgid "This plugin needs to be updated to be compatible with your theme."
@@ -155,7 +155,7 @@ msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
 msgstr ""
-"\nO pacote de plugin remoto não contém uma pasta com o slug desejado. Por "
+"O pacote de plugin remoto não contém uma pasta com o slug desejado. Por "
 "isso, não foi possível renomeá-la."
 
 #: includes/classes/class-tgm-plugin-activation.php:932
@@ -164,7 +164,7 @@ msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
-"\nEntre em contato com o provedor do plugin e peça que seu plugin seja "
+"Entre em contato com o provedor do plugin e peça que seu plugin seja "
 "empacotado de acordo com as diretrizes do WordPress."
 
 #: includes/classes/class-tgm-plugin-activation.php:935
@@ -172,7 +172,7 @@ msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
 msgstr ""
-"\nO pacote de plugin remoto consiste em mais de um arquivo, mas os arquivos "
+"O pacote de plugin remoto consiste em mais de um arquivo, mas os arquivos "
 "não são empacotados em pastas."
 
 #: includes/classes/class-tgm-plugin-activation.php:1980
@@ -206,7 +206,7 @@ msgstr "Não instalado"
 
 #: includes/classes/class-tgm-plugin-activation.php:2317
 msgid "Installed But Not Activated"
-msgstr "\nInstalado, mas não ativado"
+msgstr "Instalado, mas não ativado"
 
 #: includes/classes/class-tgm-plugin-activation.php:2319
 msgid "Active"
@@ -214,11 +214,11 @@ msgstr "Ativo"
 
 #: includes/classes/class-tgm-plugin-activation.php:2325
 msgid "Required Update not Available"
-msgstr "\nAtualização necessária não disponível"
+msgstr "Atualização necessária não disponível"
 
 #: includes/classes/class-tgm-plugin-activation.php:2328
 msgid "Requires Update"
-msgstr "\nAtualização necessária"
+msgstr "Atualização necessária"
 
 #: includes/classes/class-tgm-plugin-activation.php:2331
 msgid "Update recommended"
@@ -298,7 +298,7 @@ msgstr "Ativar %2$s"
 
 #: includes/classes/class-tgm-plugin-activation.php:2682
 msgid "Upgrade message from the plugin author:"
-msgstr "\nMensagem de atualização do autor do plugin:"
+msgstr "Mensagem de atualização do autor do plugin:"
 
 #: includes/classes/class-tgm-plugin-activation.php:2715
 msgid "Install"
@@ -360,7 +360,7 @@ msgid ""
 "The installation and activation process is starting. This process may take "
 "a while on some hosts, so please be patient."
 msgstr ""
-"O processo de instalação e ativação está iniciando. \nIsso pode demorar um "
+"O processo de instalação e ativação está iniciando. Isso pode demorar um "
 "pouco em alguns hosts. Por favor, seja paciente."
 
 #: includes/classes/class-tgm-plugin-activation.php:3507
@@ -392,7 +392,7 @@ msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
-"Iniciando o processo de instalação. \nIsso pode demorar um pouco em alguns "
+"Iniciando o processo de instalação. Isso pode demorar um pouco em alguns "
 "hosts. Por favor, seja paciente."
 
 #: includes/classes/class-tgm-plugin-activation.php:3515
@@ -407,7 +407,7 @@ msgstr "Todas as instalações foram concluídas."
 #: includes/classes/class-tgm-plugin-activation.php:3518
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "I\nInstalando o plugin %1$s (%2$d/%3$d)"
+msgstr "Instalando o plugin %1$s (%2$d/%3$d)"
 
 #: includes/core.php:83 includes/customizer.php:426
 msgid "Primary"
@@ -470,7 +470,7 @@ msgstr "Nada encontrado"
 #: includes/customizer.php:97
 #. translators: %s is the registered nav menu name
 msgid "Please assign a menu to the %s menu location"
-msgstr "\nAtribua um menu ao %s local do menu"
+msgstr "Atribua um menu ao %s local do menu"
 
 #: includes/customizer.php:257
 msgid "Width"
@@ -490,7 +490,7 @@ msgstr "Títulos da página"
 
 #: includes/customizer.php:330
 msgid "Display page titles on individual pages."
-msgstr "\nExibir títulos das páginas em páginas individuais."
+msgstr "Exibir títulos das páginas em páginas individuais."
 
 #: includes/customizer.php:349
 msgid "Copyright Text"
@@ -505,7 +505,7 @@ msgid ""
 "Choose a style, select a color scheme and customize colors to personalize "
 "your site."
 msgstr ""
-"\nEscolha um estilo e selecione um esquema de cores para personalizar o seu site."
+"Escolha um estilo e selecione um esquema de cores para personalizar o seu site."
 
 #: includes/customizer.php:402
 msgid "Color Scheme"
@@ -528,7 +528,7 @@ msgid ""
 "Choose a header for every page on your site, then style it with the "
 "selectors below."
 msgstr ""
-"\nEscolha um cabeçalho para todas as páginas do seu site e estilize-o com os "
+"Escolha um cabeçalho para todas as páginas do seu site e estilize-o com os "
 "seletores abaixo."
 
 #: includes/customizer.php:533 includes/customizer.php:615
@@ -548,7 +548,7 @@ msgid ""
 "Choose a footer for every page on your site, then style it with the "
 "selectors below."
 msgstr ""
-"\nEscolha um rodapé para todas as páginas do seu site e estilize-o com os "
+"Escolha um rodapé para todas as páginas do seu site e estilize-o com os "
 "seletores abaixo."
 
 #: includes/customizer.php:635
@@ -618,11 +618,11 @@ msgstr "Menu"
 
 #: includes/template-tags.php:782
 msgid "Search Toggle"
-msgstr "\nAlternar pesquisa"
+msgstr "Alternar pesquisa"
 
 #: includes/woocommerce.php:76
 msgid "Your cart is currently empty."
-msgstr "\nSeu carrinho está vazio no momento."
+msgstr "Seu carrinho está vazio no momento."
 
 #: partials/content-none.php:21
 #. translators: 1: link to WP admin new post page.
@@ -689,7 +689,7 @@ msgid ""
 "Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on "
 "empowering makers to build beautifully rich websites with WordPress."
 msgstr ""
-"\nGo é um tema inovador do Gutenberg, o novo editor do WordPress que promete  "
+"Go é um tema inovador do Gutenberg, o novo editor do WordPress que promete  "
 "proporcionar a criação de sites incríveis."
 
 #. Author of the plugin/theme

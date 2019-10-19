@@ -16,18 +16,6 @@ body {
 			}
 		}
 
-		/* Primary Button Disabled */
-		& button.button.alt.disabled,
-		& button.button.alt:disabled {
-			@mixin button-disabled;
-
-			&:hover,
-			&:focus,
-			&:active {
-				@mixin button-disabled;
-			}
-		}
-
 		/* Secondary Button */
 		& #respond input#submit,
 		& .button {
@@ -65,22 +53,6 @@ body {
 					vertical-align: bottom;
 				}
 			}
-		}
-
-		/* Secondary Button Disabled */
-		& .woocommerce button.button.disabled,
-		& .woocommerce button.button:disabled {
-			@mixin button-disabled;
-
-			&:hover,
-			&:focus,
-			&:active {
-				@mixin button-disabled;
-			}
-		}
-
-		& .woocommerce button.button:disabled {
-			padding: var(--theme-button--padding-y) var(--theme-button--padding-x);
 		}
 	}
 }

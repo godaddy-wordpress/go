@@ -1,0 +1,31 @@
+/*! WooCommerce store notice */
+.woocommerce-store-notice.demo_store {
+	background-color: hsl(var(--theme-color-primary));
+	bottom: 0;
+	color: hsl(var(--color-white));
+	font-size: 80%;
+	left: 0;
+	margin: 0;
+	padding: 0.75rem 1rem;
+	position: fixed;
+	right: 0;
+	top: inherit;
+	z-index: 9998;
+
+	& a {
+		color: hsl(var(--color-white));
+		text-decoration: underline;
+
+		@media (--medium) {
+			margin-left: 1rem;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+body.admin-bar .woocommerce-store-notice.demo_store {
+	top: initial;
+}

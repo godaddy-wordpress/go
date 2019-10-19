@@ -1,0 +1,42 @@
+/*! WooCommerce: Onsale Badge */
+.woocommerce .product .onsale,
+.wc-block-grid__product-onsale {
+	align-items: center;
+	background-color: hsl(var(--theme-button--bg));
+	border-radius: 50%;
+	display: flex;
+	font-family: var(--theme-button--font);
+	font-size: 0.5rem;
+	font-weight: var(--theme-button--weight);
+	height: 3rem;
+	justify-content: center;
+	left: 1em;
+	margin: 0;
+	pointer-events: none;
+	text-transform: var(--theme-button--text-transform);
+	top: 1em;
+	width: 3rem;
+
+	@media (--medium) {
+		font-size: var(--theme-button--font-size);
+		height: 4.5rem;
+		letter-spacing: var(--theme-button--tracking);
+		width: 4.5rem;
+	}
+}
+
+.woocommerce ul.products li.product .onsale {
+	left: 1em;
+	margin: 0;
+	right: auto;
+	top: 1em;
+}
+
+.single-product .product > .onsale {
+	@media (--large) {
+		height: 6rem;
+		left: 1rem;
+		top: 1rem;
+		width: 6rem;
+	}
+}
