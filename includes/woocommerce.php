@@ -135,8 +135,8 @@ function single_product_pagination() {
 
 	the_post_navigation(
 		[
-			'prev_text' => '<span class="screen-reader-text">' . esc_html__( 'Previous Post: ', 'go' ) . ' %title</span><span class="nav-title-icon-wrapper">' . $arrow_left . '</span><span class="nav-title">' . esc_html__( 'Previous', 'go' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . esc_html__( 'Next Post:', 'go' ) . ' %title</span> <span class="nav-title">' . esc_html__( 'Next', 'go' ) . '<span class="nav-title-icon-wrapper">' . $arrow_right . '</span></span>',
+			'prev_text' => '<span class="screen-reader-text">' . esc_html__( 'Previous Post: ', 'go' ) . ' %title</span>' . $arrow_left . '<span class="nav-title">' . esc_html__( 'Previous', 'go' ) . '</span>',
+			'next_text' => '<span class="screen-reader-text">' . esc_html__( 'Next Post:', 'go' ) . ' %title</span><span class="nav-title">' . esc_html__( 'Next', 'go' ) . '</span>' . $arrow_right,
 		]
 	);
 
