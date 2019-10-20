@@ -219,7 +219,7 @@ function fonts_url() {
 	}
 
 	$design_styles = get_available_design_styles();
-	$design_style  = sanitize_title( $design_style['label'] );
+	$design_style  = $design_style['slug'];
 
 	if ( ! isset( $design_styles[ $design_style ] ) || ! isset( $design_styles[ $design_style ]['fonts'] ) ) {
 
@@ -383,7 +383,7 @@ function styles() {
 
 	if ( $design_style ) {
 		wp_enqueue_style(
-			'go-design-style-' . sanitize_title( $design_style['label'] ),
+			'go-design-style-' . $design_style['slug'],
 			$design_style['url'],
 			[ 'go-style' ],
 			GO_VERSION
@@ -536,6 +536,7 @@ function body_classes( $classes ) {
  * @return string
  */
 function get_default_design_style() {
+
 	/**
 	 * Filters the default design style.
 	 *
@@ -543,8 +544,8 @@ function get_default_design_style() {
 	 *
 	 * @param array $default_design_style The slug of the default design style.
 	 */
-
 	return apply_filters( 'go_default_design_style', 'traditional' );
+
 }
 
 /**
@@ -558,6 +559,7 @@ function get_available_design_styles() {
 
 	$default_design_styles = [
 		'traditional' => [
+			'slug'          => 'traditional',
 			'label'         => _x( 'Traditional', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$suffix}.css",
@@ -607,6 +609,7 @@ function get_available_design_styles() {
 			],
 		],
 		'modern'      => [
+			'slug'          => 'modern',
 			'label'         => _x( 'Modern', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-modern{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-modern-editor{$suffix}.css",
@@ -657,6 +660,7 @@ function get_available_design_styles() {
 			],
 		],
 		'trendy'      => [
+			'slug'          => 'trendy',
 			'label'         => _x( 'Trendy', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
@@ -712,6 +716,7 @@ function get_available_design_styles() {
 			],
 		],
 		'welcoming'   => [
+			'slug'          => 'welcoming',
 			'label'         => _x( 'Welcoming', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
@@ -763,6 +768,7 @@ function get_available_design_styles() {
 			],
 		],
 		'playful'     => [
+			'slug'          => 'playful',
 			'label'         => _x( 'Playful', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
@@ -815,6 +821,7 @@ function get_available_design_styles() {
 			],
 		],
 	];
+
 	/**
 	 * Filters the supported design styles.
 	 *
@@ -835,12 +842,15 @@ function get_available_design_styles() {
  * @return array
  */
 function get_design_style() {
+
 	$design_style = get_theme_mod( 'design_style', get_default_design_style() );
 
 	$supported_design_styles = get_available_design_styles();
 
 	if ( in_array( $design_style, array_keys( $supported_design_styles ), true ) ) {
+
 		return $supported_design_styles[ $design_style ];
+
 	}
 
 	return false;
