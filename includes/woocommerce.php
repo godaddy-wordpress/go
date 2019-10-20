@@ -101,13 +101,16 @@ function empty_cart_message() {
 /**
  * Toggle the visibility of WooCommerce shop page titles
  *
- * @param  bool $show_title Whether or not to display the WooCommerce page title.
+ * @param bool $show_title Whether or not to display the WooCommerce page title.
  *
  * @return bool False when shop page, else true.
  */
 function page_title_visibility( $show_title ) {
+
 	return is_shop() ? false : $show_title;
+
 }
+
 /**
  * Output a custom WooCommerce shop page title
  *
