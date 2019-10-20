@@ -15,7 +15,6 @@
 
 			& svg {
 				display: inline-block;
-				height: 1.5rem;
 				position: relative;
 				top: -0.0015em;
 				vertical-align: middle;
@@ -53,7 +52,7 @@
 			& .nav-previous {
 				margin-right: 3px;
 
-				& .nav-title-icon-wrapper svg {
+				& svg {
 					margin-right: 5px;
 				}
 			}
@@ -73,7 +72,7 @@
 					}
 				}
 
-				& .nav-title-icon-wrapper svg {
+				& svg {
 					margin-left: 5px;
 				}
 			}
