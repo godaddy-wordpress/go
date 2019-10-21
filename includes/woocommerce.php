@@ -9,6 +9,8 @@ namespace Go\WooCommerce;
 
 use function Go\load_inline_svg;
 
+$is_icon_cart;
+
 /**
  * Set up WooCommerce hooks
  *
@@ -45,6 +47,161 @@ function setup() {
 	add_filter( 'woocommerce_product_description_heading', '__return_null' );
 
 	add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
+
+	add_filter( 'wp_nav_menu_args', $n( 'filter_nav_menus' ) );
+
+	add_filter( 'woocommerce_add_to_cart_fragments', __NAMESPACE__ . '\\go_cart_fragments', PHP_INT_MAX );
+
+}
+
+/**
+ * Whether or not the WooCommerce cart icon is enabled.
+ *
+ * @return bool True when enabled, else false.
+ */
+function should_show_woo_cart_item() {
+
+	/**
+	 * Filter whether to display the WooCommerce cart menu item.
+	 * Default: `true`
+	 *
+	 * @since NEXT
+	 *
+	 * @var bool
+	*/
+	return (bool) apply_filters( 'go_wc_show_cart_menu', true );
+
+}
+
+/**
+ * Enable the WooCommerce menu item
+ *
+ * @param  array $args Menu arguments.
+ *
+ * @return array Menu arguments array.
+ */
+function filter_nav_menus( $args ) {
+
+	if ( is_admin() || 'primary' !== $args['theme_location'] || ! should_show_woo_cart_item() ) {
+
+		return $args;
+
+	}
+
+	add_filter( 'wp_get_nav_menu_items', __NAMESPACE__ . '\\woocommerce_menu_cart', 20, 2 );
+
+	return $args;
+
+}
+
+/**
+ * Append a cart icon and a slideout menu
+ *
+ * @param  array  $items Navigation menu items.
+ * @param  object $menu  Navigation menu object.
+ *
+ * @return array Filtered nav menu items.
+ */
+function woocommerce_menu_cart( $items, $menu ) {
+
+	remove_filter( current_filter(), __FUNCTION__, 20, 2 );
+
+	$items[] = go_cart_menu_object();
+
+	return $items;
+
+}
+
+/**
+ * Simple helper function for make menu item objects
+ *
+ * @return stdClass
+ */
+function go_cart_menu_object() {
+
+	ob_start();
+	load_inline_svg( 'cart.svg' );
+	$icon = ob_get_clean();
+
+	global $woocommerce;
+
+	/**
+	 * Filters the cart menu item URL.
+	 *
+	 * @since NEXT
+	 *
+	 * @param string URL to the WooCommerce cart page.
+	 */
+	$cart_url = (string) apply_filters( 'go_menu_cart_url', wc_get_cart_url() );
+
+	/**
+	 * Filters the cart menu item text.
+	 *
+	 * @since NEXT
+	 *
+	 * @param string Text for the cart menu item.
+	 */
+	$cart_text = (string) apply_filters(
+		'go_menu_cart_text',
+		sprintf(
+			'%1$s (<span class="item-count">%2$d</span>)',
+			$icon,
+			$woocommerce->cart->get_cart_contents_count()
+		)
+	);
+
+	if ( empty( $cart_text ) ) {
+
+		$cart_text = sprintf(
+			'%1$s (%2$d)',
+			$icon,
+			$woocommerce->cart->get_cart_contents_count()
+		);
+
+	}
+
+	$item                   = new \stdClass();
+	$item->ID               = 'go-woo-cart';
+	$item->db_id            = $item->ID;
+	$item->title            = $cart_text;
+	$item->url              = esc_url( $cart_url );
+	$item->menu_order       = PHP_INT_MAX;
+	$item->menu_item_parent = 0;
+	$item->post_parent      = 0;
+	$item->type             = 'cart';
+	$item->object           = 'cart';
+	$item->object_id        = '';
+	$item->classes          = [];
+	$item->target           = '';
+	$item->attr_title       = '';
+	$item->description      = '';
+	$item->xfn              = '';
+	$item->status           = '';
+
+	return $item;
+
+}
+
+/**
+ * Filter the cart fragments to update the cart count.
+ *
+ * @param  array $fragments Array of elements to update via JS.
+ *
+ * @return array Filtered array of elements.
+ */
+function go_cart_fragments( $fragments ) {
+
+	if ( ! should_show_woo_cart_item() ) {
+
+		return $fragments;
+
+	}
+
+	global $woocommerce;
+
+	$fragments['span.item-count'] = '<span class="item-count">' . $woocommerce->cart->get_cart_contents_count() . '</span>';
+
+	return $fragments;
 
 }
 

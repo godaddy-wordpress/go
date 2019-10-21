@@ -1,0 +1,8 @@
+li#menu-item-go-woo-cart {
+
+	& svg {
+		fill: hsla(var(--theme-site-nav--color), 1);
+		vertical-align: sub;
+		width: 30px;
+	}
+}
