@@ -9,8 +9,6 @@ namespace Go\WooCommerce;
 
 use function Go\load_inline_svg;
 
-$is_icon_cart;
-
 /**
  * Set up WooCommerce hooks
  *
