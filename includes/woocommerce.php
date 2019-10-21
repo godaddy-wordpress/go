@@ -183,9 +183,9 @@ function woocommerce_slideout_cart() {
 						printf(
 							esc_html(
 								/* translators: 1. Single integer value. (eg: 1 product in your cart). 2. Integer larger than 1. (eg: 5 products in your cart). */
-								_n( '%s product in your cart', '%s products in your cart', $cart_count, 'go' ),
-								number_format_i18n( $cart_count )
-							)
+								_n( '%s product in your cart', '%s products in your cart', $cart_count, 'go' )
+							),
+							esc_html( number_format_i18n( $cart_count ) )
 						);
 						?>
 					</p>
