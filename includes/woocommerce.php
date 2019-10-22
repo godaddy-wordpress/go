@@ -142,7 +142,7 @@ function go_cart_menu_object() {
 	$cart_text = (string) apply_filters(
 		'go_menu_cart_text',
 		sprintf(
-			'%1$s (<span class="item-count">%2$d</span>)',
+			'%1$s <span class="item-count">%2$d</span>',
 			$icon,
 			$woocommerce->cart->get_cart_contents_count()
 		)
@@ -151,7 +151,7 @@ function go_cart_menu_object() {
 	if ( empty( $cart_text ) ) {
 
 		$cart_text = sprintf(
-			'%1$s (%2$d)',
+			'%1$s %2$d',
 			$icon,
 			$woocommerce->cart->get_cart_contents_count()
 		);
