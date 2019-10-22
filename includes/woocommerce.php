@@ -210,6 +210,10 @@ function go_cart_fragments( $fragments ) {
  */
 function empty_cart_message() {
 
+	ob_start();
+	load_inline_svg( 'empty-cart.svg' );
+	$icon = ob_get_clean();
+
 	printf(
 		'<div class="max-w-base m-0 px m-auto text-center">
 			<div class="cart-empty-icon">
@@ -221,7 +225,7 @@ function empty_cart_message() {
 		</div>',
 		esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ),
 		wp_kses(
-			load_inline_svg( 'empty-cart.svg' ),
+			$icon,
 			array_merge(
 				wp_kses_allowed_html( 'post' ),
 				[
