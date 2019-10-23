@@ -123,10 +123,6 @@
 @import url("utilities/colors.css");
 @import url("utilities/padding.css");
 
-.customize-partial-edit-shortcut {
-	display: none !important;
-}
-
 .site-content {
 	overflow: hidden;
 }
