@@ -61,7 +61,3 @@
 		max-width: var(--theme-max-w-base);
 	}
 }
-
-body.has-header-background .content-area > *:first-child.wp-block-group.has-background.alignfull .wp-block-group__inner-container {
-	padding-top: calc(var(--editor-padding) / 4);
-}
