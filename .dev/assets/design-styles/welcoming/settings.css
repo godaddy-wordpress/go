@@ -194,6 +194,7 @@
 	## Header
 	--------------------------------------------------------------*/
 	--theme-header--bg: "";
+	--header-padding: 2.5vw;
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);

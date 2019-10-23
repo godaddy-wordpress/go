@@ -201,6 +201,8 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
+	--header-padding: 2vw;
+
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.1rem;
 	--theme-site-title--font: var(--theme-site-nav--font);

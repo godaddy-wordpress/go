@@ -204,6 +204,8 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
+	--header-padding: 2.75vw;
+
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.5rem;
 	--theme-site-title--tracking: 0.033em;
