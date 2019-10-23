@@ -684,7 +684,7 @@ function social_icons( $args = [] ) {
  * @return void
  */
 function display_site_branding( $args = [] ) {
-	echo '<div class="header__titles sm:flex items-center" itemscope itemtype="http://schema.org/Organization">';
+	echo '<div class="header__titles lg:flex items-center" itemscope itemtype="http://schema.org/Organization">';
 		site_branding( $args );
 	echo '</div>';
 }
@@ -720,7 +720,7 @@ function site_branding( $args = [] ) {
 		}
 
 		if ( true === $args['description'] && ! empty( $blog_description ) ) :
-			echo '<span class="site-description display-block relative text-sm">' . esc_html( $blog_description ) . '</span>';
+			echo '<span class="site-description display-none sm:display-block relative text-sm">' . esc_html( $blog_description ) . '</span>';
 		endif;
 	}
 }

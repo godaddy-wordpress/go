@@ -305,6 +305,10 @@ figure {
 
 @media (--small) {
 
+	.sm\:display-block {
+		display: block;
+	}
+
 	.sm\:flex {
 		display: flex;
 	}

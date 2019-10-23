@@ -202,10 +202,10 @@
 	## Header
 	--------------------------------------------------------------*/
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: 1.15rem;
+	--theme-site-title--font-size: 1.1rem;
 	--theme-site-title--font: var(--theme-site-nav--font);
 	--theme-site-title--text-transform: uppercase;
-	--theme-site-title--tracking: 5px;
+	--theme-site-title--tracking: 3px;
 
 	@media (--large) {
 		--theme-site-title--font-size: 1.5rem;

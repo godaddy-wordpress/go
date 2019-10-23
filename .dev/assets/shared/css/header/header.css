@@ -18,10 +18,7 @@
 }
 
 .header__title-nav {
-	align-items: center;
-	display: flex;
-	flex: 1 0 70%;
-	flex-wrap: nowrap;
+	flex: 1 0 68%;
 	order: 1;
 	z-index: 9999;
 }

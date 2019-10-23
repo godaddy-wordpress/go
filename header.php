@@ -32,7 +32,7 @@
 
 				<?php Go\navigation_toggle(); ?>
 
-				<div class="header__title-nav">
+				<div class="header__title-nav flex items-center flex-nowrap">
 
 					<?php Go\display_site_branding(); ?>
 
