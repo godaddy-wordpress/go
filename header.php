@@ -59,6 +59,7 @@
 
 				<div class="header__extras">
 					<?php Go\search_toggle(); ?>
+					<?php Go\WooCommerce\woocommerce_cart_link(); ?>
 				</div>
 
 			</div>
