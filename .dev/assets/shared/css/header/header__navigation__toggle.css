@@ -10,7 +10,7 @@
 	}
 }
 
-.site-navigation__toggle {
+.header__navigation__toggle {
 	background-color: transparent;
 	border: none;
 	border-radius: 0;
@@ -43,18 +43,18 @@
 	}
 }
 
-.site-navigation__toggle-icon--close {
+.header__navigation__toggle-icon--close {
 	display: none;
 }
 
-body.menu-is-open .site-navigation__toggle-icon--close {
+body.menu-is-open .header__navigation__toggle-icon--close {
 	display: flex;
 }
 
-body.menu-is-open .site-navigation__toggle-icon:not(.site-navigation__toggle-icon--close) {
+body.menu-is-open .header__navigation__toggle-icon:not(.header__navigation__toggle-icon--close) {
 	display: none;
 }
 
-body:not(.menu-is-open) .site-navigation__toggle-icon svg {
+body:not(.menu-is-open) .header__navigation__toggle-icon svg {
 	fill: hsl(var(--theme-site-nav--color));
 }

@@ -1,5 +1,5 @@
 /*! Header: Site Navigation */
-.site-navigation {
+.header__navigation {
 	display: none;
 
 	@media (--large) {
@@ -42,7 +42,7 @@ body.menu-is-open {
 	}
 }
 
-.admin-bar .site-navigation {
+.admin-bar .header__navigation {
 	top: 32px;
 
 	@media (--admin-bar-lg) {

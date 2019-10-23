@@ -732,11 +732,11 @@ function site_branding( $args = [] ) {
  */
 function navigation_toggle() {
 	echo '<div class="header__nav-toggle">';
-	echo '<button id="js-site-navigation__toggle" class="site-navigation__toggle" type="button" aria-controls="js-primary-menu">';
-		echo '<div class="site-navigation__toggle-icon">';
+	echo '<button id="js-header__navigation__toggle" class="header__navigation__toggle" type="button" aria-controls="js-primary-menu">';
+		echo '<div class="header__navigation__toggle-icon">';
 			load_inline_svg( 'menu.svg' );
 		echo '</div>';
-		echo '<div class="site-navigation__toggle-icon site-navigation__toggle-icon--close">';
+		echo '<div class="header__navigation__toggle-icon header__navigation__toggle-icon--close">';
 			load_inline_svg( 'close.svg' );
 		echo '</div>';
 		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'go' ) . '</span>';

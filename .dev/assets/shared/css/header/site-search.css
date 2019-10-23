@@ -80,7 +80,7 @@
 }
 
 /* Override aria defaults */
-.site-navigation .site-search[aria-hidden="true"] {
+.header__navigation .site-search[aria-hidden="true"] {
 	display: none;
 	visibility: visible;
 }

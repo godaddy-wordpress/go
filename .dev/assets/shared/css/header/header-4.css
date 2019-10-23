@@ -17,7 +17,7 @@
 		justify-content: flex-end;
 		order: 3;
 
-		& .site-navigation__toggle {
+		& .header__navigation__toggle {
 			display: inline-flex;
 			margin-left: 0;
 			margin-right: -0.75rem;
@@ -34,7 +34,7 @@
 		text-align: center;
 	}
 
-	& .site-navigation {
+	& .header__navigation {
 		display: none;
 	}
 }

@@ -21,7 +21,7 @@
 		justify-content: flex-end;
 		order: 3;
 
-		& .site-navigation__toggle {
+		& .header__navigation__toggle {
 			margin-left: 0;
 			margin-right: -0.75rem;
 		}
@@ -35,7 +35,7 @@
 			order: 2;
 		}
 
-		& .site-navigation {
+		& .header__navigation {
 			justify-content: center;
 			margin-left: inherit;
 			margin-top: 0.5rem;
