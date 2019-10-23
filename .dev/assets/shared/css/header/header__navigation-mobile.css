@@ -32,7 +32,7 @@ body::before {
 				padding: 0.25rem;
 
 				@media (--smallMax) {
-					font-size: 1.15rem;
+					font-size: 1rem;
 				}
 
 				&::after {
