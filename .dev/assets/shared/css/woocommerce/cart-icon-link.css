@@ -1,0 +1,43 @@
+.woo-cart-link {
+	align-items: center;
+	display: flex;
+	height: calc(var(--theme-search-toggle--size, 1.5rem) * 2);
+	justify-content: center;
+	padding: 0.1rem;
+	position: relative;
+	width: calc(var(--theme-search-toggle--size, 1.5rem) * 2);
+	z-index: 999;
+
+	@media (--mediumMax) {
+		margin: -2.75rem 0 4rem 0;
+	}
+
+	& svg {
+		fill: hsla(var(--theme-site-nav--color), 1);
+		width: var(--theme-search-toggle--size, 1.5rem);
+
+		@media (--mediumMax) {
+			fill: hsl(var(--theme-offscreen-nav--color));
+		}
+	}
+
+	& .item-count {
+		color: hsla(var(--theme-site-nav--color), 1);
+		display: block;
+		font-family: inherit;
+		font-size: 11px;
+		font-weight: 400;
+		letter-spacing: 0;
+		line-height: 1;
+		min-width: 1rem;
+		padding: 0.5rem;
+		position: absolute;
+		right: -0.25rem;
+		text-align: center;
+		top: -0.25rem;
+
+		@media (--mediumMax) {
+			color: hsl(var(--theme-offscreen-nav--color));
+		}
+	}
+}

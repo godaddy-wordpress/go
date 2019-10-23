@@ -28,6 +28,8 @@ $has_background = Go\has_header_background();
 			);
 			?>
 
+			<?php Go\WooCommerce\woocommerce_cart_link(); ?>
+
 			<?php Go\search_toggle(); ?>
 
 			<?php get_search_form(); ?>

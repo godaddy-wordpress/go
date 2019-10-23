@@ -46,8 +46,6 @@ function setup() {
 
 	add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
 
-	add_filter( 'wp_nav_menu_args', $n( 'filter_nav_menus' ) );
-
 	add_filter( 'woocommerce_add_to_cart_fragments', __NAMESPACE__ . '\\go_cart_fragments', PHP_INT_MAX );
 
 }
@@ -72,50 +70,17 @@ function should_show_woo_cart_item() {
 }
 
 /**
- * Enable the WooCommerce menu item
+ * Generate a WooCommerce cart link
  *
- * @param  array $args Menu arguments.
- *
- * @return array Menu arguments array.
+ * @return void
  */
-function filter_nav_menus( $args ) {
+function woocommerce_cart_link() {
 
-	if ( is_admin() || 'primary' !== $args['theme_location'] || ! should_show_woo_cart_item() ) {
+	if ( ! should_show_woo_cart_item() ) {
 
-		return $args;
+		return;
 
 	}
-
-	add_filter( 'wp_get_nav_menu_items', __NAMESPACE__ . '\\woocommerce_menu_cart', 20, 2 );
-
-	return $args;
-
-}
-
-/**
- * Append a cart icon and a slideout menu
- *
- * @param  array  $items Navigation menu items.
- * @param  object $menu  Navigation menu object.
- *
- * @return array Filtered nav menu items.
- */
-function woocommerce_menu_cart( $items, $menu ) {
-
-	remove_filter( current_filter(), __FUNCTION__, 20, 2 );
-
-	$items[] = go_cart_menu_object();
-
-	return $items;
-
-}
-
-/**
- * Simple helper function for make menu item objects
- *
- * @return stdClass
- */
-function go_cart_menu_object() {
 
 	ob_start();
 	load_inline_svg( 'cart.svg' );
@@ -158,25 +123,11 @@ function go_cart_menu_object() {
 
 	}
 
-	$item                   = new \stdClass();
-	$item->ID               = 'go-woo-cart';
-	$item->db_id            = $item->ID;
-	$item->title            = $cart_text;
-	$item->url              = esc_url( $cart_url );
-	$item->menu_order       = PHP_INT_MAX;
-	$item->menu_item_parent = 0;
-	$item->post_parent      = 0;
-	$item->type             = 'cart';
-	$item->object           = 'cart';
-	$item->object_id        = '';
-	$item->classes          = [];
-	$item->target           = '';
-	$item->attr_title       = '';
-	$item->description      = '';
-	$item->xfn              = '';
-	$item->status           = '';
-
-	return $item;
+	printf(
+		'<a href="%1$s" class="woo-cart-link">%2$s</a>',
+		esc_url( $cart_url ),
+		$cart_text // @codingStandardsIgnoreLine
+	);
 
 }
 
