@@ -15,6 +15,21 @@
 		order: 2;
 	}
 
+	& .header__titles {
+		justify-content: flex-end;
+	}
+
+	& .header__titles a {
+		order: 2;
+	}
+
+	& .header__titles .site-description {
+		@media (--large) {
+			margin-left: 0;
+			margin-right: var(--theme-site-nav--padding-x, 2vw);
+		}
+	}
+
 	& .header__nav-toggle {
 		align-items: flex-end;
 		display: inline-flex;

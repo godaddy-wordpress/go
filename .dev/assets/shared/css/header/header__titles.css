@@ -52,6 +52,7 @@
 
 	@media (--large) {
 		margin-left: var(--theme-site-nav--padding-x, 2vw);
+		margin-top: 0;
 	}
 }
 

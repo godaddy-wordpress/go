@@ -15,6 +15,17 @@
 		order: 2;
 	}
 
+	& .header__titles {
+		flex-direction: column;
+
+		& .site-description {
+			margin-bottom: calc(var(--theme-site-description--mt, 0.25rem) * 3);
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: var(--theme-site-description--mt, 0.25rem);
+		}
+	}
+
 	& .header__nav-toggle {
 		align-items: flex-end;
 		display: inline-flex;
