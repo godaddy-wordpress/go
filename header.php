@@ -26,7 +26,7 @@
 
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'go' ); ?></a>
 
-		<header id="header" class="header relative <?php echo esc_attr( Go\has_header_background() ); ?>" itemscope itemtype="http://schema.org/WPHeader" role="banner">
+		<header id="site-header" class="header relative <?php echo esc_attr( Go\has_header_background() ); ?>" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 			<div class="header__inner flex items-center justify-between h-inherit w-full relative">
 
@@ -36,7 +36,7 @@
 
 					<?php Go\display_site_branding(); ?>
 
-					<nav id="js-primary-menu" class="site-navigation c-site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+					<nav id="js-primary-menu" class="site-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
 						<?php
 						wp_nav_menu(
@@ -59,4 +59,4 @@
 
 		</header>
 
-		<div id="content" class="site-content">
+		<main id="site-content" class="site-content" role="main">

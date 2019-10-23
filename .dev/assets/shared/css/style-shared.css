@@ -126,6 +126,10 @@
 	display: none !important;
 }
 
+.site-content {
+	overflow: hidden;
+}
+
 /* Everything below here still needs organizing */
 .u-informational {
 	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
