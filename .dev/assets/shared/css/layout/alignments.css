@@ -41,7 +41,7 @@
 		width: calc(100vw - var(--double-padding));
 	}
 
-	@media (--xlarge) {
+	@media (--huge) {
 		left: calc(50% - var(--half-width) + var(--theme-block-padding-x));
 		max-width: calc(var(--theme-max-w-wide) - var(--double-padding));
 		width: calc(var(--theme-max-w-wide) - var(--double-padding));

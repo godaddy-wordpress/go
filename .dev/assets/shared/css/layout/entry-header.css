@@ -9,8 +9,8 @@
 	padding-top: var(--theme-entryheader--padding-top);
 }
 
-.has-header-3 .entry-header {
+/* .has-header-3 .entry-header {
 	@media (--large) {
 		padding-top: 0;
 	}
-}
+} */

@@ -1,28 +1,28 @@
 /*! Social Icons */
 .social-icons {
 
+	&:hover li a {
+		opacity: 0.65;
+	}
+
+	& li:hover a {
+		opacity: 1;
+	}
+
 	& a {
 		align-items: center;
 		display: flex;
 		justify-content: center;
 		padding: var(--theme-social--spacing);
-		transform: translate3d(0);
+		transition: opacity 200ms cubic-bezier(0.694, 0.0482, 0.335, 1);
 
 		&:focus {
 			@mixin outline;
-		}
-
-		&:hover svg,
-		&:focus svg {
-			outline: none;
-			transform: scale(1.125);
 		}
 	}
 
 	& svg {
 		fill: hsl(var(--theme-social--color));
-		transform: translate3d(0);
-		transition: transform 0.15s linear;
 		vertical-align: middle;
 	}
 }
