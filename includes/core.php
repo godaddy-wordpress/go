@@ -780,7 +780,7 @@ function get_available_design_styles() {
 					'tertiary'          => '#f7fbff',
 					'background'        => '#ffffff',
 					'header_background' => '#3f46ae',
-					'header_text'       => '#fafafa',
+					'header_text_color' => '#fafafa',
 					'footer_background' => '#3f46ae',
 				],
 				'two'   => [
