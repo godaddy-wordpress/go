@@ -15,15 +15,15 @@
 		order: 2;
 	}
 
-	& .header__titles {
+	& .header .header__titles {
 		justify-content: flex-end;
+
+		& a {
+			order: 2;
+		}
 	}
 
-	& .header__titles a {
-		order: 2;
-	}
-
-	& .header__titles .site-description {
+	& .header .header__titles .site-description {
 		@media (--large) {
 			margin-left: 0;
 			margin-right: var(--theme-site-nav--padding-x, 2vw);

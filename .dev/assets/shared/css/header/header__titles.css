@@ -1,19 +1,6 @@
 /*! Header: Site Branding */
 .header__titles {
-	flex: 1 0 100%;
-	flex-grow: 0;
-	flex-shrink: 0;
-	justify-content: center;
-	order: 2;
 	position: relative;
-	text-align: center;
-	z-index: 10000;
-
-	@media (--large) {
-		flex: auto;
-		justify-content: start;
-		text-align: left;
-	}
 
 	& a {
 		outline-offset: 6px;
@@ -25,6 +12,22 @@
 		@media (--small) {
 			max-width: var(--theme-site-logo--width);
 		}
+	}
+}
+
+.header .header__titles {
+	flex: 1 0 100%;
+	flex-grow: 0;
+	flex-shrink: 0;
+	justify-content: center;
+	order: 2;
+	text-align: center;
+	z-index: 10000;
+
+	@media (--large) {
+		flex: auto;
+		justify-content: start;
+		text-align: left;
 	}
 }
 

@@ -37,7 +37,7 @@
 		order: 2;
 	}
 
-	& .header__titles {
+	& .header .header__titles {
 		flex: 1 0 100%;
 		flex-direction: column;
 		justify-content: center;

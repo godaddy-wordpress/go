@@ -16,18 +16,6 @@ body {
 	border-top: 0;
 }
 
-.header__titles {
-	top: 0;
-}
-
-.site-content {
-	overflow: hidden;
-}
-
-.header__search-toggle {
-	top: 0.1rem;
-}
-
 .site-footer.has-background {
 	border-top: 0.75rem solid hsl(var(--theme-header--bg));
 }
