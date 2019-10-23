@@ -7,6 +7,7 @@
 	order: 2;
 	position: relative;
 	text-align: center;
+	z-index: 10000;
 
 	@media (--large) {
 		flex: 0;

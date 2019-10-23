@@ -23,6 +23,7 @@
 	flex: 1 0 70%;
 	flex-wrap: nowrap;
 	order: 1;
+	z-index: 9999;
 }
 
 .header__extras {
@@ -31,6 +32,7 @@
 	flex: 0 0 15%;
 	justify-content: flex-end;
 	order: 3;
+	z-index: 9999;
 
 	@media (--large) {
 		flex: inherit;

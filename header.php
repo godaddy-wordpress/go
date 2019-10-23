@@ -40,15 +40,17 @@
 
 						<nav id="header__navigation" class="header__navigation" aria-label="<?php esc_attr_e( 'Horizontal', 'go' ); ?>" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
-							<?php
-							wp_nav_menu(
-								[
-									'container'      => '',
-									'menu_class'     => 'primary-menu list-reset',
-									'theme_location' => 'primary',
-								]
-							);
-							?>
+							<div class="header__navigation-inner">
+								<?php
+								wp_nav_menu(
+									[
+										'menu_class'     => 'primary-menu list-reset',
+										'theme_location' => 'primary',
+									]
+								);
+								?>
+							</div>
+
 						</nav>
 
 					<?php } ?>

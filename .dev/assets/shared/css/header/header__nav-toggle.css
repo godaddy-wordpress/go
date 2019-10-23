@@ -4,6 +4,7 @@
 	flex: 0 0 15%;
 	justify-content: flex-start;
 	order: 1;
+	z-index: 10000;
 
 	@media (--large) {
 		flex: 0;
@@ -43,14 +44,7 @@
 	}
 }
 
-.nav-toggle-icon--close {
-	display: none;
-}
-
-body.menu-is-open .nav-toggle-icon--close {
-	display: flex;
-}
-
+body:not(.menu-is-open) .nav-toggle-icon--close,
 body.menu-is-open .nav-toggle-icon:not(.nav-toggle-icon--close) {
 	display: none;
 }

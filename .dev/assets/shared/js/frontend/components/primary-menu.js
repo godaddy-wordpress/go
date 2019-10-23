@@ -8,7 +8,7 @@ const init = () => {
 	if ( TenUp ) {
 		TenUp.navigation( {
 			target: '#header__navigation',
-			toggle: '#js-nav-toggle',
+			toggle: '#nav-toggle',
 			// eslint-disable-next-line
 			sub_menu_open: 'click'
 		} );

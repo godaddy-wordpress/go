@@ -1,7 +1,0 @@
-.nav-toggle-icon-inner::before {
-	width: 88%;
-}
-
-.has-offscreen-nav.menu-is-open .nav-toggle-icon-inner::before {
-	width: 100%;
-}

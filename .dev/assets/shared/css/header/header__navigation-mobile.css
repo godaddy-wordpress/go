@@ -1,56 +1,16 @@
-/*! Header: Header 4 */
-.has-header-4 {
+/* ! Add breakpoints into the DOM for JS hooks */
+body::before {
+	content: "has-offscreen-nav";
+	display: none;
 
-	&::before {
-		content: "has-search-toggle has-offscreen-nav";
-		display: none;
-
-		@media (--large) {
-			content: "has-full-nav has-search-toggle has-offscreen-nav";
-		}
+	@media (--large) {
+		content: "has-full-nav has-search-toggle";
 	}
+}
 
-	& .header__extras {
-		justify-content: flex-start;
-		order: 1;
-
-		& .header__search-toggle {
-			margin-left: -0.75rem;
-			margin-right: 0;
-		}
-	}
-
-	& .header__nav-toggle {
-		align-items: flex-end;
-		display: inline-flex;
-		justify-content: flex-end;
-		order: 3;
-
-		& .nav-toggle {
-			display: inline-flex;
-			margin-left: 0;
-			margin-right: -0.75rem;
-		}
-	}
-
-	& .header__title-nav {
-		order: 2;
-	}
-
-	& .header__titles {
-		flex: 1 0 100%;
-		justify-content: center;
-		text-align: center;
-	}
-
-	&:not(.menu-is-open) .header__navigation {
-		@media (--large) {
-			display: none;
-		}
-	}
-
-	/*! Header: Header 4: Offscreen Navigation*/
-	&.menu-is-open {
+/*! Offscreen Navigation */
+.menu-is-open {
+	@media (--largeMax) {
 		overflow: hidden;
 
 		& .header__navigation {
@@ -68,7 +28,7 @@
 
 			& a {
 				display: block;
-				font-size: 3vmin;
+				font-size: 3.25vmin;
 				padding: 0.25rem;
 
 				@media (--smallMax) {
@@ -132,5 +92,4 @@
 			}
 		}
 	}
-
 }
