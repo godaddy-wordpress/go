@@ -44,11 +44,10 @@
 	--theme-block-padding-x: 5vw;
 
 	/* Block Padding */
-	--editor-padding: 10rem;
+	--editor-padding: 10vw;
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
-
 	--theme-selection--bg: var(--theme-color-primary);
 
 	/* Transitions */

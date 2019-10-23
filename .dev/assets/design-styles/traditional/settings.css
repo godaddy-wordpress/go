@@ -44,7 +44,7 @@
 	--theme-block-padding-x: 6vw;
 
 	/* Block Padding */
-	--editor-padding: 8rem;
+	--editor-padding: 8vw;
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-heading);

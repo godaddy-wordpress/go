@@ -63,7 +63,7 @@
 		@media (--large) {
 			display: none;
 			left: 50%;
-			padding: 0.75rem 0;
+			padding: 0.75rem;
 			position: absolute;
 			text-align: center;
 			transform: translateX(-50%);
@@ -84,8 +84,8 @@
 			width: 100%;
 
 			@media (--large) {
-				padding-bottom: 0.3rem;
-				padding-top: 0.3rem;
+				padding-bottom: 0.35rem;
+				padding-top: 0.35rem;
 			}
 
 			&::after {
