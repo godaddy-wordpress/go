@@ -59,6 +59,7 @@
 
 				<div class="header__extras">
 					<?php Go\search_toggle(); ?>
+					<?php get_search_form(); ?>
 				</div>
 
 			</div>
