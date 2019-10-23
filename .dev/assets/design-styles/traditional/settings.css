@@ -222,13 +222,6 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
-	--theme-header--padding-y: 1.25rem;
-
-	@media (--medium) {
-		--theme-header--padding-y: 2.15rem;
-	}
-
-	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 2rem;
 	--theme-site-title--font: var(--theme-heading--font);

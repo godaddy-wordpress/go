@@ -1,90 +1,40 @@
 /*! Header: Header 4 */
 .has-header-4 {
 
-	&::before {
-		content: "has-search-toggle has-offscreen-nav";
-		display: none;
+	& .site-header__extras {
+		justify-content: flex-start;
+		order: 1;
 
-		@media (--large) {
-			content: "has-search-toggle has-offscreen-nav";
+		& .site-search__toggle {
+			margin-left: -0.75rem;
+			margin-right: 0;
 		}
 	}
 
-	& .site-header .site-branding {
-		flex: 1;
-		justify-content: center;
-		max-width: 100%;
-		text-align: center;
+	& .site-header__nav-toggle {
+		align-items: flex-end;
+		display: inline-flex;
+		justify-content: flex-end;
+		order: 3;
+
+		& .site-navigation__toggle {
+			display: inline-flex;
+			margin-left: 0;
+			margin-right: -0.75rem;
+		}
 	}
 
-	& .site-navigation__toggle {
-		display: block;
-		right: calc(var(--theme-block-padding-x) - 1.75rem);
+	& .site-header__title {
+		order: 2;
+	}
+
+	& .site-branding {
+		flex: 1 0 100%;
+		justify-content: center;
+		text-align: center;
 	}
 
 	& .site-navigation {
-		text-align: center;
-
-		@media (--large) {
-			align-items: center;
-			flex-direction: row;
-			height: 0;
-			justify-content: center;
-			opacity: 0;
-			overflow: hidden;
-			position: fixed;
-			width: auto;
-		}
-	}
-
-	& .primary-menu {
-		margin-left: 0;
-		margin-right: 0;
-		opacity: 0;
-		transform: scale(1.35, 1.35);
-		visibility: hidden;
-		width: 100%;
-
-		& a {
-			@media (--large) {
-				font-size: calc(var(--theme-site-nav--font-size) * 2);
-			}
-		}
-
-		& .menu-item {
-			@media (--large) {
-				display: block;
-				padding-right: 0;
-			}
-		}
-
-		& > li > .sub-menu::before {
-			left: 50%;
-		}
-	}
-
-	& .site-search__toggle {
-		height: 100%;
-		left: calc(var(--theme-block-padding-x) - 2.25rem);
-		outline-offset: -4px;
-		padding: 0;
-		position: absolute;
-		top: 0;
-		width: 5rem;
-	}
-
-	& .site-header .site-search {
-		left: calc(var(--theme-block-padding-x) - 0.3rem);
-		opacity: 0;
-		pointer-events: none;
-		position: absolute;
-		right: calc(var(--theme-block-padding-x) - 2rem);
-		transform: translateX(-100%);
-		transition: opacity 175ms ease-out 75ms, transform ease-out 175ms;
-		z-index: 310;
-
-		@media (--medium) {
-			right: auto;
-		}
+		display: none;
 	}
 }

@@ -200,11 +200,6 @@
 	## Header
 	--------------------------------------------------------------*/
 	--theme-header--bg: "";
-	--theme-header--padding-y: 1.25rem;
-
-	@media (--medium) {
-		--theme-header--padding-y: 2.55rem;
-	}
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);

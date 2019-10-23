@@ -1,4 +1,15 @@
 /*! Header: Site Navigation: Toggle */
+.site-header__nav-toggle {
+	align-items: flex-start;
+	flex: 0 0 15%;
+	justify-content: flex-start;
+	order: 1;
+
+	@media (--large) {
+		flex: 0;
+	}
+}
+
 .site-navigation__toggle {
 	background-color: transparent;
 	border: none;
@@ -29,17 +40,6 @@
 	& svg {
 		fill: currentColor;
 		width: var(--theme-search-toggle--size, 1.35rem);
-	}
-}
-
-.site-header__nav-toggle {
-	align-items: flex-start;
-	flex: 0 0 15%;
-	justify-content: flex-start;
-	order: 1;
-
-	@media (--large) {
-		flex: 0;
 	}
 }
 

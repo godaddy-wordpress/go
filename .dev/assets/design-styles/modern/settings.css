@@ -207,14 +207,6 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
-	--header-padding: 2vw var(--theme-block-padding-x);
-	--theme-header--padding-y: 1.5rem;
-
-	@media (--medium) {
-		--theme-header--padding-y: 1.85rem;
-	}
-
-	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.15rem;
 	--theme-site-title--font: var(--theme-site-nav--font);

@@ -23,6 +23,7 @@
 @import url("layout/content.css");
 @import url("layout/alignments.css");
 @import url("layout/entry-header.css");
+@import url("layout/featured-image.css");
 @import url("layout/post.css");
 @import url("layout/pagination.css");
 @import url("layout/404.css");
@@ -120,6 +121,10 @@
 @import url("utilities/font-sizes.css");
 @import url("utilities/colors.css");
 @import url("utilities/padding.css");
+
+.customize-partial-edit-shortcut {
+	display: none !important;
+}
 
 /* Everything below here still needs organizing */
 .u-informational {

@@ -384,24 +384,6 @@ function hex_to_hsl( $hex, $string_output = false ) {
 }
 
 /**
- * Includes the selected header varation
- *
- * @return void
- */
-function header_variation() {
-	$variations         = \Go\Core\get_available_header_variations();
-	$selected_variation = \Go\Core\get_header_variation();
-
-	if ( is_customize_preview() ) {
-		foreach ( $variations as $variation ) {
-			call_user_func( $variation['partial'] );
-		}
-	} elseif ( $selected_variation ) {
-		call_user_func( $selected_variation['partial'] );
-	}
-}
-
-/**
  * Returns whether there is a footer background or not.
  *
  * @return boolean
