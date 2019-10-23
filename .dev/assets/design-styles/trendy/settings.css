@@ -33,26 +33,20 @@
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.15rem;
 	--vertical-rhythm--med: 1.75rem;
-	--vertical-rhythm--lrg: 4rem;
+	--vertical-rhythm--lrg: calc(2rem + 10vw);
 
 	@media (--large) {
 		--vertical-rhythm: 1.8rem;
 		--vertical-rhythm--med: 2.3rem;
-		--vertical-rhythm--lrg: 10rem;
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 2rem;
-
-	@media (--medium) {
-		--theme-block-padding-x: 6rem;
-	}
+	--theme-block-padding-x: 6vw;
 
 	/* Block Padding */
-	--editor-padding: 10rem;
+	--editor-padding: 10vw;
 
 	/* Accessibility */
-	--theme-outline-width: 1px;
 	--theme-outline-color: var(--theme-color-primary);
 	--theme-selection--bg: var(--theme-color-heading);
 	--theme-selection--color: var(--color-white);
@@ -98,7 +92,7 @@
 		--theme-h3--font-size: 2.25em;
 	}
 
-	@media (--xlarge) {
+	@media (--huge) {
 		--theme-h1--font-size: 4em;
 	}
 
@@ -210,16 +204,8 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
-	--theme-header--padding-y: 1.25rem;
-
-	@media (--medium) {
-		--theme-header--padding-y: 2.55rem;
-	}
-
-	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.5rem;
-	--theme-site-title--font: var(--theme-heading--font);
 	--theme-site-title--tracking: 0.033em;
 	--theme-site-title--weight: 400;
 
@@ -242,35 +228,13 @@
 	--theme-site-nav--weight: 400;
 	--theme-site-nav--tracking: 0;
 	--theme-site-nav--transition: var(--theme-link-transition);
-	--theme-site-nav--padding-x: 1.35rem;
 
-	/* Header Variations */
-	--theme-header-3--padding-y: 3.5rem;
-
-	@media (--large) {
-		--theme-header-3--padding-y: 6rem;
-	}
-
-	/*--------------------------------------------------------------
-	## Navigation Toggle
-	--------------------------------------------------------------*/
-	--theme-site-nav-toggle--color: var(--theme-color-heading);
-	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading);
-	--theme-site-nav-toggle--size: 1.75rem;
-	--theme-site-nav-toggle--spacing: 8px;
-
-	/* Offscreen Navigation */
-	--theme-offscreen-nav--bg: var(--color-white);
-	--theme-offscreen-nav--color: var(--theme-color-heading);
-	--theme-offscreen-nav-overlay--color: hsla(var(--color-black), 0.15);
-	--theme-offscreen-nav-padding: 2rem;
 
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-text-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-secondary);
-
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 	--theme-search-submit--color: var(--color-white);

@@ -7,7 +7,7 @@
 
 ?>
 
-	</div>
+	</main>
 
 	<?php Go\footer_variation(); ?>
 

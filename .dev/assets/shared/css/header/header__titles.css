@@ -1,10 +1,10 @@
 /*! Header: Site Branding */
-.site-branding {
-	flex: 1 0 33%;
-	line-height: 1.1;
-	max-width: 50%;
+.header__titles {
 	position: relative;
-	top: 3px;
+
+	& a {
+		outline-offset: 6px;
+	}
 
 	& .custom-logo {
 		max-width: var(--theme-site-logo--width-mobile);
@@ -15,62 +15,50 @@
 	}
 }
 
-.wp-custom-logo .site-branding {
-	top: 0;
+.header .header__titles {
+	flex: 1 0 100%;
+	flex-grow: 0;
+	flex-shrink: 0;
+	justify-content: center;
+	order: 2;
+	text-align: center;
+	z-index: 10000;
+
+	@media (--large) {
+		flex: auto;
+		justify-content: start;
+		text-align: left;
+	}
 }
 
-.site-branding__title {
+.site-title {
 	color: hsla(var(--theme-site-title--color), 1);
-	font-family: var(--theme-site-title--font);
+	font-family: var(--theme-site-title--font, var(--theme-heading--font));
 	font-size: var(--theme-site-title--font-size);
 	font-weight: var(--theme-site-title--weight, var(--theme-heading--weight));
 	letter-spacing: var(--theme-site-title--tracking);
+	line-height: 1.1;
+	margin: 0;
 	text-transform: var(--theme-site-title--text-transform);
 }
 
-h1.site-branding__title {
-	color: hsla(var(--theme-site-title--color), 1);
-	line-height: inherit;
-	margin: 0;
-}
-
-.site-branding__description {
+.site-description {
 	color: hsl(var(--theme-site-description--color));
 	font-family: var(--theme-site-description--font);
 	font-size: var(--theme-site-description--font-size) !important;
 	font-weight: var(--theme-site-description--weight, 400);
 	letter-spacing: var(--theme-site-nav--tracking);
 	line-height: var(--theme-site-description--leading) !important;
-	margin-top: var(--theme-site-description--mt, 0);
+	margin-top: var(--theme-site-description--mt, 0.25rem);
 	opacity: var(--theme-site-description--opacity, 0.65);
 	text-transform: var(--theme-site-nav--text-transform, normal);
-}
 
-.site-branding__link {
-	display: block;
-	line-height: 1;
-	text-decoration: none;
-
-	@media (--medium) {
-		display: inline-block;
-	}
-
-	&:hover {
-		text-decoration: none !important;
-	}
-
-	& + .site-branding__description {
-		display: none;
-
-		@media (--medium) {
-			display: block;
-			margin-left: 1.5rem;
-		}
+	@media (--large) {
+		margin-left: var(--theme-site-nav--padding-x, 2vw);
+		margin-top: 0;
 	}
 }
 
-.site-branding__link:focus,
 .custom-logo-link:focus {
-	@mixin outline;
-	outline-offset: 7px;
+	outline-offset: 6px;
 }

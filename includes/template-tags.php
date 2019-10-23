@@ -384,24 +384,6 @@ function hex_to_hsl( $hex, $string_output = false ) {
 }
 
 /**
- * Includes the selected header varation
- *
- * @return void
- */
-function header_variation() {
-	$variations         = \Go\Core\get_available_header_variations();
-	$selected_variation = \Go\Core\get_header_variation();
-
-	if ( is_customize_preview() ) {
-		foreach ( $variations as $variation ) {
-			call_user_func( $variation['partial'] );
-		}
-	} elseif ( $selected_variation ) {
-		call_user_func( $selected_variation['partial'] );
-	}
-}
-
-/**
  * Returns whether there is a footer background or not.
  *
  * @return boolean
@@ -702,7 +684,7 @@ function social_icons( $args = [] ) {
  * @return void
  */
 function display_site_branding( $args = [] ) {
-	echo '<div class="site-branding sm:flex items-center" itemscope itemtype="http://schema.org/Organization">';
+	echo '<div class="header__titles lg:flex items-center" itemscope itemtype="http://schema.org/Organization">';
 		site_branding( $args );
 	echo '</div>';
 }
@@ -729,16 +711,16 @@ function site_branding( $args = [] ) {
 		$blog_description = get_bloginfo( 'description' );
 
 		if ( ! empty( $blog_name ) ) {
-			echo '<a class="site-branding__link" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
+			echo '<a class="inline-block no-underline" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
 			printf(
-				'<%1$s class="site-branding__title">' . esc_html( $blog_name ) . '</%1$s>',
+				'<%1$s class="site-title">' . esc_html( $blog_name ) . '</%1$s>',
 				( is_front_page() && ! did_action( 'get_footer' ) ) ? 'h1' : 'span'
 			);
 			echo '</a>';
 		}
 
 		if ( true === $args['description'] && ! empty( $blog_description ) ) :
-			echo '<span class="site-branding__description display-block relative text-sm">' . esc_html( $blog_description ) . '</span>';
+			echo '<span class="site-description display-none sm:display-block relative text-sm">' . esc_html( $blog_description ) . '</span>';
 		endif;
 	}
 }
@@ -749,15 +731,17 @@ function site_branding( $args = [] ) {
  * @return void
  */
 function navigation_toggle() {
-	echo '<button id="js-site-navigation__toggle" class="site-navigation__toggle" type="button" aria-controls="js-primary-menu">';
-		echo '<div class="site-navigation__toggle-icon">';
-			load_inline_svg( 'menu.svg' );
-		echo '</div>';
-		echo '<div class="site-navigation__toggle-icon site-navigation__toggle-icon--close">';
-			load_inline_svg( 'close.svg' );
-		echo '</div>';
-		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'go' ) . '</span>';
-	echo '</button>';
+	echo '<div class="header__nav-toggle">';
+		echo '<button id="nav-toggle" class="nav-toggle" type="button" aria-controls="header__navigation">';
+			echo '<div class="nav-toggle-icon">';
+				load_inline_svg( 'menu.svg' );
+			echo '</div>';
+			echo '<div class="nav-toggle-icon nav-toggle-icon--close">';
+				load_inline_svg( 'close.svg' );
+			echo '</div>';
+			echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'go' ) . '</span>';
+		echo '</button>';
+	echo '</div>';
 }
 
 /**
@@ -774,7 +758,7 @@ function search_toggle() {
 	$search_icon = ob_get_clean();
 
 	printf(
-		'<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
+		'<button id="header__search-toggle" class="header__search-toggle" type="button" aria-controls="js-site-search">
 			%1$s
 			<span class="screen-reader-text">%2$s</span>
 		</button>',

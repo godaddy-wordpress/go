@@ -32,7 +32,7 @@
 @define-mixin outline {
 	outline-color: hsla(var(--theme-outline-color), 1);
 	outline-style: var(--theme-outline-style, dotted);
-	outline-width: var(--theme-outline-width, 2px);
+	outline-width: var(--theme-outline-width, 1px);
 }
 
 @define-mixin outline-text-link {

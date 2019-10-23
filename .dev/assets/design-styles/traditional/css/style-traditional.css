@@ -4,11 +4,6 @@
 @import url("../../../shared/css/config/media-queries.css");
 @import url("../settings.css");
 
-.site-branding {
-	position: relative;
-	top: -2px;
-}
-
 .flickity-prev-next-button {
 	border-radius: 3px;
 }
