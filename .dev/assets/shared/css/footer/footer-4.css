@@ -9,7 +9,7 @@
 		margin-top: calc(var(--vertical-rhythm--lrg) * 0.5);
 	}
 
-	& .site-footer .site-branding {
+	& .site-footer .header__titles {
 		align-items: flex-start;
 		flex: 0 0 100%;
 		margin-bottom: calc(var(--vertical-rhythm--lrg) * 0.55);
@@ -21,11 +21,11 @@
 			padding-right: 1rem;
 		}
 
-		& .site-branding__title {
+		& .site-title {
 			color: hsla(var(--theme-footer-heading--color), 1);
 		}
 
-		& .site-branding__description {
+		& .site-description {
 			display: none;
 		}
 	}

@@ -18,9 +18,9 @@ export default () => {
 
 			// Add class if a background color is applied.
 			if ( to ) {
-				$( '.site-header' ).addClass( 'has-background' );
+				$( '.header' ).addClass( 'has-background' );
 			} else {
-				$( '.site-header' ).removeClass( 'has-background' );
+				$( '.header' ).removeClass( 'has-background' );
 			}
 		} );
 	} );

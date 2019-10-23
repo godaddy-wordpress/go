@@ -33,27 +33,21 @@
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.15rem;
 	--vertical-rhythm--med: 1.75rem;
-	--vertical-rhythm--lrg: 4rem;
+	--vertical-rhythm--lrg: calc(2rem + 8vw);
 
 	@media (--large) {
 		--vertical-rhythm: 1.8rem;
 		--vertical-rhythm--med: 2.25rem;
-		--vertical-rhythm--lrg: 8rem;
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 2.5rem;
-
-	@media (--medium) {
-		--theme-block-padding-x: 6rem;
-	}
+	--theme-block-padding-x: 6vw;
 
 	/* Block Padding */
-	--editor-padding: 8rem;
+	--editor-padding: 8vw;
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-heading);
-	--theme-outline-width: 1px;
 	--theme-selection--bg: var(--theme-color-heading);
 
 	/* Transitions */
@@ -101,7 +95,7 @@
 		--theme-h3--font-size: 2.5em;
 	}
 
-	@media (--xlarge) {
+	@media (--huge) {
 		--theme-h1--font-size: 4.75em;
 		--theme-h2--font-size: 3em;
 	}
@@ -223,20 +217,11 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
-	--theme-header--padding-y: 1.25rem;
-
-	@media (--medium) {
-		--theme-header--padding-y: 2.15rem;
-	}
-
-	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: 2rem;
-	--theme-site-title--font: var(--theme-heading--font);
-	--theme-site-description--mt: 0.95rem;
+	--theme-site-title--font-size: 1.75rem;
 
 	@media (--medium) {
-		--theme-site-title--font-size: 2.5rem;
+		--theme-site-title--font-size: 2.15rem;
 	}
 
 	--theme-site-description--color: var(--theme-color-heading);
@@ -251,36 +236,13 @@
 	--theme-site-nav--text-transform: normal;
 	--theme-site-nav--tracking: 0;
 	--theme-site-nav--transition: var(--theme-link-transition);
-	--theme-site-nav--padding-x: 1rem;
 
-	/* Header Variations */
-	--theme-header-3--padding-y: 3.5rem;
-	--theme-header-3-nav--margin-top: 2.5rem;
-
-	@media (--large) {
-		--theme-header-3--padding-y: 6rem;
-	}
-
-	/*--------------------------------------------------------------
-	## Navigation Toggle
-	--------------------------------------------------------------*/
-	--theme-site-nav-toggle--color: var(--theme-color-heading);
-	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading);
-	--theme-site-nav-toggle--size: 2rem;
-	--theme-site-nav-toggle--spacing: 10px;
-
-	/* Offscreen Navigation */
-	--theme-offscreen-nav--bg: var(--color-white);
-	--theme-offscreen-nav--color: var(--theme-color-heading);
-	--theme-offscreen-nav-overlay--color: hsla(var(--color-black), 0.15);
-	--theme-offscreen-nav-padding: 2rem;
 
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-primary);
-
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 	--theme-search-submit--color: var(--color-white);

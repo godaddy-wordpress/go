@@ -30,18 +30,8 @@
 	}
 
 	&.alignfull > div {
-		padding-bottom: calc(var(--editor-padding) / 4);
-		padding-top: calc(var(--editor-padding) / 4);
-
-		@media (--medium) {
-			padding-bottom: calc(var(--editor-padding) / 2);
-			padding-top: calc(var(--editor-padding) / 2);
-		}
-
-		@media (--large) {
-			padding-bottom: var(--editor-padding);
-			padding-top: var(--editor-padding);
-		}
+		padding-bottom: var(--editor-padding);
+		padding-top: var(--editor-padding);
 	}
 
 	& .wp-block-verse {

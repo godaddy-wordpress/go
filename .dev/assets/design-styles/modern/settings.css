@@ -36,25 +36,15 @@
 	--theme-max-w-wide: 90rem;
 
 	/* Vertical Rhythm */
-	--vertical-rhythm: 1.15rem;
-	--vertical-rhythm--med: 1.75rem;
-	--vertical-rhythm--lrg: 4rem;
-
-	@media (--large) {
-		--vertical-rhythm: 1.8rem;
-		--vertical-rhythm--med: 2.3rem;
-		--vertical-rhythm--lrg: 10rem;
-	}
+	--vertical-rhythm: 1.25rem;
+	--vertical-rhythm--med: 2.25rem;
+	--vertical-rhythm--lrg: calc(2rem + 10vw);
 
 	/* Site Padding */
-	--theme-block-padding-x: 2rem;
-
-	@media (--medium) {
-		--theme-block-padding-x: 6rem;
-	}
+	--theme-block-padding-x: 4vw;
 
 	/* Block Padding */
-	--editor-padding: 10em;
+	--editor-padding: 10vw;
 
 	/* Accessibility */
 	--theme-outline-color: 0, 0%, 0%;
@@ -211,18 +201,11 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
-	--theme-header--padding-y: 1.5rem;
-
-	@media (--medium) {
-		--theme-header--padding-y: 1.85rem;
-	}
-
-	/* Header > Site Branding */
 	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: 1.15rem;
+	--theme-site-title--font-size: 1.1rem;
 	--theme-site-title--font: var(--theme-site-nav--font);
 	--theme-site-title--text-transform: uppercase;
-	--theme-site-title--tracking: 5px;
+	--theme-site-title--tracking: 3px;
 
 	@media (--large) {
 		--theme-site-title--font-size: 1.5rem;
@@ -246,35 +229,13 @@
 	--theme-site-nav--text-transform: uppercase;
 	--theme-site-nav--tracking: 3px;
 	--theme-site-nav--transition: var(--theme-link-transition);
-	--theme-site-nav--padding-x: 1rem;
 
-	/* Header Variations */
-	--theme-header-3--padding-y: 3.5rem;
-
-	@media (--large) {
-		--theme-header-3--padding-y: 6rem;
-	}
-
-	/*--------------------------------------------------------------
-	## Navigation Toggle
-	--------------------------------------------------------------*/
-	--theme-site-nav-toggle--color: var(--theme-color-heading);
-	--theme-site-nav-toggle--color-interactive: var(--theme-color-heading);
-	--theme-site-nav-toggle--size: 1.8rem;
-	--theme-site-nav-toggle--spacing: 10px;
-
-	/* Offscreen Navigation */
-	--theme-offscreen-nav--bg: var(--color-white);
-	--theme-offscreen-nav--color: var(--theme-color-heading);
-	--theme-offscreen-nav-overlay--color: hsla(var(--color-black), 0.15);
-	--theme-offscreen-nav-padding: 2rem;
 
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-heading);
-
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 	--theme-search-submit--color: var(--color-white);

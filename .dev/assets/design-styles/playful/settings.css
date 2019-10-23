@@ -33,27 +33,21 @@
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.75rem;
 	--vertical-rhythm--med: 2.25rem;
-	--vertical-rhythm--lrg: 5rem;
+	--vertical-rhythm--lrg: calc(2rem + 10vw);
 
 	@media (--large) {
 		--vertical-rhythm: 2.25rem;
 		--vertical-rhythm--med: 2.5rem;
-		--vertical-rhythm--lrg: 10rem;
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 2.25rem;
-
-	@media (--medium) {
-		--theme-block-padding-x: 6.5rem;
-	}
+	--theme-block-padding-x: 6vw;
 
 	/* Block Padding */
-	--editor-padding: 10rem;
+	--editor-padding: 10vw;
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
-	--theme-outline-width: 1px;
 
 	--theme-selection--bg: var(--theme-color-primary);
 
@@ -203,11 +197,6 @@
 	## Header
 	--------------------------------------------------------------*/
 	--theme-header--bg: "";
-	--theme-header--padding-y: 1.5rem;
-
-	@media (--medium) {
-		--theme-header--padding-y: 2.75rem;
-	}
 
 	/* Header > Site Branding */
 	--theme-site-title--color: var(--color-white);
@@ -232,35 +221,13 @@
 	--theme-site-nav--text-transform: none;
 	--theme-site-nav--tracking: 0;
 	--theme-site-nav--transition: var(--theme-link-transition);
-	--theme-site-nav--padding-x: 1.15rem;
 
-	/* Header Variations */
-	--theme-header-3--padding-y: 3.5rem;
-
-	@media (--large) {
-		--theme-header-3--padding-y: 6rem;
-	}
-
-	/*--------------------------------------------------------------
-	## Navigation Toggle
-	--------------------------------------------------------------*/
-	--theme-site-nav-toggle--color: var(--color-white);
-	--theme-site-nav-toggle--color-interactive: var(--color-white);
-	--theme-site-nav-toggle--size: 1.4rem;
-	--theme-site-nav-toggle--spacing: 8px;
-
-	/* Offscreen Navigation */
-	--theme-offscreen-nav--bg: var(--color-white);
-	--theme-offscreen-nav--color: var(--theme-color-heading);
-	--theme-offscreen-nav-overlay--color: hsla(var(--color-black), 0.15);
-	--theme-offscreen-nav-padding: 2rem;
 
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--color-white);
 	--theme-search-toggle--color-interactive: var(--color-white);
-
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-primary);
 	--theme-search-submit--color: var(--color-white);
