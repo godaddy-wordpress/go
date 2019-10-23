@@ -93,6 +93,7 @@
 @import url("coblocks/alert.css");
 @import url("coblocks/hero.css");
 @import url("coblocks/features.css");
+@import url("coblocks/media-card.css");
 
 /*! WooCommerce */
 @import url("woocommerce/notice.css");
