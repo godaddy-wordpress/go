@@ -72,14 +72,22 @@ body::before {
 			top: 0;
 			width: 100%;
 
-			& .sub-menu li {
+			& .sub-menu {
+				margin-bottom: 1rem;
 
-				&:first-child {
-					padding-top: 0.75rem;
+				&::before {
+					display: none;
 				}
 
-				&:last-child {
-					padding-bottom: 0.75rem;
+				& li {
+
+					&:first-child {
+						padding-top: 0.75rem;
+					}
+
+					&:last-child {
+						padding-bottom: 0.75rem;
+					}
 				}
 			}
 
@@ -89,6 +97,19 @@ body::before {
 				@media (--smallMax) {
 					font-size: 0.85rem;
 				}
+			}
+
+			& .menu-item-has-children svg {
+				height: 0.75rem;
+				margin-left: 0.5rem;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 0.75rem;
+			}
+
+			& .submenu-is-open svg {
+				transform: translateY(-50%) rotate(180deg);
 			}
 		}
 	}
