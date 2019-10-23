@@ -76,7 +76,7 @@
 			background-color: hsl(var(--theme-header--bg, var(--color-white)));
 			font-size: 1.5rem;
 			opacity: 1;
-			padding-bottom: var(--header-padding, 2.5vw);
+			padding-bottom: var(--header-padding, 3vw);
 			padding-left: var(--theme-block-padding-x);
 			padding-right: var(--theme-block-padding-x);
 			padding-top: 70px; /* This needs to be auto-generated based on the header height */
