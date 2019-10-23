@@ -1,10 +1,18 @@
 /*! Header: Site Branding */
 .site-branding {
-	flex: 1 0 33%;
-	line-height: 1.1;
-	max-width: 50%;
+	flex: 1 0 100%;
+	flex-grow: 0;
+	flex-shrink: 0;
+	justify-content: center;
+	order: 2;
 	position: relative;
-	top: 3px;
+	text-align: center;
+
+	@media (--large) {
+		flex: 0;
+		justify-content: start;
+		text-align: left;
+	}
 
 	& .custom-logo {
 		max-width: var(--theme-site-logo--width-mobile);
@@ -15,23 +23,15 @@
 	}
 }
 
-.wp-custom-logo .site-branding {
-	top: 0;
-}
-
 .site-branding__title {
 	color: hsla(var(--theme-site-title--color), 1);
 	font-family: var(--theme-site-title--font);
 	font-size: var(--theme-site-title--font-size);
 	font-weight: var(--theme-site-title--weight, var(--theme-heading--weight));
 	letter-spacing: var(--theme-site-title--tracking);
-	text-transform: var(--theme-site-title--text-transform);
-}
-
-h1.site-branding__title {
-	color: hsla(var(--theme-site-title--color), 1);
 	line-height: inherit;
 	margin: 0;
+	text-transform: var(--theme-site-title--text-transform);
 }
 
 .site-branding__description {
@@ -47,22 +47,17 @@ h1.site-branding__title {
 }
 
 .site-branding__link {
-	display: block;
-	line-height: 1;
+	display: inline-block;
 	text-decoration: none;
 
-	@media (--medium) {
-		display: inline-block;
-	}
-
 	&:hover {
-		text-decoration: none !important;
+		text-decoration: none;
 	}
 
 	& + .site-branding__description {
 		display: none;
 
-		@media (--medium) {
+		@media (--large) {
 			display: block;
 			margin-left: 1.5rem;
 		}
@@ -71,6 +66,5 @@ h1.site-branding__title {
 
 .site-branding__link:focus,
 .custom-logo-link:focus {
-	@mixin outline;
-	outline-offset: 7px;
+	outline-offset: 6px;
 }

@@ -749,6 +749,7 @@ function site_branding( $args = [] ) {
  * @return void
  */
 function navigation_toggle() {
+	echo '<div class="site-header__nav-toggle">';
 	echo '<button id="js-site-navigation__toggle" class="site-navigation__toggle" type="button" aria-controls="js-primary-menu">';
 		echo '<div class="site-navigation__toggle-icon">';
 			load_inline_svg( 'menu.svg' );
@@ -758,6 +759,7 @@ function navigation_toggle() {
 		echo '</div>';
 		echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'go' ) . '</span>';
 	echo '</button>';
+	echo '</div>';
 }
 
 /**

@@ -47,11 +47,7 @@
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 2rem;
-
-	@media (--medium) {
-		--theme-block-padding-x: 6rem;
-	}
+	--theme-block-padding-x: 4vw;
 
 	/* Block Padding */
 	--editor-padding: 10em;
@@ -211,6 +207,7 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
+	--header-padding: 2vw var(--theme-block-padding-x);
 	--theme-header--padding-y: 1.5rem;
 
 	@media (--medium) {
@@ -246,7 +243,6 @@
 	--theme-site-nav--text-transform: uppercase;
 	--theme-site-nav--tracking: 3px;
 	--theme-site-nav--transition: var(--theme-link-transition);
-	--theme-site-nav--padding-x: 1rem;
 
 	/* Header Variations */
 	--theme-header-3--padding-y: 3.5rem;

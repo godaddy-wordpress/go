@@ -3,12 +3,11 @@
 
 	& .menu-item {
 		position: relative;
+		white-space: nowrap;
 		width: 100%;
 
 		@media (--large) {
 			display: inline-block;
-			padding-left: var(--theme-site-nav--padding-x);
-			padding-right: var(--theme-site-nav--padding-x);
 			width: auto;
 		}
 	}
@@ -35,8 +34,7 @@
 		}
 
 		&:focus {
-			@mixin outline;
-			outline-offset: 9px;
+			outline-offset: 5px;
 		}
 	}
 

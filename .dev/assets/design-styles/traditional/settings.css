@@ -53,7 +53,6 @@
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-heading);
-	--theme-outline-width: 1px;
 	--theme-selection--bg: var(--theme-color-heading);
 
 	/* Transitions */
@@ -101,7 +100,7 @@
 		--theme-h3--font-size: 2.5em;
 	}
 
-	@media (--xlarge) {
+	@media (--huge) {
 		--theme-h1--font-size: 4.75em;
 		--theme-h2--font-size: 3em;
 	}

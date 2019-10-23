@@ -53,7 +53,6 @@
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
-	--theme-outline-width: 1px;
 
 	--theme-selection--bg: var(--theme-color-primary);
 

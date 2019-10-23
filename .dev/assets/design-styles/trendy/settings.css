@@ -52,7 +52,6 @@
 	--editor-padding: 10rem;
 
 	/* Accessibility */
-	--theme-outline-width: 1px;
 	--theme-outline-color: var(--theme-color-primary);
 	--theme-selection--bg: var(--theme-color-heading);
 	--theme-selection--color: var(--color-white);
@@ -98,7 +97,7 @@
 		--theme-h3--font-size: 2.25em;
 	}
 
-	@media (--xlarge) {
+	@media (--huge) {
 		--theme-h1--font-size: 4em;
 	}
 

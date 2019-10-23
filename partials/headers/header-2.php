@@ -8,29 +8,34 @@
 $has_background = Go\has_header_background();
 ?>
 
-<header id="masthead" class="site-header site-header--2 <?php echo esc_attr( $has_background ); ?>" itemscope itemtype="http://schema.org/WPHeader">
+<header id="masthead" class="site-header site-header--2 relative <?php echo esc_attr( $has_background ); ?>" itemscope itemtype="http://schema.org/WPHeader">
 
-	<div class="site-header__inner flex items-center justify-between max-w-wide m-auto">
+	<div class="site-header__inner flex items-center justify-between h-inherit w-full relative">
 
 		<?php Go\navigation_toggle(); ?>
 
-		<?php if ( has_nav_menu( 'primary' ) || is_customize_preview() ) : ?>
+		<div class="site-header__title">
+
+			<?php Go\display_site_branding(); ?>
+
 			<nav id="js-primary-menu" class="site-navigation c-site-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
 				<?php
-					wp_nav_menu(
-						[
-							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu list-reset',
-							'container'      => false,
-						]
-					);
+				wp_nav_menu(
+					[
+						'theme_location' => 'primary',
+						'menu_class'     => 'primary-menu list-reset',
+						'container'      => false,
+					]
+				);
 				?>
-
 			</nav>
-		<?php endif; ?>
 
-		<?php Go\display_site_branding(); ?>
+		</div>
+
+		<div class="site-header__extras justify-end">
+			<?php Go\search_toggle(); ?>
+		</div>
 
 	</div>
 
