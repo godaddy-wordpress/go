@@ -39,8 +39,15 @@
 
 	& .header__titles {
 		flex: 1 0 100%;
+		flex-direction: column;
 		justify-content: center;
 		text-align: center;
+
+		& .site-description {
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: var(--theme-site-description--mt, 0.25rem);
+		}
 	}
 
 	& .header__navigation {
