@@ -26,30 +26,3 @@
 		visibility: hidden;
 	}
 }
-
-body.menu-is-open {
-	@media (max-width: 1087px) {
-		height: 100%;
-		overflow: hidden;
-		position: fixed;
-		width: 100%;
-	}
-
-	&.admin-bar {
-		@media (--admin-bar-lg) {
-			position: inherit !important;
-		}
-	}
-}
-
-.admin-bar .header__navigation {
-	top: 32px;
-
-	@media (--admin-bar-lg) {
-		top: 46px;
-	}
-
-	@media (--large) {
-		top: initial;
-	}
-}

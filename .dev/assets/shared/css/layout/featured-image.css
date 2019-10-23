@@ -58,8 +58,8 @@
 
 .has-featured-image {
 
-	& .site-branding__title,
-	& .site-branding__description,
+	& .site-title,
+	& .site-description,
 	& .header .primary-menu a {
 		color: hsl(var(--color-white));
 	}

@@ -28,7 +28,7 @@
 		order: 2;
 	}
 
-	& .site-branding {
+	& .header__titles {
 		flex: 1 0 100%;
 		justify-content: center;
 		text-align: center;

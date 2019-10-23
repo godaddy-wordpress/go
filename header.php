@@ -38,7 +38,7 @@
 
 					<?php if ( has_nav_menu( 'primary' ) ) { ?>
 
-						<nav id="js-primary-menu" class="header__navigation" aria-label="<?php esc_attr_e( 'Horizontal', 'go' ); ?>" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<nav id="header__navigation" class="header__navigation" aria-label="<?php esc_attr_e( 'Horizontal', 'go' ); ?>" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
 							<?php
 							wp_nav_menu(

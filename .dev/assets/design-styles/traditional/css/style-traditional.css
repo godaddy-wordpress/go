@@ -4,7 +4,7 @@
 @import url("../../../shared/css/config/media-queries.css");
 @import url("../settings.css");
 
-.site-branding {
+.header__titles {
 	position: relative;
 	top: -2px;
 }

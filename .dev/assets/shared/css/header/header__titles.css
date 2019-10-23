@@ -1,5 +1,5 @@
 /*! Header: Site Branding */
-.site-branding {
+.header__titles {
 	flex: 1 0 100%;
 	flex-grow: 0;
 	flex-shrink: 0;
@@ -14,6 +14,10 @@
 		text-align: left;
 	}
 
+	& a {
+		outline-offset: 6px;
+	}
+
 	& .custom-logo {
 		max-width: var(--theme-site-logo--width-mobile);
 
@@ -23,7 +27,7 @@
 	}
 }
 
-.site-branding__title {
+.site-title {
 	color: hsla(var(--theme-site-title--color), 1);
 	font-family: var(--theme-site-title--font);
 	font-size: var(--theme-site-title--font-size);
@@ -34,7 +38,7 @@
 	text-transform: var(--theme-site-title--text-transform);
 }
 
-.site-branding__description {
+.site-description {
 	color: hsl(var(--theme-site-description--color));
 	font-family: var(--theme-site-description--font);
 	font-size: var(--theme-site-description--font-size) !important;
@@ -46,25 +50,6 @@
 	text-transform: var(--theme-site-nav--text-transform, normal);
 }
 
-.site-branding__link {
-	display: inline-block;
-	text-decoration: none;
-
-	&:hover {
-		text-decoration: none;
-	}
-
-	& + .site-branding__description {
-		display: none;
-
-		@media (--large) {
-			display: block;
-			margin-left: 1.5rem;
-		}
-	}
-}
-
-.site-branding__link:focus,
 .custom-logo-link:focus {
 	outline-offset: 6px;
 }
