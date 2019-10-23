@@ -37,6 +37,7 @@
 	line-height: inherit;
 	margin: 0;
 	text-transform: var(--theme-site-title--text-transform);
+	white-space: nowrap;
 }
 
 .site-description {
