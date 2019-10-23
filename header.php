@@ -26,13 +26,13 @@
 
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'go' ); ?></a>
 
-		<header id="site-header" class="site-header relative <?php echo esc_attr( Go\has_header_background() ); ?>" itemscope itemtype="http://schema.org/WPHeader" role="banner">
+		<header id="header" class="header relative <?php echo esc_attr( Go\has_header_background() ); ?>" itemscope itemtype="http://schema.org/WPHeader" role="banner">
 
-			<div class="site-header__inner flex items-center justify-between h-inherit w-full relative">
+			<div class="header__inner flex items-center justify-between h-inherit w-full relative">
 
 				<?php Go\navigation_toggle(); ?>
 
-				<div class="site-header__title">
+				<div class="header__title">
 
 					<?php Go\display_site_branding(); ?>
 
@@ -51,7 +51,7 @@
 
 				</div>
 
-				<div class="site-header__extras">
+				<div class="header__extras">
 					<?php Go\search_toggle(); ?>
 				</div>
 

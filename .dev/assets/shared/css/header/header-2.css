@@ -1,7 +1,7 @@
 /*! Header: Header 2 */
 .has-header-2 {
 
-	& .site-header__extras {
+	& .header__extras {
 		justify-content: flex-start;
 		order: 1;
 
@@ -11,11 +11,11 @@
 		}
 	}
 
-	& .site-header__title {
+	& .header__title {
 		order: 2;
 	}
 
-	& .site-header__nav-toggle {
+	& .header__nav-toggle {
 		align-items: flex-end;
 		display: inline-flex;
 		justify-content: flex-end;
@@ -29,7 +29,7 @@
 
 	@media (--large) {
 
-		& .site-header__title {
+		& .header__title {
 			order: 3;
 		}
 
@@ -49,7 +49,7 @@
 			}
 		}
 
-		& .site-header__extras {
+		& .header__extras {
 			order: 1;
 
 			& > *:last-child {

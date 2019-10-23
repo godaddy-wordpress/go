@@ -10,7 +10,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-.site-header__inner,
+.header__inner,
 .site-footer__inner {
 	max-width: none;
 }

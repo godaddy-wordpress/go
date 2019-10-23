@@ -29,11 +29,6 @@ body {
 		visibility: hidden;
 	}
 
-	&.menu-is-open .site-header .custom-logo-link,
-	&.menu-is-open .site-header .site-branding__link {
-		opacity: 0;
-	}
-
 	&.menu-is-open {
 
 		& .primary-menu .menu-item a {

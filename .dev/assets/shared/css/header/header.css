@@ -1,5 +1,5 @@
 /*! Header */
-.site-header {
+.header {
 	background-color: hsl(var(--theme-header--bg));
 
 	& .u-informational {
@@ -8,7 +8,7 @@
 	}
 }
 
-.site-header__inner {
+.header__inner {
 	padding: 2vw var(--theme-block-padding-x);
 
 	@media (--medium) {
@@ -17,7 +17,7 @@
 	}
 }
 
-.site-header__title {
+.header__title {
 	align-items: center;
 	display: flex;
 	flex: 1 0 70%;
@@ -25,7 +25,7 @@
 	order: 1;
 }
 
-.site-header__extras {
+.header__extras {
 	align-items: center;
 	display: inline-flex;
 	flex: 0 0 15%;

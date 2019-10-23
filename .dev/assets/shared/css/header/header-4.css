@@ -1,7 +1,7 @@
 /*! Header: Header 4 */
 .has-header-4 {
 
-	& .site-header__extras {
+	& .header__extras {
 		justify-content: flex-start;
 		order: 1;
 
@@ -11,7 +11,7 @@
 		}
 	}
 
-	& .site-header__nav-toggle {
+	& .header__nav-toggle {
 		align-items: flex-end;
 		display: inline-flex;
 		justify-content: flex-end;
@@ -24,7 +24,7 @@
 		}
 	}
 
-	& .site-header__title {
+	& .header__title {
 		order: 2;
 	}
 
