@@ -13,7 +13,7 @@ const searchToggle = () => {
 	initialized = false;
 	navigation = document.querySelector( '.primary-menu' );
 
-	const searchToggle = document.getElementById( 'js-site-search__toggle' );
+	const searchToggle = document.getElementById( 'header__search-toggle' );
 
 	if ( ! searchToggle ) {
 		return;

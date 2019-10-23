@@ -70,7 +70,7 @@
 		background-color: hsl(var(--color-white)) !important;
 	}
 
-	& .site-search__toggle svg {
+	& .header__search-toggle svg {
 		fill: hsl(var(--color-white));
 	}
 

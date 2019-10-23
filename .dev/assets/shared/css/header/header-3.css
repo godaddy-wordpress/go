@@ -5,13 +5,13 @@
 		justify-content: flex-start;
 		order: 1;
 
-		& .site-search__toggle {
+		& .header__search-toggle {
 			margin-left: -0.75rem;
 			margin-right: 0;
 		}
 	}
 
-	& .header__title {
+	& .header__title-nav {
 		order: 2;
 	}
 
@@ -29,7 +29,7 @@
 
 	@media (--large) {
 
-		& .header__title {
+		& .header__title-nav {
 			align-items: center;
 			flex-direction: column;
 			order: 2;

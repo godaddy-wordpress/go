@@ -758,7 +758,7 @@ function search_toggle() {
 	$search_icon = ob_get_clean();
 
 	printf(
-		'<button id="js-site-search__toggle" class="site-search__toggle" type="button" aria-controls="js-site-search">
+		'<button id="header__search-toggle" class="header__search-toggle" type="button" aria-controls="js-site-search">
 			%1$s
 			<span class="screen-reader-text">%2$s</span>
 		</button>',

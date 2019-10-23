@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * This is the template that displays all of the <head> section and everything up until <div id="site-content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -32,22 +32,26 @@
 
 				<?php Go\navigation_toggle(); ?>
 
-				<div class="header__title">
+				<div class="header__title-nav">
 
 					<?php Go\display_site_branding(); ?>
 
-					<nav id="js-primary-menu" class="site-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<?php if ( has_nav_menu( 'primary' ) ) { ?>
 
-						<?php
-						wp_nav_menu(
-							[
-								'theme_location' => 'primary',
-								'menu_class'     => 'primary-menu list-reset',
-								'container'      => false,
-							]
-						);
-						?>
-					</nav>
+						<nav id="js-primary-menu" class="site-navigation" aria-label="<?php esc_attr_e( 'Horizontal', 'go' ); ?>" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+							<?php
+							wp_nav_menu(
+								[
+									'container'      => '',
+									'menu_class'     => 'primary-menu list-reset',
+									'theme_location' => 'primary',
+								]
+							);
+							?>
+						</nav>
+
+					<?php } ?>
 
 				</div>
 
