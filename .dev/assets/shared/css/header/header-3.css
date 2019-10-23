@@ -19,10 +19,13 @@
 		flex-direction: column;
 
 		& .site-description {
-			margin-bottom: calc(var(--theme-site-description--mt, 0.25rem) * 3);
 			margin-left: 0;
 			margin-right: 0;
 			margin-top: var(--theme-site-description--mt, 0.25rem);
+
+			@media (--large) {
+				margin-bottom: calc(var(--theme-site-description--mt, 0.25rem) * 3);
+			}
 		}
 	}
 
@@ -35,6 +38,13 @@
 		& .nav-toggle {
 			margin-left: 0;
 			margin-right: -0.75rem;
+
+			@media (--large) {
+				display: block;
+				opacity: 0;
+				pointer-events: none;
+				visibility: hidden;
+			}
 		}
 	}
 
