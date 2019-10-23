@@ -36,21 +36,15 @@
 	--theme-max-w-wide: 90rem;
 
 	/* Vertical Rhythm */
-	--vertical-rhythm: 1.15rem;
-	--vertical-rhythm--med: 1.75rem;
-	--vertical-rhythm--lrg: 4rem;
-
-	@media (--large) {
-		--vertical-rhythm: 1.8rem;
-		--vertical-rhythm--med: 2.3rem;
-		--vertical-rhythm--lrg: 10rem;
-	}
+	--vertical-rhythm: 1.25rem;
+	--vertical-rhythm--med: 2.25rem;
+	--vertical-rhythm--lrg: calc(2rem + 10vw);
 
 	/* Site Padding */
 	--theme-block-padding-x: 4vw;
 
 	/* Block Padding */
-	--editor-padding: 10em;
+	--editor-padding: 10rem;
 
 	/* Accessibility */
 	--theme-outline-color: 0, 0%, 0%;
@@ -236,12 +230,6 @@
 	--theme-site-nav--tracking: 3px;
 	--theme-site-nav--transition: var(--theme-link-transition);
 
-	/* Header Variations */
-	--theme-header-3--padding-y: 3.5rem;
-
-	@media (--large) {
-		--theme-header-3--padding-y: 6rem;
-	}
 
 	/*--------------------------------------------------------------
 	## Navigation Toggle

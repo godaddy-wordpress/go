@@ -30,7 +30,7 @@
 
 .site-title {
 	color: hsla(var(--theme-site-title--color), 1);
-	font-family: var(--theme-site-title--font);
+	font-family: var(--theme-site-title--font, var(--theme-heading--font));
 	font-size: var(--theme-site-title--font-size);
 	font-weight: var(--theme-site-title--weight, var(--theme-heading--weight));
 	letter-spacing: var(--theme-site-title--tracking);

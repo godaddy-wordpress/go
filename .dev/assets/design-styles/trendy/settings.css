@@ -33,20 +33,15 @@
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.15rem;
 	--vertical-rhythm--med: 1.75rem;
-	--vertical-rhythm--lrg: 4rem;
+	--vertical-rhythm--lrg: calc(2rem + 10vw);
 
 	@media (--large) {
 		--vertical-rhythm: 1.8rem;
 		--vertical-rhythm--med: 2.3rem;
-		--vertical-rhythm--lrg: 10rem;
 	}
 
 	/* Site Padding */
-	--theme-block-padding-x: 2rem;
-
-	@media (--medium) {
-		--theme-block-padding-x: 6rem;
-	}
+	--theme-block-padding-x: 6vw;
 
 	/* Block Padding */
 	--editor-padding: 10rem;
@@ -211,7 +206,6 @@
 	--------------------------------------------------------------*/
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.5rem;
-	--theme-site-title--font: var(--theme-heading--font);
 	--theme-site-title--tracking: 0.033em;
 	--theme-site-title--weight: 400;
 
@@ -234,14 +228,7 @@
 	--theme-site-nav--weight: 400;
 	--theme-site-nav--tracking: 0;
 	--theme-site-nav--transition: var(--theme-link-transition);
-	--theme-site-nav--padding-x: 1.35rem;
 
-	/* Header Variations */
-	--theme-header-3--padding-y: 3.5rem;
-
-	@media (--large) {
-		--theme-header-3--padding-y: 6rem;
-	}
 
 	/*--------------------------------------------------------------
 	## Navigation Toggle
