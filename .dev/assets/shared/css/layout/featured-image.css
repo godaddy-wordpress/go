@@ -64,9 +64,9 @@
 		color: hsl(var(--color-white));
 	}
 
-	&:not(.menu-is-open) .header__navigation__toggle-icon-inner,
-	&:not(.menu-is-open) .header__navigation__toggle-icon-inner::before,
-	&:not(.menu-is-open) .header__navigation__toggle-icon-inner::after {
+	&:not(.menu-is-open) .nav-toggle-icon-inner,
+	&:not(.menu-is-open) .nav-toggle-icon-inner::before,
+	&:not(.menu-is-open) .nav-toggle-icon-inner::after {
 		background-color: hsl(var(--color-white)) !important;
 	}
 
@@ -74,7 +74,7 @@
 		fill: hsl(var(--color-white));
 	}
 
-	&:not(.menu-is-open) .header__navigation__toggle-icon:hover {
+	&:not(.menu-is-open) .nav-toggle-icon:hover {
 		opacity: 0.65;
 	}
 }

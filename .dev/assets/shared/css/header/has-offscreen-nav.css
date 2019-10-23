@@ -97,9 +97,9 @@ body {
 		}
 	}
 
-	&.menu-is-open .header__navigation__toggle-icon-inner,
-	&.menu-is-open .header__navigation__toggle-icon-inner::before,
-	&.menu-is-open .header__navigation__toggle-icon-inner::after {
+	&.menu-is-open .nav-toggle-icon-inner,
+	&.menu-is-open .nav-toggle-icon-inner::before,
+	&.menu-is-open .nav-toggle-icon-inner::after {
 		background-color: hsl(var(--theme-offscreen-nav--color));
 	}
 

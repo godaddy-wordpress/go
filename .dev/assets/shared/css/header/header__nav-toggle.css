@@ -10,7 +10,7 @@
 	}
 }
 
-.header__navigation__toggle {
+.nav-toggle {
 	background-color: transparent;
 	border: none;
 	border-radius: 0;
@@ -43,18 +43,18 @@
 	}
 }
 
-.header__navigation__toggle-icon--close {
+.nav-toggle-icon--close {
 	display: none;
 }
 
-body.menu-is-open .header__navigation__toggle-icon--close {
+body.menu-is-open .nav-toggle-icon--close {
 	display: flex;
 }
 
-body.menu-is-open .header__navigation__toggle-icon:not(.header__navigation__toggle-icon--close) {
+body.menu-is-open .nav-toggle-icon:not(.nav-toggle-icon--close) {
 	display: none;
 }
 
-body:not(.menu-is-open) .header__navigation__toggle-icon svg {
+body:not(.menu-is-open) .nav-toggle-icon svg {
 	fill: hsl(var(--theme-site-nav--color));
 }

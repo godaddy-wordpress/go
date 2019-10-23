@@ -21,7 +21,7 @@
 		justify-content: flex-end;
 		order: 3;
 
-		& .header__navigation__toggle {
+		& .nav-toggle {
 			margin-left: 0;
 			margin-right: -0.75rem;
 		}
