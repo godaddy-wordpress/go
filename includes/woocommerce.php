@@ -130,7 +130,7 @@ function woocommerce_cart_link() {
 	}
 
 	printf(
-		'<a href="%1$s" class="woo-cart-link">%2$s</a>',
+		'<a href="%1$s" class="header__cart-toggle">%2$s</a>',
 		esc_url( $cart_url ),
 		$cart_text // @codingStandardsIgnoreLine
 	);

@@ -37,10 +37,10 @@
 @import url("header/header__navigation.css");
 @import url("header/header__navigation-mobile.css");
 @import url("header/header__search-toggle.css");
+@import url("header/header__cart-toggle.css");
 @import url("header/header__titles.css");
 @import url("header/site-search.css");
 @import url("header/sub-menu.css");
-
 
 /* Footer */
 @import url("footer/footer-1.css");
@@ -111,7 +111,6 @@
 @import url("woocommerce/thank-you.css");
 @import url("woocommerce/blocks.css");
 @import url("woocommerce/single-product.css");
-@import url("woocommerce/cart-icon-link.css");
 
 /*! Gravity Forms */
 @import url("gravity/forms.css");
