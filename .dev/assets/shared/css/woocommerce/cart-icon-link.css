@@ -42,17 +42,22 @@
 	}
 }
 
-@media (--mediumMax) {
+.woocommerce-js {
 
-	.woocommerce-js {
+	& .header__title-nav {
+		flex: 1 0 60%;
 
-		& .header__title-nav {
-			flex: 1 0 60%;
+		@media (--large) {
+			flex: 1 0 70%;
 		}
+	}
 
-		& .header__nav-toggle,
-		& .header__extras {
-			flex: 0 0 20%;
+	& .header__nav-toggle,
+	& .header__extras {
+		flex: 0 0 20%;
+
+		@media (--large) {
+			flex: 0 0 15%;
 		}
 	}
 }

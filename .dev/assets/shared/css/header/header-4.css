@@ -13,7 +13,7 @@
 	& .header__extras {
 		justify-content: flex-start;
 		margin-left: -0.75rem;
-		margin-right: var(--theme-site-nav--padding-x, 2.25vw);
+		margin-right: 0;
 		order: 1;
 	}
 

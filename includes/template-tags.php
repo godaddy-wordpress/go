@@ -711,7 +711,7 @@ function site_branding( $args = [] ) {
 		$blog_description = get_bloginfo( 'description' );
 
 		if ( ! empty( $blog_name ) ) {
-			echo '<a class="inline-block no-underline" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
+			echo '<a class="display-inline-block no-underline" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
 			printf(
 				'<%1$s class="site-title">' . esc_html( $blog_name ) . '</%1$s>',
 				( is_front_page() && ! did_action( 'get_footer' ) ) ? 'h1' : 'span'
