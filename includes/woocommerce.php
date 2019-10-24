@@ -104,6 +104,15 @@ function woocommerce_cart_link() {
 	$cart_url = (string) apply_filters( 'go_menu_cart_url', wc_get_cart_url() );
 
 	/**
+	 * Filters the cart menu item alt text.
+	 *
+	 * @since NEXT
+	 *
+	 * @param string Alt text for the cart menu item.
+	 */
+	$cart_alt_text = (string) esc_html( apply_filters( 'go_menu_cart_alt', __( 'View cart', 'go' ) ) );
+
+	/**
 	 * Filters the cart menu item text.
 	 *
 	 * @since NEXT
@@ -130,8 +139,9 @@ function woocommerce_cart_link() {
 	}
 
 	printf(
-		'<a href="%1$s" class="header__cart-toggle">%2$s</a>',
+		'<a href="%1$s" class="header__cart-toggle" alt="%2$s">%3$s</a>',
 		esc_url( $cart_url ),
+		$cart_alt_text, // @codingStandardsIgnoreLine
 		$cart_text // @codingStandardsIgnoreLine
 	);
 
