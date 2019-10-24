@@ -2,9 +2,7 @@
 .has-header-3 {
 
 	& .header__extras {
-		justify-content: flex-start;
 		margin-left: -0.75rem;
-		margin-right: var(--theme-site-nav--padding-x, 2.25vw);
 		order: 1;
 	}
 
@@ -26,31 +24,19 @@
 		}
 	}
 
-	& .header__nav-toggle {
-		align-items: flex-end;
-		display: inline-flex;
-		justify-content: flex-end;
-		order: 3;
-
-		& .nav-toggle {
-			margin-left: 0;
-			margin-right: -0.75rem;
-
-			@media (--large) {
-				display: block;
-				opacity: 0;
-				pointer-events: none;
-				visibility: hidden;
-			}
-		}
-	}
-
 	@media (--large) {
 
 		& .header__title-nav {
 			align-items: center;
 			flex-direction: column;
 			order: 2;
+		}
+
+		& .nav-toggle {
+			display: block;
+			opacity: 0;
+			pointer-events: none;
+			visibility: hidden;
 		}
 
 		& .header__navigation {
@@ -61,10 +47,6 @@
 			padding-left: 0;
 			padding-right: 0;
 			text-align: center;
-		}
-
-		& .header__extras {
-			order: 1;
 		}
 	}
 }

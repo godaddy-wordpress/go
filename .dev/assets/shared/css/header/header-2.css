@@ -27,18 +27,6 @@
 		}
 	}
 
-	& .header__nav-toggle {
-		align-items: flex-end;
-		display: inline-flex;
-		justify-content: flex-end;
-		order: 3;
-
-		& .nav-toggle {
-			margin-left: 0;
-			margin-right: -0.75rem;
-		}
-	}
-
 	@media (--large) {
 
 		& .header__title-nav {

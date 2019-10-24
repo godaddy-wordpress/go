@@ -43,5 +43,7 @@
 }
 
 .has-header-1 .header__extras {
-	justify-content: flex-end;
+	@media (--large) {
+		justify-content: flex-end;
+	}
 }
