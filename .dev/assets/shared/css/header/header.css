@@ -28,6 +28,7 @@
 	display: inline-flex;
 	flex: 0 0 15%;
 	justify-content: flex-end;
+	margin-right: -0.75rem;
 	order: 3;
 	z-index: 9999;
 
