@@ -35,11 +35,6 @@
 		flex: inherit;
 		flex-grow: 0;
 		flex-shrink: 1;
-	}
-
-	& > *:first-child {
-		@media (--large) {
-			margin-left: var(--theme-site-nav--padding-x, 2.25vw);
-		}
+		margin-left: var(--theme-site-nav--padding-x, 2.25vw);
 	}
 }

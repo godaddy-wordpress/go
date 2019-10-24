@@ -5,15 +5,9 @@
 	border-radius: 0;
 	box-shadow: none;
 	color: hsl(var(--theme-search-toggle--color));
-	display: inline-block;
-	margin-right: -0.75rem;
 	padding: 0.75rem;
 	position: relative;
 	z-index: 10000;
-
-	@media (--large) {
-		padding: 0.35rem 0.45rem;
-	}
 
 	&:active,
 	&:focus,
