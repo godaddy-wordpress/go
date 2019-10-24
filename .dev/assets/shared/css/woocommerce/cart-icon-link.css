@@ -52,12 +52,10 @@
 		}
 	}
 
-	& .header__nav-toggle,
-	& .header__extras {
-		flex: 0 0 20%;
-
-		@media (--large) {
-			flex: 0 0 15%;
+	& .header__extras,
+	& .header__nav-toggle {
+		@media (--mediumMax) {
+			flex: 0 0 20%;
 		}
 	}
 }

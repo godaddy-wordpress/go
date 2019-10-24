@@ -41,3 +41,7 @@
 		order: 3;
 	}
 }
+
+.has-header-1 .header__extras {
+	justify-content: flex-end;
+}
