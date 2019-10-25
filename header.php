@@ -36,7 +36,7 @@
 
 					<?php Go\display_site_branding(); ?>
 
-					<?php if ( has_nav_menu( 'primary' ) ) { ?>
+					<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
 						<nav id="header__navigation" class="header__navigation" aria-label="<?php esc_attr_e( 'Horizontal', 'go' ); ?>" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
@@ -53,7 +53,7 @@
 
 						</nav>
 
-					<?php } ?>
+					<?php endif; ?>
 
 				</div>
 
@@ -62,6 +62,11 @@
 				</div>
 
 			</div>
+
+			<?php
+			// Output the search modal.
+			get_template_part( 'partials/modal-search' );
+			?>
 
 		</header>
 
