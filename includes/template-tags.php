@@ -750,45 +750,15 @@ function navigation_toggle() {
  * @return void
  */
 function search_toggle() {
-
-	ob_start();
-
-	load_inline_svg( 'search.svg' );
-
-	$search_icon = ob_get_clean();
-
-	printf(
-		'<button id="header__search-toggle" class="header__search-toggle" type="button" aria-controls="js-site-search">
-			%1$s
-			<span class="screen-reader-text">%2$s</span>
-		</button>',
-		wp_kses(
-			$search_icon,
-			array_merge(
-				wp_kses_allowed_html( 'post' ),
-				[
-					'svg'  => [
-						'width'   => true,
-						'role'    => true,
-						'height'  => true,
-						'fill'    => true,
-						'xmlns'   => true,
-						'viewbox' => true,
-					],
-					'path' => [
-						'd'    => true,
-						'fill' => true,
-					],
-					'g'    => [
-						'd'    => true,
-						'fill' => true,
-					],
-				]
-			)
-		),
-		esc_html__( 'Search Toggle', 'go' )
-	);
-
+	echo '<button id="header__search-toggle" class="header__search-toggle" data-toggle-target=".search-modal" data-set-focus=".search-model .search-field" type="button" aria-controls="js-site-search">';
+		echo '<div class="search-toggle-icon">';
+			load_inline_svg( 'search.svg' );
+		echo '</div>';
+		echo '<div class="search-toggle-icon search-toggle-icon--close">';
+			load_inline_svg( 'close.svg' );
+		echo '</div>';
+		echo '<span class="screen-reader-text">' . esc_html__( 'Search Toggle', 'go' ) . '</span>';
+	echo '</button>';
 }
 
 /**
