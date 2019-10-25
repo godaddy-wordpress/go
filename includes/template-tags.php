@@ -750,7 +750,7 @@ function navigation_toggle() {
  * @return void
  */
 function search_toggle() {
-	echo '<button id="header__search-toggle" class="header__search-toggle" data-toggle-target=".search-modal" data-set-focus=".search-model .search-field" type="button" aria-controls="js-site-search">';
+	echo '<button id="header__search-toggle" class="header__search-toggle" data-toggle-target=".search-modal" data-set-focus=".search-modal .search-form__input" type="button" aria-controls="js-site-search">';
 		echo '<div class="search-toggle-icon">';
 			load_inline_svg( 'search.svg' );
 		echo '</div>';
