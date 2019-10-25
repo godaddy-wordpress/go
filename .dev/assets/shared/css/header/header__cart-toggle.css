@@ -15,6 +15,7 @@
 		background-color: transparent;
 		border: none;
 		box-shadow: none;
+		color: hsla(var(--theme-site-nav--color), 1);
 	}
 
 	&:hover svg,
@@ -39,6 +40,10 @@
 		right: 0.3rem;
 		text-align: right;
 		top: 0.3rem;
+
+		&.count--zero {
+			display: none;
+		}
 	}
 }
 
