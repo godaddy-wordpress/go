@@ -10,11 +10,7 @@
 
 	<div class="search-modal-inner">
 
-		<div class="section-inner">
-
-			<?php get_search_form(); ?>
-
-		</div><!-- .section-inner -->
+		<?php get_search_form(); ?>
 
 	</div><!-- .search-modal-inner -->
 
