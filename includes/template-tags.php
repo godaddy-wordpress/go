@@ -754,9 +754,6 @@ function search_toggle() {
 		echo '<div class="search-toggle-icon">';
 			load_inline_svg( 'search.svg' );
 		echo '</div>';
-		echo '<div class="search-toggle-icon search-toggle-icon--close">';
-			load_inline_svg( 'close.svg' );
-		echo '</div>';
 		echo '<span class="screen-reader-text">' . esc_html__( 'Search Toggle', 'go' ) . '</span>';
 	echo '</button>';
 }
