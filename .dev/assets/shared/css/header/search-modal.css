@@ -17,10 +17,13 @@
 		display: none !important;
 	}
 
-	&.active {
-		cursor: pointer;
+	&.show-modal {
 		display: block;
 		left: 0;
+	}
+
+	&.active {
+		cursor: pointer;
 		opacity: 1;
 		transition: opacity 0.2s linear;
 
@@ -57,10 +60,4 @@
 		padding-bottom: var(--header-padding, 3vw);
 		padding-top: var(--header-padding, 3vw);
 	}
-}
-
-.search-modal-inner .section-inner {
-	display: flex;
-	justify-content: space-between;
-	max-width: 168rem;
 }
