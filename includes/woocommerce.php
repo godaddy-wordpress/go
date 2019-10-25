@@ -46,7 +46,7 @@ function setup() {
 
 	add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
 
-	add_filter( 'woocommerce_add_to_cart_fragments', __NAMESPACE__ . '\\go_cart_fragments', PHP_INT_MAX );
+	add_filter( 'woocommerce_add_to_cart_fragments', $n( 'go_cart_fragments' ), PHP_INT_MAX );
 
 }
 
@@ -164,7 +164,14 @@ function go_cart_fragments( $fragments ) {
 
 	global $woocommerce;
 
-	$fragments['span.item-count'] = '<span class="item-count">' . $woocommerce->cart->get_cart_contents_count() . '</span>';
+	$cart_count  = $woocommerce->cart->get_cart_contents_count();
+	$count_class = ( $cart_count > 0 ) ? '' : ' count--zero';
+
+	$fragments['span.item-count'] = sprintf(
+		'<span class="item-count%1$s">%2$s</span>',
+		esc_attr( $count_class ),
+		esc_html( $cart_count )
+	);
 
 	return $fragments;
 
