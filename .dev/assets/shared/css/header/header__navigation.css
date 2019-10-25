@@ -10,6 +10,7 @@
 	top: 0;
 	visibility: hidden;
 	will-change: opacity, visibility;
+	z-index: 1;
 
 	@media (--large) {
 		align-items: center;

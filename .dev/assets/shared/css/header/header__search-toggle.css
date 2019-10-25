@@ -9,7 +9,7 @@
 	margin-right: -0.75rem;
 	padding: 0.75rem;
 	position: relative;
-	z-index: 10000;
+	z-index: 4;
 
 	@media (--large) {
 		padding: 0.35rem 0.45rem;
@@ -31,5 +31,10 @@
 	& svg {
 		fill: currentColor;
 		width: var(--theme-search-toggle--size, 1.35rem);
+	}
+
+	&:not(.active) .search-toggle-icon--close,
+	&.active .search-toggle-icon:not(.search-toggle-icon--close) {
+		display: none;
 	}
 }
