@@ -28,7 +28,10 @@ const searchToggle = () => {
 					const focusElement = document.querySelector( toggle.dataset.setFocus );
 
 					if ( focusElement ) {
+						var searchTerm = focusElement.value;
+						focusElement.value = '';
 						focusElement.focus();
+						focusElement.value = searchTerm;
 					}
 				}
 			}, 10 );
