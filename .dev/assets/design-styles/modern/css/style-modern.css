@@ -8,10 +8,6 @@
 @import url("components/carousel.css");
 @import url("components/wc-button.css");
 
-.is-style-3d .wp-block-button__link {
-	box-shadow: inset 0 -3px 0 0 rgb(66, 66, 66);
-}
-
 .primary-menu a {
 
 	&::after {
@@ -45,9 +41,8 @@
 	}
 }
 
-.header__search-toggle {
-	position: relative;
-	top: 2px;
+.is-style-3d .wp-block-button__link {
+	box-shadow: inset 0 -3px 0 0 rgb(66, 66, 66);
 }
 
 .post-tags .meta-icon {

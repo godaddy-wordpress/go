@@ -3,12 +3,9 @@
 
 	& .header__extras {
 		justify-content: flex-start;
+		margin-left: -0.75rem;
+		margin-right: var(--theme-site-nav--padding-x, 2.25vw);
 		order: 1;
-
-		& .header__search-toggle {
-			margin-left: -0.75rem;
-			margin-right: 0;
-		}
 	}
 
 	& .header__title-nav {
@@ -27,18 +24,6 @@
 		@media (--large) {
 			margin-left: 0;
 			margin-right: var(--theme-site-nav--padding-x, 2vw);
-		}
-	}
-
-	& .header__nav-toggle {
-		align-items: flex-end;
-		display: inline-flex;
-		justify-content: flex-end;
-		order: 3;
-
-		& .nav-toggle {
-			margin-left: 0;
-			margin-right: -0.75rem;
 		}
 	}
 
@@ -66,13 +51,6 @@
 
 		& .header__extras {
 			order: 1;
-
-			& > *:last-child {
-				@media (--large) {
-					margin-left: 0;
-					margin-right: var(--theme-site-nav--padding-x, 2.25vw);
-				}
-			}
 		}
 	}
 }
