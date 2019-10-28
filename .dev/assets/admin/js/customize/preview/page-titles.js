@@ -1,3 +1,5 @@
+const $ = jQuery; // eslint-disable-line
+
 export default () => {
 
 	wp.customize( 'page_titles', ( value ) => {
