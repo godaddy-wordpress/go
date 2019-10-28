@@ -51,7 +51,7 @@
 }
 
 .search-modal-inner {
-	background: #fff;
+	background-color: hsl(var(--theme-header--bg, var(--color-white, #fff)));
 	padding: 2vw var(--theme-block-padding-x);
 	transform: translateY(-100%);
 	transition: transform 0.15s linear, box-shadow 0.15s linear;
