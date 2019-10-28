@@ -64,10 +64,7 @@
 
 			</div>
 
-			<?php
-			// Output the search modal.
-			get_template_part( 'partials/modal-search' );
-			?>
+			<?php get_template_part( 'partials/modal-search' ); ?>
 
 		</header>
 
