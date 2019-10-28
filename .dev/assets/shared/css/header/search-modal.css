@@ -11,7 +11,7 @@
 	top: 0;
 	transition: opacity 0.2s linear, left 0s 0.2s linear;
 	width: 100%;
-	z-index: 3;
+	z-index: 10001;
 
 	&::-webkit-scrollbar {
 		display: none !important;

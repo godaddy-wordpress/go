@@ -30,7 +30,10 @@
 
 			<div class="header__inner flex items-center justify-between h-inherit w-full relative">
 
-				<?php Go\navigation_toggle(); ?>
+				<div class="header__extras">
+					<?php Go\search_toggle(); ?>
+					<?php Go\WooCommerce\woocommerce_cart_link(); ?>
+				</div>
 
 				<div class="header__title-nav flex items-center flex-nowrap">
 
@@ -57,9 +60,7 @@
 
 				</div>
 
-				<div class="header__extras">
-					<?php Go\search_toggle(); ?>
-				</div>
+				<?php Go\navigation_toggle(); ?>
 
 			</div>
 

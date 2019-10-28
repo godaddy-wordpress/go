@@ -12,24 +12,14 @@
 
 	& .header__extras {
 		justify-content: flex-start;
+		margin-left: -0.75rem;
 		order: 1;
-
-		& .header__search-toggle {
-			margin-left: -0.75rem;
-			margin-right: 0;
-		}
 	}
 
 	& .header__nav-toggle {
-		align-items: flex-end;
-		display: inline-flex;
-		justify-content: flex-end;
-		order: 3;
 
 		& .nav-toggle {
 			display: inline-flex;
-			margin-left: 0;
-			margin-right: -0.75rem;
 		}
 	}
 

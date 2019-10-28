@@ -496,8 +496,12 @@ function copyright( $args = [] ) {
  */
 function page_title() {
 
+	$show_titles = get_theme_mod( 'page_titles', true );
+
 	if (
-		! is_customize_preview() && ( is_front_page() || ( ! get_theme_mod( 'page_titles', true ) && ! is_404() && ! is_search() && ! is_archive() ) )
+		! is_customize_preview() && ( is_front_page() ||
+		( ! $show_titles && ! is_404() && ! is_search() && ! is_archive() ) ||
+		( ! $show_titles && ( function_exists( 'is_shop' ) && is_shop() ) ) ) // WooCommerce shop.
 	) {
 
 		return;
@@ -570,7 +574,7 @@ function page_title() {
 
 	printf(
 		'<header class="page-header entry-header m-auto px %1$s">%2$s</header>',
-		is_customize_preview() ? ( get_theme_mod( 'page_titles', true ) ? '' : ' display-none' ) : '',
+		is_customize_preview() ? ( get_theme_mod( 'page_titles', true ) ? '' : 'display-none' ) : '',
 		wp_kses(
 			$html,
 			[
@@ -711,7 +715,7 @@ function site_branding( $args = [] ) {
 		$blog_description = get_bloginfo( 'description' );
 
 		if ( ! empty( $blog_name ) ) {
-			echo '<a class="inline-block no-underline" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
+			echo '<a class="display-inline-block no-underline" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
 			printf(
 				'<%1$s class="site-title">' . esc_html( $blog_name ) . '</%1$s>',
 				( is_front_page() && ! did_action( 'get_footer' ) ) ? 'h1' : 'span'
