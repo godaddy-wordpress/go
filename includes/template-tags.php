@@ -793,6 +793,8 @@ function search_toggle() {
 		esc_html__( 'Search Toggle', 'go' )
 	);
 
+	get_search_form();
+
 }
 
 /**
