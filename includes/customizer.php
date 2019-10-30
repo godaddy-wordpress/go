@@ -129,14 +129,14 @@ function default_controls( \WP_Customize_Manager $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
 			[
-				'selector'        => '.site-branding',
+				'selector'        => '.header__titles',
 				'render_callback' => '\\Go\\site_branding',
 			]
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			[
-				'selector'        => '.site-branding',
+				'selector'        => '.header__titles',
 				'render_callback' => '\\Go\\site_branding',
 			]
 		);
@@ -144,7 +144,7 @@ function default_controls( \WP_Customize_Manager $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial(
 			'custom_logo',
 			[
-				'selector'        => '.site-branding',
+				'selector'        => '.header__titles',
 				'render_callback' => '\\Go\\site_branding',
 			]
 		);
@@ -794,7 +794,6 @@ function inline_css() {
 					--theme-site-description--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-title--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-search-toggle--color: <?php echo esc_attr( $header_text_color ); ?>;
-					--theme-site-nav-toggle--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-search-submit--bg: <?php echo esc_attr( $header_text_color ); ?>;
 				<?php endif; ?>
 

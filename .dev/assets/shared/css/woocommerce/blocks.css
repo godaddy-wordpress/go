@@ -19,7 +19,7 @@ h2 + .wc-block-grid {
 	}
 
 	&.has-3-columns li:nth-of-type(3) {
-		@media (--small) and (--mediumMax) {
+		@media (--small) and (--largeMax) {
 			display: none;
 		}
 	}

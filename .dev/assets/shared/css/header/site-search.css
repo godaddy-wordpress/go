@@ -1,5 +1,5 @@
 /*! Header: Site Search */
-.site-header {
+.header {
 
 	& .site-search {
 		z-index: 2;
@@ -80,7 +80,7 @@
 }
 
 /* Override aria defaults */
-.site-navigation .site-search[aria-hidden="true"] {
+.header__navigation .site-search[aria-hidden="true"] {
 	display: none;
 	visibility: visible;
 }

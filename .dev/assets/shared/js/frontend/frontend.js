@@ -40,5 +40,3 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		} );
 	}
 } );
-
-

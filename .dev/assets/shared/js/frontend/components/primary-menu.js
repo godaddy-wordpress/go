@@ -7,8 +7,8 @@ import '../vendor/responsive-nav';
 const init = () => {
 	if ( TenUp ) {
 		TenUp.navigation( {
-			target: '#js-primary-menu',
-			toggle: '#js-site-navigation__toggle',
+			target: '#header__navigation',
+			toggle: '#nav-toggle',
 			// eslint-disable-next-line
 			sub_menu_open: 'click'
 		} );

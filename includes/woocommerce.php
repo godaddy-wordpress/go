@@ -30,6 +30,10 @@ function setup() {
 
 	add_action( 'woocommerce_cart_is_empty', $n( 'empty_cart_message' ), 10 );
 
+	add_filter( 'woocommerce_show_page_title', $n( 'page_title_visibility' ) );
+
+	add_action( 'woocommerce_archive_description', $n( 'shop_title' ) );
+
 	add_action( 'woocommerce_before_shop_loop', $n( 'sorting_wrapper' ), 9 );
 
 	add_action( 'woocommerce_after_shop_loop', $n( 'sorting_wrapper' ), 9 );
@@ -46,18 +50,16 @@ function setup() {
 
 	add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
 
-	add_filter( 'wp_nav_menu_args', $n( 'filter_nav_menus' ) );
+	add_filter( 'woocommerce_add_to_cart_fragments', $n( 'go_cart_fragments' ), PHP_INT_MAX );
 
 }
 
 /**
- * Enable the WooCommerce menu item
+ * Whether or not the WooCommerce cart icon is enabled.
  *
- * @param  array $args Menu arguments.
- *
- * @return array Menu arguments array.
+ * @return bool True when enabled, else false.
  */
-function filter_nav_menus( $args ) {
+function should_show_woo_cart_item() {
 
 	/**
 	 * Filter whether to display the WooCommerce cart menu item.
@@ -67,82 +69,102 @@ function filter_nav_menus( $args ) {
 	 *
 	 * @var bool
 	*/
-	$show_woo_cart_menu = (bool) apply_filters( 'go_wc_show_cart_menu', true );
+	return (bool) apply_filters( 'go_wc_show_cart_menu', true );
 
-	if ( is_admin() || 'primary' !== $args['theme_location'] || ! $show_woo_cart_menu ) {
+}
 
-		return $args;
+/**
+ * Whether or not the WooCommerce slideout cart is enabled.
+ *
+ * @return bool True when enabled, else false.
+ */
+function should_show_woo_slideout_cart() {
+
+	/**
+	 * Filter whether to display the WooCommerce slideout cart.
+	 * Default: `true`
+	 *
+	 * @since NEXT
+	 *
+	 * @var bool
+	*/
+	return (bool) apply_filters( 'go_wc_slideout_cart', false );
+
+}
+
+/**
+ * Generate a WooCommerce cart link
+ *
+ * @return void
+ */
+function woocommerce_cart_link() {
+
+	if ( ! class_exists( 'WooCommerce' ) || ! should_show_woo_cart_item() ) {
+
+		return;
 
 	}
-
-	add_filter( 'wp_get_nav_menu_items', __NAMESPACE__ . '\\woocommerce_menu_cart', 20, 2 );
-
-	if ( is_cart() ) {
-
-		return $args;
-
-	}
-
-	add_filter( 'wp_enqueue_scripts', __NAMESPACE__ . '\\woocommerce_menu_cart_scripts' );
 
 	add_action( 'wp_footer', __NAMESPACE__ . '\\woocommerce_slideout_cart' );
 
-	return $args;
-
-}
-
-/**
- * Append a cart icon and a slideout menu
- *
- * @param  array  $items Navigation menu items.
- * @param  object $menu  Navigation menu object.
- *
- * @return array Filtered nav menu items.
- */
-function woocommerce_menu_cart( $items, $menu ) {
-
-	remove_filter( current_filter(), __FUNCTION__, 20, 2 );
-
 	ob_start();
-	load_inline_svg( 'shopping-bag.svg' );
-	$bag = ob_get_clean();
+	load_inline_svg( 'cart.svg' );
+	$icon = ob_get_clean();
 
 	global $woocommerce;
 
-	$cart_count = $woocommerce->cart->get_cart_contents_count();
+	/**
+	 * Filters the cart menu item URL.
+	 *
+	 * @since NEXT
+	 *
+	 * @param string URL to the WooCommerce cart page.
+	 */
+	$cart_url = (string) apply_filters( 'go_menu_cart_url', wc_get_cart_url() );
 
-	$items[] = _custom_nav_menu_item(
+	/**
+	 * Filters the cart menu item alt text.
+	 *
+	 * @since NEXT
+	 *
+	 * @param string Alt text for the cart menu item.
+	 */
+	$cart_alt_text = (string) esc_html( apply_filters( 'go_menu_cart_alt', __( 'View cart', 'go' ) ) );
+
+	/**
+	 * Filters the cart menu item text.
+	 *
+	 * @since NEXT
+	 *
+	 * @param string Text for the cart menu item.
+	 */
+	$cart_text = (string) apply_filters(
+		'go_menu_cart_text',
 		sprintf(
-			'<span class="cart-menu hover-out">
-				%1$s
-				<span class="count-holder">
-					<span class="count">%2$s</span>
-				</span>
-			</span>',
-			$bag,
-			$cart_count
-		),
-		'#',
-		100
+			'%1$s <span class="item-count">%2$d</span>',
+			$icon,
+			$woocommerce->cart->get_cart_contents_count()
+		)
 	);
 
-	return $items;
+	if ( empty( $cart_text ) ) {
 
-}
+		$cart_text = sprintf(
+			'%1$s %2$d',
+			$icon,
+			$woocommerce->cart->get_cart_contents_count()
+		);
 
-/**
- * Enqueue the menu cart scripts
- */
-function woocommerce_menu_cart_scripts() {
+	}
 
-	$suffix = SCRIPT_DEBUG ? '' : '.min';
+	$element_wrap = should_show_woo_slideout_cart() ? 'button' : 'a';
 
-	wp_enqueue_script(
-		'go-woocommerce-menu-cart',
-		get_theme_file_uri( "dist/js/shared/menu-cart{$suffix}.js" ),
-		[ 'jquery' ],
-		GO_VERSION,
-		true
+	printf(
+		'<%1$s href="%2$s" class="header__cart-toggle" alt="%3$s">%4$s</%1$s>',
+		esc_html( $element_wrap ),
+		esc_url( $cart_url ),
+		esc_attr( $cart_alt_text ),
+		$cart_text // @codingStandardsIgnoreLine
 	);
 
 }
@@ -153,6 +175,12 @@ function woocommerce_menu_cart_scripts() {
  * @return mixed Markup for the slideout cart.
  */
 function woocommerce_slideout_cart() {
+
+	if ( ! should_show_woo_slideout_cart() ) {
+
+		return;
+
+	}
 
 	global $woocommerce;
 
@@ -201,39 +229,35 @@ function woocommerce_slideout_cart() {
 	</div>
 
 	<?php
-
 }
 
 /**
- * Simple helper function for make menu item objects
+ * Filter the cart fragments to update the cart count.
  *
- * @param string $title      Menu item title.
- * @param string $url        Menu item url.
- * @param int    $order      Where the item should appear in the menu.
- * @param int    $parent     Nav menu item's parent item.
+ * @param  array $fragments Array of elements to update via JS.
  *
- * @return stdClass
+ * @return array Filtered array of elements.
  */
-function _custom_nav_menu_item( $title, $url, $order, $parent = 0 ) {
+function go_cart_fragments( $fragments ) {
 
-	$item                   = new \stdClass();
-	$item->ID               = 'go-woo-slideout';
-	$item->db_id            = $item->ID;
-	$item->title            = $title;
-	$item->url              = $url;
-	$item->menu_order       = $order;
-	$item->menu_item_parent = $parent;
-	$item->type             = 'custom';
-	$item->object           = 'custom';
-	$item->object_id        = '';
-	$item->classes          = [ 'js-woo-slideout' ];
-	$item->target           = '';
-	$item->attr_title       = '';
-	$item->description      = '';
-	$item->xfn              = '';
-	$item->status           = '';
+	if ( ! should_show_woo_cart_item() ) {
 
-	return $item;
+		return $fragments;
+
+	}
+
+	global $woocommerce;
+
+	$cart_count  = $woocommerce->cart->get_cart_contents_count();
+	$count_class = ( $cart_count > 0 ) ? '' : ' count--zero';
+
+	$fragments['span.item-count'] = sprintf(
+		'<span class="item-count%1$s">%2$s</span>',
+		esc_attr( $count_class ),
+		esc_html( $cart_count )
+	);
+
+	return $fragments;
 
 }
 
@@ -243,6 +267,10 @@ function _custom_nav_menu_item( $title, $url, $order, $parent = 0 ) {
  * @return mixed Markup for empty cart notice.
  */
 function empty_cart_message() {
+
+	ob_start();
+	load_inline_svg( 'empty-cart.svg' );
+	$icon = ob_get_clean();
 
 	printf(
 		'<div class="max-w-base m-0 px m-auto text-center">
@@ -255,7 +283,7 @@ function empty_cart_message() {
 		</div>',
 		esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ),
 		wp_kses(
-			load_inline_svg( 'empty-cart.svg' ),
+			$icon,
 			array_merge(
 				wp_kses_allowed_html( 'post' ),
 				[
@@ -280,6 +308,57 @@ function empty_cart_message() {
 		),
 		esc_html( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'go' ) ) )
 	);
+
+}
+
+/**
+ * Toggle the visibility of WooCommerce shop page titles
+ *
+ * @param bool $show_title Whether or not to display the WooCommerce page title.
+ *
+ * @return bool False when shop page, else true.
+ */
+function page_title_visibility( $show_title ) {
+
+	return is_shop() ? false : $show_title;
+
+}
+
+/**
+ * Output a custom WooCommerce shop page title
+ *
+ * @return mixed Markup for the shop page title
+ */
+function shop_title() {
+
+	if ( ! is_shop() ) {
+
+		return;
+
+	}
+
+	add_filter( 'go_page_title_args', __NAMESPACE__ . '\\shop_title_attributes' );
+
+	\Go\page_title();
+
+	remove_filter( 'go_page_title_args', __NAMESPACE__ . '\\shop_title_attributes' );
+
+}
+
+/**
+ * Filter the WooCommerce shop page title attributes
+ *
+ * @param array $atts Title attributes.
+ *
+ * @return array Title attributes array
+ */
+function shop_title_attributes( $atts ) {
+
+	$atts['title']         = woocommerce_page_title( false );
+	$atts['atts']['class'] = 'page__title m-0 text-center';
+	$atts['custom']        = false;
+
+	return $atts;
 
 }
 
