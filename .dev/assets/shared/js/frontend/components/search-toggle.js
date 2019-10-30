@@ -120,7 +120,9 @@ const toggleSearch = ( searchForm, searchToggle, focusableElementsString ) => {
 	searchForm.classList.toggle( 'is-open' );
 
 	if ( searchForm.classList.contains( 'is-open' ) ) {
-		navigation.classList.add( 'primary-menu--hide-medium' );
+		if ( ! document.body.classList.contains( 'has-header-3' ) ) {
+			navigation.classList.add( 'primary-menu--hide-medium' );
+		}
 		searchForm.querySelector( '.search-form__input' ).removeAttribute( 'tabindex' );
 		searchForm.querySelector( '.search-input__button' ).removeAttribute( 'tabindex' );
 	} else {
