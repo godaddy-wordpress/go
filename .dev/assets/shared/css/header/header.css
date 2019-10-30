@@ -30,7 +30,7 @@
 	justify-content: flex-start;
 	margin-left: -0.75rem;
 	order: 1;
-	z-index: 9999;
+	z-index: 10000;
 
 	@media (--large) {
 		flex: inherit;
