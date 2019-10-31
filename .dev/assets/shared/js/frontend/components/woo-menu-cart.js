@@ -14,7 +14,7 @@ const wooMenuCart = () => {
 
 	document.body.classList.add( 'has-woo-cart-slideout' );
 
-	menuObject.addEventListener( 'click', function( event ) {
+	menuObject.on( 'click', function( event ) {
 		event.preventDefault();
 		toggleSideNavVisibility();
 	} );

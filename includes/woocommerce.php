@@ -193,7 +193,7 @@ function woocommerce_slideout_cart() {
 	<div id="site-nav--cart" class="site-nav style--sidebar show-cart">
 
 		<button id="site-close-handle" class="site-close-handle" aria-label="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>" title="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>">
-			<span class="hamburger-menu active" aria-hidden="true">
+			<span class="close-menu active" aria-hidden="true">
 				<span class="bar animate"></span>
 			</span>
 		</button>
