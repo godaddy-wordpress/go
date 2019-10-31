@@ -88,7 +88,7 @@ function should_show_woo_slideout_cart() {
 	 *
 	 * @var bool
 	*/
-	return (bool) apply_filters( 'go_wc_slideout_cart', false );
+	return (bool) apply_filters( 'go_wc_slideout_cart', true );
 
 }
 
