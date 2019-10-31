@@ -78,17 +78,17 @@ function should_show_woo_cart_item() {
  *
  * @return bool True when enabled, else false.
  */
-function should_show_woo_slideout_cart() {
+function should_use_woo_slideout_cart() {
 
 	/**
-	 * Filter whether to display the WooCommerce slideout cart.
+	 * Filter whether to use the WooCommerce slideout cart.
 	 * Default: `true`
 	 *
 	 * @since NEXT
 	 *
 	 * @var bool
 	*/
-	return (bool) apply_filters( 'go_wc_slideout_cart', true );
+	return (bool) apply_filters( 'go_wc_use_slideout_cart', true );
 
 }
 
@@ -157,7 +157,7 @@ function woocommerce_cart_link() {
 
 	}
 
-	$element_wrap = should_show_woo_slideout_cart() ? 'button' : 'a';
+	$element_wrap = should_use_woo_slideout_cart() ? 'button' : 'a';
 
 	printf(
 		'<%1$s href="%2$s" class="header__cart-toggle" alt="%3$s">%4$s</%1$s>',
@@ -176,7 +176,7 @@ function woocommerce_cart_link() {
  */
 function woocommerce_slideout_cart() {
 
-	if ( ! should_show_woo_slideout_cart() ) {
+	if ( ! should_use_woo_slideout_cart() ) {
 
 		return;
 
