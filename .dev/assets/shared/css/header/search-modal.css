@@ -39,17 +39,6 @@
 	}
 }
 
-.admin-bar .search-modal.active {
-	top: 32px;
-}
-
-@media (max-width: 782px) {
-
-	.admin-bar .search-modal.active {
-		top: 46px;
-	}
-}
-
 .search-modal-inner {
 	background-color: hsl(var(--theme-header--bg, var(--color-white, #fff)));
 	padding: 2vw var(--theme-block-padding-x);
@@ -59,5 +48,13 @@
 	@media (--medium) {
 		padding-bottom: var(--header-padding, 3vw);
 		padding-top: var(--header-padding, 3vw);
+	}
+}
+
+.admin-bar .search-modal.active {
+	top: 32px;
+
+	@media (--admin-bar-lg) {
+		top: 46px;
 	}
 }
