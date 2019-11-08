@@ -9,7 +9,7 @@
 	-ms-overflow-style: none;
 	position: fixed;
 	top: 0;
-	transition: opacity 0.2s linear, left 0s 0.2s linear;
+	transition: opacity 0.15s linear, left 0s 0.15s linear;
 	width: 100%;
 	z-index: 10001;
 
