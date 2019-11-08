@@ -23,7 +23,7 @@
 
 <br>
 
-![screenshot](https://cdn.richtabor.com/wp-content/uploads/2019/10/templates.gif)
+![screenshot](https://raw.githubusercontent.com/godaddy-wordpress/go/master/.github/showcase.gif)
 
 ## Key Features
 
