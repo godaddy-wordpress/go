@@ -15,8 +15,8 @@
 <p align="center">
 	<a href="#key-features">Key Features</a> •
 	<a href="#download">Download</a> •
-	<a href="#related">Showcase</a> •
-	<a href="#how-to-use">Contributing</a> •
+	<a href="#showcase">Showcase</a> •
+	<a href="#contributing">Contributing</a> •
 	<a href="#credits">Credits</a> •
 	<a href="#license">License</a>
 </p>
