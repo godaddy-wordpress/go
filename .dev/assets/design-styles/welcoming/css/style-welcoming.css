@@ -1,5 +1,5 @@
 /**
- * Modern - Styles
+ * Welcoming - Styles
  */
 @import url("../../../shared/css/config/media-queries.css");
 @import url("../settings.css");
@@ -15,18 +15,6 @@ html {
 body {
 	border: 0.75rem solid hsl(var(--theme-header--bg));
 	border-top: 0;
-}
-
-.site-branding {
-	top: 0;
-}
-
-.site-content article {
-	overflow: hidden;
-}
-
-.site-search__toggle {
-	top: 0.1rem;
 }
 
 .site-footer.has-background {

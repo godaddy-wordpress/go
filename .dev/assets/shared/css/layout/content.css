@@ -85,10 +85,6 @@ body.home {
 	}
 }
 
-.has-header-3:not(.has-header-background) .content-area > *:first-child {
-	margin-top: 0 !important;
-}
-
 /* Remove .alignfull margin if there is a footer background enabled */
 .has-footer-background .content-area > *:last-child.alignfull:not(.wp-block-coblocks-gallery-masonry) {
 	margin-bottom: 0 !important;
