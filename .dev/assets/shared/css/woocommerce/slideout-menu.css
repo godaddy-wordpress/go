@@ -34,6 +34,7 @@ body {
 
 .site-nav-container {
 	outline: none;
+	position: relative;
 }
 
 .js-woo-slideout {
@@ -106,73 +107,14 @@ body {
 
 	& .site-close-handle {
 		background: transparent;
-		height: 35px;
+		padding: 0;
 		position: absolute;
-		right: 60px;
-		top: 55px;
-		transition: transform 150ms linear;
-		width: 35px;
+		right: 0;
+		top: -2px;
 		z-index: 10001;
 
-		& .close-menu {
-			bottom: 0;
-			cursor: pointer;
-			display: block;
-			height: 17px;
-			left: 0;
-			margin: auto;
-			position: absolute;
-			right: 0;
-			top: 0;
-			transition: all 150ms linear;
-			width: 27px;
-
-			& .bar {
-				background: transparent;
-				display: block;
-				height: 3px;
-				position: relative;
-				transform: translateY(7px);
-				transition: all 0ms 100ms, width 150ms linear;
-				width: 27px;
-
-				&::before {
-					background: #252a2b;
-					bottom: 7px;
-					content: "";
-					height: 3px;
-					position: absolute;
-					right: 0;
-					transition: bottom 300ms 100ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), width 150ms linear, background 150ms linear;
-					width: 27px;
-				}
-
-				&::after {
-					background: #252a2b;
-					content: "";
-					height: 3px;
-					position: absolute;
-					right: 0;
-					top: 7px;
-					transition: top 300ms 100ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), width 150ms linear, background 150ms linear;
-					width: 27px;
-				}
-
-				&.animate {
-
-					&::before {
-						bottom: 0;
-						transform: rotate(-45deg);
-						transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 100ms cubic-bezier(0.23, 1, 0.32, 1);
-					}
-
-					&::after {
-						top: 0;
-						transform: rotate(45deg);
-						transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 100ms cubic-bezier(0.23, 1, 0.32, 1);
-					}
-				}
-			}
+		& svg {
+			width: 25px;
 		}
 	}
 
@@ -188,14 +130,14 @@ body {
 			text-transform: uppercase;
 		}
 
-		& p.subtitle {
+		& p.subheading {
 			align-items: center;
 			border-bottom: 1px solid #ededed;
 			border-top: 1px solid #ededed;
 			display: flex;
 			height: 70px;
 			margin: 25px 0;
-			opacity: 0.66;
+			opacity: 0.66 !important;
 		}
 
 		& li.mini_cart_item {

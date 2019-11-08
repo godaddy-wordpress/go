@@ -54,6 +54,8 @@ function setup() {
 
 	add_filter( 'woocommerce_add_to_cart_fragments', $n( 'go_cart_fragments' ), PHP_INT_MAX );
 
+	add_action( 'wp', $n( 'disable_cart' ) );
+
 }
 
 /**
@@ -194,13 +196,11 @@ function woocommerce_slideout_cart() {
 
 	<div id="site-nav--cart" class="site-nav style--sidebar show-cart">
 
-		<button id="site-close-handle" class="site-close-handle" aria-label="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>" title="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>">
-			<span class="close-menu active" aria-hidden="true">
-				<span class="bar animate"></span>
-			</span>
-		</button>
-
 		<div id="site-cart" class="site-nav-container" tabindex="-1">
+
+			<button id="site-close-handle" class="site-close-handle" aria-label="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>" title="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>">
+				<?php load_inline_svg( 'close.svg' ); ?>
+			</button>
 
 			<div class="site-nav-container-last">
 
@@ -208,7 +208,7 @@ function woocommerce_slideout_cart() {
 
 					<h6 class="title"><?php esc_html_e( 'Cart', 'go' ); ?></h6>
 
-					<p class="subtitle">
+					<p class="subheading">
 						<?php
 						printf(
 							esc_html(
@@ -256,7 +256,16 @@ function go_cart_fragments( $fragments ) {
 	$fragments['span.item-count'] = sprintf(
 		'<span class="item-count%1$s">%2$s</span>',
 		esc_attr( $count_class ),
-		esc_html( $cart_count )
+		esc_html( number_format_i18n( $cart_count ) )
+	);
+
+	$fragments['#site-cart .subheading'] = sprintf(
+		'<p class="subheading">%s</p>',
+		sprintf(
+			/* translators: 1. Single integer value. (eg: 1 product in your cart). 2. Integer larger than 1. (eg: 5 products in your cart). */
+			_n( '%s product in your cart', '%s products in your cart', $cart_count, 'go' ),
+			esc_html( number_format_i18n( $cart_count ) )
+		)
 	);
 
 	return $fragments;
@@ -310,6 +319,36 @@ function empty_cart_message() {
 		),
 		esc_html( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'go' ) ) )
 	);
+
+}
+
+/**
+ * Disable the slideout cart/cart icon when the cart is empty
+ *
+ * @return bool True when the cart count is 0, else false.
+ */
+function disable_cart() {
+
+	/**
+	 * Filter whether to always show the cart icon.
+	 * Default: `false`
+	 *
+	 * @since NEXT
+	 *
+	 * @var bool
+	*/
+	$always_show_cart = (bool) apply_filters( 'go_always_show_cart_icon', false );
+
+	global $woocommerce;
+
+	if ( $always_show_cart || 0 < $woocommerce->cart->get_cart_contents_count() ) {
+
+		return;
+
+	}
+
+	add_filter( 'go_wc_use_slideout_cart', '__return_false' );
+	add_filter( 'go_wc_show_cart_menu', '__return_false' );
 
 }
 

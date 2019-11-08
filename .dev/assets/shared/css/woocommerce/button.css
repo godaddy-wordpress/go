@@ -16,6 +16,13 @@ body {
 			}
 		}
 
+		& .button.disabled,
+		& .button.alt.disabled,
+		& .button.disabled:hover,
+		& .button.alt.disabled:hover {
+			@mixin button;
+		}
+
 		/* Secondary Button */
 		& #respond input#submit,
 		& .button {
