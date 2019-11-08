@@ -50,6 +50,8 @@ function setup() {
 
 	add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
 
+	add_filter( 'woocommerce_reset_variations_link', $n( 'reset_variations_link' ) );
+
 	add_filter( 'woocommerce_add_to_cart_fragments', $n( 'go_cart_fragments' ), PHP_INT_MAX );
 
 }
@@ -396,5 +398,19 @@ function sorting_wrapper() {
 function sorting_wrapper_close() {
 
 	echo '</div>';
+
+}
+
+/**
+ * Update the reset variations link text
+ *
+ * @param string $link Variations link text.
+ */
+function reset_variations_link( $link ) {
+
+	return sprintf(
+		'<a class="reset_variations" href="#">%s</a>',
+		esc_html__( 'Reset Selections', 'go' )
+	);
 
 }

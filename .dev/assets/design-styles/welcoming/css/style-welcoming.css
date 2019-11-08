@@ -6,6 +6,7 @@
 @import url("components/button.css");
 @import url("components/carousel.css");
 @import url("woocommerce/tabs.css");
+@import url("woocommerce/product.css");
 
 html {
 	background-color: hsl(var(--theme-header--bg));
