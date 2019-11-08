@@ -72,6 +72,8 @@
 
 		/* All submenu link containers (<li>) */
 		& .menu-item {
+			white-space: normal;
+
 			@media (--large) {
 				display: block;
 				margin-left: 0;
