@@ -1,9 +1,10 @@
 /*! Header: Site Navigation: Toggle */
 .header__nav-toggle {
-	align-items: flex-start;
-	flex: 0 0 15%;
-	justify-content: flex-start;
-	order: 1;
+	align-items: flex-end;
+	flex: 0 0 12.5%;
+	justify-content: flex-end;
+	order: 3;
+	text-align: right;
 	z-index: 2;
 
 	@media (--large) {
