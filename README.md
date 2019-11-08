@@ -28,13 +28,14 @@
 ## Key Features
 
 * Responsive Layout
-* Multiple Design Styles
 * Customize Colors
 * Customize Fonts
 * Multiple Design Styles
+* Multiple Header Variations
+* Multiple Footer Variations
 * Social Links Menu
 * WooCommerce-Ready
-* Available in 25 Languages
+* Available in 27 Languages
 * RTL Language Support
 
 ## Download
