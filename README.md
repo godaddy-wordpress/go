@@ -19,11 +19,16 @@
 <br>
 
 <p align="center">
-	<a href="#key-features">Key Features</a> •
-	<a href="#download">Download</a> •
-	<a href="#showcase">Showcase</a> •
-	<a href="#contributing">Contributing</a> •
-	<a href="#credits">Credits</a> •
+	<a href="#key-features">Key Features</a>
+	&nbsp;|&nbsp;
+	<a href="#download">Download</a>
+	&nbsp;|&nbsp;
+	<a href="#showcase">Showcase</a>
+	&nbsp;|&nbsp;
+	<a href="#contributing">Contributing</a>
+	&nbsp;|&nbsp;
+	<a href="#credits">Credits</a>
+	&nbsp;|&nbsp;
 	<a href="#license">License</a>
 </p>
 
