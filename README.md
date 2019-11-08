@@ -5,7 +5,7 @@
 <br>
 
 <p align="center">
-	<img src="https://img.shields.io/circleci/build/github/godaddy-wordpress/go?logo=circleci&style=flat-square" alt="CircleCI">
+	<img src="https://img.shields.io/circleci/build/github/godaddy-wordpress/go?label=&logo=circleci&style=flat-square" alt="CircleCI">
 	<img src="https://img.shields.io/static/v1?label=&message=5.0+-+5.3&color=blue&style=flat-square&logo=wordpress&logoColor=white" alt="WordPress">
 	<img src="https://img.shields.io/static/v1?label=&message=5.6+-+7.3&color=777bb4&style=flat-square&logo=php&logoColor=white" alt="PHP">
 </p>
@@ -23,7 +23,7 @@
 
 <br>
 
-![screenshot](https://raw.githubusercontent.com/godaddy-wordpress/go/master/.github/showcase.gif)
+![screenshot](https://cdn.richtabor.com/wp-content/uploads/2019/10/templates.gif)
 
 ## Key Features
 
