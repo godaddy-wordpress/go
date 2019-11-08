@@ -22,7 +22,6 @@
 	justify-content: center;
 	order: 2;
 	text-align: center;
-	z-index: 10000;
 
 	@media (--large) {
 		flex: auto;
