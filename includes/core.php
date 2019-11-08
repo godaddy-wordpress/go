@@ -780,7 +780,7 @@ function get_available_design_styles() {
 					'tertiary'          => '#f7fbff',
 					'background'        => '#ffffff',
 					'header_background' => '#3f46ae',
-					'header_text_color' => '#fafafa',
+					'header_text'       => '#fafafa',
 					'footer_background' => '#3f46ae',
 				],
 				'two'   => [
@@ -790,6 +790,7 @@ function get_available_design_styles() {
 					'tertiary'          => '#fff7f7',
 					'background'        => '#ffffff',
 					'header_background' => '#eb616a',
+					'header_text'       => '#fafafa',
 					'footer_background' => '#eb616a',
 				],
 				'three' => [
@@ -799,6 +800,7 @@ function get_available_design_styles() {
 					'tertiary'          => '#f2f9f7',
 					'background'        => '#ffffff',
 					'header_background' => '#3c896d',
+					'header_text'       => '#fafafa',
 					'footer_background' => '#3c896d',
 				],
 				'four'  => [
@@ -808,6 +810,7 @@ function get_available_design_styles() {
 					'tertiary'          => '#f7feff',
 					'background'        => '#ffffff',
 					'header_background' => '#117495',
+					'header_text'       => '#fafafa',
 					'footer_background' => '#117495',
 				],
 			],
