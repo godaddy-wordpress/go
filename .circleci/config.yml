@@ -47,7 +47,6 @@ jobs:
       - run:
           name: Install Composer packages
           command: composer install
-          working_directory: /tmp/wordpress/wp-content/themes/go
       - run:
           name: "Run PHPCS"
           command: composer run lint -- -v
@@ -60,7 +59,6 @@ jobs:
       - run:
           name: Install Composer packages
           command: composer install
-          working_directory: /tmp/wordpress/wp-content/themes/go
       - run:
           name: "Run PHPCS"
           command: composer run lint -- -v
