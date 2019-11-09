@@ -142,6 +142,10 @@ function customize_login_screen() {
 		text-decoration: underline;
 	}
 
+	body.login div#login label {
+		width: 100%;
+	}
+
 	body.login div#login #nav a:hover,
 	body.login div#login #backtoblog a:hover {
 		color: hsl(var(--theme-link--color-interactive, var(--theme-color-text)));
