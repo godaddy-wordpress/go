@@ -1,72 +1,132 @@
-# Go #
-**Contributors:** [godaddy](https://profiles.wordpress.org/godaddy), [richtabor](https://profiles.wordpress.org/richtabor), [eherman24](https://profiles.wordpress.org/eherman24), [jrtashjian](https://profiles.wordpress.org/jrtashjian)  
-**Tags:** [one-column](https://wordpress.org/themes/tags/one-column/), [custom-colors](https://wordpress.org/themes/tags/custom-colors/), [custom-logo](https://wordpress.org/themes/tags/custom-logo/), [custom-menu](https://wordpress.org/themes/tags/custom-menu/), [editor-style](https://wordpress.org/themes/tags/editor-style/), [theme-options](https://wordpress.org/themes/tags/theme-options/), [threaded-comments](https://wordpress.org/themes/tags/threaded-comments/), [translation-ready](https://wordpress.org/themes/tags/translation-ready/), [block-styles](https://wordpress.org/themes/tags/block-styles/), [wide-blocks](https://wordpress.org/themes/tags/wide-blocks/)  
-**Requires at least:** 5.0  
-**Tested up to:** 5.2  
-**Requires PHP:** 5.6.0  
-**Stable tag:** 1.1.1  
-**License:** GPL-2.0-only  
-License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
+<h1 align="center">Go <small>v1.1.1</small></h1>
 
-Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowering makers to build beautifully rich websites with WordPress.
+<h4 align="center">The most flexible <a href="https://github.com/wordpress/gutenberg" target="_blank">Gutenberg</a>-first <a href="https://wordpress.org" target="_blank">WordPress</a> theme built for go-getters everywhere.</h4>
 
-[![CircleCI](https://circleci.com/gh/godaddy-wordpress/go.svg?style=svg)](https://circleci.com/gh/godaddy-wordpress/go) [![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/godaddy-wordpress/go/blob/master/license.txt) [![PHP >= 5.6](https://img.shields.io/badge/php-%3E=%205.6-8892bf.svg)](https://secure.php.net/supported-versions.php) [![WordPress >= 5.0](https://img.shields.io/badge/wordpress-%3E=%205.0-blue.svg)](https://wordpress.org/download/release-archive/)  
+<br>
 
-## Description ##
+<p align="center">
+	<a href="https://circleci.com/gh/godaddy-wordpress/go/tree/master" target="_blank">
+		<img src="https://img.shields.io/circleci/build/github/godaddy-wordpress/go/master?label=&logo=circleci&style=flat-square" alt="CircleCI Build">
+	</a>
+	<a href="https://wordpress.org/" target="_blank">
+		<img src="https://img.shields.io/static/v1?label=&message=5.0+-+5.3&color=blue&style=flat-square&logo=wordpress&logoColor=white" alt="WordPress Versions">
+	</a>
+	<a href="https://www.php.net/" target="_blank">
+		<img src="https://img.shields.io/static/v1?label=&message=5.6+-+7.3&color=777bb4&style=flat-square&logo=php&logoColor=white" alt="PHP Versions">
+	</a>
+</p>
 
-**Features**
+<br>
+
+<p align="center">
+	<a href="#key-features">Key Features</a>
+	&nbsp;|&nbsp;
+	<a href="#download">Download</a>
+	&nbsp;|&nbsp;
+	<a href="#showcase">Showcase</a>
+	&nbsp;|&nbsp;
+	<a href="#contributing">Contributing</a>
+	&nbsp;|&nbsp;
+	<a href="#credits">Credits</a>
+	&nbsp;|&nbsp;
+	<a href="#license">License</a>
+</p>
+
+<br>
+
+![screenshot](https://raw.githubusercontent.com/godaddy-wordpress/go/master/.github/showcase.gif)
+
+## Key Features
 
 * Responsive Layout
-* Multiple Design Styles
 * Customize Colors
 * Customize Fonts
 * Multiple Design Styles
+* Multiple Header Variations
+* Multiple Footer Variations
 * Social Links Menu
 * WooCommerce-Ready
-* Available in 29 Languages
+* Available in 27 Languages
 * RTL Language Support
 
-**Contributing**
+## Download
 
-You can fork and contribute back to Go by visiting [our public repo on GitHub](https://github.com/godaddy-wordpress/go).
+[Click here to download](https://github.com/godaddy-wordpress/go/releases/latest/download/go.zip) the latest release package of Go for WordPress.
 
-## Installation ##
+**NOTE:** Go is currently [awaiting approval](https://themes.trac.wordpress.org/ticket/75007) on WordPress.org. Until then, early adopters of the theme are required to keep it up-to-date manually.
 
-1. In your admin panel, navigate to **Appearance > Themes** and click the **Add New** button.
-2. Type **Go** in the search form and press the **Enter** key on your keyboard.
-3. Click the **Activate** button to begin using Go on your website.
-4. In your admin panel, navigate to **Appearance > Customize**.
-5. Put the finishing touches on your website by adding a logo, header image, and custom colors.
+## Showcase
 
-## Copyright ##
+A theme is only as good as the websites it creates.
 
-Go WordPress theme, Copyright 2019 GoDaddy Operating Company, LLC.
-Go is distributed under the terms of the GNU GPL.
+We are crafting Go to be powerful, yet simplistic, as demonstrated by this showcase of our favorite designs, each one built entirely with Go and a few recommended plugins, [CoBlocks](https://wordpress.org/plugins/coblocks/) and [WooCommerce](https://wordpress.org/plugins/woocommerce/).
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
+### Go + CoBlocks
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+* [Alder](https://wpnux.godaddy.com/v2/?template=alder)
+* [Ashby](https://wpnux.godaddy.com/v2/?template=ashby)
+* [Barista](https://wpnux.godaddy.com/v2/?template=barista)
+* [Bento](https://wpnux.godaddy.com/v2/?template=bento)
+* [Everett](https://wpnux.godaddy.com/v2/?template=everett)
+* [Figure](https://wpnux.godaddy.com/v2/?template=figure)
+* [Keynote](https://wpnux.godaddy.com/v2/?template=keynote)
+* [Salt](https://wpnux.godaddy.com/v2/?template=salt)
 
-Go bundles the following third-party resources:
+### Go + CoBlocks + WooCommerce
 
-TGM-Plugin-Activation, Copyright 2011, Thomas Griffin
-License: GPLv2 or later
-Source: http://tgmpluginactivation.com
+* [Avenue](https://wpnux.godaddy.com/v2/?template=avenue)
+* [Chai](https://wpnux.godaddy.com/v2/?template=chai)
+* [Jane](https://wpnux.godaddy.com/v2/?template=jane)
+* [Philo](https://wpnux.godaddy.com/v2/?template=philo)
+* [Wares](https://wpnux.godaddy.com/v2/?template=wares)
 
-Screenshot image #1, Copyright Negative Space
-License: CC0 1.0 Universal (CC0 1.0) (https://creativecommons.org/publicdomain/zero/1.0/)
-Source: https://stocksnap.io/photo/RCFX768X06
+## Contributing
 
-## Changelog ##
+You can fork and contribute back to Go by getting involved with [existing issues](https://github.com/godaddy-wordpress/go/issues), [creating new ones](https://github.com/godaddy-wordpress/go/issues/new/choose), or [issuing pull requests](https://github.com/godaddy-wordpress/go/compare).
 
-### 1.1.1 ###
-* Introduce additional design styles.
+To clone this project, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) and [Composer](https://getcomposer.org) installed on your machine.
 
-### 1.1.0 ###
-* Initial release.
+From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/godaddy-wordpress/go
+
+# Go into the repository
+$ cd go
+
+# Install dependencies and create a build
+$ npm start
+
+# Install using WP-CLI (if available)
+$ wp theme install path/to/go/build/go.zip --activate --path=path/to/wordpress
+```
+
+## Credits
+
+This software uses the following open source packages:
+
+- [Composer](https://getcomposer.org/)
+- [Grunt](https://gruntjs.com/)
+- [Node.js](https://nodejs.org/)
+- [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+- [PHPUnit](https://phpunit.de/)
+- [PostCSS](https://postcss.org/)
+- [TGM Plugin Activation](http://tgmpluginactivation.com/)
+- [WordPress](https://wordpress.org/)
+
+## License
+
+This theme, like WordPress, is licensed under the GPL. Use it to make something cool, have fun, and share what you've learned with others.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+---
+
+Copyright © 2019 GoDaddy Operating Company, LLC. All Rights Reserved.
+
+[godaddy.com](https://www.godaddy.com) &nbsp;&middot;&nbsp;
+GitHub [@godaddy-wordpress](https://github.com/godaddy-wordpress) &nbsp;&middot;&nbsp;
+Twitter [@godaddy](https://twitter.com/godaddy)
