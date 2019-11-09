@@ -33,7 +33,7 @@ function customize_login_screen() {
 	 *
 	 * @var bool
 	 */
-	$disable_customizations = (bool) apply_filters( 'go_disablelogin_customizations', false );
+	$disable_customizations = (bool) apply_filters( 'go_disable_login_customizations', false );
 
 	if ( $disable_customizations ) {
 
