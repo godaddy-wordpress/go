@@ -18,6 +18,19 @@
 				<directory suffix=".php">./node_modules</directory>
 				<directory suffix=".php">./vendor</directory>
 				<directory suffix=".php">./build</directory>
+				<directory suffix=".php">./partials</directory>
+				<file>./404.php</file>
+				<file>./archive.php</file>
+				<file>./comments.php</file>
+				<file>./footer.php</file>
+				<file>./header.php</file>
+				<file>./index.php</file>
+				<file>./page.php</file>
+				<file>./search.php</file>
+				<file>./searchform.php</file>
+				<file>./single.php</file>
+				<file>./woocommerce.php</file>
+				<file>./includes/classes/class-tgm-plugin-activation.php</file>
 			</exclude>
 		</whitelist>
 	</filter>
