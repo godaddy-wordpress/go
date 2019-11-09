@@ -29,7 +29,7 @@ function setup() {
 function customize_login_screen() {
 
 	/**
-	 * Filter to preserve disable all login customizations
+	 * Filter to disable all login customizations
 	 *
 	 * @var bool
 	 */
