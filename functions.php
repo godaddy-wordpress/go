@@ -21,6 +21,12 @@ require_once get_parent_theme_file_path( 'includes/core.php' );
 require_once get_parent_theme_file_path( 'includes/customizer.php' );
 
 /**
+ * Custom login page.
+ */
+require_once get_parent_theme_file_path( 'includes/login.php' );
+
+
+/**
  * Custom template tags for the theme.
  */
 require_once get_parent_theme_file_path( 'includes/template-tags.php' );
@@ -46,6 +52,7 @@ require_once get_parent_theme_file_path( 'includes/woocommerce.php' );
 Go\Core\setup();
 Go\TGM\setup();
 Go\Customizer\setup();
+Go\Login\setup();
 Go\WooCommerce\setup();
 
 if ( ! function_exists( 'wp_body_open' ) ) :
