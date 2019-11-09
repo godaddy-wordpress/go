@@ -60,6 +60,16 @@ function customize_login_screen() {
 	}
 
 	/**
+	 * Set the login header text
+	 */
+	add_filter(
+		'login_headertext',
+		function() {
+			return get_bloginfo( 'name' );
+		}
+	);
+
+	/**
 	 * Set the login page logo URL
 	 */
 	add_filter(
@@ -100,9 +110,10 @@ function customize_login_screen() {
 
 		body.login div#login h1 a {
 			background-image: url( '<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ); ?>' );
-			background-size: 100%;
+			background-size: contain;
+			background-position: center;
 			height: 150px;
-			width: 150px;
+			width: auto;
 		}
 
 		<?php
