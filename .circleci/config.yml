@@ -46,6 +46,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Update hosts
+          command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
+      - run:
           name: Install rsync
           command: sudo apt install rsync
       - run:
@@ -71,6 +74,9 @@ jobs:
       - image: circleci/mysql:5.7
     steps:
       - checkout
+      - run:
+          name: Update hosts
+          command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - run:
           name: Install rsync
           command: sudo apt install rsync
