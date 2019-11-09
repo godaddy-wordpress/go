@@ -196,8 +196,9 @@ fi
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/go
 mkdir -p $INSTALL_PATH
 
-if [ "$CIRCLE_JOB" == 'theme-check' ]; then
-	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
-else
+if [ "$CIRCLE_JOB" == 'unit-tests' ]; then
+	# Unit test job, copy entire directory including config files
 	rsync -av --delete ~/project/. $INSTALL_PATH/
+else
+	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
 fi
