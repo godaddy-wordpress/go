@@ -1,4 +1,4 @@
-## Contribute To CoBlocks
+## Contribute To Go
 
 Community made patches, localisations, bug reports and contributions are always welcome!
 
