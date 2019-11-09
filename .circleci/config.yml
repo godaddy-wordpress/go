@@ -41,7 +41,7 @@ version: 2
 jobs:
   php56-phpcs:
     docker:
-      - image: circleci/php:5.6
+      - image: circleci/php:5.6-apache-node-browsers
       - image: circleci/mysql:5.7
     steps:
       - checkout
@@ -70,7 +70,7 @@ jobs:
 
   php73-phpcs:
     docker:
-      - image: circleci/php:7.3.8
+      - image: circleci/php:7.3.8-apache-node-browsers
       - image: circleci/mysql:5.7
     steps:
       - checkout
