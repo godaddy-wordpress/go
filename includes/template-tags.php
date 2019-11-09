@@ -40,7 +40,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 	$page_template = get_page_template_slug( $post_id );
 
 	// Check whether the post type is allowed to output post meta.
-	$disallowed_post_types = apply_filters( 'go_disallowed_post_types_for_meta_output', array( 'page' ) );
+	$disallowed_post_types = apply_filters( 'go_disallowed_post_types_for_meta_output', [ 'page' ] );
 	if ( in_array( get_post_type( $post_id ), $disallowed_post_types, true ) ) {
 		return;
 	}
@@ -53,12 +53,12 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 
 		$post_meta                 = apply_filters(
 			'go_post_meta_location_single_top',
-			array(
+			[
 				'author',
 				'post-date',
 				'comments',
 				'sticky',
-			)
+			]
 		);
 		$post_meta_wrapper_classes = ' post__meta--single post__meta--top';
 
@@ -66,9 +66,9 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 
 		$post_meta                 = apply_filters(
 			'go_post_meta_location_single_bottom',
-			array(
+			[
 				'tags',
-			)
+			]
 		);
 		$post_meta_wrapper_classes = ' post__meta--single post__meta--single-bottom';
 
