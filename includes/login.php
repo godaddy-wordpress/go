@@ -201,4 +201,7 @@ function customize_login_screen() {
 
 	<?php
 
+	// Allow output of additional styles without disabling Go login styles.
+	do_action( 'go_enqueue_scripts' );
+
 }
