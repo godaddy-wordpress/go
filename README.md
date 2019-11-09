@@ -1,4 +1,4 @@
-<h1 align="center">Go</h1>
+<h1 align="center">Go <small>v1.1.1</small></h1>
 
 <h4 align="center">The most flexible <a href="https://github.com/wordpress/gutenberg" target="_blank">Gutenberg</a>-first <a href="https://wordpress.org" target="_blank">WordPress</a> theme built for go-getters everywhere.</h4>
 
