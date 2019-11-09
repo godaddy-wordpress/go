@@ -125,6 +125,15 @@ function theme_setup() {
 		]
 	);
 
+	// Indicate that the theme works well in both Standard and Transitional template modes of the AMP plugin.
+	add_theme_support(
+		'amp',
+		[
+			// The `paired` flag means that the theme retains logic to be fully functional when AMP is disabled.
+			'paired' => true,
+		]
+	);
+
 	// Add support for WooCommerce.
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'wc-product-gallery-slider' );
