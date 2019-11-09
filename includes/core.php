@@ -311,6 +311,11 @@ function block_editor_assets() {
  */
 function scripts() {
 
+	// Short-circuit in AMP responses since custom scripts are not valid (unless refactored to use  amp-script).
+	if ( is_amp() ) {
+		return;
+	}
+
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 	wp_enqueue_script(
