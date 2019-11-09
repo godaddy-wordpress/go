@@ -408,6 +408,10 @@ function styles() {
  * @link https://git.io/vWdr2
  */
 function skip_link_focus_fix() {
+	if ( is_amp() ) {
+		// This is part of AMP. See <https://github.com/ampproject/amphtml/issues/18671>.
+		return;
+	}
 	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
 	?>
 	<script>
