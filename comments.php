@@ -62,10 +62,8 @@ if ( post_password_required() ) {
 				<div class="nav-previous"><?php previous_comments_link( esc_html_e( '&larr; Older Comments', 'go' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html_e( 'Newer Comments &rarr;', 'go' ) ); ?></div>
 			</nav>
-
-				<?php
-			endif; // check for comment navigation.
-
+			<?php endif; // check for comment navigation. ?>
+			<?php
 			/*
 			 * If there are no comments and comments are closed, let's leave a note.
 			 * But we only want the note on posts and pages that had comments in the first place.
