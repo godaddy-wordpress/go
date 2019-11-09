@@ -1245,3 +1245,17 @@ function filter_page_titles( $args ) {
 	return $args;
 
 }
+
+/**
+ * Determine whether it is an AMP response.
+ *
+ * This function is used as a "Conditional Tag" in WordPress. It can only be used at the `wp` action or later.
+ *
+ * @link https://developer.wordpress.org/themes/references/list-of-conditional-tags/
+ * @see is_amp_endpoint()
+ *
+ * @return bool Is AMP response.
+ */
+function is_amp() {
+	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
+}
