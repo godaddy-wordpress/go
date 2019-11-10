@@ -4,7 +4,7 @@ $_tests_dir = getenv( 'WP_TESTS_DIR' );
 
 if ( ! $_tests_dir ) {
 
-	$_tests_dir = rtrim( sys_get_temp_dir(), '/\\' ) . '/wordpress-tests-lib';
+	$_tests_dir = '/tmp/wordpress-tests-lib';
 
 }
 
@@ -47,6 +47,14 @@ function _register_theme() {
 		return $current_theme;
 
 	} );
+
+	$symlink = '/tmp/wordpress/wp-content/themes/go';
+
+	if ( ! file_exists( $symlink ) ) {
+
+		shell_exec( "ln -s ${theme_dir} ${symlink}" );
+
+	}
 
 	// $plugins_to_active = [
 	// 	'coblocks/class-coblocks.php',

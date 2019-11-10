@@ -14,6 +14,9 @@
 	<filter>
 		<whitelist addUncoveredFilesFromWhitelist="true">
 			<directory>./includes</directory>
+			<exclude>
+				<file>./includes/classes/class-tgm-plugin-activation.php</file>
+			</exclude>
 		</whitelist>
 	</filter>
 	<php>
