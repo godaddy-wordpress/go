@@ -2,9 +2,17 @@
 
 class Test_Core extends WP_UnitTestCase {
 
+	public static function wpSetUpBeforeClass( $factory ) {
+
+		wp_set_current_user( $factory->user->create( [ 'role' => 'administrator' ] ) );
+
+	}
+
 	function setUp() {
 
 		parent::setUp();
+
+		Go\Core\setup();
 
 	}
 
@@ -167,6 +175,85 @@ class Test_Core extends WP_UnitTestCase {
 			has_action( 'comment_form_defaults', 'Go\Core\comment_form_reply_title' ),
 			'comment_form_defaults is not attached to Go\Core\comment_form_reply_title. It might also have the wrong priority (validated priority: 10)'
 		);
+
+	}
+
+	/**
+	 * Test that the text domain was loaded
+	 */
+	function testTextDomain() {
+
+		if ( ! file_exists( get_template_directory() . '/languages/es_ES.mo' ) ) {
+
+			copy( dirname( __FILE__ ) . '/assets/es_ES.mo', get_template_directory() . '/languages/es_ES.mo' );
+
+		}
+
+		add_filter( 'locale', function() {
+			return 'es_ES';
+		} );
+
+		Go\Core\i18n();
+
+		$this->assertTrue( is_textdomain_loaded( 'go' ) );
+
+		if ( file_exists( get_template_directory() . '/languages/es_ES.mo' ) ) {
+
+			unlink( get_template_directory() . '/languages/es_ES.mo' );
+
+		}
+
+	}
+
+	/**
+	 * Test the global content width is set
+	 */
+	function testGlobalContentWidth() {
+
+		$this->assertEquals( $GLOBALS['content_width'], 660 );
+
+	}
+
+	/**
+	 * Test the theme support
+	 */
+	function testThemeSupports() {
+
+		$has_support = true;
+
+		$theme_supports = [
+			'automatic-feed-links',
+			'title-tag',
+			'post-thumbnails',
+			// 'html5',
+			'custom-logo',
+			'custom-background',
+			'woocommerce',
+			'wc-product-gallery-slider',
+			'wc-product-gallery-lightbox',
+			'wc-product-gallery-zoom',
+			'responsive-embeds',
+			'align-wide',
+			'editor-styles',
+			'wp-block-styles',
+			'editor-font-sizes',
+			'automatic-feed-links',
+			'editor-color-palette',
+		];
+
+		foreach ( $theme_supports as $support ) {
+
+			if ( current_theme_supports( $support ) ) {
+
+				continue;
+
+			}
+
+			$this->fail( "Theme lacks support for ${support}" );
+
+		}
+
+		$this->assertTrue( true );
 
 	}
 }

@@ -11,6 +11,7 @@ temp
 dist
 !.dev/assets/shared/js/frontend/vendor/
 *.mo
+!.dev/tests/php/assets/*.mo
 
 # Editors
 *.esproj

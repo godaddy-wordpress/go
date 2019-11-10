@@ -55,8 +55,6 @@ function _register_theme() {
 
 	// update_option( 'active_plugins', $plugins_to_active );
 
-	switch_theme( 'go' );
-
 }
 tests_add_filter( 'muplugins_loaded', '_register_theme' );
 
