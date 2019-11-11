@@ -116,7 +116,7 @@ function woocommerce_cart_link() {
 	 *
 	 * @param string Alt text for the cart menu item.
 	 */
-	$cart_alt_text = (string) esc_html( apply_filters( 'go_menu_cart_alt', __( 'View cart', 'go' ) ) );
+	$cart_alt_text = (string) apply_filters( 'go_menu_cart_alt', __( 'View cart', 'go' ) );
 
 	/**
 	 * Filters the cart menu item text.
@@ -145,9 +145,9 @@ function woocommerce_cart_link() {
 	}
 
 	printf(
-		'<a href="%1$s" class="header__cart-toggle" alt="%2$s">%3$s</a>',
+		'<a href="%1$s" class="header__cart-toggle" alt="%2$s" aria-label="%2$s">%3$s</a>',
 		esc_url( $cart_url ),
-		$cart_alt_text, // @codingStandardsIgnoreLine
+		esc_html( $cart_alt_text ),
 		$cart_text // @codingStandardsIgnoreLine
 	);
 
@@ -208,24 +208,24 @@ function empty_cart_message() {
 			$icon,
 			array_merge(
 				wp_kses_allowed_html( 'post' ),
-				[
-					'svg'  => [
+				array(
+					'svg'  => array(
 						'width'   => true,
 						'role'    => true,
 						'height'  => true,
 						'fill'    => true,
 						'xmlns'   => true,
 						'viewbox' => true,
-					],
-					'path' => [
+					),
+					'path' => array(
 						'd'    => true,
 						'fill' => true,
-					],
-					'g'    => [
+					),
+					'g'    => array(
 						'd'    => true,
 						'fill' => true,
-					],
-				]
+					),
+				)
 			)
 		),
 		esc_html( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'go' ) ) )
@@ -296,10 +296,10 @@ function single_product_header() {
 	<div class="product-navigation-wrapper">
 		<?php
 			woocommerce_breadcrumb(
-				[
+				array(
 					'delimiter' => '<span class="sep">&#47;</span>',
 					'home'      => woocommerce_page_title( false ),
-				]
+				)
 			);
 			single_product_pagination();
 			single_product_back_to_shop();
@@ -324,10 +324,10 @@ function single_product_pagination() {
 	$arrow_right = ob_get_clean();
 
 	the_post_navigation(
-		[
+		array(
 			'prev_text' => '<span class="screen-reader-text">' . esc_html__( 'Previous Post: ', 'go' ) . ' %title</span>' . $arrow_left . '<span class="nav-title">' . esc_html__( 'Previous', 'go' ) . '</span>',
 			'next_text' => '<span class="screen-reader-text">' . esc_html__( 'Next Post:', 'go' ) . ' %title</span><span class="nav-title">' . esc_html__( 'Next', 'go' ) . '</span>' . $arrow_right,
-		]
+		)
 	);
 
 }

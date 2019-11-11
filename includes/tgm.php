@@ -30,13 +30,13 @@ function setup() {
  * @return void
  */
 function register_required_plugins() {
-	$plugins = [
-		[
+	$plugins = array(
+		array(
 			'name'     => 'CoBlocks',
 			'slug'     => 'coblocks',
 			'required' => false,
-		],
-	];
+		),
+	);
 
 	/**
 	 * Filters the list of plugin depedencies.
@@ -55,7 +55,7 @@ function register_required_plugins() {
 		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
 		'is_automatic' => true,                    // Automatically activate plugins after installation or not.
 		'message'      => '',                      // Message to output right before the plugins table.
-	];
+	);
 
 	tgmpa( $plugins, $config );
 }

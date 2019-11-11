@@ -73,8 +73,8 @@ module.exports = function( grunt ) {
 				overwrite: true,
 				replacements: [
 					{
-						from: /<small>v[\w.+-]+/,
-						to: '<small>v<%= pkg.version %>'
+						from: /goVersion=&message=v[\w.+-]+&/,
+						to: 'goVersion=&message=v<%= pkg.version %>&'
 					}
 				],
 				src: [ 'readme.md' ]

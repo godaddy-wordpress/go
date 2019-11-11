@@ -67,12 +67,12 @@ if ( ! function_exists( 'go_comment' ) ) :
 				comment_reply_link(
 					array_merge(
 						$args,
-						[
+						array(
 							'reply_text' => __( 'Reply', 'go' ),
 							'after'      => ' <span>&darr;</span>',
 							'depth'      => $depth,
 							'max_depth'  => $args['max_depth'],
-						]
+						)
 					)
 				);
 				?>

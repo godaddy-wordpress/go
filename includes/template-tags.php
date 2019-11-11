@@ -139,11 +139,11 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 									),
 									array_merge(
 										wp_kses_allowed_html( 'post' ),
-										[
-											'time' => [
+										array(
+											'time' => array(
 												'datetime' => true,
-											],
-										]
+											),
+										)
 									)
 								);
 								?>
@@ -259,14 +259,14 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 function get_palette_color( $color, $format = 'RBG' ) {
 	$default         = \Go\Core\get_default_color_scheme();
 	$color_scheme    = get_theme_mod( 'color_scheme', $default );
-	$override_colors = [
+	$override_colors = array(
 		'primary'           => 'primary_color',
 		'secondary'         => 'secondary_color',
 		'tertiary'          => 'tertiary_color',
 		'background'        => 'background_color',
 		'header_background' => 'header_background_color',
 		'footer_background' => 'footer_background_color',
-	];
+	);
 
 	$color_override = get_theme_mod( $override_colors[ $color ] );
 
@@ -337,10 +337,10 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
  */
 function hex_to_hsl( $hex, $string_output = false ) {
 	if ( empty( $hex ) ) {
-		return $string_output ? '' : [ '', '', '' ];
+		return $string_output ? '' : array( '', '', '' );
 	}
 
-	$hex = [ $hex[1] . $hex[2], $hex[3] . $hex[4], $hex[5] . $hex[6] ];
+	$hex = array( $hex[1] . $hex[2], $hex[3] . $hex[4], $hex[5] . $hex[6] );
 	$rgb = array_map(
 		function( $part ) {
 			return intval( hexdec( $part ) ) / 255.0;
@@ -380,7 +380,7 @@ function hex_to_hsl( $hex, $string_output = false ) {
 		return "{$h}, {$s}%, ${l}%";
 	}
 
-	return [ $h, $s, $l ];
+	return array( $h, $s, $l );
 }
 
 /**
@@ -440,30 +440,30 @@ function has_footer_background() {
  *
  * @return void
  */
-function copyright( $args = [] ) {
+function copyright( $args = array() ) {
 
 	$args = wp_parse_args(
 		$args,
-		[
+		array(
 			'class' => 'site-info',
-		]
+		)
 	);
 
-	$year      = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
+	$year      = sprintf( '&copy; %s&nbsp;', esc_html( gmdate( 'Y' ) ) );
 	$copyright = get_theme_mod( 'copyright', \Go\Core\get_default_copyright() );
 
-	$html = [
-		'div'  => [
-			'class' => [],
-		],
-		'span' => [
-			'class' => [],
-		],
-		'a'    => [
-			'href'  => [],
-			'class' => [],
-		],
-	];
+	$html = array(
+		'div'  => array(
+			'class' => array(),
+		),
+		'span' => array(
+			'class' => array(),
+		),
+		'a'    => array(
+			'href'  => array(),
+			'class' => array(),
+		),
+	);
 	?>
 
 	<div class="<?php echo esc_attr( $args['class'] ); ?>">
@@ -517,14 +517,14 @@ function page_title() {
 	 */
 	$args = (array) apply_filters(
 		'go_page_title_args',
-		[
+		array(
 			'title'   => get_the_title(),
 			'wrapper' => 'h1',
-			'atts'    => [
+			'atts'    => array(
 				'class' => 'post__title m-0 text-center',
-			],
+			),
 			'custom'  => false,
-		]
+		)
 	);
 
 	/**
@@ -545,7 +545,7 @@ function page_title() {
 
 	}
 
-	$args['atts'] = empty( $args['atts'] ) ? [] : (array) $args['atts'];
+	$args['atts'] = empty( $args['atts'] ) ? array() : (array) $args['atts'];
 
 	foreach ( $args['atts'] as $key => $value ) {
 
@@ -568,7 +568,7 @@ function page_title() {
 
 	foreach ( array_keys( $args['atts'] ) as $index => $attribute ) {
 
-		$args['atts'][ $attribute ] = [];
+		$args['atts'][ $attribute ] = array();
 
 	}
 
@@ -577,9 +577,9 @@ function page_title() {
 		is_customize_preview() ? ( get_theme_mod( 'page_titles', true ) ? '' : 'display-none' ) : '',
 		wp_kses(
 			$html,
-			[
+			array(
 				$args['wrapper'] => $args['atts'],
-			]
+			)
 		)
 	);
 
@@ -638,13 +638,13 @@ function has_social_icons( $social_icons = null ) {
  *
  * @return void
  */
-function social_icons( $args = [] ) {
+function social_icons( $args = array() ) {
 	$args = wp_parse_args(
 		$args,
-		[
+		array(
 			'class'    => 'social-icons',
 			'li_class' => 'display-inline-block social-icon-%s',
-		]
+		)
 	);
 
 	$social_icons     = \Go\Core\get_social_icons();
@@ -687,7 +687,7 @@ function social_icons( $args = [] ) {
  * }
  * @return void
  */
-function display_site_branding( $args = [] ) {
+function display_site_branding( $args = array() ) {
 	echo '<div class="header__titles lg:flex items-center" itemscope itemtype="http://schema.org/Organization">';
 		site_branding( $args );
 	echo '</div>';
@@ -700,12 +700,12 @@ function display_site_branding( $args = [] ) {
  *
  * @return void
  */
-function site_branding( $args = [] ) {
+function site_branding( $args = array() ) {
 	$args = wp_parse_args(
 		$args,
-		[
+		array(
 			'description' => true,
-		]
+		)
 	);
 
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
@@ -776,14 +776,14 @@ function load_inline_svg( $filename ) {
 	ob_start();
 
 	locate_template(
-		[
+		array(
 			sprintf(
 				'dist/images/design-styles/%1$s/%2$s',
 				sanitize_title( $design_style['label'] ),
 				$filename
 			),
 			"dist/images/{$filename}",
-		],
+		),
 		true,
 		false
 	);
@@ -792,28 +792,28 @@ function load_inline_svg( $filename ) {
 		ob_get_clean(),
 		array_merge(
 			wp_kses_allowed_html( 'post' ),
-			[
-				'svg'  => [
+			array(
+				'svg'  => array(
 					'role'    => true,
 					'width'   => true,
 					'height'  => true,
 					'fill'    => true,
 					'xmlns'   => true,
 					'viewbox' => true,
-				],
-				'path' => [
+				),
+				'path' => array(
 					'd'              => true,
 					'fill'           => true,
 					'fill-rule'      => true,
 					'stroke'         => true,
 					'stroke-width'   => true,
 					'stroke-linecap' => true,
-				],
-				'g'    => [
+				),
+				'g'    => array(
 					'd'    => true,
 					'fill' => true,
-				],
-			]
+				),
+			)
 		)
 	);
 

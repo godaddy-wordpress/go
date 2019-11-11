@@ -79,12 +79,12 @@ function theme_setup() {
 
 	// This theme uses wp_nav_menu() in up to four locations.
 	register_nav_menus(
-		[
+		array(
 			'primary'  => esc_html__( 'Primary', 'go' ),
 			'footer-1' => esc_html__( 'Footer Menu #1', 'go' ),
 			'footer-2' => esc_html__( 'Footer Menu #2', 'go' ),
 			'footer-3' => esc_html__( 'Footer Menu #3', 'go' ),
-		]
+		)
 	);
 
 	/*
@@ -93,13 +93,13 @@ function theme_setup() {
 	 */
 	add_theme_support(
 		'html5',
-		[
+		array(
 			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
 			'caption',
-		]
+		)
 	);
 
 	/**
@@ -109,20 +109,20 @@ function theme_setup() {
 	 */
 	add_theme_support(
 		'custom-logo',
-		[
+		array(
 			'height'      => 190,
 			'width'       => 190,
 			'flex-width'  => true,
 			'flex-height' => true,
-		]
+		)
 	);
 
 	// Add support for custom background color.
 	add_theme_support(
 		'custom-background',
-		[
+		array(
 			'default-color' => \Go\get_palette_color( 'background' ),
-		]
+		)
 	);
 
 	// Add support for WooCommerce.
@@ -146,59 +146,59 @@ function theme_setup() {
 	// Add custom editor font sizes.
 	add_theme_support(
 		'editor-font-sizes',
-		[
-			[
+		array(
+			array(
 				'name'      => esc_html_x( 'Small', 'font size option label', 'go' ),
 				'shortName' => esc_html_x( 'S', 'abbreviation of the font size option label', 'go' ),
 				'size'      => 17,
 				'slug'      => 'small',
-			],
-			[
+			),
+			array(
 				'name'      => esc_html_x( 'Medium', 'font size option label', 'go' ),
 				'shortName' => esc_html_x( 'M', 'abbreviation of the font size option label', 'go' ),
 				'size'      => 21,
 				'slug'      => 'medium',
-			],
-			[
+			),
+			array(
 				'name'      => esc_html_x( 'Large', 'font size option label', 'go' ),
 				'shortName' => esc_html_x( 'L', 'abbreviation of the font size option label', 'go' ),
 				'size'      => 24,
 				'slug'      => 'large',
-			],
-			[
+			),
+			array(
 				'name'      => esc_html_x( 'Huge', 'font size option label', 'go' ),
 				'shortName' => esc_html_x( 'XL', 'abbreviation of the font size option label', 'go' ),
 				'size'      => 30,
 				'slug'      => 'huge',
-			],
-		]
+			),
+		)
 	);
 
 	$design_style = get_design_style();
 
 	if ( $design_style ) {
-		$color_palette = [
-			[
+		$color_palette = array(
+			array(
 				'name'  => esc_html_x( 'Primary', 'name of the first color palette selection', 'go' ),
 				'slug'  => 'primary',
 				'color' => \Go\get_palette_color( 'primary' ),
-			],
-			[
+			),
+			array(
 				'name'  => esc_html_x( 'Secondary', 'name of the second color palette selection', 'go' ),
 				'slug'  => 'secondary',
 				'color' => \Go\get_palette_color( 'secondary' ),
-			],
-			[
+			),
+			array(
 				'name'  => esc_html_x( 'Tertiary', 'name of the third color palette selection', 'go' ),
 				'slug'  => 'tertiary',
 				'color' => \Go\get_palette_color( 'tertiary' ),
-			],
-			[
+			),
+			array(
 				'name'  => esc_html_x( 'Quaternary', 'name of the fourth color palette selection', 'go' ),
 				'slug'  => 'quaternary',
 				'color' => '#ffffff',
-			],
-		];
+			),
+		);
 
 		add_theme_support( 'editor-color-palette', $color_palette );
 	}
@@ -227,7 +227,7 @@ function fonts_url() {
 
 	}
 
-	$fonts = [];
+	$fonts = array();
 
 	foreach ( $design_styles[ $design_style ]['fonts'] as $font => $font_weights ) {
 
@@ -237,7 +237,7 @@ function fonts_url() {
 
 	if ( is_customize_preview() ) {
 
-		$fonts = [];
+		$fonts = array();
 
 		foreach ( $design_styles as $design_style => $data ) {
 
@@ -257,10 +257,10 @@ function fonts_url() {
 
 	return esc_url_raw(
 		add_query_arg(
-			[
+			array(
 				'family' => rawurlencode( implode( '|', $fonts ) ),
 				'subset' => rawurlencode( 'latin,latin-ext' ),
-			],
+			),
 			'https://fonts.googleapis.com/css'
 		)
 	);
@@ -283,7 +283,7 @@ function block_editor_assets() {
 	wp_enqueue_script(
 		'go-block-filters',
 		get_theme_file_uri( "dist/js/admin/block-filters{$suffix}.js" ),
-		[ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
 		GO_VERSION,
 		true
 	);
@@ -297,9 +297,9 @@ function block_editor_assets() {
 	wp_localize_script(
 		'go-block-filters',
 		'GoBlockFilters',
-		[
+		array(
 			'inlineStyles' => $styles,
-		]
+		)
 	);
 
 }
@@ -316,7 +316,7 @@ function scripts() {
 	wp_enqueue_script(
 		'go-frontend',
 		get_theme_file_uri( "dist/js/frontend{$suffix}.js" ),
-		[],
+		array(),
 		GO_VERSION,
 		true
 	);
@@ -324,9 +324,9 @@ function scripts() {
 	wp_localize_script(
 		'go-frontend',
 		'GoText',
-		[
+		array(
 			'searchLabel' => esc_html__( 'Expand search field', 'go' ),
-		]
+		)
 	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -375,7 +375,7 @@ function styles() {
 	wp_enqueue_style(
 		'go-style',
 		get_theme_file_uri( "dist/css/style-shared{$suffix}.css" ),
-		[ 'go-fonts' ],
+		array( 'go-fonts' ),
 		GO_VERSION
 	);
 
@@ -385,7 +385,7 @@ function styles() {
 		wp_enqueue_style(
 			'go-design-style-' . $design_style['slug'],
 			$design_style['url'],
-			[ 'go-style' ],
+			array( 'go-style' ),
 			GO_VERSION
 		);
 	}
@@ -393,7 +393,7 @@ function styles() {
 	wp_enqueue_style(
 		'go-fonts',
 		fonts_url(),
-		[],
+		array(),
 		GO_VERSION
 	);
 
@@ -557,179 +557,179 @@ function get_available_design_styles() {
 
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
-	$default_design_styles = [
-		'traditional' => [
+	$default_design_styles = array(
+		'traditional' => array(
 			'slug'          => 'traditional',
 			'label'         => _x( 'Traditional', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$suffix}.css",
-			'color_schemes' => [
-				'one'   => [
+			'color_schemes' => array(
+				'one'   => array(
 					'label'      => _x( 'Apricot', 'color palette name', 'go' ),
 					'primary'    => '#c76919',
 					'secondary'  => '#122538',
 					'tertiary'   => '#f8f8f8',
 					'background' => '#ffffff',
-				],
-				'two'   => [
+				),
+				'two'   => array(
 					'label'      => _x( 'Emerald', 'color palette name', 'go' ),
 					'primary'    => '#165153',
 					'secondary'  => '#212121',
 					'tertiary'   => '#f3f1f0',
 					'background' => '#ffffff',
-				],
-				'three' => [
+				),
+				'three' => array(
 					'label'      => _x( 'Brick', 'color palette name', 'go' ),
 					'primary'    => '#87200e',
 					'secondary'  => '#242611',
 					'tertiary'   => '#f9f2ef',
 					'background' => '#ffffff',
-				],
-				'four'  => [
+				),
+				'four'  => array(
 					'label'      => _x( 'Bronze', 'color palette name', 'go' ),
 					'primary'    => '#a88548',
 					'secondary'  => '#05212d',
 					'tertiary'   => '#f9f4ef',
 					'background' => '#ffffff',
-				],
-			],
-			'fonts'         => [
-				'Crimson Text' => [
+				),
+			),
+			'fonts'         => array(
+				'Crimson Text' => array(
 					'400',
 					'400i',
 					'700',
 					'700i',
-				],
-				'Nunito Sans'  => [
+				),
+				'Nunito Sans'  => array(
 					'400',
 					'400i',
 					'600',
 					'700',
-				],
-			],
-		],
-		'modern'      => [
+				),
+			),
+		),
+		'modern'      => array(
 			'slug'          => 'modern',
 			'label'         => _x( 'Modern', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-modern{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-modern-editor{$suffix}.css",
-			'color_schemes' => [
-				'one'   => [
+			'color_schemes' => array(
+				'one'   => array(
 					'label'      => _x( 'Shade', 'color palette name', 'go' ),
 					'primary'    => '#000000',
 					'secondary'  => '#455a64',
 					'tertiary'   => '#eceff1',
 					'background' => '#ffffff',
-				],
-				'two'   => [
+				),
+				'two'   => array(
 					'label'      => _x( 'Blush', 'color palette name', 'go' ),
 					'primary'    => '#c2185b',
 					'secondary'  => '#ec407a',
 					'tertiary'   => '#fce4ec',
 					'background' => '#ffffff',
-				],
-				'three' => [
+				),
+				'three' => array(
 					'label'      => _x( 'Indigo', 'color palette name', 'go' ),
 					'primary'    => '#303f9f',
 					'secondary'  => '#5c6bc0',
 					'tertiary'   => '#e8eaf6',
 					'background' => '#ffffff',
-				],
-				'four'  => [
+				),
+				'four'  => array(
 					'label'      => _x( 'Pacific', 'color palette name', 'go' ),
 					'primary'    => '#00796b',
 					'secondary'  => '#26a69a',
 					'tertiary'   => '#e0f2f1',
 					'background' => '#ffffff',
-				],
-			],
-			'fonts'         => [
-				'Montserrat' => [
+				),
+			),
+			'fonts'         => array(
+				'Montserrat' => array(
 					'400',
 					'700',
-				],
-				'Fira Code'  => [
+				),
+				'Fira Code'  => array(
 					'400',
 					'400i',
 					'700',
-				],
-				'Heebo'      => [
+				),
+				'Heebo'      => array(
 					'400',
 					'800',
-				],
-			],
-		],
-		'trendy'      => [
+				),
+			),
+		),
+		'trendy'      => array(
 			'slug'          => 'trendy',
 			'label'         => _x( 'Trendy', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
-			'color_schemes' => [
-				'one'   => [
+			'color_schemes' => array(
+				'one'   => array(
 					'label'             => _x( 'Plum', 'color palette name', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#4d0859',
 					'tertiary'          => '#ded9e2',
 					'background'        => '#ffffff',
 					'footer_background' => '#000000',
-				],
+				),
 
-				'two'   => [
+				'two'   => array(
 					'label'             => _x( 'Steel', 'color palette name', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#003c68',
 					'tertiary'          => '#c0c9d0',
 					'background'        => '#ffffff',
 					'footer_background' => '#000000',
-				],
-				'three' => [
+				),
+				'three' => array(
 					'label'             => _x( 'Avocado', 'color palette name', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#02493b',
 					'tertiary'          => '#b4c6af',
 					'background'        => '#ffffff',
 					'footer_background' => '#000000',
-				],
-				'four'  => [
+				),
+				'four'  => array(
 					'label'             => _x( 'Champagne', 'color palette name', 'go' ),
 					'primary'           => '#000000',
 					'secondary'         => '#cc224f',
 					'tertiary'          => '#e5dede',
 					'background'        => '#ffffff',
 					'footer_background' => '#000000',
-				],
-			],
-			'fonts'         => [
-				'Trocchi'         => [
+				),
+			),
+			'fonts'         => array(
+				'Trocchi'         => array(
 					'400',
 					'600',
-				],
-				'Noto Sans'       => [
+				),
+				'Noto Sans'       => array(
 					'400',
 					'400i',
 					'700',
-				],
-				'Source Code Pro' => [
+				),
+				'Source Code Pro' => array(
 					'400',
 					'700',
-				],
-			],
-		],
-		'welcoming'   => [
+				),
+			),
+		),
+		'welcoming'   => array(
 			'slug'          => 'welcoming',
 			'label'         => _x( 'Welcoming', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
-			'color_schemes' => [
-				'one'   => [
+			'color_schemes' => array(
+				'one'   => array(
 					'label'             => _x( 'Forest', 'color palette name', 'go' ),
 					'primary'           => '#165144',
 					'secondary'         => '#01332e',
 					'tertiary'          => '#c9c9c9',
 					'background'        => '#eeeeee',
 					'header_background' => '#ffffff',
-				],
-				'two'   => [
+				),
+				'two'   => array(
 					'label'             => _x( 'Spruce', 'color palette name', 'go' ),
 					'primary'           => '#233a6b',
 					'secondary'         => '#01133d',
@@ -737,43 +737,43 @@ function get_available_design_styles() {
 					'background'        => '#ffffff',
 					'background'        => '#eeeeee',
 					'header_background' => '#ffffff',
-				],
-				'three' => [
+				),
+				'three' => array(
 					'label'             => _x( 'Mocha', 'color palette name', 'go' ),
 					'primary'           => '#5b3f20',
 					'secondary'         => '#3f2404',
 					'tertiary'          => '#c9c9c9',
 					'background'        => '#eeeeee',
 					'header_background' => '#ffffff',
-				],
-				'four'  => [
+				),
+				'four'  => array(
 					'label'             => _x( 'Lavender', 'color palette name', 'go' ),
 					'primary'           => '#443a82',
 					'secondary'         => '#2b226b',
 					'tertiary'          => '#c9c9c9',
 					'background'        => '#eeeeee',
 					'header_background' => '#ffffff',
-				],
-			],
-			'fonts'         => [
-				'Work Sans' => [
+				),
+			),
+			'fonts'         => array(
+				'Work Sans' => array(
 					'300',
 					'700',
-				],
-				'Karla'     => [
+				),
+				'Karla'     => array(
 					'400',
 					'400i',
 					'700',
-				],
-			],
-		],
-		'playful'     => [
+				),
+			),
+		),
+		'playful'     => array(
 			'slug'          => 'playful',
 			'label'         => _x( 'Playful', 'design style name', 'go' ),
 			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$suffix}.css" ),
 			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
-			'color_schemes' => [
-				'one'   => [
+			'color_schemes' => array(
+				'one'   => array(
 					'label'             => _x( 'Frolic', 'color palette name', 'go' ),
 					'primary'           => '#3f46ae',
 					'secondary'         => '#ecb43d',
@@ -782,8 +782,8 @@ function get_available_design_styles() {
 					'header_background' => '#3f46ae',
 					'header_text'       => '#fafafa',
 					'footer_background' => '#3f46ae',
-				],
-				'two'   => [
+				),
+				'two'   => array(
 					'label'             => _x( 'Coral', 'color palette name', 'go' ),
 					'primary'           => '#e06b6d',
 					'secondary'         => '#40896e',
@@ -792,8 +792,8 @@ function get_available_design_styles() {
 					'header_background' => '#eb616a',
 					'header_text'       => '#fafafa',
 					'footer_background' => '#eb616a',
-				],
-				'three' => [
+				),
+				'three' => array(
 					'label'             => _x( 'Organic', 'color palette name', 'go' ),
 					'primary'           => '#3c896d',
 					'secondary'         => '#6b0369',
@@ -802,8 +802,8 @@ function get_available_design_styles() {
 					'header_background' => '#3c896d',
 					'header_text'       => '#fafafa',
 					'footer_background' => '#3c896d',
-				],
-				'four'  => [
+				),
+				'four'  => array(
 					'label'             => _x( 'Berry', 'color palette name', 'go' ),
 					'primary'           => '#117495',
 					'secondary'         => '#d691c1',
@@ -812,19 +812,19 @@ function get_available_design_styles() {
 					'header_background' => '#117495',
 					'header_text'       => '#fafafa',
 					'footer_background' => '#117495',
-				],
-			],
-			'fonts'         => [
-				'Quicksand' => [
+				),
+			),
+			'fonts'         => array(
+				'Quicksand' => array(
 					'400',
 					'600',
-				],
-				'Poppins'   => [
+				),
+				'Poppins'   => array(
 					'700',
-				],
-			],
-		],
-	];
+				),
+			),
+		),
+	);
 
 	/**
 	 * Filters the supported design styles.
@@ -884,36 +884,36 @@ function get_default_header_variation() {
  * @return array
  */
 function get_available_header_variations() {
-	$default_header_variations = [
-		'header-1' => [
+	$default_header_variations = array(
+		'header-1' => array(
 			'label'         => esc_html_x( 'Header 1', 'name of the first header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '1' );
 			},
-		],
-		'header-2' => [
+		),
+		'header-2' => array(
 			'label'         => esc_html_x( 'Header 2', 'name of the second header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '2' );
 			},
-		],
-		'header-3' => [
+		),
+		'header-3' => array(
 			'label'         => esc_html_x( 'Header 3', 'name of the third header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '3' );
 			},
-		],
-		'header-4' => [
+		),
+		'header-4' => array(
 			'label'         => esc_html_x( 'Header 4', 'name of the fourth header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/headers/header', '4' );
 			},
-		],
-	];
+		),
+	);
 
 	/**
 	 * Filters the supported header variations.
@@ -953,36 +953,36 @@ function get_header_variation() {
  * @return array
  */
 function get_available_footer_variations() {
-	$default_footer_variations = [
-		'footer-1' => [
+	$default_footer_variations = array(
+		'footer-1' => array(
 			'label'         => esc_html_x( 'Footer 1', 'name of the first footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '1' );
 			},
-		],
-		'footer-2' => [
+		),
+		'footer-2' => array(
 			'label'         => esc_html_x( 'Footer 2', 'name of the second footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '2' );
 			},
-		],
-		'footer-3' => [
+		),
+		'footer-3' => array(
 			'label'         => esc_html_x( 'Footer 3', 'name of the third footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '3' );
 			},
-		],
-		'footer-4' => [
+		),
+		'footer-4' => array(
 			'label'         => esc_html_x( 'Footer 4', 'name of the fourth footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '4' );
 			},
-		],
-	];
+		),
+	);
 
 	/**
 	 * Filters the supported header variations.
@@ -1057,33 +1057,33 @@ function get_default_copyright() {
  * @return array
  */
 function get_available_social_icons() {
-	$social_icons = [
-		'facebook'  => [
+	$social_icons = array(
+		'facebook'  => array(
 			'label'       => esc_html__( 'Facebook', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/facebook.svg' ),
 			'placeholder' => 'https://facebook.com/user',
-		],
-		'twitter'   => [
+		),
+		'twitter'   => array(
 			'label'       => esc_html__( 'Twitter', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/twitter.svg' ),
 			'placeholder' => 'https://twitter.com/user',
-		],
-		'instagram' => [
+		),
+		'instagram' => array(
 			'label'       => esc_html__( 'Instagram', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/instagram.svg' ),
 			'placeholder' => 'https://instagram.com/user',
-		],
-		'linkedin'  => [
+		),
+		'linkedin'  => array(
 			'label'       => esc_html__( 'LinkedIn', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/linkedin.svg' ),
 			'placeholder' => 'https://linkedin.com/in/user',
-		],
-		'pinterest' => [
+		),
+		'pinterest' => array(
 			'label'       => esc_html__( 'Pinterest', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/pinterest.svg' ),
 			'placeholder' => 'https://pinterest.com/user',
-		],
-	];
+		),
+	);
 
 	/**
 	 * Filters the supported social icons.

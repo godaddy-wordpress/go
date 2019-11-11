@@ -35,7 +35,7 @@ class Switcher_Control extends \WP_Customize_Control {
 	 * @param string                $id      Control ID.
 	 * @param array                 $args    @see \WP_Customize_Control::__construct().
 	 */
-	public function __construct( \WP_Customize_Manager $manager, $id, $args = [] ) {
+	public function __construct( \WP_Customize_Manager $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
 
 		if ( isset( $args['switcher_type'] ) ) {
