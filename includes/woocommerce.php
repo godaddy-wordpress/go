@@ -116,7 +116,7 @@ function woocommerce_cart_link() {
 	 *
 	 * @param string Alt text for the cart menu item.
 	 */
-	$cart_alt_text = (string) esc_html( apply_filters( 'go_menu_cart_alt', __( 'View cart', 'go' ) ) );
+	$cart_alt_text = (string) apply_filters( 'go_menu_cart_alt', __( 'View cart', 'go' ) );
 
 	/**
 	 * Filters the cart menu item text.
@@ -145,9 +145,9 @@ function woocommerce_cart_link() {
 	}
 
 	printf(
-		'<a href="%1$s" class="header__cart-toggle" alt="%2$s">%3$s</a>',
+		'<a href="%1$s" class="header__cart-toggle" alt="%2$s" aria-label="%2$s">%3$s</a>',
 		esc_url( $cart_url ),
-		$cart_alt_text, // @codingStandardsIgnoreLine
+		esc_html( $cart_alt_text ),
 		$cart_text // @codingStandardsIgnoreLine
 	);
 
