@@ -72,11 +72,11 @@ function wp_nav_fallback( $args ) {
 	$instance_id = $args['customize_preview_nav_menus_args']['args_hmac'];
 	$attributes  = '';
 
-	$attrs = array(
+	$attrs = [
 		'data-customize-partial-id'                => 'nav_menu_instance[' . esc_attr( $instance_id ) . ']',
 		'data-customize-partial-type'              => 'nav_menu_instance',
 		'data-customize-partial-placement-context' => esc_attr( wp_json_encode( $args['customize_preview_nav_menus_args'] ) ),
-	);
+	];
 
 	$attributes = implode(
 		' ',
@@ -212,7 +212,7 @@ function enqueue_controls_assets() {
  */
 function get_color_schemes_as_choices() {
 	$design_styles = \Go\Core\get_available_design_styles();
-	$color_schemes = array();
+	$color_schemes = [];
 
 	array_walk(
 		$design_styles,
@@ -240,59 +240,59 @@ function register_logo_controls( \WP_Customize_Manager $wp_customize ) {
 
 	$wp_customize->add_setting(
 		'logo_width',
-		array(
+		[
 			'default'           => 100,
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint',
-		)
+		]
 	);
 
 	$wp_customize->add_control(
 		new Range_Control(
 			$wp_customize,
 			'logo_width',
-			array(
+			[
 				'default'     => 100,
 				'type'        => 'go_range_control',
 				'label'       => esc_html__( 'Width', 'go' ),
 				'description' => 'px',
 				'section'     => 'title_tagline',
 				'priority'    => 8,
-				'input_attrs' => array(
+				'input_attrs' => [
 					'min'  => 40,
 					'max'  => 300,
 					'step' => 2,
-				),
-			)
+				],
+			]
 		)
 	);
 
 	$wp_customize->add_setting(
 		'logo_width_mobile',
-		array(
+		[
 			'default'           => 100,
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint',
-		)
+		]
 	);
 
 	$wp_customize->add_control(
 		new Range_Control(
 			$wp_customize,
 			'logo_width_mobile',
-			array(
+			[
 				'default'     => 100,
 				'type'        => 'go_range_control',
 				'label'       => esc_html__( 'Mobile Width', 'go' ),
 				'description' => 'px',
 				'section'     => 'title_tagline',
 				'priority'    => 9,
-				'input_attrs' => array(
+				'input_attrs' => [
 					'min'  => 40,
 					'max'  => 200,
 					'step' => 2,
-				),
-			)
+				],
+			]
 		)
 	);
 }

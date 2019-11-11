@@ -8,7 +8,7 @@
  */
 
 $posts_pagination = get_the_posts_pagination(
-	array(
+	[
 		'mid_size'  => 2,
 		/**
 		 * Translators:
@@ -25,7 +25,7 @@ $posts_pagination = get_the_posts_pagination(
 			__( 'Older <span class="nav-short">Posts</span>', 'go' ),
 			'&rarr;'
 		),
-	)
+	]
 );
 
 // If we're only showing one of the next or previous links, add a class indicating so.

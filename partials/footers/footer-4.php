@@ -15,7 +15,7 @@ $has_background   = Go\has_footer_background();
 
 		<div class="flex flex-wrap lg:justify-start lg:flex-nowrap">
 
-			<?php Go\display_site_branding( array( 'description' => false ) ); ?>
+			<?php Go\display_site_branding( [ 'description' => false ] ); ?>
 
 			<?php if ( has_nav_menu( 'footer-1' ) || is_customize_preview() ) : ?>
 				<nav class="footer-navigation footer-navigation--1 text-sm" aria-label="<?php esc_attr_e( 'Primary Footer Menu', 'go' ); ?>">
