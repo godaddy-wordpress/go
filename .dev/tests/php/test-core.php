@@ -422,9 +422,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		Go\Core\block_editor_assets();
 
-		global $wp_scripts;
-
-		$this->assertArrayHasKey( 'go-block-filters', $wp_scripts->registered );
+		$this->assertTrue( wp_script_is( 'go-block-filters' ) );
 
 	}
 
@@ -459,9 +457,10 @@ class Test_Core extends WP_UnitTestCase {
 
 		Go\Core\scripts();
 
-		global $wp_scripts;
-
-		$this->assertArrayHasKey( 'go-frontend', $wp_scripts->registered );
+		$this->assertTrue(
+			wp_script_is( 'go-frontend' ),
+			'go-frontend script is not enqueued.'
+		);
 
 	}
 
@@ -498,7 +497,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		global $editor_styles;
 
-		$this->assertTrue( in_array( 'dist/css/style-editor.min.css', $editor_styles ) );
+		$this->assertTrue( in_array( 'dist/css/style-editor.min.css', $editor_styles, true ) );
 
 	}
 
@@ -509,7 +508,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		global $editor_styles;
 
-		$this->assertTrue( in_array( 'dist/css/design-styles/style-traditional-editor.min.css', $editor_styles ) );
+		$this->assertTrue( in_array( 'dist/css/design-styles/style-traditional-editor.min.css', $editor_styles, true ) );
 
 	}
 
@@ -524,7 +523,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		global $editor_styles;
 
-		$this->assertTrue( in_array( 'dist/css/design-styles/style-modern-editor.min.css', $editor_styles ) );
+		$this->assertTrue( in_array( 'dist/css/design-styles/style-modern-editor.min.css', $editor_styles, true ) );
 
 		set_theme_mod( 'design_style', 'traditional' );
 
@@ -537,7 +536,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		global $editor_styles;
 
-		$this->assertTrue( in_array( Go\Core\fonts_url(), $editor_styles ) );
+		$this->assertTrue( in_array( Go\Core\fonts_url(), $editor_styles, true ) );
 
 	}
 
@@ -724,7 +723,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		$GLOBALS['post'] = $wp_query->post;
 
-		$this->assertTrue( in_array( 'woocommerce-page', Go\Core\body_classes( [] ) ) );
+		$this->assertTrue( in_array( 'woocommerce-page', Go\Core\body_classes( [] ), true ) );
 
 	}
 
