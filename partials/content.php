@@ -40,10 +40,10 @@
 				the_content();
 			}
 			wp_link_pages(
-				[
+				array(
 					'before' => '<nav class="post-nav-links" aria-label="' . esc_attr__( 'Page', 'go' ) . '"><span class="label">' . __( 'Pages:', 'go' ) . '</span>',
 					'after'  => '</nav>',
-				]
+				)
 			);
 			?>
 		</div>
