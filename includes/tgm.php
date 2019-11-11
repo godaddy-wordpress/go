@@ -30,13 +30,13 @@ function setup() {
  * @return void
  */
 function register_required_plugins() {
-	$plugins = [
-		[
+	$plugins = array(
+		array(
 			'name'     => 'CoBlocks',
 			'slug'     => 'coblocks',
 			'required' => false,
-		],
-	];
+		),
+	);
 
 	/**
 	 * Filters the list of plugin depedencies.
@@ -47,7 +47,7 @@ function register_required_plugins() {
 	 */
 	$plugins = apply_filters( 'go_plugin_dependencies', $plugins );
 
-	$config = [
+	$config = array(
 		'id'           => 'go',              // Unique ID for hashing notices for multiple instances of TGMPA.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'has_notices'  => true,                    // Show admin notices or not.
@@ -55,7 +55,7 @@ function register_required_plugins() {
 		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
 		'is_automatic' => true,                    // Automatically activate plugins after installation or not.
 		'message'      => '',                      // Message to output right before the plugins table.
-	];
+	);
 
 	tgmpa( $plugins, $config );
 }

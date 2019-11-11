@@ -46,10 +46,10 @@
 							<div class="header__navigation-inner">
 								<?php
 								wp_nav_menu(
-									[
+									array(
 										'menu_class'     => 'primary-menu list-reset',
 										'theme_location' => 'primary',
-									]
+									)
 								);
 								?>
 							</div>
