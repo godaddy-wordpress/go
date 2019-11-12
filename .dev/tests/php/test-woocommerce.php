@@ -60,7 +60,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		if ( ! get_option( 'woocommerce_shop_page_id' ) ) {
 
 			// install WC
-			WC_Install::install();
+			@WC_Install::install();
 			$GLOBALS['wp_roles'] = null;
 			wp_roles();
 
@@ -154,15 +154,6 @@ class Test_WooCommerce extends WP_UnitTestCase {
 			has_action( 'woocommerce_cart_is_empty', 'Go\WooCommerce\wc_empty_cart_message' ),
 			'woocommerce_cart_is_empty looks to be attached to Go\WooCommerce\wc_empty_cart_message. It should not be.'
 		);
-
-	}
-
-	/**
-	 * Test that Go\WooCommerce\woocommerce_cart_link() returns null when WooCommerce is not active
-	 */
-	function test_woocommerce_cart_link_no_woocommerce() {
-
-		$this->assertNull( Go\WooCommerce\woocommerce_cart_link() );
 
 	}
 

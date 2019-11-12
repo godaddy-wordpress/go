@@ -82,13 +82,7 @@ function should_show_woo_cart_item() {
  */
 function woocommerce_cart_link() {
 
-	if ( ! class_exists( 'WooCommerce' ) ) {
-
-		return;
-
-	}
-
-	if ( ! should_show_woo_cart_item() ) {
+	if ( ! class_exists( 'WooCommerce' ) || ! should_show_woo_cart_item() ) {
 
 		return;
 

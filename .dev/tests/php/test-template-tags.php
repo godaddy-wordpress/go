@@ -832,6 +832,12 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		$this->expectOutputRegex( '/WordPress Theme by GoDaddy/' );
 
+		add_filter( 'wp_nav_menu_args', function( $args ) {
+			$args['theme_location']                                = 'footer';
+			$args['customize_preview_nav_menus_args']['args_hmac'] = '123';
+			return $args;
+		} );
+
 		Go\footer_variation();
 
 	}
@@ -1111,7 +1117,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'social_icon_linkedin', 'https://www.linkedin.com/custom' );
 
-		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.linkedin.com\/custom" aria-label="Linkedin" rel="noopener noreferrer">/' );
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.linkedin.com\/custom" aria-label="LinkedIn" rel="noopener noreferrer">/' );
 
 		Go\social_icons( [] );
 
