@@ -565,7 +565,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		Go\WooCommerce\empty_cart_message( [] );
 
-		$this->expectOutputRegex( '/<a href="https:\/\/google.com"><svg viewBox="0 0 24 30">/' );
+		$this->expectOutputRegex( '/<a href="https:\/\/www.google.com"><svg viewBox="0 0 24 30">/' );
 
 	}
 
