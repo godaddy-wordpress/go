@@ -88,12 +88,22 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 	/**
 	 * Create a simple WooCommerce product
+	 *
+	 * @param string $product_title The product title.
+	 * @param bool   $wait          Whether or not we should wait 2 seconds before creating the product
+	 *                              Note: Useful when creating multiple products, so the post creation time isn't the same
 	 */
-	private function create_simple_product() {
+	private function create_simple_product( $product_title = 'Simple Product', $wait = false ) {
+
+		if ( $wait ) {
+
+			sleep( 2 );
+
+		}
 
 		$post_id = $this->factory->post->create(
 			[
-				'post_title'   => 'Simple Product',
+				'post_title'   => $product_title,
 				'post_type'    => 'product',
 				'post_staus'   => 'publish',
 				'post_content' => 'Product post content',
@@ -646,10 +656,238 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$wp_query->is_post_type_archive    = 1;
 
 		ob_start();
-		Go\WooCommerce\shop_title( false );
+		Go\WooCommerce\shop_title();
 		$shop_page_title = ob_get_clean();
 
 		$this->assertEquals( '<header class="page-header entry-header m-auto px "><h1 class="page__title m-0 text-center">Shop Page</h1></header>', $shop_page_title );
+
+	}
+
+	/**
+	 * Test shop_title_attributes() returns the correct attributes
+	 */
+	function test_shop_title_attributes() {
+
+		$this->initialize_woo_session();
+
+		$expected_atts = [
+			'custom_att' => 'value',
+			'title'      => 'Shop Page',
+			'atts'       => [
+				'class' => 'page__title m-0 text-center',
+			],
+			'custom'     => false,
+		];
+
+		$this->assertEquals( $expected_atts, Go\WooCommerce\shop_title_attributes( [ 'custom_att' => 'value' ] ) );
+
+	}
+
+	/**
+	 * Test the single product header renders as expected
+	 */
+	function test_single_product_header() {
+
+		$this->initialize_woo_session();
+
+		Go\WooCommerce\single_product_header();
+
+		$this->expectOutputRegex( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb">Shop Page<\/nav><a href="http:\/\/example\.org\/\?page_id=5" class="back-to-shop">/' );
+
+	}
+
+	/**
+	 * Test the single product pagination renders as expected
+	 */
+	function test_single_product_pagination() {
+
+		$this->initialize_woo_session();
+
+		// Create 3 products
+		$this->create_simple_product( 'Simple Product 1' );
+		$product_2_id = $this->create_simple_product( 'Simple Product 2', true );
+		$this->create_simple_product( 'Simple Product 3', true );
+
+		global $wp_query;
+
+		$product_post_object = get_post( $product_2_id );
+
+		$wp_query->query['page']           = 'simple-product-2';
+		$wp_query->query['product']        = 'simple-product-2';
+		$wp_query->query['post_type']      = 'product';
+		$wp_query->query['name']           = 'simple-product-2';
+
+		$wp_query->query_vars['post_type'] = 'product';
+
+		global $post;
+
+		$wp_query->queried_object          = $product_post_object;
+		$wp_query->post                    = $product_post_object;
+		$post                              = $product_post_object;
+
+		Go\WooCommerce\single_product_pagination();
+
+		$this->expectOutputRegex( '/<div class="nav-links"><div class="nav-previous"><a href="http:\/\/example.org\/\?product=simple-product-1" rel="prev"><span class="screen-reader-text">Previous Post:  Simple Product 1<\/span>(<svg)([^<]*|[^>]*)(.*<\/svg>)<span class="nav-title">Previous<\/span><\/a><\/div><div class="nav-next"><a href="http:\/\/example.org\/\?product=simple-product-3" rel="next"><span class="screen-reader-text">Next Post: Simple Product 3<\/span><span class="nav-title">Next<\/span>/' );
+
+	}
+
+	/**
+	 * Test that single_product_back_to_shop() generates the proper link
+	 */
+	function test_single_product_back_to_shop() {
+
+		$this->initialize_woo_session();
+
+		$product_id = $this->create_simple_product();
+
+		global $wp_query;
+
+		$product_post_object = get_post( $product_id );
+
+		$wp_query->query['page']           = 'simple-product-1';
+		$wp_query->query['product']        = 'simple-product-1';
+		$wp_query->query['post_type']      = 'product';
+		$wp_query->query['name']           = 'simple-product-1';
+
+		$wp_query->query_vars['post_type'] = 'product';
+
+		global $post;
+
+		$wp_query->queried_object          = $product_post_object;
+		$wp_query->post                    = $product_post_object;
+		$post                              = $product_post_object;
+
+		Go\WooCommerce\single_product_back_to_shop();
+
+		$this->expectOutputRegex( '/<a href="http:\/\/example.org\/\?page_id=5" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/' );
+
+	}
+
+	/**
+	 * Test that single_product_back_to_shop() go_back_to_shop_url filter works as intended
+	 */
+	function test_single_product_back_to_shop_go_back_to_shop_url_filter() {
+
+		$this->initialize_woo_session();
+
+		$product_id = $this->create_simple_product();
+
+		global $wp_query;
+
+		$product_post_object = get_post( $product_id );
+
+		$wp_query->query['page']           = 'simple-product-1';
+		$wp_query->query['product']        = 'simple-product-1';
+		$wp_query->query['post_type']      = 'product';
+		$wp_query->query['name']           = 'simple-product-1';
+
+		$wp_query->query_vars['post_type'] = 'product';
+
+		global $post;
+
+		$wp_query->queried_object          = $product_post_object;
+		$wp_query->post                    = $product_post_object;
+		$post                              = $product_post_object;
+
+		add_filter( 'go_back_to_shop_url', function() {
+
+			return 'https://www.google.com';
+
+		} );
+
+		Go\WooCommerce\single_product_back_to_shop();
+
+		$this->expectOutputRegex( '/<a href="https:\/\/www.google.com" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/' );
+
+	}
+
+	/**
+	 * Test that single_product_back_to_shop() go_back_to_shop_text filter works as intended
+	 */
+	function test_single_product_back_to_shop_go_back_to_shop_text_filter() {
+
+		$this->initialize_woo_session();
+
+		$product_id = $this->create_simple_product();
+
+		global $wp_query;
+
+		$product_post_object = get_post( $product_id );
+
+		$wp_query->query['page']           = 'simple-product-1';
+		$wp_query->query['product']        = 'simple-product-1';
+		$wp_query->query['post_type']      = 'product';
+		$wp_query->query['name']           = 'simple-product-1';
+
+		$wp_query->query_vars['post_type'] = 'product';
+
+		global $post;
+
+		$wp_query->queried_object          = $product_post_object;
+		$wp_query->post                    = $product_post_object;
+		$post                              = $product_post_object;
+
+		add_filter( 'go_back_to_shop_text', function() {
+
+			return 'Head Back to the Shop!';
+
+		} );
+
+		Go\WooCommerce\single_product_back_to_shop();
+
+		$this->expectOutputRegex( '/<a href="http:\/\/example.org\/\?page_id=5" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Head Back to the Shop!<\/a>/' );
+
+	}
+
+	/**
+	 * Test that breadcrumb_home_url() returns correctly
+	 */
+	function test_breadcrumb_home_url() {
+
+		$this->initialize_woo_session();
+
+		$this->assertEquals( 'http://example.org/?page_id=5', Go\WooCommerce\breadcrumb_home_url() );
+
+	}
+
+	/**
+	 * Test that sorting_wrapper() renders correctly
+	 */
+	function test_sorting_wrapper() {
+
+		$this->initialize_woo_session();
+
+		ob_start();
+		Go\WooCommerce\sorting_wrapper();
+		$sorting_wrapper = ob_get_clean();
+
+		$this->assertEquals( '<div class="go-sorting">', $sorting_wrapper );
+
+	}
+
+	/**
+	 * Test that sorting_wrapper_close() renders correctly
+	 */
+	function test_sorting_wrapper_close() {
+
+		$this->initialize_woo_session();
+
+		ob_start();
+		Go\WooCommerce\sorting_wrapper_close();
+		$sorting_wrapper_close = ob_get_clean();
+
+		$this->assertEquals( '</div>', $sorting_wrapper_close );
+
+	}
+
+	/**
+	 * Test that reset_variations_link() renders correctly
+	 */
+	function test_reset_variations_link() {
+
+		$this->initialize_woo_session();
+
+		$this->assertEquals( '<a class="reset_variations" href="#">Reset Selections</a>', Go\WooCommerce\reset_variations_link() );
 
 	}
 }

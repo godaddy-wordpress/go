@@ -403,10 +403,8 @@ function sorting_wrapper_close() {
 
 /**
  * Update the reset variations link text
- *
- * @param string $link Variations link text.
  */
-function reset_variations_link( $link ) {
+function reset_variations_link() {
 
 	return sprintf(
 		'<a class="reset_variations" href="#">%s</a>',
