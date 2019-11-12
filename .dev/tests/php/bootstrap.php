@@ -56,10 +56,7 @@ function _register_theme() {
 
 	}
 
-	update_option( 'active_plugins', [
-		'coblocks/class-coblocks.php',
-		'woocommerce/woocommerce.php',
-	] );
+	update_option( 'active_plugins', [ 'coblocks/class-coblocks.php' ] );
 
 }
 tests_add_filter( 'muplugins_loaded', '_register_theme' );
