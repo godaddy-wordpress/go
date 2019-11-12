@@ -830,13 +830,22 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_footer_variation_no_preview() {
 
-		$this->expectOutputRegex( '/WordPress Theme by GoDaddy/' );
+		register_nav_menus(
+			array(
+				'primary'  => esc_html__( 'Primary', 'go' ),
+				'footer-1' => esc_html__( 'Footer Menu #1', 'go' ),
+				'footer-2' => esc_html__( 'Footer Menu #2', 'go' ),
+				'footer-3' => esc_html__( 'Footer Menu #3', 'go' ),
+			)
+		);
 
 		add_filter( 'wp_nav_menu_args', function( $args ) {
 			$args['theme_location']                                = 'footer';
 			$args['customize_preview_nav_menus_args']['args_hmac'] = '123';
 			return $args;
 		} );
+
+		$this->expectOutputRegex( '/WordPress Theme by GoDaddy/' );
 
 		Go\footer_variation();
 
@@ -932,7 +941,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 		Go\page_title();
 		$page_title = ob_get_clean();
 
-		$this->assertEmpty( $page_title );
+		$this->assertEquals( '', $page_title );
 
 	}
 

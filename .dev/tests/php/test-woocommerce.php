@@ -60,7 +60,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		if ( ! get_option( 'woocommerce_shop_page_id' ) ) {
 
 			// install WC
-			@WC_Install::install();
+			WC_Install::install();
 			$GLOBALS['wp_roles'] = null;
 			wp_roles();
 
