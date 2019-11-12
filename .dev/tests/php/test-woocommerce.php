@@ -696,7 +696,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		Go\WooCommerce\single_product_header();
 
-		$this->expectOutputRegex( sprintf( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb">Shop Page<\/nav><a href="http:\/\/example\.org\/\?page_id=%s" class="back-to-shop">/', $this->shop_page_id ) );
+		$this->expectOutputRegex( sprintf( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb">Shop Page<\/nav><a href="http:\/\/example\.org\/\?page_id=%s" class="back-to-shop">/', get_option( 'woocommerce_shop_page_id' ) ) );
 
 	}
 
@@ -763,7 +763,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		Go\WooCommerce\single_product_back_to_shop();
 
-		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/', $this->shop_page_id ) );
+		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/', get_option( 'woocommerce_shop_page_id' ) ) );
 
 	}
 
@@ -839,7 +839,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		Go\WooCommerce\single_product_back_to_shop();
 
-		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Head Back to the Shop!<\/a>/', $this->shop_page_id ) );
+		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Head Back to the Shop!<\/a>/', get_option( 'woocommerce_shop_page_id' ) ) );
 
 	}
 
@@ -850,7 +850,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
-		$this->assertEquals( sprintf( 'http://example.org/?page_id=%s', $this->shop_page_id ), Go\WooCommerce\breadcrumb_home_url() );
+		$this->assertEquals( sprintf( 'http://example.org/?page_id=%s', get_option( 'woocommerce_shop_page_id' ) ), Go\WooCommerce\breadcrumb_home_url() );
 
 	}
 
