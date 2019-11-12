@@ -804,4 +804,431 @@ class Test_Template_Tags extends WP_UnitTestCase {
 		);
 
 	}
+
+	/**
+	 * Test that has_header_background returns null when no header_background is set in the color_scheme
+	 */
+	public function test_has_header_background_null() {
+
+		$this->assertNull( Go\has_header_background() );
+
+	}
+
+	/**
+	 * Test that has_header_background returns the correct class when header_background is set in the color_scheme
+	 */
+	public function test_has_header_background() {
+
+		set_theme_mod( 'design_style', 'welcoming' );
+
+		$this->assertEquals( 'has-background', Go\has_header_background() );
+
+	}
+
+	/**
+	 * Test the footer variations when ! is_customize_preview()
+	 */
+	public function test_footer_variation_no_preview() {
+
+		$this->expectOutputRegex( '/WordPress Theme by GoDaddy/' );
+
+		Go\footer_variation();
+
+	}
+
+	/**
+	 * Test the footer variations when is_customize_preview()
+	 */
+	public function test_footer_variation_in_preview() {
+
+		wp_set_current_user( $this->factory->user->create( [ 'role' => 'administrator' ] ) );
+
+		require_once( ABSPATH . WPINC . '/class-wp-customize-manager.php' );
+
+		register_nav_menus(
+			array(
+				'primary'  => esc_html__( 'Primary', 'go' ),
+				'footer-1' => esc_html__( 'Footer Menu #1', 'go' ),
+				'footer-2' => esc_html__( 'Footer Menu #2', 'go' ),
+				'footer-3' => esc_html__( 'Footer Menu #3', 'go' ),
+			)
+		);
+
+		global $wp_customize;
+
+		$GLOBALS['wp_customize'] = new WP_Customize_Manager();
+		$GLOBALS['wp_customize']->setup_theme();
+
+		add_filter( 'wp_nav_menu_args', function( $args ) {
+			$args['theme_location']                                = 'primary';
+			$args['customize_preview_nav_menus_args']['args_hmac'] = '123';
+			return $args;
+		} );
+
+		Go\footer_variation();
+
+		$this->expectOutputRegex( '/Please assign a menu to the Primary menu location/' );
+
+	}
+
+	/**
+	 * Test the current design style does not receive a footer background class
+	 */
+	public function test_has_footer_background_none() {
+
+		$this->assertNull( Go\has_footer_background() );
+
+	}
+
+	/**
+	 * Test the current design style does not receive a footer background class
+	 */
+	public function test_has_footer_background() {
+
+		set_theme_mod( 'design_style', 'playful' );
+
+		$this->assertEquals( 'has-background', Go\has_footer_background() );
+
+	}
+
+	/**
+	 * Test the current design style does not receive a footer background class
+	 */
+	public function test_copyright() {
+
+		$this->expectOutputRegex( '/WordPress Theme by GoDaddy/' );
+
+		Go\copyright();
+
+	}
+
+	/**
+	 * Test the current design style does not receive a footer background class
+	 */
+	public function test_copyright_custom_text() {
+
+		set_theme_mod( 'copyright', 'This is custom copyright text' );
+
+		$this->expectOutputRegex( '/This is custom copyright text/' );
+
+		Go\copyright();
+
+	}
+
+	/**
+	 * Test that the page titles do not render when page_titles theme mod false
+	 */
+	public function test_page_title_disabled() {
+
+		set_theme_mod( 'page_titles', false );
+
+		ob_start();
+		Go\page_title();
+		$page_title = ob_get_clean();
+
+		$this->assertEmpty( $page_title );
+
+	}
+
+	/**
+	 * Test that the page titles render correctly when the custom arg is set to true
+	 */
+	public function test_page_title_custom_title() {
+
+		add_filter( 'go_page_title_args', function( $args ) {
+
+			$args['custom'] = true;
+			$args['title']  = 'My Custom Title';
+
+			return $args;
+
+		} );
+
+		ob_start();
+		Go\page_title();
+		$page_title = ob_get_clean();
+
+		$this->assertRegexp( '/My Custom Title/', $page_title );
+
+	}
+
+	/**
+	 * Test that the page titles return empty when $args['title'] is empty
+	 */
+	public function test_page_title_empty_title() {
+
+		add_filter( 'go_page_title_args', function( $args ) {
+
+			$args['title']  = '';
+
+			return $args;
+
+		} );
+
+		ob_start();
+		Go\page_title();
+		$page_title = ob_get_clean();
+
+		$this->assertEmpty( $page_title );
+
+	}
+
+	/**
+	 * Test any custom classes get appended to the page title element
+	 */
+	public function test_page_title_classes() {
+
+		add_filter( 'go_page_title_args', function( $args ) {
+
+			$args['atts']['class'] .= ' custom-class';
+
+			return $args;
+
+		} );
+
+		ob_start();
+		Go\page_title();
+		$page_title = ob_get_clean();
+
+		$this->assertRegexp( '/custom-class/', $page_title );
+
+	}
+
+	/**
+	 * Test the page title renders correctly
+	 */
+	public function test_page_title() {
+
+		ob_start();
+		Go\page_title();
+		$page_title = ob_get_clean();
+
+		$this->assertRegexp( '/<header class="page-header entry-header m-auto px "><h1 class="post__title m-0 text-center">Test Post Meta<\/h1><\/header>/', $page_title );
+
+	}
+
+	/**
+	 * Test WooCommerce content wraper classes are not added when WooCommerce is not active
+	 */
+	public function test_content_wrapper_class_no_woo_cart() {
+
+		ob_start();
+		Go\content_wrapper_class();
+		$content_wrapper_class = ob_get_clean();
+
+		$this->assertEmpty( $content_wrapper_class );
+
+	}
+
+	/**
+	 * Test WooCommerce content wraper classes are added when WooCommerce is prsent
+	 */
+	public function test_content_wrapper_class_woo_cart() {
+
+		if ( ! class_exists( 'WooCommerce' ) ) {
+
+			include WP_PLUGIN_DIR . '/woocommerce/woocommerce.php';
+
+		}
+
+		// Force WooCommerce is_cart() true
+		define( 'WOOCOMMERCE_CART', true );
+
+		// Force WooCommerce is_checkout() true
+		apply_filters( 'woocommerce_is_checkout', '__return_true' );
+
+		ob_start();
+		Go\content_wrapper_class();
+		$content_wrapper_class = ob_get_clean();
+
+		$this->assertEquals( 'max-w-wide w-full m-auto px', trim( $content_wrapper_class ) );
+
+	}
+
+	/**
+	 * Test that has_social_icons returns true when social icons are set
+	 */
+	public function test_has_social_icons() {
+
+		set_theme_mod( 'social_icon_facebook', 'https://www.facebook.com/custom' );
+
+		$this->assertTrue( Go\has_social_icons() );
+
+	}
+
+	/**
+	 * Test that has_social_icons returns false when no social icons are set
+	 */
+	public function test_has_no_social_icons() {
+
+		$this->assertFalse( Go\has_social_icons() );
+
+	}
+
+	/**
+	 * Test the post_meta() returns proper data facebook icon data
+	 */
+	public function test_social_icons_facebook() {
+
+		set_theme_mod( 'social_icon_facebook', 'https://www.facebook.com/custom' );
+
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.facebook.com\/custom" aria-label="Facebook" rel="noopener noreferrer">/' );
+
+		Go\social_icons( [] );
+
+	}
+
+	/**
+	 * Test the post_meta() returns proper data twitter icon data
+	 */
+	public function test_social_icons_twitter() {
+
+		set_theme_mod( 'social_icon_twitter', 'https://www.twitter.com/custom' );
+
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.twitter.com\/custom" aria-label="Twitter" rel="noopener noreferrer">/' );
+
+		Go\social_icons( [] );
+
+	}
+
+	/**
+	 * Test the post_meta() returns proper data instagram icon data
+	 */
+	public function test_social_icons_instagram() {
+
+		set_theme_mod( 'social_icon_instagram', 'https://www.instagram.com/custom' );
+
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.instagram.com\/custom" aria-label="Instagram" rel="noopener noreferrer">/' );
+
+		Go\social_icons( [] );
+
+	}
+
+	/**
+	 * Test the post_meta() returns proper data linkedin icon data
+	 */
+	public function test_social_icons_linkedin() {
+
+		set_theme_mod( 'social_icon_linkedin', 'https://www.linkedin.com/custom' );
+
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.linkedin.com\/custom" aria-label="Linkedin" rel="noopener noreferrer">/' );
+
+		Go\social_icons( [] );
+
+	}
+
+	/**
+	 * Test the post_meta() returns proper data pinterest icon data
+	 */
+	public function test_social_icons_pinterest() {
+
+		set_theme_mod( 'social_icon_pinterest', 'https://www.pinterest.com/custom' );
+
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.pinterest.com\/custom" aria-label="Pinterest" rel="noopener noreferrer">/' );
+
+		Go\social_icons( [] );
+
+	}
+
+	/**
+	 * Test the site branding renders properly
+	 */
+	public function test_display_site_branding() {
+
+		$this->expectOutputRegex( '/<div class="header__titles lg:flex items-center" itemscope itemtype="http:\/\/schema.org\/Organization"><a class="display-inline-block no-underline" href="http:\/\/example.org\/" itemprop="url"><span class="site-title">Test Blog<\/span><\/a><span class="site-description display-none sm:display-block relative text-sm">Just another WordPress site<\/span><\/div>/' );
+
+		Go\display_site_branding();
+
+	}
+
+	/**
+	 * Test the site branding renders properly
+	 */
+	public function test_site_branding() {
+
+		$this->expectOutputRegex( '/<a class="display-inline-block no-underline" href="http:\/\/example.org\/" itemprop="url"><span class="site-title">Test Blog<\/span><\/a><span class="site-description display-none sm:display-block relative text-sm">Just another WordPress site<\/span>/' );
+
+		Go\site_branding();
+
+	}
+
+	/**
+	 * Test the site branding renders properly with a custom logo
+	 */
+	public function test_site_branding_custom_logo() {
+
+		$post_id = $this->factory->post->create(
+			[
+				'post_title' => 'Body Classes Test Post',
+			]
+		);
+
+		$featured_image_id = media_sideload_image( 'https://raw.githubusercontent.com/godaddy-wordpress/go/master/screenshot.png', $post_id, '', 'id' );
+
+		set_theme_mod( 'custom_logo', $featured_image_id );
+
+		$this->expectOutputRegex( '/<a href="http:\/\/example.org\/" class="custom-logo-link" rel="home">(<img)([^<]*|[^>]*)(.*\/>)<\/a>/' );
+
+		Go\site_branding();
+
+	}
+
+	/**
+	 * Test navigation_toggle markup is as expected
+	 */
+	public function test_navigation_toggle() {
+
+		$this->expectOutputRegex( '/<div class="header__nav-toggle"><button id="nav-toggle" class="nav-toggle" type="button" aria-controls="header__navigation"><div class="nav-toggle-icon">(<svg)([^<]*|[^>]*)(.*<\/svg>)(.*)\n<\/div><div class="nav-toggle-icon nav-toggle-icon--close">(<svg)([^<]*|[^>]*)(.*<\/svg>)(.*)\n<\/div><span class="screen-reader-text">Menu<\/span><\/button><\/div>/' );
+
+		Go\navigation_toggle();
+
+	}
+
+	/**
+	 * Test search_toggle markup is as expected
+	 */
+	public function test_search_toggle() {
+
+		$this->expectOutputRegex( '/<button id="header__search-toggle" class="header__search-toggle" data-toggle-target=".search-modal" data-set-focus=".search-modal .search-form__input" type="button" aria-controls="js-site-search"><div class="search-toggle-icon">(<svg)([^<]*|[^>]*)(.*<\/svg>)(.*)\n<\/div><span class="screen-reader-text">Search Toggle<\/span><\/button>/' );
+
+		Go\search_toggle();
+
+	}
+
+	/**
+	 * Test load_inline_svg markup is as expected
+	 */
+	public function test_load_inline_svg() {
+
+		$this->expectOutputRegex( '/(<svg)([^<]*|[^>]*)(.*<\/svg>)/' );
+
+		Go\load_inline_svg( 'cart.svg' );
+
+	}
+
+	/**
+	 * Test load_inline_svg markup is as expected - invalid icon should return empty
+	 */
+	public function test_load_inline_svg_invalid_icon() {
+
+		ob_start();
+		Go\load_inline_svg( 'test-icon.svg' );
+		$icon = ob_get_clean();
+
+		$this->assertEmpty( $icon );
+
+	}
+
+	/**
+	 * Test load_inline_svg markup is as expected - trendy search.svg
+	 */
+	public function test_load_inline_svg_trendy_search() {
+
+		set_theme_mod( 'design_style', 'trendy' );
+
+		$this->expectOutputRegex( '/<svg role="img" viewBox="0 0 20 20" xmlns="http:\/\/www.w3.org\/2000\/svg"><path d="m18.0553691 9.08577774c0-4.92630404-4.02005-8.94635404-8.94635408-8.94635404-4.92630404 0-8.96959132 4.02005-8.96959132 8.94635404 0 4.92630406 4.02005 8.94635406 8.94635404 8.94635406 2.13783006 0 4.08976186-.7435931 5.64665986-1.9984064l3.8109144 3.8109145 1.3245252-1.3245252-3.8341518-3.7876771c1.2548133-1.5336607 2.0216437-3.5088298 2.0216437-5.64665986zm-8.96959136 7.11060866c-3.90386358 0-7.08737138-3.1835078-7.08737138-7.08737138s3.1835078-7.08737138 7.08737138-7.08737138c3.90386356 0 7.08737136 3.1835078 7.08737136 7.08737138s-3.1602705 7.08737138-7.08737136 7.08737138z" \/><\/svg>/' );
+
+		Go\load_inline_svg( 'search.svg' );
+
+	}
 }
