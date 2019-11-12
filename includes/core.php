@@ -734,7 +734,6 @@ function get_available_design_styles() {
 					'primary'           => '#233a6b',
 					'secondary'         => '#01133d',
 					'tertiary'          => '#c9c9c9',
-					'background'        => '#ffffff',
 					'background'        => '#eeeeee',
 					'header_background' => '#ffffff',
 				),

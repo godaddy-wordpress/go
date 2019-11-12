@@ -763,7 +763,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		Go\WooCommerce\single_product_back_to_shop();
 
-		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=5" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/', $this->shop_page_id ) );
+		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/', $this->shop_page_id ) );
 
 	}
 

@@ -17,6 +17,15 @@ class Test_Core extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the theme_setup() data is set
+	 */
+	public function test_theme_setup() {
+
+		$this->markTestSkipped( 'Todo: Figure out how to properly test Go\Core\theme_setup().' );
+
+	}
+
+	/**
 	 * Test the hooked i18n.
 	 */
 	function testHookedi18n() {
