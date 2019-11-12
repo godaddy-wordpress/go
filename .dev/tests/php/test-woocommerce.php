@@ -57,20 +57,24 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		}
 
-		// install WC
-		WC_Install::install();
-		$GLOBALS['wp_roles'] = null;
-		wp_roles();
+		if ( ! get_option( 'woocommerce_shop_page_id' ) ) {
 
-		$this->shop_page_id = $this->factory->post->create(
-			[
-				'post_title'   => 'Shop Page',
-				'post_type'    => 'page',
-				'post_staus'   => 'publish',
-			]
-		);
+			// install WC
+			WC_Install::install();
+			$GLOBALS['wp_roles'] = null;
+			wp_roles();
 
-		update_option( 'woocommerce_shop_page_id', $this->shop_page_id );
+			$this->shop_page_id = $this->factory->post->create(
+				[
+					'post_title'   => 'Shop Page',
+					'post_type'    => 'page',
+					'post_staus'   => 'publish',
+				]
+			);
+
+			update_option( 'woocommerce_shop_page_id', $this->shop_page_id );
+
+		}
 
 		global $woocommerce;
 
@@ -692,7 +696,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		Go\WooCommerce\single_product_header();
 
-		$this->expectOutputRegex( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb">Shop Page<\/nav><a href="http:\/\/example\.org\/\?page_id=5" class="back-to-shop">/' );
+		$this->expectOutputRegex( sprintf( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb">Shop Page<\/nav><a href="http:\/\/example\.org\/\?page_id=%s" class="back-to-shop">/', $this->shop_page_id ) );
 
 	}
 
@@ -759,7 +763,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		Go\WooCommerce\single_product_back_to_shop();
 
-		$this->expectOutputRegex( '/<a href="http:\/\/example.org\/\?page_id=5" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/' );
+		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=5" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/', $this->shop_page_id ) );
 
 	}
 
@@ -835,7 +839,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		Go\WooCommerce\single_product_back_to_shop();
 
-		$this->expectOutputRegex( '/<a href="http:\/\/example.org\/\?page_id=5" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Head Back to the Shop!<\/a>/' );
+		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Head Back to the Shop!<\/a>/', $this->shop_page_id ) );
 
 	}
 
@@ -846,7 +850,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
-		$this->assertEquals( 'http://example.org/?page_id=5', Go\WooCommerce\breadcrumb_home_url() );
+		$this->assertEquals( sprintf( 'http://example.org/?page_id=%s', $this->shop_page_id ), Go\WooCommerce\breadcrumb_home_url() );
 
 	}
 
