@@ -27,14 +27,13 @@ function _register_theme() {
 	$theme_dir     = dirname( dirname( dirname( __DIR__ ) ) );
 	$current_theme = basename( $theme_dir );
 	$theme_root    = dirname( $theme_dir );
+	$plugin_root   = dirname( dirname( $theme_dir ) ) . '/plugins/';
 
 	add_filter( 'theme_root', function() use ( $theme_root ) {
 
 		return $theme_root;
 
 	} );
-
-	register_theme_directory( $theme_root );
 
 	add_filter( 'pre_option_template', function() use ( $current_theme ) {
 
@@ -48,11 +47,27 @@ function _register_theme() {
 
 	} );
 
-	$symlink = '/tmp/wordpress/wp-content/themes/go';
+	$theme_symlink = '/tmp/wordpress/wp-content/themes/go';
 
-	if ( ! file_exists( $symlink ) ) {
+	if ( ! file_exists( $theme_symlink ) ) {
 
-		shell_exec( "ln -s ${theme_dir} ${symlink}" );
+		shell_exec( "ln -s ${theme_dir} ${theme_symlink}" );
+
+	}
+
+	$coblocks_symlink = '/tmp/wordpress/wp-content/plugins/coblocks';
+
+	if ( ! file_exists( $coblocks_symlink ) ) {
+
+		shell_exec( "ln -s ${plugin_root}/coblocks ${coblocks_symlink}" );
+
+	}
+
+	$woocommerce_symlink = '/tmp/wordpress/wp-content/plugins/woocommerce';
+
+	if ( ! file_exists( $woocommerce_symlink ) ) {
+
+		shell_exec( "ln -s ${plugin_root}/woocommerce ${woocommerce_symlink}" );
 
 	}
 

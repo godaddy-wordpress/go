@@ -935,6 +935,10 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_page_title_disabled() {
 
+		global $wp_customize;
+
+		$wp_customize = null;
+
 		set_theme_mod( 'page_titles', false );
 
 		ob_start();

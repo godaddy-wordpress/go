@@ -27,6 +27,10 @@ class Test_Customizer extends WP_UnitTestCase {
 
 		parent::tearDown();
 
+		global $wp_customize;
+
+		$wp_customize = null;
+
 	}
 
 	/**

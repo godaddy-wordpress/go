@@ -647,7 +647,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$wp_query->post_type               = 'product';
 		$wp_query->query_vars['post_type'] = 'product';
 		$wp_query->query_vars['wc_query']  = 'product_query';
-		$wp_query->queried_object          = get_post( $this->shop_page_id );
+		$wp_query->queried_object          = get_post( get_option( 'woocommerce_shop_page_id' ) );
 		$wp_query->is_post_type_archive    = 1;
 
 		ob_start();
