@@ -880,30 +880,6 @@ class Test_Core extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test retreiving the header variation
-	 */
-	function testGetHeaderVariation() {
-
-		$header_variation = Go\Core\get_header_variation();
-
-		$this->assertEquals( 'Header 1', $header_variation['label'] );
-
-	}
-
-	/**
-	 * Test retreiving an invalid header
-	 */
-	function testGetInvalidHeaderVariation() {
-
-		set_theme_mod( 'header_variation', 'invalid-header' );
-
-		$this->assertFalse( Go\Core\get_header_variation() );
-
-		set_theme_mod( 'header_variation', Go\Core\get_default_header_variation() );
-
-	}
-
-	/**
 	 * Test the available footer variations
 	 */
 	function testGetAvailableFooterVariations() {
