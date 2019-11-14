@@ -52,6 +52,8 @@ function i18n() {
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * @codeCoverageIgnore
  */
 function theme_setup() {
 

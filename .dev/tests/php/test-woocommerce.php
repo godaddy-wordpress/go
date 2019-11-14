@@ -144,20 +144,6 @@ class Test_WooCommerce extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test that the WooCommerce class does not run when WooCommerce is not active
-	 */
-	function test_setup_no_woocommerce() {
-
-		Go\WooCommerce\setup();
-
-		$this->assertFalse(
-			has_action( 'woocommerce_cart_is_empty', 'Go\WooCommerce\wc_empty_cart_message' ),
-			'woocommerce_cart_is_empty looks to be attached to Go\WooCommerce\wc_empty_cart_message. It should not be.'
-		);
-
-	}
-
-	/**
 	 * Test WooCommerce core function wc_empty_cart_message is unhooked
 	 */
 	function test_setup_removed_wc_empty_cart_message() {

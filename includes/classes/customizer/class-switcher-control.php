@@ -57,9 +57,7 @@ class Switcher_Control extends \WP_Customize_Control {
 	 *
 	 * @return void
 	 */
-	public function render_content() {
-
-	}
+	public function render_content() {}
 
 	/**
 	 * Convert the control settings to JSON.

@@ -1040,6 +1040,24 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test that the WooCommerce class does not run when WooCommerce is not active
+	 *
+	 * Note: Tests woocommerce.php setup when no WooCommerce is active
+	 *       This must be run here, and not in test-woocommerce.php because after
+	 *       this point WooCommerce is loaded.
+	 */
+	function test_woocommerce_setup_no_woocommerce() {
+
+		Go\WooCommerce\setup();
+
+		$this->assertFalse(
+			has_action( 'woocommerce_cart_is_empty', 'Go\WooCommerce\wc_empty_cart_message' ),
+			'woocommerce_cart_is_empty looks to be attached to Go\WooCommerce\wc_empty_cart_message. It should not be.'
+		);
+
+	}
+
+	/**
 	 * Test WooCommerce content wraper classes are added when WooCommerce is prsent
 	 */
 	public function test_content_wrapper_class_woo_cart() {

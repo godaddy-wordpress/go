@@ -17,15 +17,6 @@ class Test_Core extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test the theme_setup() data is set
-	 */
-	public function test_theme_setup() {
-
-		$this->markTestSkipped( 'Todo: Figure out how to properly test Go\Core\theme_setup().' );
-
-	}
-
-	/**
 	 * Test the hooked i18n.
 	 */
 	function testHookedi18n() {
@@ -271,6 +262,8 @@ class Test_Core extends WP_UnitTestCase {
 	 */
 	function testFontsUrl() {
 
+		unset( $GLOBALS['wp_customize'] );
+
 		$expected  = 'https://fonts.googleapis.com/css?family=Crimson Text:400,400i,700,700i|Nunito Sans:400,400i,600,700&subset=latin,latin-ext';
 		$fonts_url = Go\Core\fonts_url();
 
@@ -418,9 +411,6 @@ class Test_Core extends WP_UnitTestCase {
 		} );
 
 		$this->assertNotContains( 'Montserrat', Go\Core\fonts_url() );
-
-		// Unset the wp_customize global so it no longer thinks were in the customizer
-		unset( $GLOBALS['wp_customize'] );
 
 	}
 
