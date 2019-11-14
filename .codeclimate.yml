@@ -4,15 +4,7 @@ plugins:
     enabled: true
     config:
       standard: "WordPress-Core"
-engines:
-  eslint:
-    enabled: true
-ratings:
-  paths:
-  - "**.js"
-  - "**.css"
-  - "**.php"
-exclude_paths:
+exclude_patterns:
   - ".dev/config/"
   - ".dev/deploy-scripts/"
   - ".dev/tests/"
