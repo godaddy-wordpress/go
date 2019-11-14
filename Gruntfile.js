@@ -45,9 +45,13 @@ module.exports = function( grunt ) {
 					{
 						from: /'GO_VERSION',(\s*)'[\w.+-]+'/,
 						to: "'GO_VERSION',$1'<%= pkg.version %>'"
+					},
+					{
+						from: /'[\w.+-]+',(\s*)GO_VERSION/,
+						to: "'<%= pkg.version %>',$1GO_VERSION"
 					}
 				],
-				src: [ '*.php', '**/*.php' ]
+				src: [ '*.php', '**/*.php', '.dev/tests/php/test-functions.php' ]
 			},
 			style_css: {
 				overwrite: true,
