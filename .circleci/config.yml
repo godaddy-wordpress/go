@@ -130,11 +130,12 @@ jobs:
           working_directory: /tmp/wordpress/wp-content/themes/go
       - run:
           name: "Run PHPUnit - Single Site - Generate Coverage Reports"
-          command: composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml --coverage-clover=/tmp/artifacts/code-coverage/phpunit/results-clover.xml
+          command: composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml --coverage-clover=clover.xml
           working_directory: /tmp/wordpress/wp-content/themes/go
       - run:
           name: "Deploy Coverage to Code Climate"
           command: ./cc-test-reporter after-build -t clover --exit-code $?
+          working_directory: /tmp/wordpress/wp-content/themes/go
       - store_artifacts:
           path: /tmp/artifacts/code-coverage/
           destination: phpunit-coverage
