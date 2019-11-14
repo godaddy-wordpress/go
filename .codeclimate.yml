@@ -6,6 +6,10 @@ plugins:
     enabled: true
     config:
       standard: "WordPress-Core"
+checks:
+  return-statements:
+    config:
+      enabled: false
 exclude_patterns:
   - ".dev/config/"
   - ".dev/deploy-scripts/"
