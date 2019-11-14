@@ -1,0 +1,19 @@
+plugins:
+  phpcodesniffer:
+    enabled: true
+    config:
+    	standard: "WordPress-Core"
+engines:
+  eslint:
+    enabled: true
+ratings:
+  paths:
+  - "**.js"
+  - "**.css"
+  - "**.php"
+exclude_paths:
+  - ".dev/config/"
+  - ".dev/deploy-scripts/"
+  - ".dev/tests/"
+  - ".dev/assets/shared/js/frontend/vendor/"
+  - "includes/classes/class-tgm-plugin-activation.php"

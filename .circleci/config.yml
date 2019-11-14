@@ -93,6 +93,12 @@ jobs:
           name: Install rsync
           command: sudo apt install rsync
       - run:
+          name: Install Code Climate test reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+            ./cc-test-reporter before-build
+      - run:
           name: Install WPCLI
           command: |
             curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
@@ -124,8 +130,11 @@ jobs:
           working_directory: /tmp/wordpress/wp-content/themes/go
       - run:
           name: "Run PHPUnit - Single Site - Generate Coverage Reports"
-          command: composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml
+          command: composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml --coverage-clover=/tmp/artifacts/code-coverage/phpunit/results-clover.xml
           working_directory: /tmp/wordpress/wp-content/themes/go
+      - run:
+          name: "Deploy Coverage to Code Climate"
+          command: ./cc-test-reporter after-build -t clover --exit-code $?
       - store_artifacts:
           path: /tmp/artifacts/code-coverage/
           destination: phpunit-coverage
