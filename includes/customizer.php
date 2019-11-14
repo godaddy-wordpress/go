@@ -75,7 +75,7 @@ function wp_nav_fallback( $args ) {
 	$attrs = array(
 		'data-customize-partial-id'                => 'nav_menu_instance[' . esc_attr( $instance_id ) . ']',
 		'data-customize-partial-type'              => 'nav_menu_instance',
-		'data-customize-partial-placement-context' => esc_attr( wp_json_encode( $args['customize_preview_nav_menus_args'] ) ),
+		'data-customize-partial-placement-context' => wp_json_encode( $args['customize_preview_nav_menus_args'] ),
 	);
 
 	$attributes = implode(
@@ -88,19 +88,21 @@ function wp_nav_fallback( $args ) {
 			$attrs
 		)
 	);
-	?>
-	<p class="u-informational" <?php echo $attributes; // phpcs:ignore ?> id="menu-primary-navigation">
-		<?php
-		echo esc_html(
+
+	printf(
+		'<p class="u-informational" %1$s id="menu-primary-navigation">
+			%2$s
+		</p>',
+		$attributes, // @codingStandardsIgnoreLine
+		esc_html(
 			sprintf(
 				/* translators: %s is the registered nav menu name */
 				__( 'Please assign a menu to the %s menu location', 'go' ),
 				$registered_nav_menus[ $menu_slug ]
 			)
-		);
-		?>
-	</p>
-	<?php
+		)
+	);
+
 }
 
 /**

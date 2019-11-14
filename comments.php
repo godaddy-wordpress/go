@@ -56,13 +56,13 @@ if ( post_password_required() ) {
 				?>
 			</ol><!-- .commentlist -->
 
-			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through. ?>
+			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<nav id="comment-nav-below" class="navigation" role="navigation">
 				<h1 class="assistive-text section-heading"><?php esc_html_e( 'Comment navigation', 'go' ); ?></h1>
 				<div class="nav-previous"><?php previous_comments_link( esc_html_e( '&larr; Older Comments', 'go' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html_e( 'Newer Comments &rarr;', 'go' ) ); ?></div>
 			</nav>
-			<?php endif; // check for comment navigation. ?>
+			<?php endif; ?>
 			<?php
 			/*
 			 * If there are no comments and comments are closed, let's leave a note.
@@ -73,7 +73,7 @@ if ( post_password_required() ) {
 			<p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'go' ); ?></p>
 			<?php endif; ?>
 
-		<?php endif; // have_comments(). ?>
+		<?php endif; ?>
 
 		<?php comment_form(); ?>
 

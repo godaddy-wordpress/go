@@ -1,5 +1,7 @@
 version: "2"
 plugins:
+  duplication:
+    enabled: false
   phpcodesniffer:
     enabled: true
     config:
