@@ -1,8 +1,9 @@
+version: "2"
 plugins:
   phpcodesniffer:
     enabled: true
     config:
-    	standard: "WordPress-Core"
+      standard: "WordPress-Core"
 engines:
   eslint:
     enabled: true
