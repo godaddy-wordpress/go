@@ -8,20 +8,15 @@ plugins:
       standard: "WordPress-Core"
 checks:
   file-lines:
-    config:
-      enabled: false
+    enabled: false
   method-count:
-    config:
-      enabled: false
+    enabled: false
   method-lines:
-    config:
-      enabled: false
+    enabled: false
   return-statements:
-    config:
-      enabled: false
+    enabled: false
   method-complexity:
-    config:
-      enabled: false
+    enabled: false
 exclude_patterns:
   - ".dev/config/"
   - ".dev/deploy-scripts/"
