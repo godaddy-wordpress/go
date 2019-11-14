@@ -48,7 +48,7 @@ function register_required_plugins() {
 	$plugins = apply_filters( 'go_plugin_dependencies', $plugins );
 
 	$config = array(
-		'id'           => 'go',              // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'go',                    // Unique ID for hashing notices for multiple instances of TGMPA.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'has_notices'  => true,                    // Show admin notices or not.
 		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.

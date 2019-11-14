@@ -14,8 +14,13 @@
 	<a href="https://www.php.net/" target="_blank">
 		<img src="https://img.shields.io/static/v1?label=&message=5.6+-+7.3&color=777bb4&style=flat-square&logo=php&logoColor=white" alt="PHP Versions">
 	</a>
+	<a href="https://codeclimate.com/github/godaddy-wordpress/go/maintainability">
+		<img src="https://api.codeclimate.com/v1/badges/f5688f0e960e67996dd6/maintainability" />
+	</a>
+	<a href="https://codeclimate.com/github/godaddy-wordpress/go/test_coverage">
+		<img src="https://api.codeclimate.com/v1/badges/f5688f0e960e67996dd6/test_coverage" />
+	</a>
 </p>
-
 <br>
 
 <p align="center">

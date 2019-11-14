@@ -82,13 +82,7 @@ function should_show_woo_cart_item() {
  */
 function woocommerce_cart_link() {
 
-	if ( ! class_exists( 'WooCommerce' ) ) {
-
-		return;
-
-	}
-
-	if ( ! should_show_woo_cart_item() ) {
+	if ( ! class_exists( 'WooCommerce' ) || ! should_show_woo_cart_item() ) {
 
 		return;
 
@@ -403,10 +397,8 @@ function sorting_wrapper_close() {
 
 /**
  * Update the reset variations link text
- *
- * @param string $link Variations link text.
  */
-function reset_variations_link( $link ) {
+function reset_variations_link() {
 
 	return sprintf(
 		'<a class="reset_variations" href="#">%s</a>',

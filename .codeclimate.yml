@@ -1,0 +1,18 @@
+version: "2"
+plugins:
+  duplication:
+    enabled: false
+  phpcodesniffer:
+    enabled: true
+    config:
+      standard: "WordPress-Core"
+checks:
+  return-statements:
+    config:
+      enabled: false
+exclude_patterns:
+  - ".dev/config/"
+  - ".dev/deploy-scripts/"
+  - ".dev/tests/"
+  - ".dev/assets/shared/js/frontend/vendor/"
+  - "includes/classes/class-tgm-plugin-activation.php"

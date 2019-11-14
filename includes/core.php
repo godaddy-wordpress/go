@@ -52,6 +52,8 @@ function i18n() {
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * @codeCoverageIgnore
  */
 function theme_setup() {
 
@@ -734,7 +736,6 @@ function get_available_design_styles() {
 					'primary'           => '#233a6b',
 					'secondary'         => '#01133d',
 					'tertiary'          => '#c9c9c9',
-					'background'        => '#ffffff',
 					'background'        => '#eeeeee',
 					'header_background' => '#ffffff',
 				),
@@ -888,30 +889,18 @@ function get_available_header_variations() {
 		'header-1' => array(
 			'label'         => esc_html_x( 'Header 1', 'name of the first header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-1.svg' ),
-			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', '1' );
-			},
 		),
 		'header-2' => array(
 			'label'         => esc_html_x( 'Header 2', 'name of the second header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-2.svg' ),
-			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', '2' );
-			},
 		),
 		'header-3' => array(
 			'label'         => esc_html_x( 'Header 3', 'name of the third header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-3.svg' ),
-			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', '3' );
-			},
 		),
 		'header-4' => array(
 			'label'         => esc_html_x( 'Header 4', 'name of the fourth header variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-4.svg' ),
-			'partial'       => function() {
-				return get_template_part( 'partials/headers/header', '4' );
-			},
 		),
 	);
 
@@ -926,24 +915,6 @@ function get_available_header_variations() {
 	$supported_header_variations = apply_filters( 'go_header_variations', $default_header_variations );
 
 	return $supported_header_variations;
-
-}
-
-/**
- * Returns the current header variation.
- *
- * @return array
- */
-function get_header_variation() {
-	$selected_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
-
-	$supported_header_variations = get_available_header_variations();
-
-	if ( in_array( $selected_variation, array_keys( $supported_header_variations ), true ) ) {
-		return $supported_header_variations[ $selected_variation ];
-	}
-
-	return false;
 
 }
 
