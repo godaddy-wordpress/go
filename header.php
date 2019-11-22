@@ -26,7 +26,7 @@
 
 		<a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'go' ); ?></a>
 
-		<header id="site-header" class="header relative <?php echo esc_attr( Go\has_header_background() ); ?>" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+		<header id="site-header" class="site-header header relative <?php echo esc_attr( Go\has_header_background() ); ?>" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 			<div class="header__inner flex items-center justify-between h-inherit w-full relative">
 
