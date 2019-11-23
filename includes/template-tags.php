@@ -75,176 +75,181 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 	}
 
 	// If the post meta setting has the value 'empty', it's explicitly empty and the default post meta shouldn't be output.
-	if ( $post_meta && ! in_array( 'empty', $post_meta, true ) ) {
+	if ( ! $post_meta || in_array( 'empty', $post_meta, true ) ) {
 
-		// Make sure we don't output an empty container.
-		$has_meta = false;
+		return;
 
-		global $post;
-		$the_post = get_post( $post_id );
-		setup_postdata( $the_post );
+	}
 
-		ob_start();
+	// Make sure we don't output an empty container.
+	$has_meta = false;
 
-		?>
+	global $post;
+	$the_post = get_post( $post_id );
+	setup_postdata( $the_post );
 
-		<div class="post__meta--wrapper<?php echo esc_attr( $post_meta_wrapper_classes ); ?>">
+	ob_start();
 
-			<ul class="post__meta list-reset<?php echo esc_attr( $post_meta_classes ); ?>">
+	?>
 
+	<div class="post__meta--wrapper<?php echo esc_attr( $post_meta_wrapper_classes ); ?>">
+
+		<ul class="post__meta list-reset<?php echo esc_attr( $post_meta_classes ); ?>">
+
+			<?php
+
+			// Allow output of additional meta items to be added by child themes and plugins.
+			do_action( 'go_start_of_post_meta_list', $post_meta, $post_id );
+
+			// Author.
+			if ( in_array( 'author', $post_meta, true ) ) {
+
+				$has_meta = true;
+				?>
+				<li class="post-author meta-wrapper">
+					<span class="meta-icon">
+						<span class="screen-reader-text"><?php esc_html_e( 'Post author', 'go' ); ?></span>
+						<?php load_inline_svg( 'author.svg' ); ?>
+					</span>
+					<span class="meta-text">
+						<?php
+						// Translators: %s = the author name.
+						printf( esc_html_x( 'By %s', '%s = author name', 'go' ), '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'nickname' ) ) . '</a>' );
+						?>
+					</span>
+				</li>
 				<?php
 
-				// Allow output of additional meta items to be added by child themes and plugins.
-				do_action( 'go_start_of_post_meta_list', $post_meta, $post_id );
+			}
 
-				// Author.
-				if ( in_array( 'author', $post_meta, true ) ) {
+			// Post date.
+			if ( in_array( 'post-date', $post_meta, true ) ) {
+				$has_meta = true;
 
-					$has_meta = true;
-					?>
-					<li class="post-author meta-wrapper">
+				?>
+				<li class="post-date">
+					<a class="meta-wrapper" href="<?php the_permalink(); ?>">
 						<span class="meta-icon">
-							<span class="screen-reader-text"><?php esc_html_e( 'Post author', 'go' ); ?></span>
-							<?php load_inline_svg( 'author.svg' ); ?>
+							<span class="screen-reader-text"><?php esc_html_e( 'Post date', 'go' ); ?></span>
+							<?php load_inline_svg( 'calendar.svg' ); ?>
 						</span>
 						<span class="meta-text">
 							<?php
-							// Translators: %s = the author name.
-							printf( esc_html_x( 'By %s', '%s = author name', 'go' ), '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'nickname' ) ) . '</a>' );
+							echo wp_kses(
+								sprintf(
+									'<time datetime="%1$s">%2$s</time>',
+									esc_attr( get_the_date( DATE_W3C ) ),
+									esc_html( get_the_date() )
+								),
+								array_merge(
+									wp_kses_allowed_html( 'post' ),
+									array(
+										'time' => array(
+											'datetime' => true,
+										),
+									)
+								)
+							);
 							?>
 						</span>
-					</li>
-					<?php
+					</a>
+				</li>
+				<?php
 
-				}
+			}
 
-				// Post date.
-				if ( in_array( 'post-date', $post_meta, true ) ) {
-					$has_meta = true;
+			// Categories.
+			if ( in_array( 'categories', $post_meta, true ) && has_category() ) {
 
-					?>
-					<li class="post-date">
-						<a class="meta-wrapper" href="<?php the_permalink(); ?>">
-							<span class="meta-icon">
-								<span class="screen-reader-text"><?php esc_html_e( 'Post date', 'go' ); ?></span>
-								<?php load_inline_svg( 'calendar.svg' ); ?>
-							</span>
-							<span class="meta-text">
-								<?php
-								echo wp_kses(
-									sprintf(
-										'<time datetime="%1$s">%2$s</time>',
-										esc_attr( get_the_date( DATE_W3C ) ),
-										esc_html( get_the_date() )
-									),
-									array_merge(
-										wp_kses_allowed_html( 'post' ),
-										[
-											'time' => [
-												'datetime' => true,
-											],
-										]
-									)
-								);
-								?>
-							</span>
-						</a>
-					</li>
-					<?php
-
-				}
-
-				// Categories.
-				if ( in_array( 'categories', $post_meta, true ) && has_category() ) {
-
-					$has_meta = true;
-					?>
-					<li class="post-categories meta-wrapper">
-						<span class="meta-icon">
-							<span class="screen-reader-text"><?php esc_html_e( 'Categories', 'go' ); ?></span>
-							<?php load_inline_svg( 'categories.svg' ); ?>
-						</span>
-						<span class="meta-text">
-							<?php esc_html_e( 'In', 'go' ); ?> <?php the_category( ', ' ); ?>
-						</span>
-					</li>
-					<?php
-
-				}
-
-				// Tags.
-				if ( in_array( 'tags', $post_meta, true ) && has_tag() ) {
-
-					$has_meta = true;
-					?>
-					<li class="post-tags meta-wrapper">
-						<span class="meta-icon">
-							<span class="screen-reader-text"><?php esc_html_e( 'Tags', 'go' ); ?></span>
-							<?php load_inline_svg( 'tags.svg' ); ?>
-						</span>
-						<span class="meta-text">
-							<?php the_tags( '', ', ', '' ); ?>
-						</span>
-					</li>
-					<?php
-
-				}
-
-				// Comments link.
-				if ( in_array( 'comments', $post_meta, true ) && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-
-					$has_meta = true;
-					?>
-					<li class="post-comment-link meta-wrapper">
-						<span class="meta-icon">
-							<?php load_inline_svg( 'comments.svg' ); ?>
-						</span>
-						<span class="meta-text">
-							<?php comments_popup_link(); ?>
-						</span>
-					</li>
-					<?php
-
-				}
-
-				// Sticky.
-				if ( in_array( 'sticky', $post_meta, true ) && is_sticky() ) {
-
-					$has_meta = true;
-					?>
-					<li class="post-sticky meta-wrapper">
-						<span class="meta-icon">
-							<?php load_inline_svg( 'bookmark.svg' ); ?>
-						</span>
-						<span class="meta-text">
-							<?php esc_html_e( 'Featured', 'go' ); ?>
-						</span>
-					</li>
-					<?php
-
-				}
-
-				// Allow output of additional post meta types to be added by child themes and plugins.
-				do_action( 'go_end_of_post_meta_list', $post_meta, $post_id );
+				$has_meta = true;
 				?>
+				<li class="post-categories meta-wrapper">
+					<span class="meta-icon">
+						<span class="screen-reader-text"><?php esc_html_e( 'Categories', 'go' ); ?></span>
+						<?php load_inline_svg( 'categories.svg' ); ?>
+					</span>
+					<span class="meta-text">
+						<?php esc_html_e( 'In', 'go' ); ?> <?php the_category( ', ' ); ?>
+					</span>
+				</li>
+				<?php
 
-			</ul>
+			}
 
-		</div>
+			// Tags.
+			if ( in_array( 'tags', $post_meta, true ) && has_tag() ) {
 
-		<?php
+				$has_meta = true;
+				?>
+				<li class="post-tags meta-wrapper">
+					<span class="meta-icon">
+						<span class="screen-reader-text"><?php esc_html_e( 'Tags', 'go' ); ?></span>
+						<?php load_inline_svg( 'tags.svg' ); ?>
+					</span>
+					<span class="meta-text">
+						<?php the_tags( '', ', ', '' ); ?>
+					</span>
+				</li>
+				<?php
 
-		wp_reset_postdata();
+			}
 
-		$meta_output = ob_get_clean();
+			// Comments link.
+			if ( in_array( 'comments', $post_meta, true ) && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 
-		// If there is meta to output, return it.
-		if ( $has_meta && $meta_output ) {
+				$has_meta = true;
+				?>
+				<li class="post-comment-link meta-wrapper">
+					<span class="meta-icon">
+						<?php load_inline_svg( 'comments.svg' ); ?>
+					</span>
+					<span class="meta-text">
+						<?php comments_popup_link(); ?>
+					</span>
+				</li>
+				<?php
 
-			return $meta_output;
+			}
 
-		}
+			// Sticky.
+			if ( in_array( 'sticky', $post_meta, true ) && is_sticky() ) {
+
+				$has_meta = true;
+				?>
+				<li class="post-sticky meta-wrapper">
+					<span class="meta-icon">
+						<?php load_inline_svg( 'bookmark.svg' ); ?>
+					</span>
+					<span class="meta-text">
+						<?php esc_html_e( 'Featured', 'go' ); ?>
+					</span>
+				</li>
+				<?php
+
+			}
+
+			// Allow output of additional post meta types to be added by child themes and plugins.
+			do_action( 'go_end_of_post_meta_list', $post_meta, $post_id );
+			?>
+
+		</ul>
+
+	</div>
+
+	<?php
+
+	wp_reset_postdata();
+
+	$meta_output = ob_get_clean();
+
+	if ( ! $has_meta || empty( $meta_output ) ) {
+
+		return;
+
 	}
+
+	return $meta_output;
+
 }
 
 
@@ -259,14 +264,14 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 function get_palette_color( $color, $format = 'RBG' ) {
 	$default         = \Go\Core\get_default_color_scheme();
 	$color_scheme    = get_theme_mod( 'color_scheme', $default );
-	$override_colors = [
+	$override_colors = array(
 		'primary'           => 'primary_color',
 		'secondary'         => 'secondary_color',
 		'tertiary'          => 'tertiary_color',
 		'background'        => 'background_color',
 		'header_background' => 'header_background_color',
 		'footer_background' => 'footer_background_color',
-	];
+	);
 
 	$color_override = get_theme_mod( $override_colors[ $color ] );
 
@@ -337,10 +342,10 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
  */
 function hex_to_hsl( $hex, $string_output = false ) {
 	if ( empty( $hex ) ) {
-		return $string_output ? '' : [ '', '', '' ];
+		return $string_output ? '' : array( '', '', '' );
 	}
 
-	$hex = [ $hex[1] . $hex[2], $hex[3] . $hex[4], $hex[5] . $hex[6] ];
+	$hex = array( $hex[1] . $hex[2], $hex[3] . $hex[4], $hex[5] . $hex[6] );
 	$rgb = array_map(
 		function( $part ) {
 			return intval( hexdec( $part ) ) / 255.0;
@@ -380,7 +385,7 @@ function hex_to_hsl( $hex, $string_output = false ) {
 		return "{$h}, {$s}%, ${l}%";
 	}
 
-	return [ $h, $s, $l ];
+	return array( $h, $s, $l );
 }
 
 /**
@@ -440,30 +445,30 @@ function has_footer_background() {
  *
  * @return void
  */
-function copyright( $args = [] ) {
+function copyright( $args = array() ) {
 
 	$args = wp_parse_args(
 		$args,
-		[
+		array(
 			'class' => 'site-info',
-		]
+		)
 	);
 
-	$year      = sprintf( '&copy; %s&nbsp;', esc_html( date( 'Y' ) ) );
+	$year      = sprintf( '&copy; %s&nbsp;', esc_html( gmdate( 'Y' ) ) );
 	$copyright = get_theme_mod( 'copyright', \Go\Core\get_default_copyright() );
 
-	$html = [
-		'div'  => [
-			'class' => [],
-		],
-		'span' => [
-			'class' => [],
-		],
-		'a'    => [
-			'href'  => [],
-			'class' => [],
-		],
-	];
+	$html = array(
+		'div'  => array(
+			'class' => array(),
+		),
+		'span' => array(
+			'class' => array(),
+		),
+		'a'    => array(
+			'href'  => array(),
+			'class' => array(),
+		),
+	);
 	?>
 
 	<div class="<?php echo esc_attr( $args['class'] ); ?>">
@@ -517,14 +522,14 @@ function page_title() {
 	 */
 	$args = (array) apply_filters(
 		'go_page_title_args',
-		[
+		array(
 			'title'   => get_the_title(),
 			'wrapper' => 'h1',
-			'atts'    => [
+			'atts'    => array(
 				'class' => 'post__title m-0 text-center',
-			],
+			),
 			'custom'  => false,
-		]
+		)
 	);
 
 	/**
@@ -545,7 +550,7 @@ function page_title() {
 
 	}
 
-	$args['atts'] = empty( $args['atts'] ) ? [] : (array) $args['atts'];
+	$args['atts'] = empty( $args['atts'] ) ? array() : (array) $args['atts'];
 
 	foreach ( $args['atts'] as $key => $value ) {
 
@@ -568,7 +573,7 @@ function page_title() {
 
 	foreach ( array_keys( $args['atts'] ) as $index => $attribute ) {
 
-		$args['atts'][ $attribute ] = [];
+		$args['atts'][ $attribute ] = array();
 
 	}
 
@@ -577,9 +582,9 @@ function page_title() {
 		is_customize_preview() ? ( get_theme_mod( 'page_titles', true ) ? '' : 'display-none' ) : '',
 		wp_kses(
 			$html,
-			[
+			array(
 				$args['wrapper'] => $args['atts'],
-			]
+			)
 		)
 	);
 
@@ -638,13 +643,13 @@ function has_social_icons( $social_icons = null ) {
  *
  * @return void
  */
-function social_icons( $args = [] ) {
+function social_icons( $args = array() ) {
 	$args = wp_parse_args(
 		$args,
-		[
+		array(
 			'class'    => 'social-icons',
 			'li_class' => 'display-inline-block social-icon-%s',
-		]
+		)
 	);
 
 	$social_icons     = \Go\Core\get_social_icons();
@@ -687,7 +692,7 @@ function social_icons( $args = [] ) {
  * }
  * @return void
  */
-function display_site_branding( $args = [] ) {
+function display_site_branding( $args = array() ) {
 	echo '<div class="header__titles lg:flex items-center" itemscope itemtype="http://schema.org/Organization">';
 		site_branding( $args );
 	echo '</div>';
@@ -700,12 +705,12 @@ function display_site_branding( $args = [] ) {
  *
  * @return void
  */
-function site_branding( $args = [] ) {
+function site_branding( $args = array() ) {
 	$args = wp_parse_args(
 		$args,
-		[
+		array(
 			'description' => true,
-		]
+		)
 	);
 
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
@@ -754,45 +759,12 @@ function navigation_toggle() {
  * @return void
  */
 function search_toggle() {
-
-	ob_start();
-
-	load_inline_svg( 'search.svg' );
-
-	$search_icon = ob_get_clean();
-
-	printf(
-		'<button id="header__search-toggle" class="header__search-toggle" type="button" aria-controls="js-site-search">
-			%1$s
-			<span class="screen-reader-text">%2$s</span>
-		</button>',
-		wp_kses(
-			$search_icon,
-			array_merge(
-				wp_kses_allowed_html( 'post' ),
-				[
-					'svg'  => [
-						'width'   => true,
-						'role'    => true,
-						'height'  => true,
-						'fill'    => true,
-						'xmlns'   => true,
-						'viewbox' => true,
-					],
-					'path' => [
-						'd'    => true,
-						'fill' => true,
-					],
-					'g'    => [
-						'd'    => true,
-						'fill' => true,
-					],
-				]
-			)
-		),
-		esc_html__( 'Search Toggle', 'go' )
-	);
-
+	echo '<button id="header__search-toggle" class="header__search-toggle" data-toggle-target=".search-modal" data-set-focus=".search-modal .search-form__input" type="button" aria-controls="js-site-search">';
+		echo '<div class="search-toggle-icon">';
+			load_inline_svg( 'search.svg' );
+		echo '</div>';
+		echo '<span class="screen-reader-text">' . esc_html__( 'Search Toggle', 'go' ) . '</span>';
+	echo '</button>';
 }
 
 /**
@@ -809,14 +781,14 @@ function load_inline_svg( $filename ) {
 	ob_start();
 
 	locate_template(
-		[
+		array(
 			sprintf(
 				'dist/images/design-styles/%1$s/%2$s',
 				sanitize_title( $design_style['label'] ),
 				$filename
 			),
 			"dist/images/{$filename}",
-		],
+		),
 		true,
 		false
 	);
@@ -825,28 +797,28 @@ function load_inline_svg( $filename ) {
 		ob_get_clean(),
 		array_merge(
 			wp_kses_allowed_html( 'post' ),
-			[
-				'svg'  => [
+			array(
+				'svg'  => array(
 					'role'    => true,
 					'width'   => true,
 					'height'  => true,
 					'fill'    => true,
 					'xmlns'   => true,
 					'viewbox' => true,
-				],
-				'path' => [
+				),
+				'path' => array(
 					'd'              => true,
 					'fill'           => true,
 					'fill-rule'      => true,
 					'stroke'         => true,
 					'stroke-width'   => true,
 					'stroke-linecap' => true,
-				],
-				'g'    => [
+				),
+				'g'    => array(
 					'd'    => true,
 					'fill' => true,
-				],
-			]
+				),
+			)
 		)
 	);
 

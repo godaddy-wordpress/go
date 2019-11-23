@@ -22,11 +22,11 @@ $has_background   = Go\has_footer_background();
 					<span class="footer-navigation__title"><?php echo esc_html( wp_get_nav_menu_name( 'footer-1' ) ); ?></span>
 					<?php
 						wp_nav_menu(
-							[
+							array(
 								'theme_location' => 'footer-1',
 								'menu_class'     => 'footer-menu list-reset',
 								'depth'          => 1,
-							]
+							)
 						);
 					?>
 				</nav>
@@ -37,11 +37,11 @@ $has_background   = Go\has_footer_background();
 					<span class="footer-navigation__title"><?php echo esc_html( wp_get_nav_menu_name( 'footer-2' ) ); ?></span>
 					<?php
 						wp_nav_menu(
-							[
+							array(
 								'theme_location' => 'footer-2',
 								'menu_class'     => 'footer-menu list-reset',
 								'depth'          => 1,
-							]
+							)
 						);
 					?>
 				</nav>
@@ -52,11 +52,11 @@ $has_background   = Go\has_footer_background();
 					<span class="footer-navigation__title"><?php echo esc_html( wp_get_nav_menu_name( 'footer-3' ) ); ?></span>
 					<?php
 						wp_nav_menu(
-							[
+							array(
 								'theme_location' => 'footer-3',
 								'menu_class'     => 'footer-menu list-reset',
 								'depth'          => 1,
-							]
+							)
 						);
 					?>
 				</nav>
@@ -65,8 +65,8 @@ $has_background   = Go\has_footer_background();
 
 		<?php if ( $has_social_icons ) : ?>
 			<div class="site-footer__row flex flex-column lg:flex-row justify-between items-center">
-				<?php Go\copyright( [ 'class' => 'site-info text-sm mb-0' ] ); ?>
-				<?php Go\social_icons( [ 'class' => 'social-icons list-reset m-0' ] ); ?>
+				<?php Go\copyright( array( 'class' => 'site-info text-sm mb-0' ) ); ?>
+				<?php Go\social_icons( array( 'class' => 'social-icons list-reset m-0' ) ); ?>
 			</div>
 		<?php endif; ?>
 

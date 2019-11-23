@@ -41,7 +41,7 @@ if ( $posts_pagination ) { ?>
 
 	<div class="pagination-wrapper m-auto max-w-wide px">
 
-		<?php echo $posts_pagination; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped during generation. ?>
+		<?php echo $posts_pagination; /* @codingStandardsIgnoreLine -- already escaped during generation. */ ?>
 
 	</div>
 

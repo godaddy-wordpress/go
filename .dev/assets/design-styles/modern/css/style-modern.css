@@ -8,6 +8,12 @@
 @import url("components/carousel.css");
 @import url("components/wc-button.css");
 
+.site-title {
+	@media (--largeMax) {
+		margin-left: calc(var(--theme-site-title--tracking) * 2.5);
+	}
+}
+
 .primary-menu a {
 
 	&::after {

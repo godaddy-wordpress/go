@@ -7,7 +7,6 @@
 	color: hsl(var(--theme-search-toggle--color));
 	padding: 0.75rem;
 	position: relative;
-	z-index: 10000;
 
 	&:active,
 	&:focus,

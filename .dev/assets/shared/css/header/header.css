@@ -20,7 +20,6 @@
 .header__title-nav {
 	flex: 1 0 75%;
 	order: 2;
-	z-index: 9999;
 }
 
 .header__extras {

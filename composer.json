@@ -30,14 +30,18 @@
     "php": ">=5.6",
     "wpackagist-plugin/coblocks": "dev-trunk",
     "wpackagist-plugin/woocommerce": "dev-trunk",
-    "oomphinc/composer-installers-extender": "^1.1",
-    "phpunit/phpunit": "7.5.14"
+    "oomphinc/composer-installers-extender": "^1.1"
   },
   "require-dev": {
-    "10up/phpcs-composer": "dev-master"
+    "10up/phpcs-composer": "dev-master",
+    "squizlabs/php_codesniffer": "^3.5",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "wp-coding-standards/wpcs": "^2.1",
+    "phpunit/phpunit": "^5"
   },
   "scripts": {
-    "lint": "phpcs .",
-    "lint-fix": "phpcbf ."
+    "lint": "@php ./vendor/bin/phpcs --standard=phpcs.xml --extensions=php --colors -s -p -v ./",
+    "test": "@php ./vendor/bin/phpunit"
   }
 }

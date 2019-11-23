@@ -13,11 +13,9 @@
 	</testsuites>
 	<filter>
 		<whitelist addUncoveredFilesFromWhitelist="true">
-			<directory>./</directory>
+			<directory>./includes</directory>
 			<exclude>
-				<directory suffix=".php">./node_modules</directory>
-				<directory suffix=".php">./vendor</directory>
-				<directory suffix=".php">./build</directory>
+				<file>./includes/classes/class-tgm-plugin-activation.php</file>
 			</exclude>
 		</whitelist>
 	</filter>

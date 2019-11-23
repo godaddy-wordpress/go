@@ -73,7 +73,6 @@
 			pointer-events: auto;
 			text-align: center;
 			visibility: visible;
-			z-index: 9998;
 
 			& a {
 				display: block;
