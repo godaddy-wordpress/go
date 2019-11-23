@@ -222,7 +222,7 @@ function woocommerce_slideout_cart() {
 
 				</div>
 
-				<?php the_widget( 'WC_Widget_Cart', [], [ 'before_title' => '<h2 class="widgettitle screen-reader-text"">' ] ); ?>
+				<?php the_widget( 'WC_Widget_Cart', array(), array( 'before_title' => '<h2 class="widgettitle screen-reader-text"">' ) ); ?>
 
 			</div>
 
