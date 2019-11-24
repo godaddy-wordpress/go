@@ -45,7 +45,7 @@
     "format": "npm run format-js",
     "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
     "test-php": "./vendor/bin/phpunit",
-    "test-visual-regressions": "./node_modules/.bin/cypress run --parallel --browser chrome --spec '.dev/tests/cypress/integration/visual-regression-tests/**/*.spec.js'"
+    "test-visual-regressions": "./node_modules/.bin/cypress run --record --parallel --browser chrome --spec '.dev/tests/cypress/integration/visual-regression-tests/**/*.spec.js'"
   },
   "locales": {
     "da_DK": "Dansk",
