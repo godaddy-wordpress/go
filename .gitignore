@@ -32,3 +32,6 @@ Session.vim
 # Windows
 Thumbs.db
 Desktop.ini
+
+# Cypress
+.dev/tests/cypress/screenshots
