@@ -1,10 +1,12 @@
 import cssVars from 'css-vars-ponyfill';
 import primaryMenu from './components/primary-menu.js';
 import searchToggle from './components/search-toggle.js';
+import wooMenuCart from './components/woo-menu-cart.js';
 import _debouce from 'lodash/debounce'; // we need an alias for debounce otherwise it conflicts with customizer
 
 primaryMenu();
 searchToggle();
+wooMenuCart();
 cssVars();
 
 document.addEventListener( 'DOMContentLoaded', function() {
@@ -38,5 +40,3 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		} );
 	}
 } );
-
-

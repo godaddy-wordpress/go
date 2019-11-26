@@ -112,6 +112,7 @@
 @import url("woocommerce/thank-you.css");
 @import url("woocommerce/blocks.css");
 @import url("woocommerce/single-product.css");
+@import url("woocommerce/slideout-menu.css");
 
 /*! Gravity Forms */
 @import url("gravity/forms.css");

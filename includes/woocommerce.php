@@ -54,6 +54,8 @@ function setup() {
 
 	add_filter( 'woocommerce_add_to_cart_fragments', $n( 'go_cart_fragments' ), PHP_INT_MAX );
 
+	add_action( 'wp', $n( 'disable_cart' ) );
+
 }
 
 /**
@@ -76,6 +78,25 @@ function should_show_woo_cart_item() {
 }
 
 /**
+ * Whether or not the WooCommerce slideout cart is enabled.
+ *
+ * @return bool True when enabled, else false.
+ */
+function should_use_woo_slideout_cart() {
+
+	/**
+	 * Filter whether to use the WooCommerce slideout cart.
+	 * Default: `true`
+	 *
+	 * @since NEXT
+	 *
+	 * @var bool
+	*/
+	return (bool) apply_filters( 'go_wc_use_slideout_cart', true );
+
+}
+
+/**
  * Generate a WooCommerce cart link
  *
  * @return void
@@ -87,6 +108,8 @@ function woocommerce_cart_link() {
 		return;
 
 	}
+
+	add_action( 'wp_footer', __NAMESPACE__ . '\\woocommerce_slideout_cart' );
 
 	ob_start();
 	load_inline_svg( 'cart.svg' );
@@ -138,13 +161,76 @@ function woocommerce_cart_link() {
 
 	}
 
+	$element_wrap = should_use_woo_slideout_cart() ? 'button' : 'a';
+
 	printf(
-		'<a href="%1$s" class="header__cart-toggle" alt="%2$s" aria-label="%2$s">%3$s</a>',
+		'<%1$s href="%2$s" class="header__cart-toggle" alt="%3$s">%4$s</%1$s>',
+		esc_html( $element_wrap ),
 		esc_url( $cart_url ),
-		esc_html( $cart_alt_text ),
+		esc_attr( $cart_alt_text ),
 		$cart_text // @codingStandardsIgnoreLine
 	);
 
+}
+
+/**
+ * Render the markup for yhe WooCommerce slideout cart
+ *
+ * @return mixed Markup for the slideout cart.
+ */
+function woocommerce_slideout_cart() {
+
+	if ( ! should_use_woo_slideout_cart() ) {
+
+		return;
+
+	}
+
+	global $woocommerce;
+
+	$cart_count = $woocommerce->cart->get_cart_contents_count();
+
+	?>
+
+	<div id="site-overlay" class="site-overlay"></div>
+
+	<div id="site-nav--cart" class="site-nav style--sidebar show-cart">
+
+		<div id="site-cart" class="site-nav-container" tabindex="-1">
+
+			<button id="site-close-handle" class="site-close-handle" aria-label="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>" title="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>">
+				<?php load_inline_svg( 'close.svg' ); ?>
+			</button>
+
+			<div class="site-nav-container-last">
+
+				<div class="site-cart-heading">
+
+					<h6 class="title"><?php esc_html_e( 'Cart', 'go' ); ?></h6>
+
+					<p class="subheading">
+						<?php
+						printf(
+							esc_html(
+								/* translators: 1. Single integer value. (eg: 1 product in your cart). 2. Integer larger than 1. (eg: 5 products in your cart). */
+								_n( '%s product in your cart', '%s products in your cart', $cart_count, 'go' )
+							),
+							esc_html( number_format_i18n( $cart_count ) )
+						);
+						?>
+					</p>
+
+				</div>
+
+				<?php the_widget( 'WC_Widget_Cart', array(), array( 'before_title' => '<h2 class="widgettitle screen-reader-text"">' ) ); ?>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<?php
 }
 
 /**
@@ -170,7 +256,16 @@ function go_cart_fragments( $fragments ) {
 	$fragments['span.item-count'] = sprintf(
 		'<span class="item-count%1$s">%2$s</span>',
 		esc_attr( $count_class ),
-		esc_html( $cart_count )
+		esc_html( number_format_i18n( $cart_count ) )
+	);
+
+	$fragments['#site-cart .subheading'] = sprintf(
+		'<p class="subheading">%s</p>',
+		sprintf(
+			/* translators: 1. Single integer value. (eg: 1 product in your cart). 2. Integer larger than 1. (eg: 5 products in your cart). */
+			_n( '%s product in your cart', '%s products in your cart', $cart_count, 'go' ),
+			esc_html( number_format_i18n( $cart_count ) )
+		)
 	);
 
 	return $fragments;
@@ -224,6 +319,36 @@ function empty_cart_message() {
 		),
 		esc_html( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'go' ) ) )
 	);
+
+}
+
+/**
+ * Disable the slideout cart/cart icon when the cart is empty
+ *
+ * @return bool True when the cart count is 0, else false.
+ */
+function disable_cart() {
+
+	/**
+	 * Filter whether to always show the cart icon.
+	 * Default: `false`
+	 *
+	 * @since NEXT
+	 *
+	 * @var bool
+	*/
+	$always_show_cart = (bool) apply_filters( 'go_always_show_cart_icon', false );
+
+	global $woocommerce;
+
+	if ( $always_show_cart || 0 < $woocommerce->cart->get_cart_contents_count() ) {
+
+		return;
+
+	}
+
+	add_filter( 'go_wc_use_slideout_cart', '__return_false' );
+	add_filter( 'go_wc_show_cart_menu', '__return_false' );
 
 }
 

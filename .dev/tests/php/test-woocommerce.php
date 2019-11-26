@@ -398,11 +398,43 @@ class Test_WooCommerce extends WP_UnitTestCase {
 	 */
 	function test_woocommerce_cart_link() {
 
+		$this->expectOutputRegex( '/<button href="http:\/\/example.org" class="header__cart-toggle" alt="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
+
 		$this->initialize_woo_session();
 
 		Go\WooCommerce\woocommerce_cart_link();
 
-		$this->expectOutputRegex( '/<a href="http:\/\/example.org" class="header__cart-toggle" alt="View cart" aria-label="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
+	}
+
+	/**
+	 * Test that the cart does not render when it is disabled via a filter
+	 */
+	function test_woocommerce_slideout_cart_disabled() {
+
+		add_filter( 'go_wc_use_slideout_cart', '__return_false' );
+
+		$this->assertNull( Go\WooCommerce\woocommerce_slideout_cart() );
+
+	}
+
+	/**
+	 * Test that the cart renders as expected
+	 */
+	function test_woocommerce_slideout_cart() {
+
+		if ( ! function_exists( 'wc_register_widgets' ) ) {
+
+			include WP_PLUGIN_DIR . '/woocommerce/includes/wc-widget-functions.php';
+
+		}
+
+		$this->initialize_woo_session();
+
+		wc_register_widgets();
+
+		$this->expectOutputRegex( '/<button id="site-close-handle" class="site-close-handle" aria-label="Close sidebar" title="Close sidebar">/' );
+
+		Go\WooCommerce\woocommerce_slideout_cart();
 
 	}
 
@@ -417,9 +449,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 			return 'https://www.google.com';
 		} );
 
-		Go\WooCommerce\woocommerce_cart_link();
+		$this->expectOutputRegex( '/<button href="https:\/\/www.google.com" class="header__cart-toggle" alt="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
 
-		$this->expectOutputRegex( '/<a href="https:\/\/www.google.com" class="header__cart-toggle" alt="View cart" aria-label="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
+		Go\WooCommerce\woocommerce_cart_link();
 
 	}
 
@@ -434,9 +466,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 			return 'Alternate Text';
 		} );
 
-		Go\WooCommerce\woocommerce_cart_link();
+		$this->expectOutputRegex( '/<button href="http:\/\/example.org" class="header__cart-toggle" alt="Alternate Text">/' );
 
-		$this->expectOutputRegex( '/<a href="http:\/\/example.org" class="header__cart-toggle" alt="Alternate Text" aria-label="Alternate Text">/' );
+		Go\WooCommerce\woocommerce_cart_link();
 
 	}
 
@@ -451,9 +483,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 			return 'Custom Cart Text';
 		} );
 
-		Go\WooCommerce\woocommerce_cart_link();
+		$this->expectOutputRegex( '/<button href="http:\/\/example.org" class="header__cart-toggle" alt="View cart">Custom Cart Text<\/button>/' );
 
-		$this->expectOutputRegex( '/<a href="http:\/\/example.org" class="header__cart-toggle" alt="View cart" aria-label="View cart">Custom Cart Text<\/a>/' );
+		Go\WooCommerce\woocommerce_cart_link();
 
 	}
 
@@ -468,9 +500,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 			return '';
 		} );
 
-		Go\WooCommerce\woocommerce_cart_link();
+		$this->expectOutputRegex( '/<button href="http:\/\/example.org" class="header__cart-toggle" alt="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
 
-		$this->expectOutputRegex( '/<a href="http:\/\/example.org" class="header__cart-toggle" alt="View cart" aria-label="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
+		Go\WooCommerce\woocommerce_cart_link();
 
 	}
 
@@ -493,7 +525,8 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$this->initialize_woo_session();
 
 		$expected_fragments = [
-			'span.item-count' => '<span class="item-count count--zero">0</span>',
+			'span.item-count'        => '<span class="item-count count--zero">0</span>',
+			'#site-cart .subheading' => '<p class="subheading">0 products in your cart</p>',
 		];
 
 		$this->assertEquals( $expected_fragments, Go\WooCommerce\go_cart_fragments( [] ) );
@@ -514,8 +547,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$this->woo->cart->calculate_totals();
 
 		$expected_fragments = [
-			'.class'          => 'Text',
-			'span.item-count' => '<span class="item-count">3</span>',
+			'.class'                 => 'Text',
+			'span.item-count'        => '<span class="item-count">3</span>',
+			'#site-cart .subheading' => '<p class="subheading">3 products in your cart</p>',
 		];
 
 		$this->assertEquals( $expected_fragments, Go\WooCommerce\go_cart_fragments( [ '.class' => 'Text' ] ) );
@@ -533,9 +567,54 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		}
 
+		$this->expectOutputRegex( '/<a href="http:\/\/example.org"><svg viewBox="0 0 24 30">/' );
+
 		Go\WooCommerce\empty_cart_message( [] );
 
-		$this->expectOutputRegex( '/<a href="http:\/\/example.org"><svg viewBox="0 0 24 30">/' );
+	}
+
+	/**
+	 * Test that the Cart is always visible when the filter go_always_show_cart_icon is true
+	 */
+	function test_disable_cart_always_show_cart_icon_filter() {
+
+		add_filter( 'go_always_show_cart_icon', '__return_true' );
+
+		Go\WooCommerce\disable_cart();
+
+		$this->assertTrue( Go\WooCommerce\should_use_woo_slideout_cart() );
+
+	}
+
+	/**
+	 * Test that the Cart link is visible when the cart contents count is greater than zero
+	 */
+	function test_disable_cart_cart_contents_great_than_zero() {
+
+		$this->initialize_woo_session();
+
+		$product_id = $this->create_simple_product();
+
+		$this->woo->cart->add_to_cart( $product_id, 3 );
+
+		$this->woo->cart->calculate_totals();
+
+		Go\WooCommerce\disable_cart();
+
+		$this->assertTrue( Go\WooCommerce\should_use_woo_slideout_cart() );
+
+	}
+
+	/**
+	 * Test that the Cart link is not visible when the cart contents is zero
+	 */
+	function test_disable_cart_cart_contents_zero() {
+
+		$this->initialize_woo_session();
+
+		Go\WooCommerce\disable_cart();
+
+		$this->assertFalse( Go\WooCommerce\should_use_woo_slideout_cart() );
 
 	}
 
@@ -554,9 +633,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 			return 'https://www.google.com';
 		} );
 
-		Go\WooCommerce\empty_cart_message( [] );
-
 		$this->expectOutputRegex( '/<a href="https:\/\/www.google.com"><svg viewBox="0 0 24 30">/' );
+
+		Go\WooCommerce\empty_cart_message( [] );
 
 	}
 
@@ -575,9 +654,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 			return 'Back to Store';
 		} );
 
-		Go\WooCommerce\empty_cart_message( [] );
-
 		$this->expectOutputRegex( '/Back to Store/' );
+
+		Go\WooCommerce\empty_cart_message( [] );
 
 	}
 
@@ -671,9 +750,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
-		Go\WooCommerce\single_product_header();
-
 		$this->expectOutputRegex( sprintf( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb">Shop Page<\/nav><a href="http:\/\/example\.org\/\?page_id=%s" class="back-to-shop">/', get_option( 'woocommerce_shop_page_id' ) ) );
+
+		Go\WooCommerce\single_product_header();
 
 	}
 
@@ -706,9 +785,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$wp_query->post                    = $product_post_object;
 		$post                              = $product_post_object;
 
-		Go\WooCommerce\single_product_pagination();
-
 		$this->expectOutputRegex( '/<div class="nav-links"><div class="nav-previous"><a href="http:\/\/example.org\/\?product=simple-product-1" rel="prev"><span class="screen-reader-text">Previous Post:  Simple Product 1<\/span>(<svg)([^<]*|[^>]*)(.*<\/svg>)<span class="nav-title">Previous<\/span><\/a><\/div><div class="nav-next"><a href="http:\/\/example.org\/\?product=simple-product-3" rel="next"><span class="screen-reader-text">Next Post: Simple Product 3<\/span><span class="nav-title">Next<\/span>/' );
+
+		Go\WooCommerce\single_product_pagination();
 
 	}
 
@@ -738,9 +817,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$wp_query->post                    = $product_post_object;
 		$post                              = $product_post_object;
 
-		Go\WooCommerce\single_product_back_to_shop();
-
 		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/', get_option( 'woocommerce_shop_page_id' ) ) );
+
+		Go\WooCommerce\single_product_back_to_shop();
 
 	}
 
@@ -776,9 +855,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		} );
 
-		Go\WooCommerce\single_product_back_to_shop();
-
 		$this->expectOutputRegex( '/<a href="https:\/\/www.google.com" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/' );
+
+		Go\WooCommerce\single_product_back_to_shop();
 
 	}
 
@@ -814,9 +893,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		} );
 
-		Go\WooCommerce\single_product_back_to_shop();
-
 		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Head Back to the Shop!<\/a>/', get_option( 'woocommerce_shop_page_id' ) ) );
+
+		Go\WooCommerce\single_product_back_to_shop();
 
 	}
 
