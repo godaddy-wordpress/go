@@ -514,17 +514,19 @@ function body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Add class whenever a WooCommerce block is added to a page.
-	if (
-		has_block( 'woocommerce/handpicked-products' )
-		|| has_block( 'woocommerce/product-best-sellers' )
-		|| has_block( 'woocommerce/product-category' )
-		|| has_block( 'woocommerce/product-new' )
-		|| has_block( 'woocommerce/product-on-sale' )
-		|| has_block( 'woocommerce/product-top-rated' )
-		|| has_block( 'woocommerce/products-by-attribute' )
-		|| has_block( 'woocommerce/featured-product' )
-	) {
+	$woocommerce_blocks = array(
+		'woocommerce/featured-product',
+		'woocommerce/handpicked-products',
+		'woocommerce/product-best-sellers',
+		'woocommerce/product-category',
+		'woocommerce/product-new',
+		'woocommerce/product-on-sale',
+		'woocommerce/product-top-rated',
+		'woocommerce/products-by-attribute',
+	);
+
+	// Add class if page contains any WooCommerce blocks.
+	if ( array_filter( array_map( 'has_block', $woocommerce_blocks ) ) ) {
 		$classes[] = 'woocommerce-page';
 	}
 
