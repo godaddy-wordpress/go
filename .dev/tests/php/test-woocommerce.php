@@ -612,6 +612,8 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
+		unset( $GLOBALS['current_screen'] );
+
 		Go\WooCommerce\disable_cart();
 
 		$this->assertFalse( Go\WooCommerce\should_use_woo_slideout_cart() );

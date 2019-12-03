@@ -341,7 +341,7 @@ function disable_cart() {
 
 	global $woocommerce;
 
-	if ( $always_show_cart || 0 < $woocommerce->cart->get_cart_contents_count() ) {
+	if ( is_admin() || $always_show_cart || 0 < $woocommerce->cart->get_cart_contents_count() ) {
 
 		return;
 
