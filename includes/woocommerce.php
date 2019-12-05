@@ -467,7 +467,7 @@ function single_product_back_to_shop() {
 	 *
 	 * @param string URL to the WooCommerce shop page.
 	 */
-	$url = apply_filters( 'go_back_to_shop_url', get_permalink( wc_get_page_id( 'shop' ) ) );
+	$url = (string) apply_filters( 'go_back_to_shop_url', get_permalink( wc_get_page_id( 'shop' ) ) );
 
 	/**
 	 * Filters the back to shop link text.
@@ -476,7 +476,7 @@ function single_product_back_to_shop() {
 	 *
 	 * @param string The text used in the back link.
 	 */
-	$text = apply_filters( 'go_back_to_shop_text', esc_html__( 'Back', 'go' ) );
+	$text = (string) apply_filters( 'go_back_to_shop_text', esc_html__( 'Back', 'go' ) );
 
 	printf(
 		'<a href="%s" class="back-to-shop">%s%s</a>',

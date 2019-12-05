@@ -45,7 +45,7 @@ function register_required_plugins() {
 	 *
 	 * @param array $plugins Array containings the plugin dependencies in the TGM format.
 	 */
-	$plugins = apply_filters( 'go_plugin_dependencies', $plugins );
+	$plugins = (array) apply_filters( 'go_plugin_dependencies', $plugins );
 
 	$config = array(
 		'id'           => 'go',                    // Unique ID for hashing notices for multiple instances of TGMPA.

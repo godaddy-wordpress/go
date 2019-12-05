@@ -41,6 +41,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 
 	// Check whether the post type is allowed to output post meta.
 	$disallowed_post_types = apply_filters( 'go_disallowed_post_types_for_meta_output', array( 'page' ) );
+
 	if ( in_array( get_post_type( $post_id ), $disallowed_post_types, true ) ) {
 		return;
 	}

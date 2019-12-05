@@ -59,7 +59,7 @@ function theme_setup() {
 
 	// Filters the theme content width global; intended to be overruled from themes.
 	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'go_content_width', 660 );
+	$GLOBALS['content_width'] = (int) apply_filters( 'go_content_width', 660 );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -546,7 +546,7 @@ function get_default_design_style() {
 	 *
 	 * @param array $default_design_style The slug of the default design style.
 	 */
-	return apply_filters( 'go_default_design_style', 'traditional' );
+	return (string) apply_filters( 'go_default_design_style', 'traditional' );
 
 }
 
@@ -835,7 +835,7 @@ function get_available_design_styles() {
 	 * @param array $design_styles Array containings the supported design styles,
 	 * where the index is the slug of design style and value an array of options that sets up the design styles.
 	 */
-	$supported_design_styles = apply_filters( 'go_design_styles', $default_design_styles );
+	$supported_design_styles = (array) apply_filters( 'go_design_styles', $default_design_styles );
 
 	return $supported_design_styles;
 
@@ -875,7 +875,7 @@ function get_default_header_variation() {
 	 *
 	 * @param array $default_header_variation The slug of the default header variation.
 	 */
-	return apply_filters( 'go_default_header', 'header-1' );
+	return (string) apply_filters( 'go_default_header', 'header-1' );
 
 }
 
@@ -912,7 +912,7 @@ function get_available_header_variations() {
 	 * @param array $header_variations Array containings the supported header variations,
 	 * where the index is the slug of header variation and the value an array of options that sets up the header variation.
 	 */
-	$supported_header_variations = apply_filters( 'go_header_variations', $default_header_variations );
+	$supported_header_variations = (array) apply_filters( 'go_header_variations', $default_header_variations );
 
 	return $supported_header_variations;
 
@@ -963,7 +963,7 @@ function get_available_footer_variations() {
 	 * @param array $footer_variations Array containings the supported header variations,
 	 * where the index is the slug of header variation and the value an array of options that sets up the header variation.
 	 */
-	$supported_footer_variations = apply_filters( 'go_footer_variations', $default_footer_variations );
+	$supported_footer_variations = (array) apply_filters( 'go_footer_variations', $default_footer_variations );
 
 	return $supported_footer_variations;
 
@@ -982,7 +982,7 @@ function get_default_footer_variation() {
 	 *
 	 * @param array $default_footer_variation The slug of the default footer variation.
 	 */
-	return apply_filters( 'go_default_footer_variation', 'footer-1' );
+	return (string) apply_filters( 'go_default_footer_variation', 'footer-1' );
 
 }
 
@@ -1018,7 +1018,7 @@ function get_default_copyright() {
 	 * @param string $copyright The default text for copyright.
 	 */
 	/* translators: the theme author */
-	return apply_filters( 'go_default_copyright', sprintf( esc_html__( 'WordPress Theme by %s', 'go' ), 'GoDaddy' ) );
+	return (string) apply_filters( 'go_default_copyright', sprintf( esc_html__( 'WordPress Theme by %s', 'go' ), 'GoDaddy' ) );
 
 }
 
@@ -1063,7 +1063,7 @@ function get_available_social_icons() {
 	 *
 	 * @param array $social_icons Array containings the supported social icons.
 	 */
-	return apply_filters( 'go_avaliable_social_icons', $social_icons );
+	return (array) apply_filters( 'go_avaliable_social_icons', $social_icons );
 
 }
 
@@ -1099,7 +1099,7 @@ function get_available_color_schemes() {
 	 * @param array $color_schemes The array containing the color schemes
 	 * @param array $design_style  The full design style object
 	 */
-	return apply_filters( 'go_color_schemes', $design_style['color_schemes'], $design_style );
+	return (array) apply_filters( 'go_color_schemes', $design_style['color_schemes'], $design_style );
 
 }
 
@@ -1114,7 +1114,7 @@ function get_default_color_scheme() {
 	 *
 	 * @param array $default_color_scheme The slug of the default color scheme.
 	 */
-	return apply_filters( 'go_default_color_scheme', 'one' );
+	return (string) apply_filters( 'go_default_color_scheme', 'one' );
 
 }
 
