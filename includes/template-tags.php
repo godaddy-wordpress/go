@@ -502,13 +502,17 @@ function copyright( $args = array() ) {
  */
 function page_title() {
 
-	$show_titles = get_theme_mod( 'page_titles', true );
+	if ( ! is_customize_preview() && is_front_page() ) {
 
-	if (
-		! is_customize_preview() && ( is_front_page() ||
-		( ! $show_titles && ! is_404() && ! is_search() && ! is_archive() ) ||
-		( ! $show_titles && ( function_exists( 'is_shop' ) && is_shop() ) ) ) // WooCommerce shop.
-	) {
+		return;
+
+	}
+
+	$show_titles = (bool) get_theme_mod( 'page_titles', true );
+	$non_archive = ! is_404() && ! is_search() && ! is_archive();
+	$is_shop     = function_exists( 'is_shop' ) && is_shop(); // WooCommerce shop.
+
+	if ( ! is_customize_preview() && ! $show_titles && ( $non_archive || $is_shop ) ) {
 
 		return;
 
