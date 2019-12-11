@@ -69,7 +69,7 @@ function should_show_woo_cart_item() {
 	 * Filter whether to display the WooCommerce cart menu item.
 	 * Default: `true`
 	 *
-	 * @since NEXT
+	 * @since 1.2.0
 	 *
 	 * @var bool
 	*/
@@ -88,7 +88,7 @@ function should_use_woo_slideout_cart() {
 	 * Filter whether to use the WooCommerce slideout cart.
 	 * Default: `true`
 	 *
-	 * @since NEXT
+	 * @since 1.2.0
 	 *
 	 * @var bool
 	*/
@@ -120,7 +120,7 @@ function woocommerce_cart_link() {
 	/**
 	 * Filters the cart menu item URL.
 	 *
-	 * @since NEXT
+	 * @since 1.2.0
 	 *
 	 * @param string URL to the WooCommerce cart page.
 	 */
@@ -129,7 +129,7 @@ function woocommerce_cart_link() {
 	/**
 	 * Filters the cart menu item alt text.
 	 *
-	 * @since NEXT
+	 * @since 1.2.0
 	 *
 	 * @param string Alt text for the cart menu item.
 	 */
@@ -138,7 +138,7 @@ function woocommerce_cart_link() {
 	/**
 	 * Filters the cart menu item text.
 	 *
-	 * @since NEXT
+	 * @since 1.2.0
 	 *
 	 * @param string Text for the cart menu item.
 	 */
@@ -333,7 +333,7 @@ function disable_cart() {
 	 * Filter whether to always show the cart icon.
 	 * Default: `false`
 	 *
-	 * @since NEXT
+	 * @since 1.2.0
 	 *
 	 * @var bool
 	*/
@@ -463,7 +463,7 @@ function single_product_back_to_shop() {
 	/**
 	 * Filters the back to shop link URL.
 	 *
-	 * @since NEXT
+	 * @since 1.2.0
 	 *
 	 * @param string URL to the WooCommerce shop page.
 	 */
@@ -472,7 +472,7 @@ function single_product_back_to_shop() {
 	/**
 	 * Filters the back to shop link text.
 	 *
-	 * @since NEXT
+	 * @since 1.2.0
 	 *
 	 * @param string The text used in the back link.
 	 */
