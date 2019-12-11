@@ -63,6 +63,29 @@ Source: https://stocksnap.io/photo/RCFX768X06
 
 == Changelog ==
 
+= 1.2.0 =
+* Introduce breadcrumbs and post navigation in single product templates.
+* Fix output of archive page title.
+* Tweak product navigation.
+* Fix shop page title visibility.
+* Introduce WooCommerce cart menu icon and slide out cart.
+* Fix empty cart message icon.
+* Tweak variation styles.
+* Update 'Clear' reset variations link text.
+* Update comments in design style CSS files.
+* Fix Playful design style default header text color.
+* Update headers and theme responsiveness.
+* Add variants to `--header-padding` values.
+* Improved site search bar.
+* Fix submenu item word wrap.
+* Typecast all Go filters to return data in the expected format.
+* Add an `aria-label` to the navigation cart link.
+* Revert all PHP array shorthand syntax.
+* Update unit test suite.
+* Fix unscoped jQuery for WordPress 5.3 compatibility.
+* Fix code sniffs.
+* Fix dashboard fatal error on `shop_order` post type.
+
 = 1.1.1 =
 * Introduce additional design styles.
 
