@@ -1,11 +1,11 @@
-let menuObject   = jQuery( 'button.header__cart-toggle' );
+let menuObject   = document.getElementById( 'header__cart-toggle' );
 let siteOverlay  = document.getElementById( 'site-overlay' );
 let sideNav      = document.getElementById( 'site-nav--cart' );
 let sideNavClose = document.getElementById( 'site-close-handle' );
 
 const wooMenuCart = () => {
 	if (
-		! menuObject.length ||
+		null === menuObject ||
 		null === siteOverlay ||
 		null === sideNavClose
 	) {
@@ -14,7 +14,7 @@ const wooMenuCart = () => {
 
 	document.body.classList.add( 'has-woo-cart-slideout' );
 
-	menuObject.on( 'click', function( event ) {
+	menuObject.addEventListener( 'click',  function( event ) {
 		event.preventDefault();
 		toggleSideNavVisibility();
 	} );
