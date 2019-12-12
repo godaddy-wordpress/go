@@ -164,7 +164,7 @@ function woocommerce_cart_link() {
 	$element_wrap = should_use_woo_slideout_cart() ? 'button' : 'a';
 
 	printf(
-		'<%1$s href="%2$s" class="header__cart-toggle" alt="%3$s">%4$s</%1$s>',
+		'<%1$s id="header__cart-toggle" href="%2$s" class="header__cart-toggle" alt="%3$s">%4$s</%1$s>',
 		esc_html( $element_wrap ),
 		esc_url( $cart_url ),
 		esc_attr( $cart_alt_text ),
