@@ -5,7 +5,7 @@ let sideNavClose = document.getElementById( 'site-close-handle' );
 
 const wooMenuCart = () => {
 	if (
-		! menuObject ||
+		null === menuObject ||
 		null === siteOverlay ||
 		null === sideNavClose
 	) {
