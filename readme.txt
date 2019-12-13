@@ -63,6 +63,11 @@ Source: https://stocksnap.io/photo/RCFX768X06
 
 == Changelog ==
 
+= 1.2.1 =
+* Refactor `woo-menu-cart.js` to resolve JavaScript error on non-shop sites.
+* Remove the `href` attribute from the cart slide out button element.
+* Disable the WooCommerce slide out cart when on the cart page.
+
 = 1.2.0 =
 * Introduce breadcrumbs and post navigation in single product templates.
 * Fix output of archive page title.
