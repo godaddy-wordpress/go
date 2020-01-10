@@ -1014,6 +1014,41 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the page does not show up on the front page of the site
+	 */
+	public function test_page_title_front_page() {
+
+		$front_page_id = $this->factory->post->create(
+			[
+				'post_title'   => 'Front Page',
+				'post_content' => 'This is the front page of my site.',
+			]
+		);
+
+		update_option( 'page_on_front', $front_page_id );
+		update_option( 'show_on_front', 'page' );
+
+		global $post;
+		global $wp_query;
+
+		$post = get_post( $front_page_id );
+
+		$wp_query                 = new WP_Query( [ 'page_id' => $front_page_id ] );
+		$wp_query->queried_object = $post;
+		$wp_query->is_page        = true;
+		$wp_query->is_single      = true;
+
+		ob_start();
+		Go\page_title();
+		$page_title = ob_get_clean();
+
+		$this->assertEmpty( $page_title );
+
+		wp_reset_query();
+
+	}
+
+	/**
 	 * Test the page title renders correctly
 	 */
 	public function test_page_title() {
@@ -1054,31 +1089,6 @@ class Test_Template_Tags extends WP_UnitTestCase {
 			has_action( 'woocommerce_cart_is_empty', 'Go\WooCommerce\wc_empty_cart_message' ),
 			'woocommerce_cart_is_empty looks to be attached to Go\WooCommerce\wc_empty_cart_message. It should not be.'
 		);
-
-	}
-
-	/**
-	 * Test WooCommerce content wraper classes are added when WooCommerce is prsent
-	 */
-	public function test_content_wrapper_class_woo_cart() {
-
-		if ( ! class_exists( 'WooCommerce' ) ) {
-
-			include WP_PLUGIN_DIR . '/woocommerce/woocommerce.php';
-
-		}
-
-		// Force WooCommerce is_cart() true
-		define( 'WOOCOMMERCE_CART', true );
-
-		// Force WooCommerce is_checkout() true
-		apply_filters( 'woocommerce_is_checkout', '__return_true' );
-
-		ob_start();
-		Go\content_wrapper_class();
-		$content_wrapper_class = ob_get_clean();
-
-		$this->assertEquals( 'max-w-wide w-full m-auto px', trim( $content_wrapper_class ) );
 
 	}
 
