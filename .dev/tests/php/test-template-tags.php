@@ -1058,31 +1058,6 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test WooCommerce content wraper classes are added when WooCommerce is prsent
-	 */
-	public function test_content_wrapper_class_woo_cart() {
-
-		if ( ! class_exists( 'WooCommerce' ) ) {
-
-			include WP_PLUGIN_DIR . '/woocommerce/woocommerce.php';
-
-		}
-
-		// Force WooCommerce is_cart() true
-		define( 'WOOCOMMERCE_CART', true );
-
-		// Force WooCommerce is_checkout() true
-		apply_filters( 'woocommerce_is_checkout', '__return_true' );
-
-		ob_start();
-		Go\content_wrapper_class();
-		$content_wrapper_class = ob_get_clean();
-
-		$this->assertEquals( 'max-w-wide w-full m-auto px', trim( $content_wrapper_class ) );
-
-	}
-
-	/**
 	 * Test that has_social_icons returns true when social icons are set
 	 */
 	public function test_has_social_icons() {

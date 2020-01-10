@@ -6,8 +6,6 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 	private $woo_cart;
 
-	private $shop_page_id;
-
 	function setUp() {
 
 		parent::setUp();
@@ -64,7 +62,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 			$GLOBALS['wp_roles'] = null;
 			wp_roles();
 
-			$this->shop_page_id = $this->factory->post->create(
+			$shop_page_id = $this->factory->post->create(
 				[
 					'post_title'   => 'Shop Page',
 					'post_type'    => 'page',
@@ -72,7 +70,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 				]
 			);
 
-			update_option( 'woocommerce_shop_page_id', $this->shop_page_id );
+			update_option( 'woocommerce_shop_page_id', $shop_page_id );
 
 		}
 
@@ -956,6 +954,34 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$this->initialize_woo_session();
 
 		$this->assertEquals( '<a class="reset_variations" href="#">Reset Selections</a>', Go\WooCommerce\reset_variations_link() );
+
+	}
+
+	/**
+	 * Test WooCommerce content wraper classes are added when WooCommerce is present
+	 *
+	 * Note: From test-template-tags.php. Defining WOOCOMMERCE_CART forces other tests to fail.
+	 *       This should always be run last.
+	 */
+	public function test_content_wrapper_class_woo_cart() {
+
+		if ( ! class_exists( 'WooCommerce' ) ) {
+
+			include WP_PLUGIN_DIR . '/woocommerce/woocommerce.php';
+
+		}
+
+		// Force WooCommerce is_cart() true
+		define( 'WOOCOMMERCE_CART', true );
+
+		// Force WooCommerce is_checkout() true
+		apply_filters( 'woocommerce_is_checkout', '__return_true' );
+
+		ob_start();
+		Go\content_wrapper_class();
+		$content_wrapper_class = ob_get_clean();
+
+		$this->assertEquals( 'max-w-wide w-full m-auto px', trim( $content_wrapper_class ) );
 
 	}
 }
