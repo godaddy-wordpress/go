@@ -61,6 +61,5 @@ yarn.lock
 # By default, we ignore these dropins. Delete these to manage via git
 object-cache.php
 advanced-cache.php
-mu-plugins/10up-sso-client.php
 /db.php
 /sunrise.php

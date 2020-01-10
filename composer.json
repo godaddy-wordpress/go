@@ -33,7 +33,6 @@
     "oomphinc/composer-installers-extender": "^1.1"
   },
   "require-dev": {
-    "10up/phpcs-composer": "dev-master",
     "squizlabs/php_codesniffer": "^3.5",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
     "phpcompatibility/phpcompatibility-wp": "^2.1",
