@@ -546,9 +546,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$product_id = $this->create_simple_product();
 
-		$this->woo->cart->add_to_cart( $product_id, 3 );
+		$this->woo_cart->add_to_cart( $product_id, 3 );
 
-		$this->woo->cart->calculate_totals();
+		$this->woo_cart->calculate_totals();
 
 		$expected_fragments = [
 			'.class'                 => 'Text',
@@ -982,6 +982,16 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$content_wrapper_class = ob_get_clean();
 
 		$this->assertEquals( 'max-w-wide w-full m-auto px', trim( $content_wrapper_class ) );
+
+	}
+
+	/**
+	 * Test that the Cart is false on the shop page
+	 * Note: Should run after WOOCOMMERCE_CART is defined in the test above
+	 */
+	function test_should_use_woo_slideout_cart_cart_page() {
+
+		$this->assertFalse( Go\WooCommerce\should_use_woo_slideout_cart() );
 
 	}
 }
