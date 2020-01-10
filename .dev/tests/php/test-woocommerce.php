@@ -398,7 +398,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 	 */
 	function test_woocommerce_cart_link() {
 
-		$this->expectOutputRegex( '/<button href="http:\/\/example.org" class="header__cart-toggle" alt="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
+		$this->expectOutputRegex( '/<button id="header__cart-toggle" class="header__cart-toggle" alt="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
 
 		$this->initialize_woo_session();
 
@@ -445,11 +445,13 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
+		add_filter( 'go_wc_use_slideout_cart', '__return_false' );
+
 		add_filter( 'go_menu_cart_url', function() {
 			return 'https://www.google.com';
 		} );
 
-		$this->expectOutputRegex( '/<button href="https:\/\/www.google.com" class="header__cart-toggle" alt="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
+		$this->expectOutputRegex( '/<a id="header__cart-toggle" href="https:\/\/www.google.com" class="header__cart-toggle" alt="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
 
 		Go\WooCommerce\woocommerce_cart_link();
 
@@ -462,11 +464,13 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
+		add_filter( 'go_wc_use_slideout_cart', '__return_false' );
+
 		add_filter( 'go_menu_cart_alt', function() {
 			return 'Alternate Text';
 		} );
 
-		$this->expectOutputRegex( '/<button href="http:\/\/example.org" class="header__cart-toggle" alt="Alternate Text">/' );
+		$this->expectOutputRegex( '/<a id="header__cart-toggle" href="http:\/\/example.org" class="header__cart-toggle" alt="Alternate Text">/' );
 
 		Go\WooCommerce\woocommerce_cart_link();
 
@@ -479,11 +483,13 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
+		add_filter( 'go_wc_use_slideout_cart', '__return_false' );
+
 		add_filter( 'go_menu_cart_text', function() {
 			return 'Custom Cart Text';
 		} );
 
-		$this->expectOutputRegex( '/<button href="http:\/\/example.org" class="header__cart-toggle" alt="View cart">Custom Cart Text<\/button>/' );
+		$this->expectOutputRegex( '/<a id="header__cart-toggle" href="http:\/\/example.org" class="header__cart-toggle" alt="View cart">Custom Cart Text<\/a>/' );
 
 		Go\WooCommerce\woocommerce_cart_link();
 
@@ -500,7 +506,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 			return '';
 		} );
 
-		$this->expectOutputRegex( '/<button href="http:\/\/example.org" class="header__cart-toggle" alt="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
+		$this->expectOutputRegex( '/<button id="header__cart-toggle" class="header__cart-toggle" alt="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
 
 		Go\WooCommerce\woocommerce_cart_link();
 

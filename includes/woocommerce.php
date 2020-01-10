@@ -170,9 +170,9 @@ function woocommerce_cart_link() {
 	$element_wrap = should_use_woo_slideout_cart() ? 'button' : 'a';
 
 	printf(
-		'<%1$s id="header__cart-toggle" %2$s class="header__cart-toggle" alt="%3$s">%4$s</%1$s>',
+		'<%1$s id="header__cart-toggle"%2$sclass="header__cart-toggle" alt="%3$s">%4$s</%1$s>',
 		esc_html( $element_wrap ),
-		( 'a' === $element_wrap ) ? 'href="' . esc_url( $cart_url ) . '"' : '',
+		( 'a' === $element_wrap ) ? ' href="' . esc_url( $cart_url ) . '" ' : ' ',
 		esc_attr( $cart_alt_text ),
 		$cart_text // @codingStandardsIgnoreLine
 	);
