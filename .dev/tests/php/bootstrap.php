@@ -76,6 +76,26 @@ function _register_theme() {
 }
 tests_add_filter( 'muplugins_loaded', '_register_theme' );
 
+/**
+ * Install WooCommerce
+ */
+tests_add_filter( 'setup_theme', function() {
+	include '/tmp/wordpress/wp-content/plugins/woocommerce/woocommerce.php';
+	// Clean existing install first.
+	define( 'WP_UNINSTALL_PLUGIN', true );
+	define( 'WC_REMOVE_ALL_DATA', true );
+	include '/tmp/wordpress/wp-content/plugins/woocommerce/uninstall.php';
+	WC_Install::install();
+	// Reload capabilities after install, see https://core.trac.wordpress.org/ticket/28374
+	if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+		$GLOBALS['wp_roles']->reinit();
+	} else {
+		$GLOBALS['wp_roles'] = null; // WPCS: override ok.
+		wp_roles();
+	}
+	echo esc_html( 'Installing WooCommerce...' . PHP_EOL );
+} );
+
 
 // Start up the WP testing environment.
 require $_tests_dir . '/includes/bootstrap.php';
