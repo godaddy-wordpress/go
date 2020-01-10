@@ -1044,6 +1044,8 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		$this->assertEmpty( $page_title );
 
+		wp_reset_query();
+
 	}
 
 	/**
