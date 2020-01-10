@@ -12,7 +12,6 @@ body {
 }
 
 p {
-	font-family: var(--theme-body--font);
 	font-size: var(--theme-body--font-size);
 	line-height: var(--theme-body--leading);
 }
