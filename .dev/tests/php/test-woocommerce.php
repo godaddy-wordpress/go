@@ -546,9 +546,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$product_id = $this->create_simple_product();
 
-		$this->woo_cart->add_to_cart( $product_id, 3 );
+		$this->woo->cart->add_to_cart( $product_id, 3 );
 
-		$this->woo_cart->calculate_totals();
+		$this->woo->cart->calculate_totals();
 
 		$expected_fragments = [
 			'.class'                 => 'Text',
