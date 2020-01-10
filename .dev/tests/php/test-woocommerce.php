@@ -598,7 +598,6 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 	/**
 	 * Test that the Cart link is visible when the cart contents count is greater than zero
-	 * @group Test
 	 */
 	function test_disable_cart_cart_contents_greater_than_zero() {
 

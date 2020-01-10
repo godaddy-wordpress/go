@@ -16,11 +16,13 @@ use function Go\load_inline_svg;
  */
 function setup() {
 
+	// @codeCoverageIgnoreStart
 	if ( ! class_exists( 'WooCommerce' ) ) {
 
 		return;
 
 	}
+	// @codeCoverageIgnoreEnd
 
 	$n = function( $function ) {
 		return __NAMESPACE__ . "\\$function";

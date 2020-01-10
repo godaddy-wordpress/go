@@ -94,9 +94,6 @@ tests_add_filter( 'setup_theme', function() {
 		wp_roles();
 	}
 	echo esc_html( 'Installing WooCommerce...' . PHP_EOL );
-	// global $wp_rewrite;
-	// $wp_rewrite->set_permalink_structure('/%postname%/');
-	// $wp_rewrite->flush_rules();
 } );
 
 
