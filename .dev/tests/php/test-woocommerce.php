@@ -57,11 +57,6 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		if ( ! get_option( 'woocommerce_shop_page_id' ) ) {
 
-			// install WC
-			WC_Install::install();
-			$GLOBALS['wp_roles'] = null;
-			wp_roles();
-
 			$shop_page_id = $this->factory->post->create(
 				[
 					'post_title'   => 'Shop Page',
@@ -389,6 +384,8 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->assertNull( Go\WooCommerce\woocommerce_cart_link() );
 
+		remove_filter( 'go_wc_show_cart_menu', '__return_false' );
+
 	}
 
 	/**
@@ -412,6 +409,8 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		add_filter( 'go_wc_use_slideout_cart', '__return_false' );
 
 		$this->assertNull( Go\WooCommerce\woocommerce_slideout_cart() );
+
+		remove_filter( 'go_wc_use_slideout_cart', '__return_false' );
 
 	}
 
@@ -445,13 +444,15 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		add_filter( 'go_wc_use_slideout_cart', '__return_false' );
 
-		add_filter( 'go_menu_cart_url', function() {
-			return 'https://www.google.com';
-		} );
+		add_filter( 'go_menu_cart_url', [ $this, 'set_google_url' ] );
 
 		$this->expectOutputRegex( '/<a id="header__cart-toggle" href="https:\/\/www.google.com" class="header__cart-toggle" alt="View cart"><svg role="img" viewBox="0 0 24 24" height="24" width="24" xmlns="http:\/\/www.w3.org\/2000\/svg">/' );
 
 		Go\WooCommerce\woocommerce_cart_link();
+
+		remove_filter( 'go_wc_use_slideout_cart', '__return_false' );
+
+		remove_filter( 'go_menu_cart_url', [ $this, 'set_google_url' ] );
 
 	}
 
@@ -464,13 +465,15 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		add_filter( 'go_wc_use_slideout_cart', '__return_false' );
 
-		add_filter( 'go_menu_cart_alt', function() {
-			return 'Alternate Text';
-		} );
+		add_filter( 'go_menu_cart_alt', [ $this, 'custom_alt_text' ] );
 
 		$this->expectOutputRegex( '/<a id="header__cart-toggle" href="http:\/\/example.org" class="header__cart-toggle" alt="Alternate Text">/' );
 
 		Go\WooCommerce\woocommerce_cart_link();
+
+		remove_filter( 'go_wc_use_slideout_cart', '__return_false' );
+
+		remove_filter( 'go_menu_cart_alt', [ $this, 'custom_alt_text' ] );
 
 	}
 
@@ -483,13 +486,15 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		add_filter( 'go_wc_use_slideout_cart', '__return_false' );
 
-		add_filter( 'go_menu_cart_text', function() {
-			return 'Custom Cart Text';
-		} );
+		add_filter( 'go_menu_cart_text', [ $this, 'custom_cart_text' ] );
 
 		$this->expectOutputRegex( '/<a id="header__cart-toggle" href="http:\/\/example.org" class="header__cart-toggle" alt="View cart">Custom Cart Text<\/a>/' );
 
 		Go\WooCommerce\woocommerce_cart_link();
+
+		remove_filter( 'go_wc_use_slideout_cart', '__return_false' );
+
+		remove_filter( 'go_menu_cart_text', [ $this, 'custom_cart_text' ] );
 
 	}
 
@@ -518,6 +523,8 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		add_filter( 'go_wc_show_cart_menu', '__return_false' );
 
 		$this->assertEquals( [], Go\WooCommerce\go_cart_fragments( [] ) );
+
+		remove_filter( 'go_wc_show_cart_menu', '__return_false' );
 
 	}
 
@@ -570,8 +577,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 			include WP_PLUGIN_DIR . '/woocommerce/includes/wc-page-functions.php';
 
 		}
-
-		$this->expectOutputRegex( '/<a href="http:\/\/example.org"><svg viewBox="0 0 24 30">/' );
+		$this->expectOutputRegex( '/<p class="cart-empty">Your cart is currently empty.<\/p>/' );
 
 		Go\WooCommerce\empty_cart_message( [] );
 
@@ -592,8 +598,9 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 	/**
 	 * Test that the Cart link is visible when the cart contents count is greater than zero
+	 * @group Test
 	 */
-	function test_disable_cart_cart_contents_great_than_zero() {
+	function test_disable_cart_cart_contents_greater_than_zero() {
 
 		$this->initialize_woo_session();
 
@@ -756,7 +763,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
-		$this->expectOutputRegex( sprintf( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb">Shop Page<\/nav><a href="http:\/\/example\.org\/\?page_id=%s" class="back-to-shop">/', get_option( 'woocommerce_shop_page_id' ) ) );
+		$this->expectOutputRegex( sprintf( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb">Shop Page<\/nav><a href="http:\/\/example\.org\/\?page_id=%s" class="back-to-shop">/', get_option( 'woocommerce_shop_page_id' ), get_option( 'woocommerce_shop_page_id' ) ) );
 
 		Go\WooCommerce\single_product_header();
 
@@ -855,15 +862,13 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$wp_query->post                    = $product_post_object;
 		$post                              = $product_post_object;
 
-		add_filter( 'go_back_to_shop_url', function() {
-
-			return 'https://www.google.com';
-
-		} );
+		add_filter( 'go_back_to_shop_url', [ $this, 'set_google_url' ] );
 
 		$this->expectOutputRegex( '/<a href="https:\/\/www.google.com" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/' );
 
 		Go\WooCommerce\single_product_back_to_shop();
+
+		remove_filter( 'go_back_to_shop_url', [ $this, 'set_google_url' ] );
 
 	}
 
@@ -992,6 +997,33 @@ class Test_WooCommerce extends WP_UnitTestCase {
 	function test_should_use_woo_slideout_cart_cart_page() {
 
 		$this->assertFalse( Go\WooCommerce\should_use_woo_slideout_cart() );
+
+	}
+
+	/**
+	 * Return a test url for Google.com
+	 */
+	public function set_google_url() {
+
+		return 'https://www.google.com';
+
+	}
+
+	/**
+	 * Return custom alt text
+	 */
+	public function custom_alt_text() {
+
+		return 'Alternate Text';
+
+	}
+
+	/**
+	 * Return custom cart text
+	 */
+	public function custom_cart_text() {
+
+		return 'Custom Cart Text';
 
 	}
 }
