@@ -921,6 +921,17 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the rename_panels renames the colors panel properly
+	 */
+	function test_rename_panels_colors() {
+
+		Go\Customizer\rename_panels( $GLOBALS['wp_customize'] );
+
+		$this->assertEquals( 'Site Design', $GLOBALS['wp_customize']->get_section( 'colors' )->title );
+
+	}
+
+	/**
 	 * Test sanitizing a radio option returns as expected when an invalid option is specified
 	 */
 	function test_sanitize_radio_invalid_choice() {

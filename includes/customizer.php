@@ -28,6 +28,7 @@ function setup() {
 	add_action( 'customize_register', $n( 'register_header_controls' ) );
 	add_action( 'customize_register', $n( 'register_footer_controls' ) );
 	add_action( 'customize_register', $n( 'register_social_controls' ) );
+	add_action( 'customize_register', $n( 'rename_panels' ) );
 	add_action( 'customize_preview_init', $n( 'customize_preview_init' ) );
 	add_action( 'customize_controls_enqueue_scripts', $n( 'customize_preview_init' ) );
 	add_action( 'customize_preview_init', $n( 'enqueue_controls_assets' ) );
@@ -724,6 +725,19 @@ function register_social_controls( \WP_Customize_Manager $wp_customize ) {
 			)
 		)
 	);
+}
+
+/**
+ * Rename customizer panels.
+ *
+ * @param \WP_Customize_Manager $wp_customize The customize manager object.
+ *
+ * @return void
+ */
+function rename_panels( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->get_section( 'colors' )->title = __( 'Site Design', 'go' );
+
 }
 
 /**
