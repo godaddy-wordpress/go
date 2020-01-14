@@ -14,3 +14,15 @@ do
 	echo "Grouping like media queries in $f..."
 	./node_modules/.bin/mqpacker $f $f
 done
+
+# Generate a -rtl file
+for f in $(find ./dist/css -type f -name '*.css')
+do
+	echo "Generating RTL file for: $f"
+	if [[ $f == *".min.css"* ]]; then
+		OutputFilename=${f/.min.css/-rtl.min.css}
+	else
+		OutputFilename=${f/.css/-rtl.css}
+	fi
+	./node_modules/.bin/rtlcss $f $OutputFilename
+done
