@@ -1,5 +1,5 @@
 workflows:
-  version: 2
+  version: 2.1
   main:
     jobs:
       # Support PHP Versions
@@ -33,11 +33,11 @@ workflows:
             - a11y-tests
           filters:
             tags:
-              only: /.*/
+              only: /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*)?(\+[0-9-]+(\.[0-9]+)*)?/ # Run on semantic version tags only
             branches:
               ignore: /.*/
 
-version: 2
+version: 2.1
 jobs:
   php56-phpcs:
     docker:
