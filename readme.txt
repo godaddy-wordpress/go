@@ -57,9 +57,9 @@ TGM-Plugin-Activation, Copyright 2011, Thomas Griffin
 License: GPLv2 or later
 Source: http://tgmpluginactivation.com
 
-Screenshot image #1, Copyright Negative Space
-License: CC0 1.0 Universal (CC0 1.0) (https://creativecommons.org/publicdomain/zero/1.0)
-Source: https://stocksnap.io/photo/RCFX768X06
+Screenshot image #1, Copyright Helena Lopes
+License: CC0 1.0 Universal (CC0 1.0) (https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://stocksnap.io/photo/8LHTBAZW32
 
 css-vars-ponyfill, Copyright John Hildenbiddle ([@jhildenbiddle](https://github.com/jhildenbiddle))
 License: MIT
@@ -69,9 +69,9 @@ Lodash, Copyright [Lodash Core Team](https://github.com/orgs/lodash/people)
 License: MIT
 Source: https://lodash.com
 
-TGM-Plugin-Activation, Copyright 2011, Thomas Griffin
-License: GPLv2 or later
-Source: http://tgmpluginactivation.com
+normalize.css, Copyright Nicolas Gallagher ([@necolas](https://github.com/necolas))
+License: MIT
+Source: https://github.com/necolas/normalize.css
 
 == Changelog ==
 
