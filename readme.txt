@@ -58,8 +58,20 @@ License: GPLv2 or later
 Source: http://tgmpluginactivation.com
 
 Screenshot image #1, Copyright Negative Space
-License: CC0 1.0 Universal (CC0 1.0) (https://creativecommons.org/publicdomain/zero/1.0/)
+License: CC0 1.0 Universal (CC0 1.0) (https://creativecommons.org/publicdomain/zero/1.0)
 Source: https://stocksnap.io/photo/RCFX768X06
+
+css-vars-ponyfill, Copyright John Hildenbiddle ([@jhildenbiddle](https://github.com/jhildenbiddle))
+License: MIT
+Source: https://github.com/jhildenbiddle/css-vars-ponyfill
+
+Lodash, Copyright [Lodash Core Team](https://github.com/orgs/lodash/people)
+License: MIT
+Source: https://lodash.com
+
+TGM-Plugin-Activation, Copyright 2011, Thomas Griffin
+License: GPLv2 or later
+Source: http://tgmpluginactivation.com
 
 == Changelog ==
 
