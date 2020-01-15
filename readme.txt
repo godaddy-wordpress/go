@@ -57,9 +57,9 @@ TGM-Plugin-Activation, Copyright 2011, Thomas Griffin
 License: GPLv2 or later
 Source: http://tgmpluginactivation.com
 
-Screenshot image #1, Copyright Negative Space
+Screenshot image #1, Copyright Helena Lopes
 License: CC0 1.0 Universal (CC0 1.0) (https://creativecommons.org/publicdomain/zero/1.0/)
-Source: https://stocksnap.io/photo/RCFX768X06
+Source: https://stocksnap.io/photo/8LHTBAZW32
 
 == Changelog ==
 
