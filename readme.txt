@@ -111,8 +111,12 @@ List of bespoke icons:
 
 = 1.2.2 =
 * Set `is_automatic` to false in `includes/tgm.php`.
+* Removed excess, unused, files.
+* Removed `font-family` from global `p` element. @props [Danny Cooper](https://github.com/DannyCooper)
+* Renamed 'Colors' panel title in the customizer to 'Site Design'.
 * Remove `esc_attr()` from `searchform.php`.
 * Swap `esc_attr_x()` for `esc_html_x()` in `searchform.php`.
+* Update theme `screenshot.png` and add attribution for image used in screenshot.
 * Add attribution for node dependencies in `readme.txt`.
 * Refactor `primary-menu.js` and `search-toggle.js` to lock tab focus to the main menu and the search form, respectively.
 
