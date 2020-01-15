@@ -51,10 +51,6 @@
 	box-shadow: inset 0 -3px 0 0 rgb(66, 66, 66);
 }
 
-.post-tags .meta-icon {
-	top: 2px;
-}
-
 .woocommerce .product .onsale,
 .woocommerce ul.products li.product .onsale {
 	border-radius: 0;
