@@ -68,6 +68,36 @@ const searchToggle = () => {
 			);
 		}
 	} );
+
+	document.addEventListener( 'keydown', lockSearchFocus );
 };
+
+/**
+ * Lock tabbing to the search form only.
+ */
+function lockSearchFocus( evt ) {
+	var e = event || evt; // for cross-browser compatibility
+	var charCode = e.which || e.keyCode;
+
+	if ( charCode !== 9 || ! jQuery( 'div.search-modal' ).hasClass( 'active' ) ) {
+		return;
+	}
+
+	var $element       = jQuery( ':focus' ),
+	    isShiftTab     = ( event.shiftKey && event.keyCode == 9 );
+
+	if ( $element.hasClass( 'search-form__input' ) && isShiftTab ) {
+		setTimeout( function() {
+			jQuery( '.search-input__button' ).focus();
+		}, 10 );
+	}
+
+	if ( $element.hasClass( 'search-input__button' ) && ! isShiftTab ) {
+		setTimeout( function() {
+			jQuery( 'input.search-form__input' ).focus();
+		}, 10 );
+	}
+};
+
 
 export default searchToggle;

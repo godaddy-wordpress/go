@@ -53,13 +53,59 @@ GNU General Public License for more details.
 
 Go bundles the following third-party resources:
 
+Screenshot image #1, Copyright Helena Lopes
+License: CC0 1.0 Universal (CC0 1.0) (https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://stocksnap.io/photo/8LHTBAZW32
+
 TGM-Plugin-Activation, Copyright 2011, Thomas Griffin
 License: GPLv2 or later
 Source: http://tgmpluginactivation.com
 
-Screenshot image #1, Copyright Helena Lopes
-License: CC0 1.0 Universal (CC0 1.0) (https://creativecommons.org/publicdomain/zero/1.0/)
-Source: https://stocksnap.io/photo/8LHTBAZW32
+CSS-vars-ponyfill, Copyright John Hildenbiddle ([@jhildenbiddle](https://github.com/jhildenbiddle))
+License: MIT
+Source: https://github.com/jhildenbiddle/css-vars-ponyfill
+
+Lodash, Copyright [Lodash Core Team](https://github.com/orgs/lodash/people)
+License: MIT
+Source: https://lodash.com
+
+Normalize.css, Copyright Nicolas Gallagher ([@necolas](https://github.com/necolas))
+License: MIT
+Source: https://github.com/necolas/normalize.css
+
+Bespoke Icons Created For Go
+License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/zero/1.0/
+List of bespoke icons:
+- Arrow icons
+- Arrow Paginator icon
+- Calendar icon
+- Carousel arrow icons
+- Cart icon
+- Checkbox checked icon
+- Checkbox icon
+- Cross-stich border icon
+- Empty Cart icon
+- Error icon
+- Header and footer icons
+- Menu icon
+- Search icons
+- Shopping Bag icon
+- Tags icon
+
+Social Icons
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Source: WordPress Social Link Block (See wp-includes\blocks\social-link.php)
+
+Feather Icons
+Copyright (c) 2013-2017 Cole Bemis
+License: MIT License, https://opensource.org/licenses/MIT
+Source: https://feathericons.com
+List of bespoke icons:
+- Author icon
+- Bookmark icon
+- Categories icon
+- Comments icon
 
 == Changelog ==
 
