@@ -318,7 +318,7 @@ function scripts() {
 	wp_enqueue_script(
 		'go-frontend',
 		get_theme_file_uri( "dist/js/frontend{$suffix}.js" ),
-		array(),
+		array( 'jquery' ),
 		GO_VERSION,
 		true
 	);
