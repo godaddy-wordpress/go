@@ -109,6 +109,9 @@ List of bespoke icons:
 
 == Changelog ==
 
+= 1.2.3 =
+* Add jQuery as a dependency of `frontend.js`.
+
 = 1.2.2 =
 * Set `is_automatic` to false in `includes/tgm.php`.
 * Removed excess, unused, files.
