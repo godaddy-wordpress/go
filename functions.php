@@ -8,7 +8,7 @@
 /**
  * Theme constants.
  */
-define( 'GO_VERSION', '1.2.2' );
+define( 'GO_VERSION', '1.2.3' );
 
 /**
  * Core setup, hooks, and filters.
