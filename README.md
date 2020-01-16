@@ -60,8 +60,6 @@
 
 [Click here to download](https://github.com/godaddy-wordpress/go/releases/latest/download/go.zip) the latest release package of Go for WordPress.
 
-**NOTE:** Go is currently [awaiting approval](https://themes.trac.wordpress.org/ticket/75007) on WordPress.org. Until then, early adopters of the theme are required to keep it up-to-date manually.
-
 ## Showcase
 
 A theme is only as good as the websites it creates.
