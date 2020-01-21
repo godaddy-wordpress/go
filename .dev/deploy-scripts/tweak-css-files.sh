@@ -18,6 +18,10 @@ done
 # Generate a -rtl file
 for f in $(find ./dist/css -type f -name '*.css')
 do
+	# Do not -rtl an -rtl file...
+	if [[ $f == *"-rtl"* ]]; then
+		continue
+	fi
 	echo "Generating RTL file for: $f"
 	if [[ $f == *".min.css"* ]]; then
 		OutputFilename=${f/.min.css/-rtl.min.css}
