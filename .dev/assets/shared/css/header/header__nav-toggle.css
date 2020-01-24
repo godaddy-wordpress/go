@@ -17,7 +17,7 @@
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
-	color: hsl(var(--theme-search-toggle--color));
+	color: var(--theme-search-toggle--color);
 	display: inline-block;
 	line-height: 1;
 	margin-right: -0.75rem;
@@ -48,5 +48,5 @@ body.menu-is-open .nav-toggle-icon:not(.nav-toggle-icon--close) {
 }
 
 body:not(.menu-is-open) .nav-toggle-icon svg {
-	fill: hsl(var(--theme-site-nav--color));
+	fill: var(--theme-site-nav--color);
 }

@@ -165,13 +165,13 @@ body {
 	& .gform_wrapper textarea {
 		background-color: hsl(var(--theme-input--bg));
 		border-color: hsl(var(--theme-input--border-color));
-		color: hsl(var(--theme-input--color));
+		color: var(--theme-input--color);
 		font-size: var(--theme-input--font-size);
 		font-weight: var(--theme-input--weight);
 		padding: var(--theme-button--padding-y);
 
 		&:focus {
-			border-color: hsl(var(--theme-input--border-color-focus));
+			border-color: var(--theme-input--border-color-focus);
 			color: hsl(var(--theme-input--color-focus));
 		}
 	}

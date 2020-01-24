@@ -5,7 +5,7 @@
 
 .pagination .nav-links {
 	align-content: center;
-	color: hsl(var(--theme-site-nav--color));
+	color: var(--theme-site-nav--color);
 	display: flex;
 	flex-wrap: wrap;
 	font-family: var(--theme-site-nav--font);
@@ -36,7 +36,7 @@
 }
 
 .pagination .dots {
-	color: hsl(var(--theme-color-text-secondary));
+	color: var(--theme-color-text-secondary);
 	transform: translateY(-0.3em);
 }
 

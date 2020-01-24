@@ -92,7 +92,7 @@
 		}
 
 		& .price {
-			color: hsl(var(--theme-color-text-secondary));
+			color: var(--theme-color-text-secondary);
 			font-size: var(--theme-text-sm);
 
 			@media (--large) {

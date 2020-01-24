@@ -1,7 +1,7 @@
 /*! Body Typography */
 body {
 	background-color: hsl(var(--theme-color-body-bg, 0, 0%, 100%));
-	color: hsl(var(--theme-color-text));
+	color: var(--theme-color-text);
 	font-family: var(--theme-body--font);
 	font-size: var(--theme-body--font-size);
 	font-weight: var(--theme-body--weight, 400);

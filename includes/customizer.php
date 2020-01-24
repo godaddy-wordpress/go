@@ -786,11 +786,11 @@ function inline_css() {
 		<style>
 			:root {
 				<?php if ( $primary_color ) : ?>
-					--theme-color-primary: <?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>;
+					--theme-color-primary: hsl(<?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $secondary_color ) : ?>
-					--theme-color-secondary: <?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>;
+					--theme-color-secondary: hsl(<?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $tertiary_color ) : ?>
@@ -802,19 +802,19 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $header_background ) : ?>
-					--theme-header--bg: <?php echo esc_attr( $header_background[0] ) . ', ' . esc_attr( $header_background[1] ) . '%, ' . esc_attr( $header_background[2] ) . '%'; ?>;
+					--theme-header--bg: hsl(<?php echo esc_attr( $header_background[0] ) . ', ' . esc_attr( $header_background[1] ) . '%, ' . esc_attr( $header_background[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $header_text_color ) : ?>
-					--theme-site-nav--color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-site-nav--color: hsla(<?php echo esc_attr( "{$header_text_color}, 1" ); ?>);
 					--theme-site-description--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-site-title--color: <?php echo esc_attr( $header_text_color ); ?>;
-					--theme-search-toggle--color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-search-toggle--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 					--theme-search-submit--bg: <?php echo esc_attr( $header_text_color ); ?>;
 				<?php endif; ?>
 
 				<?php if ( $footer_background ) : ?>
-					--theme-footer--bg: <?php echo esc_attr( $footer_background[0] ) . ', ' . esc_attr( $footer_background[1] ) . '%, ' . esc_attr( $footer_background[2] ) . '%'; ?>;
+					--theme-footer--bg: hsl(<?php echo esc_attr( $footer_background[0] ) . ', ' . esc_attr( $footer_background[1] ) . '%, ' . esc_attr( $footer_background[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $footer_heading_color ) : ?>
@@ -822,7 +822,7 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $footer_text_color ) : ?>
-					--theme-footer--color: <?php echo esc_attr( $footer_text_color ); ?>;
+					--theme-footer--color: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
 					--theme-footer-nav--color: <?php echo esc_attr( $footer_text_color ); ?>;
 				<?php endif; ?>
 

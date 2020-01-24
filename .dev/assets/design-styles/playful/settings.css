@@ -59,9 +59,9 @@
 	/*--------------------------------------------------------------
 	## Text Colors
 	--------------------------------------------------------------*/
-	--theme-color-heading: 229, 18%, 24%;
-	--theme-color-text: 230, 9%, 39%;
-	--theme-color-text-secondary: 0, 0%, 52%;
+	--theme-color-heading: hsl(229, 18%, 24%);
+	--theme-color-text: hsl(230, 9%, 39%);
+	--theme-color-text-secondary: hsl(0, 0%, 52%);
 
 
 	/*--------------------------------------------------------------
@@ -149,7 +149,7 @@
 	--theme-input--border-color: var(--theme-color-heading);
 	--theme-input--border-style: solid;
 	--theme-input--border-width: 2px;
-	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style) hsl(var(--theme-input--border-color));
+	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style) var(--theme-input--border-color);
 	--theme-input--color: var(--theme-color-heading);
 	--theme-input--font-size: 1.1rem;
 	--theme-input--padding-x: 1.35rem;
@@ -159,7 +159,7 @@
 	--theme-input--weight: 600;
 
 	/* Input Focus */
-	--theme-input--border-color-focus: var(--theme-color-primary);
+	--theme-input--border-color-focus: hsl(var(--theme-color-primary));
 	--theme-input--color-focus: var(--theme-color-primary);
 
 	/* Errors */
@@ -315,7 +315,7 @@
 	--coblocks-food-drinks-title--style: normal;
 
 	--coblocks-pricing--bg: var(--color-white);
-	--coblocks-pricing--border: 2px solid hsl(var(--theme-color-heading));
+	--coblocks-pricing--border: 2px solid var(--theme-color-heading);
 	--coblocks-pricing--color-price: var(--theme-color-heading);
 	--coblocks-pricing--color-title: var(--theme-color-heading);
 

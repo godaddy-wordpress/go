@@ -2,7 +2,7 @@
 .post__title {
 
 	& a {
-		color: hsl(var(--theme-h1--color, var(--theme-color-heading)));
+		color: var(--theme-h1--color, var(--theme-color-heading));
 		text-decoration: none;
 
 		&:hover {
@@ -17,7 +17,7 @@
 }
 
 .post__meta {
-	color: hsl(var(--theme-meta--color, var(--theme-color-text-secondary)));
+	color: var(--theme-meta--color, var(--theme-color-text-secondary));
 	display: flex;
 	flex-wrap: wrap;
 	font-family: var(--theme-meta--font, var(--theme-site-nav--font));
@@ -55,7 +55,7 @@
 	}
 
 	& a {
-		color: hsl(var(--theme-meta--color, var(--theme-color-text-secondary)));
+		color: var(--theme-meta--color, var(--theme-color-text-secondary));
 		outline-offset: 4px;
 		text-decoration: none;
 

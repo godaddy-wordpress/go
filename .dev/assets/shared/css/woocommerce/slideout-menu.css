@@ -74,7 +74,7 @@ body {
 	}
 
 	& svg {
-		fill: hsla(var(--theme-site-nav--color), 1);
+		fill: var(--theme-site-nav--color);
 		vertical-align: sub;
 		width: 30px;
 	}

@@ -18,7 +18,7 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_filter( 'walker_nav_menu_start_el', $n( 'amp_nav_sub_menu_buttons' ), 10, 2 );
+	add_filter( 'walker_nav_menu_start_el', $n( 'amp_nav_sub_menu_buttons' ), 10, 4 );
 
 }
 
@@ -27,13 +27,16 @@ function setup() {
  *
  * This is only used for AMP since in JS it is added via initMainNavigation() in navigation.js.
  *
- * @param string $item_output   Nav menu item HTML.
- * @param object $item          Nav menu item.
+ * @param string   $item_output The menu item's starting HTML output.
+ * @param WP_Post  $item        Menu item data object.
+ * @param int      $depth       Depth of menu item. Used for padding.
+ * @param stdClass $args        An object of wp_nav_menu() arguments.
+ *
  * @return string Modified nav menu item HTML.
  */
-function amp_nav_sub_menu_buttons( $item_output, $item ) {
+function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 
-	if ( ! is_amp() ) {
+	if ( ! is_amp() || 'primary' !== $args->theme_location ) {
 
 		return $item_output;
 

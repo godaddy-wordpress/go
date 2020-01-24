@@ -102,10 +102,10 @@
 			}
 
 			& a {
-				color: hsl(var(--theme-color-text-secondary));
+				color: var(--theme-color-text-secondary);
 
 				&:hover {
-					color: hsl(var(--theme-color-heading));
+					color: var(--theme-color-heading);
 				}
 			}
 		}
@@ -158,20 +158,20 @@
 .woocommerce div.product p.price,
 .woocommerce div.product span.price,
 .woocommerce ul.products li.product .price ins {
-	color: hsl(var(--theme-color-text-secondary));
+	color: var(--theme-color-text-secondary);
 }
 
 .woocommerce-Price-amount {
-	color: hsl(var(--theme-color-heading));
+	color: var(--theme-color-heading);
 }
 
 /* Details under the single post "Add to Cart" button */
 .product_meta {
-	color: hsl(var(--theme-color-text-secondary));
+	color: var(--theme-color-text-secondary);
 	margin-top: 2.5rem;
 
 	& a {
-		color: hsl(var(--theme-color-text-secondary));
+		color: var(--theme-color-text-secondary);
 	}
 
 	& > span {

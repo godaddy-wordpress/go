@@ -9,16 +9,16 @@
 @import url("woocommerce/product.css");
 
 html {
-	background-color: hsl(var(--theme-header--bg));
+	background-color: var(--theme-header--bg);
 }
 
 body {
-	border: 0.75rem solid hsl(var(--theme-header--bg));
+	border: 0.75rem solid var(--theme-header--bg);
 	border-top: 0;
 }
 
 .site-footer.has-background {
-	border-top: 0.75rem solid hsl(var(--theme-header--bg));
+	border-top: 0.75rem solid var(--theme-header--bg);
 }
 
 .has-footer-3 .site-footer__inner {

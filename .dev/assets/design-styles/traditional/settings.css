@@ -58,7 +58,7 @@
 	/*--------------------------------------------------------------
 	## Text Colors
 	--------------------------------------------------------------*/
-	--theme-color-heading: var(--theme-color-secondary);
+	--theme-color-heading: hsl(var(--theme-color-secondary));
 	--theme-color-text: 218, 12%, 30%;
 	--theme-color-text-secondary: 0, 0%, 43%;
 
@@ -320,7 +320,7 @@
 	--coblocks-food-drinks-title--style: normal;
 
 	--coblocks-pricing--bg: var(--color-white);
-	--coblocks-pricing--border: 2px solid hsl(var(--theme-color-heading));
+	--coblocks-pricing--border: 2px solid var(--theme-color-heading);
 	--coblocks-pricing--color-price: var(--theme-color-heading);
 	--coblocks-pricing--color-title: var(--theme-color-heading);
 
