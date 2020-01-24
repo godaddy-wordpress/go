@@ -126,6 +126,9 @@
 @import url("utilities/colors.css");
 @import url("utilities/padding.css");
 
+/* AMP */
+@import url("amp/amp.css");
+
 .site-content {
 	overflow: hidden;
 }

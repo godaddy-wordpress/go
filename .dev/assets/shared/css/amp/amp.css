@@ -1,0 +1,16 @@
+body[class*="amp"] .primary-menu .menu-item-has-children:hover > .sub-menu {
+	display: none;
+}
+
+body[class*="amp"] .primary-menu .menu-item-has-children:hover button.dropdown-toggle.toggled-on + ul,
+body[class*="amp"] .primary-menu button.toggled-on + ul {
+	display: block;
+}
+
+body[class*="amp"] .primary-menu button.dropdown-toggle {
+	background: transparent;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
