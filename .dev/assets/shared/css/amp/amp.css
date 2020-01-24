@@ -14,3 +14,11 @@ body[class*="amp"] .primary-menu button.dropdown-toggle {
 	top: 0;
 	width: 100%;
 }
+
+body[class*="amp"] .header__navigation a {
+	color: hsla(var(--theme-site-nav--color), 1);
+}
+
+.primary-menu .sub-menu {
+	background-color: hsl(var(--theme-submenu--bg, var(--theme-color-heading)));
+}
