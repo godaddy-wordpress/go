@@ -14,7 +14,7 @@
 	}
 }
 
-body.rtl .wp-block-gallery .blocks-gallery-item figcaption {
+body.rtl .wp-block-gallery {
 
 	& .blocks-gallery-item figcaption {
 		text-align: var(--theme-caption--alignment-opposite);
