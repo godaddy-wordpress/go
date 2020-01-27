@@ -1,6 +1,7 @@
 /*! Header */
 .header {
 	background-color: hsl(var(--theme-header--bg));
+	z-index: 2;
 
 	& .u-informational {
 		display: inline-block;
