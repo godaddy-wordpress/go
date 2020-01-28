@@ -14,6 +14,13 @@
 	}
 }
 
+body.rtl .wp-block-gallery {
+
+	& .blocks-gallery-item figcaption {
+		text-align: var(--theme-caption--alignment-opposite);
+	}
+}
+
 /*! Gallery */
 .content-area .wp-block-gallery {
 	margin-bottom: calc(var(--vertical-rhythm--med) - 35px) !important;

@@ -17,3 +17,10 @@
 		text-align: var(--theme-caption--alignment);
 	}
 }
+
+body.rtl .wp-block-coblocks-gallery-masonry {
+
+	& figcaption {
+		text-align: var(--theme-caption--alignment-opposite);
+	}
+}
