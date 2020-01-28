@@ -4,6 +4,7 @@
 - name: First-time Contributor
   color: "704000"
   description: "Pull request opened by a first-time contributor"
+
 - name: "[Type] a11y"
   color: "646970"
   description: "Changes that impact accessibility"
@@ -28,6 +29,10 @@
 - name: "[Type] Code Quality"
   color: "2271b1"
   description: "Issues related to improving the quality of our code"
+- name: "[Type] Documention"
+  color: "2271b1"
+  description: "Issues related to improving documention"
+
 - name: "[Status] In Progress"
   color: "017e65"
   description: "Tracking issues with work in progress"
@@ -46,6 +51,7 @@
 - name: "[Status] Waiting"
   color: "017e65"
   description: "Issues/PRs that are on hold"
+
 - name: "[Priority] Low"
   color: "008a20"
   description: "This issue/pull request is not immediate"
