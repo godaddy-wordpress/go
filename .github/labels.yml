@@ -36,9 +36,10 @@
 
 - name: "[Type] a11y"
   color: "008a20"
-  description: "Changes that impact accessibility"
+  description: "Issues/PRs related to accessibility"
 - name: "[Type] i18n"
   color: "907300"
+  description: "Issues/PRs related to localization/translations"
 - name: "[Type] Enhancement"
   color: "007e65"
   description: "Something new that adds functionality"
