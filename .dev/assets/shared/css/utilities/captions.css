@@ -30,3 +30,16 @@
 		}
 	}
 }
+
+body.rtl .wp-block-image,
+body.rtl .wp-block-embed,
+body.rtl .wp-block-audio,
+body.rtl .gallery {
+
+	& figcaption,
+	& .wp-caption,
+	& .wp-caption-text,
+	& .gallery-caption {
+		text-align: var(--theme-caption--alignment-opposite);
+	}
+}

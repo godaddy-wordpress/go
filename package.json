@@ -124,6 +124,8 @@
     "postcss-loader": "^3.0.0",
     "postcss-mixins": "^6.2.1",
     "postcss-preset-env": "^5.3.0",
+    "rtlcss": "^2.4.1",
+    "rtlcss-webpack-plugin": "^4.0.3",
     "strip-css-comments-cli": "^2.0.2",
     "stylelint": "^9.6.0",
     "stylelint-config-wordpress": "^13.1.0",
