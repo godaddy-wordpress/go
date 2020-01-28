@@ -62,3 +62,6 @@
 - name: "[Type] Documention"
   color: "674399"
   description: "Issues related to improving documention"
+- name: "[Type] Woo"
+  color: "7f54b3"
+  description: "Relevant to WooCommerce"
