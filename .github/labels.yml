@@ -59,7 +59,7 @@
   description: "Issues/PRs that should not be merged (yet)"
 
 - name: "[Priority] Low"
-  color: "008a20"
+  color: "907300"
   description: "This issue/pull request is not immediate"
 - name: "[Priority] High"
   color: "b26200"
