@@ -1,8 +1,8 @@
 - name: Good First Issue
-  color: "c8356e"
+  color: "c3c4c7"
   description: "A great place to start if you're new to contributing"
 - name: First-time Contributor
-  color: "704000"
+  color: "c3c4c7"
   description: "Pull request opened by a first-time contributor"
 
 - name: "[Type] a11y"
