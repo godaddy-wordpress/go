@@ -40,7 +40,7 @@
 - name: "[Type] i18n"
   color: "907300"
 - name: "[Type] Enhancement"
-  color: "004e6e"
+  color: "006088"
   description: "Something new that adds functionality"
 - name: "[Type] Bug"
   color: "b32d2e"
