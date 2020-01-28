@@ -52,7 +52,7 @@
   color: "017e65"
   description: "Issues/PRs that are on hold"
 - name: "[Status] Do Not Merge"
-  color: "017e65"
+  color: "000000"
   description: "Issues/PRs that should not be merged (yet)"
 
 - name: "[Priority] Low"
