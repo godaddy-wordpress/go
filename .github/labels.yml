@@ -18,7 +18,7 @@
 - name: "[Type] WP Core Bug"
   color: "006088"
 - name: "[Type] Maintenance"
-  color: "2271b1"
+  color: "c3c4c7"
   description: "Minor file cleanup and organization tasks"
 - name: "[Type] Tooling"
   color: "2271b1"
