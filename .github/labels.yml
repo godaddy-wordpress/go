@@ -12,7 +12,7 @@
   color: "b26200"
   description: "This issue/pull request needs resolving before the next release"
 - name: "[Priority] Critical"
-  color: "d63638"
+  color: "d5322b"
   description: "This issue/pull request needs resolving immediately, likely followed by a hot-fix"
 
 - name: "[Status] In Progress"
@@ -40,7 +40,7 @@
 - name: "[Type] i18n"
   color: "907300"
 - name: "[Type] Enhancement"
-  color: "006088"
+  color: "007e65"
   description: "Something new that adds functionality"
 - name: "[Type] Bug"
   color: "b32d2e"
