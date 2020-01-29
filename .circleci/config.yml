@@ -33,7 +33,7 @@ workflows:
             - a11y-tests
           filters:
             branches:
-              only: /.*/
+              only: master
       - deploy:
           requires:
             - php56-phpcs
