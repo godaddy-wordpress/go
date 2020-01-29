@@ -74,5 +74,5 @@
   color: "7f54b3"
   description: "Relevant to WooCommerce"
 - name: "[Type] Design"
-  color: "008a20"
+  color: "dd2c55"
   description: "Issues/PRs related to improving design"
