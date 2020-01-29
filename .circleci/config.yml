@@ -284,12 +284,12 @@ jobs:
           name: Build the Go Theme
           command: |
             npm run build
-            GO_VERSION_LINE=$(awk '/\* Version:/{ print NR; exit }' build/go/style.css)
-            GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
-            sed -i -e "${GO_VERSION_LINE}s/$/-${GO_COMMIT_HASH}/" build/go/style.css
             mkdir -p go
             mkdir -p /tmp/artifacts
             rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
+            GO_VERSION_LINE=$(awk '/\* Version:/{ print NR; exit }' ./go/style.css)
+            GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
+            sed -i -e "${GO_VERSION_LINE}s/$/-${GO_COMMIT_HASH}/" ./go/style.css
             zip -r /tmp/artifacts/go-canary.zip ./go
       - deploy:
           name: Create a canary release on GitHub
