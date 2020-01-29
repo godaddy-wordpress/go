@@ -33,6 +33,9 @@
 - name: "[Status] Needs Review"
   color: "005042"
   description: "Tracking pull requests that need another set of eyes"
+- name: "[Status] Ready to Merge"
+  color: "005042"
+  description: "Tracking pull requests that are 100% approved and passing, ready to merge into master"
 
 - name: "[Type] a11y"
   color: "008a20"
