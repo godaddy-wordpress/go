@@ -25,6 +25,12 @@ workflows:
             tags:
               only: /^(?!canary).*$/
       - canary:
+          requires:
+            - php56-phpcs
+            - php73-phpcs
+            - unit-tests
+            - theme-check
+            - a11y-tests
           filters:
             branches:
               only: /.*/
