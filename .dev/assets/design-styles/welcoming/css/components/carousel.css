@@ -1,14 +1,21 @@
 /*! Welcoming: CoBlocks Carousel */
-.wp-block-coblocks-gallery-carousel .coblocks-gallery--item {
-	transition: opacity 0.75s;
+.wp-block-coblocks-gallery-carousel {
 
-	&:not(.is-selected) {
-		opacity: 0.25;
+	& .flickity-button::after {
+		background: hsl(var(--theme-button--bg));
 	}
-}
 
-.wp-block-coblocks-gallery-carousel .coblocks-gallery--figure::before {
-	display: none;
+	& .coblocks-gallery--item {
+		transition: opacity 0.75s;
+
+		&:not(.is-selected) {
+			opacity: 0.25;
+		}
+	}
+
+	& .coblocks-gallery--figure::before {
+		display: none;
+	}
 }
 
 .flickity-button {

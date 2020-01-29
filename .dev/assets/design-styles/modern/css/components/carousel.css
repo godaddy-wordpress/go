@@ -85,3 +85,18 @@
 		z-index: -1;
 	}
 }
+
+.wp-block-coblocks-gallery-carousel {
+
+	& .flickity-button {
+
+		&.previous::after,
+		&.next::after {
+			-webkit-mask-image: unset;
+		}
+
+		&::after {
+			background-color: transparent;
+		}
+	}
+}

@@ -8,8 +8,23 @@
 	}
 }
 
-.wp-block-coblocks-gallery-carousel .coblocks-gallery--figure::before {
-	display: none;
+.wp-block-coblocks-gallery-carousel {
+
+	& .flickity-button {
+
+		&.previous::after,
+		&.next::after {
+			-webkit-mask-image: unset;
+		}
+
+		&::after {
+			background-color: transparent;
+		}
+	}
+
+	& .coblocks-gallery--figure::before {
+		display: none;
+	}
 }
 
 .flickity-button {
