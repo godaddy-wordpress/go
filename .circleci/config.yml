@@ -27,7 +27,7 @@ workflows:
       - canary:
           filters:
             branches:
-              only: canary
+              only: /.*/
       - deploy:
           requires:
             - php56-phpcs
