@@ -1,5 +1,5 @@
 - name: Good First Issue
-  color: "c3c4c7"
+  color: "262daf"
   description: "A great place to start if you're new to contributing"
 - name: First-time Contributor
   color: "c3c4c7"
@@ -12,7 +12,7 @@
   color: "b26200"
   description: "This issue/pull request needs resolving before the next release"
 - name: "[Priority] Critical"
-  color: "d5322b"
+  color: "d43021"
   description: "This issue/pull request needs resolving immediately, likely followed by a hot-fix"
 
 - name: "[Status] In Progress"
@@ -47,7 +47,7 @@
   color: "007e65"
   description: "Something new that adds functionality"
 - name: "[Type] Bug"
-  color: "b32d2e"
+  color: "d43021"
   description: "Something that is not working as expected"
 - name: "[Type] WP Core Bug"
   color: "006088"
