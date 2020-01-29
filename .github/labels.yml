@@ -63,7 +63,7 @@
   description: "Relevant to our test suite; i.e. Cypress, Jest, PHPUnit, etc"
 - name: "[Type] Needs Tests"
   color: "646970"
-  description: "Relevant to our test suite; i.e. Cypress, Jest, PHPUnit, etc"
+  description: "This issue/pull request requires proper tests implemented"
 - name: "[Type] Code Quality"
   color: "c9356e"
   description: "Relevant to improving the quality of our code"
