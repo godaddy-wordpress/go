@@ -7,23 +7,27 @@ workflows:
       - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
           filters:
             tags:
-              only: /.*/
+              only: /^(?!canary).*$/
       - php73-phpcs: # Will be deprecated on 30 Nov 2020
           filters:
             tags:
-              only: /.*/
+              only: /^(?!canary).*$/
       - unit-tests:
           filters:
             tags:
-              only: /.*/
+              only: /^(?!canary).*$/
       - theme-check:
           filters:
             tags:
-              only: /.*/
+              only: /^(?!canary).*$/
       - a11y-tests:
           filters:
             tags:
-              only: /.*/
+              only: /^(?!canary).*$/
+      - canary:
+          filters:
+            branches:
+              only: canary
       - deploy:
           requires:
             - php56-phpcs
@@ -236,6 +240,54 @@ jobs:
             if [[ $RESULTS != *"All accessibility tests have passed"* ]]; then
               exit 1
             fi
+
+  canary:
+    docker:
+      - image: circleci/golang:latest-node-browsers-legacy
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - run:
+          name: Install Grunt.js
+          command: sudo npm install -g grunt-cli
+      - run:
+          name: Install PHP
+          command: sudo apt-get install php libapache2-mod-php php-mbstring
+      - run:
+          name: Install gettext
+          command: sudo apt-get install gettext
+      - run:
+          name: Install WPCLI
+          command: |
+            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+            chmod +x wp-cli.phar
+            sudo mv wp-cli.phar /usr/local/bin/wp
+      - run:
+          name: Install ghr
+          command: |
+            go get -u github.com/tcnksm/ghr
+      - run:
+          name: Install rsync
+          command: sudo apt install rsync
+      - run:
+          name: Install node packages
+          command: npm install
+      - run:
+          name: Build the Go Theme
+          command: |
+            npm run build
+            GO_VERSION_LINE=$(awk '/\* Version:/{ print NR; exit }' build/go/style.css)
+            GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
+            sed -i -e "${GO_VERSION_LINE}s/$/-${GO_COMMIT_HASH}/" build/go/style.css
+            mkdir -p go
+            mkdir -p /tmp/artifacts
+            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
+            zip -r /tmp/artifacts/go-canary.zip ./go
+      - deploy:
+          name: Create a canary release on GitHub
+          command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -b "Latest build of the master branch. This bleeding edge version is for testing purposes only and should not be used in production." -delete -prerelease -replace canary /tmp/artifacts/go-canary.zip
 
   deploy:
     docker:
