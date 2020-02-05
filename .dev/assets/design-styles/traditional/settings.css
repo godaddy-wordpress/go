@@ -40,8 +40,16 @@
 		--vertical-rhythm--med: 2.25rem;
 	}
 
+	@media (--huge) {
+		--vertical-rhythm--lrg: 9rem;
+	}
+
 	/* Site Padding */
 	--theme-block-padding-x: 6vw;
+
+	@media (--huge) {
+		--theme-block-padding-x: 2.5rem;
+	}
 
 	/* Block Padding */
 	--editor-padding: 8vw;
