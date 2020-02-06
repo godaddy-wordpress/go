@@ -24,6 +24,10 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
+      - i18n:
+          filters:
+            branches:
+              only: master
       - canary:
           requires:
             - php56-phpcs
@@ -247,6 +251,57 @@ jobs:
               exit 1
             fi
 
+  i18n:
+    docker:
+      - image: circleci/php:7.3-node-browsers-legacy
+    steps:
+      - checkout
+      - run:
+        name: Disable xdebug PHP extension
+        command: |
+          sudo rm -f /etc/php/*/mods-available/xdebug.ini
+          sudo rm -f /etc/php/*/mods-enabled/xdebug.ini
+          sudo rm -f /etc/php/*/conf.d/*xdebug.ini
+          sudo rm -f /usr/local/etc/php/conf.d/*xdebug.ini
+  		- restore_cache:
+        keys:
+          - npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          - npm-deps-{{ .Branch }}
+      - run:
+          name: Install node dependencies
+          command: |
+            npm install
+      - save_cache:
+        key: npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+        paths:
+          - /home/circleci/project/node_modules
+          - /home/circleci/.npm
+      - run:
+          name: Install composer dependencies
+          command: |
+            composer install
+      - save_cache:
+        key: composer-deps-{{ .Branch }}-{{ checksum "composer.lock" }}
+        paths:
+          - /home/circleci/project/vendor
+      - run:
+          name: Generate the translations
+          command: |
+            npm run makepot
+            npm run json2po
+            npm run pot2json
+      - run:
+          name: Deploy coblocks.pot/coblocks.json back to GitHub
+            command: |
+              export GIT_COMMIT_DESC=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
+              if [[ $GIT_COMMIT_DESC != *"skip i18n"* ]]; then
+                git config --global user.email "plugins@godaddy.com"
+                git config --global user.name "GoDaddy Translator"
+                git add languages/go.json && git add languages/go.pot
+                git commit -m "Update go.pot/go.json files [skip i18n]"
+                git push origin master --quiet
+              fi
+
   canary:
     docker:
       - image: circleci/golang:latest-node-browsers-legacy
@@ -292,6 +347,8 @@ jobs:
             npm run build
             mkdir -p go
             mkdir -p /tmp/artifacts
+            npm run json2po
+            npm run po2mo
             rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
             GO_VERSION_LINE=$(awk '/\* Version:/{ print NR; exit }' ./go/style.css)
             GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
