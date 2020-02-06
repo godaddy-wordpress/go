@@ -1,15 +1,14 @@
-# Copyright (C) 2020 GoDaddy
-# This file is distributed under the GPL-2.0.
+# Copyright (c) 2019 GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
 "Project-Id-Version: Go 1.2.3\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/go\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: https://github.com/godaddy-wordpress/go/issues\n"
+"Last-Translator: plugins@godaddy.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-02-05T16:48:03+00:00\n"
+"POT-Creation-Date: 2020-02-06T16:58:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -36,8 +35,6 @@ msgstr ""
 
 #: .dev/tests/php/test-template-tags.php:835
 #: .dev/tests/php/test-template-tags.php:865
-#: build/go/includes/core.php:85
-#: build/go/includes/customizer.php:429
 #: includes/core.php:85
 #: includes/customizer.php:430
 msgid "Primary"
@@ -45,98 +42,81 @@ msgstr ""
 
 #: .dev/tests/php/test-template-tags.php:836
 #: .dev/tests/php/test-template-tags.php:866
-#: build/go/includes/core.php:86
 #: includes/core.php:86
 msgid "Footer Menu #1"
 msgstr ""
 
 #: .dev/tests/php/test-template-tags.php:837
 #: .dev/tests/php/test-template-tags.php:867
-#: build/go/includes/core.php:87
 #: includes/core.php:87
 msgid "Footer Menu #2"
 msgstr ""
 
 #: .dev/tests/php/test-template-tags.php:838
 #: .dev/tests/php/test-template-tags.php:868
-#: build/go/includes/core.php:88
 #: includes/core.php:88
 msgid "Footer Menu #3"
 msgstr ""
 
 #. translators: %s: The post title.
-#: build/go/comments.php:32
 #: comments.php:32
 msgid "One thought on &ldquo;%s&rdquo;"
 msgstr ""
 
 #. translators: %1$s: The number of comments. %2$s: The post title.
-#: build/go/comments.php:39
 #: comments.php:39
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/go/comments.php:61
 #: comments.php:61
 msgid "Comment navigation"
 msgstr ""
 
-#: build/go/comments.php:62
 #: comments.php:62
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: build/go/comments.php:63
 #: comments.php:63
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: build/go/comments.php:73
 #: comments.php:73
 msgid "Comments are closed."
 msgstr ""
 
-#: build/go/header.php:27
 #: header.php:27
 msgid "Skip to content"
 msgstr ""
 
-#: build/go/header.php:44
 #: header.php:44
 msgid "Horizontal"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:325
 #: includes/classes/class-tgm-plugin-activation.php:325
 msgid "Install Required Plugins"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:326
 #: includes/classes/class-tgm-plugin-activation.php:326
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:328
 #: includes/classes/class-tgm-plugin-activation.php:328
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:330
 #: includes/classes/class-tgm-plugin-activation.php:330
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:331
 #: includes/classes/class-tgm-plugin-activation.php:331
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #. translators: 1: plugin name(s).
-#: build/go/includes/classes/class-tgm-plugin-activation.php:332
 #: includes/classes/class-tgm-plugin-activation.php:332
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
@@ -144,7 +124,6 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: build/go/includes/classes/class-tgm-plugin-activation.php:338
 #: includes/classes/class-tgm-plugin-activation.php:338
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
@@ -152,7 +131,6 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: build/go/includes/classes/class-tgm-plugin-activation.php:344
 #: includes/classes/class-tgm-plugin-activation.php:344
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
@@ -160,7 +138,6 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: build/go/includes/classes/class-tgm-plugin-activation.php:350
 #: includes/classes/class-tgm-plugin-activation.php:350
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
@@ -168,7 +145,6 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: build/go/includes/classes/class-tgm-plugin-activation.php:356
 #: includes/classes/class-tgm-plugin-activation.php:356
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -176,43 +152,34 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: build/go/includes/classes/class-tgm-plugin-activation.php:362
 #: includes/classes/class-tgm-plugin-activation.php:362
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:368
 #: includes/classes/class-tgm-plugin-activation.php:368
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:373
 #: includes/classes/class-tgm-plugin-activation.php:373
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:378
 #: includes/classes/class-tgm-plugin-activation.php:378
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:383
 #: includes/classes/class-tgm-plugin-activation.php:383
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:384
-#: build/go/includes/classes/class-tgm-plugin-activation.php:825
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2531
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3578
 #: includes/classes/class-tgm-plugin-activation.php:384
 #: includes/classes/class-tgm-plugin-activation.php:825
 #: includes/classes/class-tgm-plugin-activation.php:2531
@@ -220,15 +187,11 @@ msgstr ""
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:385
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3157
 #: includes/classes/class-tgm-plugin-activation.php:385
 #: includes/classes/class-tgm-plugin-activation.php:3157
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:386
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2950
 #: includes/classes/class-tgm-plugin-activation.php:386
 #: includes/classes/class-tgm-plugin-activation.php:2950
 msgid "The following plugin was activated successfully:"
@@ -237,67 +200,53 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:388
 #: includes/classes/class-tgm-plugin-activation.php:388
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:390
 #: includes/classes/class-tgm-plugin-activation.php:390
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
 #. translators: 1: dashboard link.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:392
 #: includes/classes/class-tgm-plugin-activation.php:392
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:393
 #: includes/classes/class-tgm-plugin-activation.php:393
 msgid "Dismiss this notice"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:394
 #: includes/classes/class-tgm-plugin-activation.php:394
 msgid "There are one or more required or recommended plugins to install, update or activate."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:395
 #: includes/classes/class-tgm-plugin-activation.php:395
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:520
 #: includes/classes/class-tgm-plugin-activation.php:520
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:521
 #: includes/classes/class-tgm-plugin-activation.php:521
 msgid "Update Required"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:932
 #: includes/classes/class-tgm-plugin-activation.php:932
 msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:932
-#: build/go/includes/classes/class-tgm-plugin-activation.php:935
 #: includes/classes/class-tgm-plugin-activation.php:932
 #: includes/classes/class-tgm-plugin-activation.php:935
 msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:935
 #: includes/classes/class-tgm-plugin-activation.php:935
 msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:1119
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2946
 #: includes/classes/class-tgm-plugin-activation.php:1119
 #: includes/classes/class-tgm-plugin-activation.php:2946
 msgctxt "plugin A *and* plugin B"
@@ -305,75 +254,61 @@ msgid "and"
 msgstr ""
 
 #. translators: %s: version number
-#: build/go/includes/classes/class-tgm-plugin-activation.php:1980
 #: includes/classes/class-tgm-plugin-activation.php:1980
 msgid "TGMPA v%s"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2271
 #: includes/classes/class-tgm-plugin-activation.php:2271
 msgid "Required"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2274
 #: includes/classes/class-tgm-plugin-activation.php:2274
 msgid "Recommended"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2290
 #: includes/classes/class-tgm-plugin-activation.php:2290
 msgid "WordPress Repository"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2293
 #: includes/classes/class-tgm-plugin-activation.php:2293
 msgid "External Source"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2296
 #: includes/classes/class-tgm-plugin-activation.php:2296
 msgid "Pre-Packaged"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2313
 #: includes/classes/class-tgm-plugin-activation.php:2313
 msgid "Not Installed"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2317
 #: includes/classes/class-tgm-plugin-activation.php:2317
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2319
 #: includes/classes/class-tgm-plugin-activation.php:2319
 msgid "Active"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2325
 #: includes/classes/class-tgm-plugin-activation.php:2325
 msgid "Required Update not Available"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2328
 #: includes/classes/class-tgm-plugin-activation.php:2328
 msgid "Requires Update"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2331
 #: includes/classes/class-tgm-plugin-activation.php:2331
 msgid "Update recommended"
 msgstr ""
 
 #. translators: 1: install status, 2: update status
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2340
 #: includes/classes/class-tgm-plugin-activation.php:2340
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
 #. translators: 1: number of plugins.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2386
 #: includes/classes/class-tgm-plugin-activation.php:2386
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
@@ -382,7 +317,6 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2390
 #: includes/classes/class-tgm-plugin-activation.php:2390
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
@@ -390,7 +324,6 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2394
 #: includes/classes/class-tgm-plugin-activation.php:2394
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
@@ -398,754 +331,612 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2398
 #: includes/classes/class-tgm-plugin-activation.php:2398
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2480
 #: includes/classes/class-tgm-plugin-activation.php:2480
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2488
 #: includes/classes/class-tgm-plugin-activation.php:2488
 msgid "Installed version:"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2496
 #: includes/classes/class-tgm-plugin-activation.php:2496
 msgid "Minimum required version:"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2508
 #: includes/classes/class-tgm-plugin-activation.php:2508
 msgid "Available version:"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2531
 #: includes/classes/class-tgm-plugin-activation.php:2531
 msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2545
 #: includes/classes/class-tgm-plugin-activation.php:2545
 msgid "Plugin"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2546
 #: includes/classes/class-tgm-plugin-activation.php:2546
 msgid "Source"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2547
 #: includes/classes/class-tgm-plugin-activation.php:2547
 msgid "Type"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2551
 #: includes/classes/class-tgm-plugin-activation.php:2551
 msgid "Version"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2552
 #: includes/classes/class-tgm-plugin-activation.php:2552
 msgid "Status"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2601
 #: includes/classes/class-tgm-plugin-activation.php:2601
 msgid "Install %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2606
 #: includes/classes/class-tgm-plugin-activation.php:2606
 msgid "Update %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2612
 #: includes/classes/class-tgm-plugin-activation.php:2612
 msgid "Activate %2$s"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2682
 #: includes/classes/class-tgm-plugin-activation.php:2682
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2715
 #: includes/classes/class-tgm-plugin-activation.php:2715
 msgid "Install"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2721
 #: includes/classes/class-tgm-plugin-activation.php:2721
 msgid "Update"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2724
 #: includes/classes/class-tgm-plugin-activation.php:2724
 msgid "Activate"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2755
 #: includes/classes/class-tgm-plugin-activation.php:2755
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2757
 #: includes/classes/class-tgm-plugin-activation.php:2757
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2798
 #: includes/classes/class-tgm-plugin-activation.php:2798
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2800
 #: includes/classes/class-tgm-plugin-activation.php:2800
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2906
 #: includes/classes/class-tgm-plugin-activation.php:2906
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:2932
 #: includes/classes/class-tgm-plugin-activation.php:2932
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3156
 #: includes/classes/class-tgm-plugin-activation.php:3156
 msgid "Plugin activation failed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3496
 #: includes/classes/class-tgm-plugin-activation.php:3496
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #. translators: 1: plugin name, 2: error message.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3499
 #: includes/classes/class-tgm-plugin-activation.php:3499
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3501
 #: includes/classes/class-tgm-plugin-activation.php:3501
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3505
 #: includes/classes/class-tgm-plugin-activation.php:3505
 msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3507
 #: includes/classes/class-tgm-plugin-activation.php:3507
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3507
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3515
 #: includes/classes/class-tgm-plugin-activation.php:3507
 #: includes/classes/class-tgm-plugin-activation.php:3515
 msgid "Show Details"
 msgstr ""
 
 #. translators: 1: plugin name.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3507
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3515
 #: includes/classes/class-tgm-plugin-activation.php:3507
 #: includes/classes/class-tgm-plugin-activation.php:3515
 msgid "Hide Details"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3508
 #: includes/classes/class-tgm-plugin-activation.php:3508
 msgid "All installations and activations have been completed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3510
 #: includes/classes/class-tgm-plugin-activation.php:3510
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3513
 #: includes/classes/class-tgm-plugin-activation.php:3513
 msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3515
 #: includes/classes/class-tgm-plugin-activation.php:3515
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3516
 #: includes/classes/class-tgm-plugin-activation.php:3516
 msgid "All installations have been completed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: build/go/includes/classes/class-tgm-plugin-activation.php:3518
 #: includes/classes/class-tgm-plugin-activation.php:3518
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: build/go/includes/core.php:153
 #: includes/core.php:153
 msgctxt "font size option label"
 msgid "Small"
 msgstr ""
 
-#: build/go/includes/core.php:154
 #: includes/core.php:154
 msgctxt "abbreviation of the font size option label"
 msgid "S"
 msgstr ""
 
-#: build/go/includes/core.php:159
 #: includes/core.php:159
 msgctxt "font size option label"
 msgid "Medium"
 msgstr ""
 
-#: build/go/includes/core.php:160
 #: includes/core.php:160
 msgctxt "abbreviation of the font size option label"
 msgid "M"
 msgstr ""
 
-#: build/go/includes/core.php:165
 #: includes/core.php:165
 msgctxt "font size option label"
 msgid "Large"
 msgstr ""
 
-#: build/go/includes/core.php:166
 #: includes/core.php:166
 msgctxt "abbreviation of the font size option label"
 msgid "L"
 msgstr ""
 
-#: build/go/includes/core.php:171
 #: includes/core.php:171
 msgctxt "font size option label"
 msgid "Huge"
 msgstr ""
 
-#: build/go/includes/core.php:172
 #: includes/core.php:172
 msgctxt "abbreviation of the font size option label"
 msgid "XL"
 msgstr ""
 
-#: build/go/includes/core.php:184
 #: includes/core.php:184
 msgctxt "name of the first color palette selection"
 msgid "Primary"
 msgstr ""
 
-#: build/go/includes/core.php:189
 #: includes/core.php:189
 msgctxt "name of the second color palette selection"
 msgid "Secondary"
 msgstr ""
 
-#: build/go/includes/core.php:194
 #: includes/core.php:194
 msgctxt "name of the third color palette selection"
 msgid "Tertiary"
 msgstr ""
 
-#: build/go/includes/core.php:199
 #: includes/core.php:199
 msgctxt "name of the fourth color palette selection"
 msgid "Quaternary"
 msgstr ""
 
-#: build/go/includes/core.php:330
 #: includes/core.php:330
 msgid "Expand search field"
 msgstr ""
 
-#: build/go/includes/core.php:567
 #: includes/core.php:570
 msgctxt "design style name"
 msgid "Traditional"
 msgstr ""
 
-#: build/go/includes/core.php:572
 #: includes/core.php:575
 msgctxt "color palette name"
 msgid "Apricot"
 msgstr ""
 
-#: build/go/includes/core.php:579
 #: includes/core.php:582
 msgctxt "color palette name"
 msgid "Emerald"
 msgstr ""
 
-#: build/go/includes/core.php:586
 #: includes/core.php:589
 msgctxt "color palette name"
 msgid "Brick"
 msgstr ""
 
-#: build/go/includes/core.php:593
 #: includes/core.php:596
 msgctxt "color palette name"
 msgid "Bronze"
 msgstr ""
 
-#: build/go/includes/core.php:617
 #: includes/core.php:620
 msgctxt "design style name"
 msgid "Modern"
 msgstr ""
 
-#: build/go/includes/core.php:622
 #: includes/core.php:625
 msgctxt "color palette name"
 msgid "Shade"
 msgstr ""
 
-#: build/go/includes/core.php:629
 #: includes/core.php:632
 msgctxt "color palette name"
 msgid "Blush"
 msgstr ""
 
-#: build/go/includes/core.php:636
 #: includes/core.php:639
 msgctxt "color palette name"
 msgid "Indigo"
 msgstr ""
 
-#: build/go/includes/core.php:643
 #: includes/core.php:646
 msgctxt "color palette name"
 msgid "Pacific"
 msgstr ""
 
-#: build/go/includes/core.php:668
 #: includes/core.php:671
 msgctxt "design style name"
 msgid "Trendy"
 msgstr ""
 
-#: build/go/includes/core.php:673
 #: includes/core.php:676
 msgctxt "color palette name"
 msgid "Plum"
 msgstr ""
 
-#: build/go/includes/core.php:682
 #: includes/core.php:685
 msgctxt "color palette name"
 msgid "Steel"
 msgstr ""
 
-#: build/go/includes/core.php:690
 #: includes/core.php:693
 msgctxt "color palette name"
 msgid "Avocado"
 msgstr ""
 
-#: build/go/includes/core.php:698
 #: includes/core.php:701
 msgctxt "color palette name"
 msgid "Champagne"
 msgstr ""
 
-#: build/go/includes/core.php:724
 #: includes/core.php:727
 msgctxt "design style name"
 msgid "Welcoming"
 msgstr ""
 
-#: build/go/includes/core.php:729
 #: includes/core.php:732
 msgctxt "color palette name"
 msgid "Forest"
 msgstr ""
 
-#: build/go/includes/core.php:737
 #: includes/core.php:740
 msgctxt "color palette name"
 msgid "Spruce"
 msgstr ""
 
-#: build/go/includes/core.php:745
 #: includes/core.php:748
 msgctxt "color palette name"
 msgid "Mocha"
 msgstr ""
 
-#: build/go/includes/core.php:753
 #: includes/core.php:756
 msgctxt "color palette name"
 msgid "Lavender"
 msgstr ""
 
-#: build/go/includes/core.php:775
 #: includes/core.php:778
 msgctxt "design style name"
 msgid "Playful"
 msgstr ""
 
-#: build/go/includes/core.php:780
 #: includes/core.php:783
 msgctxt "color palette name"
 msgid "Frolic"
 msgstr ""
 
-#: build/go/includes/core.php:790
 #: includes/core.php:793
 msgctxt "color palette name"
 msgid "Coral"
 msgstr ""
 
-#: build/go/includes/core.php:800
 #: includes/core.php:803
 msgctxt "color palette name"
 msgid "Organic"
 msgstr ""
 
-#: build/go/includes/core.php:810
 #: includes/core.php:813
 msgctxt "color palette name"
 msgid "Berry"
 msgstr ""
 
-#: build/go/includes/core.php:892
 #: includes/core.php:895
 msgctxt "name of the first header variation option"
 msgid "Header 1"
 msgstr ""
 
-#: build/go/includes/core.php:896
 #: includes/core.php:899
 msgctxt "name of the second header variation option"
 msgid "Header 2"
 msgstr ""
 
-#: build/go/includes/core.php:900
 #: includes/core.php:903
 msgctxt "name of the third header variation option"
 msgid "Header 3"
 msgstr ""
 
-#: build/go/includes/core.php:904
 #: includes/core.php:907
 msgctxt "name of the fourth header variation option"
 msgid "Header 4"
 msgstr ""
 
-#: build/go/includes/core.php:931
 #: includes/core.php:934
 msgctxt "name of the first footer variation option"
 msgid "Footer 1"
 msgstr ""
 
-#: build/go/includes/core.php:938
 #: includes/core.php:941
 msgctxt "name of the second footer variation option"
 msgid "Footer 2"
 msgstr ""
 
-#: build/go/includes/core.php:945
 #: includes/core.php:948
 msgctxt "name of the third footer variation option"
 msgid "Footer 3"
 msgstr ""
 
-#: build/go/includes/core.php:952
 #: includes/core.php:955
 msgctxt "name of the fourth footer variation option"
 msgid "Footer 4"
 msgstr ""
 
 #. translators: the theme author
-#: build/go/includes/core.php:1023
 #: includes/core.php:1026
 msgid "WordPress Theme by %s"
 msgstr ""
 
-#: build/go/includes/core.php:1035
 #: includes/core.php:1038
 msgid "Facebook"
 msgstr ""
 
-#: build/go/includes/core.php:1040
 #: includes/core.php:1043
 msgid "Twitter"
 msgstr ""
 
-#: build/go/includes/core.php:1045
 #: includes/core.php:1048
 msgid "Instagram"
 msgstr ""
 
-#: build/go/includes/core.php:1050
 #: includes/core.php:1053
 msgid "LinkedIn"
 msgstr ""
 
-#: build/go/includes/core.php:1055
 #: includes/core.php:1058
 msgid "Pinterest"
 msgstr ""
 
-#: build/go/includes/core.php:1187
 #: includes/core.php:1190
 msgid "That page can't be found"
 msgstr ""
 
 #. translators: Search query term(s).
-#: build/go/includes/core.php:1205
 #: includes/core.php:1208
 msgid "Search for: %s"
 msgstr ""
 
-#: build/go/includes/core.php:1213
 #: includes/core.php:1216
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: %s is the registered nav menu name
-#: build/go/includes/customizer.php:101
 #: includes/customizer.php:101
 msgid "Please assign a menu to the %s menu location"
 msgstr ""
 
-#: build/go/includes/customizer.php:260
 #: includes/customizer.php:261
 msgid "Width"
 msgstr ""
 
-#: build/go/includes/customizer.php:289
 #: includes/customizer.php:290
 msgid "Mobile Width"
 msgstr ""
 
-#: build/go/includes/customizer.php:315
 #: includes/customizer.php:316
 msgid "Site Settings"
 msgstr ""
 
-#: build/go/includes/customizer.php:332
 #: includes/customizer.php:333
 msgid "Page Titles"
 msgstr ""
 
-#: build/go/includes/customizer.php:333
 #: includes/customizer.php:334
 msgid "Display page titles on individual pages."
 msgstr ""
 
-#: build/go/includes/customizer.php:352
 #: includes/customizer.php:353
 msgid "Copyright Text"
 msgstr ""
 
-#: build/go/includes/customizer.php:381
 #: includes/customizer.php:382
 msgid "Design Style"
 msgstr ""
 
-#: build/go/includes/customizer.php:382
 #: includes/customizer.php:383
 msgid "Choose a style, select a color scheme and customize colors to personalize your site."
 msgstr ""
 
-#: build/go/includes/customizer.php:405
 #: includes/customizer.php:406
 msgid "Color Scheme"
 msgstr ""
 
-#: build/go/includes/customizer.php:451
 #: includes/customizer.php:452
 msgid "Secondary"
 msgstr ""
 
-#: build/go/includes/customizer.php:473
 #: includes/customizer.php:474
 msgid "Tertiary"
 msgstr ""
 
-#: build/go/includes/customizer.php:494
-#: build/go/includes/customizer.php:513
 #: includes/customizer.php:495
 #: includes/customizer.php:514
 msgid "Header"
 msgstr ""
 
-#: build/go/includes/customizer.php:514
 #: includes/customizer.php:515
 msgid "Choose a header for every page on your site, then style it with the selectors below."
 msgstr ""
 
-#: build/go/includes/customizer.php:536
-#: build/go/includes/customizer.php:618
 #: includes/customizer.php:537
 #: includes/customizer.php:619
 msgid "Background Color"
 msgstr ""
 
-#: build/go/includes/customizer.php:556
-#: build/go/includes/customizer.php:658
 #: includes/customizer.php:557
 #: includes/customizer.php:659
 msgid "Text Color"
 msgstr ""
 
-#: build/go/includes/customizer.php:576
-#: build/go/includes/customizer.php:595
 #: includes/customizer.php:577
 #: includes/customizer.php:596
 msgid "Footer"
 msgstr ""
 
-#: build/go/includes/customizer.php:596
 #: includes/customizer.php:597
 msgid "Choose a footer for every page on your site, then style it with the selectors below."
 msgstr ""
 
-#: build/go/includes/customizer.php:638
 #: includes/customizer.php:639
 msgid "Heading Color"
 msgstr ""
 
-#: build/go/includes/customizer.php:678
 #: includes/customizer.php:679
 msgid "Social"
 msgstr ""
 
-#: build/go/includes/customizer.php:722
 #: includes/customizer.php:723
 msgid "Icon Color"
 msgstr ""
 
-#: build/go/includes/customizer.php:739
 #: includes/customizer.php:740
 msgid "Site Design"
 msgstr ""
 
-#: build/go/includes/pluggable.php:28
 #: includes/pluggable.php:28
 msgid "Pingback:"
 msgstr ""
 
-#: build/go/includes/pluggable.php:28
 #: includes/pluggable.php:28
 msgid "(Edit)"
 msgstr ""
 
-#: build/go/includes/pluggable.php:44
-#: build/go/includes/template-tags.php:112
 #: includes/pluggable.php:44
 #: includes/template-tags.php:112
 msgid "Post author"
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: build/go/includes/pluggable.php:51
 #: includes/pluggable.php:51
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: build/go/includes/pluggable.php:57
 #: includes/pluggable.php:57
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: build/go/includes/pluggable.php:62
 #: includes/pluggable.php:62
 msgid "Edit"
 msgstr ""
 
-#: build/go/includes/pluggable.php:71
 #: includes/pluggable.php:71
 msgid "Reply"
 msgstr ""
 
 #. Translators: %s = the author name.
-#: build/go/includes/template-tags.php:118
 #: includes/template-tags.php:118
 msgctxt "%s = author name"
 msgid "By %s"
 msgstr ""
 
-#: build/go/includes/template-tags.php:134
 #: includes/template-tags.php:134
 msgid "Post date"
 msgstr ""
 
-#: build/go/includes/template-tags.php:169
 #: includes/template-tags.php:169
 msgid "Categories"
 msgstr ""
 
-#: build/go/includes/template-tags.php:173
 #: includes/template-tags.php:173
 msgid "In"
 msgstr ""
 
-#: build/go/includes/template-tags.php:187
 #: includes/template-tags.php:187
 msgid "Tags"
 msgstr ""
 
-#: build/go/includes/template-tags.php:225
 #: includes/template-tags.php:225
 msgid "Featured"
 msgstr ""
 
-#: build/go/includes/template-tags.php:756
 #: includes/template-tags.php:756
 msgid "Menu"
 msgstr ""
 
-#: build/go/includes/template-tags.php:771
 #: includes/template-tags.php:771
 msgid "Search Toggle"
 msgstr ""
 
-#: build/go/includes/woocommerce.php:144
 #: includes/woocommerce.php:144
 msgid "View cart"
 msgstr ""
 
-#: build/go/includes/woocommerce.php:209
 #: includes/woocommerce.php:209
 msgid "Close sidebar"
 msgstr ""
 
-#: build/go/includes/woocommerce.php:217
 #: includes/woocommerce.php:217
 msgid "Cart"
 msgstr ""
 
 #. translators: 1. Single integer value. (eg: 1 product in your cart). 2. Integer larger than 1. (eg: 5 products in your cart).
-#: build/go/includes/woocommerce.php:224
-#: build/go/includes/woocommerce.php:274
 #: includes/woocommerce.php:224
 #: includes/woocommerce.php:274
 msgid "%s product in your cart"
@@ -1153,124 +944,98 @@ msgid_plural "%s products in your cart"
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/go/includes/woocommerce.php:328
 #: includes/woocommerce.php:328
 msgid "Your cart is currently empty."
 msgstr ""
 
-#: build/go/includes/woocommerce.php:455
 #: includes/woocommerce.php:455
 msgid "Previous Post: "
 msgstr ""
 
-#: build/go/includes/woocommerce.php:455
 #: includes/woocommerce.php:455
 msgid "Previous"
 msgstr ""
 
-#: build/go/includes/woocommerce.php:456
 #: includes/woocommerce.php:456
 msgid "Next Post:"
 msgstr ""
 
-#: build/go/includes/woocommerce.php:456
 #: includes/woocommerce.php:456
 msgid "Next"
 msgstr ""
 
-#: build/go/includes/woocommerce.php:487
 #: includes/woocommerce.php:487
 msgid "Back"
 msgstr ""
 
-#: build/go/includes/woocommerce.php:538
 #: includes/woocommerce.php:538
 msgid "Reset Selections"
 msgstr ""
 
-#: build/go/partials/content-excerpt.php:25
 #: partials/content-excerpt.php:25
 msgctxt "post"
 msgid "Featured"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
-#: build/go/partials/content-none.php:21
 #: partials/content-none.php:21
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: build/go/partials/content-none.php:33
 #: partials/content-none.php:33
 msgid "Sorry, but nothing matched your search terms. Please try searching again with some different keywords."
 msgstr ""
 
-#: build/go/partials/content-none.php:38
 #: partials/content-none.php:38
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help you out."
 msgstr ""
 
-#: build/go/partials/content.php:44
 #: partials/content.php:44
 msgid "Page"
 msgstr ""
 
-#: build/go/partials/content.php:44
 #: partials/content.php:44
 msgid "Pages:"
 msgstr ""
 
-#: build/go/partials/footers/footer-1.php:18
-#: build/go/partials/footers/footer-2.php:16
 #: partials/footers/footer-1.php:18
 #: partials/footers/footer-2.php:16
 msgid "Footer Menu"
 msgstr ""
 
-#: build/go/partials/footers/footer-3.php:21
-#: build/go/partials/footers/footer-4.php:21
 #: partials/footers/footer-3.php:21
 #: partials/footers/footer-4.php:21
 msgid "Primary Footer Menu"
 msgstr ""
 
-#: build/go/partials/footers/footer-3.php:36
-#: build/go/partials/footers/footer-4.php:37
 #: partials/footers/footer-3.php:36
 #: partials/footers/footer-4.php:37
 msgid "Secondary Footer Menu"
 msgstr ""
 
-#: build/go/partials/footers/footer-3.php:51
-#: build/go/partials/footers/footer-4.php:53
 #: partials/footers/footer-3.php:51
 #: partials/footers/footer-4.php:53
 msgid "Tertiary Footer Menu"
 msgstr ""
 
-#: build/go/partials/pagination.php:21
 #: partials/pagination.php:21
 msgid "Newer <span class=\"nav-short\">Posts</span>"
 msgstr ""
 
-#: build/go/partials/pagination.php:25
 #: partials/pagination.php:25
 msgid "Older <span class=\"nav-short\">Posts</span>"
 msgstr ""
 
-#: build/go/searchform.php:13
 #: searchform.php:13
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: build/go/searchform.php:15
 #: searchform.php:15
 msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr ""
 
-#: build/go/searchform.php:17
 #: searchform.php:17
 msgctxt "submit button"
 msgid "Submit"
