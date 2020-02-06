@@ -257,7 +257,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Test
+          name: Check the commit for [skip i18n]
           command: |
             export GIT_COMMIT_DESC=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
             if [[ $GIT_COMMIT_DESC == *"skip i18n"* ]]; then
@@ -284,21 +284,13 @@ jobs:
             - /home/circleci/project/node_modules
             - /home/circleci/.npm
       - run:
-          name: Install composer dependencies
-          command: |
-            composer install
-      - save_cache:
-          key: composer-deps-{{ .Branch }}-{{ checksum "composer.lock" }}
-          paths:
-            - /home/circleci/project/vendor
-      - run:
           name: Generate the translations
           command: |
             npm run makepot
             npm run json2po
             npm run pot2json
       - run:
-          name: Deploy coblocks.pot/coblocks.json back to GitHub
+          name: Deploy go.pot/go.json back to GitHub
           command: |
             git config --global user.email "plugins@godaddy.com"
             git config --global user.name "GoDaddy Translator"
