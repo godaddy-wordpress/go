@@ -27,7 +27,7 @@ workflows:
       - i18n:
           filters:
             branches:
-              only: /i18n-.*/
+              only: /.*/
       - canary:
           requires:
             - php56-phpcs
@@ -37,7 +37,7 @@ workflows:
             - a11y-tests
           filters:
             branches:
-              only: /i18n-.*/
+              only: /.*/
       - deploy:
           requires:
             - php56-phpcs
