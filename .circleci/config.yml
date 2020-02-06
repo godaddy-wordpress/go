@@ -27,7 +27,7 @@ workflows:
       - i18n:
           filters:
             branches:
-              only: master
+              only: /i18n-.*/
       - canary:
           requires:
             - php56-phpcs
@@ -37,7 +37,7 @@ workflows:
             - a11y-tests
           filters:
             branches:
-              only: master
+              only: /i18n-.*/
       - deploy:
           requires:
             - php56-phpcs
@@ -257,6 +257,13 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Test
+          command: |
+            export GIT_COMMIT_DESC=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
+            if [[ $GIT_COMMIT_DESC == *"skip i18n"* ]]; then
+              circleci-agent step halt
+            fi
+      - run:
           name: Disable xdebug PHP extension
           command: |
             sudo rm -f /etc/php/*/mods-available/xdebug.ini
@@ -293,14 +300,11 @@ jobs:
       - run:
           name: Deploy coblocks.pot/coblocks.json back to GitHub
           command: |
-            export GIT_COMMIT_DESC=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
-            if [[ $GIT_COMMIT_DESC != *"skip i18n"* ]]; then
-              git config --global user.email "plugins@godaddy.com"
-              git config --global user.name "GoDaddy Translator"
-              git add languages/go.json && git add languages/go.pot
-              git commit -m "Update go.pot/go.json files [skip i18n]"
-              git push origin master --quiet
-            fi
+            git config --global user.email "plugins@godaddy.com"
+            git config --global user.name "GoDaddy Translator"
+            git add languages/go.json && git add languages/go.pot
+            git commit -m "Update go.pot/go.json files [skip i18n]"
+            git push origin master --quiet
 
   canary:
     docker:
