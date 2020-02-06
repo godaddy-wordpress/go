@@ -40,7 +40,7 @@
     "lint-css": "stylelint 'assets/shared/css' '.dev/assets/design-styles/**/*.css'",
     "lint-js": "eslint assets/shared/js",
     "lint-php": "composer run lint",
-    "makepot": "wp i18n make-pot . --skip-audit --exclude=build,dist --headers='{\"Last-Translator\":\"plugins@godaddy.com\",\"Report-Msgid-Bugs-To\":\"https://github.com/godaddy-wordpress/go/issues\"}' --file-comment='Copyright (c) 2019 GoDaddy Operating Company, LLC. All Rights Reserved.' && npm run pot2json",
+    "makepot": "wp i18n make-pot . languages/go.pot --skip-audit --exclude=build,dist --headers='{\"Last-Translator\":\"plugins@godaddy.com\",\"Report-Msgid-Bugs-To\":\"https://github.com/godaddy-wordpress/go/issues\"}' --file-comment='Copyright (c) 2019 GoDaddy Operating Company, LLC. All Rights Reserved.' && npm run pot2json",
     "pot2json": ".dev/bin/pot2json languages/go.pot languages/go.json",
     "json2po": "cd languages && find . -name \\*.json ! -name 'go*.json' -execdir sh -c '../.dev/bin/json2po go.json \"$0\" go-`basename $0 .json`.po' '{}' \\;",
     "po2mo": "cd languages && find . -name \\*.po -execdir sh -c 'msgfmt \"$0\" -o `basename $0 .po`.mo' '{}' \\;",
