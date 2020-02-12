@@ -229,18 +229,14 @@
 		}; // menu_sub_close()
 
 		function menu_sub_close_all() {
-			var open_menus = menu.querySelectorAll( '.submenu-is-open' ),
-					open_menus_count = open_menus.length,
-					opn;
-
+			var open_menus = menu.querySelectorAll( '.submenu-is-open' );
+			var open_menus_count = open_menus.length;
+			var opn;
 			// We were getting some errors, so let's add in a checkpoint
 			if ( open_menus_count ) {
-
 				// Loop through all the open menus and close them
 				for ( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
-
 					menu_sub_close( open_menus[opn] );
-
 				} // for
 			} // if
 		}; // menu_sub_close()
