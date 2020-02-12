@@ -134,6 +134,7 @@
 					// The menu is already open, so this should be a close action
 					menu_sub_close( target );
 				} else {
+					menu_sub_close_all();
 					// The menu is closed, so this click should open it
 					menu_sub_open( target );
 
@@ -225,6 +226,19 @@
 			if ( open_item.parentNode.querySelector( '.sub-menu' ) ) {
 				open_item.parentNode.querySelector( '.sub-menu' ).setAttribute( 'aria-hidden', 'true' );
 			}
+		}; // menu_sub_close()
+
+		function menu_sub_close_all() {
+			var open_menus = menu.querySelectorAll( '.submenu-is-open' );
+			var open_menus_count = open_menus.length;
+			var opn;
+			// We were getting some errors, so let's add in a checkpoint
+			if ( open_menus_count ) {
+				// Loop through all the open menus and close them
+				for ( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
+					menu_sub_close( open_menus[opn] );
+				} // for
+			} // if
 		}; // menu_sub_close()
 
 		function menu_sub_open( closed_item ) {
