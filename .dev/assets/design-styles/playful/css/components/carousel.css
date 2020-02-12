@@ -11,15 +11,18 @@
 	display: none;
 }
 
-.flickity-button,
-.flickity-button:hover {
-	background: hsl(var(--theme-color-primary));
-}
+.wp-block-coblocks-gallery-carousel {
 
-.flickity-prev-next-button {
-	border-radius: var(--theme-button--radius);
-}
+	& .flickity-button,
+	& .flickity-button:hover {
+		background: hsl(var(--theme-color-primary));
+	}
 
-.flickity-button-icon {
-	fill: hsl(var(--color-white));
+	& .flickity-prev-next-button {
+		border-radius: var(--theme-button--radius);
+	}
+
+	& .flickity-button-icon {
+		fill: hsl(var(--color-white));
+	}
 }

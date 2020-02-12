@@ -4,14 +4,10 @@
 @import url("../../../shared/css/config/media-queries.css");
 @import url("../settings.css");
 
-.flickity-prev-next-button {
-	border-radius: 3px;
-}
-
-.flickity-button-icon {
-	fill: hsl(var(--theme-color-primary));
-}
-
 .wp-block-coblocks-food-item__attributes {
 	top: 0;
+}
+
+.wp-block-coblocks-gallery-carousel .flickity-button::after {
+	background-color: hsl(var(--theme-color-heading));
 }
