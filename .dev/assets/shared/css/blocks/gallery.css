@@ -9,6 +9,11 @@
 		text-align: var(--theme-caption--alignment);
 	}
 
+	& .blocks-gallery-grid + figcaption {
+		display: block;
+		width: 100%;
+	}
+
 	& .blocks-gallery-item:last-child {
 		margin-bottom: 16px !important;
 	}
