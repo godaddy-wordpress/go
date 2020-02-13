@@ -795,11 +795,11 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $tertiary_color ) : ?>
-					--theme-color-tertiary: <?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>;
+					--theme-color-tertiary: hsl(<?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $background_color ) : ?>
-					--theme-color-body-bg: <?php echo esc_attr( $background_color[0] ) . ', ' . esc_attr( $background_color[1] ) . '%, ' . esc_attr( $background_color[2] ) . '%'; ?>;
+					--theme-color-body-bg: hsl(<?php echo esc_attr( $background_color[0] ) . ', ' . esc_attr( $background_color[1] ) . '%, ' . esc_attr( $background_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $header_background ) : ?>
@@ -807,11 +807,11 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $header_text_color ) : ?>
-					--theme-site-nav--color: hsla(<?php echo esc_attr( "{$header_text_color}, 1" ); ?>);
-					--theme-site-description--color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-site-nav--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--theme-site-description--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 					--theme-site-title--color: <?php echo esc_attr( $header_text_color ); ?>;
 					--theme-search-toggle--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--theme-search-submit--bg: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-search-submit--bg: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $footer_background ) : ?>
@@ -819,16 +819,16 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $footer_heading_color ) : ?>
-					--theme-footer-heading--color: <?php echo esc_attr( $footer_heading_color ); ?>;
+					--theme-footer-heading--color: hsl(<?php echo esc_attr( $footer_heading_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $footer_text_color ) : ?>
 					--theme-footer--color: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
-					--theme-footer-nav--color: <?php echo esc_attr( $footer_text_color ); ?>;
+					--theme-footer-nav--color: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $social_icon_color ) : ?>
-					--theme-social--color: <?php echo esc_attr( $social_icon_color ); ?>;
+					--theme-social--color: hsl(<?php echo esc_attr( $social_icon_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $logo_width ) : ?>
