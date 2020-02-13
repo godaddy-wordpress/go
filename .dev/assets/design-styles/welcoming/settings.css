@@ -182,10 +182,6 @@
 	--theme-button--tracking: 1px;
 	--theme-button--weight: 400;
 
-	/* Disabled */
-	--theme-button--disabled-bg: 0, 2%, 89%;
-	--theme-button--disabled-color: 0, 0%, 61%;
-
 
 	/*--------------------------------------------------------------
 	## Header
