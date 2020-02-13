@@ -27,5 +27,5 @@
 }
 
 .flickity-button-icon {
-	fill: hsl(var(--theme-color-primary));
+	fill: var(--theme-color-primary);
 }

@@ -155,7 +155,7 @@
 	}
 
 	& .required {
-		color: hsl(var(--theme-color-primary));
+		color: var(--theme-color-primary);
 		margin-top: -6px;
 	}
 }

@@ -159,7 +159,7 @@
 	--theme-input--weight: 600;
 
 	/* Input Focus */
-	--theme-input--border-color-focus: hsl(var(--theme-color-primary));
+	--theme-input--border-color-focus: var(--theme-color-primary);
 	--theme-input--color-focus: var(--theme-color-primary);
 
 	/* Errors */

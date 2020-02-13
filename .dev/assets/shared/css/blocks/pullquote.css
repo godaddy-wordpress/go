@@ -44,7 +44,7 @@
 	&.is-style-solid-color {
 
 		&:not([class*="background-color"]) {
-			background-color: hsl(var(--theme-color-primary));
+			background-color: var(--theme-color-primary);
 		}
 
 		&:not([class*="text-color"]) {

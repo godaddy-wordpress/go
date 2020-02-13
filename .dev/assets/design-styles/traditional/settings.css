@@ -59,7 +59,7 @@
 	## Text Colors
 	--------------------------------------------------------------*/
 	--theme-color-heading: var(--theme-color-secondary);
-	--theme-color-text: 218, 12%, 30%;
+	--theme-color-text: hsl(218, 12%, 30%);
 	--theme-color-text-secondary: hsl(0, 0%, 43%);
 
 

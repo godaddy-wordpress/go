@@ -1,6 +1,6 @@
 /*! Color Utility Classes */
 .has-primary-background-color {
-	background-color: hsl(var(--theme-color-primary));
+	background-color: var(--theme-color-primary);
 
 	&,
 	& label,
@@ -16,7 +16,7 @@
 }
 
 .has-primary-color {
-	color: hsl(var(--theme-color-primary));
+	color: var(--theme-color-primary);
 }
 
 .has-secondary-background-color {

@@ -107,7 +107,7 @@
 
 	/* Links */
 	--theme-link--color: var(--theme-color-heading);
-	--theme-link--color-interactive: hsl(var(--theme-color-primary));
+	--theme-link--color-interactive: var(--theme-color-primary);
 
 	/* Pullquote */
 	--theme-pullquote--font: var(--theme-heading--font);

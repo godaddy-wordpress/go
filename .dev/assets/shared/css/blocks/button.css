@@ -10,11 +10,11 @@
 	}
 
 	&.is-style-outline .wp-block-button__link.has-secondary-color:hover {
-		color: hsl(var(--theme-color-primary));
+		color: var(--theme-color-primary);
 	}
 
 	&.is-style-outline .wp-block-button__link:not(.has-text-color) {
-		color: hsl(var(--theme-color-primary));
+		color: var(--theme-color-primary);
 	}
 
 	&.is-style-outline .wp-block-button__link:not(.has-background) {

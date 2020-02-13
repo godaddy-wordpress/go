@@ -158,11 +158,11 @@ body {
 				top: 4px;
 
 				&:not(:hover) {
-					color: hsl(var(--theme-color-primary)) !important;
+					color: var(--theme-color-primary) !important;
 				}
 
 				&:hover {
-					background: hsl(var(--theme-color-primary));
+					background: var(--theme-color-primary);
 				}
 			}
 

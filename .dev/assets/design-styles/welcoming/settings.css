@@ -58,7 +58,7 @@
 	/*--------------------------------------------------------------
 	## Colors
 	--------------------------------------------------------------*/
-	--theme-color-heading: hsl(var(--theme-color-primary));
+	--theme-color-heading: var(--theme-color-primary);
 	--theme-color-text: var(--theme-color-primary);
 	--theme-color-text-secondary: hsl(0, 0%, 52%);
 
