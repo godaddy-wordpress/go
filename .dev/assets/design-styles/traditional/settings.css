@@ -191,9 +191,6 @@
 	/* Checkbox and Radio*/
 	--theme-checkbox-radio-fill: var(--theme-color-heading);
 
-	/* Feedback colors: error, success, warning, informational. */
-	--theme-feedback-informational-color: 208, 100%, 43%;
-
 
 	/*--------------------------------------------------------------
 	## Buttons
@@ -277,7 +274,7 @@
 	--theme-social--spacing: 1rem;
 
 	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: 0, 0%, 80%;
+	--theme-footer-3-site-info--border-color: hsl(0, 0%, 80%);
 
 
 	/*--------------------------------------------------------------
