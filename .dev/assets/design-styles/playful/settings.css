@@ -48,7 +48,7 @@
 	--theme-block-padding-x: 6vw;
 
 	@media (--huge) {
-		--theme-block-padding-x: 2.5rem;
+		--theme-block-padding-x: 5.5rem;
 	}
 
 	/* Block Padding */
