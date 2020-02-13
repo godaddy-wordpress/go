@@ -809,7 +809,7 @@ function inline_css() {
 				<?php if ( $header_text_color ) : ?>
 					--theme-site-nav--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 					--theme-site-description--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--theme-site-title--color: <?php echo esc_attr( $header_text_color ); ?>;
+					--theme-site-title--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 					--theme-search-toggle--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 					--theme-search-submit--bg: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 				<?php endif; ?>
