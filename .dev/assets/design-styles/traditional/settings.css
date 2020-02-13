@@ -115,6 +115,7 @@
 
 	/* Captions */
 	--theme-caption--alignment: left;
+	--theme-caption--alignment-opposite: right;
 	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
 

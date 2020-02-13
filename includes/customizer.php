@@ -190,6 +190,7 @@ function customize_preview_init() {
 function enqueue_controls_assets() {
 
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
+	$rtl    = ! is_rtl() ? '' : '-rtl';
 
 	wp_enqueue_script(
 		'go-customize-controls',
@@ -201,7 +202,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_style(
 		'go-customize-style',
-		get_theme_file_uri( "dist/css/admin/style-customize{$suffix}.css" ),
+		get_theme_file_uri( "dist/css/admin/style-customize{$rtl}{$suffix}.css" ),
 		array(),
 		GO_VERSION
 	);

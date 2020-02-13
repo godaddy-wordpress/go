@@ -362,10 +362,11 @@ function scripts() {
 function editor_styles() {
 
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
+	$rtl    = ! is_rtl() ? '' : '-rtl';
 
 	// Enqueue  shared editor styles.
 	add_editor_style(
-		"dist/css/style-editor{$suffix}.css"
+		"dist/css/style-editor{$rtl}{$suffix}.css"
 	);
 
 	// Enqueue design style editor styles.
@@ -390,10 +391,11 @@ function editor_styles() {
 function styles() {
 
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
+	$rtl    = ! is_rtl() ? '' : '-rtl';
 
 	wp_enqueue_style(
 		'go-style',
-		get_theme_file_uri( "dist/css/style-shared{$suffix}.css" ),
+		get_theme_file_uri( "dist/css/style-shared{$rtl}{$suffix}.css" ),
 		array( 'go-fonts' ),
 		GO_VERSION
 	);
@@ -581,13 +583,14 @@ function get_default_design_style() {
 function get_available_design_styles() {
 
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
+	$rtl    = ! is_rtl() ? '' : '-rtl';
 
 	$default_design_styles = array(
 		'traditional' => array(
 			'slug'          => 'traditional',
 			'label'         => _x( 'Traditional', 'design style name', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$suffix}.css",
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$rtl}{$suffix}.css" ),
+			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$rtl}{$suffix}.css",
 			'color_schemes' => array(
 				'one'   => array(
 					'label'      => _x( 'Apricot', 'color palette name', 'go' ),
@@ -636,8 +639,8 @@ function get_available_design_styles() {
 		'modern'      => array(
 			'slug'          => 'modern',
 			'label'         => _x( 'Modern', 'design style name', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-modern{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-modern-editor{$suffix}.css",
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-modern{$rtl}{$suffix}.css" ),
+			'editor_style'  => "dist/css/design-styles/style-modern-editor{$rtl}{$suffix}.css",
 			'color_schemes' => array(
 				'one'   => array(
 					'label'      => _x( 'Shade', 'color palette name', 'go' ),
@@ -687,8 +690,8 @@ function get_available_design_styles() {
 		'trendy'      => array(
 			'slug'          => 'trendy',
 			'label'         => _x( 'Trendy', 'design style name', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$suffix}.css",
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$rtl}{$suffix}.css" ),
+			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$rtl}{$suffix}.css",
 			'color_schemes' => array(
 				'one'   => array(
 					'label'             => _x( 'Plum', 'color palette name', 'go' ),
@@ -743,8 +746,8 @@ function get_available_design_styles() {
 		'welcoming'   => array(
 			'slug'          => 'welcoming',
 			'label'         => _x( 'Welcoming', 'design style name', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$suffix}.css",
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$rtl}{$suffix}.css" ),
+			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$rtl}{$suffix}.css",
 			'color_schemes' => array(
 				'one'   => array(
 					'label'             => _x( 'Forest', 'color palette name', 'go' ),
@@ -794,8 +797,8 @@ function get_available_design_styles() {
 		'playful'     => array(
 			'slug'          => 'playful',
 			'label'         => _x( 'Playful', 'design style name', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-playful-editor{$suffix}.css",
+			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$rtl}{$suffix}.css" ),
+			'editor_style'  => "dist/css/design-styles/style-playful-editor{$rtl}{$suffix}.css",
 			'color_schemes' => array(
 				'one'   => array(
 					'label'             => _x( 'Frolic', 'color palette name', 'go' ),

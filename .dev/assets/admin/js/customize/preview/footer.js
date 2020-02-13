@@ -2,11 +2,14 @@ import { hexToHSL } from '../util';
 
 const $ = jQuery; // eslint-disable-line
 
+$( document ).ready( setMenuLocationDescription );
+
 export default () => {
 	wp.customize( 'footer_variation', ( value ) => {
 		value.bind( ( to ) => {
 			$( 'body' ).removeClass( 'has-footer-1 has-footer-2 has-footer-3 has-footer-4' )
-           			   .addClass( 'has-' + to );
+			           .addClass( 'has-' + to );
+			setMenuLocationDescription();
 		} );
 	} );
 
@@ -108,3 +111,9 @@ export default () => {
 		} );
 	} );
 };
+
+function setMenuLocationDescription() {
+	var menuLocationsDescription = $( '.customize-section-title-menu_locations-description' ).text(),
+	    menuLocationCount        = [ 'footer-1', 'footer-2' ].includes( wp.customize( 'footer_variation' ).get() ) ? '2' : '4';
+	$( '.customize-section-title-menu_locations-description' ).text( menuLocationsDescription.replace( /[0-9]/g, menuLocationCount ) );
+}
