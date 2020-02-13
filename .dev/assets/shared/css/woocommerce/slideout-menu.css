@@ -81,7 +81,7 @@ body {
 }
 
 #site-nav--cart {
-	background: hsl(var(--theme-color-body-bg, 0, 0%, 100%));
+	background: var(--theme-color-body-bg, hsl(0, 0%, 100%));
 	height: 100vh;
 	overflow-y: auto;
 	padding: 60px 65px;
