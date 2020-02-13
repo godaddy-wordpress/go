@@ -2,7 +2,7 @@
 .wp-block-button {
 
 	&:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
-		background-color: hsl(var(--theme-button--bg));
+		background-color: var(--theme-button--bg);
 	}
 
 	&.is-style-outline .wp-block-button__link.has-primary-color:hover {

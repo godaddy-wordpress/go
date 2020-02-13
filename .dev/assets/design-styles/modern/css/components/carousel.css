@@ -87,7 +87,7 @@
 .has-aligned-cells {
 
 	& .flickity-button::before {
-		background: hsl(var(--theme-button--bg));
+		background: var(--theme-button--bg);
 		bottom: 0;
 		content: "";
 		display: block;
