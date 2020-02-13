@@ -10,5 +10,5 @@
 }
 
 .wp-block-coblocks-author__name {
-	color: hsl(var(--coblocks-author--color-name, var(--theme-color-heading)));
+	color: var(--coblocks-author--color-name, var(--theme-color-heading));
 }

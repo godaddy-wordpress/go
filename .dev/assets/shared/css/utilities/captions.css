@@ -8,7 +8,7 @@
 	& .wp-caption,
 	& .wp-caption-text,
 	& .gallery-caption {
-		color: hsl(var(--theme-caption--color));
+		color: var(--theme-caption--color, var(--theme-color-text-secondary));
 		font-size: var(--theme-caption--font-size);
 		font-style: var(--theme-caption--style, normal);
 		margin-top: var(--theme-caption--spacing-top, 0.75em);

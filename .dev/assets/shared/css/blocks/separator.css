@@ -1,6 +1,6 @@
 /*! Separator */
 .wp-block-separator {
-	border-bottom-color: hsl(var(--theme-separator--color, var(--theme-color-heading)));
+	border-bottom-color: var(--theme-separator--color, var(--theme-color-heading));
 
 	&.is-style-dots::before {
 		font-size: var(--theme-separator--dot-size, 2rem);

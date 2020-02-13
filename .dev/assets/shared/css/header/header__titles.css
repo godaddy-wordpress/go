@@ -42,7 +42,7 @@
 }
 
 .site-description {
-	color: hsl(var(--theme-site-description--color));
+	color: var(--theme-site-description--color);
 	font-family: var(--theme-site-description--font);
 	font-size: var(--theme-site-description--font-size) !important;
 	font-weight: var(--theme-site-description--weight, 400);

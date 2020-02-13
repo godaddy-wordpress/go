@@ -9,11 +9,11 @@
 	border-radius: var(--coblocks-accordion--radius, var(--theme-button--radius));
 
 	&:not(.has-background) {
-		background: hsl(var(--coblocks-accordion--bg, var(--theme-color-body-bg)));
+		background: var(--coblocks-accordion--bg, var(--theme-color-body-bg));
 	}
 
 	&:not(.has-text-color) {
-		color: hsl(var(--coblocks-accordion--color));
+		color: var(--coblocks-accordion--color, var(--theme-color-heading));
 	}
 
 	&:hover::after {
@@ -29,7 +29,7 @@
 
 .wp-block-coblocks-accordion-item__content {
 	border: var(--coblocks-accordion--border);
-	border-color: hsl(var(--coblocks-accordion--border-color)) !important;
+	border-color: var(--coblocks-accordion--border-color) !important;
 	margin-top: calc(var(--coblocks-accordion--border-width, 2px) * -1);
 }
 

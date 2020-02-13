@@ -22,7 +22,7 @@
 	}
 
 	& svg {
-		fill: hsl(var(--theme-social--color));
+		fill: var(--theme-social--color);
 		vertical-align: middle;
 	}
 }

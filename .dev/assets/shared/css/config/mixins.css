@@ -45,7 +45,7 @@
 
 @define-mixin select-menu {
 	appearance: button;
-	background-color: hsl(var(--theme-input--bg));
+	background-color: var(--theme-input--bg, 0, 0%, 100%);
 	background-image: url("../images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
@@ -64,7 +64,7 @@
 }
 
 @define-mixin select-menu-focus {
-	border-color: var(--theme-input--border-color-focus);
+	border-color: var(--theme-input--border-color-interactive);
 	box-shadow: var(--heme-input--shadow-focus);
 	color: var(--theme-input--color);
 	outline: 0;
@@ -77,7 +77,7 @@
 }
 
 @define-mixin checkbox-radio-label-before {
-	background-color: var(--theme-checkbox-radio-fill);
+	background-color: var(--theme-checkbox-radio-fill, var(--theme-color-heading));
 	content: "";
 	display: block;
 	height: 19px;
@@ -98,13 +98,13 @@
 
 @define-mixin radio-label-before {
 	background-color: var(--color-white);
-	border: 1px solid var(--theme-checkbox-radio-fill);
+	border: 1px solid var(--theme-checkbox-radio-fill, var(--theme-color-heading));
 	border-radius: 9999px;
 	box-shadow: inset 0 0 0 3px #fff;
 }
 
 @define-mixin radio-label-selected-before {
-	background-color: var(--theme-checkbox-radio-fill);
+	background-color: var(--theme-checkbox-radio-fill, var(--theme-color-heading));
 }
 
 @define-mixin blockWidthNoPaddingWide {

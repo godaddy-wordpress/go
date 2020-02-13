@@ -64,7 +64,7 @@
 }
 
 .footer-navigation__title {
-	color: hsl(var(--theme-footer-heading--color));
+	color: var(--theme-footer-heading--color);
 	display: block;
 	font-family: var(--theme-site-nav--font);
 	font-size: var(--theme-site-nav--font-size);

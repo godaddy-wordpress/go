@@ -2,39 +2,16 @@
 .wp-block-quote {
 	margin-bottom: 0;
 
-	& p {
-		color: hsl(var(--theme-quote--color));
-		font-family: var(--theme-heading--font);
-		font-size: var(--theme-quote--font-size);
-		font-style: var(--theme-quote--style);
-		font-weight: var(--theme-quote--weight);
-		line-height: var(--theme-quote--leading);
-		margin: 0 0 2rem;
-		padding: 0.5rem 0;
-		position: relative;
-
-		&::before {
-			content: "“";
-			line-height: 1;
-			position: absolute;
-			transform: translate3d(-120%, 20%, 0);
-		}
-
-		&::after {
-			content: "”";
-		}
-	}
-
 	& cite,
 	& .wp-block-quote__citation {
-		color: hsl(var(--theme-caption--color));
+		color: var(--theme-caption--color, var(--theme-color-text-secondary));
 		display: block;
 		font-size: var(--theme-caption--font-size);
 		font-style: var(--theme-caption--style, normal);
 	}
 
 	&:not(.is-style-large) {
-		border-left: var(--theme-quote--border);
+		border-left: var(--theme-quote--border-width, 0) var(--theme-quote--border-style, solid) var(--theme-quote--border-color, var(--theme-color-primary));
 		padding-left: 0;
 		padding-right: 0;
 
@@ -58,15 +35,15 @@
 	}
 
 	&.is-style-large {
-		color: hsl(var(--theme-quote-large--color));
+		color: var(--theme-quote-large--color, var(--theme-color-heading));
 		margin-left: auto;
 		margin-right: auto;
 		padding: 0;
 
 		& p {
 			font-size: var(--theme-quote-large--font-size, var(--theme-h2--font-size));
-			font-style: var(--theme-quote-large--style);
-			line-height: var(--theme-quote-large--leading);
+			font-style: var(--theme-quote-large--style, normal);
+			line-height: var(--theme-quote-large--leading), var(--theme-heading--leading));
 			margin: 0;
 			padding: 0;
 

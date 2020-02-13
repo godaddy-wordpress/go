@@ -26,7 +26,7 @@
 		}
 
 		& .search-input__arrow-icon {
-			fill: hsl(var(--theme-search-submit--color));
+			fill: var(--theme-search-submit--color, hsl(0, 0%, 100%));
 			height: auto;
 			left: 50%;
 			position: absolute;
@@ -41,12 +41,12 @@
 
 		&:active,
 		&:hover {
-			background-color: hsl(var(--theme-search-submit--bg-interactive));
-			border-color: hsl(var(--theme-search-submit--bg-interactive));
+			background-color: var(--theme-search-submit--bg-interactive);
+			border-color: var(--theme-search-submit--bg-interactive);
 			box-shadow: none;
 
 			& .search-input__arrow-icon {
-				fill: hsl(var(--theme-search-submit--color));
+				fill: var(--theme-search-submit--color, hsl(0, 0%, 100%));
 			}
 		}
 
