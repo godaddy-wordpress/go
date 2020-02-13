@@ -7,7 +7,7 @@
 
 /*! Separator */
 .wp-block-separator:not(.is-style-dots) {
-	background-color: hsl(var(--theme-color-secondary));
+	background-color: var(--theme-color-secondary);
 	background-position: 50%;
 	background-repeat: repeat-x;
 	border: none;

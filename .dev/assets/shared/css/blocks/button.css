@@ -6,7 +6,7 @@
 	}
 
 	&.is-style-outline .wp-block-button__link.has-primary-color:hover {
-		color: hsl(var(--theme-color-secondary));
+		color: var(--theme-color-secondary);
 	}
 
 	&.is-style-outline .wp-block-button__link.has-secondary-color:hover {
@@ -28,7 +28,7 @@
 		padding: calc(var(--theme-button--padding-y) - 2px) calc(var(--theme-button--padding-x) - 2px);
 
 		&:hover {
-			color: hsl(var(--theme-color-secondary));
+			color: var(--theme-color-secondary);
 		}
 	}
 

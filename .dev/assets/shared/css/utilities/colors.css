@@ -20,11 +20,11 @@
 }
 
 .has-secondary-background-color {
-	background-color: hsl(var(--theme-color-secondary));
+	background-color: var(--theme-color-secondary);
 }
 
 .has-secondary-color {
-	color: hsl(var(--theme-color-secondary));
+	color: var(--theme-color-secondary);
 }
 
 .has-tertiary-background-color {

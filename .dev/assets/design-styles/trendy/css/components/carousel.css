@@ -43,7 +43,7 @@
 		&:active,
 		&:focus,
 		&:hover {
-			border-color: hsl(var(--theme-color-secondary)) !important;
+			border-color: var(--theme-color-secondary) !important;
 		}
 
 		& .flickity-button-icon {
