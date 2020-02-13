@@ -82,7 +82,7 @@
 
 		/* All submenu links */
 		& a {
-			color: hsl(var(--theme-submenu--color, 0, 0%, 100%));
+			color: var(--theme-submenu--color, hsl(0, 0%, 100%));
 			width: 100%;
 
 			@media (--large) {
@@ -96,7 +96,7 @@
 
 			&:focus {
 				@mixin outline;
-				outline-color: hsla(var(--theme-submenu--color, 0, 0%, 100%), 0.25);
+				outline-color: var(--theme-submenu--color, hsla(0, 0%, 100%, 0.25));
 				outline-offset: 0;
 			}
 		}
