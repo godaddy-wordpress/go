@@ -4,7 +4,7 @@ Tags: one-column, custom-colors, custom-logo, custom-menu, editor-style, theme-o
 Requires at least: 5.0
 Tested up to: 5.2
 Requires PHP: 5.6.0
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -108,6 +108,19 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
+
+= 1.2.4 / 2020-02-13 =
+
+### Enhancements
+* Improve vertical vertical rhythm and spacing. [#451](https://github.com/godaddy-wordpress/go/pull/451)
+* Switch from PO/MO to JSON-based translation system. [#459](https://github.com/godaddy-wordpress/go/pull/459)
+
+### Bug Fixes
+* Conditionally set menu locations description based on selected footer variation. [#445](https://github.com/godaddy-wordpress/go/pull/445)
+* Prevent site header from overlapping the mobile menu. [#449](https://github.com/godaddy-wordpress/go/pull/449)
+* Tweak CoBlocks carousel block arrows for Welcoming, Trendy and Playful design styles. [#452](https://github.com/godaddy-wordpress/go/pull/452)
+* Fix gallery caption alignment. [#461](https://github.com/godaddy-wordpress/go/pull/461)
+* Hide previously open menu items when a new one is opened. [#464](https://github.com/godaddy-wordpress/go/pull/464)
 
 = 1.2.3 =
 * Add jQuery as a dependency of `frontend.js`.
