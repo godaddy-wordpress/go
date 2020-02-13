@@ -30,7 +30,7 @@
 }
 
 @define-mixin outline {
-	outline-color: hsla(var(--theme-outline-color), 1);
+	outline-color: var(--theme-outline-color);
 	outline-style: var(--theme-outline-style, dotted);
 	outline-width: var(--theme-outline-width, 1px);
 }
@@ -38,7 +38,7 @@
 @define-mixin outline-text-link {
 	border: 0;
 	border-bottom-width: var(--theme-outline-width);
-	border-color: hsla(var(--theme-outline-color), 1);
+	border-color: var(--theme-outline-color);
 	border-style: var(--theme-outline-style, dotted);
 	outline: none;
 }
@@ -97,7 +97,7 @@
 }
 
 @define-mixin radio-label-before {
-	background-color: hsl(var(--color-white));
+	background-color: var(--color-white);
 	border: 1px solid var(--theme-checkbox-radio-fill);
 	border-radius: 9999px;
 	box-shadow: inset 0 0 0 3px #fff;

@@ -288,7 +288,7 @@
 	/*--------------------------------------------------------------
 	## CoBlocks
 	--------------------------------------------------------------*/
-	--coblocks-accordion--bg-hover: hsla(var(--theme-selection--bg), 0.05);
+	--coblocks-accordion--bg-hover: hsla(0, 0%, 0%, 0.05);
 	--coblocks-accordion--border-color: var(--theme-color-heading);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid hsl(var(--coblocks-accordion--border-color));
 	--coblocks-accordion--color: var(--theme-color-heading);

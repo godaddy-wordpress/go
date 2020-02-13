@@ -3,7 +3,7 @@
 
 	& .flickity-button {
 		background-color: transparent;
-		border: 2px solid hsl(var(--color-white)) !important;
+		border: 2px solid var(--color-white) !important;
 		border-radius: 0;
 
 		&::after {

@@ -19,7 +19,7 @@
 }
 
 .flickity-button {
-	background: hsl(var(--color-white));
+	background: var(--color-white);
 }
 
 .flickity-prev-next-button {

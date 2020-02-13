@@ -48,7 +48,7 @@
 		}
 
 		&:not([class*="text-color"]) {
-			color: hsl(var(--color-white));
+			color: var(--color-white);
 		}
 
 		& blockquote {

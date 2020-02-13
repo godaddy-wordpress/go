@@ -61,11 +61,11 @@
 	& .site-title,
 	& .site-description,
 	& .header .primary-menu a {
-		color: hsl(var(--color-white));
+		color: var(--color-white);
 	}
 
 	& .nav-toggle-icon svg,
 	& .header__search-toggle svg {
-		fill: hsl(var(--color-white)) !important;
+		fill: var(--color-white) !important;
 	}
 }

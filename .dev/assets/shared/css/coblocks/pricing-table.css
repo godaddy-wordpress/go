@@ -22,7 +22,7 @@
 		& .wp-block-coblocks-pricing-table-item__title,
 		& .wp-block-coblocks-pricing-table-item__amount,
 		& .wp-block-coblocks-pricing-table-item__currency {
-			color: hsl(var(--color-white));
+			color: var(--color-white);
 		}
 	}
 }

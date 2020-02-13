@@ -15,7 +15,7 @@ img {
 }
 
 .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
-	background: hsl(var(--color-white)) !important;
+	background: var(--color-white) !important;
 }
 
 .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
