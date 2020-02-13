@@ -43,6 +43,10 @@
 	/* Site Padding */
 	--theme-block-padding-x: 5vw;
 
+	@media (--huge) {
+		--theme-block-padding-x: 4.5rem;
+	}
+
 	/* Block Padding */
 	--editor-padding: 10vw;
 

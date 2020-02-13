@@ -40,8 +40,16 @@
 	--vertical-rhythm--med: 2.25rem;
 	--vertical-rhythm--lrg: calc(2rem + 10vw);
 
+	@media (--huge) {
+		--vertical-rhythm--lrg: 11rem;
+	}
+
 	/* Site Padding */
 	--theme-block-padding-x: 4vw;
+
+	@media (--huge) {
+		--theme-block-padding-x: 3.5rem;
+	}
 
 	/* Block Padding */
 	--editor-padding: 10vw;
@@ -203,6 +211,10 @@
 	## Header
 	--------------------------------------------------------------*/
 	--header-padding: 2vw;
+
+	@media (--huge) {
+		--header-padding: 1.85rem;
+	}
 
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.1rem;
