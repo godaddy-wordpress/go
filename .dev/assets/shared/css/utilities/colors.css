@@ -28,7 +28,7 @@
 }
 
 .has-tertiary-background-color {
-	background-color: hsl(var(--theme-color-tertiary));
+	background-color: var(--theme-color-tertiary);
 
 	&,
 	& a:not(.wp-block-button__link) {
@@ -37,7 +37,7 @@
 }
 
 .has-tertiary-color {
-	color: hsl(var(--theme-color-tertiary));
+	color: var(--theme-color-tertiary);
 }
 
 .has-quaternary-background-color {
