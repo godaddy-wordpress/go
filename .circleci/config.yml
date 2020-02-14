@@ -296,14 +296,12 @@ jobs:
           name: Generate the translations
           command: |
             npm run makepot
-            npm run json2po
-            npm run pot2json
       - run:
           name: Deploy go.pot/go.json back to GitHub
           command: |
             rm -rf package-lock.json
             git config --global user.email "plugins@godaddy.com"
-            git config --global user.name "GoDaddy Translator"
+            git config --global user.name "GoDaddy Translator Bot"
             git add languages/go.json && git add languages/go.pot
             git commit -m "Update go.pot/go.json files [skip i18n]"
             git push origin master --quiet
