@@ -971,8 +971,8 @@ class Test_Customizer extends WP_UnitTestCase {
 			'--theme-color-secondary',
 			'--theme-color-tertiary',
 			'--theme-color-body-bg',
-			'--theme-site-logo--width',
-			'--theme-site-logo--width-mobile',
+			'--user-logo-size',
+			'--user-logo-size--mobile',
 		];
 
 		foreach ( $expected_strings as $expected_string ) {

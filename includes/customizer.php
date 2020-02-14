@@ -862,11 +862,11 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $logo_width ) : ?>
-					--theme-site-logo--width: <?php echo esc_attr( $logo_width ); ?>px;
+					--user-logo-size: <?php echo esc_attr( $logo_width ); ?>px;
 				<?php endif; ?>
 
 				<?php if ( $logo_width_mobile ) : ?>
-					--theme-site-logo--width-mobile: <?php echo esc_attr( $logo_width_mobile ); ?>px;
+					--user-logo-size--mobile: <?php echo esc_attr( $logo_width_mobile ); ?>px;
 				<?php endif; ?>
 
 				<?php if ( $viewport_basis ) : ?>
