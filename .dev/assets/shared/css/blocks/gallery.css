@@ -27,7 +27,7 @@ body.rtl .wp-block-gallery {
 }
 
 .site .content-area__wrapper .content-area .wp-block-gallery {
-	margin-bottom: calc(var(--vertical-rhythm) - 16px) !important;
+	margin-bottom: calc(var(--theme-vertical-rhythm) - 16px) !important;
 }
 
 .site .content-area__wrapper .content-area .wp-block-gallery.alignfull {

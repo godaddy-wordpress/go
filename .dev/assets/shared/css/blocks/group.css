@@ -2,7 +2,7 @@
 .wp-block-group {
 
 	&.has-background {
-		padding: var(--vertical-rhythm) calc(var(--vertical-rhythm) * 1.3);
+		padding: var(--theme-vertical-rhythm) calc(var(--theme-vertical-rhythm) * 1.3);
 
 		@media (--medium) {
 			padding: calc(var(--vertical-rhythm--lrg) * 0.2) calc(var(--vertical-rhythm--lrg) * 0.25);
@@ -33,7 +33,7 @@
 	}
 
 	& .wp-block-column {
-		padding-bottom: var(--vertical-rhythm);
+		padding-bottom: var(--theme-vertical-rhythm);
 
 		@media (--medium) {
 			padding-bottom: 0;

@@ -1,6 +1,6 @@
 /*! Editor Padding Sizes */
 .has-small-padding {
-	padding: var(--vertical-rhythm);
+	padding: var(--theme-vertical-rhythm);
 
 	@media (--medium) {
 		padding: calc(var(--vertical-rhythm--lrg) * 0.2);
@@ -8,7 +8,7 @@
 }
 
 .has-medium-padding {
-	padding: var(--vertical-rhythm);
+	padding: var(--theme-vertical-rhythm);
 
 	@media (--medium) {
 		padding: calc(var(--vertical-rhythm--lrg) * 0.5);
@@ -16,7 +16,7 @@
 }
 
 .has-large-padding {
-	padding: var(--vertical-rhythm);
+	padding: var(--theme-vertical-rhythm);
 
 	@media (--medium) {
 		padding: calc(var(--vertical-rhythm--lrg) * 0.75);

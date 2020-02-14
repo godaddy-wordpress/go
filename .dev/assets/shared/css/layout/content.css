@@ -8,8 +8,8 @@
 }
 
 .content-area > * {
-	margin-bottom: var(--vertical-rhythm);
-	margin-top: var(--vertical-rhythm);
+	margin-bottom: var(--theme-vertical-rhythm);
+	margin-top: var(--theme-vertical-rhythm);
 
 	&:not(p):not(ul):not(ol):not(address):not(.wp-block-spacer):not(.wp-block-separator):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
 		margin-bottom: var(--vertical-rhythm--lrg);
@@ -103,8 +103,8 @@ body.home {
 		& .wp-block-coblocks-accordion,
 		& .wp-block-coblocks-author,
 		& figure:not(.alignfull):not(.alignwide) {
-			margin-bottom: var(--vertical-rhythm) !important;
-			margin-top: var(--vertical-rhythm) !important;
+			margin-bottom: var(--theme-vertical-rhythm) !important;
+			margin-top: var(--theme-vertical-rhythm) !important;
 		}
 
 		& .coblocks-form,
@@ -112,12 +112,12 @@ body.home {
 		& .wp-block-separator,
 		& .wp-block-coblocks-dynamic-separator,
 		& .wp-block-pullquote:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
-			margin-bottom: calc(var(--vertical-rhythm) * 1.5) !important;
-			margin-top: calc(var(--vertical-rhythm) * 2) !important;
+			margin-bottom: calc(var(--theme-vertical-rhythm) * 1.5) !important;
+			margin-top: calc(var(--theme-vertical-rhythm) * 2) !important;
 		}
 
 		& .wp-block-coblocks-buttons {
-			margin-top: calc(var(--vertical-rhythm) * 2) !important;
+			margin-top: calc(var(--theme-vertical-rhythm) * 2) !important;
 		}
 	}
 

@@ -25,7 +25,7 @@
 	}
 
 	& .wp-block-column {
-		padding-bottom: var(--vertical-rhythm) !important;
+		padding-bottom: var(--theme-vertical-rhythm) !important;
 
 		@media (--medium) {
 			padding-bottom: 0 !important;
