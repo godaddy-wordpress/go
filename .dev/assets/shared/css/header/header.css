@@ -13,8 +13,8 @@
 	padding: 2vw var(--theme-block-padding-x);
 
 	@media (--medium) {
-		padding-bottom: var(--header-padding, 3vw);
-		padding-top: var(--header-padding, 3vw);
+		padding-bottom: var(--header-padding, var(--theme-block-padding-x));
+		padding-top: var(--header-padding, var(--theme-block-padding-x));
 	}
 }
 

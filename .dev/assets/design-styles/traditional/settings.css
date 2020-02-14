@@ -32,12 +32,10 @@
 
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.15rem;
-	--vertical-rhythm--med: 1.75rem;
 	--vertical-rhythm--lrg: calc(2rem + 8vw);
 
 	@media (--large) {
 		--vertical-rhythm: 1.8rem;
-		--vertical-rhythm--med: 2.25rem;
 	}
 
 	@media (--huge) {
@@ -50,9 +48,6 @@
 	@media (--huge) {
 		--theme-block-padding-x: 5.5rem;
 	}
-
-	/* Block Padding */
-	--editor-padding: 8vw;
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-heading);
@@ -161,7 +156,7 @@
 
 	/* Input */
 	--theme-input--bg: var(--theme-color-body-bg);
-	--theme-input--bg-interactive: hsl(0, 0%, 100%);
+	--theme-input--bg-interactive: var(--color-white);
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
 	--theme-input--color: var(--theme-color-text);

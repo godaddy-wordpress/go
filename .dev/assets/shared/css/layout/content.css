@@ -103,12 +103,7 @@ body.home {
 		& .wp-block-coblocks-accordion,
 		& .wp-block-coblocks-author,
 		& figure:not(.alignfull):not(.alignwide) {
-			margin-bottom: var(--vertical-rhythm--med) !important;
-			margin-top: var(--vertical-rhythm--med) !important;
-		}
-
-		& .wp-block-columns,
-		& .wp-block-coblocks-row {
+			margin-bottom: var(--vertical-rhythm) !important;
 			margin-top: var(--vertical-rhythm) !important;
 		}
 
@@ -117,12 +112,12 @@ body.home {
 		& .wp-block-separator,
 		& .wp-block-coblocks-dynamic-separator,
 		& .wp-block-pullquote:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
-			margin-bottom: calc(var(--vertical-rhythm--med) * 1.5) !important;
-			margin-top: calc(var(--vertical-rhythm--med) * 1.15) !important;
+			margin-bottom: calc(var(--vertical-rhythm) * 1.5) !important;
+			margin-top: calc(var(--vertical-rhythm) * 2) !important;
 		}
 
 		& .wp-block-coblocks-buttons {
-			margin-top: calc(var(--vertical-rhythm--med) * 1.15) !important;
+			margin-top: calc(var(--vertical-rhythm) * 2) !important;
 		}
 	}
 

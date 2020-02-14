@@ -32,12 +32,10 @@
 
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.75rem;
-	--vertical-rhythm--med: 2.25rem;
 	--vertical-rhythm--lrg: calc(2rem + 10vw);
 
 	@media (--large) {
 		--vertical-rhythm: 2.25rem;
-		--vertical-rhythm--med: 2.5rem;
 	}
 
 	@media (--huge) {
@@ -50,9 +48,6 @@
 	@media (--huge) {
 		--theme-block-padding-x: 5.5rem;
 	}
-
-	/* Block Padding */
-	--editor-padding: 10vw;
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
@@ -133,7 +128,7 @@
 	--theme-label--spacing: 0.35rem;
 
 	/* Input */
-	--theme-input--bg-interactive: hsl(0, 0%, 100%);
+	--theme-input--bg-interactive: var(--color-white);
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
 	--theme-input--color: var(--theme-color-heading);
@@ -176,7 +171,7 @@
 	}
 
 	/* Header > Site Branding */
-	--theme-site-title--color: hsl(0, 0%, 100%);
+	--theme-site-title--color: var(--color-white);
 	--theme-site-title--font-size: 1.4rem;
 	--theme-site-title--font: "Poppins", sans-serif;
 	--theme-site-title--text-transform: none;
@@ -186,11 +181,11 @@
 		--theme-site-title--font-size: 1.8rem;
 	}
 
-	--theme-site-description--color: hsl(0, 0%, 100%);
+	--theme-site-description--color: var(--color-white);
 	--theme-site-description--leading: 1.4;
 
 	/* Header > Navigation */
-	--theme-site-nav--color: hsl(0, 0%, 100%);
+	--theme-site-nav--color: var(--color-white);
 	--theme-site-nav--font: var(--theme-body--font);
 	--theme-site-nav--font-size: 1.1rem;
 	--theme-site-nav--font-size-mobile: 1.4rem;
@@ -203,8 +198,8 @@
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
-	--theme-search-toggle--color: hsl(0, 0%, 100%);
-	--theme-search-toggle--color-interactive: hsl(0, 0%, 100%);
+	--theme-search-toggle--color: var(--color-white);
+	--theme-search-toggle--color-interactive: var(--color-white);
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-primary);
 
@@ -223,12 +218,12 @@
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--color: hsl(0, 0%, 100%);
-	--theme-footer-heading--color: hsl(0, 0%, 100%);
+	--theme-footer--color: var(--color-white);
+	--theme-footer-heading--color: var(--color-white);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color: hsl(0, 0%, 100%);
+	--theme-footer-nav--color: var(--color-white);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
@@ -239,7 +234,7 @@
 	}
 
 	/* Footer > Social Icons */
-	--theme-social--color: hsl(0, 0%, 100%);
+	--theme-social--color: var(--color-white);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 

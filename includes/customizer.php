@@ -478,6 +478,33 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 			)
 		)
 	);
+
+	$wp_customize->add_setting(
+		'viewportBasis',
+		array(
+			'default'           => 1000,
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Range_Control(
+			$wp_customize,
+			'viewportBasis',
+			array(
+				'default'     => 1100,
+				'type'        => 'go_range_control',
+				'label'       => esc_html__( 'Spacing', 'go' ),
+				'section'     => 'colors',
+				'input_attrs' => array(
+					'min'  => 500,
+					'max'  => 2250,
+					'step' => 1,
+				),
+			)
+		)
+	);
 }
 
 /**
@@ -783,6 +810,9 @@ function inline_css() {
 	// Site logo width.
 	$logo_width        = get_theme_mod( 'logo_width', '100' );
 	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', '100' );
+
+	// Spacing.
+	$viewport_basis = get_theme_mod( 'viewportBasis', '1100' );
 	?>
 		<style>
 			:root {
@@ -837,6 +867,10 @@ function inline_css() {
 
 				<?php if ( $logo_width_mobile ) : ?>
 					--theme-site-logo--width-mobile: <?php echo esc_attr( $logo_width_mobile ); ?>px;
+				<?php endif; ?>
+
+				<?php if ( $viewport_basis ) : ?>
+					--viewportBasis: <?php echo esc_attr( $viewport_basis ); ?>;
 				<?php endif; ?>
 			}
 		</style>

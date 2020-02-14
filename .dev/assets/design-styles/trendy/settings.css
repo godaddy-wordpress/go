@@ -32,12 +32,10 @@
 
 	/* Vertical Rhythm */
 	--vertical-rhythm: 1.15rem;
-	--vertical-rhythm--med: 1.75rem;
 	--vertical-rhythm--lrg: calc(2rem + 10vw);
 
 	@media (--large) {
 		--vertical-rhythm: 1.8rem;
-		--vertical-rhythm--med: 2.3rem;
 	}
 
 	@media (--huge) {
@@ -51,13 +49,10 @@
 		--theme-block-padding-x: 5.5rem;
 	}
 
-	/* Block Padding */
-	--editor-padding: 10vw;
-
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
 	--theme-selection--bg: var(--theme-color-heading);
-	--theme-selection--color: hsl(0, 0%, 100%);
+	--theme-selection--color: var(--color-white);
 
 	/* Transitions */
 	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
@@ -236,11 +231,11 @@
 	--theme-footer--bg: var(--theme-color-tertiary);
 	--theme-footer--color: 0, 0%, 55%;
 	--theme-footer--font-family: "Source Code Pro", sans-serif;
-	--theme-footer-heading--color: hsl(0, 0%, 100%);
+	--theme-footer-heading--color: var(--color-white);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color: hsl(0, 0%, 100%);
+	--theme-footer-nav--color: var(--color-white);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
@@ -251,7 +246,7 @@
 	}
 
 	/* Footer > Social Icons */
-	--theme-social--color: hsl(0, 0%, 100%);
+	--theme-social--color: var(--color-white);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 
@@ -261,7 +256,7 @@
 	}
 
 	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: hsl(0, 0%, 100%);
+	--theme-footer-3-site-info--border-color: var(--color-white);
 	--theme-footer-3-site-info--border-width: 1px;
 
 

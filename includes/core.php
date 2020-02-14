@@ -635,6 +635,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
+			'viewportBasis' => '1000',
 		),
 		'modern'      => array(
 			'slug'          => 'modern',
@@ -686,6 +687,7 @@ function get_available_design_styles() {
 					'800',
 				),
 			),
+			'viewportBasis' => '1100',
 		),
 		'trendy'      => array(
 			'slug'          => 'trendy',
@@ -742,6 +744,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
+			'viewportBasis' => '1200',
 		),
 		'welcoming'   => array(
 			'slug'          => 'welcoming',
@@ -793,6 +796,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
+			'viewportBasis' => '1100',
 		),
 		'playful'     => array(
 			'slug'          => 'playful',
@@ -850,6 +854,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
+			'viewportBasis' => '1000',
 		),
 	);
 

@@ -26,7 +26,7 @@
 		}
 
 		& .search-input__arrow-icon {
-			fill: var(--theme-search-submit--color, hsl(0, 0%, 100%));
+			fill: var(--theme-search-submit--color, var(--color-white));
 			height: auto;
 			left: 50%;
 			position: absolute;
@@ -46,7 +46,7 @@
 			box-shadow: none;
 
 			& .search-input__arrow-icon {
-				fill: var(--theme-search-submit--color, hsl(0, 0%, 100%));
+				fill: var(--theme-search-submit--color, var(--color-white));
 			}
 		}
 

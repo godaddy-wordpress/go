@@ -1,0 +1,26 @@
+:root {
+
+	/*! Vertical Rhythm */
+	--vertical-rhythm: calc(var(--verticalSpacing) / var(--viewportBasis) * 100rem);
+	--vertical-rhythm--lrg: calc(100 / var(--viewportBasis) * 100vw);
+
+	@media (--huge) {
+		--vertical-rhythm--lrg: calc(90 / var(--viewportBasis) * 100rem);
+	}
+
+	/*! Horizontal Rhythm */
+	--horizontalSpacingMax: calc(var(--horizontalSpacing) * 0.9);
+	--theme-block-padding-x: calc(var(--horizontalSpacing) / var(--viewportBasis) * 100vw);
+
+	@media (--huge) {
+		--theme-block-padding-x: calc(var(--horizontalSpacingMax) / var(--viewportBasis) * 100rem);
+	}
+
+	/*! Header */
+	--headerSpacingMax: calc(var(--headerSpacing) * 0.9);
+	--header-padding: calc(var(--headerSpacing) / var(--viewportBasis) * 100vw);
+
+	@media (--huge) {
+		--header-padding: calc(var(--headerSpacingMax) / var(--viewportBasis) * 100rem);
+	}
+}

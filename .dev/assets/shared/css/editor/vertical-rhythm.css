@@ -16,11 +16,6 @@
 		margin-top: calc(-0.65 * var(--vertical-rhythm--lrg)) !important;
 	}
 
-	& [data-type="core/paragraph"] ~ [data-type="core/cover"] {
-		margin-bottom: var(--vertical-rhythm--med) !important;
-		margin-top: var(--vertical-rhythm--med) !important;
-	}
-
 	& [data-type="core/paragraph"] + [data-type="core/button"],
 	& [data-type="core/paragraph"] + [data-type="coblocks/buttons"],
 	& [data-type="core/paragraph"] + [data-type="coblocks/form"] {
@@ -32,6 +27,8 @@
 	}
 }
 
+.wp-block[data-type="core/columns"],
+.wp-block[data-type="core/cover"][data-align="wide"],
 .wp-block[data-type="core/image"][data-align="full"],
 .wp-block[data-type="core/image"][data-align="wide"],
 .wp-block[data-type="core/gallery"][data-align="full"],

@@ -23,4 +23,16 @@ export default () => {
 			}
 		} );
 	} );
+	/**
+	 * Set Logo width.
+	 *
+	 * @param {*} width
+	 */
+	const setViewportBasis = ( size ) => {
+		document.documentElement.style.setProperty( '--viewportBasis', size ? size : '1000' );
+	};
+
+	wp.customize( 'viewportBasis', ( value ) => {
+		value.bind( ( to ) => setViewportBasis( to ) );
+	} );
 };

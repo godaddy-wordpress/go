@@ -1,7 +1,8 @@
-/* Vertical Rhythm */
+/* Global Variables */
 @import url("editor/vertical-rhythm.css");
 @import url("config/media-queries.css");
 @import url("config/mixins.css");
+@import url("config/spacing.css");
 @import url("config/colors.css");
 @import url("editor/settings.css");
 @import url("editor/widths.css");
@@ -70,7 +71,7 @@
 	& h6 {
 		background-color: var(--coblocks-food-drinks-title--bg, var(--theme-color-heading));
 		border-bottom: var(--coblocks-food-drinks-title--border-bottom);
-		color: var(--coblocks-food-drinks-title--color, hsl(0, 0%, 100%));
+		color: var(--coblocks-food-drinks-title--color, var(--color-white));
 		font-size: var(--coblocks-food-drinks-title--font-size);
 		font-style: var(--coblocks-food-drinks-title--style);
 		margin-bottom: var(--coblocks-food-drinks-title--margin-y);

@@ -18,41 +18,15 @@
 
 
 	/*--------------------------------------------------------------
-	## Editor
-	--------------------------------------------------------------*/
-	--editor-title--font-size: 2em;
-	--editor-max-w-base: 633px;
-	--editor-max-w-wide: 1280px;
-
-	@media (--medium) {
-		--editor-title--font-size: 3.65em;
-	}
-
-
-	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
+	--viewportBasis: 1000;
+	--verticalSpacing: 9;
+	--horizontalSpacing: 50;
+	--headerSpacing: 20;
+
 	--theme-max-w-base: 38rem;
 	--theme-max-w-wide: 90rem;
-
-	/* Vertical Rhythm */
-	--vertical-rhythm: 1.25rem;
-	--vertical-rhythm--med: 2.25rem;
-	--vertical-rhythm--lrg: calc(2rem + 10vw);
-
-	@media (--huge) {
-		--vertical-rhythm--lrg: 11rem;
-	}
-
-	/* Site Padding */
-	--theme-block-padding-x: 4vw;
-
-	@media (--huge) {
-		--theme-block-padding-x: 3.5rem;
-	}
-
-	/* Block Padding */
-	--editor-padding: 10vw;
 
 	/* Accessibility */
 	--theme-outline-color: hsl(0, 0%, 0%);
@@ -141,7 +115,7 @@
 	--theme-label--spacing: 0.75rem;
 
 	/* Input */
-	--theme-input--bg-interactive: hsl(0, 0%, 100%);
+	--theme-input--bg-interactive: var(--color-white);
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
 	--theme-input--color: var(--theme-color-text);
@@ -175,11 +149,6 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
-	--header-padding: 2vw;
-
-	@media (--huge) {
-		--header-padding: 1.85rem;
-	}
 
 	--theme-site-title--color: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.1rem;
@@ -297,4 +266,15 @@
 
 	--coblocks-services--heading-margin-bottom: 1rem;
 	--coblocks-services--heading-margin-top: 1.75rem;
+
+	/*--------------------------------------------------------------
+	## Editor
+	--------------------------------------------------------------*/
+	--editor-title--font-size: 2em;
+	--editor-max-w-base: 633px;
+	--editor-max-w-wide: 1280px;
+
+	@media (--medium) {
+		--editor-title--font-size: 3.65em;
+	}
 }
