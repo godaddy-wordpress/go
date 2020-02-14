@@ -1,17 +1,19 @@
 /*! Cover */
 .wp-block-cover {
 
-	&.alignfull > div {
-		padding-bottom: var(--vertical-rhythm--lrg);
-		padding-top: var(--vertical-rhythm--lrg);
-	}
-
-	& .wp-block-cover__inner-container {
+	& > div {
 		margin: 0 auto;
 		max-width: calc(var(--theme-max-w-base));
-		padding-left: 1rem;
-		padding-right: 1rem;
+		padding: var(--vertical-rhythm--lrg) 1rem;
 		width: 100%;
+	}
+
+	& h2:last-of-type,
+	& h3:last-of-type,
+	& h4:last-of-type,
+	& h5:last-of-type,
+	& h6:last-of-type {
+		margin-bottom: 0;
 	}
 
 	& ul,

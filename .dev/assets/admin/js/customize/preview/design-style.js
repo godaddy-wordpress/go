@@ -24,9 +24,9 @@ export default () => {
 		} );
 	} );
 	/**
-	 * Set Logo width.
+	 * Set viewport basis
 	 *
-	 * @param {*} width
+	 * @param {*} size
 	 */
 	const setViewportBasis = ( size ) => {
 		document.documentElement.style.setProperty( '--viewportBasis', size ? size : '1000' );

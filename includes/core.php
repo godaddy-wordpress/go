@@ -635,7 +635,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'viewportBasis' => '1000',
+			'viewportBasis' => '900',
 		),
 		'modern'      => array(
 			'slug'          => 'modern',
@@ -687,7 +687,7 @@ function get_available_design_styles() {
 					'800',
 				),
 			),
-			'viewportBasis' => '1100',
+			'viewportBasis' => '950',
 		),
 		'trendy'      => array(
 			'slug'          => 'trendy',
@@ -744,7 +744,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'viewportBasis' => '1200',
+			'viewportBasis' => '975',
 		),
 		'welcoming'   => array(
 			'slug'          => 'welcoming',
@@ -796,7 +796,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'viewportBasis' => '1100',
+			'viewportBasis' => '750',
 		),
 		'playful'     => array(
 			'slug'          => 'playful',
@@ -854,7 +854,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'viewportBasis' => '1000',
+			'viewportBasis' => '950',
 		),
 	);
 
@@ -1147,6 +1147,26 @@ function get_default_color_scheme() {
 	 */
 	return (string) apply_filters( 'go_default_color_scheme', 'one' );
 
+}
+
+/**
+ * Returns the default viewport basis.
+ *
+ * @return string
+ */
+function get_default_viewport_basis() {
+
+	$design_style = get_theme_mod( 'design_style', get_default_design_style() );
+
+	$supported_design_styles = get_available_design_styles();
+
+	if ( in_array( $design_style, array_keys( $supported_design_styles ), true ) ) {
+
+		return $supported_design_styles[ $design_style ]['viewportBasis'];
+
+	}
+
+	return false;
 }
 
 /**

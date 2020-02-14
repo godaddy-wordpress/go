@@ -1,62 +1,17 @@
 :root {
 
 	/*--------------------------------------------------------------
-	>>> TABLE OF CONTENTS:
-	----------------------------------------------------------------
-	# Base
-	# Colors
-	# Typography
-	# Forms
-	# Buttons
-	# Header
-	# Header Navigation Toggle
-	# Header Search Toggle
-	# Entry Header
-	# Footer
-	# Blocks
-	# CoBlocks
-
-
-	/*--------------------------------------------------------------
-	## Editor
-	--------------------------------------------------------------*/
-	--editor-max-w-base: 702px;
-	--editor-max-w-wide: 1118px;
-
-
-	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
+	--horizontalSpacing: 60;
+	--paragraphSpacing: 9;
+	--headerSpacing: 25;
 	--theme-max-w-base: 42rem;
 	--theme-max-w-wide: 84rem;
-
-	/* Vertical Rhythm */
-	--vertical-rhythm: 1.75rem;
-	--vertical-rhythm--lrg: calc(2rem + 10vw);
-
-	@media (--large) {
-		--vertical-rhythm: 2.25rem;
-	}
-
-	@media (--huge) {
-		--vertical-rhythm--lrg: 11rem;
-	}
-
-	/* Site Padding */
-	--theme-block-padding-x: 6vw;
-
-	@media (--huge) {
-		--theme-block-padding-x: 5.5rem;
-	}
 
 	/* Accessibility */
 	--theme-outline-color: var(--theme-color-primary);
 	--theme-selection--bg: var(--theme-color-primary);
-
-	/* Transitions */
-	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
-	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), box-shadow 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1);
-
 
 	/*--------------------------------------------------------------
 	## Text Colors
@@ -192,7 +147,6 @@
 	--theme-site-nav--weight: 600;
 	--theme-site-nav--text-transform: none;
 	--theme-site-nav--tracking: 0;
-	--theme-site-nav--transition: var(--theme-link-transition);
 
 
 	/*--------------------------------------------------------------
@@ -280,4 +234,10 @@
 
 	--coblocks-services--heading-margin-bottom: 1.25rem;
 	--coblocks-services--heading-margin-top: 2rem;
+
+	/*--------------------------------------------------------------
+	## Editor
+	--------------------------------------------------------------*/
+	--editor-max-w-base: 702px;
+	--editor-max-w-wide: 1118px;
 }

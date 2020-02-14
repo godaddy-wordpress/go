@@ -482,7 +482,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_setting(
 		'viewportBasis',
 		array(
-			'default'           => 1000,
+			'default'           => \Go\Core\get_default_viewport_basis(),
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint',
 		)
@@ -493,7 +493,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 			$wp_customize,
 			'viewportBasis',
 			array(
-				'default'     => 1100,
+				'default'     => \Go\Core\get_default_viewport_basis(),
 				'type'        => 'go_range_control',
 				'label'       => esc_html__( 'Spacing', 'go' ),
 				'section'     => 'colors',

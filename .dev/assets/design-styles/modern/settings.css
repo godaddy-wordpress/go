@@ -1,40 +1,17 @@
 :root {
 
 	/*--------------------------------------------------------------
-	>>> TABLE OF CONTENTS:
-	----------------------------------------------------------------
-	# Base
-	# Colors
-	# Typography
-	# Forms
-	# Buttons
-	# Header
-	# Header Navigation Toggle
-	# Header Search Toggle
-	# Entry Header
-	# Footer
-	# Blocks
-	# CoBlocks
-
-
-	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--viewportBasis: 1000;
-	--verticalSpacing: 9;
-	--horizontalSpacing: 50;
-	--headerSpacing: 20;
-
+	--horizontalSpacing: 40;
+	--paragraphSpacing: 13;
+	--headerSpacing: 17;
 	--theme-max-w-base: 38rem;
 	--theme-max-w-wide: 90rem;
 
 	/* Accessibility */
 	--theme-outline-color: hsl(0, 0%, 0%);
 	--theme-selection--bg: hsl(0, 0%, 0%);
-
-	/* Transitions */
-	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
-	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1);
 
 
 	/*--------------------------------------------------------------
@@ -177,7 +154,6 @@
 	--theme-site-nav--weight: 700;
 	--theme-site-nav--text-transform: uppercase;
 	--theme-site-nav--tracking: 3px;
-	--theme-site-nav--transition: var(--theme-link-transition);
 
 
 	/*--------------------------------------------------------------
