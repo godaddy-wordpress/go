@@ -42,7 +42,7 @@
     "lint-php": "composer run lint",
     "makepot": "wp i18n make-pot . languages/go.pot --skip-audit --exclude=build,dist --headers='{\"Last-Translator\":\"plugins@godaddy.com\",\"Report-Msgid-Bugs-To\":\"https://github.com/godaddy-wordpress/go/issues\"}' --file-comment='Copyright (c) 2019 GoDaddy Operating Company, LLC. All Rights Reserved.' && npm run pot2json",
     "pot2json": ".dev/bin/pot2json languages/go.pot languages/go.json",
-    "json2po": "cd languages && find . -name '*.json' ! -name 'go*.json' -execdir sh -c 'FROM=\"$0\" && TO=\"go-`basename $0 .json`.po\" && echo \"$FROM > $TO\" && ../.dev/bin/json2po go.json $FROM $TO && msgmerge --previous $TO go.pot > $TO-msgmerge && mv $TO-msgmerge $TO && sed -i \"\" -e \"/^#, fuzzy$/d\" $TO' '{}' \\;",
+    "json2po": "cd languages && find . -name '*.json' ! -name 'go*.json' -execdir sh -c 'FROM=\"$0\" && TO=\"go-`basename $0 .json`.po\" && echo \"$FROM > $TO\" && ../.dev/bin/json2po go.json $FROM $TO && msgmerge --previous $TO go.pot > $TO-msgmerge && mv $TO-msgmerge $TO && if [[ \"$OSTYPE\" == \"darwin\"* ]]; then sed -i \"\" -e \"/^#, fuzzy$/d\" $TO; else sed -i -e \"/^#, fuzzy$/d\" $TO; fi;' '{}' \\;",
     "po2mo": "cd languages && find . -name '*.po' -execdir sh -c 'FROM=\"$0\" && TO=\"`basename ${0#go-} .po`.mo\" && echo \"$FROM > $TO\" && msgfmt $FROM -o $TO' '{}'  \\;",
     "format-js": "eslint --fix assets/shared/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
