@@ -32,7 +32,7 @@ export default () => {
 		document.documentElement.style.setProperty( '--theme-viewport-basis', size ? size : '1000' );
 	};
 
-	wp.customize( 'viewportBasis', ( value ) => {
+	wp.customize( 'viewport_basis', ( value ) => {
 		value.bind( ( to ) => setViewportBasis( to ) );
 	} );
 };

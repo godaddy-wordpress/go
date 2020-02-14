@@ -480,7 +480,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'viewportBasis',
+		'viewport_basis',
 		array(
 			'default'           => \Go\Core\get_default_viewport_basis(),
 			'transport'         => 'postMessage',
@@ -491,7 +491,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new Range_Control(
 			$wp_customize,
-			'viewportBasis',
+			'viewport_basis',
 			array(
 				'default'     => \Go\Core\get_default_viewport_basis(),
 				'type'        => 'go_range_control',
@@ -812,7 +812,7 @@ function inline_css() {
 	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', '100' );
 
 	// Spacing.
-	$viewport_basis = get_theme_mod( 'viewportBasis', '1100' );
+	$viewport_basis = get_theme_mod( 'viewport_basis', '1100' );
 	?>
 		<style>
 			:root {

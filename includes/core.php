@@ -635,7 +635,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'viewportBasis' => '900',
+			'viewport_basis' => '900',
 		),
 		'modern'      => array(
 			'slug'          => 'modern',
@@ -687,7 +687,7 @@ function get_available_design_styles() {
 					'800',
 				),
 			),
-			'viewportBasis' => '950',
+			'viewport_basis' => '950',
 		),
 		'trendy'      => array(
 			'slug'          => 'trendy',
@@ -744,7 +744,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'viewportBasis' => '975',
+			'viewport_basis' => '975',
 		),
 		'welcoming'   => array(
 			'slug'          => 'welcoming',
@@ -796,7 +796,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'viewportBasis' => '750',
+			'viewport_basis' => '750',
 		),
 		'playful'     => array(
 			'slug'          => 'playful',
@@ -854,7 +854,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'viewportBasis' => '950',
+			'viewport_basis' => '950',
 		),
 	);
 
@@ -1162,7 +1162,7 @@ function get_default_viewport_basis() {
 
 	if ( in_array( $design_style, array_keys( $supported_design_styles ), true ) ) {
 
-		return $supported_design_styles[ $design_style ]['viewportBasis'];
+		return $supported_design_styles[ $design_style ]['viewport_basis'];
 
 	}
 
