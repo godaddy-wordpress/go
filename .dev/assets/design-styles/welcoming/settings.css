@@ -156,17 +156,6 @@
 
 
 	/*--------------------------------------------------------------
-	## Entry Header
-	--------------------------------------------------------------*/
-	--theme-entryheader--padding-top: 4rem;
-	--theme-entryheader--padding-bottom: 7rem;
-
-	@media (--large) {
-		--theme-entryheader--padding-bottom: 8.5rem;
-	}
-
-
-	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
 	--theme-footer--color: var(--theme-color-primary);

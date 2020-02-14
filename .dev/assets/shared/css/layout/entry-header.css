@@ -6,11 +6,5 @@
 }
 
 .has-featured-image .entry-header {
-	padding-top: var(--theme-entryheader--padding-top);
+	padding-top: var(--theme-entryheader--padding-top, 4rem);
 }
-
-/* .has-header-3 .entry-header {
-	@media (--large) {
-		padding-top: 0;
-	}
-} */
