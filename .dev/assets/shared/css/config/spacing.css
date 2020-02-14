@@ -1,10 +1,10 @@
 :root {
 
 	/*! Vertical Rhythm */
-	--vertical-rhythm--lrg: calc(100 / var(--viewportBasis) * 100vw);
+	--theme-vertical-rhythm--lrg: calc(100 / var(--viewportBasis) * 100vw);
 
 	@media (--huge) {
-		--vertical-rhythm--lrg: calc(90 / var(--viewportBasis) * 100rem);
+		--theme-vertical-rhythm--lrg: calc(90 / var(--viewportBasis) * 100rem);
 	}
 
 	/*! Horizontal Rhythm */
@@ -24,5 +24,5 @@
 	}
 
 	/*! Paragraph */
-	--vertical-rhythm: calc(var(--paragraphSpacing) / var(--viewportBasis) * 100rem);
+	--theme-vertical-rhythm: calc(var(--paragraphSpacing) / var(--viewportBasis) * 100rem);
 }

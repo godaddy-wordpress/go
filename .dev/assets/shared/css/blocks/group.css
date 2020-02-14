@@ -5,12 +5,12 @@
 		padding: var(--theme-vertical-rhythm) calc(var(--theme-vertical-rhythm) * 1.3);
 
 		@media (--medium) {
-			padding: calc(var(--vertical-rhythm--lrg) * 0.2) calc(var(--vertical-rhythm--lrg) * 0.25);
+			padding: calc(var(--theme-vertical-rhythm--lrg) * 0.2) calc(var(--theme-vertical-rhythm--lrg) * 0.25);
 		}
 
 		&.alignwide,
 		&.alignfull {
-			padding: var(--vertical-rhythm--lrg);
+			padding: var(--theme-vertical-rhythm--lrg);
 		}
 
 		&.alignfull + .alignfull:not(.wp-block-gallery) {
@@ -28,7 +28,7 @@
 		margin-bottom: 0;
 
 		&.alignfull {
-			margin-bottom: calc(var(--vertical-rhythm--lrg) * -1);
+			margin-bottom: calc(var(--theme-vertical-rhythm--lrg) * -1);
 		}
 	}
 

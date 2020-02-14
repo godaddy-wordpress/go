@@ -3,7 +3,7 @@
 .wp-block[data-type="core/group"][data-align="full"] {
 
 	& .has-background {
-		padding: var(--vertical-rhythm--lrg);
+		padding: var(--theme-vertical-rhythm--lrg);
 	}
 }
 
@@ -11,7 +11,7 @@
 
 	& .wp-block + .wp-block[data-type="core/image"][data-align="full"],
 	& .wp-block + .wp-block[data-type="core/image"][data-align="wide"] {
-		margin-top: var(--vertical-rhythm--lrg) !important;
+		margin-top: var(--theme-vertical-rhythm--lrg) !important;
 	}
 }
 

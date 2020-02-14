@@ -1,6 +1,6 @@
 /*! WooCommerce: Shop */
 .content-area--woocommerce {
-	margin-bottom: var(--vertical-rhythm--lrg);
+	margin-bottom: var(--theme-vertical-rhythm--lrg);
 
 	& .page-title {
 		display: none !important;

@@ -3,7 +3,7 @@
 	padding: var(--theme-vertical-rhythm);
 
 	@media (--medium) {
-		padding: calc(var(--vertical-rhythm--lrg) * 0.2);
+		padding: calc(var(--theme-vertical-rhythm--lrg) * 0.2);
 	}
 }
 
@@ -11,7 +11,7 @@
 	padding: var(--theme-vertical-rhythm);
 
 	@media (--medium) {
-		padding: calc(var(--vertical-rhythm--lrg) * 0.5);
+		padding: calc(var(--theme-vertical-rhythm--lrg) * 0.5);
 	}
 }
 
@@ -19,10 +19,10 @@
 	padding: var(--theme-vertical-rhythm);
 
 	@media (--medium) {
-		padding: calc(var(--vertical-rhythm--lrg) * 0.75);
+		padding: calc(var(--theme-vertical-rhythm--lrg) * 0.75);
 	}
 }
 
 .has-huge-padding {
-	padding: var(--vertical-rhythm--lrg);
+	padding: var(--theme-vertical-rhythm--lrg);
 }

@@ -5,7 +5,7 @@
 		padding: var(--theme-vertical-rhythm) calc(var(--theme-vertical-rhythm) * 1.3);
 
 		@media (--medium) {
-			padding: calc(var(--vertical-rhythm--lrg) * 0.2) calc(var(--vertical-rhythm--lrg) * 0.25);
+			padding: calc(var(--theme-vertical-rhythm--lrg) * 0.2) calc(var(--theme-vertical-rhythm--lrg) * 0.25);
 		}
 	}
 

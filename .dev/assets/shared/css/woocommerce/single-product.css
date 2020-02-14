@@ -113,7 +113,7 @@
 }
 
 .single-product .content-area--woocommerce {
-	margin-bottom: var(--vertical-rhythm--lrg);
+	margin-bottom: var(--theme-vertical-rhythm--lrg);
 }
 
 /* Override core WooCommerce for an improved layout. */

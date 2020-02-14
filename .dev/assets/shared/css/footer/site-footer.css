@@ -5,7 +5,7 @@
 	font-family: var(--theme-footer--font-family, inherit);
 
 	&.has-background {
-		padding-top: var(--vertical-rhythm--lrg);
+		padding-top: var(--theme-vertical-rhythm--lrg);
 	}
 
 	& a {

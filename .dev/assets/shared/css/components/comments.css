@@ -23,7 +23,7 @@
 }
 
 .comments-area {
-	margin-bottom: var(--vertical-rhythm--lrg);
+	margin-bottom: var(--theme-vertical-rhythm--lrg);
 
 	/* Post Comment button */
 	& input[type="submit"] {
