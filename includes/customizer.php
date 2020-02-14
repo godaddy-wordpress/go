@@ -870,7 +870,7 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $viewport_basis ) : ?>
-					--viewportBasis: <?php echo esc_attr( $viewport_basis ); ?>;
+					--theme-viewport-basis: <?php echo esc_attr( $viewport_basis ); ?>;
 				<?php endif; ?>
 			}
 		</style>

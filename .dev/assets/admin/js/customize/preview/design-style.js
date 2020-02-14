@@ -29,7 +29,7 @@ export default () => {
 	 * @param {*} size
 	 */
 	const setViewportBasis = ( size ) => {
-		document.documentElement.style.setProperty( '--viewportBasis', size ? size : '1000' );
+		document.documentElement.style.setProperty( '--theme-viewport-basis', size ? size : '1000' );
 	};
 
 	wp.customize( 'viewportBasis', ( value ) => {
