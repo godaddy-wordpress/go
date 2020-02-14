@@ -8,7 +8,7 @@
 		font-size: var(--editor-title--font-size, var(--theme-h1--font-size));
 		font-style: var(--theme-heading--style, normal);
 		font-weight: var(--theme-heading--weight);
-		letter-spacing: var(--theme-heading--tracking);
+		letter-spacing: var(--theme-heading--tracking, normal);
 		line-height: var(--theme-heading--leading);
 		text-align: var(--editor-title-block--alignment, center);
 	}

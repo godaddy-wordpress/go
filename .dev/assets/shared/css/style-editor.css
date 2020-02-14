@@ -164,11 +164,11 @@
 .wp-block-search__label .rich-text,
 label:not(.components-toggle-control__label):not(.components-base-control__label) {
 	color: var(--theme-label--color, var(--theme-color-heading));
-	font-family: var(--theme-label--font);
+	font-family: var(--theme-label--font, var(--theme-site-nav--font));
 	font-size: var(--theme-label--font-size);
 	font-weight: var(--theme-label--weight);
 	letter-spacing: var(--theme-label--tracking);
-	text-transform: var(--theme-label--transform);
+	text-transform: var(--theme-label--transform, normal);
 }
 
 .wp-block-search__label .rich-text {
@@ -188,7 +188,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 	box-shadow: var(--theme-input--shadow, none);
 	color: var(--theme-input--color);
 	font-size: var(--theme-input--font-size);
-	font-weight: var(--theme-input--weight);
+	font-weight: var(--theme-input--weight, 400);
 	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
 }
 

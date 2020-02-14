@@ -13,7 +13,7 @@
 	left: 1em;
 	margin: 0;
 	pointer-events: none;
-	text-transform: var(--theme-button--text-transform);
+	text-transform: var(--theme-button--text-transform, normal);
 	top: 1em;
 	width: 3rem;
 

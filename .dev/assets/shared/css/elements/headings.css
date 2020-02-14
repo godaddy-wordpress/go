@@ -23,13 +23,13 @@ h1,
 .h1 {
 	color: var(--theme-h1--color, var(--theme-color-heading));
 	font-size: var(--theme-h1--font-size);
-	letter-spacing: var(--theme-heading--tracking);
+	letter-spacing: var(--theme-heading--tracking, normal);
 }
 
 h2 {
 	color: var(--theme-h2--color, var(--theme-color-heading));
 	font-size: var(--theme-h2--font-size);
-	letter-spacing: var(--theme-heading--tracking);
+	letter-spacing: var(--theme-heading--tracking, normal);
 }
 
 h3 {

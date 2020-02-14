@@ -32,7 +32,6 @@
 	--theme-heading--font: "Quicksand", sans-serif;
 	--theme-heading--leading: 1.35;
 	--theme-heading--spacing: 1.75rem;
-	--theme-heading--tracking: 0;
 	--theme-heading--weight: 600;
 	--theme-heading--button-spacing: 2rem;
 
@@ -76,9 +75,7 @@
 	## Forms
 	--------------------------------------------------------------*/
 	--theme-label--font-size: var(--theme-body--font-size);
-	--theme-label--font: var(--theme-site-nav--font);
 	--theme-label--tracking: var(--theme-site-nav--tracking);
-	--theme-label--transform: normal;
 	--theme-label--weight: 600;
 	--theme-label--spacing: 0.35rem;
 
@@ -93,8 +90,6 @@
 	--theme-input--radius: 5px;
 	--theme-input--spacing: 1.75rem;
 	--theme-input--weight: 600;
-
-	/* Input Focus */
 	--theme-input--border-color-interactive: var(--theme-color-primary);
 	--theme-input--color-interactive: var(--theme-color-primary);
 
@@ -110,8 +105,6 @@
 	--theme-button--padding-x: 1.85rem;
 	--theme-button--padding-y: 1.35rem;
 	--theme-button--radius: 5px;
-	--theme-button--text-transform: normal;
-	--theme-button--tracking: 0;
 	--theme-button--weight: 600;
 
 

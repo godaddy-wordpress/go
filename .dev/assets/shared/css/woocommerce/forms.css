@@ -26,7 +26,7 @@
 	background-repeat: no-repeat;
 	border: var(--theme-input--border);
 	border-radius: 0;
-	font-weight: var(--theme-input--weight);
+	font-weight: var(--theme-input--weight, 400);
 	height: initial;
 	line-height: 1;
 	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
@@ -54,7 +54,7 @@
 
 .select2-results__option {
 	font-size: var(--theme-input--font-size);
-	font-weight: var(--theme-input--weight);
+	font-weight: var(--theme-input--weight, 400);
 	margin: 0 0 2px;
 	padding: 0.5rem;
 }
@@ -140,7 +140,7 @@
 	background-color: var(--theme-input--bg, 0, 0%, 100%);
 	border-color: var(--theme-input--border-color, var(--theme-color-heading));
 	font-size: var(--theme-input--font-size);
-	font-weight: var(--theme-input--weight);
+	font-weight: var(--theme-input--weight, 400);
 	line-height: 1.25;
 
 	&:focus {

@@ -85,7 +85,6 @@
 	## Forms
 	--------------------------------------------------------------*/
 	--theme-label--font-size: var(--theme-site-nav--font-size);
-	--theme-label--font: var(--theme-site-nav--font);
 	--theme-label--tracking: var(--theme-site-nav--tracking);
 	--theme-label--transform: uppercase;
 	--theme-label--weight: var(--theme-site-nav--weight);
@@ -100,9 +99,6 @@
 	--theme-input--padding-x: 1.25rem;
 	--theme-input--padding-y: 1.25rem;
 	--theme-input--spacing: 2.25rem;
-	--theme-input--weight: 400;
-
-	/* Input Focus */
 	--theme-input--border-color-interactive: var(--theme-color-primary);
 	--theme-input--color-interactive: var(--theme-color-text);
 

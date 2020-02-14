@@ -105,7 +105,6 @@
 	--theme-label--font-size: 1rem;
 	--theme-label--font: var(--theme-body--font);
 	--theme-label--tracking: var(--theme-site-nav--tracking);
-	--theme-label--transform: normal;
 	--theme-label--weight: var(--theme-site-nav--weight);
 	--theme-label--spacing: 0.25rem;
 
@@ -119,9 +118,6 @@
 	--theme-input--padding-x: 0.85rem;
 	--theme-input--padding-y: 0.85rem;
 	--theme-input--spacing: 2rem;
-	--theme-input--weight: 400;
-
-	/* Input Focus */
 	--theme-input--border-color-interactive: var(--theme-color-primary);
 	--theme-input--color-interactive: var(--theme-color-text);
 
@@ -137,8 +133,6 @@
 	--theme-button--padding-x: 2.25rem;
 	--theme-button--padding-y: 1.4rem;
 	--theme-button--radius: 4px;
-	--theme-button--text-transform: normal;
-	--theme-button--tracking: 0;
 	--theme-button--weight: 500;
 
 

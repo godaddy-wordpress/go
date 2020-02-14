@@ -9,12 +9,12 @@
 	font-family: var(--theme-button--font);
 	font-size: var(--theme-button--font-size);
 	font-weight: var(--theme-button--weight);
-	letter-spacing: var(--theme-button--tracking);
+	letter-spacing: var(--theme-button--tracking, normal);
 	line-height: 1;
 	padding: var(--theme-button--padding-y) var(--theme-button--padding-x);
 	position: relative;
 	text-decoration: none;
-	text-transform: var(--theme-button--text-transform);
+	text-transform: var(--theme-button--text-transform, normal);
 	transition: var(--theme-button-transition, background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), box-shadow 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1));
 	vertical-align: bottom;
 }
@@ -53,7 +53,7 @@
 	box-shadow: none;
 	color: var(--theme-input--color);
 	display: block;
-	font-weight: var(--theme-input--weight);
+	font-weight: var(--theme-input--weight, 400);
 	margin: 0;
 	overflow: hidden;
 	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);

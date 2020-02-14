@@ -82,7 +82,7 @@
 			font-family: var(--theme-heading--font);
 			font-size: var(--theme-h5--font-size);
 			font-weight: var(--theme-heading--weight);
-			letter-spacing: var(--theme-heading--tracking);
+			letter-spacing: var(--theme-heading--tracking, normal);
 			line-height: var(--theme-heading--leading);
 			margin-bottom: 0.5rem;
 
