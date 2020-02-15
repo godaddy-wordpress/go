@@ -49,14 +49,14 @@
 	background-image: url("../images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
-	border: var(--theme-input--border);
+	border: var(--go-input--border);
 	box-shadow: none;
-	color: var(--theme-input--color);
+	color: var(--go-input--color--text);
 	display: block;
 	font-weight: var(--theme-input--weight, 400);
 	margin: 0;
 	overflow: hidden;
-	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+	padding: var(--go-input--padding--y) var(--go-input--padding--x);
 	text-overflow: ellipsis;
 	user-select: none;
 	white-space: nowrap;
@@ -64,9 +64,9 @@
 }
 
 @define-mixin select-menu-focus {
-	border-color: var(--theme-input--border-color-interactive, var(--go--color--primary));
+	border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
 	box-shadow: var(--heme-input--shadow-focus);
-	color: var(--theme-input--color);
+	color: var(--go-input--color--text);
 	outline: 0;
 }
 

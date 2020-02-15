@@ -3,7 +3,7 @@
 
 	& input[type="search"] {
 		margin-bottom: 0;
-		padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+		padding: var(--go-input--padding--y) var(--go-input--padding--x);
 		width: auto;
 	}
 }

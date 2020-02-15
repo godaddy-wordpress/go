@@ -89,15 +89,14 @@
 
 	/* Input */
 	--theme-input--bg-interactive: var(--go--color--tertiary);
-	--theme-input--border-width: 2px;
-	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--go-heading--color--text));
-	--theme-input--color: var(--go-caption--color--text);
-	--theme-input--font-size: 1.1rem;
-	--theme-input--padding-x: 1.35rem;
-	--theme-input--padding-y: 1rem;
-	--theme-input--spacing: 2rem;
-	--theme-input--border-color-interactive: var(--go--color--tertiary);
-	--theme-input--color-interactive: var(--go-heading--color--text);
+	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
+	--go-input--color--text: var(--go-caption--color--text);
+	--go-input--font-size: 1.1rem;
+	--go-input--padding--x: 1.35rem;
+	--go-input--padding--y: 1rem;
+	--go-input--margin-bottom: 2rem;
+	--go-input--border-color-interactive: var(--go--color--tertiary);
+	--go-input-interactive--color--text: var(--go-heading--color--text);
 
 
 	/*--------------------------------------------------------------

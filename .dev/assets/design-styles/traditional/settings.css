@@ -100,14 +100,13 @@
 
 	/* Input */
 	--theme-input--bg: var(--go--color--background);
-	--theme-input--border-width: 2px;
-	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--go-heading--color--text));
-	--theme-input--color: var(--go--color--text);
-	--theme-input--font-size: var(--go--font-size);
-	--theme-input--padding-x: 0.85rem;
-	--theme-input--padding-y: 0.85rem;
-	--theme-input--spacing: 2rem;
-	--theme-input--color-interactive: var(--go--color--text);
+	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
+	--go-input--color--text: var(--go--color--text);
+	--go-input--font-size: var(--go--font-size);
+	--go-input--padding--x: 0.85rem;
+	--go-input--padding--y: 0.85rem;
+	--go-input--margin-bottom: 2rem;
+	--go-input-interactive--color--text: var(--go--color--text);
 
 
 	/*--------------------------------------------------------------

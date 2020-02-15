@@ -6,7 +6,7 @@
 	}
 
 	& .coblocks-field {
-		margin-bottom: var(--theme-input--spacing);
+		margin-bottom: var(--go-input--margin-bottom);
 	}
 
 	& .required {

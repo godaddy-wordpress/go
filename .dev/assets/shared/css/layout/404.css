@@ -27,7 +27,7 @@
 	& input[type="search"] {
 		margin-bottom: 0;
 		margin-right: 8px;
-		padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+		padding: var(--go-input--padding--y) var(--go-input--padding--x);
 		width: 100%;
 	}
 }

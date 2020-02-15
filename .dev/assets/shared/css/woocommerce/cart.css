@@ -7,7 +7,7 @@ body {
 			display: flex;
 
 			& #coupon_code {
-				padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+				padding: var(--go-input--padding--y) var(--go-input--padding--x);
 				width: auto !important;
 			}
 		}
