@@ -817,23 +817,23 @@ function inline_css() {
 		<style>
 			:root {
 				<?php if ( $primary_color ) : ?>
-					--theme-color-primary: hsl(<?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>);
+					--go--color--primary: hsl(<?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $secondary_color ) : ?>
-					--theme-color-secondary: hsl(<?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>);
+					--go--color--secondary: hsl(<?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $tertiary_color ) : ?>
-					--theme-color-tertiary: hsl(<?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>);
+					--go--color--tertiary: hsl(<?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $background_color ) : ?>
-					--theme-color-body-bg: hsl(<?php echo esc_attr( $background_color[0] ) . ', ' . esc_attr( $background_color[1] ) . '%, ' . esc_attr( $background_color[2] ) . '%'; ?>);
+					--go-body--color--background: hsl(<?php echo esc_attr( $background_color[0] ) . ', ' . esc_attr( $background_color[1] ) . '%, ' . esc_attr( $background_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $header_background ) : ?>
-					--theme-header--bg: hsl(<?php echo esc_attr( $header_background[0] ) . ', ' . esc_attr( $header_background[1] ) . '%, ' . esc_attr( $header_background[2] ) . '%'; ?>);
+					--go-header--color--background: hsl(<?php echo esc_attr( $header_background[0] ) . ', ' . esc_attr( $header_background[1] ) . '%, ' . esc_attr( $header_background[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $header_text_color ) : ?>
@@ -845,20 +845,20 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $footer_background ) : ?>
-					--theme-footer--bg: hsl(<?php echo esc_attr( $footer_background[0] ) . ', ' . esc_attr( $footer_background[1] ) . '%, ' . esc_attr( $footer_background[2] ) . '%'; ?>);
+					--go-footer--color--background: hsl(<?php echo esc_attr( $footer_background[0] ) . ', ' . esc_attr( $footer_background[1] ) . '%, ' . esc_attr( $footer_background[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $footer_heading_color ) : ?>
-					--theme-footer-heading--color: hsl(<?php echo esc_attr( $footer_heading_color ); ?>);
+					--go-footer-heading--color--text: hsl(<?php echo esc_attr( $footer_heading_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $footer_text_color ) : ?>
-					--theme-footer--color: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
-					--theme-footer-nav--color: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
+					--go-footer--color--text: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
+					--go-footer-navigation--color--text: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $social_icon_color ) : ?>
-					--theme-social--color: hsl(<?php echo esc_attr( $social_icon_color ); ?>);
+					--go-social--color--fill: hsl(<?php echo esc_attr( $social_icon_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $logo_width ) : ?>
@@ -870,7 +870,7 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $viewport_basis ) : ?>
-					--theme-viewport-basis: <?php echo esc_attr( $viewport_basis ); ?>;
+					--go--viewport-basis: <?php echo esc_attr( $viewport_basis ); ?>;
 				<?php endif; ?>
 			}
 		</style>

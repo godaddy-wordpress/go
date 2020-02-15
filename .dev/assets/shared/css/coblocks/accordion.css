@@ -9,7 +9,7 @@
 	border-radius: var(--coblocks-accordion--radius, var(--theme-button--radius));
 
 	&:not(.has-background) {
-		background: var(--coblocks-accordion--bg, var(--theme-color-body-bg));
+		background: var(--coblocks-accordion--bg, var(--go-body--color--background));
 	}
 
 	&:not(.has-text-color) {

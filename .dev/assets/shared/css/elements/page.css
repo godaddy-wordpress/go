@@ -4,12 +4,12 @@ html {
 }
 
 ::-moz-selection {
-	background-color: var(--theme-selection--bg, var(--theme-color-primary));
+	background-color: var(--theme-selection--bg, var(--go--color--primary));
 	color: var(--theme-selection--color, inherit);
 }
 
 ::selection {
-	background-color: var(--theme-selection--bg, var(--theme-color-primary));
+	background-color: var(--theme-selection--bg, var(--go--color--primary));
 	color: var(--theme-selection--color, var(--color-white));
 }
 

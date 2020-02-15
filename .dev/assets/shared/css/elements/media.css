@@ -20,5 +20,5 @@ img {
 
 .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
 .mejs-controls .mejs-time-rail .mejs-time-current {
-	background: var(--theme-color-primary) !important;
+	background: var(--go--color--primary) !important;
 }

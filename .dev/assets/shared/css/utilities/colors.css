@@ -1,6 +1,6 @@
 /*! Color Utility Classes */
 .has-primary-background-color {
-	background-color: var(--theme-color-primary);
+	background-color: var(--go--color--primary);
 
 	&,
 	& label,
@@ -16,19 +16,19 @@
 }
 
 .has-primary-color {
-	color: var(--theme-color-primary);
+	color: var(--go--color--primary);
 }
 
 .has-secondary-background-color {
-	background-color: var(--theme-color-secondary);
+	background-color: var(--go--color--secondary);
 }
 
 .has-secondary-color {
-	color: var(--theme-color-secondary);
+	color: var(--go--color--secondary);
 }
 
 .has-tertiary-background-color {
-	background-color: var(--theme-color-tertiary);
+	background-color: var(--go--color--tertiary);
 
 	&,
 	& a:not(.wp-block-button__link) {
@@ -37,7 +37,7 @@
 }
 
 .has-tertiary-color {
-	color: var(--theme-color-tertiary);
+	color: var(--go--color--tertiary);
 }
 
 .has-quaternary-background-color {

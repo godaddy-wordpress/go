@@ -82,18 +82,18 @@ export default () => {
 	} );
 
 	wp.customize( 'background_color', ( value ) => {
-		value.bind( ( to ) => setColor( to, '--theme-color-body-bg' ) );
+		value.bind( ( to ) => setColor( to, '--go-body--color--background' ) );
 	} );
 
 	wp.customize( 'primary_color', ( value ) => {
-		value.bind( ( to ) => setColor( to, '--theme-color-primary' ) );
+		value.bind( ( to ) => setColor( to, '--go--color--primary' ) );
 	} );
 
 	wp.customize( 'secondary_color', ( value ) => {
-		value.bind( ( to ) => setColor( to, '--theme-color-secondary' ) );
+		value.bind( ( to ) => setColor( to, '--go--color--secondary' ) );
 	} );
 
 	wp.customize( 'tertiary_color', ( value ) => {
-		value.bind( ( to ) => setColor( to, '--theme-color-tertiary' ) );
+		value.bind( ( to ) => setColor( to, '--go--color--tertiary' ) );
 	} );
 };

@@ -1,28 +1,28 @@
 :root {
 
 	/*! Vertical Rhythm */
-	--theme-vertical-rhythm--lrg: calc(100 / var(--theme-viewport-basis) * 100vw);
+	--theme-vertical-rhythm--lrg: calc(100 / var(--go--viewport-basis) * 100vw);
 
 	@media (--huge) {
-		--theme-vertical-rhythm--lrg: calc(90 / var(--theme-viewport-basis) * 100rem);
+		--theme-vertical-rhythm--lrg: calc(90 / var(--go--viewport-basis) * 100rem);
 	}
 
 	/*! Horizontal Rhythm */
 	--horizontalSpacingMax: calc(var(--horizontalSpacing) * 0.9);
-	--theme-block-padding-x: calc(var(--horizontalSpacing) / var(--theme-viewport-basis) * 100vw);
+	--theme-block-padding-x: calc(var(--horizontalSpacing) / var(--go--viewport-basis) * 100vw);
 
 	@media (--huge) {
-		--theme-block-padding-x: calc(var(--horizontalSpacingMax) / var(--theme-viewport-basis) * 100rem);
+		--theme-block-padding-x: calc(var(--horizontalSpacingMax) / var(--go--viewport-basis) * 100rem);
 	}
 
 	/*! Header */
 	--headerSpacingMax: calc(var(--headerSpacing) * 0.9);
-	--header-padding: calc(var(--headerSpacing) / var(--theme-viewport-basis) * 100vw);
+	--header-padding: calc(var(--headerSpacing) / var(--go--viewport-basis) * 100vw);
 
 	@media (--huge) {
-		--header-padding: calc(var(--headerSpacingMax) / var(--theme-viewport-basis) * 100rem);
+		--header-padding: calc(var(--headerSpacingMax) / var(--go--viewport-basis) * 100rem);
 	}
 
 	/*! Paragraph */
-	--theme-vertical-rhythm: calc(var(--paragraphSpacing) / var(--theme-viewport-basis) * 100rem);
+	--theme-vertical-rhythm: calc(var(--paragraphSpacing) / var(--go--viewport-basis) * 100rem);
 }

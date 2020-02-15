@@ -1,6 +1,6 @@
 /*! Links */
 a {
-	color: var(--theme-link--color, var(--theme-color-primary));
+	color: var(--theme-link--color, var(--go--color--primary));
 	text-decoration: underline;
 
 	&:hover,

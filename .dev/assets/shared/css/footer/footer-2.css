@@ -34,7 +34,7 @@
 		}
 
 		& a {
-			color: var(--theme-footer-nav--color);
+			color: var(--go-footer-navigation--color--text);
 			display: block;
 			font-family: var(--theme-site-nav--font);
 			font-size: var(--theme-site-nav--font-size);

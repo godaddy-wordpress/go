@@ -10,6 +10,6 @@
 	}
 
 	& .required {
-		color: var(--theme-color-primary);
+		color: var(--go--color--primary);
 	}
 }

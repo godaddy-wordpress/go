@@ -16,7 +16,7 @@
 	/*--------------------------------------------------------------
 	## Text Colors
 	--------------------------------------------------------------*/
-	--theme-color-heading: var(--theme-color-secondary);
+	--theme-color-heading: var(--go--color--secondary);
 	--theme-color-text: hsl(218, 12%, 30%);
 	--theme-color-text-secondary: hsl(0, 0%, 43%);
 
@@ -109,7 +109,7 @@
 	--theme-label--spacing: 0.25rem;
 
 	/* Input */
-	--theme-input--bg: var(--theme-color-body-bg);
+	--theme-input--bg: var(--go-body--color--background);
 	--theme-input--bg-interactive: var(--color-white);
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
@@ -118,14 +118,14 @@
 	--theme-input--padding-x: 0.85rem;
 	--theme-input--padding-y: 0.85rem;
 	--theme-input--spacing: 2rem;
-	--theme-input--border-color-interactive: var(--theme-color-primary);
+	--theme-input--border-color-interactive: var(--go--color--primary);
 	--theme-input--color-interactive: var(--theme-color-text);
 
 
 	/*--------------------------------------------------------------
 	## Buttons
 	--------------------------------------------------------------*/
-	--theme-button--bg: var(--theme-color-primary);
+	--theme-button--bg: var(--go--color--primary);
 	--theme-button--bg-interactive: var(--theme-color-heading);
 	--theme-button--border-width: 2px;
 	--theme-button--font-size: 1.3rem;
@@ -168,8 +168,8 @@
 	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
-	--theme-search-toggle--color-interactive: var(--theme-color-primary);
-	--theme-search-submit--bg: var(--theme-color-primary);
+	--theme-search-toggle--color-interactive: var(--go--color--primary);
+	--theme-search-submit--bg: var(--go--color--primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 
 
@@ -182,8 +182,8 @@
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--color: var(--theme-color-heading);
-	--theme-footer-heading--color: var(--theme-color-heading);
+	--go-footer--color--text: var(--theme-color-heading);
+	--go-footer-heading--color--text: var(--theme-color-heading);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
@@ -196,7 +196,7 @@
 	}
 
 	/* Footer > Social Icons */
-	--theme-social--color: var(--theme-color-primary);
+	--go-social--color--fill: var(--go--color--primary);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 1rem;
 
@@ -219,9 +219,9 @@
 	## CoBlocks
 	--------------------------------------------------------------*/
 	--coblocks-accordion--bg-hover: none;
-	--coblocks-accordion--border-color: var(--theme-color-primary);
+	--coblocks-accordion--border-color: var(--go--color--primary);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
-	--coblocks-accordion--color: var(--theme-color-primary);
+	--coblocks-accordion--color: var(--go--color--primary);
 
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1rem;

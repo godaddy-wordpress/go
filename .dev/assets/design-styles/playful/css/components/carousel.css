@@ -15,7 +15,7 @@
 
 	& .flickity-button,
 	& .flickity-button:hover {
-		background: var(--theme-color-primary);
+		background: var(--go--color--primary);
 	}
 
 	& .flickity-prev-next-button {

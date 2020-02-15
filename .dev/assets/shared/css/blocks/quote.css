@@ -11,7 +11,7 @@
 	}
 
 	&:not(.is-style-large) {
-		border-left: var(--theme-quote--border-width, 0) var(--theme-quote--border-style, solid) var(--theme-quote--border-color, var(--theme-color-primary));
+		border-left: var(--theme-quote--border-width, 0) var(--theme-quote--border-style, solid) var(--theme-quote--border-color, var(--go--color--primary));
 		padding-left: 0;
 		padding-right: 0;
 

@@ -10,7 +10,7 @@
 	--theme-max-w-wide: 80rem;
 
 	/* Accessibility */
-	--theme-outline-color: var(--theme-color-primary);
+	--theme-outline-color: var(--go--color--primary);
 	--theme-selection--bg: var(--theme-color-heading);
 	--theme-selection--color: var(--color-white);
 
@@ -64,7 +64,7 @@
 
 	/* Links */
 	--theme-link--color: var(--theme-color-heading);
-	--theme-link--color-interactive: var(--theme-color-primary);
+	--theme-link--color-interactive: var(--go--color--primary);
 
 	/* Pullquote */
 	--theme-pullquote--font: var(--theme-heading--font);
@@ -93,7 +93,7 @@
 	--theme-label--spacing: 0.5rem;
 
 	/* Input */
-	--theme-input--bg-interactive: var(--theme-color-tertiary);
+	--theme-input--bg-interactive: var(--go--color--tertiary);
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
 	--theme-input--color: var(--theme-color-text-secondary);
@@ -101,15 +101,15 @@
 	--theme-input--padding-x: 1.35rem;
 	--theme-input--padding-y: 1rem;
 	--theme-input--spacing: 2rem;
-	--theme-input--border-color-interactive: var(--theme-color-tertiary);
+	--theme-input--border-color-interactive: var(--go--color--tertiary);
 	--theme-input--color-interactive: var(--theme-color-heading);
 
 
 	/*--------------------------------------------------------------
 	## Buttons
 	--------------------------------------------------------------*/
-	--theme-button--bg: var(--theme-color-primary);
-	--theme-button--bg-interactive: var(--theme-color-secondary);
+	--theme-button--bg: var(--go--color--primary);
+	--theme-button--bg-interactive: var(--go--color--secondary);
 	--theme-button--border-width: 2px;
 	--theme-button--font-size: 0.725rem;
 	--theme-button--font: var(--theme-site-nav--font);
@@ -159,22 +159,22 @@
 	## Search
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-text-heading);
-	--theme-search-toggle--color-interactive: var(--theme-color-secondary);
-	--theme-search-submit--bg: var(--theme-color-primary);
+	--theme-search-toggle--color-interactive: var(--go--color--secondary);
+	--theme-search-submit--bg: var(--go--color--primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 
 
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--bg: var(--theme-color-tertiary);
-	--theme-footer--color: 0, 0%, 55%;
+	--go-footer--color--background: var(--go--color--tertiary);
+	--go-footer--color--text: 0, 0%, 55%;
 	--theme-footer--font-family: "Source Code Pro", sans-serif;
-	--theme-footer-heading--color: var(--color-white);
+	--go-footer-heading--color--text: var(--color-white);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color: var(--color-white);
+	--go-footer-navigation--color--text: var(--color-white);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
@@ -185,7 +185,7 @@
 	}
 
 	/* Footer > Social Icons */
-	--theme-social--color: var(--color-white);
+	--go-social--color--fill: var(--color-white);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 

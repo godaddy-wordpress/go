@@ -81,7 +81,7 @@ body {
 }
 
 #site-nav--cart {
-	background: var(--theme-color-body-bg, var(--color-white));
+	background: var(--go-body--color--background, var(--color-white));
 	height: 100vh;
 	overflow-y: auto;
 	padding: 60px 65px;
@@ -158,11 +158,11 @@ body {
 				top: 4px;
 
 				&:not(:hover) {
-					color: var(--theme-color-primary) !important;
+					color: var(--go--color--primary) !important;
 				}
 
 				&:hover {
-					background: var(--theme-color-primary);
+					background: var(--go--color--primary);
 				}
 			}
 

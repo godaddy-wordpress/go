@@ -10,15 +10,15 @@
 	--theme-max-w-wide: 82rem;
 
 	/* Accessibility */
-	--theme-outline-color: var(--theme-color-primary);
-	--theme-selection--bg: var(--theme-color-primary);
+	--theme-outline-color: var(--go--color--primary);
+	--theme-selection--bg: var(--go--color--primary);
 
 
 	/*--------------------------------------------------------------
 	## Colors
 	--------------------------------------------------------------*/
-	--theme-color-heading: var(--theme-color-primary);
-	--theme-color-text: var(--theme-color-primary);
+	--theme-color-heading: var(--go--color--primary);
+	--theme-color-text: var(--go--color--primary);
 	--theme-color-text-secondary: hsl(0, 0%, 52%);
 
 
@@ -81,7 +81,7 @@
 
 	/* Input */
 	--theme-input--bg-interactive: var(--color-white);
-	--theme-input--border-color: var(--theme-color-primary);
+	--theme-input--border-color: var(--go--color--primary);
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
 	--theme-input--color: var(--theme-color-text-secondary);
@@ -89,15 +89,15 @@
 	--theme-input--padding-x: 1.35rem;
 	--theme-input--padding-y: 1rem;
 	--theme-input--spacing: 1.75rem;
-	--theme-input--border-color-interactive: var(--theme-color-secondary);
+	--theme-input--border-color-interactive: var(--go--color--secondary);
 	--theme-input--color-interactive: var(--theme-color-heading);
 
 
 	/*--------------------------------------------------------------
 	## Buttons
 	--------------------------------------------------------------*/
-	--theme-button--bg: var(--theme-color-primary);
-	--theme-button--bg-interactive: var(--theme-color-secondary);
+	--theme-button--bg: var(--go--color--primary);
+	--theme-button--bg-interactive: var(--go--color--secondary);
 	--theme-button--border-width: 1px;
 	--theme-button--font-size: var(--theme-body--font-size);
 	--theme-button--font: var(--theme-site-nav--font);
@@ -112,7 +112,7 @@
 	/*--------------------------------------------------------------
 	## Header
 	--------------------------------------------------------------*/
-	--theme-header--bg: "";
+	--go-header--color--background: "";
 	--header-padding: 2.5vw;
 
 	/* Header > Site Branding */
@@ -126,12 +126,12 @@
 		--theme-site-title--font-size: 2.25rem;
 	}
 
-	--theme-site-description--color: var(--theme-color-primary);
+	--theme-site-description--color: var(--go--color--primary);
 	--theme-site-description--leading: 1.4;
 	--theme-site-description--opacity: 1;
 
 	/* Header > Navigation */
-	--theme-site-nav--color: var(--theme-color-primary);
+	--theme-site-nav--color: var(--go--color--primary);
 	--theme-site-nav--font: var(--theme-body--font);
 	--theme-site-nav--font-size: 1rem;
 	--theme-site-nav--font-size-mobile: 1.75rem;
@@ -146,19 +146,19 @@
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-text);
-	--theme-search-submit--bg: var(--theme-color-primary);
+	--theme-search-submit--bg: var(--go--color--primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-text);
 
 
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--color: var(--theme-color-primary);
-	--theme-footer-heading--color: var(--theme-color-heading);
+	--go-footer--color--text: var(--go--color--primary);
+	--go-footer-heading--color--text: var(--theme-color-heading);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color: var(--theme-color-heading);
+	--go-footer-navigation--color--text: var(--theme-color-heading);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
@@ -169,7 +169,7 @@
 	}
 
 	/* Footer > Social Icons */
-	--theme-social--color: var(--theme-color-heading);
+	--go-social--color--fill: var(--theme-color-heading);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 
@@ -179,7 +179,7 @@
 	}
 
 	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: var(--theme-header--bg);
+	--theme-footer-3-site-info--border-color: var(--go-header--color--background);
 	--theme-footer-3-site-info--border-width: 10px;
 
 
@@ -187,7 +187,7 @@
 	## Post
 	--------------------------------------------------------------*/
 	--theme-entry-header--width: 70rem;
-	--theme-meta--color: var(--theme-color-primary);
+	--theme-meta--color: var(--go--color--primary);
 	--theme-comment-p--font-size: 0.95rem;
 
 

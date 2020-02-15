@@ -64,7 +64,7 @@
 
 	/* Links */
 	--theme-link--color: var(--theme-color-heading);
-	--theme-link--color-interactive: var(--theme-color-primary);
+	--theme-link--color-interactive: var(--go--color--primary);
 
 	/* Pullquote */
 	--theme-pullquote--font: serif;
@@ -99,14 +99,14 @@
 	--theme-input--padding-x: 1.25rem;
 	--theme-input--padding-y: 1.25rem;
 	--theme-input--spacing: 2.25rem;
-	--theme-input--border-color-interactive: var(--theme-color-primary);
+	--theme-input--border-color-interactive: var(--go--color--primary);
 	--theme-input--color-interactive: var(--theme-color-text);
 
 
 	/*--------------------------------------------------------------
 	## Buttons
 	--------------------------------------------------------------*/
-	--theme-button--bg: var(--theme-color-primary);
+	--theme-button--bg: var(--go--color--primary);
 	--theme-button--bg-interactive: var(--theme-color-heading);
 	--theme-button--border-width: 2px;
 	--theme-button--font-size: 0.75rem;
@@ -157,19 +157,19 @@
 	--------------------------------------------------------------*/
 	--theme-search-toggle--color: var(--theme-color-heading);
 	--theme-search-toggle--color-interactive: var(--theme-color-heading);
-	--theme-search-submit--bg: var(--theme-color-primary);
+	--theme-search-submit--bg: var(--go--color--primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
 
 
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--theme-footer--color: var(--theme-color-text);
-	--theme-footer-heading--color: var(--theme-color-heading);
+	--go-footer--color--text: var(--theme-color-text);
+	--go-footer-heading--color--text: var(--theme-color-heading);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--theme-footer-nav--color: var(--theme-site-nav--color);
+	--go-footer-navigation--color--text: var(--theme-site-nav--color);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
@@ -180,7 +180,7 @@
 	}
 
 	/* Footer > Social Icons */
-	--theme-social--color: var(--theme-color-heading);
+	--go-social--color--fill: var(--theme-color-heading);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.75rem;
 
