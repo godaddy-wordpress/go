@@ -837,11 +837,11 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $header_text_color ) : ?>
-					--theme-site-nav--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--theme-site-description--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--theme-site-title--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--theme-search-toggle--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--theme-search-submit--bg: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-site-title--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-site-description--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-navigation--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-search-button--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-search-button--color--background: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $footer_background ) : ?>
@@ -862,11 +862,11 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $logo_width ) : ?>
-					--go-logo-size: <?php echo esc_attr( $logo_width ); ?>px;
+					--go-logo--max-width: <?php echo esc_attr( $logo_width ); ?>px;
 				<?php endif; ?>
 
 				<?php if ( $logo_width_mobile ) : ?>
-					--go-logo-size--mobile: <?php echo esc_attr( $logo_width_mobile ); ?>px;
+					--go-logo-mobile--max-width: <?php echo esc_attr( $logo_width_mobile ); ?>px;
 				<?php endif; ?>
 
 				<?php if ( $viewport_basis ) : ?>

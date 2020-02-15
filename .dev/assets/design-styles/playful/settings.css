@@ -119,7 +119,7 @@
 	}
 
 	/* Header > Site Branding */
-	--theme-site-title--color: var(--color-white);
+	--go-site-title--color--text: var(--color-white);
 	--theme-site-title--font-size: 1.4rem;
 	--theme-site-title--font: "Poppins", sans-serif;
 	--theme-site-title--text-transform: none;
@@ -129,11 +129,11 @@
 		--theme-site-title--font-size: 1.8rem;
 	}
 
-	--theme-site-description--color: var(--color-white);
+	--go-site-description--color--text: var(--color-white);
 	--theme-site-description--leading: 1.4;
 
 	/* Header > Navigation */
-	--theme-site-nav--color: var(--color-white);
+	--go-navigation--color--text: var(--color-white);
 	--theme-site-nav--font: var(--theme-body--font);
 	--theme-site-nav--font-size: 1.1rem;
 	--theme-site-nav--font-size-mobile: 1.4rem;
@@ -145,10 +145,10 @@
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
-	--theme-search-toggle--color: var(--color-white);
-	--theme-search-toggle--color-interactive: var(--color-white);
-	--theme-search-submit--bg: var(--go--color--primary);
-	--theme-search-submit--bg-interactive: var(--go--color--primary);
+	--go-search-button--color--text: var(--color-white);
+	--go-search-button--color--text-interactive: var(--color-white);
+	--go-search-button--color--background: var(--go--color--primary);
+	--go-search-button--color--background-interactive: var(--go--color--primary);
 
 
 	/*--------------------------------------------------------------

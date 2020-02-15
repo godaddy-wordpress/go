@@ -53,7 +53,7 @@
 	}
 
 	& a {
-		color: var(--theme-site-nav--color);
+		color: var(--go-navigation--color--text);
 		display: inline-block;
 		font-family: var(--theme-site-nav--font);
 		font-size: var(--theme-site-nav--font-size-mobile);

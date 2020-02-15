@@ -74,7 +74,7 @@ body {
 	}
 
 	& svg {
-		fill: var(--theme-site-nav--color);
+		fill: var(--go-navigation--color--text);
 		vertical-align: sub;
 		width: 30px;
 	}

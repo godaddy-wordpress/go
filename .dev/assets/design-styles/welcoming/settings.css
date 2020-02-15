@@ -116,7 +116,7 @@
 	--header-padding: 2.5vw;
 
 	/* Header > Site Branding */
-	--theme-site-title--color: var(--theme-color-heading);
+	--go-site-title--color--text: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.85rem;
 	--theme-site-title--text-transform: normal;
 	--theme-site-title--tracking: 0;
@@ -126,12 +126,12 @@
 		--theme-site-title--font-size: 2.25rem;
 	}
 
-	--theme-site-description--color: var(--go--color--primary);
+	--go-site-description--color--text: var(--go--color--primary);
 	--theme-site-description--leading: 1.4;
 	--theme-site-description--opacity: 1;
 
 	/* Header > Navigation */
-	--theme-site-nav--color: var(--go--color--primary);
+	--go-navigation--color--text: var(--go--color--primary);
 	--theme-site-nav--font: var(--theme-body--font);
 	--theme-site-nav--font-size: 1rem;
 	--theme-site-nav--font-size-mobile: 1.75rem;
@@ -144,10 +144,10 @@
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
-	--theme-search-toggle--color: var(--theme-color-heading);
-	--theme-search-toggle--color-interactive: var(--theme-color-text);
-	--theme-search-submit--bg: var(--go--color--primary);
-	--theme-search-submit--bg-interactive: var(--theme-color-text);
+	--go-search-button--color--text: var(--theme-color-heading);
+	--go-search-button--color--text-interactive: var(--theme-color-text);
+	--go-search-button--color--background: var(--go--color--primary);
+	--go-search-button--color--background-interactive: var(--theme-color-text);
 
 
 	/*--------------------------------------------------------------

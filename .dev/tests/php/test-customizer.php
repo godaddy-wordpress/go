@@ -971,8 +971,8 @@ class Test_Customizer extends WP_UnitTestCase {
 			'--go--color--secondary',
 			'--go--color--tertiary',
 			'--go-body--color--background',
-			'--go--logo--max-width',
-			'--go--logo--mobile-max-width',
+			'--go-logo--max-width',
+			'--go-logo-mobile--max-width',
 		];
 
 		foreach ( $expected_strings as $expected_string ) {
@@ -1021,11 +1021,11 @@ class Test_Customizer extends WP_UnitTestCase {
 		$inline_css = ob_get_clean();
 
 		$expected_strings = [
-			'--theme-site-nav--color',
-			'--theme-site-description--color',
-			'--theme-site-title--color',
-			'--theme-search-toggle--color',
-			'--theme-search-submit--bg',
+			'--go-navigation--color--text',
+			'--go-site-description--color--text',
+			'--go-site-title--color--text',
+			'--go-search-button--color--text',
+			'--go-search-button--color--background',
 		];
 
 		foreach ( $expected_strings as $expected_string ) {

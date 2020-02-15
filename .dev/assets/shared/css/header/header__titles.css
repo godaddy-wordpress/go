@@ -7,10 +7,10 @@
 	}
 
 	& .custom-logo {
-		max-width: var(--go--logo--mobile-max-width);
+		max-width: var(--go-logo-mobile--max-width);
 
 		@media (--small) {
-			max-width: var(--go--logo--max-width);
+			max-width: var(--go-logo--max-width);
 		}
 	}
 }
@@ -31,7 +31,7 @@
 }
 
 .site-title {
-	color: var(--theme-site-title--color);
+	color: var(--go-site-title--color--text);
 	font-family: var(--theme-site-title--font, var(--theme-heading--font));
 	font-size: var(--theme-site-title--font-size);
 	font-weight: var(--theme-site-title--weight, var(--theme-heading--weight));
@@ -42,7 +42,7 @@
 }
 
 .site-description {
-	color: var(--theme-site-description--color);
+	color: var(--go-site-description--color--text);
 	font-family: var(--theme-site-description--font);
 	font-size: var(--theme-site-description--font-size) !important;
 	font-weight: var(--theme-site-description--weight, 400);

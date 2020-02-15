@@ -123,7 +123,7 @@
 	## Header
 	--------------------------------------------------------------*/
 
-	--theme-site-title--color: var(--theme-color-heading);
+	--go-site-title--color--text: var(--theme-color-heading);
 	--theme-site-title--font-size: 1.1rem;
 	--theme-site-title--font: var(--theme-site-nav--font);
 	--theme-site-title--text-transform: uppercase;
@@ -133,7 +133,7 @@
 		--theme-site-title--font-size: 1.5rem;
 	}
 
-	--theme-site-description--color: var(--theme-color-heading);
+	--go-site-description--color--text: var(--theme-color-heading);
 	--theme-site-description--leading: 1.4;
 	--theme-site-description--opacity: 1;
 	--theme-site-description--font-size: 0.65rem;
@@ -143,7 +143,7 @@
 	--theme-site-nav--text-transform: uppercase;
 
 	/* Header > Navigation */
-	--theme-site-nav--color: var(--theme-color-heading);
+	--go-navigation--color--text: var(--theme-color-heading);
 	--theme-site-nav--font: "Montserrat", sans-serif;
 	--theme-site-nav--font-size: 0.8rem;
 	--theme-site-nav--font-size-mobile: 1rem;
@@ -155,10 +155,10 @@
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
-	--theme-search-toggle--color: var(--theme-color-heading);
-	--theme-search-toggle--color-interactive: var(--theme-color-heading);
-	--theme-search-submit--bg: var(--go--color--primary);
-	--theme-search-submit--bg-interactive: var(--theme-color-heading);
+	--go-search-button--color--text: var(--theme-color-heading);
+	--go-search-button--color--text-interactive: var(--theme-color-heading);
+	--go-search-button--color--background: var(--go--color--primary);
+	--go-search-button--color--background-interactive: var(--theme-color-heading);
 
 
 	/*--------------------------------------------------------------
@@ -169,7 +169,7 @@
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--go-footer-navigation--color--text: var(--theme-site-nav--color);
+	--go-footer-navigation--color--text: var(--go-navigation--color--text);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;

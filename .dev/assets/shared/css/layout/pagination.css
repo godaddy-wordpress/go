@@ -5,7 +5,7 @@
 
 .pagination .nav-links {
 	align-content: center;
-	color: var(--theme-site-nav--color);
+	color: var(--go-navigation--color--text);
 	display: flex;
 	flex-wrap: wrap;
 	font-family: var(--theme-site-nav--font);
