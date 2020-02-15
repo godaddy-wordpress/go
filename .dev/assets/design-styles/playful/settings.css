@@ -16,7 +16,7 @@
 	/*--------------------------------------------------------------
 	## Text Colors
 	--------------------------------------------------------------*/
-	--theme-color-heading: hsl(229, 18%, 24%);
+	--go-heading--color--text: hsl(229, 18%, 24%);
 	--theme-color-text: hsl(230, 9%, 39%);
 	--theme-color-text-secondary: hsl(0, 0%, 52%);
 
@@ -82,8 +82,8 @@
 	/* Input */
 	--theme-input--bg-interactive: var(--color-white);
 	--theme-input--border-width: 2px;
-	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
-	--theme-input--color: var(--theme-color-heading);
+	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--go-heading--color--text));
+	--theme-input--color: var(--go-heading--color--text);
 	--theme-input--font-size: 1.1rem;
 	--theme-input--padding-x: 1.35rem;
 	--theme-input--padding-y: 1rem;
@@ -212,7 +212,7 @@
 	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
 	--coblocks-food-drinks-title--style: normal;
 
-	--coblocks-pricing--border: 2px solid var(--theme-color-heading);
+	--coblocks-pricing--border: 2px solid var(--go-heading--color--text);
 
 	--coblocks-services--heading-margin-bottom: 1.25rem;
 	--coblocks-services--heading-margin-top: 2rem;

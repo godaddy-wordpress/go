@@ -12,7 +12,7 @@
 	padding: var(--theme-button--padding-y) 10px;
 
 	&[multiple="multiple"] {
-		border-color: var(--theme-input--border-color, var(--theme-color-heading));
+		border-color: var(--theme-input--border-color, var(--go-heading--color--text));
 		border-width: var(--theme-input--border-width);
 		padding: var(--theme-button--padding-y) var(--theme-input--padding-x);
 	}
@@ -164,7 +164,7 @@ body {
 
 	& .gform_wrapper textarea {
 		background-color: var(--theme-input--bg, 0, 0%, 100%);
-		border-color: var(--theme-input--border-color), var(--theme-color-heading));
+		border-color: var(--theme-input--border-color), var(--go-heading--color--text));
 		color: var(--theme-input--color);
 		font-size: var(--theme-input--font-size);
 		font-weight: var(--theme-input--weight, 400);

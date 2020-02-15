@@ -12,7 +12,7 @@
 		padding-right: var(--theme-pullquote--padding-x);
 
 		& p {
-			color: var(--theme-pullquote--color, var(--theme-color-heading));
+			color: var(--theme-pullquote--color, var(--go-heading--color--text));
 			margin: 1rem 0;
 		}
 	}

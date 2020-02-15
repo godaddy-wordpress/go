@@ -10,13 +10,13 @@
 	--theme-max-w-wide: 84rem;
 
 	/* Accessibility */
-	--theme-outline-color: var(--theme-color-heading);
-	--theme-selection--bg: var(--theme-color-heading);
+	--theme-outline-color: var(--go-heading--color--text);
+	--theme-selection--bg: var(--go-heading--color--text);
 
 	/*--------------------------------------------------------------
 	## Text Colors
 	--------------------------------------------------------------*/
-	--theme-color-heading: var(--go--color--secondary);
+	--go-heading--color--text: var(--go--color--secondary);
 	--theme-color-text: hsl(218, 12%, 30%);
 	--theme-color-text-secondary: hsl(0, 0%, 43%);
 
@@ -112,7 +112,7 @@
 	--theme-input--bg: var(--go-body--color--background);
 	--theme-input--bg-interactive: var(--color-white);
 	--theme-input--border-width: 2px;
-	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
+	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--go-heading--color--text));
 	--theme-input--color: var(--theme-color-text);
 	--theme-input--font-size: var(--theme-body--font-size);
 	--theme-input--padding-x: 0.85rem;
@@ -126,7 +126,7 @@
 	## Buttons
 	--------------------------------------------------------------*/
 	--theme-button--bg: var(--go--color--primary);
-	--theme-button--bg-interactive: var(--theme-color-heading);
+	--theme-button--bg-interactive: var(--go-heading--color--text);
 	--theme-button--border-width: 2px;
 	--theme-button--font-size: 1.3rem;
 	--theme-button--font: var(--theme-heading--font);
@@ -144,18 +144,18 @@
 		--header-padding: 2.65rem;
 	}
 
-	--go-site-title--color--text: var(--theme-color-heading);
+	--go-site-title--color--text: var(--go-heading--color--text);
 	--theme-site-title--font-size: 1.75rem;
 
 	@media (--medium) {
 		--theme-site-title--font-size: 2.15rem;
 	}
 
-	--go-site-description--color--text: var(--theme-color-heading);
+	--go-site-description--color--text: var(--go-heading--color--text);
 	--theme-site-description--leading: 1.4;
 
 	/* Header > Navigation */
-	--go-navigation--color--text: var(--theme-color-heading);
+	--go-navigation--color--text: var(--go-heading--color--text);
 	--theme-site-nav--font: var(--theme-heading--font);
 	--theme-site-nav--font-size: 1.3rem;
 	--theme-site-nav--font-size-mobile: 1.65rem;
@@ -167,10 +167,10 @@
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
-	--go-search-button--color--text: var(--theme-color-heading);
+	--go-search-button--color--text: var(--go-heading--color--text);
 	--go-search-button--color--text-interactive: var(--go--color--primary);
 	--go-search-button--color--background: var(--go--color--primary);
-	--go-search-button--color--background-interactive: var(--theme-color-heading);
+	--go-search-button--color--background-interactive: var(--go-heading--color--text);
 
 
 	/*--------------------------------------------------------------
@@ -182,8 +182,8 @@
 	/*--------------------------------------------------------------
 	## Footer
 	--------------------------------------------------------------*/
-	--go-footer--color--text: var(--theme-color-heading);
-	--go-footer-heading--color--text: var(--theme-color-heading);
+	--go-footer--color--text: var(--go-heading--color--text);
+	--go-footer-heading--color--text: var(--go-heading--color--text);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
@@ -210,7 +210,7 @@
 	--theme-entry-header--width: 70rem;
 	--theme-meta--font: var(--theme-body--font);
 	--theme-meta--font-size: 1rem;
-	--theme-meta--color: var(--theme-color-heading);
+	--theme-meta--color: var(--go-heading--color--text);
 	--theme-meta--opacity: 0.65;
 	--theme-comment-p--font-size: 0.95rem;
 
@@ -233,13 +233,13 @@
 	--coblocks-food-drinks-item--weight: 400;
 	--coblocks-food-drinks-title--bg: none;
 	--coblocks-food-drinks-title--border-bottom: none;
-	--coblocks-food-drinks-title--color: var(--theme-color-heading);
+	--coblocks-food-drinks-title--color: var(--go-heading--color--text);
 	--coblocks-food-drinks-title--font-size: 2.25em;
 	--coblocks-food-drinks-title--margin-y: 0.5em;
 	--coblocks-food-drinks-title--padding: 0.5em 0.25em 0;
 	--coblocks-food-drinks-title--style: normal;
 
-	--coblocks-pricing--border: 2px solid var(--theme-color-heading);
+	--coblocks-pricing--border: 2px solid var(--go-heading--color--text);
 
 	--coblocks-services--heading-margin-bottom: 1.25rem;
 	--coblocks-services--heading-margin-top: 2rem;

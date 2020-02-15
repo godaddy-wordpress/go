@@ -105,7 +105,7 @@
 				color: var(--theme-color-text-secondary);
 
 				&:hover {
-					color: var(--theme-color-heading);
+					color: var(--go-heading--color--text);
 				}
 			}
 		}
@@ -162,7 +162,7 @@
 }
 
 .woocommerce-Price-amount {
-	color: var(--theme-color-heading);
+	color: var(--go-heading--color--text);
 }
 
 /* Details under the single post "Add to Cart" button */

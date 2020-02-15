@@ -13,7 +13,7 @@
 	}
 
 	&:not(.has-text-color) {
-		color: var(--coblocks-accordion--color, var(--theme-color-heading));
+		color: var(--coblocks-accordion--color, var(--go-heading--color--text));
 	}
 
 	&:hover::after {

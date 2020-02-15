@@ -69,7 +69,7 @@
 	& h4,
 	& h5,
 	& h6 {
-		background-color: var(--coblocks-food-drinks-title--bg, var(--theme-color-heading));
+		background-color: var(--coblocks-food-drinks-title--bg, var(--go-heading--color--text));
 		border-bottom: var(--coblocks-food-drinks-title--border-bottom);
 		color: var(--coblocks-food-drinks-title--color, var(--color-white));
 		font-size: var(--coblocks-food-drinks-title--font-size);
@@ -163,7 +163,7 @@
 
 .wp-block-search__label .rich-text,
 label:not(.components-toggle-control__label):not(.components-base-control__label) {
-	color: var(--theme-label--color, var(--theme-color-heading));
+	color: var(--theme-label--color, var(--go-heading--color--text));
 	font-family: var(--theme-label--font, var(--theme-site-nav--font));
 	font-size: var(--theme-label--font-size);
 	font-weight: var(--theme-label--weight);
@@ -271,7 +271,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 
 	& table td,
 	& table th {
-		border: 2px solid var(--theme-table--border-color, var(--theme-color-heading));
+		border: 2px solid var(--theme-table--border-color, var(--go-heading--color--text));
 	}
 }
 
@@ -282,7 +282,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 }
 
 .wp-block-separator {
-	border-bottom-color: var(--theme-separator--color, var(--theme-color-heading));
+	border-bottom-color: var(--theme-separator--color, var(--go-heading--color--text));
 	padding: 0;
 
 	&.is-style-wide {

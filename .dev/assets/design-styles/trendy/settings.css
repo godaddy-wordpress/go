@@ -11,14 +11,14 @@
 
 	/* Accessibility */
 	--theme-outline-color: var(--go--color--primary);
-	--theme-selection--bg: var(--theme-color-heading);
+	--theme-selection--bg: var(--go-heading--color--text);
 	--theme-selection--color: var(--color-white);
 
 
 	/*--------------------------------------------------------------
 	## Text Colors
 	--------------------------------------------------------------*/
-	--theme-color-heading: hsl(0, 0%, 0%);
+	--go-heading--color--text: hsl(0, 0%, 0%);
 	--theme-color-text: hsl(0, 0%, 0%);
 	--theme-color-text-secondary: hsl(0, 0%, 43%);
 
@@ -63,7 +63,7 @@
 	--theme-caption--font-size: 0.85rem;
 
 	/* Links */
-	--theme-link--color: var(--theme-color-heading);
+	--theme-link--color: var(--go-heading--color--text);
 	--theme-link--color-interactive: var(--go--color--primary);
 
 	/* Pullquote */
@@ -95,14 +95,14 @@
 	/* Input */
 	--theme-input--bg-interactive: var(--go--color--tertiary);
 	--theme-input--border-width: 2px;
-	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
+	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--go-heading--color--text));
 	--theme-input--color: var(--theme-color-text-secondary);
 	--theme-input--font-size: 1.1rem;
 	--theme-input--padding-x: 1.35rem;
 	--theme-input--padding-y: 1rem;
 	--theme-input--spacing: 2rem;
 	--theme-input--border-color-interactive: var(--go--color--tertiary);
-	--theme-input--color-interactive: var(--theme-color-heading);
+	--theme-input--color-interactive: var(--go-heading--color--text);
 
 
 	/*--------------------------------------------------------------
@@ -130,7 +130,7 @@
 		--header-padding: 2.5rem;
 	}
 
-	--go-site-title--color--text: var(--theme-color-heading);
+	--go-site-title--color--text: var(--go-heading--color--text);
 	--theme-site-title--font-size: 1.5rem;
 	--theme-site-title--tracking: 0.033em;
 	--theme-site-title--weight: 400;
@@ -139,7 +139,7 @@
 		--theme-site-title--font-size: 2rem;
 	}
 
-	--go-site-description--color--text: var(--theme-color-heading);
+	--go-site-description--color--text: var(--go-heading--color--text);
 	--theme-site-description--font: "Source Code Pro", monospace;
 	--theme-site-description--font-size: 0.9rem;
 	--theme-site-description--leading: 1.4;
@@ -147,7 +147,7 @@
 	--theme-site-description--opacity: 1;
 
 	/* Header > Navigation */
-	--go-navigation--color--text: var(--theme-color-heading);
+	--go-navigation--color--text: var(--go-heading--color--text);
 	--theme-site-nav--font: "Source Code Pro", monospace;
 	--theme-site-nav--font-size: 0.9rem;
 	--theme-site-nav--font-size-mobile: 1rem;
@@ -161,7 +161,7 @@
 	--go-search-button--color--text: var(--theme-color-text-heading);
 	--go-search-button--color--text-interactive: var(--go--color--secondary);
 	--go-search-button--color--background: var(--go--color--primary);
-	--go-search-button--color--background-interactive: var(--theme-color-heading);
+	--go-search-button--color--background-interactive: var(--go-heading--color--text);
 
 
 	/*--------------------------------------------------------------
@@ -202,7 +202,7 @@
 	/*--------------------------------------------------------------
 	## Post
 	--------------------------------------------------------------*/
-	--theme-meta--color: var(--theme-color-heading);
+	--theme-meta--color: var(--go-heading--color--text);
 	--theme-meta--font-size: 0.9rem;
 	--theme-comment-p--font-size: 0.95rem;
 
@@ -211,7 +211,7 @@
 	## CoBlocks
 	--------------------------------------------------------------*/
 	--coblocks-accordion--bg-hover: hsla(0, 0%, 0%, 0.1);
-	--coblocks-accordion--border-color: var(--theme-color-heading);
+	--coblocks-accordion--border-color: var(--go-heading--color--text);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
 
 	--coblocks-features--icon-spacing: 2rem;
@@ -228,7 +228,7 @@
 	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
 	--coblocks-food-drinks-title--style: normal;
 
-	--coblocks-pricing--border: 2px solid var(--theme-color-heading);
+	--coblocks-pricing--border: 2px solid var(--go-heading--color--text);
 
 	--coblocks-services--heading-margin-bottom: 1rem;
 	--coblocks-services--heading-margin-top: 1.75rem;

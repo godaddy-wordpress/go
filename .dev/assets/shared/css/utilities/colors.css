@@ -32,7 +32,7 @@
 
 	&,
 	& a:not(.wp-block-button__link) {
-		color: var(--theme-color-heading);
+		color: var(--go-heading--color--text);
 	}
 }
 

@@ -16,7 +16,7 @@
 
 	& .flickity-button {
 		background: var(--go-body--color--background);
-		border: 2px solid var(--theme-color-heading) !important;
+		border: 2px solid var(--go-heading--color--text) !important;
 		border-radius: 0;
 		box-shadow: 0.4em 0.4em 0 0 rgba(0, 0, 0, 0.075);
 		height: 120px;

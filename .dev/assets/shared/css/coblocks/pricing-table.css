@@ -30,12 +30,12 @@
 .wp-block-coblocks-pricing-table-item:not(.has-text-color) {
 
 	& .wp-block-coblocks-pricing-table-item__title {
-		color: var(--coblocks-pricing--color-title, var(--theme-color-heading));
+		color: var(--coblocks-pricing--color-title, var(--go-heading--color--text));
 	}
 
 	& .wp-block-coblocks-pricing-table-item__currency,
 	& .wp-block-coblocks-pricing-table-item__amount {
-		color: var(--coblocks-pricing--color-price, var(--theme-color-heading));
+		color: var(--coblocks-pricing--color-price, var(--go-heading--color--text));
 	}
 }
 

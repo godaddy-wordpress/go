@@ -17,7 +17,7 @@
 	/*--------------------------------------------------------------
 	## Colors
 	--------------------------------------------------------------*/
-	--theme-color-heading: var(--go--color--primary);
+	--go-heading--color--text: var(--go--color--primary);
 	--theme-color-text: var(--go--color--primary);
 	--theme-color-text-secondary: hsl(0, 0%, 52%);
 
@@ -83,14 +83,14 @@
 	--theme-input--bg-interactive: var(--color-white);
 	--theme-input--border-color: var(--go--color--primary);
 	--theme-input--border-width: 2px;
-	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
+	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--go-heading--color--text));
 	--theme-input--color: var(--theme-color-text-secondary);
 	--theme-input--font-size: 1.1rem;
 	--theme-input--padding-x: 1.35rem;
 	--theme-input--padding-y: 1rem;
 	--theme-input--spacing: 1.75rem;
 	--theme-input--border-color-interactive: var(--go--color--secondary);
-	--theme-input--color-interactive: var(--theme-color-heading);
+	--theme-input--color-interactive: var(--go-heading--color--text);
 
 
 	/*--------------------------------------------------------------
@@ -116,7 +116,7 @@
 	--header-padding: 2.5vw;
 
 	/* Header > Site Branding */
-	--go-site-title--color--text: var(--theme-color-heading);
+	--go-site-title--color--text: var(--go-heading--color--text);
 	--theme-site-title--font-size: 1.85rem;
 	--theme-site-title--text-transform: normal;
 	--theme-site-title--tracking: 0;
@@ -144,7 +144,7 @@
 	/*--------------------------------------------------------------
 	## Search
 	--------------------------------------------------------------*/
-	--go-search-button--color--text: var(--theme-color-heading);
+	--go-search-button--color--text: var(--go-heading--color--text);
 	--go-search-button--color--text-interactive: var(--theme-color-text);
 	--go-search-button--color--background: var(--go--color--primary);
 	--go-search-button--color--background-interactive: var(--theme-color-text);
@@ -154,11 +154,11 @@
 	## Footer
 	--------------------------------------------------------------*/
 	--go-footer--color--text: var(--go--color--primary);
-	--go-footer-heading--color--text: var(--theme-color-heading);
+	--go-footer-heading--color--text: var(--go-heading--color--text);
 	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
-	--go-footer-navigation--color--text: var(--theme-color-heading);
+	--go-footer-navigation--color--text: var(--go-heading--color--text);
 	--theme-footer-nav--leading: 2.5;
 	--theme-footer-nav--padding-x: 1rem;
 	--theme-footer-nav--padding-y: 0.25rem;
@@ -169,7 +169,7 @@
 	}
 
 	/* Footer > Social Icons */
-	--go-social--color--fill: var(--theme-color-heading);
+	--go-social--color--fill: var(--go-heading--color--text);
 	--theme-social--size: 1.5rem;
 	--theme-social--spacing: 0.5rem;
 
@@ -195,7 +195,7 @@
 	## CoBlocks
 	--------------------------------------------------------------*/
 	--coblocks-accordion--bg-hover: hsla(0, 0%, 0%, 0.05);
-	--coblocks-accordion--border-color: var(--theme-color-heading);
+	--coblocks-accordion--border-color: var(--go-heading--color--text);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
 
 	--coblocks-features--icon-spacing: 2rem;
@@ -212,7 +212,7 @@
 	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
 	--coblocks-food-drinks-title--style: normal;
 
-	--coblocks-pricing--border: 2px solid var(--theme-color-heading);
+	--coblocks-pricing--border: 2px solid var(--go-heading--color--text);
 
 	--coblocks-services--heading-margin-bottom: 1rem;
 	--coblocks-services--heading-margin-top: 1.75rem;

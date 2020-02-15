@@ -32,10 +32,10 @@
 			&:focus,
 			&:hover {
 				background: transparent;
-				color: var(--theme-color-heading);
+				color: var(--go-heading--color--text);
 
 				&::after {
-					border-bottom-color: var(--theme-color-heading);
+					border-bottom-color: var(--go-heading--color--text);
 				}
 			}
 		}

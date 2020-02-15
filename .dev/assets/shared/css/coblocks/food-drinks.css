@@ -6,7 +6,7 @@
 	& > h4,
 	& > h5,
 	& > h6 {
-		background-color: var(--coblocks-food-drinks-title--bg, var(--theme-color-heading));
+		background-color: var(--coblocks-food-drinks-title--bg, var(--go-heading--color--text));
 		border-bottom: var(--coblocks-food-drinks-title--border-bottom);
 		color: var(--coblocks-food-drinks-title--color, var(--color-white));
 		font-size: var(--coblocks-food-drinks-title--font-size);
@@ -41,7 +41,7 @@
 	top: -5px;
 
 	& svg {
-		fill: var(--coblocks-food-drinks-item--fill, var(--theme-color-heading));
+		fill: var(--coblocks-food-drinks-item--fill, var(--go-heading--color--text));
 	}
 }
 
@@ -56,10 +56,10 @@
 }
 
 [class*="hint--"]::after {
-	background-color: var(--coblocks-food-drinks-hint--bg, var(--theme-color-heading));
+	background-color: var(--coblocks-food-drinks-hint--bg, var(--go-heading--color--text));
 	border-radius: var(--coblocks-food-drinks-hint--radius, 0);
 }
 
 .hint--top::before {
-	border-top-color: var(--coblocks-food-drinks-hint--bg, var(--theme-color-heading));
+	border-top-color: var(--coblocks-food-drinks-hint--bg, var(--go-heading--color--text));
 }
