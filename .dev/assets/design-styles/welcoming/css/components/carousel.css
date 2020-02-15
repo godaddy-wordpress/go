@@ -2,7 +2,7 @@
 .wp-block-coblocks-gallery-carousel {
 
 	& .flickity-button::after {
-		background: var(--theme-button--bg);
+		background: var(--go-button--color--background, var(--go--color--primary));
 	}
 
 	& .coblocks-gallery--item {

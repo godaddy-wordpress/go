@@ -2,11 +2,11 @@
 .wp-block-gallery {
 
 	& .blocks-gallery-item figcaption {
-		font-size: var(--theme-caption--font-size);
+		font-size: var(--go-caption--font-size);
 		font-style: var(--theme-caption--style, normal);
 		padding-left: 15px;
 		padding-right: 15px;
-		text-align: var(--theme-caption--alignment);
+		text-align: var(--go-caption--text-align);
 	}
 
 	& .blocks-gallery-grid + figcaption {
@@ -22,7 +22,7 @@
 body.rtl .wp-block-gallery {
 
 	& .blocks-gallery-item figcaption {
-		text-align: var(--theme-caption--alignment-opposite);
+		text-align: var(--go-caption--text-align--rtl);
 	}
 }
 

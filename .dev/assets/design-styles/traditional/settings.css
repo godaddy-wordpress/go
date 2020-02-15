@@ -3,93 +3,83 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--horizontalSpacing: 60;
-	--paragraphSpacing: 9;
-	--headerSpacing: 22;
-	--theme-max-w-base: 42rem;
-	--theme-max-w-wide: 84rem;
+	--go--spacing--horizontal: 60;
+	--go--spacing--paragraph: 9;
+	--go--spacing--header: 22;
+	--go--max-width: 42rem;
+	--go--max-width--alignwide: 84rem;
 
 	/* Accessibility */
-	--theme-outline-color: var(--go-heading--color--text);
-	--theme-selection--bg: var(--go-heading--color--text);
-
-	/*--------------------------------------------------------------
-	## Text Colors
-	--------------------------------------------------------------*/
-	--go-heading--color--text: var(--go--color--secondary);
-	--theme-color-text: hsl(218, 12%, 30%);
-	--theme-color-text-secondary: hsl(0, 0%, 43%);
-
+	--go--color--outline: var(--go-heading--color--text);
+	--go--color--selection--background: var(--go-heading--color--text);
 
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
-	--theme-body--font: "Nunito Sans", sans-serif;
-	--theme-body--font-size: 1.05rem;
-	--theme-body--leading: 1.85;
+	--go--color--text: hsl(218, 12%, 30%);
+	--go--font-family: "Nunito Sans", sans-serif;
+	--go--font-size--small: 85%;
+	--go--font-size--smallest: 82%;
+	--go--font-size: 1.05rem;
+	--go--letter-spacing--small: 0.015em;
+	--go--line-height: 1.85;
 
-	/* Headings */
-	--theme-heading--font: "Crimson Text", serif;
-	--theme-heading--leading: 1.15;
-	--theme-heading--spacing: 2rem;
-	--theme-heading--tracking: -0.02em;
-	--theme-heading--weight: 400;
-	--theme-heading--button-spacing: 1.75rem;
-
-	--theme-h1--font-size: 2.5em;
-	--theme-h2--font-size: 2em;
-	--theme-h3--font-size: 1.6em;
-	--theme-h4--font-size: 1.5em;
-	--theme-h5--font-size: 1.3em;
-	--theme-h6--font-size: 1.25em;
-
-	@media (--medium) {
-		--theme-h1--font-size: 3.35em;
+	@media (--small) {
+		--go--font-size--small: 90%;
 	}
 
 	@media (--large) {
-		--theme-h1--font-size: 4.35em;
-		--theme-h2--font-size: 2.75em;
-		--theme-h3--font-size: 2.5em;
+		--go--font-size--small: 97%;
+	}
+
+	/* Headings */
+	--go-heading--color--text: var(--go--color--secondary);
+	--go-heading--font-family: "Crimson Text", serif;
+	--go-heading--line-height: 1.15;
+	--go-heading--margin-bottom: 2rem;
+	--go-heading--letter-spacing: -0.02em;
+	--go-heading--font-weight: 400;
+	--go-heading--button-spacing: 1.75rem;
+
+	--go-heading--font-size--h1: 2.5em;
+	--go-heading--font-size--h2: 2em;
+	--go-heading--font-size--h3: 1.6em;
+	--go-heading--font-size--h4: 1.5em;
+	--go-heading--font-size--h5: 1.3em;
+	--go-heading--font-size--h6: 1.25em;
+
+	@media (--medium) {
+		--go-heading--font-size--h1: 3.35em;
+	}
+
+	@media (--large) {
+		--go-heading--font-size--h1: 4.35em;
+		--go-heading--font-size--h2: 2.75em;
+		--go-heading--font-size--h3: 2.5em;
 	}
 
 	@media (--huge) {
-		--theme-h1--font-size: 4.75em;
-		--theme-h2--font-size: 3em;
-	}
-
-	/* Text Utilities */
-	--theme-text-xs: 82%;
-	--theme-text-sm: 85%;
-	--theme-text-sm--letter-spacing: 0.015em;
-
-	@media (--small) {
-		--theme-text-sm: 90%;
-	}
-
-	@media (--large) {
-		--theme-text-sm: 97%;
+		--go-heading--font-size--h1: 4.75em;
+		--go-heading--font-size--h2: 3em;
 	}
 
 	/* Captions */
-	--theme-caption--alignment: left;
-	--theme-caption--alignment-opposite: right;
-	--theme-caption--font-size: 0.85rem;
+	--go-caption--color--text: hsl(0, 0%, 43%);
+	--go-caption--text-align: left;
+	--go-caption--text-align--rtl: right;
+	--go-caption--font-size: 0.85rem;
 
 	/* Pullquote */
-	--theme-pullquote--font: serif;
-	--theme-pullquote--font-size: var(--theme-h2--font-size);
-	--theme-pullquote--leading: 1.25;
-	--theme-pullquote--padding-x: 1rem;
-	--theme-pullquote--style: normal;
-	--theme-pullquote--weight: var(--theme-heading--weight);
+	--go-pullquote--font-family: serif;
+	--go-pullquote--font-size: var(--go-heading--font-size--h2);
+	--go-pullquote--font-style: normal;
 
 	/* Blockquote */
 	--theme-quote--border-width: 0.45rem;
-	--theme-quote--font-size: var(--theme-h3--font-size);
-	--theme-quote--leading: var(--theme-heading--leading);
+	--theme-quote--font-size: var(--go-heading--font-size--h3);
+	--theme-quote--leading: var(--go-heading--line-height);
 	--theme-quote--style: normal;
-	--theme-quote--weight: var(--theme-heading--weight);
+	--theme-quote--weight: var(--go-heading--font-weight);
 
 	/* Blockquote (Large) */
 	--theme-quote-large--font-size: 2.5em;
@@ -102,38 +92,34 @@
 	/*--------------------------------------------------------------
 	## Forms
 	--------------------------------------------------------------*/
-	--theme-label--font-size: 1rem;
-	--theme-label--font: var(--theme-body--font);
-	--theme-label--tracking: var(--theme-site-nav--tracking);
-	--theme-label--weight: var(--theme-site-nav--weight);
-	--theme-label--spacing: 0.25rem;
+	--go-label--font-size: 1rem;
+	--theme-label--font: var(--go--font-family);
+	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
+	--go-label--font-weight: var(--go-navigation--font-weight, 400);
+	--go-label--margin-bottom: 0.25rem;
 
 	/* Input */
-	--theme-input--bg: var(--go-body--color--background);
-	--theme-input--bg-interactive: var(--color-white);
+	--theme-input--bg: var(--go--color--background);
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--go-heading--color--text));
-	--theme-input--color: var(--theme-color-text);
-	--theme-input--font-size: var(--theme-body--font-size);
+	--theme-input--color: var(--go--color--text);
+	--theme-input--font-size: var(--go--font-size);
 	--theme-input--padding-x: 0.85rem;
 	--theme-input--padding-y: 0.85rem;
 	--theme-input--spacing: 2rem;
-	--theme-input--border-color-interactive: var(--go--color--primary);
-	--theme-input--color-interactive: var(--theme-color-text);
+	--theme-input--color-interactive: var(--go--color--text);
 
 
 	/*--------------------------------------------------------------
 	## Buttons
 	--------------------------------------------------------------*/
-	--theme-button--bg: var(--go--color--primary);
-	--theme-button--bg-interactive: var(--go-heading--color--text);
-	--theme-button--border-width: 2px;
-	--theme-button--font-size: 1.3rem;
-	--theme-button--font: var(--theme-heading--font);
-	--theme-button--padding-x: 2.25rem;
-	--theme-button--padding-y: 1.4rem;
-	--theme-button--radius: 4px;
-	--theme-button--weight: 500;
+	--go-button-interactive--color--background: var(--go-heading--color--text);
+	--go-button--font-size: 1.3rem;
+	--theme-button--font: var(--go-heading--font-family);
+	--go-button--padding--x: 2.25rem;
+	--go-button--padding--y: 1.4rem;
+	--go-button--border-radius: 4px;
+	--go-button--font-weight: 500;
 
 
 	/*--------------------------------------------------------------
@@ -145,23 +131,19 @@
 	}
 
 	--go-site-title--color--text: var(--go-heading--color--text);
-	--theme-site-title--font-size: 1.75rem;
+	--go-site-title--font-size: 1.75rem;
 
 	@media (--medium) {
-		--theme-site-title--font-size: 2.15rem;
+		--go-site-title--font-size: 2.15rem;
 	}
 
 	--go-site-description--color--text: var(--go-heading--color--text);
-	--theme-site-description--leading: 1.4;
 
 	/* Header > Navigation */
 	--go-navigation--color--text: var(--go-heading--color--text);
-	--theme-site-nav--font: var(--theme-heading--font);
-	--theme-site-nav--font-size: 1.3rem;
-	--theme-site-nav--font-size-mobile: 1.65rem;
-	--theme-site-nav--weight: 400;
-	--theme-site-nav--text-transform: normal;
-	--theme-site-nav--tracking: 0;
+	--go-navigation--font-family: var(--go-heading--font-family);
+	--go-navigation--font-size: 1.3rem;
+	--go-navigation-mobile--font-size: 1.65rem;
 
 
 	/*--------------------------------------------------------------
@@ -208,7 +190,7 @@
 	## Post
 	--------------------------------------------------------------*/
 	--theme-entry-header--width: 70rem;
-	--theme-meta--font: var(--theme-body--font);
+	--theme-meta--font: var(--go--font-family);
 	--theme-meta--font-size: 1rem;
 	--theme-meta--color: var(--go-heading--color--text);
 	--theme-meta--opacity: 0.65;

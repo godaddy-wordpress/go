@@ -3,88 +3,82 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--horizontalSpacing: 50;
-	--paragraphSpacing: 15;
-	--headerSpacing: 25;
-	--theme-max-w-base: 42rem;
-	--theme-max-w-wide: 82rem;
+	--go--spacing--horizontal: 50;
+	--go--spacing--paragraph: 15;
+	--go--spacing--header: 25;
+	--go--max-width: 42rem;
+	--go--max-width--alignwide: 82rem;
 
 	/* Accessibility */
-	--theme-outline-color: var(--go--color--primary);
-	--theme-selection--bg: var(--go--color--primary);
+	--go--color--outline: var(--go--color--primary);
+	--go--color--selection--background: var(--go--color--primary);
 
 
 	/*--------------------------------------------------------------
 	## Colors
 	--------------------------------------------------------------*/
 	--go-heading--color--text: var(--go--color--primary);
-	--theme-color-text: var(--go--color--primary);
-	--theme-color-text-secondary: hsl(0, 0%, 52%);
+	--go--color--text: var(--go--color--primary);
+	--go-caption--color--text: hsl(0, 0%, 52%);
 
 
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
-	--theme-body--font: "Karla", sans-serif;
-	--theme-body--font-size: 1rem;
-	--theme-body--leading: 1.8;
+	--go--font-family: "Karla", sans-serif;
+	--go--font-size: 1rem;
+	--go--line-height: 1.8;
+	--go--font-size--small: 90%;
 
 	/* Headings */
-	--theme-heading--font: "Work Sans", sans-serif;
-	--theme-heading--leading: 1.35;
-	--theme-heading--spacing: 1.75rem;
-	--theme-heading--weight: 300;
-	--theme-heading--button-spacing: 2rem;
+	--go-heading--font-family: "Work Sans", sans-serif;
+	--go-heading--line-height: 1.35;
+	--go-heading--margin-bottom: 1.75rem;
+	--go-heading--font-weight: 300;
+	--go-heading--button-spacing: 2rem;
 
-	--theme-h1--font-size: 2.5em;
-	--theme-h2--font-size: 2em;
-	--theme-h3--font-size: 1.75em;
-	--theme-h4--font-size: 2em;
-	--theme-h5--font-size: 1.5em;
-	--theme-h6--font-size: 1.25em;
+	--go-heading--font-size--h1: 2.5em;
+	--go-heading--font-size--h2: 2em;
+	--go-heading--font-size--h3: 1.75em;
+	--go-heading--font-size--h4: 2em;
+	--go-heading--font-size--h5: 1.5em;
+	--go-heading--font-size--h6: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3.65em;
-		--theme-h2--font-size: 2.75em;
-		--theme-h3--font-size: 2.5em;
+		--go-heading--font-size--h1: 3.65em;
+		--go-heading--font-size--h2: 2.75em;
+		--go-heading--font-size--h3: 2.5em;
 	}
 
-	/* Text Utilities */
-	--theme-text-sm: 90%;
-
 	/* Captions */
-	--theme-caption--alignment: center;
-	--theme-caption--font-size: 0.85rem;
+	--go-caption--text-align: center;
+	--go-caption--font-size: 0.85rem;
 
 	/* Pullquote */
-	--theme-pullquote--font: var(--theme-heading--font);
-	--theme-pullquote--font-size: var(--theme-h1--font-size);
-	--theme-pullquote--leading: 1.25;
-	--theme-pullquote--padding-x: 1rem;
-	--theme-pullquote--weight: var(--theme-heading--weight);
+	--go-pullquote--font-family: var(--go-heading--font-family);
+	--go-pullquote--font-size: var(--go-heading--font-size--h1);
 
 	/* Blockquote */
-	--theme-quote--font-size: var(--theme-h3--font-size);
-	--theme-quote--leading: var(--theme-heading--leading);
+	--theme-quote--font-size: var(--go-heading--font-size--h3);
+	--theme-quote--leading: var(--go-heading--line-height);
 	--theme-quote--style: normal;
-	--theme-quote--weight: var(--theme-heading--weight);
+	--theme-quote--weight: var(--go-heading--font-weight);
 
 
 	/*--------------------------------------------------------------
 	## Forms
 	--------------------------------------------------------------*/
-	--theme-label--font-size: var(--theme-body--font-size);
-	--theme-label--tracking: var(--theme-site-nav--tracking);
-	--theme-label--transform: lowercase;
-	--theme-label--weight: var(--theme-site-nav--weight);
-	--theme-label--spacing: 0.35rem;
+	--go-label--font-size: var(--go--font-size);
+	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
+	--go-label--text-transform: lowercase;
+	--go-label--font-weight: var(--go-navigation--font-weight, 400);
+	--go-label--margin-bottom: 0.35rem;
 
 	/* Input */
-	--theme-input--bg-interactive: var(--color-white);
 	--theme-input--border-color: var(--go--color--primary);
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--go-heading--color--text));
-	--theme-input--color: var(--theme-color-text-secondary);
+	--theme-input--color: var(--go-caption--color--text);
 	--theme-input--font-size: 1.1rem;
 	--theme-input--padding-x: 1.35rem;
 	--theme-input--padding-y: 1rem;
@@ -96,17 +90,13 @@
 	/*--------------------------------------------------------------
 	## Buttons
 	--------------------------------------------------------------*/
-	--theme-button--bg: var(--go--color--primary);
-	--theme-button--bg-interactive: var(--go--color--secondary);
-	--theme-button--border-width: 1px;
-	--theme-button--font-size: var(--theme-body--font-size);
-	--theme-button--font: var(--theme-site-nav--font);
-	--theme-button--padding-x: 1.85rem;
-	--theme-button--padding-y: 1.35rem;
-	--theme-button--radius: 3px;
-	--theme-button--text-transform: lowercase;
-	--theme-button--tracking: 1px;
-	--theme-button--weight: 400;
+	--go-button--border-width: 1px;
+	--go-button--padding--x: 1.85rem;
+	--go-button--padding--y: 1.35rem;
+	--go-button--border-radius: 3px;
+	--go-button--text-transform: lowercase;
+	--go-button--letter-spacing: 1px;
+	--go-button--font-weight: 400;
 
 
 	/*--------------------------------------------------------------
@@ -117,27 +107,25 @@
 
 	/* Header > Site Branding */
 	--go-site-title--color--text: var(--go-heading--color--text);
-	--theme-site-title--font-size: 1.85rem;
-	--theme-site-title--text-transform: normal;
-	--theme-site-title--tracking: 0;
+	--go-site-title--font-size: 1.85rem;
+	--go-site-title--text-transform: normal;
+	--go-site-title--letter-spacing: 0;
 	--theme-site-title--weight: 600;
 
 	@media (--medium) {
-		--theme-site-title--font-size: 2.25rem;
+		--go-site-title--font-size: 2.25rem;
 	}
 
 	--go-site-description--color--text: var(--go--color--primary);
-	--theme-site-description--leading: 1.4;
-	--theme-site-description--opacity: 1;
+	--go-site-description--opacity: 1;
 
 	/* Header > Navigation */
 	--go-navigation--color--text: var(--go--color--primary);
-	--theme-site-nav--font: var(--theme-body--font);
-	--theme-site-nav--font-size: 1rem;
-	--theme-site-nav--font-size-mobile: 1.75rem;
-	--theme-site-nav--weight: 400;
-	--theme-site-nav--text-transform: lowercase;
-	--theme-site-nav--tracking: 1px;
+	--go-navigation--font-family: var(--go--font-family);
+	--go-navigation--font-size: 1rem;
+	--go-navigation-mobile--font-size: 1.75rem;
+	--go-navigation--text-transform: lowercase;
+	--go-navigation--letter-spacing: 1px;
 	--theme-site-nav--padding-x: 1.5vw;
 
 
@@ -145,9 +133,9 @@
 	## Search
 	--------------------------------------------------------------*/
 	--go-search-button--color--text: var(--go-heading--color--text);
-	--go-search-button--color--text-interactive: var(--theme-color-text);
+	--go-search-button--color--text-interactive: var(--go--color--text);
 	--go-search-button--color--background: var(--go--color--primary);
-	--go-search-button--color--background-interactive: var(--theme-color-text);
+	--go-search-button--color--background-interactive: var(--go--color--text);
 
 
 	/*--------------------------------------------------------------

@@ -17,11 +17,11 @@
 }
 
 .post__meta {
-	color: var(--theme-meta--color, var(--theme-color-text-secondary));
+	color: var(--theme-meta--color, var(--go-caption--color--text));
 	display: flex;
 	flex-wrap: wrap;
-	font-family: var(--theme-meta--font, var(--theme-site-nav--font));
-	font-size: var(--theme-meta--font-size, var(--theme-site-nav--font-size));
+	font-family: var(--theme-meta--font, var(--go-navigation--font-family));
+	font-size: var(--theme-meta--font-size, var(--go-navigation--font-size));
 	list-style: none;
 	opacity: var(--theme-meta--opacity, 1);
 	text-align: center;
@@ -55,7 +55,7 @@
 	}
 
 	& a {
-		color: var(--theme-meta--color, var(--theme-color-text-secondary));
+		color: var(--theme-meta--color, var(--go-caption--color--text));
 		outline-offset: 4px;
 		text-decoration: none;
 

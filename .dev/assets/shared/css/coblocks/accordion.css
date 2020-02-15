@@ -6,10 +6,10 @@
 
 .wp-block-coblocks-accordion-item__title {
 	border: var(--coblocks-accordion--border);
-	border-radius: var(--coblocks-accordion--radius, var(--theme-button--radius));
+	border-radius: var(--coblocks-accordion--radius, var(--go-button--border-radius));
 
 	&:not(.has-background) {
-		background: var(--coblocks-accordion--bg, var(--go-body--color--background));
+		background: var(--coblocks-accordion--bg, var(--go--color--background));
 	}
 
 	&:not(.has-text-color) {
@@ -18,7 +18,7 @@
 
 	&:hover::after {
 		background: var(--coblocks-accordion--bg-hover);
-		border-radius: var(--coblocks-accordion--radius, var(--theme-button--radius)) var(--coblocks-accordion--radius, var(--theme-button--radius)) 0 0;
+		border-radius: var(--coblocks-accordion--radius, var(--go-button--border-radius)) var(--coblocks-accordion--radius, var(--go-button--border-radius)) 0 0;
 	}
 
 	&:focus {
@@ -34,5 +34,5 @@
 }
 
 .wp-block-coblocks-accordion-item details[open] summary {
-	border-radius: var(--coblocks-accordion--radius, var(--theme-button--radius)) var(--coblocks-accordion--radius, var(--theme-button--radius)) 0 0;
+	border-radius: var(--coblocks-accordion--radius, var(--go-button--border-radius)) var(--coblocks-accordion--radius, var(--go-button--border-radius)) 0 0;
 }

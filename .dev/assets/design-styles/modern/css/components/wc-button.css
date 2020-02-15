@@ -22,9 +22,9 @@ body {
 					content: "";
 					display: block;
 					height: 8px;
-					left: var(--theme-button--padding-x);
+					left: var(--go-button--padding--x);
 					position: absolute;
-					right: var(--theme-button--padding-x);
+					right: var(--go-button--padding--x);
 				}
 			}
 		}

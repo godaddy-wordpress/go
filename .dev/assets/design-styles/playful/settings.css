@@ -3,84 +3,76 @@
 	/*--------------------------------------------------------------
 	## Base
 	--------------------------------------------------------------*/
-	--horizontalSpacing: 60;
-	--paragraphSpacing: 9;
-	--headerSpacing: 25;
-	--theme-max-w-base: 42rem;
-	--theme-max-w-wide: 84rem;
+	--go--spacing--horizontal: 60;
+	--go--spacing--paragraph: 9;
+	--go--spacing--header: 25;
+	--go--max-width: 42rem;
+	--go--max-width--alignwide: 84rem;
 
 	/* Accessibility */
-	--theme-outline-color: var(--go--color--primary);
-	--theme-selection--bg: var(--go--color--primary);
-
-	/*--------------------------------------------------------------
-	## Text Colors
-	--------------------------------------------------------------*/
-	--go-heading--color--text: hsl(229, 18%, 24%);
-	--theme-color-text: hsl(230, 9%, 39%);
-	--theme-color-text-secondary: hsl(0, 0%, 52%);
-
+	--go--color--outline: var(--go--color--primary);
+	--go--color--selection--background: var(--go--color--primary);
 
 	/*--------------------------------------------------------------
 	## Typography
 	--------------------------------------------------------------*/
-	--theme-body--font: "Quicksand", sans-serif;
-	--theme-body--font-size: 1.1rem;
-	--theme-body--leading: 1.8;
+	--go--font-family: "Quicksand", sans-serif;
+	--go--color--text: hsl(230, 9%, 39%);
+	--go-caption--color--text: hsl(0, 0%, 52%);
+	--go--font-size: 1.1rem;
+	--go--line-height: 1.8;
 
 	/* Headings */
-	--theme-heading--font: "Quicksand", sans-serif;
-	--theme-heading--leading: 1.35;
-	--theme-heading--spacing: 1.75rem;
-	--theme-heading--weight: 600;
-	--theme-heading--button-spacing: 2rem;
+	--go-heading--color--text: hsl(229, 18%, 24%);
+	--go-heading--font-family: "Quicksand", sans-serif;
+	--go-heading--line-height: 1.35;
+	--go-heading--margin-bottom: 1.75rem;
+	--go-heading--font-weight: 600;
+	--go-heading--button-spacing: 2rem;
 
-	--theme-h1--font-size: 2.25em;
-	--theme-h2--font-size: 2em;
-	--theme-h3--font-size: 1.75em;
-	--theme-h4--font-size: 2em;
-	--theme-h5--font-size: 1.5em;
-	--theme-h6--font-size: 1.25em;
+	--go-heading--font-size--h1: 2.25em;
+	--go-heading--font-size--h2: 2em;
+	--go-heading--font-size--h3: 1.75em;
+	--go-heading--font-size--h4: 2em;
+	--go-heading--font-size--h5: 1.5em;
+	--go-heading--font-size--h6: 1.25em;
 
 	@media (--medium) {
-		--theme-h1--font-size: 3em;
-		--theme-h2--font-size: 2.5em;
-		--theme-h3--font-size: 2em;
+		--go-heading--font-size--h1: 3em;
+		--go-heading--font-size--h2: 2.5em;
+		--go-heading--font-size--h3: 2em;
 	}
 
 	/* Text Utilities */
-	--theme-text-sm: 80%;
-	--theme-text-xs: 80%;
+	--go--font-size--small: 80%;
+	--go--font-size--smallest: 80%;
 
 	/* Captions */
-	--theme-caption--alignment: center;
-	--theme-caption--font-size: 0.85rem;
+	--go-caption--text-align: center;
+	--go-caption--font-size: 0.85rem;
 
 	/* Pullquote */
-	--theme-pullquote--font: "Poppins", sans-serif;
-	--theme-pullquote--font-size: var(--theme-h1--font-size);
-	--theme-pullquote--leading: 1.25;
-	--theme-pullquote--padding-x: 1rem;
-	--theme-pullquote--style: normal;
-	--theme-pullquote--weight: 700;
+	--go-pullquote--font-family: "Poppins", sans-serif;
+	--go-pullquote--font-size: var(--go-heading--font-size--h1);
+	--go-pullquote--font-style: normal;
+	--go-pullquote--font-weight: 700;
 
 	/* Blockquote */
-	--theme-quote--font-size: var(--theme-h3--font-size);
-	--theme-quote--leading: var(--theme-heading--leading);
+	--theme-quote--font-size: var(--go-heading--font-size--h3);
+	--theme-quote--leading: var(--go-heading--line-height);
 	--theme-quote--style: normal;
-	--theme-quote--weight: var(--theme-heading--weight);
+	--theme-quote--weight: var(--go-heading--font-weight);
 
 
 	/*--------------------------------------------------------------
 	## Forms
 	--------------------------------------------------------------*/
-	--theme-label--font-size: var(--theme-body--font-size);
-	--theme-label--tracking: var(--theme-site-nav--tracking);
-	--theme-label--weight: 600;
-	--theme-label--spacing: 0.35rem;
+	--go-label--font-size: var(--go--font-size);
+	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
+	--go-label--font-weight: 600;
+	--go-label--margin-bottom: 0.35rem;
 
 	/* Input */
-	--theme-input--bg-interactive: var(--color-white);
 	--theme-input--border-width: 2px;
 	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--go-heading--color--text));
 	--theme-input--color: var(--go-heading--color--text);
@@ -90,22 +82,17 @@
 	--theme-input--radius: 5px;
 	--theme-input--spacing: 1.75rem;
 	--theme-input--weight: 600;
-	--theme-input--border-color-interactive: var(--go--color--primary);
 	--theme-input--color-interactive: var(--go--color--primary);
 
 
 	/*--------------------------------------------------------------
 	## Buttons
 	--------------------------------------------------------------*/
-	--theme-button--bg: var(--go--color--primary);
-	--theme-button--bg-interactive: var(--go--color--secondary);
-	--theme-button--border-width: 1px;
-	--theme-button--font-size: var(--theme-body--font-size);
-	--theme-button--font: var(--theme-site-nav--font);
-	--theme-button--padding-x: 1.85rem;
-	--theme-button--padding-y: 1.35rem;
-	--theme-button--radius: 5px;
-	--theme-button--weight: 600;
+	--go-button--border-width: 1px;
+	--go-button--padding--x: 1.85rem;
+	--go-button--padding--y: 1.35rem;
+	--go-button--border-radius: 5px;
+	--go-button--font-weight: 600;
 
 
 	/*--------------------------------------------------------------
@@ -120,26 +107,23 @@
 
 	/* Header > Site Branding */
 	--go-site-title--color--text: var(--color-white);
-	--theme-site-title--font-size: 1.4rem;
-	--theme-site-title--font: "Poppins", sans-serif;
-	--theme-site-title--text-transform: none;
-	--theme-site-title--tracking: 0;
+	--go-site-title--font-size: 1.4rem;
+	--go-site-title--font-family: "Poppins", sans-serif;
+	--go-site-title--text-transform: none;
+	--go-site-title--letter-spacing: 0;
 
 	@media (--medium) {
-		--theme-site-title--font-size: 1.8rem;
+		--go-site-title--font-size: 1.8rem;
 	}
 
 	--go-site-description--color--text: var(--color-white);
-	--theme-site-description--leading: 1.4;
 
 	/* Header > Navigation */
 	--go-navigation--color--text: var(--color-white);
-	--theme-site-nav--font: var(--theme-body--font);
-	--theme-site-nav--font-size: 1.1rem;
-	--theme-site-nav--font-size-mobile: 1.4rem;
-	--theme-site-nav--weight: 600;
-	--theme-site-nav--text-transform: none;
-	--theme-site-nav--tracking: 0;
+	--go-navigation--font-family: var(--go--font-family);
+	--go-navigation--font-size: 1.1rem;
+	--go-navigation-mobile--font-size: 1.4rem;
+	--go-navigation--font-weight: 600;
 
 
 	/*--------------------------------------------------------------

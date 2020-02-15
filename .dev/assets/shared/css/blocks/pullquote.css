@@ -8,8 +8,8 @@
 	}
 
 	&:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
-		padding-left: var(--theme-pullquote--padding-x);
-		padding-right: var(--theme-pullquote--padding-x);
+		padding-left: var(--theme-pullquote--padding-x, 1rem);
+		padding-right: var(--theme-pullquote--padding-x, 1rem);
 
 		& p {
 			color: var(--theme-pullquote--color, var(--go-heading--color--text));
@@ -23,18 +23,18 @@
 
 	& p {
 
-		font-family: var(--theme-pullquote--font);
-		font-size: var(--theme-pullquote--font-size);
-		font-style: var(--theme-pullquote--style, italic);
-		font-weight: var(--theme-pullquote--weight);
-		line-height: var(--theme-pullquote--leading);
+		font-family: var(--go-pullquote--font-family);
+		font-size: var(--go-pullquote--font-size);
+		font-style: var(--go-pullquote--font-style, italic);
+		font-weight: var(--go-pullquote--font-weight, var(--go-heading--font-weight));
+		line-height: var(--go-pullquote--line-height, 1.25);
 	}
 
 	& cite,
 	& .wp-block-pullquote__citation {
-		color: var(--theme-caption--color, var(--theme-color-text-secondary));
+		color: var(--theme-caption--color, var(--go-caption--color--text));
 		display: inline-block;
-		font-size: var(--theme-caption--font-size);
+		font-size: var(--go-caption--font-size);
 		font-style: var(--theme-caption--style, normal);
 		margin-bottom: calc(var(--theme-pullquote--padding-y) + 0.5rem);
 		text-transform: none;
@@ -56,7 +56,7 @@
 
 
 			& p {
-				font-size: var(--theme-pullquote--font-size);
+				font-size: var(--go-pullquote--font-size);
 			}
 
 			& cite,
@@ -77,7 +77,7 @@
 	& > blockquote {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: var(--theme-max-w-wide);
+		max-width: var(--go--max-width--alignwide);
 		padding: var(--theme-vertical-rhythm--lrg);
 	}
 }

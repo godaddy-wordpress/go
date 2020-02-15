@@ -829,7 +829,7 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $background_color ) : ?>
-					--go-body--color--background: hsl(<?php echo esc_attr( $background_color[0] ) . ', ' . esc_attr( $background_color[1] ) . '%, ' . esc_attr( $background_color[2] ) . '%'; ?>);
+					--go--color--background: hsl(<?php echo esc_attr( $background_color[0] ) . ', ' . esc_attr( $background_color[1] ) . '%, ' . esc_attr( $background_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $header_background ) : ?>

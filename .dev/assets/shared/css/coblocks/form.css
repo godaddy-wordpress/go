@@ -2,7 +2,7 @@
 .coblocks-form {
 
 	& .coblocks-label {
-		margin-bottom: var(--theme-label--spacing);
+		margin-bottom: var(--go-label--margin-bottom);
 	}
 
 	& .coblocks-field {

@@ -67,7 +67,7 @@
 .is-image-fill {
 
 	&.alignfull .wp-block-media-text__content {
-		max-width: var(--theme-max-w-base);
+		max-width: var(--go--max-width);
 		padding-bottom: var(--theme-vertical-rhythm--lrg);
 		padding-top: var(--theme-vertical-rhythm--lrg);
 	}

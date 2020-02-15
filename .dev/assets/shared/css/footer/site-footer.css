@@ -66,10 +66,10 @@
 .footer-navigation__title {
 	color: var(--go-footer-heading--color--text);
 	display: block;
-	font-family: var(--theme-site-nav--font);
-	font-size: var(--theme-site-nav--font-size);
-	font-weight: var(--theme-site-nav--weight);
-	letter-spacing: var(--theme-site-nav--tracking);
+	font-family: var(--go-navigation--font-family);
+	font-size: var(--go-navigation--font-size);
+	font-weight: var(--go-navigation--font-weight, 400);
+	letter-spacing: var(--go-navigation--letter-spacing, normal);
 	margin-bottom: 0.75rem;
-	text-transform: var(--theme-site-nav--text-transform);
+	text-transform: var(--go-navigation--text-transform, normal);
 }

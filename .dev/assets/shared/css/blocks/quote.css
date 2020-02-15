@@ -4,9 +4,9 @@
 
 	& cite,
 	& .wp-block-quote__citation {
-		color: var(--theme-caption--color, var(--theme-color-text-secondary));
+		color: var(--theme-caption--color, var(--go-caption--color--text));
 		display: block;
-		font-size: var(--theme-caption--font-size);
+		font-size: var(--go-caption--font-size);
 		font-style: var(--theme-caption--style, normal);
 	}
 
@@ -41,9 +41,9 @@
 		padding: 0;
 
 		& p {
-			font-size: var(--theme-quote-large--font-size, var(--theme-h2--font-size));
+			font-size: var(--theme-quote-large--font-size, var(--go-heading--font-size--h2));
 			font-style: var(--theme-quote-large--style, normal);
-			line-height: var(--theme-quote-large--leading), var(--theme-heading--leading));
+			line-height: var(--theme-quote-large--leading), var(--go-heading--line-height));
 			margin: 0;
 			padding: 0;
 
@@ -56,7 +56,7 @@
 
 		& cite,
 		& .wp-block-quote__citation {
-			font-size: var(--theme-caption--font-size);
+			font-size: var(--go-caption--font-size);
 			text-align: inherit;
 
 			& em {

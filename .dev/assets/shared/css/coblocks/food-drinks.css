@@ -46,12 +46,12 @@
 }
 
 .wp-block-coblocks-food-item__description {
-	font-size: var(--coblocks-food-drinks-desc--font-size, var(--theme-text-sm));
+	font-size: var(--coblocks-food-drinks-desc--font-size, var(--go--font-size--small));
 }
 
 .wp-block-coblocks-food-item__price {
-	color: var(--coblocks-food-drinks-price--color, var(--theme-color-text-secondary));
-	font-size: var(--coblocks-food-drinks-price--font-size, var(--theme-text-sm));
+	color: var(--coblocks-food-drinks-price--color, var(--go-caption--color--text));
+	font-size: var(--coblocks-food-drinks-price--font-size, var(--go--font-size--small));
 	opacity: 1;
 }
 

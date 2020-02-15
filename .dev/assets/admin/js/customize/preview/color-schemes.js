@@ -82,7 +82,7 @@ export default () => {
 	} );
 
 	wp.customize( 'background_color', ( value ) => {
-		value.bind( ( to ) => setColor( to, '--go-body--color--background' ) );
+		value.bind( ( to ) => setColor( to, '--go--color--background' ) );
 	} );
 
 	wp.customize( 'primary_color', ( value ) => {

@@ -1,26 +1,26 @@
 @define-mixin button {
 	appearance: none !important;
-	background-color: var(--theme-button--bg);
+	background-color: var(--go-button--color--background, var(--go--color--primary));
 	border: none;
-	border-radius: var(--theme-button--radius);
+	border-radius: var(--go-button--border-radius);
 	box-sizing: border-box;
 	color: var(--theme-button--color, var(--color-white));
 	display: inline-block;
-	font-family: var(--theme-button--font);
-	font-size: var(--theme-button--font-size);
-	font-weight: var(--theme-button--weight);
-	letter-spacing: var(--theme-button--tracking, normal);
+	font-family: var(--theme-button--font, var(--go-navigation--font-family));
+	font-size: var(--go-button--font-size, var(--go--font-size));
+	font-weight: var(--go-button--font-weight);
+	letter-spacing: var(--go-button--letter-spacing, normal);
 	line-height: 1;
-	padding: var(--theme-button--padding-y) var(--theme-button--padding-x);
+	padding: var(--go-button--padding--y) var(--go-button--padding--x);
 	position: relative;
 	text-decoration: none;
-	text-transform: var(--theme-button--text-transform, normal);
+	text-transform: var(--go-button--text-transform, normal);
 	transition: var(--theme-button-transition, background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), box-shadow 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1));
 	vertical-align: bottom;
 }
 
 @define-mixin button-hover {
-	background-color: var(--theme-button--bg-interactive);
+	background-color: var(--go-button-interactive--color--background);
 }
 
 @define-mixin button-disabled {
@@ -30,7 +30,7 @@
 }
 
 @define-mixin outline {
-	outline-color: var(--theme-outline-color);
+	outline-color: var(--go--color--outline);
 	outline-style: var(--theme-outline-style, dotted);
 	outline-width: var(--theme-outline-width, 1px);
 }
@@ -38,7 +38,7 @@
 @define-mixin outline-text-link {
 	border: 0;
 	border-bottom-width: var(--theme-outline-width);
-	border-color: var(--theme-outline-color);
+	border-color: var(--go--color--outline);
 	border-style: var(--theme-outline-style, dotted);
 	outline: none;
 }
@@ -64,7 +64,7 @@
 }
 
 @define-mixin select-menu-focus {
-	border-color: var(--theme-input--border-color-interactive);
+	border-color: var(--theme-input--border-color-interactive, var(--go--color--primary));
 	box-shadow: var(--heme-input--shadow-focus);
 	color: var(--theme-input--color);
 	outline: 0;
@@ -109,5 +109,5 @@
 
 @define-mixin blockWidthNoPaddingWide {
 	--total-block-padding: calc(var(--theme-block-padding-x) * 2);
-	max-width: calc(var(--theme-max-w-wide) - var(--total-block-padding));
+	max-width: calc(var(--go--max-width--alignwide) - var(--total-block-padding));
 }

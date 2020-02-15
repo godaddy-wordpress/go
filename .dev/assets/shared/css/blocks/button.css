@@ -2,7 +2,7 @@
 .wp-block-button {
 
 	&:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
-		background-color: var(--theme-button--bg);
+		background-color: var(--go-button--color--background, var(--go--color--primary));
 	}
 
 	&.is-style-outline .wp-block-button__link.has-primary-color:hover {
@@ -24,8 +24,8 @@
 	&.is-style-outline .wp-block-button__link {
 		border-color: currentColor;
 		border-style: solid;
-		border-width: var(--theme-button--border-width);
-		padding: calc(var(--theme-button--padding-y) - 2px) calc(var(--theme-button--padding-x) - 2px);
+		border-width: var(--go-button--border-width, 2px);
+		padding: calc(var(--go-button--padding--y) - 2px) calc(var(--go-button--padding--x) - 2px);
 
 		&:hover {
 			color: var(--go--color--secondary);

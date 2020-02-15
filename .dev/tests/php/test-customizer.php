@@ -970,7 +970,7 @@ class Test_Customizer extends WP_UnitTestCase {
 			'--go--color--primary',
 			'--go--color--secondary',
 			'--go--color--tertiary',
-			'--go-body--color--background',
+			'--go--color--background',
 			'--go-logo--max-width',
 			'--go-logo-mobile--max-width',
 		];

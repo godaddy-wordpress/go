@@ -1,19 +1,19 @@
 /*! Body Typography */
 body {
-	background-color: var(--go-body--color--background, 0, 0%, 100%);
-	color: var(--theme-color-text);
-	font-family: var(--theme-body--font);
-	font-size: var(--theme-body--font-size);
+	background-color: var(--go--color--background, 0, 0%, 100%);
+	color: var(--go--color--text);
+	font-family: var(--go--font-family);
+	font-size: var(--go--font-size);
 	font-weight: var(--theme-body--weight, 400);
 	letter-spacing: var(--theme-body--tracking);
-	line-height: var(--theme-body--leading);
+	line-height: var(--go--line-height);
 	text-rendering: optimizeLegibility;
 	word-wrap: break-word;
 }
 
 p {
-	font-size: var(--theme-body--font-size);
-	line-height: var(--theme-body--leading);
+	font-size: var(--go--font-size);
+	line-height: var(--go--line-height);
 }
 
 .content-area > blockquote {
@@ -24,7 +24,7 @@ p {
 
 	& p {
 		color: var(--theme-quote--color, var(--go-heading--color--text));
-		font-family: var(--theme-heading--font);
+		font-family: var(--go-heading--font-family);
 		font-size: var(--theme-quote--font-size);
 		font-style: var(--theme-quote--style);
 		font-weight: var(--theme-quote--weight);

@@ -19,7 +19,7 @@
 	}
 
 	& .flickity-prev-next-button {
-		border-radius: var(--theme-button--radius);
+		border-radius: var(--go-button--border-radius);
 	}
 
 	& .flickity-button-icon {
