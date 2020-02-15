@@ -7,10 +7,10 @@
 	}
 
 	& .custom-logo {
-		max-width: var(--user-logo-size--mobile);
+		max-width: var(--go-logo-size--mobile);
 
 		@media (--small) {
-			max-width: var(--user-logo-size);
+			max-width: var(--go-logo-size);
 		}
 	}
 }
