@@ -75,11 +75,11 @@
 	--go-pullquote--font-style: normal;
 
 	/* Blockquote */
-	--theme-quote--border-width: 0.45rem;
-	--theme-quote--font-size: var(--go-heading--font-size--h3);
-	--theme-quote--leading: var(--go-heading--line-height);
-	--theme-quote--style: normal;
-	--theme-quote--weight: var(--go-heading--font-weight);
+	--go-quote--border-width: 0.45rem;
+	--go-quote--font-size: var(--go-heading--font-size--h3);
+	--go-quote--line-height: var(--go-heading--line-height);
+	--go-quote--font-style: normal;
+	--go-quote--font-weight: var(--go-heading--font-weight);
 
 	/* Blockquote (Large) */
 	--theme-quote-large--font-size: 2.5em;
@@ -164,36 +164,23 @@
 	## Footer
 	--------------------------------------------------------------*/
 	--go-footer--color--text: var(--go-heading--color--text);
-	--go-footer-heading--color--text: var(--go-heading--color--text);
-	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
 	--theme-footer-nav--leading: 2.25;
-	--theme-footer-nav--padding-x: 1rem;
-	--theme-footer-nav--padding-y: 0.25rem;
-
-	@media (--medium) {
-		--theme-footer-nav--padding-y: 0.1rem;
-	}
 
 	/* Footer > Social Icons */
-	--go-social--color--fill: var(--go--color--primary);
-	--theme-social--size: 1.5rem;
-	--theme-social--spacing: 1rem;
-
-	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: hsl(0, 0%, 80%);
+	--go-social--color--text: var(--go--color--primary);
+	--go-social--size: 1.5rem;
+	--go-social--padding: 1rem;
 
 
 	/*--------------------------------------------------------------
 	## Post
 	--------------------------------------------------------------*/
-	--theme-entry-header--width: 70rem;
 	--theme-meta--font: var(--go--font-family);
 	--theme-meta--font-size: 1rem;
 	--theme-meta--color: var(--go-heading--color--text);
 	--theme-meta--opacity: 0.65;
-	--theme-comment-p--font-size: 0.95rem;
 
 
 	/*--------------------------------------------------------------

@@ -858,7 +858,7 @@ function inline_css() {
 				<?php endif; ?>
 
 				<?php if ( $social_icon_color ) : ?>
-					--go-social--color--fill: hsl(<?php echo esc_attr( $social_icon_color ); ?>);
+					--go-social--color--text: hsl(<?php echo esc_attr( $social_icon_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $logo_width ) : ?>

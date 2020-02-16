@@ -23,7 +23,7 @@
 			font-size: var(--go-navigation--font-size);
 			font-weight: var(--go-navigation--font-weight, 400);
 			letter-spacing: var(--go-navigation--letter-spacing, normal);
-			padding: var(--theme-footer-nav--padding-y) var(--theme-footer-nav--padding-x);
+			padding: 0 var(--go-navigation--padding--x, 2vw);
 			text-transform: var(--go-navigation--text-transform, normal);
 		}
 	}
@@ -32,7 +32,7 @@
 		margin-bottom: calc(var(--theme-vertical-rhythm--lrg) * 0.5);
 
 		& svg {
-			height: var(--theme-social--size);
+			height: var(--go-social--size);
 		}
 	}
 }

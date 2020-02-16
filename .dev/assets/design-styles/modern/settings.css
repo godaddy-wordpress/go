@@ -48,16 +48,16 @@
 	--go--hyperlink--color--text: var(--go-heading--color--text);
 	--go--hyperlink-interactive--color--text: var(--go--color--primary);
 
+	/* Quote */
+	--go-quote--border-width: 0.45rem;
+	--go-quote--font-size: var(--go-heading--font-size--h3);
+	--go-quote--line-height: var(--go-heading--line-height);
+	--go-quote--font-style: normal;
+	--go-quote--font-weight: var(--go-heading--font-weight);
+
 	/* Pullquote */
 	--go-pullquote--font-family: serif;
 	--go-pullquote--font-size: var(--go-heading--font-size--h2);
-
-	/* Quote */
-	--theme-quote--border-width: 0.45rem;
-	--theme-quote--font-size: var(--go-heading--font-size--h3);
-	--theme-quote--leading: var(--go-heading--line-height);
-	--theme-quote--style: normal;
-	--theme-quote--weight: var(--go-heading--font-weight);
 
 	/* Accessibility */
 	--go--color--outline: hsl(0, 0%, 0%);
@@ -123,58 +123,29 @@
 	--go-search-button--color--background: var(--go--color--primary);
 	--go-search-button--color--background-interactive: var(--go-heading--color--text);
 
-
-	/*--------------------------------------------------------------
-	## Footer
-	--------------------------------------------------------------*/
-	--go-footer--color--text: var(--go--color--text);
-	--go-footer-heading--color--text: var(--go-heading--color--text);
-	--theme-footer-2--padding-y: 4rem;
-
-	/* Footer > Navigation */
-	--go-footer-navigation--color--text: var(--go-navigation--color--text);
-	--theme-footer-nav--leading: 2.5;
-	--theme-footer-nav--padding-x: 1rem;
-	--theme-footer-nav--padding-y: 0.25rem;
+	/* Social */
+	--go-social--size: 1.5rem;
+	--go-social--padding: 0.75rem;
 
 	@media (--medium) {
-		--theme-footer-nav--padding-x: 1.75rem;
-		--theme-footer-nav--padding-y: 0.15rem;
+		--go-social--size: 2rem;
+		--go-social--padding: 1rem;
 	}
-
-	/* Footer > Social Icons */
-	--go-social--color--fill: var(--go-heading--color--text);
-	--theme-social--size: 1.5rem;
-	--theme-social--spacing: 0.75rem;
-
-	@media (--medium) {
-		--theme-social--size: 2rem;
-		--theme-social--spacing: 1rem;
-	}
-
-	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: hsl(0, 0%, 80%);
-
 
 	/*--------------------------------------------------------------
 	## Post
 	--------------------------------------------------------------*/
-	--theme-entry-header--width: 70rem;
 	--theme-meta--color: var(--go-heading--color--text);
 	--theme-meta--font: var(--go--font-family);
 	--theme-meta--font-size: var(--go--font-size);
 
 
-	/*--------------------------------------------------------------
-	## CoBlocks
-	--------------------------------------------------------------*/
+	/* CoBlocks */
 	--coblocks-accordion--bg-hover: hsla(0, 0%, 0%, 0.1);
 	--coblocks-accordion--border-color: var(--go-heading--color--text);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
-
 	--coblocks-features--icon-spacing: 1.75rem;
 	--coblocks-features--heading-spacing: 1rem;
-
 	--coblocks-food-drinks-item--font-size: 0.95em;
 	--coblocks-food-drinks-item--spacing: 3.5em;
 	--coblocks-food-drinks-item--text-transform: uppercase;
@@ -185,15 +156,11 @@
 	--coblocks-food-drinks-title--margin-y: 0.65em;
 	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
 	--coblocks-food-drinks-title--style: normal;
-
 	--coblocks-pricing--border: 2px solid var(--go-heading--color--text);
-
 	--coblocks-services--heading-margin-bottom: 1rem;
 	--coblocks-services--heading-margin-top: 1.75rem;
 
-	/*--------------------------------------------------------------
-	## Editor
-	--------------------------------------------------------------*/
+	/* Block Editor */
 	--editor-title--font-size: 2em;
 	--editor-max-w-base: 633px;
 	--editor-max-w-wide: 1280px;

@@ -1,7 +1,7 @@
 /*! Comments */
 .comment-form-cookies-consent input[type="checkbox"] + label {
 	font-family: var(--go--font-family);
-	font-size: var(--theme-comment-p--font-size, 0.85rem);
+	font-size: var(--theme-comment-p--font-size, 0.95rem);
 	font-weight: var(--theme-body--weight, 400);
 	letter-spacing: 0;
 	line-height: 1.4;
@@ -113,12 +113,12 @@
 	}
 
 	& p.comment-notes {
-		font-size: var(--theme-comment-p--font-size, 0.8rem);
+		font-size: var(--theme-comment-p--font-size, 0.95rem);
 		margin-bottom: 2.25rem;
 	}
 
 	& p.logged-in-as {
-		font-size: var(--theme-comment-p--font-size, 0.8rem);
+		font-size: var(--theme-comment-p--font-size, 0.95rem);
 		margin-bottom: 2.25rem;
 	}
 

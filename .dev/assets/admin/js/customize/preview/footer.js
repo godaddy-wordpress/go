@@ -40,7 +40,7 @@ export default () => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined;
-			document.querySelector( ':root' ).style.setProperty( '--go-social--color--fill', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-social--color--text', setTo );
 		} );
 	} );
 

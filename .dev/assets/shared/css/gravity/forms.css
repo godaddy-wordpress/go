@@ -117,7 +117,7 @@ body {
 
 	& .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
 		background-color: var(--theme-input--bg, 0, 0%, 100%);
-		border-radius: var(--theme-input--radius, var(--go-button--border-radius));
+		border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 		font-size: var(--go-input--font-size);
 		line-height: 1;
 		padding: var(--go-button--padding--y) var(--go-input--padding--x);

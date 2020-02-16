@@ -184,7 +184,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 .wp-block[data-type="coblocks/form"] .components-textarea-control__input {
 	background-color: var(--theme-input--bg, 0, 0%, 100%);
 	border: var(--go-input--border);
-	border-radius: var(--theme-input--radius, var(--go-button--border-radius));
+	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 	box-shadow: var(--theme-input--shadow, none);
 	color: var(--go-input--color--text);
 	font-size: var(--go-input--font-size);

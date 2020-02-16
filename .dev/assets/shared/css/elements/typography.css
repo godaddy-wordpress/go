@@ -17,7 +17,7 @@ p {
 }
 
 .content-area > blockquote {
-	border-left: var(--theme-quote--border-width) var(--theme-quote--border-style) var(--theme-quote--border-color);
+	border-left: var(--go-quote--border-width) var(--theme-quote--border-style) var(--theme-quote--border-color);
 	margin: 0;
 	padding-left: 0;
 	padding-right: 0;
@@ -25,10 +25,10 @@ p {
 	& p {
 		color: var(--theme-quote--color, var(--go-heading--color--text));
 		font-family: var(--go-heading--font-family);
-		font-size: var(--theme-quote--font-size);
-		font-style: var(--theme-quote--style);
-		font-weight: var(--theme-quote--weight);
-		line-height: var(--theme-quote--leading);
+		font-size: var(--go-quote--font-size);
+		font-style: var(--go-quote--font-style);
+		font-weight: var(--go-quote--font-weight);
+		line-height: var(--go-quote--line-height);
 		margin: 0 0 2rem;
 		padding: 0.5rem 0 0.5rem 1.5rem;
 		position: relative;

@@ -53,7 +53,7 @@
 	text-transform: var(--go-site-description--text-transform, normal);
 
 	@media (--large) {
-		margin-left: var(--theme-site-nav--padding-x, 2vw);
+		margin-left: var(--go-navigation--padding--x, 2vw);
 		margin-top: 0;
 	}
 }

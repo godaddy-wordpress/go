@@ -21,7 +21,7 @@ input[type="color"] {
 	appearance: none;
 	background-color: var(--theme-input--bg, 0, 0%, 100%);
 	border: var(--go-input--border);
-	border-radius: var(--theme-input--radius, var(--go-button--border-radius));
+	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 	box-shadow: var(--theme-input--shadow, none);
 	color: var(--go-input--color--text);
 	font-size: var(--go-input--font-size);
@@ -48,7 +48,7 @@ input[type="checkbox"] {
 textarea {
 	background-color: var(--theme-input--bg, 0, 0%, 100%);
 	border: var(--go-input--border);
-	border-radius: var(--theme-input--radius, var(--go-button--border-radius));
+	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 	color: var(--go-input--color--text);
 	display: block;
 	font-size: var(--go-input--font-size);

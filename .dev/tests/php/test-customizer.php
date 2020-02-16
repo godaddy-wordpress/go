@@ -1123,9 +1123,9 @@ class Test_Customizer extends WP_UnitTestCase {
 		Go\Customizer\inline_css();
 		$inline_css = ob_get_clean();
 
-		if ( false === strpos( $inline_css, '--go-social--color--fill' ) ) {
+		if ( false === strpos( $inline_css, '--go-social--color--text' ) ) {
 
-			$this->fail( "--go-social--color--fill was not found in the output of Go\Customizer\inline_css() after setting social_icon_color" );
+			$this->fail( "--go-social--color--text was not found in the output of Go\Customizer\inline_css() after setting social_icon_color" );
 
 		}
 

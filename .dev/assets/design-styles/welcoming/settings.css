@@ -59,10 +59,10 @@
 	--go-pullquote--font-size: var(--go-heading--font-size--h1);
 
 	/* Blockquote */
-	--theme-quote--font-size: var(--go-heading--font-size--h3);
-	--theme-quote--leading: var(--go-heading--line-height);
-	--theme-quote--style: normal;
-	--theme-quote--weight: var(--go-heading--font-weight);
+	--go-quote--font-size: var(--go-heading--font-size--h3);
+	--go-quote--line-height: var(--go-heading--line-height);
+	--go-quote--font-style: normal;
+	--go-quote--font-weight: var(--go-heading--font-weight);
 
 
 	/*--------------------------------------------------------------
@@ -125,7 +125,7 @@
 	--go-navigation-mobile--font-size: 1.75rem;
 	--go-navigation--text-transform: lowercase;
 	--go-navigation--letter-spacing: 1px;
-	--theme-site-nav--padding-x: 1.5vw;
+	--go-navigation--padding--x: 1.5vw;
 
 
 	/*--------------------------------------------------------------
@@ -136,33 +136,17 @@
 	--go-search-button--color--background: var(--go--color--primary);
 	--go-search-button--color--background-interactive: var(--go--color--text);
 
-
-	/*--------------------------------------------------------------
-	## Footer
-	--------------------------------------------------------------*/
+	/* Footer */
 	--go-footer--color--text: var(--go--color--primary);
-	--go-footer-heading--color--text: var(--go-heading--color--text);
-	--theme-footer-2--padding-y: 4rem;
-
-	/* Footer > Navigation */
 	--go-footer-navigation--color--text: var(--go-heading--color--text);
-	--theme-footer-nav--leading: 2.5;
-	--theme-footer-nav--padding-x: 1rem;
-	--theme-footer-nav--padding-y: 0.25rem;
+
+	/* Social */
+	--go-social--size: 1.5rem;
+	--go-social--padding: 0.5rem;
 
 	@media (--medium) {
-		--theme-footer-nav--padding-x: 1.75rem;
-		--theme-footer-nav--padding-y: 0.15rem;
-	}
-
-	/* Footer > Social Icons */
-	--go-social--color--fill: var(--go-heading--color--text);
-	--theme-social--size: 1.5rem;
-	--theme-social--spacing: 0.5rem;
-
-	@media (--medium) {
-		--theme-social--size: 2rem;
-		--theme-social--spacing: 1rem;
+		--go-social--size: 2rem;
+		--go-social--padding: 1rem;
 	}
 
 	/* Footer Variations Specific */
@@ -173,9 +157,7 @@
 	/*--------------------------------------------------------------
 	## Post
 	--------------------------------------------------------------*/
-	--theme-entry-header--width: 70rem;
 	--theme-meta--color: var(--go--color--primary);
-	--theme-comment-p--font-size: 0.95rem;
 
 
 	/*--------------------------------------------------------------

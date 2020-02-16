@@ -69,10 +69,10 @@
 	--go-pullquote--font-size: var(--go-heading--font-size--h2);
 
 	/* Blockquote */
-	--theme-quote--font-size: var(--go-heading--font-size--h2);
-	--theme-quote--leading: var(--go-heading--line-height);
-	--theme-quote--style: normal;
-	--theme-quote--weight: var(--go-heading--font-weight);
+	--go-quote--font-size: var(--go-heading--font-size--h2);
+	--go-quote--line-height: var(--go-heading--line-height);
+	--go-quote--font-style: normal;
+	--go-quote--font-weight: var(--go-heading--font-weight);
 
 	/* Blockquote (Large) */
 	--theme-quote-large--font-size: var(--go-heading--font-size--h3);
@@ -158,32 +158,22 @@
 	--go-footer--color--text: 0, 0%, 55%;
 	--theme-footer--font-family: "Source Code Pro", sans-serif;
 	--go-footer-heading--color--text: var(--color-white);
-	--theme-footer-2--padding-y: 4rem;
 
 	/* Footer > Navigation */
 	--go-footer-navigation--color--text: var(--color-white);
-	--theme-footer-nav--leading: 2.5;
-	--theme-footer-nav--padding-x: 1rem;
-	--theme-footer-nav--padding-y: 0.25rem;
-
-	@media (--medium) {
-		--theme-footer-nav--padding-x: 1.75rem;
-		--theme-footer-nav--padding-y: 0.15rem;
-	}
 
 	/* Footer > Social Icons */
-	--go-social--color--fill: var(--color-white);
-	--theme-social--size: 1.5rem;
-	--theme-social--spacing: 0.5rem;
+	--go-social--color--text: var(--color-white);
+	--go-social--size: 1.5rem;
+	--go-social--padding: 0.5rem;
 
 	@media (--medium) {
-		--theme-social--size: 1.65rem;
-		--theme-social--spacing: 1rem;
+		--go-social--size: 1.65rem;
+		--go-social--padding: 1rem;
 	}
 
 	/* Footer Variations Specific */
 	--theme-footer-3-site-info--border-color: var(--color-white);
-	--theme-footer-3-site-info--border-width: 1px;
 
 
 	/*--------------------------------------------------------------
@@ -191,7 +181,6 @@
 	--------------------------------------------------------------*/
 	--theme-meta--color: var(--go-heading--color--text);
 	--theme-meta--font-size: 0.9rem;
-	--theme-comment-p--font-size: 0.95rem;
 
 
 	/*--------------------------------------------------------------
