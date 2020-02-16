@@ -4,10 +4,10 @@
 }
 
 .gform_wrapper ul.gform_fields li.gfield select {
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
+	background-color: var(--go-input--color--background, var(--color-white));
 	border: var(--go-input--border);
 	font-size: var(--go-input--font-size);
-	font-weight: var(--theme-input--weight, 400);
+	font-weight: var(--go-input--font-weight, 400);
 	line-height: 1;
 	padding: var(--go-button--padding--y) 10px;
 
@@ -48,10 +48,10 @@ body .gform_wrapper .top_label select.medium {
 
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_right select {
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
+	background-color: var(--go-input--color--background, var(--color-white));
 	border: var(--go-input--border);
 	font-size: var(--go-input--font-size);
-	font-weight: var(--theme-input--weight, 400);
+	font-weight: var(--go-input--font-weight, 400);
 	margin: 0 0 var(--go-input--margin-bottom) 0;
 	padding: var(--go-button--padding--y) calc(var(--go-input--padding--x) * 2) var(--go-button--padding--y) var(--go-input--padding--x);
 
@@ -61,7 +61,7 @@ body .gform_wrapper .top_label select.medium {
 }
 
 .gform_wrapper ul.gform_fields li.gfield input[type="radio"] {
-	font-weight: var(--theme-input--weight, 400);
+	font-weight: var(--go-input--font-weight, 400);
 	line-height: 1.25;
 	margin-bottom: 0;
 	padding: var(--go-input--padding--y) var(--go-input--padding--x);
@@ -90,12 +90,12 @@ body {
 
 	& label.gfield_consent_label {
 		font-size: var(--go-input--font-size);
-		font-weight: var(--theme-input--weight, 400);
+		font-weight: var(--go-input--font-weight, 400);
 	}
 
 	& .gform_wrapper label.gfield_label,
 	& .gform_wrapper legend.gfield_label {
-		font-family: var(--theme-label--font, var(--go-navigation--font-family));
+		font-family: var(--go-label--font-family, var(--go-navigation--font-family));
 		font-size: var(--go-label--font-size);
 		font-weight: var(--go-label--font-weight);
 	}
@@ -116,7 +116,7 @@ body {
 	}
 
 	& .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
-		background-color: var(--theme-input--bg, 0, 0%, 100%);
+		background-color: var(--go-input--color--background, var(--color-white));
 		border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 		font-size: var(--go-input--font-size);
 		line-height: 1;
@@ -154,7 +154,7 @@ body {
 	}
 
 	& .gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
-		background-color: var(--theme-input--bg, 0, 0%, 100%);
+		background-color: var(--go-input--color--background, var(--color-white));
 		background-image: url("../images/error-icon.svg");
 		background-position: calc(100% - 10px) center;
 		background-repeat: no-repeat;
@@ -163,11 +163,11 @@ body {
 	}
 
 	& .gform_wrapper textarea {
-		background-color: var(--theme-input--bg, 0, 0%, 100%);
+		background-color: var(--go-input--color--background, var(--color-white));
 		border-color: var(--go-input--border-color), var(--go-heading--color--text));
 		color: var(--go-input--color--text);
 		font-size: var(--go-input--font-size);
-		font-weight: var(--theme-input--weight, 400);
+		font-weight: var(--go-input--font-weight, 400);
 		padding: var(--go-button--padding--y);
 
 		&:focus {

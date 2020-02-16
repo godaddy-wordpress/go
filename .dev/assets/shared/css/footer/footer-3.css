@@ -6,7 +6,7 @@
 	}
 
 	& .site-footer__row {
-		border-top: var(--theme-footer-3-site-info--border-width, 1px) solid var(--theme-footer-3-site-info--border-color, hsl(0, 0%, 80%));
+		border-top: var(--go-footer-3--border-width, 1px) solid var(--go-footer-3--border-color, hsl(0, 0%, 80%));
 		margin-top: calc(var(--theme-vertical-rhythm--lrg) * 0.75);
 		padding: 2rem 0 1rem;
 		text-align: center;

@@ -4,13 +4,13 @@ html {
 }
 
 ::-moz-selection {
-	background-color: var(--go--color--selection--background, var(--go--color--primary));
-	color: var(--go-body--color--selection--text, inherit);
+	background-color: var(--go-selection--color--background, var(--go--color--primary));
+	color: var(--go-selection--color--text, inherit);
 }
 
 ::selection {
-	background-color: var(--go--color--selection--background, var(--go--color--primary));
-	color: var(--go-body--color--selection--text, var(--color-white));
+	background-color: var(--go-selection--color--background, var(--go--color--primary));
+	color: var(--go-selection--color--text, var(--color-white));
 }
 
 *,
@@ -29,7 +29,7 @@ optgroup,
 textarea {
 	color: $color__text-main;
 	font-family: var(--go--font-family);
-	font-weight: var(--theme-body--weight, 400);
+	font-weight: var(--go--font-weight, 400);
 	line-height: var(--go--line-height);
 	text-rendering: optimizeLegibility;
 }

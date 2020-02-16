@@ -1,7 +1,7 @@
 label {
 	color: var(--theme-label--color, var(--go-heading--color--text));
 	display: block;
-	font-family: var(--theme-label--font, var(--go-navigation--font-family));
+	font-family: var(--go-label--font-family, var(--go-navigation--font-family));
 	font-size: var(--go-label--font-size);
 	font-weight: var(--go-label--font-weight);
 	letter-spacing: var(--go-label--letter-spacing);

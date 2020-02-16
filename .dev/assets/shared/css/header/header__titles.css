@@ -34,7 +34,7 @@
 	color: var(--go-site-title--color--text);
 	font-family: var(--go-site-title--font-family, var(--go-heading--font-family));
 	font-size: var(--go-site-title--font-size);
-	font-weight: var(--theme-site-title--weight, var(--go-heading--font-weight));
+	font-weight: var(--go-site-title--font-weight, var(--go-heading--font-weight));
 	letter-spacing: var(--go-site-title--letter-spacing);
 	line-height: 1.1;
 	margin: 0;

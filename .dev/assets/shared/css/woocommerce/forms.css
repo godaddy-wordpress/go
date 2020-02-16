@@ -10,23 +10,22 @@
 }
 
 .woocommerce form .form-row textarea {
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
+	background-color: var(--go-input--color--background, var(--color-white));
 	border-color: var(--go-input--border-color, var(--go-heading--color--text));
 }
 
 .woocommerce form .form-row textarea:focus {
 	border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
-	box-shadow: var(--heme-input--shadow-focus);
 }
 
 .select2-container--default .select2-selection--single {
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
+	background-color: var(--go-input--color--background, var(--color-white));
 	background-image: url("../shared/images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border: var(--go-input--border);
 	border-radius: 0;
-	font-weight: var(--theme-input--weight, 400);
+	font-weight: var(--go-input--font-weight, 400);
 	height: initial;
 	line-height: 1;
 	padding: var(--go-input--padding--y) var(--go-input--padding--x);
@@ -54,7 +53,7 @@
 
 .select2-results__option {
 	font-size: var(--go-input--font-size);
-	font-weight: var(--theme-input--weight, 400);
+	font-weight: var(--go-input--font-weight, 400);
 	margin: 0 0 2px;
 	padding: 0.5rem;
 }
@@ -126,7 +125,7 @@
 .woocommerce form .form-row.woocommerce-invalid .select2-container,
 .woocommerce form .form-row.woocommerce-invalid input.input-text,
 .woocommerce form .form-row.woocommerce-invalid select {
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
+	background-color: var(--go-input--color--background, var(--color-white));
 	background-image: url("../shared/images/error-icon.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
@@ -137,10 +136,10 @@
 .woocommerce form .form-row.woocommerce-validated .select2-container,
 .woocommerce form .form-row.woocommerce-validated input.input-text,
 .woocommerce form .form-row.woocommerce-validated select {
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
+	background-color: var(--go-input--color--background, var(--color-white));
 	border-color: var(--go-input--border-color, var(--go-heading--color--text));
 	font-size: var(--go-input--font-size);
-	font-weight: var(--theme-input--weight, 400);
+	font-weight: var(--go-input--font-weight, 400);
 	line-height: 1.25;
 
 	&:focus {

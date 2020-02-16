@@ -1,41 +1,28 @@
 :root {
 
-	/*--------------------------------------------------------------
-	## Base
-	--------------------------------------------------------------*/
-	--go--spacing--horizontal: 50;
-	--go--spacing--paragraph: 15;
-	--go--spacing--header: 25;
+	/* Content width */
 	--go--max-width: 42rem;
 	--go--max-width--alignwide: 82rem;
 
-	/* Accessibility */
-	--go--color--outline: var(--go--color--primary);
-	--go--color--selection--background: var(--go--color--primary);
+	/* Spacing */
+	--go--spacing--horizontal: 50;
+	--go--spacing--paragraph: 15;
+	--go--spacing--header: 25;
 
-
-	/*--------------------------------------------------------------
-	## Colors
-	--------------------------------------------------------------*/
-	--go-heading--color--text: var(--go--color--primary);
+	/* Typography */
 	--go--color--text: var(--go--color--primary);
-	--go-caption--color--text: hsl(0, 0%, 52%);
-
-
-	/*--------------------------------------------------------------
-	## Typography
-	--------------------------------------------------------------*/
 	--go--font-family: "Karla", sans-serif;
+	--go--font-size--small: 90%;
 	--go--font-size: 1rem;
 	--go--line-height: 1.8;
-	--go--font-size--small: 90%;
 
 	/* Headings */
+	--go-heading--button-spacing: 2rem;
+	--go-heading--color--text: var(--go--color--primary);
 	--go-heading--font-family: "Work Sans", sans-serif;
+	--go-heading--font-weight: 300;
 	--go-heading--line-height: 1.35;
 	--go-heading--margin-bottom: 1.75rem;
-	--go-heading--font-weight: 300;
-	--go-heading--button-spacing: 2rem;
 
 	--go-heading--font-size--h1: 2.5em;
 	--go-heading--font-size--h2: 2em;
@@ -51,8 +38,9 @@
 	}
 
 	/* Captions */
-	--go-caption--text-align: center;
+	--go-caption--color--text: hsl(0, 0%, 52%);
 	--go-caption--font-size: 0.85rem;
+	--go-caption--text-align: center;
 
 	/* Pullquote */
 	--go-pullquote--font-family: var(--go-heading--font-family);
@@ -61,13 +49,23 @@
 	/* Blockquote */
 	--go-quote--font-size: var(--go-heading--font-size--h3);
 	--go-quote--line-height: var(--go-heading--line-height);
-	--go-quote--font-style: normal;
 	--go-quote--font-weight: var(--go-heading--font-weight);
 
+	/* Accessibility */
+	--go-outline--color--text: var(--go--color--primary);
+	--go-selection--color--background: var(--go--color--primary);
 
-	/*--------------------------------------------------------------
-	## Forms
-	--------------------------------------------------------------*/
+	/* Buttons */
+	--go-button--border-width: 1px;
+	--go-button--padding--x: 1.85rem;
+	--go-button--padding--y: 1.35rem;
+	--go-button--border-radius: 3px;
+	--go-button--text-transform: lowercase;
+	--go-button--letter-spacing: 1px;
+	--go-button--font-weight: 400;
+	--go-button-interactive--color--background: var(--go--color--secondary);
+
+	/* Labels */
 	--go-label--font-size: var(--go--font-size);
 	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
 	--go-label--text-transform: lowercase;
@@ -85,52 +83,34 @@
 	--go-input--border-color-interactive: var(--go--color--secondary);
 	--go-input-interactive--color--text: var(--go-heading--color--text);
 
-
-	/*--------------------------------------------------------------
-	## Buttons
-	--------------------------------------------------------------*/
-	--go-button--border-width: 1px;
-	--go-button--padding--x: 1.85rem;
-	--go-button--padding--y: 1.35rem;
-	--go-button--border-radius: 3px;
-	--go-button--text-transform: lowercase;
-	--go-button--letter-spacing: 1px;
-	--go-button--font-weight: 400;
-
-
-	/*--------------------------------------------------------------
-	## Header
-	--------------------------------------------------------------*/
+	/* Header */
 	--go-header--color--background: "";
-	--header-padding: 2.5vw;
 
-	/* Header > Site Branding */
+	/* Site Title */
 	--go-site-title--color--text: var(--go-heading--color--text);
 	--go-site-title--font-size: 1.85rem;
-	--go-site-title--text-transform: normal;
+	--go-site-title--font-weight: 600;
 	--go-site-title--letter-spacing: 0;
-	--theme-site-title--weight: 600;
+	--go-site-title--text-transform: normal;
 
 	@media (--medium) {
 		--go-site-title--font-size: 2.25rem;
 	}
 
+	/* Site Description */
 	--go-site-description--color--text: var(--go--color--primary);
 	--go-site-description--opacity: 1;
 
-	/* Header > Navigation */
+	/* Site Navigation */
 	--go-navigation--color--text: var(--go--color--primary);
 	--go-navigation--font-family: var(--go--font-family);
 	--go-navigation--font-size: 1rem;
-	--go-navigation-mobile--font-size: 1.75rem;
-	--go-navigation--text-transform: lowercase;
 	--go-navigation--letter-spacing: 1px;
 	--go-navigation--padding--x: 1.5vw;
+	--go-navigation--text-transform: lowercase;
+	--go-navigation-mobile--font-size: 1.75rem;
 
-
-	/*--------------------------------------------------------------
-	## Search
-	--------------------------------------------------------------*/
+	/* Site Search */
 	--go-search-button--color--text: var(--go-heading--color--text);
 	--go-search-button--color--text-interactive: var(--go--color--text);
 	--go-search-button--color--background: var(--go--color--primary);
@@ -139,37 +119,27 @@
 	/* Footer */
 	--go-footer--color--text: var(--go--color--primary);
 	--go-footer-navigation--color--text: var(--go-heading--color--text);
+	--go-footer-3--border-color: var(--go-header--color--background);
+	--go-footer-3--border-width: 10px;
 
 	/* Social */
-	--go-social--size: 1.5rem;
 	--go-social--padding: 0.5rem;
+	--go-social--size: 1.5rem;
 
 	@media (--medium) {
-		--go-social--size: 2rem;
 		--go-social--padding: 1rem;
+		--go-social--size: 2rem;
 	}
 
-	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: var(--go-header--color--background);
-	--theme-footer-3-site-info--border-width: 10px;
+	/* Posts */
+	--go-meta--color--text: var(--go--color--primary);
 
-
-	/*--------------------------------------------------------------
-	## Post
-	--------------------------------------------------------------*/
-	--theme-meta--color: var(--go--color--primary);
-
-
-	/*--------------------------------------------------------------
-	## CoBlocks
-	--------------------------------------------------------------*/
+	/* CoBlocks */
 	--coblocks-accordion--bg-hover: hsla(0, 0%, 0%, 0.05);
 	--coblocks-accordion--border-color: var(--go-heading--color--text);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
-
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1.5rem;
-
 	--coblocks-food-drinks-item--font-size: 0.95em;
 	--coblocks-food-drinks-item--spacing: 3.5em;
 	--coblocks-food-drinks-item--text-transform: uppercase;
@@ -180,15 +150,11 @@
 	--coblocks-food-drinks-title--margin-y: 0.65em;
 	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
 	--coblocks-food-drinks-title--style: normal;
-
 	--coblocks-pricing--border: 2px solid var(--go-heading--color--text);
-
 	--coblocks-services--heading-margin-bottom: 1rem;
 	--coblocks-services--heading-margin-top: 1.75rem;
 
-	/*--------------------------------------------------------------
-	## Editor
-	--------------------------------------------------------------*/
+	/* Block Editor */
 	--editor-max-w-base: 702px;
 	--editor-max-w-wide: 1134px;
 }

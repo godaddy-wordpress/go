@@ -52,7 +52,6 @@
 	--go-quote--border-width: 0.45rem;
 	--go-quote--font-size: var(--go-heading--font-size--h3);
 	--go-quote--line-height: var(--go-heading--line-height);
-	--go-quote--font-style: normal;
 	--go-quote--font-weight: var(--go-heading--font-weight);
 
 	/* Pullquote */
@@ -60,8 +59,8 @@
 	--go-pullquote--font-size: var(--go-heading--font-size--h2);
 
 	/* Accessibility */
-	--go--color--outline: hsl(0, 0%, 0%);
-	--go--color--selection--background: hsl(0, 0%, 0%);
+	--go-outline--color--text: hsl(0, 0%, 0%);
+	--go-selection--color--background: hsl(0, 0%, 0%);
 
 	/* Buttons */
 	--go-button--border-radius: 0;
@@ -132,13 +131,8 @@
 		--go-social--padding: 1rem;
 	}
 
-	/*--------------------------------------------------------------
-	## Post
-	--------------------------------------------------------------*/
-	--theme-meta--color: var(--go-heading--color--text);
-	--theme-meta--font: var(--go--font-family);
-	--theme-meta--font-size: var(--go--font-size);
-
+	/* Blog Posts */
+	--go-meta--color--text: var(--go-heading--color--text);
 
 	/* CoBlocks */
 	--coblocks-accordion--bg-hover: hsla(0, 0%, 0%, 0.1);

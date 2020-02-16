@@ -1,31 +1,16 @@
 :root {
 
-	/*--------------------------------------------------------------
-	## Base
-	--------------------------------------------------------------*/
-	--go--spacing--horizontal: 60;
-	--go--spacing--paragraph: 15;
-	--go--spacing--header: 25;
+	/* Content width */
 	--go--max-width: 38rem;
 	--go--max-width--alignwide: 80rem;
 
-	/* Accessibility */
-	--go--color--outline: var(--go--color--primary);
-	--go--color--selection--background: var(--go-heading--color--text);
-	--go-body--color--selection--text: var(--color-white);
+	/* Spacing */
+	--go--spacing--header: 25;
+	--go--spacing--horizontal: 60;
+	--go--spacing--paragraph: 15;
 
-
-	/*--------------------------------------------------------------
-	## Text Colors
-	--------------------------------------------------------------*/
-	--go-heading--color--text: hsl(0, 0%, 0%);
+	/* Typography */
 	--go--color--text: hsl(0, 0%, 0%);
-	--go-caption--color--text: hsl(0, 0%, 43%);
-
-
-	/*--------------------------------------------------------------
-	## Typography
-	--------------------------------------------------------------*/
 	--go--font-family: "Noto Sans", sans-serif;
 	--go--font-size--small: 82.5%;
 	--go--font-size--smallest: 78%;
@@ -33,11 +18,12 @@
 	--go--line-height: 1.9;
 
 	/* Headings */
+	--go-heading--button-spacing: 1.75rem;
+	--go-heading--color--text: hsl(0, 0%, 0%);
 	--go-heading--font-family: "Trocchi", sans-serif;
+	--go-heading--font-weight: 400;
 	--go-heading--line-height: 1.325;
 	--go-heading--margin-bottom: 1.25rem;
-	--go-heading--font-weight: 400;
-	--go-heading--button-spacing: 1.75rem;
 
 	--go-heading--font-size--h1: 2.15em;
 	--go-heading--font-size--h2: 2em;
@@ -57,8 +43,9 @@
 	}
 
 	/* Captions */
-	--go-caption--text-align: center;
+	--go-caption--color--text: hsl(0, 0%, 43%);
 	--go-caption--font-size: 0.85rem;
+	--go-caption--text-align: center;
 
 	/* Links */
 	--go--hyperlink--color--text: var(--go-heading--color--text);
@@ -71,37 +58,15 @@
 	/* Blockquote */
 	--go-quote--font-size: var(--go-heading--font-size--h2);
 	--go-quote--line-height: var(--go-heading--line-height);
-	--go-quote--font-style: normal;
 	--go-quote--font-weight: var(--go-heading--font-weight);
+	--go-quote-large--font-size: var(--go-heading--font-size--h3);
 
-	/* Blockquote (Large) */
-	--theme-quote-large--font-size: var(--go-heading--font-size--h3);
+	/* Accessibility */
+	--go-outline--color--text: var(--go--color--primary);
+	--go-selection--color--background: var(--go-heading--color--text);
+	--go-selection--color--text: var(--color-white);
 
-
-	/*--------------------------------------------------------------
-	## Forms
-	--------------------------------------------------------------*/
-	--go-label--font-size: var(--go-navigation--font-size);
-	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
-	--go-label--text-transform: uppercase;
-	--go-label--font-weight: var(--go-navigation--font-weight, 400);
-	--go-label--margin-bottom: 0.5rem;
-
-	/* Input */
-	--theme-input--bg-interactive: var(--go--color--tertiary);
-	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
-	--go-input--color--text: var(--go-caption--color--text);
-	--go-input--font-size: 1.1rem;
-	--go-input--padding--x: 1.35rem;
-	--go-input--padding--y: 1rem;
-	--go-input--margin-bottom: 2rem;
-	--go-input--border-color-interactive: var(--go--color--tertiary);
-	--go-input-interactive--color--text: var(--go-heading--color--text);
-
-
-	/*--------------------------------------------------------------
-	## Buttons
-	--------------------------------------------------------------*/
+	/* Buttons */
 	--go-button--font-size: 0.725rem;
 	--go-button--padding--x: 1.85rem;
 	--go-button--padding--y: 1.65rem;
@@ -110,59 +75,62 @@
 	--go-button--letter-spacing: 3px;
 	--go-button--font-weight: 600;
 
+	/* Labels */
+	--go-label--font-size: var(--go-navigation--font-size);
+	--go-label--font-weight: var(--go-navigation--font-weight, 400);
+	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
+	--go-label--margin-bottom: 0.5rem;
+	--go-label--text-transform: uppercase;
 
-	/*--------------------------------------------------------------
-	## Header
-	--------------------------------------------------------------*/
-	--header-padding: 2.75vw;
+	/* Input */
+	--go-input--border-color-interactive: var(--go--color--tertiary);
+	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
+	--go-input--color--text: var(--go-caption--color--text);
+	--go-input--font-size: 1.1rem;
+	--go-input--margin-bottom: 2rem;
+	--go-input--padding--x: 1.35rem;
+	--go-input--padding--y: 1rem;
+	--go-input-interactive--color--text: var(--go-heading--color--text);
+	--go-input-interactive-color--background: var(--go--color--tertiary);
 
-	@media (--huge) {
-		--header-padding: 2.5rem;
-	}
-
+	/* Site Title */
 	--go-site-title--color--text: var(--go-heading--color--text);
 	--go-site-title--font-size: 1.5rem;
 	--go-site-title--letter-spacing: 0.033em;
-	--theme-site-title--weight: 400;
+	--go-site-title--font-weight: 400;
 
 	@media (--medium) {
 		--go-site-title--font-size: 2rem;
 	}
 
+	/* Site Description */
 	--go-site-description--color--text: var(--go-heading--color--text);
 	--go-site-description--font-family: "Source Code Pro", monospace;
 	--go-site-description--font-size: 0.9rem;
 	--go-site-description--font-family-weight: 400;
 	--go-site-description--opacity: 1;
 
-	/* Header > Navigation */
+	/* Site Navigation */
 	--go-navigation--color--text: var(--go-heading--color--text);
 	--go-navigation--font-family: "Source Code Pro", monospace;
 	--go-navigation--font-size: 0.9rem;
 	--go-navigation-mobile--font-size: 1rem;
 
-
-	/*--------------------------------------------------------------
-	## Search
-	--------------------------------------------------------------*/
+	/* Site Search */
 	--go-search-button--color--text: var(--go-heading--color--text);
 	--go-search-button--color--text-interactive: var(--go--color--secondary);
 	--go-search-button--color--background: var(--go--color--primary);
 	--go-search-button--color--background-interactive: var(--go-heading--color--text);
 
-
-	/*--------------------------------------------------------------
-	## Footer
-	--------------------------------------------------------------*/
+	/* Footer */
 	--go-footer--color--background: var(--go--color--tertiary);
 	--go-footer--color--text: 0, 0%, 55%;
-	--theme-footer--font-family: "Source Code Pro", sans-serif;
+	--go-footer--font-family: "Source Code Pro", sans-serif;
+	--go-footer-3--border-color: var(--color-white);
 	--go-footer-heading--color--text: var(--color-white);
-
-	/* Footer > Navigation */
 	--go-footer-navigation--color--text: var(--color-white);
 
-	/* Footer > Social Icons */
+	/* Social Icons */
 	--go-social--color--text: var(--color-white);
 	--go-social--size: 1.5rem;
 	--go-social--padding: 0.5rem;
@@ -172,27 +140,15 @@
 		--go-social--padding: 1rem;
 	}
 
-	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: var(--color-white);
+	/* Posts */
+	--go-meta--color--text: var(--go-heading--color--text);
 
-
-	/*--------------------------------------------------------------
-	## Post
-	--------------------------------------------------------------*/
-	--theme-meta--color: var(--go-heading--color--text);
-	--theme-meta--font-size: 0.9rem;
-
-
-	/*--------------------------------------------------------------
-	## CoBlocks
-	--------------------------------------------------------------*/
+	/* CoBlocks */
 	--coblocks-accordion--bg-hover: hsla(0, 0%, 0%, 0.1);
 	--coblocks-accordion--border-color: var(--go-heading--color--text);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
-
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1.5rem;
-
 	--coblocks-food-drinks-item--font-size: 0.95em;
 	--coblocks-food-drinks-item--spacing: 3.5em;
 	--coblocks-food-drinks-item--text-transform: uppercase;
@@ -203,15 +159,11 @@
 	--coblocks-food-drinks-title--margin-y: 0.65em;
 	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
 	--coblocks-food-drinks-title--style: normal;
-
 	--coblocks-pricing--border: 2px solid var(--go-heading--color--text);
-
 	--coblocks-services--heading-margin-bottom: 1rem;
 	--coblocks-services--heading-margin-top: 1.75rem;
 
-	/*--------------------------------------------------------------
-	## Editor
-	--------------------------------------------------------------*/
+	/* Block Editor */
 	--editor-max-w-base: 638px;
 	--editor-max-w-wide: 1118px;
 }

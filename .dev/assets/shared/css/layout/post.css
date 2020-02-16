@@ -2,7 +2,7 @@
 .post__title {
 
 	& a {
-		color: var(--theme-h1--color, var(--go-heading--color--text));
+		color: var(--go--color--h1, var(--go-heading--color--text));
 		text-decoration: none;
 
 		&:hover {
@@ -17,13 +17,12 @@
 }
 
 .post__meta {
-	color: var(--theme-meta--color, var(--go-caption--color--text));
+	color: var(--go-meta--color--text, var(--go-caption--color--text));
 	display: flex;
 	flex-wrap: wrap;
-	font-family: var(--theme-meta--font, var(--go-navigation--font-family));
-	font-size: var(--theme-meta--font-size, var(--go-navigation--font-size));
+	font-family: var(--go-meta--font-family, inherit);
+	font-size: var(--go-meta--font-size, var(--go-navigation--font-size));
 	list-style: none;
-	opacity: var(--theme-meta--opacity, 1);
 	text-align: center;
 
 	& li {
@@ -55,7 +54,7 @@
 	}
 
 	& a {
-		color: var(--theme-meta--color, var(--go-caption--color--text));
+		color: var(--go-meta--color--text, var(--go-caption--color--text));
 		outline-offset: 4px;
 		text-decoration: none;
 

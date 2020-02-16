@@ -9,7 +9,7 @@ h6,
 	clear: both;
 	display: block;
 	font-family: var(--go-heading--font-family);
-	font-style: var(--theme-heading--style, normal);
+	font-style: var(--go-heading--font-style, normal);
 	font-weight: var(--go-heading--font-weight);
 	line-height: var(--go-heading--line-height);
 	margin: 0 0 var(--go-heading--margin-bottom);
@@ -21,33 +21,33 @@ h6,
 
 h1,
 .h1 {
-	color: var(--theme-h1--color, var(--go-heading--color--text));
+	color: var(--go--color--h1, var(--go-heading--color--text));
 	font-size: var(--go-heading--font-size--h1);
 	letter-spacing: var(--go-heading--letter-spacing, normal);
 }
 
 h2 {
-	color: var(--theme-h2--color, var(--go-heading--color--text));
+	color: var(--go--color--h2, var(--go-heading--color--text));
 	font-size: var(--go-heading--font-size--h2);
 	letter-spacing: var(--go-heading--letter-spacing, normal);
 }
 
 h3 {
-	color: var(--theme-h3--color, var(--go-heading--color--text));
+	color: var(--go--color--h3, var(--go-heading--color--text));
 	font-size: var(--go-heading--font-size--h3);
 }
 
 h4 {
-	color: var(--theme-h4--color, var(--go-heading--color--text));
+	color: var(--go--color--h4, var(--go-heading--color--text));
 	font-size: var(--go-heading--font-size--h4);
 }
 
 h5 {
-	color: var(--theme-h5--color, var(--go-heading--color--text));
+	color: var(--go--color--h5, var(--go-heading--color--text));
 	font-size: var(--go-heading--font-size--h5);
 }
 
 h6 {
-	color: var(--theme-h6--color, var(--go-heading--color--text));
+	color: var(--go--color--h6, var(--go-heading--color--text));
 	font-size: var(--go-heading--font-size--h6);
 }

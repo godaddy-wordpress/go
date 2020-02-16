@@ -2,7 +2,7 @@
 .comment-form-cookies-consent input[type="checkbox"] + label {
 	font-family: var(--go--font-family);
 	font-size: var(--theme-comment-p--font-size, 0.95rem);
-	font-weight: var(--theme-body--weight, 400);
+	font-weight: var(--go--font-weight, 400);
 	letter-spacing: 0;
 	line-height: 1.4;
 	line-height: var(--go--line-height);

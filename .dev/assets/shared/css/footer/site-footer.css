@@ -2,7 +2,7 @@
 .site-footer {
 	background-color: var(--go-footer--color--background);
 	color: var(--go-footer--color--text, intial);
-	font-family: var(--theme-footer--font-family, inherit);
+	font-family: var(--go-footer--font-family, inherit);
 
 	&.has-background {
 		padding-top: var(--theme-vertical-rhythm--lrg);
@@ -56,7 +56,7 @@
 }
 
 .footer-navigation {
-	line-height: var(--theme-footer-nav--leading, 2.5);
+	line-height: var(--go-footer-navigation--line-height, 2.5);
 
 	& a:focus {
 		@mixin outline;

@@ -164,7 +164,7 @@
 .wp-block-search__label .rich-text,
 label:not(.components-toggle-control__label):not(.components-base-control__label) {
 	color: var(--theme-label--color, var(--go-heading--color--text));
-	font-family: var(--theme-label--font, var(--go-navigation--font-family));
+	font-family: var(--go-label--font-family, var(--go-navigation--font-family));
 	font-size: var(--go-label--font-size);
 	font-weight: var(--go-label--font-weight);
 	letter-spacing: var(--go-label--letter-spacing);
@@ -182,13 +182,13 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 .wp-block-search__input,
 .wp-block[data-type="coblocks/form"] .components-text-control__input,
 .wp-block[data-type="coblocks/form"] .components-textarea-control__input {
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
+	background-color: var(--go-input--color--background, var(--color-white));
 	border: var(--go-input--border);
 	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 	box-shadow: var(--theme-input--shadow, none);
 	color: var(--go-input--color--text);
 	font-size: var(--go-input--font-size);
-	font-weight: var(--theme-input--weight, 400);
+	font-weight: var(--go-input--font-weight, 400);
 	padding: var(--go-input--padding--y) var(--go-input--padding--x);
 }
 

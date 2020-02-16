@@ -1,21 +1,15 @@
 :root {
 
-	/*--------------------------------------------------------------
-	## Base
-	--------------------------------------------------------------*/
-	--go--spacing--horizontal: 60;
-	--go--spacing--paragraph: 9;
-	--go--spacing--header: 22;
+	/* Content width */
 	--go--max-width: 42rem;
 	--go--max-width--alignwide: 84rem;
 
-	/* Accessibility */
-	--go--color--outline: var(--go-heading--color--text);
-	--go--color--selection--background: var(--go-heading--color--text);
+	/* Spacing */
+	--go--spacing--horizontal: 60;
+	--go--spacing--paragraph: 9;
+	--go--spacing--header: 22;
 
-	/*--------------------------------------------------------------
-	## Typography
-	--------------------------------------------------------------*/
+	/* Typography */
 	--go--color--text: hsl(218, 12%, 30%);
 	--go--font-family: "Nunito Sans", sans-serif;
 	--go--font-size--small: 85%;
@@ -33,13 +27,13 @@
 	}
 
 	/* Headings */
+	--go-heading--button-spacing: 1.75rem;
 	--go-heading--color--text: var(--go--color--secondary);
 	--go-heading--font-family: "Crimson Text", serif;
+	--go-heading--font-weight: 400;
+	--go-heading--letter-spacing: -0.02em;
 	--go-heading--line-height: 1.15;
 	--go-heading--margin-bottom: 2rem;
-	--go-heading--letter-spacing: -0.02em;
-	--go-heading--font-weight: 400;
-	--go-heading--button-spacing: 1.75rem;
 
 	--go-heading--font-size--h1: 2.5em;
 	--go-heading--font-size--h2: 2em;
@@ -65,70 +59,57 @@
 
 	/* Captions */
 	--go-caption--color--text: hsl(0, 0%, 43%);
-	--go-caption--text-align: left;
-	--go-caption--text-align--rtl: right;
 	--go-caption--font-size: 0.85rem;
+	--go-caption--text-align--rtl: right;
+	--go-caption--text-align: left;
+
+	/* Blockquote */
+	--go-quote--border-width: 0.45rem;
+	--go-quote--font-size: var(--go-heading--font-size--h3);
+	--go-quote--font-weight: var(--go-heading--font-weight);
+	--go-quote--line-height: var(--go-heading--line-height);
+	--go-quote-large--font-size: 2.5em;
+
+	@media (--medium) {
+		--go-quote-large--font-size: 3.75em;
+	}
 
 	/* Pullquote */
 	--go-pullquote--font-family: serif;
 	--go-pullquote--font-size: var(--go-heading--font-size--h2);
 	--go-pullquote--font-style: normal;
 
-	/* Blockquote */
-	--go-quote--border-width: 0.45rem;
-	--go-quote--font-size: var(--go-heading--font-size--h3);
-	--go-quote--line-height: var(--go-heading--line-height);
-	--go-quote--font-style: normal;
-	--go-quote--font-weight: var(--go-heading--font-weight);
+	/* Accessibility */
+	--go-outline--color--text: var(--go-heading--color--text);
+	--go-selection--color--background: var(--go-heading--color--text);
 
-	/* Blockquote (Large) */
-	--theme-quote-large--font-size: 2.5em;
+	/* Buttons */
+	--go-button--border-radius: 4px;
+	--go-button--font-family: var(--go-heading--font-family);
+	--go-button--font-size: 1.3rem;
+	--go-button--font-weight: 500;
+	--go-button--padding--x: 2.25rem;
+	--go-button--padding--y: 1.4rem;
+	--go-button-interactive--color--background: var(--go-heading--color--text);
 
-	@media (--medium) {
-		--theme-quote-large--font-size: 3.75em;
-	}
-
-
-	/*--------------------------------------------------------------
-	## Forms
-	--------------------------------------------------------------*/
+	/* Labels */
+	--go-label--font-family: var(--go--font-family);
 	--go-label--font-size: 1rem;
-	--theme-label--font: var(--go--font-family);
-	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
 	--go-label--font-weight: var(--go-navigation--font-weight, 400);
+	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
 	--go-label--margin-bottom: 0.25rem;
 
 	/* Input */
-	--theme-input--bg: var(--go--color--background);
 	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
+	--go-input--color--background: var(--go--color--background);
 	--go-input--color--text: var(--go--color--text);
 	--go-input--font-size: var(--go--font-size);
+	--go-input--margin-bottom: 2rem;
 	--go-input--padding--x: 0.85rem;
 	--go-input--padding--y: 0.85rem;
-	--go-input--margin-bottom: 2rem;
 	--go-input-interactive--color--text: var(--go--color--text);
 
-
-	/*--------------------------------------------------------------
-	## Buttons
-	--------------------------------------------------------------*/
-	--go-button-interactive--color--background: var(--go-heading--color--text);
-	--go-button--font-size: 1.3rem;
-	--theme-button--font: var(--go-heading--font-family);
-	--go-button--padding--x: 2.25rem;
-	--go-button--padding--y: 1.4rem;
-	--go-button--border-radius: 4px;
-	--go-button--font-weight: 500;
-
-
-	/*--------------------------------------------------------------
-	## Header
-	--------------------------------------------------------------*/
-
-	@media (--huge) {
-		--header-padding: 2.65rem;
-	}
-
+	/* Site Title */
 	--go-site-title--color--text: var(--go-heading--color--text);
 	--go-site-title--font-size: 1.75rem;
 
@@ -136,64 +117,40 @@
 		--go-site-title--font-size: 2.15rem;
 	}
 
+	/* Site Description */
 	--go-site-description--color--text: var(--go-heading--color--text);
 
-	/* Header > Navigation */
+	/* Site Navigation */
 	--go-navigation--color--text: var(--go-heading--color--text);
 	--go-navigation--font-family: var(--go-heading--font-family);
 	--go-navigation--font-size: 1.3rem;
 	--go-navigation-mobile--font-size: 1.65rem;
 
-
-	/*--------------------------------------------------------------
-	## Search
-	--------------------------------------------------------------*/
+	/* Site Search */
 	--go-search-button--color--text: var(--go-heading--color--text);
 	--go-search-button--color--text-interactive: var(--go--color--primary);
 	--go-search-button--color--background: var(--go--color--primary);
 	--go-search-button--color--background-interactive: var(--go-heading--color--text);
 
+	/* Entry Header */
+	--go-entryheader--padding-top: 3rem;
 
-	/*--------------------------------------------------------------
-	## Entry Header
-	--------------------------------------------------------------*/
-	--theme-entryheader--padding-top: 3rem;
-
-
-	/*--------------------------------------------------------------
-	## Footer
-	--------------------------------------------------------------*/
+	/* Footer */
 	--go-footer--color--text: var(--go-heading--color--text);
+	--go-footer-navigation--line-height: 2.25;
 
-	/* Footer > Navigation */
-	--theme-footer-nav--leading: 2.25;
-
-	/* Footer > Social Icons */
+	/* Social Icons */
 	--go-social--color--text: var(--go--color--primary);
-	--go-social--size: 1.5rem;
 	--go-social--padding: 1rem;
+	--go-social--size: 1.5rem;
 
-
-	/*--------------------------------------------------------------
-	## Post
-	--------------------------------------------------------------*/
-	--theme-meta--font: var(--go--font-family);
-	--theme-meta--font-size: 1rem;
-	--theme-meta--color: var(--go-heading--color--text);
-	--theme-meta--opacity: 0.65;
-
-
-	/*--------------------------------------------------------------
-	## CoBlocks
-	--------------------------------------------------------------*/
+	/* CoBlocks */
 	--coblocks-accordion--bg-hover: none;
 	--coblocks-accordion--border-color: var(--go--color--primary);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
 	--coblocks-accordion--color: var(--go--color--primary);
-
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1rem;
-
 	--coblocks-food-drinks-item--font-size: 1.5em;
 	--coblocks-food-drinks-item--spacing: 3em;
 	--coblocks-food-drinks-item--text-transform: normal;
@@ -206,15 +163,11 @@
 	--coblocks-food-drinks-title--margin-y: 0.5em;
 	--coblocks-food-drinks-title--padding: 0.5em 0.25em 0;
 	--coblocks-food-drinks-title--style: normal;
-
 	--coblocks-pricing--border: 2px solid var(--go-heading--color--text);
-
 	--coblocks-services--heading-margin-bottom: 1.25rem;
 	--coblocks-services--heading-margin-top: 2rem;
 
-	/*--------------------------------------------------------------
-	## Editor
-	--------------------------------------------------------------*/
+	/* Block Editor */
 	--editor-max-w-base: 702px;
 	--editor-max-w-wide: 1118px;
 }

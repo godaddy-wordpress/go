@@ -4,9 +4,9 @@
 	border: none;
 	border-radius: var(--go-button--border-radius);
 	box-sizing: border-box;
-	color: var(--theme-button--color, var(--color-white));
+	color: var(--go-button--color--background, var(--color-white));
 	display: inline-block;
-	font-family: var(--theme-button--font, var(--go-navigation--font-family));
+	font-family: var(--go-button--font-family, var(--go-navigation--font-family));
 	font-size: var(--go-button--font-size, var(--go--font-size));
 	font-weight: var(--go-button--font-weight);
 	letter-spacing: var(--go-button--letter-spacing, normal);
@@ -20,7 +20,7 @@
 }
 
 @define-mixin button-hover {
-	background-color: var(--go-button-interactive--color--background);
+	background-color: var(--go-button-interactive--color--background, var(--go--color--secondary));
 }
 
 @define-mixin button-disabled {
@@ -30,7 +30,7 @@
 }
 
 @define-mixin outline {
-	outline-color: var(--go--color--outline);
+	outline-color: var(--go-outline--color--text);
 	outline-style: var(--theme-outline-style, dotted);
 	outline-width: var(--theme-outline-width, 1px);
 }
@@ -38,14 +38,14 @@
 @define-mixin outline-text-link {
 	border: 0;
 	border-bottom-width: var(--theme-outline-width);
-	border-color: var(--go--color--outline);
+	border-color: var(--go-outline--color--text);
 	border-style: var(--theme-outline-style, dotted);
 	outline: none;
 }
 
 @define-mixin select-menu {
 	appearance: button;
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
+	background-color: var(--go-input--color--background, var(--color-white));
 	background-image: url("../images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
@@ -53,7 +53,7 @@
 	box-shadow: none;
 	color: var(--go-input--color--text);
 	display: block;
-	font-weight: var(--theme-input--weight, 400);
+	font-weight: var(--go-input--font-weight, 400);
 	margin: 0;
 	overflow: hidden;
 	padding: var(--go-input--padding--y) var(--go-input--padding--x);
@@ -65,7 +65,6 @@
 
 @define-mixin select-menu-focus {
 	border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
-	box-shadow: var(--heme-input--shadow-focus);
 	color: var(--go-input--color--text);
 	outline: 0;
 }

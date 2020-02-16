@@ -1,10 +1,10 @@
 /*! Layout: Entry Header */
 .entry-header {
-	max-width: var(--theme-entry-header--width, 70rem);
+	max-width: var(--go-entryheader--max-width, 70rem);
 	padding-top: calc(var(--theme-vertical-rhythm--lrg) * 0.55);
 	text-align: center;
 }
 
 .has-featured-image .entry-header {
-	padding-top: var(--theme-entryheader--padding-top, 4rem);
+	padding-top: var(--go-entryheader--padding-top, 4rem);
 }

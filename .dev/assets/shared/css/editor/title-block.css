@@ -3,11 +3,11 @@
 	max-width: var(--editor-title-max-w);
 
 	& .editor-post-title__input {
-		color: var(--theme-h1--color, var(--go-heading--color--text));
+		color: var(--go--color--h1, var(--go-heading--color--text));
 		font-family: var(--go-heading--font-family);
 		font-size: var(--editor-title--font-size, var(--go-heading--font-size--h1));
-		font-style: var(--theme-heading--style, normal);
-		font-weight: var(--go-heading--font-weight);
+		font-style: var(--go-heading--font-style, normal);
+		font-weight: var(--go-heading--font-weight, normal);
 		letter-spacing: var(--go-heading--letter-spacing, normal);
 		line-height: var(--go-heading--line-height);
 		text-align: var(--editor-title-block--alignment, center);

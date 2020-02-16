@@ -11,7 +11,7 @@
 	}
 
 	&:not(.is-style-large) {
-		border-left: var(--go-quote--border-width, 0) var(--theme-quote--border-style, solid) var(--theme-quote--border-color, var(--go--color--primary));
+		border-left: var(--go-quote--border-width, 0) var(--go-quote--border-style, solid) var(--go-quote--border-color, var(--go--color--primary));
 		padding-left: 0;
 		padding-right: 0;
 
@@ -41,7 +41,7 @@
 		padding: 0;
 
 		& p {
-			font-size: var(--theme-quote-large--font-size, var(--go-heading--font-size--h2));
+			font-size: var(--go-quote-large--font-size, var(--go-heading--font-size--h2));
 			font-style: var(--theme-quote-large--style, normal);
 			line-height: var(--theme-quote-large--leading), var(--go-heading--line-height));
 			margin: 0;
