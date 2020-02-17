@@ -816,6 +816,7 @@ function inline_css() {
 	?>
 		<style>
 			:root {
+				--go--color--white: hsl(0, 0%, 100%);
 				<?php if ( $primary_color ) : ?>
 					--go--color--primary: hsl(<?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>);
 				<?php endif; ?>

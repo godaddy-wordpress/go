@@ -1,8 +1,5 @@
 :root {
 
-	/* Global colors */
-	--go--color--white: hsl(0, 0%, 100%);
-
 	/* Typographic scale */
 	--go--type-ratio: 1.333; /* Perfect Fourth; to be overwritten by design styles. */
 	--go--type-scale-0: calc(var(--go--heading-size, var(--go--font-size)) * 0.7);
@@ -29,5 +26,4 @@
 		--go--spacing--vertical--lg: calc(90 / var(--go--viewport-basis) * 100rem);
 		--go-block--padding--x: calc(var(--go--spacing--horizontal) / var(--go--viewport-basis) * 90rem);
 	}
-
 }

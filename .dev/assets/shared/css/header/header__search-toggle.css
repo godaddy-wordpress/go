@@ -4,7 +4,7 @@
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
-	color: var(--go-search-button--color--text);
+	color: var(--go-search-button--color--text, var(--go--color--white));
 	padding: 0.75rem;
 	position: relative;
 

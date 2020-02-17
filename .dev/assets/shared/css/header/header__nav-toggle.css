@@ -17,7 +17,7 @@
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
-	color: var(--go-search-button--color--text);
+	color: var(--go-search-button--color--text, var(--go--color--white));
 	display: inline-block;
 	line-height: 1;
 	margin-right: -0.75rem;
