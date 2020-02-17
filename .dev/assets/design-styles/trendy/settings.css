@@ -64,7 +64,7 @@
 	/* Accessibility */
 	--go-outline--color--text: var(--go--color--primary);
 	--go-selection--color--background: var(--go-heading--color--text);
-	--go-selection--color--text: var(--color-white);
+	--go-selection--color--text: var(--go--color--white);
 
 	/* Buttons */
 	--go-button--font-size: 0.725rem;
@@ -126,12 +126,12 @@
 	--go-footer--color--background: var(--go--color--tertiary);
 	--go-footer--color--text: 0, 0%, 55%;
 	--go-footer--font-family: "Source Code Pro", sans-serif;
-	--go-footer-3--border-color: var(--color-white);
-	--go-footer-heading--color--text: var(--color-white);
-	--go-footer-navigation--color--text: var(--color-white);
+	--go-footer-3--border-color: var(--go--color--white);
+	--go-footer-heading--color--text: var(--go--color--white);
+	--go-footer-navigation--color--text: var(--go--color--white);
 
 	/* Social Icons */
-	--go-social--color--text: var(--color-white);
+	--go-social--color--text: var(--go--color--white);
 	--go-social--size: 1.5rem;
 	--go-social--padding: 0.5rem;
 

@@ -10,7 +10,7 @@ html {
 
 ::selection {
 	background-color: var(--go-selection--color--background, var(--go--color--primary));
-	color: var(--go-selection--color--text, var(--color-white));
+	color: var(--go-selection--color--text, var(--go--color--white));
 }
 
 *,

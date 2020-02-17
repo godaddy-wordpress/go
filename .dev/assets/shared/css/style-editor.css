@@ -71,7 +71,7 @@
 	& h6 {
 		background-color: var(--coblocks-food-drinks-title--bg, var(--go-heading--color--text));
 		border-bottom: var(--coblocks-food-drinks-title--border-bottom);
-		color: var(--coblocks-food-drinks-title--color, var(--color-white));
+		color: var(--coblocks-food-drinks-title--color, var(--go--color--white));
 		font-size: var(--coblocks-food-drinks-title--font-size);
 		font-style: var(--coblocks-food-drinks-title--style);
 		margin-bottom: var(--coblocks-food-drinks-title--margin-y);
@@ -182,7 +182,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 .wp-block-search__input,
 .wp-block[data-type="coblocks/form"] .components-text-control__input,
 .wp-block[data-type="coblocks/form"] .components-textarea-control__input {
-	background-color: var(--go-input--color--background, var(--color-white));
+	background-color: var(--go-input--color--background, var(--go--color--white));
 	border: var(--go-input--border);
 	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 	box-shadow: var(--go-input--box-shadow, none);

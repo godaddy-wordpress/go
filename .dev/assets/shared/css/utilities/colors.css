@@ -11,7 +11,7 @@
 	& h5:not([class*="color"]),
 	& h6:not([class*="color"]),
 	& a:not(.wp-block-button__link) {
-		color: var(--color-white);
+		color: var(--go--color--white);
 	}
 }
 
@@ -41,13 +41,13 @@
 }
 
 .has-quaternary-background-color {
-	background-color: var(--color-white);
+	background-color: var(--go--color--white);
 }
 
 .has-quaternary-color {
-	color: var(--color-white);
+	color: var(--go--color--white);
 
 	&.wp-block-button__link {
-		color: var(--color-white) !important;
+		color: var(--go--color--white) !important;
 	}
 }

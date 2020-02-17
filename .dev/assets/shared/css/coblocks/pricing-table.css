@@ -3,7 +3,7 @@
 	border: var(--coblocks-pricing--border);
 
 	&:not(.has-background) {
-		background: var(--coblocks-pricing--bg, var(--color-white));
+		background: var(--coblocks-pricing--bg, var(--go--color--white));
 	}
 
 	& .wp-block-coblocks-pricing-table-item__price-wrapper {
@@ -22,7 +22,7 @@
 		& .wp-block-coblocks-pricing-table-item__title,
 		& .wp-block-coblocks-pricing-table-item__amount,
 		& .wp-block-coblocks-pricing-table-item__currency {
-			color: var(--color-white);
+			color: var(--go--color--white);
 		}
 	}
 }

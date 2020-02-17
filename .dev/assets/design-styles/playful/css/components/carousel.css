@@ -23,6 +23,6 @@
 	}
 
 	& .flickity-button-icon {
-		fill: var(--color-white);
+		fill: var(--go--color--white);
 	}
 }

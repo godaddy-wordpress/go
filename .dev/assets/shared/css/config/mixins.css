@@ -4,7 +4,7 @@
 	border: none;
 	border-radius: var(--go-button--border-radius);
 	box-sizing: border-box;
-	color: var(--go-button--color--background, var(--color-white));
+	color: var(--go-button--color--background, var(--go--color--white));
 	display: inline-block;
 	font-family: var(--go-button--font-family, var(--go-navigation--font-family));
 	font-size: var(--go-button--font-size, var(--go--font-size));
@@ -45,7 +45,7 @@
 
 @define-mixin select-menu {
 	appearance: button;
-	background-color: var(--go-input--color--background, var(--color-white));
+	background-color: var(--go-input--color--background, var(--go--color--white));
 	background-image: url("../images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
@@ -96,7 +96,7 @@
 }
 
 @define-mixin radio-label-before {
-	background-color: var(--color-white);
+	background-color: var(--go--color--white);
 	border: 1px solid var(--go-input-radio--color--fill, var(--go-heading--color--text));
 	border-radius: 9999px;
 	box-shadow: inset 0 0 0 3px #fff;

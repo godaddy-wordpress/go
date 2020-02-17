@@ -48,7 +48,7 @@
 		}
 
 		&:not([class*="text-color"]) {
-			color: var(--color-white);
+			color: var(--go--color--white);
 		}
 
 		& blockquote {

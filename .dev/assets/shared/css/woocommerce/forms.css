@@ -10,7 +10,7 @@
 }
 
 .woocommerce form .form-row textarea {
-	background-color: var(--go-input--color--background, var(--color-white));
+	background-color: var(--go-input--color--background, var(--go--color--white));
 	border-color: var(--go-input--border-color, var(--go-heading--color--text));
 }
 
@@ -19,7 +19,7 @@
 }
 
 .select2-container--default .select2-selection--single {
-	background-color: var(--go-input--color--background, var(--color-white));
+	background-color: var(--go-input--color--background, var(--go--color--white));
 	background-image: url("../shared/images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
@@ -124,7 +124,7 @@
 .woocommerce form .form-row.woocommerce-invalid .select2-container,
 .woocommerce form .form-row.woocommerce-invalid input.input-text,
 .woocommerce form .form-row.woocommerce-invalid select {
-	background-color: var(--go-input--color--background, var(--color-white));
+	background-color: var(--go-input--color--background, var(--go--color--white));
 	background-image: url("../shared/images/error-icon.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
@@ -135,7 +135,7 @@
 .woocommerce form .form-row.woocommerce-validated .select2-container,
 .woocommerce form .form-row.woocommerce-validated input.input-text,
 .woocommerce form .form-row.woocommerce-validated select {
-	background-color: var(--go-input--color--background, var(--color-white));
+	background-color: var(--go-input--color--background, var(--go--color--white));
 	border-color: var(--go-input--border-color, var(--go-heading--color--text));
 	font-size: var(--go-input--font-size);
 	font-weight: var(--go-input--font-weight, 400);

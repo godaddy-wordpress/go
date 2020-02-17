@@ -86,7 +86,7 @@
 	--go-header--color--background: "";
 
 	/* Site Title */
-	--go-site-title--color--text: var(--color-white);
+	--go-site-title--color--text: var(--go--color--white);
 	--go-site-title--font-family: "Poppins", sans-serif;
 	--go-site-title--font-size: 1.4rem;
 	--go-site-title--letter-spacing: 0;
@@ -97,30 +97,30 @@
 	}
 
 	/* Site Description */
-	--go-site-description--color--text: var(--color-white);
+	--go-site-description--color--text: var(--go--color--white);
 
 	/* Site Navigation */
-	--go-navigation--color--text: var(--color-white);
+	--go-navigation--color--text: var(--go--color--white);
 	--go-navigation--font-family: var(--go--font-family);
 	--go-navigation--font-size: 1.1rem;
 	--go-navigation--font-weight: 600;
 	--go-navigation-mobile--font-size: 1.4rem;
 
 	/* Site Search */
-	--go-search-button--color--text: var(--color-white);
-	--go-search-button--color--text-interactive: var(--color-white);
+	--go-search-button--color--text: var(--go--color--white);
+	--go-search-button--color--text-interactive: var(--go--color--white);
 	--go-search-button--color--background: var(--go--color--primary);
 	--go-search-button--color--background-interactive: var(--go--color--primary);
 
 	/* Footer */
-	--go-footer--color--text: var(--color-white);
-	--go-footer-heading--color--text: var(--color-white);
-	--go-footer-navigation--color--text: var(--color-white);
+	--go-footer--color--text: var(--go--color--white);
+	--go-footer-heading--color--text: var(--go--color--white);
+	--go-footer-navigation--color--text: var(--go--color--white);
 	--go-footer-3--border-color: var(--go-header--color--background);
 	--go-footer-3--border-width: 10px;
 
 	/* Social */
-	--go-social--color--text: var(--color-white);
+	--go-social--color--text: var(--go--color--white);
 	--go-social--padding: 0.5rem;
 	--go-social--size: 1.5rem;
 
