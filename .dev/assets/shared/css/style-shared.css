@@ -3,10 +3,8 @@
 
 /* Global Variables */
 @import url("config/media-queries.css");
-@import url("config/colors.css");
-@import url("config/editor-font-sizes.css");
 @import url("config/mixins.css");
-@import url("config/spacing.css");
+@import url("config/root.css");
 
 /* Elements */
 @import url("elements/page.css");

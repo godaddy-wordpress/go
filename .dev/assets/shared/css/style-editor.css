@@ -2,8 +2,7 @@
 @import url("editor/vertical-rhythm.css");
 @import url("config/media-queries.css");
 @import url("config/mixins.css");
-@import url("config/spacing.css");
-@import url("config/colors.css");
+@import url("config/root.css");
 @import url("editor/settings.css");
 @import url("editor/widths.css");
 @import url("editor/title-block.css");

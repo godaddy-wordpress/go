@@ -1,13 +1,23 @@
 :root {
 
-	/*! Vertical Rhythm */
+	/* Colors */
+	--go--color--white: hsl(0, 0%, 100%);
+
+	/* Editor font sizes */
+	--go-editor--font-size--small: 17px;
+	--go-editor--font-size--medium: 19px;
+	--go-editor--font-size--large: 24px;
+	--go-editor--font-size--huge: 30px;
+
+	/* Spacing */
+	--go--spacing--vertical: calc(var(--go--spacing--paragraph) / var(--go--viewport-basis) * 100rem);
 	--go--spacing--vertical--lg: calc(100 / var(--go--viewport-basis) * 100vw);
 
 	@media (--huge) {
 		--go--spacing--vertical--lg: calc(90 / var(--go--viewport-basis) * 100rem);
 	}
 
-	/*! Horizontal Rhythm */
+	/* Horizontal */
 	--go--spacing--horizontalMax: calc(var(--go--spacing--horizontal) * 0.9);
 	--go-block--padding--x: calc(var(--go--spacing--horizontal) / var(--go--viewport-basis) * 100vw);
 
@@ -15,14 +25,11 @@
 		--go-block--padding--x: calc(var(--go--spacing--horizontalMax) / var(--go--viewport-basis) * 100rem);
 	}
 
-	/*! Header */
+	/* Header */
 	--go--spacing--headerMax: calc(var(--go--spacing--header) * 0.9);
 	--go--header--padding--y: calc(var(--go--spacing--header) / var(--go--viewport-basis) * 100vw);
 
 	@media (--huge) {
 		--go--header--padding--y: calc(var(--go--spacing--headerMax) / var(--go--viewport-basis) * 100rem);
 	}
-
-	/*! Paragraph */
-	--go--spacing--vertical: calc(var(--go--spacing--paragraph) / var(--go--viewport-basis) * 100rem);
 }
