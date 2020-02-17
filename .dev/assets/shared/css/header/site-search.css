@@ -11,8 +11,10 @@
 	}
 
 	& .search-input__button {
+		border: none;
 		border-radius: var(--go-search-button--border-radius, var(--go-button--border-radius));
 		box-shadow: none;
+		color: var(--go-search-button--color--text, inherit);
 		margin: 0 0 0 0.5rem;
 		padding: 0 1.75rem;
 		position: relative;

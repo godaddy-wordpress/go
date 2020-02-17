@@ -90,10 +90,11 @@
 	--go-navigation-mobile--font-size: 1.4rem;
 
 	/* Site Search */
-	--go-search-button--color--text: var(--go--color--white);
-	--go-search-button--color--text-interactive: var(--go--color--white);
-	--go-search-button--color--background: var(--go--color--primary);
 	--go-search-button--color--background-interactive: var(--go--color--primary);
+	--go-search-button--color--background: var(--go--color--white);
+	--go-search-button--color--text-interactive: var(--go--color--white);
+	--go-search-button--color--text: var(--go--color--primary);
+	--go-search-toggle--color--text: var(--go--color--white);
 
 	/* Footer */
 	--go-footer--color--text: var(--go--color--white);

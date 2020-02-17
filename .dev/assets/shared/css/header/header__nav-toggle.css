@@ -17,7 +17,7 @@
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
-	color: var(--go-search-button--color--text, var(--go--color--white));
+	color: var(--go-search-toggle--color--text, var(--go-heading--color--text));
 	display: inline-block;
 	line-height: 1;
 	margin-right: -0.75rem;
@@ -38,7 +38,7 @@
 
 	& svg {
 		fill: currentColor;
-		width: var(--go-search-button--icon--size, 1.35rem);
+		width: var(--go-search-toggle--icon--size, 1.35rem);
 	}
 }
 

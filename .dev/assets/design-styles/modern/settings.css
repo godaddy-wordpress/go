@@ -99,7 +99,6 @@
 	--go-navigation--letter-spacing: 3px;
 
 	/* Site Search */
-	--go-search-button--color--text: var(--go-heading--color--text);
 	--go-search-button--color--text-interactive: var(--go-heading--color--text);
 	--go-search-button--color--background: var(--go--color--primary);
 	--go-search-button--color--background-interactive: var(--go-heading--color--text);
