@@ -121,7 +121,7 @@
 
 /* Pullquote */
 .wp-block-pullquote blockquote > .block-editor-rich-text p {
-	font-size: var(--go-pullquote--font-size);
+	font-size: var(--go-pullquote--font-size, var(--go--type-scale-5));
 	line-height: var(--go-pullquote--line-height, 1.25);
 }
 

@@ -40,7 +40,6 @@
 
 	/* Pullquote */
 	--go-pullquote--font-family: serif;
-	--go-pullquote--font-size: var(--go--type-scale-5);
 
 	/* Accessibility */
 	--go-outline--color--text: hsl(0, 0%, 0%);

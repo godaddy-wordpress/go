@@ -31,7 +31,6 @@
 	--go-caption--text-align: center;
 
 	/* Pullquote */
-	--go-pullquote--font-family: var(--go-heading--font-family);
 	--go-pullquote--font-size: var(--go--type-scale-6);
 
 	/* Accessibility */

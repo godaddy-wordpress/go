@@ -52,7 +52,6 @@
 
 	/* Pullquote */
 	--go-pullquote--font-family: serif;
-	--go-pullquote--font-size: var(--go--type-scale-5);
 	--go-pullquote--font-style: normal;
 
 	/* Accessibility */
