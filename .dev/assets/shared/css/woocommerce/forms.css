@@ -60,7 +60,6 @@
 
 .select2-container--default .select2-results__option[aria-selected="true"],
 .select2-container--default .select2-results__option[data-selected="true"] {
-	background-color: var(--theme-multi-select-hover);
 	color: var(--go-input--color--text);
 }
 
@@ -119,7 +118,7 @@
 
 .woocommerce form .form-row.woocommerce-invalid .required,
 .woocommerce form .form-row.woocommerce-invalid label {
-	color: var(--theme-input-error--color);
+	color: var(--go-input-error--color--text);
 }
 
 .woocommerce form .form-row.woocommerce-invalid .select2-container,
@@ -129,7 +128,7 @@
 	background-image: url("../shared/images/error-icon.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
-	border-color: var(--theme-input-error--border-color, hsl(0, 65%, 51%));
+	border-color: var(--go-input-error--border-color, hsl(0, 65%, 51%));
 	line-height: 1.25;
 }
 

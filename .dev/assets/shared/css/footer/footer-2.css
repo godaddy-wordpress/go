@@ -6,7 +6,7 @@
 	}
 
 	& .site-footer {
-		padding-bottom: var(--theme-footer-2--padding-y, 4rem);
+		padding-bottom: var(--go-footer-2--padding-bottom, 4rem);
 
 		&.has-background {
 			padding-top: var(--go-footer-2--padding--y, 4rem);

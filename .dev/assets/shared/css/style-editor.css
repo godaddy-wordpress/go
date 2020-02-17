@@ -271,7 +271,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 
 	& table td,
 	& table th {
-		border: 2px solid var(--theme-table--border-color, var(--go-heading--color--text));
+		border: 2px solid var(--go-table--border-color, var(--go-heading--color--text));
 	}
 }
 
@@ -282,7 +282,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 }
 
 .wp-block-separator {
-	border-bottom-color: var(--theme-separator--color, var(--go-heading--color--text));
+	border-bottom-color: var(--go-separator--color--border, var(--go-heading--color--text));
 	padding: 0;
 
 	&.is-style-wide {
@@ -290,7 +290,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 	}
 
 	&.is-style-dots::before {
-		font-size: var(--theme-separator--dot-size, 2rem);
+		font-size: var(--go-separator--size, 2rem);
 	}
 }
 

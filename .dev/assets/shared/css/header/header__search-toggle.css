@@ -23,6 +23,6 @@
 
 	& svg {
 		fill: currentColor;
-		width: var(--theme-search-toggle--size, 1.35rem);
+		width: var(--go-search-button--icon--size, 1.35rem);
 	}
 }

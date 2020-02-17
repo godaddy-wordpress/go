@@ -150,7 +150,7 @@ body {
 
 	& .gform_wrapper .gfield_error .gfield_label,
 	& .gform_wrapper .validation_message {
-		color: var(--theme-input-error--color, hsl(0, 65%, 51%));
+		color: var(--go-input-error--color--text, hsl(0, 65%, 51%));
 	}
 
 	& .gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
@@ -159,7 +159,7 @@ body {
 		background-position: calc(100% - 10px) center;
 		background-repeat: no-repeat;
 		border: var(--go-input--border);
-		color: var(--theme-input-error--color);
+		color: var(--go-input-error--color--text);
 	}
 
 	& .gform_wrapper textarea {
@@ -177,7 +177,7 @@ body {
 	}
 
 	& .gform_wrapper li.gfield_error textarea {
-		border-color: var(--theme-input-error--border-color, hsl(0, 65%, 51%));
+		border-color: var(--go-input-error--border-color, hsl(0, 65%, 51%));
 	}
 
 	& .gform_wrapper form.gf_simple_horizontal {

@@ -23,7 +23,7 @@ p {
 	padding-right: 0;
 
 	& p {
-		color: var(--theme-quote--color, var(--go-heading--color--text));
+		color: var(--go-quote--color--text, var(--go-heading--color--text));
 		font-family: var(--go-heading--font-family);
 		font-size: var(--go-quote--font-size);
 		font-style: var(--go-quote--font-style, normal);
@@ -57,7 +57,7 @@ table {
 
 	& td,
 	& th {
-		border: 2px solid var(--theme-table--border-color, var(--go-heading--color--text));
+		border: 2px solid var(--go-table--border-color, var(--go-heading--color--text));
 		padding: 1em;
 		word-break: break-all;
 	}
@@ -70,7 +70,7 @@ code {
 }
 
 pre {
-	border: 0.1rem solid var(--theme-table--border-color, var(--go-heading--color--text));
+	border: 0.1rem solid var(--go-table--border-color, var(--go-heading--color--text));
 	line-height: 1.5;
 	overflow: auto;
 	padding: 3rem 2rem;

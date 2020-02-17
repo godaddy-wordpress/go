@@ -24,8 +24,8 @@
 }
 
 @define-mixin button-disabled {
-	background-color: var(--theme-button--disabled-bg, hsl(0, 2%, 89%));
-	color: var(--theme-button--disabled-color, hsl(0, 0%, 61%));
+	background-color: var(--go-button-disabled--color--background, hsl(0, 2%, 89%));
+	color: var(--go-button-disabled--color--text, hsl(0, 0%, 61%));
 	cursor: default;
 }
 
@@ -76,7 +76,7 @@
 }
 
 @define-mixin checkbox-radio-label-before {
-	background-color: var(--theme-checkbox-radio-fill, var(--go-heading--color--text));
+	background-color: var(--go-input-radio--color--fill, var(--go-heading--color--text));
 	content: "";
 	display: block;
 	height: 19px;
@@ -97,13 +97,13 @@
 
 @define-mixin radio-label-before {
 	background-color: var(--color-white);
-	border: 1px solid var(--theme-checkbox-radio-fill, var(--go-heading--color--text));
+	border: 1px solid var(--go-input-radio--color--fill, var(--go-heading--color--text));
 	border-radius: 9999px;
 	box-shadow: inset 0 0 0 3px #fff;
 }
 
 @define-mixin radio-label-selected-before {
-	background-color: var(--theme-checkbox-radio-fill, var(--go-heading--color--text));
+	background-color: var(--go-input-radio--color--fill, var(--go-heading--color--text));
 }
 
 @define-mixin blockWidthNoPaddingWide {

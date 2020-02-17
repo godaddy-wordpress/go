@@ -16,6 +16,7 @@
 		padding-right: 0;
 
 		& p {
+			color: var(--go-quote--color--text, var(--go-heading--color--text));
 			padding-left: 1.5rem;
 
 			@media (--medium) {
@@ -35,15 +36,15 @@
 	}
 
 	&.is-style-large {
-		color: var(--theme-quote-large--color, var(--go-heading--color--text));
+		color: var(--go-quote-large--color--text, var(--go-heading--color--text));
 		margin-left: auto;
 		margin-right: auto;
 		padding: 0;
 
 		& p {
 			font-size: var(--go-quote-large--font-size, var(--go-heading--font-size--h2));
-			font-style: var(--theme-quote-large--style, normal);
-			line-height: var(--theme-quote-large--leading), var(--go-heading--line-height));
+			font-style: var(--go-quote-large--font-style, normal);
+			line-height: var(--go-quote-large--line-height), var(--go-heading--line-height));
 			margin: 0;
 			padding: 0;
 

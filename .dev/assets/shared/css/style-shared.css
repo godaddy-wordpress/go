@@ -136,9 +136,9 @@
 
 /* Everything below here still needs organizing */
 .u-informational {
-	background-color: var(--theme-feedback-informational-background-color, hsla(208, 100%, 43%, 0.1));
-	border: 1px solid var(--theme-feedback-informational-color, hsl(208, 100%, 43%));
-	color: var(--theme-feedback-informational-color, hsl(208, 100%, 43%));
+	background-color: var(--go-customizer-notice--color--background, hsla(208, 100%, 43%, 0.1));
+	border: 1px solid var(--go-customizer-notice--color--text, hsl(208, 100%, 43%));
+	color: var(--go-customizer-notice--color--text, hsl(208, 100%, 43%));
 	line-height: 2;
 	padding: 0 0.5em;
 }

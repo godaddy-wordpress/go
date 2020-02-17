@@ -93,15 +93,15 @@ option {
 }
 
 ::placeholder {
-	color: var(--theme-input-placeholder--color, hsl(0, 0%, 47%));
+	color: var(--go-input-placeholder--color--text, hsl(0, 0%, 47%));
 	line-height: 1.5;
 	opacity: 1;
 }
 
 ::-ms-input-placeholder {
-	color: var(--theme-input-placeholder--color, hsl(0, 0%, 47%));
+	color: var(--go-input-placeholder--color--text, hsl(0, 0%, 47%));
 }
 
 :-ms-input-placeholder {
-	color: var(--theme-input-placeholder--color, hsl(0, 0%, 47%));
+	color: var(--go-input-placeholder--color--text, hsl(0, 0%, 47%));
 }

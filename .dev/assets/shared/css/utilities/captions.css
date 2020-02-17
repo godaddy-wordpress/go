@@ -11,7 +11,7 @@
 		color: var(--go-caption--color--text);
 		font-size: var(--go-caption--font-size);
 		font-style: var(--go-caption--font-style, normal);
-		margin-top: var(--theme-caption--spacing-top, 0.75em);
+		margin-top: var(--go-caption--margin-top, 0.75em);
 		text-align: var(--go-caption--text-align);
 	}
 

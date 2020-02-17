@@ -48,7 +48,7 @@
 	font-weight: var(--go-site-description--font-weight, 400);
 	letter-spacing: var(--go-site-description--letter-spacing, normal);
 	line-height: var(--go-site-description--color--text, 1.4) !important;
-	margin-top: var(--theme-site-description--mt, 0.25rem);
+	margin-top: var(--go-site-description--margin-top, 0.25rem);
 	opacity: var(--go-site-description--opacity, 0.65);
 	text-transform: var(--go-site-description--text-transform, normal);
 
