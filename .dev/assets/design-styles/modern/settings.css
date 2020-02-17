@@ -21,22 +21,9 @@
 	--go-heading--color--text: hsl(0, 0%, 0%);
 	--go-heading--font-family: "Heebo", sans-serif;
 	--go-heading--font-weight: 800;
-	--go-heading--letter-spacing: -0.0175em;
-	--go-heading--line-height: 1.3;
+	--go-heading--letter-spacing: -0.02rem;
+	--go-heading--line-height: 1.2;
 	--go-heading--margin-bottom: 1rem;
-
-	--go-heading--font-size--h1: 2.5em;
-	--go-heading--font-size--h2: 2em;
-	--go-heading--font-size--h3: 1.75em;
-	--go-heading--font-size--h4: 2em;
-	--go-heading--font-size--h5: 1.5em;
-	--go-heading--font-size--h6: 1.25em;
-
-	@media (--medium) {
-		--go-heading--font-size--h1: 4.5em;
-		--go-heading--font-size--h2: 3.5em;
-		--go-heading--font-size--h3: 2.75em;
-	}
 
 	/* Captions */
 	--go-caption--color--text: hsl(0, 0%, 34%);
@@ -50,13 +37,10 @@
 
 	/* Quote */
 	--go-quote--border-width: 0.45rem;
-	--go-quote--font-size: var(--go-heading--font-size--h3);
-	--go-quote--line-height: var(--go-heading--line-height);
-	--go-quote--font-weight: var(--go-heading--font-weight);
 
 	/* Pullquote */
 	--go-pullquote--font-family: serif;
-	--go-pullquote--font-size: var(--go-heading--font-size--h2);
+	--go-pullquote--font-size: var(--go--type-scale-5, var(--go-heading--font-size--h2));
 
 	/* Accessibility */
 	--go-outline--color--text: hsl(0, 0%, 0%);

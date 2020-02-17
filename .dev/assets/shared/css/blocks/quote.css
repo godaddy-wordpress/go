@@ -2,6 +2,10 @@
 .wp-block-quote {
 	margin-bottom: 0;
 
+	& p {
+		font-family: var(--go-heading--font-family);
+	}
+
 	& cite,
 	& .wp-block-quote__citation {
 		color: var(--go-caption--color--text);
@@ -42,9 +46,10 @@
 		padding: 0;
 
 		& p {
-			font-size: var(--go-quote-large--font-size, var(--go-heading--font-size--h2));
+			font-size: var(--go-quote-large--font-size, var(--go--type-scale-5, var(--go-heading--font-size--h2)));
 			font-style: var(--go-quote-large--font-style, normal);
-			line-height: var(--go-quote-large--line-height), var(--go-heading--line-height));
+			font-weight: var(--go-quote--font-weight, var(--go-heading--font-weight));
+			line-height: var(--go-quote-large--line-height, var(--go-heading--line-height));
 			margin: 0;
 			padding: 0;
 

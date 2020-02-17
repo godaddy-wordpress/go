@@ -16,6 +16,7 @@
 	--go--font-size--smallest: 78%;
 	--go--font-size: 1.1rem;
 	--go--line-height: 1.9;
+	--go--type-ratio: 1.225;
 
 	/* Headings */
 	--go-heading--button-spacing: 1.75rem;
@@ -24,23 +25,6 @@
 	--go-heading--font-weight: 400;
 	--go-heading--line-height: 1.325;
 	--go-heading--margin-bottom: 1.25rem;
-
-	--go-heading--font-size--h1: 2.15em;
-	--go-heading--font-size--h2: 2em;
-	--go-heading--font-size--h3: 1.75em;
-	--go-heading--font-size--h4: 1.65em;
-	--go-heading--font-size--h5: 1.5em;
-	--go-heading--font-size--h6: 1.25em;
-
-	@media (--medium) {
-		--go-heading--font-size--h1: 3.25em;
-		--go-heading--font-size--h2: 2.5em;
-		--go-heading--font-size--h3: 2.25em;
-	}
-
-	@media (--huge) {
-		--go-heading--font-size--h1: 4em;
-	}
 
 	/* Captions */
 	--go-caption--color--text: hsl(0, 0%, 43%);
@@ -53,13 +37,11 @@
 
 	/* Pullquote */
 	--go-pullquote--font-family: var(--go-heading--font-family);
-	--go-pullquote--font-size: var(--go-heading--font-size--h2);
+	--go-pullquote--font-size: var(--go--type-scale-5, var(--go-heading--font-size--h2));
 
 	/* Blockquote */
-	--go-quote--font-size: var(--go-heading--font-size--h2);
-	--go-quote--line-height: var(--go-heading--line-height);
-	--go-quote--font-weight: var(--go-heading--font-weight);
-	--go-quote-large--font-size: var(--go-heading--font-size--h3);
+	--go-quote--font-size: var(--go--type-scale-5, var(--go-heading--font-size--h2));
+	--go-quote-large--font-size: var(--go--type-scale-4, var(--go-heading--font-size--h3));
 
 	/* Accessibility */
 	--go-outline--color--text: var(--go--color--primary);

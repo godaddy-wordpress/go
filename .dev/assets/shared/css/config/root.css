@@ -1,35 +1,33 @@
 :root {
 
-	/* Colors */
+	/* Global colors */
 	--go--color--white: hsl(0, 0%, 100%);
 
-	/* Editor font sizes */
-	--go-editor--font-size--small: 17px;
-	--go-editor--font-size--medium: 19px;
-	--go-editor--font-size--large: 24px;
-	--go-editor--font-size--huge: 30px;
+	/* Typographic scale */
+	--go--type-ratio: 1.333; /* Perfect Fourth; to be overwritten by design styles. */
+	--go--type-scale-0: calc(var(--go--heading-size, var(--go--font-size)) * 0.7);
 
-	/* Spacing */
-	--go--spacing--vertical: calc(var(--go--spacing--paragraph) / var(--go--viewport-basis) * 100rem);
-	--go--spacing--vertical--lg: calc(100 / var(--go--viewport-basis) * 100vw);
-
-	@media (--huge) {
-		--go--spacing--vertical--lg: calc(90 / var(--go--viewport-basis) * 100rem);
+	@media (--large) {
+		--go--type-scale-0: var(--go--heading-size, var(--go--font-size)); /* --go--heading-size is a future user-controlled value, in rem. */
 	}
 
-	/* Horizontal */
-	--go--spacing--horizontalMax: calc(var(--go--spacing--horizontal) * 0.9);
+	--go--type-scale-1: calc(var(--go--type-scale-0) * var(--go--type-ratio));
+	--go--type-scale-2: calc(var(--go--type-scale-1) * var(--go--type-ratio));
+	--go--type-scale-3: calc(var(--go--type-scale-2) * var(--go--type-ratio));
+	--go--type-scale-4: calc(var(--go--type-scale-3) * var(--go--type-ratio));
+	--go--type-scale-5: calc(var(--go--type-scale-4) * var(--go--type-ratio));
+	--go--type-scale-6: calc(var(--go--type-scale-5) * var(--go--type-ratio));
+
+	/* Spacing */
+	--go--header--padding--y: calc(var(--go--spacing--header) / var(--go--viewport-basis) * 100vw);
+	--go--spacing--vertical--lg: calc(100 / var(--go--viewport-basis) * 100vw);
+	--go--spacing--vertical: calc(var(--go--spacing--paragraph) / var(--go--viewport-basis) * 100rem);
 	--go-block--padding--x: calc(var(--go--spacing--horizontal) / var(--go--viewport-basis) * 100vw);
 
 	@media (--huge) {
-		--go-block--padding--x: calc(var(--go--spacing--horizontalMax) / var(--go--viewport-basis) * 100rem);
+		--go--header--padding--y: calc(var(--go--spacing--header) / var(--go--viewport-basis) * 90rem);
+		--go--spacing--vertical--lg: calc(90 / var(--go--viewport-basis) * 100rem);
+		--go-block--padding--x: calc(var(--go--spacing--horizontal) / var(--go--viewport-basis) * 90rem);
 	}
 
-	/* Header */
-	--go--spacing--headerMax: calc(var(--go--spacing--header) * 0.9);
-	--go--header--padding--y: calc(var(--go--spacing--header) / var(--go--viewport-basis) * 100vw);
-
-	@media (--huge) {
-		--go--header--padding--y: calc(var(--go--spacing--headerMax) / var(--go--viewport-basis) * 100rem);
-	}
 }

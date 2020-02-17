@@ -17,6 +17,7 @@
 	--go--font-size: 1.05rem;
 	--go--letter-spacing--small: 0.015em;
 	--go--line-height: 1.85;
+	--go--type-ratio: 1.275;
 
 	@media (--small) {
 		--go--font-size--small: 90%;
@@ -35,28 +36,6 @@
 	--go-heading--line-height: 1.15;
 	--go-heading--margin-bottom: 2rem;
 
-	--go-heading--font-size--h1: 2.5em;
-	--go-heading--font-size--h2: 2em;
-	--go-heading--font-size--h3: 1.6em;
-	--go-heading--font-size--h4: 1.5em;
-	--go-heading--font-size--h5: 1.3em;
-	--go-heading--font-size--h6: 1.25em;
-
-	@media (--medium) {
-		--go-heading--font-size--h1: 3.35em;
-	}
-
-	@media (--large) {
-		--go-heading--font-size--h1: 4.35em;
-		--go-heading--font-size--h2: 2.75em;
-		--go-heading--font-size--h3: 2.5em;
-	}
-
-	@media (--huge) {
-		--go-heading--font-size--h1: 4.75em;
-		--go-heading--font-size--h2: 3em;
-	}
-
 	/* Captions */
 	--go-caption--color--text: hsl(0, 0%, 43%);
 	--go-caption--font-size: 0.85rem;
@@ -65,9 +44,6 @@
 
 	/* Blockquote */
 	--go-quote--border-width: 0.45rem;
-	--go-quote--font-size: var(--go-heading--font-size--h3);
-	--go-quote--font-weight: var(--go-heading--font-weight);
-	--go-quote--line-height: var(--go-heading--line-height);
 	--go-quote-large--font-size: 2.5em;
 
 	@media (--medium) {
@@ -76,7 +52,7 @@
 
 	/* Pullquote */
 	--go-pullquote--font-family: serif;
-	--go-pullquote--font-size: var(--go-heading--font-size--h2);
+	--go-pullquote--font-size: var(--go--type-scale-5, var(--go-heading--font-size--h2));
 	--go-pullquote--font-style: normal;
 
 	/* Accessibility */

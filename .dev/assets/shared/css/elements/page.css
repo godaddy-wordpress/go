@@ -1,6 +1,14 @@
 html {
 	box-sizing: border-box;
-	font-size: 100%;
+	font-size: 100%; /* 1rem = 16px */
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	html {
+		scroll-behavior: auto;
+	}
 }
 
 ::-moz-selection {
