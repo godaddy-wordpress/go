@@ -20,32 +20,32 @@ h6 {
 
 h1 {
 	color: var(--go--color--h1, var(--go-heading--color--text));
-	font-size: var(--go--type-scale-6, var(--go-heading--font-size--h1));
+	font-size: var(--go--type-scale-6);
 	letter-spacing: var(--go-heading--letter-spacing, normal);
 }
 
 h2 {
 	color: var(--go--color--h2, var(--go-heading--color--text));
-	font-size: var(--go--type-scale-5, var(--go--type-scale-5, var(--go-heading--font-size--h2)));
+	font-size: var(--go--type-scale-5);
 	letter-spacing: var(--go-heading--letter-spacing, normal);
 }
 
 h3 {
 	color: var(--go--color--h3, var(--go-heading--color--text));
-	font-size: var(--go--type-scale-4, var(--go-heading--font-size--h3));
+	font-size: var(--go--type-scale-4);
 }
 
 h4 {
 	color: var(--go--color--h4, var(--go-heading--color--text));
-	font-size: var(--go--type-scale-3, var(--go-heading--font-size--h4));
+	font-size: var(--go--type-scale-3);
 }
 
 h5 {
 	color: var(--go--color--h5, var(--go-heading--color--text));
-	font-size: var(--go--type-scale-2, var(--go-heading--font-size--h5));
+	font-size: var(--go--type-scale-2);
 }
 
 h6 {
 	color: var(--go--color--h6, var(--go-heading--color--text));
-	font-size: var(--go--type-scale-1, var(--go-heading--font-size--h6));
+	font-size: var(--go--type-scale-1);
 }

@@ -37,11 +37,11 @@
 
 	/* Pullquote */
 	--go-pullquote--font-family: var(--go-heading--font-family);
-	--go-pullquote--font-size: var(--go--type-scale-5, var(--go-heading--font-size--h2));
+	--go-pullquote--font-size: var(--go--type-scale-5);
 
 	/* Blockquote */
-	--go-quote--font-size: var(--go--type-scale-5, var(--go-heading--font-size--h2));
-	--go-quote-large--font-size: var(--go--type-scale-4, var(--go-heading--font-size--h3));
+	--go-quote--font-size: var(--go--type-scale-5);
+	--go-quote-large--font-size: var(--go--type-scale-4);
 
 	/* Accessibility */
 	--go-outline--color--text: var(--go--color--primary);

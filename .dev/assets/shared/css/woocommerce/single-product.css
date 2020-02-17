@@ -150,7 +150,7 @@
 	text-align: center;
 
 	& .product_title {
-		font-size: var(--go--type-scale-5, var(--go-heading--font-size--h2));
+		font-size: var(--go--type-scale-5);
 	}
 }
 

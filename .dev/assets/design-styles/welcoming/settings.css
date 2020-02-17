@@ -32,7 +32,7 @@
 
 	/* Pullquote */
 	--go-pullquote--font-family: var(--go-heading--font-family);
-	--go-pullquote--font-size: var(--go--type-scale-6, var(--go-heading--font-size--h1));
+	--go-pullquote--font-size: var(--go--type-scale-6);
 
 	/* Accessibility */
 	--go-outline--color--text: var(--go--color--primary);

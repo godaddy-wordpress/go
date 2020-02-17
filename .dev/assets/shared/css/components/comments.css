@@ -42,11 +42,11 @@
 	}
 
 	& .comments-title {
-		font-size: var(--go--type-scale-4, var(--go-heading--font-size--h3));
+		font-size: var(--go--type-scale-4);
 	}
 
 	& .comment-reply-title {
-		font-size: var(--go--type-scale-4, var(--go-heading--font-size--h3));
+		font-size: var(--go--type-scale-4);
 
 		& small {
 			font-size: 50%;

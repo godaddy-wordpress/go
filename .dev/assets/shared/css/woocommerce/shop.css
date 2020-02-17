@@ -80,14 +80,14 @@
 		& .woocommerce-loop-product__title {
 			color: var(--go-heading--color--text);
 			font-family: var(--go-heading--font-family);
-			font-size: var(--go--type-scale-2, var(--go-heading--font-size--h5));
+			font-size: var(--go--type-scale-2);
 			font-weight: var(--go-heading--font-weight);
 			letter-spacing: var(--go-heading--letter-spacing, normal);
 			line-height: var(--go-heading--line-height);
 			margin-bottom: 0.5rem;
 
 			@media (--large) {
-				font-size: var(--go--type-scale-3, var(--go-heading--font-size--h4));
+				font-size: var(--go--type-scale-3);
 			}
 		}
 

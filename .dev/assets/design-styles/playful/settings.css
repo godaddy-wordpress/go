@@ -33,7 +33,7 @@
 
 	/* Pullquote */
 	--go-pullquote--font-family: "Poppins", sans-serif;
-	--go-pullquote--font-size: var(--go--type-scale-6, var(--go-heading--font-size--h1));
+	--go-pullquote--font-size: var(--go--type-scale-6);
 	--go-pullquote--font-style: normal;
 	--go-pullquote--font-weight: 700;
 
