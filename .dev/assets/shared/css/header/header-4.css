@@ -66,7 +66,7 @@
 			background-color: var(--go-header--color--background, var(--go--color--white));
 			font-size: 1.5rem;
 			opacity: 1;
-			padding-bottom: var(--go--header--padding--y, 3vw);
+			padding-bottom: var(--go-header--padding--y, 3vw);
 			padding-left: var(--go-block--padding--x);
 			padding-right: var(--go-block--padding--x);
 			padding-top: 70px; /* This needs to be auto-generated based on the header height */
