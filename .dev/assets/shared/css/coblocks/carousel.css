@@ -27,5 +27,5 @@
 }
 
 .wp-block-coblocks-gallery-carousel.alignfull + .wp-block-cover.alignfull {
-	margin-top: calc(var(--theme-vertical-rhythm--lrg) * -1) !important;
+	margin-top: calc(var(--go--spacing--vertical--lg) * -1) !important;
 }

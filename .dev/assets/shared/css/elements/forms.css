@@ -22,7 +22,7 @@ input[type="color"] {
 	background-color: var(--go-input--color--background, var(--color-white));
 	border: var(--go-input--border);
 	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
-	box-shadow: var(--theme-input--shadow, none);
+	box-shadow: var(--go-input--box-shadow, none);
 	color: var(--go-input--color--text);
 	font-size: var(--go-input--font-size);
 	font-weight: var(--go-input--font-weight, 400);
@@ -34,7 +34,7 @@ input[type="color"] {
 	&:focus {
 		background: var(--go-input-interactive-color--background, var(--color-white));
 		border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
-		box-shadow: var(--theme-input--shadow-focus, none);
+		box-shadow: var(--go-input-interactive--box-shadow, none);
 		color: var(--go-input-interactive--color--text);
 		outline: none;
 	}
@@ -61,7 +61,7 @@ textarea {
 	&:focus {
 		background: var(--go-input-interactive-color--background, var(--color-white));
 		border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
-		box-shadow: var(--theme-input--shadow-focus, none);
+		box-shadow: var(--go-input-interactive--box-shadow, none);
 		color: var(--go-input-interactive--color--text);
 		outline: none;
 	}

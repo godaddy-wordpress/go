@@ -85,7 +85,7 @@
 }
 
 .post__meta--single-bottom {
-	margin-bottom: var(--theme-vertical-rhythm--lrg);
+	margin-bottom: var(--go--spacing--vertical--lg);
 	margin-top: 0;
 
 	& .post-tags {

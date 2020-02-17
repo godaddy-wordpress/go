@@ -4,7 +4,7 @@
 	& > div {
 		margin: 0 auto;
 		max-width: calc(var(--go--max-width));
-		padding: var(--theme-vertical-rhythm--lrg) 1rem;
+		padding: var(--go--spacing--vertical--lg) 1rem;
 		width: 100%;
 	}
 

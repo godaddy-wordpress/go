@@ -50,7 +50,7 @@
 	transition: transform 0.15s linear, box-shadow 0.15s linear;
 
 	@media (--medium) {
-		padding: var(--header-padding, 3vw) var(--theme-block-padding-x);
+		padding: var(--go--header--padding--y, 3vw) var(--go-block--padding--x);
 	}
 }
 

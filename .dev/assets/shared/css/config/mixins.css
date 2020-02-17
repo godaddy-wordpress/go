@@ -31,15 +31,15 @@
 
 @define-mixin outline {
 	outline-color: var(--go-outline--color--text);
-	outline-style: var(--theme-outline-style, dotted);
-	outline-width: var(--theme-outline-width, 1px);
+	outline-style: var(--go-outline--style, dotted);
+	outline-width: var(--go-outline--width, 1px);
 }
 
 @define-mixin outline-text-link {
 	border: 0;
-	border-bottom-width: var(--theme-outline-width);
+	border-bottom-width: var(--go-outline--width);
 	border-color: var(--go-outline--color--text);
-	border-style: var(--theme-outline-style, dotted);
+	border-style: var(--go-outline--style, dotted);
 	outline: none;
 }
 
@@ -107,6 +107,6 @@
 }
 
 @define-mixin blockWidthNoPaddingWide {
-	--total-block-padding: calc(var(--theme-block-padding-x) * 2);
+	--total-block-padding: calc(var(--go-block--padding--x) * 2);
 	max-width: calc(var(--go--max-width--alignwide) - var(--total-block-padding));
 }

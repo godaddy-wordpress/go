@@ -85,7 +85,7 @@
 }
 
 .woocommerce form .form-row .required {
-	color: var(--theme-label--color, var(--go-heading--color--text));
+	color: var(--go-label--color--text, var(--go-heading--color--text));
 }
 
 #add_payment_method table.cart td.actions .coupon .input-text,

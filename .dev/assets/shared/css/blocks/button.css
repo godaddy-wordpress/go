@@ -45,6 +45,7 @@
 
 	&:not(.is-style-outline) .wp-block-button__link.has-tertiary-background-color:hover {
 		background-color: var(--go--color--tertiary);
+		color: var(--go--color--primary);
 	}
 }
 

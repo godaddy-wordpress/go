@@ -34,7 +34,7 @@
 
 		/* Upward dark arrow on top of the flyout sub-menu */
 		&::before {
-			border-bottom: 10px solid var(--theme-submenu--bg, var(--go-heading--color--text));
+			border-bottom: 10px solid var(--go-submenu--color--background, var(--go-heading--color--text));
 			border-left: 10px solid transparent;
 			border-right: 10px solid transparent;
 			content: "";
@@ -54,7 +54,7 @@
 
 	/* All other submenus */
 	& .sub-menu {
-		background-color: var(--theme-submenu--bg, var(--go-heading--color--text));
+		background-color: var(--go-submenu--color--background, var(--go-heading--color--text));
 		list-style: none;
 		margin: 0;
 		padding: 0;

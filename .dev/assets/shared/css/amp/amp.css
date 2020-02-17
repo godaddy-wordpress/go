@@ -19,5 +19,5 @@ body[class*="amp"] .primary-menu button.dropdown-toggle {
 }
 
 body[class*="amp"] .primary-menu .sub-menu {
-	background-color: var(--theme-submenu--bg, var(--go-heading--color--text));
+	background-color: var(--go-submenu--color--background, var(--go-heading--color--text));
 }

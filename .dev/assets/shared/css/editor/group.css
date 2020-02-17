@@ -3,7 +3,7 @@
 .wp-block[data-type="core/group"][data-align="full"] {
 
 	& .has-background {
-		padding: var(--theme-vertical-rhythm--lrg);
+		padding: var(--go--spacing--vertical--lg);
 	}
 }
 
@@ -11,7 +11,7 @@
 
 	& .wp-block + .wp-block[data-type="core/image"][data-align="full"],
 	& .wp-block + .wp-block[data-type="core/image"][data-align="wide"] {
-		margin-top: var(--theme-vertical-rhythm--lrg) !important;
+		margin-top: var(--go--spacing--vertical--lg) !important;
 	}
 }
 
@@ -25,7 +25,7 @@
 	}
 
 	& .wp-block-column {
-		padding-bottom: var(--theme-vertical-rhythm) !important;
+		padding-bottom: var(--go--spacing--vertical) !important;
 
 		@media (--medium) {
 			padding-bottom: 0 !important;

@@ -22,7 +22,7 @@ body {
 }
 
 .has-footer-3 .site-footer__inner {
-	padding-bottom: var(--theme-block-padding-x);
+	padding-bottom: var(--go-block--padding--x);
 }
 
 .has-footer-3 .site-footer__row {

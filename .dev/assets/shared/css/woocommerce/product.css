@@ -33,7 +33,7 @@
 }
 
 .woocommerce-tabs {
-	padding-top: var(--theme-vertical-rhythm--lrg);
+	padding-top: var(--go--spacing--vertical--lg);
 }
 
 .related.products {

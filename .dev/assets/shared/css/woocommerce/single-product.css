@@ -113,7 +113,7 @@
 }
 
 .single-product .content-area--woocommerce {
-	margin-bottom: var(--theme-vertical-rhythm--lrg);
+	margin-bottom: var(--go--spacing--vertical--lg);
 }
 
 /* Override core WooCommerce for an improved layout. */
@@ -140,7 +140,7 @@
 	@media (--large) {
 		clear: none;
 		float: right;
-		padding: 4rem 0 0 var(--theme-block-padding-x);
+		padding: 4rem 0 0 var(--go-block--padding--x);
 		width: 40%;
 	}
 }

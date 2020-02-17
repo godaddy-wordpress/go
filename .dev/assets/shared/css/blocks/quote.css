@@ -4,10 +4,10 @@
 
 	& cite,
 	& .wp-block-quote__citation {
-		color: var(--theme-caption--color, var(--go-caption--color--text));
+		color: var(--go-caption--color--text);
 		display: block;
 		font-size: var(--go-caption--font-size);
-		font-style: var(--theme-caption--style, normal);
+		font-style: var(--go-caption--font-style, normal);
 	}
 
 	&:not(.is-style-large) {

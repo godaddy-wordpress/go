@@ -2,12 +2,12 @@
 .has-footer-3 {
 
 	& .site-footer__inner {
-		padding-bottom: calc(var(--theme-vertical-rhythm--lrg) * 0.25);
+		padding-bottom: calc(var(--go--spacing--vertical--lg) * 0.25);
 	}
 
 	& .site-footer__row {
 		border-top: var(--go-footer-3--border-width, 1px) solid var(--go-footer-3--border-color, hsl(0, 0%, 80%));
-		margin-top: calc(var(--theme-vertical-rhythm--lrg) * 0.75);
+		margin-top: calc(var(--go--spacing--vertical--lg) * 0.75);
 		padding: 2rem 0 1rem;
 		text-align: center;
 
@@ -45,7 +45,7 @@
 	& .site-footer .header__titles {
 		align-items: flex-start;
 		flex: 0 0 100%;
-		margin-bottom: calc(var(--theme-vertical-rhythm--lrg) * 0.75);
+		margin-bottom: calc(var(--go--spacing--vertical--lg) * 0.75);
 		max-width: 100%;
 
 		@media (--large) {

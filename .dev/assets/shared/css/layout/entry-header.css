@@ -1,7 +1,7 @@
 /*! Layout: Entry Header */
 .entry-header {
 	max-width: var(--go-entryheader--max-width, 70rem);
-	padding-top: calc(var(--theme-vertical-rhythm--lrg) * 0.55);
+	padding-top: calc(var(--go--spacing--vertical--lg) * 0.55);
 	text-align: center;
 }
 

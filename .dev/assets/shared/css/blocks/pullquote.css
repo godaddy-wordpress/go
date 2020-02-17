@@ -32,15 +32,16 @@
 
 	& cite,
 	& .wp-block-pullquote__citation {
-		color: var(--theme-caption--color, var(--go-caption--color--text));
+		color: var(--go-caption--color--text);
 		display: inline-block;
 		font-size: var(--go-caption--font-size);
-		font-style: var(--theme-caption--style, normal);
+		font-style: var(--go-caption--font-style, normal);
 		margin-bottom: calc(var(--theme-pullquote--padding-y) + 0.5rem);
 		text-transform: none;
 	}
 
 	&.is-style-solid-color {
+		padding: 0 !important;
 
 		&:not([class*="background-color"]) {
 			background-color: var(--go--color--primary);
@@ -52,7 +53,7 @@
 
 		& blockquote {
 			max-width: 100%;
-			padding: calc(var(--theme-vertical-rhythm--lrg) * 0.33) calc(var(--theme-vertical-rhythm--lrg) * 0.66);
+			padding: calc(var(--go--spacing--vertical--lg) * 0.35) calc(var(--go--spacing--vertical--lg) * 0.35);
 
 
 			& p {
@@ -78,6 +79,6 @@
 		margin-left: auto;
 		margin-right: auto;
 		max-width: var(--go--max-width--alignwide);
-		padding: var(--theme-vertical-rhythm--lrg);
+		padding: var(--go--spacing--vertical--lg);
 	}
 }

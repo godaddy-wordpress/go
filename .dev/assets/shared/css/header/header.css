@@ -10,11 +10,11 @@
 }
 
 .header__inner {
-	padding: 2vw var(--theme-block-padding-x);
+	padding: 2vw var(--go-block--padding--x);
 
 	@media (--medium) {
-		padding-bottom: var(--header-padding, var(--theme-block-padding-x));
-		padding-top: var(--header-padding, var(--theme-block-padding-x));
+		padding-bottom: var(--go--header--padding--y, var(--go-block--padding--x));
+		padding-top: var(--go--header--padding--y, var(--go-block--padding--x));
 	}
 }
 

@@ -1,28 +1,28 @@
 /*! Editor Padding Sizes */
 .has-small-padding {
-	padding: var(--theme-vertical-rhythm);
+	padding: var(--go--spacing--vertical);
 
 	@media (--medium) {
-		padding: calc(var(--theme-vertical-rhythm--lrg) * 0.2);
+		padding: calc(var(--go--spacing--vertical--lg) * 0.2);
 	}
 }
 
 .has-medium-padding {
-	padding: var(--theme-vertical-rhythm);
+	padding: var(--go--spacing--vertical);
 
 	@media (--medium) {
-		padding: calc(var(--theme-vertical-rhythm--lrg) * 0.5);
+		padding: calc(var(--go--spacing--vertical--lg) * 0.5);
 	}
 }
 
 .has-large-padding {
-	padding: var(--theme-vertical-rhythm);
+	padding: var(--go--spacing--vertical);
 
 	@media (--medium) {
-		padding: calc(var(--theme-vertical-rhythm--lrg) * 0.75);
+		padding: calc(var(--go--spacing--vertical--lg) * 0.75);
 	}
 }
 
 .has-huge-padding {
-	padding: var(--theme-vertical-rhythm--lrg);
+	padding: var(--go--spacing--vertical--lg);
 }

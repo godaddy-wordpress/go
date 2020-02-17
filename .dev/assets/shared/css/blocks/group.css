@@ -2,15 +2,15 @@
 .wp-block-group {
 
 	&.has-background {
-		padding: var(--theme-vertical-rhythm) calc(var(--theme-vertical-rhythm) * 1.3);
+		padding: var(--go--spacing--vertical) calc(var(--go--spacing--vertical) * 1.3);
 
 		@media (--medium) {
-			padding: calc(var(--theme-vertical-rhythm--lrg) * 0.2) calc(var(--theme-vertical-rhythm--lrg) * 0.25);
+			padding: calc(var(--go--spacing--vertical--lg) * 0.2) calc(var(--go--spacing--vertical--lg) * 0.25);
 		}
 
 		&.alignwide,
 		&.alignfull {
-			padding: var(--theme-vertical-rhythm--lrg);
+			padding: var(--go--spacing--vertical--lg);
 		}
 
 		&.alignfull + .alignfull:not(.wp-block-gallery) {
@@ -28,12 +28,12 @@
 		margin-bottom: 0;
 
 		&.alignfull {
-			margin-bottom: calc(var(--theme-vertical-rhythm--lrg) * -1);
+			margin-bottom: calc(var(--go--spacing--vertical--lg) * -1);
 		}
 	}
 
 	& .wp-block-column {
-		padding-bottom: var(--theme-vertical-rhythm);
+		padding-bottom: var(--go--spacing--vertical);
 
 		@media (--medium) {
 			padding-bottom: 0;

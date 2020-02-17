@@ -135,8 +135,8 @@
 	--coblocks-accordion--bg: var(--go--color--tertiary);
 	--coblocks-accordion--border-color: var(--go--color--primary);
 	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
-	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1.5rem;
+	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-food-drinks-item--font-size: 0.95em;
 	--coblocks-food-drinks-item--spacing: 3.5em;
 	--coblocks-food-drinks-item--text-transform: uppercase;

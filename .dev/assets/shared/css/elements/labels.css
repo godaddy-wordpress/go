@@ -1,5 +1,5 @@
 label {
-	color: var(--theme-label--color, var(--go-heading--color--text));
+	color: var(--go-label--color--text, var(--go-heading--color--text));
 	display: block;
 	font-family: var(--go-label--font-family, var(--go-navigation--font-family));
 	font-size: var(--go-label--font-size);
