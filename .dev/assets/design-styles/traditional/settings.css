@@ -83,7 +83,6 @@
 	--go-input--margin-bottom: 2rem;
 	--go-input--padding--x: 0.85rem;
 	--go-input--padding--y: 0.85rem;
-	--go-input-interactive--color--text: var(--go--color--text);
 
 	/* Site Title */
 	--go-site-title--color--text: var(--go-heading--color--text);
