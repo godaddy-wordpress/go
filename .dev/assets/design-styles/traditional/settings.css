@@ -145,27 +145,20 @@
 	--go-social--size: 1.5rem;
 
 	/* CoBlocks */
-	--coblocks-accordion--bg-hover: none;
-	--coblocks-accordion--border-color: var(--go--color--primary);
-	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
-	--coblocks-accordion--color: var(--go--color--primary);
-	--coblocks-features--heading-spacing: 1rem;
-	--coblocks-features--icon-spacing: 2rem;
-	--coblocks-food-drinks-item--font-size: 1.5em;
-	--coblocks-food-drinks-item--spacing: 3em;
-	--coblocks-food-drinks-item--text-transform: normal;
-	--coblocks-food-drinks-item--tracking: 0;
-	--coblocks-food-drinks-item--weight: 400;
-	--coblocks-food-drinks-title--bg: none;
-	--coblocks-food-drinks-title--border-bottom: none;
-	--coblocks-food-drinks-title--color: var(--go-heading--color--text);
-	--coblocks-food-drinks-title--font-size: 2.25em;
-	--coblocks-food-drinks-title--margin-y: 0.5em;
-	--coblocks-food-drinks-title--padding: 0.5em 0.25em 0;
-	--coblocks-food-drinks-title--style: normal;
-	--coblocks-pricing--border: 2px solid var(--go-heading--color--text);
-	--coblocks-services--heading-margin-bottom: 1.25rem;
-	--coblocks-services--heading-margin-top: 2rem;
+	--wp-block-coblocks-accordion-item--border-color: var(--go--color--primary);
+	--wp-block-coblocks-accordion-item--color--text: var(--go--color--primary);
+	--wp-block-coblocks-accordion-item-interactive--color--background: none;
+	--wp-block-coblocks-features--heading--margin-bottom: 1rem;
+	--wp-block-coblocks-food-drinks--heading--color--background: none;
+	--wp-block-coblocks-food-drinks--heading--color--text: var(--go-heading--color--text);
+	--wp-block-coblocks-food-drinks--heading--font-size: 2.25rem;
+	--wp-block-coblocks-food-drinks--heading--padding: 0.5em 0.25em 0;
+	--wp-block-coblocks-food-item--heading--font-size: 1.5rem;
+	--wp-block-coblocks-food-item--heading--letter-spacing: 0;
+	--wp-block-coblocks-food-item--heading--text-transform: normal;
+	--wp-block-coblocks-gallery-carousel--overlay--opacity: 0.5;
+	--wp-block-coblocks-services--heading--margin-bottom: 1.25rem;
+	--wp-block-coblocks-services--heading--margin-top: 2rem;
 
 	/* Block Editor */
 	--editor-max-w-base: 702px;

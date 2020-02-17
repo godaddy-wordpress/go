@@ -57,7 +57,7 @@
 
 /*  Author */
 .wp-block-coblocks-author {
-	padding: var(--coblocks-author--padding, 2.5rem);
+	padding: var(--wp-block-coblocks-author--padding, 2.5rem);
 }
 
 /*  Food & Drinks */
@@ -69,13 +69,13 @@
 	& h4,
 	& h5,
 	& h6 {
-		background-color: var(--coblocks-food-drinks-title--bg, var(--go-heading--color--text));
-		border-bottom: var(--coblocks-food-drinks-title--border-bottom);
-		color: var(--coblocks-food-drinks-title--color, var(--go--color--white));
-		font-size: var(--coblocks-food-drinks-title--font-size);
-		font-style: var(--coblocks-food-drinks-title--style);
-		margin-bottom: var(--coblocks-food-drinks-title--margin-y);
-		padding: var(--coblocks-food-drinks-title--padding);
+		background-color: var(--wp-block-coblocks-food-drinks--heading--color--background, var(--go-heading--color--text));
+		border-bottom: var(--wp-block-coblocks-food-drinks--heading--border-bottom, none);
+		color: var(--wp-block-coblocks-food-drinks--heading--color--text, var(--go--color--white));
+		font-size: var(--wp-block-coblocks-food-drinks--heading--font-size, 1.25rem);
+		font-style: var(--wp-block-coblocks-food-drinks--heading--font-style, normal);
+		margin-bottom: var(--wp-block-coblocks-food-drinks--heading--margin-bottom, 0.65rem);
+		padding: var(--wp-block-coblocks-food-drinks--heading--padding, 0.4rem 0.25rem 0.4rem);
 	}
 }
 
@@ -91,10 +91,10 @@
 	margin-bottom: 0.4em;
 
 	& h4 {
-		font-size: var(--coblocks-food-drinks-item--font-size);
-		font-weight: var(--coblocks-food-drinks-item--weight);
-		letter-spacing: var(--coblocks-food-drinks-item--tracking);
-		text-transform: var(--coblocks-food-drinks-item--text-transform);
+		font-size: var(--wp-block-coblocks-food-item--heading--font-size);
+		font-weight: var(--wp-block-coblocks-food-item--heading--font-weight, var(--go-heading--font-weight));
+		letter-spacing: var(--wp-block-coblocks-food-item--heading--letter-spacing, 2px);
+		text-transform: var(--wp-block-coblocks-food-item--heading--text-transform, uppercase);
 	}
 }
 

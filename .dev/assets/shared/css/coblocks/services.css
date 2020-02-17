@@ -11,8 +11,8 @@
 	& h4,
 	& h5,
 	& h6 {
-		margin-bottom: var(--coblocks-services--heading-margin-bottom);
-		margin-top: var(--coblocks-services--heading-margin-top);
+		margin-bottom: var(--wp-block-coblocks-services--heading--margin-bottom, 1rem);
+		margin-top: var(--wp-block-coblocks-services--heading--margin-top, 1.75rem);
 	}
 }
 

@@ -135,24 +135,7 @@
 	--go-meta--color--text: var(--go--color--primary);
 
 	/* CoBlocks */
-	--coblocks-accordion--bg-hover: hsla(0, 0%, 0%, 0.05);
-	--coblocks-accordion--border-color: var(--go-heading--color--text);
-	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
-	--coblocks-features--heading-spacing: 1.5rem;
-	--coblocks-features--icon-spacing: 2rem;
-	--coblocks-food-drinks-item--font-size: 0.95em;
-	--coblocks-food-drinks-item--spacing: 3.5em;
-	--coblocks-food-drinks-item--text-transform: uppercase;
-	--coblocks-food-drinks-item--tracking: 2px;
-	--coblocks-food-drinks-item--weight: 700;
-	--coblocks-food-drinks-title--border-bottom: none;
-	--coblocks-food-drinks-title--font-size: 1.5em;
-	--coblocks-food-drinks-title--margin-y: 0.65em;
-	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
-	--coblocks-food-drinks-title--style: normal;
-	--coblocks-pricing--border: 2px solid var(--go-heading--color--text);
-	--coblocks-services--heading-margin-bottom: 1rem;
-	--coblocks-services--heading-margin-top: 1.75rem;
+	--wp-block-coblocks-food-item--heading--font-weight: 700;
 
 	/* Block Editor */
 	--editor-max-w-base: 702px;

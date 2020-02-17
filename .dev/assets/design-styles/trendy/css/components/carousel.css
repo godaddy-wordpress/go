@@ -3,7 +3,6 @@
 	transition: opacity 0.75s, transform 0.75s;
 
 	&:not(.is-selected) {
-		opacity: 0.5;
 		transform: scale(0.9);
 	}
 }
