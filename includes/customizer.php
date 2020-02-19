@@ -870,7 +870,7 @@ function inline_css() {
 					--go-logo-mobile--max-width: <?php echo esc_attr( $logo_width_mobile ); ?>px;
 				<?php endif; ?>
 
-				<?php if ( $viewport_basis ) : ?>
+				<?php if ( false === $viewport_basis ) : ?>
 					--go--viewport-basis: <?php echo esc_attr( $viewport_basis ); ?>;
 				<?php endif; ?>
 			}
