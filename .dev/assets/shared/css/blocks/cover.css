@@ -1,13 +1,6 @@
 /*! Cover */
 .wp-block-cover {
 
-	& > div {
-		margin: 0 auto;
-		max-width: calc(var(--go--max-width));
-		padding: var(--go--spacing--vertical--lg) 1rem;
-		width: 100%;
-	}
-
 	& h2:last-of-type,
 	& h3:last-of-type,
 	& h4:last-of-type,
@@ -20,4 +13,11 @@
 	& ol {
 		padding-left: 0;
 	}
+}
+
+.wp-block-cover__inner-container {
+	margin: 0 auto;
+	max-width: calc(var(--go--max-width));
+	padding: var(--go--spacing--vertical--lg) 1rem;
+	width: 100% !important;
 }

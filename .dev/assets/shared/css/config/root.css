@@ -1,7 +1,6 @@
 :root {
 
 	/* Typographic scale */
-	--go--type-ratio: 1.333; /* Perfect Fourth; to be overwritten by design styles. */
 	--go--type-scale-0: calc(var(--go--heading-size, var(--go--font-size)) * 0.7);
 
 	@media (--large) {

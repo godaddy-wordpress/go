@@ -5,8 +5,9 @@
 	--go--max-width--alignwide: 80rem;
 
 	/* Spacing */
-	--go--spacing--header: 25;
-	--go--spacing--horizontal: 60;
+	--go--viewport-basis: 850;
+	--go--spacing--header: 27;
+	--go--spacing--horizontal: 55;
 	--go--spacing--paragraph: 15;
 
 	/* Typography */
@@ -16,7 +17,7 @@
 	--go--font-size--smallest: 78%;
 	--go--font-size: 1.1rem;
 	--go--line-height: 1.9;
-	--go--type-ratio: 1.225;
+	--go--type-ratio: 1.2;
 
 	/* Headings */
 	--go-heading--button-spacing: 1.75rem;

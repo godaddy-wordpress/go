@@ -5,9 +5,10 @@
 	--go--max-width--alignwide: 84rem;
 
 	/* Spacing */
+	--go--viewport-basis: 1000;
 	--go--spacing--horizontal: 60;
 	--go--spacing--paragraph: 9;
-	--go--spacing--header: 22;
+	--go--spacing--header: 30;
 
 	/* Typography */
 	--go--color--text: hsl(218, 12%, 30%);

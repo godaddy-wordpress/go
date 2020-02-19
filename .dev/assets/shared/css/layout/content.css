@@ -86,7 +86,7 @@ body.home {
 }
 
 /* Remove .alignfull margin if there is a footer background enabled */
-.has-footer-background .content-area > *:last-child.alignfull:not(.wp-block-coblocks-gallery-masonry) {
+body.has-footer-background .content-area > *:last-child.alignfull:not(.wp-block-coblocks-gallery-masonry) {
 	margin-bottom: 0 !important;
 }
 

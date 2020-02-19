@@ -2,14 +2,26 @@
 .has-footer-2 {
 
 	& .content-area > .alignfull:last-child {
-		margin-bottom: var(--go-footer-2--padding--y, 4rem) !important;
+		margin-bottom: calc(var(--go--spacing--vertical--lg) / 1.5) !important;
+
+		@media (--medium) {
+			margin-bottom: calc(var(--go--spacing--vertical--lg) / 2) !important;
+		}
 	}
 
 	& .site-footer {
-		padding-bottom: var(--go-footer-2--padding-bottom, 4rem);
+		padding-bottom: calc(var(--go--spacing--vertical--lg) / 1.5);
+
+		@media (--medium) {
+			padding-bottom: calc(var(--go--spacing--vertical--lg) / 2);
+		}
 
 		&.has-background {
-			padding-top: var(--go-footer-2--padding--y, 4rem);
+			padding-top: calc(var(--go--spacing--vertical--lg) / 1.5);
+
+			@media (--medium) {
+				padding-top: calc(var(--go--spacing--vertical--lg) / 2);
+			}
 		}
 	}
 
@@ -28,7 +40,7 @@
 
 			&:first-child a {
 				@media (--large) {
-					margin-left: calc(-1 * var(--go-navigation--padding--x));
+					padding-left: 0;
 				}
 			}
 		}

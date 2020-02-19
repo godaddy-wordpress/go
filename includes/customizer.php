@@ -841,7 +841,7 @@ function inline_css() {
 					--go-site-title--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 					--go-site-description--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 					--go-navigation--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--go-search-button--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-search-toggle--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 					--go-search-button--color--background: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 				<?php endif; ?>
 

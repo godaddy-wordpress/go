@@ -5,6 +5,7 @@
 	--go--max-width--alignwide: 82rem;
 
 	/* Spacing */
+	--go--viewport-basis: 750;
 	--go--spacing--horizontal: 50;
 	--go--spacing--paragraph: 15;
 	--go--spacing--header: 25;
