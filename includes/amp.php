@@ -36,13 +36,7 @@ function setup() {
  */
 function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 
-	if ( ! is_amp() || 'primary' !== $args->theme_location ) {
-
-		return $item_output;
-
-	}
-
-	if ( ! in_array( 'menu-item-has-children', $item->classes, true ) ) {
+	if ( ! is_amp() || 'primary' !== $args->theme_location || ! in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
 		return $item_output;
 

@@ -1,7 +1,3 @@
-body[class*="amp"] .primary-menu .menu-item-has-children:hover > .sub-menu {
-	display: none;
-}
-
 body[class*="amp"] .primary-menu .menu-item-has-children:hover button.dropdown-toggle.toggled-on + ul,
 body[class*="amp"] .primary-menu button.toggled-on + ul {
 	display: block;
@@ -18,6 +14,11 @@ body[class*="amp"] .primary-menu button.dropdown-toggle {
 	width: 100%;
 }
 
-body[class*="amp"] .primary-menu .sub-menu {
-	background-color: var(--theme-submenu--bg, var(--theme-color-heading));
+body[class*="amp"].menu-is-open .site-header {
+	position: fixed;
+	width: 100%;
+}
+
+body[class*="amp"] input[type="search"] {
+	background: var(--theme-input--bg-interactive);
 }
