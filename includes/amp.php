@@ -51,7 +51,9 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 
 	// Create new state for managing storing the whether the sub-menu is expanded.
 	$item_output .= sprintf(
-		'<amp-state id="%s"><script type="application/json">%s</script></amp-state>',
+		'<amp-state id="%s">
+			<script type="application/json">%s</script>
+		</amp-state>',
 		esc_attr( $expanded_state_id ),
 		wp_json_encode( $expanded )
 	);
@@ -91,9 +93,7 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 
 	$dropdown_button .= '</button>';
 
-	$item_output .= $dropdown_button;
-
-	return $item_output;
+	return $dropdown_button . $item_output;
 
 }
 

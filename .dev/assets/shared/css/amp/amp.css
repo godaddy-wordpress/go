@@ -12,6 +12,7 @@ body[class*="amp"] .primary-menu button.dropdown-toggle {
 	position: absolute;
 	top: 0;
 	width: 100%;
+	z-index: 99;
 }
 
 body[class*="amp"].menu-is-open .site-header {
@@ -21,4 +22,13 @@ body[class*="amp"].menu-is-open .site-header {
 
 body[class*="amp"] input[type="search"] {
 	background: var(--theme-input--bg-interactive);
+}
+
+body[class*="amp"] .dropdown-toggle:not(.toggled-on) + a + amp-state + ul.sub-menu {
+	display: none;
+}
+
+body[class*="amp"] .dropdown-toggle.toggled-on + a > svg {
+	-webkit-transform: translateY(-50%) rotate(180deg);
+	transform: translateY(-50%) rotate(180deg);
 }
