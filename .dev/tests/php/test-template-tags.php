@@ -1251,7 +1251,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		add_filter( 'go_is_amp', '__return_true' );
 
-		$this->expectOutputRegex( '/on="tap:AMP\.setState\( { mainNavMenuExpanded: ! mainNavMenuExpanded } \)"/' );
+		$this->expectOutputRegex( '/on="tap:AMP\.setState\( { navMenuItemExpanded1: ! navMenuItemExpanded1 } \)"/' );
 
 		Go\navigation_toggle();
 

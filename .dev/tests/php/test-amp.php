@@ -102,7 +102,7 @@ class Test_AMP extends WP_UnitTestCase {
 
 		$output = Go\AMP\amp_nav_sub_menu_buttons( '<a href="http://example.org/blog/">Blog</a>', $post, 1, $menu_args );
 
-		$this->assertRegexp( '/<button class="dropdown-toggle" \[class\]="&quot;dropdown-toggle&quot; \+ \( navMenuItemExpanded1 \? &quot; toggled-on&quot; : &#039;&#039; \)" aria-expanded="false" \[aria-expanded\]="navMenuItemExpanded1 \? &#039;true&#039; : &#039;false&#039;" on="tap:AMP\.setState\( { navMenuItemExpanded1: ! navMenuItemExpanded1 } \)"><span class="screen-reader-text" \[text\]="navMenuItemExpanded1 \? &quot;collapse child menu&quot; : &quot;expand child menu&quot;">expand child menu<\/span><\/button><a href="http:\/\/example\.org\/blog\/">Blog<\/a><amp-state id="navMenuItemExpanded1">/', $output );
+		$this->assertRegexp( '/<button class="dropdown-toggle" \[class\]="&quot;dropdown-toggle&quot; \+ \( navMenuItemExpanded1 \? &quot; toggled-on&quot; : &#039;&#039; \)" aria-expanded="false" \[aria-expanded\]="navMenuItemExpanded1 \? &#039;true&#039; : &#039;false&#039;" on="tap:AMP\.setState\( { navMenuItemExpanded1: ! navMenuItemExpanded1 } \)">/', $output );
 
 	}
 
