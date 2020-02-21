@@ -1024,7 +1024,7 @@ class Test_Customizer extends WP_UnitTestCase {
 			'--go-navigation--color--text',
 			'--go-site-description--color--text',
 			'--go-site-title--color--text',
-			'--go-search-button--color--text',
+			'--go-search-toggle--color--text',
 			'--go-search-button--color--background',
 		];
 
