@@ -20,6 +20,29 @@ function setup() {
 
 	add_filter( 'walker_nav_menu_start_el', $n( 'amp_nav_sub_menu_buttons' ), 10, 4 );
 
+	add_filter( 'body_class', $n( 'amp_body_class' ) );
+
+}
+
+/**
+ * Append amp to the body classes.
+ *
+ * @param array $classes Body classes array.
+ *
+ * @return array Filtered body classes array.
+ */
+function amp_body_class( $classes ) {
+
+	if ( ! is_amp() ) {
+
+		return $classes;
+
+	}
+
+	$classes[] = 'amp';
+
+	return $classes;
+
 }
 
 /**

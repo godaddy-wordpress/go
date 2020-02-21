@@ -8,6 +8,7 @@
 namespace Go\WooCommerce;
 
 use function Go\load_inline_svg;
+use function Go\AMP\is_amp;
 
 /**
  * Set up WooCommerce hooks
@@ -171,11 +172,23 @@ function woocommerce_cart_link() {
 
 	$element_wrap = should_use_woo_slideout_cart() ? 'button' : 'a';
 
+	if ( is_amp() ) {
+		?>
+		<!-- 1. Define the state -->
+		<amp-state id="wooCartMenuExpanded">
+			<script type="application/json">false</script>
+		</amp-state>
+		<?php
+	}
+
+	$amp_atts = is_amp() ? ' on="tap:AMP.setState( { wooCartMenuExpanded: ! wooCartMenuExpanded } )"' : '';
+
 	printf(
-		'<%1$s id="header__cart-toggle"%2$sclass="header__cart-toggle" alt="%3$s">%4$s</%1$s>',
+		'<%1$s id="header__cart-toggle"%2$sclass="header__cart-toggle" alt="%3$s"%4$s>%5$s</%1$s>',
 		esc_html( $element_wrap ),
 		( 'a' === $element_wrap ) ? ' href="' . esc_url( $cart_url ) . '" ' : ' ',
 		esc_attr( $cart_alt_text ),
+		wp_kses_post( $amp_atts ),
 		$cart_text // @codingStandardsIgnoreLine
 	);
 
@@ -198,15 +211,19 @@ function woocommerce_slideout_cart() {
 
 	$cart_count = $woocommerce->cart->get_cart_contents_count();
 
+	$site_overlay_amp_atts  = is_amp() ? ' [class]="\'site-overlay\' + ( wooCartMenuExpanded ? \' active\' : \'\' )"' : '';
+	$site_nav_cart_amp_atts = is_amp() ? ' [class]="\'site-nav style--sidebar\' + ( wooCartMenuExpanded ? \' active\' : \'\' )"' : '';
+	$close_btn_amp_atts     = is_amp() ? ' on="tap:AMP.setState( { wooCartMenuExpanded: ! wooCartMenuExpanded } )"' : '';
+
 	?>
 
-	<div id="site-overlay" class="site-overlay"></div>
+	<div id="site-overlay" class="site-overlay"<?php echo wp_kses_post( $site_overlay_amp_atts ); ?>></div>
 
-	<div id="site-nav--cart" class="site-nav style--sidebar show-cart">
+	<div id="site-nav--cart" class="site-nav style--sidebar show-cart"<?php echo wp_kses_post( $site_nav_cart_amp_atts ); ?>>
 
 		<div id="site-cart" class="site-nav-container" tabindex="-1">
 
-			<button id="site-close-handle" class="site-close-handle" aria-label="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>" title="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>">
+			<button id="site-close-handle" class="site-close-handle" aria-label="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>" title="<?php esc_attr_e( 'Close sidebar', 'go' ); ?>"<?php echo wp_kses_post( $close_btn_amp_atts ); ?>>
 				<?php load_inline_svg( 'close.svg' ); ?>
 			</button>
 
