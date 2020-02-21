@@ -5,6 +5,14 @@
 		background-color: var(--go-button--color--background, var(--go--color--primary));
 	}
 
+	&:not(.is-style-outline) .wp-block-button__link.has-quaternary-background-color:not(.has-text-color) {
+		color: var(--go--color--primary);
+	}
+
+	&:not(.is-style-outline) .wp-block-button__link.has-quaternary-background-color:not(.has-text-color):hover {
+		color: var(--go--color--quaternary);
+	}
+
 	&.is-style-outline .wp-block-button__link.has-primary-color:hover {
 		color: var(--go--color--secondary);
 	}
