@@ -132,6 +132,11 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
  */
 function is_amp() {
 
-	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
+	/**
+	 * Filter whether or not this is an AMP request.
+	 *
+	 * @var bool
+	 */
+	return (bool) apply_filters( 'go_is_amp', ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) );
 
 }
