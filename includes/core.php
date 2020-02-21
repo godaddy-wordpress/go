@@ -744,7 +744,7 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'viewport_basis' => '975',
+			'viewport_basis' => '850',
 		),
 		'welcoming'   => array(
 			'slug'          => 'welcoming',
