@@ -20,6 +20,29 @@ function setup() {
 
 	add_filter( 'walker_nav_menu_start_el', $n( 'amp_nav_sub_menu_buttons' ), 10, 4 );
 
+	add_filter( 'body_class', $n( 'amp_body_class' ) );
+
+}
+
+/**
+ * Append amp to the body classes.
+ *
+ * @param array $classes Body classes array.
+ *
+ * @return array Filtered body classes array.
+ */
+function amp_body_class( $classes ) {
+
+	if ( ! is_amp() ) {
+
+		return $classes;
+
+	}
+
+	$classes[] = 'amp';
+
+	return $classes;
+
 }
 
 /**
@@ -36,13 +59,7 @@ function setup() {
  */
 function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 
-	if ( ! is_amp() || 'primary' !== $args->theme_location ) {
-
-		return $item_output;
-
-	}
-
-	if ( ! in_array( 'menu-item-has-children', $item->classes, true ) ) {
+	if ( ! is_amp() || 'primary' !== $args->theme_location || ! in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
 		return $item_output;
 
@@ -50,56 +67,44 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 
 	$expanded = in_array( 'current-menu-ancestor', $item->classes, true );
 
-	// Generate a unique state ID.
 	static $nav_menu_item_number = 0;
 	$nav_menu_item_number++;
 	$expanded_state_id = 'navMenuItemExpanded' . $nav_menu_item_number;
 
-	// Create new state for managing storing the whether the sub-menu is expanded.
 	$item_output .= sprintf(
-		'<amp-state id="%s"><script type="application/json">%s</script></amp-state>',
+		'<amp-state id="%s">
+			<script type="application/json">%s</script>
+		</amp-state>',
 		esc_attr( $expanded_state_id ),
 		wp_json_encode( $expanded )
 	);
 
-	/*
-	* Create the toggle button which mutates the state and which has class and
-	* aria-expanded attributes which react to the state changes.
-	*/
-	$dropdown_button  = '<button';
-	$dropdown_class   = 'dropdown-toggle';
-	$toggled_class    = 'toggled-on';
-	$dropdown_button .= sprintf(
-		' class="%s" [class]="%s"',
-		esc_attr( $dropdown_class . ( $expanded ? " $toggled_class" : '' ) ),
-		esc_attr( sprintf( "%s + ( $expanded_state_id ? %s : '' )", wp_json_encode( $dropdown_class ), wp_json_encode( " $toggled_class" ) ) )
-	);
-
-	$dropdown_button .= sprintf(
-		' aria-expanded="%s" [aria-expanded]="%s"',
+	$dropdown_button = sprintf(
+		'<button class="dropdown-toggle%1$s" [class]="%2$s" aria-expanded="%3$s" [aria-expanded]="%4$s" on="%5$s">
+			<span class="screen-reader-text" [text]="%6$s">%7$s</span>
+		</button>',
+		esc_attr( $expanded ? ' toggled-on' : '' ),
+		esc_attr(
+			sprintf(
+				"%s + ( $expanded_state_id ? %s : '' )",
+				wp_json_encode( 'dropdown-toggle' ),
+				wp_json_encode( ' toggled-on' )
+			)
+		),
 		esc_attr( wp_json_encode( $expanded ) ),
-		esc_attr( "$expanded_state_id ? 'true' : 'false'" )
+		esc_attr( "$expanded_state_id ? 'true' : 'false'" ),
+		esc_attr( "tap:AMP.setState( { $expanded_state_id: ! $expanded_state_id } )" ),
+		esc_attr(
+			sprintf(
+				"$expanded_state_id ? %s : %s",
+				wp_json_encode( __( 'collapse child menu', 'gd-system-plugin' ) ),
+				wp_json_encode( __( 'expand child menu', 'gd-system-plugin' ) )
+			)
+		),
+		esc_html( $expanded ? __( 'collapse child menu', 'gd-system-plugin' ) : __( 'expand child menu', 'gd-system-plugin' ) )
 	);
 
-	$dropdown_button .= sprintf(
-		' on="%s"',
-		esc_attr( "tap:AMP.setState( { $expanded_state_id: ! $expanded_state_id } )" )
-	);
-
-	$dropdown_button .= '>';
-
-	// Let the screen reader text in the button also update based on the expanded state.
-	$dropdown_button .= sprintf(
-		'<span class="screen-reader-text" [text]="%s">%s</span>',
-		esc_attr( sprintf( "$expanded_state_id ? %s : %s", wp_json_encode( __( 'collapse child menu', 'example' ) ), wp_json_encode( __( 'expand child menu', 'example' ) ) ) ),
-		esc_html( $expanded ? __( 'collapse child menu', 'example' ) : __( 'expand child menu', 'example' ) )
-	);
-
-	$dropdown_button .= '</button>';
-
-	$item_output .= $dropdown_button;
-
-	return $item_output;
+	return $dropdown_button . $item_output;
 
 }
 
@@ -115,6 +120,11 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
  */
 function is_amp() {
 
-	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
+	/**
+	 * Filter whether or not this is an AMP request.
+	 *
+	 * @var bool
+	 */
+	return (bool) apply_filters( 'go_is_amp', ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) );
 
 }

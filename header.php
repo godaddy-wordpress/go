@@ -18,7 +18,19 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body
+	<?php
+	if ( Go\AMP\is_amp() ) {
+		?>
+		aria-expanded="false"
+		[aria-expanded]="mainNavMenuExpanded ? 'true' : 'false'"
+		class="<?php echo esc_attr( implode( ' ', get_body_class() ) ); ?>"
+		[class]="'<?php echo esc_attr( implode( ' ', get_body_class() ) ); ?>' + ( mainNavMenuExpanded ? ' menu-is-open' : '' )"
+		<?php
+	}
+	body_class();
+	?>
+>
 
 	<?php wp_body_open(); ?>
 

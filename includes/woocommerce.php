@@ -8,6 +8,7 @@
 namespace Go\WooCommerce;
 
 use function Go\load_inline_svg;
+use function Go\AMP\is_amp;
 
 /**
  * Set up WooCommerce hooks
@@ -66,6 +67,12 @@ function setup() {
  * @return bool True when enabled, else false.
  */
 function should_show_woo_cart_item() {
+
+	if ( is_amp() ) {
+
+		return false;
+
+	}
 
 	/**
 	 * Filter whether to display the WooCommerce cart menu item.

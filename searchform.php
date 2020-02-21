@@ -6,7 +6,15 @@
  */
 
 ?>
-<div id="js-site-search" class="site-search" itemscope itemtype="http://schema.org/WebSite">
+<div
+id="js-site-search"
+class="site-search"
+itemscope
+itemtype="http://schema.org/WebSite"
+<?php if ( Go\AMP\is_amp() ) { ?>
+	on="tap:AMP.setState( { searchModalActive: true } )"
+<?php } ?>
+>
 	<form role="search" id="searchform" class="search-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<meta itemprop="target" content="<?php echo esc_url( home_url( '/' ) ); ?>/?s={s}" />
 		<label for="search-field">

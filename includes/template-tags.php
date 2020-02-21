@@ -11,6 +11,7 @@
 namespace Go;
 
 use function Go\Core\get_available_color_schemes;
+use function Go\AMP\is_amp;
 
 /**
  * Return the Post Meta.
@@ -745,17 +746,44 @@ function site_branding( $args = array() ) {
  * @return void
  */
 function navigation_toggle() {
-	echo '<div class="header__nav-toggle">';
-		echo '<button id="nav-toggle" class="nav-toggle" type="button" aria-controls="header__navigation">';
-			echo '<div class="nav-toggle-icon">';
-				load_inline_svg( 'menu.svg' );
-			echo '</div>';
-			echo '<div class="nav-toggle-icon nav-toggle-icon--close">';
-				load_inline_svg( 'close.svg' );
-			echo '</div>';
-			echo '<span class="screen-reader-text">' . esc_html__( 'Menu', 'go' ) . '</span>';
-		echo '</button>';
-	echo '</div>';
+
+	if ( is_amp() ) {
+		?>
+		<!-- 1. Define the state -->
+		<amp-state id="mainNavMenuExpanded">
+			<script type="application/json">false</script>
+		</amp-state>
+		<?php
+	}
+	?>
+
+	<div class="header__nav-toggle">
+		<button
+			id="nav-toggle"
+			class="nav-toggle"
+			type="button"
+			aria-controls="header__navigation"
+			<?php
+			if ( is_amp() ) {
+				?>
+				on="tap:AMP.setState( { mainNavMenuExpanded: ! mainNavMenuExpanded } )"
+				aria-expanded="false"
+				[aria-expanded]="mainNavMenuExpanded ? 'true' : 'false'"
+				<?php
+			}
+			?>
+		>
+			<div class="nav-toggle-icon">
+				<?php load_inline_svg( 'menu.svg' ); ?>
+			</div>
+			<div class="nav-toggle-icon nav-toggle-icon--close">
+				<?php load_inline_svg( 'close.svg' ); ?>
+			</div>
+			<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'go' ); ?></span>
+		</button>
+	</div>
+
+	<?php
 }
 
 /**
@@ -764,12 +792,30 @@ function navigation_toggle() {
  * @return void
  */
 function search_toggle() {
-	echo '<button id="header__search-toggle" class="header__search-toggle" data-toggle-target=".search-modal" data-set-focus=".search-modal .search-form__input" type="button" aria-controls="js-site-search">';
-		echo '<div class="search-toggle-icon">';
-			load_inline_svg( 'search.svg' );
-		echo '</div>';
-		echo '<span class="screen-reader-text">' . esc_html__( 'Search Toggle', 'go' ) . '</span>';
-	echo '</button>';
+	?>
+
+	<button
+		id="header__search-toggle"
+		class="header__search-toggle"
+		data-toggle-target=".search-modal"
+		data-set-focus=".search-modal .search-form__input"
+		type="button"
+		aria-controls="js-site-search"
+		<?php
+		if ( is_amp() ) {
+			?>
+			on="tap:AMP.setState( { searchModalActive: ! searchModalActive } )"
+			<?php
+		}
+		?>
+	>
+		<div class="search-toggle-icon">
+			<?php load_inline_svg( 'search.svg' ); ?>
+		</div>
+		<span class="screen-reader-text"><?php esc_html_e( 'Search Toggle', 'go' ); ?></span>
+	</button>
+
+	<?php
 }
 
 /**

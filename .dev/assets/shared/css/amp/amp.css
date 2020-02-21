@@ -1,13 +1,9 @@
-body[class*="amp"] .primary-menu .menu-item-has-children:hover > .sub-menu {
-	display: none;
-}
-
-body[class*="amp"] .primary-menu .menu-item-has-children:hover button.dropdown-toggle.toggled-on + ul,
-body[class*="amp"] .primary-menu button.toggled-on + ul {
+body.amp .primary-menu .menu-item-has-children:hover button.dropdown-toggle.toggled-on + ul,
+body.amp .primary-menu button.toggled-on + ul {
 	display: block;
 }
 
-body[class*="amp"] .primary-menu button.dropdown-toggle {
+body.amp .primary-menu button.dropdown-toggle {
 	background: transparent;
 	border-radius: 0;
 	height: 100%;
@@ -16,8 +12,22 @@ body[class*="amp"] .primary-menu button.dropdown-toggle {
 	position: absolute;
 	top: 0;
 	width: 100%;
+	z-index: 99;
 }
 
-body[class*="amp"] .primary-menu .sub-menu {
-	background-color: var(--go-submenu--color--background, var(--go-heading--color--text));
+body.amp.menu-is-open .site-header {
+	position: fixed;
+	width: 100%;
+}
+
+body.amp input[type="search"] {
+	background: var(--go-input-interactive--color--background);
+}
+
+body.amp .dropdown-toggle:not(.toggled-on) + a + amp-state + ul.sub-menu {
+	display: none;
+}
+
+body.amp .dropdown-toggle.toggled-on + a > svg {
+	transform: translateY(-50%) rotate(180deg);
 }

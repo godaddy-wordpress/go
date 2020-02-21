@@ -1225,7 +1225,33 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_navigation_toggle() {
 
-		$this->expectOutputRegex( '/<div class="header__nav-toggle"><button id="nav-toggle" class="nav-toggle" type="button" aria-controls="header__navigation"><div class="nav-toggle-icon">(<svg)([^<]*|[^>]*)(.*<\/svg>)(.*)\n<\/div><div class="nav-toggle-icon nav-toggle-icon--close">(<svg)([^<]*|[^>]*)(.*<\/svg>)(.*)\n<\/div><span class="screen-reader-text">Menu<\/span><\/button><\/div>/' );
+		$this->expectOutputRegex( '/<div class="header__nav-toggle">\\n[\n\r\s]+<button\\n[\n\r\s]+id="nav-toggle"\\n[\n\r\s]+class="nav-toggle"\\n[\n\r\s]+type="button"\\n[\n\r\s]+aria-controls="header__navigation"\\n[\n\r\s]+>\\n[\n\r\s]+<div class="nav-toggle-icon">\\n[\n\r\s]+(<svg)([^<]*|[^>]*)(.*<\/svg>)\\n[\n\r\s]+<\/div>\\n[\n\r\s]+<div class="nav-toggle-icon nav-toggle-icon--close">\\n[\n\r\s]+(<svg)([^<]*|[^>]*)(.*<\/svg>)\\n[\n\r\s]+<\/div>\\n[\n\r\s]+<span class="screen-reader-text">Menu<\/span>\\n[\n\r\s]+<\/button>/' );
+
+		Go\navigation_toggle();
+
+	}
+
+	/**
+	 * Test navigation_toggle amp-state element is rendered as expected
+	 */
+	public function test_navigation_toggle_amp_state_element() {
+
+		add_filter( 'go_is_amp', '__return_true' );
+
+		$this->expectOutputRegex( '/<amp-state id="mainNavMenuExpanded">/' );
+
+		Go\navigation_toggle();
+
+	}
+
+	/**
+	 * Test navigation_toggle markup is as expected
+	 */
+	public function test_navigation_toggle_amp_atts() {
+
+		add_filter( 'go_is_amp', '__return_true' );
+
+		$this->expectOutputRegex( '/on="tap:AMP\.setState\( { mainNavMenuExpanded[0-9]*: ! mainNavMenuExpanded[0-9]* } \)"/' );
 
 		Go\navigation_toggle();
 
@@ -1236,7 +1262,20 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_search_toggle() {
 
-		$this->expectOutputRegex( '/<button id="header__search-toggle" class="header__search-toggle" data-toggle-target=".search-modal" data-set-focus=".search-modal .search-form__input" type="button" aria-controls="js-site-search"><div class="search-toggle-icon">(<svg)([^<]*|[^>]*)(.*<\/svg>)(.*)\n<\/div><span class="screen-reader-text">Search Toggle<\/span><\/button>/' );
+		$this->expectOutputRegex( '/<button\\n[\n\r\s]+id="header__search-toggle"\\n[\n\r\s]+class="header__search-toggle"\\n[\n\r\s]+data-toggle-target=".search-modal"\\n[\n\r\s]+data-set-focus=".search-modal .search-form__input"\\n[\n\r\s]+type="button"\\n[\n\r\s]+aria-controls="js-site-search"\\n[\n\r\s]+>\\n[\n\r\s]+<div class="search-toggle-icon">\\n[\n\r\s]+(<svg)([^<]*|[^>]*)(.*<\/svg>)(.*)\\n[\n\r\s]+<\/div>\\n[\n\r\s]+<span class="screen-reader-text">Search Toggle<\/span>\\n[\n\r\s]+<\/button>/' );
+
+		Go\search_toggle();
+
+	}
+
+	/**
+	 * Test search_toggle markup renders the AMP attributes as expected
+	 */
+	public function test_search_toggle_amp_atts() {
+
+		add_filter( 'go_is_amp', '__return_true' );
+
+		$this->expectOutputRegex( '/on="tap:AMP\.setState\( { searchModalActive: ! searchModalActive } \)"/' );
 
 		Go\search_toggle();
 

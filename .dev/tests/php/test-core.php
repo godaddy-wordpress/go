@@ -464,6 +464,26 @@ class Test_Core extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the scripts are not enqueued when is_amp()
+	 */
+	function testScriptsAMP() {
+
+		// Reset the script queue
+		global $wp_scripts;
+		$wp_scripts->queue = [];
+
+		add_filter( 'go_is_amp', '__return_true' );
+
+		Go\Core\scripts();
+
+		$this->assertFalse(
+			wp_script_is( 'go-frontend' ),
+			'go-frontend script is enqueued when is_amp() and it should not be.'
+		);
+
+	}
+
+	/**
 	 * Test the scripts are enqueued
 	 */
 	function testScriptsSingular() {
@@ -581,6 +601,20 @@ class Test_Core extends WP_UnitTestCase {
 		Go\Core\skip_link_focus_fix();
 
 		$this->assertContains( '(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);', ob_get_clean() );
+
+	}
+
+	/**
+	 * Test the skip link focus script tag outputs nothing when is_amp()
+	 */
+	function testSkipLinkFocusAMP() {
+
+		add_filter( 'go_is_amp', '__return_true' );
+
+		ob_start();
+		Go\Core\skip_link_focus_fix();
+
+		$this->assertEmpty( ob_get_clean() );
 
 	}
 
