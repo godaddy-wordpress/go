@@ -17,10 +17,6 @@
 	& .blocks-gallery-item:last-child {
 		margin-bottom: 16px !important;
 	}
-
-	&.mb-0 {
-		margin-bottom: 0 !important;
-	}
 }
 
 body.rtl .wp-block-gallery {
@@ -30,34 +26,40 @@ body.rtl .wp-block-gallery {
 	}
 }
 
+#page.site .content-area__wrapper .content-area .wp-block-gallery.mb-0 {
+	margin-bottom: 0 !important;
+}
+
 .site .content-area__wrapper .content-area .wp-block-gallery {
 	margin-bottom: calc(var(--go--spacing--vertical) - 16px) !important;
 }
 
-.site .content-area__wrapper .content-area .wp-block-gallery.alignfull {
+.site .content-area__wrapper .content-area .wp-block-gallery.alignfull,
+.site .content-area__wrapper .content-area .wp-block-gallery.alignwide {
 	margin-bottom: calc(var(--go--spacing--vertical--lg) - 16px) !important;
+	margin-top: calc(var(--go--spacing--vertical--lg) - 16px) !important;
 }
 
 .site .content-area__wrapper .content-area .wp-block-gallery .mb-0 {
 	margin-bottom: -16px !important;
 }
 
-.wp-block-gallery.alignfull + .wp-block-cover.alignfull {
+.site .content-area__wrapper .wp-block-gallery.alignfull + .wp-block-cover.alignfull {
 	margin-top: 16px !important;
 }
 
-.wp-block-gallery.alignfull + .wp-block-image.alignfull {
+.site .content-area__wrapper .wp-block-gallery.alignfull + .wp-block-image.alignfull {
 	margin-top: calc(var(--go--spacing--vertical--lg) * -1 + 16px) !important;
 }
 
-.wp-block-image.alignfull + .wp-block-gallery.alignfull {
+.site .content-area__wrapper .wp-block-image.alignfull + .wp-block-gallery.alignfull {
 	margin-top: calc(var(--go--spacing--vertical--lg) * -1 + 16px) !important;
 }
 
-.wp-block-group.alignfull + .wp-block-gallery.alignfull {
+.site .content-area__wrapper .wp-block-group.alignfull + .wp-block-gallery.alignfull {
 	margin-top: calc(var(--go--spacing--vertical--lg) * -1 + 16px) !important;
 }
 
-.wp-block-gallery.alignfull + .wp-block-group.alignfull {
+.site .content-area__wrapper .wp-block-gallery.alignfull + .wp-block-group.alignfull {
 	margin-top: calc(var(--go--spacing--vertical--lg) * -1 + 16px) !important;
 }

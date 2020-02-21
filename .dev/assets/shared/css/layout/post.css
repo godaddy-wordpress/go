@@ -56,10 +56,10 @@
 	& a {
 		color: var(--go-meta--color--text, var(--go-caption--color--text));
 		outline-offset: 4px;
-		text-decoration: none;
+		text-decoration: underline;
 
 		&:hover {
-			text-decoration: underline;
+			text-decoration: none;
 		}
 	}
 }
