@@ -587,11 +587,11 @@ function get_available_design_styles() {
 
 	$default_design_styles = array(
 		'traditional' => array(
-			'slug'          => 'traditional',
-			'label'         => _x( 'Traditional', 'design style name', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-traditional{$rtl}{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-traditional-editor{$rtl}{$suffix}.css",
-			'color_schemes' => array(
+			'slug'           => 'traditional',
+			'label'          => _x( 'Traditional', 'design style name', 'go' ),
+			'url'            => get_theme_file_uri( "dist/css/design-styles/style-traditional{$rtl}{$suffix}.css" ),
+			'editor_style'   => "dist/css/design-styles/style-traditional-editor{$rtl}{$suffix}.css",
+			'color_schemes'  => array(
 				'one'   => array(
 					'label'      => _x( 'Apricot', 'color palette name', 'go' ),
 					'primary'    => '#c76919',
@@ -621,7 +621,7 @@ function get_available_design_styles() {
 					'background' => '#ffffff',
 				),
 			),
-			'fonts'         => array(
+			'fonts'          => array(
 				'Crimson Text' => array(
 					'400',
 					'400i',
@@ -638,11 +638,11 @@ function get_available_design_styles() {
 			'viewport_basis' => '900',
 		),
 		'modern'      => array(
-			'slug'          => 'modern',
-			'label'         => _x( 'Modern', 'design style name', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-modern{$rtl}{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-modern-editor{$rtl}{$suffix}.css",
-			'color_schemes' => array(
+			'slug'           => 'modern',
+			'label'          => _x( 'Modern', 'design style name', 'go' ),
+			'url'            => get_theme_file_uri( "dist/css/design-styles/style-modern{$rtl}{$suffix}.css" ),
+			'editor_style'   => "dist/css/design-styles/style-modern-editor{$rtl}{$suffix}.css",
+			'color_schemes'  => array(
 				'one'   => array(
 					'label'      => _x( 'Shade', 'color palette name', 'go' ),
 					'primary'    => '#000000',
@@ -672,7 +672,7 @@ function get_available_design_styles() {
 					'background' => '#ffffff',
 				),
 			),
-			'fonts'         => array(
+			'fonts'          => array(
 				'Montserrat' => array(
 					'400',
 					'700',
@@ -690,11 +690,11 @@ function get_available_design_styles() {
 			'viewport_basis' => '950',
 		),
 		'trendy'      => array(
-			'slug'          => 'trendy',
-			'label'         => _x( 'Trendy', 'design style name', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-trendy{$rtl}{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-trendy-editor{$rtl}{$suffix}.css",
-			'color_schemes' => array(
+			'slug'           => 'trendy',
+			'label'          => _x( 'Trendy', 'design style name', 'go' ),
+			'url'            => get_theme_file_uri( "dist/css/design-styles/style-trendy{$rtl}{$suffix}.css" ),
+			'editor_style'   => "dist/css/design-styles/style-trendy-editor{$rtl}{$suffix}.css",
+			'color_schemes'  => array(
 				'one'   => array(
 					'label'             => _x( 'Plum', 'color palette name', 'go' ),
 					'primary'           => '#000000',
@@ -729,7 +729,7 @@ function get_available_design_styles() {
 					'footer_background' => '#000000',
 				),
 			),
-			'fonts'         => array(
+			'fonts'          => array(
 				'Trocchi'         => array(
 					'400',
 					'600',
@@ -747,11 +747,11 @@ function get_available_design_styles() {
 			'viewport_basis' => '850',
 		),
 		'welcoming'   => array(
-			'slug'          => 'welcoming',
-			'label'         => _x( 'Welcoming', 'design style name', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$rtl}{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-welcoming-editor{$rtl}{$suffix}.css",
-			'color_schemes' => array(
+			'slug'           => 'welcoming',
+			'label'          => _x( 'Welcoming', 'design style name', 'go' ),
+			'url'            => get_theme_file_uri( "dist/css/design-styles/style-welcoming{$rtl}{$suffix}.css" ),
+			'editor_style'   => "dist/css/design-styles/style-welcoming-editor{$rtl}{$suffix}.css",
+			'color_schemes'  => array(
 				'one'   => array(
 					'label'             => _x( 'Forest', 'color palette name', 'go' ),
 					'primary'           => '#165144',
@@ -785,7 +785,7 @@ function get_available_design_styles() {
 					'header_background' => '#ffffff',
 				),
 			),
-			'fonts'         => array(
+			'fonts'          => array(
 				'Work Sans' => array(
 					'300',
 					'700',
@@ -799,11 +799,11 @@ function get_available_design_styles() {
 			'viewport_basis' => '750',
 		),
 		'playful'     => array(
-			'slug'          => 'playful',
-			'label'         => _x( 'Playful', 'design style name', 'go' ),
-			'url'           => get_theme_file_uri( "dist/css/design-styles/style-playful{$rtl}{$suffix}.css" ),
-			'editor_style'  => "dist/css/design-styles/style-playful-editor{$rtl}{$suffix}.css",
-			'color_schemes' => array(
+			'slug'           => 'playful',
+			'label'          => _x( 'Playful', 'design style name', 'go' ),
+			'url'            => get_theme_file_uri( "dist/css/design-styles/style-playful{$rtl}{$suffix}.css" ),
+			'editor_style'   => "dist/css/design-styles/style-playful-editor{$rtl}{$suffix}.css",
+			'color_schemes'  => array(
 				'one'   => array(
 					'label'             => _x( 'Frolic', 'color palette name', 'go' ),
 					'primary'           => '#3f46ae',
@@ -845,7 +845,7 @@ function get_available_design_styles() {
 					'footer_background' => '#117495',
 				),
 			),
-			'fonts'         => array(
+			'fonts'          => array(
 				'Quicksand' => array(
 					'400',
 					'600',
