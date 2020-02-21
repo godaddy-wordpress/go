@@ -15,10 +15,15 @@
 	--go--type-scale-6: calc(var(--go--type-scale-5) * var(--go--type-ratio));
 
 	/* Spacing */
-	--go--spacing--vertical--lg: calc(100 / var(--go--viewport-basis) * 100vw);
 	--go--spacing--vertical: calc(var(--go--spacing--paragraph) / var(--go--viewport-basis) * 100rem);
+	--go--spacing--vertical--lg: calc(120 / var(--go--viewport-basis) * 100vw);
+
 	--go-block--padding--x: calc(var(--go--spacing--horizontal) / var(--go--viewport-basis) * 100vw);
 	--go-header--padding--y: calc(var(--go--spacing--header) / var(--go--viewport-basis) * 100vw);
+
+	@media (--medium) {
+		--go--spacing--vertical--lg: calc(100 / var(--go--viewport-basis) * 100vw);
+	}
 
 	@media (--huge) {
 		--go--spacing--vertical--lg: calc(90 / var(--go--viewport-basis) * 100rem);
