@@ -11,6 +11,11 @@
 define( 'GO_VERSION', '1.2.4' );
 
 /**
+ * AMPP setup, hooks, and filters.
+ */
+require_once get_parent_theme_file_path( 'includes/amp.php' );
+
+/**
  * Core setup, hooks, and filters.
  */
 require_once get_parent_theme_file_path( 'includes/core.php' );
@@ -43,6 +48,7 @@ require_once get_parent_theme_file_path( 'includes/woocommerce.php' );
 /**
  * Run setup functions.
  */
+Go\AMP\setup();
 Go\Core\setup();
 Go\TGM\setup();
 Go\Customizer\setup();

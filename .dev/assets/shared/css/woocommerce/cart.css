@@ -13,11 +13,11 @@ body {
 		}
 
 		& td.product-remove a {
-			color: hsl(var(--theme-color-primary)) !important;
+			color: var(--theme-color-primary) !important;
 			margin: 0 auto;
 
 			&:hover {
-				background: hsl(var(--theme-color-primary));
+				background: var(--theme-color-primary);
 			}
 		}
 

@@ -1,11 +1,10 @@
 /*! Pullquote */
 .wp-block-pullquote {
-	border-bottom: var(--theme-pullquote--border);
-	border-top: var(--theme-pullquote--border);
+	border: none;
 
 	&:not(.alignleft):not(.alignright) {
-		padding-bottom: var(--theme-pullquote--padding-y);
-		padding-top: var(--theme-pullquote--padding-y);
+		padding-bottom: var(--theme-pullquote--padding-y, 0.75rem);
+		padding-top: var(--theme-pullquote--padding-y, 0.75rem);
 	}
 
 	&:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
@@ -13,7 +12,7 @@
 		padding-right: var(--theme-pullquote--padding-x);
 
 		& p {
-			color: hsl(var(--theme-pullquote--color));
+			color: var(--theme-pullquote--color, var(--theme-color-heading));
 			margin: 1rem 0;
 		}
 	}
@@ -26,14 +25,14 @@
 
 		font-family: var(--theme-pullquote--font);
 		font-size: var(--theme-pullquote--font-size);
-		font-style: var(--theme-pullquote--style);
+		font-style: var(--theme-pullquote--style, italic);
 		font-weight: var(--theme-pullquote--weight);
 		line-height: var(--theme-pullquote--leading);
 	}
 
 	& cite,
 	& .wp-block-pullquote__citation {
-		color: hsl(var(--theme-caption--color));
+		color: var(--theme-caption--color, var(--theme-color-text-secondary));
 		display: inline-block;
 		font-size: var(--theme-caption--font-size);
 		font-style: var(--theme-caption--style, normal);
@@ -44,11 +43,11 @@
 	&.is-style-solid-color {
 
 		&:not([class*="background-color"]) {
-			background-color: hsl(var(--theme-color-primary));
+			background-color: var(--theme-color-primary);
 		}
 
 		&:not([class*="text-color"]) {
-			color: hsl(var(--color-white));
+			color: var(--color-white);
 		}
 
 		& blockquote {

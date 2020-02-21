@@ -63,7 +63,7 @@
 		overflow: hidden;
 
 		& .header__navigation {
-			background-color: hsl(var(--theme-header--bg, var(--color-white)));
+			background-color: var(--theme-header--bg, var(--color-white));
 			font-size: 1.5rem;
 			opacity: 1;
 			padding-bottom: var(--header-padding, 3vw);

@@ -13,7 +13,7 @@ export default () => {
 	wp.customize( 'header_background_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			const setTo = to ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : undefined ;
+			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined ;
 			document.querySelector( ':root' ).style.setProperty( '--theme-header--bg', setTo );
 
 			// Add class if a background color is applied.
@@ -28,7 +28,7 @@ export default () => {
 	wp.customize( 'header_text_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			const setTo = to ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : undefined ;
+			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined ;
 			document.querySelector( ':root' ).style.setProperty( '--theme-site-nav--color', setTo );
 			document.querySelector( ':root' ).style.setProperty( '--theme-site-description--color', setTo );
 			document.querySelector( ':root' ).style.setProperty( '--theme-search-toggle--color', setTo );

@@ -2,7 +2,7 @@
 .wp-block-coblocks-social {
 
 	& .wp-block-button__link:not(.has-background) {
-		background-color: hsl(var(--theme-button--bg));
+		background-color: var(--theme-button--bg);
 	}
 
 	& a::after {

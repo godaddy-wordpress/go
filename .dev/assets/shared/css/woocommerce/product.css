@@ -100,7 +100,7 @@
 
 /* Variations dropdowns */
 table.variations tbody tr:nth-child(odd) {
-	background-color: hsl(var(--color-white));
+	background-color: var(--color-white);
 }
 
 .woocommerce div.product form.cart .variations td,

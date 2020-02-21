@@ -1,7 +1,7 @@
 /*! Footer */
 .site-footer {
-	background-color: hsl(var(--theme-footer--bg));
-	color: hsl(var(--theme-footer--color));
+	background-color: var(--theme-footer--bg);
+	color: var(--theme-footer--color);
 	font-family: var(--theme-footer--font-family, inherit);
 
 	&.has-background {
@@ -9,7 +9,7 @@
 	}
 
 	& a {
-		color: hsl(var(--theme-footer--color));
+		color: var(--theme-footer--color);
 		text-decoration: none;
 
 		&:hover {
@@ -64,7 +64,7 @@
 }
 
 .footer-navigation__title {
-	color: hsl(var(--theme-footer-heading--color));
+	color: var(--theme-footer-heading--color);
 	display: block;
 	font-family: var(--theme-site-nav--font);
 	font-size: var(--theme-site-nav--font-size);

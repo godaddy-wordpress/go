@@ -1,5 +1,5 @@
 label {
-	color: hsl(var(--theme-label--color));
+	color: var(--theme-label--color, var(--theme-color-heading));
 	display: block;
 	font-family: var(--theme-label--font);
 	font-size: var(--theme-label--font-size);

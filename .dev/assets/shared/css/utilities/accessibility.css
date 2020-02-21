@@ -17,7 +17,7 @@
 	&:focus {
 		@mixin button;
 		@mixin outline;
-		background-color: hsl(var(--theme-button--bg));
+		background-color: var(--theme-button--bg);
 		border-bottom-left-radius: 0;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;

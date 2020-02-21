@@ -67,8 +67,8 @@
 	## Text Colors
 	--------------------------------------------------------------*/
 	--theme-color-heading: var(--theme-color-secondary);
-	--theme-color-text: 218, 12%, 30%;
-	--theme-color-text-secondary: 0, 0%, 43%;
+	--theme-color-text: hsl(218, 12%, 30%);
+	--theme-color-text-secondary: hsl(0, 0%, 43%);
 
 
 	/*--------------------------------------------------------------
@@ -124,39 +124,25 @@
 	/* Captions */
 	--theme-caption--alignment: left;
 	--theme-caption--alignment-opposite: right;
-	--theme-caption--color: var(--theme-color-text-secondary);
 	--theme-caption--font-size: 0.85rem;
 
 	/* Pullquote */
 	--theme-pullquote--font: serif;
-	--theme-pullquote--border-color: transparent;
-	--theme-pullquote--border-style: solid;
-	--theme-pullquote--border-width: 0;
-	--theme-pullquote--border: var(--theme-pullquote--border-width) var(--theme-pullquote--border-style) hsl(var(--theme-pullquote--border-color));
-	--theme-pullquote--color: var(--theme-color-heading);
 	--theme-pullquote--font-size: var(--theme-h2--font-size);
 	--theme-pullquote--leading: 1.25;
-	--theme-pullquote--padding-y: 0.75rem;
 	--theme-pullquote--padding-x: 1rem;
 	--theme-pullquote--style: normal;
 	--theme-pullquote--weight: var(--theme-heading--weight);
 
 	/* Blockquote */
-	--theme-quote--border-color: var(--theme-color-primary);
-	--theme-quote--border-style: solid;
 	--theme-quote--border-width: 0.45rem;
-	--theme-quote--border: var(--theme-quote--border-width) var(--theme-quote--border-style) hsl(var(--theme-quote--border-color));
-	--theme-quote--color: var(--theme-color-heading);
 	--theme-quote--font-size: var(--theme-h3--font-size);
 	--theme-quote--leading: var(--theme-heading--leading);
 	--theme-quote--style: normal;
 	--theme-quote--weight: var(--theme-heading--weight);
 
 	/* Blockquote (Large) */
-	--theme-quote-large--color: var(--theme-color-heading);
 	--theme-quote-large--font-size: 2.5em;
-	--theme-quote-large--leading: var(--theme-heading--leading);
-	--theme-quote-large--style: normal;
 
 	@media (--medium) {
 		--theme-quote-large--font-size: 3.75em;
@@ -166,7 +152,6 @@
 	/*--------------------------------------------------------------
 	## Forms
 	--------------------------------------------------------------*/
-	--theme-label--color: var(--theme-color-heading);
 	--theme-label--font-size: 1rem;
 	--theme-label--font: var(--theme-body--font);
 	--theme-label--tracking: var(--theme-site-nav--tracking);
@@ -176,11 +161,9 @@
 
 	/* Input */
 	--theme-input--bg: var(--theme-color-body-bg);
-	--theme-input--bg-interactive: 0, 0%, 100%;
-	--theme-input--border-color: var(--theme-color-heading);
-	--theme-input--border-style: solid;
+	--theme-input--bg-interactive: hsl(0, 0%, 100%);
 	--theme-input--border-width: 2px;
-	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style) hsl(var(--theme-input--border-color));
+	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
 	--theme-input--color: var(--theme-color-text);
 	--theme-input--font-size: var(--theme-body--font-size);
 	--theme-input--padding-x: 0.85rem;
@@ -189,18 +172,8 @@
 	--theme-input--weight: 400;
 
 	/* Input Focus */
-	--theme-input--border-color-focus: var(--theme-color-primary);
-	--theme-input--color-focus: var(--theme-color-text);
-
-	/* Errors */
-	--theme-input-error--border-color: 0, 65%, 51%; /* #d32f2f */
-	--theme-input-error--color: 0, 65%, 51%; /* #d32f2f */
-
-	/* Checkbox and Radio*/
-	--theme-checkbox-radio-fill: var(--theme-color-heading);
-
-	/* Feedback colors: error, success, warning, informational. */
-	--theme-feedback-informational-color: 208, 100%, 43%;
+	--theme-input--border-color-interactive: var(--theme-color-primary);
+	--theme-input--color-interactive: var(--theme-color-text);
 
 
 	/*--------------------------------------------------------------
@@ -217,10 +190,6 @@
 	--theme-button--text-transform: normal;
 	--theme-button--tracking: 0;
 	--theme-button--weight: 500;
-
-	/* Disabled */
-	--theme-button--disabled-bg: 0, 2%, 89%;
-	--theme-button--disabled-color: 0, 0%, 61%;
 
 
 	/*--------------------------------------------------------------
@@ -259,7 +228,6 @@
 	--theme-search-toggle--color-interactive: var(--theme-color-primary);
 	--theme-search-submit--bg: var(--theme-color-primary);
 	--theme-search-submit--bg-interactive: var(--theme-color-heading);
-	--theme-search-submit--color: var(--color-white);
 
 
 	/*--------------------------------------------------------------
@@ -290,7 +258,7 @@
 	--theme-social--spacing: 1rem;
 
 	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: 0, 0%, 80%;
+	--theme-footer-3-site-info--border-color: hsl(0, 0%, 80%);
 
 
 	/*--------------------------------------------------------------
@@ -309,22 +277,17 @@
 	--------------------------------------------------------------*/
 	--coblocks-accordion--bg-hover: none;
 	--coblocks-accordion--border-color: var(--theme-color-primary);
-	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid hsl(var(--coblocks-accordion--border-color));
+	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
 	--coblocks-accordion--color: var(--theme-color-primary);
 
 	--coblocks-features--icon-spacing: 2rem;
 	--coblocks-features--heading-spacing: 1rem;
 
-	--coblocks-food-drinks-desc--font-size: var(--theme-text-sm);
-	--coblocks-food-drinks-hint--bg: var(--theme-color-heading);
-	--coblocks-food-drinks-item--fill: var(--theme-color-heading);
 	--coblocks-food-drinks-item--font-size: 1.5em;
 	--coblocks-food-drinks-item--spacing: 3em;
 	--coblocks-food-drinks-item--text-transform: normal;
 	--coblocks-food-drinks-item--tracking: 0;
 	--coblocks-food-drinks-item--weight: 400;
-	--coblocks-food-drinks-price--color: var(--theme-color-text-secondary);
-	--coblocks-food-drinks-price--font-size: var(--theme-text-sm);
 	--coblocks-food-drinks-title--bg: none;
 	--coblocks-food-drinks-title--border-bottom: none;
 	--coblocks-food-drinks-title--color: var(--theme-color-heading);
@@ -333,12 +296,7 @@
 	--coblocks-food-drinks-title--padding: 0.5em 0.25em 0;
 	--coblocks-food-drinks-title--style: normal;
 
-	--coblocks-pricing--bg: var(--color-white);
-	--coblocks-pricing--border: 2px solid hsl(var(--theme-color-heading));
-	--coblocks-pricing--color-price: var(--theme-color-heading);
-	--coblocks-pricing--color-title: var(--theme-color-heading);
-
-	--coblocks-shapedivider--bg: var(--theme-color-primary);
+	--coblocks-pricing--border: 2px solid var(--theme-color-heading);
 
 	--coblocks-services--heading-margin-bottom: 1.25rem;
 	--coblocks-services--heading-margin-top: 2rem;

@@ -31,7 +31,7 @@
 }
 
 .site-title {
-	color: hsla(var(--theme-site-title--color), 1);
+	color: var(--theme-site-title--color);
 	font-family: var(--theme-site-title--font, var(--theme-heading--font));
 	font-size: var(--theme-site-title--font-size);
 	font-weight: var(--theme-site-title--weight, var(--theme-heading--weight));
@@ -42,7 +42,7 @@
 }
 
 .site-description {
-	color: hsl(var(--theme-site-description--color));
+	color: var(--theme-site-description--color);
 	font-family: var(--theme-site-description--font);
 	font-size: var(--theme-site-description--font-size) !important;
 	font-weight: var(--theme-site-description--weight, 400);

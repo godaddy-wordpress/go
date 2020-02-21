@@ -22,7 +22,7 @@
 		}
 
 		& .site-title {
-			color: hsla(var(--theme-footer-heading--color), 1);
+			color: var(--theme-footer-heading--color);
 		}
 
 		& .site-description {

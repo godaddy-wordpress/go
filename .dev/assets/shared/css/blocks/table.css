@@ -8,7 +8,7 @@
 
 	& table td,
 	& table th {
-		border: 2px solid hsl(var(--theme-table--border-color, var(--theme-color-heading)));
+		border: 2px solid var(--theme-table--border-color, var(--theme-color-heading));
 		padding: 1em;
 		word-break: break-all;
 	}

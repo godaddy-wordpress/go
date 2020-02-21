@@ -1,6 +1,6 @@
 /*! Color Utility Classes */
 .has-primary-background-color {
-	background-color: hsl(var(--theme-color-primary));
+	background-color: var(--theme-color-primary);
 
 	&,
 	& label,
@@ -11,43 +11,43 @@
 	& h5:not([class*="color"]),
 	& h6:not([class*="color"]),
 	& a:not(.wp-block-button__link) {
-		color: hsl(var(--color-white));
+		color: var(--color-white);
 	}
 }
 
 .has-primary-color {
-	color: hsl(var(--theme-color-primary));
+	color: var(--theme-color-primary);
 }
 
 .has-secondary-background-color {
-	background-color: hsl(var(--theme-color-secondary));
+	background-color: var(--theme-color-secondary);
 }
 
 .has-secondary-color {
-	color: hsl(var(--theme-color-secondary));
+	color: var(--theme-color-secondary);
 }
 
 .has-tertiary-background-color {
-	background-color: hsl(var(--theme-color-tertiary));
+	background-color: var(--theme-color-tertiary);
 
 	&,
 	& a:not(.wp-block-button__link) {
-		color: hsl(var(--theme-color-heading));
+		color: var(--theme-color-heading);
 	}
 }
 
 .has-tertiary-color {
-	color: hsl(var(--theme-color-tertiary));
+	color: var(--theme-color-tertiary);
 }
 
 .has-quaternary-background-color {
-	background-color: hsl(var(--color-white));
+	background-color: var(--color-white);
 }
 
 .has-quaternary-color {
-	color: hsl(var(--color-white));
+	color: var(--color-white);
 
 	&.wp-block-button__link {
-		color: hsl(var(--color-white)) !important;
+		color: var(--color-white) !important;
 	}
 }

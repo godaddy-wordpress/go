@@ -126,15 +126,18 @@
 @import url("utilities/colors.css");
 @import url("utilities/padding.css");
 
+/* AMP */
+@import url("amp/amp.css");
+
 .site-content {
 	overflow: hidden;
 }
 
 /* Everything below here still needs organizing */
 .u-informational {
-	background-color: hsla(var(--theme-feedback-informational-color), 0.1);
-	border: 1px solid hsla(var(--theme-feedback-informational-color), 1);
-	color: hsla(var(--theme-feedback-informational-color), 1);
+	background-color: var(--theme-feedback-informational-background-color, hsla(208, 100%, 43%, 0.1));
+	border: 1px solid var(--theme-feedback-informational-color, hsl(208, 100%, 43%));
+	color: var(--theme-feedback-informational-color, hsl(208, 100%, 43%));
 	line-height: 2;
 	padding: 0 0.5em;
 }

@@ -1,10 +1,10 @@
 @define-mixin button {
 	appearance: none !important;
-	background-color: hsl(var(--theme-button--bg));
+	background-color: var(--theme-button--bg);
 	border: none;
 	border-radius: var(--theme-button--radius);
 	box-sizing: border-box;
-	color: hsl(var(--theme-button--color, 0, 0%, 100%));
+	color: var(--theme-button--color, hsl(0, 0%, 100%));
 	display: inline-block;
 	font-family: var(--theme-button--font);
 	font-size: var(--theme-button--font-size);
@@ -20,17 +20,17 @@
 }
 
 @define-mixin button-hover {
-	background-color: hsl(var(--theme-button--bg-interactive));
+	background-color: var(--theme-button--bg-interactive);
 }
 
 @define-mixin button-disabled {
-	background-color: hsl(var(--theme-button--disabled-bg));
-	color: hsl(var(--theme-button--disabled-color));
+	background-color: var(--theme-button--disabled-bg, hsl(0, 2%, 89%));
+	color: var(--theme-button--disabled-color, hsl(0, 0%, 61%));
 	cursor: default;
 }
 
 @define-mixin outline {
-	outline-color: hsla(var(--theme-outline-color), 1);
+	outline-color: var(--theme-outline-color);
 	outline-style: var(--theme-outline-style, dotted);
 	outline-width: var(--theme-outline-width, 1px);
 }
@@ -38,20 +38,20 @@
 @define-mixin outline-text-link {
 	border: 0;
 	border-bottom-width: var(--theme-outline-width);
-	border-color: hsla(var(--theme-outline-color), 1);
+	border-color: var(--theme-outline-color);
 	border-style: var(--theme-outline-style, dotted);
 	outline: none;
 }
 
 @define-mixin select-menu {
 	appearance: button;
-	background-color: hsl(var(--theme-input--bg));
+	background-color: var(--theme-input--bg, 0, 0%, 100%);
 	background-image: url("../images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border: var(--theme-input--border);
 	box-shadow: none;
-	color: hsl(var(--theme-input--color));
+	color: var(--theme-input--color);
 	display: block;
 	font-weight: var(--theme-input--weight);
 	margin: 0;
@@ -64,9 +64,9 @@
 }
 
 @define-mixin select-menu-focus {
-	border-color: hsl(var(--theme-input--border-color-focus));
+	border-color: var(--theme-input--border-color-interactive);
 	box-shadow: var(--heme-input--shadow-focus);
-	color: hsl(var(--theme-input--color));
+	color: var(--theme-input--color);
 	outline: 0;
 }
 
@@ -77,7 +77,7 @@
 }
 
 @define-mixin checkbox-radio-label-before {
-	background-color: hsl(var(--theme-checkbox-radio-fill));
+	background-color: var(--theme-checkbox-radio-fill, var(--theme-color-heading));
 	content: "";
 	display: block;
 	height: 19px;
@@ -97,14 +97,14 @@
 }
 
 @define-mixin radio-label-before {
-	background-color: hsl(var(--color-white));
-	border: 1px solid hsl(var(--theme-checkbox-radio-fill));
+	background-color: var(--color-white);
+	border: 1px solid var(--theme-checkbox-radio-fill, var(--theme-color-heading));
 	border-radius: 9999px;
 	box-shadow: inset 0 0 0 3px #fff;
 }
 
 @define-mixin radio-label-selected-before {
-	background-color: hsl(var(--theme-checkbox-radio-fill));
+	background-color: var(--theme-checkbox-radio-fill, var(--theme-color-heading));
 }
 
 @define-mixin blockWidthNoPaddingWide {

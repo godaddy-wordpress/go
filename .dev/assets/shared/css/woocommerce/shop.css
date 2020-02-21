@@ -78,7 +78,7 @@
 
 		& .wc-block-grid__product-title,
 		& .woocommerce-loop-product__title {
-			color: hsl(var(--theme-heading--color));
+			color: var(--theme-color-heading);
 			font-family: var(--theme-heading--font);
 			font-size: var(--theme-h5--font-size);
 			font-weight: var(--theme-heading--weight);
@@ -92,7 +92,7 @@
 		}
 
 		& .price {
-			color: hsl(var(--theme-color-text-secondary));
+			color: var(--theme-color-text-secondary);
 			font-size: var(--theme-text-sm);
 
 			@media (--large) {

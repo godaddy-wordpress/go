@@ -3,7 +3,7 @@
 	max-width: var(--editor-title-max-w);
 
 	& .editor-post-title__input {
-		color: hsl(var(--theme-h1--color, var(--theme-color-heading)));
+		color: var(--theme-h1--color, var(--theme-color-heading));
 		font-family: var(--theme-heading--font);
 		font-size: var(--editor-title--font-size, var(--theme-h1--font-size));
 		font-style: var(--theme-heading--style, normal);

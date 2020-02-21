@@ -9,5 +9,5 @@
 }
 
 .wp-block-coblocks-gallery-carousel .flickity-button::after {
-	background-color: hsl(var(--theme-color-heading));
+	background-color: var(--theme-color-heading);
 }

@@ -3,7 +3,7 @@
 
 	& .flickity-button {
 		background-color: transparent;
-		border: 2px solid hsl(var(--color-white)) !important;
+		border: 2px solid var(--color-white) !important;
 		border-radius: 0;
 
 		&::after {
@@ -87,7 +87,7 @@
 .has-aligned-cells {
 
 	& .flickity-button::before {
-		background: hsl(var(--theme-button--bg));
+		background: var(--theme-button--bg);
 		bottom: 0;
 		content: "";
 		display: block;

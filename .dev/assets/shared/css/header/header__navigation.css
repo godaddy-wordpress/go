@@ -53,7 +53,7 @@
 	}
 
 	& a {
-		color: hsla(var(--theme-site-nav--color), 1);
+		color: var(--theme-site-nav--color);
 		display: inline-block;
 		font-family: var(--theme-site-nav--font);
 		font-size: var(--theme-site-nav--font-size-mobile);

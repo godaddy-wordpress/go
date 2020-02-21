@@ -9,6 +9,7 @@ namespace Go\Core;
 
 use function Go\hex_to_hsl;
 use function Go\load_inline_svg;
+use function Go\AMP\is_amp;
 
 /**
  * Set up theme defaults and register supported WordPress features.
@@ -124,6 +125,15 @@ function theme_setup() {
 		'custom-background',
 		array(
 			'default-color' => \Go\get_palette_color( 'background' ),
+		)
+	);
+
+	// Indicate that the theme works well in both Standard and Transitional template modes of the AMP plugin.
+	add_theme_support(
+		'amp',
+		array(
+			// The `paired` flag means that the theme retains logic to be fully functional when AMP is disabled.
+			'paired' => true,
 		)
 	);
 
@@ -313,6 +323,13 @@ function block_editor_assets() {
  */
 function scripts() {
 
+	// Short-circuit in AMP responses since custom scripts are not valid (unless refactored to use amp-script).
+	if ( is_amp() ) {
+
+		return;
+
+	}
+
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 
 	wp_enqueue_script(
@@ -412,6 +429,10 @@ function styles() {
  * @link https://git.io/vWdr2
  */
 function skip_link_focus_fix() {
+	if ( is_amp() ) {
+		// This is part of AMP. See <https://github.com/ampproject/amphtml/issues/18671>.
+		return;
+	}
 	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
 	?>
 	<script>

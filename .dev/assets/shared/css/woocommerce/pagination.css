@@ -32,10 +32,10 @@
 			&:focus,
 			&:hover {
 				background: transparent;
-				color: hsl(var(--color-shark));
+				color: var(--color-shark);
 
 				&::after {
-					border-bottom-color: hsl(var(--color-shark));
+					border-bottom-color: var(--color-shark);
 				}
 			}
 		}

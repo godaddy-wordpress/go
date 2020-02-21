@@ -68,9 +68,9 @@
 	& h4,
 	& h5,
 	& h6 {
-		background-color: hsl(var(--coblocks-food-drinks-title--bg));
+		background-color: var(--coblocks-food-drinks-title--bg, var(--theme-color-heading));
 		border-bottom: var(--coblocks-food-drinks-title--border-bottom);
-		color: hsl(var(--coblocks-food-drinks-title--color));
+		color: var(--coblocks-food-drinks-title--color, hsl(0, 0%, 100%));
 		font-size: var(--coblocks-food-drinks-title--font-size);
 		font-style: var(--coblocks-food-drinks-title--style);
 		margin-bottom: var(--coblocks-food-drinks-title--margin-y);
@@ -155,14 +155,14 @@
 	}
 
 	& .required {
-		color: hsl(var(--theme-color-primary));
+		color: var(--theme-color-primary);
 		margin-top: -6px;
 	}
 }
 
 .wp-block-search__label .rich-text,
 label:not(.components-toggle-control__label):not(.components-base-control__label) {
-	color: hsl(var(--theme-label--color));
+	color: var(--theme-label--color, var(--theme-color-heading));
 	font-family: var(--theme-label--font);
 	font-size: var(--theme-label--font-size);
 	font-weight: var(--theme-label--weight);
@@ -181,11 +181,11 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 .wp-block-search__input,
 .wp-block[data-type="coblocks/form"] .components-text-control__input,
 .wp-block[data-type="coblocks/form"] .components-textarea-control__input {
-	background-color: hsl(var(--theme-input--bg));
+	background-color: var(--theme-input--bg, 0, 0%, 100%);
 	border: var(--theme-input--border);
 	border-radius: var(--theme-input--radius, var(--theme-button--radius));
 	box-shadow: var(--theme-input--shadow, none);
-	color: hsl(var(--theme-input--color));
+	color: var(--theme-input--color);
 	font-size: var(--theme-input--font-size);
 	font-weight: var(--theme-input--weight);
 	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
@@ -270,7 +270,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 
 	& table td,
 	& table th {
-		border: 2px solid hsl(var(--theme-table--border-color, var(--theme-color-heading)));
+		border: 2px solid var(--theme-table--border-color, var(--theme-color-heading));
 	}
 }
 
@@ -281,7 +281,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 }
 
 .wp-block-separator {
-	border-bottom-color: hsl(var(--theme-separator--color, var(--theme-color-heading)));
+	border-bottom-color: var(--theme-separator--color, var(--theme-color-heading));
 	padding: 0;
 
 	&.is-style-wide {

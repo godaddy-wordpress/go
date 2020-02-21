@@ -15,5 +15,5 @@ body {
 }
 
 .has-footer-1 .footer-navigation a {
-	color: hsl(var(--theme-footer--color));
+	color: var(--theme-footer--color);
 }

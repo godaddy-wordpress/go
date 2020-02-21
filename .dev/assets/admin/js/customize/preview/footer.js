@@ -22,7 +22,7 @@ export default () => {
 	wp.customize( 'footer_background_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			const setTo = to ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : undefined;
+			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined;
 			document.querySelector( ':root' ).style.setProperty( '--theme-footer--bg', setTo );
 
 			// Add class if a background color is applied.
@@ -39,7 +39,7 @@ export default () => {
 	wp.customize( 'social_icon_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			const setTo = to ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : undefined;
+			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined;
 			document.querySelector( ':root' ).style.setProperty( '--theme-social--color', setTo );
 		} );
 	} );
@@ -47,7 +47,7 @@ export default () => {
 	wp.customize( 'footer_text_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			const setTo = to ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : undefined;
+			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined;
 			document.querySelector( ':root' ).style.setProperty( '--theme-footer--color', setTo );
 			document.querySelector( ':root' ).style.setProperty( '--theme-footer-nav--color', setTo );
 		} );
@@ -56,7 +56,7 @@ export default () => {
 	wp.customize( 'footer_heading_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			const setTo = to ? `${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%` : null;
+			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : null;
 			document.querySelector( ':root' ).style.setProperty( '--theme-footer-heading--color', setTo );
 		} );
 	} );

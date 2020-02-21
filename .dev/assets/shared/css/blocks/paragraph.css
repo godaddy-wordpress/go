@@ -2,7 +2,7 @@
 .has-drop-cap:not(:focus) {
 
 	&::first-letter {
-		color: hsl(var(--theme-color-primary));
+		color: var(--theme-color-primary);
 		font-size: var(--theme-dropcap--font-size, 5rem);
 		font-weight: var(--theme-dropcap--weight, 700);
 		line-height: 1;

@@ -1,8 +1,8 @@
 /*! WooCommerce store notice */
 .woocommerce-store-notice.demo_store {
-	background-color: hsl(var(--theme-color-primary));
+	background-color: var(--theme-color-primary);
 	bottom: 0;
-	color: hsl(var(--color-white));
+	color: var(--color-white);
 	font-size: 80%;
 	left: 0;
 	margin: 0;
@@ -13,7 +13,7 @@
 	z-index: 9998;
 
 	& a {
-		color: hsl(var(--color-white));
+		color: var(--color-white);
 		text-decoration: underline;
 
 		@media (--medium) {

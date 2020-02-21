@@ -12,7 +12,7 @@ export default () => {
 	 */
 	const setColor = ( color, cssVar ) => {
 		const hsl = hexToHSL( color );
-		document.querySelector( ':root' ).style.setProperty( `${cssVar}`, `${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%` );
+		document.querySelector( ':root' ).style.setProperty( `${cssVar}`, `hsl(${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%)` );
 	};
 
 	/**

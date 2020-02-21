@@ -17,7 +17,7 @@ body {
 
 				/* Must use :before, since woo reserves after for loader icon */
 				&::before {
-					background-color: hsl(var(--color-white));
+					background-color: var(--color-white);
 					bottom: 0;
 					content: "";
 					display: block;

@@ -10,6 +10,9 @@
       "except": ["first-nested", "blockless-after-blockless"],
       "ignore": ['after-comment'],
     }],
+    "selector-type-no-unknown": [true, {
+      "ignoreTypes": ["amp-state"],
+    }],
 	"sh-waqar/declaration-use-variable": [ [ "/color/", { ignoreValues: ["transparent", "inherit", "currentColor"] } ] ],
   }
 }

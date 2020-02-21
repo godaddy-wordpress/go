@@ -9,16 +9,16 @@
 @import url("woocommerce/product.css");
 
 html {
-	background-color: hsl(var(--theme-header--bg));
+	background-color: var(--theme-header--bg);
 }
 
 body {
-	border: 0.75rem solid hsl(var(--theme-header--bg));
+	border: 0.75rem solid var(--theme-header--bg);
 	border-top: 0;
 }
 
 .site-footer.has-background {
-	border-top: 0.75rem solid hsl(var(--theme-header--bg));
+	border-top: 0.75rem solid var(--theme-header--bg);
 }
 
 .has-footer-3 .site-footer__inner {
@@ -26,7 +26,7 @@ body {
 }
 
 .has-footer-3 .site-footer__row {
-	border-color: hsla(var(--theme-footer-3-site-info--border-color), 1);
+	border-color: var(--theme-footer-3-site-info--border-color);
 }
 
 .has-footer-3 .has-background .site-footer__row {
@@ -36,7 +36,7 @@ body {
 .primary-menu a {
 
 	&::after {
-		background-color: hsl(var(--theme-color-primary));
+		background-color: var(--theme-color-primary);
 		bottom: -0.2rem;
 		content: "";
 		height: 0.2rem;

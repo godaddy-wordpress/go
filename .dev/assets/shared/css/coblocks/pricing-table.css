@@ -3,7 +3,7 @@
 	border: var(--coblocks-pricing--border);
 
 	&:not(.has-background) {
-		background: hsl(var(--coblocks-pricing--bg));
+		background: var(--coblocks-pricing--bg, var(--color-white));
 	}
 
 	& .wp-block-coblocks-pricing-table-item__price-wrapper {
@@ -22,7 +22,7 @@
 		& .wp-block-coblocks-pricing-table-item__title,
 		& .wp-block-coblocks-pricing-table-item__amount,
 		& .wp-block-coblocks-pricing-table-item__currency {
-			color: hsl(var(--color-white));
+			color: var(--color-white);
 		}
 	}
 }
@@ -30,12 +30,12 @@
 .wp-block-coblocks-pricing-table-item:not(.has-text-color) {
 
 	& .wp-block-coblocks-pricing-table-item__title {
-		color: hsl(var(--coblocks-pricing--color-title));
+		color: var(--coblocks-pricing--color-title, var(--theme-color-heading));
 	}
 
 	& .wp-block-coblocks-pricing-table-item__currency,
 	& .wp-block-coblocks-pricing-table-item__amount {
-		color: hsl(var(--coblocks-pricing--color-price));
+		color: var(--coblocks-pricing--color-price, var(--theme-color-heading));
 	}
 }
 

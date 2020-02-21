@@ -34,7 +34,7 @@
 		}
 
 		& a {
-			color: hsl(var(--theme-footer-nav--color));
+			color: var(--theme-footer-nav--color);
 			display: block;
 			font-family: var(--theme-site-nav--font);
 			font-size: var(--theme-site-nav--font-size);
