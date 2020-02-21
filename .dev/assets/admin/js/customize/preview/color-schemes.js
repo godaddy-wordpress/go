@@ -25,7 +25,10 @@ export default () => {
 		if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] && 'undefined' !== typeof wp.customize.settings.controls ) {
 			const colors = designStyle.color_schemes[ colorScheme ];
 			toggleColorSchemes();
-			updateViewportBasis( designStyle );
+
+			setTimeout( function() {
+				updateViewportBasis( designStyle );
+			}, 200 );
 
 			Object.entries( wp.customize.settings.controls )
 				.filter( ( [ _control, config ] ) => config.type === 'color' )
@@ -55,7 +58,7 @@ export default () => {
 	 * Update the viewport basis for the selected design style.
 	 */
 	const updateViewportBasis = ( designStyle ) => {
-		let viewportBasis = ( 'undefined'!== typeof designStyle.viewport_basis ) ? designStyle.viewport_basis : '1000';
+		let viewportBasis = ( 'undefined'!== typeof designStyle.viewport_basis ) ? designStyle.viewport_basis : '950';
 		wp.customize.control( 'viewport_basis' ).setting( viewportBasis );
 	};
 
