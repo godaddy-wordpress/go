@@ -12,7 +12,6 @@ export default () => {
 			) {
 
 				setTimeout( function() {
-					// wp.customize.previewer.refresh();
 					const designStyle = GoPreviewData['design_styles'][ to ];
 					$( 'link[id*="design-style"]' ).attr( 'href', designStyle['url'] );
 
