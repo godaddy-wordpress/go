@@ -19,7 +19,7 @@ class Test_AMP extends WP_UnitTestCase {
 	/**
 	 * Test the hooked amp_nav_sub_menu_buttons
 	 */
-	function testHookedWalkerNav() {
+	function test_hooked_amp_nav_sub_menu_buttons() {
 
 		$this->assertEquals(
 			10,
@@ -32,7 +32,7 @@ class Test_AMP extends WP_UnitTestCase {
 	/**
 	 * Test the hooked amp_body_class
 	 */
-	function testHookedAMPBodyClass() {
+	function test_hooked_amp_body_class() {
 
 		$this->assertEquals(
 			10,
@@ -45,7 +45,7 @@ class Test_AMP extends WP_UnitTestCase {
 	/**
 	 * Test amp_body_class does not append amp when ! is_amp()
 	 */
-	function testAMPBodyClassNotAppend() {
+	function test_amp_body_class_non_amp() {
 
 		$this->assertTrue( ! in_array( 'amp', get_body_class(), true ) );
 
@@ -54,7 +54,7 @@ class Test_AMP extends WP_UnitTestCase {
 	/**
 	 * Test amp_body_class appends amp when is_amp()
 	 */
-	function testAMPBodyClassAppended() {
+	function test_amp_body_class_amp() {
 
 		add_filter( 'go_is_amp', '__return_true' );
 
@@ -65,7 +65,7 @@ class Test_AMP extends WP_UnitTestCase {
 	/**
 	 * Test amp_nav_sub_menu_buttons returns original output when ! is_amp()
 	 */
-	function testAMPNavSubMenuButtonsNotAMP() {
+	function test_amp_nav_sub_menu_buttons_non_amp() {
 
 		$nav_menu_item = $this->factory->post->create(
 			[
@@ -83,7 +83,7 @@ class Test_AMP extends WP_UnitTestCase {
 	/**
 	 * Test amp_nav_sub_menu_buttons returns correct output when is_amp()
 	 */
-	function testAMPNavSubMenuButtonsAMP() {
+	function test_amp_nav_sub_menu_buttons_amp() {
 
 		add_filter( 'go_is_amp', '__return_true' );
 
@@ -109,7 +109,7 @@ class Test_AMP extends WP_UnitTestCase {
 	/**
 	 * Test is_amp returns false
 	 */
-	function testisAMPIsFalse() {
+	function test_amp_is_false() {
 
 		add_filter( 'go_is_amp', '__return_false' );
 
@@ -120,7 +120,7 @@ class Test_AMP extends WP_UnitTestCase {
 	/**
 	 * Test is_amp returns true
 	 */
-	function testisAMPIsTrue() {
+	function test_amp_is_true() {
 
 		add_filter( 'go_is_amp', '__return_true' );
 

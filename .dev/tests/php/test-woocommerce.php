@@ -374,6 +374,26 @@ class Test_WooCommerce extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test if the WooCommerce cart menu item should render
+	 */
+	function test_should_show_woo_cart_item() {
+
+		$this->assertTrue( Go\WooCommerce\should_show_woo_cart_item() );
+
+	}
+
+	/**
+	 * Test that the WooCommerce cart menu item should not render when is_amp()
+	 */
+	function test_should_show_woo_cart_item_amp() {
+
+		add_filter( 'go_is_amp', '__return_true' );
+
+		$this->assertFalse( Go\WooCommerce\should_show_woo_cart_item() );
+
+	}
+
+	/**
 	 * Test the WooCommerce cart link does not render when go_wc_show_cart_menu is false
 	 */
 	function test_woocommerce_cart_link_disabled_woo_cart_link() {
