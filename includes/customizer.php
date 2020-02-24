@@ -343,7 +343,9 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		array(
 			'default'           => \Go\Core\get_default_copyright(),
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => function( $input, $setting ) {
+				return wp_kses( $input, \Go\get_copyright_kses_html() );
+			},
 		)
 	);
 
