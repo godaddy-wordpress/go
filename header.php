@@ -25,7 +25,7 @@
 		?>
 		aria-expanded="false"
 		[aria-expanded]="mainNavMenuExpanded ? 'true' : 'false'"
-		[class]="<?php echo esc_attr( sprintf( '%s + ( mainNavMenuExpanded ? " menu-is-open" : ""', wp_json_encode( implode( ' ', $body_class ) ) ) ); ?>"
+		[class]="'<?php echo esc_attr( implode( ' ', $body_class ) ); ?>' + ( mainNavMenuExpanded ? ' menu-is-open' : '' )"
 		<?php
 	}
 	?>
