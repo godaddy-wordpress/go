@@ -82,7 +82,7 @@
 	display: block;
 	height: 19px;
 	left: 0;
-	mask-position: left bottom;
+	mask-position: center center;
 	mask-repeat: no-repeat;
 	position: absolute;
 	width: 20px;
@@ -104,7 +104,7 @@
 }
 
 @define-mixin radio-label-selected-before {
-	background-color: var(--theme-checkbox-radio-fill, var(--theme-color-heading));
+	background-color: var(--theme-color-primary) !important;
 }
 
 @define-mixin blockWidthNoPaddingWide {
