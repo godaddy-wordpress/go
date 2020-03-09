@@ -8,6 +8,14 @@
 
 .wp-block-woocommerce-all-reviews {
 
+	& .wc-block-sort-select__select {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		display: inline;
+		padding: 5px 10px !important;
+		width: auto;
+	}
+
 	& .wc-block-review-list {
 		padding-left: 0;
 
@@ -36,9 +44,13 @@ h2 + .wc-block-grid {
 
 .wc-block-grid {
 
-	& .wc-block-grid__product-rating .star-rating span::before {
-		color: var(--theme-color-primary);
-		color: var(--theme-link--color, var(--theme-color-primary));
+	& .wc-block-grid__product-rating {
+		margin-bottom: 1em;
+
+		& .star-rating span::before {
+			color: var(--theme-color-primary);
+			color: var(--theme-link--color, var(--theme-color-primary));
+		}
 	}
 
 	& .wc-block-grid__product-link {
@@ -62,6 +74,14 @@ h2 + .wc-block-grid {
 		text-transform: inherit;
 		top: unset;
 		width: unset;
+	}
+
+	& li .price {
+		margin: 0.5em 0;
+
+		& + .wc-block-grid__product-add-to-cart {
+			margin-top: 1em;
+		}
 	}
 
 	& ul {
