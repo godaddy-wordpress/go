@@ -8,11 +8,11 @@
 	& .wp-caption,
 	& .wp-caption-text,
 	& .gallery-caption {
-		color: var(--theme-caption--color, var(--theme-color-text-secondary));
-		font-size: var(--theme-caption--font-size);
-		font-style: var(--theme-caption--style, normal);
-		margin-top: var(--theme-caption--spacing-top, 0.75em);
-		text-align: var(--theme-caption--alignment);
+		color: var(--go-caption--color--text);
+		font-size: var(--go-caption--font-size);
+		font-style: var(--go-caption--font-style, normal);
+		margin-top: var(--go-caption--margin-top, 0.75em);
+		text-align: var(--go-caption--text-align);
 	}
 
 	&.alignfull {
@@ -40,6 +40,6 @@ body.rtl .gallery {
 	& .wp-caption,
 	& .wp-caption-text,
 	& .gallery-caption {
-		text-align: var(--theme-caption--alignment-opposite);
+		text-align: var(--go-caption--text-align--rtl);
 	}
 }

@@ -2,14 +2,26 @@
 .has-footer-2 {
 
 	& .content-area > .alignfull:last-child {
-		margin-bottom: var(--theme-footer-2--padding-y) !important;
+		margin-bottom: calc(var(--go--spacing--vertical--lg) / 1.5) !important;
+
+		@media (--medium) {
+			margin-bottom: calc(var(--go--spacing--vertical--lg) / 2) !important;
+		}
 	}
 
 	& .site-footer {
-		padding-bottom: var(--theme-footer-2--padding-y);
+		padding-bottom: calc(var(--go--spacing--vertical--lg) / 1.5);
+
+		@media (--medium) {
+			padding-bottom: calc(var(--go--spacing--vertical--lg) / 2);
+		}
 
 		&.has-background {
-			padding-top: var(--theme-footer-2--padding-y);
+			padding-top: calc(var(--go--spacing--vertical--lg) / 1.5);
+
+			@media (--medium) {
+				padding-top: calc(var(--go--spacing--vertical--lg) / 2);
+			}
 		}
 	}
 
@@ -28,20 +40,20 @@
 
 			&:first-child a {
 				@media (--large) {
-					margin-left: calc(-1 * var(--theme-footer-nav--padding-x));
+					padding-left: 0;
 				}
 			}
 		}
 
 		& a {
-			color: var(--theme-footer-nav--color);
+			color: var(--go-footer-navigation--color--text, var(--go-navigation--color--text));
 			display: block;
-			font-family: var(--theme-site-nav--font);
-			font-size: var(--theme-site-nav--font-size);
-			font-weight: var(--theme-site-nav--weight);
-			letter-spacing: var(--theme-site-nav--tracking);
-			padding: var(--theme-footer-nav--padding-y) var(--theme-footer-nav--padding-x);
-			text-transform: var(--theme-site-nav--text-transform);
+			font-family: var(--go-navigation--font-family);
+			font-size: var(--go-navigation--font-size);
+			font-weight: var(--go-navigation--font-weight, 400);
+			letter-spacing: var(--go-navigation--letter-spacing, normal);
+			padding: 0 var(--go-navigation--padding--x, 2vw);
+			text-transform: var(--go-navigation--text-transform, normal);
 
 			&:focus {
 				@media (--medium) {
@@ -59,15 +71,15 @@
 		}
 
 		& a {
-			padding: calc(var(--theme-social--spacing) * 0.85);
+			padding: calc(var(--go-social--padding) * 0.85);
 
 			@media (--medium) {
-				padding: calc(var(--theme-social--spacing) * 0.5);
+				padding: calc(var(--go-social--padding) * 0.5);
 			}
 		}
 
 		& svg {
-			height: calc(var(--theme-social--size) * 0.85);
+			height: calc(var(--go-social--size) * 0.85);
 		}
 	}
 
@@ -77,7 +89,7 @@
 		text-align: center;
 
 		@media (--large) {
-			margin-bottom: calc(var(--theme-footer-nav--padding-y) * 0.85);
+			margin-bottom: calc(var(--go-navigation--padding--x) * 0.85);
 			margin-top: 0.75rem;
 			text-align: left;
 		}

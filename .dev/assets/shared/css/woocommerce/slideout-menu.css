@@ -74,14 +74,14 @@ body {
 	}
 
 	& svg {
-		fill: var(--theme-site-nav--color);
+		fill: var(--go-navigation--color--text);
 		vertical-align: sub;
 		width: 30px;
 	}
 }
 
 #site-nav--cart {
-	background: var(--theme-color-body-bg, hsl(0, 0%, 100%));
+	background: var(--go--color--background, var(--go--color--white));
 	height: 100vh;
 	overflow-y: auto;
 	padding: 60px 65px;
@@ -158,11 +158,11 @@ body {
 				top: 4px;
 
 				&:not(:hover) {
-					color: var(--theme-color-primary) !important;
+					color: var(--go--color--primary) !important;
 				}
 
 				&:hover {
-					background: var(--theme-color-primary);
+					background: var(--go--color--primary);
 				}
 			}
 

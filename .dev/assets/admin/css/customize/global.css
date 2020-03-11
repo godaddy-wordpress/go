@@ -6,7 +6,7 @@ body,
 .wp-block-pullquote.is-style-solid-color,
 .has-drop-cap:not(:focus)::first-letter,
 .wp-block-coblocks-shape-divider {
-	transition: var(--theme-button-transition);
+	transition: var(--go-button--transition, background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), box-shadow 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1));
 }
 
 .has-footer-background .content-area > *:last-child {

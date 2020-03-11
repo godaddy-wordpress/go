@@ -17,7 +17,7 @@
 			width: 100%;
 
 			&:first-child {
-				margin-bottom: var(--vertical-rhythm);
+				margin-bottom: var(--go--spacing--vertical);
 			}
 		}
 	}

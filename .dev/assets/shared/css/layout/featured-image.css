@@ -2,16 +2,16 @@
 	margin: 0;
 	max-height: 10em;
 	overflow: hidden;
-	padding-bottom: calc(var(--theme-featured-img--height, 35%) * 1.5);
+	padding-bottom: calc(var(--go-featured-image--height, 35%) * 1.5);
 	position: relative;
 	z-index: -1;
 
 	@media (--medium) {
-		padding-bottom: var(--theme-featured-img--height, 35%);
+		padding-bottom: var(--go-featured-image--height, 35%);
 	}
 
 	@media (--huge) {
-		padding-bottom: calc(var(--theme-featured-img--height, 35%) / 1.5);
+		padding-bottom: calc(var(--go-featured-image--height, 35%) / 1.5);
 	}
 
 	&::after {
@@ -61,11 +61,11 @@
 	& .site-title,
 	& .site-description,
 	& .header .primary-menu a {
-		color: var(--color-white);
+		color: var(--go--color--white);
 	}
 
 	& .nav-toggle-icon svg,
 	& .header__search-toggle svg {
-		fill: var(--color-white) !important;
+		fill: var(--go--color--white) !important;
 	}
 }

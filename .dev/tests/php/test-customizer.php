@@ -967,12 +967,12 @@ class Test_Customizer extends WP_UnitTestCase {
 		$inline_css = ob_get_clean();
 
 		$expected_strings = [
-			'--theme-color-primary',
-			'--theme-color-secondary',
-			'--theme-color-tertiary',
-			'--theme-color-body-bg',
-			'--theme-site-logo--width',
-			'--theme-site-logo--width-mobile',
+			'--go--color--primary',
+			'--go--color--secondary',
+			'--go--color--tertiary',
+			'--go--color--background',
+			'--go-logo--max-width',
+			'--go-logo-mobile--max-width',
 		];
 
 		foreach ( $expected_strings as $expected_string ) {
@@ -989,7 +989,7 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test the inline CSS outputs --theme-header--bg when a header background is used
+	 * Test the inline CSS outputs --go-header--color--background when a header background is used
 	 */
 	function test_inline_css_header_background() {
 
@@ -999,9 +999,9 @@ class Test_Customizer extends WP_UnitTestCase {
 		Go\Customizer\inline_css();
 		$inline_css = ob_get_clean();
 
-		if ( false === strpos( $inline_css, '--theme-header--bg' ) ) {
+		if ( false === strpos( $inline_css, '--go-header--color--background' ) ) {
 
-			$this->fail( "--theme-header--bg was not found in the output of Go\Customizer\inline_css() after setting header_background_color" );
+			$this->fail( "--go-header--color--background was not found in the output of Go\Customizer\inline_css() after setting header_background_color" );
 
 		}
 
@@ -1021,11 +1021,11 @@ class Test_Customizer extends WP_UnitTestCase {
 		$inline_css = ob_get_clean();
 
 		$expected_strings = [
-			'--theme-site-nav--color',
-			'--theme-site-description--color',
-			'--theme-site-title--color',
-			'--theme-search-toggle--color',
-			'--theme-search-submit--bg',
+			'--go-navigation--color--text',
+			'--go-site-description--color--text',
+			'--go-site-title--color--text',
+			'--go-search-toggle--color--text',
+			'--go-search-button--color--background',
 		];
 
 		foreach ( $expected_strings as $expected_string ) {
@@ -1042,7 +1042,7 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test the inline CSS outputs --theme-footer--bg when a footer background is used
+	 * Test the inline CSS outputs --go-footer--color--background when a footer background is used
 	 */
 	function test_inline_css_footer_background() {
 
@@ -1052,9 +1052,9 @@ class Test_Customizer extends WP_UnitTestCase {
 		Go\Customizer\inline_css();
 		$inline_css = ob_get_clean();
 
-		if ( false === strpos( $inline_css, '--theme-footer--bg' ) ) {
+		if ( false === strpos( $inline_css, '--go-footer--color--background' ) ) {
 
-			$this->fail( "--theme-footer--bg was not found in the output of Go\Customizer\inline_css() after setting footer_background_color" );
+			$this->fail( "--go-footer--color--background was not found in the output of Go\Customizer\inline_css() after setting footer_background_color" );
 
 		}
 
@@ -1063,7 +1063,7 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test the inline CSS outputs --theme-footer-heading--color when a footer background is used
+	 * Test the inline CSS outputs --go-footer-heading--color--text when a footer background is used
 	 */
 	function test_inline_css_footer_heading_color() {
 
@@ -1073,9 +1073,9 @@ class Test_Customizer extends WP_UnitTestCase {
 		Go\Customizer\inline_css();
 		$inline_css = ob_get_clean();
 
-		if ( false === strpos( $inline_css, '--theme-footer-heading--color' ) ) {
+		if ( false === strpos( $inline_css, '--go-footer-heading--color--text' ) ) {
 
-			$this->fail( "--theme-footer-heading--color was not found in the output of Go\Customizer\inline_css() after setting footer_heading_color" );
+			$this->fail( "--go-footer-heading--color--text was not found in the output of Go\Customizer\inline_css() after setting footer_heading_color" );
 
 		}
 
@@ -1095,8 +1095,8 @@ class Test_Customizer extends WP_UnitTestCase {
 		$inline_css = ob_get_clean();
 
 		$expected_strings = [
-			'--theme-footer--color',
-			'--theme-footer-nav--color',
+			'--go-footer--color--text',
+			'--go-footer-navigation--color--text',
 		];
 
 		foreach ( $expected_strings as $expected_string ) {
@@ -1113,7 +1113,7 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test the inline CSS outputs --theme-footer-heading--color when a footer background is used
+	 * Test the inline CSS outputs --go-footer-heading--color--text when a footer background is used
 	 */
 	function test_inline_css_social_icon_color() {
 
@@ -1123,9 +1123,9 @@ class Test_Customizer extends WP_UnitTestCase {
 		Go\Customizer\inline_css();
 		$inline_css = ob_get_clean();
 
-		if ( false === strpos( $inline_css, '--theme-social--color' ) ) {
+		if ( false === strpos( $inline_css, '--go-social--color--text' ) ) {
 
-			$this->fail( "--theme-social--color was not found in the output of Go\Customizer\inline_css() after setting social_icon_color" );
+			$this->fail( "--go-social--color--text was not found in the output of Go\Customizer\inline_css() after setting social_icon_color" );
 
 		}
 

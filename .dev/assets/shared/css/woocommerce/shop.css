@@ -1,6 +1,6 @@
 /*! WooCommerce: Shop */
 .content-area--woocommerce {
-	margin-bottom: var(--vertical-rhythm--lrg);
+	margin-bottom: var(--go--spacing--vertical--lg);
 
 	& .page-title {
 		display: none !important;
@@ -78,22 +78,22 @@
 
 		& .wc-block-grid__product-title,
 		& .woocommerce-loop-product__title {
-			color: var(--theme-color-heading);
-			font-family: var(--theme-heading--font);
-			font-size: var(--theme-h5--font-size);
-			font-weight: var(--theme-heading--weight);
-			letter-spacing: var(--theme-heading--tracking);
-			line-height: var(--theme-heading--leading);
+			color: var(--go-heading--color--text);
+			font-family: var(--go-heading--font-family);
+			font-size: var(--go--type-scale-2);
+			font-weight: var(--go-heading--font-weight);
+			letter-spacing: var(--go-heading--letter-spacing, normal);
+			line-height: var(--go-heading--line-height);
 			margin-bottom: 0.5rem;
 
 			@media (--large) {
-				font-size: var(--theme-h4--font-size);
+				font-size: var(--go--type-scale-3);
 			}
 		}
 
 		& .price {
-			color: var(--theme-color-text-secondary);
-			font-size: var(--theme-text-sm);
+			color: var(--go-caption--color--text);
+			font-size: var(--go--font-size--small);
 
 			@media (--large) {
 				margin-bottom: 2rem;

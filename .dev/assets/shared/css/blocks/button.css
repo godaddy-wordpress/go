@@ -2,19 +2,27 @@
 .wp-block-button {
 
 	&:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
-		background-color: var(--theme-button--bg);
+		background-color: var(--go-button--color--background, var(--go--color--primary));
+	}
+
+	&:not(.is-style-outline) .wp-block-button__link.has-quaternary-background-color:not(.has-text-color) {
+		color: var(--go--color--primary);
+	}
+
+	&:not(.is-style-outline) .wp-block-button__link.has-quaternary-background-color:not(.has-text-color):hover {
+		color: var(--go--color--quaternary);
 	}
 
 	&.is-style-outline .wp-block-button__link.has-primary-color:hover {
-		color: var(--theme-color-secondary);
+		color: var(--go--color--secondary);
 	}
 
 	&.is-style-outline .wp-block-button__link.has-secondary-color:hover {
-		color: var(--theme-color-primary);
+		color: var(--go--color--primary);
 	}
 
 	&.is-style-outline .wp-block-button__link:not(.has-text-color) {
-		color: var(--theme-color-primary);
+		color: var(--go--color--primary);
 	}
 
 	&.is-style-outline .wp-block-button__link:not(.has-background) {
@@ -24,11 +32,11 @@
 	&.is-style-outline .wp-block-button__link {
 		border-color: currentColor;
 		border-style: solid;
-		border-width: var(--theme-button--border-width);
-		padding: calc(var(--theme-button--padding-y) - 2px) calc(var(--theme-button--padding-x) - 2px);
+		border-width: var(--go-button--border-width, 2px);
+		padding: calc(var(--go-button--padding--y) - 2px) calc(var(--go-button--padding--x) - 2px);
 
 		&:hover {
-			color: var(--theme-color-secondary);
+			color: var(--go--color--secondary);
 		}
 	}
 
@@ -44,7 +52,8 @@
 	}
 
 	&:not(.is-style-outline) .wp-block-button__link.has-tertiary-background-color:hover {
-		background-color: var(--theme-color-tertiary);
+		background-color: var(--go--color--tertiary);
+		color: var(--go--color--primary);
 	}
 }
 

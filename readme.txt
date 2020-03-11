@@ -153,7 +153,7 @@ List of bespoke icons:
 * Update comments in design style CSS files.
 * Fix Playful design style default header text color.
 * Update headers and theme responsiveness.
-* Add variants to `--header-padding` values.
+* Add variants to `--go-header--padding--y` values.
 * Improved site search bar.
 * Fix submenu item word wrap.
 * Typecast all Go filters to return data in the expected format.

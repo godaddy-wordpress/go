@@ -1,5 +1,5 @@
 .wp-block-coblocks-features .wp-block-coblocks-feature .wp-block-coblocks-icon {
-	margin-bottom: var(--coblocks-features--icon-spacing);
+	margin-bottom: var(--wp-block-coblocks-features--icon--margin-bottom, 2rem);
 }
 
 .wp-block-coblocks-features .wp-block-coblocks-feature {
@@ -9,7 +9,7 @@
 	& h4,
 	& h5,
 	& h6 {
-		margin-bottom: var(--coblocks-features--heading-spacing);
+		margin-bottom: var(--wp-block-coblocks-features--heading--margin-bottom, 1.5rem);
 	}
 
 }

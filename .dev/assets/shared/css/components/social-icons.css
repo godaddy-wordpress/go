@@ -13,7 +13,7 @@
 		align-items: center;
 		display: flex;
 		justify-content: center;
-		padding: var(--theme-social--spacing);
+		padding: var(--go-social--padding);
 		transition: opacity 200ms cubic-bezier(0.694, 0.0482, 0.335, 1);
 
 		&:focus {
@@ -22,7 +22,7 @@
 	}
 
 	& svg {
-		fill: var(--theme-social--color);
+		fill: var(--go-social--color--text, var(--go-heading--color--text));
 		vertical-align: middle;
 	}
 }
