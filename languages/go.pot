@@ -8,9 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-02-21T21:39:20+00:00\n"
+"POT-Creation-Date: 2020-03-11T16:13:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.1.0\n"
+"X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
 
 #. Theme Name of the theme
@@ -33,6 +33,31 @@ msgstr ""
 msgid "https://www.godaddy.com"
 msgstr ""
 
+#: .dev/tests/php/test-template-tags.php:835
+#: .dev/tests/php/test-template-tags.php:865
+#: includes/core.php:86
+#: includes/customizer.php:430
+msgid "Primary"
+msgstr ""
+
+#: .dev/tests/php/test-template-tags.php:836
+#: .dev/tests/php/test-template-tags.php:866
+#: includes/core.php:87
+msgid "Footer Menu #1"
+msgstr ""
+
+#: .dev/tests/php/test-template-tags.php:837
+#: .dev/tests/php/test-template-tags.php:867
+#: includes/core.php:88
+msgid "Footer Menu #2"
+msgstr ""
+
+#: .dev/tests/php/test-template-tags.php:838
+#: .dev/tests/php/test-template-tags.php:868
+#: includes/core.php:89
+msgid "Footer Menu #3"
+msgstr ""
+
 #. translators: %s: The post title.
 #: comments.php:32
 msgid "One thought on &ldquo;%s&rdquo;"
@@ -43,6 +68,7 @@ msgstr ""
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
+msgstr[1] ""
 
 #: comments.php:61
 msgid "Comment navigation"
@@ -58,6 +84,14 @@ msgstr ""
 
 #: comments.php:73
 msgid "Comments are closed."
+msgstr ""
+
+#: header.php:39
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:56
+msgid "Horizontal"
 msgstr ""
 
 #: includes/classes/class-tgm-plugin-activation.php:325
@@ -87,51 +121,60 @@ msgstr ""
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
+msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:338
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
+msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:344
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
+msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:350
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
+msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:356
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
+msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:362
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
+msgstr[1] ""
 
 #: includes/classes/class-tgm-plugin-activation.php:368
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
+msgstr[1] ""
 
 #: includes/classes/class-tgm-plugin-activation.php:373
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
+msgstr[1] ""
 
 #: includes/classes/class-tgm-plugin-activation.php:378
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
+msgstr[1] ""
 
 #: includes/classes/class-tgm-plugin-activation.php:383
 msgid "Return to Required Plugins Installer"
@@ -154,6 +197,7 @@ msgstr ""
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
+msgstr[1] ""
 
 #. translators: 1: plugin name.
 #: includes/classes/class-tgm-plugin-activation.php:388
@@ -270,24 +314,28 @@ msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
+msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: includes/classes/class-tgm-plugin-activation.php:2390
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
+msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: includes/classes/class-tgm-plugin-activation.php:2394
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
+msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: includes/classes/class-tgm-plugin-activation.php:2398
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
+msgstr[1] ""
 
 #: includes/classes/class-tgm-plugin-activation.php:2480
 msgctxt "as in: \"version nr unknown\""
@@ -450,205 +498,6 @@ msgstr ""
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: includes/classes/class-tgm-plugin-activation.php:3518
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: includes/woocommerce.php:151
-msgid "View cart"
-msgstr ""
-
-#: includes/woocommerce.php:216
-msgid "Close sidebar"
-msgstr ""
-
-#: includes/woocommerce.php:224
-msgid "Cart"
-msgstr ""
-
-#. translators: 1. Single integer value. (eg: 1 product in your cart). 2. Integer larger than 1. (eg: 5 products in your cart).
-#: includes/woocommerce.php:231
-#: includes/woocommerce.php:281
-msgid "%s product in your cart"
-msgid_plural "%s products in your cart"
-msgstr[0] ""
-
-#: includes/woocommerce.php:335
-msgid "Your cart is currently empty."
-msgstr ""
-
-#: includes/woocommerce.php:462
-msgid "Previous Post: "
-msgstr ""
-
-#: includes/woocommerce.php:462
-msgid "Previous"
-msgstr ""
-
-#: includes/woocommerce.php:463
-msgid "Next Post:"
-msgstr ""
-
-#: includes/woocommerce.php:463
-msgid "Next"
-msgstr ""
-
-#: includes/woocommerce.php:494
-msgid "Back"
-msgstr ""
-
-#: includes/woocommerce.php:545
-msgid "Reset Selections"
-msgstr ""
-
-#. translators: %s is the registered nav menu name
-#: includes/customizer.php:101
-msgid "Please assign a menu to the %s menu location"
-msgstr ""
-
-#: includes/customizer.php:261
-msgid "Width"
-msgstr ""
-
-#: includes/customizer.php:290
-msgid "Mobile Width"
-msgstr ""
-
-#: includes/customizer.php:316
-msgid "Site Settings"
-msgstr ""
-
-#: includes/customizer.php:333
-msgid "Page Titles"
-msgstr ""
-
-#: includes/customizer.php:334
-msgid "Display page titles on individual pages."
-msgstr ""
-
-#: includes/customizer.php:353
-msgid "Copyright Text"
-msgstr ""
-
-#: includes/customizer.php:382
-msgid "Design Style"
-msgstr ""
-
-#: includes/customizer.php:383
-msgid "Choose a style, select a color scheme and customize colors to personalize your site."
-msgstr ""
-
-#: includes/customizer.php:406
-msgid "Color Scheme"
-msgstr ""
-
-#: includes/customizer.php:430
-#: includes/core.php:86
-#: .dev/tests/php/test-template-tags.php:835
-#: .dev/tests/php/test-template-tags.php:865
-msgid "Primary"
-msgstr ""
-
-#: includes/customizer.php:452
-msgid "Secondary"
-msgstr ""
-
-#: includes/customizer.php:474
-msgid "Tertiary"
-msgstr ""
-
-#: includes/customizer.php:498
-msgid "Spacing"
-msgstr ""
-
-#: includes/customizer.php:522
-#: includes/customizer.php:541
-msgid "Header"
-msgstr ""
-
-#: includes/customizer.php:542
-msgid "Choose a header for every page on your site, then style it with the selectors below."
-msgstr ""
-
-#: includes/customizer.php:564
-#: includes/customizer.php:646
-msgid "Background Color"
-msgstr ""
-
-#: includes/customizer.php:584
-#: includes/customizer.php:686
-msgid "Text Color"
-msgstr ""
-
-#: includes/customizer.php:604
-#: includes/customizer.php:623
-msgid "Footer"
-msgstr ""
-
-#: includes/customizer.php:624
-msgid "Choose a footer for every page on your site, then style it with the selectors below."
-msgstr ""
-
-#: includes/customizer.php:666
-msgid "Heading Color"
-msgstr ""
-
-#: includes/customizer.php:706
-msgid "Social"
-msgstr ""
-
-#: includes/customizer.php:750
-msgid "Icon Color"
-msgstr ""
-
-#: includes/customizer.php:767
-msgid "Site Design"
-msgstr ""
-
-#: includes/pluggable.php:28
-msgid "Pingback:"
-msgstr ""
-
-#: includes/pluggable.php:28
-msgid "(Edit)"
-msgstr ""
-
-#: includes/pluggable.php:44
-#: includes/template-tags.php:113
-msgid "Post author"
-msgstr ""
-
-#. translators: 1: date, 2: time
-#: includes/pluggable.php:51
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: includes/pluggable.php:57
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: includes/pluggable.php:62
-msgid "Edit"
-msgstr ""
-
-#: includes/pluggable.php:71
-msgid "Reply"
-msgstr ""
-
-#: includes/core.php:87
-#: .dev/tests/php/test-template-tags.php:836
-#: .dev/tests/php/test-template-tags.php:866
-msgid "Footer Menu #1"
-msgstr ""
-
-#: includes/core.php:88
-#: .dev/tests/php/test-template-tags.php:837
-#: .dev/tests/php/test-template-tags.php:867
-msgid "Footer Menu #2"
-msgstr ""
-
-#: includes/core.php:89
-#: .dev/tests/php/test-template-tags.php:838
-#: .dev/tests/php/test-template-tags.php:868
-msgid "Footer Menu #3"
 msgstr ""
 
 #: includes/core.php:163
@@ -918,6 +767,133 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
+#. translators: %s is the registered nav menu name
+#: includes/customizer.php:101
+msgid "Please assign a menu to the %s menu location"
+msgstr ""
+
+#: includes/customizer.php:261
+msgid "Width"
+msgstr ""
+
+#: includes/customizer.php:290
+msgid "Mobile Width"
+msgstr ""
+
+#: includes/customizer.php:316
+msgid "Site Settings"
+msgstr ""
+
+#: includes/customizer.php:333
+msgid "Page Titles"
+msgstr ""
+
+#: includes/customizer.php:334
+msgid "Display page titles on individual pages."
+msgstr ""
+
+#: includes/customizer.php:353
+msgid "Copyright Text"
+msgstr ""
+
+#: includes/customizer.php:382
+msgid "Design Style"
+msgstr ""
+
+#: includes/customizer.php:383
+msgid "Choose a style, select a color scheme and customize colors to personalize your site."
+msgstr ""
+
+#: includes/customizer.php:406
+msgid "Color Scheme"
+msgstr ""
+
+#: includes/customizer.php:452
+msgid "Secondary"
+msgstr ""
+
+#: includes/customizer.php:474
+msgid "Tertiary"
+msgstr ""
+
+#: includes/customizer.php:498
+msgid "Spacing"
+msgstr ""
+
+#: includes/customizer.php:522
+#: includes/customizer.php:541
+msgid "Header"
+msgstr ""
+
+#: includes/customizer.php:542
+msgid "Choose a header for every page on your site, then style it with the selectors below."
+msgstr ""
+
+#: includes/customizer.php:564
+#: includes/customizer.php:646
+msgid "Background Color"
+msgstr ""
+
+#: includes/customizer.php:584
+#: includes/customizer.php:686
+msgid "Text Color"
+msgstr ""
+
+#: includes/customizer.php:604
+#: includes/customizer.php:623
+msgid "Footer"
+msgstr ""
+
+#: includes/customizer.php:624
+msgid "Choose a footer for every page on your site, then style it with the selectors below."
+msgstr ""
+
+#: includes/customizer.php:666
+msgid "Heading Color"
+msgstr ""
+
+#: includes/customizer.php:706
+msgid "Social"
+msgstr ""
+
+#: includes/customizer.php:750
+msgid "Icon Color"
+msgstr ""
+
+#: includes/customizer.php:767
+msgid "Site Design"
+msgstr ""
+
+#: includes/pluggable.php:28
+msgid "Pingback:"
+msgstr ""
+
+#: includes/pluggable.php:28
+msgid "(Edit)"
+msgstr ""
+
+#: includes/pluggable.php:44
+#: includes/template-tags.php:113
+msgid "Post author"
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: includes/pluggable.php:51
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: includes/pluggable.php:57
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: includes/pluggable.php:62
+msgid "Edit"
+msgstr ""
+
+#: includes/pluggable.php:71
+msgid "Reply"
+msgstr ""
+
 #. Translators: %s = the author name.
 #: includes/template-tags.php:119
 msgctxt "%s = author name"
@@ -952,20 +928,57 @@ msgstr ""
 msgid "Search Toggle"
 msgstr ""
 
-#: header.php:39
-msgid "Skip to content"
+#: includes/woocommerce.php:151
+msgid "View cart"
 msgstr ""
 
-#: header.php:56
-msgid "Horizontal"
+#: includes/woocommerce.php:216
+msgid "Close sidebar"
 msgstr ""
 
-#: partials/pagination.php:21
-msgid "Newer <span class=\"nav-short\">Posts</span>"
+#: includes/woocommerce.php:224
+msgid "Cart"
 msgstr ""
 
-#: partials/pagination.php:25
-msgid "Older <span class=\"nav-short\">Posts</span>"
+#. translators: 1. Single integer value. (eg: 1 product in your cart). 2. Integer larger than 1. (eg: 5 products in your cart).
+#: includes/woocommerce.php:231
+#: includes/woocommerce.php:281
+msgid "%s product in your cart"
+msgid_plural "%s products in your cart"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/woocommerce.php:335
+msgid "Your cart is currently empty."
+msgstr ""
+
+#: includes/woocommerce.php:462
+msgid "Previous Post: "
+msgstr ""
+
+#: includes/woocommerce.php:462
+msgid "Previous"
+msgstr ""
+
+#: includes/woocommerce.php:463
+msgid "Next Post:"
+msgstr ""
+
+#: includes/woocommerce.php:463
+msgid "Next"
+msgstr ""
+
+#: includes/woocommerce.php:494
+msgid "Back"
+msgstr ""
+
+#: includes/woocommerce.php:545
+msgid "Reset Selections"
+msgstr ""
+
+#: partials/content-excerpt.php:25
+msgctxt "post"
+msgid "Featured"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
@@ -979,6 +992,14 @@ msgstr ""
 
 #: partials/content-none.php:38
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help you out."
+msgstr ""
+
+#: partials/content.php:44
+msgid "Page"
+msgstr ""
+
+#: partials/content.php:44
+msgid "Pages:"
 msgstr ""
 
 #: partials/footers/footer-1.php:18
@@ -1001,17 +1022,12 @@ msgstr ""
 msgid "Tertiary Footer Menu"
 msgstr ""
 
-#: partials/content-excerpt.php:25
-msgctxt "post"
-msgid "Featured"
+#: partials/pagination.php:21
+msgid "Newer <span class=\"nav-short\">Posts</span>"
 msgstr ""
 
-#: partials/content.php:44
-msgid "Page"
-msgstr ""
-
-#: partials/content.php:44
-msgid "Pages:"
+#: partials/pagination.php:25
+msgid "Older <span class=\"nav-short\">Posts</span>"
 msgstr ""
 
 #: searchform.php:21
