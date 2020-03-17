@@ -61,7 +61,7 @@ input[type="checkbox"] {
 			padding-left: 2rem;
 
 			&::before {
-				top: 5px;
+				top: 3px;
 			}
 		}
 	}
