@@ -62,8 +62,8 @@
 			&:hover {
 
 				& .star-rating {
-					color: var(--theme-color-primary);
-					color: var(--theme-link--color, var(--theme-color-primary));
+					color: var(--go--color--primary);
+					color: var(--go--hyperlink--color--text, var(--go--color--primary));
 				}
 			}
 
