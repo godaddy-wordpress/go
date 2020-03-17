@@ -45,6 +45,69 @@ input[type="checkbox"] {
 	appearance: none;
 }
 
+.coblocks-field {
+
+	& input[type="radio"],
+	& input[type="checkbox"],
+	& input[type="hidden"] {
+		display: none;
+	}
+
+	& .coblocks--inline {
+
+		& .coblocks-checkbox-label,
+		& .coblocks-radio-label {
+			margin-right: 20px;
+			padding-left: 2rem;
+
+			&::before {
+				top: 3px;
+			}
+		}
+	}
+}
+
+input[type="radio"]:checked + label::before {
+	background-color: var(--theme-color-primary) !important;
+}
+
+.coblocks-radio-label {
+	@mixin checkbox-radio-label;
+	position: relative;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&::before {
+		@mixin checkbox-radio-label-before;
+		@mixin radio-label-before;
+		top: 5px;
+	}
+}
+
+.coblocks-checkbox-label {
+	@mixin checkbox-radio-label;
+	position: relative;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&::before {
+		@mixin checkbox-radio-label-before;
+		@mixin checkbox-label-before;
+		top: 5px;
+	}
+}
+
+input[type="checkbox"]:checked + label {
+
+	&::before {
+		@mixin checkbox-label-checked-before;
+	}
+}
+
 textarea {
 	background-color: var(--go-input--color--background, var(--go--color--white));
 	border: var(--go-input--border);
