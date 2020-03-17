@@ -27,24 +27,24 @@
 }
 
 .alignwide {
-	--double-padding: calc(var(--theme-block-padding-x) * 2);
-	--half-width: calc(var(--theme-max-w-wide) * 0.5);
+	--double-padding: calc(var(--go-block--padding--x) * 2);
+	--half-width: calc(var(--go--max-width--alignwide) * 0.5);
 
-	left: calc(50% - 50vw + var(--theme-block-padding-x));
-	max-width: calc(100vw - var(--theme-block-padding-x));
+	left: calc(50% - 50vw + var(--go-block--padding--x));
+	max-width: calc(100vw - var(--go-block--padding--x));
 	position: relative;
 	width: calc(100vw - var(--double-padding));
 
 	@media (--large) {
-		left: calc(50% - 50vw + var(--theme-block-padding-x));
+		left: calc(50% - 50vw + var(--go-block--padding--x));
 		max-width: calc(100vw - var(--double-padding));
 		width: calc(100vw - var(--double-padding));
 	}
 
 	@media (--huge) {
-		left: calc(50% - var(--half-width) + var(--theme-block-padding-x));
-		max-width: calc(var(--theme-max-w-wide) - var(--double-padding));
-		width: calc(var(--theme-max-w-wide) - var(--double-padding));
+		left: calc(50% - var(--half-width) + var(--go-block--padding--x));
+		max-width: calc(var(--go--max-width--alignwide) - var(--double-padding));
+		width: calc(var(--go--max-width--alignwide) - var(--double-padding));
 	}
 }
 

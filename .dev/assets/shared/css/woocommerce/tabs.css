@@ -39,7 +39,7 @@
 .woocommerce div.product .woocommerce-tabs ul.tabs li a {
 	border-bottom: 2px solid transparent;
 	font-weight: 400;
-	line-height: var(--theme-body--leading);
+	line-height: var(--go--line-height);
 	padding: 0;
 }
 

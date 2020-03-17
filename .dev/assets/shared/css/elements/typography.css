@@ -1,34 +1,34 @@
 /*! Body Typography */
 body {
-	background-color: var(--theme-color-body-bg, 0, 0%, 100%);
-	color: var(--theme-color-text);
-	font-family: var(--theme-body--font);
-	font-size: var(--theme-body--font-size);
-	font-weight: var(--theme-body--weight, 400);
-	letter-spacing: var(--theme-body--tracking);
-	line-height: var(--theme-body--leading);
+	background-color: var(--go--color--background, 0, 0%, 100%);
+	color: var(--go--color--text);
+	font-family: var(--go--font-family);
+	font-size: var(--go--font-size);
+	font-weight: var(--go--font-weight, 400);
+	letter-spacing: var(--go--letter-spacing, normal);
+	line-height: var(--go--line-height);
 	text-rendering: optimizeLegibility;
 	word-wrap: break-word;
 }
 
 p {
-	font-size: var(--theme-body--font-size);
-	line-height: var(--theme-body--leading);
+	font-size: var(--go--font-size);
+	line-height: var(--go--line-height);
 }
 
 .content-area > blockquote {
-	border-left: var(--theme-quote--border-width) var(--theme-quote--border-style) var(--theme-quote--border-color);
+	border-left: var(--go-quote--border-width) var(--go-quote--border-style) var(--go-quote--border-color);
 	margin: 0;
 	padding-left: 0;
 	padding-right: 0;
 
 	& p {
-		color: var(--theme-quote--color, var(--theme-color-heading));
-		font-family: var(--theme-heading--font);
-		font-size: var(--theme-quote--font-size);
-		font-style: var(--theme-quote--style);
-		font-weight: var(--theme-quote--weight);
-		line-height: var(--theme-quote--leading);
+		color: var(--go-quote--color--text, var(--go-heading--color--text));
+		font-family: var(--go-heading--font-family);
+		font-size: var(--go-quote--font-size, var(--go--type-scale-4));
+		font-style: var(--go-quote--font-style, normal);
+		font-weight: var(--go-quote--font-weight, var(--go-heading--font-weight));
+		line-height: var(--go-quote--line-height, var(--go-heading--line-height));
 		margin: 0 0 2rem;
 		padding: 0.5rem 0 0.5rem 1.5rem;
 		position: relative;
@@ -57,7 +57,7 @@ table {
 
 	& td,
 	& th {
-		border: 2px solid var(--theme-table--border-color, var(--theme-color-heading));
+		border: 2px solid var(--go-table--border-color, var(--go-heading--color--text));
 		padding: 1em;
 		word-break: break-all;
 	}
@@ -70,7 +70,7 @@ code {
 }
 
 pre {
-	border: 0.1rem solid var(--theme-table--border-color, var(--theme-color-heading));
+	border: 0.1rem solid var(--go-table--border-color, var(--go-heading--color--text));
 	line-height: 1.5;
 	overflow: auto;
 	padding: 3rem 2rem;

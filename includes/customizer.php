@@ -478,6 +478,33 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 			)
 		)
 	);
+
+	$wp_customize->add_setting(
+		'viewport_basis',
+		array(
+			'default'           => \Go\Core\get_default_viewport_basis(),
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Range_Control(
+			$wp_customize,
+			'viewport_basis',
+			array(
+				'default'     => \Go\Core\get_default_viewport_basis(),
+				'type'        => 'go_range_control',
+				'label'       => esc_html__( 'Spacing', 'go' ),
+				'section'     => 'colors',
+				'input_attrs' => array(
+					'min'  => 500,
+					'max'  => 2250,
+					'step' => 1,
+				),
+			)
+		)
+	);
 }
 
 /**
@@ -783,60 +810,68 @@ function inline_css() {
 	// Site logo width.
 	$logo_width        = get_theme_mod( 'logo_width', '100' );
 	$logo_width_mobile = get_theme_mod( 'logo_width_mobile', '100' );
+
+	// Spacing.
+	$viewport_basis = get_theme_mod( 'viewport_basis', '1100' );
 	?>
 		<style>
 			:root {
+				--go--color--white: hsl(0, 0%, 100%);
 				<?php if ( $primary_color ) : ?>
-					--theme-color-primary: hsl(<?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>);
+					--go--color--primary: hsl(<?php echo esc_attr( $primary_color[0] ) . ', ' . esc_attr( $primary_color[1] ) . '%, ' . esc_attr( $primary_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $secondary_color ) : ?>
-					--theme-color-secondary: hsl(<?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>);
+					--go--color--secondary: hsl(<?php echo esc_attr( $secondary_color[0] ) . ', ' . esc_attr( $secondary_color[1] ) . '%, ' . esc_attr( $secondary_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $tertiary_color ) : ?>
-					--theme-color-tertiary: hsl(<?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>);
+					--go--color--tertiary: hsl(<?php echo esc_attr( $tertiary_color[0] ) . ', ' . esc_attr( $tertiary_color[1] ) . '%, ' . esc_attr( $tertiary_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $background_color ) : ?>
-					--theme-color-body-bg: hsl(<?php echo esc_attr( $background_color[0] ) . ', ' . esc_attr( $background_color[1] ) . '%, ' . esc_attr( $background_color[2] ) . '%'; ?>);
+					--go--color--background: hsl(<?php echo esc_attr( $background_color[0] ) . ', ' . esc_attr( $background_color[1] ) . '%, ' . esc_attr( $background_color[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $header_background ) : ?>
-					--theme-header--bg: hsl(<?php echo esc_attr( $header_background[0] ) . ', ' . esc_attr( $header_background[1] ) . '%, ' . esc_attr( $header_background[2] ) . '%'; ?>);
+					--go-header--color--background: hsl(<?php echo esc_attr( $header_background[0] ) . ', ' . esc_attr( $header_background[1] ) . '%, ' . esc_attr( $header_background[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $header_text_color ) : ?>
-					--theme-site-nav--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--theme-site-description--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--theme-site-title--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--theme-search-toggle--color: hsl(<?php echo esc_attr( $header_text_color ); ?>);
-					--theme-search-submit--bg: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-site-title--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-site-description--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-navigation--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-search-toggle--color--text: hsl(<?php echo esc_attr( $header_text_color ); ?>);
+					--go-search-button--color--background: hsl(<?php echo esc_attr( $header_text_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $footer_background ) : ?>
-					--theme-footer--bg: hsl(<?php echo esc_attr( $footer_background[0] ) . ', ' . esc_attr( $footer_background[1] ) . '%, ' . esc_attr( $footer_background[2] ) . '%'; ?>);
+					--go-footer--color--background: hsl(<?php echo esc_attr( $footer_background[0] ) . ', ' . esc_attr( $footer_background[1] ) . '%, ' . esc_attr( $footer_background[2] ) . '%'; ?>);
 				<?php endif; ?>
 
 				<?php if ( $footer_heading_color ) : ?>
-					--theme-footer-heading--color: hsl(<?php echo esc_attr( $footer_heading_color ); ?>);
+					--go-footer-heading--color--text: hsl(<?php echo esc_attr( $footer_heading_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $footer_text_color ) : ?>
-					--theme-footer--color: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
-					--theme-footer-nav--color: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
+					--go-footer--color--text: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
+					--go-footer-navigation--color--text: hsl(<?php echo esc_attr( $footer_text_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $social_icon_color ) : ?>
-					--theme-social--color: hsl(<?php echo esc_attr( $social_icon_color ); ?>);
+					--go-social--color--text: hsl(<?php echo esc_attr( $social_icon_color ); ?>);
 				<?php endif; ?>
 
 				<?php if ( $logo_width ) : ?>
-					--theme-site-logo--width: <?php echo esc_attr( $logo_width ); ?>px;
+					--go-logo--max-width: <?php echo esc_attr( $logo_width ); ?>px;
 				<?php endif; ?>
 
 				<?php if ( $logo_width_mobile ) : ?>
-					--theme-site-logo--width-mobile: <?php echo esc_attr( $logo_width_mobile ); ?>px;
+					--go-logo-mobile--max-width: <?php echo esc_attr( $logo_width_mobile ); ?>px;
+				<?php endif; ?>
+
+				<?php if ( false === $viewport_basis ) : ?>
+					--go--viewport-basis: <?php echo esc_attr( $viewport_basis ); ?>;
 				<?php endif; ?>
 			}
 		</style>

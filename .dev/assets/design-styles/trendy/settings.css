@@ -1,301 +1,129 @@
 :root {
 
-	/*--------------------------------------------------------------
-	>>> TABLE OF CONTENTS:
-	----------------------------------------------------------------
-	# Base
-	# Colors
-	# Typography
-	# Forms
-	# Buttons
-	# Header
-	# Header Navigation Toggle
-	# Header Search Toggle
-	# Entry Header
-	# Footer
-	# Blocks
-	# CoBlocks
+	/* Content width */
+	--go--max-width: 38rem;
+	--go--max-width--alignwide: 80rem;
 
+	/* Spacing */
+	--go--viewport-basis: 850;
+	--go--spacing--header: 27;
+	--go--spacing--horizontal: 55;
+	--go--spacing--paragraph: 15;
 
-	/*--------------------------------------------------------------
-	## Editor
-	--------------------------------------------------------------*/
-	--editor-max-w-base: 638px;
-	--editor-max-w-wide: 1118px;
-
-
-	/*--------------------------------------------------------------
-	## Base
-	--------------------------------------------------------------*/
-	--theme-max-w-base: 38rem;
-	--theme-max-w-wide: 80rem;
-
-	/* Vertical Rhythm */
-	--vertical-rhythm: 1.15rem;
-	--vertical-rhythm--med: 1.75rem;
-	--vertical-rhythm--lrg: calc(2rem + 10vw);
-
-	@media (--large) {
-		--vertical-rhythm: 1.8rem;
-		--vertical-rhythm--med: 2.3rem;
-	}
-
-	@media (--huge) {
-		--vertical-rhythm--lrg: 10rem;
-	}
-
-	/* Site Padding */
-	--theme-block-padding-x: 6vw;
-
-	@media (--huge) {
-		--theme-block-padding-x: 5.5rem;
-	}
-
-	/* Block Padding */
-	--editor-padding: 10vw;
-
-	/* Accessibility */
-	--theme-outline-color: var(--theme-color-primary);
-	--theme-selection--bg: var(--theme-color-heading);
-	--theme-selection--color: hsl(0, 0%, 100%);
-
-	/* Transitions */
-	--theme-link-transition: color 200ms cubic-bezier(0.7, 0, 0.3, 1);
-	--theme-button-transition: background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), box-shadow 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1);
-
-
-	/*--------------------------------------------------------------
-	## Text Colors
-	--------------------------------------------------------------*/
-	--theme-color-heading: hsl(0, 0%, 0%);
-	--theme-color-text: hsl(0, 0%, 0%);
-	--theme-color-text-secondary: hsl(0, 0%, 43%);
-
-
-	/*--------------------------------------------------------------
-	## Typography
-	--------------------------------------------------------------*/
-	--theme-body--font: "Noto Sans", sans-serif;
-	--theme-body--font-size: 1.1rem;
-	--theme-body--leading: 1.9;
+	/* Typography */
+	--go--color--text: hsl(0, 0%, 0%);
+	--go--font-family: "Noto Sans", sans-serif;
+	--go--font-size--small: 82.5%;
+	--go--font-size--smallest: 78%;
+	--go--font-size: 1.1rem;
+	--go--line-height: 1.9;
+	--go--type-ratio: 1.2;
 
 	/* Headings */
-	--theme-heading--font: "Trocchi", sans-serif;
-	--theme-heading--leading: 1.325;
-	--theme-heading--spacing: 1.25rem;
-	--theme-heading--tracking: 0;
-	--theme-heading--weight: 400;
-	--theme-heading--button-spacing: 1.75rem;
-
-	--theme-h1--font-size: 2.15em;
-	--theme-h2--font-size: 2em;
-	--theme-h3--font-size: 1.75em;
-	--theme-h4--font-size: 1.65em;
-	--theme-h5--font-size: 1.5em;
-	--theme-h6--font-size: 1.25em;
-
-	@media (--medium) {
-		--theme-h1--font-size: 3.25em;
-		--theme-h2--font-size: 2.5em;
-		--theme-h3--font-size: 2.25em;
-	}
-
-	@media (--huge) {
-		--theme-h1--font-size: 4em;
-	}
-
-	/* Text Utilities */
-	--theme-text-xs: 78%;
-	--theme-text-sm: 82.5%;
+	--go-heading--button-spacing: 1.75rem;
+	--go-heading--color--text: hsl(0, 0%, 0%);
+	--go-heading--font-family: "Trocchi", sans-serif;
+	--go-heading--font-weight: 400;
+	--go-heading--line-height: 1.325;
+	--go-heading--margin-bottom: 1.25rem;
 
 	/* Captions */
-	--theme-caption--alignment: center;
-	--theme-caption--font-size: 0.85rem;
+	--go-caption--color--text: hsl(0, 0%, 43%);
+	--go-caption--font-size: 0.85rem;
+	--go-caption--text-align: center;
 
 	/* Links */
-	--theme-link--color: var(--theme-color-heading);
-	--theme-link--color-interactive: var(--theme-color-primary);
-
-	/* Pullquote */
-	--theme-pullquote--font: var(--theme-heading--font);
-	--theme-pullquote--font-size: var(--theme-h2--font-size);
-	--theme-pullquote--leading: 1.25;
-	--theme-pullquote--padding-x: 1rem;
-	--theme-pullquote--weight: var(--theme-heading--weight);
+	--go--hyperlink--color--text: var(--go-heading--color--text);
+	--go--hyperlink-interactive--color--text: var(--go--color--primary);
 
 	/* Blockquote */
-	--theme-quote--font-size: var(--theme-h2--font-size);
-	--theme-quote--leading: var(--theme-heading--leading);
-	--theme-quote--style: normal;
-	--theme-quote--weight: var(--theme-heading--weight);
+	--go-quote-large--font-size: var(--go--type-scale-4);
 
-	/* Blockquote (Large) */
-	--theme-quote-large--font-size: var(--theme-h3--font-size);
+	/* Accessibility */
+	--go-outline--color--text: var(--go--color--primary);
+	--go-selection--color--background: var(--go-heading--color--text);
+	--go-selection--color--text: var(--go--color--white);
 
+	/* Buttons */
+	--go-button--font-size: 0.725rem;
+	--go-button--padding--x: 1.85rem;
+	--go-button--padding--y: 1.65rem;
+	--go-button--border-radius: 0;
+	--go-button--text-transform: uppercase;
+	--go-button--letter-spacing: 3px;
+	--go-button--font-weight: 600;
 
-	/*--------------------------------------------------------------
-	## Forms
-	--------------------------------------------------------------*/
-	--theme-label--font-size: var(--theme-site-nav--font-size);
-	--theme-label--font: var(--theme-site-nav--font);
-	--theme-label--tracking: var(--theme-site-nav--tracking);
-	--theme-label--transform: uppercase;
-	--theme-label--weight: var(--theme-site-nav--weight);
-	--theme-label--spacing: 0.5rem;
+	/* Labels */
+	--go-label--font-size: var(--go-navigation--font-size);
+	--go-label--font-weight: var(--go-navigation--font-weight, 400);
+	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
+	--go-label--margin-bottom: 0.5rem;
+	--go-label--text-transform: uppercase;
 
 	/* Input */
-	--theme-input--bg-interactive: var(--theme-color-tertiary);
-	--theme-input--border-width: 2px;
-	--theme-input--border: var(--theme-input--border-width) var(--theme-input--border-style, solid) var(--theme-input--border-color, var(--theme-color-heading));
-	--theme-input--color: var(--theme-color-text-secondary);
-	--theme-input--font-size: 1.1rem;
-	--theme-input--padding-x: 1.35rem;
-	--theme-input--padding-y: 1rem;
-	--theme-input--spacing: 2rem;
-	--theme-input--weight: 400;
+	--go-input--border-color-interactive: var(--go--color--tertiary);
+	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
+	--go-input--color--text: var(--go-caption--color--text);
+	--go-input--font-size: 1.1rem;
+	--go-input--margin-bottom: 2rem;
+	--go-input--padding--x: 1.35rem;
+	--go-input--padding--y: 1rem;
+	--go-input-interactive--color--text: var(--go-heading--color--text);
+	--go-input-interactive-color--background: var(--go--color--tertiary);
 
-	/* Input Focus */
-	--theme-input--border-color-interactive: var(--theme-color-tertiary);
-	--theme-input--color-interactive: var(--theme-color-heading);
-
-
-	/*--------------------------------------------------------------
-	## Buttons
-	--------------------------------------------------------------*/
-	--theme-button--bg: var(--theme-color-primary);
-	--theme-button--bg-interactive: var(--theme-color-secondary);
-	--theme-button--border-width: 2px;
-	--theme-button--font-size: 0.725rem;
-	--theme-button--font: var(--theme-site-nav--font);
-	--theme-button--padding-x: 1.85rem;
-	--theme-button--padding-y: 1.65rem;
-	--theme-button--radius: 0;
-	--theme-button--text-transform: uppercase;
-	--theme-button--tracking: 3px;
-	--theme-button--weight: 600;
-
-
-	/*--------------------------------------------------------------
-	## Header
-	--------------------------------------------------------------*/
-	--header-padding: 2.75vw;
-
-	@media (--huge) {
-		--header-padding: 2.5rem;
-	}
-
-	--theme-site-title--color: var(--theme-color-heading);
-	--theme-site-title--font-size: 1.5rem;
-	--theme-site-title--tracking: 0.033em;
-	--theme-site-title--weight: 400;
+	/* Site Title */
+	--go-site-title--color--text: var(--go-heading--color--text);
+	--go-site-title--font-size: 1.5rem;
+	--go-site-title--letter-spacing: 0.033em;
+	--go-site-title--font-weight: 400;
 
 	@media (--medium) {
-		--theme-site-title--font-size: 2rem;
+		--go-site-title--font-size: 2rem;
 	}
 
-	--theme-site-description--color: var(--theme-color-heading);
-	--theme-site-description--font: "Source Code Pro", monospace;
-	--theme-site-description--font-size: 0.9rem;
-	--theme-site-description--leading: 1.4;
-	--theme-site-description--font-weight: 400;
-	--theme-site-description--opacity: 1;
+	/* Site Description */
+	--go-site-description--color--text: var(--go-heading--color--text);
+	--go-site-description--font-family: "Source Code Pro", monospace;
+	--go-site-description--font-size: 0.9rem;
+	--go-site-description--font-family-weight: 400;
+	--go-site-description--opacity: 1;
 
-	/* Header > Navigation */
-	--theme-site-nav--color: var(--theme-color-heading);
-	--theme-site-nav--font: "Source Code Pro", monospace;
-	--theme-site-nav--font-size: 0.9rem;
-	--theme-site-nav--font-size-mobile: 1rem;
-	--theme-site-nav--weight: 400;
-	--theme-site-nav--tracking: 0;
-	--theme-site-nav--transition: var(--theme-link-transition);
+	/* Site Navigation */
+	--go-navigation--color--text: var(--go-heading--color--text);
+	--go-navigation--font-family: "Source Code Pro", monospace;
+	--go-navigation--font-size: 0.9rem;
+	--go-navigation-mobile--font-size: 1rem;
 
+	/* Site Search */
+	--go-search-button--color--text-interactive: var(--go--color--secondary);
+	--go-search-button--color--background: var(--go--color--primary);
+	--go-search-button--color--background-interactive: var(--go-heading--color--text);
 
-	/*--------------------------------------------------------------
-	## Search
-	--------------------------------------------------------------*/
-	--theme-search-toggle--color: var(--theme-color-text-heading);
-	--theme-search-toggle--color-interactive: var(--theme-color-secondary);
-	--theme-search-submit--bg: var(--theme-color-primary);
-	--theme-search-submit--bg-interactive: var(--theme-color-heading);
+	/* Footer */
+	--go-footer--color--background: var(--go--color--tertiary);
+	--go-footer--color--text: hsl(0, 0%, 55%);
+	--go-footer--font-family: "Source Code Pro", sans-serif;
+	--go-footer-3--border-color: var(--go--color--white);
+	--go-footer-heading--color--text: var(--go--color--white);
+	--go-footer-navigation--color--text: var(--go--color--white);
 
-
-	/*--------------------------------------------------------------
-	## Entry Header
-	--------------------------------------------------------------*/
-	--theme-entryheader--padding-top: 4rem;
-	--theme-entryheader--padding-bottom: 7rem;
-
-	@media (--large) {
-		--theme-entryheader--padding-bottom: 8.5rem;
-	}
-
-
-	/*--------------------------------------------------------------
-	## Footer
-	--------------------------------------------------------------*/
-	--theme-footer--bg: var(--theme-color-tertiary);
-	--theme-footer--color: 0, 0%, 55%;
-	--theme-footer--font-family: "Source Code Pro", sans-serif;
-	--theme-footer-heading--color: hsl(0, 0%, 100%);
-	--theme-footer-2--padding-y: 4rem;
-
-	/* Footer > Navigation */
-	--theme-footer-nav--color: hsl(0, 0%, 100%);
-	--theme-footer-nav--leading: 2.5;
-	--theme-footer-nav--padding-x: 1rem;
-	--theme-footer-nav--padding-y: 0.25rem;
+	/* Social Icons */
+	--go-social--color--text: var(--go--color--white);
+	--go-social--size: 1.5rem;
+	--go-social--padding: 0.5rem;
 
 	@media (--medium) {
-		--theme-footer-nav--padding-x: 1.75rem;
-		--theme-footer-nav--padding-y: 0.15rem;
+		--go-social--size: 1.65rem;
+		--go-social--padding: 1rem;
 	}
 
-	/* Footer > Social Icons */
-	--theme-social--color: hsl(0, 0%, 100%);
-	--theme-social--size: 1.5rem;
-	--theme-social--spacing: 0.5rem;
+	/* Posts */
+	--go-meta--color--text: var(--go-heading--color--text);
 
-	@media (--medium) {
-		--theme-social--size: 1.65rem;
-		--theme-social--spacing: 1rem;
-	}
+	/* CoBlocks */
+	--wp-block-coblocks-gallery-carousel--overlay--opacity: 0;
 
-	/* Footer Variations Specific */
-	--theme-footer-3-site-info--border-color: hsl(0, 0%, 100%);
-	--theme-footer-3-site-info--border-width: 1px;
-
-
-	/*--------------------------------------------------------------
-	## Post
-	--------------------------------------------------------------*/
-	--theme-meta--color: var(--theme-color-heading);
-	--theme-meta--font-size: 0.9rem;
-	--theme-comment-p--font-size: 0.95rem;
-
-
-	/*--------------------------------------------------------------
-	## CoBlocks
-	--------------------------------------------------------------*/
-	--coblocks-accordion--bg-hover: hsla(0, 0%, 0%, 0.1);
-	--coblocks-accordion--border-color: var(--theme-color-heading);
-	--coblocks-accordion--border: var(--coblocks-accordion--border-width, 2px) solid var(--coblocks-accordion--border-color);
-
-	--coblocks-features--icon-spacing: 2rem;
-	--coblocks-features--heading-spacing: 1.5rem;
-
-	--coblocks-food-drinks-item--font-size: 0.95em;
-	--coblocks-food-drinks-item--spacing: 3.5em;
-	--coblocks-food-drinks-item--text-transform: uppercase;
-	--coblocks-food-drinks-item--tracking: 2px;
-	--coblocks-food-drinks-item--weight: 700;
-	--coblocks-food-drinks-title--border-bottom: none;
-	--coblocks-food-drinks-title--font-size: 1.5em;
-	--coblocks-food-drinks-title--margin-y: 0.65em;
-	--coblocks-food-drinks-title--padding: 0.3em 0.25em 0.2em;
-	--coblocks-food-drinks-title--style: normal;
-
-	--coblocks-pricing--border: 2px solid var(--theme-color-heading);
-
-	--coblocks-services--heading-margin-bottom: 1rem;
-	--coblocks-services--heading-margin-top: 1.75rem;
+	/* Block Editor */
+	--editor-max-w-base: 638px;
+	--editor-max-w-wide: 1118px;
 }

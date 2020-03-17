@@ -14,12 +14,12 @@ body::before {
 		overflow: hidden;
 
 		& .header__navigation {
-			background-color: var(--theme-header--bg, var(--color-white));
+			background-color: var(--go-header--color--background, var(--go--color--white));
 			font-size: 1.5rem;
 			opacity: 1;
-			padding-bottom: var(--header-padding, 3vw);
-			padding-left: var(--theme-block-padding-x);
-			padding-right: var(--theme-block-padding-x);
+			padding-bottom: var(--go-header--padding--y, 3vw);
+			padding-left: var(--go-block--padding--x);
+			padding-right: var(--go-block--padding--x);
 			padding-top: 70px; /* This needs to be auto-generated based on the header height */
 			pointer-events: auto;
 			text-align: center;

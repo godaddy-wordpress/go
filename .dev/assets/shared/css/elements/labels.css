@@ -1,10 +1,10 @@
 label {
-	color: var(--theme-label--color, var(--theme-color-heading));
+	color: var(--go-label--color--text, var(--go-heading--color--text));
 	display: block;
-	font-family: var(--theme-label--font);
-	font-size: var(--theme-label--font-size);
-	font-weight: var(--theme-label--weight);
-	letter-spacing: var(--theme-label--tracking);
-	margin-bottom: var(--theme-label--spacing);
-	text-transform: var(--theme-label--transform);
+	font-family: var(--go-label--font-family, var(--go-navigation--font-family));
+	font-size: var(--go-label--font-size);
+	font-weight: var(--go-label--font-weight);
+	letter-spacing: var(--go-label--letter-spacing);
+	margin-bottom: var(--go-label--margin-bottom);
+	text-transform: var(--go-label--text-transform, normal);
 }

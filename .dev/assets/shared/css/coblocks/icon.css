@@ -1,4 +1,4 @@
 /*! CoBlocks: Icon */
 .wp-block-coblocks-icon__inner:not(.has-text-color) {
-	color: var(--theme-color-primary);
+	color: var(--go--color--primary);
 }

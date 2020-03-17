@@ -44,13 +44,13 @@
 }
 
 .search-modal-inner {
-	background-color: var(--theme-header--bg, var(--color-white, #fff));
+	background-color: var(--go-header--color--background, var(--go--color--white));
 	padding: 3vw;
 	transform: translateY(-100%);
 	transition: transform 0.15s linear, box-shadow 0.15s linear;
 
 	@media (--medium) {
-		padding: var(--header-padding, 3vw) var(--theme-block-padding-x);
+		padding: var(--go-header--padding--y, 3vw) var(--go-block--padding--x);
 	}
 }
 

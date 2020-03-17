@@ -1,7 +1,7 @@
 /*! CoBlocks: Author */
 .wp-block-coblocks-author {
-	border-radius: var(--coblocks-author--radius, 0);
-	padding: var(--coblocks-author--padding, 2.5rem);
+	border-radius: var(--wp-block-coblocks-author--border-radius, 0);
+	padding: var(--wp-block-coblocks-author--padding, 2.5rem);
 
 	& p ~ .wp-block-button {
 		margin-bottom: 10px !important;
@@ -10,5 +10,5 @@
 }
 
 .wp-block-coblocks-author__name {
-	color: var(--coblocks-author--color-name, var(--theme-color-heading));
+	color: var(--wp-block-coblocks-author--color--text, var(--go-heading--color--text));
 }

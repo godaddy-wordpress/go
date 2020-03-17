@@ -1,16 +1,24 @@
 html {
 	box-sizing: border-box;
-	font-size: 100%;
+	font-size: 100%; /* 1rem = 16px */
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	html {
+		scroll-behavior: auto;
+	}
 }
 
 ::-moz-selection {
-	background-color: var(--theme-selection--bg, var(--theme-color-primary));
-	color: var(--theme-selection--color, inherit);
+	background-color: var(--go-selection--color--background, var(--go--color--primary));
+	color: var(--go-selection--color--text, inherit);
 }
 
 ::selection {
-	background-color: var(--theme-selection--bg, var(--theme-color-primary));
-	color: var(--theme-selection--color, var(--color-white));
+	background-color: var(--go-selection--color--background, var(--go--color--primary));
+	color: var(--go-selection--color--text, var(--go--color--white));
 }
 
 *,
@@ -28,8 +36,8 @@ select,
 optgroup,
 textarea {
 	color: $color__text-main;
-	font-family: var(--theme-body--font);
-	font-weight: var(--theme-body--weight, 400);
-	line-height: var(--theme-body--leading);
+	font-family: var(--go--font-family);
+	font-weight: var(--go--font-weight, 400);
+	line-height: var(--go--line-height);
 	text-rendering: optimizeLegibility;
 }

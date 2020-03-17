@@ -21,7 +21,7 @@ body.amp.menu-is-open .site-header {
 }
 
 body.amp input[type="search"] {
-	background: var(--theme-input--bg-interactive);
+	background: var(--go-input-interactive--color--background);
 }
 
 body.amp .dropdown-toggle:not(.toggled-on) + a + amp-state + ul.sub-menu {
@@ -29,6 +29,5 @@ body.amp .dropdown-toggle:not(.toggled-on) + a + amp-state + ul.sub-menu {
 }
 
 body.amp .dropdown-toggle.toggled-on + a > svg {
-	-webkit-transform: translateY(-50%) rotate(180deg);
 	transform: translateY(-50%) rotate(180deg);
 }

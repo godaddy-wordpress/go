@@ -33,7 +33,7 @@
 }
 
 .woocommerce-tabs {
-	padding-top: var(--vertical-rhythm--lrg);
+	padding-top: var(--go--spacing--vertical--lg);
 }
 
 .related.products {
@@ -100,7 +100,7 @@
 
 /* Variations dropdowns */
 table.variations tbody tr:nth-child(odd) {
-	background-color: var(--color-white);
+	background-color: var(--go--color--white);
 }
 
 .woocommerce div.product form.cart .variations td,
@@ -137,7 +137,7 @@ table.variations tbody tr:nth-child(odd) {
 
 				& input {
 					margin-bottom: 0;
-					padding: var(--theme-input--padding-y) 36px var(--theme-input--padding-y) var(--theme-input--padding-x);
+					padding: var(--go-input--padding--y) 36px var(--go-input--padding--y) var(--go-input--padding--x);
 					width: 100%;
 				}
 			}
