@@ -25,7 +25,6 @@ module.exports = merge( common, {
 				reload: false,
 			}
 		),
-		new RtlCssPlugin( { filename: 'css/[name]-rtl.css' } ),
 		new OptimizeCssAssetsPlugin( {
 			assetNameRegExp: /\.*\.css$/g,
 			cssProcessor: require( 'cssnano' ),
@@ -37,16 +36,39 @@ module.exports = merge( common, {
 	],
 } );
 
-// Minify both the standard .css file and the -rtl.css files when running `npm run watch`
 if ( 'development' === process.env.NODE_ENV ) {
-	module.exports.plugins.push(
-		new MiniCssExtractPlugin( {
-			filename: 'css/[name].min.css',
-			chunkFilename: '[id].css',
-		} ),
-		new MiniCssExtractPlugin( {
-			filename: 'css/[name]-rtl.min.css',
-			chunkFilename: '[id].css',
-		} ),
-	);
+
+	let flags = [];
+
+	if ( undefined !== process.argv[5] ) {
+
+		flags = process.argv[5].replace( '--', '' ).split( ',' );
+
+	}
+
+	// Generate the RTL files when running `npm run start` and a --rtl flag is set
+	if ( flags.includes( 'rtl' ) ) {
+		module.exports.plugins.push(
+			new RtlCssPlugin( { filename: 'css/[name]-rtl.css' } ),
+		);
+
+		if ( flags.includes( 'min' ) ) {
+			module.exports.plugins.push(
+				new MiniCssExtractPlugin( {
+					filename: 'css/[name]-rtl.min.css',
+					chunkFilename: '[id].css',
+				} ),
+			);
+		}
+	}
+
+	// Minify both the standard .css file and the -rtl.css files when running `npm run start` and a --min flag is set
+	if ( flags.includes( 'min' ) ) {
+		module.exports.plugins.push(
+			new MiniCssExtractPlugin( {
+				filename: 'css/[name].min.css',
+				chunkFilename: '[id].css',
+			} ),
+		);
+	}
 }
