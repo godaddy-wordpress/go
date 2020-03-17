@@ -46,7 +46,7 @@ if ( 'development' === process.env.NODE_ENV ) {
 
 	}
 
-	// Generate the RTL files when running `npm run watch` and a --rtl flag is set
+	// Generate the RTL files when running `npm run start` and a --rtl flag is set
 	if ( flags.includes( 'rtl' ) ) {
 		module.exports.plugins.push(
 			new RtlCssPlugin( { filename: 'css/[name]-rtl.css' } ),
@@ -62,7 +62,7 @@ if ( 'development' === process.env.NODE_ENV ) {
 		}
 	}
 
-	// Minify both the standard .css file and the -rtl.css files when running `npm run watch` and a --min flag is set
+	// Minify both the standard .css file and the -rtl.css files when running `npm run start` and a --min flag is set
 	if ( flags.includes( 'min' ) ) {
 		module.exports.plugins.push(
 			new MiniCssExtractPlugin( {
