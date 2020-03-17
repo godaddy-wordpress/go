@@ -2,11 +2,87 @@
 	text-align: center;
 }
 
+.wc-block-featured-product .woocommerce-Price-amount {
+	color: var(--go-caption--color--text, var(--go--color--text));
+}
+
+.wp-block-woocommerce-all-reviews {
+
+	& .wc-block-sort-select__select {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		display: inline;
+		padding: 5px 10px !important;
+		width: auto;
+	}
+
+	& .wc-block-review-list {
+		padding-left: 0;
+
+		& .wc-block-review-list-item__item {
+			margin: 0 0 40px;
+
+			&:last-child {
+				margin: 0;
+			}
+
+			& .wc-block-review-list-item__rating__stars span::before {
+				color: var(--go--color--primary);
+				color: var(--go--hyperlink--color--text, var(--go--color--primary));
+			}
+		}
+	}
+}
+
+.wc-block-grid__product-add-to-cart a.added_to_cart {
+	margin-top: 0.5rem !important;
+}
+
 h2 + .wc-block-grid {
 	margin-top: 3rem;
 }
 
 .wc-block-grid {
+
+	& .wc-block-grid__product-rating {
+		margin-bottom: 1em;
+
+		& .star-rating span::before {
+			color: var(--go--color--primary);
+			color: var(--go--hyperlink--color--text, var(--go--color--primary));
+		}
+	}
+
+	& .wc-block-grid__product-link {
+		text-decoration: none;
+	}
+
+	& .wc-block-grid__product-image {
+		margin-bottom: 0;
+	}
+
+	& .wc-block-grid__product-onsale {
+		background-color: transparent;
+		border-radius: unset;
+		display: inline-block;
+		font-size: inherit;
+		height: unset;
+		left: unset;
+		letter-spacing: inherit;
+		margin: 0.25rem 0 0.75rem 0;
+		pointer-events: none;
+		text-transform: inherit;
+		top: unset;
+		width: unset;
+	}
+
+	& li .price {
+		margin: 0.5em 0;
+
+		& + .wc-block-grid__product-add-to-cart {
+			margin-top: 1em;
+		}
+	}
 
 	& ul {
 		justify-content: space-between;

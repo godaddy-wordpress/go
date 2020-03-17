@@ -59,6 +59,14 @@
 
 		& a {
 
+			&:hover {
+
+				& .star-rating {
+					color: var(--go--color--primary);
+					color: var(--go--hyperlink--color--text, var(--go--color--primary));
+				}
+			}
+
 			& img {
 				height: auto;
 				margin: 0;
@@ -72,7 +80,8 @@
 			/* Add to cart button appears on Shop page after ajax load */
 			&.added_to_cart {
 				border: none;
-				margin-left: 1rem;
+				margin: 0.5rem 0 0 1rem;
+				padding-top: 0;
 			}
 		}
 
@@ -89,6 +98,10 @@
 			@media (--large) {
 				font-size: var(--go--type-scale-3);
 			}
+		}
+
+		& .star-rating {
+			margin: 0 auto 0.5em;
 		}
 
 		& .price {

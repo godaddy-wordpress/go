@@ -68,7 +68,7 @@ input[type="checkbox"] {
 }
 
 input[type="radio"]:checked + label::before {
-	background-color: var(--theme-color-primary) !important;
+	background-color: var(--go--color--primary) !important;
 }
 
 .coblocks-radio-label {

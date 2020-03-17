@@ -25,7 +25,8 @@ body {
 
 		/* Secondary Button */
 		& #respond input#submit,
-		& .button {
+		& .button,
+		& .wp-block-button__link.add_to_cart_button {
 			@mixin button;
 
 			&:hover,
@@ -55,7 +56,7 @@ body {
 					line-height: 1;
 					margin-left: 1rem;
 					position: absolute;
-					right: 0.5rem;
+					right: 1rem;
 					top: auto;
 					vertical-align: bottom;
 				}
