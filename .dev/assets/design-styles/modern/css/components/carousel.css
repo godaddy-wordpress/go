@@ -2,8 +2,8 @@
 .wp-block-coblocks-gallery-carousel {
 
 	& .flickity-button {
-		background-color: transparent;
-		border: 2px solid var(--color-white) !important;
+		background-color: transparent !important;
+		border: 2px solid var(--go--color--white) !important;
 		border-radius: 0;
 
 		&::after {
@@ -16,15 +16,9 @@
 			height: 8px;
 			left: 13px;
 			position: absolute;
-			top: calc(50% - 3px);
+			top: calc(50% - 4px);
 			transition: transform 200ms cubic-bezier(0.7, 0, 0.3, 1);
 			width: 48px;
-		}
-
-		&:active,
-		&:focus,
-		&:hover {
-			background-color: var(--color-white);
 		}
 
 		&.next,
@@ -87,7 +81,7 @@
 .has-aligned-cells {
 
 	& .flickity-button::before {
-		background: var(--theme-button--bg);
+		background: var(--go-button--color--background, var(--go--color--primary));
 		bottom: 0;
 		content: "";
 		display: block;

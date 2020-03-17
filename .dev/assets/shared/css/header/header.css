@@ -1,6 +1,6 @@
 /*! Header */
 .header {
-	background-color: var(--theme-header--bg);
+	background-color: var(--go-header--color--background);
 	z-index: 2;
 
 	& .u-informational {
@@ -10,11 +10,11 @@
 }
 
 .header__inner {
-	padding: 2vw var(--theme-block-padding-x);
+	padding: 2vw var(--go-block--padding--x);
 
 	@media (--medium) {
-		padding-bottom: var(--header-padding, 3vw);
-		padding-top: var(--header-padding, 3vw);
+		padding-bottom: var(--go-header--padding--y, var(--go-block--padding--x));
+		padding-top: var(--go-header--padding--y, var(--go-block--padding--x));
 	}
 }
 
@@ -36,7 +36,7 @@
 		flex: inherit;
 		flex-grow: 0;
 		flex-shrink: 1;
-		margin-left: var(--theme-site-nav--padding-x, 2.25vw);
+		margin-left: var(--go-navigation--padding--x, 2.25vw);
 		margin-right: -0.75rem;
 		order: 3;
 	}

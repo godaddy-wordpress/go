@@ -2,8 +2,8 @@
 .wp-block-coblocks-hero {
 
 	&.alignfull .has-padding {
-		padding-left: var(--theme-block-padding-x);
-		padding-right: var(--theme-block-padding-x);
+		padding-left: var(--go-block--padding--x);
+		padding-right: var(--go-block--padding--x);
 	}
 
 	& .wp-block-coblocks-buttons {

@@ -3,9 +3,8 @@
 
 /* Global Variables */
 @import url("config/media-queries.css");
-@import url("config/colors.css");
-@import url("config/editor-font-sizes.css");
 @import url("config/mixins.css");
+@import url("config/root.css");
 
 /* Elements */
 @import url("elements/page.css");
@@ -135,9 +134,9 @@
 
 /* Everything below here still needs organizing */
 .u-informational {
-	background-color: var(--theme-feedback-informational-background-color, hsla(208, 100%, 43%, 0.1));
-	border: 1px solid var(--theme-feedback-informational-color, hsl(208, 100%, 43%));
-	color: var(--theme-feedback-informational-color, hsl(208, 100%, 43%));
+	background-color: var(--go-customizer-notice--color--background, hsla(208, 100%, 43%, 0.1));
+	border: 1px solid var(--go-customizer-notice--color--text, hsl(208, 100%, 43%));
+	color: var(--go-customizer-notice--color--text, hsl(208, 100%, 43%));
 	line-height: 2;
 	padding: 0 0.5em;
 }
@@ -147,11 +146,11 @@
 }
 
 .wp-block-coblocks-pricing-table-item__title {
-	font-family: var(--theme-site-nav--font);
-	font-size: var(--theme-site-nav--font-size);
-	font-weight: var(--theme-site-nav--weight);
-	letter-spacing: var(--theme-site-nav--tracking);
-	text-transform: var(--theme-site-nav--text-transform);
+	font-family: var(--go-navigation--font-family);
+	font-size: var(--go-navigation--font-size);
+	font-weight: var(--go-navigation--font-weight, 400);
+	letter-spacing: var(--go-navigation--letter-spacing, normal);
+	text-transform: var(--go-navigation--text-transform, normal);
 }
 
 div[class*="wp-block"].mb-0 {
@@ -250,11 +249,11 @@ figure {
 }
 
 .text-xs {
-	font-size: var(--theme-text-xs);
+	font-size: var(--go--font-size--smallest);
 }
 
 .text-sm {
-	font-size: var(--theme-text-sm);
+	font-size: var(--go--font-size--small);
 }
 
 .no-underline {
@@ -266,11 +265,11 @@ figure {
 }
 
 .max-w-base {
-	max-width: var(--theme-max-w-base);
+	max-width: var(--go--max-width);
 }
 
 .max-w-wide {
-	max-width: var(--theme-max-w-wide);
+	max-width: var(--go--max-width--alignwide);
 }
 
 .max-w-full {
@@ -304,8 +303,8 @@ figure {
 }
 
 .px {
-	padding-left: var(--theme-block-padding-x) !important;
-	padding-right: var(--theme-block-padding-x) !important;
+	padding-left: var(--go-block--padding--x) !important;
+	padding-right: var(--go-block--padding--x) !important;
 }
 
 @media (--small) {
@@ -331,7 +330,7 @@ figure {
 	}
 
 	.sm\:max-w-base {
-		max-width: var(--theme-max-w-base);
+		max-width: var(--go--max-width);
 	}
 }
 
@@ -358,11 +357,11 @@ figure {
 	}
 
 	.md\:max-w-base {
-		max-width: var(--theme-max-w-base);
+		max-width: var(--go--max-width);
 	}
 
 	.md\:max-w-wide {
-		max-width: var(--theme-max-w-wide);
+		max-width: var(--go--max-width--alignwide);
 	}
 
 	.md\:justify-between {
@@ -421,10 +420,10 @@ figure {
 	}
 
 	.lg\:max-w-base {
-		max-width: var(--theme-max-w-base);
+		max-width: var(--go--max-width);
 	}
 
 	.lg\:max-w-wide {
-		max-width: var(--theme-max-w-wide);
+		max-width: var(--go--max-width--alignwide);
 	}
 }

@@ -1,6 +1,6 @@
 /*! WooCommerce: Typography */
 .related.products h2 {
-	font-family: var(--theme-body--font);
-	font-size: var(--theme-h5--font-size);
+	font-family: var(--go--font-family);
+	font-size: var(--go--type-scale-2);
 	letter-spacing: 1px;
 }

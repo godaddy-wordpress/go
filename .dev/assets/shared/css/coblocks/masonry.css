@@ -10,17 +10,17 @@
 	}
 
 	& figcaption {
-		font-size: var(--theme-caption--font-size);
-		font-style: var(--theme-caption--style, normal);
+		font-size: var(--go-caption--font-size);
+		font-style: var(--go-caption--font-style, normal);
 		padding-left: 15px !important;
 		padding-right: 15px !important;
-		text-align: var(--theme-caption--alignment);
+		text-align: var(--go-caption--text-align);
 	}
 }
 
 body.rtl .wp-block-coblocks-gallery-masonry {
 
 	& figcaption {
-		text-align: var(--theme-caption--alignment-opposite);
+		text-align: var(--go-caption--text-align--rtl);
 	}
 }

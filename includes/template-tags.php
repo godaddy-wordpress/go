@@ -749,7 +749,6 @@ function navigation_toggle() {
 
 	if ( is_amp() ) {
 		?>
-		<!-- 1. Define the state -->
 		<amp-state id="mainNavMenuExpanded">
 			<script type="application/json">false</script>
 		</amp-state>

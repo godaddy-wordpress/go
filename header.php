@@ -20,16 +20,16 @@
 
 <body
 	<?php
+	$body_class = get_body_class();
 	if ( Go\AMP\is_amp() ) {
 		?>
 		aria-expanded="false"
 		[aria-expanded]="mainNavMenuExpanded ? 'true' : 'false'"
-		class="<?php echo esc_attr( implode( ' ', get_body_class() ) ); ?>"
-		[class]="'<?php echo esc_attr( implode( ' ', get_body_class() ) ); ?>' + ( mainNavMenuExpanded ? ' menu-is-open' : '' )"
+		[class]="'<?php echo esc_attr( implode( ' ', $body_class ) ); ?>' + ( mainNavMenuExpanded ? ' menu-is-open' : '' )"
 		<?php
 	}
-	body_class();
 	?>
+	class="<?php echo esc_attr( implode( ' ', $body_class ) ); ?>"
 >
 
 	<?php wp_body_open(); ?>

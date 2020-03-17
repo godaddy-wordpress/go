@@ -3,8 +3,8 @@
 
 	&.alignfull,
 	&.alignwide {
-		margin-bottom: var(--vertical-rhythm--lrg);
-		margin-top: var(--vertical-rhythm--lrg);
+		margin-bottom: var(--go--spacing--vertical--lg);
+		margin-top: var(--go--spacing--vertical--lg);
 	}
 
 	& img {

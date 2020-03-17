@@ -26,6 +26,10 @@ export default () => {
 			const colors = designStyle.color_schemes[ colorScheme ];
 			toggleColorSchemes();
 
+			setTimeout( function() {
+				updateViewportBasis( designStyle );
+			}, 200 );
+
 			Object.entries( wp.customize.settings.controls )
 				.filter( ( [ _control, config ] ) => config.type === 'color' )
 				.forEach( ( [ customizerControl, config ] ) => {
@@ -48,6 +52,14 @@ export default () => {
 	const toggleColorSchemes = () => {
 		$( 'label[for^=color_scheme_control]' ).hide();
 		$( `label[for^=color_scheme_control-${selectedDesignStyle}-]` ).show();
+	};
+
+	/**
+	 * Update the viewport basis for the selected design style.
+	 */
+	const updateViewportBasis = ( designStyle ) => {
+		let viewportBasis = ( 'undefined'!== typeof designStyle.viewport_basis ) ? designStyle.viewport_basis : '950';
+		wp.customize.control( 'viewport_basis' ).setting( viewportBasis );
 	};
 
 	/**
@@ -82,18 +94,18 @@ export default () => {
 	} );
 
 	wp.customize( 'background_color', ( value ) => {
-		value.bind( ( to ) => setColor( to, '--theme-color-body-bg' ) );
+		value.bind( ( to ) => setColor( to, '--go--color--background' ) );
 	} );
 
 	wp.customize( 'primary_color', ( value ) => {
-		value.bind( ( to ) => setColor( to, '--theme-color-primary' ) );
+		value.bind( ( to ) => setColor( to, '--go--color--primary' ) );
 	} );
 
 	wp.customize( 'secondary_color', ( value ) => {
-		value.bind( ( to ) => setColor( to, '--theme-color-secondary' ) );
+		value.bind( ( to ) => setColor( to, '--go--color--secondary' ) );
 	} );
 
 	wp.customize( 'tertiary_color', ( value ) => {
-		value.bind( ( to ) => setColor( to, '--theme-color-tertiary' ) );
+		value.bind( ( to ) => setColor( to, '--go--color--tertiary' ) );
 	} );
 };

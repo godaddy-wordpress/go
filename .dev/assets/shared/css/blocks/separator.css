@@ -1,8 +1,8 @@
 /*! Separator */
 .wp-block-separator {
-	border-bottom-color: var(--theme-separator--color, var(--theme-color-heading));
+	border-bottom-color: var(--go-separator--color--border, var(--go-heading--color--text));
 
 	&.is-style-dots::before {
-		font-size: var(--theme-separator--dot-size, 2rem);
+		font-size: var(--go-separator--size, 2rem);
 	}
 }
