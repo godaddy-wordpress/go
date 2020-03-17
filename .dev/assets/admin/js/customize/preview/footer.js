@@ -23,7 +23,7 @@ export default () => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined;
-			document.querySelector( ':root' ).style.setProperty( '--theme-footer--bg', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-footer--color--background', setTo );
 
 			// Add class if a background color is applied.
 			if ( to ) {
@@ -40,7 +40,7 @@ export default () => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined;
-			document.querySelector( ':root' ).style.setProperty( '--theme-social--color', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-social--color--text', setTo );
 		} );
 	} );
 
@@ -48,8 +48,8 @@ export default () => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined;
-			document.querySelector( ':root' ).style.setProperty( '--theme-footer--color', setTo );
-			document.querySelector( ':root' ).style.setProperty( '--theme-footer-nav--color', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-footer--color--text', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-footer-navigation--color--text', setTo );
 		} );
 	} );
 
@@ -57,7 +57,7 @@ export default () => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : null;
-			document.querySelector( ':root' ).style.setProperty( '--theme-footer-heading--color', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-footer-heading--color--text', setTo );
 		} );
 	} );
 

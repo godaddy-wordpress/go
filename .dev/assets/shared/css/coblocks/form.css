@@ -2,14 +2,14 @@
 .coblocks-form {
 
 	& .coblocks-label {
-		margin-bottom: var(--theme-label--spacing);
+		margin-bottom: var(--go-label--margin-bottom);
 	}
 
 	& .coblocks-field {
-		margin-bottom: var(--theme-input--spacing);
+		margin-bottom: var(--go-input--margin-bottom);
 	}
 
 	& .required {
-		color: var(--theme-color-primary);
+		color: var(--go--color--primary);
 	}
 }

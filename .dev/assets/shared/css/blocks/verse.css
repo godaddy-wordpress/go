@@ -1,6 +1,6 @@
 /*! Verse */
 pre {
-	border: 0.1rem solid var(--theme-table--border-color, var(--theme-color-heading));
+	border: 0.1rem solid var(--go-table--border-color, var(--go-heading--color--text));
 	line-height: 1.5;
 	overflow: auto;
 	padding: 3rem 2rem;

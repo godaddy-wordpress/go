@@ -10,7 +10,7 @@
 
 .site-title {
 	@media (--largeMax) {
-		margin-left: calc(var(--theme-site-title--tracking) * 2.5);
+		margin-left: calc(var(--go-site-title--letter-spacing) * 2.5);
 	}
 }
 

@@ -3,11 +3,7 @@
 	text-align: center;
 
 	& > * {
-		max-width: var(--theme-not-found-width, 42rem);
-	}
-
-	& p {
-		margin-bottom: calc(var(--vertical-rhythm--med) * 1.5);
+		max-width: 42rem;
 	}
 
 	& .site-search {
@@ -31,7 +27,7 @@
 	& input[type="search"] {
 		margin-bottom: 0;
 		margin-right: 8px;
-		padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+		padding: var(--go-input--padding--y) var(--go-input--padding--x);
 		width: 100%;
 	}
 }

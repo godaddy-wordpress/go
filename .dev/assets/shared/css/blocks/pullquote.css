@@ -3,16 +3,16 @@
 	border: none;
 
 	&:not(.alignleft):not(.alignright) {
-		padding-bottom: var(--theme-pullquote--padding-y, 0.75rem);
-		padding-top: var(--theme-pullquote--padding-y, 0.75rem);
+		padding-bottom: var(--go-pullquote--padding--y, 0.75rem);
+		padding-top: var(--go-pullquote--padding--y, 0.75rem);
 	}
 
 	&:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
-		padding-left: var(--theme-pullquote--padding-x);
-		padding-right: var(--theme-pullquote--padding-x);
+		padding-left: var(--go-pullquote--padding-x, 1rem);
+		padding-right: var(--go-pullquote--padding-x, 1rem);
 
 		& p {
-			color: var(--theme-pullquote--color, var(--theme-color-heading));
+			color: var(--go-pullquote--color--text, var(--go-heading--color--text));
 			margin: 1rem 0;
 		}
 	}
@@ -23,43 +23,41 @@
 
 	& p {
 
-		font-family: var(--theme-pullquote--font);
-		font-size: var(--theme-pullquote--font-size);
-		font-style: var(--theme-pullquote--style, italic);
-		font-weight: var(--theme-pullquote--weight);
-		line-height: var(--theme-pullquote--leading);
+		font-family: var(--go-pullquote--font-family, var(--go-heading--font-family));
+		font-size: var(--go-pullquote--font-size, var(--go--type-scale-5));
+		font-style: var(--go-pullquote--font-style, italic);
+		font-weight: var(--go-pullquote--font-weight, var(--go-heading--font-weight));
+		line-height: var(--go-pullquote--line-height, 1.25);
 	}
 
 	& cite,
 	& .wp-block-pullquote__citation {
-		color: var(--theme-caption--color, var(--theme-color-text-secondary));
+		color: var(--go-caption--color--text);
 		display: inline-block;
-		font-size: var(--theme-caption--font-size);
-		font-style: var(--theme-caption--style, normal);
-		margin-bottom: calc(var(--theme-pullquote--padding-y) + 0.5rem);
+		font-size: var(--go-caption--font-size, var(--go--type-scale-5));
+		font-style: var(--go-caption--font-style, normal);
+		margin-bottom: calc(var(--go-pullquote--padding--y) + 0.5rem);
 		text-transform: none;
 	}
 
 	&.is-style-solid-color {
+		padding: 0 !important;
 
 		&:not([class*="background-color"]) {
-			background-color: var(--theme-color-primary);
+			background-color: var(--go--color--primary);
 		}
 
 		&:not([class*="text-color"]) {
-			color: var(--color-white);
+			color: var(--go--color--white);
 		}
 
 		& blockquote {
 			max-width: 100%;
-			padding: calc(var(--editor-padding) / 3) calc(var(--editor-padding) / 2);
+			padding: calc(var(--go--spacing--vertical--lg) * 0.35) calc(var(--go--spacing--vertical--lg) * 0.35);
 
-			@media (--medium) {
-				padding: calc(var(--editor-padding) / 2) calc(var(--editor-padding) * 0.75);
-			}
 
 			& p {
-				font-size: var(--theme-pullquote--font-size);
+				font-size: var(--go-pullquote--font-size, var(--go--type-scale-5));
 			}
 
 			& cite,
@@ -80,13 +78,7 @@
 	& > blockquote {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: var(--theme-max-w-wide);
-		padding-left: var(--theme-block-padding-x);
-		padding-right: var(--theme-block-padding-x);
-
-		@media (--large) {
-			padding-bottom: var(--editor-padding);
-			padding-top: var(--editor-padding);
-		}
+		max-width: var(--go--max-width--alignwide);
+		padding: var(--go--spacing--vertical--lg);
 	}
 }

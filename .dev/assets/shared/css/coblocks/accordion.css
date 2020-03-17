@@ -1,24 +1,24 @@
 /*! CoBlocks: Accordion */
 .wp-block-coblocks-accordion.alignfull {
-	padding-left: var(--theme-block-padding-x);
-	padding-right: var(--theme-block-padding-x);
+	padding-left: var(--go-block--padding--x);
+	padding-right: var(--go-block--padding--x);
 }
 
 .wp-block-coblocks-accordion-item__title {
-	border: var(--coblocks-accordion--border);
-	border-radius: var(--coblocks-accordion--radius, var(--theme-button--radius));
+	border: var(--wp-block-coblocks-accordion-item--border-width, 2px) solid var(--wp-block-coblocks-accordion-item--border-color, var(--go-heading--color--text));
+	border-radius: var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius));
 
 	&:not(.has-background) {
-		background: var(--coblocks-accordion--bg, var(--theme-color-body-bg));
+		background: var(--wp-block-coblocks-accordion-item--color--background, var(--go--color--background));
 	}
 
 	&:not(.has-text-color) {
-		color: var(--coblocks-accordion--color, var(--theme-color-heading));
+		color: var(--wp-block-coblocks-accordion-item--color--text, var(--go-heading--color--text));
 	}
 
 	&:hover::after {
-		background: var(--coblocks-accordion--bg-hover);
-		border-radius: var(--coblocks-accordion--radius, var(--theme-button--radius)) var(--coblocks-accordion--radius, var(--theme-button--radius)) 0 0;
+		background: var(--wp-block-coblocks-accordion-item-interactive--color--background, hsla(0, 0%, 0%, 0.1));
+		border-radius: var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius)) var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius)) 0 0;
 	}
 
 	&:focus {
@@ -28,11 +28,11 @@
 }
 
 .wp-block-coblocks-accordion-item__content {
-	border: var(--coblocks-accordion--border);
-	border-color: var(--coblocks-accordion--border-color) !important;
-	margin-top: calc(var(--coblocks-accordion--border-width, 2px) * -1);
+	border: var(--wp-block-coblocks-accordion-item--border-width, 2px) solid var(--wp-block-coblocks-accordion-item--border-color, var(--go-heading--color--text));
+	border-color: var(--wp-block-coblocks-accordion-item--border-color, var(--go-heading--color--text)) !important;
+	margin-top: calc(var(--wp-block-coblocks-accordion-item--border-width, 2px) * -1);
 }
 
 .wp-block-coblocks-accordion-item details[open] summary {
-	border-radius: var(--coblocks-accordion--radius, var(--theme-button--radius)) var(--coblocks-accordion--radius, var(--theme-button--radius)) 0 0;
+	border-radius: var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius)) var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius)) 0 0;
 }

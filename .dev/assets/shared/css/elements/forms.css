@@ -19,23 +19,23 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"] {
 	appearance: none;
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
-	border: var(--theme-input--border);
-	border-radius: var(--theme-input--radius, var(--theme-button--radius));
-	box-shadow: var(--theme-input--shadow, none);
-	color: var(--theme-input--color);
-	font-size: var(--theme-input--font-size);
-	font-weight: var(--theme-input--weight);
+	background-color: var(--go-input--color--background, var(--go--color--white));
+	border: var(--go-input--border);
+	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
+	box-shadow: var(--go-input--box-shadow, none);
+	color: var(--go-input--color--text);
+	font-size: var(--go-input--font-size);
+	font-weight: var(--go-input--font-weight, 400);
 	line-height: 1;
-	margin-bottom: var(--theme-input--spacing);
-	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+	margin-bottom: var(--go-input--margin-bottom);
+	padding: var(--go-input--padding--y) var(--go-input--padding--x);
 	width: 100%;
 
 	&:focus {
-		background: var(--theme-input--bg-interactive);
-		border-color: var(--theme-input--border-color-interactive);
-		box-shadow: var(--theme-input--shadow-focus, none);
-		color: var(--theme-input--color-interactive);
+		background: var(--go-input-interactive-color--background, var(--go--color--white));
+		border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+		box-shadow: var(--go-input-interactive--box-shadow, none);
+		color: var(--go-input-interactive--color--text, var(--go--color--text));
 		outline: none;
 	}
 }
@@ -46,31 +46,31 @@ input[type="checkbox"] {
 }
 
 textarea {
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
-	border: var(--theme-input--border);
-	border-radius: var(--theme-input--radius, var(--theme-button--radius));
-	color: var(--theme-input--color);
+	background-color: var(--go-input--color--background, var(--go--color--white));
+	border: var(--go-input--border);
+	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
+	color: var(--go-input--color--text);
 	display: block;
-	font-size: var(--theme-input--font-size);
-	font-weight: var(--theme-input--weight);
-	margin-bottom: var(--theme-input--spacing);
+	font-size: var(--go-input--font-size);
+	font-weight: var(--go-input--font-weight, 400);
+	margin-bottom: var(--go-input--margin-bottom);
 	min-height: calc(0.5rem * 10);
-	padding: var(--theme-input--padding-x) var(--theme-input--padding-x);
+	padding: var(--go-input--padding--x) var(--go-input--padding--x);
 	width: 100%;
 
 	&:focus {
-		background: var(--theme-input--bg-interactive);
-		border-color: var(--theme-input--border-color-interactive);
-		box-shadow: var(--theme-input--shadow-focus, none);
-		color: var(--theme-input--color-interactive);
+		background: var(--go-input-interactive-color--background, var(--go--color--white));
+		border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+		box-shadow: var(--go-input-interactive--box-shadow, none);
+		color: var(--go-input-interactive--color--text, var(--go--color--text));
 		outline: none;
 	}
 }
 
 select {
 	@mixin select-menu;
-	margin-bottom: var(--theme-input--spacing);
-	padding: var(--theme-input--padding-y) var(--theme-input--padding-x) !important;
+	margin-bottom: var(--go-input--margin-bottom);
+	padding: var(--go-input--padding--y) var(--go-input--padding--x) !important;
 
 	/* CAUTION: IE hackery ahead */
 	&::-ms-expand {
@@ -89,19 +89,19 @@ select {
 }
 
 option {
-	font-weight: var(--theme-input--weight);
+	font-weight: var(--go-input--font-weight, 400);
 }
 
 ::placeholder {
-	color: var(--theme-input-placeholder--color, hsl(0, 0%, 47%));
+	color: var(--go-input-placeholder--color--text, hsl(0, 0%, 47%));
 	line-height: 1.5;
 	opacity: 1;
 }
 
 ::-ms-input-placeholder {
-	color: var(--theme-input-placeholder--color, hsl(0, 0%, 47%));
+	color: var(--go-input-placeholder--color--text, hsl(0, 0%, 47%));
 }
 
 :-ms-input-placeholder {
-	color: var(--theme-input-placeholder--color, hsl(0, 0%, 47%));
+	color: var(--go-input-placeholder--color--text, hsl(0, 0%, 47%));
 }

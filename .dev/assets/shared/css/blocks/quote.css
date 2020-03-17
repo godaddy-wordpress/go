@@ -2,20 +2,33 @@
 .wp-block-quote {
 	margin-bottom: 0;
 
+	& p {
+		color: var(--go-quote--color--text, var(--go-heading--color--text));
+		font-family: var(--go-heading--font-family);
+		font-size: var(--go-quote--font-size, var(--go--type-scale-4));
+		font-style: var(--go-quote--font-style, normal);
+		font-weight: var(--go-quote--font-weight, var(--go-heading--font-weight));
+		line-height: var(--go-quote--line-height, var(--go-heading--line-height));
+		margin: 0 0 2rem;
+		padding: 0.5rem 0;
+		position: relative;
+	}
+
 	& cite,
 	& .wp-block-quote__citation {
-		color: var(--theme-caption--color, var(--theme-color-text-secondary));
+		color: var(--go-caption--color--text);
 		display: block;
-		font-size: var(--theme-caption--font-size);
-		font-style: var(--theme-caption--style, normal);
+		font-size: var(--go-caption--font-size);
+		font-style: var(--go-caption--font-style, normal);
 	}
 
 	&:not(.is-style-large) {
-		border-left: var(--theme-quote--border-width, 0) var(--theme-quote--border-style, solid) var(--theme-quote--border-color, var(--theme-color-primary));
+		border-left: var(--go-quote--border-width, 0) var(--go-quote--border-style, solid) var(--go-quote--border-color, var(--go--color--primary));
 		padding-left: 0;
 		padding-right: 0;
 
 		& p {
+			color: var(--go-quote--color--text, var(--go-heading--color--text));
 			padding-left: 1.5rem;
 
 			@media (--medium) {
@@ -35,15 +48,16 @@
 	}
 
 	&.is-style-large {
-		color: var(--theme-quote-large--color, var(--theme-color-heading));
+		color: var(--go-quote-large--color--text, var(--go-heading--color--text));
 		margin-left: auto;
 		margin-right: auto;
 		padding: 0;
 
 		& p {
-			font-size: var(--theme-quote-large--font-size, var(--theme-h2--font-size));
-			font-style: var(--theme-quote-large--style, normal);
-			line-height: var(--theme-quote-large--leading), var(--theme-heading--leading));
+			font-size: var(--go-quote-large--font-size, var(--go--type-scale-5));
+			font-style: var(--go-quote-large--font-style, normal);
+			font-weight: var(--go-quote--font-weight, var(--go-heading--font-weight));
+			line-height: var(--go-quote-large--line-height, var(--go-heading--line-height));
 			margin: 0;
 			padding: 0;
 
@@ -56,7 +70,7 @@
 
 		& cite,
 		& .wp-block-quote__citation {
-			font-size: var(--theme-caption--font-size);
+			font-size: var(--go-caption--font-size);
 			text-align: inherit;
 
 			& em {

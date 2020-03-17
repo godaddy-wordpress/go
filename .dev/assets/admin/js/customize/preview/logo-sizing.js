@@ -5,7 +5,7 @@ export default () => {
 	 * @param {*} width
 	 */
 	const setLogoWidth = ( width ) => {
-		document.documentElement.style.setProperty( '--theme-site-logo--width', width ? `${width}px` : 'none' );
+		document.documentElement.style.setProperty( '--go-logo--max-width', width ? `${width}px` : 'none' );
 	};
 
 	/**
@@ -14,7 +14,7 @@ export default () => {
 	 * @param {*} width
 	 */
 	const setLogoMobileWidth = ( width ) => {
-		document.documentElement.style.setProperty( '--theme-site-logo--width-mobile', width ? `${width}px` : 'none' );
+		document.documentElement.style.setProperty( '--go-logo-mobile--max-width', width ? `${width}px` : 'none' );
 	};
 
 	wp.customize( 'logo_width', ( value ) => {

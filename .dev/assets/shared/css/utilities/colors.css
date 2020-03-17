@@ -1,6 +1,6 @@
 /*! Color Utility Classes */
 .has-primary-background-color {
-	background-color: var(--theme-color-primary);
+	background-color: var(--go--color--primary);
 
 	&,
 	& label,
@@ -11,43 +11,43 @@
 	& h5:not([class*="color"]),
 	& h6:not([class*="color"]),
 	& a:not(.wp-block-button__link) {
-		color: var(--color-white);
+		color: var(--go--color--white);
 	}
 }
 
 .has-primary-color {
-	color: var(--theme-color-primary);
+	color: var(--go--color--primary);
 }
 
 .has-secondary-background-color {
-	background-color: var(--theme-color-secondary);
+	background-color: var(--go--color--secondary);
 }
 
 .has-secondary-color {
-	color: var(--theme-color-secondary);
+	color: var(--go--color--secondary);
 }
 
 .has-tertiary-background-color {
-	background-color: var(--theme-color-tertiary);
+	background-color: var(--go--color--tertiary);
 
 	&,
 	& a:not(.wp-block-button__link) {
-		color: var(--theme-color-heading);
+		color: var(--go-heading--color--text);
 	}
 }
 
 .has-tertiary-color {
-	color: var(--theme-color-tertiary);
+	color: var(--go--color--tertiary);
 }
 
 .has-quaternary-background-color {
-	background-color: var(--color-white);
+	background-color: var(--go--color--white);
 }
 
 .has-quaternary-color {
-	color: var(--color-white);
+	color: var(--go--color--white);
 
 	&.wp-block-button__link {
-		color: var(--color-white) !important;
+		color: var(--go--color--white) !important;
 	}
 }
