@@ -3,13 +3,13 @@
 	max-width: var(--editor-title-max-w);
 
 	& .editor-post-title__input {
-		color: var(--theme-h1--color, var(--theme-color-heading));
-		font-family: var(--theme-heading--font);
-		font-size: var(--editor-title--font-size, var(--theme-h1--font-size));
-		font-style: var(--theme-heading--style, normal);
-		font-weight: var(--theme-heading--weight);
-		letter-spacing: var(--theme-heading--tracking);
-		line-height: var(--theme-heading--leading);
+		color: var(--go-h1--color--text, var(--go-heading--color--text));
+		font-family: var(--go-heading--font-family);
+		font-size: var(--editor-title--font-size, var(--go--type-scale-6));
+		font-style: var(--go-heading--font-style, normal);
+		font-weight: var(--go-heading--font-weight, normal);
+		letter-spacing: var(--go-heading--letter-spacing, normal);
+		line-height: var(--go-heading--line-height);
 		text-align: var(--editor-title-block--alignment, center);
 	}
 }

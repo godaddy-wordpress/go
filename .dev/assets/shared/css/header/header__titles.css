@@ -7,10 +7,10 @@
 	}
 
 	& .custom-logo {
-		max-width: var(--theme-site-logo--width-mobile);
+		max-width: var(--go-logo-mobile--max-width);
 
 		@media (--small) {
-			max-width: var(--theme-site-logo--width);
+			max-width: var(--go-logo--max-width);
 		}
 	}
 }
@@ -31,29 +31,29 @@
 }
 
 .site-title {
-	color: var(--theme-site-title--color);
-	font-family: var(--theme-site-title--font, var(--theme-heading--font));
-	font-size: var(--theme-site-title--font-size);
-	font-weight: var(--theme-site-title--weight, var(--theme-heading--weight));
-	letter-spacing: var(--theme-site-title--tracking);
+	color: var(--go-site-title--color--text);
+	font-family: var(--go-site-title--font-family, var(--go-heading--font-family));
+	font-size: var(--go-site-title--font-size);
+	font-weight: var(--go-site-title--font-weight, var(--go-heading--font-weight));
+	letter-spacing: var(--go-site-title--letter-spacing);
 	line-height: 1.1;
 	margin: 0;
-	text-transform: var(--theme-site-title--text-transform);
+	text-transform: var(--go-site-title--text-transform);
 }
 
 .site-description {
-	color: var(--theme-site-description--color);
-	font-family: var(--theme-site-description--font);
-	font-size: var(--theme-site-description--font-size) !important;
-	font-weight: var(--theme-site-description--weight, 400);
-	letter-spacing: var(--theme-site-nav--tracking);
-	line-height: var(--theme-site-description--leading) !important;
-	margin-top: var(--theme-site-description--mt, 0.25rem);
-	opacity: var(--theme-site-description--opacity, 0.65);
-	text-transform: var(--theme-site-nav--text-transform, normal);
+	color: var(--go-site-description--color--text, var(--go-heading--color--text));
+	font-family: var(--go-site-description--font-family, inherit);
+	font-size: var(--go-site-description--font-size, inherit) !important;
+	font-weight: var(--go-site-description--font-weight, 400);
+	letter-spacing: var(--go-site-description--letter-spacing, normal);
+	line-height: var(--go-site-description--color--text, 1.4) !important;
+	margin-top: var(--go-site-description--margin-top, 0.25rem);
+	opacity: var(--go-site-description--opacity, 0.65);
+	text-transform: var(--go-site-description--text-transform, normal);
 
 	@media (--large) {
-		margin-left: var(--theme-site-nav--padding-x, 2vw);
+		margin-left: var(--go-navigation--padding--x, 2vw);
 		margin-top: 0;
 	}
 }

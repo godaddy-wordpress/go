@@ -2,7 +2,7 @@
 Contributors: godaddy, richtabor, eherman24, jrtashjian
 Tags: one-column, custom-colors, custom-logo, custom-menu, editor-style, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
 Requires at least: 5.0
-Tested up to: 5.2
+Tested up to: 5.4
 Requires PHP: 5.6.0
 Stable tag: 1.2.4
 License: GPL-2.0-only
@@ -153,7 +153,7 @@ List of bespoke icons:
 * Update comments in design style CSS files.
 * Fix Playful design style default header text color.
 * Update headers and theme responsiveness.
-* Add variants to `--header-padding` values.
+* Add variants to `--go-header--padding--y` values.
 * Improved site search bar.
 * Fix submenu item word wrap.
 * Typecast all Go filters to return data in the expected format.

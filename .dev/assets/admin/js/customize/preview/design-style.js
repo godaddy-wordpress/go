@@ -12,7 +12,6 @@ export default () => {
 			) {
 
 				setTimeout( function() {
-					// wp.customize.previewer.refresh();
 					const designStyle = GoPreviewData['design_styles'][ to ];
 					$( 'link[id*="design-style"]' ).attr( 'href', designStyle['url'] );
 
@@ -22,5 +21,17 @@ export default () => {
 				}, 500 ); // match the .02s transition time from core
 			}
 		} );
+	} );
+	/**
+	 * Set viewport basis
+	 *
+	 * @param {*} size
+	 */
+	const setViewportBasis = ( size ) => {
+		document.documentElement.style.setProperty( '--go--viewport-basis', size ? size : '1000' );
+	};
+
+	wp.customize( 'viewport_basis', ( value ) => {
+		value.bind( ( to ) => setViewportBasis( to ) );
 	} );
 };

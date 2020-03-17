@@ -2,6 +2,6 @@
 .wp-block-coblocks-shape-divider {
 
 	&:not([class*="color"]) {
-		color: var(--coblocks-shapedivider--bg, var(--theme-color-primary));
+		color: var(--wp-block-coblocks-shape-divider--color--background, var(--go--color--primary));
 	}
 }

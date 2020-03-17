@@ -16,10 +16,10 @@
 		& .site-description {
 			margin-left: 0;
 			margin-right: 0;
-			margin-top: var(--theme-site-description--mt, 0.25rem);
+			margin-top: var(--go-site-description--margin-top, 0.25rem);
 
 			@media (--large) {
-				margin-bottom: calc(var(--theme-site-description--mt, 0.25rem) * 3);
+				margin-bottom: calc(var(--go-site-description--margin-top, 0.25rem) * 3);
 			}
 		}
 	}

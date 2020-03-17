@@ -17,7 +17,7 @@
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
-	color: var(--theme-search-toggle--color);
+	color: var(--go-search-toggle--color--text, var(--go-heading--color--text));
 	display: inline-block;
 	line-height: 1;
 	margin-right: -0.75rem;
@@ -38,7 +38,7 @@
 
 	& svg {
 		fill: currentColor;
-		width: var(--theme-search-toggle--size, 1.35rem);
+		width: var(--go-search-toggle--icon--size, 1.35rem);
 	}
 }
 
@@ -48,5 +48,5 @@ body.menu-is-open .nav-toggle-icon:not(.nav-toggle-icon--close) {
 }
 
 body:not(.menu-is-open) .nav-toggle-icon svg {
-	fill: var(--theme-site-nav--color);
+	fill: var(--go-navigation--color--text);
 }
