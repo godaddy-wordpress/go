@@ -456,7 +456,7 @@ function copyright( $args = array() ) {
 		)
 	);
 
-	$year      = sprintf( '&copy; %s&nbsp;', esc_html( gmdate( 'Y' ) ) );
+	$year      = sprintf( '&copy; %s', esc_html( gmdate( 'Y' ) ) );
 	$copyright = get_theme_mod( 'copyright', \Go\Core\get_default_copyright() );
 
 	$html = array(
