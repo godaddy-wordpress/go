@@ -995,7 +995,7 @@ class Test_Core extends WP_UnitTestCase {
 	 */
 	function testGetDefaultCopyright() {
 
-		$this->assertEquals( 'WordPress Theme by GoDaddy', Go\Core\get_default_copyright() );
+		$this->assertEquals( 'Test Blog', Go\Core\get_default_copyright() );
 
 	}
 
