@@ -1,7 +1,7 @@
 /*! Header */
 .header {
 	background-color: var(--go-header--color--background);
-	z-index: 2;
+	z-index: 99;
 
 	& .u-informational {
 		display: inline-block;
