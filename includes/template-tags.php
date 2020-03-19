@@ -483,7 +483,7 @@ function copyright( $args = array() ) {
 	/**
 	 * Filter the footer copyright year text.
 	 *
-	 * @since NEXT
+	 * @since 1.2.5
 	 *
 	 * @var string
 	 */
