@@ -254,6 +254,30 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 
 }
 
+/**
+ * Allwed HTML in the copyright site settings
+ *
+ * @return array Allowed HTML markup.
+ */
+function get_copyright_kses_html() {
+
+	return (array) apply_filters(
+		'go_copyright_kses_html',
+		array(
+			'div'  => array(
+				'class' => array(),
+			),
+			'span' => array(
+				'class' => array(),
+			),
+			'a'    => array(
+				'href'  => array(),
+				'class' => array(),
+			),
+		)
+	);
+
+}
 
 /**
  * Returns the color selected by the user.
@@ -456,32 +480,31 @@ function copyright( $args = array() ) {
 		)
 	);
 
-	$year      = sprintf( '&copy; %s', esc_html( gmdate( 'Y' ) ) );
+	/**
+	 * Filter the footer copyright year text.
+	 *
+	 * @since NEXT
+	 *
+	 * @var string
+	 */
+	$year      = (string) apply_filters( 'go_footer_copyrght_year_text', sprintf( '&copy; %s&nbsp;', esc_html( gmdate( 'Y' ) ) ) );
 	$copyright = get_theme_mod( 'copyright', \Go\Core\get_default_copyright() );
 
-	$html = array(
-		'div'  => array(
-			'class' => array(),
-		),
-		'span' => array(
-			'class' => array(),
-		),
-		'a'    => array(
-			'href'  => array(),
-			'class' => array(),
-		),
-	);
 	?>
 
 	<div class="<?php echo esc_attr( $args['class'] ); ?>">
 
-		<?php echo esc_html( $year ); ?>
+		<?php
+		if ( ! empty( $year ) ) {
+			echo wp_kses( $year, get_copyright_kses_html() );
+		}
 
-		<?php if ( $copyright || is_customize_preview() ) : ?>
+		if ( $copyright || is_customize_preview() ) {
+			?>
 			<span class="copyright">
-				<?php echo wp_kses( $copyright, $html ); ?>
+				<?php echo wp_kses( $copyright, get_copyright_kses_html() ); ?>
 			</span>
-		<?php endif; ?>
+		<?php } ?>
 
 		<?php
 		if ( function_exists( 'the_privacy_policy_link' ) ) {

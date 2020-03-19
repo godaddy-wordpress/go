@@ -1107,6 +1107,18 @@ class Test_Core extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test that the default viewport basis returns false when an invalid design
+	 * style is set
+	 */
+	function testGetDefaultViewportBasis() {
+
+		set_theme_mod( 'design_style', 'non-existing-style' );
+
+		$this->assertFalse( Go\Core\get_default_viewport_basis() );
+
+	}
+
+	/**
 	 * Test filtering the default color scheme
 	 */
 	function testGetDefaultSchemeFilter() {

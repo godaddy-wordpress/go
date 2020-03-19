@@ -568,6 +568,15 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the copyright kses HTML returns expected HTML elements.
+	 */
+	function test_copyright_kses_html() {
+
+		$this->assertEquals( 'This is a test <a href="#">Test</a>', Go\Customizer\copyright_kses_html( 'This is a test <a href="#">Test</a>' ) );
+
+	}
+
+	/**
 	 * Test the design_style setting is registered
 	 */
 	function test_register_color_controls_design_style_setting() {
