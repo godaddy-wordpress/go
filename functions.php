@@ -8,7 +8,7 @@
 /**
  * Theme constants.
  */
-define( 'GO_VERSION', '1.2.5' );
+define( 'GO_VERSION', '1.2.4' );
 
 /**
  * AMPP setup, hooks, and filters.
