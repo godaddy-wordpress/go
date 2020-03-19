@@ -223,6 +223,41 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test that we can add custom html to the allowed list of copyright kses
+	 */
+	public function test_get_copyright_kses_html_filter() {
+
+		add_filter( 'go_copyright_kses_html', function( $html ) {
+
+			$html['p'] = [
+				'class' => [],
+			];
+
+			return $html;
+
+		} );
+
+		$expected = [
+			'div'  => [
+				'class' => [],
+			],
+			'span' => [
+				'class' => [],
+			],
+			'a'    => [
+				'href'  => [],
+				'class' => [],
+			],
+			'p'    => [
+				'class' => [],
+			],
+		];
+
+		$this->assertEquals( $expected, Go\get_copyright_kses_html() );
+
+	}
+
+	/**
 	 * Test the selected color palette returns correct data - primary
 	 */
 	public function test_get_palette_color_primary() {

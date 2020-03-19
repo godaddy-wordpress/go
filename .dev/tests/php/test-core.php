@@ -701,7 +701,8 @@ class Test_Core extends WP_UnitTestCase {
 
 		$post_id = $this->factory->post->create(
 			[
-				'post_title' => 'Body Classes Test Post',
+				'post_title'   => 'Body Classes Test Post',
+				'post_content' => '<!-- wp:woocommerce/featured-category {"editMode":false} /-->',
 			]
 		);
 
@@ -1103,6 +1104,18 @@ class Test_Core extends WP_UnitTestCase {
 	function testGetDefaultScheme() {
 
 		$this->assertEquals( 'one', Go\Core\get_default_color_scheme() );
+
+	}
+
+	/**
+	 * Test that the default viewport basis returns false when an invalid design
+	 * style is set
+	 */
+	function testGetDefaultViewportBasis() {
+
+		set_theme_mod( 'design_style', 'non-existing-style' );
+
+		$this->assertFalse( Go\Core\get_default_viewport_basis() );
 
 	}
 
