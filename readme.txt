@@ -110,12 +110,14 @@ List of bespoke icons:
 == Changelog ==
 
 ### Enhancements
-* Improve vertical vertical rhythm and spacing. [#451](https://github.com/godaddy-wordpress/go/pull/451)
-* Switch from PO/MO to JSON-based translation system. [#459](https://github.com/godaddy-wordpress/go/pull/459)
+* Introduce [AMP](https://amp.dev/) compatibility. [#447](https://github.com/godaddy-wordpress/go/pull/447), [#471](https://github.com/godaddy-wordpress/go/pull/471)
+* Update CSS variables, improve spacing, improve typography scale. [#467](https://github.com/godaddy-wordpress/go/pull/467)
+* Improve development processes (`npm run watch`). [#478](https://github.com/godaddy-wordpress/go/pull/478)
+* Introduced a `changelog.txt` file to easier track changes between releases. Update Github release notes with changelog changes. [#475](https://github.com/godaddy-wordpress/go/pull/475)
+* Improvements to the copyright footer text, including a new filter (`go_footer_copyrght_year_text`). [#468](https://github.com/godaddy-wordpress/go/pull/468)
 
 ### Bug Fixes
-* Conditionally set menu locations description based on selected footer variation. [#445](https://github.com/godaddy-wordpress/go/pull/445)
-* Prevent site header from overlapping the mobile menu. [#449](https://github.com/godaddy-wordpress/go/pull/449)
-* Tweak CoBlocks carousel block arrows for Welcoming, Trendy and Playful design styles. [#452](https://github.com/godaddy-wordpress/go/pull/452)
-* Fix gallery caption alignment. [#461](https://github.com/godaddy-wordpress/go/pull/461)
-* Hide previously open menu items when a new one is opened. [#464](https://github.com/godaddy-wordpress/go/pull/464)
+* Fix Welcoming design style featured image. [#469](https://github.com/godaddy-wordpress/go/pull/469)
+* Fix radio and checkbox visibility in each design style. [#477](https://github.com/godaddy-wordpress/go/pull/477)
+* Increase the `z-index` on the header, so the mobile menu displays correctly. [#482](https://github.com/godaddy-wordpress/go/pull/482)
+* Update copyright footer text [#481](https://github.com/godaddy-wordpress/go/pull/481)
