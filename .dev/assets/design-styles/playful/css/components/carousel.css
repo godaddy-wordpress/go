@@ -15,14 +15,18 @@
 
 	& .flickity-button,
 	& .flickity-button:hover {
-		background: var(--theme-color-primary);
+		background: var(--go--color--primary);
+	}
+
+	& .flickity-button:hover {
+		background-color: var(--go-button-interactive--color--background, var(--go--color--secondary));
 	}
 
 	& .flickity-prev-next-button {
-		border-radius: var(--theme-button--radius);
+		border-radius: var(--go-button--border-radius);
 	}
 
 	& .flickity-button-icon {
-		fill: var(--color-white);
+		fill: var(--go--color--white);
 	}
 }

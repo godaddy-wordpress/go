@@ -1,20 +1,20 @@
 /*! Gravity Forms */
 .gform_wrapper {
-	max-width: var(--theme-max-w-base) !important;
+	max-width: var(--go--max-width) !important;
 }
 
 .gform_wrapper ul.gform_fields li.gfield select {
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
-	border: var(--theme-input--border);
-	font-size: var(--theme-input--font-size);
-	font-weight: var(--theme-input--weight);
+	background-color: var(--go-input--color--background, var(--go--color--white));
+	border: var(--go-input--border);
+	font-size: var(--go-input--font-size);
+	font-weight: var(--go-input--font-weight, 400);
 	line-height: 1;
-	padding: var(--theme-button--padding-y) 10px;
+	padding: var(--go-button--padding--y) 10px;
 
 	&[multiple="multiple"] {
-		border-color: var(--theme-input--border-color, var(--theme-color-heading));
-		border-width: var(--theme-input--border-width);
-		padding: var(--theme-button--padding-y) var(--theme-input--padding-x);
+		border-color: var(--go-input--border-color, var(--go-heading--color--text));
+		border-width: var(--go-input--border-width, 2px);
+		padding: var(--go-button--padding--y) var(--go-input--padding--x);
 	}
 
 	&:focus {
@@ -29,7 +29,7 @@ body .gform_wrapper .top_label select.medium {
 
 .gform_wrapper ul.gfield_checkbox,
 .gform_wrapper ul.gfield_radio {
-	margin-bottom: var(--theme-input--spacing) !important;
+	margin-bottom: var(--go-input--margin-bottom) !important;
 }
 
 .gform_wrapper .gfield_time_hour i {
@@ -48,12 +48,12 @@ body .gform_wrapper .top_label select.medium {
 
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_right select {
-	background-color: var(--theme-input--bg, 0, 0%, 100%);
-	border: var(--theme-input--border);
-	font-size: var(--theme-input--font-size);
-	font-weight: var(--theme-input--weight);
-	margin: 0 0 var(--theme-input--spacing) 0;
-	padding: var(--theme-button--padding-y) calc(var(--theme-input--padding-x) * 2) var(--theme-button--padding-y) var(--theme-input--padding-x);
+	background-color: var(--go-input--color--background, var(--go--color--white));
+	border: var(--go-input--border);
+	font-size: var(--go-input--font-size);
+	font-weight: var(--go-input--font-weight, 400);
+	margin: 0 0 var(--go-input--margin-bottom) 0;
+	padding: var(--go-button--padding--y) calc(var(--go-input--padding--x) * 2) var(--go-button--padding--y) var(--go-input--padding--x);
 
 	&:focus {
 		@mixin select-menu-focus;
@@ -61,10 +61,10 @@ body .gform_wrapper .top_label select.medium {
 }
 
 .gform_wrapper ul.gform_fields li.gfield input[type="radio"] {
-	font-weight: var(--theme-input--weight);
+	font-weight: var(--go-input--font-weight, 400);
 	line-height: 1.25;
 	margin-bottom: 0;
-	padding: var(--theme-input--padding-y) var(--theme-input--padding-x);
+	padding: var(--go-input--padding--y) var(--go-input--padding--x);
 }
 
 .content-area table tbody tr.gfield_list_group.gfield_list_row_odd {
@@ -89,15 +89,15 @@ body .gform_body .gform_wrapper .top_label div.ginput_container {
 body {
 
 	& label.gfield_consent_label {
-		font-size: var(--theme-input--font-size);
-		font-weight: var(--theme-input--weight);
+		font-size: var(--go-input--font-size);
+		font-weight: var(--go-input--font-weight, 400);
 	}
 
 	& .gform_wrapper label.gfield_label,
 	& .gform_wrapper legend.gfield_label {
-		font-family: var(--theme-label--font);
-		font-size: var(--theme-label--font-size);
-		font-weight: var(--theme-label--weight);
+		font-family: var(--go-label--font-family, var(--go-navigation--font-family));
+		font-size: var(--go-label--font-size);
+		font-weight: var(--go-label--font-weight);
 	}
 
 	& .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label,
@@ -107,7 +107,7 @@ body {
 
 	& .gform_wrapper select option {
 		margin: 0 0 2px;
-		padding: var(--theme-button--padding-y) var(--theme-input--padding-x);
+		padding: var(--go-button--padding--y) var(--go-input--padding--x);
 	}
 
 	& .gform_wrapper ul li.gfield {
@@ -116,11 +116,11 @@ body {
 	}
 
 	& .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
-		background-color: var(--theme-input--bg, 0, 0%, 100%);
-		border-radius: var(--theme-input--radius, var(--theme-button--radius));
-		font-size: var(--theme-input--font-size);
+		background-color: var(--go-input--color--background, var(--go--color--white));
+		border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
+		font-size: var(--go-input--font-size);
 		line-height: 1;
-		padding: var(--theme-button--padding-y) var(--theme-input--padding-x);
+		padding: var(--go-button--padding--y) var(--go-input--padding--x);
 	}
 
 	& .gform_wrapper .field_description_below .gfield_description {
@@ -150,34 +150,34 @@ body {
 
 	& .gform_wrapper .gfield_error .gfield_label,
 	& .gform_wrapper .validation_message {
-		color: var(--theme-input-error--color, hsl(0, 65%, 51%));
+		color: var(--go-input-error--color--text, hsl(0, 65%, 51%));
 	}
 
 	& .gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
-		background-color: var(--theme-input--bg, 0, 0%, 100%);
+		background-color: var(--go-input--color--background, var(--go--color--white));
 		background-image: url("../images/error-icon.svg");
 		background-position: calc(100% - 10px) center;
 		background-repeat: no-repeat;
-		border: var(--theme-input--border);
-		color: var(--theme-input-error--color);
+		border: var(--go-input--border);
+		color: var(--go-input-error--color--text);
 	}
 
 	& .gform_wrapper textarea {
-		background-color: var(--theme-input--bg, 0, 0%, 100%);
-		border-color: var(--theme-input--border-color), var(--theme-color-heading));
-		color: var(--theme-input--color);
-		font-size: var(--theme-input--font-size);
-		font-weight: var(--theme-input--weight);
-		padding: var(--theme-button--padding-y);
+		background-color: var(--go-input--color--background, var(--go--color--white));
+		border-color: var(--go-input--border-color), var(--go-heading--color--text));
+		color: var(--go-input--color--text);
+		font-size: var(--go-input--font-size);
+		font-weight: var(--go-input--font-weight, 400);
+		padding: var(--go-button--padding--y);
 
 		&:focus {
-			border-color: var(--theme-input--border-color-interactive);
-			color: var(--theme-input--color-interactive);
+			border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+			color: var(--go-input-interactive--color--text, var(--go--color--text));
 		}
 	}
 
 	& .gform_wrapper li.gfield_error textarea {
-		border-color: var(--theme-input-error--border-color, hsl(0, 65%, 51%));
+		border-color: var(--go-input-error--border-color, hsl(0, 65%, 51%));
 	}
 
 	& .gform_wrapper form.gf_simple_horizontal {
@@ -210,7 +210,7 @@ body {
 		& input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
 			line-height: 22px;
 			max-height: 100%;
-			padding: calc(var(--theme-button--padding-x) - 7px) calc(var(--theme-button--padding-x) - 6px) !important;
+			padding: calc(var(--go-button--padding--x) - 7px) calc(var(--go-button--padding--x) - 6px) !important;
 		}
 
 		& h3.gform_title {

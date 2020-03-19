@@ -1,20 +1,16 @@
 /*! Editor Font Sizes */
 .has-small-font-size {
-	font-size: var(--editor-font-size-small);
+	font-size: var(--go--font-size);
 }
 
 .has-medium-font-size {
-	font-size: var(--theme-body--font-size);
-
-	@media (--small) {
-		font-size: var(--editor-font-size-medium);
-	}
+	font-size: var(--go--type-scale-1);
 }
 
 .has-large-font-size {
-	font-size: var(--editor-font-size-large);
+	font-size: var(--go--type-scale-2);
 }
 
 .has-huge-font-size {
-	font-size: var(--editor-font-size-huge);
+	font-size: var(--go--type-scale-3);
 }

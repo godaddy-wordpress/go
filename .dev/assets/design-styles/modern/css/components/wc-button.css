@@ -17,14 +17,14 @@ body {
 
 				/* Must use :before, since woo reserves after for loader icon */
 				&::before {
-					background-color: var(--color-white);
+					background-color: var(--go--color--white);
 					bottom: 0;
 					content: "";
 					display: block;
 					height: 8px;
-					left: var(--theme-button--padding-x);
+					left: var(--go-button--padding--x);
 					position: absolute;
-					right: var(--theme-button--padding-x);
+					right: var(--go-button--padding--x);
 				}
 			}
 		}

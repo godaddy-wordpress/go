@@ -14,7 +14,7 @@ export default () => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined ;
-			document.querySelector( ':root' ).style.setProperty( '--theme-header--bg', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-header--color--background', setTo );
 
 			// Add class if a background color is applied.
 			if ( to ) {
@@ -29,10 +29,10 @@ export default () => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
 			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined ;
-			document.querySelector( ':root' ).style.setProperty( '--theme-site-nav--color', setTo );
-			document.querySelector( ':root' ).style.setProperty( '--theme-site-description--color', setTo );
-			document.querySelector( ':root' ).style.setProperty( '--theme-search-toggle--color', setTo );
-			document.querySelector( ':root' ).style.setProperty( '--theme-site-title--color', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-navigation--color--text', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-site-description--color--text', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-search-button--color--text', setTo );
+			document.querySelector( ':root' ).style.setProperty( '--go-site-title--color--text', setTo );
 		} );
 	} );
 };

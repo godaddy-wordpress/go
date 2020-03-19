@@ -1,11 +1,11 @@
 /*! Links */
 a {
-	color: var(--theme-link--color, var(--theme-color-primary));
+	color: var(--go--hyperlink--color--text, var(--go--color--primary));
 	text-decoration: underline;
 
 	&:hover,
 	&:active {
-		color: var(--theme-link--color-interactive, var(--theme-color-text));
+		color: var(--go--hyperlink-interactive--color--text, var(--go--color--text));
 		outline: 0;
 	}
 

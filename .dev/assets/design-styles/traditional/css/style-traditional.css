@@ -7,7 +7,3 @@
 .wp-block-coblocks-food-item__attributes {
 	top: 0;
 }
-
-.wp-block-coblocks-gallery-carousel .flickity-button::after {
-	background-color: var(--theme-color-heading);
-}

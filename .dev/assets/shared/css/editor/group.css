@@ -1,46 +1,17 @@
 /* Group */
-.wp-block[data-type="core/group"][data-align="wide"] {
+.wp-block[data-type="core/group"][data-align="wide"],
+.wp-block[data-type="core/group"][data-align="full"] {
 
 	& .has-background {
-		padding: calc(var(--editor-padding) / 4);
-
-		@media (--medium) {
-			padding: calc(var(--editor-padding) / 2);
-		}
-
-		@media (--large) {
-			padding: var(--editor-padding);
-		}
+		padding: var(--go--spacing--vertical--lg);
 	}
 }
 
-.wp-block[data-type="core/group"][data-align="full"] {
+.wp-block[data-type="core/group"] {
 
-	& .wp-block-group__inner-container {
-		padding-left: var(--theme-block-padding-x));
-		padding-right: var(--theme-block-padding-x));
-	}
-
-	& .has-background .wp-block-group__inner-container {
-		padding-bottom: calc(var(--editor-padding) / 4) var(--theme-block-padding-x);
-
-		@media (--medium) {
-			padding-bottom: calc(var(--editor-padding) / 2);
-			padding-top: calc(var(--editor-padding) / 2);
-		}
-
-		@media (--large) {
-			padding-bottom: var(--editor-padding);
-			padding-top: var(--editor-padding);
-		}
-
-		& > h2,
-		& > h3 {
-			@media (--small) {
-				padding-left: var(--theme-block-padding-x);
-				padding-right: var(--theme-block-padding-x);
-			}
-		}
+	& .wp-block + .wp-block[data-type="core/image"][data-align="full"],
+	& .wp-block + .wp-block[data-type="core/image"][data-align="wide"] {
+		margin-top: var(--go--spacing--vertical--lg) !important;
 	}
 }
 
@@ -53,23 +24,21 @@
 		max-width: var(--editor-max-w-wide);
 	}
 
-	& .wp-block[data-type="core/columns"] {
-		padding-bottom: calc(var(--editor-padding) / 4);
+	& .wp-block-column {
+		padding-bottom: var(--go--spacing--vertical) !important;
 
 		@media (--medium) {
-			padding-bottom: calc(var(--editor-padding) / 2);
-		}
-
-		@media (--large) {
-			padding-bottom: var(--editor-padding);
+			padding-bottom: 0 !important;
 		}
 
 		&:last-of-type {
-			padding-bottom: 0;
+			padding-bottom: 0 !important;
 		}
 	}
 
 	& .wp-block[data-type="core/paragraph"] {
-		max-width: 680px;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: var(--go--max-width);
 	}
 }

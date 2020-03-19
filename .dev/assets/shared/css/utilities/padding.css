@@ -1,28 +1,28 @@
 /*! Editor Padding Sizes */
 .has-small-padding {
-	padding: var(--editor-padding);
+	padding: var(--go--spacing--vertical);
 
 	@media (--medium) {
-		padding: calc(var(--editor-padding) * 0.35);
+		padding: calc(var(--go--spacing--vertical--lg) * 0.2);
 	}
 }
 
 .has-medium-padding {
-	padding: var(--editor-padding);
+	padding: var(--go--spacing--vertical);
 
 	@media (--medium) {
-		padding: calc(var(--editor-padding) * 0.5);
+		padding: calc(var(--go--spacing--vertical--lg) * 0.5);
 	}
 }
 
 .has-large-padding {
-	padding: var(--editor-padding);
+	padding: var(--go--spacing--vertical);
 
 	@media (--medium) {
-		padding: calc(var(--editor-padding) * 0.75);
+		padding: calc(var(--go--spacing--vertical--lg) * 0.75);
 	}
 }
 
 .has-huge-padding {
-	padding: var(--editor-padding);
+	padding: var(--go--spacing--vertical--lg);
 }

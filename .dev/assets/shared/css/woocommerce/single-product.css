@@ -4,7 +4,7 @@
 
 		& .product-navigation-wrapper {
 			display: none;
-			font-size: var(--theme-text-sm);
+			font-size: var(--go--font-size--small);
 			line-height: 1;
 			padding: 2rem 0 2.75rem;
 			width: 100%;
@@ -102,10 +102,10 @@
 			}
 
 			& a {
-				color: var(--theme-color-text-secondary);
+				color: var(--go-caption--color--text);
 
 				&:hover {
-					color: var(--theme-color-heading);
+					color: var(--go-heading--color--text);
 				}
 			}
 		}
@@ -113,7 +113,7 @@
 }
 
 .single-product .content-area--woocommerce {
-	margin-bottom: var(--vertical-rhythm--lrg);
+	margin-bottom: var(--go--spacing--vertical--lg);
 }
 
 /* Override core WooCommerce for an improved layout. */
@@ -140,7 +140,7 @@
 	@media (--large) {
 		clear: none;
 		float: right;
-		padding: 4rem 0 0 var(--theme-block-padding-x);
+		padding: 4rem 0 0 var(--go-block--padding--x);
 		width: 40%;
 	}
 }
@@ -150,7 +150,7 @@
 	text-align: center;
 
 	& .product_title {
-		font-size: var(--theme-h2--font-size);
+		font-size: var(--go--type-scale-5);
 	}
 }
 
@@ -158,24 +158,24 @@
 .woocommerce div.product p.price,
 .woocommerce div.product span.price,
 .woocommerce ul.products li.product .price ins {
-	color: var(--theme-color-text-secondary);
+	color: var(--go-caption--color--text);
 }
 
 .woocommerce-Price-amount {
-	color: var(--theme-color-heading);
+	color: var(--go-heading--color--text);
 }
 
 /* Details under the single post "Add to Cart" button */
 .product_meta {
-	color: var(--theme-color-text-secondary);
+	color: var(--go-caption--color--text);
 	margin-top: 2.5rem;
 
 	& a {
-		color: var(--theme-color-text-secondary);
+		color: var(--go-caption--color--text);
 	}
 
 	& > span {
 		display: block;
-		font-size: var(--theme-text-sm);
+		font-size: var(--go--font-size--small);
 	}
 }

@@ -1,16 +1,10 @@
 /*! Layout: Entry Header */
 .entry-header {
-	max-width: var(--theme-entry-header--width, 78rem);
-	padding-top: calc(var(--vertical-rhythm--lrg) * 0.55);
+	max-width: var(--go-entryheader--max-width, 70rem);
+	padding-top: calc(var(--go--spacing--vertical--lg) * 0.55);
 	text-align: center;
 }
 
 .has-featured-image .entry-header {
-	padding-top: var(--theme-entryheader--padding-top);
+	padding-top: var(--go-entryheader--padding-top, 4rem);
 }
-
-/* .has-header-3 .entry-header {
-	@media (--large) {
-		padding-top: 0;
-	}
-} */

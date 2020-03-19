@@ -1,15 +1,15 @@
 /*! Footer */
 .site-footer {
-	background-color: var(--theme-footer--bg);
-	color: var(--theme-footer--color);
-	font-family: var(--theme-footer--font-family, inherit);
+	background-color: var(--go-footer--color--background);
+	color: var(--go-footer--color--text, intial);
+	font-family: var(--go-footer--font-family, inherit);
 
 	&.has-background {
-		padding-top: var(--vertical-rhythm--lrg);
+		padding-top: var(--go--spacing--vertical--lg);
 	}
 
 	& a {
-		color: var(--theme-footer--color);
+		color: var(--go-footer--color--text, intial);
 		text-decoration: none;
 
 		&:hover {
@@ -56,7 +56,7 @@
 }
 
 .footer-navigation {
-	line-height: var(--theme-footer-nav--leading);
+	line-height: var(--go-footer-navigation--line-height, 2.5);
 
 	& a:focus {
 		@mixin outline;
@@ -64,12 +64,12 @@
 }
 
 .footer-navigation__title {
-	color: var(--theme-footer-heading--color);
+	color: var(--go-footer-heading--color--text, var(--go-heading--color--text));
 	display: block;
-	font-family: var(--theme-site-nav--font);
-	font-size: var(--theme-site-nav--font-size);
-	font-weight: var(--theme-site-nav--weight);
-	letter-spacing: var(--theme-site-nav--tracking);
+	font-family: var(--go-navigation--font-family);
+	font-size: var(--go-navigation--font-size);
+	font-weight: var(--go-navigation--font-weight, 400);
+	letter-spacing: var(--go-navigation--letter-spacing, normal);
 	margin-bottom: 0.75rem;
-	text-transform: var(--theme-site-nav--text-transform);
+	text-transform: var(--go-navigation--text-transform, normal);
 }
