@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-03-19T18:09:27+00:00\n"
+"POT-Creation-Date: 2020-03-19T18:12:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -727,11 +727,6 @@ msgstr ""
 #: includes/core.php:981
 msgctxt "name of the fourth footer variation option"
 msgid "Footer 4"
-msgstr ""
-
-#. translators: the theme author
-#: includes/core.php:1052
-msgid "WordPress Theme by %s"
 msgstr ""
 
 #: includes/core.php:1064
