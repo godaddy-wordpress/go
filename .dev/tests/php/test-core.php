@@ -701,7 +701,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		$post_id = $this->factory->post->create(
 			[
-				'post_title'   => 'Body Classes Test Post',
+				'post_title' => 'Body Classes Test Post',
 			]
 		);
 
