@@ -1049,7 +1049,7 @@ function get_default_copyright() {
 	 * @param string $copyright The default text for copyright.
 	 */
 	/* translators: the theme author */
-	return (string) apply_filters( 'go_default_copyright', sprintf( esc_html__( 'WordPress Theme by %s', 'go' ), 'GoDaddy' ) );
+	return (string) apply_filters( 'go_default_copyright', get_bloginfo( 'name' ) );
 
 }
 
