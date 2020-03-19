@@ -98,6 +98,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Disable xdebug PHP extension
+          command: sudo rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - run:
           name: Update hosts
           command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - run:
