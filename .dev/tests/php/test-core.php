@@ -728,6 +728,7 @@ class Test_Core extends WP_UnitTestCase {
 			'has-page-titles',
 			'has-featured-image',
 			'singular',
+			'woocommerce-page',
 		];
 
 		$this->assertEquals( $expecting_classes, $classes );
