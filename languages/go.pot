@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-03-19T18:12:01+00:00\n"
+"POT-Creation-Date: 2020-03-19T20:03:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -33,27 +33,27 @@ msgstr ""
 msgid "https://www.godaddy.com"
 msgstr ""
 
-#: .dev/tests/php/test-template-tags.php:835
-#: .dev/tests/php/test-template-tags.php:865
+#: .dev/tests/php/test-template-tags.php:870
+#: .dev/tests/php/test-template-tags.php:900
 #: includes/core.php:86
-#: includes/customizer.php:430
+#: includes/customizer.php:443
 msgid "Primary"
 msgstr ""
 
-#: .dev/tests/php/test-template-tags.php:836
-#: .dev/tests/php/test-template-tags.php:866
+#: .dev/tests/php/test-template-tags.php:871
+#: .dev/tests/php/test-template-tags.php:901
 #: includes/core.php:87
 msgid "Footer Menu #1"
 msgstr ""
 
-#: .dev/tests/php/test-template-tags.php:837
-#: .dev/tests/php/test-template-tags.php:867
+#: .dev/tests/php/test-template-tags.php:872
+#: .dev/tests/php/test-template-tags.php:902
 #: includes/core.php:88
 msgid "Footer Menu #2"
 msgstr ""
 
-#: .dev/tests/php/test-template-tags.php:838
-#: .dev/tests/php/test-template-tags.php:868
+#: .dev/tests/php/test-template-tags.php:873
+#: .dev/tests/php/test-template-tags.php:903
 #: includes/core.php:89
 msgid "Footer Menu #3"
 msgstr ""
@@ -791,71 +791,71 @@ msgstr ""
 msgid "Copyright Text"
 msgstr ""
 
-#: includes/customizer.php:382
+#: includes/customizer.php:395
 msgid "Design Style"
 msgstr ""
 
-#: includes/customizer.php:383
+#: includes/customizer.php:396
 msgid "Choose a style, select a color scheme and customize colors to personalize your site."
 msgstr ""
 
-#: includes/customizer.php:406
+#: includes/customizer.php:419
 msgid "Color Scheme"
 msgstr ""
 
-#: includes/customizer.php:452
+#: includes/customizer.php:465
 msgid "Secondary"
 msgstr ""
 
-#: includes/customizer.php:474
+#: includes/customizer.php:487
 msgid "Tertiary"
 msgstr ""
 
-#: includes/customizer.php:498
+#: includes/customizer.php:511
 msgid "Spacing"
 msgstr ""
 
-#: includes/customizer.php:522
-#: includes/customizer.php:541
+#: includes/customizer.php:535
+#: includes/customizer.php:554
 msgid "Header"
 msgstr ""
 
-#: includes/customizer.php:542
+#: includes/customizer.php:555
 msgid "Choose a header for every page on your site, then style it with the selectors below."
 msgstr ""
 
-#: includes/customizer.php:564
-#: includes/customizer.php:646
+#: includes/customizer.php:577
+#: includes/customizer.php:659
 msgid "Background Color"
 msgstr ""
 
-#: includes/customizer.php:584
-#: includes/customizer.php:686
+#: includes/customizer.php:597
+#: includes/customizer.php:699
 msgid "Text Color"
 msgstr ""
 
-#: includes/customizer.php:604
-#: includes/customizer.php:623
+#: includes/customizer.php:617
+#: includes/customizer.php:636
 msgid "Footer"
 msgstr ""
 
-#: includes/customizer.php:624
+#: includes/customizer.php:637
 msgid "Choose a footer for every page on your site, then style it with the selectors below."
 msgstr ""
 
-#: includes/customizer.php:666
+#: includes/customizer.php:679
 msgid "Heading Color"
 msgstr ""
 
-#: includes/customizer.php:706
+#: includes/customizer.php:719
 msgid "Social"
 msgstr ""
 
-#: includes/customizer.php:750
+#: includes/customizer.php:763
 msgid "Icon Color"
 msgstr ""
 
-#: includes/customizer.php:767
+#: includes/customizer.php:780
 msgid "Site Design"
 msgstr ""
 
@@ -915,11 +915,11 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: includes/template-tags.php:781
+#: includes/template-tags.php:804
 msgid "Menu"
 msgstr ""
 
-#: includes/template-tags.php:814
+#: includes/template-tags.php:837
 msgid "Search Toggle"
 msgstr ""
 
