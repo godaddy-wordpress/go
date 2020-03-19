@@ -702,7 +702,6 @@ class Test_Core extends WP_UnitTestCase {
 		$post_id = $this->factory->post->create(
 			[
 				'post_title'   => 'Body Classes Test Post',
-				'post_content' => '<!-- wp:woocommerce/featured-category {"editMode":false} /-->',
 			]
 		);
 
@@ -728,7 +727,6 @@ class Test_Core extends WP_UnitTestCase {
 			'has-page-titles',
 			'has-featured-image',
 			'singular',
-			'woocommerce-page',
 		];
 
 		$this->assertEquals( $expecting_classes, $classes );
