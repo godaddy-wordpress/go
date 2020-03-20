@@ -111,3 +111,4 @@ List of bespoke icons:
 
 ### Bug Fixes
 * Resolve specificity issue with the group block within the editor. [#485](https://github.com/godaddy-wordpress/go/pull/485)
+* Remove languages from tagged releases, keep MO files in canary. [#486](https://github.com/godaddy-wordpress/go/pull/486)
