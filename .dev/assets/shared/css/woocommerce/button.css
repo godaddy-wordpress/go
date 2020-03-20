@@ -19,7 +19,9 @@ body {
 		& .button.disabled,
 		& .button.alt.disabled,
 		& .button.disabled:hover,
-		& .button.alt.disabled:hover {
+		& .button.alt.disabled:hover,
+		& .woocommerce button.button:disabled,
+		& .woocommerce button.button:disabled[disabled] {
 			@mixin button;
 		}
 
