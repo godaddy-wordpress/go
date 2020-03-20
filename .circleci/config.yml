@@ -369,7 +369,6 @@ jobs:
             -H 'X-Authorization: Bearer ${STAGING_SITE_X_AUTHORIZATION}' \
             -d '[ ["theme", "install"], ["https://github.com/godaddy-wordpress/go/releases/download/canary/go-canary.zip"], ["force"] ]'
 
-
   deploy:
     docker:
       - image: circleci/golang:latest-node-browsers-legacy
