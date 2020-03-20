@@ -3,6 +3,18 @@ body {
 	&.sidebar-move {
 		right: 480px;
 	}
+
+	&.woocommerce-checkout .woocommerce.widget_shopping_cart {
+
+		& a.remove_from_cart_button,
+		& .woocommerce-mini-cart__buttons a.checkout {
+			display: none;
+		}
+
+		& .cart_list li {
+			padding-left: 0;
+		}
+	}
 }
 
 .site-overlay {
