@@ -1,5 +1,13 @@
-1.2.5 / 2002-03-19
+1.2.6 / 2020-03-20
 ==================
+
+### Bug Fixes
+* Resolve specificity issue with the group block within the editor. [#485](https://github.com/godaddy-wordpress/go/pull/485)
+* Remove languages from tagged releases, keep MO files in canary. [#486](https://github.com/godaddy-wordpress/go/pull/486)
+
+1.2.5 / 2020-03-19
+==================
+
 ### Enhancements
 * Introduce [AMP](https://amp.dev/) compatibility. [#447](https://github.com/godaddy-wordpress/go/pull/447), [#471](https://github.com/godaddy-wordpress/go/pull/471)
 * Update CSS variables, improve spacing, improve typography scale. [#467](https://github.com/godaddy-wordpress/go/pull/467)

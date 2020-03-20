@@ -109,15 +109,6 @@ List of bespoke icons:
 
 == Changelog ==
 
-### Enhancements
-* Introduce [AMP](https://amp.dev/) compatibility. [#447](https://github.com/godaddy-wordpress/go/pull/447), [#471](https://github.com/godaddy-wordpress/go/pull/471)
-* Update CSS variables, improve spacing, improve typography scale. [#467](https://github.com/godaddy-wordpress/go/pull/467)
-* Improve development processes (`npm run watch`). [#478](https://github.com/godaddy-wordpress/go/pull/478)
-* Introduced a `changelog.txt` file to easier track changes between releases. Update Github release notes with changelog changes. [#475](https://github.com/godaddy-wordpress/go/pull/475)
-* Improvements to the copyright footer text, including a new filter (`go_footer_copyrght_year_text`). [#468](https://github.com/godaddy-wordpress/go/pull/468)
-
 ### Bug Fixes
-* Fix Welcoming design style featured image. [#469](https://github.com/godaddy-wordpress/go/pull/469)
-* Fix radio and checkbox visibility in each design style. [#477](https://github.com/godaddy-wordpress/go/pull/477)
-* Increase the `z-index` on the header, so the mobile menu displays correctly. [#482](https://github.com/godaddy-wordpress/go/pull/482)
-* Update copyright footer text [#481](https://github.com/godaddy-wordpress/go/pull/481)
+* Resolve specificity issue with the group block within the editor. [#485](https://github.com/godaddy-wordpress/go/pull/485)
+* Remove languages from tagged releases, keep MO files in canary. [#486](https://github.com/godaddy-wordpress/go/pull/486)
