@@ -409,6 +409,7 @@ jobs:
             mkdir -p go
             mkdir -p /tmp/artifacts
             rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
+            rm -rf go/languages
             zip -r /tmp/artifacts/go.zip ./go
       - deploy:
           name: Deploy a new release to GitHub

@@ -10,5 +10,7 @@ package*.json
 README.md
 bin/
 build/
+languages/*.json
 languages/*.po
+languages/*.pot
 vendor/
