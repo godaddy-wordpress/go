@@ -65,6 +65,16 @@ body {
 			}
 		}
 	}
+
+	& .widget_shopping_cart a.wc-forward {
+		@mixin button;
+
+		&:hover,
+		&:focus,
+		&:active {
+			@mixin button-hover;
+		}
+	}
 }
 
 /* Buttons found on full product pages */
