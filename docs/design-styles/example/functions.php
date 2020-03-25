@@ -31,16 +31,16 @@ function prefix_get_available_design_styles( $default_design_styles ) {
 			'one' => array(
 				'label'      => _x( 'Millennial', 'color palette name', 'go' ),
 				'primary'    => '#0d00ff',
-				'secondary'  => '#fe2501',
-				'tertiary'   => '#09ff02',
-				'background' => '#ffffff',
+				'secondary'  => '#ccff04',
+				'tertiary'   => '#f7ceff',
+				'background' => '#ccff04',
 			),
 			'two' => array(
 				'label'      => _x( 'Blush', 'color palette name', 'go' ),
-				'primary'    => '#ccff04',
-				'secondary'  => '#8c02ec',
-				'tertiary'   => '#0d00ff',
-				'background' => '#ffffff',
+				'primary'    => '#5501e6',
+				'secondary'  => '#00fc75',
+				'tertiary'   => '#f6ffd8',
+				'background' => '#00fc75',
 			),
 		),
 		'fonts'          => array(
