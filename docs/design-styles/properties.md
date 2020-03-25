@@ -16,8 +16,7 @@ To target the text alignment of each caption, you'd use `--go--caption--text-ali
 ## CSS Properties
 Here are properties that may be leveraged within design style stylesheets:
 
-### Structure
-| CSS Property  | Description |
+| Structure  | Description |
 | ------------- | ------------- |
 | --go--max-width  | Standard page content width |
 | --go--max-width--alignwide | Wide alignment content width |
