@@ -26,8 +26,8 @@ function prefix_get_available_design_styles( $default_design_styles ) {
 			'one' => array(
 				'label'      => _x( 'Millennial', 'color palette name', 'go' ),
 				'primary'    => '#0d00ff',
-				'secondary'  => '#fe2501',
-				'tertiary'   => '#09ff02',
+				'secondary'  => '#09ff02',
+				'tertiary'   => '#cedcff',
 				'background' => '#ffffff',
 			),
 			'two' => array(
