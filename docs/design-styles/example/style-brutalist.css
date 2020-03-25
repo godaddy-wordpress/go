@@ -12,7 +12,7 @@
 
 	/* Typography */
 	--go--color--text: hsl(0, 0%, 0%);
-	--go--font-family: "Fira Code", mono, sans-serif;
+	--go--font-family: "IBM Plex Mono", mono, sans-serif;
 	--go--font-size--small: 90%;
 	--go--font-size: 0.85rem;
 	--go--line-height: 2.25;
@@ -21,7 +21,7 @@
 	/* Headings */
 	--go-heading--button-spacing: 1.75rem;
 	--go-heading--color--text: hsl(0, 0%, 0%);
-	--go-heading--font-family: "Heebo", sans-serif;
+	--go-heading--font-family: "Bungee", serif;
 	--go-heading--font-weight: 800;
 	--go-heading--letter-spacing: -0.02rem;
 	--go-heading--line-height: 1.2;

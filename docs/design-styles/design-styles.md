@@ -1,19 +1,14 @@
-<?php
-/**
- * Plugin Name: Go Design Style Example
- * Plugin URI:
- * Description:
- * Author: GoDaddy
- * Version: 1.22.0
- * Text Domain:
- * Domain Path:
- * Tested up to: 5.4
- *
- * @package Go
- */
+# Extending design styles
 
+
+The easiest way to add a custom design style is to create a plugin with a  function to add a new design style to Go and a corresponding stylesheet.
+
+## Registering a design style
+Add a function to make the design styles available within the Customizer:
+
+```
 /**
- *  Add my Brutalist design style
+ * Add my Brutalist design style
  *
  * @since 0.1.0
  *
@@ -36,7 +31,7 @@ function prefix_get_available_design_styles( $default_design_styles ) {
 				'background' => '#ffffff',
 			),
 			'two' => array(
-				'label'      => _x( 'Blush', 'color palette name', 'go' ),
+				'label'      => _x( 'Radical', 'color palette name', 'go' ),
 				'primary'    => '#ccff04',
 				'secondary'  => '#8c02ec',
 				'tertiary'   => '#0d00ff',
@@ -59,3 +54,8 @@ function prefix_get_available_design_styles( $default_design_styles ) {
 
 }
 add_filter( 'go_design_styles', 'prefix_get_available_design_styles' );
+```
+
+
+## Registering a styleseheet and modify CSS custom properties
+2. Add a stylesheet to override any default CSS custom properties in Go.
