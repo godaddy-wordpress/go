@@ -1,7 +1,10 @@
 # Extending design styles
+The easiest way to add a custom design style is to create a plugin with a function to add a new design style to Go, along with a corresponding stylesheet.
 
+Then you'd be able to add all sorts of design styles to your site, instantly changing the look and feel of your site - without risking any compatibility/theme conflicts that arise when traditionally changing themes: 
 
-The easiest way to add a custom design style is to create a plugin with a  function to add a new design style to Go and a corresponding stylesheet.
+![customize](https://user-images.githubusercontent.com/1813435/77576898-4d633900-6eac-11ea-8a2f-10e3ca761b9c.jpg)
+Note how the "Brutalist" style is added to the list of availble design styles. 👆
 
 ## Registering a design style
 Add a function to make the design styles available within the Customizer:
