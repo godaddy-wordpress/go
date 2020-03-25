@@ -1,6 +1,6 @@
 /*! Header */
 .header {
-	background-color: var(--go-header--color--background);
+	background-color: var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
 	z-index: 99;
 
 	& .u-informational {
