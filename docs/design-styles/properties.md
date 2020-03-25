@@ -30,12 +30,12 @@ Here are properties that may be leveraged within design style stylesheets:
 ### Typography
 | CSS Property  | Description |
 | ------------- | ------------- |
-| --go--color--text ||
-| --go--font-family ||
-| --go--font-size ||
-| --go--font-size--small ||
-| --go--line-height ||
-| --go--type-ratio ||
+| --go--color--text | Global text color|
+| --go--font-family | Global font family applied|
+| --go--font-size | Base body text size, in `rem` |
+| --go--font-size--small | Text size for smaller elements, such as captions |
+| --go--line-height | Base body line height/leading |
+| --go--type-ratio | [Typography ratio](https://type-scale.com) by which the heading sizes are generated, example `1.3` |
 
 
 ### Formatting
@@ -43,16 +43,16 @@ Here are properties that may be leveraged within design style stylesheets:
 #### Hyperlinks
 | CSS Property  | Description |
 | ------------- | ------------- |
-| --go--hyperlink--color--text ||
-| --go--hyperlink-interactive--color--text ||
+| --go--hyperlink--color--text | Link default color |
+| --go--hyperlink-interactive--color--text | Link hover/focus color |
 
 #### Captions
 | CSS Property  | Description |
 | ------------- | ------------- |
-| --go-caption--color--text ||
-| --go-caption--font-size ||
-| --go-caption--text-align ||
-| --go-caption--text-align--rtl ||
+| --go-caption--color--text | Text color for all captions |
+| --go-caption--font-size | Font size for captions |
+| --go-caption--text-align | Text alignment for captions: right, left, center |
+| --go-caption--text-align--rtl | Text alignment for RTL langauges|
 
 
 ### Forms
@@ -60,31 +60,31 @@ Here are properties that may be leveraged within design style stylesheets:
 #### Labels
 | CSS Property  | Description |
 | ------------- | ------------- |
-| --go-label--font-size ||
-| --go-label--font-weight ||
-| --go-label--letter-spacing ||
+| --go-label--font-size | Font size for <label> |
+| --go-label--font-weight | Font weight for <label> |
+| --go-label--letter-spacing | Letter spacing for <label> |
 | --go-label--margin-bottom | Space between label and the input below it |
 
 #### Inputs
 | CSS Property  | Description |
 | ------------- | ------------- |
-| --go-input--border ||
-| --go-input--color--text ||
-| --go-input--margin-bottom ||
-| --go-input--padding--x ||
-| --go-input--padding--y ||
+| --go-input--border | Border for inputs, example: 1px solid black|
+| --go-input--color--text | Text color for input fields |
+| --go-input--margin-bottom | Space between the input and elements below |
+| --go-input--padding--x | Horizontal padding for field inputs |
+| --go-input--padding--y | Vertical padding for field inputs |
 
 #### Buttons
 | CSS Property  | Description |
 | ------------- | ------------- |
-| --go-button--border-radius ||
-| --go-button--font-size ||
-| --go-button--font-weight ||
-| --go-button--letter-spacing ||
-| --go-button--padding--x ||
-| --go-button--padding--y ||
-| --go-button--text-transform ||
-| --go-button-interactive--color--background ||
+| --go-button--border-radius | Rounded corners, example `3px` |
+| --go-button--font-size | Font size for button text |
+| --go-button--font-weight | Font weight, examplel `400` |
+| --go-button--letter-spacing | Letter spacing |
+| --go-button--padding--x | Horizontal padding for field inputs |
+| --go-button--padding--y | Vertical padding for field inputs |
+| --go-button--text-transform | Button text transformation, example `uppercase` |
+| --go-button-interactive--color--background | Button hover/focus background color |
 
 
 ### Elements
@@ -92,19 +92,10 @@ Here are properties that may be leveraged within design style stylesheets:
 #### Site Navigation
 | CSS Property  | Description |
 | ------------- | ------------- |
-| --go-navigation--color--text ||
-| --go-navigation--font-family ||
-| --go-navigation--font-size ||
-| --go-navigation-mobile--font-size ||
+| --go-navigation--color--text | Text color for site navigation |
+| --go-navigation--font-family | Font family for site navigation |
+| --go-navigation--font-size | Font size for site navigation menu items |
+| --go-navigation-mobile--font-size | Font size for the mobile navigation menu items |
 | --go-navigation--font-weight ||
 | --go-navigation--text-transform ||
 | --go-navigation--letter-spacing ||
-
-
-
-
-
-
-
-
-
