@@ -27,7 +27,7 @@ Here are properties that may be leveraged within design style stylesheets:
 
 
 ### Typography
-| CSS Property  | Description |
+| Typography  | Description |
 | ------------- | ------------- |
 | --go--color--text | Global text color|
 | --go--font-family | Global font family applied|
@@ -38,15 +38,12 @@ Here are properties that may be leveraged within design style stylesheets:
 
 
 ### Formatting
-
-#### Hyperlinks
-| CSS Property  | Description |
+| Hyperlinks  | Description |
 | ------------- | ------------- |
 | --go--hyperlink--color--text | Link default color |
 | --go--hyperlink-interactive--color--text | Link hover/focus color |
 
-#### Captions
-| CSS Property  | Description |
+| Captions  | Description |
 | ------------- | ------------- |
 | --go-caption--color--text | Text color for all captions |
 | --go-caption--font-size | Font size for captions |
@@ -56,16 +53,14 @@ Here are properties that may be leveraged within design style stylesheets:
 
 ### Forms
 
-#### Labels
-| CSS Property  | Description |
+| Labels  | Description |
 | ------------- | ------------- |
 | --go-label--font-size | Font size for <label> |
 | --go-label--font-weight | Font weight for <label> |
 | --go-label--letter-spacing | Letter spacing for <label> |
 | --go-label--margin-bottom | Space between label and the input below it |
 
-#### Inputs
-| CSS Property  | Description |
+| Inputs  | Description |
 | ------------- | ------------- |
 | --go-input--border | Border for inputs, example: 1px solid black|
 | --go-input--color--text | Text color for input fields |
@@ -73,8 +68,7 @@ Here are properties that may be leveraged within design style stylesheets:
 | --go-input--padding--x | Horizontal padding for field inputs |
 | --go-input--padding--y | Vertical padding for field inputs |
 
-#### Buttons
-| CSS Property  | Description |
+| Buttons  | Description |
 | ------------- | ------------- |
 | --go-button--border-radius | Rounded corners, example `3px` |
 | --go-button--font-size | Font size for button text |
@@ -88,8 +82,7 @@ Here are properties that may be leveraged within design style stylesheets:
 
 ### Elements
 
-#### Site Navigation
-| CSS Property  | Description |
+| Site Navigation  | Description |
 | ------------- | ------------- |
 | --go-navigation--color--text | Text color for site navigation |
 | --go-navigation--font-family | Font family for site navigation |
