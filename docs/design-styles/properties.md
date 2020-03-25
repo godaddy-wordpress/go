@@ -5,10 +5,13 @@ Go leverages CSS custom properties – also referred to as CSS variables — to 
 
 The `{target}` is the element we're wanting to style, while `{propertyName}` is the specific CSS property to modify.
 
-For example, to target the text alignment of each caption, you'd use `--go--caption--text-align`, setting the value to either `left`, `right`, or `center`.
+### Example:
+To target the text alignment of each caption, you'd use `--go--caption--text-align`, setting the value to either `left`, `right`, or `center`.
 
 
-## Structure
+## CSS Properties
+
+### Structure
 | CSS Property  | Description |
 | ------------- | ------------- |
 | --go--max-width  | Standard page content width |
@@ -19,7 +22,7 @@ For example, to target the text alignment of each caption, you'd use `--go--capt
 | --go--viewport-basis | Global site spacing basis |
 
 
-## Typography
+### Typography
 | CSS Property  | Description |
 | ------------- | ------------- |
 | --go--color--text ||
@@ -30,15 +33,15 @@ For example, to target the text alignment of each caption, you'd use `--go--capt
 | --go--type-ratio ||
 
 
-## Formatting
+### Formatting
 
-### Hyperlinks
+#### Hyperlinks
 | CSS Property  | Description |
 | ------------- | ------------- |
 | --go--hyperlink--color--text ||
 | --go--hyperlink-interactive--color--text ||
 
-### Captions
+#### Captions
 | CSS Property  | Description |
 | ------------- | ------------- |
 | --go-caption--color--text ||
@@ -47,9 +50,9 @@ For example, to target the text alignment of each caption, you'd use `--go--capt
 | --go-caption--text-align--rtl ||
 
 
-## Forms
+### Forms
 
-### Labels
+#### Labels
 | CSS Property  | Description |
 | ------------- | ------------- |
 | --go-label--font-size ||
@@ -57,7 +60,7 @@ For example, to target the text alignment of each caption, you'd use `--go--capt
 | --go-label--letter-spacing ||
 | --go-label--margin-bottom | Space between label and the input below it |
 
-### Inputs
+#### Inputs
 | CSS Property  | Description |
 | ------------- | ------------- |
 | --go-input--border ||
@@ -66,7 +69,7 @@ For example, to target the text alignment of each caption, you'd use `--go--capt
 | --go-input--padding--x ||
 | --go-input--padding--y ||
 
-### Buttons
+#### Buttons
 | CSS Property  | Description |
 | ------------- | ------------- |
 | --go-button--border-radius ||
@@ -79,9 +82,9 @@ For example, to target the text alignment of each caption, you'd use `--go--capt
 | --go-button-interactive--color--background ||
 
 
-## Elements
+### Elements
 
-### Site Navigation
+#### Site Navigation
 | CSS Property  | Description |
 | ------------- | ------------- |
 | --go-navigation--color--text ||
