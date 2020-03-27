@@ -10,6 +10,7 @@ package*.json
 README.md
 bin/
 build/
+docs/
 languages/*.json
 languages/*.po
 languages/*.pot

@@ -1,0 +1,88 @@
+:root {
+
+	/* Content width */
+	--go--max-width: 30rem;
+	--go--max-width--alignwide: 80rem;
+
+	/* Spacing */
+	--go--viewport-basis: 790;
+	--go--spacing--header: 20;
+	--go--spacing--horizontal: 40;
+	--go--spacing--paragraph: 13;
+
+	/* Typography */
+	--go--color--text: hsl(0, 0%, 0%);
+	--go--font-family: "IBM Plex Mono", mono, sans-serif;
+	--go--font-size--small: 90%;
+	--go--font-size: 0.8rem;
+	--go--line-height: 2.25;
+	--go--type-ratio: 1.3;
+
+	/* Headings */
+	--go-heading--button-spacing: 1.75rem;
+	--go-heading--color--text: hsl(0, 0%, 0%);
+	--go-heading--font-family: "Bungee", serif;
+	--go-heading--font-weight: 800;
+	--go-heading--line-height: 1.2;
+	--go-heading--margin-bottom: 1rem;
+
+	/* Captions */
+	--go-caption--color--text: hsl(0, 0%, 0%);
+
+	/* Links */
+	--go--hyperlink--color--text: var(--go-heading--color--text);
+	--go--hyperlink-interactive--color--text: var(--go--color--primary);
+
+	/* Buttons */
+	--go-button--border-radius: 0;
+	--go-button--font-size: 0.75rem;
+	--go-button--font-weight: 600;
+	--go-button--letter-spacing: 3px;
+	--go-button--padding--x: 2rem;
+	--go-button--padding--y: 1.8rem;
+	--go-button--text-transform: uppercase;
+	--go-button-interactive--color--background: var(--go-heading--color--text);
+
+	/* Input */
+	--go-input--color--background: var(--go--color--background);
+	--go-input-interactive--color--background: var(--go--color--primary);
+	--go-input-interactive--color--text: var(--go--color--white);
+	--go-input--border: var(--go-input--border-width, 3px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go--color--primary));
+	--go-input--color--text: var(--go--color--primary);
+	--go-input--font-size: 1.1rem;
+	--go-input--padding--x: 1.5rem;
+	--go-input--padding--y: 1.5rem;
+
+	/* Site Title */
+	--go-site-title--color--text: var(--go--color--primary);
+	--go-site-title--font-size: 1.75rem;
+	--go-site-title--font-family: var(--go-navigation--font-family);
+	--go-site-title--text-transform: uppercase;
+	--go-site-title--letter-spacing: 3px;
+
+	/* Site Description */
+	--go-site-description--color--text: var(--go--color--primary);
+	--go-site-description--opacity: 1;
+	--go-site-description--font-size: 0.65rem;
+	--go-site-description--letter-spacing: 10px;
+
+	/* Site Navigation */
+	--go-navigation--color--text: var(--go--color--primary);
+	--go-navigation--font-size: 0.75rem;
+	--go-navigation-mobile--font-size: 1rem;
+	--go-navigation--text-transform: uppercase;
+	--go-submenu--color--background: var(--go--color--primary);
+
+	/* Site Search */
+	--go-search-button--color--text-interactive: var(--go-heading--color--text);
+	--go-search-button--color--background: var(--go--color--primary);
+	--go-search-button--color--background-interactive: var(--go-heading--color--text);
+
+	/* Social */
+	--go-social--size: 2.5rem;
+	--go-social--padding: 0.75rem;
+	--go-social--color--text: var(--go--color--primary);
+
+	/* Footer  */
+	--go-footer--color--text: var(--go--color--primary);
+}
