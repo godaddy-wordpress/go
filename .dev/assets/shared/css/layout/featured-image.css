@@ -4,7 +4,7 @@
 	overflow: hidden;
 	padding-bottom: calc(var(--go-featured-image--height, 35%) * 1.5);
 	position: relative;
-	z-index: -1;
+	z-index: 0;
 
 	@media (--medium) {
 		padding-bottom: var(--go-featured-image--height, 35%);
@@ -56,7 +56,7 @@
 	}
 }
 
-.has-featured-image:not(.menu-is-open) {
+.has-featured-image:not(.is-style-welcoming):not(.menu-is-open) {
 
 	& .site-title,
 	& .site-description,

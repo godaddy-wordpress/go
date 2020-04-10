@@ -15,7 +15,7 @@
 }
 
 .woocommerce form .form-row textarea:focus {
-	border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+	border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 }
 
 .select2-container--default .select2-selection--single {
@@ -36,7 +36,7 @@
 }
 
 .select2-container--default.select2-container--open.select2-container--default .select2-selection--single {
-	border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+	border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 	border-width: var(--go-input--border-width, 2px);
 }
 
@@ -64,7 +64,7 @@
 }
 
 .select2-dropdown {
-	border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+	border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 	border-radius: 0;
 	border-width: var(--go-input--border-width, 2px);
 	line-height: 1.25;
@@ -96,7 +96,7 @@
 	width: auto;
 
 	&:focus {
-		border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+		border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 	}
 }
 
@@ -142,7 +142,7 @@
 	line-height: 1.25;
 
 	&:focus {
-		border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+		border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 	}
 }
 

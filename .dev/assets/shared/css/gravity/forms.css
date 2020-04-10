@@ -171,7 +171,7 @@ body {
 		padding: var(--go-button--padding--y);
 
 		&:focus {
-			border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+			border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 			color: var(--go-input-interactive--color--text, var(--go--color--text));
 		}
 	}

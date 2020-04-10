@@ -64,7 +64,7 @@
 }
 
 @define-mixin select-menu-focus {
-	border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+	border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 	color: var(--go-input--color--text);
 	outline: 0;
 }
@@ -81,7 +81,7 @@
 	display: block;
 	height: 19px;
 	left: 0;
-	mask-position: left bottom;
+	mask-position: center center;
 	mask-repeat: no-repeat;
 	position: absolute;
 	width: 20px;

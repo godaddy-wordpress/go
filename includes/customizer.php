@@ -343,7 +343,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		array(
 			'default'           => \Go\Core\get_default_copyright(),
 			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => array( 'Go\Customizer', 'copyright_kses_html' ),
 		)
 	);
 
@@ -356,6 +356,19 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'     => 'text',
 		)
 	);
+}
+
+/**
+ * Callback to retreive the copyright kses HTML
+ *
+ * @param string $input Input value.
+
+ * @return string Filtered $input value.
+ */
+function copyright_kses_html( $input ) {
+
+	return wp_kses( $input, \Go\get_copyright_kses_html() );
+
 }
 
 /**

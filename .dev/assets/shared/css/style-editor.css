@@ -14,6 +14,7 @@
 /* Custom Editor Styles */
 @import url("editor/hero.css");
 @import url("editor/group.css");
+@import url("editor/woocommerce-blocks.css");
 
 /* Utitlities */
 @import url("utilities/captions.css");
@@ -292,4 +293,3 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 		font-size: var(--go-separator--size, 2rem);
 	}
 }
-

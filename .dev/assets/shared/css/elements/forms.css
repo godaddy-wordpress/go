@@ -32,8 +32,8 @@ input[type="color"] {
 	width: 100%;
 
 	&:focus {
-		background: var(--go-input-interactive-color--background, var(--go--color--white));
-		border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+		background: var(--go-input-interactive--color--background, var(--go--color--white));
+		border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 		box-shadow: var(--go-input-interactive--box-shadow, none);
 		color: var(--go-input-interactive--color--text, var(--go--color--text));
 		outline: none;
@@ -43,6 +43,69 @@ input[type="color"] {
 input[type="radio"],
 input[type="checkbox"] {
 	appearance: none;
+}
+
+.coblocks-field {
+
+	& input[type="radio"],
+	& input[type="checkbox"],
+	& input[type="hidden"] {
+		display: none;
+	}
+
+	& .coblocks--inline {
+
+		& .coblocks-checkbox-label,
+		& .coblocks-radio-label {
+			margin-right: 20px;
+			padding-left: 2rem;
+
+			&::before {
+				top: 3px;
+			}
+		}
+	}
+}
+
+input[type="radio"]:checked + label::before {
+	background-color: var(--go--color--primary) !important;
+}
+
+.coblocks-radio-label {
+	@mixin checkbox-radio-label;
+	position: relative;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&::before {
+		@mixin checkbox-radio-label-before;
+		@mixin radio-label-before;
+		top: 5px;
+	}
+}
+
+.coblocks-checkbox-label {
+	@mixin checkbox-radio-label;
+	position: relative;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&::before {
+		@mixin checkbox-radio-label-before;
+		@mixin checkbox-label-before;
+		top: 5px;
+	}
+}
+
+input[type="checkbox"]:checked + label {
+
+	&::before {
+		@mixin checkbox-label-checked-before;
+	}
 }
 
 textarea {
@@ -59,8 +122,8 @@ textarea {
 	width: 100%;
 
 	&:focus {
-		background: var(--go-input-interactive-color--background, var(--go--color--white));
-		border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+		background: var(--go-input-interactive--color--background, var(--go--color--white));
+		border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 		box-shadow: var(--go-input-interactive--box-shadow, none);
 		color: var(--go-input-interactive--color--text, var(--go--color--text));
 		outline: none;

@@ -44,7 +44,7 @@
 }
 
 .search-modal-inner {
-	background-color: var(--go-header--color--background, var(--go--color--white));
+	background-color: var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
 	padding: 3vw;
 	transform: translateY(-100%);
 	transition: transform 0.15s linear, box-shadow 0.15s linear;

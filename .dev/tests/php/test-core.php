@@ -995,7 +995,7 @@ class Test_Core extends WP_UnitTestCase {
 	 */
 	function testGetDefaultCopyright() {
 
-		$this->assertEquals( 'WordPress Theme by GoDaddy', Go\Core\get_default_copyright() );
+		$this->assertEquals( 'Test Blog', Go\Core\get_default_copyright() );
 
 	}
 
@@ -1103,6 +1103,18 @@ class Test_Core extends WP_UnitTestCase {
 	function testGetDefaultScheme() {
 
 		$this->assertEquals( 'one', Go\Core\get_default_color_scheme() );
+
+	}
+
+	/**
+	 * Test that the default viewport basis returns false when an invalid design
+	 * style is set
+	 */
+	function testGetDefaultViewportBasis() {
+
+		set_theme_mod( 'design_style', 'non-existing-style' );
+
+		$this->assertFalse( Go\Core\get_default_viewport_basis() );
 
 	}
 
