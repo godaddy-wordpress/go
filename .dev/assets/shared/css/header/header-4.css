@@ -63,7 +63,7 @@
 		overflow: hidden;
 
 		& .header__navigation {
-			background-color: var(--go-header--color--background, var(--go--color--white));
+			background-color: var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
 			font-size: 1.5rem;
 			opacity: 1;
 			padding-bottom: var(--go-header--padding--y, 3vw);

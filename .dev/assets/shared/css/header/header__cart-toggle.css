@@ -3,7 +3,7 @@
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
-	color: var(--go-search-toggle--color--text, var(--go-heading--color--text));
+	color: var(--go-search-toggle--color--text, var(--go-navigation--color--text));
 	line-height: 1;
 	padding: 0.75rem;
 	position: relative;

@@ -61,7 +61,7 @@
 	--go-label--text-transform: uppercase;
 
 	/* Input */
-	--go-input--border-color-interactive: var(--go--color--tertiary);
+	--go-input-interactive--color--border-color: var(--go--color--tertiary);
 	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
 	--go-input--color--text: var(--go-caption--color--text);
 	--go-input--font-size: 1.1rem;
@@ -69,7 +69,7 @@
 	--go-input--padding--x: 1.35rem;
 	--go-input--padding--y: 1rem;
 	--go-input-interactive--color--text: var(--go-heading--color--text);
-	--go-input-interactive-color--background: var(--go--color--tertiary);
+	--go-input-interactive--color--background: var(--go--color--tertiary);
 
 	/* Site Title */
 	--go-site-title--color--text: var(--go-heading--color--text);

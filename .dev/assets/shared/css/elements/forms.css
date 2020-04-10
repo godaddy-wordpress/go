@@ -32,8 +32,8 @@ input[type="color"] {
 	width: 100%;
 
 	&:focus {
-		background: var(--go-input-interactive-color--background, var(--go--color--white));
-		border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+		background: var(--go-input-interactive--color--background, var(--go--color--white));
+		border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 		box-shadow: var(--go-input-interactive--box-shadow, none);
 		color: var(--go-input-interactive--color--text, var(--go--color--text));
 		outline: none;
@@ -122,8 +122,8 @@ textarea {
 	width: 100%;
 
 	&:focus {
-		background: var(--go-input-interactive-color--background, var(--go--color--white));
-		border-color: var(--go-input--border-color-interactive, var(--go--color--primary));
+		background: var(--go-input-interactive--color--background, var(--go--color--white));
+		border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 		box-shadow: var(--go-input-interactive--box-shadow, none);
 		color: var(--go-input-interactive--color--text, var(--go--color--text));
 		outline: none;
