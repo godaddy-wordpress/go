@@ -1,6 +1,10 @@
 /*! Gallery */
 .wp-block-gallery {
 
+	& .blocks-gallery-grid {
+		width: 100%;
+	}
+
 	& .blocks-gallery-item figcaption {
 		font-size: var(--go-caption--font-size);
 		font-style: var(--go-caption--font-style, normal);
