@@ -168,7 +168,7 @@ function customize_preview_init() {
 	wp_enqueue_script(
 		'go-customize-preview',
 		get_theme_file_uri( "dist/js/admin/customize-preview{$suffix}.js" ),
-		array( 'jquery', 'customize-preview', 'wp-autop' ),
+		array( 'jquery', 'wp-autop' ),
 		GO_VERSION,
 		true
 	);
