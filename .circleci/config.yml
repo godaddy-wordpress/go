@@ -365,7 +365,7 @@ jobs:
       - deploy:
           name: Deploy Go canary to the WPNUX site
           command: |
-            curl -X POST https://wpnux.godaddy.com/webhook-install-canary.php \
+            curl -X POST https://wpnux.godaddy.com/v2/webhook-install-canary.php \
             -H 'Content-Type: application/json' \
             -H "X-Authorization: Bearer ${WPNUX_SITE_X_AUTHORIZATION}" \
             -d '[ "go" ]'
