@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-04-13T16:14:30+00:00\n"
+"POT-Creation-Date: 2020-04-13T16:24:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -934,51 +934,51 @@ msgstr ""
 msgid "Search Toggle"
 msgstr ""
 
-#: includes/woocommerce.php:151
+#: includes/woocommerce.php:153
 msgid "View cart"
 msgstr ""
 
-#: includes/woocommerce.php:216
+#: includes/woocommerce.php:218
 msgid "Close sidebar"
 msgstr ""
 
-#: includes/woocommerce.php:224
+#: includes/woocommerce.php:226
 msgid "Cart"
 msgstr ""
 
 #. translators: 1. Single integer value. (eg: 1 product in your cart). 2. Integer larger than 1. (eg: 5 products in your cart).
-#: includes/woocommerce.php:231
-#: includes/woocommerce.php:281
+#: includes/woocommerce.php:233
+#: includes/woocommerce.php:283
 msgid "%s product in your cart"
 msgid_plural "%s products in your cart"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/woocommerce.php:335
+#: includes/woocommerce.php:337
 msgid "Your cart is currently empty."
 msgstr ""
 
-#: includes/woocommerce.php:462
+#: includes/woocommerce.php:475
 msgid "Previous Post: "
 msgstr ""
 
-#: includes/woocommerce.php:462
+#: includes/woocommerce.php:475
 msgid "Previous"
 msgstr ""
 
-#: includes/woocommerce.php:463
+#: includes/woocommerce.php:476
 msgid "Next Post:"
 msgstr ""
 
-#: includes/woocommerce.php:463
+#: includes/woocommerce.php:476
 msgid "Next"
 msgstr ""
 
-#: includes/woocommerce.php:494
+#: includes/woocommerce.php:507
 msgid "Back"
 msgstr ""
 
-#: includes/woocommerce.php:545
+#: includes/woocommerce.php:558
 msgid "Reset Selections"
 msgstr ""
 
