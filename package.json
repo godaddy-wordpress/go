@@ -1,6 +1,6 @@
 {
   "name": "go",
-  "version": "1.2.7",
+  "version": "1.2.6",
   "description": "Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowering makers to build beautifully rich websites with WordPress.",
   "homepage": "https://github.com/godaddy-wordpress/go",
   "repository": {
@@ -33,6 +33,7 @@
     "postdev": "mkdir temp && cp -a dist/* temp && NODE_ENV=production webpack --config .dev/config/webpack.prod.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
     "package": "rm -rf build && mkdir -p build/go && npm run build && rsync -av --exclude-from .distignore --delete . build/go && cd build && zip -r go.zip ./go",
     "version": "grunt version && git add -A .",
+    "preversion": "git pull origin master && git reset --hard origin/master",
     "postversion": "git push && git push --tags",
     "build-release": "npm install && npm run build",
     "lint-release": "npm install && composer install && npm run lint",
