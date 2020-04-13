@@ -22,15 +22,6 @@
 	}
 }
 
-#customize-control-social_icon_color {
-	margin-top: 10px;
-}
-
-#customize-control-header_background_color,
-#customize-control-footer_background_color {
-	margin-top: 5px;
-}
-
 .home .entry-header.page-header {
 	display: none;
 }
@@ -38,4 +29,23 @@
 /* Hide the control while experimental */
 #customize-control-viewport_basis {
 	display: none !important;
+}
+
+.customize-control-go_title {
+	border-top: 1px solid #ddd;
+	margin-top: 12px;
+	padding-top: 20px;
+
+	& .customize-control-title {
+		line-height: 1.75;
+		margin-bottom: 4px;
+	}
+}
+
+.customize-control-color {
+
+	& .customize-control-title {
+		font-size: 13px;
+		font-weight: 500;
+	}
 }
