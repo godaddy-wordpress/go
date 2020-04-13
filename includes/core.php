@@ -233,7 +233,11 @@ function fonts_url() {
 	$design_styles = get_available_design_styles();
 	$design_style  = $design_style['slug'];
 
-	if ( ! isset( $design_styles[ $design_style ] ) || ! isset( $design_styles[ $design_style ]['fonts'] ) ) {
+	if (
+		! isset( $design_styles[ $design_style ] ) ||
+		! isset( $design_styles[ $design_style ]['fonts'] ) ||
+		empty( $design_styles[ $design_style ]['fonts'] )
+	) {
 
 		return;
 
@@ -390,13 +394,28 @@ function editor_styles() {
  */
 function styles() {
 
-	$suffix = SCRIPT_DEBUG ? '' : '.min';
-	$rtl    = ! is_rtl() ? '' : '-rtl';
+	$suffix                = SCRIPT_DEBUG ? '' : '.min';
+	$rtl                   = ! is_rtl() ? '' : '-rtl';
+	$go_style_dependencies = array();
+	$fonts_url             = fonts_url();
+
+	if ( ! empty( $fonts_url ) ) {
+
+		$go_style_dependencies[] = 'go-fonts';
+
+		wp_enqueue_style(
+			'go-fonts',
+			$fonts_url,
+			array(),
+			GO_VERSION
+		);
+
+	}
 
 	wp_enqueue_style(
 		'go-style',
 		get_theme_file_uri( "dist/css/style-shared{$rtl}{$suffix}.css" ),
-		array( 'go-fonts' ),
+		$go_style_dependencies,
 		GO_VERSION
 	);
 
@@ -410,13 +429,6 @@ function styles() {
 			GO_VERSION
 		);
 	}
-
-	wp_enqueue_style(
-		'go-fonts',
-		fonts_url(),
-		array(),
-		GO_VERSION
-	);
 
 }
 
