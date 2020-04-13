@@ -109,6 +109,11 @@ List of bespoke icons:
 
 == Changelog ==
 
+### Enhancements
+* Various design and functionality improvements to the WooCommerce slide out cart. [#488](https://github.com/godaddy-wordpress/go/pull/488)
+* Introduce improved fallbacks for CSS custom properties. [#491](https://github.com/godaddy-wordpress/go/pull/491)
+* Allow for design styles to specify no Google fonts. [#493](https://github.com/godaddy-wordpress/go/pull/493)
+* Declare HTML5 scripts and styles support for better compliance with W3C validator. [#498](https://github.com/godaddy-wordpress/go/pull/498)
+
 ### Bug Fixes
-* Resolve specificity issue with the group block within the editor. [#485](https://github.com/godaddy-wordpress/go/pull/485)
-* Remove languages from tagged releases, keep MO files in canary. [#486](https://github.com/godaddy-wordpress/go/pull/486)
+* Fix copyright footer text error on save. [#497](https://github.com/godaddy-wordpress/go/pull/497)
