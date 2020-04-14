@@ -23,8 +23,12 @@ function screenshotPathFromUrl( url ) {
         urlParts.searchParams.get( 'lang' ),
         urlParts.searchParams.get( 'template' ),
         urlParts.searchParams.get( 'style' ),
-        urlParts.pathname.replace( '/', '' ) || 'frontpage',
+        unslashit( urlParts.pathname ) || 'frontpage',
     ].join( '/' );
+}
+
+function unslashit( path ) {
+    return path.replace( /(^[\/]+|[\/]+$)/, '' );
 }
 
 describe( 'Template gallery regression testing', () => {
@@ -32,7 +36,10 @@ describe( 'Template gallery regression testing', () => {
     let pages = [];
 
     before( () => {
-        cy.request( Cypress.env( 'templateGalleryEndpoint' ).replace(/\/$/, '') + '/templates' )
+        cy.request( [
+            unslashit( Cypress.env( 'templateGalleryEndpoint' ) ),
+            'templates'
+        ].join( '/' ) )
         .its( 'body' )
         .should( 'exist' )
         .then( ( list ) => {
