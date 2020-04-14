@@ -47,7 +47,8 @@
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
     "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
-    "test-php": "./vendor/bin/phpunit"
+    "test-php": "./vendor/bin/phpunit",
+    "test-visual": "curl -sS https://wpnux.godaddy.com/v2/api/templates > .dev/tests/cypress/fixtures/templates.json && cypress open"
   },
   "locales": {
     "da_DK": "Dansk",
@@ -110,6 +111,8 @@
     "css-loader": "^2.1.1",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
+    "cypress": "^4.4.0",
+    "cypress-image-snapshot": "^3.1.1",
     "eslint": "^5.4.0",
     "eslint-loader": "^2.1.2",
     "grunt": "^1.0.3",
