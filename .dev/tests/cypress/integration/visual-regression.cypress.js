@@ -4,10 +4,10 @@ function captureDocument( path = '' ) {
     cy.get('html').invoke('css', 'scroll-behavior', 'auto');
 
     [
-        { label: 'go-huge', width: 1440, height: 4000 },
-        { label: 'go-large', width: 960, height: 4000 },
-        { label: 'go-medium', width: 782, height: 4000 },
-        { label: 'go-small', width: 600, height: 4000 },
+        { label: 'go-huge', width: 1440, height: 1080 },
+        { label: 'go-large', width: 960, height: 1080 },
+        { label: 'go-medium', width: 782, height: 1080 },
+        { label: 'go-small', width: 600, height: 1080 },
 
     ].forEach( viewport => {
         cy.viewport( viewport.width, viewport.height );
