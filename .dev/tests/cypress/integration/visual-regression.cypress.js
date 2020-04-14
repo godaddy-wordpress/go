@@ -16,12 +16,14 @@ function captureDocument( path = '' ) {
 }
 
 function screenshotPathFromUrl( url ) {
-    const urlParts = new URL( url );
+    const urlSlashIt = url.replace( Cypress.env( 'templateGalleryEndpoint' ).replace(/\/$/, '/'), '' );
+    const urlParts = new URL( urlSlashIt );
+
     return [
         urlParts.searchParams.get( 'lang' ),
         urlParts.searchParams.get( 'template' ),
         urlParts.searchParams.get( 'style' ),
-        urlParts.pathname.replace( '/v2/', '' ) || 'frontpage',
+        urlParts.pathname.replace( '/', '' ) || 'frontpage',
     ].join( '/' );
 }
 
@@ -30,7 +32,7 @@ describe( 'Template gallery regression testing', () => {
     let pages = [];
 
     before( () => {
-        cy.request( 'https://wpnux.godaddy.com/v2/api/templates' )
+        cy.request( Cypress.env( 'templateGalleryEndpoint' ).replace(/\/$/, '') + '/templates' )
         .its( 'body' )
         .should( 'exist' )
         .then( ( list ) => {
