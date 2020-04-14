@@ -42,12 +42,14 @@ describe( 'Template gallery regression testing', () => {
 
     it( 'Loads template home pages', () => {
         templates.forEach( template => {
-            cy.visit( template.preview_url );
-            captureDocument( screenshotPathFromUrl( template.preview_url ) );
+            template.styles.forEach( style => {
+                cy.visit( style.preview_url );
+                captureDocument( screenshotPathFromUrl( style.preview_url ) );
 
-            cy.get( '#header__navigation' ).then( $headerNavigation => {
-                [ ...$headerNavigation.find( '.menu-item a' ) ].forEach( $navLink => {
-                    pages.push( $navLink.href );
+                cy.get( '#header__navigation' ).then( $headerNavigation => {
+                    [ ...$headerNavigation.find( '.menu-item a' ) ].forEach( $navLink => {
+                        pages.push( $navLink.href );
+                    } );
                 } );
             } );
         } );
