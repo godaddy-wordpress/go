@@ -53,8 +53,13 @@ function register_control_types( \WP_Customize_Manager $wp_customize ) {
 	// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	require_once get_parent_theme_file_path( 'includes/classes/customizer/class-range-control.php' );
 
+	// This file is a class for our Customizer range control, not template partials.
+	// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+	require_once get_parent_theme_file_path( 'includes/classes/customizer/class-title-control.php' );
+
 	$wp_customize->register_control_type( Switcher_Control::class );
 	$wp_customize->register_control_type( Range_Control::class );
+	$wp_customize->register_control_type( Title_Control::class );
 }
 
 /**
@@ -416,7 +421,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 			$wp_customize,
 			'color_scheme_control',
 			array(
-				'label'         => esc_html__( 'Color Scheme', 'go' ),
+				'label'         => esc_html__( 'Color scheme', 'go' ),
 				'section'       => 'colors',
 				'settings'      => 'color_scheme',
 				'choices'       => get_color_schemes_as_choices(),
@@ -492,6 +497,170 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 		)
 	);
 
+	// Header colors.
+	$wp_customize->add_setting(
+		'title_header_colors',
+		array(
+			'sanitize_callback' => 'esc_html',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Title_Control(
+			$wp_customize,
+			'title_header_colors_control',
+			array(
+				'type'        => 'go_title',
+				'label'       => esc_html__( 'Header Colors', 'go' ),
+				'description' => __( 'Customize colors within the site header.', 'go' ),
+				'section'     => 'colors',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'header_background_color',
+		array(
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'default'           => \Go\get_default_palette_color( 'header_background' ),
+		)
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'header_background_color_control',
+			array(
+				'label'    => esc_html__( 'Background', 'go' ),
+				'section'  => 'colors',
+				'settings' => 'header_background_color',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'header_text_color',
+		array(
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'header_text_color_control',
+			array(
+				'label'    => esc_html__( 'Foreground', 'go' ),
+				'section'  => 'colors',
+				'settings' => 'header_text_color',
+			)
+		)
+	);
+
+	// Footer colors.
+	$wp_customize->add_setting(
+		'title_footer_colors',
+		array(
+			'sanitize_callback' => 'esc_html',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Title_Control(
+			$wp_customize,
+			'title_footer_colors_control',
+			array(
+				'type'        => 'go_title',
+				'label'       => esc_html__( 'Footer Colors', 'go' ),
+				'description' => __( 'Customize colors within the site footer.', 'go' ),
+				'section'     => 'colors',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'footer_background_color',
+		array(
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'default'           => \Go\get_default_palette_color( 'footer_background' ),
+		)
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_background_color_control',
+			array(
+				'label'    => esc_html__( 'Background', 'go' ),
+				'section'  => 'colors',
+				'settings' => 'footer_background_color',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'footer_text_color',
+		array(
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_text_color',
+			array(
+				'label'    => esc_html__( 'Foreground', 'go' ),
+				'section'  => 'colors',
+				'settings' => 'footer_text_color',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'footer_heading_color',
+		array(
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_heading_color',
+			array(
+				'label'    => esc_html__( 'Heading', 'go' ),
+				'section'  => 'colors',
+				'settings' => 'footer_heading_color',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'social_icon_color',
+		array(
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Color_Control(
+			$wp_customize,
+			'social_icon_color',
+			array(
+				'label'    => esc_html__( 'Social Icon', 'go' ),
+				'section'  => 'colors',
+				'settings' => 'social_icon_color',
+			)
+		)
+	);
+
 	$wp_customize->add_setting(
 		'viewport_basis',
 		array(
@@ -518,6 +687,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 			)
 		)
 	);
+
 }
 
 /**
@@ -560,41 +730,26 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting(
-		'header_background_color',
-		array(
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'default'           => \Go\get_default_palette_color( 'header_background' ),
-		)
-	);
-
+	// Alternate color control.
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'header_background_color_control',
+			'header_background_color_control_alt',
 			array(
-				'label'    => esc_html__( 'Background Color', 'go' ),
+				'label'    => esc_html__( 'Background', 'go' ),
 				'section'  => 'go_header_settings',
 				'settings' => 'header_background_color',
 			)
 		)
 	);
 
-	$wp_customize->add_setting(
-		'header_text_color',
-		array(
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-
+	// Alternate color control.
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'header_text_color_control',
+			'header_text_color_control_alt',
 			array(
-				'label'    => esc_html__( 'Text Color', 'go' ),
+				'label'    => esc_html__( 'Foreground', 'go' ),
 				'section'  => 'go_header_settings',
 				'settings' => 'header_text_color',
 			)
@@ -642,63 +797,41 @@ function register_footer_controls( \WP_Customize_Manager $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting(
-		'footer_background_color',
-		array(
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'default'           => \Go\get_default_palette_color( 'footer_background' ),
-		)
-	);
-
+	// Alternate color control.
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'footer_background_color_control',
+			'footer_background_color_control_alt',
 			array(
-				'label'    => esc_html__( 'Background Color', 'go' ),
+				'label'    => esc_html__( 'Background', 'go' ),
 				'section'  => 'go_footer_settings',
 				'settings' => 'footer_background_color',
 			)
 		)
 	);
 
-	$wp_customize->add_setting(
-		'footer_heading_color',
-		array(
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-
+	// Alternate color control.
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'footer_heading_color',
+			'footer_text_color_alt',
 			array(
-				'label'    => esc_html__( 'Heading Color', 'go' ),
+				'label'    => esc_html__( 'Foreground', 'go' ),
 				'section'  => 'go_footer_settings',
-				'settings' => 'footer_heading_color',
+				'settings' => 'footer_text_color',
 			)
 		)
 	);
 
-	$wp_customize->add_setting(
-		'footer_text_color',
-		array(
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-
+	// Alternate color control.
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'footer_text_color',
+			'footer_heading_color_alt',
 			array(
-				'label'    => esc_html__( 'Text Color', 'go' ),
+				'label'    => esc_html__( 'Heading', 'go' ),
 				'section'  => 'go_footer_settings',
-				'settings' => 'footer_text_color',
+				'settings' => 'footer_heading_color',
 			)
 		)
 	);
@@ -717,7 +850,7 @@ function register_social_controls( \WP_Customize_Manager $wp_customize ) {
 		'go_social_media',
 		array(
 			'title'       => esc_html__( 'Social', 'go' ),
-			'description' => 'Add social media account links to apply social icons to the footer of your site.',
+			'description' => esc_html__( 'Add social media account links to apply social icons on the site footer.', 'go' ),
 			'priority'    => 90,
 		)
 	);
@@ -747,20 +880,13 @@ function register_social_controls( \WP_Customize_Manager $wp_customize ) {
 		);
 	}
 
-	$wp_customize->add_setting(
-		'social_icon_color',
-		array(
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-
+	// Alternate color control.
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'social_icon_color',
+			'social_icon_color_alt',
 			array(
-				'label'    => esc_html__( 'Icon Color', 'go' ),
+				'label'    => esc_html__( 'Social icon', 'go' ),
 				'section'  => 'go_social_media',
 				'settings' => 'social_icon_color',
 			)

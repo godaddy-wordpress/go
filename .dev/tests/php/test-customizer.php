@@ -192,6 +192,7 @@ class Test_Customizer extends WP_UnitTestCase {
 		$expected = [
 			'Go\Customizer\Switcher_Control',
 			'Go\Customizer\Range_Control',
+			'Go\Customizer\Title_Control',
 		];
 
 		$this->assertEquals( $expected, $instance->getValue( $manager ) );
@@ -687,6 +688,182 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the title_header_colors setting is registered
+	 */
+	function test_register_header_controls_title_header_colors_setting() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'title_header_colors' ) );
+
+	}
+
+	/**
+	 * Test the title_header_colors control is registered
+	 */
+	function test_register_header_controls_title_header_colors_control() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'title_header_colors_control' ) );
+
+	}
+
+	/**
+	 * Test the header_background_color setting is registered
+	 */
+	function test_register_color_controls_header_background_color_setting() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'header_background_color' ) );
+
+	}
+
+	/**
+	 * Test the tertiary_color_control control is registered
+	 */
+	function test_register_color_controls_header_background_color_control() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'header_background_color_control' ) );
+
+	}
+
+	/**
+	 * Test the header_text_color setting is registered
+	 */
+	function test_register_header_controls_header_text_color_setting() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'header_text_color' ) );
+
+	}
+
+	/**
+	 * Test the header_text_color_control control is registered
+	 */
+	function test_register_header_controls_header_text_color_control() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'header_text_color_control' ) );
+
+	}
+
+	/**
+	 * Test the title_footer_colors setting is registered
+	 */
+	function test_register_header_controls_title_footer_colors_setting() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'title_footer_colors' ) );
+
+	}
+
+	/**
+	 * Test the title_footer_colors_control control is registered
+	 */
+	function test_register_header_controls_title_footer_colors_control() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'title_footer_colors_control' ) );
+
+	}
+
+	/**
+	 * Test the footer_background_color setting is registered
+	 */
+	function test_register_header_controls_footer_background_color_setting() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'footer_background_color' ) );
+
+	}
+
+	/**
+	 * Test the footer_background_color_control control is registered
+	 */
+	function test_register_header_controls_footer_background_color_control() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'footer_background_color_control' ) );
+
+	}
+
+	/**
+	 * Test the footer_text_color setting is registered
+	 */
+	function test_register_footer_controls_footer_text_color_setting() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'footer_text_color' ) );
+
+	}
+
+	/**
+	 * Test the footer_text_color control is registered
+	 */
+	function test_register_footer_controls_footer_text_color_control() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'footer_text_color' ) );
+
+	}
+
+	/**
+	 * Test the footer_heading_color setting is registered
+	 */
+	function test_register_footer_controls_footer_heading_color_setting() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'footer_heading_color' ) );
+
+	}
+
+	/**
+	 * Test the footer_heading_color control is registered
+	 */
+	function test_register_footer_controls_footer_heading_color_control() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'footer_heading_color' ) );
+
+	}
+
+	/**
+	 * Test the social_icon_color setting is registered
+	 */
+	function test_register_color_controls_social_icon_color_setting() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'social_icon_color' ) );
+
+	}
+
+	/**
+	 * Test the social_icon_color control is registered
+	 */
+	function test_register_color_controls_social_icon_color_control() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'social_icon_color' ) );
+
+	}
+
+	/**
 	 * Test the go_header_settings section is registered
 	 */
 	function test_register_header_controls_go_site_settings_section() {
@@ -720,50 +897,6 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test the header_background_color setting is registered
-	 */
-	function test_register_header_controls_header_background_color_setting() {
-
-		Go\Customizer\register_header_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'header_background_color' ) );
-
-	}
-
-	/**
-	 * Test the header_background_color_control control is registered
-	 */
-	function test_register_header_controls_header_background_color_control() {
-
-		Go\Customizer\register_header_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'header_background_color_control' ) );
-
-	}
-
-	/**
-	 * Test the header_text_color setting is registered
-	 */
-	function test_register_header_controls_header_text_color_setting() {
-
-		Go\Customizer\register_header_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'header_text_color' ) );
-
-	}
-
-	/**
-	 * Test the header_text_color_control control is registered
-	 */
-	function test_register_header_controls_header_text_color_control() {
-
-		Go\Customizer\register_header_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'header_text_color_control' ) );
-
-	}
-
-	/**
 	 * Test the go_footer_settings section is registered
 	 */
 	function test_register_footer_controls_go_footer_settings_section() {
@@ -793,72 +926,6 @@ class Test_Customizer extends WP_UnitTestCase {
 		Go\Customizer\register_footer_controls( $GLOBALS['wp_customize'] );
 
 		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'footer_variation_control' ) );
-
-	}
-
-	/**
-	 * Test the footer_background_color setting is registered
-	 */
-	function test_register_footer_controls_footer_background_color_setting() {
-
-		Go\Customizer\register_footer_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'footer_background_color' ) );
-
-	}
-
-	/**
-	 * Test the footer_background_color_control control is registered
-	 */
-	function test_register_footer_controls_footer_background_color_control() {
-
-		Go\Customizer\register_footer_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'footer_background_color_control' ) );
-
-	}
-
-	/**
-	 * Test the footer_heading_color setting is registered
-	 */
-	function test_register_footer_controls_footer_heading_color_setting() {
-
-		Go\Customizer\register_footer_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'footer_heading_color' ) );
-
-	}
-
-	/**
-	 * Test the footer_heading_color control is registered
-	 */
-	function test_register_footer_controls_footer_heading_color_control() {
-
-		Go\Customizer\register_footer_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'footer_heading_color' ) );
-
-	}
-
-	/**
-	 * Test the footer_text_color setting is registered
-	 */
-	function test_register_footer_controls_footer_text_color_setting() {
-
-		Go\Customizer\register_footer_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'footer_text_color' ) );
-
-	}
-
-	/**
-	 * Test the footer_text_color control is registered
-	 */
-	function test_register_footer_controls_footer_text_color_control() {
-
-		Go\Customizer\register_footer_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'footer_text_color' ) );
 
 	}
 
@@ -904,28 +971,6 @@ class Test_Customizer extends WP_UnitTestCase {
 		}
 
 		$this->assertTrue( true );
-
-	}
-
-	/**
-	 * Test the social_icon_color setting is registered
-	 */
-	function test_register_social_controls_social_icon_color_setting() {
-
-		Go\Customizer\register_social_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'social_icon_color' ) );
-
-	}
-
-	/**
-	 * Test the social_icon_color control is registered
-	 */
-	function test_register_social_controls_social_icon_color_control() {
-
-		Go\Customizer\register_social_controls( $GLOBALS['wp_customize'] );
-
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'social_icon_color' ) );
 
 	}
 

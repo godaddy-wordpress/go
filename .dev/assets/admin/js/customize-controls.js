@@ -72,6 +72,7 @@ import './customize/controls/range-control';
 
 		// Only show the Footer Header Color selector, if the footer variation is 2 or 4.
 		customizerOptionDisplay( 'footer_variation', 'footer_heading_color', [ 'footer-3', 'footer-4' ] );
+		customizerOptionDisplay( 'footer_variation', 'footer_heading_color_alt', [ 'footer-3', 'footer-4' ] );
 
 		// Footer nav locations #2 and #3 are only available on Footer Variation #3 and #4.
 		customizerOptionDisplay( 'footer_variation', 'nav_menu_locations[footer-2]', [ 'footer-3', 'footer-4' ] );
