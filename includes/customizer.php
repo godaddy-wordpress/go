@@ -508,7 +508,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new Title_Control(
 			$wp_customize,
-			'title_header_colors',
+			'title_header_colors_control',
 			array(
 				'type'        => 'go_title',
 				'label'       => esc_html__( 'Header Colors', 'go' ),
@@ -570,7 +570,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new Title_Control(
 			$wp_customize,
-			'title_footer_colors',
+			'title_footer_colors_control',
 			array(
 				'type'        => 'go_title',
 				'label'       => esc_html__( 'Footer Colors', 'go' ),
