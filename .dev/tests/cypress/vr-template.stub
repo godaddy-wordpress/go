@@ -1,11 +1,16 @@
-import { captureDocument, screenshotPathFromUrl } from '../helpers';
+import { captureDocument, screenshotPathFromUrl, unslashit } from '../helpers';
 
 describe( 'VR Testing: {{TEMPLATE}} - {{STYLE}}', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        cy.visit( "{{PREVIEW_URL}}" );
-        captureDocument( screenshotPathFromUrl( "{{PREVIEW_URL}}" ) );
+        let url = "{{PREVIEW_URL}}".replace(
+            unslashit( 'https://wpnux.godaddy.com/v2/' ),
+            unslashit( Cypress.env( 'templateGalleryEndpoint' ) )
+        );
+
+        cy.visit( url );
+        captureDocument( screenshotPathFromUrl( url ) );
 
         cy.get( '#header__navigation' ).then( $headerNavigation => {
             [ ...$headerNavigation.find( '.menu-item a' ) ].forEach( $navLink => {
