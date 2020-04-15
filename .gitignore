@@ -40,3 +40,4 @@ Desktop.ini
 .dev/tests/cypress/screenshots
 .dev/tests/cypress/snapshots
 .dev/tests/cypress/videos
+.dev/tests/cypress/fixtures
