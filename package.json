@@ -48,7 +48,7 @@
     "format": "npm run format-js",
     "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
     "test-php": "./vendor/bin/phpunit",
-    "generate-vr-specs": "curl -sS https://wpnux.godaddy.com/v2/api/templates | jq -r '.[].styles[].preview_url'",
+    "generate-vr-specs": ".dev/bin/generate-vr-specs.sh",
     "test-vr": "npx cypress run --record --parallel --spec '.dev/tests/cypress/integration/vr-*.spec.js'"
   },
   "locales": {

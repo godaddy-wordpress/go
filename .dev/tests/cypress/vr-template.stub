@@ -1,0 +1,24 @@
+import { captureDocument, screenshotPathFromUrl } from '../helpers';
+
+describe( 'VR Testing: {{TEMPLATE}} - {{STYLE}}', () => {
+    let pages = [];
+
+    it( 'Loads frontpage', () => {
+        cy.visit( "{{PREVIEW_URL}}" );
+        captureDocument( screenshotPathFromUrl( "{{PREVIEW_URL}}" ) );
+
+        cy.get( '#header__navigation' ).then( $headerNavigation => {
+            [ ...$headerNavigation.find( '.menu-item a' ) ].forEach( $navLink => {
+                pages.push( $navLink.href );
+            } );
+        } );
+    } );
+
+    it( 'Loads additional pages', () => {
+        pages.forEach( page => {
+            cy.visit( page );
+            captureDocument( screenshotPathFromUrl( page ) );
+        } );
+    } );
+
+} );
