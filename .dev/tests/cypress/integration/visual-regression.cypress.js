@@ -23,6 +23,7 @@ function screenshotPathFromUrl( url ) {
         urlParts.searchParams.get( 'lang' ),
         urlParts.searchParams.get( 'template' ),
         urlParts.searchParams.get( 'style' ),
+        Cypress.browser.name,
         unslashit( urlParts.pathname ) || 'frontpage',
     ].join( '/' );
 }
