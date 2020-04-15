@@ -49,7 +49,7 @@
     "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
     "test-php": "./vendor/bin/phpunit",
     "generate-vr-specs": ".dev/bin/generate-vr-specs.sh",
-    "test-vr": "npx cypress run --spec '.dev/tests/cypress/integration/vr-*.spec.js'"
+    "test-vr": "npx cypress run --config video=false --spec '.dev/tests/cypress/integration/vr-*.spec.js'"
   },
   "locales": {
     "da_DK": "Dansk",
