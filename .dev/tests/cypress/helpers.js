@@ -27,15 +27,12 @@ export function captureDocument( path = '' ) {
  * @param {string} url WPNUX API template preview url.
  */
 export function screenshotPathFromUrl( url ) {
-    const urlSlashIt = url.replace( Cypress.env( 'templateGalleryEndpoint' ).replace(/\/$/, '/'), '' );
-    const urlParts = new URL( urlSlashIt );
+    const urlParts = new URL( url );
+    const envEndpointParts = new URL( Cypress.env( 'templateGalleryEndpoint' ) );
 
     return [
-        urlParts.searchParams.get( 'lang' ),
-        urlParts.searchParams.get( 'template' ),
-        urlParts.searchParams.get( 'style' ),
         Cypress.browser.name,
-        unslashit( urlParts.pathname ) || 'frontpage',
+        unslashit( urlParts.pathname.replace( envEndpointParts.pathname, '' ) ) || 'frontpage',
     ].join( '/' );
 }
 
