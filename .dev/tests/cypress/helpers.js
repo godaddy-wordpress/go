@@ -16,7 +16,8 @@ export function captureDocument( path = '' ) {
 
     ].forEach( viewport => {
         cy.viewport( viewport.width, viewport.height );
-        cy.matchImageSnapshot( `${path}/${viewport.label}` );
+        cy.wait( 250 );
+        cy.matchImageSnapshot( `${path}/${viewport.label}`, { disableTimersAndAnimations: false } );
     } );
 }
 
