@@ -1,3 +1,11 @@
+1.2.8 / 2020-04-16
+==================
+### Enhancements
+* Add color controls to Site Design panel. [#500](https://github.com/godaddy-wordpress/go/pull/500)
+
+### Bug Fixes
+* Remove the `customize-preview` dependency from `go-customize-preview` script. [#501](https://github.com/godaddy-wordpress/go/pull/501)
+
 1.2.7 / 2020-04-13
 ==================
 ### Enhancements
