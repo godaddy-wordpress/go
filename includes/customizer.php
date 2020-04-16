@@ -508,7 +508,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new Title_Control(
 			$wp_customize,
-			'title_header_colors_control',
+			'title_header_colors',
 			array(
 				'type'        => 'go_title',
 				'label'       => esc_html__( 'Header Colors', 'go' ),
@@ -530,7 +530,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'header_background_color_control',
+			'header_background_color',
 			array(
 				'label'    => esc_html__( 'Background', 'go' ),
 				'section'  => 'colors',
@@ -550,7 +550,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'header_text_color_control',
+			'header_text_color',
 			array(
 				'label'    => esc_html__( 'Foreground', 'go' ),
 				'section'  => 'colors',
@@ -570,7 +570,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new Title_Control(
 			$wp_customize,
-			'title_footer_colors_control',
+			'title_footer_colors',
 			array(
 				'type'        => 'go_title',
 				'label'       => esc_html__( 'Footer Colors', 'go' ),
@@ -592,7 +592,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		new \WP_Customize_Color_Control(
 			$wp_customize,
-			'footer_background_color_control',
+			'footer_background_color',
 			array(
 				'label'    => esc_html__( 'Background', 'go' ),
 				'section'  => 'colors',

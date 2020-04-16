@@ -705,7 +705,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
 
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'title_header_colors_control' ) );
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'title_header_colors' ) );
 
 	}
 
@@ -727,7 +727,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
 
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'header_background_color_control' ) );
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'header_background_color' ) );
 
 	}
 
@@ -749,7 +749,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
 
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'header_text_color_control' ) );
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'header_text_color' ) );
 
 	}
 
@@ -771,7 +771,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
 
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'title_footer_colors_control' ) );
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'title_footer_colors' ) );
 
 	}
 
@@ -793,7 +793,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
 
-		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'footer_background_color_control' ) );
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'footer_background_color' ) );
 
 	}
 
