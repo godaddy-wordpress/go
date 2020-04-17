@@ -3,6 +3,7 @@
 	background-color: var(--go-footer--color--background);
 	color: var(--go-footer--color--text, intial);
 	font-family: var(--go-footer--font-family, inherit);
+	margin-top: var(--go--spacing--vertical--lg);
 
 	& .site-info {
 		color: var(--go-footer--color--text, intial);

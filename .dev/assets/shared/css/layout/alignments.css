@@ -28,10 +28,8 @@
 .aligncenter,
 .alignleft,
 .alignright {
-	margin-bottom: 4rem;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 4rem;
 }
 
 [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright) {
