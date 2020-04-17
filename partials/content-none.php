@@ -12,7 +12,7 @@ Go\page_title();
 
 <div class="<?php Go\content_wrapper_class( 'content-area__wrapper' ); ?>">
 
-	<div class="content-area no-results not-found">
+	<div class="content-area entry-content no-results not-found">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 			printf(
