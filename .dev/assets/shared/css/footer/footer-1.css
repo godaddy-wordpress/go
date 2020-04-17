@@ -3,6 +3,7 @@
 
 	& .site-footer {
 		padding-bottom: var(--go--spacing--vertical--lg);
+		padding-top: var(--go--spacing--vertical--lg);
 	}
 
 	& .footer-navigation {

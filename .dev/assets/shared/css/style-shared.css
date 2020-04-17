@@ -19,7 +19,6 @@
 @import url("blocks/table.css");
 
 /* Layout */
-@import url("layout/content.css");
 @import url("layout/alignments.css");
 @import url("layout/entry-header.css");
 @import url("layout/featured-image.css");
