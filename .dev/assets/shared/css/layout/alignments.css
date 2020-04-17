@@ -9,14 +9,14 @@
 	margin-bottom: 1.5rem;
 	margin-left: auto;
 	margin-right: auto;
-}
 
-.entry-content > *:first-child {
-	margin-top: 0;
-}
+	&:first-child {
+		margin-top: 0;
+	}
 
-.entry-content > *:last-child {
-	margin-bottom: 0;
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
