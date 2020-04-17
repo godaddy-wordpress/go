@@ -49,8 +49,25 @@
 	width: 100%;
 }
 
+/* @todo - this should exist within CoBlocks: */
+
+.alignfull > [class*="__inner-container"] .has-columns {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* END @todo */
+
 [class*="__inner-container"] > .alignfull {
 	max-width: 100%;
+}
+
+[class*="__inner-container"] > *:first-child {
+	margin-top: 0;
+}
+
+[class*="__inner-container"] > *:last-child {
+	margin-bottom: 0;
 }
 
 /* Wide */
