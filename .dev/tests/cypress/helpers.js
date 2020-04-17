@@ -31,6 +31,7 @@ export function screenshotPathFromUrl( url ) {
     const envEndpointParts = new URL( Cypress.env( 'templateGalleryEndpoint' ) );
 
     return [
+        urlParts.searchParams.get( 'lang' ),
         Cypress.browser.name,
         unslashit( urlParts.pathname.replace( envEndpointParts.pathname, '' ) ) || 'frontpage',
     ].join( '/' );
