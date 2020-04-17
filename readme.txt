@@ -4,7 +4,7 @@ Tags: one-column, custom-colors, custom-logo, custom-menu, editor-style, theme-o
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 5.6.0
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -110,10 +110,7 @@ List of bespoke icons:
 == Changelog ==
 
 ### Enhancements
-* Various design and functionality improvements to the WooCommerce slide out cart. [#488](https://github.com/godaddy-wordpress/go/pull/488)
-* Introduce improved fallbacks for CSS custom properties. [#491](https://github.com/godaddy-wordpress/go/pull/491)
-* Allow for design styles to specify no Google fonts. [#493](https://github.com/godaddy-wordpress/go/pull/493)
-* Declare HTML5 scripts and styles support for better compliance with W3C validator. [#498](https://github.com/godaddy-wordpress/go/pull/498)
+* Add color controls to Site Design panel. [#500](https://github.com/godaddy-wordpress/go/pull/500)
 
 ### Bug Fixes
-* Fix copyright footer text error on save. [#497](https://github.com/godaddy-wordpress/go/pull/497)
+* Remove the `customize-preview` dependency from `go-customize-preview` script. [#501](https://github.com/godaddy-wordpress/go/pull/501)
