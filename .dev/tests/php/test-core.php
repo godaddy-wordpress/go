@@ -1025,6 +1025,8 @@ class Test_Core extends WP_UnitTestCase {
 			'instagram',
 			'linkedin',
 			'pinterest',
+			'youtube',
+			'github',
 		];
 
 		$this->assertEquals( $social_icons, array_keys( Go\Core\get_available_social_icons() ) );
