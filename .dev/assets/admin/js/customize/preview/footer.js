@@ -110,6 +110,26 @@ export default () => {
 			}
 		} );
 	} );
+
+	wp.customize( 'social_icon_youtube', ( value ) => {
+		value.bind( ( to ) => {
+			if ( to ) {
+				$( '.social-icon-youtube' ).removeClass( 'display-none' );
+			} else {
+				$( '.social-icon-youtube' ).addClass( 'display-none' );
+			}
+		} );
+	} );
+
+	wp.customize( 'social_icon_github', ( value ) => {
+		value.bind( ( to ) => {
+			if ( to ) {
+				$( '.social-icon-github' ).removeClass( 'display-none' );
+			} else {
+				$( '.social-icon-github' ).addClass( 'display-none' );
+			}
+		} );
+	} );
 };
 
 function setMenuLocationDescription() {
