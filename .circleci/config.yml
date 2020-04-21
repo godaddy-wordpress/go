@@ -32,12 +32,16 @@ workflows:
           type: approval
           filters:
             branches:
-              only: master
+              only:
+                - master
+                - feature/e2e-tests-with-wpnux # remove after review.
       - visual-regression-firefox:
           type: approval
           filters:
             branches:
-              only: master
+              only:
+                - master
+                - feature/e2e-tests-with-wpnux # remove after review.
       - canary:
           requires:
             - php56-phpcs
