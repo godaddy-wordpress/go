@@ -46,6 +46,24 @@ workflows:
               only:
                 - master
                 - feature/e2e-tests-with-wpnux # remove after review.
+      - visual-regression-update-snapshots-hold:
+          type: approval
+      - visual-regression-update-snapshots-chrome:
+          requires:
+            - visual-regression-update-snapshots-hold
+          filters:
+            branches:
+              only:
+                - master
+                - feature/e2e-tests-with-wpnux # remove after review.
+      - visual-regression-update-snapshots-firefox:
+          requires:
+            - visual-regression-update-snapshots-hold
+          filters:
+            branches:
+              only:
+                - master
+                - feature/e2e-tests-with-wpnux # remove after review.
       - canary:
           requires:
             - php56-phpcs
@@ -383,6 +401,64 @@ jobs:
       - run:
           name: "Run end to end tests (Cypress.io)"
           command: npx cypress run --browser firefox --record --parallel --group vr-firefox --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
+
+  visual-regression-update-snapshots-chrome:
+    docker:
+      - image: circleci/python:latest-node-browsers
+    parallelism: 10
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - restore_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+          paths:
+            - node_modules
+            - ~/.cache
+      - run:
+          name: "Install awscli"
+          command: sudo apt-get install awscli
+      - run:
+          name: "Run end to end tests (Cypress.io)"
+          command: npx cypress run --browser chrome --record --parallel --group vr-chrome --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
+      - run:
+          name: "Update base snapshots"
+          command: npm run snapshots:upload
+
+  visual-regression-update-snapshots-firefox:
+    docker:
+      - image: circleci/python:latest-node-browsers
+    parallelism: 10
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - restore_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+          paths:
+            - node_modules
+            - ~/.cache
+      - run:
+          name: "Install awscli"
+          command: sudo apt-get install awscli
+      - run:
+          name: "Run end to end tests (Cypress.io)"
+          command: npx cypress run --browser firefox --record --parallel --group vr-firefox --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
+      - run:
+          name: "Update base snapshots"
+          command: npm run snapshots:upload
 
   canary:
     docker:
