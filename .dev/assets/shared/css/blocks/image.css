@@ -25,5 +25,5 @@
 }
 
 .wp-block-image.alignfull + .wp-block-gallery {
-	margin-top: 16px !important;
+	margin-top: calc(var(--go--spacing--vertical--lg) * -1 + 16px);
 }

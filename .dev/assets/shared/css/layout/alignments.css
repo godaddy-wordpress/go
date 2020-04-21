@@ -11,12 +11,22 @@
 	margin-right: auto;
 
 	&:first-child {
-		margin-top: 0;
+		margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
+
+		&.alignfull,
+		&.alignwide.wp-block-image,
+		&.alignwide.wp-block-gallery {
+			margin-top: 0;
+		}
 	}
 
 	&:last-child {
 		margin-bottom: 0;
 	}
+}
+
+.has-footer-background  .entry-content > *:last-child:not(.alignfull) {
+	margin-bottom: var(--go--spacing--vertical--lg);
 }
 
 [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {

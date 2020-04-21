@@ -1,55 +1,3 @@
-/*! Layout: Content Area */
-.content-area__wrapper {
-	--double-padding: calc(var(--go-block--padding--x) * 2);
-	margin-left: auto;
-	margin-right: auto;
-	max-width: var(--go--max-width);
-	width: calc(100% - var(--double-padding));
-}
-
-.content-area > * {
-	margin-bottom: var(--go--spacing--vertical);
-	margin-top: var(--go--spacing--vertical);
-
-	&:not(p):not(ul):not(ol):not(address):not(.wp-block-spacer):not(.wp-block-separator):not(.wp-block-image):not(.wp-block-file):not(.wp-block-preformatted):not(.wp-block-verse):not(.wp-block-categories-dropdown):not(.wp-block-archives-dropdown):not(.wp-block-code):not(.wp-block-coblocks-alert):not(.wp-block-coblocks-accordion):not(.wp-block-coblocks-author) {
-		margin-bottom: var(--go--spacing--vertical--lg);
-		margin-top: var(--go--spacing--vertical--lg);
-	}
-
-	/* Remove margin from nested child blocks */
-	& > *:first-child {
-		margin-top: 0;
-	}
-
-	& > *:last-child {
-		margin-bottom: 0;
-	}
-
-	/* Remove margin from the very first block */
-	&:first-child {
-		margin-top: calc(var(--go--spacing--vertical--lg) * 0.55) !important;
-	}
-
-	/* Apply the largest spacing value to the last item that is not .alignfull */
-	&:not(.alignfull):last-child {
-		margin-bottom: var(--go--spacing--vertical--lg) !important;
-	}
-
-	/*! Account for the last block being .alignfull */
-	& > .alignfull:last-child {
-		margin-bottom: var(--go--spacing--vertical--lg) !important;
-	}
-
-	&.mt-0 {
-		margin-top: 0 !important;
-	}
-
-	&.alignleft,
-	&.alignright {
-		margin-top: 0 !important;
-	}
-}
-
 .hfeed article {
 	margin-bottom: var(--go--spacing--vertical--lg);
 }
@@ -83,11 +31,6 @@ body.home {
 	& .content-area > *:first-child.alignfull {
 		margin-top: 0 !important;
 	}
-}
-
-/* Remove .alignfull margin if there is a footer background enabled */
-body.has-footer-background .content-area > *:last-child.alignfull:not(.wp-block-coblocks-gallery-masonry) {
-	margin-bottom: 0 !important;
 }
 
 .single-post.has-comments-open .content-area > *:last-child {

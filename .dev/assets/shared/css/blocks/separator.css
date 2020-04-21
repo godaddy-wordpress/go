@@ -1,8 +1,16 @@
 /*! Separator */
 .wp-block-separator {
 	border-bottom-color: var(--go-separator--color--border, var(--go-heading--color--text));
+	border-style: solid;
+	border-width: 1px;
+	margin-left: auto;
+	margin-right: auto;
 
 	&.is-style-dots::before {
 		font-size: var(--go-separator--size, 2rem);
+	}
+
+	&:not(.is-style-wide):not(.is-style-dots) {
+		max-width: 100px !important;
 	}
 }

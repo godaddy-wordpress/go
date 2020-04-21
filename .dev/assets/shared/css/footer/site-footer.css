@@ -10,6 +10,7 @@
 	}
 
 	&.has-background {
+		margin-top: 0;
 		padding-top: var(--go--spacing--vertical--lg);
 	}
 

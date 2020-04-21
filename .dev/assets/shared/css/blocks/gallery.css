@@ -30,6 +30,10 @@ body.rtl .wp-block-gallery {
 	}
 }
 
+.wp-block-gallery.alignfull + .wp-block-image {
+	margin-top: calc(var(--go--spacing--vertical--lg) * -1);
+}
+
 #page.site .content-area__wrapper .content-area .wp-block-gallery.mb-0 {
 	margin-bottom: 0 !important;
 }
