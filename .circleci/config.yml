@@ -28,15 +28,21 @@ workflows:
           filters:
             branches:
               only: master
-      - visual-regression-chrome:
+      - visual-regression-chrome-hold:
           type: approval
+      - visual-regression-chrome:
+          requires:
+            - visual-regression-chrome-hold
           filters:
             branches:
               only:
                 - master
                 - feature/e2e-tests-with-wpnux # remove after review.
-      - visual-regression-firefox:
+      - visual-regression-firefox-hold:
           type: approval
+      - visual-regression-firefox:
+          requires:
+            - visual-regression-firefox-hold
           filters:
             branches:
               only:
