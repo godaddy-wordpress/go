@@ -348,8 +348,8 @@ jobs:
             - node_modules
             - ~/.cache
       - run:
-          name: "Install aws-cli"
-          command: sudo apt-get install aws-cli
+          name: "Install awscli"
+          command: sudo apt-get install awscli
       - run:
           name: "Download base snapshots"
           command: npm run snapshots:download
@@ -377,8 +377,8 @@ jobs:
             - node_modules
             - ~/.cache
       - run:
-          name: "Install aws-cli"
-          command: sudo apt-get install aws-cli
+          name: "Install awscli"
+          command: sudo apt-get install awscli
       - run:
           name: "Download base snapshots"
           command: npm run snapshots:download
