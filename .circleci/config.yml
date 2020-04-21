@@ -338,8 +338,14 @@ jobs:
             - node_modules
             - ~/.cache
       - run:
+          name: "Install aws-cli"
+          command: sudo apt-get install aws-cli
+      - run:
+          name: "Download base snapshots"
+          command: npm run snapshots:download
+      - run:
           name: "Run end to end tests (Cypress.io)"
-          command: npx cypress run --browser chrome --record --parallel --group vr-chrome --spec '.dev/tests/cypress/integration/vr-*.spec.js'"
+          command: npx cypress run --browser chrome --record --parallel --group vr-chrome --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
 
   visual-regression-firefox:
     docker:
@@ -361,8 +367,14 @@ jobs:
             - node_modules
             - ~/.cache
       - run:
+          name: "Install aws-cli"
+          command: sudo apt-get install aws-cli
+      - run:
+          name: "Download base snapshots"
+          command: npm run snapshots:download
+      - run:
           name: "Run end to end tests (Cypress.io)"
-          command: npx cypress run --browser firefox --record --parallel --group vr-firefox --spec '.dev/tests/cypress/integration/vr-*.spec.js'"
+          command: npx cypress run --browser firefox --record --parallel --group vr-firefox --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
 
   canary:
     docker:
