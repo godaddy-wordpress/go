@@ -50,7 +50,7 @@
     "test-php": "./vendor/bin/phpunit",
     "generate-vr-specs": ".dev/bin/generate-vr-specs.sh",
     "test-vr": "npx cypress run --config video=false --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'",
-    "snapshots:upload": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\" --delete",
+    "snapshots:upload": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\"",
     "snapshots:download": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete"
   },
   "locales": {
