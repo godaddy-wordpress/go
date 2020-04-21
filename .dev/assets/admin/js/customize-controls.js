@@ -1,4 +1,5 @@
 import './customize/controls/range-control';
+import './customize/controls/set-active-color-schemes';
 
 /**
  * Scripts within the customizer controls window.

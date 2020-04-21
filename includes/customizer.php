@@ -200,9 +200,34 @@ function enqueue_controls_assets() {
 	wp_enqueue_script(
 		'go-customize-controls',
 		get_theme_file_uri( "dist/js/admin/customize-controls{$suffix}.js" ),
-		array( 'jquery' ),
+		array( 'jquery', 'wp-color-picker' ),
 		GO_VERSION,
 		true
+	);
+
+	$color_scheme            = str_replace( get_theme_mod( 'design_style' ) . '-', '', get_theme_mod( 'color_scheme', \Go\Core\get_default_color_scheme() ) );
+	$avaliable_color_schemes = \Go\Core\get_available_color_schemes();
+	$color_scheme_colors     = array();
+
+	if ( $color_scheme && ! empty( $avaliable_color_schemes[ $color_scheme ] ) ) {
+
+		if ( ! empty( $avaliable_color_schemes[ $color_scheme ]['label'] ) ) {
+
+			unset( $avaliable_color_schemes[ $color_scheme ]['label'] );
+
+		}
+
+		$color_scheme_colors = $avaliable_color_schemes[ $color_scheme ];
+
+	}
+
+	wp_localize_script(
+		'go-customize-controls',
+		'goCustomizerControls',
+		array(
+			'availableDesignStyles' => \Go\Core\get_available_design_styles(),
+			'activeColorScheme'     => array_values( $color_scheme_colors ),
+		)
 	);
 
 	wp_enqueue_style(
