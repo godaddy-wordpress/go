@@ -320,7 +320,7 @@ jobs:
 
   visual-regression-chrome:
     docker:
-      - image: circleci/php:latest-node-browsers-legacy
+      - image: circleci/python:latest-node-browsers
     parallelism: 10
     steps:
       - checkout
@@ -343,7 +343,7 @@ jobs:
 
   visual-regression-firefox:
     docker:
-      - image: circleci/php:latest-node-browsers-legacy
+      - image: circleci/python:latest-node-browsers
     parallelism: 10
     steps:
       - checkout
