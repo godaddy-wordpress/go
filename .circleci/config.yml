@@ -308,7 +308,7 @@ jobs:
 
   canary:
     docker:
-      - image: circleci/golang:latest-node
+      - image: circleci/golang:1.14.1-node
     steps:
       - checkout
       - run:
