@@ -25,10 +25,6 @@
 	}
 }
 
-.has-footer-background .entry-content > *:last-child:not(.alignfull) {
-	margin-bottom: var(--go--spacing--vertical--lg);
-}
-
 [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
 	max-width: var(--go--max-width);
 	width: 100%;
@@ -78,6 +74,14 @@
 
 [class*="__inner-container"] > *:last-child {
 	margin-bottom: 0;
+}
+
+.has-footer-background .entry-content > *:last-child:not(.alignfull) {
+	margin-bottom: var(--go--spacing--vertical--lg);
+}
+
+.has-footer-background .entry-content > *:last-child.alignfull.px {
+	margin-bottom: var(--go--spacing--vertical--lg);
 }
 
 /* Wide */
