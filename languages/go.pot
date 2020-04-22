@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-04-16T19:45:40+00:00\n"
+"POT-Creation-Date: 2020-04-22T18:11:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -97,7 +97,7 @@ msgid "Millennial"
 msgstr ""
 
 #: docs/design-styles/example/functions.php:39
-#: includes/core.php:668
+#: includes/core.php:665
 msgctxt "color palette name"
 msgid "Blush"
 msgstr ""
@@ -516,260 +516,260 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/core.php:165
+#: includes/core.php:162
 msgctxt "font size option label"
 msgid "Small"
 msgstr ""
 
-#: includes/core.php:166
+#: includes/core.php:163
 msgctxt "abbreviation of the font size option label"
 msgid "S"
 msgstr ""
 
-#: includes/core.php:171
+#: includes/core.php:168
 msgctxt "font size option label"
 msgid "Medium"
 msgstr ""
 
-#: includes/core.php:172
+#: includes/core.php:169
 msgctxt "abbreviation of the font size option label"
 msgid "M"
 msgstr ""
 
-#: includes/core.php:177
+#: includes/core.php:174
 msgctxt "font size option label"
 msgid "Large"
 msgstr ""
 
-#: includes/core.php:178
+#: includes/core.php:175
 msgctxt "abbreviation of the font size option label"
 msgid "L"
 msgstr ""
 
-#: includes/core.php:183
+#: includes/core.php:180
 msgctxt "font size option label"
 msgid "Huge"
 msgstr ""
 
-#: includes/core.php:184
+#: includes/core.php:181
 msgctxt "abbreviation of the font size option label"
 msgid "XL"
 msgstr ""
 
-#: includes/core.php:196
+#: includes/core.php:193
 msgctxt "name of the first color palette selection"
 msgid "Primary"
 msgstr ""
 
-#: includes/core.php:201
+#: includes/core.php:198
 msgctxt "name of the second color palette selection"
 msgid "Secondary"
 msgstr ""
 
-#: includes/core.php:206
+#: includes/core.php:203
 msgctxt "name of the third color palette selection"
 msgid "Tertiary"
 msgstr ""
 
-#: includes/core.php:211
+#: includes/core.php:208
 msgctxt "name of the fourth color palette selection"
 msgid "Quaternary"
 msgstr ""
 
-#: includes/core.php:353
+#: includes/core.php:350
 msgid "Expand search field"
 msgstr ""
 
-#: includes/core.php:605
+#: includes/core.php:602
 msgctxt "design style name"
 msgid "Traditional"
 msgstr ""
 
-#: includes/core.php:610
+#: includes/core.php:607
 msgctxt "color palette name"
 msgid "Apricot"
 msgstr ""
 
-#: includes/core.php:617
+#: includes/core.php:614
 msgctxt "color palette name"
 msgid "Emerald"
 msgstr ""
 
-#: includes/core.php:624
+#: includes/core.php:621
 msgctxt "color palette name"
 msgid "Brick"
 msgstr ""
 
-#: includes/core.php:631
+#: includes/core.php:628
 msgctxt "color palette name"
 msgid "Bronze"
 msgstr ""
 
-#: includes/core.php:656
+#: includes/core.php:653
 msgctxt "design style name"
 msgid "Modern"
 msgstr ""
 
-#: includes/core.php:661
+#: includes/core.php:658
 msgctxt "color palette name"
 msgid "Shade"
 msgstr ""
 
-#: includes/core.php:675
+#: includes/core.php:672
 msgctxt "color palette name"
 msgid "Indigo"
 msgstr ""
 
-#: includes/core.php:682
+#: includes/core.php:679
 msgctxt "color palette name"
 msgid "Pacific"
 msgstr ""
 
-#: includes/core.php:708
+#: includes/core.php:705
 msgctxt "design style name"
 msgid "Trendy"
 msgstr ""
 
-#: includes/core.php:713
+#: includes/core.php:710
 msgctxt "color palette name"
 msgid "Plum"
 msgstr ""
 
-#: includes/core.php:722
+#: includes/core.php:719
 msgctxt "color palette name"
 msgid "Steel"
 msgstr ""
 
-#: includes/core.php:730
+#: includes/core.php:727
 msgctxt "color palette name"
 msgid "Avocado"
 msgstr ""
 
-#: includes/core.php:738
+#: includes/core.php:735
 msgctxt "color palette name"
 msgid "Champagne"
 msgstr ""
 
-#: includes/core.php:765
+#: includes/core.php:762
 msgctxt "design style name"
 msgid "Welcoming"
 msgstr ""
 
-#: includes/core.php:770
+#: includes/core.php:767
 msgctxt "color palette name"
 msgid "Forest"
 msgstr ""
 
-#: includes/core.php:778
+#: includes/core.php:775
 msgctxt "color palette name"
 msgid "Spruce"
 msgstr ""
 
-#: includes/core.php:786
+#: includes/core.php:783
 msgctxt "color palette name"
 msgid "Mocha"
 msgstr ""
 
-#: includes/core.php:794
+#: includes/core.php:791
 msgctxt "color palette name"
 msgid "Lavender"
 msgstr ""
 
-#: includes/core.php:817
+#: includes/core.php:814
 msgctxt "design style name"
 msgid "Playful"
 msgstr ""
 
-#: includes/core.php:822
+#: includes/core.php:819
 msgctxt "color palette name"
 msgid "Frolic"
 msgstr ""
 
-#: includes/core.php:832
+#: includes/core.php:829
 msgctxt "color palette name"
 msgid "Coral"
 msgstr ""
 
-#: includes/core.php:842
+#: includes/core.php:839
 msgctxt "color palette name"
 msgid "Organic"
 msgstr ""
 
-#: includes/core.php:852
+#: includes/core.php:849
 msgctxt "color palette name"
 msgid "Berry"
 msgstr ""
 
-#: includes/core.php:935
+#: includes/core.php:932
 msgctxt "name of the first header variation option"
 msgid "Header 1"
 msgstr ""
 
-#: includes/core.php:939
+#: includes/core.php:936
 msgctxt "name of the second header variation option"
 msgid "Header 2"
 msgstr ""
 
-#: includes/core.php:943
+#: includes/core.php:940
 msgctxt "name of the third header variation option"
 msgid "Header 3"
 msgstr ""
 
-#: includes/core.php:947
+#: includes/core.php:944
 msgctxt "name of the fourth header variation option"
 msgid "Header 4"
 msgstr ""
 
-#: includes/core.php:974
+#: includes/core.php:971
 msgctxt "name of the first footer variation option"
 msgid "Footer 1"
 msgstr ""
 
-#: includes/core.php:981
+#: includes/core.php:978
 msgctxt "name of the second footer variation option"
 msgid "Footer 2"
 msgstr ""
 
-#: includes/core.php:988
+#: includes/core.php:985
 msgctxt "name of the third footer variation option"
 msgid "Footer 3"
 msgstr ""
 
-#: includes/core.php:995
+#: includes/core.php:992
 msgctxt "name of the fourth footer variation option"
 msgid "Footer 4"
 msgstr ""
 
-#: includes/core.php:1078
+#: includes/core.php:1075
 msgid "Facebook"
 msgstr ""
 
-#: includes/core.php:1083
+#: includes/core.php:1080
 msgid "Twitter"
 msgstr ""
 
-#: includes/core.php:1088
+#: includes/core.php:1085
 msgid "Instagram"
 msgstr ""
 
-#: includes/core.php:1093
+#: includes/core.php:1090
 msgid "LinkedIn"
 msgstr ""
 
-#: includes/core.php:1098
+#: includes/core.php:1095
 msgid "Pinterest"
 msgstr ""
 
-#: includes/core.php:1250
+#: includes/core.php:1247
 msgid "That page can't be found"
 msgstr ""
 
 #. translators: Search query term(s).
-#: includes/core.php:1268
+#: includes/core.php:1265
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1276
+#: includes/core.php:1273
 msgid "Nothing Found"
 msgstr ""
 
