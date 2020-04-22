@@ -371,7 +371,7 @@ jobs:
           command: npm run snapshots:download
       - run:
           name: "Run end to end tests (Cypress.io)"
-          command: npx cypress run --browser chrome --record --parallel --group vr-chrome --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js' --env failOnSnapshotDiff=false
+          command: npx cypress run --browser chrome --record --parallel --group vr-chrome --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
 
   visual-regression-firefox:
     docker:
@@ -400,7 +400,7 @@ jobs:
           command: npm run snapshots:download
       - run:
           name: "Run end to end tests (Cypress.io)"
-          command: npx cypress run --browser firefox --record --parallel --group vr-firefox --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js' --env failOnSnapshotDiff=false
+          command: npx cypress run --browser firefox --record --parallel --group vr-firefox --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
 
   visual-regression-update-snapshots-chrome:
     docker:
