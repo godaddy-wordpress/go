@@ -5,6 +5,7 @@ module.exports = {
 	entries: {
 		// JS.
 		'frontend': './.dev/assets/shared/js/frontend/frontend.js',
+		'title-meta': './.dev/assets/shared/js/title-meta.js',
 
 		// CSS.
 		'style-editor': './.dev/assets/shared/css/style-editor.css',
@@ -75,7 +76,7 @@ module.exports = {
 	BrowserSyncConfig: {
 		host: 'localhost',
 		port: 3000,
-		proxy: 'https://go.test',
+		proxy: 'http://localhost:8889',
 		open: true,
 		files: [
 			'**/*.php',

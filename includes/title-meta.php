@@ -29,10 +29,14 @@ function setup() {
  * @link https://codex.wordpress.org/Plugin_API/Action_Reference/add_meta_boxes
  */
 function page_titles_add_meta_boxes( $post ) {
+	$n = function( $function ) {
+		return __NAMESPACE__ . "\\$function";
+	};
+
 	add_meta_box(
 		'page_title_metabox',
 		__( 'Enable page titles', 'go' ),
-		'page_title_build_metabox',
+		$n( 'page_title_build_metabox' ),
 		'post',
 		'side',
 		'high'
@@ -55,8 +59,8 @@ function page_titles_metabox_script() {
 
 	wp_enqueue_script(
 		'page_titles_metabox_script_enqueue',
-		get_stylesheet_directory_uri() . '/includes/title-meta.js',
-		array(),
+		get_theme_file_uri( 'dist/js/title-meta.js' ),
+		array( 'jquery', 'wp' ),
 		true,
 		true,
 	);
@@ -69,15 +73,13 @@ function page_titles_metabox_script() {
  * @param post $post The post object.
  */
 function page_title_build_metabox( $post ) {
-
 	wp_nonce_field( basename( __FILE__ ), 'page_titles_metabox_nonce' );
 
 	?>
-	<div class='inside'>
-
-		<h3><?php esc_html_e( 'Page titles', 'go' ); ?></h3>
+	<div class='page-title-meta'>
 		<p>
-			<input type="url" name="page_titles" value="<?php sanitize_text_field( get_post_meta( $post->ID, '_page_titles', true ) ); ?>" />
+			<input type="checkbox" id="page_titles_checkbox" name="page_titles" value="<?php get_post_meta( $post->ID, '_page_titles', true ); ?>" />
+			<label for="page_titles_checkbox"> Show page title</label><br>
 		</p>
 
 	</div>
@@ -116,5 +118,4 @@ function page_titles_meta_box_data( $post_id ) {
 		update_post_meta( $post_id, '_page_titles', sanitize_text_field( wp_unslash( $_POST['page_titles'] ) ) );
 
 	}
-
 }
