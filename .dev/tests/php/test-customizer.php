@@ -953,6 +953,8 @@ class Test_Customizer extends WP_UnitTestCase {
 			'instagram',
 			'linkedin',
 			'pinterest',
+			'youtube',
+			'github',
 		];
 
 		foreach ( $networks as $social_network ) {

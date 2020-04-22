@@ -1096,6 +1096,16 @@ function get_available_social_icons() {
 			'icon'        => get_theme_file_path( 'dist/images/social/pinterest.svg' ),
 			'placeholder' => 'https://pinterest.com/user',
 		),
+		'youtube'   => array(
+			'label'       => esc_html__( 'YouTube', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/youtube.svg' ),
+			'placeholder' => 'https://youtube.com/user',
+		),
+		'github'    => array(
+			'label'       => esc_html__( 'GitHub', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/github.svg' ),
+			'placeholder' => 'https://github.com/user',
+		),
 	);
 
 	/**
