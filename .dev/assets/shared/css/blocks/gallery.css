@@ -30,7 +30,9 @@ body.rtl .wp-block-gallery {
 	}
 }
 
-.wp-block-gallery.alignfull + .wp-block-image {
+.wp-block-gallery.alignfull + .wp-block-image.alignfull,
+.wp-block-gallery.alignfull + .wp-block-group.alignfull.has-background,
+.wp-block-image.alignfull + .wp-block-group.alignfull.has-background {
 	margin-top: calc(var(--go--spacing--vertical--lg) * -1);
 }
 

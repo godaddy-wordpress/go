@@ -15,7 +15,7 @@
 
 		&.alignfull,
 		&.alignwide.wp-block-image,
-		&.alignwide.wp-block-gallery {
+		&.alignwide[class*="gallery"] {
 			margin-top: 0;
 		}
 	}
@@ -25,7 +25,7 @@
 	}
 }
 
-.has-footer-background  .entry-content > *:last-child:not(.alignfull) {
+.has-footer-background .entry-content > *:last-child:not(.alignfull) {
 	margin-bottom: var(--go--spacing--vertical--lg);
 }
 
