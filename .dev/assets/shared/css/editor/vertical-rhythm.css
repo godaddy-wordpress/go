@@ -1,6 +1,13 @@
 /* Vertical Spacing */
 .wp-block {
+	margin-bottom: var(--go--spacing--vertical);
+	margin-top: var(--go--spacing--vertical);
 	max-width: var(--editor-max-w-base);
+}
+
+.wp-block-paragraph {
+	margin-bottom: 0;
+	margin-top: 0;
 }
 
 .wp-block .wp-block {
