@@ -15,5 +15,5 @@ body {
 }
 
 .has-footer-1 .footer-navigation a {
-	color: var(--go-footer--color--text, intial);
+	color: var(--go-footer--color--text, initial);
 }
