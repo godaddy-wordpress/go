@@ -154,9 +154,6 @@ function theme_setup() {
 	// Add support for editor styles.
 	add_theme_support( 'editor-styles' );
 
-	// Add support for core block styles.
-	add_theme_support( 'wp-block-styles' );
-
 	// Add custom editor font sizes.
 	add_theme_support(
 		'editor-font-sizes',

@@ -14,7 +14,7 @@
 		}
 
 		&.alignfull + .alignfull:not(.wp-block-gallery) {
-			margin-top: 0 !important;
+			margin-top: calc(var(--go--spacing--vertical--lg) * -1);
 		}
 	}
 

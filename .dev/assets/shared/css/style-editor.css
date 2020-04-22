@@ -276,11 +276,6 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 }
 
 /*! Separator */
-.wp-block[data-type="core/separator"] {
-	margin-bottom: var(--editor-block-spacing, 4em);
-	margin-top: var(--editor-block-spacing, 4em);
-}
-
 .wp-block-separator {
 	border-bottom-color: var(--go-separator--color--border, var(--go-heading--color--text));
 	padding: 0;

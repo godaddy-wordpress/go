@@ -235,7 +235,7 @@ class Test_Core extends WP_UnitTestCase {
 			'responsive-embeds',
 			'align-wide',
 			'editor-styles',
-			'wp-block-styles',
+			// 'wp-block-styles',
 			'editor-font-sizes',
 			'automatic-feed-links',
 			'editor-color-palette',

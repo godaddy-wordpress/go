@@ -20,7 +20,7 @@
 	<?php Go\page_title(); ?>
 
 	<div class="<?php Go\content_wrapper_class( 'content-area__wrapper' ); ?>">
-		<div class="content-area">
+		<div class="content-area entry-content">
 			<?php the_content(); ?>
 			<?php wp_link_pages(); ?>
 		</div>
