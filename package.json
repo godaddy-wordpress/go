@@ -147,7 +147,7 @@
   },
   "testing": {
     "urls": {
-      "local": "http://go.test",
+      "local": "http://localhost:8889",
       "staging": "",
       "production": ""
     },
@@ -156,6 +156,7 @@
     }
   },
   "dependencies": {
+    "@wordpress/dom-ready": "^2.9.0",
     "css-vars-ponyfill": "^2.0.2",
     "lodash.throttle": "^4.1.1",
     "normalize.css": "^8.0.0"
