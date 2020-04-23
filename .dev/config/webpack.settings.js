@@ -5,7 +5,6 @@ module.exports = {
 	entries: {
 		// JS.
 		'frontend': './.dev/assets/shared/js/frontend/frontend.js',
-		'title-meta': './.dev/assets/shared/js/title-meta.js',
 
 		// CSS.
 		'style-editor': './.dev/assets/shared/css/style-editor.css',

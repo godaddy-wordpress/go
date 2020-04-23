@@ -525,6 +525,7 @@ function copyright( $args = array() ) {
  * @return mixed Markup for the page title
  */
 function page_title() {
+	global $post;
 
 	if ( ! is_customize_preview() && is_front_page() ) {
 
@@ -532,7 +533,7 @@ function page_title() {
 
 	}
 
-	$show_titles = (bool) get_theme_mod( 'page_titles', true );
+	$show_titles = (bool) get_theme_mod( 'page_titles', true ) || ( isset( $post ) && ! get_post_meta( $post->ID, '_page_title', true ) );
 	$non_archive = ! is_404() && ! is_search() && ! is_archive();
 	$is_shop     = function_exists( 'is_shop' ) && is_shop(); // WooCommerce shop.
 

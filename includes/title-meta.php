@@ -19,8 +19,22 @@ function setup() {
 
 	add_action( 'add_meta_boxes', $n( 'page_title_add_meta_boxes' ) );
 	add_action( 'save_post', $n( 'page_title_meta_box_data' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'page_title_metabox_script' ) );
+	add_filter( 'go_page_title_args', $n( 'hide_page_title' ) );
+}
 
+/**
+ * Hide page title box
+ *
+ * @param title_data $title_data The title data.
+ * @return title_data $title_data Filtered title data.
+ */
+function hide_page_title( $title_data ) {
+	if ( ! is_singular( 'page' ) || ! get_post_meta( get_the_ID(), '_page_title', true ) ) {
+		return $title_data;
+	} else {
+		$title_data['title'] = '';
+		return $title_data;
+	}
 }
 
 /**
@@ -32,37 +46,12 @@ function setup() {
 function page_title_add_meta_boxes( $post ) {
 	add_meta_box(
 		'page_title_checkbox',
-		__( 'Enable page title', 'go' ),
+		__( 'Hide page title', 'go' ),
 		'Go\TitleMeta\\page_title_build_metabox',
 		'page',
 		'side',
 		'high'
 	);
-
-}
-
-
-/**
- * Enqueue the metaboxes script on the post edit screen
- */
-function page_title_metabox_script() {
-	global $post;
-
-	if (
-		isset( $post ) &&
-		'page' === $post->post_type &&
-		! get_post_meta( $post->ID, '_page_title', true )
-	) {
-
-		wp_enqueue_script(
-			'page_title_metabox_script_enqueue',
-			get_theme_file_uri( 'dist/js/title-meta.js' ),
-			array( 'jquery' ),
-			true,
-			true,
-		);
-
-	}
 
 }
 
@@ -72,13 +61,14 @@ function page_title_metabox_script() {
  * @param post $post The post object.
  */
 function page_title_build_metabox( $post ) {
+	$label = __( 'Hide page title when published.', 'go' );
 	wp_nonce_field( basename( __FILE__ ), 'page_title_metabox_nonce' );
 
 	?>
 	<div class='page-title-meta'>
 		<p>
 			<input type="checkbox" id="page-title-checkbox" name="page-title" value="on" <?php checked( get_post_meta( $post->ID, '_page_title', true ), 1 ); ?> />
-			<label for="page-title-checkbox"> Show page title on published page.</label><br>
+			<label for="page-title-checkbox"> <?php echo( esc_html( $label ) ); ?> </label><br>
 		</p>
 
 	</div>
