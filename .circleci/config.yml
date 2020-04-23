@@ -305,6 +305,7 @@ jobs:
             git add languages/go.pot
             git status
             git commit -m "Update go.pot/go.json files [skip i18n]"
+            git reset --hard
             git pull --rebase
             git push origin master --quiet
 
