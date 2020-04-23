@@ -58,7 +58,7 @@ Go\Core\setup();
 Go\TGM\setup();
 Go\Customizer\setup();
 Go\WooCommerce\setup();
-Go\TitleMeta\setup();
+Go\Title_Meta\setup();
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
