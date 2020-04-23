@@ -299,6 +299,7 @@ jobs:
       - run:
           name: Deploy go.pot/go.json back to GitHub
           command: |
+            rm -f package-lock.json
             git config --global user.email "plugins@godaddy.com"
             git config --global user.name "GoDaddy Translator Bot"
             git add languages/go.json
