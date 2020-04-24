@@ -59,7 +59,9 @@ function page_title_add_meta_boxes( $post ) {
  * @param post $post The post object.
  */
 function page_title_build_metabox( $post ) {
-	if ( 0 === count( get_post_meta( get_the_ID(), '_page_title' ) ) ) {
+	$post_meta = get_post_meta( get_the_ID(), '_page_title' );
+
+	if ( is_array( $post_meta ) && 0 === count( $post_meta ) ) {
 		update_post_meta( $post->ID, '_page_title', get_theme_mod( 'page_titles', true ) );
 	}
 
