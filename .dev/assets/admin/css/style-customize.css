@@ -28,6 +28,11 @@
 
 #customize-control-viewport_basis {
 	direction: rtl;
+
+	& .customize-control-title {
+		font-size: 13px;
+		font-weight: 500;
+	}
 }
 
 .customize-control-go_title {
