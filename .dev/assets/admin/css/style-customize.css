@@ -26,9 +26,8 @@
 	display: none;
 }
 
-/* Hide the control while experimental */
 #customize-control-viewport_basis {
-	display: none !important;
+	direction: rtl;
 }
 
 .customize-control-go_title {

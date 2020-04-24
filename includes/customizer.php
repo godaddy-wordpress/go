@@ -671,20 +671,17 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new Range_Control(
-			$wp_customize,
-			'viewport_basis',
-			array(
-				'default'     => \Go\Core\get_default_viewport_basis(),
-				'type'        => 'go_range_control',
-				'label'       => esc_html__( 'Spacing', 'go' ),
-				'section'     => 'colors',
-				'input_attrs' => array(
-					'min'  => 500,
-					'max'  => 2250,
-					'step' => 1,
-				),
-			)
+		'viewport_basis',
+		array(
+			'default'     => \Go\Core\get_default_viewport_basis(),
+			'type'   => 'range',
+			'label'       => esc_html__( 'Spacing', 'go' ),
+			'section'     => 'colors',
+			'input_attrs' => array(
+				'min'  => 500,
+				'max'  => 2250,
+				'step' => 1,
+			),
 		)
 	);
 
