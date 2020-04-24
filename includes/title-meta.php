@@ -51,7 +51,7 @@ function page_title_build_metabox() {
 
 	global $pagenow;
 
-	$hide_page_title = ( 'post-new.php' === $pagenow ) ? ! get_theme_mod( 'page_titles', true ) : get_post_meta( get_the_ID(), '_hide_page_title', true );
+	$hide_page_title = ( 'post-new.php' === $pagenow ) ? get_theme_mod( 'page_titles', true ) : get_post_meta( get_the_ID(), '_hide_page_title', true );
 
 	wp_nonce_field( basename( __FILE__ ), 'page_title_metabox_nonce' );
 
