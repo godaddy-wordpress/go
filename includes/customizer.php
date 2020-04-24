@@ -674,7 +674,7 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 		'viewport_basis',
 		array(
 			'default'     => \Go\Core\get_default_viewport_basis(),
-			'type'   => 'range',
+			'type'        => 'range',
 			'label'       => esc_html__( 'Spacing', 'go' ),
 			'section'     => 'colors',
 			'input_attrs' => array(
@@ -1006,7 +1006,7 @@ function inline_css() {
 					--go-logo-mobile--max-width: <?php echo esc_attr( $logo_width_mobile ); ?>px;
 				<?php endif; ?>
 
-				<?php if ( false === $viewport_basis ) : ?>
+				<?php if ( $viewport_basis ) : ?>
 					--go--viewport-basis: <?php echo esc_attr( $viewport_basis ); ?>;
 				<?php endif; ?>
 			}
