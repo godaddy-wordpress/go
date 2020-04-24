@@ -35,7 +35,7 @@ function setup() {
  */
 function hide_page_title( $title_data ) {
 
-	if ( is_singular( 'page' ) && ! get_post_meta( get_the_ID(), '_hide_page_title', true ) ) {
+	if ( is_singular( 'page' ) && get_post_meta( get_the_ID(), '_hide_page_title', true ) ) {
 
 		$title_data['title'] = '';
 

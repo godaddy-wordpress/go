@@ -525,16 +525,14 @@ function copyright( $args = array() ) {
  * @return mixed Markup for the page title
  */
 function page_title() {
-	if (
-		( is_front_page() && ! is_customize_preview() ) &&
-		( isset( $post ) && get_post_meta( get_the_ID(), '_page_title', true ) )
-	) {
+
+	if ( ! is_customize_preview() && is_front_page() ) {
 
 		return;
 
 	}
 
-	$show_titles = (bool) get_theme_mod( 'page_titles', true ) || ! get_post_meta( get_the_ID(), '_page_title', true );
+	$show_titles = (bool) get_theme_mod( 'page_titles', true ) || ! get_post_meta( get_the_ID(), '_hide_page_title', true );
 	$non_archive = ! is_404() && ! is_search() && ! is_archive();
 	$is_shop     = function_exists( 'is_shop' ) && is_shop(); // WooCommerce shop.
 
