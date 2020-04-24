@@ -1063,8 +1063,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 		update_option( 'page_on_front', $front_page_id );
 		update_option( 'show_on_front', 'page' );
 
-		global $post;
-		global $wp_query;
+		global $post, $wp_query;
 
 		$post = get_post( $front_page_id );
 

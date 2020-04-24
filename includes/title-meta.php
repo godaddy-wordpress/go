@@ -53,7 +53,7 @@ function page_title_build_metabox() {
 
 	$hide_page_title = ( 'post-new.php' === $pagenow ) ? ! get_theme_mod( 'page_titles', true ) : get_post_meta( get_the_ID(), '_hide_page_title', true );
 
-	wp_nonce_field( basename( __FILE__ ), 'page_title_metabox_nonce' );
+	wp_nonce_field( 'go-hide-page-title', 'page_title_metabox_nonce' );
 
 	?>
 	<div class="hide-page-title-meta">
@@ -74,12 +74,17 @@ function page_title_build_metabox() {
  */
 function save_page_title_metabox_data( $post_id ) {
 
-	$page_title_metabox_nonce = filter_input( INPUT_POST, 'page_title_metabox_nonce', FILTER_SANITIZE_STRING );
+	if ( ! isset( $_POST['page_title_metabox_nonce'] ) ) {
+
+		return;
+
+	}
+
+	$page_title_metabox_nonce = filter_var( wp_unslash( $_POST['page_title_metabox_nonce'] ), FILTER_SANITIZE_STRING );
 
 	if (
-		! $page_title_metabox_nonce ||
 		! current_user_can( 'edit_post', $post_id ) ||
-		! wp_verify_nonce( $page_title_metabox_nonce, basename( __FILE__ ) ) ||
+		! wp_verify_nonce( $page_title_metabox_nonce, 'go-hide-page-title' ) ||
 		defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE
 	) {
 
@@ -87,7 +92,7 @@ function save_page_title_metabox_data( $post_id ) {
 
 	}
 
-	update_post_meta( $post_id, '_hide_page_title', filter_input( INPUT_POST, 'hide-page-title', FILTER_VALIDATE_BOOLEAN ) );
+	update_post_meta( $post_id, '_hide_page_title', isset( $_POST['hide-page-title'] ) );
 
 }
 

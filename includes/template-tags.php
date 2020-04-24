@@ -47,6 +47,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 		return;
 	}
 
+	$post_meta                 = false;
 	$post_meta_wrapper_classes = '';
 	$post_meta_classes         = '';
 
@@ -532,7 +533,7 @@ function page_title() {
 
 	}
 
-	$show_titles = (bool) get_theme_mod( 'page_titles', true ) || ! get_post_meta( get_the_ID(), '_hide_page_title', true );
+	$show_titles = (bool) get_theme_mod( 'page_titles', true );
 	$non_archive = ! is_404() && ! is_search() && ! is_archive();
 	$is_shop     = function_exists( 'is_shop' ) && is_shop(); // WooCommerce shop.
 
