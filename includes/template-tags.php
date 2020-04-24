@@ -525,10 +525,8 @@ function copyright( $args = array() ) {
  * @return mixed Markup for the page title
  */
 function page_title() {
-	if (
-		( is_front_page() && ! is_customize_preview() ) &&
-		( get_post_meta( get_the_ID(), '_hide_page_title', true ) )
-	) {
+
+	if ( ! is_customize_preview() && is_front_page() ) {
 
 		return;
 
