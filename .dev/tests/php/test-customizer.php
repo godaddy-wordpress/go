@@ -977,6 +977,29 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the viewport_basis setting is registered
+	 */
+	function test_register_color_viewport_basis_setting() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'viewport_basis' ) );
+
+	}
+
+	/**
+	 * Test the viewport_basis control is registered
+	 */
+	function test_register_viewport_basis_control() {
+
+		Go\Customizer\register_color_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'viewport_basis' ) );
+
+	}
+
+
+	/**
 	 * Test the rename_panels renames the colors panel properly
 	 */
 	function test_rename_panels_colors() {
