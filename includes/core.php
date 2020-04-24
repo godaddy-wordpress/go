@@ -316,7 +316,8 @@ function block_editor_assets() {
 		'go-block-filters',
 		'GoBlockFilters',
 		array(
-			'inlineStyles' => $styles,
+			'inlineStyles'  => $styles,
+			'hidePageTitle' => get_post_meta( get_the_ID(), '_hide_page_title', true ),
 		)
 	);
 
