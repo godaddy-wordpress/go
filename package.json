@@ -147,7 +147,7 @@
   },
   "testing": {
     "urls": {
-      "local": "https://go.test",
+      "local": "http://go.test",
       "staging": "",
       "production": ""
     },
