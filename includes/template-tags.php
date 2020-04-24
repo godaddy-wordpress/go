@@ -527,7 +527,7 @@ function copyright( $args = array() ) {
 function page_title() {
 	if (
 		( is_front_page() && ! is_customize_preview() ) &&
-		( isset( $post ) && get_post_meta( get_the_ID(), '_page_title', true ) )
+		( get_post_meta( get_the_ID(), '_page_title', true ) )
 	) {
 
 		return;
