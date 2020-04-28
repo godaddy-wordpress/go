@@ -14,6 +14,12 @@ namespace Go\Development_Environment;
  */
 function setup() {
 
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+
+		return;
+
+	}
+
 	$n = function( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
