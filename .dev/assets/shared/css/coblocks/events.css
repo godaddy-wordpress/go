@@ -1,0 +1,9 @@
+/*! CoBlocks: Events */
+.wp-block-coblocks-events__title,
+.wp-block-coblocks-events__day,
+.wp-block-coblocks-events__time {
+	font-family: var(--go-heading--font-family);
+	font-style: var(--go-heading--font-style, normal);
+	font-weight: var(--go-heading--font-weight);
+	line-height: var(--go-heading--line-height);
+}

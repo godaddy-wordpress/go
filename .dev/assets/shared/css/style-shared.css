@@ -76,23 +76,24 @@
 @import url("blocks/group.css");
 
 /*! CoBlocks */
+@import url("coblocks/accordion.css");
+@import url("coblocks/alert.css");
 @import url("coblocks/author.css");
-@import url("coblocks/form.css");
-@import url("coblocks/row.css");
+@import url("coblocks/carousel.css");
+@import url("coblocks/dynamic-separator.css");
+@import url("coblocks/events.css");
+@import url("coblocks/features.css");
 @import url("coblocks/food-drinks.css");
+@import url("coblocks/form.css");
+@import url("coblocks/hero.css");
 @import url("coblocks/icon.css");
 @import url("coblocks/masonry.css");
-@import url("coblocks/carousel.css");
-@import url("coblocks/accordion.css");
-@import url("coblocks/pricing-table.css");
-@import url("coblocks/services.css");
-@import url("coblocks/dynamic-separator.css");
-@import url("coblocks/social.css");
-@import url("coblocks/shape-divider.css");
-@import url("coblocks/alert.css");
-@import url("coblocks/hero.css");
-@import url("coblocks/features.css");
 @import url("coblocks/media-card.css");
+@import url("coblocks/pricing-table.css");
+@import url("coblocks/row.css");
+@import url("coblocks/services.css");
+@import url("coblocks/shape-divider.css");
+@import url("coblocks/social.css");
 
 /*! WooCommerce */
 @import url("woocommerce/notice.css");
