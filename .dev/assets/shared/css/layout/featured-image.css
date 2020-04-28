@@ -55,17 +55,3 @@
 		}
 	}
 }
-
-.has-featured-image:not(.is-style-welcoming):not(.menu-is-open) {
-
-	& .site-title,
-	& .site-description,
-	& .header .primary-menu a {
-		color: var(--go--color--white);
-	}
-
-	& .nav-toggle-icon svg,
-	& .header__search-toggle svg {
-		fill: var(--go--color--white) !important;
-	}
-}

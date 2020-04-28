@@ -661,6 +661,27 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 		)
 	);
 
+	// Footer colors.
+	$wp_customize->add_setting(
+		'title_site_styles',
+		array(
+			'sanitize_callback' => 'esc_html',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Title_Control(
+			$wp_customize,
+			'title_site_styles',
+			array(
+				'type'        => 'go_title',
+				'label'       => esc_html__( 'Additional Design Controls', 'go' ),
+				'description' => __( 'Customize additional design settings.', 'go' ),
+				'section'     => 'colors',
+			)
+		)
+	);
+
 	$wp_customize->add_setting(
 		'viewport_basis',
 		array(
@@ -671,20 +692,17 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new Range_Control(
-			$wp_customize,
-			'viewport_basis',
-			array(
-				'default'     => \Go\Core\get_default_viewport_basis(),
-				'type'        => 'go_range_control',
-				'label'       => esc_html__( 'Spacing', 'go' ),
-				'section'     => 'colors',
-				'input_attrs' => array(
-					'min'  => 500,
-					'max'  => 2250,
-					'step' => 1,
-				),
-			)
+		'viewport_basis',
+		array(
+			'default'     => \Go\Core\get_default_viewport_basis(),
+			'type'        => 'range',
+			'label'       => esc_html__( 'Site Spacing', 'go' ),
+			'section'     => 'colors',
+			'input_attrs' => array(
+				'min'  => 500,
+				'max'  => 2250,
+				'step' => 1,
+			),
 		)
 	);
 
@@ -1009,7 +1027,7 @@ function inline_css() {
 					--go-logo-mobile--max-width: <?php echo esc_attr( $logo_width_mobile ); ?>px;
 				<?php endif; ?>
 
-				<?php if ( false === $viewport_basis ) : ?>
+				<?php if ( $viewport_basis ) : ?>
 					--go--viewport-basis: <?php echo esc_attr( $viewport_basis ); ?>;
 				<?php endif; ?>
 			}

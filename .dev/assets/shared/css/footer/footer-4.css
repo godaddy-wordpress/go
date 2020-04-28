@@ -2,6 +2,7 @@
 .has-footer-4 {
 
 	& .site-footer {
+		margin-top: calc(var(--go--spacing--vertical--lg) * 0.7);
 		padding-bottom: calc(var(--go--spacing--vertical--lg) * 0.5);
 	}
 

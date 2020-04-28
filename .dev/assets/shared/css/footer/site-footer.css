@@ -1,19 +1,21 @@
 /*! Footer */
 .site-footer {
 	background-color: var(--go-footer--color--background);
-	color: var(--go-footer--color--text, intial);
+	color: var(--go-footer--color--text, initial);
 	font-family: var(--go-footer--font-family, inherit);
+	margin-top: var(--go--spacing--vertical--lg);
 
 	& .site-info {
-		color: var(--go-footer--color--text, intial);
+		color: var(--go-footer--color--text, initial);
 	}
 
 	&.has-background {
+		margin-top: 0;
 		padding-top: var(--go--spacing--vertical--lg);
 	}
 
 	& a {
-		color: var(--go-footer--color--text, intial);
+		color: var(--go-footer--color--text, initial);
 		text-decoration: none;
 
 		&:hover {

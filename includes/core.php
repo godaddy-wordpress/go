@@ -154,9 +154,6 @@ function theme_setup() {
 	// Add support for editor styles.
 	add_theme_support( 'editor-styles' );
 
-	// Add support for core block styles.
-	add_theme_support( 'wp-block-styles' );
-
 	// Add custom editor font sizes.
 	add_theme_support(
 		'editor-font-sizes',
@@ -1099,6 +1096,16 @@ function get_available_social_icons() {
 			'label'       => esc_html__( 'Pinterest', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/pinterest.svg' ),
 			'placeholder' => 'https://pinterest.com/user',
+		),
+		'youtube'   => array(
+			'label'       => esc_html__( 'YouTube', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/youtube.svg' ),
+			'placeholder' => 'https://youtube.com/user',
+		),
+		'github'    => array(
+			'label'       => esc_html__( 'GitHub', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/github.svg' ),
+			'placeholder' => 'https://github.com/user',
 		),
 	);
 

@@ -26,9 +26,13 @@
 	display: none;
 }
 
-/* Hide the control while experimental */
 #customize-control-viewport_basis {
-	display: none !important;
+	direction: rtl;
+
+	& .customize-control-title {
+		font-size: 13px;
+		font-weight: 500;
+	}
 }
 
 .customize-control-go_title {
