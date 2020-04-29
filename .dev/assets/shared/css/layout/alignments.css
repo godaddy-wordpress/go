@@ -30,6 +30,12 @@
 	width: 100%;
 }
 
+.alignwide > [class*="__inner-container"] > *:not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
+.alignfull > [class*="__inner-container"] > *:not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+	max-width: var(--go--max-width--alignwide);
+	width: 100%;
+}
+
 .alignnone,
 .aligncenter,
 .alignleft,
