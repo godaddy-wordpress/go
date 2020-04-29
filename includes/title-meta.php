@@ -59,7 +59,7 @@ function page_title_build_metabox() {
 	<div class="hide-page-title-meta">
 		<p>
 			<input type="checkbox" id="hide-page-title-checkbox" name="hide-page-title" value="on"<?php checked( $hide_page_title, 1 ); ?> />
-			<label for="hide-page-title-checkbox"><?php esc_html_e( 'Hide page titles when published.', 'go' ); ?></label>
+			<label for="hide-page-title-checkbox"><?php esc_html_e( 'Hide page title', 'go' ); ?></label>
 		</p>
 	</div>
 	<?php
