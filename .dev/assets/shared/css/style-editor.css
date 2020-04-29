@@ -34,12 +34,13 @@
 
 /* CoBlocks */
 @import url("coblocks/accordion.css");
-@import url("coblocks/pricing-table.css");
-@import url("coblocks/social.css");
-@import url("coblocks/services.css");
-@import url("coblocks/features.css");
 @import url("coblocks/carousel.css");
+@import url("coblocks/events.css");
+@import url("coblocks/features.css");
 @import url("coblocks/food-drinks.css");
+@import url("coblocks/pricing-table.css");
+@import url("coblocks/services.css");
+@import url("coblocks/social.css");
 
 .block-editor-block-list__block[data-type="core/paragraph"] p {
 	line-height: var(--go--line-height);
