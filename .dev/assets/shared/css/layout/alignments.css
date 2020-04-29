@@ -30,8 +30,8 @@
 	width: 100%;
 }
 
-.alignwide > [class*="__inner-container"] > *:not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
-.alignfull > [class*="__inner-container"] > *:not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+.alignwide > [class*="__inner-container"] > *:not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+.alignfull > [class*="__inner-container"] > *:not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
 	max-width: var(--go--max-width--alignwide);
 	width: 100%;
 }
