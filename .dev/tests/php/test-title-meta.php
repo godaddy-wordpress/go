@@ -81,7 +81,7 @@ class Test_Title_Meta extends WP_UnitTestCase {
 
 		Go\Title_Meta\page_title_build_metabox();
 
-		$this->expectOutputRegex( '/<input type="hidden" id="page_title_metabox_nonce" name="page_title_metabox_nonce" value="[0-9a-zA-Z]+" \/><input type="hidden" name="_wp_http_referer" value="" \/>\s<div class="hide-page-title-meta">\\n[\n\r\s]+<p>\\n[\n\r\s]+<input type="checkbox" id="hide-page-title-checkbox" name="hide-page-title" value="on" \/>\\n[\n\r\s]+<label for="hide-page-title-checkbox">Hide page titles when published.<\/label>\\n[\n\r\s]+<\/p>\\n[\n\r\s]+<\/div>\n/' );
+		$this->expectOutputRegex( '/<input type="hidden" id="page_title_metabox_nonce" name="page_title_metabox_nonce" value="[0-9a-zA-Z]+" \/><input type="hidden" name="_wp_http_referer" value="" \/>\s<div class="hide-page-title-meta">\\n[\n\r\s]+<p>\\n[\n\r\s]+<input type="checkbox" id="hide-page-title-checkbox" name="hide-page-title" value="on" \/>\\n[\n\r\s]+<label for="hide-page-title-checkbox">Hide page title<\/label>\\n[\n\r\s]+<\/p>\\n[\n\r\s]+<\/div>\n/' );
 
 	}
 
@@ -106,7 +106,7 @@ class Test_Title_Meta extends WP_UnitTestCase {
 
 		Go\Title_Meta\page_title_build_metabox();
 
-		$this->expectOutputRegex( '/<input type="hidden" id="page_title_metabox_nonce" name="page_title_metabox_nonce" value="[0-9a-zA-Z]+" \/><input type="hidden" name="_wp_http_referer" value="" \/>\s<div class="hide-page-title-meta">\\n[\n\r\s]+<p>\\n[\n\r\s]+<input type="checkbox" id="hide-page-title-checkbox" name="hide-page-title" value="on" checked=\'checked\' \/>\\n[\n\r\s]+<label for="hide-page-title-checkbox">Hide page titles when published.<\/label>\\n[\n\r\s]+<\/p>\\n[\n\r\s]+<\/div>\n/' );
+		$this->expectOutputRegex( '/<input type="hidden" id="page_title_metabox_nonce" name="page_title_metabox_nonce" value="[0-9a-zA-Z]+" \/><input type="hidden" name="_wp_http_referer" value="" \/>\s<div class="hide-page-title-meta">\\n[\n\r\s]+<p>\\n[\n\r\s]+<input type="checkbox" id="hide-page-title-checkbox" name="hide-page-title" value="on" checked=\'checked\' \/>\\n[\n\r\s]+<label for="hide-page-title-checkbox">Hide page title<\/label>\\n[\n\r\s]+<\/p>\\n[\n\r\s]+<\/div>\n/' );
 
 	}
 
