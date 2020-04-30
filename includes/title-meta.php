@@ -24,6 +24,8 @@ function setup() {
 
 	add_filter( 'go_page_title_args', $n( 'hide_page_title' ) );
 
+	add_action( 'enqueue_block_editor_assets', $n( 'scripts' ) );
+
 }
 
 /**
@@ -63,6 +65,24 @@ function page_title_build_metabox() {
 		</p>
 	</div>
 	<?php
+
+}
+
+/**
+ * Build custom field meta box
+ *
+ * @return mixed Markup for the page title metabox.
+ */
+function scripts() {
+
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+
+	wp_enqueue_script(
+		'some-slug',
+		get_theme_file_uri( "dist/js/admin/test{$suffix}.js" ),
+		array( 'wp-blocks', 'wp-components', 'wp-element', 'wp-plugins', 'wp-polyfill' ),
+		'0.1'
+	);
 
 }
 
