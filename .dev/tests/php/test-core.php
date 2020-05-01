@@ -187,6 +187,7 @@ class Test_Core extends WP_UnitTestCase {
 
 	/**
 	 * Test that development_environment doesn't include the necessary file when it doesn't exist.
+	 * Note: This should run and pass on the CI build.
 	 */
 	function testDevelopmentEnvironmentDoesntExist() {
 
@@ -204,7 +205,6 @@ class Test_Core extends WP_UnitTestCase {
 
 	/**
 	 * Test that development_environment doesn't include the necessary file when it doesn't exist.
-	 *
 	 * Note: This file will not exist in the CI build
 	 */
 	function testDevelopmentEnvironmentExists() {
