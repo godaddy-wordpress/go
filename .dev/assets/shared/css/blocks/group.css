@@ -18,6 +18,7 @@
 		}
 
 		&.alignfull + .wp-block-image.alignfull,
+		&.alignfull + .wp-block-coblocks-map.alignfull,
 		&.alignfull + .wp-block-coblocks-gallery-carousel.alignfull {
 			margin-top: calc(var(--go--spacing--vertical--lg) * -1);
 		}

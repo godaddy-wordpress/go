@@ -82,4 +82,8 @@
 	& .wp-block-column > .wp-block-button:first-child {
 		margin-top: 0.75em !important;
 	}
+
+	& + .wp-block-columns {
+		margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
+	}
 }
