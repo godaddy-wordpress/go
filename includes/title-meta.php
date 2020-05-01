@@ -24,6 +24,24 @@ function setup() {
 
 	add_filter( 'go_page_title_args', $n( 'hide_page_title' ) );
 
+	register_meta(
+		'post',
+		'hide_page_title',
+		array(
+			'sanitize_callback' => function( $status ) {
+				$status = strtolower( trim( $status ) );
+				if ( ! in_array( $status, array( 'enabled', 'disabled' ), true ) ) {
+					$status = '';
+				}
+				return $status;
+			},
+			'type'              => 'string',
+			'description'       => __( 'Hide Page Title.', 'go' ),
+			'show_in_rest'      => true,
+			'single'            => true,
+		)
+	);
+
 }
 
 /**

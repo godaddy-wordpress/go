@@ -295,11 +295,13 @@ function block_editor_assets() {
 
 	wp_enqueue_script(
 		'go-block-filters',
-		wp_unslash( get_theme_file_uri( 'dist/js/admin/block-filters.js' ) ),
-		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+		get_theme_file_uri( 'dist/js/admin/block-filters.js' ),
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post', 'wp-components' ),
 		GO_VERSION,
 		true
 	);
+
+	wp_add_inline_script( 'go-block-filters', 'window.lodash = _.noConflict();', 'after' );
 
 	ob_start();
 
