@@ -29,8 +29,7 @@ Scripts and styles are compiled using Webpack and a number of node packages. The
 To install all of the Go dependencies, you can run the two commands:
 
 ```sh
-$ npm install
-$ composer install
+$ npm run setup
 ```
 
 If you are introducing or altering any styles, you'll most likely want to setup
@@ -76,6 +75,11 @@ There are two types of builds:
 
 	```sh
 	npm run start
+	```
+
+	To build an installable zip of the theme, use:
+	```sh
+	npm run package
 	```
 
 #### BrowserSync
