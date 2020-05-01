@@ -295,7 +295,7 @@ function block_editor_assets() {
 
 	wp_enqueue_script(
 		'go-block-filters',
-		get_theme_file_uri( 'dist/js/admin/block-filters.js' ),
+		wp_unslash( get_theme_file_uri( 'dist/js/admin/block-filters.js' ) ),
 		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post', 'wp-components' ),
 		GO_VERSION,
 		true
@@ -313,8 +313,7 @@ function block_editor_assets() {
 		'go-block-filters',
 		'GoBlockFilters',
 		array(
-			'inlineStyles'  => $styles,
-			'hidePageTitle' => get_post_meta( get_the_ID(), '_hide_page_title', true ),
+			'inlineStyles' => $styles,
 		)
 	);
 
