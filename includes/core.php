@@ -293,11 +293,9 @@ function block_editor_assets() {
 	// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	require_once get_parent_theme_file_path( 'includes/customizer.php' );
 
-	$suffix = SCRIPT_DEBUG ? '' : '.min';
-
 	wp_enqueue_script(
 		'go-block-filters',
-		get_theme_file_uri( "dist/js/admin/block-filters{$suffix}.js" ),
+		wp_unslash( get_theme_file_uri( 'dist/js/admin/block-filters.js' ) ),
 		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
 		GO_VERSION,
 		true
