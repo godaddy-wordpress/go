@@ -301,8 +301,6 @@ function block_editor_assets() {
 		true
 	);
 
-	wp_add_inline_script( 'go-block-filters', 'window.lodash = _.noConflict();', 'after' );
-
 	ob_start();
 
 	\Go\Customizer\inline_css();
