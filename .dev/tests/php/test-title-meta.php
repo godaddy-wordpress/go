@@ -69,7 +69,7 @@ class Test_Title_Meta extends WP_UnitTestCase {
 			]
 		);
 
-		update_post_meta( $page_id, 'hide_page_title', false );
+		update_post_meta( $page_id, 'hide_page_title', 'disabled' );
 
 		$test_data = [
 			'title' => 'Page Title',
@@ -97,7 +97,7 @@ class Test_Title_Meta extends WP_UnitTestCase {
 			]
 		);
 
-		update_post_meta( $page_id, 'hide_page_title', true );
+		update_post_meta( $page_id, 'hide_page_title', 'enabled' );
 
 		$test_data = [
 			'title' => 'Page Title',
