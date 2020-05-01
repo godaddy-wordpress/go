@@ -1,6 +1,9 @@
 /*! Blockquote */
 .wp-block-quote {
-	margin-bottom: 0;
+	margin-bottom: calc(var(--go--spacing--vertical--lg) * 0.5);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
 
 	& p {
 		color: var(--go-quote--color--text, var(--go-heading--color--text));
