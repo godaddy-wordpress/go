@@ -187,27 +187,9 @@ class Test_Core extends WP_UnitTestCase {
 
 	/**
 	 * Test that development_environment doesn't include the necessary file when it doesn't exist.
-	 * Note: This should run and pass on the CI build.
-	 */
-	function testDevelopmentEnvironmentDoesntExist() {
-
-		if ( ! getenv( 'ci' ) ) {
-
-			$this->markTestSkipped( 'Skip this test locally.' );
-
-			return;
-
-		}
-
-		$this->assertNull( Go\Core\development_environment() );
-
-	}
-
-	/**
-	 * Test that development_environment doesn't include the necessary file when it doesn't exist.
 	 * Note: This file will not exist in the CI build
 	 */
-	function testDevelopmentEnvironmentExists() {
+	function testDevelopmentEnvironment() {
 
 		$file_path = get_template_directory() . '/.dev/assets/development-environment.php';
 
@@ -221,13 +203,15 @@ class Test_Core extends WP_UnitTestCase {
 
 			$this->assertTrue( TEST_CORE );
 
+			unlink( $file_path );
+
 			return;
 
 		}
 
 		Go\Core\development_environment();
 
-		$this->assertTrue( class_exists( 'Go\Development_Environment' ) );
+		$this->assertTrue( is_callable( 'Go\Development_Environment\setup' ) );
 
 	}
 

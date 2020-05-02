@@ -42,13 +42,11 @@ function setup() {
  */
 function development_environment() {
 
-	if ( ! is_readable( get_template_directory() . '/.dev/assets/development-environment.php' ) ) {
+	if ( is_readable( get_template_directory() . '/.dev/assets/development-environment.php' ) ) {
 
-		return;
+		require_once get_template_directory() . '/.dev/assets/development-environment.php';
 
 	}
-
-	require_once get_template_directory() . '/.dev/assets/development-environment.php';
 
 }
 
