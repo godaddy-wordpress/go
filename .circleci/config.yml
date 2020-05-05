@@ -175,7 +175,7 @@ jobs:
   theme-check:
     docker:
       - image: circleci/php:7.3.8-apache-node-browsers
-      - image: circleci/mysql:latest
+      - image: circleci/mysql:5.7
     steps:
       - checkout
       - run:
