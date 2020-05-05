@@ -115,8 +115,10 @@ jobs:
           name: Update npm
           command: sudo npm install -g npm@latest
       - run:
-          name: Install MySQL
-          command: sudo apt-get install default-mysql-client
+          name: Install MariaDB
+          command: |
+            sudo apt-get update
+            sudo apt-get install mariadb-client
       - run:
           name: Install rsync
           command: sudo apt install rsync
@@ -191,8 +193,10 @@ jobs:
           name: Update npm
           command: sudo npm install -g npm@latest
       - run:
-          name: Install MySQL
-          command: sudo apt-get install default-mysql-client
+          name: Install MariaDB
+          command: |
+            sudo apt-get update
+            sudo apt-get install mariadb-client
       - run:
           name: Install rsync
           command: sudo apt install rsync
@@ -251,8 +255,10 @@ jobs:
           name: Update npm
           command: sudo npm install -g npm@latest
       - run:
-          name: Install MySQL
-          command: sudo apt-get install default-mysql-client
+          name: Install MariaDB
+          command: |
+            sudo apt-get update
+            sudo apt-get install mariadb-client
       - run:
           name: Install rsync
           command: sudo apt install rsync
