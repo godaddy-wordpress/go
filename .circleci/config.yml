@@ -98,11 +98,27 @@ jobs:
     steps:
       - checkout
       - run:
+          # Our primary container isn't MYSQL so run a sleep command until it's ready.
+          name: Waiting for MySQL to be ready
+          command: |
+            for i in `seq 1 10`;
+            do
+              nc -z 127.0.0.1 3306 && echo Success && exit 0
+              echo -n .
+              sleep 1
+            done
+            echo Failed waiting for MySQL && exit 1
+      - run:
           name: Update hosts
           command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - run:
           name: Update npm
           command: sudo npm install -g npm@latest
+      - run:
+          name: Install MariaDB
+          command: |
+            sudo apt-get update
+            sudo apt-get install mariadb-client
       - run:
           name: Install rsync
           command: sudo apt install rsync
@@ -163,8 +179,24 @@ jobs:
     steps:
       - checkout
       - run:
+          # Our primary container isn't MYSQL so run a sleep command until it's ready.
+          name: Waiting for MySQL to be ready
+          command: |
+            for i in `seq 1 10`;
+            do
+              nc -z 127.0.0.1 3306 && echo Success && exit 0
+              echo -n .
+              sleep 1
+            done
+            echo Failed waiting for MySQL && exit 1
+      - run:
           name: Update npm
           command: sudo npm install -g npm@latest
+      - run:
+          name: Install MariaDB
+          command: |
+            sudo apt-get update
+            sudo apt-get install mariadb-client
       - run:
           name: Install rsync
           command: sudo apt install rsync
@@ -206,11 +238,27 @@ jobs:
     steps:
       - checkout
       - run:
+          # Our primary container isn't MYSQL so run a sleep command until it's ready.
+          name: Waiting for MySQL to be ready
+          command: |
+            for i in `seq 1 10`;
+            do
+              nc -z 127.0.0.1 3306 && echo Success && exit 0
+              echo -n .
+              sleep 1
+            done
+            echo Failed waiting for MySQL && exit 1
+      - run:
           name: Update hosts
           command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - run:
           name: Update npm
           command: sudo npm install -g npm@latest
+      - run:
+          name: Install MariaDB
+          command: |
+            sudo apt-get update
+            sudo apt-get install mariadb-client
       - run:
           name: Install rsync
           command: sudo apt install rsync
