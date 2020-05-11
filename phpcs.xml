@@ -29,6 +29,13 @@
 		-->
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
 		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+		<!--
+		ShortPrefixPassed is excluded due to the use of prefix `Go` This prefix, 
+		while short in length, is approved by the themes team at WordPress.org.
+		For this reason the rule should be excluded as we are not concerned with 
+		code collisions.
+		-->
+		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed" />
 	</rule>
 
 	<!-- Let's also check that everything is properly documented. -->
