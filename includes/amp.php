@@ -52,11 +52,12 @@ function amp_body_class( $classes ) {
  *
  * @param string   $item_output The menu item's starting HTML output.
  * @param WP_Post  $item        Menu item data object.
+ * @param int      $depth       Depth of menu item. Used for padding.
  * @param stdClass $args        An object of wp_nav_menu() arguments.
  *
  * @return string Modified nav menu item HTML.
  */
-function amp_nav_sub_menu_buttons( $item_output, $item, $args ) {
+function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 
 	if ( ! is_amp() || 'primary' !== $args->theme_location || ! in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
