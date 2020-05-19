@@ -66,7 +66,8 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: |
-            composer install --no-custom-installers
+            mkdir -p ../../plugins/coblocks/
+            composer install
       - run:
           name: "Run PHPCS"
           command: composer lint
@@ -84,7 +85,8 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: |
-            composer install --no-custom-installers
+            mkdir -p ../../plugins/coblocks/
+            composer install
       - run:
           name: "Run PHPCS"
           command: composer lint
