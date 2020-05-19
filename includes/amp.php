@@ -57,7 +57,7 @@ function amp_body_class( $classes ) {
  *
  * @return string Modified nav menu item HTML.
  */
-function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
+function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter -- Parameters are coming from a hook.
 
 	if ( ! is_amp() || 'primary' !== $args->theme_location || ! in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
