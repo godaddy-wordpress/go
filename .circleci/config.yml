@@ -67,7 +67,7 @@ jobs:
           name: "Install Dependencies"
           command: |
             mkdir -p ../../plugins/coblocks
-            chomod -R 777 ../../plugins/coblocks
+            chmod -R 777 ../../plugins/coblocks
             composer install
       - run:
           name: "Run PHPCS"
@@ -87,7 +87,7 @@ jobs:
           name: "Install Dependencies"
           command: |
             mkdir -p ../../plugins/coblocks
-            chomod -R 777 ../../plugins/coblocks
+            chmod -R 777 ../../plugins/coblocks
             composer install
       - run:
           name: "Run PHPCS"
