@@ -45,6 +45,7 @@ function amp_body_class( $classes ) {
 
 }
 
+// phpcs:disable Generic.CodeAnalysis.UnusedFunctionParameter -- Parameters are coming from a hook.
 /**
  * Filter the HTML output of a nav menu item to add the AMP dropdown button to reveal the sub-menu.
  *
@@ -57,7 +58,7 @@ function amp_body_class( $classes ) {
  *
  * @return string Modified nav menu item HTML.
  */
-function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter -- Parameters are coming from a hook.
+function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 
 	if ( ! is_amp() || 'primary' !== $args->theme_location || ! in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
@@ -107,6 +108,7 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) { // php
 	return $dropdown_button . $item_output;
 
 }
+// phpcs:enable Generic.CodeAnalysis.UnusedFunctionParameter
 
 /**
  * Determine whether it is an AMP response.
