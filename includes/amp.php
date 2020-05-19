@@ -45,6 +45,7 @@ function amp_body_class( $classes ) {
 
 }
 
+// phpcs:disable Generic.CodeAnalysis.UnusedFunctionParameter -- Parameters are coming from a hook.
 /**
  * Filter the HTML output of a nav menu item to add the AMP dropdown button to reveal the sub-menu.
  *
@@ -107,6 +108,7 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 	return $dropdown_button . $item_output;
 
 }
+// phpcs:enable Generic.CodeAnalysis.UnusedFunctionParameter
 
 /**
  * Determine whether it is an AMP response.
