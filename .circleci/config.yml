@@ -66,11 +66,10 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: |
-            composer global require wp-coding-standards/wpcs
-            phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
+            composer install
       - run:
           name: "Run PHPCS"
-          command: phpcs --standard=phpcs.xml --extensions=php --colors -s -p -v .
+          command: composer lint
 
   php73-phpcs:
     docker:
@@ -85,11 +84,10 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: |
-            composer global require wp-coding-standards/wpcs
-            phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
+            composer install
       - run:
           name: "Run PHPCS"
-          command: phpcs --standard=phpcs.xml --extensions=php --colors -s -p -v .
+          command: composer lint
 
   unit-tests:
     docker:
