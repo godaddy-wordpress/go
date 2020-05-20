@@ -18,7 +18,8 @@ p {
 
 .content-area > blockquote {
 	border-left: var(--go-quote--border-width) var(--go-quote--border-style) var(--go-quote--border-color);
-	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
 	padding-left: 0;
 	padding-right: 0;
 

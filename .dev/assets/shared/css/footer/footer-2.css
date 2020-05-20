@@ -1,18 +1,12 @@
 /*! Footer: Footer 2 */
 .has-footer-2 {
 
-	& .content-area > .alignfull:last-child {
-		margin-bottom: calc(var(--go--spacing--vertical--lg) / 1.5) !important;
-
-		@media (--medium) {
-			margin-bottom: calc(var(--go--spacing--vertical--lg) / 2) !important;
-		}
-	}
-
 	& .site-footer {
+		margin-top: calc(var(--go--spacing--vertical--lg) / 1.5);
 		padding-bottom: calc(var(--go--spacing--vertical--lg) / 1.5);
 
 		@media (--medium) {
+			margin-top: calc(var(--go--spacing--vertical--lg) / 2);
 			padding-bottom: calc(var(--go--spacing--vertical--lg) / 2);
 		}
 
@@ -46,7 +40,6 @@
 		}
 
 		& a {
-			color: var(--go-footer-navigation--color--text, var(--go-navigation--color--text));
 			display: block;
 			font-family: var(--go-navigation--font-family);
 			font-size: var(--go-navigation--font-size);
