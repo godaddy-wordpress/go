@@ -12,7 +12,7 @@
 	border: none;
 	height: 9pt;
 	mask-image: url("../../../dist/images/design-styles/playful/cross-stich-border.svg");
-	max-width: 113px;
+	max-width: 113px !important;
 }
 
 .wp-block-separator.is-style-dots:not(.has-text-color)::before {

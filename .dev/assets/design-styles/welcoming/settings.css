@@ -63,7 +63,7 @@
 	--go-input--padding--x: 1.35rem;
 	--go-input--padding--y: 1rem;
 	--go-input--margin-bottom: 1.75rem;
-	--go-input--border-color-interactive: var(--go--color--secondary);
+	--go-input-interactive--color--border-color: var(--go--color--secondary);
 	--go-input-interactive--color--text: var(--go-heading--color--text);
 
 	/* Header */
@@ -101,7 +101,7 @@
 	/* Footer */
 	--go-footer--color--text: var(--go--color--primary);
 	--go-footer-navigation--color--text: var(--go-heading--color--text);
-	--go-footer-3--border-color: var(--go-header--color--background);
+	--go-footer-3--border-color: var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
 	--go-footer-3--border-width: 10px;
 
 	/* Social */

@@ -4,9 +4,9 @@
 Go leverages CSS custom properties – also referred to as CSS variables — to make it easier to extend the design of the theme. The CSS properties Go uses are configured via the following format: `--go--{target}--{propertyName}`, where `{target}` is the element we're wanting to style, while `{propertyName}` is the specific CSS property to modify.
 
 ### Example:
-To target the text alignment of each caption, you'd use `--go--caption--text-align`, setting the value to either `left`, `right`, or `center`: 
+To target the text alignment of each caption, you'd use `--go--caption--text-align`, setting the value to either `left`, `right`, or `center`:
 
-```
+```css
 :root {
 	--go--caption--text-align: center;
 }

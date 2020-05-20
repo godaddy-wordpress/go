@@ -21,6 +21,7 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
+	add_action( 'after_setup_theme', $n( 'development_environment' ) );
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'admin_init', $n( 'editor_styles' ) );
@@ -33,6 +34,19 @@ function setup() {
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
 	add_filter( 'go_page_title_args', $n( 'filter_page_titles' ) );
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
+
+}
+
+/**
+ * Check if this is an install is a local development environment
+ */
+function development_environment() {
+
+	if ( is_readable( get_template_directory() . '/.dev/assets/development-environment.php' ) ) {
+
+		require_once get_template_directory() . '/.dev/assets/development-environment.php';
+
+	}
 
 }
 
@@ -102,6 +116,8 @@ function theme_setup() {
 			'comment-list',
 			'gallery',
 			'caption',
+			'style',
+			'script',
 		)
 	);
 
@@ -151,9 +167,6 @@ function theme_setup() {
 
 	// Add support for editor styles.
 	add_theme_support( 'editor-styles' );
-
-	// Add support for core block styles.
-	add_theme_support( 'wp-block-styles' );
 
 	// Add custom editor font sizes.
 	add_theme_support(
@@ -233,7 +246,11 @@ function fonts_url() {
 	$design_styles = get_available_design_styles();
 	$design_style  = $design_style['slug'];
 
-	if ( ! isset( $design_styles[ $design_style ] ) || ! isset( $design_styles[ $design_style ]['fonts'] ) ) {
+	if (
+		! isset( $design_styles[ $design_style ] ) ||
+		! isset( $design_styles[ $design_style ]['fonts'] ) ||
+		empty( $design_styles[ $design_style ]['fonts'] )
+	) {
 
 		return;
 
@@ -390,13 +407,28 @@ function editor_styles() {
  */
 function styles() {
 
-	$suffix = SCRIPT_DEBUG ? '' : '.min';
-	$rtl    = ! is_rtl() ? '' : '-rtl';
+	$suffix                = SCRIPT_DEBUG ? '' : '.min';
+	$rtl                   = ! is_rtl() ? '' : '-rtl';
+	$go_style_dependencies = array();
+	$fonts_url             = fonts_url();
+
+	if ( ! empty( $fonts_url ) ) {
+
+		$go_style_dependencies[] = 'go-fonts';
+
+		wp_enqueue_style(
+			'go-fonts',
+			$fonts_url,
+			array(),
+			GO_VERSION
+		);
+
+	}
 
 	wp_enqueue_style(
 		'go-style',
 		get_theme_file_uri( "dist/css/style-shared{$rtl}{$suffix}.css" ),
-		array( 'go-fonts' ),
+		$go_style_dependencies,
 		GO_VERSION
 	);
 
@@ -410,13 +442,6 @@ function styles() {
 			GO_VERSION
 		);
 	}
-
-	wp_enqueue_style(
-		'go-fonts',
-		fonts_url(),
-		array(),
-		GO_VERSION
-	);
 
 }
 
@@ -1084,6 +1109,16 @@ function get_available_social_icons() {
 			'label'       => esc_html__( 'Pinterest', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/pinterest.svg' ),
 			'placeholder' => 'https://pinterest.com/user',
+		),
+		'youtube'   => array(
+			'label'       => esc_html__( 'YouTube', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/youtube.svg' ),
+			'placeholder' => 'https://youtube.com/user',
+		),
+		'github'    => array(
+			'label'       => esc_html__( 'GitHub', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/github.svg' ),
+			'placeholder' => 'https://github.com/user',
 		),
 	);
 

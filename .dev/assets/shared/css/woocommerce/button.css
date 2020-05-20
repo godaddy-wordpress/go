@@ -19,7 +19,9 @@ body {
 		& .button.disabled,
 		& .button.alt.disabled,
 		& .button.disabled:hover,
-		& .button.alt.disabled:hover {
+		& .button.alt.disabled:hover,
+		& .woocommerce button.button:disabled,
+		& .woocommerce button.button:disabled[disabled] {
 			@mixin button;
 		}
 
@@ -61,6 +63,16 @@ body {
 					vertical-align: bottom;
 				}
 			}
+		}
+	}
+
+	& .widget_shopping_cart a.wc-forward {
+		@mixin button;
+
+		&:hover,
+		&:focus,
+		&:active {
+			@mixin button-hover;
 		}
 	}
 }

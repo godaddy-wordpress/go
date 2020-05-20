@@ -59,6 +59,8 @@ function setup() {
 
 	add_action( 'wp', $n( 'disable_cart' ) );
 
+	add_filter( 'woocommerce_widget_cart_is_hidden', $n( 'show_widget_cart_on_checkout' ) );
+
 }
 
 /**
@@ -364,6 +366,17 @@ function disable_cart() {
 
 	add_filter( 'go_wc_use_slideout_cart', '__return_false' );
 	add_filter( 'go_wc_show_cart_menu', '__return_false' );
+
+}
+
+/**
+ * Enable the WooCommerce cart widget on the checkout page
+ *
+ * @return bool True when the cart should be disabled, else false.
+ */
+function show_widget_cart_on_checkout() {
+
+	return is_cart() ? true : false;
 
 }
 

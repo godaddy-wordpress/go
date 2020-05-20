@@ -1213,6 +1213,32 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the post_meta() returns proper data youtube icon data
+	 */
+	public function test_social_icons_youtube() {
+
+		set_theme_mod( 'social_icon_youtube', 'https://www.youtube.com/custom' );
+
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.youtube.com\/custom" aria-label="YouTube" rel="noopener noreferrer">/' );
+
+		Go\social_icons( [] );
+
+	}
+
+	/**
+	 * Test the post_meta() returns proper data github icon data
+	 */
+	public function test_social_icons_github() {
+
+		set_theme_mod( 'social_icon_github', 'https://www.github.com/custom' );
+
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.github.com\/custom" aria-label="GitHub" rel="noopener noreferrer">/' );
+
+		Go\social_icons( [] );
+
+	}
+
+	/**
 	 * Test the site branding renders properly
 	 */
 	public function test_display_site_branding() {

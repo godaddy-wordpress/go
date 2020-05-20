@@ -4,7 +4,7 @@ Tags: one-column, custom-colors, custom-logo, custom-menu, editor-style, theme-o
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 5.6.0
-Stable tag: 1.2.6
+Stable tag: 1.2.9
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -109,6 +109,12 @@ List of bespoke icons:
 
 == Changelog ==
 
+### Enhancements
+* Adjust vertical spacing in the block editor. [#510](https://github.com/godaddy-wordpress/go/pull/510)
+* Add viewport basis Customizer controls to allow for granular control over the themes white space. [#512](https://github.com/godaddy-wordpress/go/pull/512)
+* Add CoBlocks Events block styles. This allows the heading and paragraph typography variables to properly apply to the Events block. [#514](https://github.com/godaddy-wordpress/go/pull/514)
+* Improve our getting started documentation and add an admin notice for users who have cloned the Go theme from GitHub. [#515](https://github.com/godaddy-wordpress/go/pull/515)
+* Adjust vertical alignment and block spacing. [#516](https://github.com/godaddy-wordpress/go/pull/516)
+
 ### Bug Fixes
-* Resolve specificity issue with the group block within the editor. [#485](https://github.com/godaddy-wordpress/go/pull/485)
-* Remove languages from tagged releases, keep MO files in canary. [#486](https://github.com/godaddy-wordpress/go/pull/486)
+* Resolve an issue where the featured image causes featured image text to be white. [#513](https://github.com/godaddy-wordpress/go/pull/513)
