@@ -50,9 +50,11 @@
     "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
     "test-php": "./vendor/bin/phpunit",
     "generate-vr-specs": ".dev/bin/generate-vr-specs.sh",
-    "test-vr": "npx cypress run --config video=false --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'",
-    "snapshots:upload": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\"",
-    "snapshots:download": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete"
+    "test-vr": "npx cypress run --spec '.dev/tests/cypress/integration/visual-regression/+(barista|bento|furnish|miller)-*.spec.js'",
+    "test-vr-all": "npx cypress run --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'",
+    "snapshots:upload-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\"",
+    "snapshots:download-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete",
+    "snapshots:download": "npm run snapshots:download-all -- --exclude='*' --include='barista*' --include='bento*' --include='furnish*' --include='miller*'"
   },
   "locales": {
     "da_DK": "Dansk",
