@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-05-20T17:14:47+00:00\n"
+"POT-Creation-Date: 2020-05-20T17:18:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -46,7 +46,7 @@ msgstr ""
 #: .dev/tests/php/test-template-tags.php:870
 #: .dev/tests/php/test-template-tags.php:900
 #: includes/core.php:100
-#: includes/customizer.php:448
+#: includes/customizer.php:473
 msgid "Primary"
 msgstr ""
 
@@ -796,132 +796,132 @@ msgstr ""
 msgid "Please assign a menu to the %s menu location"
 msgstr ""
 
-#: includes/customizer.php:266
+#: includes/customizer.php:291
 msgid "Width"
 msgstr ""
 
-#: includes/customizer.php:295
+#: includes/customizer.php:320
 msgid "Mobile Width"
 msgstr ""
 
-#: includes/customizer.php:321
+#: includes/customizer.php:346
 msgid "Site Settings"
 msgstr ""
 
-#: includes/customizer.php:338
+#: includes/customizer.php:363
 msgid "Page Titles"
 msgstr ""
 
-#: includes/customizer.php:339
+#: includes/customizer.php:364
 msgid "Display page titles on individual pages."
 msgstr ""
 
-#: includes/customizer.php:358
+#: includes/customizer.php:383
 msgid "Copyright Text"
 msgstr ""
 
-#: includes/customizer.php:400
+#: includes/customizer.php:425
 msgid "Design Style"
 msgstr ""
 
-#: includes/customizer.php:401
+#: includes/customizer.php:426
 msgid "Choose a style, select a color scheme and customize colors to personalize your site."
 msgstr ""
 
-#: includes/customizer.php:424
+#: includes/customizer.php:449
 msgid "Color scheme"
 msgstr ""
 
-#: includes/customizer.php:470
+#: includes/customizer.php:495
 msgid "Secondary"
 msgstr ""
 
-#: includes/customizer.php:492
+#: includes/customizer.php:517
 msgid "Tertiary"
 msgstr ""
 
-#: includes/customizer.php:514
+#: includes/customizer.php:539
 msgid "Header Colors"
 msgstr ""
 
-#: includes/customizer.php:515
+#: includes/customizer.php:540
 msgid "Customize colors within the site header."
 msgstr ""
 
-#: includes/customizer.php:535
-#: includes/customizer.php:597
-#: includes/customizer.php:757
-#: includes/customizer.php:824
+#: includes/customizer.php:560
+#: includes/customizer.php:622
+#: includes/customizer.php:782
+#: includes/customizer.php:849
 msgid "Background"
 msgstr ""
 
-#: includes/customizer.php:555
-#: includes/customizer.php:617
-#: includes/customizer.php:770
-#: includes/customizer.php:837
+#: includes/customizer.php:580
+#: includes/customizer.php:642
+#: includes/customizer.php:795
+#: includes/customizer.php:862
 msgid "Foreground"
 msgstr ""
 
-#: includes/customizer.php:576
+#: includes/customizer.php:601
 msgid "Footer Colors"
 msgstr ""
 
-#: includes/customizer.php:577
+#: includes/customizer.php:602
 msgid "Customize colors within the site footer."
 msgstr ""
 
-#: includes/customizer.php:637
-#: includes/customizer.php:850
+#: includes/customizer.php:662
+#: includes/customizer.php:875
 msgid "Heading"
 msgstr ""
 
-#: includes/customizer.php:657
+#: includes/customizer.php:682
 msgid "Social Icon"
 msgstr ""
 
-#: includes/customizer.php:678
+#: includes/customizer.php:703
 msgid "Additional Design Controls"
 msgstr ""
 
-#: includes/customizer.php:679
+#: includes/customizer.php:704
 msgid "Customize additional design settings."
 msgstr ""
 
-#: includes/customizer.php:699
+#: includes/customizer.php:724
 msgid "Site Spacing"
 msgstr ""
 
-#: includes/customizer.php:723
-#: includes/customizer.php:742
+#: includes/customizer.php:748
+#: includes/customizer.php:767
 msgid "Header"
 msgstr ""
 
-#: includes/customizer.php:743
+#: includes/customizer.php:768
 msgid "Choose a header for every page on your site, then style it with the selectors below."
 msgstr ""
 
-#: includes/customizer.php:790
-#: includes/customizer.php:809
+#: includes/customizer.php:815
+#: includes/customizer.php:834
 msgid "Footer"
 msgstr ""
 
-#: includes/customizer.php:810
+#: includes/customizer.php:835
 msgid "Choose a footer for every page on your site, then style it with the selectors below."
 msgstr ""
 
-#: includes/customizer.php:870
+#: includes/customizer.php:895
 msgid "Social"
 msgstr ""
 
-#: includes/customizer.php:871
+#: includes/customizer.php:896
 msgid "Add social media account links to apply social icons on the site footer."
 msgstr ""
 
-#: includes/customizer.php:907
+#: includes/customizer.php:932
 msgid "Social icon"
 msgstr ""
 
-#: includes/customizer.php:924
+#: includes/customizer.php:949
 msgid "Site Design"
 msgstr ""
 
