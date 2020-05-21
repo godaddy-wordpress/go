@@ -29,7 +29,7 @@ export const aboutLayouts = [
 			[
 				'core/button',
 				{
-					'url': '{{contact-page:permalink}}',
+
 					'text': 'Work With Me',
 					'align': 'center'
 				},
@@ -40,24 +40,22 @@ export const aboutLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{about-image-1:file}}',
-							'alt': '{{about-image-1:post_content}}',
-							'id': '{{about-image-1}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-1.jpg',
+							'alt': 'Image description',
+							'id': 'about-image-1',
 							'caption': ''
 						},
 						{
-							'url': '{{about-image-2:file}}',
-							'link': '{{about-image-2:permalink}}',
-							'alt': '{{about-image-2:post_content}}',
-							'id': '{{about-image-2}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-2.jpg',
+							'alt': 'Image description',
+							'id': 'about-image-2',
 							'caption': ''
 						},
 						{
-							'url': '{{about-image-3:file}}',
-							'fullUrl': '{{about-image-3:file}}',
-							'link': '{{about-image-3:permalink}}',
-							'alt': '{{about-image-3:post_content}}',
-							'id': '{{about-image-3}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-3.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-3.jpg',
+							'alt': 'Image description',
+							'id': 'about-image-3',
 							'caption': ''
 						}
 					],
@@ -218,8 +216,8 @@ export const aboutLayouts = [
 			[
 				'core/image',
 				{
-					'url': '{{image-5:file}}',
-					'alt': '{{image-5:post_content}}',
+					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-5.jpg',
+					'alt': 'Image description',
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignwide size-full'
@@ -385,8 +383,8 @@ export const contactLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{contact-image-1:file}}',
-							'imageAlt': '{{contact-image-1:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/contact-image-1.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -415,8 +413,8 @@ export const contactLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{contact-image-2:file}}',
-							'imageAlt': '{{contact-image-2:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/contact-image-2.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -445,8 +443,8 @@ export const contactLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{contact-image-3:file}}',
-							'imageAlt': '{{contact-image-3:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/contact-image-3.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -583,19 +581,17 @@ export const contactLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{image-3:file}}',
-							'fullUrl': '{{image-3:file}}',
-							'link': '{{image-3:permalink}}',
-							'alt': '{{image-3:post_content}}',
-							'id': '{{image-3}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-3.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-3.jpg',
+							'alt': 'Image description',
+							'id': 'image-3',
 							'caption': ''
 						},
 						{
-							'url': '{{image-1:file}}',
-							'fullUrl': '{{image-1:file}}',
-							'link': '{{image-1:permalink}}',
-							'alt': '{{image-1:post_content}}',
-							'id': '{{image-1}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-1.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-1.jpg',
+							'alt': 'Image description',
+							'id': 'image-1',
 							'caption': ''
 						}
 					],
@@ -1067,7 +1063,6 @@ export const homeLayouts = [
 							[
 								'core/button',
 								{
-									'url': '{{about-page:permalink}}',
 									'text': 'About Me'
 								},
 								[]
@@ -1075,7 +1070,6 @@ export const homeLayouts = [
 							[
 								'core/button',
 								{
-									'url': '{{contact-page:permalink}}',
 									'text': 'Contact Me',
 									'className': 'is-style-outline'
 								},
@@ -1135,8 +1129,8 @@ export const homeLayouts = [
 			[
 				'core/image',
 				{
-					'url': '{{home-image-1:file}}',
-					'alt': '{{home-image-1:post_content}}',
+					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/keynote/attachments/home-image-1.jpg',
+					'alt': 'Image description',
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignwide size-large'
@@ -1508,7 +1502,6 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{contact-page:permalink}}',
 							'text': 'Schedule it today',
 							'align': 'center'
 						},
@@ -1526,8 +1519,8 @@ export const homeLayouts = [
 			[
 				'core/image',
 				{
-					'url': '{{home-image-1:file}}',
-					'alt': '{{home-image-1:post_content}}',
+					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/bento/attachments/home-image-1.jpg',
+					'alt': 'Image description',
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignfull size-full is-style-default'
@@ -1546,7 +1539,7 @@ export const homeLayouts = [
 			[
 				'core/button',
 				{
-					'url': '{{menu-page:permalink}}',
+
 					'text': 'View our Menu',
 					'align': 'center'
 				},
@@ -1634,8 +1627,8 @@ export const homeLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{home-image-2:file}}',
-							'imageAlt': '{{home-image-2:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/bento/attachments/home-image-2.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -1664,8 +1657,8 @@ export const homeLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{home-image-3:file}}',
-							'imageAlt': '{{home-image-3:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/bento/attachments/home-image-3.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -1695,8 +1688,8 @@ export const homeLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{home-image-4:file}}',
-							'imageAlt': '{{home-image-4:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/bento/attachments/home-image-4.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -1798,7 +1791,6 @@ export const homeLayouts = [
 									[
 										'core/button',
 										{
-											'url': '{{contact-page:permalink}}',
 											'text': 'Reservations',
 											'align': 'center',
 											'className': 'is-style-default'
@@ -1850,108 +1842,93 @@ export const homeLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{gallery-image-1:file}}',
-							'link': '{{gallery-image-1:permalink}}',
-							'alt': '{{gallery-image-1:post_content}}',
-							'id': '{{gallery-image-1}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-1.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-1',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-2:file}}',
-							'link': '{{gallery-image-2:permalink}}',
-							'alt': '{{gallery-image-2:post_content}}',
-							'id': '{{gallery-image-2}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-2.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-2',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-3:file}}',
-							'link': '{{gallery-image-3:permalink}}',
-							'alt': '{{gallery-image-3:post_content}}',
-							'id': '{{gallery-image-3}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-3.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-3',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-4:file}}',
-							'link': '{{gallery-image-4:permalink}}',
-							'alt': '{{gallery-image-4:post_content}}',
-							'id': '{{gallery-image-4}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-4.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-4',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-5:file}}',
-							'link': '{{gallery-image-5:permalink}}',
-							'alt': '{{gallery-image-5:post_content}}',
-							'id': '{{gallery-image-5}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-5.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-5',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-6:file}}',
-							'link': '{{gallery-image-6:permalink}}',
-							'alt': '{{gallery-image-6:post_content}}',
-							'id': '{{gallery-image-6}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-6.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-6',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-7:file}}',
-							'link': '{{gallery-image-7:permalink}}',
-							'alt': '{{gallery-image-7:post_content}}',
-							'id': '{{gallery-image-7}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-7.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-7',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-8:file}}',
-							'link': '{{gallery-image-8:permalink}}',
-							'alt': '{{gallery-image-8:post_content}}',
-							'id': '{{gallery-image-8}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-8.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-8',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-9:file}}',
-							'link': '{{gallery-image-9:permalink}}',
-							'alt': '{{gallery-image-9:post_content}}',
-							'id': '{{gallery-image-9}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-9.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-9',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-10:file}}',
-							'link': '{{gallery-image-10:permalink}}',
-							'alt': '{{gallery-image-10:post_content}}',
-							'id': '{{gallery-image-10}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-10.jpg',
+							'alt': 'Image description',
+							'id': '{{gallery-image-10',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-11:file}}',
-							'link': '{{gallery-image-11:permalink}}',
-							'alt': '{{gallery-image-11:post_content}}',
-							'id': '{{gallery-image-11}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-11.jpg',
+							'alt': 'Image description',
+							'id': '{{gallery-image-11',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-12:file}}',
-							'link': '{{gallery-image-12:permalink}}',
-							'alt': '{{gallery-image-12:post_content}}',
-							'id': '{{gallery-image-12}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-12.jpg',
+							'alt': 'Image description',
+							'id': '{{gallery-image-12',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-13:file}}',
-							'link': '{{gallery-image-13:permalink}}',
-							'alt': '{{gallery-image-13:post_content}}',
-							'id': '{{gallery-image-13}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-13.jpg',
+							'alt': 'Image description',
+							'id': '{{gallery-image-13',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-14:file}}',
-							'link': '{{gallery-image-14:permalink}}',
-							'alt': '{{gallery-image-14:post_content}}',
-							'id': '{{gallery-image-14}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-14.jpg',
+							'alt': 'Image description',
+							'id': '{{gallery-image-14',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-15:file}}',
-							'link': '{{gallery-image-15:permalink}}',
-							'alt': '{{gallery-image-15:post_content}}',
-							'id': '{{gallery-image-15}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-15.jpg',
+							'alt': 'Image description',
+							'id': '{{gallery-image-15',
 							'caption': []
 						}
 					],
@@ -1994,7 +1971,7 @@ export const homeLayouts = [
 			[
 				'core/button',
 				{
-					'url': '{{shop-page:permalink}}',
+
 					'text': 'Shop Catalogue',
 					'borderRadius': 0,
 					'align': 'center'
@@ -2004,8 +1981,8 @@ export const homeLayouts = [
 			[
 				'core/image',
 				{
-					'url': '{{image-1:file}}',
-					'alt': '{{image-1:post_content}}',
+					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/fashn/attachments/image-1.jpg',
+					'alt': 'Image description',
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignwide size-full'
@@ -2050,7 +2027,6 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{shop-page:permalink}}',
 							'text': 'Shop Now',
 							'borderRadius': 0,
 							'align': 'none'
@@ -2089,7 +2065,6 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{shop-page:permalink}}',
 							'text': 'Shop Now',
 							'borderRadius': 0,
 							'align': 'center'
@@ -2127,7 +2102,6 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{shop-page:permalink}}',
 							'text': 'Shop Now',
 							'borderRadius': 0,
 							'align': 'none'
@@ -2168,7 +2142,6 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{contact-page:permalink}}',
 							'text': 'Let\'s Talk',
 							'align': 'center'
 						},
@@ -2181,40 +2154,36 @@ export const homeLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{image-1:file}}',
-							'alt': '{{image-1:post_content}}',
-							'id': '{{image-1}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-1.jpg',
+							'alt': 'Image description',
+							'id': 'image-1',
 							'caption': ''
 						},
 						{
-							'url': '{{image-2:file}}',
-							'link': '{{image-2:permalink}}',
-							'alt': '{{image-2:post_content}}',
-							'id': '{{image-2}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-2.jpg',
+							'alt': 'Image description',
+							'id': 'image-2',
 							'caption': ''
 						},
 						{
-							'url': '{{image-3:file}}',
-							'fullUrl': '{{image-3:file}}',
-							'link': '{{image-3:permalink}}',
-							'alt': '{{image-3:post_content}}',
-							'id': '{{image-3}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-3.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-3.jpg',
+							'alt': 'Image description',
+							'id': 'image-3',
 							'caption': ''
 						},
 						{
-							'url': '{{image-4:file}}',
-							'fullUrl': '{{image-4:file}}',
-							'link': '{{image-4:permalink}}',
-							'alt': '{{image-4:post_content}}',
-							'id': '{{image-4}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-4.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-4.jpg',
+							'alt': 'Image description',
+							'id': 'image-4',
 							'caption': ''
 						},
 						{
-							'url': '{{image-5:file}}',
-							'fullUrl': '{{image-5:file}}',
-							'link': '{{image-5:permalink}}',
-							'alt': '{{image-5:post_content}}',
-							'id': '{{image-5}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-5.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-5.jpg',
+							'alt': 'Image description',
+							'id': 'image-5',
 							'caption': ''
 						}
 					],
@@ -2230,8 +2199,8 @@ export const homeLayouts = [
 			[
 				'core/image',
 				{
-					'url': '{{image-6:file}}',
-					'alt': '{{image-6:post_content}}',
+					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-6.jpg',
+					'alt': 'Image description',
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignfull size-large'
@@ -2243,19 +2212,17 @@ export const homeLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{image-7:file}}',
-							'fullUrl': '{{image-7:file}}',
-							'link': '{{image-7:permalink}}',
-							'alt': '{{image-7:post_content}}',
-							'id': '{{image-7}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-7.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-7.jpg',
+							'alt': 'Image description',
+							'id': 'image-7',
 							'caption': ''
 						},
 						{
-							'url': '{{image-8:file}}',
-							'fullUrl': '{{image-8:file}}',
-							'link': '{{image-8:permalink}}',
-							'alt': '{{image-8:post_content}}',
-							'id': '{{image-8}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-8.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-8.jpg',
+							'alt': 'Image description',
+							'id': 'image-8',
 							'caption': ''
 						}
 					],
@@ -2293,7 +2260,6 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{contact-page:permalink}}',
 							'text': 'Let\'s Talk',
 							'align': 'center'
 						},
@@ -2327,8 +2293,8 @@ export const homeLayouts = [
 					[
 						'core/image',
 						{
-							'url': '{{image-1:file}}',
-							'alt': '{{image-1:post_content}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-1.jpg',
+							'alt': 'Image description',
 							'caption': '',
 							'linkDestination': 'none',
 							'className': 'alignwide size-large'
@@ -2441,7 +2407,6 @@ export const homeLayouts = [
 									[
 										'core/button',
 										{
-											'url': '{{shop-page:permalink}}',
 											'text': 'Shop Now'
 										},
 										[]
@@ -2556,7 +2521,6 @@ export const homeLayouts = [
 									[
 										'core/button',
 										{
-											'url': '{{shop-page:permalink}}',
 											'text': 'Shop Now'
 										},
 										[]
@@ -2599,7 +2563,6 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{shop-page:permalink}}',
 							'text': 'Shop Best Sellers',
 							'textColor': 'quaternary',
 							'align': 'center',
@@ -2651,8 +2614,8 @@ export const homeLayouts = [
 			[
 				'core/image',
 				{
-					'url': '{{image-1:file}}',
-					'alt': '{{image-1:post_content}}',
+					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-1.jpg',
+					'alt': 'Image description',
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignwide size-large'
@@ -2698,7 +2661,6 @@ export const homeLayouts = [
 							[
 								'core/button',
 								{
-									'url': '{{about-page:permalink}}',
 									'text': 'Learn More',
 									'borderRadius': 0,
 									'align': 'none'
@@ -2845,7 +2807,6 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{about-page:permalink}}',
 							'text': 'Learn More',
 							'borderRadius': 0,
 							'align': 'center'
@@ -2859,27 +2820,24 @@ export const homeLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{image-2:file}}',
-							'fullUrl': '{{image-2:file}}',
-							'link': '{{image-2:permalink}}',
-							'alt': '{{image-2:post_content}}',
-							'id': '{{image-2}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-2.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-2.jpg',
+							'alt': 'Image description',
+							'id': 'image-2',
 							'caption': ''
 						},
 						{
-							'url': '{{image-3:file}}',
-							'fullUrl': '{{image-3:file}}',
-							'link': '{{image-3:permalink}}',
-							'alt': '{{image-3:post_content}}',
-							'id': '{{image-3}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-3.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-3.jpg',
+							'alt': 'Image description',
+							'id': 'image-3',
 							'caption': ''
 						},
 						{
-							'url': '{{image-4:file}}',
-							'fullUrl': '{{image-4:file}}',
-							'link': '{{image-4:permalink}}',
-							'alt': '{{image-4:post_content}}',
-							'id': '{{image-4}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-4.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-4.jpg',
+							'alt': 'Image description',
+							'id': 'image-4',
 							'caption': ''
 						}
 					],
@@ -2930,7 +2888,6 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{contact-page:permalink}}',
 							'text': 'Schedule a Tour',
 							'className': 'is-style-outline'
 						},
@@ -2952,52 +2909,45 @@ export const homeLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{image-2:file}}',
-							'link': '{{image-2:permalink}}',
-							'alt': '{{image-2:post_content}}',
-							'id': '{{image-2}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-2.jpg',
+							'alt': 'Image description',
+							'id': 'image-2',
 							'caption': []
 						},
 						{
-							'url': '{{image-3:file}}',
-							'link': '{{image-3:permalink}}',
-							'alt': '{{image-3:post_content}}',
-							'id': '{{image-3}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-3.jpg',
+							'alt': 'Image description',
+							'id': 'image-3',
 							'caption': []
 						},
 						{
-							'url': '{{image-4:file}}',
-							'link': '{{image-4:permalink}}',
-							'alt': '{{image-4:post_content}}',
-							'id': '{{image-4}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-4.jpg',
+							'alt': 'Image description',
+							'id': 'image-4',
 							'caption': []
 						},
 						{
-							'url': '{{image-5:file}}',
-							'link': '{{image-5:permalink}}',
-							'alt': '{{image-5:post_content}}',
-							'id': '{{image-5}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-5.jpg',
+							'alt': 'Image description',
+							'id': 'image-5',
 							'caption': []
 						},
 						{
-							'url': '{{image-6:file}}',
-							'link': '{{image-6:permalink}}',
-							'alt': '{{image-6:post_content}}',
-							'id': '{{image-6}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-6.jpg',
+							'alt': 'Image description',
+							'id': 'image-6',
 							'caption': []
 						},
 						{
-							'url': '{{image-7:file}}',
-							'link': '{{image-7:permalink}}',
-							'alt': '{{image-7:post_content}}',
-							'id': '{{image-7}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-7.jpg',
+							'alt': 'Image description',
+							'id': 'image-7',
 							'caption': []
 						},
 						{
-							'url': '{{image-8:file}}',
-							'link': '{{image-8:permalink}}',
-							'alt': '{{image-8:post_content}}',
-							'id': '{{image-8}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-8.jpg',
+							'alt': 'Image description',
+							'id': 'image-8',
 							'caption': []
 						}
 					],
@@ -3058,8 +3008,8 @@ export const homeLayouts = [
 								{
 									'headingLevel': 3,
 									'showCta': false,
-									'imageUrl': '{{image-9:file}}',
-									'imageAlt': '{{image-9:post_content}}',
+									'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-9.jpg',
+									'imageAlt': 'Image description',
 									'alignment': 'none'
 								},
 								[
@@ -3087,8 +3037,8 @@ export const homeLayouts = [
 								{
 									'headingLevel': 3,
 									'showCta': false,
-									'imageUrl': '{{image-10:file}}',
-									'imageAlt': '{{image-10:post_content}}',
+									'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-10.jpg',
+									'imageAlt': 'Image description',
 									'alignment': 'none'
 								},
 								[
@@ -3116,8 +3066,8 @@ export const homeLayouts = [
 								{
 									'headingLevel': 3,
 									'showCta': false,
-									'imageUrl': '{{image-11:file}}',
-									'imageAlt': '{{image-11:post_content}}',
+									'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-11.jpg',
+									'imageAlt': 'Image description',
 									'alignment': 'none'
 								},
 								[
@@ -3154,8 +3104,8 @@ export const homeLayouts = [
 			[
 				'core/image',
 				{
-					'url': '{{home-image-1:file}}',
-					'alt': '{{home-image-1:post_content}}',
+					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/salt/attachments/home-image-1.jpg',
+					'alt': 'Image description',
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignfull size-full is-style-top-wave'
@@ -3167,18 +3117,16 @@ export const homeLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{home-image-2:file}}',
-							'link': '{{home-image-2:permalink}}',
-							'alt': '{{home-image-2:post_content}}',
-							'id': '{{home-image-2}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/salt/attachments/home-image-2.jpg',
+							'alt': 'Image description',
+							'id': 'home-image-2',
 							'caption': ''
 						},
 						{
-							'url': '{{home-image-3:file}}',
-							'fullUrl': '{{home-image-3:file}}',
-							'link': '{{home-image-3:permalink}}',
-							'alt': '{{home-image-3:post_content}}',
-							'id': '{{home-image-3}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/salt/attachments/home-image-3.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/salt/attachments/home-image-3.jpg',
+							'alt': 'Image description',
+							'id': 'home-image-3',
 							'caption': ''
 						}
 					],
@@ -3311,7 +3259,6 @@ export const homeLayouts = [
 							[
 								'core/button',
 								{
-									'url': '{{menu-page:permalink}}',
 									'text': 'See Menu',
 									'backgroundColor': 'secondary',
 									'align': 'center'
@@ -3382,7 +3329,6 @@ export const homeLayouts = [
 							[
 								'core/button',
 								{
-									'url': '{{contact-page:permalink}}',
 									'text': 'Dine in',
 									'backgroundColor': 'secondary',
 									'align': 'center'
@@ -3454,7 +3400,6 @@ export const homeLayouts = [
 							[
 								'core/button',
 								{
-									'url': '{{contact-page:permalink}}',
 									'text': 'Contact',
 									'backgroundColor': 'secondary',
 									'align': 'center'
@@ -3468,8 +3413,8 @@ export const homeLayouts = [
 			[
 				'core/image',
 				{
-					'url': '{{footer-image-1:file}}',
-					'alt': '{{footer-image-1:post_content}}',
+					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/salt/attachments/footer-image-1.jpg',
+					'alt': 'Image description',
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignfull size-large is-style-top-wave'
@@ -3652,8 +3597,8 @@ export const portfolioLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{gallery-image-1:file}}',
-							'imageAlt': '{{gallery-image-1:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-1.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -3683,8 +3628,8 @@ export const portfolioLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{gallery-image-2:file}}',
-							'imageAlt': '{{gallery-image-2:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-2.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -3714,8 +3659,8 @@ export const portfolioLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{gallery-image-3:file}}',
-							'imageAlt': '{{gallery-image-3:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-3.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -3758,8 +3703,8 @@ export const portfolioLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{gallery-image-4:file}}',
-							'imageAlt': '{{gallery-image-4:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-4.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -3789,8 +3734,8 @@ export const portfolioLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{gallery-image-5:file}}',
-							'imageAlt': '{{gallery-image-5:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-5.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -3820,8 +3765,8 @@ export const portfolioLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{gallery-image-6:file}}',
-							'imageAlt': '{{gallery-image-6:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-6.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
@@ -3860,7 +3805,7 @@ export const portfolioLayouts = [
 			[
 				'core/button',
 				{
-					'url': '{{contact-page:permalink}}',
+
 					'text': 'Work With Me',
 					'align': 'center'
 				},
@@ -3898,7 +3843,6 @@ export const portfolioLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{contact-page:permalink}}',
 							'text': 'Let\'s Talk',
 							'align': 'center'
 						},
@@ -3911,40 +3855,36 @@ export const portfolioLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{image-1:file}}',
-							'alt': '{{image-1:post_content}}',
-							'id': '{{image-1}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-1.jpg',
+							'alt': 'Image description',
+							'id': 'image-1',
 							'caption': ''
 						},
 						{
-							'url': '{{image-2:file}}',
-							'link': '{{image-2:permalink}}',
-							'alt': '{{image-2:post_content}}',
-							'id': '{{image-2}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-2.jpg',
+							'alt': 'Image description',
+							'id': 'image-2',
 							'caption': ''
 						},
 						{
-							'url': '{{image-3:file}}',
-							'fullUrl': '{{image-3:file}}',
-							'link': '{{image-3:permalink}}',
-							'alt': '{{image-3:post_content}}',
-							'id': '{{image-3}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-3.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-3.jpg',
+							'alt': 'Image description',
+							'id': 'image-3',
 							'caption': ''
 						},
 						{
-							'url': '{{image-4:file}}',
-							'fullUrl': '{{image-4:file}}',
-							'link': '{{image-4:permalink}}',
-							'alt': '{{image-4:post_content}}',
-							'id': '{{image-4}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-4.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-4.jpg',
+							'alt': 'Image description',
+							'id': 'image-4',
 							'caption': ''
 						},
 						{
-							'url': '{{image-5:file}}',
-							'fullUrl': '{{image-5:file}}',
-							'link': '{{image-5:permalink}}',
-							'alt': '{{image-5:post_content}}',
-							'id': '{{image-5}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-5.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-5.jpg',
+							'alt': 'Image description',
+							'id': 'image-5',
 							'caption': ''
 						}
 					],
@@ -3960,8 +3900,8 @@ export const portfolioLayouts = [
 			[
 				'core/image',
 				{
-					'url': '{{image-6:file}}',
-					'alt': '{{image-6:post_content}}',
+					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-6.jpg',
+					'alt': 'Image description',
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignfull size-large'
@@ -3973,19 +3913,17 @@ export const portfolioLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{image-7:file}}',
-							'fullUrl': '{{image-7:file}}',
-							'link': '{{image-7:permalink}}',
-							'alt': '{{image-7:post_content}}',
-							'id': '{{image-7}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-7.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-7.jpg',
+							'alt': 'Image description',
+							'id': 'image-7',
 							'caption': ''
 						},
 						{
-							'url': '{{image-8:file}}',
-							'fullUrl': '{{image-8:file}}',
-							'link': '{{image-8:permalink}}',
-							'alt': '{{image-8:post_content}}',
-							'id': '{{image-8}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-8.jpg',
+							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-8.jpg',
+							'alt': 'Image description',
+							'id': 'image-8',
 							'caption': ''
 						}
 					],
@@ -4023,7 +3961,6 @@ export const portfolioLayouts = [
 					[
 						'core/button',
 						{
-							'url': '{{contact-page:permalink}}',
 							'text': 'Let\'s Talk',
 							'align': 'center'
 						},
@@ -4043,24 +3980,21 @@ export const portfolioLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{gallery-image-1:file}}',
-							'link': '{{gallery-image-1:permalink}}',
-							'alt': '{{gallery-image-1:post_content}}',
-							'id': '{{gallery-image-1}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-1.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-1',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-2:file}}',
-							'link': '{{gallery-image-2:permalink}}',
-							'alt': '{{gallery-image-2:post_content}}',
-							'id': '{{gallery-image-2}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-2.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-2',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-3:file}}',
-							'link': '{{gallery-image-3:permalink}}',
-							'alt': '{{gallery-image-3:post_content}}',
-							'id': '{{gallery-image-3}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-3.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-3',
 							'caption': []
 						}
 					],
@@ -4100,38 +4034,33 @@ export const portfolioLayouts = [
 				{
 					'images': [
 						{
-							'url': '{{gallery-image-4:file}}',
-							'link': '{{gallery-image-4:permalink}}',
-							'alt': '{{gallery-image-4:post_content}}',
-							'id': '{{gallery-image-4}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-4.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-4',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-5:file}}',
-							'link': '{{gallery-image-5:permalink}}',
-							'alt': '{{gallery-image-5:post_content}}',
-							'id': '{{gallery-image-5}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-5.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-5',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-6:file}}',
-							'link': '{{gallery-image-6:permalink}}',
-							'alt': '{{gallery-image-6:post_content}}',
-							'id': '{{gallery-image-6}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-6.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-6',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-7:file}}',
-							'link': '{{gallery-image-7:permalink}}',
-							'alt': '{{gallery-image-7:post_content}}',
-							'id': '{{gallery-image-7}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-7.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-7',
 							'caption': []
 						},
 						{
-							'url': '{{gallery-image-8:file}}',
-							'link': '{{gallery-image-8:permalink}}',
-							'alt': '{{gallery-image-8:post_content}}',
-							'id': '{{gallery-image-8}}',
+							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-8.jpg',
+							'alt': 'Image description',
+							'id': 'gallery-image-8',
 							'caption': []
 						}
 					],
@@ -4185,8 +4114,8 @@ export const portfolioLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{image-4:file}}',
-							'imageAlt': '{{image-4:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/image-4.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'none'
 						},
 						[
@@ -4214,8 +4143,8 @@ export const portfolioLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{image-5:file}}',
-							'imageAlt': '{{image-5:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/image-5.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'none'
 						},
 						[
@@ -4256,8 +4185,8 @@ export const portfolioLayouts = [
 						{
 							'headingLevel': 3,
 							'showCta': false,
-							'imageUrl': '{{image-6:file}}',
-							'imageAlt': '{{image-6:post_content}}',
+							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-6.jpg',
+							'imageAlt': 'Image description',
 							'alignment': 'center'
 						},
 						[
