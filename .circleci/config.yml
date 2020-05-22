@@ -30,11 +30,13 @@ workflows:
               only: master
 
       - visual-regression-chrome:
-          tags:
-            only: /^(?!canary).*$/
+          filters:
+            tags:
+              only: /^(?!canary).*$/
       - visual-regression-firefox:
-          tags:
-            only: /^(?!canary).*$/
+          filters:
+            tags:
+              only: /^(?!canary).*$/
 
       - visual-regression-update-snapshots-chrome:
           filters:
