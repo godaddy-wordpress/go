@@ -502,7 +502,12 @@ jobs:
             fi
       - run:
           name: "Update base snapshots"
-          command: npm run snapshots:upload-all
+          command: |
+            if [ ! -d .dev/tests/cypress/snapshots/visual-regression ]; then
+              echo "No snapshots to upload."
+              circleci-agent step halt
+            fi
+            npm run snapshots:upload-all
 
   visual-regression-update-snapshots-firefox:
     docker:
@@ -536,7 +541,12 @@ jobs:
             fi
       - run:
           name: "Update base snapshots"
-          command: npm run snapshots:upload-all
+          command: |
+            if [ ! -d .dev/tests/cypress/snapshots/visual-regression ]; then
+              echo "No snapshots to upload."
+              circleci-agent step halt
+            fi
+            npm run snapshots:upload-all
 
   canary:
     docker:
