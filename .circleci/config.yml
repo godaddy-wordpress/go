@@ -492,7 +492,7 @@ jobs:
             if [ "$CIRCLE_BRANCH" == "master" ]; then
               npm run test-vr-all -- --browser chrome --record --parallel --group vr-chrome
             else
-              npm run test-vr -- --browser chrome --record --parallel --group vr-chrome
+              npm run test-vr-all -- --browser chrome --record --parallel --group vr-chrome
             fi
       - run:
           name: "Update base snapshots"
@@ -531,7 +531,7 @@ jobs:
             if [ "$CIRCLE_BRANCH" == "master" ]; then
               npm run test-vr-all -- --browser firefox --record --parallel --group vr-firefox
             else
-              npm run test-vr -- --browser firefox --record --parallel --group vr-firefox
+              npm run test-vr-all -- --browser firefox --record --parallel --group vr-firefox
             fi
       - run:
           name: "Update base snapshots"
