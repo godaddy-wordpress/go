@@ -9,14 +9,19 @@ export function captureDocument( path = '' ) {
     cy.get('html').invoke('css', 'scroll-behavior', 'auto');
 
     [
-        { label: 'go-huge', width: 1440, height: 1080 },
-        { label: 'go-large', width: 960, height: 1080 },
-        { label: 'go-medium', width: 782, height: 1080 },
-        { label: 'go-small', width: 600, height: 1080 },
+        { label: 'go-1080', width: 1920, height: 1080 }
+        // { label: 'go-huge', width: 1440, height: 1080 },
+        // { label: 'go-large', width: 960, height: 1080 },
+        // { label: 'go-medium', width: 782, height: 1080 },
+        // { label: 'go-small', width: 600, height: 1080 },
 
     ].forEach( viewport => {
-        cy.viewport( viewport.width, viewport.height );
-        cy.wait( 250 );
+        // cy.viewport( viewport.width, viewport.height );
+
+        // Wait for any animations to finish for those we're unable to prevent right now.
+        cy.wait( 500 );
+
+        // Take the full-page screenshot
         cy.matchImageSnapshot( `${path}/${viewport.label}` );
     } );
 }
