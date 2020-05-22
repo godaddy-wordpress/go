@@ -502,7 +502,7 @@ jobs:
             fi
       - run:
           name: "Update base snapshots"
-          command: npm run snapshots:upload
+          command: npm run snapshots:upload-all
 
   visual-regression-update-snapshots-firefox:
     docker:
@@ -536,7 +536,7 @@ jobs:
             fi
       - run:
           name: "Update base snapshots"
-          command: npm run snapshots:upload
+          command: npm run snapshots:upload-all
 
   canary:
     docker:
