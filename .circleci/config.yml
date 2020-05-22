@@ -497,7 +497,7 @@ jobs:
       - run:
           name: "Update base snapshots"
           command: |
-            if [ ! -d .dev/tests/cypress/snapshots/visual-regression ]; then
+            if [ ! -d .dev/tests/cypress/snapshots/visual-regression ] || [ -z "$(ls -A .dev/tests/cypress/snapshots/visual-regression)"]; then
               echo "No snapshots to upload."
               circleci-agent step halt
             fi
@@ -536,7 +536,7 @@ jobs:
       - run:
           name: "Update base snapshots"
           command: |
-            if [ ! -d .dev/tests/cypress/snapshots/visual-regression ]; then
+          if [ ! -d .dev/tests/cypress/snapshots/visual-regression ] || [ -z "$(ls -A .dev/tests/cypress/snapshots/visual-regression)"]; then
               echo "No snapshots to upload."
               circleci-agent step halt
             fi
