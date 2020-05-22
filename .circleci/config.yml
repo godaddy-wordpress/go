@@ -29,8 +29,14 @@ workflows:
             branches:
               only: master
 
-      - visual-regression-chrome
-      - visual-regression-firefox
+      - visual-regression-snapshots-hold:
+          type: approval
+      - visual-regression-chrome:
+          requires:
+            - visual-regression-snapshots-hold
+      - visual-regression-firefox:
+          requires:
+            - visual-regression-snapshots-hold
 
       - visual-regression-update-snapshots-hold:
           type: approval
