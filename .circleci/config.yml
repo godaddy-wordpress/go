@@ -29,26 +29,34 @@ workflows:
             branches:
               only: master
 
-      - visual-regression-chrome
-      - visual-regression-firefox
-      # - visual-regression-update-snapshots-hold:
-      #     type: approval
-      # - visual-regression-update-snapshots-chrome:
-      #     requires:
-      #       - visual-regression-update-snapshots-hold
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
-      #           - feature/e2e-tests-with-wpnux # remove after review.
-      # - visual-regression-update-snapshots-firefox:
-      #     requires:
-      #       - visual-regression-update-snapshots-hold
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
-      #           - feature/e2e-tests-with-wpnux # remove after review.
+      - visual-regression-hold:
+          type: approval
+      - visual-regression-chrome:
+          requires:
+            - visual-regression-hold
+      - visual-regression-firefox:
+          requires:
+            - visual-regression-hold
+
+      - visual-regression-update-snapshots-hold:
+          type: approval
+      - visual-regression-update-snapshots-chrome:
+          requires:
+            - visual-regression-update-snapshots-hold
+          filters:
+            branches:
+              only:
+                - master
+                - feature/e2e-tests-with-wpnux # remove after review.
+      - visual-regression-update-snapshots-firefox:
+          requires:
+            - visual-regression-update-snapshots-hold
+          filters:
+            branches:
+              only:
+                - master
+                - feature/e2e-tests-with-wpnux # remove after review.
+
       - canary:
           requires:
             - php56-phpcs
@@ -486,7 +494,12 @@ jobs:
           command: sudo apt-get install awscli
       - run:
           name: "Run end to end tests (Cypress.io)"
-          command: npx cypress run --browser chrome --record --parallel --group vr-chrome --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
+          command: |
+            if [ "$CIRCLE_BRANCH" == "master" ]; then
+              npm run test-vr-all -- --browser chrome --record --parallel --group vr-chrome
+            else
+              npm run test-vr -- --browser chrome --record --parallel --group vr-chrome
+            fi
       - run:
           name: "Update base snapshots"
           command: npm run snapshots:upload
@@ -515,7 +528,12 @@ jobs:
           command: sudo apt-get install awscli
       - run:
           name: "Run end to end tests (Cypress.io)"
-          command: npx cypress run --browser firefox --record --parallel --group vr-firefox --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
+          command: |
+            if [ "$CIRCLE_BRANCH" == "master" ]; then
+              npm run test-vr-all -- --browser firefox --record --parallel --group vr-firefox
+            else
+              npm run test-vr -- --browser firefox --record --parallel --group vr-firefox
+            fi
       - run:
           name: "Update base snapshots"
           command: npm run snapshots:upload
