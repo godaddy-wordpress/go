@@ -29,25 +29,23 @@ workflows:
             branches:
               only: master
 
-      - visual-regression-chrome
-      - visual-regression-firefox
+      - visual-regression-chrome:
+          tags:
+            only: /^(?!canary).*$/
+      - visual-regression-firefox:
+          tags:
+            only: /^(?!canary).*$/
 
-      - visual-regression-update-snapshots-hold:
-          type: approval
       - visual-regression-update-snapshots-chrome:
-          requires:
-            - visual-regression-update-snapshots-hold
           filters:
             branches:
               only:
-                - master
+                - actions/visual-regression-update-snapshots
       - visual-regression-update-snapshots-firefox:
-          requires:
-            - visual-regression-update-snapshots-hold
           filters:
             branches:
               only:
-                - master
+                - actions/visual-regression-update-snapshots
 
       - canary:
           requires:
