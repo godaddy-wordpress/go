@@ -361,7 +361,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		'show_page_title_checkbox',
 		array(
 			'label'       => esc_html__( 'Page Titles', 'go' ),
-			'description' => esc_html__( 'Display page titles on individual pages.', 'go' ),
+			'description' => esc_html__( 'Display page titles on individual pages that are not individually opted-out.', 'go' ),
 			'section'     => 'go_site_settings',
 			'settings'    => 'page_titles',
 			'type'        => 'checkbox',
