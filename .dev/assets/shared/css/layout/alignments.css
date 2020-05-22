@@ -25,8 +25,22 @@
 	}
 }
 
+.has-page-titles .entry-content > *:first-child {
+
+	&.alignwide.wp-block-image,
+	&.alignwide[class*="gallery"] {
+		margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
+	}
+}
+
 [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
 	max-width: var(--go--max-width);
+	width: 100%;
+}
+
+.alignwide > [class*="__inner-container"] > *:not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(.coblocks-form),
+.alignfull > [class*="__inner-container"] > *:not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(.coblocks-form) {
+	max-width: var(--go--max-width--alignwide);
 	width: 100%;
 }
 

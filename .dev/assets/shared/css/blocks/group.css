@@ -13,7 +13,13 @@
 			padding: var(--go--spacing--vertical--lg);
 		}
 
-		&.alignfull + .alignfull:not(.wp-block-gallery) {
+		&.alignfull + .has-background.alignfull:not(.wp-block-gallery) {
+			margin-top: calc(var(--go--spacing--vertical--lg) * -1);
+		}
+
+		&.alignfull + .wp-block-image.alignfull,
+		&.alignfull + .wp-block-coblocks-map.alignfull,
+		&.alignfull + .wp-block-coblocks-gallery-carousel.alignfull {
 			margin-top: calc(var(--go--spacing--vertical--lg) * -1);
 		}
 	}

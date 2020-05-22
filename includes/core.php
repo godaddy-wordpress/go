@@ -21,6 +21,7 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
+	add_action( 'after_setup_theme', $n( 'development_environment' ) );
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'admin_init', $n( 'editor_styles' ) );
@@ -33,6 +34,19 @@ function setup() {
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
 	add_filter( 'go_page_title_args', $n( 'filter_page_titles' ) );
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
+
+}
+
+/**
+ * Check if this is an install is a local development environment
+ */
+function development_environment() {
+
+	if ( is_readable( get_template_directory() . '/.dev/assets/development-environment.php' ) ) {
+
+		require_once get_template_directory() . '/.dev/assets/development-environment.php';
+
+	}
 
 }
 

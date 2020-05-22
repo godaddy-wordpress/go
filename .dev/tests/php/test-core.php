@@ -17,6 +17,19 @@ class Test_Core extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the hooked development_environment.
+	 */
+	function testHookedDevelopmentEnvironment() {
+
+		$this->assertEquals(
+			10,
+			has_action( 'after_setup_theme', 'Go\Core\development_environment' ),
+			'after_setup_theme is not attached to Go\Core\development_environment. It might also have the wrong priority (validated priority: 10)'
+		);
+
+	}
+
+	/**
 	 * Test the hooked i18n.
 	 */
 	function testHookedi18n() {
@@ -169,6 +182,36 @@ class Test_Core extends WP_UnitTestCase {
 			has_action( 'comment_form_defaults', 'Go\Core\comment_form_reply_title' ),
 			'comment_form_defaults is not attached to Go\Core\comment_form_reply_title. It might also have the wrong priority (validated priority: 10)'
 		);
+
+	}
+
+	/**
+	 * Test that development_environment doesn't include the necessary file when it doesn't exist.
+	 * Note: This file will not exist in the CI build
+	 */
+	function testDevelopmentEnvironment() {
+
+		$file_path = get_template_directory() . '/.dev/assets/development-environment.php';
+
+		if ( getenv( 'ci' ) ) {
+
+			touch( $file_path );
+
+			file_put_contents( $file_path, "<?php define( 'TEST_CORE', true );" );
+
+			Go\Core\development_environment();
+
+			$this->assertTrue( TEST_CORE );
+
+			unlink( $file_path );
+
+			return;
+
+		}
+
+		Go\Core\development_environment();
+
+		$this->assertTrue( is_callable( 'Go\Development_Environment\setup' ) );
 
 	}
 
