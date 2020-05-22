@@ -29,14 +29,8 @@ workflows:
             branches:
               only: master
 
-      - visual-regression-snapshots-hold:
-          type: approval
-      - visual-regression-chrome:
-          requires:
-            - visual-regression-snapshots-hold
-      - visual-regression-firefox:
-          requires:
-            - visual-regression-snapshots-hold
+      - visual-regression-chrome
+      - visual-regression-firefox
 
       - visual-regression-update-snapshots-hold:
           type: approval
@@ -47,7 +41,6 @@ workflows:
             branches:
               only:
                 - master
-                - feature/e2e-tests-with-wpnux # remove after review.
       - visual-regression-update-snapshots-firefox:
           requires:
             - visual-regression-update-snapshots-hold
@@ -55,7 +48,6 @@ workflows:
             branches:
               only:
                 - master
-                - feature/e2e-tests-with-wpnux # remove after review.
 
       - canary:
           requires:
@@ -494,12 +486,7 @@ jobs:
           command: sudo apt-get install awscli
       - run:
           name: "Run end to end tests (Cypress.io)"
-          command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              npm run test-vr-all -- --browser chrome --record --parallel --group vr-chrome
-            else
-              npm run test-vr-all -- --browser chrome --record --parallel --group vr-chrome
-            fi
+          command: npm run test-vr-all -- --browser chrome --record --parallel --group vr-chrome
       - run:
           name: "Update base snapshots"
           command: |
@@ -533,12 +520,7 @@ jobs:
           command: sudo apt-get install awscli
       - run:
           name: "Run end to end tests (Cypress.io)"
-          command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              npm run test-vr-all -- --browser firefox --record --parallel --group vr-firefox
-            else
-              npm run test-vr-all -- --browser firefox --record --parallel --group vr-firefox
-            fi
+          command: npm run test-vr-all -- --browser firefox --record --parallel --group vr-firefox
       - run:
           name: "Update base snapshots"
           command: |
