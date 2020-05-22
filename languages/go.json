@@ -164,7 +164,7 @@
   "320b8c4699152b882bbf171e0bf567f0": "Mobile Width",
   "225e92a29a578d4ab13cebc9d40e4c1e": "Site Settings",
   "0788de47c0f48f512564f551a796f888": "Page Titles",
-  "a80be1d4cafce60fbe2910d76338efaf": "Display page titles on individual pages.",
+  "bb74fb7d72a4cb101f0fbdc48057a279": "Display page titles on individual pages that are not individually opted-out.",
   "847bc3bdd70d4f17eb04bac2b378455d": "Copyright Text",
   "c551fef0bdcf0fd755100caafe7f93c7": "Design Style",
   "31029597bb352af3508cd607cc741a08": "Choose a style, select a color scheme and customize colors to personalize your site.",
@@ -203,6 +203,7 @@
   "15422d54ec0d47000dc86a9820a5237e": "Featured",
   "b61541208db7fa7dba42c85224405911": "Menu",
   "2b81f8f425c6f22b8d869ee405833e25": "Search Toggle",
+  "1f522a2fa180c6b03a80139148f74f13": "Hide Page Title.",
   "57c1fee9db05c07a96c99d9260d38d6d": "View cart",
   "8af832276de7faddcccbe98e59eee754": "Close sidebar",
   "a85eba4c6c699122b2bb1387ea4813ad": "Cart",
@@ -227,5 +228,6 @@
   "60fedf85a70d0e6151a988c7d207b457": "Older <span class=\"nav-short\">Posts</span>",
   "75ecaaafd1f677d07360709be6528768": "Search for:",
   "29042a31d997c996f52c1d2fd4ad813d": "Search &hellip;",
-  "a4d3b161ce1309df1c4e25df28694b7b": "Submit"
+  "a4d3b161ce1309df1c4e25df28694b7b": "Submit",
+  "0e979c88b3a83cc4da445e3dc2a06213": "Hide page title"
 }

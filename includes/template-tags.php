@@ -47,6 +47,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 		return;
 	}
 
+	$post_meta                 = false;
 	$post_meta_wrapper_classes = '';
 	$post_meta_classes         = '';
 

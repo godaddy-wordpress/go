@@ -46,6 +46,11 @@ require_once get_parent_theme_file_path( 'includes/tgm.php' );
 require_once get_parent_theme_file_path( 'includes/woocommerce.php' );
 
 /**
+ * Page Titles Meta functions.
+ */
+require_once get_parent_theme_file_path( 'includes/title-meta.php' );
+
+/**
  * Run setup functions.
  */
 Go\AMP\setup();
@@ -53,6 +58,7 @@ Go\Core\setup();
 Go\TGM\setup();
 Go\Customizer\setup();
 Go\WooCommerce\setup();
+Go\Title_Meta\setup();
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
