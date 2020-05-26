@@ -3,6 +3,10 @@
  */
 import { __ } from '@wordpress/i18n';
 
+const commonText = { 
+	imgAlt: __( 'Image description', 'go' ),
+};
+
 export const aboutLayouts = [
 	{
 		slug: 'about-one',
@@ -12,7 +16,7 @@ export const aboutLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Hi, I’m Everett',
+					'content': __( 'Hi, I’m Everett', 'go' ),
 					'level': 2
 				},
 				[]
@@ -21,7 +25,7 @@ export const aboutLayouts = [
 				'core/paragraph',
 				{
 					'align': 'center',
-					'content': 'A tenacious, loving and energetic photographer who enjoys grabbing her camera and running out to take some photos.',
+					'content': __( 'A tenacious, loving and energetic photographer who enjoys grabbing her camera and running out to take some photos.', 'go' ),
 					'dropCap': false
 				},
 				[]
@@ -30,7 +34,7 @@ export const aboutLayouts = [
 				'core/button',
 				{
 
-					'text': 'Work With Me',
+					'text': __( 'Work With Me', 'go' ),
 					'align': 'center'
 				},
 				[]
@@ -41,20 +45,20 @@ export const aboutLayouts = [
 					'images': [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-1.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'about-image-1',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-2.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'about-image-2',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-3.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'about-image-3',
 							'caption': ''
 						}
@@ -81,7 +85,7 @@ export const aboutLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'Early on',
+									'content': __( 'Early on', 'go' ),
 									'level': 3
 								},
 								[]
@@ -89,7 +93,7 @@ export const aboutLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'I am so fascinated by photography and it’s capability to bring your imagination to amazing places. Early on, I fell in love with the idea of filming my own productions, so I set out to learn everything I could about storytelling through photos.',
+									'content': __( 'I am so fascinated by photography and it’s capability to bring your imagination to amazing places. Early on, I fell in love with the idea of filming my own productions, so I set out to learn everything I could about storytelling through photos.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -103,7 +107,7 @@ export const aboutLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'Current',
+									'content': __( 'Current', 'go' ),
 									'level': 3
 								},
 								[]
@@ -111,7 +115,7 @@ export const aboutLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'I have been teaching myself filmmaking for the past four and a half years and I’m still learning every day. I am building my business as a freelance filmmaker, as well as working on my own photo shoots.',
+									'content': __( 'I have been teaching myself filmmaking for the past four and a half years and I’m still learning every day. I am building my business as a freelance filmmaker, as well as working on my own photo shoots.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -141,7 +145,7 @@ export const aboutLayouts = [
 						'core/heading',
 						{
 							'align': 'center',
-							'content': 'Protecting your ideas',
+							'content': __( 'Protecting your ideas', 'go' ),
 							'level': 1,
 							'textColor': 'secondary'
 						},
@@ -151,7 +155,7 @@ export const aboutLayouts = [
 						'core/paragraph',
 						{
 							'align': 'center',
-							'content': 'Miller &amp; Cole is tremendously proud of the impact that we have made in helping our clients by providing quality legal services and exceptional customer service.&nbsp;&nbsp;',
+							'content': __( 'Miller &amp; Cole is tremendously proud of the impact that we have made in helping our clients by providing quality legal services and exceptional customer service.&nbsp;&nbsp;', 'go' ),
 							'dropCap': false,
 							'textColor': 'secondary'
 						},
@@ -173,7 +177,7 @@ export const aboutLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Quality Results',
+									'content': __( 'Quality Results', 'go' ),
 									'level': 3
 								},
 								[]
@@ -181,7 +185,7 @@ export const aboutLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'Our goal is to create assets from our clients’ innovations through patent, trademark and copyright law.&nbsp; We take great pride in providing quality trademark legal services and exceptional customer service every single day. We\'re absolutely here for you.',
+									'content': __( 'Our goal is to create assets from our clients’ innovations through patent, trademark and copyright law.&nbsp; We take great pride in providing quality trademark legal services and exceptional customer service every single day. We\'re absolutely here for you.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -196,7 +200,7 @@ export const aboutLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Experienced',
+									'content': __( 'Experienced', 'go' ),
 									'level': 3
 								},
 								[]
@@ -204,7 +208,7 @@ export const aboutLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'The attorneys at Miller &amp; Cole work as a team to exceed each of our clients’ expectations. We have 30+ years of high-level experience helping businesses protecting the time, money and resources spent developing ideas and inventions.',
+									'content': __( 'The attorneys at Miller &amp; Cole work as a team to exceed each of our clients’ expectations. We have 30+ years of high-level experience helping businesses protecting the time, money and resources spent developing ideas and inventions.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -217,7 +221,7 @@ export const aboutLayouts = [
 				'core/image',
 				{
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-5.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignwide size-full'
@@ -238,7 +242,7 @@ export const aboutLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Contact',
+									'content': __( 'Contact', 'go' ),
 									'level': 3
 								},
 								[]
@@ -247,7 +251,7 @@ export const aboutLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'Office: (555) 555-5555<br>email@example.com',
+									'content': __( 'Office: (555) 555-5555<br>email@example.com', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -262,7 +266,7 @@ export const aboutLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Location',
+									'content': __( 'Location', 'go' ),
 									'level': 3
 								},
 								[]
@@ -271,7 +275,7 @@ export const aboutLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': '123 Example Rd<br>Scottsdale, AZ 85260',
+									'content': __( '123 Example Rd<br>Scottsdale, AZ 85260', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -286,7 +290,7 @@ export const aboutLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Connect',
+									'content': __( 'Connect', 'go' ),
 									'level': 3
 								},
 								[]
@@ -295,7 +299,7 @@ export const aboutLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': '<a href="https://twitter.com">Twitter</a><br><a href="https://www.facebook.com">Facebook</a><br>',
+									'content': __( '<a href="https://twitter.com">Twitter</a><br><a href="https://www.facebook.com">Facebook</a><br>', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -317,7 +321,7 @@ export const contactLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Let\'s get in touch',
+					'content': __( 'Let\'s get in touch', 'go' ),
 					'level': 2
 				},
 				[]
@@ -326,7 +330,7 @@ export const contactLayouts = [
 				'core/paragraph',
 				{
 					'align': 'center',
-					'content': 'Well hello there, wonderful, fabulous&nbsp;you!&nbsp;If you’d like to get in touch with me, please feel free to give me a call at (555) 555-5555, or send a message with the form down below. Either way, I\'ll be in touch shortly!',
+					'content': __( 'Well hello there, wonderful, fabulous&nbsp;you!&nbsp;If you’d like to get in touch with me, please feel free to give me a call at (555) 555-5555, or send a message with the form down below. Either way, I\'ll be in touch shortly!', 'go' ),
 					'dropCap': false
 				},
 				[]
@@ -384,7 +388,7 @@ export const contactLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/contact-image-1.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -392,7 +396,7 @@ export const contactLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': '<em>"I appreciate Everett\'s ability to compose visually stunning photos, brining my memories to live every time I look at them. I couldn\'t be more happier!"</em>',
+									'content': __( '<em>"I appreciate Everett\'s ability to compose visually stunning photos, brining my memories to live every time I look at them. I couldn\'t be more happier!"</em>', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -401,7 +405,7 @@ export const contactLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': '- Larina H.',
+									'content': __( '- Larina H.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -414,7 +418,7 @@ export const contactLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/contact-image-2.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -422,7 +426,7 @@ export const contactLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': '<em>"Everett should be nominated for photographer of the year. I am so pleased with her photography at my wedding. She’s wonderful!"</em>',
+									'content': __( '<em>"Everett should be nominated for photographer of the year. I am so pleased with her photography at my wedding. She’s wonderful!"</em>', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -431,7 +435,7 @@ export const contactLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': '- Kam V.',
+									'content': __( '- Kam V.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -444,7 +448,7 @@ export const contactLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/contact-image-3.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -452,7 +456,7 @@ export const contactLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': '<em>"Everett knew exactly how to pull the best of me out, and into a beautiful portrait. I\'m so glad I met Everett - she\'s my go-to photographer now!"</em>',
+									'content': __( '<em>"Everett knew exactly how to pull the best of me out, and into a beautiful portrait. I\'m so glad I met Everett - she\'s my go-to photographer now!"</em>', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -461,7 +465,7 @@ export const contactLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': '- Jerri S.',
+									'content': __( '- Jerri S.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -481,7 +485,7 @@ export const contactLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Contact Us',
+					'content': __( 'Contact Us', 'go' ),
 					'level': 1
 				},
 				[]
@@ -498,7 +502,7 @@ export const contactLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Contact',
+									'content': __( 'Contact', 'go' ),
 									'level': 5
 								},
 								[]
@@ -507,7 +511,7 @@ export const contactLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'Studio Gym<br>123 Example Rd, Scottsdale, AZ 85260<br>(555) 555-5555',
+									'content': __( 'Studio Gym<br>123 Example Rd, Scottsdale, AZ 85260<br>(555) 555-5555', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -522,7 +526,7 @@ export const contactLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Gym Hours',
+									'content': __( 'Gym Hours', 'go' ),
 									'level': 5
 								},
 								[]
@@ -531,7 +535,7 @@ export const contactLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'Mon-Fri: 8:00 - 21:00<br>Sat: 8:00 - 20:00<br>Sun: 10:00 - 14:00<br>– Holidays off –',
+									'content': __( 'Mon-Fri: 8:00 - 21:00<br>Sat: 8:00 - 20:00<br>Sun: 10:00 - 14:00<br>– Holidays off –', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -583,14 +587,14 @@ export const contactLayouts = [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-3.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-3',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-1.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-1.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-1',
 							'caption': ''
 						}
@@ -645,7 +649,7 @@ export const homeLayouts = [
 				{
 					'align': 'wide',
 					'url': 'https://user-images.githubusercontent.com/1813435/76585612-2e7ca400-64b5-11ea-8ce7-936d4fe9180b.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'id': 1,
 					'sizeSlug': 'full',
@@ -684,7 +688,7 @@ export const homeLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Enjoy Live Music + the Best Coffee You\'ve Ever Had',
+									'content': __( 'Enjoy Live Music + the Best Coffee You\'ve Ever Had', 'go' ),
 									'level': 3,
 									'fontWeight': '',
 									'textTransform': '',
@@ -697,7 +701,7 @@ export const homeLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'Connecting audience + artist in our lush, speakeasy-style listening room. Only 50 seats available for this sought-after scene.',
+									'content': __( 'Connecting audience + artist in our lush, speakeasy-style listening room. Only 50 seats available for this sought-after scene.', 'go' ),
 									'dropCap': false,
 									'fontWeight': '',
 									'textTransform': '',
@@ -734,14 +738,14 @@ export const homeLayouts = [
 							'headingLevel': 4,
 							'showCta': false,
 							'imageUrl': 'https://user-images.githubusercontent.com/1813435/76585533-fffec900-64b4-11ea-9ba4-fb771f6d7622.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'none'
 						},
 						[
 							[
 								'core/heading',
 								{
-									'content': 'A social house',
+									'content': __( 'A social house', 'go' ),
 									'level': 4,
 									'fontWeight': '',
 									'textTransform': '',
@@ -753,7 +757,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'With our guides\' experience, we will not only get you to where the fish are - but we\'ll get you hooked on them too. Our crew is knowledgeable and friendly - ready to take you on the trip of your dreams.',
+									'content': __( 'With our guides\' experience, we will not only get you to where the fish are - but we\'ll get you hooked on them too. Our crew is knowledgeable and friendly - ready to take you on the trip of your dreams.', 'go' ),
 									'dropCap': false,
 									'fontWeight': '',
 									'textTransform': '',
@@ -770,14 +774,14 @@ export const homeLayouts = [
 							'headingLevel': 4,
 							'showCta': false,
 							'imageUrl': 'https://user-images.githubusercontent.com/1813435/76585544-04c37d00-64b5-11ea-93a2-e287301b67f0.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'none'
 						},
 						[
 							[
 								'core/heading',
 								{
-									'content': 'A listening room',
+									'content': __( 'A listening room', 'go' ),
 									'level': 4,
 									'fontWeight': '',
 									'textTransform': '',
@@ -789,7 +793,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'Folks have fought some monster bluefin tuna on standup gear with our offshore fishing packager, which is an incredible challenge for sure! Stick to the shoreline and test your strength pulling in some biggies!',
+									'content': __( 'Folks have fought some monster bluefin tuna on standup gear with our offshore fishing packager, which is an incredible challenge for sure! Stick to the shoreline and test your strength pulling in some biggies!', 'go' ),
 									'dropCap': false,
 									'fontWeight': '',
 									'textTransform': '',
@@ -814,7 +818,7 @@ export const homeLayouts = [
 				{
 					'align': 'full',
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/barista/attachments/home-image-1.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'id': 0,
 					'sizeSlug': 'full',
@@ -833,7 +837,7 @@ export const homeLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Our approach reflects the people we serve. We are diverse, yet the same.',
+					'content': __( 'Our approach reflects the people we serve. We are diverse, yet the same.', 'go' ),
 					'level': 2,
 					'fontWeight': '',
 					'textTransform': '',
@@ -846,7 +850,7 @@ export const homeLayouts = [
 				'core/button',
 				{
 					'url': 'https://godaddy.com',
-					'text': 'Learn More',
+					'text': __( 'Learn More', 'go' ),
 					'align': 'center',
 					'className': 'is-style-default',
 					'fontWeight': '',
@@ -863,14 +867,14 @@ export const homeLayouts = [
 					'images': [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/barista/attachments/home-image-2.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': '1',
 							'link': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/barista/attachments/home-image-2.jpg',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/barista/attachments/home-image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': '2',
 							'link': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/barista/attachments/home-image-3.jpg',
 							'caption': []
@@ -924,7 +928,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'When we set up shop with an espresso machine up front and a roaster in the back, we hoped to some day be a part of New York\'s rich tradition of service and culinary achievement. Everyday this aspiration drives us.',
+									'content': __( 'When we set up shop with an espresso machine up front and a roaster in the back, we hoped to some day be a part of New York\'s rich tradition of service and culinary achievement. Everyday this aspiration drives us.', 'go' ),
 									'dropCap': false,
 									'fontWeight': '',
 									'textTransform': '',
@@ -936,7 +940,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'The city\'s energy binds us together. It drives us to be the best.',
+									'content': __( 'The city\'s energy binds us together. It drives us to be the best.', 'go' ),
 									'dropCap': false,
 									'fontWeight': '',
 									'textTransform': '',
@@ -948,7 +952,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'This fairly new coffee shop, conveniently located in downtown Scottsdale, is one of the best coffee shops I\'ve ever been to, and trust me when I say, I\'ve been to many. The owners and the staff will make you feel like an old friend or even family.',
+									'content': __( 'This fairly new coffee shop, conveniently located in downtown Scottsdale, is one of the best coffee shops I\'ve ever been to, and trust me when I say, I\'ve been to many. The owners and the staff will make you feel like an old friend or even family.', 'go' ),
 									'dropCap': false,
 									'fontWeight': '',
 									'textTransform': '',
@@ -961,7 +965,7 @@ export const homeLayouts = [
 								'core/button',
 								{
 									'url': 'https://godaddy.com',
-									'text': 'Grab a cup',
+									'text': __( 'Grab a cup', 'go' ),
 									'fontWeight': '',
 									'textTransform': '',
 									'noBottomSpacing': false,
@@ -979,7 +983,7 @@ export const homeLayouts = [
 				{
 					'align': 'full',
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/barista/attachments/home-image-4.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'id': 3,
 					'sizeSlug': 'full',
@@ -1047,7 +1051,7 @@ export const homeLayouts = [
 					[
 						'core/heading',
 						{
-							'content': 'Hi, I\'m Mark Cannon. A life coach &amp; mentor in Scottsdale.',
+							'content': __( 'Hi, I\'m Mark Cannon. A life coach &amp; mentor in Scottsdale.', 'go' ),
 							'level': 1
 						},
 						[]
@@ -1063,14 +1067,14 @@ export const homeLayouts = [
 							[
 								'core/button',
 								{
-									'text': 'About Me'
+									'text': __( 'About Me', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/button',
 								{
-									'text': 'Contact Me',
+									'text': __( 'Contact Me', 'go' ),
 									'className': 'is-style-outline'
 								},
 								[]
@@ -1094,7 +1098,7 @@ export const homeLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'My Message',
+									'content': __( 'My Message', 'go' ),
 									'level': 2
 								},
 								[]
@@ -1102,7 +1106,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'With a school-age daughter of my own, it is of the utmost importance that we keep pushing for changes in our schools, better study spaces for our kids, affordable after-school programs, and healthy lunches. Our children are the next generation, let\'s make sure they\'re prepared, together.',
+									'content': __( 'With a school-age daughter of my own, it is of the utmost importance that we keep pushing for changes in our schools, better study spaces for our kids, affordable after-school programs, and healthy lunches. Our children are the next generation, let\'s make sure they\'re prepared, together.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -1110,7 +1114,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'I have been actively serving our community since before my children began school. As a leader of the PTA, youth sports, and fundraising committees, I am passionate about making our town a better place for our children - and for the future.',
+									'content': __( 'I have been actively serving our community since before my children began school. As a leader of the PTA, youth sports, and fundraising committees, I am passionate about making our town a better place for our children - and for the future.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -1130,7 +1134,7 @@ export const homeLayouts = [
 				'core/image',
 				{
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/keynote/attachments/home-image-1.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignwide size-large'
@@ -1245,18 +1249,18 @@ export const homeLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'Background',
+									'content': __( 'Background', 'go' ),
 									'level': 3,
-									'placeholder': 'Add feature title...'
+									'placeholder': __( 'Add feature title...', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/paragraph',
 								{
-									'content': 'As Founder and Chief Executive Officer of Keynote, Mark has helped develop workshops and programs that have transformed the lives of men and women, and altered the course of education throughout the country and across the world.',
+									'content': __( 'As Founder and Chief Executive Officer of Keynote, Mark has helped develop workshops and programs that have transformed the lives of men and women, and altered the course of education throughout the country and across the world.', 'go' ),
 									'dropCap': false,
-									'placeholder': 'Add feature content'
+									'placeholder': __( 'Add feature content', 'go' ),
 								},
 								[]
 							]
@@ -1307,18 +1311,18 @@ export const homeLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'Experience',
+									'content': __( 'Experience', 'go' ),
 									'level': 3,
-									'placeholder': 'Add feature title...'
+									'placeholder': __( 'Add feature title...', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/paragraph',
 								{
-									'content': 'As Founder and Chief Executive Officer of Keynote, Mark has helped develop workshops and programs that have transformed the lives of men and women, and altered the course of education throughout the country and across the world.',
+									'content': __( 'As Founder and Chief Executive Officer of Keynote, Mark has helped develop workshops and programs that have transformed the lives of men and women, and altered the course of education throughout the country and across the world.', 'go' ),
 									'dropCap': false,
-									'placeholder': 'Add feature content'
+									'placeholder': __( 'Add feature content', 'go' ),
 								},
 								[]
 							]
@@ -1402,18 +1406,18 @@ export const homeLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'Leadership',
+									'content': __( 'Leadership', 'go' ),
 									'level': 3,
-									'placeholder': 'Add feature title...'
+									'placeholder': __( 'Add feature title...', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/paragraph',
 								{
-									'content': 'As Founder and Chief Executive Officer of Keynote, Mark has helped develop workshops and programs that have transformed the lives of men and women, and altered the course of education throughout the country and across the world.',
+									'content': __( 'As Founder and Chief Executive Officer of Keynote, Mark has helped develop workshops and programs that have transformed the lives of men and women, and altered the course of education throughout the country and across the world.', 'go' ),
 									'dropCap': false,
-									'placeholder': 'Add feature content'
+									'placeholder': __( 'Add feature content', 'go' ),
 								},
 								[]
 							]
@@ -1464,18 +1468,18 @@ export const homeLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'Topics',
+									'content': __( 'Topics', 'go' ),
 									'level': 3,
-									'placeholder': 'Add feature title...'
+									'placeholder': __( 'Add feature title...', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/paragraph',
 								{
-									'content': 'Mark’s story of transforming his own life into a full and successful life is the inspiration behind her topics around teaching others that it is possible to do the same through education. He enjoys teaching the importance of education as a whole.',
+									'content': __( 'Mark’s story of transforming his own life into a full and successful life is the inspiration behind her topics around teaching others that it is possible to do the same through education. He enjoys teaching the importance of education as a whole.', 'go' ),
 									'dropCap': false,
-									'placeholder': 'Add feature content'
+									'placeholder': __( 'Add feature content', 'go' ),
 								},
 								[]
 							]
@@ -1494,7 +1498,7 @@ export const homeLayouts = [
 						'core/heading',
 						{
 							'align': 'center',
-							'content': 'Your first consultation is on me',
+							'content': __( 'Your first consultation is on me', 'go' ),
 							'level': 2
 						},
 						[]
@@ -1502,7 +1506,7 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Schedule it today',
+							'text': __( 'Schedule it today', 'go' ),
 							'align': 'center'
 						},
 						[]
@@ -1520,7 +1524,7 @@ export const homeLayouts = [
 				'core/image',
 				{
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/bento/attachments/home-image-1.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignfull size-full is-style-default'
@@ -1531,7 +1535,7 @@ export const homeLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Bringing the finest culinary food from the heart of Asia directly to you',
+					'content': __( 'Bringing the finest culinary food from the heart of Asia directly to you', 'go' ),
 					'level': 2
 				},
 				[]
@@ -1540,7 +1544,7 @@ export const homeLayouts = [
 				'core/button',
 				{
 
-					'text': 'View our Menu',
+					'text': __( 'View our Menu', 'go' ),
 					'align': 'center'
 				},
 				[]
@@ -1576,7 +1580,7 @@ export const homeLayouts = [
 					[
 						'core/paragraph',
 						{
-							'content': '<strong>Sushi Nakazawa</strong>&nbsp;serves the&nbsp;<em>omakase</em>&nbsp;of&nbsp;<strong>Chef Daisuke Nakazawa</strong>. Within the twenty-course meal lies Chef Nakazawa’s passion for sushi. With ingredients sourced both domestically and internationally, the chef crafts a very special tasting menu within the style of Edomae sushi. Chef Nakazawa is a strong believer in the food he serves representing the waters he is surrounded by, so only the best and freshest find its way to your plate.',
+							'content': __( '<strong>Sushi Nakazawa</strong>&nbsp;serves the&nbsp;<em>omakase</em>&nbsp;of&nbsp;<strong>Chef Daisuke Nakazawa</strong>. Within the twenty-course meal lies Chef Nakazawa’s passion for sushi. With ingredients sourced both domestically and internationally, the chef crafts a very special tasting menu within the style of Edomae sushi. Chef Nakazawa is a strong believer in the food he serves representing the waters he is surrounded by, so only the best and freshest find its way to your plate.', 'go' ),
 							'dropCap': false
 						},
 						[]
@@ -1584,7 +1588,7 @@ export const homeLayouts = [
 					[
 						'core/paragraph',
 						{
-							'content': 'The relaxed dining experience at Sushi Nakazawa is chic nonetheless. High back leather chairs at the sushi bar coddle you while each course is explained in detail, and every nuance is revealed. Whether an Edomae novice or self-proclaimed sushi foodie, you will leave with a feeling of euphoria.',
+							'content': __( 'The relaxed dining experience at Sushi Nakazawa is chic nonetheless. High back leather chairs at the sushi bar coddle you while each course is explained in detail, and every nuance is revealed. Whether an Edomae novice or self-proclaimed sushi foodie, you will leave with a feeling of euphoria.', 'go' ),
 							'dropCap': false
 						},
 						[]
@@ -1628,7 +1632,7 @@ export const homeLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/bento/attachments/home-image-2.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -1636,7 +1640,7 @@ export const homeLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Authentic',
+									'content': __( 'Authentic', 'go' ),
 									'level': 3
 								},
 								[]
@@ -1645,7 +1649,7 @@ export const homeLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'The relaxed dining experience at Bento is chic and airy. High back chairs at the sushi bar coddle you for each course.',
+									'content': __( 'The relaxed dining experience at Bento is chic and airy. High back chairs at the sushi bar coddle you for each course.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -1658,7 +1662,7 @@ export const homeLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/bento/attachments/home-image-3.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -1666,9 +1670,9 @@ export const homeLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Historical',
+									'content': __( 'Historical', 'go' ),
 									'level': 3,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
@@ -1676,7 +1680,7 @@ export const homeLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'Housed in the original Yami House, the history behind Bento is amazing. Learn more as you dine in our historical dining room.',
+									'content': __( 'Housed in the original Yami House, the history behind Bento is amazing. Learn more as you dine in our historical dining room.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -1689,7 +1693,7 @@ export const homeLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/bento/attachments/home-image-4.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -1697,9 +1701,9 @@ export const homeLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Best-Rated',
+									'content': __( 'Best-Rated', 'go' ),
 									'level': 3,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
@@ -1707,7 +1711,7 @@ export const homeLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'Bento is one of the best-rated restaurants in the region. With glamourous food and delicious drinks - you won\'t want to miss out!',
+									'content': __( 'Bento is one of the best-rated restaurants in the region. With glamourous food and delicious drinks - you won\'t want to miss out!', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -1765,7 +1769,7 @@ export const homeLayouts = [
 										'core/heading',
 										{
 											'align': 'center',
-											'content': 'Bento, Steak &amp; Sushi',
+											'content': __( 'Bento, Steak &amp; Sushi', 'go' ),
 											'level': 3
 										},
 										[]
@@ -1774,7 +1778,7 @@ export const homeLayouts = [
 										'core/paragraph',
 										{
 											'align': 'center',
-											'content': '123 Example Rd',
+											'content': __( '123 Example Rd', 'go' ),
 											'dropCap': false
 										},
 										[]
@@ -1783,7 +1787,7 @@ export const homeLayouts = [
 										'core/paragraph',
 										{
 											'align': 'center',
-											'content': 'Scottsdale, AZ 85260',
+											'content': __( 'Scottsdale, AZ 85260', 'go' ),
 											'dropCap': false
 										},
 										[]
@@ -1791,7 +1795,7 @@ export const homeLayouts = [
 									[
 										'core/button',
 										{
-											'text': 'Reservations',
+											'text': __( 'Reservations', 'go' ),
 											'align': 'center',
 											'className': 'is-style-default'
 										},
@@ -1843,92 +1847,92 @@ export const homeLayouts = [
 					'images': [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-1.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-1',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-2.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-2',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-3',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-4.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-4',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-5.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-5',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-6.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-6',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-7.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-7',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-8.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-8',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-9.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-9',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-10.jpg',
-							'alt': 'Image description',
-							'id': '{{gallery-image-10',
+							'alt': commonText.imgAlt,
+							'id': 'gallery-image-10',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-11.jpg',
-							'alt': 'Image description',
-							'id': '{{gallery-image-11',
+							'alt': commonText.imgAlt,
+							'id': 'gallery-image-11',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-12.jpg',
-							'alt': 'Image description',
-							'id': '{{gallery-image-12',
+							'alt': commonText.imgAlt,
+							'id': 'gallery-image-12',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-13.jpg',
-							'alt': 'Image description',
-							'id': '{{gallery-image-13',
+							'alt': commonText.imgAlt,
+							'id': 'gallery-image-13',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-14.jpg',
-							'alt': 'Image description',
-							'id': '{{gallery-image-14',
+							'alt': commonText.imgAlt,
+							'id': 'gallery-image-14',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-15.jpg',
-							'alt': 'Image description',
-							'id': '{{gallery-image-15',
+							'alt': commonText.imgAlt,
+							'id': 'gallery-image-15',
 							'caption': []
 						}
 					],
@@ -1963,7 +1967,7 @@ export const homeLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Be Fashionable Together',
+					'content': __( 'Be Fashionable Together', 'go' ),
 					'level': 1
 				},
 				[]
@@ -1972,7 +1976,7 @@ export const homeLayouts = [
 				'core/button',
 				{
 
-					'text': 'Shop Catalogue',
+					'text': __( 'Shop Catalogue', 'go' ),
 					'borderRadius': 0,
 					'align': 'center'
 				},
@@ -1982,7 +1986,7 @@ export const homeLayouts = [
 				'core/image',
 				{
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/fashn/attachments/image-1.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignwide size-full'
@@ -1993,7 +1997,7 @@ export const homeLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Spring is here, finally',
+					'content': __( 'Spring is here, finally', 'go' ),
 					'level': 2
 				},
 				[]
@@ -2011,7 +2015,7 @@ export const homeLayouts = [
 					[
 						'core/heading',
 						{
-							'content': 'Essentials',
+							'content': __( 'Essentials', 'go' ),
 							'level': 2
 						},
 						[]
@@ -2019,7 +2023,7 @@ export const homeLayouts = [
 					[
 						'core/paragraph',
 						{
-							'content': 'In fashion, beauty is in the eye of the beholder, but quality should never be a compromise. We are committed to providing you styles that have quality built in and will last through the wear and tear of your day.',
+							'content': __( 'In fashion, beauty is in the eye of the beholder, but quality should never be a compromise. We are committed to providing you styles that have quality built in and will last through the wear and tear of your day.', 'go' ),
 							'dropCap': false
 						},
 						[]
@@ -2027,7 +2031,7 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Shop Now',
+							'text': __( 'Shop Now', 'go' ),
 							'borderRadius': 0,
 							'align': 'none'
 						},
@@ -2049,7 +2053,7 @@ export const homeLayouts = [
 					[
 						'core/heading',
 						{
-							'content': 'Objects',
+							'content': __( 'Objects', 'go' ),
 							'level': 2
 						},
 						[]
@@ -2057,7 +2061,7 @@ export const homeLayouts = [
 					[
 						'core/paragraph',
 						{
-							'content': 'Our collection of objects of all sorts are sure to please. Objects for the home, objects for the life, objects for your pockets, and objects to wear. While shopping with us, we want you to be completely happy with the experience.',
+							'content': __( 'Our collection of objects of all sorts are sure to please. Objects for the home, objects for the life, objects for your pockets, and objects to wear. While shopping with us, we want you to be completely happy with the experience.', 'go' ),
 							'dropCap': false
 						},
 						[]
@@ -2065,7 +2069,7 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Shop Now',
+							'text': __( 'Shop Now', 'go' ),
 							'borderRadius': 0,
 							'align': 'center'
 						},
@@ -2086,7 +2090,7 @@ export const homeLayouts = [
 					[
 						'core/heading',
 						{
-							'content': 'Home',
+							'content': __( 'Home', 'go' ),
 							'level': 2
 						},
 						[]
@@ -2094,7 +2098,7 @@ export const homeLayouts = [
 					[
 						'core/paragraph',
 						{
-							'content': 'Our collection of home goods is bound to catch your attention. Style your pad as well as yourself with our second-to-none, curated collection of beautiful home goods.',
+							'content': __( 'Our collection of home goods is bound to catch your attention. Style your pad as well as yourself with our second-to-none, curated collection of beautiful home goods.', 'go' ),
 							'dropCap': false
 						},
 						[]
@@ -2102,7 +2106,7 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Shop Now',
+							'text': __( 'Shop Now', 'go' ),
 							'borderRadius': 0,
 							'align': 'none'
 						},
@@ -2125,7 +2129,7 @@ export const homeLayouts = [
 						'core/paragraph',
 						{
 							'align': 'center',
-							'content': 'Hello! We\'re a',
+							'content': __( 'Hello! We\'re a', 'go' ),
 							'dropCap': false
 						},
 						[]
@@ -2134,7 +2138,7 @@ export const homeLayouts = [
 						'core/heading',
 						{
 							'align': 'center',
-							'content': 'Branding &amp; Digital Design<br>Studio in Tokyo',
+							'content': __( 'Branding &amp; Digital Design<br>Studio in Tokyo', 'go' ),
 							'level': 2
 						},
 						[]
@@ -2142,7 +2146,7 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Let\'s Talk',
+							'text': __( 'Let\'s Talk', 'go' ),
 							'align': 'center'
 						},
 						[]
@@ -2155,34 +2159,34 @@ export const homeLayouts = [
 					'images': [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-1.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-1',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-2.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-2',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-3.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-3',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-4.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-4.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-4',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-5.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-5.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-5',
 							'caption': ''
 						}
@@ -2200,7 +2204,7 @@ export const homeLayouts = [
 				'core/image',
 				{
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-6.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignfull size-large'
@@ -2214,14 +2218,14 @@ export const homeLayouts = [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-7.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-7.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-7',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-8.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-8.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-8',
 							'caption': ''
 						}
@@ -2243,7 +2247,7 @@ export const homeLayouts = [
 						'core/paragraph',
 						{
 							'align': 'center',
-							'content': 'Need our help?',
+							'content': __( 'Need our help?', 'go' ),
 							'dropCap': false
 						},
 						[]
@@ -2252,7 +2256,7 @@ export const homeLayouts = [
 						'core/heading',
 						{
 							'align': 'center',
-							'content': 'We Create Brands and Inspire Experiences',
+							'content': __( 'We Create Brands and Inspire Experiences', 'go' ),
 							'level': 2
 						},
 						[]
@@ -2260,7 +2264,7 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Let\'s Talk',
+							'text': __( 'Let\'s Talk', 'go' ),
 							'align': 'center'
 						},
 						[]
@@ -2285,7 +2289,7 @@ export const homeLayouts = [
 						'core/heading',
 						{
 							'align': 'center',
-							'content': 'Brilliant design.<br>Simplicity in the home.',
+							'content': __( 'Brilliant design.<br>Simplicity in the home.', 'go' ),
 							'level': 1
 						},
 						[]
@@ -2294,7 +2298,7 @@ export const homeLayouts = [
 						'core/image',
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-1.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'caption': '',
 							'linkDestination': 'none',
 							'className': 'alignwide size-large'
@@ -2398,16 +2402,16 @@ export const homeLayouts = [
 									[
 										'core/heading',
 										{
-											'content': 'Curating &amp; designing furnishing for your stunning home.',
+											'content': __( 'Curating &amp; designing furnishing for your stunning home.', 'go' ),
 											'level': 2,
-											'placeholder': 'Add heading...'
+											'placeholder': __( 'Add heading...', 'go' ),
 										},
 										[]
 									],
 									[
 										'core/button',
 										{
-											'text': 'Shop Now'
+											'text': __( 'Shop Now', 'go' ),
 										},
 										[]
 									]
@@ -2512,16 +2516,16 @@ export const homeLayouts = [
 									[
 										'core/heading',
 										{
-											'content': 'Shop our curated best sellers and top deals.',
+											'content': __( 'Shop our curated best sellers and top deals.', 'go' ),
 											'level': 2,
-											'placeholder': 'Add heading...'
+											'placeholder': __( 'Add heading...', 'go' ),
 										},
 										[]
 									],
 									[
 										'core/button',
 										{
-											'text': 'Shop Now'
+											'text': __( 'Shop Now', 'go' ),
 										},
 										[]
 									]
@@ -2555,7 +2559,7 @@ export const homeLayouts = [
 					[
 						'core/heading',
 						{
-							'content': 'Grab our best sellers today',
+							'content': __( 'Grab our best sellers today', 'go' ),
 							'level': 3
 						},
 						[]
@@ -2563,7 +2567,7 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Shop Best Sellers',
+							'text': __( 'Shop Best Sellers', 'go' ),
 							'textColor': 'quaternary',
 							'align': 'center',
 							'className': 'is-style-outline'
@@ -2593,7 +2597,7 @@ export const homeLayouts = [
 						'core/heading',
 						{
 							'align': 'center',
-							'content': 'Fearless. Passionate. Experienced.',
+							'content': __( 'Fearless. Passionate. Experienced.', 'go' ),
 							'level': 1,
 							'textColor': 'secondary'
 						},
@@ -2603,7 +2607,7 @@ export const homeLayouts = [
 						'core/paragraph',
 						{
 							'align': 'center',
-							'content': 'Helping businesses protect their brand, content and image throughout the world for more than 30 years. We help businesses protect themselves.',
+							'content': __( 'Helping businesses protect their brand, content and image throughout the world for more than 30 years. We help businesses protect themselves.', 'go' ),
 							'dropCap': false,
 							'textColor': 'secondary'
 						},
@@ -2615,7 +2619,7 @@ export const homeLayouts = [
 				'core/image',
 				{
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-1.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignwide size-large'
@@ -2637,7 +2641,7 @@ export const homeLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'Helping the leaders of successful online businesses protect everything.',
+									'content': __( 'Helping the leaders of successful online businesses protect everything.', 'go' ),
 									'level': 2
 								},
 								[]
@@ -2645,7 +2649,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'Miller &amp; Cole is tremendously proud of the impact that we have made in helping our clients by providing quality patent, trademark and legal services. The patent and trademark attorneys at Miller &amp; Cole have successfully represented and advised hundreds of clients over the last 20 years.',
+									'content': __( 'Miller &amp; Cole is tremendously proud of the impact that we have made in helping our clients by providing quality patent, trademark and legal services. The patent and trademark attorneys at Miller &amp; Cole have successfully represented and advised hundreds of clients over the last 20 years.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -2653,7 +2657,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'We are confident that our team\'s unique experiences and trademark law focus will absolutely be an asset to your business.',
+									'content': __( 'We are confident that our team\'s unique experiences and trademark law focus will absolutely be an asset to your business.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -2661,7 +2665,7 @@ export const homeLayouts = [
 							[
 								'core/button',
 								{
-									'text': 'Learn More',
+									'text': __( 'Learn More', 'go' ),
 									'borderRadius': 0,
 									'align': 'none'
 								},
@@ -2678,7 +2682,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': '<strong>Contact Us</strong>',
+									'content': __( '<strong>Contact Us</strong>', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -2686,7 +2690,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': '123 Example Rd<br>Scottsdale, AZ 85260',
+									'content': __( '123 Example Rd<br>Scottsdale, AZ 85260', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -2694,7 +2698,7 @@ export const homeLayouts = [
 							[
 								'core/paragraph',
 								{
-									'content': 'email@example.com<br>(555) 555-5555',
+									'content': __( 'email@example.com<br>(555) 555-5555', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -2714,7 +2718,7 @@ export const homeLayouts = [
 						'core/heading',
 						{
 							'align': 'center',
-							'content': 'Our Services',
+							'content': __( 'Our Services', 'go' ),
 							'level': 2
 						},
 						[]
@@ -2738,7 +2742,7 @@ export const homeLayouts = [
 										'core/heading',
 										{
 											'align': 'center',
-											'content': '<em>Patent Applications</em>',
+											'content': __( '<em>Patent Applications</em>', 'go' ),
 											'level': 4
 										},
 										[]
@@ -2747,7 +2751,7 @@ export const homeLayouts = [
 										'core/paragraph',
 										{
 											'align': 'center',
-											'content': 'A provisional patent application can be an effective tool for businesses and individuals seeking to acquire patent rights.',
+											'content': __( 'A provisional patent application can be an effective tool for businesses and individuals seeking to acquire patent rights.', 'go' ),
 											'dropCap': false
 										},
 										[]
@@ -2762,7 +2766,7 @@ export const homeLayouts = [
 										'core/heading',
 										{
 											'align': 'center',
-											'content': '<em>Licensing Agreements</em>',
+											'content': __( '<em>Licensing Agreements</em>', 'go' ),
 											'level': 4
 										},
 										[]
@@ -2771,7 +2775,7 @@ export const homeLayouts = [
 										'core/paragraph',
 										{
 											'align': 'center',
-											'content': 'A license agreement is a legal document used to harness the value of intellectual property - creations of the mind and more.',
+											'content': __( 'A license agreement is a legal document used to harness the value of intellectual property - creations of the mind and more.', 'go' ),
 											'dropCap': false
 										},
 										[]
@@ -2786,7 +2790,7 @@ export const homeLayouts = [
 										'core/heading',
 										{
 											'align': 'center',
-											'content': '<em>Copyrights</em>',
+											'content': __( '<em>Copyrights</em>', 'go' ),
 											'level': 4
 										},
 										[]
@@ -2795,7 +2799,7 @@ export const homeLayouts = [
 										'core/paragraph',
 										{
 											'align': 'center',
-											'content': 'A copyright, an important asset to the copyright owner, is a set of exclusive rights granted to the author of an original work. ',
+											'content': __( 'A copyright, an important asset to the copyright owner, is a set of exclusive rights granted to the author of an original work. ', 'go' ),
 											'dropCap': false
 										},
 										[]
@@ -2807,7 +2811,7 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Learn More',
+							'text': __( 'Learn More', 'go' ),
 							'borderRadius': 0,
 							'align': 'center'
 						},
@@ -2822,21 +2826,21 @@ export const homeLayouts = [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-2.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-2.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-2',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-3.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-3',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-4.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-4.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-4',
 							'caption': ''
 						}
@@ -2871,7 +2875,7 @@ export const homeLayouts = [
 					[
 						'core/heading',
 						{
-							'content': 'Find your nook.',
+							'content': __( 'Find your nook.', 'go' ),
 							'level': 1,
 							'textColor': 'primary'
 						},
@@ -2880,7 +2884,7 @@ export const homeLayouts = [
 					[
 						'core/paragraph',
 						{
-							'content': 'Charming apartment rentals in historic neighborhoods.',
+							'content': __( 'Charming apartment rentals in historic neighborhoods.', 'go' ),
 							'dropCap': false
 						},
 						[]
@@ -2888,7 +2892,7 @@ export const homeLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Schedule a Tour',
+							'text': __( 'Schedule a Tour', 'go' ),
 							'className': 'is-style-outline'
 						},
 						[]
@@ -2899,7 +2903,7 @@ export const homeLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Only the Best Homes',
+					'content': __( 'Only the Best Homes', 'go' ),
 					'level': 3
 				},
 				[]
@@ -2910,43 +2914,43 @@ export const homeLayouts = [
 					'images': [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-2.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-2',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-3',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-4.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-4',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-5.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-5',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-6.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-6',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-7.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-7',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-8.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-8',
 							'caption': []
 						}
@@ -2981,7 +2985,7 @@ export const homeLayouts = [
 						'core/heading',
 						{
 							'align': 'center',
-							'content': 'Recently Rented Listings',
+							'content': __( 'Recently Rented Listings', 'go' ),
 							'level': 3
 						},
 						[]
@@ -3009,23 +3013,23 @@ export const homeLayouts = [
 									'headingLevel': 3,
 									'showCta': false,
 									'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-9.jpg',
-									'imageAlt': 'Image description',
+									'imageAlt': commonText.imgAlt,
 									'alignment': 'none'
 								},
 								[
 									[
 										'core/heading',
 										{
-											'content': 'Historic Heights',
+											'content': __( 'Historic Heights', 'go' ),
 											'level': 4,
-											'placeholder': 'Write title...'
+											'placeholder': __( 'Write title...', 'go' ),
 										},
 										[]
 									],
 									[
 										'core/paragraph',
 										{
-											'content': 'Granite counter tops, new cabinets and appliances, and modern lights and fixtures. Two bedroom, one bath.',
+											'content': __( 'Granite counter tops, new cabinets and appliances, and modern lights and fixtures. Two bedroom, one bath.', 'go' ),
 											'dropCap': false
 										},
 										[]
@@ -3038,23 +3042,23 @@ export const homeLayouts = [
 									'headingLevel': 3,
 									'showCta': false,
 									'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-10.jpg',
-									'imageAlt': 'Image description',
+									'imageAlt': commonText.imgAlt,
 									'alignment': 'none'
 								},
 								[
 									[
 										'core/heading',
 										{
-											'content': 'The Legacy',
+											'content': __( 'The Legacy', 'go' ),
 											'level': 4,
-											'placeholder': 'Write title...'
+											'placeholder': __( 'Write title...', 'go' ),
 										},
 										[]
 									],
 									[
 										'core/paragraph',
 										{
-											'content': 'One secure, gated garage space is included. Coin-op laundry onsite. Recent kitchenette renovation. One bedroom, one bath.',
+											'content': __( 'One secure, gated garage space is included. Coin-op laundry onsite. Recent kitchenette renovation. One bedroom, one bath.', 'go' ),
 											'dropCap': false
 										},
 										[]
@@ -3067,23 +3071,23 @@ export const homeLayouts = [
 									'headingLevel': 3,
 									'showCta': false,
 									'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/nook/attachments/image-11.jpg',
-									'imageAlt': 'Image description',
+									'imageAlt': commonText.imgAlt,
 									'alignment': 'none'
 								},
 								[
 									[
 										'core/heading',
 										{
-											'content': 'The Cottage',
+											'content': __( 'The Cottage', 'go' ),
 											'level': 4,
-											'placeholder': 'Write title...'
+											'placeholder': __( 'Write title...', 'go' ),
 										},
 										[]
 									],
 									[
 										'core/paragraph',
 										{
-											'content': 'Hardwood floors throughout, modern kitchen, gas heat, tons of closet space and recently remodeled bathroom and kitchen.',
+											'content': __( 'Hardwood floors throughout, modern kitchen, gas heat, tons of closet space and recently remodeled bathroom and kitchen.', 'go' ),
 											'dropCap': false
 										},
 										[]
@@ -3105,7 +3109,7 @@ export const homeLayouts = [
 				'core/image',
 				{
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/salt/attachments/home-image-1.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignfull size-full is-style-top-wave'
@@ -3118,14 +3122,14 @@ export const homeLayouts = [
 					'images': [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/salt/attachments/home-image-2.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'home-image-2',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/salt/attachments/home-image-3.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/salt/attachments/home-image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'home-image-3',
 							'caption': ''
 						}
@@ -3143,7 +3147,7 @@ export const homeLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Welcome to Salt',
+					'content': __( 'Welcome to Salt', 'go' ),
 					'level': 2
 				},
 				[]
@@ -3152,7 +3156,7 @@ export const homeLayouts = [
 				'core/paragraph',
 				{
 					'align': 'center',
-					'content': 'For over forty years Salt has been known for its luxury lobster, steamed clams, barbecued chicken and homemade clam chowder. Stop on by and grab some of the most incredible seafood you\'ll ever taste.',
+					'content': __( 'For over forty years Salt has been known for its luxury lobster, steamed clams, barbecued chicken and homemade clam chowder. Stop on by and grab some of the most incredible seafood you\'ll ever taste.', 'go' ),
 					'dropCap': false
 				},
 				[]
@@ -3161,7 +3165,7 @@ export const homeLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Food &amp; Hours',
+					'content': __( 'Food &amp; Hours', 'go' ),
 					'level': 3
 				},
 				[]
@@ -3242,16 +3246,16 @@ export const homeLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'Ocean to Plate',
+									'content': __( 'Ocean to Plate', 'go' ),
 									'level': 4,
-									'placeholder': 'Add feature title...'
+									'placeholder': __( 'Add feature title...', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/paragraph',
 								{
-									'content': 'Cajun &amp; creole seafood cuisine, never frozen - delish',
+									'content': __( 'Cajun &amp; creole seafood cuisine, never frozen - delish', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -3259,7 +3263,7 @@ export const homeLayouts = [
 							[
 								'core/button',
 								{
-									'text': 'See Menu',
+									'text': __( 'See Menu', 'go' ),
 									'backgroundColor': 'secondary',
 									'align': 'center'
 								},
@@ -3312,16 +3316,16 @@ export const homeLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'Dine with Us',
+									'content': __( 'Dine with Us', 'go' ),
 									'level': 4,
-									'placeholder': 'Add feature title...'
+									'placeholder': __( 'Add feature title...', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/paragraph',
 								{
-									'content': 'Mon - Thurs: 5pm - 11pm<br> Fri-Sat: 5pm - Midnight',
+									'content': __( 'Mon - Thurs: 5pm - 11pm<br> Fri-Sat: 5pm - Midnight', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -3329,7 +3333,7 @@ export const homeLayouts = [
 							[
 								'core/button',
 								{
-									'text': 'Dine in',
+									'text': __( 'Dine in', 'go' ),
 									'backgroundColor': 'secondary',
 									'align': 'center'
 								},
@@ -3382,25 +3386,25 @@ export const homeLayouts = [
 							[
 								'core/heading',
 								{
-									'content': 'Catering',
+									'content': __( 'Catering', 'go' ),
 									'level': 4,
-									'placeholder': 'Add feature title...'
+									'placeholder': __( 'Add feature title...', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/paragraph',
 								{
-									'content': 'We cater all events from family reunions, to weddings',
+									'content': __( 'We cater all events from family reunions, to weddings', 'go' ),
 									'dropCap': false,
-									'placeholder': 'Add feature content'
+									'placeholder': __( 'Add feature content', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/button',
 								{
-									'text': 'Contact',
+									'text': __( 'Contact', 'go' ),
 									'backgroundColor': 'secondary',
 									'align': 'center'
 								},
@@ -3414,7 +3418,7 @@ export const homeLayouts = [
 				'core/image',
 				{
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/salt/attachments/footer-image-1.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignfull size-large is-style-top-wave'
@@ -3460,7 +3464,7 @@ export const portfolioLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Gallery',
+									'content': __( 'Gallery', 'go' ),
 									'level': 3,
 									'fontWeight': '',
 									'textTransform': '',
@@ -3473,7 +3477,7 @@ export const portfolioLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'Connecting audience + artist in our lush, speakeasy-style listening room. Only 50 seats available for this sought-after scene.',
+									'content': __( 'Connecting audience + artist in our lush, speakeasy-style listening room. Only 50 seats available for this sought-after scene.', 'go' ),
 									'dropCap': false,
 									'fontWeight': '',
 									'textTransform': '',
@@ -3498,7 +3502,7 @@ export const portfolioLayouts = [
 				{
 					'align': 'wide',
 					'url': 'https://user-images.githubusercontent.com/1813435/76585533-fffec900-64b4-11ea-9ba4-fb771f6d7622.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'id': 3,
 					'sizeSlug': 'full',
@@ -3519,14 +3523,14 @@ export const portfolioLayouts = [
 					'images': [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/barista/attachments/home-image-2.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': '1',
 							'link': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/barista/attachments/home-image-2.jpg',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/barista/attachments/home-image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': '2',
 							'link': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/barista/attachments/home-image-3.jpg',
 							'caption': []
@@ -3550,7 +3554,7 @@ export const portfolioLayouts = [
 				{
 					'align': 'wide',
 					'url': 'https://user-images.githubusercontent.com/1813435/76585544-04c37d00-64b5-11ea-93a2-e287301b67f0.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'id': 3,
 					'sizeSlug': 'full',
@@ -3576,7 +3580,7 @@ export const portfolioLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': '“Great photography is about depth of feeling, not depth of field.”',
+					'content': __( '“Great photography is about depth of feeling, not depth of field.”', 'go' ),
 					'level': 2
 				},
 				[]
@@ -3598,7 +3602,7 @@ export const portfolioLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-1.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -3606,9 +3610,9 @@ export const portfolioLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Portrait',
+									'content': __( 'Portrait', 'go' ),
 									'level': 5,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
@@ -3616,7 +3620,7 @@ export const portfolioLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'I do senior, family, wedding, engagemnet and graduation portraits to capture those memores for a lifetime.',
+									'content': __( 'I do senior, family, wedding, engagemnet and graduation portraits to capture those memores for a lifetime.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -3629,7 +3633,7 @@ export const portfolioLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-2.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -3637,9 +3641,9 @@ export const portfolioLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Maternity',
+									'content': __( 'Maternity', 'go' ),
 									'level': 5,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
@@ -3647,7 +3651,7 @@ export const portfolioLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'Lets capture your beautiful bump, grabbing a little snapsnap for your memories before your baby arrives.',
+									'content': __( 'Lets capture your beautiful bump, grabbing a little snapsnap for your memories before your baby arrives.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -3660,7 +3664,7 @@ export const portfolioLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-3.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -3668,9 +3672,9 @@ export const portfolioLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Product',
+									'content': __( 'Product', 'go' ),
 									'level': 5,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
@@ -3678,7 +3682,7 @@ export const portfolioLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'A photo shoot to capture the essence of your products, that helps you share your products with the world.',
+									'content': __( 'A photo shoot to capture the essence of your products, that helps you share your products with the world.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -3704,7 +3708,7 @@ export const portfolioLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-4.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -3712,9 +3716,9 @@ export const portfolioLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Architectural',
+									'content': __( 'Architectural', 'go' ),
 									'level': 5,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
@@ -3722,7 +3726,7 @@ export const portfolioLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'Photography based on wide architectual frames, including shoots for real estate agents looking to sell homes fast.',
+									'content': __( 'Photography based on wide architectual frames, including shoots for real estate agents looking to sell homes fast.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -3735,7 +3739,7 @@ export const portfolioLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-5.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -3743,9 +3747,9 @@ export const portfolioLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Baby',
+									'content': __( 'Baby', 'go' ),
 									'level': 5,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
@@ -3753,7 +3757,7 @@ export const portfolioLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'Don\'t let those years go by too fast. Let me take photos of your littlest ones, capturing those moments in time.',
+									'content': __( 'Don\'t let those years go by too fast. Let me take photos of your littlest ones, capturing those moments in time.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -3766,7 +3770,7 @@ export const portfolioLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-6.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -3774,9 +3778,9 @@ export const portfolioLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Families',
+									'content': __( 'Families', 'go' ),
 									'level': 5,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
@@ -3784,7 +3788,7 @@ export const portfolioLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'I conduct full on family shoots, either portrait style - or at events like your reunion. You\'re gonna love them!',
+									'content': __( 'I conduct full on family shoots, either portrait style - or at events like your reunion. You\'re gonna love them!', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -3797,7 +3801,7 @@ export const portfolioLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'I\'ll capture your best side at your next photoshoot.',
+					'content': __( 'I\'ll capture your best side at your next photoshoot.', 'go' ),
 					'level': 2
 				},
 				[]
@@ -3806,7 +3810,7 @@ export const portfolioLayouts = [
 				'core/button',
 				{
 
-					'text': 'Work With Me',
+					'text': __( 'Work With Me', 'go' ),
 					'align': 'center'
 				},
 				[]
@@ -3826,7 +3830,7 @@ export const portfolioLayouts = [
 						'core/paragraph',
 						{
 							'align': 'center',
-							'content': 'Hello! We\'re a',
+							'content': __( 'Hello! We\'re a', 'go' ),
 							'dropCap': false
 						},
 						[]
@@ -3835,7 +3839,7 @@ export const portfolioLayouts = [
 						'core/heading',
 						{
 							'align': 'center',
-							'content': 'Branding &amp; Digital Design<br>Studio in Tokyo',
+							'content': __( 'Branding &amp; Digital Design<br>Studio in Tokyo', 'go' ),
 							'level': 2
 						},
 						[]
@@ -3843,7 +3847,7 @@ export const portfolioLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Let\'s Talk',
+							'text': __( 'Let\'s Talk', 'go' ),
 							'align': 'center'
 						},
 						[]
@@ -3856,34 +3860,34 @@ export const portfolioLayouts = [
 					'images': [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-1.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-1',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-2.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-2',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-3.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-3',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-4.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-4.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-4',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-5.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-5.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-5',
 							'caption': ''
 						}
@@ -3901,7 +3905,7 @@ export const portfolioLayouts = [
 				'core/image',
 				{
 					'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-6.jpg',
-					'alt': 'Image description',
+					'alt': commonText.imgAlt,
 					'caption': '',
 					'linkDestination': 'none',
 					'className': 'alignfull size-large'
@@ -3915,14 +3919,14 @@ export const portfolioLayouts = [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-7.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-7.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-7',
 							'caption': ''
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-8.jpg',
 							'fullUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/figure/attachments/image-8.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'image-8',
 							'caption': ''
 						}
@@ -3944,7 +3948,7 @@ export const portfolioLayouts = [
 						'core/paragraph',
 						{
 							'align': 'center',
-							'content': 'Need our help?',
+							'content': __( 'Need our help?', 'go' ),
 							'dropCap': false
 						},
 						[]
@@ -3953,7 +3957,7 @@ export const portfolioLayouts = [
 						'core/heading',
 						{
 							'align': 'center',
-							'content': 'We Create Brands and Inspire Experiences',
+							'content': __( 'We Create Brands and Inspire Experiences', 'go' ),
 							'level': 2
 						},
 						[]
@@ -3961,7 +3965,7 @@ export const portfolioLayouts = [
 					[
 						'core/button',
 						{
-							'text': 'Let\'s Talk',
+							'text': __( 'Let\'s Talk', 'go' ),
 							'align': 'center'
 						},
 						[]
@@ -3981,19 +3985,19 @@ export const portfolioLayouts = [
 					'images': [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-1.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-1',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-2.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-2',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-3.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-3',
 							'caption': []
 						}
@@ -4035,31 +4039,31 @@ export const portfolioLayouts = [
 					'images': [
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-4.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-4',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-5.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-5',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-6.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-6',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-7.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-7',
 							'caption': []
 						},
 						{
 							'url': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/gallery-image-8.jpg',
-							'alt': 'Image description',
+							'alt': commonText.imgAlt,
 							'id': 'gallery-image-8',
 							'caption': []
 						}
@@ -4093,7 +4097,7 @@ export const portfolioLayouts = [
 				'core/heading',
 				{
 					'align': 'center',
-					'content': 'Our Instructors',
+					'content': __( 'Our Instructors', 'go' ),
 					'level': 1
 				},
 				[]
@@ -4115,23 +4119,23 @@ export const portfolioLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/image-4.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'none'
 						},
 						[
 							[
 								'core/heading',
 								{
-									'content': 'Sally D.',
+									'content': __( 'Sally D.', 'go' ),
 									'level': 3,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/paragraph',
 								{
-									'content': 'The cardio leader focuses on classes to help you build your core foundation to maximize cardio intake.',
+									'content': __( 'The cardio leader focuses on classes to help you build your core foundation to maximize cardio intake.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -4144,23 +4148,23 @@ export const portfolioLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/image-5.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'none'
 						},
 						[
 							[
 								'core/heading',
 								{
-									'content': 'Tom S.',
+									'content': __( 'Tom S.', 'go' ),
 									'level': 3,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
 							[
 								'core/paragraph',
 								{
-									'content': 'The strength leader helps you meld your physical self for an intense workout.',
+									'content': __( 'The strength leader helps you meld your physical self for an intense workout.', 'go' ),
 									'dropCap': false
 								},
 								[]
@@ -4186,7 +4190,7 @@ export const portfolioLayouts = [
 							'headingLevel': 3,
 							'showCta': false,
 							'imageUrl': 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-6.jpg',
-							'imageAlt': 'Image description',
+							'imageAlt': commonText.imgAlt,
 							'alignment': 'center'
 						},
 						[
@@ -4194,9 +4198,9 @@ export const portfolioLayouts = [
 								'core/heading',
 								{
 									'align': 'center',
-									'content': 'Sally D.',
+									'content': __( 'Sally D.', 'go' ),
 									'level': 3,
-									'placeholder': 'Write title...'
+									'placeholder': __( 'Write title...', 'go' ),
 								},
 								[]
 							],
@@ -4204,7 +4208,7 @@ export const portfolioLayouts = [
 								'core/paragraph',
 								{
 									'align': 'center',
-									'content': 'The cardio leader focuses on classes to help you build your core foundation to maximize cardio intake.',
+									'content': __( 'The cardio leader focuses on classes to help you build your core foundation to maximize cardio intake.', 'go' ),
 									'dropCap': false
 								},
 								[]
