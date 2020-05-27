@@ -5,6 +5,21 @@
 	max-width: var(--editor-max-w-base);
 }
 
+.block-editor-block-list__layout > .wp-block {
+
+	&:first-child {
+
+		&[data-align="full"],
+		&[data-align="wide"] {
+			margin-top: 0;
+		}
+	}
+
+	&:nth-last-child(2) {
+		margin-bottom: 0;
+	}
+}
+
 .wp-block-paragraph {
 	margin-bottom: 0;
 	margin-top: 0;
