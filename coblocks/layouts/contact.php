@@ -69,6 +69,13 @@ function go_coblocks_contact_layouts( $layouts ) {
 						),
 						array(),
 					),
+					array(
+						'coblocks/field-submit-button',
+						array(
+							'submitButtonText'    => __( 'Contact Us', 'go' ),
+						),
+						array(),
+					),
 				),
 			),
 			array(
@@ -275,6 +282,13 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'label'    => 'Message',
 							'required' => true,
+						),
+						array(),
+					),
+					array(
+						'coblocks/field-submit-button',
+						array(
+							'submitButtonText'    => __( 'Contact Us', 'go' ),
 						),
 						array(),
 					),
