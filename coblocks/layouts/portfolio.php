@@ -160,6 +160,128 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 		'label'    => __( 'Portfolio', 'go' ),
 		'blocks'   => array(
 			array(
+				'coblocks/gallery-masonry',
+				array(
+					'images'                  => array(
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-1.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-1',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-2.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-2',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-3.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-3',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-4.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-4',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-5.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-5',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-6.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-6',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-7.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-7',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-8.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-8',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-9.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-9',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-10.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-10',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-11.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-11',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-12.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-12',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-13.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-13',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-14.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-14',
+							'caption' => array(),
+						),
+						array(
+							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/gallery-image-15.jpg',
+							'alt'     => __( 'Image description', 'go' ),
+							'id'      => 'gallery-image-15',
+							'caption' => array(),
+						),
+					),
+					'linkTo'                  => 'none',
+					'rel'                     => '',
+					'align'                   => 'full',
+					'gutter'                  => 40,
+					'gutterMobile'            => 15,
+					'radius'                  => 0,
+					'shadow'                  => 'none',
+					'filter'                  => 'none',
+					'captions'                => false,
+					'captionStyle'            => 'dark',
+					'primaryCaption'          => array(),
+					'backgroundRadius'        => 0,
+					'backgroundPadding'       => 0,
+					'backgroundPaddingMobile' => 0,
+					'lightbox'                => true,
+					'gridSize'                => 'lrg',
+					'className'               => 'px',
+				),
+				array(),
+			),
+		),
+	);
+
+	$layouts[] = array(
+		'category' => 'portfolio',
+		'label'    => __( 'Portfolio', 'go' ),
+		'blocks'   => array(
+			array(
 				'core/heading',
 				array(
 					'align'   => 'center',
@@ -282,7 +404,8 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 					'alignment'    => 'center',
 					'headingLevel' => 3,
 					'buttons'      => false,
-					'className'    => 'alignwide is-style-circle',
+					'className'    => 'is-style-circle',
+					'align'        => 'wide',
 				),
 				array(
 					array(
@@ -668,137 +791,6 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 					'fullwidth'               => true,
 				),
 				array(),
-			),
-		),
-	);
-
-	$layouts[] = array(
-		'category' => 'portfolio',
-		'label'    => __( 'Portfolio', 'go' ),
-		'blocks'   => array(
-			array(
-				'core/heading',
-				array(
-					'align'   => 'center',
-					'content' => __( 'Our Instructors', 'go' ),
-					'level'   => 1,
-				),
-				array(),
-			),
-			array(
-				'coblocks/services',
-				array(
-					'columns'      => 2,
-					'gutter'       => 'medium',
-					'alignment'    => 'none',
-					'headingLevel' => 3,
-					'buttons'      => false,
-					'className'    => 'alignwide is-style-threebyfour',
-				),
-				array(
-					array(
-						'coblocks/service',
-						array(
-							'headingLevel' => 3,
-							'showCta'      => false,
-							'imageUrl'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/image-4.jpg',
-							'imageAlt'     => __( 'Image description', 'go' ),
-							'alignment'    => 'none',
-						),
-						array(
-							array(
-								'core/heading',
-								array(
-									'content'     => __( 'Sally D.', 'go' ),
-									'level'       => 3,
-									'placeholder' => __( 'Write title...', 'go' ),
-								),
-								array(),
-							),
-							array(
-								'core/paragraph',
-								array(
-									'content' => __( 'The cardio leader focuses on classes to help you build your core foundation to maximize cardio intake.', 'go' ),
-									'dropCap' => false,
-								),
-								array(),
-							),
-						),
-					),
-					array(
-						'coblocks/service',
-						array(
-							'headingLevel' => 3,
-							'showCta'      => false,
-							'imageUrl'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/index/attachments/image-5.jpg',
-							'imageAlt'     => __( 'Image description', 'go' ),
-							'alignment'    => 'none',
-						),
-						array(
-							array(
-								'core/heading',
-								array(
-									'content'     => __( 'Tom S.', 'go' ),
-									'level'       => 3,
-									'placeholder' => __( 'Write title...', 'go' ),
-								),
-								array(),
-							),
-							array(
-								'core/paragraph',
-								array(
-									'content' => __( 'The strength leader helps you meld your physical self for an intense workout.', 'go' ),
-									'dropCap' => false,
-								),
-								array(),
-							),
-						),
-					),
-				),
-			),
-			array(
-				'coblocks/services',
-				array(
-					'columns'      => 1,
-					'gutter'       => 'medium',
-					'alignment'    => 'center',
-					'headingLevel' => 3,
-					'buttons'      => false,
-					'className'    => 'alignwide is-style-threebyfour',
-				),
-				array(
-					array(
-						'coblocks/service',
-						array(
-							'headingLevel' => 3,
-							'showCta'      => false,
-							'imageUrl'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-6.jpg',
-							'imageAlt'     => __( 'Image description', 'go' ),
-							'alignment'    => 'center',
-						),
-						array(
-							array(
-								'core/heading',
-								array(
-									'align'       => 'center',
-									'content'     => __( 'Sally D.', 'go' ),
-									'level'       => 3,
-									'placeholder' => __( 'Write title...', 'go' ),
-								),
-								array(),
-							),
-							array(
-								'core/paragraph',
-								array(
-									'align'   => 'center',
-									'content' => __( 'The cardio leader focuses on classes to help you build your core foundation to maximize cardio intake.', 'go' ),
-									'dropCap' => false,
-								),
-								array(),
-							),
-						),
-					),
-				),
 			),
 		),
 	);

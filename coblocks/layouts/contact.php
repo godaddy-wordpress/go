@@ -79,7 +79,8 @@ function go_coblocks_contact_layouts( $layouts ) {
 					'alignment'    => 'center',
 					'headingLevel' => 3,
 					'buttons'      => false,
-					'className'    => 'alignwide is-style-circle',
+					'className'    => 'is-style-circle',
+					'align'        => 'wide',
 				),
 				array(
 					array(
@@ -303,7 +304,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 					'imageCrop' => true,
 					'linkTo'    => 'none',
 					'sizeslug'  => 'large',
-					'className' => 'alignfull',
+					'align'     => 'full',
 				),
 				array(),
 			),
