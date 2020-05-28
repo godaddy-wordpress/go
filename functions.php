@@ -46,6 +46,13 @@ require_once get_parent_theme_file_path( 'includes/tgm.php' );
 require_once get_parent_theme_file_path( 'includes/woocommerce.php' );
 
 /**
+ * Go CoBlocks Layouts.
+ */
+foreach ( glob( get_parent_theme_file_path( 'coblocks/layouts/*.php' ) ) as $filename ) {
+	require_once $filename;
+}
+
+/**
  * Run setup functions.
  */
 Go\AMP\setup();
