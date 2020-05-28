@@ -37,6 +37,8 @@ module.exports = {
 	// External objects.
 	externals: {
 		jquery: 'jQuery',
+		react: "React",
+		reactDom: "ReactDOM",
 	},
 
 	// Performance settings.

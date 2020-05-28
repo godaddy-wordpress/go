@@ -361,7 +361,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		'show_page_title_checkbox',
 		array(
 			'label'       => esc_html__( 'Page Titles', 'go' ),
-			'description' => esc_html__( 'Display page titles on individual pages.', 'go' ),
+			'description' => esc_html__( 'Display page titles on individual pages that are not individually opted-out.', 'go' ),
 			'section'     => 'go_site_settings',
 			'settings'    => 'page_titles',
 			'type'        => 'checkbox',
@@ -1055,6 +1055,30 @@ function inline_css() {
 				<?php if ( $viewport_basis ) : ?>
 					--go--viewport-basis: <?php echo esc_attr( $viewport_basis ); ?>;
 				<?php endif; ?>
+			}
+
+			.has-primary-to-secondary-gradient-background {
+				background: -webkit-linear-gradient(135deg, var(--go--color--primary) 0%, var(--go--color--secondary) 100%);
+				background: -o-linear-gradient(135deg, var(--go--color--primary) 0%, var(--go--color--secondary) 100%);
+				background: linear-gradient(135deg, var(--go--color--primary) 0%, var(--go--color--secondary) 100%);
+			}
+
+			.has-primary-to-tertiary-gradient-background {
+				background: -webkit-linear-gradient(135deg, var(--go--color--primary) 0%, var(--go--color--tertiary) 100%);
+				background: -o-linear-gradient(135deg, var(--go--color--primary) 0%, var(--go--color--tertiary) 100%);
+				background: linear-gradient(135deg, var(--go--color--primary) 0%, var(--go--color--tertiary) 100%);
+			}
+
+			.has-primary-to-background-gradient-background {
+				background: -webkit-linear-gradient(135deg, var(--go--color--primary) 0%, var(--go--color--background) 100%);
+				background: -o-linear-gradient(135deg, var(--go--color--primary) 0%, var(--go--color--background) 100%);
+				background: linear-gradient(135deg, var(--go--color--primary) 0%, var(--go--color--background) 100%);
+			}
+
+			.has-secondary-to-tertiary-gradient-background {
+				background: -webkit-linear-gradient(135deg, var(--go--color--secondary) 0%, var(--go--color--tertiary) 100%);
+				background: -o-linear-gradient(135deg, var(--go--color--secondary) 0%, var(--go--color--tertiary) 100%);
+				background: linear-gradient(135deg, var(--go--color--secondary) 0%, var(--go--color--tertiary) 100%);
 			}
 		</style>
 	<?php

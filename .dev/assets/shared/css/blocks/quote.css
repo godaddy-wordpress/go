@@ -82,3 +82,8 @@
 		}
 	}
 }
+
+.wp-block-column .wp-block-quote {
+	margin-bottom: 0;
+	margin-top: 0;
+}
