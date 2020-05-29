@@ -49,20 +49,20 @@ function go_coblocks_about_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-1.jpg',
+							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'about-image-1',
 							'caption' => '',
 						),
 						array(
-							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-2.jpg',
+							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'about-image-2',
 							'caption' => '',
 						),
 						array(
-							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-3.jpg',
-							'fullUrl' => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/about-image-3.jpg',
+							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'about-image-3',
 							'caption' => '',
@@ -226,7 +226,7 @@ function go_coblocks_about_layouts( $layouts ) {
 			array(
 				'core/image',
 				array(
-					'url'             => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/miller/attachments/image-5.jpg',
+					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-5.png',
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'linkDestination' => 'none',

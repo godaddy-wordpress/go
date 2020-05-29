@@ -95,7 +95,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/contact-image-1.jpg',
+							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -125,7 +125,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/contact-image-2.jpg',
+							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -155,7 +155,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/everett/attachments/contact-image-3.jpg',
+							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -299,15 +299,15 @@ function go_coblocks_contact_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-3.jpg',
-							'fullUrl' => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-3.jpg',
+							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-3',
 							'caption' => '',
 						),
 						array(
-							'url'     => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-1.jpg',
-							'fullUrl' => 'https://wpnux.godaddy.com/v2/wp-content/mu-plugins/wpnux/starter-content/templates/studio/attachments/image-1.jpg',
+							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-1',
 							'caption' => '',
