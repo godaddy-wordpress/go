@@ -34,7 +34,7 @@
     "package": "rm -rf build && mkdir -p build/go && npm run build && rsync -av --exclude-from .distignore --delete . build/go && cd build && zip -r go.zip ./go",
     "version": "grunt version && git add -A .",
     "preversion": "git pull origin master && git reset --hard origin/master",
-    "postversion": "git push && git push --tags",
+    "postversion": "git tag -d canary && git push && git push --tags",
     "build-release": "npm install && npm run build",
     "lint-release": "npm install && composer install && npm run lint",
     "lint-css": "stylelint 'assets/shared/css' '.dev/assets/design-styles/**/*.css'",
