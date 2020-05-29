@@ -110,11 +110,8 @@ List of bespoke icons:
 == Changelog ==
 
 ### Enhancements
-* Adjust vertical spacing in the block editor. [#510](https://github.com/godaddy-wordpress/go/pull/510)
-* Add viewport basis Customizer controls to allow for granular control over the themes white space. [#512](https://github.com/godaddy-wordpress/go/pull/512)
-* Add CoBlocks Events block styles. This allows the heading and paragraph typography variables to properly apply to the Events block. [#514](https://github.com/godaddy-wordpress/go/pull/514)
-* Improve our getting started documentation and add an admin notice for users who have cloned the Go theme from GitHub. [#515](https://github.com/godaddy-wordpress/go/pull/515)
-* Adjust vertical alignment and block spacing. [#516](https://github.com/godaddy-wordpress/go/pull/516)
-
-### Bug Fixes
-* Resolve an issue where the featured image causes featured image text to be white. [#513](https://github.com/godaddy-wordpress/go/pull/513)
+* Updates to PHP syntax and PHPCS rulesets. [#518](https://github.com/godaddy-wordpress/go/pull/518)
+* Add `Tested up to` and `Requires PHP` to style.css headers. [#521](https://github.com/godaddy-wordpress/go/pull/521)
+* Use `display_name` for front of site post author names. [#522](https://github.com/godaddy-wordpress/go/pull/522)
+* Set the customizer color palettes to the currently selected color scheme. [#523](https://github.com/godaddy-wordpress/go/pull/523)
+* Minor block style design tweaks. [#526](https://github.com/godaddy-wordpress/go/pull/526)
