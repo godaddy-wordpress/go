@@ -48,7 +48,13 @@
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
     "test-a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
-    "test-php": "./vendor/bin/phpunit"
+    "test-php": "./vendor/bin/phpunit",
+    "generate-vr-specs": ".dev/bin/generate-vr-specs.sh",
+    "test-vr": "MOZ_HEADLESS_WIDTH=1920 MOZ_HEADLESS_HEIGHT=1080 npx cypress run --config video=false --spec '.dev/tests/cypress/integration/visual-regression/+(barista|bento|furnish|miller)-*.spec.js' --headless",
+    "test-vr-all": "MOZ_HEADLESS_WIDTH=1920 MOZ_HEADLESS_HEIGHT=1080 npx cypress run --config video=false --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js' --headless",
+    "snapshots:upload-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\" --exclude \"*__diff_output__*\"",
+    "snapshots:download-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete",
+    "snapshots:download": "npm run snapshots:download-all -- --exclude='*' --include='barista*' --include='bento*' --include='furnish*' --include='miller*'"
   },
   "locales": {
     "da_DK": "Dansk",
@@ -113,6 +119,8 @@
     "css-loader": "^2.1.1",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
+    "cypress": "^4.4.0",
+    "cypress-image-snapshot": "^3.1.1",
     "eslint": "^5.4.0",
     "eslint-loader": "^2.1.2",
     "grunt": "^1.0.3",
