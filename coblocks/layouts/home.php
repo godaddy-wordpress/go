@@ -48,7 +48,7 @@ function go_coblocks_home_layouts( $layouts ) {
 				'core/image',
 				array(
 					'align'           => 'wide',
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'id'              => 1,
@@ -138,7 +138,7 @@ function go_coblocks_home_layouts( $layouts ) {
 						array(
 							'headingLevel' => 4,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'none',
 						),
@@ -174,7 +174,7 @@ function go_coblocks_home_layouts( $layouts ) {
 						array(
 							'headingLevel' => 4,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'none',
 						),
@@ -218,7 +218,7 @@ function go_coblocks_home_layouts( $layouts ) {
 				'core/image',
 				array(
 					'align'           => 'full',
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'id'              => 0,
@@ -267,17 +267,17 @@ function go_coblocks_home_layouts( $layouts ) {
 				array(
 					'images'         => array(
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => '1',
-							'link'    => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'link'    => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => '2',
-							'link'    => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'link'    => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'caption' => array(),
 						),
 					),
@@ -383,7 +383,7 @@ function go_coblocks_home_layouts( $layouts ) {
 				'core/image',
 				array(
 					'align'           => 'full',
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-4.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-4.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'id'              => 3,
@@ -534,7 +534,7 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/image',
 				array(
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'linkDestination' => 'none',
@@ -927,11 +927,12 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/image',
 				array(
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'linkDestination' => 'none',
 					'className'       => 'alignfull size-full is-style-default',
+					'align'           => 'full',
 				),
 				array(),
 			),
@@ -1036,7 +1037,7 @@ function go_coblocks_home_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -1066,7 +1067,7 @@ function go_coblocks_home_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -1097,7 +1098,7 @@ function go_coblocks_home_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-4.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-4.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -1285,34 +1286,34 @@ function go_coblocks_home_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-1',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-2',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
-							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-3',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-4.png',
-							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-4.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-4.png' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-4.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-4',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-5.png',
-							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-5.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-5.png' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-5.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-5',
 							'caption' => '',
@@ -1330,7 +1331,7 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/image',
 				array(
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-6.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-6.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'linkDestination' => 'none',
@@ -1344,15 +1345,15 @@ function go_coblocks_home_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-7.png',
-							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-7.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-7.png' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-7.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-7',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-8.png',
-							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-8.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-8.png' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-8.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-8',
 							'caption' => '',
@@ -1409,559 +1410,9 @@ function go_coblocks_home_layouts( $layouts ) {
 		'label'    => __( 'Homepage', 'go' ),
 		'blocks'   => array(
 			array(
-				'core/group',
-				array(
-					'backgroundColor' => 'primary',
-					'align'           => 'full',
-				),
-				array(
-					array(
-						'core/heading',
-						array(
-							'align'   => 'center',
-							'content' => __( 'Brilliant design.<br>Simplicity in the home.', 'go' ),
-							'level'   => 1,
-						),
-						array(),
-					),
-					array(
-						'core/image',
-						array(
-							'url'             => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
-							'alt'             => __( 'Image description', 'go' ),
-							'caption'         => '',
-							'linkDestination' => 'none',
-							'className'       => 'size-large',
-							'align'           => 'wide',
-						),
-						array(),
-					),
-				),
-			),
-			array(
-				'coblocks/media-card',
-				array(
-					'backgroundType'         => 'image',
-					'backgroundPosition'     => 'center center',
-					'backgroundRepeat'       => 'no-repeat',
-					'backgroundOverlay'      => 0,
-					'hasParallax'            => false,
-					'videoMuted'             => true,
-					'videoLoop'              => true,
-					'openPopover'            => false,
-					'paddingUnit'            => 'px',
-					'paddingSize'            => 'no',
-					'paddingSyncUnits'       => false,
-					'paddingSyncUnitsTablet' => true,
-					'paddingSyncUnitsMobile' => true,
-					'marginUnit'             => 'px',
-					'marginSize'             => 'no',
-					'marginSyncUnits'        => false,
-					'marginSyncUnitsTablet'  => false,
-					'marginSyncUnitsMobile'  => false,
-					'hasMarginControl'       => true,
-					'hasAlignmentControls'   => true,
-					'hasStackedControl'      => true,
-					'mediaPosition'          => 'left',
-					'mediaAlt'               => '',
-					'mediaWidth'             => 55,
-					'align'                  => 'wide',
-					'hasImgShadow'           => false,
-					'hasCardShadow'          => false,
-					'className'              => 'is-style-right is-stacked-on-mobile coblocks-media-card-82315629723',
-				),
-				array(
-					array(
-						'coblocks/row',
-						array(
-							'paddingUnit'            => 'px',
-							'paddingSize'            => 'large',
-							'paddingSyncUnits'       => false,
-							'paddingSyncUnitsTablet' => true,
-							'paddingSyncUnitsMobile' => true,
-							'marginUnit'             => 'px',
-							'marginSize'             => 'no',
-							'marginSyncUnits'        => false,
-							'marginSyncUnitsTablet'  => false,
-							'marginSyncUnitsMobile'  => false,
-							'hasMarginControl'       => false,
-							'hasAlignmentControls'   => false,
-							'hasStackedControl'      => false,
-							'backgroundType'         => 'image',
-							'backgroundPosition'     => 'center center',
-							'backgroundRepeat'       => 'no-repeat',
-							'backgroundOverlay'      => 0,
-							'customBackgroundColor'  => '#FFFFFF',
-							'hasParallax'            => false,
-							'videoMuted'             => true,
-							'videoLoop'              => true,
-							'openPopover'            => false,
-							'columns'                => 1,
-							'layout'                 => '100',
-							'gutter'                 => 'medium',
-							'className'              => 'coblocks-row-82315629908',
-						),
-						array(
-							array(
-								'coblocks/column',
-								array(
-									'paddingUnit'          => 'px',
-									'paddingSize'          => 'no',
-									'paddingSyncUnits'     => false,
-									'paddingSyncUnitsTablet' => true,
-									'paddingSyncUnitsMobile' => true,
-									'marginUnit'           => 'px',
-									'marginSize'           => 'no',
-									'marginSyncUnits'      => false,
-									'marginSyncUnitsTablet' => false,
-									'marginSyncUnitsMobile' => false,
-									'hasMarginControl'     => true,
-									'hasAlignmentControls' => true,
-									'hasStackedControl'    => true,
-									'backgroundType'       => 'image',
-									'backgroundPosition'   => 'center center',
-									'backgroundRepeat'     => 'no-repeat',
-									'backgroundOverlay'    => 0,
-									'hasParallax'          => false,
-									'videoMuted'           => true,
-									'videoLoop'            => true,
-									'openPopover'          => false,
-									'width'                => '100',
-									'className'            => 'coblocks-column-82315629936',
-								),
-								array(
-									array(
-										'core/heading',
-										array(
-											'content'     => __( 'Curating &amp; designing furnishing for your stunning home.', 'go' ),
-											'level'       => 2,
-											'placeholder' => __( 'Add heading...', 'go' ),
-										),
-										array(),
-									),
-									array(
-										'core/button',
-										array(
-											'text' => __( 'Shop Now', 'go' ),
-										),
-										array(),
-									),
-								),
-							),
-						),
-					),
-				),
-			),
-			array(
-				'coblocks/media-card',
-				array(
-					'backgroundType'         => 'image',
-					'backgroundPosition'     => 'center center',
-					'backgroundRepeat'       => 'no-repeat',
-					'backgroundOverlay'      => 0,
-					'hasParallax'            => false,
-					'videoMuted'             => true,
-					'videoLoop'              => true,
-					'openPopover'            => false,
-					'paddingUnit'            => 'px',
-					'paddingSize'            => 'no',
-					'paddingSyncUnits'       => false,
-					'paddingSyncUnitsTablet' => true,
-					'paddingSyncUnitsMobile' => true,
-					'marginUnit'             => 'px',
-					'marginSize'             => 'no',
-					'marginSyncUnits'        => false,
-					'marginSyncUnitsTablet'  => false,
-					'marginSyncUnitsMobile'  => false,
-					'hasMarginControl'       => true,
-					'hasAlignmentControls'   => true,
-					'hasStackedControl'      => true,
-					'mediaPosition'          => 'left',
-					'mediaAlt'               => '',
-					'mediaWidth'             => 55,
-					'align'                  => 'wide',
-					'hasImgShadow'           => false,
-					'hasCardShadow'          => false,
-					'className'              => 'is-stacked-on-mobile coblocks-media-card-82315629723',
-				),
-				array(
-					array(
-						'coblocks/row',
-						array(
-							'paddingUnit'            => 'px',
-							'paddingSize'            => 'large',
-							'paddingSyncUnits'       => false,
-							'paddingSyncUnitsTablet' => true,
-							'paddingSyncUnitsMobile' => true,
-							'marginUnit'             => 'px',
-							'marginSize'             => 'no',
-							'marginSyncUnits'        => false,
-							'marginSyncUnitsTablet'  => false,
-							'marginSyncUnitsMobile'  => false,
-							'hasMarginControl'       => false,
-							'hasAlignmentControls'   => false,
-							'hasStackedControl'      => false,
-							'backgroundType'         => 'image',
-							'backgroundPosition'     => 'center center',
-							'backgroundRepeat'       => 'no-repeat',
-							'backgroundOverlay'      => 0,
-							'customBackgroundColor'  => '#FFFFFF',
-							'hasParallax'            => false,
-							'videoMuted'             => true,
-							'videoLoop'              => true,
-							'openPopover'            => false,
-							'columns'                => 1,
-							'layout'                 => '100',
-							'gutter'                 => 'medium',
-							'className'              => 'coblocks-row-82315629908',
-						),
-						array(
-							array(
-								'coblocks/column',
-								array(
-									'paddingUnit'          => 'px',
-									'paddingSize'          => 'no',
-									'paddingSyncUnits'     => false,
-									'paddingSyncUnitsTablet' => true,
-									'paddingSyncUnitsMobile' => true,
-									'marginUnit'           => 'px',
-									'marginSize'           => 'no',
-									'marginSyncUnits'      => false,
-									'marginSyncUnitsTablet' => false,
-									'marginSyncUnitsMobile' => false,
-									'hasMarginControl'     => true,
-									'hasAlignmentControls' => true,
-									'hasStackedControl'    => true,
-									'backgroundType'       => 'image',
-									'backgroundPosition'   => 'center center',
-									'backgroundRepeat'     => 'no-repeat',
-									'backgroundOverlay'    => 0,
-									'hasParallax'          => false,
-									'videoMuted'           => true,
-									'videoLoop'            => true,
-									'openPopover'          => false,
-									'width'                => '100',
-									'className'            => 'coblocks-column-82315629936',
-								),
-								array(
-									array(
-										'core/heading',
-										array(
-											'content'     => __( 'Shop our curated best sellers and top deals.', 'go' ),
-											'level'       => 2,
-											'placeholder' => __( 'Add heading...', 'go' ),
-										),
-										array(),
-									),
-									array(
-										'core/button',
-										array(
-											'text' => __( 'Shop Now', 'go' ),
-										),
-										array(),
-									),
-								),
-							),
-						),
-					),
-				),
-			),
-			array(
-				'core/quote',
-				array(
-					'value'     => '<p>“Stop and shop at Furnish to grab all the latest home furnishings” </p>',
-					'citation'  => 'Jenna S.',
-					'align'     => 'center',
-					'className' => 'is-style-large',
-				),
-				array(),
-			),
-			array(
-				'core/cover',
-				array(
-					'hasParallax'    => false,
-					'dimRatio'       => 50,
-					'overlayColor'   => 'primary',
-					'backgroundType' => 'image',
-					'minHeight'      => 528,
-					'align'          => 'full',
-				),
-				array(
-					array(
-						'core/heading',
-						array(
-							'content' => __( 'Grab our best sellers today', 'go' ),
-							'level'   => 3,
-						),
-						array(),
-					),
-					array(
-						'core/button',
-						array(
-							'text'      => __( 'Shop Best Sellers', 'go' ),
-							'textColor' => 'quaternary',
-							'align'     => 'center',
-							'className' => 'is-style-outline',
-						),
-						array(),
-					),
-				),
-			),
-		),
-	);
-
-	$layouts[] = array(
-		'category' => 'home',
-		'label'    => __( 'Homepage', 'go' ),
-		'blocks'   => array(
-			array(
-				'core/media-text',
-				array(
-					'align'             => 'wide',
-					'mediaAlt'          => '',
-					'mediaPosition'     => 'left',
-					'mediaWidth'        => 50,
-					'isStackedOnMobile' => true,
-					'className'         => 'has-media-on-the-right',
-				),
-				array(
-					array(
-						'core/heading',
-						array(
-							'content'   => __( 'Find your nook.', 'go' ),
-							'level'     => 1,
-							'textColor' => 'primary',
-						),
-						array(),
-					),
-					array(
-						'core/paragraph',
-						array(
-							'content' => __( 'Charming apartment rentals in historic neighborhoods.', 'go' ),
-							'dropCap' => false,
-						),
-						array(),
-					),
-					array(
-						'core/button',
-						array(
-							'text'      => __( 'Schedule a Tour', 'go' ),
-							'className' => 'is-style-outline',
-						),
-						array(),
-					),
-				),
-			),
-			array(
-				'core/heading',
-				array(
-					'align'   => 'center',
-					'content' => __( 'Only the Best Homes', 'go' ),
-					'level'   => 3,
-				),
-				array(),
-			),
-			array(
-				'coblocks/gallery-masonry',
-				array(
-					'images'                  => array(
-						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-2',
-							'caption' => array(),
-						),
-						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-3',
-							'caption' => array(),
-						),
-						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-4.png',
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-4',
-							'caption' => array(),
-						),
-						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-5.png',
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-5',
-							'caption' => array(),
-						),
-						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-6.png',
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-6',
-							'caption' => array(),
-						),
-						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-7.png',
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-7',
-							'caption' => array(),
-						),
-						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-8.png',
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-8',
-							'caption' => array(),
-						),
-					),
-					'linkTo'                  => 'none',
-					'rel'                     => '',
-					'align'                   => 'wide',
-					'gutter'                  => 15,
-					'gutterMobile'            => 15,
-					'radius'                  => 0,
-					'shadow'                  => 'none',
-					'filter'                  => 'none',
-					'captions'                => false,
-					'captionStyle'            => 'dark',
-					'primaryCaption'          => array(),
-					'backgroundRadius'        => 0,
-					'backgroundPadding'       => 0,
-					'backgroundPaddingMobile' => 0,
-					'lightbox'                => false,
-					'gridSize'                => 'lrg',
-				),
-				array(),
-			),
-			array(
-				'core/group',
-				array(
-					'backgroundColor' => 'tertiary',
-					'align'           => 'full',
-				),
-				array(
-					array(
-						'core/heading',
-						array(
-							'align'   => 'center',
-							'content' => __( 'Recently Rented Listings', 'go' ),
-							'level'   => 3,
-						),
-						array(),
-					),
-					array(
-						'core/spacer',
-						array(
-							'height' => 20,
-						),
-						array(),
-					),
-					array(
-						'coblocks/services',
-						array(
-							'columns'      => 3,
-							'gutter'       => 'medium',
-							'alignment'    => 'none',
-							'headingLevel' => 3,
-							'buttons'      => false,
-						),
-						array(
-							array(
-								'coblocks/service',
-								array(
-									'headingLevel' => 3,
-									'showCta'      => false,
-									'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-9.png',
-									'imageAlt'     => __( 'Image description', 'go' ),
-									'alignment'    => 'none',
-								),
-								array(
-									array(
-										'core/heading',
-										array(
-											'content'     => __( 'Historic Heights', 'go' ),
-											'level'       => 4,
-											'placeholder' => __( 'Write title...', 'go' ),
-										),
-										array(),
-									),
-									array(
-										'core/paragraph',
-										array(
-											'content' => __( 'Granite counter tops, new cabinets and appliances, and modern lights and fixtures. Two bedroom, one bath.', 'go' ),
-											'dropCap' => false,
-										),
-										array(),
-									),
-								),
-							),
-							array(
-								'coblocks/service',
-								array(
-									'headingLevel' => 3,
-									'showCta'      => false,
-									'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-10.png',
-									'imageAlt'     => __( 'Image description', 'go' ),
-									'alignment'    => 'none',
-								),
-								array(
-									array(
-										'core/heading',
-										array(
-											'content'     => __( 'The Legacy', 'go' ),
-											'level'       => 4,
-											'placeholder' => __( 'Write title...', 'go' ),
-										),
-										array(),
-									),
-									array(
-										'core/paragraph',
-										array(
-											'content' => __( 'One secure, gated garage space is included. Coin-op laundry onsite. Recent kitchenette renovation. One bedroom, one bath.', 'go' ),
-											'dropCap' => false,
-										),
-										array(),
-									),
-								),
-							),
-							array(
-								'coblocks/service',
-								array(
-									'headingLevel' => 3,
-									'showCta'      => false,
-									'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-11.png',
-									'imageAlt'     => __( 'Image description', 'go' ),
-									'alignment'    => 'none',
-								),
-								array(
-									array(
-										'core/heading',
-										array(
-											'content'     => __( 'The Cottage', 'go' ),
-											'level'       => 4,
-											'placeholder' => __( 'Write title...', 'go' ),
-										),
-										array(),
-									),
-									array(
-										'core/paragraph',
-										array(
-											'content' => __( 'Hardwood floors throughout, modern kitchen, gas heat, tons of closet space and recently remodeled bathroom and kitchen.', 'go' ),
-											'dropCap' => false,
-										),
-										array(),
-									),
-								),
-							),
-						),
-					),
-				),
-			),
-		),
-	);
-
-	$layouts[] = array(
-		'category' => 'home',
-		'label'    => __( 'Homepage', 'go' ),
-		'blocks'   => array(
-			array(
 				'core/image',
 				array(
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'linkDestination' => 'none',
@@ -1975,14 +1426,14 @@ function go_coblocks_home_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'home-image-2',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
-							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'home-image-3',
 							'caption' => '',
@@ -2273,7 +1724,7 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/image',
 				array(
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'linkDestination' => 'none',

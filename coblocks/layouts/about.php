@@ -49,20 +49,20 @@ function go_coblocks_about_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'about-image-1',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'about-image-2',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
-							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'about-image-3',
 							'caption' => '',
@@ -226,7 +226,7 @@ function go_coblocks_about_layouts( $layouts ) {
 			array(
 				'core/image',
 				array(
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-5.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-5.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'linkDestination' => 'none',

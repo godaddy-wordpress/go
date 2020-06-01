@@ -84,7 +84,7 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 				'core/image',
 				array(
 					'align'           => 'wide',
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'id'              => 3,
@@ -105,17 +105,17 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 				array(
 					'images'         => array(
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => '1',
-							'link'    => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'link'    => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => '2',
-							'link'    => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'link'    => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'caption' => array(),
 						),
 					),
@@ -136,7 +136,7 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 				'core/image',
 				array(
 					'align'           => 'wide',
-					'url'             => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+					'url'             => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'id'              => 3,
@@ -164,91 +164,91 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 				array(
 					'images'                  => array(
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-1',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-2',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-3',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-4.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-4.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-4',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-5.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-5.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-5',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-6.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-6.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-6',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-7.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-7.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-7',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-8.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-8.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-8',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-9.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-9.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-9',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-10.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-10.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-10',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-11.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-11.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-11',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-12.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-12.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-12',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-13.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-13.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-13',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-14.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-14.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-14',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-15.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-15.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-15',
 							'caption' => array(),
@@ -307,7 +307,7 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -338,7 +338,7 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -369,7 +369,7 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -414,7 +414,7 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-4.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-4.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -445,7 +445,7 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-5.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-5.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -476,7 +476,7 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-6.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-6.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -534,19 +534,19 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 				array(
 					'images'                  => array(
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-1',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-2',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-3',
 							'caption' => array(),
@@ -588,31 +588,31 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 				array(
 					'images'                  => array(
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-4.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-4.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-4',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-5.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-5.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-5',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-6.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-6.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-6',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-7.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-7.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-7',
 							'caption' => array(),
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-8.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-8.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'gallery-image-8',
 							'caption' => array(),

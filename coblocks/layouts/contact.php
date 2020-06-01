@@ -95,7 +95,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -125,7 +125,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-2.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -155,7 +155,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -299,15 +299,15 @@ function go_coblocks_contact_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
-							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-3.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-3',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
-							'fullUrl' => get_template_directory_uri() .  '/coblocks/assets/image-1.png',
+							'url'     => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-1',
 							'caption' => '',
