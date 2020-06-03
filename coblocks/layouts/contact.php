@@ -36,6 +36,13 @@ function go_coblocks_contact_layouts( $layouts ) {
 				array(),
 			),
 			array(
+				'core/spacer',
+				array(
+					'height' => 30,
+				),
+				array(),
+			),
+			array(
 				'coblocks/form',
 				array(
 					'subject' => null,
@@ -82,7 +89,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 				'coblocks/services',
 				array(
 					'columns'      => 3,
-					'gutter'       => 'medium',
+					'gutter'       => 'huge',
 					'alignment'    => 'center',
 					'headingLevel' => 3,
 					'buttons'      => false,
@@ -95,7 +102,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -104,7 +111,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 								'core/paragraph',
 								array(
 									'align'   => 'center',
-									'content' => '<em>' . __( '"I appreciate Everett\'s ability to compose visually stunning photos, brining my memories to live every time I look at them. I couldn\'t be more happier!"', 'go' ) . '</em>',
+									'content' => '<em>' . __( '"I appreciate Everett\'s ability to compose visually stunning photos, brining my memories to live every time I look at them."', 'go' ) . '</em>',
 									'dropCap' => false,
 								),
 								array(),
@@ -125,7 +132,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -134,7 +141,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 								'core/paragraph',
 								array(
 									'align'   => 'center',
-									'content' => '<em>' . __( '"Everett should be nominated for photographer of the year. I am so pleased with her photography at my wedding. She’s wonderful!"', 'go' ) . '</em>',
+									'content' => '<em>' . __( '"Everett should be nominated for photographer of the year. I am so pleased with her photography at my wedding."', 'go' ) . '</em>',
 									'dropCap' => false,
 								),
 								array(),
@@ -155,7 +162,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
+							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -164,7 +171,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 								'core/paragraph',
 								array(
 									'align'   => 'center',
-									'content' => '<em>' . __( '"Everett knew exactly how to pull the best of me out, and into a beautiful portrait. I\'m so glad I met Everett - she\'s my go-to photographer now!"', 'go' ) . '</em>',
+									'content' => '<em>' . __( '"Everett knew exactly how to pull the best of me out, and into a beautiful portrait. I\'m so glad I met Everett!"', 'go' ) . '</em>',
 									'dropCap' => false,
 								),
 								array(),
@@ -188,15 +195,6 @@ function go_coblocks_contact_layouts( $layouts ) {
 		'category' => 'contact',
 		'label'    => __( 'Contact', 'go' ),
 		'blocks'   => array(
-			array(
-				'core/heading',
-				array(
-					'align'   => 'center',
-					'content' => __( 'Contact Us', 'go' ),
-					'level'   => 1,
-				),
-				array(),
-			),
 			array(
 				'core/columns',
 				array(),
@@ -233,7 +231,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 								'core/heading',
 								array(
 									'align'   => 'center',
-									'content' => __( 'Gym Hours', 'go' ),
+									'content' => __( 'Hours', 'go' ),
 									'level'   => 5,
 								),
 								array(),
@@ -242,7 +240,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 								'core/paragraph',
 								array(
 									'align'   => 'center',
-									'content' => __( 'Mon-Fri => 8:00 - 21:00<br>Sat => 8:00 - 20:00<br>Sun => 10:00 - 14:00<br>– Holidays off –', 'go' ),
+									'content' => __( 'Mon-Fri => 8:00 - 21:00<br>Sat => 8:00 - 20:00<br>Sun => 10:00 - 14:00', 'go' ),
 									'dropCap' => false,
 								),
 								array(),
@@ -288,7 +286,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 					array(
 						'coblocks/field-submit-button',
 						array(
-							'submitButtonText'    => __( 'Contact Us', 'go' ),
+							'submitButtonText' => __( 'Contact Us', 'go' ),
 						),
 						array(),
 					),
@@ -299,15 +297,15 @@ function go_coblocks_contact_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
-							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
+							'url'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-3',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
-							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
+							'url'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-1',
 							'caption' => '',

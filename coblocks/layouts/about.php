@@ -49,22 +49,22 @@ function go_coblocks_about_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => get_theme_file_uri( '/coblocks/assets/image-1.png' ),
+							'url'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'about-image-1',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_theme_file_uri( '/coblocks/assets/image-2.png' ),
+							'url'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
 							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'about-image-2',
+							'id'      => 'about-image-1',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
-							'fullUrl' => get_theme_file_uri( '/coblocks/assets/image-3.png' ),
+							'url'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'fullUrl' => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
 							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'about-image-3',
+							'id'      => 'about-image-1',
 							'caption' => '',
 						),
 					),
@@ -73,7 +73,7 @@ function go_coblocks_about_layouts( $layouts ) {
 					'imageCrop' => true,
 					'linkTo'    => 'none',
 					'sizeslug'  => 'large',
-					'className' => 'columns-2',
+					'columns'   => 3,
 					'align'     => 'wide',
 				),
 				array(),
@@ -99,7 +99,7 @@ function go_coblocks_about_layouts( $layouts ) {
 							array(
 								'core/paragraph',
 								array(
-									'content' => __( 'I am so fascinated by photography and it’s capability to bring your imagination to amazing places. Early on, I fell in love with the idea of filming my own productions, so I set out to learn everything I could about storytelling through photos.', 'go' ),
+									'content' => __( 'I am so fascinated by photography and it’s capability to bring your imagination to amazing places. Early on, I fell in love with the idea of filming my own productions, so I set out to learn everything I could.', 'go' ),
 									'dropCap' => false,
 								),
 								array(),
@@ -140,18 +140,15 @@ function go_coblocks_about_layouts( $layouts ) {
 			array(
 				'core/cover',
 				array(
-					'hasParallax'    => false,
-					'dimRatio'       => 50,
 					'overlayColor'   => 'tertiary',
-					'backgroundType' => 'image',
-					'align'          => 'full',
+					'align'          => 'wide',
 				),
 				array(
 					array(
 						'core/heading',
 						array(
 							'align'     => 'center',
-							'content'   => __( 'Protecting your ideas', 'go' ),
+							'content'   => __( 'Protecting yourself', 'go' ),
 							'level'     => 1,
 							'textColor' => 'primary',
 						),
@@ -161,7 +158,7 @@ function go_coblocks_about_layouts( $layouts ) {
 						'core/paragraph',
 						array(
 							'align'     => 'center',
-							'content'   => __( 'Miller &amp; Cole is tremendously proud of the impact that we have made in helping our clients by providing quality legal services and exceptional customer service.&nbsp;&nbsp;', 'go' ),
+							'content'   => __( 'Miller &amp; Cole is tremendously proud of the impact that we have made in helping our clients by providing quality legal services and exceptional service.', 'go' ),
 							'dropCap'   => false,
 							'textColor' => 'primary',
 						),
@@ -182,7 +179,7 @@ function go_coblocks_about_layouts( $layouts ) {
 							array(
 								'core/heading',
 								array(
-									'align'   => 'center',
+									'align'   => 'left',
 									'content' => __( 'Quality Results', 'go' ),
 									'level'   => 3,
 								),
@@ -191,7 +188,7 @@ function go_coblocks_about_layouts( $layouts ) {
 							array(
 								'core/paragraph',
 								array(
-									'content' => __( 'Our goal is to create assets from our clients’ innovations through patent, trademark and copyright law.&nbsp; We take great pride in providing quality trademark legal services and exceptional customer service every single day. We\'re absolutely here for you.', 'go' ),
+									'content' => __( 'Our goal is to create assets from our clients’ innovations through patent, trademark and copyright law.&nbsp; We take great pride in providing quality trademark legal services and exceptional customer service every single day.', 'go' ),
 									'dropCap' => false,
 								),
 								array(),
@@ -205,7 +202,7 @@ function go_coblocks_about_layouts( $layouts ) {
 							array(
 								'core/heading',
 								array(
-									'align'   => 'center',
+									'align'   => 'left',
 									'content' => __( 'Experienced', 'go' ),
 									'level'   => 3,
 								),
@@ -226,7 +223,7 @@ function go_coblocks_about_layouts( $layouts ) {
 			array(
 				'core/image',
 				array(
-					'url'             => get_theme_file_uri( '/coblocks/assets/image-5.png' ),
+					'url'             => get_theme_file_uri( '/coblocks/assets/2x3.jpg' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'linkDestination' => 'none',
