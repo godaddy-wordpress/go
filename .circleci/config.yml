@@ -28,6 +28,27 @@ workflows:
           filters:
             branches:
               only: master
+
+      - visual-regression-chrome:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+      - visual-regression-firefox:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+
+      - visual-regression-update-snapshots-chrome:
+          filters:
+            branches:
+              only:
+                - actions/visual-regression-update-snapshots
+      - visual-regression-update-snapshots-firefox:
+          filters:
+            branches:
+              only:
+                - actions/visual-regression-update-snapshots
+
       - canary:
           requires:
             - php56-phpcs
@@ -45,6 +66,8 @@ workflows:
             - unit-tests
             - theme-check
             - a11y-tests
+            - visual-regression-chrome
+            - visual-regression-firefox
           filters:
             tags:
               only: /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*)?(\+[0-9-]+(\.[0-9]+)*)?/ # Run on semantic version tags only
@@ -360,6 +383,152 @@ jobs:
             git reset --hard
             git pull --rebase
             git push origin master --quiet
+
+  visual-regression-chrome:
+    docker:
+      - image: circleci/python:latest-node-browsers
+    parallelism: 10
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - restore_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+          paths:
+            - node_modules
+            - ~/.cache
+      - run:
+          name: "Install awscli"
+          command: sudo apt-get install awscli
+      - run:
+          name: "Download base snapshots"
+          command: |
+            if [ "$CIRCLE_BRANCH" == "master" ]; then
+              npm run snapshots:download-all
+            else
+              npm run snapshots:download
+            fi
+      - run:
+          name: "Run end to end tests (Cypress.io)"
+          command: |
+            if [ "$CIRCLE_BRANCH" == "master" ]; then
+              npm run test-vr-all -- --browser chrome --record --parallel --group vr-chrome
+            else
+              npm run test-vr -- --browser chrome --record --parallel --group vr-chrome
+            fi
+
+  visual-regression-firefox:
+    docker:
+      - image: circleci/python:latest-node-browsers
+    parallelism: 10
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - restore_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+          paths:
+            - node_modules
+            - ~/.cache
+      - run:
+          name: "Install awscli"
+          command: sudo apt-get install awscli
+      - run:
+          name: "Download base snapshots"
+          command: |
+            if [ "$CIRCLE_BRANCH" == "master" ]; then
+              npm run snapshots:download-all
+            else
+              npm run snapshots:download
+            fi
+      - run:
+          name: "Run end to end tests (Cypress.io)"
+          command: |
+            if [ "$CIRCLE_BRANCH" == "master" ]; then
+              npm run test-vr-all -- --browser firefox --record --parallel --group vr-firefox
+            else
+              npm run test-vr -- --browser firefox --record --parallel --group vr-firefox
+            fi
+
+  visual-regression-update-snapshots-chrome:
+    docker:
+      - image: circleci/python:latest-node-browsers
+    parallelism: 10
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - restore_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+          paths:
+            - node_modules
+            - ~/.cache
+      - run:
+          name: "Install awscli"
+          command: sudo apt-get install awscli
+      - run:
+          name: "Run end to end tests (Cypress.io)"
+          command: npm run test-vr-all -- --browser chrome --record --parallel --group vr-chrome
+      - run:
+          name: "Update base snapshots"
+          command: |
+            if [ ! -d .dev/tests/cypress/snapshots/visual-regression ] || [ -z "$(ls -A .dev/tests/cypress/snapshots/visual-regression)"]; then
+              echo "No snapshots to upload."
+              circleci-agent step halt
+            fi
+            npm run snapshots:upload-all
+
+  visual-regression-update-snapshots-firefox:
+    docker:
+      - image: circleci/python:latest-node-browsers
+    parallelism: 10
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - restore_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+          paths:
+            - node_modules
+            - ~/.cache
+      - run:
+          name: "Install awscli"
+          command: sudo apt-get install awscli
+      - run:
+          name: "Run end to end tests (Cypress.io)"
+          command: npm run test-vr-all -- --browser firefox --record --parallel --group vr-firefox
+      - run:
+          name: "Update base snapshots"
+          command: |
+            if [ ! -d .dev/tests/cypress/snapshots/visual-regression ] || [ -z "$(ls -A .dev/tests/cypress/snapshots/visual-regression)"]; then
+              echo "No snapshots to upload."
+              circleci-agent step halt
+            fi
+            npm run snapshots:upload-all
 
   canary:
     docker:
