@@ -288,7 +288,7 @@ function get_copyright_kses_html() {
  *
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
-function get_palette_color( $color, $format = 'RBG' ) {
+function get_palette_color( $color, $format = 'RGB' ) {
 	$default         = \Go\Core\get_default_color_scheme();
 	$color_scheme    = get_theme_mod( 'color_scheme', $default );
 	$override_colors = array(
@@ -322,8 +322,8 @@ function get_palette_color( $color, $format = 'RBG' ) {
 			return hex_to_hsl( $the_color );
 		}
 
-		if ( 'RBG' === $format ) {
-			return hex_to_rbg( $the_color );
+		if ( 'RGB' === $format ) {
+			return hex_to_rgb( $the_color );
 		}
 	}
 
@@ -338,7 +338,7 @@ function get_palette_color( $color, $format = 'RBG' ) {
  *
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
-function get_default_palette_color( $color, $format = 'RBG' ) {
+function get_default_palette_color( $color, $format = 'RGB' ) {
 	$default                 = \Go\Core\get_default_color_scheme();
 	$color_scheme            = get_theme_mod( 'color_scheme', $default );
 	$avaliable_color_schemes = get_available_color_schemes();
@@ -371,7 +371,7 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
  *
  * @return string
  */
-function hex_to_rbg( $color, $opacity = false ) {
+function hex_to_rgb( $color, $opacity = false ) {
 
 	if ( empty( $color ) ) {
 		return false;

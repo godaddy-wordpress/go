@@ -227,10 +227,10 @@ function theme_setup() {
 
 		add_theme_support( 'editor-color-palette', $color_palette );
 
-		$primary_color    = \Go\get_palette_color( 'primary', 'RBG' );
-		$secondary_color  = \Go\get_palette_color( 'secondary', 'RBG' );
-		$tertiary_color   = \Go\get_palette_color( 'tertiary', 'RBG' );
-		$background_color = \Go\get_palette_color( 'background', 'RBG' );
+		$primary_color    = \Go\get_palette_color( 'primary', 'RGB' );
+		$secondary_color  = \Go\get_palette_color( 'secondary', 'RGB' );
+		$tertiary_color   = \Go\get_palette_color( 'tertiary', 'RGB' );
+		$background_color = \Go\get_palette_color( 'background', 'RGB' );
 
 		add_theme_support(
 			'editor-gradient-presets',
