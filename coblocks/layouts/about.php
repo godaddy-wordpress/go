@@ -140,8 +140,8 @@ function go_coblocks_about_layouts( $layouts ) {
 			array(
 				'core/cover',
 				array(
-					'overlayColor'   => 'tertiary',
-					'align'          => 'wide',
+					'overlayColor' => 'tertiary',
+					'align'        => 'wide',
 				),
 				array(
 					array(

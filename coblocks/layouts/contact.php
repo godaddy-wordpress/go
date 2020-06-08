@@ -79,7 +79,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 					array(
 						'coblocks/field-submit-button',
 						array(
-							'submitButtonText'    => __( 'Contact Us', 'go' ),
+							'submitButtonText' => __( 'Contact Us', 'go' ),
 						),
 						array(),
 					),
