@@ -288,7 +288,7 @@ function get_copyright_kses_html() {
  *
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
-function get_palette_color( $color, $format = 'RBG' ) {
+function get_palette_color( $color, $format = 'RGB' ) {
 	$default         = \Go\Core\get_default_color_scheme();
 	$color_scheme    = get_theme_mod( 'color_scheme', $default );
 	$override_colors = array(
@@ -321,6 +321,10 @@ function get_palette_color( $color, $format = 'RBG' ) {
 		if ( 'HSL' === $format ) {
 			return hex_to_hsl( $the_color );
 		}
+
+		if ( 'RGB' === $format ) {
+			return hex_to_rgb( $the_color );
+		}
 	}
 
 	return $the_color;
@@ -334,7 +338,7 @@ function get_palette_color( $color, $format = 'RBG' ) {
  *
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
-function get_default_palette_color( $color, $format = 'RBG' ) {
+function get_default_palette_color( $color, $format = 'RGB' ) {
 	$default                 = \Go\Core\get_default_color_scheme();
 	$color_scheme            = get_theme_mod( 'color_scheme', $default );
 	$avaliable_color_schemes = get_available_color_schemes();
@@ -360,9 +364,59 @@ function get_default_palette_color( $color, $format = 'RBG' ) {
 }
 
 /**
+ * Convert a 3- or 6-digit hexadecimal color to an associative RGB array.
+ *
+ * @param string $color The color in hex format.
+ * @param bool   $opacity Whether to return the RGB color is opaque.
+ *
+ * @return string
+ */
+function hex_to_rgb( $color, $opacity = false ) {
+
+	if ( empty( $color ) ) {
+		return false;
+	}
+
+	if ( '#' === $color[0] ) {
+		$color = substr( $color, 1 );
+	}
+
+	if ( 6 === strlen( $color ) ) {
+		$hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
+	} elseif ( 3 === strlen( $color ) ) {
+		$hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
+	} else {
+		$default                 = \Go\Core\get_default_color_scheme();
+		$avaliable_color_schemes = get_available_color_schemes();
+		if ( isset( $avaliable_color_schemes[ $default ] ) && isset( $avaliable_color_schemes[ $default ]['primary'] ) ) {
+			$default = $avaliable_color_schemes[ $default ]['primary'];
+		}
+		return $default;
+	}
+
+	$rgb = array_map( 'hexdec', $hex );
+
+	if ( $opacity ) {
+		if ( abs( $opacity ) > 1 ) {
+			$opacity = 1.0;
+		}
+
+		$output = 'rgba(' . implode( ',', $rgb ) . ',' . $opacity . ')';
+
+	} else {
+
+		$output = 'rgb(' . implode( ',', $rgb ) . ')';
+
+	}
+
+	return esc_attr( $output );
+
+}
+
+/**
  * Converts a hex RGB color to HSL
  *
- * @param string $hex The RGB color in hex format.
+ * @param string $hex The HSL color in hex format.
  * @param bool   $string_output Whether to return the HSL color in CSS format.
  *
  * @return array

@@ -227,37 +227,32 @@ function theme_setup() {
 
 		add_theme_support( 'editor-color-palette', $color_palette );
 
-		$primary_color    = \Go\get_palette_color( 'primary', 'HSL' );
-		$secondary_color  = \Go\get_palette_color( 'secondary', 'HSL' );
-		$tertiary_color   = \Go\get_palette_color( 'tertiary', 'HSL' );
-		$background_color = \Go\get_palette_color( 'background', 'HSL' );
-
-		$primary_hsl    = 'hsl(' . $primary_color[0] . ', ' . $primary_color[1] . '%, ' . $primary_color[2] . '%)';
-		$secondary_hsl  = 'hsl(' . $secondary_color[0] . ', ' . $secondary_color[1] . '%, ' . $secondary_color[2] . '%)';
-		$tertiary_hsl   = 'hsl(' . $tertiary_color[0] . ', ' . $tertiary_color[1] . '%, ' . $tertiary_color[2] . '%)';
-		$background_hsl = 'hsl(' . $background_color[0] . ', ' . $background_color[1] . '%, ' . $background_color[2] . '%)';
+		$primary_color    = \Go\get_palette_color( 'primary', 'RGB' );
+		$secondary_color  = \Go\get_palette_color( 'secondary', 'RGB' );
+		$tertiary_color   = \Go\get_palette_color( 'tertiary', 'RGB' );
+		$background_color = \Go\get_palette_color( 'background', 'RGB' );
 
 		add_theme_support(
 			'editor-gradient-presets',
 			array(
 				array(
 					'name'     => __( 'Primary to Secondary', 'go' ),
-					'gradient' => 'linear-gradient(135deg, ' . esc_attr( $primary_hsl ) . ' 0%, ' . esc_attr( $secondary_hsl ) . ' 100%)',
+					'gradient' => 'linear-gradient(135deg, ' . esc_attr( $primary_color ) . ' 0%, ' . esc_attr( $secondary_color ) . ' 100%)',
 					'slug'     => 'primary-to-secondary',
 				),
 				array(
 					'name'     => __( 'Primary to Tertiary', 'go' ),
-					'gradient' => 'linear-gradient(135deg, ' . esc_attr( $primary_hsl ) . ' 0%, ' . esc_attr( $tertiary_hsl ) . ' 100%)',
+					'gradient' => 'linear-gradient(135deg, ' . esc_attr( $primary_color ) . ' 0%, ' . esc_attr( $tertiary_color ) . ' 100%)',
 					'slug'     => 'primary-to-tertiary',
 				),
 				array(
 					'name'     => __( 'Primary to Background', 'go' ),
-					'gradient' => 'linear-gradient(135deg, ' . esc_attr( $primary_hsl ) . ' 0%, ' . esc_attr( $background_hsl ) . ' 100%)',
+					'gradient' => 'linear-gradient(135deg, ' . esc_attr( $primary_color ) . ' 0%, ' . esc_attr( $background_color ) . ' 100%)',
 					'slug'     => 'primary-to-background',
 				),
 				array(
 					'name'     => __( 'Secondary to Tertiary', 'go' ),
-					'gradient' => 'linear-gradient(135deg, ' . esc_attr( $secondary_hsl ) . ' 0%, ' . esc_attr( $tertiary_hsl ) . ' 100%)',
+					'gradient' => 'linear-gradient(135deg, ' . esc_attr( $secondary_color ) . ' 0%, ' . esc_attr( $background_color ) . ' 100%)',
 					'slug'     => 'secondary-to-tertiary',
 				),
 			)

@@ -57,6 +57,48 @@ class Test_Title_Meta extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test hide_page_title has no effect when on non-pages.
+	 */
+	function test_hide_page_title_callback() {
+
+		$post_title_visible = $this->factory->post->create(
+			[
+				'post_title' => 'Show Post title',
+				'post_type'  => 'post'
+			]
+		);
+
+		update_post_meta( $post_title_visible, 'hide_page_title', 'enabled' );
+
+		$post_title_hidden = $this->factory->post->create(
+			[
+				'post_title' => 'Hide Post title',
+				'post_type'  => 'post'
+			]
+		);
+
+		update_post_meta( $post_title_hidden, 'hide_page_title', 'disabled' );
+
+		$post_title_invalid_status = $this->factory->post->create(
+			[
+				'post_title' => 'Invalid Status Hide Post title',
+				'post_type'  => 'post'
+			]
+		);
+
+		update_post_meta( $post_title_invalid_status, 'hide_page_title', 'invalid-type' );
+
+		$test_data = [
+			get_post_meta( $post_title_visible, 'hide_page_title', true ),
+			get_post_meta( $post_title_hidden, 'hide_page_title', true ),
+			get_post_meta( $post_title_invalid_status, 'hide_page_title', true ),
+		];
+
+		$this->assertEquals( $test_data, [ 'enabled', 'disabled', '' ] );
+
+	}
+
+	/**
 	 * Test hide_page_title does not remove the title value when on pages where _hide_page_title is false.
 	 * (visible page titles)
 	 */

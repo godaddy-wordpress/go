@@ -264,34 +264,34 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		$expected_primary_colors = [
 			'traditional' => [
-				'one'   => '#c76919',
-				'two'   => '#165153',
-				'three' => '#87200e',
-				'four'  => '#a88548',
+				'one'   => 'rgb(199,105,25)',
+				'two'   => 'rgb(22,81,83)',
+				'three' => 'rgb(135,32,14)',
+				'four'  => 'rgb(168,133,72)',
 			],
 			'modern'      => [
-				'one'   => '#000000',
-				'two'   => '#c2185b',
-				'three' => '#303f9f',
-				'four'  => '#00796b',
+				'one'   => 'rgb(0,0,0)',
+				'two'   => 'rgb(194,24,91)',
+				'three' => 'rgb(48,63,159)',
+				'four'  => 'rgb(0,121,107)',
 			],
 			'trendy'      => [
-				'one'   => '#000000',
-				'two'   => '#000000',
-				'three' => '#000000',
-				'four'  => '#000000',
+				'one'   => 'rgb(0,0,0)',
+				'two'   => 'rgb(0,0,0)',
+				'three' => 'rgb(0,0,0)',
+				'four'  => 'rgb(0,0,0)',
 			],
 			'welcoming'   => [
-				'one'   => '#165144',
-				'two'   => '#233a6b',
-				'three' => '#5b3f20',
-				'four'  => '#443a82',
+				'one'   => 'rgb(22,81,68)',
+				'two'   => 'rgb(35,58,107)',
+				'three' => 'rgb(91,63,32)',
+				'four'  => 'rgb(68,58,130)',
 			],
 			'playful'     => [
-				'one'   => '#3f46ae',
-				'two'   => '#e06b6d',
-				'three' => '#3c896d',
-				'four'  => '#117495',
+				'one'   => 'rgb(63,70,174)',
+				'two'   => 'rgb(224,107,109)',
+				'three' => 'rgb(60,137,109)',
+				'four'  => 'rgb(17,116,149)',
 			],
 		];
 
@@ -326,34 +326,34 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		$expected_secondary_colors = [
 			'traditional' => [
-				'one'   => '#122538',
-				'two'   => '#212121',
-				'three' => '#242611',
-				'four'  => '#05212d',
+				'one'   => 'rgb(18,37,56)',
+				'two'   => 'rgb(33,33,33)',
+				'three' => 'rgb(36,38,17)',
+				'four'  => 'rgb(5,33,45)',
 			],
 			'modern'      => [
-				'one'   => '#455a64',
-				'two'   => '#ec407a',
-				'three' => '#5c6bc0',
-				'four'  => '#26a69a',
+				'one'   => 'rgb(69,90,100)',
+				'two'   => 'rgb(236,64,122)',
+				'three' => 'rgb(92,107,192)',
+				'four'  => 'rgb(38,166,154)',
 			],
 			'trendy'      => [
-				'one'   => '#4d0859',
-				'two'   => '#003c68',
-				'three' => '#02493b',
-				'four'  => '#cc224f',
+				'one'   => 'rgb(77,8,89)',
+				'two'   => 'rgb(0,60,104)',
+				'three' => 'rgb(2,73,59)',
+				'four'  => 'rgb(204,34,79)',
 			],
 			'welcoming'   => [
-				'one'   => '#01332e',
-				'two'   => '#01133d',
-				'three' => '#3f2404',
-				'four'  => '#2b226b',
+				'one'   => 'rgb(1,51,46)',
+				'two'   => 'rgb(1,19,61)',
+				'three' => 'rgb(63,36,4)',
+				'four'  => 'rgb(43,34,107)',
 			],
 			'playful'     => [
-				'one'   => '#ecb43d',
-				'two'   => '#40896e',
-				'three' => '#6b0369',
-				'four'  => '#d691c1',
+				'one'   => 'rgb(236,180,61)',
+				'two'   => 'rgb(64,137,110)',
+				'three' => 'rgb(107,3,105)',
+				'four'  => 'rgb(214,145,193)',
 			],
 		];
 
@@ -388,34 +388,34 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		$expected_tertiary_colors = [
 			'traditional' => [
-				'one'   => '#f8f8f8',
-				'two'   => '#f3f1f0',
-				'three' => '#f9f2ef',
-				'four'  => '#f9f4ef',
+				'one'   => 'rgb(248,248,248)',
+				'two'   => 'rgb(243,241,240)',
+				'three' => 'rgb(249,242,239)',
+				'four'  => 'rgb(249,244,239)',
 			],
 			'modern'      => [
-				'one'   => '#eceff1',
-				'two'   => '#fce4ec',
-				'three' => '#e8eaf6',
-				'four'  => '#e0f2f1',
+				'one'   => 'rgb(236,239,241)',
+				'two'   => 'rgb(252,228,236)',
+				'three' => 'rgb(232,234,246)',
+				'four'  => 'rgb(224,242,241)',
 			],
 			'trendy'      => [
-				'one'   => '#ded9e2',
-				'two'   => '#c0c9d0',
-				'three' => '#b4c6af',
-				'four'  => '#e5dede',
+				'one'   => 'rgb(222,217,226)',
+				'two'   => 'rgb(192,201,208)',
+				'three' => 'rgb(180,198,175)',
+				'four'  => 'rgb(229,222,222)',
 			],
 			'welcoming'   => [
-				'one'   => '#c9c9c9',
-				'two'   => '#c9c9c9',
-				'three' => '#c9c9c9',
-				'four'  => '#c9c9c9',
+				'one'   => 'rgb(201,201,201)',
+				'two'   => 'rgb(201,201,201)',
+				'three' => 'rgb(201,201,201)',
+				'four'  => 'rgb(201,201,201)',
 			],
 			'playful'     => [
-				'one'   => '#f7fbff',
-				'two'   => '#fff7f7',
-				'three' => '#f2f9f7',
-				'four'  => '#f7feff',
+				'one'   => 'rgb(247,251,255)',
+				'two'   => 'rgb(255,247,247)',
+				'three' => 'rgb(242,249,247)',
+				'four'  => 'rgb(247,254,255)',
 			],
 		];
 
@@ -450,34 +450,34 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		$expected_background_colors = [
 			'traditional' => [
-				'one'   => '#ffffff',
-				'two'   => '#ffffff',
-				'three' => '#ffffff',
-				'four'  => '#ffffff',
+				'one'   => 'rgb(255,255,255)',
+				'two'   => 'rgb(255,255,255)',
+				'three' => 'rgb(255,255,255)',
+				'four'  => 'rgb(255,255,255)',
 			],
 			'modern'      => [
-				'one'   => '#ffffff',
-				'two'   => '#ffffff',
-				'three' => '#ffffff',
-				'four'  => '#ffffff',
+				'one'   => 'rgb(255,255,255)',
+				'two'   => 'rgb(255,255,255)',
+				'three' => 'rgb(255,255,255)',
+				'four'  => 'rgb(255,255,255)',
 			],
 			'trendy'      => [
-				'one'   => '#ffffff',
-				'two'   => '#ffffff',
-				'three' => '#ffffff',
-				'four'  => '#ffffff',
+				'one'   => 'rgb(255,255,255)',
+				'two'   => 'rgb(255,255,255)',
+				'three' => 'rgb(255,255,255)',
+				'four'  => 'rgb(255,255,255)',
 			],
 			'welcoming'   => [
-				'one'   => '#eeeeee',
-				'two'   => '#eeeeee',
-				'three' => '#eeeeee',
-				'four'  => '#eeeeee',
+				'one'   => 'rgb(238,238,238)',
+				'two'   => 'rgb(238,238,238)',
+				'three' => 'rgb(238,238,238)',
+				'four'  => 'rgb(238,238,238)',
 			],
 			'playful'     => [
-				'one'   => '#ffffff',
-				'two'   => '#ffffff',
-				'three' => '#ffffff',
-				'four'  => '#ffffff',
+				'one'   => 'rgb(255,255,255)',
+				'two'   => 'rgb(255,255,255)',
+				'three' => 'rgb(255,255,255)',
+				'four'  => 'rgb(255,255,255)',
 			],
 		];
 
@@ -524,10 +524,10 @@ class Test_Template_Tags extends WP_UnitTestCase {
 				'four'  => null,
 			],
 			'trendy'      => [
-				'one'   => '#000000',
-				'two'   => '#000000',
-				'three' => '#000000',
-				'four'  => '#000000',
+				'one'   => 'rgb(0,0,0)',
+				'two'   => 'rgb(0,0,0)',
+				'three' => 'rgb(0,0,0)',
+				'four'  => 'rgb(0,0,0)',
 			],
 			'welcoming'   => [
 				'one'   => null,
@@ -536,10 +536,10 @@ class Test_Template_Tags extends WP_UnitTestCase {
 				'four'  => null,
 			],
 			'playful'     => [
-				'one'   => '#3f46ae',
-				'two'   => '#eb616a',
-				'three' => '#3c896d',
-				'four'  => '#117495',
+				'one'   => 'rgb(63,70,174)',
+				'two'   => 'rgb(235,97,106)',
+				'three' => 'rgb(60,137,109)',
+				'four'  => 'rgb(17,116,149)',
 			],
 		];
 
@@ -592,16 +592,16 @@ class Test_Template_Tags extends WP_UnitTestCase {
 				'four'  => null,
 			],
 			'welcoming'   => [
-				'one'   => '#ffffff',
-				'two'   => '#ffffff',
-				'three' => '#ffffff',
-				'four'  => '#ffffff',
+				'one'   => 'rgb(255,255,255)',
+				'two'   => 'rgb(255,255,255)',
+				'three' => 'rgb(255,255,255)',
+				'four'  => 'rgb(255,255,255)',
 			],
 			'playful'     => [
-				'one'   => '#3f46ae',
-				'two'   => '#eb616a',
-				'three' => '#3c896d',
-				'four'  => '#117495',
+				'one'   => 'rgb(63,70,174)',
+				'two'   => 'rgb(235,97,106)',
+				'three' => 'rgb(60,137,109)',
+				'four'  => 'rgb(17,116,149)',
 			],
 		];
 
@@ -636,7 +636,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'header_background_color', '#B4D455' );
 
-		$this->assertEquals( '#B4D455', Go\get_palette_color( 'header_background' ) );
+		$this->assertEquals( 'rgb(180,212,85)', Go\get_palette_color( 'header_background' ) );
 
 	}
 
@@ -837,6 +837,60 @@ class Test_Template_Tags extends WP_UnitTestCase {
 			'335, 81%, 46%',
 			Go\hex_to_hsl( '#d61765', true )
 		);
+
+	}
+
+	/**
+	 * Test that passing a empty HEX value returns false.
+	 */
+	public function test_hex_to_rgb_empty() {
+
+		$this->assertEquals( false, Go\hex_to_rgb( '' ) );
+
+	}
+
+	/**
+	 * Test that passing a color of invali length returns the default primary color.
+	 */
+	public function test_hex_to_rgb_invalid_length() {
+
+		$this->assertEquals( '#c76919', Go\hex_to_rgb( '#1234567' ) );
+
+	}
+
+	/**
+	 * Test that passing a HEX value of with six string length.
+	 */
+	public function test_hex_to_rgb_length_six() {
+
+		$this->assertEquals( 'rgb(199,105,25)', Go\hex_to_rgb( '#c76919' ) );
+
+	}
+
+	/**
+	 * Test that passing a HEX value of with three string length.
+	 */
+	public function test_hex_to_rgb_length_three() {
+
+		$this->assertEquals( 'rgb(204,119,102)', Go\hex_to_rgb( '#c76' ) );
+
+	}
+
+	/**
+	 * Test that passing a HEX value of with three string length.
+	 */
+	public function test_hex_to_rgb_with_opacity() {
+
+		$this->assertEquals( 'rgba(199,105,25,0.8)', Go\hex_to_rgb( '#c76919', '0.8' ) );
+
+	}
+
+	/**
+	 * Test that passing a HEX value of with three string length.
+	 */
+	public function test_hex_to_rgb_with_opacity_greater_than_one() {
+
+		$this->assertEquals( 'rgba(199,105,25,1)', Go\hex_to_rgb( '#c76919', '2' ) );
 
 	}
 
