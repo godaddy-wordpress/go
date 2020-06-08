@@ -1,11 +1,9 @@
 <?php
 /**
- * Go CoBlocks Layouts.
+ * Go layouts.
  *
  * @package Go
  */
-
-add_filter( 'coblocks_layout_selector_layouts', 'go_coblocks_contact_layouts' );
 
 /**
  * Set up layouts for 'contact' category.
@@ -102,7 +100,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'imageUrl'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -132,7 +130,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'imageUrl'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -162,7 +160,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 						array(
 							'headingLevel' => 3,
 							'showCta'      => false,
-							'imageUrl'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'imageUrl'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
 							'imageAlt'     => __( 'Image description', 'go' ),
 							'alignment'    => 'center',
 						),
@@ -297,15 +295,15 @@ function go_coblocks_contact_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
-							'fullUrl' => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'fullUrl' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-3',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
-							'fullUrl' => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'fullUrl' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'image-1',
 							'caption' => '',
@@ -325,3 +323,5 @@ function go_coblocks_contact_layouts( $layouts ) {
 
 	return $layouts;
 };
+
+add_filter( 'coblocks_layout_selector_layouts', 'go_coblocks_contact_layouts' );

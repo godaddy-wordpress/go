@@ -1,11 +1,9 @@
 <?php
 /**
- * Go CoBlocks Layouts.
+ * Go layouts.
  *
  * @package Go
  */
-
-add_filter( 'coblocks_layout_selector_layouts', 'go_coblocks_about_layouts' );
 
 /**
  * Set up layouts for 'about' category.
@@ -49,20 +47,20 @@ function go_coblocks_about_layouts( $layouts ) {
 				array(
 					'images'    => array(
 						array(
-							'url'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'about-image-1',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'about-image-1',
 							'caption' => '',
 						),
 						array(
-							'url'     => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
-							'fullUrl' => get_theme_file_uri( '/coblocks/assets/1x1.jpg' ),
+							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'fullUrl' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
 							'alt'     => __( 'Image description', 'go' ),
 							'id'      => 'about-image-1',
 							'caption' => '',
@@ -223,7 +221,7 @@ function go_coblocks_about_layouts( $layouts ) {
 			array(
 				'core/image',
 				array(
-					'url'             => get_theme_file_uri( '/coblocks/assets/2x3.jpg' ),
+					'url'             => get_theme_file_uri( '/partials/layouts/images/2x3.jpg' ),
 					'alt'             => __( 'Image description', 'go' ),
 					'caption'         => '',
 					'linkDestination' => 'none',
@@ -317,3 +315,5 @@ function go_coblocks_about_layouts( $layouts ) {
 
 	return $layouts;
 };
+
+add_filter( 'coblocks_layout_selector_layouts', 'go_coblocks_about_layouts' );

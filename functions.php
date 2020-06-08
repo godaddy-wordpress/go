@@ -51,9 +51,9 @@ require_once get_parent_theme_file_path( 'includes/woocommerce.php' );
 require_once get_parent_theme_file_path( 'includes/title-meta.php' );
 
 /**
- * Go CoBlocks Layouts.
+ * Load CoBlocks layouts.
  */
-foreach ( glob( get_parent_theme_file_path( 'coblocks/layouts/*.php' ) ) as $filename ) {
+foreach ( glob( get_parent_theme_file_path( 'partials/layouts/*.php' ) ) as $filename ) {
 	require_once $filename;
 }
 
