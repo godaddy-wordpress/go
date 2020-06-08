@@ -386,6 +386,11 @@ function hex_to_rgb( $color, $opacity = false ) {
 	} elseif ( 3 === strlen( $color ) ) {
 		$hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
 	} else {
+		$default                 = \Go\Core\get_default_color_scheme();
+		$avaliable_color_schemes = get_available_color_schemes();
+		if ( isset( $avaliable_color_schemes[ $default ] ) && isset( $avaliable_color_schemes[ $default ]['primary'] ) ) {
+			$default = $avaliable_color_schemes[ $default ]['primary'];
+		}
 		return $default;
 	}
 

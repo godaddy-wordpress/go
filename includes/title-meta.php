@@ -24,19 +24,34 @@ function setup() {
 		'post',
 		'hide_page_title',
 		array(
-			'sanitize_callback' => function( $status ) {
-				$status = strtolower( trim( $status ) );
-				if ( ! in_array( $status, array( 'enabled', 'disabled' ), true ) ) {
-					$status = '';
-				}
-				return $status;
-			},
+			'sanitize_callback' => $n( 'hide_page_title_callback' ),
 			'type'              => 'string',
 			'description'       => __( 'Hide Page Title.', 'go' ),
 			'show_in_rest'      => true,
 			'single'            => true,
 		)
 	);
+
+}
+
+/**
+ * Hide page title meta callback
+ *
+ * @param  string $status Hide page title status (eg: enable, disabled).
+ *
+ * @return string Whether or not the page title should be enabled or not.
+ */
+function hide_page_title_callback( $status ) {
+
+	$status = strtolower( trim( $status ) );
+
+	if ( ! in_array( $status, array( 'enabled', 'disabled' ), true ) ) {
+
+		$status = '';
+
+	}
+
+	return $status;
 
 }
 

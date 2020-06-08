@@ -841,6 +841,60 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test that passing a empty HEX value returns false.
+	 */
+	public function test_hex_to_rgb_empty() {
+
+		$this->assertEquals( false, Go\hex_to_rgb( '' ) );
+
+	}
+
+	/**
+	 * Test that passing a color of invali length returns the default primary color.
+	 */
+	public function test_hex_to_rgb_invalid_length() {
+
+		$this->assertEquals( '#c76919', Go\hex_to_rgb( '#1234567' ) );
+
+	}
+
+	/**
+	 * Test that passing a HEX value of with six string length.
+	 */
+	public function test_hex_to_rgb_length_six() {
+
+		$this->assertEquals( 'rgb(199,105,25)', Go\hex_to_rgb( '#c76919' ) );
+
+	}
+
+	/**
+	 * Test that passing a HEX value of with three string length.
+	 */
+	public function test_hex_to_rgb_length_three() {
+
+		$this->assertEquals( 'rgb(204,119,102)', Go\hex_to_rgb( '#c76' ) );
+
+	}
+
+	/**
+	 * Test that passing a HEX value of with three string length.
+	 */
+	public function test_hex_to_rgb_with_opacity() {
+
+		$this->assertEquals( 'rgba(199,105,25,0.8)', Go\hex_to_rgb( '#c76919', '0.8' ) );
+
+	}
+
+	/**
+	 * Test that passing a HEX value of with three string length.
+	 */
+	public function test_hex_to_rgb_with_opacity_greater_than_one() {
+
+		$this->assertEquals( 'rgba(199,105,25,1)', Go\hex_to_rgb( '#c76919', '2' ) );
+
+	}
+
+	/**
 	 * Test that has_header_background returns null when no header_background is set in the color_scheme
 	 */
 	public function test_has_header_background_null() {
