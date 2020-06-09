@@ -186,6 +186,19 @@ class Test_Core extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the hooked read_more_tag.
+	 */
+	function testHookedReadMoreTag() {
+
+		$this->assertEquals(
+			10,
+			has_action( 'the_content_more_link', 'Go\Core\read_more_tag' ),
+			'the_content_more_link is not attached to Go\Core\read_more_tag. It might also have the wrong priority (validated priority: 10)'
+		);
+
+	}
+
+	/**
 	 * Test that development_environment doesn't include the necessary file when it doesn't exist.
 	 * Note: This file will not exist in the CI build
 	 */
@@ -1327,6 +1340,27 @@ class Test_Core extends WP_UnitTestCase {
 		$wp_query->found_posts = 0;
 
 		$this->assertEquals( [ 'title' => 'Nothing Found' ], Go\Core\filter_page_titles( [] ) );
+
+	}
+
+	/**
+	 * Test the read more tag returns as expected.
+	 */
+	function testReadMoreTag() {
+
+		$post_id = $this->factory->post->create(
+			[
+				'post_title' => 'Test Post',
+			]
+		);
+
+		global $wp_query;
+
+		$wp_query->post = get_post( $post_id );
+
+		$GLOBALS['post'] = $wp_query->post;
+
+		$this->assertEquals( '<div class="read-more-button-wrap"><a href="#"><span class="button">Read More</span> <span class="screen-reader-text">"Test Post"</span></a></div>', Go\Core\read_more_tag( '<a href="#">Read More</a>' ) );
 
 	}
 }
