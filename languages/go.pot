@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-06-08T17:42:11+00:00\n"
+"POT-Creation-Date: 2020-06-09T17:17:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -1101,6 +1101,400 @@ msgstr ""
 #: partials/footers/footer-3.php:51
 #: partials/footers/footer-4.php:53
 msgid "Tertiary Footer Menu"
+msgstr ""
+
+#: partials/layouts/about.php:16
+#: partials/layouts/about.php:136
+msgid "About"
+msgstr ""
+
+#: partials/layouts/about.php:22
+msgid "Hi, I’m Everett"
+msgstr ""
+
+#: partials/layouts/about.php:31
+msgid "A tenacious, loving and energetic photographer who enjoys grabbing her camera and running out to take some photos."
+msgstr ""
+
+#: partials/layouts/about.php:40
+msgid "Work With Me"
+msgstr ""
+
+#: partials/layouts/about.php:51
+#: partials/layouts/about.php:57
+#: partials/layouts/about.php:64
+#: partials/layouts/about.php:225
+#: partials/layouts/contact.php:104
+#: partials/layouts/contact.php:134
+#: partials/layouts/contact.php:164
+#: partials/layouts/contact.php:300
+#: partials/layouts/contact.php:307
+#: partials/layouts/home.php:50
+#: partials/layouts/home.php:140
+#: partials/layouts/home.php:176
+#: partials/layouts/home.php:220
+#: partials/layouts/home.php:269
+#: partials/layouts/home.php:274
+#: partials/layouts/home.php:381
+#: partials/layouts/home.php:407
+#: partials/layouts/home.php:519
+#: partials/layouts/home.php:549
+#: partials/layouts/home.php:580
+#: partials/layouts/home.php:769
+#: partials/layouts/home.php:775
+#: partials/layouts/home.php:781
+#: partials/layouts/home.php:787
+#: partials/layouts/home.php:793
+#: partials/layouts/home.php:811
+#: partials/layouts/home.php:825
+#: partials/layouts/home.php:831
+#: partials/layouts/home.php:890
+#: partials/layouts/home.php:905
+#: partials/layouts/home.php:910
+#: partials/layouts/home.php:1208
+#: partials/layouts/portfolio.php:79
+#: partials/layouts/portfolio.php:100
+#: partials/layouts/portfolio.php:105
+#: partials/layouts/portfolio.php:127
+#: partials/layouts/portfolio.php:155
+#: partials/layouts/portfolio.php:160
+#: partials/layouts/portfolio.php:165
+#: partials/layouts/portfolio.php:170
+#: partials/layouts/portfolio.php:175
+#: partials/layouts/portfolio.php:180
+#: partials/layouts/portfolio.php:185
+#: partials/layouts/portfolio.php:190
+#: partials/layouts/portfolio.php:195
+#: partials/layouts/portfolio.php:200
+#: partials/layouts/portfolio.php:205
+#: partials/layouts/portfolio.php:210
+#: partials/layouts/portfolio.php:215
+#: partials/layouts/portfolio.php:220
+#: partials/layouts/portfolio.php:225
+msgid "Image description"
+msgstr ""
+
+#: partials/layouts/about.php:92
+msgid "Early on"
+msgstr ""
+
+#: partials/layouts/about.php:100
+msgid "I am so fascinated by photography and it’s capability to bring your imagination to amazing places. Early on, I fell in love with the idea of filming my own productions, so I set out to learn everything I could."
+msgstr ""
+
+#: partials/layouts/about.php:114
+msgid "Current"
+msgstr ""
+
+#: partials/layouts/about.php:122
+msgid "I have been teaching myself filmmaking for the past four and a half years and I’m still learning every day. I am building my business as a freelance filmmaker, as well as working on my own photo shoots."
+msgstr ""
+
+#: partials/layouts/about.php:149
+msgid "Protecting yourself"
+msgstr ""
+
+#: partials/layouts/about.php:159
+msgid "Miller &amp; Cole is tremendously proud of the impact that we have made in helping our clients by providing quality legal services and exceptional service."
+msgstr ""
+
+#: partials/layouts/about.php:181
+msgid "Quality Results"
+msgstr ""
+
+#: partials/layouts/about.php:189
+msgid "Our goal is to create assets from our clients’ innovations through patent, trademark and copyright law.&nbsp; We take great pride in providing quality trademark legal services and exceptional customer service every single day."
+msgstr ""
+
+#: partials/layouts/about.php:204
+msgid "Experienced"
+msgstr ""
+
+#: partials/layouts/about.php:212
+msgid "The attorneys at Miller &amp; Cole work as a team to exceed each of our clients’ expectations. We have 30+ years of high-level experience helping businesses protecting the time, money and resources spent developing ideas and inventions."
+msgstr ""
+
+#: partials/layouts/about.php:247
+#: partials/layouts/contact.php:16
+#: partials/layouts/contact.php:194
+#: partials/layouts/contact.php:208
+#: partials/layouts/home.php:1194
+msgid "Contact"
+msgstr ""
+
+#: partials/layouts/about.php:256
+msgid "Office => (555) 555-5555<br>email@example.com"
+msgstr ""
+
+#: partials/layouts/about.php:271
+msgid "Location"
+msgstr ""
+
+#: partials/layouts/about.php:280
+msgid "123 Example Rd<br>Scottsdale, AZ 85260"
+msgstr ""
+
+#: partials/layouts/about.php:295
+msgid "Connect"
+msgstr ""
+
+#: partials/layouts/about.php:304
+msgid "<a href=\"https://twitter.com\">Twitter</a><br><a href=\"https://www.facebook.com\">Facebook</a><br>"
+msgstr ""
+
+#: partials/layouts/contact.php:22
+msgid "Let's get in touch"
+msgstr ""
+
+#: partials/layouts/contact.php:31
+msgid "Well hello there, wonderful, fabulous&nbsp;you!&nbsp;If you’d like to get in touch with me, please feel free to give me a call at (555) 555-5555, or send a message with the form down below. Either way, I'll be in touch shortly!"
+msgstr ""
+
+#: partials/layouts/contact.php:80
+#: partials/layouts/contact.php:287
+msgid "Contact Us"
+msgstr ""
+
+#: partials/layouts/contact.php:112
+msgid "\"I appreciate Everett's ability to compose visually stunning photos, brining my memories to live every time I look at them.\""
+msgstr ""
+
+#: partials/layouts/contact.php:121
+msgid "- Larina H."
+msgstr ""
+
+#: partials/layouts/contact.php:142
+msgid "\"Everett should be nominated for photographer of the year. I am so pleased with her photography at my wedding.\""
+msgstr ""
+
+#: partials/layouts/contact.php:151
+msgid "- Kam V."
+msgstr ""
+
+#: partials/layouts/contact.php:172
+msgid "\"Everett knew exactly how to pull the best of me out, and into a beautiful portrait. I'm so glad I met Everett!\""
+msgstr ""
+
+#: partials/layouts/contact.php:181
+msgid "- Jerri S."
+msgstr ""
+
+#: partials/layouts/contact.php:217
+msgid "Studio Gym<br>123 Example Rd, Scottsdale, AZ 85260<br>(555) 555-5555"
+msgstr ""
+
+#: partials/layouts/contact.php:232
+msgid "Hours"
+msgstr ""
+
+#: partials/layouts/contact.php:241
+msgid "Mon-Fri => 8:00 - 21:00<br>Sat => 8:00 - 20:00<br>Sun => 10:00 - 14:00"
+msgstr ""
+
+#: partials/layouts/home.php:16
+#: partials/layouts/home.php:213
+#: partials/layouts/home.php:401
+#: partials/layouts/home.php:727
+#: partials/layouts/home.php:884
+msgid "Homepage"
+msgstr ""
+
+#: partials/layouts/home.php:29
+msgid "Where the hustle slows, the rhythm is heard, and the beans are fantastic"
+msgstr ""
+
+#: partials/layouts/home.php:89
+msgid "Enjoy Live Music + the Best Coffee You've Ever Had"
+msgstr ""
+
+#: partials/layouts/home.php:102
+#: partials/layouts/portfolio.php:54
+msgid "Connecting audience + artist in our lush, speakeasy-style listening room. Only 50 seats available for this sought-after scene."
+msgstr ""
+
+#: partials/layouts/home.php:147
+msgid "A social house"
+msgstr ""
+
+#: partials/layouts/home.php:159
+msgid "With our guides' experience, we will not only get you to where the fish are - but we'll get you hooked on them too. Our crew is knowledgeable and friendly - ready to take you on the trip of your dreams."
+msgstr ""
+
+#: partials/layouts/home.php:183
+msgid "A listening room"
+msgstr ""
+
+#: partials/layouts/home.php:195
+msgid "Folks have fought some monster bluefin tuna on standup gear with our offshore fishing packager, which is an incredible challenge for sure! Stick to the shoreline and test your strength pulling in some biggies!"
+msgstr ""
+
+#: partials/layouts/home.php:239
+msgid "Our approach reflects the people we serve. We are diverse, yet the same."
+msgstr ""
+
+#: partials/layouts/home.php:252
+msgid "Learn More"
+msgstr ""
+
+#: partials/layouts/home.php:326
+msgid "When we set up shop with an espresso machine up front and a roaster in the back, we hoped to some day be a part of New York's rich tradition of service and culinary achievement. Everyday this aspiration drives us."
+msgstr ""
+
+#: partials/layouts/home.php:338
+msgid "The city's energy binds us together. It drives us to be the best."
+msgstr ""
+
+#: partials/layouts/home.php:350
+msgid "This fairly new coffee shop, conveniently located in downtown Scottsdale, is one of the best coffee shops I've ever been to, and trust me when I say, I've been to many. The owners and the staff will make you feel like an old friend or even family."
+msgstr ""
+
+#: partials/layouts/home.php:363
+msgid "Grab a cup"
+msgstr ""
+
+#: partials/layouts/home.php:419
+msgid "Bringing the finest culinary food from the heart of Asia directly to you"
+msgstr ""
+
+#: partials/layouts/home.php:428
+msgid "View our Menu"
+msgstr ""
+
+#: partials/layouts/home.php:466
+msgid "<strong>Sushi Nakazawa</strong>&nbsp;serves the&nbsp;<em>omakase</em>&nbsp;of&nbsp;<strong>Chef Daisuke Nakazawa</strong>. Within the twenty-course meal lies Chef Nakazawa’s passion for sushi. With ingredients sourced both domestically and internationally, the chef crafts a very special tasting menu within the style of Edomae sushi. Chef Nakazawa is a strong believer in the food he serves representing the waters he is surrounded by, so only the best and freshest find its way to your plate."
+msgstr ""
+
+#: partials/layouts/home.php:474
+msgid "The relaxed dining experience at Sushi Nakazawa is chic nonetheless. High back leather chairs at the sushi bar coddle you while each course is explained in detail, and every nuance is revealed. Whether an Edomae novice or self-proclaimed sushi foodie, you will leave with a feeling of euphoria."
+msgstr ""
+
+#: partials/layouts/home.php:527
+msgid "Authentic"
+msgstr ""
+
+#: partials/layouts/home.php:536
+msgid "The relaxed dining experience at Bento is chic and airy. High back chairs at the sushi bar coddle you for each course."
+msgstr ""
+
+#: partials/layouts/home.php:557
+msgid "Historical"
+msgstr ""
+
+#: partials/layouts/home.php:559
+#: partials/layouts/home.php:590
+msgid "Write title..."
+msgstr ""
+
+#: partials/layouts/home.php:567
+msgid "Housed in the original Yami House, the history behind Bento is amazing. Learn more as you dine in our historical dining room."
+msgstr ""
+
+#: partials/layouts/home.php:588
+msgid "Best-rated"
+msgstr ""
+
+#: partials/layouts/home.php:598
+msgid "Bento is one of the best-rated restaurants in the region. With glamourous food and delicious drinks - you won't want to miss out!"
+msgstr ""
+
+#: partials/layouts/home.php:658
+msgid "Bento, Steak &amp; Sushi"
+msgstr ""
+
+#: partials/layouts/home.php:667
+msgid "123 Example Rd"
+msgstr ""
+
+#: partials/layouts/home.php:676
+msgid "Scottsdale, AZ 85260"
+msgstr ""
+
+#: partials/layouts/home.php:684
+msgid "Reservations"
+msgstr ""
+
+#: partials/layouts/home.php:739
+msgid "Hello! We're a"
+msgstr ""
+
+#: partials/layouts/home.php:748
+msgid "Branding &amp; Digital Design<br>Studio in Tokyo"
+msgstr ""
+
+#: partials/layouts/home.php:756
+#: partials/layouts/home.php:872
+msgid "Let's Talk"
+msgstr ""
+
+#: partials/layouts/home.php:855
+msgid "Need our help?"
+msgstr ""
+
+#: partials/layouts/home.php:864
+msgid "We Create Brands and Inspire Experiences"
+msgstr ""
+
+#: partials/layouts/home.php:929
+msgid "Welcome to Salt"
+msgstr ""
+
+#: partials/layouts/home.php:938
+msgid "For over forty years Salt has been known for its luxury lobster, steamed clams, barbecued chicken and homemade clam chowder. Stop on by and grab some of the most incredible seafood you'll ever taste."
+msgstr ""
+
+#: partials/layouts/home.php:954
+msgid "Food &amp; Hours"
+msgstr ""
+
+#: partials/layouts/home.php:1036
+msgid "Ocean to Plate"
+msgstr ""
+
+#: partials/layouts/home.php:1038
+#: partials/layouts/home.php:1108
+#: partials/layouts/home.php:1178
+msgid "Add feature title..."
+msgstr ""
+
+#: partials/layouts/home.php:1045
+msgid "Cajun &amp; creole seafood cuisine, never frozen - delish"
+msgstr ""
+
+#: partials/layouts/home.php:1053
+msgid "See Menu"
+msgstr ""
+
+#: partials/layouts/home.php:1106
+msgid "Dine with Us"
+msgstr ""
+
+#: partials/layouts/home.php:1115
+msgid "Mon - Thurs => 5pm - 11pm<br> Fri-Sat => 5pm - Midnight"
+msgstr ""
+
+#: partials/layouts/home.php:1123
+msgid "Dine in"
+msgstr ""
+
+#: partials/layouts/home.php:1176
+msgid "Catering"
+msgstr ""
+
+#: partials/layouts/home.php:1185
+msgid "We cater all events from family reunions, to weddings"
+msgstr ""
+
+#: partials/layouts/home.php:1187
+msgid "Add feature content"
+msgstr ""
+
+#: partials/layouts/portfolio.php:16
+#: partials/layouts/portfolio.php:147
+msgid "Portfolio"
+msgstr ""
+
+#: partials/layouts/portfolio.php:41
+msgid "Gallery"
 msgstr ""
 
 #: partials/pagination.php:21
