@@ -1,3 +1,14 @@
+1.3.0 / 2020-06-11
+==================
+
+### Bug Fixes
+* Fixed gradient control. [#528](https://github.com/godaddy-wordpress/go/pull/528)
+* Add wrapper and styles for `more` block. [#532](https://github.com/godaddy-wordpress/go/pull/532)
+* Add minor style fixes to add missing `aligncenter` class as well as two editor-facing style issues. [#533](https://github.com/godaddy-wordpress/go/pull/533)
+
+### Enhancements
+* Tweak svgs for improved accessibility. [#534](https://github.com/godaddy-wordpress/go/pull/534)
+
 1.2.10 / 2020-05-29
 ==================
 ### Enhancements
