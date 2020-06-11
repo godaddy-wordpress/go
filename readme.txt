@@ -109,9 +109,10 @@ List of bespoke icons:
 
 == Changelog ==
 
+### Bug Fixes
+* Fixed gradient control. [#528](https://github.com/godaddy-wordpress/go/pull/528)
+* Add wrapper and styles for `more` block. [#532](https://github.com/godaddy-wordpress/go/pull/532)
+* Add minor style fixes to add missing `aligncenter` class as well as two editor-facing style issues. [#533](https://github.com/godaddy-wordpress/go/pull/533)
+
 ### Enhancements
-* Updates to PHP syntax and PHPCS rulesets. [#518](https://github.com/godaddy-wordpress/go/pull/518)
-* Add `Tested up to` and `Requires PHP` to style.css headers. [#521](https://github.com/godaddy-wordpress/go/pull/521)
-* Use `display_name` for front of site post author names. [#522](https://github.com/godaddy-wordpress/go/pull/522)
-* Set the customizer color palettes to the currently selected color scheme. [#523](https://github.com/godaddy-wordpress/go/pull/523)
-* Minor block style design tweaks. [#526](https://github.com/godaddy-wordpress/go/pull/526)
+* Tweak svgs for improved accessibility. [#534](https://github.com/godaddy-wordpress/go/pull/534)
