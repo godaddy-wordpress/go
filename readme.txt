@@ -110,9 +110,5 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-* Fixed gradient control. [#528](https://github.com/godaddy-wordpress/go/pull/528)
-* Add wrapper and styles for `more` block. [#532](https://github.com/godaddy-wordpress/go/pull/532)
-* Add minor style fixes to add missing `aligncenter` class as well as two editor-facing style issues. [#533](https://github.com/godaddy-wordpress/go/pull/533)
-
-### Enhancements
-* Tweak svgs for improved accessibility. [#534](https://github.com/godaddy-wordpress/go/pull/534)
+* Add missing minified asset files. [#537](https://github.com/godaddy-wordpress/go/pull/537)
+* Exclude cypress.json file from the build. [#537](https://github.com/godaddy-wordpress/go/pull/537)
