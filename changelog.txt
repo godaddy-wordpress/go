@@ -1,3 +1,10 @@
+1.3.1 / 2020-06-12
+==================
+
+### Bug Fixes
+* Add missing minified asset files. [#537](https://github.com/godaddy-wordpress/go/pull/537)
+* Exclude cypress.json file from the build. [#537](https://github.com/godaddy-wordpress/go/pull/537)
+
 1.3.0 / 2020-06-11
 ==================
 
