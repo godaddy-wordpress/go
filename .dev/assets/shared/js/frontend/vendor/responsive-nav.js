@@ -220,10 +220,12 @@
 		}; // listener_close_open_menus()
 
 		function menu_sub_close( open_item ) {
-			open_item.classList.remove('submenu-is-open');
-			open_item.parentNode.classList.remove('child-has-focus');
+			if ( open_item && open_item.classList ) {
+				open_item.classList.remove('submenu-is-open');
+				open_item.parentNode.classList.remove('child-has-focus');
+			}
 
-			if ( open_item.parentNode.querySelector( '.sub-menu' ) ) {
+			if ( open_item && open_item.parentNode && open_item.parentNode.querySelector( '.sub-menu' ) ) {
 				open_item.parentNode.querySelector( '.sub-menu' ).setAttribute( 'aria-hidden', 'true' );
 			}
 		}; // menu_sub_close()
@@ -376,6 +378,29 @@
 				menu.classList.add( 'uses-click' );
 			} else if ( sub_menu_acion !== 'click' ) {
 				if ( get_screen_size( 'has-full-nav' ) ) {
+					menu_items_with_children[i].addEventListener( 'mouseover', listener_submenu_focus );
+					menu_items_with_children[i].addEventListener( 'mouseout', function() {
+						var closeParentMenu = setTimeout( function() {
+							var open_menus = menu.querySelectorAll('.submenu-is-open');
+							var open_menus_count = open_menus.length;
+							var opn;
+
+							// We were getting some errors, so let's add in a checkpoint
+							if ( open_menus_count ) {
+
+								// Loop through all the open menus and close them
+								for ( opn = 0; opn < open_menus.length; opn = opn + 1 ) {
+
+									var open_menus = menu.querySelectorAll('.submenu-is-open');
+
+									menu_sub_close( open_menus[opn] );
+
+								} // for
+
+							}
+
+						}, 200 );
+					} );
 					menu_items_with_children[i].addEventListener( 'focusin', listener_submenu_focus );
 				} // if
 			} // if

@@ -10,7 +10,7 @@ const init = () => {
 			target: '#header__navigation',
 			toggle: '#nav-toggle',
 			// eslint-disable-next-line
-			sub_menu_open: 'click'
+			sub_menu_open: goFrontend.openMenuOnHover ? 'hover' : 'click'
 		} );
 	}
 
