@@ -15,3 +15,4 @@ languages/*.json
 languages/*.po
 languages/*.pot
 vendor/
+cypress.json
