@@ -14,3 +14,7 @@
 		padding-top: 0;
 	}
 }
+
+.has-link-color a:hover {
+	color: var(--go--color--text) !important;
+}
