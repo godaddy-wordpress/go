@@ -110,5 +110,4 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-* Add missing minified asset files. [#537](https://github.com/godaddy-wordpress/go/pull/537)
-* Exclude cypress.json file from the build. [#537](https://github.com/godaddy-wordpress/go/pull/537)
+* Fix WooCommerce checkout radio buttons. [#540](https://github.com/godaddy-wordpress/go/pull/540)

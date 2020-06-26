@@ -1,3 +1,9 @@
+1.3.2 / 2020-06-26
+==================
+
+### Bug Fixes
+* Fix WooCommerce checkout radio buttons. [#540](https://github.com/godaddy-wordpress/go/pull/540)
+
 1.3.1 / 2020-06-12
 ==================
 
