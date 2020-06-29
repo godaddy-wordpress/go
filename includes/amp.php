@@ -98,11 +98,11 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 		esc_attr(
 			sprintf(
 				"$expanded_state_id ? %s : %s",
-				wp_json_encode( __( 'collapse child menu', 'gd-system-plugin' ) ),
-				wp_json_encode( __( 'expand child menu', 'gd-system-plugin' ) )
+				wp_json_encode( __( 'collapse child menu', 'go' ) ),
+				wp_json_encode( __( 'expand child menu', 'go' ) )
 			)
 		),
-		esc_html( $expanded ? __( 'collapse child menu', 'gd-system-plugin' ) : __( 'expand child menu', 'gd-system-plugin' ) )
+		esc_html( $expanded ? __( 'collapse child menu', 'go' ) : __( 'expand child menu', 'go' ) )
 	);
 
 	return $dropdown_button . $item_output;
