@@ -15,39 +15,43 @@
 	}
 }
 
-.has-primary-color {
-	color: var(--go--color--primary);
-}
+:root {
 
-.has-secondary-background-color {
-	background-color: var(--go--color--secondary);
-}
+	& .has-primary-color {
+		color: var(--go--color--primary);
+	}
 
-.has-secondary-color {
-	color: var(--go--color--secondary);
-}
+	& .has-secondary-background-color {
+		background-color: var(--go--color--secondary);
+	}
 
-.has-tertiary-background-color {
-	background-color: var(--go--color--tertiary);
+	& .has-secondary-color {
+		color: var(--go--color--secondary);
+	}
 
-	&,
-	& a:not(.wp-block-button__link) {
-		color: var(--go-heading--color--text);
+	& .has-tertiary-background-color {
+		background-color: var(--go--color--tertiary);
+
+		&,
+		& a:not(.wp-block-button__link) {
+			color: var(--go-heading--color--text);
+		}
+	}
+
+	& .has-tertiary-color {
+		color: var(--go--color--tertiary);
+	}
+
+	& .has-quaternary-background-color {
+		background-color: var(--go--color--white);
+	}
+
+	& .has-quaternary-color {
+		color: var(--go--color--white);
+
+		&.wp-block-button__link {
+			color: var(--go--color--white) !important;
+		}
 	}
 }
 
-.has-tertiary-color {
-	color: var(--go--color--tertiary);
-}
-
-.has-quaternary-background-color {
-	background-color: var(--go--color--white);
-}
-
-.has-quaternary-color {
-	color: var(--go--color--white);
-
-	&.wp-block-button__link {
-		color: var(--go--color--white) !important;
-	}
-}
