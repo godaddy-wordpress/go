@@ -1,53 +1,57 @@
 /*! Color Utility Classes */
-.has-primary-background-color {
-	background-color: var(--go--color--primary);
+:root {
 
-	&,
-	& label,
-	& h1:not([class*="color"]),
-	& h2:not([class*="color"]),
-	& h3:not([class*="color"]),
-	& h4:not([class*="color"]),
-	& h5:not([class*="color"]),
-	& h6:not([class*="color"]),
-	& a:not(.wp-block-button__link) {
+	& .has-primary-background-color {
+		background-color: var(--go--color--primary);
+
+		&,
+		& label,
+		& h1:not([class*="color"]),
+		& h2:not([class*="color"]),
+		& h3:not([class*="color"]),
+		& h4:not([class*="color"]),
+		& h5:not([class*="color"]),
+		& h6:not([class*="color"]),
+		& a:not(.wp-block-button__link) {
+			color: var(--go--color--white);
+		}
+	}
+
+	& .has-primary-color {
+		color: var(--go--color--primary);
+	}
+
+	& .has-secondary-background-color {
+		background-color: var(--go--color--secondary);
+	}
+
+	& .has-secondary-color {
+		color: var(--go--color--secondary);
+	}
+
+	& .has-tertiary-background-color {
+		background-color: var(--go--color--tertiary);
+
+		&,
+		& a:not(.wp-block-button__link) {
+			color: var(--go-heading--color--text);
+		}
+	}
+
+	& .has-tertiary-color {
+		color: var(--go--color--tertiary);
+	}
+
+	& .has-quaternary-background-color {
+		background-color: var(--go--color--white);
+	}
+
+	& .has-quaternary-color {
 		color: var(--go--color--white);
+
+		&.wp-block-button__link {
+			color: var(--go--color--white) !important;
+		}
 	}
 }
 
-.has-primary-color {
-	color: var(--go--color--primary);
-}
-
-.has-secondary-background-color {
-	background-color: var(--go--color--secondary);
-}
-
-.has-secondary-color {
-	color: var(--go--color--secondary);
-}
-
-.has-tertiary-background-color {
-	background-color: var(--go--color--tertiary);
-
-	&,
-	& a:not(.wp-block-button__link) {
-		color: var(--go-heading--color--text);
-	}
-}
-
-.has-tertiary-color {
-	color: var(--go--color--tertiary);
-}
-
-.has-quaternary-background-color {
-	background-color: var(--go--color--white);
-}
-
-.has-quaternary-color {
-	color: var(--go--color--white);
-
-	&.wp-block-button__link {
-		color: var(--go--color--white) !important;
-	}
-}
