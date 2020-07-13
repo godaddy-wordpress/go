@@ -94,8 +94,7 @@ h2 + .wc-block-grid {
 		}
 	}
 
-	&.has-1-columns li.wc-block-grid__product {
-		margin: 0 auto;
+	&.has-1-columns li.wc-block-grid__product .wc-block-grid__product-image img {
 		max-width: 300px;
 	}
 
