@@ -13,7 +13,8 @@
 
 /*! Post Meta */
 .post__meta--wrapper {
-	margin-top: 2rem;
+	margin: 0 auto;
+	max-width: var(--go--max-width);
 }
 
 .post__meta {
