@@ -1,0 +1,27 @@
+/* Editor CoBlocks Blocks */
+.wp-block-coblocks-gallery-stacked {
+
+	& .coblocks-gallery.alignfull {
+		margin-left: 0;
+		padding-left: 0;
+	}
+}
+
+.wp-block-coblocks-gallery-collage {
+
+	& ul {
+		margin-left: 0;
+		padding-left: 0;
+
+		& li {
+			list-style: none;
+		}
+	}
+}
+
+.wp-block-coblocks-gallery-offset {
+
+	& .coblocks-gallery {
+		padding-left: 0;
+	}
+}
