@@ -290,3 +290,13 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 		font-size: var(--go-separator--size, 2rem);
 	}
 }
+
+/*! Block Editor Insert Panel Fix */
+.block-editor-inserter__panel-content {
+
+	& .wp-block[data-align="full"],
+	& .wp-block[data-align="wide"] {
+		margin-bottom: 0 !important;
+		margin-top: 0 !important;
+	}
+}
