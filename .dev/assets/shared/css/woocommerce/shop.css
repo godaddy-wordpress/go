@@ -93,7 +93,7 @@
 			font-weight: var(--go-heading--font-weight);
 			letter-spacing: var(--go-heading--letter-spacing, normal);
 			line-height: var(--go-heading--line-height);
-			margin-bottom: 0.5rem;
+			margin-bottom: 2rem;
 
 			@media (--large) {
 				font-size: var(--go--type-scale-3);

@@ -291,6 +291,32 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 	}
 }
 
+/*! WooCommerce products */
+.wc-block-grid__products {
+	padding-left: 0;
+}
+
+.wc-block-grid__products .wc-block-grid__product-image img {
+	width: auto;
+}
+
+.wc-block-grid__products .wc-block-grid__product-title,
+.wc-block-grid__products .woocommerce-loop-product__title {
+	color: var(--go-heading--color--text);
+	font-family: var(--go-heading--font-family);
+	font-size: var(--go--type-scale-2);
+	font-weight: var(--go-heading--font-weight);
+	letter-spacing: var(--go-heading--letter-spacing, normal);
+	line-height: var(--go-heading--line-height);
+	margin-bottom: 2rem;
+	text-decoration: none !important;
+
+	@media (--large) {
+		font-size: var(--go--type-scale-3);
+	}
+
+}
+
 /*! Block Editor Insert Panel Fix */
 .block-editor-inserter__panel-content {
 

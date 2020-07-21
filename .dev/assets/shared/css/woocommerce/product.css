@@ -50,7 +50,7 @@
 
 .woocommerce-page ul.wc-block-grid__products li.wc-block-grid__product .wc-block-grid__product-link > *:last-child,
 .woocommerce div.product .product_title {
-	margin-bottom: 0.5rem;
+	margin-bottom: 2rem;
 }
 
 .woocommerce-product-details__short-description {
