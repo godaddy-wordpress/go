@@ -42,6 +42,10 @@ h2 + .wc-block-grid {
 	margin-top: 3rem;
 }
 
+.wc-block-grid__products .wc-block-grid__product-image img {
+	width: auto;
+}
+
 .wc-block-grid {
 
 	& .wc-block-grid__product-rating {
