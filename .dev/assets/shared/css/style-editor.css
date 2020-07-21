@@ -314,4 +314,15 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 	@media (--large) {
 		font-size: var(--go--type-scale-3);
 	}
+
+}
+
+/*! Block Editor Insert Panel Fix */
+.block-editor-inserter__panel-content {
+
+	& .wp-block[data-align="full"],
+	& .wp-block[data-align="wide"] {
+		margin-bottom: 0 !important;
+		margin-top: 0 !important;
+	}
 }

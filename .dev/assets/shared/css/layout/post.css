@@ -13,7 +13,8 @@
 
 /*! Post Meta */
 .post__meta--wrapper {
-	margin-top: 2rem;
+	margin: 2rem auto 0;
+	max-width: var(--go--max-width);
 }
 
 .post__meta {
@@ -86,7 +87,6 @@
 
 .post__meta--single-bottom {
 	margin-bottom: var(--go--spacing--vertical--lg);
-	margin-top: 0;
 
 	& .post-tags {
 		margin-bottom: 0;
