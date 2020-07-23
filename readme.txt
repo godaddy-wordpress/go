@@ -110,4 +110,8 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-* Fix WooCommerce checkout radio buttons. [#540](https://github.com/godaddy-wordpress/go/pull/540)
+- Removed rogue `gd-system-plugin` text domain and replaced it with the proper `go` text domain. [#549](https://github.com/godaddy-wordpress/go/pull/549)
+- Apply :root to better prevent Gutenberg overriding theme colors. [#550](https://github.com/godaddy-wordpress/go/pull/550)
+- Fix WooCommerce single product grid. [#552](https://github.com/godaddy-wordpress/go/pull/552)
+- Update post meta tags wrapper styles. [#553](https://github.com/godaddy-wordpress/go/pull/553)
+- Fix block editor inserter panel pattern styles. [#556](https://github.com/godaddy-wordpress/go/pull/556)
