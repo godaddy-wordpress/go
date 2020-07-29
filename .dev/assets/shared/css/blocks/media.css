@@ -6,7 +6,7 @@
 		grid-template-columns: 50% auto !important;
 	}
 
-	&.has-media-on-the-right {
+	&.has-media-on-the-right:not(.is-style-card) {
 
 		& .wp-block-media-text__content {
 			padding-left: 0;
@@ -16,6 +16,10 @@
 	& .wp-block-media-text__content {
 		@media (max-width: 600px) {
 			padding-right: 0;
+		}
+
+		& > *:first-child {
+			margin-top: 0;
 		}
 	}
 
@@ -42,6 +46,13 @@
 				padding: 0;
 			}
 		}
+	}
+}
+
+.wp-block-media-text__content {
+
+	& > *:first-child {
+		margin-top: 0;
 	}
 }
 
