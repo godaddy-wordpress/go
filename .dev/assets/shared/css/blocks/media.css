@@ -6,7 +6,11 @@
 		grid-template-columns: 50% auto !important;
 	}
 
-	&.has-media-on-the-right:not(.is-style-card) {
+	&.has-background {
+		padding: calc(var(--go--spacing--vertical) * 1.3);
+	}
+
+	&.has-media-on-the-right {
 
 		& .wp-block-media-text__content {
 			padding-left: 0;
@@ -16,10 +20,6 @@
 	& .wp-block-media-text__content {
 		@media (max-width: 600px) {
 			padding-right: 0;
-		}
-
-		& > *:first-child {
-			margin-top: 0;
 		}
 	}
 
@@ -35,13 +35,13 @@
 			}
 		}
 
-		&:not(.has-media-on-the-right) .wp-block-media-text__media {
+		&:not(.has-media-on-the-right):not(.is-style-offset):not(.is-style-card):not(.is-style-overlay) .wp-block-media-text__media {
 			@media (--smallMax) {
 				margin-bottom: var(--go--spacing--vertical);
 			}
 		}
 
-		& .wp-block-media-text__content {
+		&:not(.is-style-card) .wp-block-media-text__content {
 			@media (--smallMax) {
 				padding: 0;
 			}
@@ -49,11 +49,8 @@
 	}
 }
 
-.wp-block-media-text__content {
-
-	& > *:first-child {
-		margin-top: 0;
-	}
+.wp-block-media-text.is-style-overlap.has-media-on-the-right .wp-block-media-text__content {
+	margin-left: 0.5rem;
 }
 
 /* When two Media & Text blocks are displayed right after each other */
