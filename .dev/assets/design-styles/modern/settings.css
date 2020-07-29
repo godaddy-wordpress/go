@@ -66,7 +66,7 @@
 
 	/* Input */
 	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
-	--go-input--color--text: var(--go--color--text);
+	--go-input--color--text: var(--wp--preset--color--text, var(--go--color--text));
 	--go-input--font-size: 1rem;
 	--go-input--margin-bottom: 2.25rem;
 	--go-input--padding--x: 1.25rem;

@@ -1,7 +1,7 @@
 /*! Body Typography */
 body {
-	background-color: var(--go--color--background, 0, 0%, 100%);
-	color: var(--go--color--text);
+	background-color: var(--wp--preset--color--background, var(--go--color--background, 0, 0%, 100%));
+	color: var(--wp--preset--color--text, var(--go--color--text));
 	font-family: var(--go--font-family);
 	font-size: var(--go--font-size);
 	font-weight: var(--go--font-weight, 400);

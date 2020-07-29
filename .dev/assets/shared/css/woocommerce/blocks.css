@@ -3,7 +3,7 @@
 }
 
 .wc-block-featured-product .woocommerce-Price-amount {
-	color: var(--go-caption--color--text, var(--go--color--text));
+	color: var(--go-caption--color--text, var(--wp--preset--color--text, var(--go--color--text)));
 }
 
 .wp-block-woocommerce-all-reviews {

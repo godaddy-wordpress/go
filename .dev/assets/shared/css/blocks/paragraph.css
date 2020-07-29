@@ -2,7 +2,7 @@
 .has-drop-cap:not(:focus) {
 
 	&::first-letter {
-		color: var(--go--color--primary);
+		color: var(--wp--preset--color--primary, var(--go--color--primary));
 		font-size: var(--go-paragraph-dropcap--font-size, 5rem);
 		font-weight: var(--go-paragraph-dropcap--font-weight, 700);
 		line-height: 1;
