@@ -927,12 +927,13 @@ function load_inline_svg( $filename ) {
 			wp_kses_allowed_html( 'post' ),
 			array(
 				'svg'  => array(
-					'role'    => true,
-					'width'   => true,
-					'height'  => true,
-					'fill'    => true,
-					'xmlns'   => true,
-					'viewbox' => true,
+					'role'        => true,
+					'width'       => true,
+					'height'      => true,
+					'fill'        => true,
+					'xmlns'       => true,
+					'viewbox'     => true,
+					'aria-hidden' => true,
 				),
 				'path' => array(
 					'd'              => true,

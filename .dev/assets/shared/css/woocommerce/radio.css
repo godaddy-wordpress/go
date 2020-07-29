@@ -1,0 +1,24 @@
+.woocommerce-page {
+
+	& .wc_payment_methods {
+
+		& input[name="payment_method"] {
+			display: none;
+		}
+
+		& label {
+			@mixin checkbox-radio-label;
+			position: relative;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			&::before {
+				@mixin checkbox-radio-label-before;
+				@mixin radio-label-before;
+				top: 8px;
+			}
+		}
+	}
+}

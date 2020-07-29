@@ -4,7 +4,7 @@ Tags: one-column, custom-colors, custom-logo, custom-menu, editor-style, theme-o
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 5.6.0
-Stable tag: 1.2.10
+Stable tag: 1.3.3
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -109,9 +109,9 @@ List of bespoke icons:
 
 == Changelog ==
 
-### Enhancements
-* Updates to PHP syntax and PHPCS rulesets. [#518](https://github.com/godaddy-wordpress/go/pull/518)
-* Add `Tested up to` and `Requires PHP` to style.css headers. [#521](https://github.com/godaddy-wordpress/go/pull/521)
-* Use `display_name` for front of site post author names. [#522](https://github.com/godaddy-wordpress/go/pull/522)
-* Set the customizer color palettes to the currently selected color scheme. [#523](https://github.com/godaddy-wordpress/go/pull/523)
-* Minor block style design tweaks. [#526](https://github.com/godaddy-wordpress/go/pull/526)
+### Bug Fixes
+- Removed rogue `gd-system-plugin` text domain and replaced it with the proper `go` text domain. [#549](https://github.com/godaddy-wordpress/go/pull/549)
+- Apply :root to better prevent Gutenberg overriding theme colors. [#550](https://github.com/godaddy-wordpress/go/pull/550)
+- Fix WooCommerce single product grid. [#552](https://github.com/godaddy-wordpress/go/pull/552)
+- Update post meta tags wrapper styles. [#553](https://github.com/godaddy-wordpress/go/pull/553)
+- Fix block editor inserter panel pattern styles. [#556](https://github.com/godaddy-wordpress/go/pull/556)
