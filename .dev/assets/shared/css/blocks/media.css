@@ -35,7 +35,7 @@
 			}
 		}
 
-		&:not(.has-media-on-the-right):not(.is-style-offset):not(.is-style-card):not(.is-style-overlap) .wp-block-media-text__media {
+		&:not(.has-media-on-the-right):not(.is-style-card):not(.is-style-overlap):not(.is-style-outline) .wp-block-media-text__media {
 			@media (--smallMax) {
 				margin-bottom: var(--go--spacing--vertical);
 			}
