@@ -171,6 +171,7 @@ function theme_setup() {
 
 	// Add support for experimental custom padding.
 	add_theme_support( 'experimental-custom-spacing' );
+	add_theme_support( 'custom-units' );
 
 	// Add support for experimental link colors.
 	add_theme_support( 'experimental-link-color' );
