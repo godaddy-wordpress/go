@@ -169,6 +169,9 @@ function theme_setup() {
 	// Add support for editor styles.
 	add_theme_support( 'editor-styles' );
 
+	// Add support for experimental link colors.
+	add_theme_support( 'experimental-link-color' );
+
 	// Add custom editor font sizes.
 	add_theme_support(
 		'editor-font-sizes',
