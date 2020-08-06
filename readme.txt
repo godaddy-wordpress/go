@@ -110,8 +110,8 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Removed rogue `gd-system-plugin` text domain and replaced it with the proper `go` text domain. [#549](https://github.com/godaddy-wordpress/go/pull/549)
-- Apply :root to better prevent Gutenberg overriding theme colors. [#550](https://github.com/godaddy-wordpress/go/pull/550)
-- Fix WooCommerce single product grid. [#552](https://github.com/godaddy-wordpress/go/pull/552)
-- Update post meta tags wrapper styles. [#553](https://github.com/godaddy-wordpress/go/pull/553)
-- Fix block editor inserter panel pattern styles. [#556](https://github.com/godaddy-wordpress/go/pull/556)
+- Fix header background fallback issue. [#564](https://github.com/godaddy-wordpress/go/pull/564)
+- Fix group block's custom padding not properly reflected in the editor. [#563](https://github.com/godaddy-wordpress/go/pull/563)
+- Update style to ignore the future Media & Text card style. [#561](https://github.com/godaddy-wordpress/go/pull/561)
+- Update styles for Cover block positioning in WordPress 5.5. [#559](https://github.com/godaddy-wordpress/go/pull/559)
+- Add new experimental link color theme support. [#541](https://github.com/godaddy-wordpress/go/pull/541)
