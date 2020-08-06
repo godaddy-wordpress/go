@@ -101,7 +101,7 @@
 	--go-footer--color--text: var(--go--color--white);
 	--go-footer-heading--color--text: var(--go--color--white);
 	--go-footer-navigation--color--text: var(--go--color--white);
-	--go-footer-3--border-color: var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
+	--go-footer-3--border-color: var(--go-header--color--background);
 	--go-footer-3--border-width: 10px;
 
 	/* Social */
