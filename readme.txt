@@ -109,9 +109,4 @@ List of bespoke icons:
 
 == Changelog ==
 
-### Bug Fixes
-- Fix header background fallback issue. [#564](https://github.com/godaddy-wordpress/go/pull/564)
-- Fix group block's custom padding not properly reflected in the editor. [#563](https://github.com/godaddy-wordpress/go/pull/563)
-- Update style to ignore the future Media & Text card style. [#561](https://github.com/godaddy-wordpress/go/pull/561)
-- Update styles for Cover block positioning in WordPress 5.5. [#559](https://github.com/godaddy-wordpress/go/pull/559)
-- Add new experimental link color theme support. [#541](https://github.com/godaddy-wordpress/go/pull/541)
+- Bump tested up to version to 5.5 and Go patch version 1.3.5 [#566][https://github.com/godaddy-wordpress/go/pull/566]
