@@ -76,6 +76,14 @@
 	margin-top: var(--go--spacing--vertical--lg);
 }
 
+.block-editor-block-list__block:first-child {
+
+	& .wp-block[data-align="wide"],
+	& .wp-block[data-align="full"] {
+		margin-top: inherit;
+	}
+}
+
 .wp-block[data-type="core/gallery"][data-align="full"] + .wp-block[data-type="core/image"][data-align="full"],
 .wp-block[data-type="core/gallery"][data-align="full"] + .wp-block[data-type="core/group"][data-align="full"] .has-background,
 .wp-block[data-type="core/image"][data-align="full"] + .wp-block[data-type="core/group"][data-align="full"] .has-background {
