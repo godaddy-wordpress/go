@@ -2,9 +2,9 @@
 Contributors: godaddy, richtabor, eherman24, jrtashjian
 Tags: one-column, custom-colors, custom-logo, custom-menu, editor-style, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.6.0
-Stable tag: 1.3.1
+Stable tag: 1.3.5
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -109,6 +109,4 @@ List of bespoke icons:
 
 == Changelog ==
 
-### Bug Fixes
-* Add missing minified asset files. [#537](https://github.com/godaddy-wordpress/go/pull/537)
-* Exclude cypress.json file from the build. [#537](https://github.com/godaddy-wordpress/go/pull/537)
+- Bump tested up to version to 5.5 and Go patch version 1.3.5 [#566][https://github.com/godaddy-wordpress/go/pull/566]

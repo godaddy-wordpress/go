@@ -9,16 +9,16 @@
 @import url("woocommerce/product.css");
 
 html {
-	background-color: var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
+	background-color: var(--go-header--color--background);
 }
 
 body {
-	border: 0.75rem solid var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
+	border: 0.75rem solid var(--go-header--color--background);
 	border-top: 0;
 }
 
 .site-footer.has-background {
-	border-top: 0.75rem solid var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
+	border-top: 0.75rem solid var(--go-header--color--background);
 }
 
 .has-footer-3 .site-footer__inner {

@@ -2,15 +2,18 @@
 .wp-block-group {
 
 	&.has-background {
-		padding: var(--go--spacing--vertical) calc(var(--go--spacing--vertical) * 1.3);
 
-		@media (--medium) {
-			padding: calc(var(--go--spacing--vertical--lg) * 0.2) calc(var(--go--spacing--vertical--lg) * 0.25);
-		}
+		&:not([class*="padding"]) {
+			padding: var(--go--spacing--vertical) calc(var(--go--spacing--vertical) * 1.3);
 
-		&.alignwide,
-		&.alignfull {
-			padding: var(--go--spacing--vertical--lg);
+			@media (--medium) {
+				padding: calc(var(--go--spacing--vertical--lg) * 0.2) calc(var(--go--spacing--vertical--lg) * 0.25);
+			}
+
+			&.alignwide,
+			&.alignfull {
+				padding: var(--go--spacing--vertical--lg);
+			}
 		}
 
 		&.alignfull + .has-background.alignfull:not(.wp-block-gallery) {

@@ -17,6 +17,17 @@
 	& ol {
 		padding-left: 0;
 	}
+
+	&:not(.is-position-center-center) {
+
+		& .wp-block-cover__inner-container {
+			padding: calc(var(--go--spacing--vertical) * 0.5) var(--go--spacing--vertical);
+
+			@media (--medium) {
+				padding: calc(var(--go--spacing--vertical) * 1.5) calc(var(--go--spacing--vertical) * 2);
+			}
+		}
+	}
 }
 
 .wp-block-cover__inner-container {
