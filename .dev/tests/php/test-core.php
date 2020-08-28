@@ -557,7 +557,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		global $wp_scripts;
 
-		$this->assertEquals( 'var goFrontend = {"openMenuOnHover":false};', $wp_scripts->registered['go-frontend']->extra['data'] );
+		$this->assertEquals( 'var goFrontend = {"openMenuOnHover":""};', $wp_scripts->registered['go-frontend']->extra['data'] );
 
 	}
 

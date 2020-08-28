@@ -994,7 +994,7 @@ class Test_Customizer extends WP_UnitTestCase {
 	 */
 	function test_register_menu_controls_menus_section() {
 
-		Go\Customizer\register_social_controls( $GLOBALS['wp_customize'] );
+		Go\Customizer\register_menu_controls( $GLOBALS['wp_customize'] );
 
 		$this->assertNotNull( $GLOBALS['wp_customize']->get_section( 'go_menu_behavior' ) );
 
