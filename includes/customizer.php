@@ -967,11 +967,11 @@ function register_menu_controls( \WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_control(
 		'open_menu_on_hover',
 		array(
-			'label'    => __( 'Show sub menus on hover.', 'go' ),
+			'label'       => __( 'Show sub menus on hover.', 'go' ),
 			'description' => esc_html__( 'Show sub menu items on hover.', 'go' ),
-			'section'  => 'menu_behavior',
-			'settings' => 'open_menu_on_hover',
-			'type'     => 'checkbox',
+			'section'     => 'menu_behavior',
+			'settings'    => 'open_menu_on_hover',
+			'type'        => 'checkbox',
 		)
 	);
 
