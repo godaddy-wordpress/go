@@ -948,7 +948,7 @@ function register_social_controls( \WP_Customize_Manager $wp_customize ) {
 function register_menu_controls( \WP_Customize_Manager $wp_customize ) {
 
 	$wp_customize->add_section(
-		'menu_behavior',
+		'go_menu_behavior',
 		array(
 			'title' => __( 'Menu Behavior', 'go' ),
 			'panel' => 'nav_menus',
@@ -969,7 +969,7 @@ function register_menu_controls( \WP_Customize_Manager $wp_customize ) {
 		array(
 			'label'       => __( 'Show sub menus on hover.', 'go' ),
 			'description' => esc_html__( 'Show sub menu items on hover.', 'go' ),
-			'section'     => 'menu_behavior',
+			'section'     => 'go_menu_behavior',
 			'settings'    => 'open_menu_on_hover',
 			'type'        => 'checkbox',
 		)
