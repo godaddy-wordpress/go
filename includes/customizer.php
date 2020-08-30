@@ -372,7 +372,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 		'blog_excerpt',
 		array(
 			'default'           => false,
-			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint',
 		)
 	);

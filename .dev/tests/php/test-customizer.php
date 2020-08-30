@@ -547,6 +547,28 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the blog_excerpt setting is registered
+	 */
+	function test_register_global_controls_blog_excerpt_setting() {
+
+		Go\Customizer\register_global_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'blog_excerpt' ) );
+
+	}
+
+	/**
+	 * Test the blog_excerpt_checkbox control is registered
+	 */
+	function test_register_global_controls_blog_excerpt_checkbox_control() {
+
+		Go\Customizer\register_global_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'blog_excerpt_checkbox' ) );
+
+	}
+
+	/**
 	 * Test the copyright setting is registered
 	 */
 	function test_register_global_controls_copyright_setting() {
