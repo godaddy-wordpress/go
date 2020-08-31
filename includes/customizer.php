@@ -959,7 +959,7 @@ function register_menu_controls( \WP_Customize_Manager $wp_customize ) {
 		'open_menu_on_hover',
 		array(
 			'capability'        => 'edit_theme_options',
-			'default'           => false,
+			'default'           => true,
 			'sanitize_callback' => 'absint',
 		)
 	);

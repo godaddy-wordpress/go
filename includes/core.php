@@ -395,7 +395,7 @@ function scripts() {
 		'go-frontend',
 		'goFrontend',
 		array(
-			'openMenuOnHover' => (bool) get_theme_mod( 'open_menu_on_hover', false ),
+			'openMenuOnHover' => (bool) get_theme_mod( 'open_menu_on_hover', true ),
 		)
 	);
 
