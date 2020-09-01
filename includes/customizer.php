@@ -369,6 +369,25 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'blog_excerpt',
+		array(
+			'default'           => false,
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'blog_excerpt_checkbox',
+		array(
+			'label'       => esc_html__( 'Blog Excerpt', 'go' ),
+			'description' => esc_html__( 'Use post excerpts on the blog page.', 'go' ),
+			'section'     => 'go_site_settings',
+			'settings'    => 'blog_excerpt',
+			'type'        => 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
 		'copyright',
 		array(
 			'default'           => \Go\Core\get_default_copyright(),

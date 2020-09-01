@@ -34,7 +34,7 @@
 
 		<div class="content-area entry-content">
 			<?php
-			if ( is_search() ) {
+			if ( is_search() || get_theme_mod( 'blog_excerpt', false ) ) {
 				the_excerpt();
 			} else {
 				the_content();
