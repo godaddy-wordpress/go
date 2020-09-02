@@ -50,6 +50,17 @@
 				left: 50%;
 			}
 		}
+
+		/* Spacer to fix menu hovers */
+		&::after {
+			bottom: 100%;
+			content: "";
+			height: 1.75rem;
+			left: 0;
+			position: absolute;
+			right: 0;
+			width: 100%;
+		}
 	}
 
 	/* All other submenus */
@@ -126,6 +137,7 @@
 
 	& svg {
 		transform: rotate(180deg);
+		z-index: 9999;
 	}
 }
 
