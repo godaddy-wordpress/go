@@ -164,7 +164,7 @@
 }
 
 .wp-block-search__label .rich-text,
-label:not(.components-toggle-control__label):not(.components-base-control__label) {
+label:not(.components-toggle-control__label):not(.components-base-control__label):not(.has-text-color) {
 	color: var(--go-label--color--text, var(--go-heading--color--text));
 	font-family: var(--go-label--font-family, var(--go-navigation--font-family));
 	font-size: var(--go-label--font-size);
