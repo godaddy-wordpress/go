@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-09-02T15:28:15+00:00\n"
+"POT-Creation-Date: 2020-09-02T15:31:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -1538,6 +1538,6 @@ msgctxt "submit button"
 msgid "Submit"
 msgstr ""
 
-#: .dev/assets/admin/js/block-filters.js:35
+#: .dev/assets/admin/js/block-filters.js:40
 msgid "Hide page title"
 msgstr ""
