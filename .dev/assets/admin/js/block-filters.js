@@ -28,6 +28,11 @@ function GoPageTitleToggle( { isEnabled, onChange } ) {
 		} );
 	} );
 
+	if ( 'page' !== wp.data.select('core/editor').getCurrentPostType() ) {
+
+		return null;
+
+	}
 
 	return (
 		<PluginPostStatusInfo>
