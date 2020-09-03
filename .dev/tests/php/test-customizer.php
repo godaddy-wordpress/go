@@ -138,6 +138,19 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test register_menu_controls is hooked correctly
+	 */
+	function test_hooked_register_menu_controls() {
+
+		$this->assertEquals(
+			10,
+			has_action( 'customize_register', 'Go\Customizer\register_menu_controls' ),
+			'customize_register is not attached to Go\Customizer\register_menu_controls. It might also have the wrong priority (validated priority: 10)'
+		);
+
+	}
+
+	/**
 	 * Test customize_preview_init is hooked correctly to customize_preview_init
 	 */
 	function test_hooked_customize_preview_init() {
@@ -995,6 +1008,17 @@ class Test_Customizer extends WP_UnitTestCase {
 		}
 
 		$this->assertTrue( true );
+
+	}
+
+	/**
+	 * Test the register_menu_controls section is registered
+	 */
+	function test_register_menu_controls_menus_section() {
+
+		Go\Customizer\register_menu_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_section( 'go_menu_behavior' ) );
 
 	}
 

@@ -28,6 +28,7 @@ function setup() {
 	add_action( 'customize_register', $n( 'register_header_controls' ) );
 	add_action( 'customize_register', $n( 'register_footer_controls' ) );
 	add_action( 'customize_register', $n( 'register_social_controls' ) );
+	add_action( 'customize_register', $n( 'register_menu_controls' ) );
 	add_action( 'customize_register', $n( 'rename_panels' ) );
 	add_action( 'customize_preview_init', $n( 'customize_preview_init' ) );
 	add_action( 'customize_controls_enqueue_scripts', $n( 'customize_preview_init' ) );
@@ -954,6 +955,45 @@ function register_social_controls( \WP_Customize_Manager $wp_customize ) {
 			)
 		)
 	);
+}
+
+/**
+ * Register the menu within Customize.
+ *
+ * @param \WP_Customize_Manager $wp_customize The customize manager object.
+ *
+ * @return void
+ */
+function register_menu_controls( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_section(
+		'go_menu_behavior',
+		array(
+			'title' => __( 'Menu Behavior', 'go' ),
+			'panel' => 'nav_menus',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'open_menu_on_hover',
+		array(
+			'capability'        => 'edit_theme_options',
+			'default'           => true,
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'open_menu_on_hover',
+		array(
+			'label'       => __( 'Show sub menus on hover.', 'go' ),
+			'description' => esc_html__( 'Show sub menu items on hover.', 'go' ),
+			'section'     => 'go_menu_behavior',
+			'settings'    => 'open_menu_on_hover',
+			'type'        => 'checkbox',
+		)
+	);
+
 }
 
 /**

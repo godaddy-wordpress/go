@@ -393,9 +393,9 @@ function scripts() {
 
 	wp_localize_script(
 		'go-frontend',
-		'GoText',
+		'goFrontend',
 		array(
-			'searchLabel' => esc_html__( 'Expand search field', 'go' ),
+			'openMenuOnHover' => (bool) get_theme_mod( 'open_menu_on_hover', true ),
 		)
 	);
 

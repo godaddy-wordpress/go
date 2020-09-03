@@ -7,7 +7,7 @@
 
 		'target'		:	'#primary-nav',      // the selector of the nav menu <ul>
 		'toggle'		:	'#js-menu-toggle',   // the ID of the link you're using to open/close the small screen menu
-		'sub_menu_open'	:	'hover'              // "click" is the other option
+		'sub_menu_open'	:	'hover'
 
 	}, function() {
 
@@ -98,9 +98,20 @@
 			currentTarget = e.currentTarget;
 			target = e.target;
 
+			console.log( 'Before' );
+			console.log( currentTarget );
+			console.log( target );
+			console.log( '----------' );
+
 			if ( target.tagName === 'svg' || target.tagName === 'path' ) {
+				console.log( 'Yes, the target is an SVG' );
 				target = currentTarget.closest( '.menu-item > a' );
 			}
+
+			console.log( 'After' );
+			console.log( currentTarget );
+			console.log( target );
+			console.log( '----------' );
 
 			if ( target.getAttribute( 'aria-haspopup' ) ) {
 				// Stop links from firing
@@ -220,10 +231,12 @@
 		}; // listener_close_open_menus()
 
 		function menu_sub_close( open_item ) {
-			open_item.classList.remove('submenu-is-open');
-			open_item.parentNode.classList.remove('child-has-focus');
+			if ( open_item && open_item.classList ) {
+				open_item.classList.remove('submenu-is-open');
+				open_item.parentNode.classList.remove('child-has-focus');
+			}
 
-			if ( open_item.parentNode.querySelector( '.sub-menu' ) ) {
+			if ( open_item && open_item.parentNode && open_item.parentNode.querySelector( '.sub-menu' ) ) {
 				open_item.parentNode.querySelector( '.sub-menu' ).setAttribute( 'aria-hidden', 'true' );
 			}
 		}; // menu_sub_close()
@@ -265,11 +278,11 @@
 
 				// Loop through all submenus and bind events when needed
 				for ( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
-					if ( sub_menu_acion !== 'click' ) {
-						menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
-						menu_items_with_children[i].removeEventListener( 'focusin', listener_submenu_focus );
-						menu.classList.add( 'uses-click' );
+					var svgElements = menu_items_with_children[i].querySelectorAll( 'svg' );
+					for ( var q = 0; q < svgElements.length; q = q + 1 ) {
+						svgElements[q].addEventListener( 'click', listener_submenu_click );
 					}
+					menu_items_with_children[i].removeEventListener( 'focusin', listener_submenu_focus );
 				} // for
 
 				// Bind the event
@@ -373,10 +386,34 @@
 
 				}
 
-				menu.classList.add( 'uses-click' );
+				menu.classList.add( sub_menu_acion === 'click' ? 'uses-click' : 'uses-hover' );
 			} else if ( sub_menu_acion !== 'click' ) {
 				if ( get_screen_size( 'has-full-nav' ) ) {
+					menu_items_with_children[i].addEventListener( 'mouseover', listener_submenu_focus );
+					menu_items_with_children[i].addEventListener( 'mouseout', function() {
+						var open_menus = menu.querySelectorAll( '.submenu-is-open' );
+						var open_menus_count = open_menus.length;
+						var opn;
+
+						// We were getting some errors, so let's add in a checkpoint
+						if ( open_menus_count ) {
+
+							// Loop through all the open menus and close them
+							for ( opn = 0; opn < open_menus_count; opn = opn + 1 ) {
+
+								menu_sub_close( open_menus[opn] );
+
+							} // for
+
+						}
+					} );
 					menu_items_with_children[i].addEventListener( 'focusin', listener_submenu_focus );
+					menu_items_with_children[i].querySelectorAll( '.sub-menu' ).forEach( submenu => {
+						submenu.addEventListener( 'mouseover', event => {
+							submenu.parentElement.classList.add( 'child-has-focus' );
+							submenu.previousElementSibling.classList.add( 'submenu-is-open' );
+						}, false );
+					} );
 				} // if
 			} // if
 		} // for

@@ -557,7 +557,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		global $wp_scripts;
 
-		$this->assertEquals( 'var GoText = {"searchLabel":"Expand search field"};', $wp_scripts->registered['go-frontend']->extra['data'] );
+		$this->assertEquals( 'var goFrontend = {"openMenuOnHover":"1"};', $wp_scripts->registered['go-frontend']->extra['data'] );
 
 	}
 
