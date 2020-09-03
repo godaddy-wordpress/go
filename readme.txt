@@ -109,4 +109,15 @@ List of bespoke icons:
 
 == Changelog ==
 
-- Bump tested up to version to 5.5 and Go patch version 1.3.5 [#566][https://github.com/godaddy-wordpress/go/pull/566]
+### Bug Fixes
+- Fix radio group required error visibility. [#579](https://github.com/godaddy-wordpress/go/pull/579)
+- Display the page title checkbox on page post types only. [#577](https://github.com/godaddy-wordpress/go/pull/577)
+- Exclude the CoBlocks form block `.custom-color` label from inheriting theme colors. [#574](https://github.com/godaddy-wordpress/go/pull/574)
+- Fix first block top margin with class alignwide/alignfull. [#571](https://github.com/godaddy-wordpress/go/pull/571)
+
+### New Feature
+- Introduce the ability to toggle post excerpt length on the blog roll. [#576](https://github.com/godaddy-wordpress/go/pull/576)
+- Introduce the ability to toggle menu behavior (hover/click). [#575](https://github.com/godaddy-wordpress/go/pull/575)
+
+### Tweaks
+- Add e-commerce tag to Go theme. [#572](https://github.com/godaddy-wordpress/go/pull/572)
