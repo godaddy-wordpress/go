@@ -42,7 +42,9 @@ input[type="color"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-	appearance: none;
+	height: 19px;
+	opacity: 0;
+	width: 20px;
 }
 
 .coblocks-field {
