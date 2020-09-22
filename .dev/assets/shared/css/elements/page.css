@@ -35,7 +35,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
+	color: var(--go--color--text);
 	font-family: var(--go--font-family);
 	font-weight: var(--go--font-weight, 400);
 	line-height: var(--go--line-height);
