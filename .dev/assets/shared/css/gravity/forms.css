@@ -164,7 +164,7 @@ body {
 
 	& .gform_wrapper textarea {
 		background-color: var(--go-input--color--background, var(--go--color--white));
-		border-color: var(--go-input--border-color), var(--go-heading--color--text));
+		border-color: var(--go-input--border-color, var(--go-heading--color--text));
 		color: var(--go-input--color--text);
 		font-size: var(--go-input--font-size);
 		font-weight: var(--go-input--font-weight, 400);
