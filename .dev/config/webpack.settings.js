@@ -8,7 +8,7 @@ module.exports = {
 
 		// CSS.
 		'style-editor': './.dev/assets/shared/css/style-editor.css',
-		'style-shared': './.dev/assets/shared/css/style-shared.css',
+		'style': './.dev/assets/shared/css/style.css',
 
 		// Design Style CSS.
 		'design-styles/style-modern': './.dev/assets/design-styles/modern/css/style-modern.css',
@@ -75,7 +75,7 @@ module.exports = {
 	BrowserSyncConfig: {
 		host: 'localhost',
 		port: 3000,
-		proxy: 'https://go.test',
+		proxy: 'https://coblocks.test',
 		open: true,
 		files: [
 			'**/*.php',
