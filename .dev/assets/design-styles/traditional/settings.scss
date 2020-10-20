@@ -20,11 +20,11 @@
 	--go--line-height: 1.85;
 	--go--type-ratio: 1.275;
 
-	@media (--small) {
+	@include media(small) {
 		--go--font-size--small: 90%;
 	}
 
-	@media (--large) {
+	@include media(large) {
 		--go--font-size--small: 97%;
 	}
 
@@ -47,7 +47,7 @@
 	--go-quote--border-width: 0.45rem;
 	--go-quote-large--font-size: 2.5em;
 
-	@media (--medium) {
+	@include media(medium) {
 		--go-quote-large--font-size: 3.75em;
 	}
 
@@ -76,7 +76,7 @@
 	--go-label--margin-bottom: 0.25rem;
 
 	/* Input */
-	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
+	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, --go-heading--color--text);
 	--go-input--color--background: var(--go--color--background);
 	--go-input--color--text: var(--go--color--text);
 	--go-input--font-size: var(--go--font-size);
@@ -88,7 +88,7 @@
 	--go-site-title--color--text: var(--go-heading--color--text);
 	--go-site-title--font-size: 1.75rem;
 
-	@media (--medium) {
+	@include media(medium) {
 		--go-site-title--font-size: 2.15rem;
 	}
 
