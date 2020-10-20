@@ -13,20 +13,20 @@
 
 .wp-block-coblocks-gallery-carousel {
 
-	& .flickity-button,
-	& .flickity-button:hover {
+	.flickity-button,
+	.flickity-button:hover {
 		background: var(--go--color--primary);
 	}
 
-	& .flickity-button:hover {
-		background-color: var(--go-button-interactive--color--background, var(--go--color--secondary));
+	.flickity-button:hover {
+		background-color: var(--go-button-interactive--color--background, --go--color--secondary);
 	}
 
-	& .flickity-prev-next-button {
+	.flickity-prev-next-button {
 		border-radius: var(--go-button--border-radius);
 	}
 
-	& .flickity-button-icon {
+	.flickity-button-icon {
 		fill: var(--go--color--white);
 	}
 }

@@ -1,9 +1,9 @@
 /**
  * Playful - Styles
  */
-@import url("../../../shared/css/config/media-queries.css");
-@import url("../settings.css");
-@import url("components/carousel.css");
+@import "../../../shared/css/config/media-queries";
+@import "../settings";
+@import "components/carousel";
 
 .wp-block-separator:not(.is-style-dots) {
 	background-color: var(--go--color--secondary);
@@ -11,7 +11,7 @@
 	background-repeat: repeat-x;
 	border: none;
 	height: 9pt;
-	mask-image: url("../../../dist/images/design-styles/playful/cross-stich-border.svg");
+	mask-image: url(../../../dist/images/design-styles/playful/cross-stich-border.svg);
 	max-width: 113px !important;
 }
 
@@ -29,7 +29,7 @@
 		position: absolute;
 		transform: translate3d(-120%, 0, 0);
 
-		@media (--medium) {
+		@include media(medium) {
 			font-size: 3em;
 		}
 	}
