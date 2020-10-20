@@ -1,31 +1,24 @@
-/*! Global Variables */
+// Global variables
 @import "config/breakpoints";
 @import "config/mixins";
 @import "config/root";
 
-/**
- * Blocks
- */
-@import "blocks/blocks";
-@import "blocks/blocks-editor";
-
-
-
-
-/**
- * Editor styles
- */
-@import "editor/vertical-rhythm";
+// Styling the editor
 @import "editor/settings";
-@import "editor/widths";
+@import "editor/vertical-rhythm";
+@import "editor/horizontal-rhythm";
 @import "editor/title-block";
 @import "editor/title-permalink";
+
+
 @import "utilities/padding";
 @import "utilities/font-sizes";
 @import "elements/headings";
 @import "elements/typography";
 
-@import "editor/woocommerce-blocks";
+// Blocks
+// @import "blocks/blocks"; // We shouldnt need these styles also in this file.
+@import "blocks/blocks-editor";
 
 /**
  * Utitlities
@@ -33,9 +26,6 @@
 @import "utilities/captions";
 @import "utilities/colors";
 
-.block-editor-block-list__block[data-type="core/paragraph"] p {
-	line-height: var(--go--line-height);
-}
 
 .wp-block figcaption {
 	margin-top: 0 !important;
@@ -65,7 +55,6 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 	margin-bottom: calc(var(--go-label--margin-bottom) - 5px);
 }
 
-
 .wp-block-search__input,
 .wp-block[data-type="coblocks/form"] .components-text-control__input,
 .wp-block[data-type="coblocks/form"] .components-textarea-control__input {
@@ -85,43 +74,6 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 	font-size: var(--go--font-size);
 }
 
-/*! Features */
-.wp-block-coblocks-feature .wp-block[data-type="core/heading"] [data-block] {
-	margin-bottom: -10px;
-}
-
-/*! Services */
-.wp-block-coblocks-service .wp-block[data-type="core/heading"] [data-block] {
-	margin-bottom: -10px;
-}
-
-.wp-block[data-type="coblocks/service"] {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-[data-columns="2"] .wp-block[data-type="coblocks/service"] {
-	@include media(medium) {
-		max-width: calc(100% / 2 - 1em);
-	}
-}
-
-[data-columns="3"] .wp-block[data-type="coblocks/service"] {
-	@include media(large) {
-		max-width: calc(100% / 3 - 0.5em);
-	}
-}
-
-[data-columns="4"] .wp-block[data-type="coblocks/service"] {
-	@include media(small) {
-		max-width: calc(100% / 2 - 1em);
-	}
-
-	@include media(large) {
-		max-width: calc(100% / 4 - 0.5em);
-	}
-}
-
 .gform_wrapper {
 
 	.gfield_time_hour i {
@@ -131,25 +83,6 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 	.gfield_time_ampm select {
 		height: inherit !important;
 	}
-}
-
-/*! Verse */
-.wp-block-verse pre {
-	margin: 0;
-	padding: 0;
-}
-
-/*! Button */
-.wp-block-button__link,
-.wp-block-search__button {
-
-	&:focus {
-		outline: none !important;
-	}
-}
-
-.is-style-outline .wp-block-button__link {
-	border: 2px solid;
 }
 
 /*! WooCommerce products */
