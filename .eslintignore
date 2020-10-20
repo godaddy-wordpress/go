@@ -3,3 +3,5 @@ Gruntfile.js
 gulp-tasks/
 webpack.config.babel.js
 gulpfile.babel.js
+vendor/
+node_modules/
