@@ -1,0 +1,45 @@
+/*! Captions */
+.wp-block-image,
+.wp-block-embed,
+.wp-block-audio,
+.gallery {
+
+	figcaption,
+	.wp-caption,
+	.wp-caption-text,
+	.gallery-caption {
+		color: var(--go-caption--color--text);
+		font-size: var(--go-caption--font-size);
+		font-style: var(--go-caption--font-style, normal);
+		margin-top: var(--go-caption--margin-top, 0.75em);
+		text-align: var(--go-caption--text-align);
+	}
+
+	&.alignfull {
+
+		figcaption {
+			padding-left: 1.25rem;
+			padding-right: 1.25rem;
+		}
+	}
+
+	.aligncenter {
+
+		figcaption {
+			text-align: center;
+		}
+	}
+}
+
+body.rtl .wp-block-image,
+body.rtl .wp-block-embed,
+body.rtl .wp-block-audio,
+body.rtl .gallery {
+
+	figcaption,
+	.wp-caption,
+	.wp-caption-text,
+	.gallery-caption {
+		text-align: var(--go-caption--text-align--rtl);
+	}
+}

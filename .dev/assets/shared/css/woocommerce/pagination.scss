@@ -1,0 +1,73 @@
+/*! WooCommerce: Pagination */
+.woocommerce nav.woocommerce-pagination {
+	text-align: center;
+
+	ul,
+	ul li {
+		border: none;
+	}
+
+	ul li {
+
+		a,
+		span {
+			border-bottom: 0;
+			font-weight: 700;
+			margin: 0 1px;
+			padding: 0.25rem 0;
+			position: relative;
+			text-align: center;
+
+			&::after {
+				border-bottom: 2px solid transparent;
+				bottom: 0;
+				content: "";
+				height: 1px;
+				left: 0;
+				position: absolute;
+				width: 100%;
+			}
+
+			&.current,
+			&:focus,
+			&:hover {
+				background: transparent;
+				color: var(--go-heading--color--text);
+
+				&::after {
+					border-bottom-color: var(--go-heading--color--text);
+				}
+			}
+		}
+	}
+
+	.prev,
+	.next {
+		font-size: 1rem;
+		position: relative;
+		text-indent: -9999px;
+		width: 40px;
+
+		&::before {
+			background: url(../images/arrow-paginator.svg) no-repeat center center;
+			content: "";
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 40px;
+		}
+	}
+
+	.next {
+		margin-left: 0.25rem;
+	}
+
+	.prev {
+		margin-right: 0.25rem;
+
+		&::before {
+			transform: rotate(180deg);
+		}
+	}
+}

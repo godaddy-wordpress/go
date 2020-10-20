@@ -1,0 +1,10 @@
+/*! Layout: Entry Header */
+.entry-header {
+	max-width: var(--go-entryheader--max-width, 70rem);
+	padding-top: calc(0.55 * var(--go--spacing--vertical--lg));
+	text-align: center;
+}
+
+.has-featured-image .entry-header {
+	padding-top: var(--go-entryheader--padding-top, 4rem);
+}
