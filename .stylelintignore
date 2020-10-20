@@ -1,0 +1,11 @@
+vendor/
+node_modules/
+dist/images
+*.php
+*.map
+*.png
+*.json
+LICENSE
+composer.lock
+*.txt
+*.css
