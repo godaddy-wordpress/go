@@ -25,11 +25,6 @@
 @import "elements/headings";
 @import "elements/typography";
 
-/**
- * Custom Editor Styles
- */
-// @import "editor/hero";
-// @import "editor/group";
 @import "editor/woocommerce-blocks";
 
 /**
@@ -37,28 +32,6 @@
  */
 @import "utilities/captions";
 @import "utilities/colors";
-
-// @import "blocks/paragraph";
-// @import "blocks/code";
-// @import "blocks/cover";
-// @import "blocks/file";
-// @import "blocks/search";
-// @import "blocks/button";
-// @import "blocks/verse";
-// @import "blocks/quote";
-// @import "blocks/pullquote";
-
-// /**
-//  * CoBlocks
-//  */
-// @import "coblocks/accordion";
-// @import "coblocks/carousel";
-// @import "coblocks/events";
-// @import "coblocks/features";
-// @import "coblocks/food-drinks";
-// @import "coblocks/pricing-table";
-// @import "coblocks/services";
-// @import "coblocks/social";
 
 .block-editor-block-list__block[data-type="core/paragraph"] p {
 	line-height: var(--go--line-height);
