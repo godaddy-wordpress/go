@@ -1,7 +1,10 @@
+// Global variables
+@import "../../../shared/css/config/breakpoints";
+@import "../../../shared/css/config/mixins";
+
 /**
  * Playful - Editor Styles
  */
-@import "../../../shared/css/config/media-queries";
 @import "../settings";
 @import "components/carousel";
 
@@ -12,6 +15,6 @@
 	background-repeat: repeat-x;
 	border: none;
 	height: 9pt;
-	mask-image: url(../../../dist/images/design-styles/playful/cross-stich-border.svg);
+	//mask-image: url(../../../dist/images/design-styles/playful/cross-stich-border.svg);
 	max-width: 113px;
 }

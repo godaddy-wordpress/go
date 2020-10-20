@@ -1,7 +1,10 @@
+// Global variables
+@import "../../../shared/css/config/breakpoints";
+@import "../../../shared/css/config/mixins";
+
 /**
  * Traditional - Styles
  */
-@import "../../../shared/css/config/media-queries";
 @import "../settings";
 
 .wp-block-coblocks-food-item__attributes {

@@ -1,8 +1,10 @@
+// Global variables
+@import "../../../shared/css/config/breakpoints";
+@import "../../../shared/css/config/mixins";
+
 /**
  * Modern - Styles
  */
-@import "../../../shared/css/config/media-queries";
-@import "../../../shared/css/config/mixins";
 @import "../settings";
 @import "components/button";
 @import "components/carousel";

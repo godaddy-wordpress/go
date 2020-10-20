@@ -1,7 +1,10 @@
+// Global variables
+@import "../../../shared/css/config/breakpoints";
+@import "../../../shared/css/config/mixins";
+
 /**
  * Trendy - Editor Styles
  */
-@import "../../../shared/css/config/media-queries";
 @import "../settings";
 @import "components/button";
 @import "components/carousel";
