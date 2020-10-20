@@ -1,7 +1,6 @@
 /*! Media & Text */
 .wp-block-media-text {
 
-	/* Fix 50% width */
 	@include media(small-only) {
 		grid-template-columns: 50% auto !important;
 	}

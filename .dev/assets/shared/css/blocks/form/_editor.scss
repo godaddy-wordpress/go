@@ -1,0 +1,29 @@
+.wp-block[data-type="coblocks/form"] {
+
+	.wp-block {
+		margin-bottom: var(--go-input--margin-bottom);
+	}
+
+	.components-base-control__field {
+		align-content: center;
+		align-items: center;
+	}
+
+	.components-form-toggle {
+		display: flex;
+		margin-top: 0 !important;
+	}
+
+	.components-base-control__field label {
+		line-height: 1;
+	}
+
+	.required {
+		color: var(--go--color--primary);
+		margin-top: -6px;
+	}
+}
+
+.coblocks-field-label {
+	margin-bottom: calc(var(--go-label--margin-bottom) - 5px);
+}

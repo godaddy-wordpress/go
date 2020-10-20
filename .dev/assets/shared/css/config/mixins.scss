@@ -46,7 +46,7 @@
 @mixin select-menu {
 	appearance: button;
 	background-color: var(--go-input--color--background, --go--color--white);
-	background-image: url(../images/arrow-down-solid.svg);
+	//background-image: url("../images/arrow-down-solid.svg");
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border: var(--go-input--border);
@@ -88,11 +88,11 @@
 }
 
 @mixin checkbox-label-before {
-	mask-image: url(../images/checkbox.svg);
+	//mask-image: url(../images/checkbox.svg);
 }
 
 @mixin checkbox-label-checked-before {
-	mask-image: url(../images/checkbox-checked.svg);
+	//mask-image: url(../images/checkbox-checked.svg);
 }
 
 @mixin radio-label-before {

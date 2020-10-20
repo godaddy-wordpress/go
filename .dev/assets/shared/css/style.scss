@@ -1,7 +1,7 @@
 /* Reset & Normalize */
 
 /*! Global Variables */
-@import "config/media-queries";
+@import "config/breakpoints";
 @import "config/mixins";
 @import "config/root";
 
@@ -15,7 +15,6 @@
 @import "elements/headings";
 @import "elements/lists";
 @import "elements/media";
-@import "blocks/table";
 
 /*! Layout */
 @import "layout/alignments";
@@ -55,45 +54,45 @@
 /*! Blocks */
 @import "blocks/blocks";
 
-@import "blocks/button";
-@import "blocks/separator";
-@import "blocks/image";
-@import "blocks/columns";
-@import "blocks/cover";
-@import "blocks/media";
-@import "blocks/gallery";
-@import "blocks/preformatted";
-@import "blocks/pullquote";
-@import "blocks/file";
-@import "blocks/latest-posts";
-@import "blocks/latest-comments";
-@import "blocks/quote";
-@import "blocks/paragraph";
-@import "blocks/verse";
-@import "blocks/more";
-@import "blocks/code";
-@import "blocks/search";
-@import "blocks/group";
+// @import "blocks/button";
+// @import "blocks/separator";
+// @import "blocks/image";
+// @import "blocks/columns";
+// @import "blocks/cover";
+// @import "blocks/media";
+// @import "blocks/gallery";
+// @import "blocks/preformatted";
+// @import "blocks/pullquote";
+// @import "blocks/file";
+// @import "blocks/latest-posts";
+// @import "blocks/latest-comments";
+// @import "blocks/quote";
+// @import "blocks/paragraph";
+// @import "blocks/verse";
+// @import "blocks/more";
+// @import "blocks/code";
+// @import "blocks/search";
+// @import "blocks/group";
 
-/*! CoBlocks */
-@import "coblocks/accordion";
-@import "coblocks/alert";
-@import "coblocks/author";
-@import "coblocks/carousel";
-@import "coblocks/dynamic-separator";
-@import "coblocks/events";
-@import "coblocks/features";
-// @import "coblocks/food-drinks";
-@import "coblocks/form";
-@import "coblocks/hero";
-@import "coblocks/icon";
-@import "coblocks/masonry";
-@import "coblocks/media-card";
-@import "coblocks/pricing-table";
-@import "coblocks/row";
-@import "coblocks/services";
-@import "coblocks/shape-divider";
-@import "coblocks/social";
+// /*! CoBlocks */
+// @import "coblocks/accordion";
+// @import "coblocks/alert";
+// @import "coblocks/author";
+// @import "coblocks/carousel";
+// @import "coblocks/dynamic-separator";
+// @import "coblocks/events";
+// @import "coblocks/features";
+// // @import "coblocks/food-drinks";
+// @import "coblocks/form";
+// @import "coblocks/hero";
+// @import "coblocks/icon";
+// @import "coblocks/masonry";
+// @import "coblocks/media-card";
+// @import "coblocks/pricing-table";
+// @import "coblocks/row";
+// @import "coblocks/services";
+// @import "coblocks/shape-divider";
+// @import "coblocks/social";
 
 /*! WooCommerce */
 @import "woocommerce/notice";

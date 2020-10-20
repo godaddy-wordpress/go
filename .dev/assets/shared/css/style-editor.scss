@@ -1,10 +1,23 @@
+/*! Global Variables */
+@import "config/breakpoints";
+@import "config/mixins";
+@import "config/root";
+
+/**
+ * Blocks
+ */
+@import "blocks/blocks";
+@import "blocks/blocks-editor";
+
+
+
+
+
+
 /**
  * Editor styles
  */
 @import "editor/vertical-rhythm";
-@import "config/media-queries";
-@import "config/mixins";
-@import "config/root";
 @import "editor/settings";
 @import "editor/widths";
 @import "editor/title-block";
@@ -17,8 +30,8 @@
 /**
  * Custom Editor Styles
  */
-@import "editor/hero";
-@import "editor/group";
+// @import "editor/hero";
+// @import "editor/group";
 @import "editor/woocommerce-blocks";
 
 /**
@@ -27,33 +40,27 @@
 @import "utilities/captions";
 @import "utilities/colors";
 
-/**
- * Blocks
- */
-@import "blocks/blocks";
-@import "blocks/blocks-editor";
+// @import "blocks/paragraph";
+// @import "blocks/code";
+// @import "blocks/cover";
+// @import "blocks/file";
+// @import "blocks/search";
+// @import "blocks/button";
+// @import "blocks/verse";
+// @import "blocks/quote";
+// @import "blocks/pullquote";
 
-@import "blocks/paragraph";
-@import "blocks/code";
-@import "blocks/cover";
-@import "blocks/file";
-@import "blocks/search";
-@import "blocks/button";
-@import "blocks/verse";
-@import "blocks/quote";
-@import "blocks/pullquote";
-
-/**
- * CoBlocks
- */
-@import "coblocks/accordion";
-@import "coblocks/carousel";
-@import "coblocks/events";
-@import "coblocks/features";
-@import "coblocks/food-drinks";
-@import "coblocks/pricing-table";
-@import "coblocks/services";
-@import "coblocks/social";
+// /**
+//  * CoBlocks
+//  */
+// @import "coblocks/accordion";
+// @import "coblocks/carousel";
+// @import "coblocks/events";
+// @import "coblocks/features";
+// @import "coblocks/food-drinks";
+// @import "coblocks/pricing-table";
+// @import "coblocks/services";
+// @import "coblocks/social";
 
 .block-editor-block-list__block[data-type="core/paragraph"] p {
 	line-height: var(--go--line-height);
@@ -68,86 +75,9 @@
 	padding-right: 1.25rem;
 }
 
-.wp-block-coblocks-author {
-	padding: var(--wp-block-coblocks-author--padding, 2.5rem);
-}
-
-// .wp-block-coblocks-food-and-drinks .wp-block[data-type="core/heading"] {
-
-// 	h1,
-// 	h2,
-// 	h3,
-// 	h4,
-// 	h5,
-// 	h6 {
-// 		background-color: var(--wp-block-coblocks-food-drinks--heading--color--background, --go-heading--color--text);
-// 		border-bottom: var(--wp-block-coblocks-food-drinks--heading--border-bottom, none);
-// 		color: var(--wp-block-coblocks-food-drinks--heading--color--text, --go--color--white);
-// 		font-size: var(--wp-block-coblocks-food-drinks--heading--font-size, 1.25rem);
-// 		font-style: var(--wp-block-coblocks-food-drinks--heading--font-style, normal);
-// 		margin-bottom: var(--wp-block-coblocks-food-drinks--heading--margin-bottom, 0.65rem);
-// 		padding: var(--wp-block-coblocks-food-drinks--heading--padding, 0.4rem 0.25rem 0.4rem);
-// 	}
-// }
-
-
-.wp-block-columns {
-
-	.wp-block-quote {
-		max-width: none;
-
-		&.is-style-large {
-			margin-left: 0;
-			margin-right: 0;
-		}
-	}
-
-	.wp-block[data-type="core/paragraph"] ~ .wp-block[data-type="core/button"] {
-		margin-bottom: 0 !important;
-	}
-}
-
-.wp-block-latest-posts {
-	padding-left: 0;
-}
-
 .wp-block-pullquote blockquote > .block-editor-rich-text p {
 	font-size: var(--go-pullquote--font-size, --go--type-scale-5);
 	line-height: var(--go-pullquote--line-height, 1.25);
-}
-
-.wp-block[data-type="core/pullquote"] {
-
-	.is-style-solid-color blockquote {
-		padding-left: var(--go-block--padding--x);
-		padding-right: var(--go-block--padding--x);
-	}
-}
-
-.wp-block[data-type="coblocks/form"] {
-
-	.wp-block {
-		margin-bottom: var(--go-input--margin-bottom);
-	}
-
-	.components-base-control__field {
-		align-content: center;
-		align-items: center;
-	}
-
-	.components-form-toggle {
-		display: flex;
-		margin-top: 0 !important;
-	}
-
-	.components-base-control__field label {
-		line-height: 1;
-	}
-
-	.required {
-		color: var(--go--color--primary);
-		margin-top: -6px;
-	}
 }
 
 .wp-block-search__label .rich-text,
@@ -164,9 +94,6 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 	margin-bottom: calc(var(--go-label--margin-bottom) - 5px);
 }
 
-.coblocks-field-label {
-	margin-bottom: calc(var(--go-label--margin-bottom) - 5px);
-}
 
 .wp-block-search__input,
 .wp-block[data-type="coblocks/form"] .components-text-control__input,
@@ -252,29 +179,6 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 
 .is-style-outline .wp-block-button__link {
 	border: 2px solid;
-}
-
-/*! Table */
-.wp-block-table {
-
-	table td,
-	table th {
-		border: 2px solid var(--go-table--border-color, --go-heading--color--text);
-	}
-}
-
-/*! Separator */
-.wp-block-separator {
-	border-bottom-color: var(--go-separator--color--border, --go-heading--color--text);
-	padding: 0;
-
-	&.is-style-wide {
-		max-width: 100%;
-	}
-
-	&.is-style-dots::before {
-		font-size: var(--go-separator--size, 2rem);
-	}
 }
 
 /*! WooCommerce products */
