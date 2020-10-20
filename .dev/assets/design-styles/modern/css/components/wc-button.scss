@@ -1,15 +1,11 @@
-/**
- * WooCommerce Modern - button overrides
- *
-*/
-
+/*! Woo Button */
 body {
 
 	&.woocommerce-page {
 
 		/* Primary Button */
-		& #respond input#submit.alt,
-		& .button.alt {
+		#respond input#submit.alt,
+		.button.alt {
 
 			&:active,
 			&:focus,

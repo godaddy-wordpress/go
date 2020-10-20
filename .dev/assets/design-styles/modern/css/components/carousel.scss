@@ -1,13 +1,13 @@
 /*! Modern: CoBlocks Carousel */
 .wp-block-coblocks-gallery-carousel {
 
-	& .flickity-button {
+	.flickity-button {
 		background-color: transparent !important;
 		border: 2px solid var(--go--color--white) !important;
 		border-radius: 0;
 
 		&::after {
-			background-image: url("../../../dist/images/design-styles/modern/carousel-arrow.svg");
+			background-image: url(../../../dist/images/design-styles/modern/carousel-arrow.svg);
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: 100%;
@@ -35,7 +35,7 @@
 		&.previous {
 			left: 18px;
 
-			@media (--medium) {
+			@include media(medium) {
 				left: 25px;
 			}
 
@@ -57,7 +57,7 @@
 		&.next {
 			right: 18px;
 
-			@media (--medium) {
+			@include media(medium) {
 				right: 25px;
 			}
 
@@ -80,8 +80,8 @@
 
 .has-aligned-cells {
 
-	& .flickity-button::before {
-		background: var(--go-button--color--background, var(--go--color--primary));
+	.flickity-button::before {
+		background: var(--go-button--color--background, --go--color--primary);
 		bottom: 0;
 		content: "";
 		display: block;

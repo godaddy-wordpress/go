@@ -1,15 +1,15 @@
 /**
  * Modern - Styles
  */
-@import url("../../../shared/css/config/media-queries.css");
-@import url("../../../shared/css/config/mixins.css");
-@import url("../settings.css");
-@import url("components/button.css");
-@import url("components/carousel.css");
-@import url("components/wc-button.css");
+@import "../../../shared/css/config/media-queries";
+@import "../../../shared/css/config/mixins";
+@import "../settings";
+@import "components/button";
+@import "components/carousel";
+@import "components/wc-button";
 
 .site-title {
-	@media (--largeMax) {
+	@include media(large-only) {
 		margin-left: calc(var(--go-site-title--letter-spacing) * 2.5);
 	}
 }
