@@ -1,11 +1,11 @@
 /*! CoBlocks: Food & Drinks */
 .wp-block-coblocks-food-and-drinks {
 
-	& > h2,
-	& > h3,
-	& > h4,
-	& > h5,
-	& > h6 {
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
 		background-color: var(--wp-block-coblocks-food-drinks--heading--color--background, --go-heading--color--text);
 		border-bottom: var(--wp-block-coblocks-food-drinks--heading--border-bottom, none);
 		color: var(--wp-block-coblocks-food-drinks--heading--color--text, --go--color--white);
@@ -40,7 +40,7 @@
 	position: relative;
 	top: -5px;
 
-	& svg {
+	svg {
 		fill: var(--wp-block-coblocks-food-item--icon--color--text, --go-heading--color--text);
 	}
 }

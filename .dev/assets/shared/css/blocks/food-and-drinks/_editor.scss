@@ -16,3 +16,21 @@
 		text-transform: var(--wp-block-coblocks-food-item--heading--text-transform, uppercase);
 	}
 }
+
+.wp-block-coblocks-food-and-drinks .wp-block[data-type="core/heading"] {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		background-color: var(--wp-block-coblocks-food-drinks--heading--color--background, --go-heading--color--text);
+		border-bottom: var(--wp-block-coblocks-food-drinks--heading--border-bottom, none);
+		color: var(--wp-block-coblocks-food-drinks--heading--color--text, --go--color--white);
+		font-size: var(--wp-block-coblocks-food-drinks--heading--font-size, 1.25rem);
+		font-style: var(--wp-block-coblocks-food-drinks--heading--font-style, normal);
+		margin-bottom: var(--wp-block-coblocks-food-drinks--heading--margin-bottom, 0.65rem);
+		padding: var(--wp-block-coblocks-food-drinks--heading--padding, 0.4rem 0.25rem 0.4rem);
+	}
+}
