@@ -1,11 +1,11 @@
 /*! Welcoming: CoBlocks Carousel */
 .wp-block-coblocks-gallery-carousel {
 
-	& .flickity-button::after {
-		background: var(--go-button--color--background, var(--go--color--primary));
+	.flickity-button::after {
+		background: var(--go-button--color--background, --go--color--primary);
 	}
 
-	& .coblocks-gallery--item {
+	.coblocks-gallery--item {
 		transition: opacity 0.75s;
 
 		&:not(.is-selected) {
@@ -13,7 +13,7 @@
 		}
 	}
 
-	& .coblocks-gallery--figure::before {
+	.coblocks-gallery--figure::before {
 		display: none;
 	}
 }

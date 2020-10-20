@@ -9,11 +9,11 @@
 
 .wp-block-coblocks-gallery-carousel {
 
-	& .coblocks-gallery--figure::before {
+	.coblocks-gallery--figure::before {
 		display: none;
 	}
 
-	& .flickity-button {
+	.flickity-button {
 		background: var(--go--color--background);
 		border: 2px solid var(--go-heading--color--text) !important;
 		border-radius: 0;
@@ -24,7 +24,7 @@
 
 		&::after {
 			background-color: transparent;
-			background-image: url("../../../dist/images/design-styles/trendy/carousel-arrow.svg");
+			background-image: url(../../../dist/images/design-styles/trendy/carousel-arrow.svg);
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: 100%;
@@ -45,7 +45,7 @@
 			border-color: var(--go--color--secondary) !important;
 		}
 
-		& .flickity-button-icon {
+		.flickity-button-icon {
 			display: none;
 		}
 

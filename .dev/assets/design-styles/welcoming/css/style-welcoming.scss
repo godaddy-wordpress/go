@@ -1,12 +1,12 @@
 /**
  * Welcoming - Styles
  */
-@import url("../../../shared/css/config/media-queries.css");
-@import url("../settings.css");
-@import url("components/button.css");
-@import url("components/carousel.css");
-@import url("woocommerce/tabs.css");
-@import url("woocommerce/product.css");
+@import "../../../shared/css/config/media-queries";
+@import "../settings";
+@import "components/button";
+@import "components/carousel";
+@import "woocommerce/tabs";
+@import "woocommerce/product";
 
 html {
 	background-color: var(--go-header--color--background);

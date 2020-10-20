@@ -57,7 +57,7 @@
 
 	/* Input */
 	--go-input--border-color: var(--go--color--primary);
-	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
+	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, --go-heading--color--text);
 	--go-input--color--text: var(--go-caption--color--text);
 	--go-input--font-size: 1.1rem;
 	--go-input--padding--x: 1.35rem;
@@ -76,7 +76,7 @@
 	--go-site-title--letter-spacing: 0;
 	--go-site-title--text-transform: normal;
 
-	@media (--medium) {
+	@include media(medium) {
 		--go-site-title--font-size: 2.25rem;
 	}
 
@@ -108,7 +108,7 @@
 	--go-social--padding: 0.5rem;
 	--go-social--size: 1.5rem;
 
-	@media (--medium) {
+	@include media(medium) {
 		--go-social--padding: 1rem;
 		--go-social--size: 2rem;
 	}
