@@ -1,12 +1,12 @@
 .wp-block {
-	max-width: var(--editor-max-w-base);
+	max-width: var(--go--max-width);
 
 	.wp-block {
 		width: 100%;
 	}
 
 	&[data-align="wide"] {
-		max-width: var(--editor-max-w-wide);
+		max-width: var(--go--max-width--alignwide);
 	}
 
 	&[data-align="full"] {
@@ -26,14 +26,14 @@
 
 .wp-block[data-align="wide"] .wp-block[data-align="wide"],
 .wp-block[data-align="full"] .wp-block[data-align="wide"] {
-	max-width: var(--editor-max-w-wide);
+	max-width: var(--go--max-width--alignwide);
 }
 
 .wp-block .wp-block[data-type="core/group"]:not([data-align="full"]):not([data-align="wide"]):not([data-align="left"]):not([data-align="right"]),
 .wp-block .wp-block[data-type="core/cover"]:not([data-align="full"]):not([data-align="wide"]):not([data-align="left"]):not([data-align="right"]) {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: var(--editor-max-w-base);
+	max-width: var(--go--max-width);
 }
 
 .wp-block[data-type="core/group"][data-align="full"] .wp-block:not([data-align="full"]):not([data-align="wide"]):not([data-align="left"]):not([data-align="right"]):not([data-type="core/heading"]):not([data-type="core/paragraph"]):not([data-type="coblocks/form"]) {
@@ -44,7 +44,7 @@
 }
 
 .wp-block[data-type="core/group"][data-align="full"] [data-type="core/heading"] {
-	max-width: var(--editor-max-w-base);
+	max-width: var(--go--max-width);
 }
 
 

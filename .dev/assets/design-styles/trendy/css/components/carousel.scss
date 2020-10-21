@@ -1,6 +1,6 @@
 /*! Trendy: CoBlocks Carousel */
 .wp-block-coblocks-gallery-carousel .has-carousel:not(.has-aligned-cells) .coblocks-gallery--item {
-	transition: opacity 0.75s, transform 0.75s;
+	transition: opacity 800ms cubic-bezier(.165,.84,.44,1), transform 1000ms cubic-bezier(.165,.84,.44,1);
 
 	&:not(.is-selected) {
 		transform: scale(0.9);
@@ -24,7 +24,7 @@
 
 		&::after {
 			background-color: transparent;
-			//background-image: url("../../../dist/images/design-styles/trendy/carousel-arrow.svg");
+			//background-image: url("/images/design-styles/trendy/carousel-arrow.svg");
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: 100%;
