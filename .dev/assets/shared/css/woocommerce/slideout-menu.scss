@@ -93,7 +93,7 @@ body {
 }
 
 #site-nav--cart {
-	background: var(--go--color--background, --go--color--white);
+	background: var(--go--color--background, var(--go--color--white));
 	height: 100vh;
 	overflow-y: auto;
 	padding: 60px 65px;

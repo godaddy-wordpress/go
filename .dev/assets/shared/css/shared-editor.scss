@@ -56,7 +56,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 .wp-block-search__input,
 .wp-block[data-type="coblocks/form"] .components-text-control__input,
 .wp-block[data-type="coblocks/form"] .components-textarea-control__input {
-	background-color: var(--go-input--color--background, --go--color--white);
+	background-color: var(--go-input--color--background, var(--go--color--white));
 	border: var(--go-input--border);
 	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 	box-shadow: var(--go-input--box-shadow, none);

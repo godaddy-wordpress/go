@@ -93,7 +93,7 @@
 
 		/* All submenu links */
 		a {
-			color: var(--go-submenu--color--text, --go--color--white);
+			color: var(--go-submenu--color--text, var(--go--color--white));
 			width: 100%;
 
 			@include media(large) {

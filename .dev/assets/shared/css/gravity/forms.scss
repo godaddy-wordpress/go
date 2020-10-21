@@ -4,7 +4,7 @@
 }
 
 .gform_wrapper ul.gform_fields li.gfield select {
-	background-color: var(--go-input--color--background, --go--color--white);
+	background-color: var(--go-input--color--background, var(--go--color--white));
 	border: var(--go-input--border);
 	font-size: var(--go-input--font-size);
 	font-weight: var(--go-input--font-weight, 400);
@@ -48,7 +48,7 @@ body .gform_wrapper .top_label select.medium {
 
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
 .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_right select {
-	background-color: var(--go-input--color--background, --go--color--white);
+	background-color: var(--go-input--color--background, var(--go--color--white));
 	border: var(--go-input--border);
 	font-size: var(--go-input--font-size);
 	font-weight: var(--go-input--font-weight, 400);
@@ -116,7 +116,7 @@ body {
 	}
 
 	.gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
-		background-color: var(--go-input--color--background, --go--color--white);
+		background-color: var(--go-input--color--background, var(--go--color--white));
 		border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 		font-size: var(--go-input--font-size);
 		line-height: 1;
@@ -154,7 +154,7 @@ body {
 	}
 
 	.gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
-		background-color: var(--go-input--color--background, --go--color--white);
+		background-color: var(--go-input--color--background, var(--go--color--white));
 		//background-image: url(../images/error-icon.svg);
 		background-position: calc(100% - 10px) center;
 		background-repeat: no-repeat;
@@ -163,7 +163,7 @@ body {
 	}
 
 	.gform_wrapper textarea {
-		background-color: var(--go-input--color--background, --go--color--white);
+		background-color: var(--go-input--color--background, var(--go--color--white));
 		border-color: var(--go-input--border-color, var(--go-heading--color--text));
 		color: var(--go-input--color--text);
 		font-size: var(--go-input--font-size);
