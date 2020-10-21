@@ -28,7 +28,7 @@
 
 			.wc-block-review-list-item__rating__stars span::before {
 				color: var(--go--color--primary);
-				color: var(--go--hyperlink--color--text, --go--color--primary);
+				color: var(--go--hyperlink--color--text, var(--go--color--primary));
 			}
 		}
 	}
@@ -53,7 +53,7 @@ h2 + .wc-block-grid {
 
 		.star-rating span::before {
 			color: var(--go--color--primary);
-			color: var(--go--hyperlink--color--text, --go--color--primary);
+			color: var(--go--hyperlink--color--text, var(--go--color--primary));
 		}
 	}
 

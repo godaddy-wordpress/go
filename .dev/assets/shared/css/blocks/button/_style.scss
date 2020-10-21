@@ -2,7 +2,7 @@
 .wp-block-button {
 
 	&:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
-		background-color: var(--go-button--color--background, --go--color--primary);
+		background-color: var(--go-button--color--background, var(--go--color--primary));
 	}
 
 	&:not(.is-style-outline) .wp-block-button__link.has-quaternary-background-color:not(.has-text-color) {

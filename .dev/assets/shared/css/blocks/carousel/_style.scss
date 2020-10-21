@@ -7,7 +7,7 @@
 
 	/* @todo, does not work with the new hsl variables. */
 	& .coblocks-gallery--figure::before {
-		background-color: var(--wp-block-coblocks-gallery-carousel--overlay--color--background, --go--color--primary);
+		background-color: var(--wp-block-coblocks-gallery-carousel--overlay--color--background, var(--go--color--primary));
 		content: "";
 		height: 100%;
 		opacity: 0;

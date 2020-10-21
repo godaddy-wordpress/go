@@ -63,7 +63,7 @@
 
 				.star-rating {
 					color: var(--go--color--primary);
-					color: var(--go--hyperlink--color--text, --go--color--primary);
+					color: var(--go--hyperlink--color--text, var(--go--color--primary));
 				}
 			}
 

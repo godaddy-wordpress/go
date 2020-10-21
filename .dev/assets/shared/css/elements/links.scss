@@ -1,6 +1,6 @@
 /*! Links */
 a {
-	color: var(--go--hyperlink--color--text, --go--color--primary);
+	color: var(--go--hyperlink--color--text, var(--go--color--primary));
 	text-decoration: underline;
 
 	&:hover,

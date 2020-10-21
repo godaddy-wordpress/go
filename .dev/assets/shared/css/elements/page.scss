@@ -12,12 +12,12 @@ html {
 }
 
 ::-moz-selection {
-	background-color: var(--go-selection--color--background, --go--color--primary);
+	background-color: var(--go-selection--color--background, var(--go--color--primary));
 	color: var(--go-selection--color--text, inherit);
 }
 
 ::selection {
-	background-color: var(--go-selection--color--background, --go--color--primary);
+	background-color: var(--go-selection--color--background, var(--go--color--primary));
 	color: var(--go-selection--color--text, --go--color--white);
 }
 
