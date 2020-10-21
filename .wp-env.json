@@ -1,3 +1,8 @@
 {
+	"core": null,
+	"plugins": [
+		".",
+		"https://downloads.wordpress.org/plugin/coblocks.latest-stable.zip"
+	],
 	"themes": [ "." ]
 }
