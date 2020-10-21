@@ -11,7 +11,7 @@
 
 	h4 {
 		font-size: var(--wp-block-coblocks-food-item--heading--font-size);
-		font-weight: var(--wp-block-coblocks-food-item--heading--font-weight, --go-heading--font-weight);
+		font-weight: var(--wp-block-coblocks-food-item--heading--font-weight, var(--go-heading--font-weight));
 		letter-spacing: var(--wp-block-coblocks-food-item--heading--letter-spacing, 2px);
 		text-transform: var(--wp-block-coblocks-food-item--heading--text-transform, uppercase);
 	}

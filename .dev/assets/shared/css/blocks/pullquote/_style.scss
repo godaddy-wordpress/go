@@ -23,10 +23,10 @@
 
 	p {
 
-		font-family: var(--go-pullquote--font-family, --go-heading--font-family);
+		font-family: var(--go-pullquote--font-family, var(--go-heading--font-family));
 		font-size: var(--go-pullquote--font-size, var(--go--type-scale-5));
 		font-style: var(--go-pullquote--font-style, italic);
-		font-weight: var(--go-pullquote--font-weight, --go-heading--font-weight);
+		font-weight: var(--go-pullquote--font-weight, var(--go-heading--font-weight));
 		line-height: var(--go-pullquote--line-height, 1.25);
 	}
 

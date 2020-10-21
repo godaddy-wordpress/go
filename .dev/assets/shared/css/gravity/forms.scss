@@ -172,7 +172,7 @@ body {
 
 		&:focus {
 			border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
-			color: var(--go-input-interactive--color--text, --go--color--text);
+			color: var(--go-input-interactive--color--text, var(--go--color--text));
 		}
 	}
 

@@ -35,7 +35,7 @@ input[type="color"] {
 		background: var(--go-input-interactive--color--background, var(--go--color--white));
 		border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 		box-shadow: var(--go-input-interactive--box-shadow, none);
-		color: var(--go-input-interactive--color--text, --go--color--text);
+		color: var(--go-input-interactive--color--text, var(--go--color--text));
 		outline: none;
 	}
 }
@@ -127,7 +127,7 @@ textarea {
 		background: var(--go-input-interactive--color--background, var(--go--color--white));
 		border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 		box-shadow: var(--go-input-interactive--box-shadow, none);
-		color: var(--go-input-interactive--color--text, --go--color--text);
+		color: var(--go-input-interactive--color--text, var(--go--color--text));
 		outline: none;
 	}
 }

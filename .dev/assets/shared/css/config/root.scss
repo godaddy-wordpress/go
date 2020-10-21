@@ -1,10 +1,10 @@
 :root {
 
 	/* Typographic scale */
-	--go--type-scale-0: calc(var(--go--heading-size, --go--font-size) * 0.7);
+	--go--type-scale-0: calc(var(--go--heading-size, var(--go--font-size)) * 0.7);
 
 	@include media(large) {
-		--go--type-scale-0: var(--go--heading-size, --go--font-size);
+		--go--type-scale-0: var(--go--heading-size, var(--go--font-size));
 	}
 
 	--go--type-scale-1: calc(var(--go--type-scale-0) * var(--go--type-ratio));

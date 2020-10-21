@@ -8,10 +8,10 @@
 	p {
 		color: var(--go-quote--color--text, var(--go-heading--color--text));
 		font-family: var(--go-heading--font-family);
-		font-size: var(--go-quote--font-size, --go--type-scale-4);
+		font-size: var(--go-quote--font-size, var(--go--type-scale-4));
 		font-style: var(--go-quote--font-style, normal);
-		font-weight: var(--go-quote--font-weight, --go-heading--font-weight);
-		line-height: var(--go-quote--line-height, --go-heading--line-height);
+		font-weight: var(--go-quote--font-weight, var(--go-heading--font-weight));
+		line-height: var(--go-quote--line-height, var(--go-heading--line-height));
 		margin: 0 0 2rem;
 		padding: 0.5rem 0;
 		position: relative;
@@ -59,8 +59,8 @@
 		p {
 			font-size: var(--go-quote-large--font-size, var(--go--type-scale-5));
 			font-style: var(--go-quote-large--font-style, normal);
-			font-weight: var(--go-quote--font-weight, --go-heading--font-weight);
-			line-height: var(--go-quote-large--line-height, --go-heading--line-height);
+			font-weight: var(--go-quote--font-weight, var(--go-heading--font-weight));
+			line-height: var(--go-quote-large--line-height, var(--go-heading--line-height));
 			margin: 0;
 			padding: 0;
 

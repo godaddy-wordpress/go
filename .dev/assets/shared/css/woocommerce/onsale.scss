@@ -18,7 +18,7 @@
 	width: 3rem;
 
 	@include media(medium) {
-		font-size: var(--go-button--font-size, --go--font-size);
+		font-size: var(--go-button--font-size, var(--go--font-size));
 		height: 4.5rem;
 		letter-spacing: var(--go-button--letter-spacing);
 		width: 4.5rem;

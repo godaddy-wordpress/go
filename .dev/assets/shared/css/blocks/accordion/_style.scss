@@ -9,7 +9,7 @@
 	border-radius: var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius));
 
 	&:not(.has-background) {
-		background: var(--wp-block-coblocks-accordion-item--color--background, --go--color--background);
+		background: var(--wp-block-coblocks-accordion-item--color--background, var(--go--color--background));
 	}
 
 	&:not(.has-text-color) {

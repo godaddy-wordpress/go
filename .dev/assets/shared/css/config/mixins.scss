@@ -7,7 +7,7 @@
 	color: var(--go-button--color--text, var(--go--color--white));
 	display: inline-block;
 	font-family: var(--go-button--font-family, var(--go-navigation--font-family));
-	font-size: var(--go-button--font-size, --go--font-size);
+	font-size: var(--go-button--font-size, var(--go--font-size));
 	font-weight: var(--go-button--font-weight);
 	letter-spacing: var(--go-button--letter-spacing, normal);
 	line-height: 1;
@@ -20,7 +20,7 @@
 }
 
 @mixin button-hover {
-	background-color: var(--go-button-interactive--color--background, --go--color--secondary);
+	background-color: var(--go-button-interactive--color--background, var(--go--color--secondary));
 }
 
 @mixin button-disabled {

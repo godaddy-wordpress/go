@@ -5,7 +5,7 @@ a {
 
 	&:hover,
 	&:active {
-		color: var(--go--hyperlink-interactive--color--text, --go--color--text);
+		color: var(--go--hyperlink-interactive--color--text, var(--go--color--text));
 		outline: 0;
 	}
 
