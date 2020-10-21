@@ -19,7 +19,7 @@
 	}
 
 	.flickity-button:hover {
-		background-color: var(--go-button-interactive--color--background, --go--color--secondary);
+		background-color: var(--go-button-interactive--color--background, var(--go--color--secondary));
 	}
 
 	.flickity-prev-next-button {

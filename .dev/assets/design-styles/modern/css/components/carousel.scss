@@ -81,7 +81,7 @@
 .has-aligned-cells {
 
 	.flickity-button::before {
-		background: var(--go-button--color--background, --go--color--primary);
+		background: var(--go-button--color--background, var(--go--color--primary));
 		bottom: 0;
 		content: "";
 		display: block;
