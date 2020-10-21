@@ -417,7 +417,7 @@ function editor_styles() {
 
 	// Enqueue  shared editor styles.
 	add_editor_style(
-		"dist/css/style-editor{$rtl}{$suffix}.css"
+		"dist/css/style-shared-editor{$rtl}{$suffix}.css"
 	);
 
 	// Enqueue design style editor styles.

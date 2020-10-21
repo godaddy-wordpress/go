@@ -572,7 +572,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		global $editor_styles;
 
-		$this->assertTrue( in_array( 'dist/css/style-editor.min.css', $editor_styles, true ) );
+		$this->assertTrue( in_array( 'dist/css/style-shared-editor.min.css', $editor_styles, true ) );
 
 	}
 
