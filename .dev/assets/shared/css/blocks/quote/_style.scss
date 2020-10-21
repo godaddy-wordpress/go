@@ -6,7 +6,7 @@
 	margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
 
 	p {
-		color: var(--go-quote--color--text, --go-heading--color--text);
+		color: var(--go-quote--color--text, var(--go-heading--color--text));
 		font-family: var(--go-heading--font-family);
 		font-size: var(--go-quote--font-size, --go--type-scale-4);
 		font-style: var(--go-quote--font-style, normal);
@@ -31,7 +31,7 @@
 		padding-right: 0;
 
 		p {
-			color: var(--go-quote--color--text, --go-heading--color--text);
+			color: var(--go-quote--color--text, var(--go-heading--color--text));
 			padding-left: 1.5rem;
 
 			@include media(medium) {
@@ -51,7 +51,7 @@
 	}
 
 	&.is-style-large {
-		color: var(--go-quote-large--color--text, --go-heading--color--text);
+		color: var(--go-quote-large--color--text, var(--go-heading--color--text));
 		margin-left: auto;
 		margin-right: auto;
 		padding: 0;

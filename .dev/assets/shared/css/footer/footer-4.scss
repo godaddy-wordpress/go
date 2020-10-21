@@ -23,7 +23,7 @@
 		}
 
 		.site-title {
-			color: var(--go-footer-heading--color--text, --go-heading--color--text);
+			color: var(--go-footer-heading--color--text, var(--go-heading--color--text));
 		}
 
 		.site-description {

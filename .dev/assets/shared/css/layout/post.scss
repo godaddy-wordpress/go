@@ -2,7 +2,7 @@
 .post__title {
 
 	a {
-		color: var(--go-h1--color--text, --go-heading--color--text);
+		color: var(--go-h1--color--text, var(--go-heading--color--text));
 		text-decoration: none;
 
 		&:hover {

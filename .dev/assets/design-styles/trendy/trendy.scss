@@ -62,7 +62,7 @@
 
 	/* Input */
 	--go-input-interactive--color--border-color: var(--go--color--tertiary);
-	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, --go-heading--color--text);
+	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
 	--go-input--color--text: var(--go-caption--color--text);
 	--go-input--font-size: 1.1rem;
 	--go-input--margin-bottom: 2rem;

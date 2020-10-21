@@ -70,7 +70,7 @@
 }
 
 .footer-navigation__title {
-	color: var(--go-footer-heading--color--text, --go-heading--color--text);
+	color: var(--go-footer-heading--color--text, var(--go-heading--color--text));
 	display: block;
 	font-family: var(--go-navigation--font-family);
 	font-size: var(--go-navigation--font-size);

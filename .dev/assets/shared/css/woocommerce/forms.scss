@@ -11,7 +11,7 @@
 
 .woocommerce form .form-row textarea {
 	background-color: var(--go-input--color--background, --go--color--white);
-	border-color: var(--go-input--border-color, --go-heading--color--text);
+	border-color: var(--go-input--border-color, var(--go-heading--color--text));
 }
 
 .woocommerce form .form-row textarea:focus {
@@ -71,7 +71,7 @@
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
-	border-color: var(--go-input--border-color, --go-heading--color--text);
+	border-color: var(--go-input--border-color, var(--go-heading--color--text));
 	margin-bottom: 0;
 	padding: var(--go-input--padding--y) var(--go-input--padding--x);
 }
@@ -84,7 +84,7 @@
 }
 
 .woocommerce form .form-row .required {
-	color: var(--go-label--color--text, --go-heading--color--text);
+	color: var(--go-label--color--text, var(--go-heading--color--text));
 }
 
 #add_payment_method table.cart td.actions .coupon .input-text,
@@ -136,7 +136,7 @@
 .woocommerce form .form-row.woocommerce-validated input.input-text,
 .woocommerce form .form-row.woocommerce-validated select {
 	background-color: var(--go-input--color--background, --go--color--white);
-	border-color: var(--go-input--border-color, --go-heading--color--text);
+	border-color: var(--go-input--border-color, var(--go-heading--color--text));
 	font-size: var(--go-input--font-size);
 	font-weight: var(--go-input--font-weight, 400);
 	line-height: 1.25;
@@ -196,7 +196,7 @@
 	padding: 0;
 
 	legend {
-		border-top: 1px solid var(--go-input--border-color, --go-heading--color--text);
+		border-top: 1px solid var(--go-input--border-color, var(--go-heading--color--text));
 		display: block;
 		margin: 0 0 1.5rem;
 		padding-top: 0.5rem;
@@ -205,7 +205,7 @@
 }
 
 .woocommerce-Address {
-	border-top: 1px solid var(--go-input--border-color, --go-heading--color--text);
+	border-top: 1px solid var(--go-input--border-color, var(--go-heading--color--text));
 	margin: 1.5rem 0;
 	padding-top: 0.5rem;
 }

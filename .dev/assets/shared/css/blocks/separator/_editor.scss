@@ -1,6 +1,6 @@
 /*! Separator */
 .wp-block-separator {
-	border-bottom-color: var(--go-separator--color--border, --go-heading--color--text);
+	border-bottom-color: var(--go-separator--color--border, var(--go-heading--color--text));
 	padding: 0;
 
 	&.is-style-wide {

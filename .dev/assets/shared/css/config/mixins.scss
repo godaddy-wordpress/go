@@ -76,7 +76,7 @@
 }
 
 @mixin checkbox-radio-label-before {
-	background-color: var(--go-input-radio--color--fill, --go-heading--color--text);
+	background-color: var(--go-input-radio--color--fill, var(--go-heading--color--text));
 	content: "";
 	display: block;
 	height: 19px;
@@ -97,13 +97,13 @@
 
 @mixin radio-label-before {
 	background-color: var(--go--color--white);
-	border: 1px solid var(--go-input-radio--color--fill, --go-heading--color--text);
+	border: 1px solid var(--go-input-radio--color--fill, var(--go-heading--color--text));
 	border-radius: 9999px;
 	box-shadow: inset 0 0 0 3px #fff;
 }
 
 @mixin radio-label-selected-before {
-	background-color: var(--go-input-radio--color--fill, --go-heading--color--text);
+	background-color: var(--go-input-radio--color--fill, var(--go-heading--color--text));
 }
 
 @mixin blockWidthNoPaddingWide {

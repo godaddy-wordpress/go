@@ -6,7 +6,7 @@
 	> h4,
 	> h5,
 	> h6 {
-		background-color: var(--wp-block-coblocks-food-drinks--heading--color--background, --go-heading--color--text);
+		background-color: var(--wp-block-coblocks-food-drinks--heading--color--background, var(--go-heading--color--text));
 		border-bottom: var(--wp-block-coblocks-food-drinks--heading--border-bottom, none);
 		color: var(--wp-block-coblocks-food-drinks--heading--color--text, --go--color--white);
 		font-size: var(--wp-block-coblocks-food-drinks--heading--font-size, 1.25rem);
@@ -41,7 +41,7 @@
 	top: -5px;
 
 	svg {
-		fill: var(--wp-block-coblocks-food-item--icon--color--text, --go-heading--color--text);
+		fill: var(--wp-block-coblocks-food-item--icon--color--text, var(--go-heading--color--text));
 	}
 }
 
@@ -56,10 +56,10 @@
 }
 
 [class*="hint--"]::after {
-	background-color: var(--wp-block-coblocks-food-item--tooltip--color--background, --go-heading--color--text);
+	background-color: var(--wp-block-coblocks-food-item--tooltip--color--background, var(--go-heading--color--text));
 	border-radius: var(--wp-block-coblocks-food-item--tooltip--border-radius, 0);
 }
 
 .hint--top::before {
-	border-top-color: var(--wp-block-coblocks-food-item--tooltip--color--background, --go-heading--color--text);
+	border-top-color: var(--wp-block-coblocks-food-item--tooltip--color--background, var(--go-heading--color--text));
 }

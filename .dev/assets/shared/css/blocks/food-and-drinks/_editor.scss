@@ -25,7 +25,7 @@
 	h4,
 	h5,
 	h6 {
-		background-color: var(--wp-block-coblocks-food-drinks--heading--color--background, --go-heading--color--text);
+		background-color: var(--wp-block-coblocks-food-drinks--heading--color--background, var(--go-heading--color--text));
 		border-bottom: var(--wp-block-coblocks-food-drinks--heading--border-bottom, none);
 		color: var(--wp-block-coblocks-food-drinks--heading--color--text, --go--color--white);
 		font-size: var(--wp-block-coblocks-food-drinks--heading--font-size, 1.25rem);

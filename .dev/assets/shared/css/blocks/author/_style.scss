@@ -10,5 +10,5 @@
 }
 
 .wp-block-coblocks-author__name {
-	color: var(--wp-block-coblocks-author--color--text, --go-heading--color--text);
+	color: var(--wp-block-coblocks-author--color--text, var(--go-heading--color--text));
 }
