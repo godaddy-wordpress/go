@@ -35,14 +35,14 @@
 }
 
 .wp-block-pullquote blockquote > .block-editor-rich-text p {
-	font-size: var(--go-pullquote--font-size, --go--type-scale-5);
+	font-size: var(--go-pullquote--font-size, var(--go--type-scale-5));
 	line-height: var(--go-pullquote--line-height, 1.25);
 }
 
 .wp-block-search__label .rich-text,
 label:not(.components-toggle-control__label):not(.components-base-control__label):not(.has-text-color) {
 	color: var(--go-label--color--text, var(--go-heading--color--text));
-	font-family: var(--go-label--font-family, --go-navigation--font-family);
+	font-family: var(--go-label--font-family, var(--go-navigation--font-family));
 	font-size: var(--go-label--font-size);
 	font-weight: var(--go-label--font-weight);
 	letter-spacing: var(--go-label--letter-spacing);
@@ -58,7 +58,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 .wp-block[data-type="coblocks/form"] .components-textarea-control__input {
 	background-color: var(--go-input--color--background, --go--color--white);
 	border: var(--go-input--border);
-	border-radius: var(--go-input--border-radius, --go-button--border-radius);
+	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 	box-shadow: var(--go-input--box-shadow, none);
 	color: var(--go-input--color--text);
 	font-size: var(--go-input--font-size);

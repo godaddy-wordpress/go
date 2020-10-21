@@ -6,7 +6,7 @@
 
 .wp-block-coblocks-accordion-item__title {
 	border: var(--wp-block-coblocks-accordion-item--border-width, 2px) solid var(--wp-block-coblocks-accordion-item--border-color, var(--go-heading--color--text));
-	border-radius: var(--wp-block-coblocks-accordion-item--border-radius, --go-button--border-radius);
+	border-radius: var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius));
 
 	&:not(.has-background) {
 		background: var(--wp-block-coblocks-accordion-item--color--background, --go--color--background);
@@ -18,7 +18,7 @@
 
 	&:hover::after {
 		background: var(--wp-block-coblocks-accordion-item-interactive--color--background, hsla(0, 0%, 0%, 0.1));
-		border-radius: var(--wp-block-coblocks-accordion-item--border-radius, --go-button--border-radius) var(--wp-block-coblocks-accordion-item--border-radius, --go-button--border-radius) 0 0;
+		border-radius: var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius)) var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius)) 0 0;
 	}
 
 	&:focus {
@@ -34,5 +34,5 @@
 }
 
 .wp-block-coblocks-accordion-item details[open] summary {
-	border-radius: var(--wp-block-coblocks-accordion-item--border-radius, --go-button--border-radius) var(--wp-block-coblocks-accordion-item--border-radius, --go-button--border-radius) 0 0;
+	border-radius: var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius)) var(--wp-block-coblocks-accordion-item--border-radius, var(--go-button--border-radius)) 0 0;
 }

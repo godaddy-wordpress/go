@@ -57,7 +57,7 @@
 		padding: 0;
 
 		p {
-			font-size: var(--go-quote-large--font-size, --go--type-scale-5);
+			font-size: var(--go-quote-large--font-size, var(--go--type-scale-5));
 			font-style: var(--go-quote-large--font-style, normal);
 			font-weight: var(--go-quote--font-weight, --go-heading--font-weight);
 			line-height: var(--go-quote-large--line-height, --go-heading--line-height);

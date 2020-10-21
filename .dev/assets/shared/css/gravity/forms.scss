@@ -95,7 +95,7 @@ body {
 
 	.gform_wrapper label.gfield_label,
 	.gform_wrapper legend.gfield_label {
-		font-family: var(--go-label--font-family, --go-navigation--font-family);
+		font-family: var(--go-label--font-family, var(--go-navigation--font-family));
 		font-size: var(--go-label--font-size);
 		font-weight: var(--go-label--font-weight);
 	}
@@ -117,7 +117,7 @@ body {
 
 	.gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]) {
 		background-color: var(--go-input--color--background, --go--color--white);
-		border-radius: var(--go-input--border-radius, --go-button--border-radius);
+		border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
 		font-size: var(--go-input--font-size);
 		line-height: 1;
 		padding: var(--go-button--padding--y) var(--go-input--padding--x);
