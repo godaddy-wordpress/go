@@ -86,7 +86,7 @@ There are two types of builds:
 
 Go leverages BrowserSync to inject styles into the DOM as you are working, so you don't have to continuously refresh the page after making small CSS tweaks.
 
-After running `npm run start`, anytime you change alter any of the `.scss` files in the `assets/` they will be recompiled and BrowserSync will inject the new styles into the DOM. Our webpack configuration file proxys the requests to `https://go.test`. You most likely do not have your site setup at this address locally.
+After running `npm run start`, anytime you change alter any of the `.scss` files in the `src/` they will be recompiled and BrowserSync will inject the new styles into the DOM. Our webpack configuration file proxys the requests to `https://go.test`. You most likely do not have your site setup at this address locally.
 
 If you are using a different URL, you'll need to update the proxy value inside of the [webpack config file](https://github.com/godaddy-wordpress/go/blob/master/.dev/config/webpack.settings.js#L78).
 

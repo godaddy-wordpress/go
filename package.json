@@ -30,7 +30,7 @@
 		"build-release": "npm install && npm run build",
 		"env": "wp-env",
 		"format": "npm run format-js",
-		"format-js": "eslint --fix assets/js",
+		"format-js": "eslint --fix src/js",
 		"generate-vr-specs": ".dev/bin/generate-vr-specs.sh",
 		"json2po": "cd languages && find . -name '*.json' ! -name 'go.json' -execdir /bin/bash -c 'FROM=\"$0\" && TO=\"go-`basename $0 .json`.po\" && echo \"$FROM > $TO\" && ../.dev/bin/json2po go.json $FROM $TO && msgmerge --previous $TO go.pot > $TO-msgmerge && mv $TO-msgmerge $TO && if [[ \"$OSTYPE\" == \"darwin\"* ]]; then sed -i \"\" -e \"/^#, fuzzy$/d\" $TO; else sed -i -e \"/^#, fuzzy$/d\" $TO; fi;' '{}' \\;",
 		"lint-php": "composer run lint",

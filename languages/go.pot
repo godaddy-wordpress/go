@@ -34,12 +34,12 @@ msgid "https://www.godaddy.com"
 msgstr ""
 
 #. translators: Placeholder is a link to the support document on GitHub.
-#: assets/development-environment.php:49
+#: src/development-environment.php:49
 msgid "Your installation of the Go theme is incomplete. If you installed the Go theme from GitHub, please refer to this document to set up your development environment: %1$s"
 msgstr ""
 
 #. translators: Placeholder is a link to the support document on GitHub.
-#: assets/development-environment.php:70
+#: src/development-environment.php:70
 msgid "Your installation of the Go theme is incomplete. If you installed the Go theme from GitHub, please refer to <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">this document</a> to set up your development environment."
 msgstr ""
 
@@ -1546,6 +1546,6 @@ msgctxt "submit button"
 msgid "Submit"
 msgstr ""
 
-#: assets/js/block-filters.js:40
+#: src/js/block-filters.js:40
 msgid "Hide page title"
 msgstr ""

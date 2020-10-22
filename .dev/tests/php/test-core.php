@@ -235,7 +235,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		if ( ! file_exists( get_template_directory() . '/languages/es_ES.mo' ) ) {
 
-			copy( dirname( __FILE__ ) . '/assets/es_ES.mo', get_template_directory() . '/languages/es_ES.mo' );
+			copy( dirname( __FILE__ ) . '/src/es_ES.mo', get_template_directory() . '/languages/es_ES.mo' );
 
 		}
 
