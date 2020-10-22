@@ -1,6 +1,7 @@
 Gruntfile.js
 src/js/frontend/vendor
 gulp-tasks/
+webpack.config.js
 webpack.config.babel.js
 gulpfile.babel.js
 vendor/
