@@ -1,5 +1,5 @@
 Gruntfile.js
-.dev/assets/shared/js/frontend/vendor
+assets/js/frontend/vendor
 gulp-tasks/
 webpack.config.babel.js
 gulpfile.babel.js
