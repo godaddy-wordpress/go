@@ -4,7 +4,7 @@
 module.exports = {
 	entries: {
 		// Styles
-		'style-editor': './src/sass/shared/shared-editor.scss',
+		'style-shared-editor': './src/sass/shared/shared-editor.scss',
 		'style-shared': './src/sass/shared/shared.scss',
 
 		// Design styles
