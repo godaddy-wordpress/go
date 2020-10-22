@@ -1,0 +1,18 @@
+/**
+ * Trendy - Styles
+ */
+@import "../trendy";
+@import "components/button";
+@import "components/carousel";
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+.site-footer__inner {
+	max-width: none;
+}
+
+.has-footer-1 .footer-navigation a {
+	color: var(--go-footer--color--text, initial);
+}
