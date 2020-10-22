@@ -204,7 +204,7 @@ class Test_Core extends WP_UnitTestCase {
 	 */
 	function testDevelopmentEnvironment() {
 
-		$file_path = get_template_directory() . '/.dev/assets/development-environment.php';
+		$file_path = get_template_directory() . '/development-environment.php';
 
 		if ( getenv( 'ci' ) ) {
 

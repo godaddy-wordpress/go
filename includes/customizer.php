@@ -173,7 +173,7 @@ function customize_preview_init() {
 
 	wp_enqueue_script(
 		'go-customize-preview',
-		get_theme_file_uri( "dist/js/admin/customize-preview{$suffix}.js" ),
+		get_theme_file_uri( "dist/js/customize/customize-preview{$suffix}.js" ),
 		array( 'jquery', 'wp-autop' ),
 		GO_VERSION,
 		true
@@ -200,7 +200,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_script(
 		'go-customize-controls',
-		get_theme_file_uri( "dist/js/admin/customize-controls{$suffix}.js" ),
+		get_theme_file_uri( "dist/js/customize/customize-controls{$suffix}.js" ),
 		array( 'jquery', 'wp-color-picker' ),
 		GO_VERSION,
 		true
@@ -233,7 +233,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_style(
 		'go-customize-style',
-		get_theme_file_uri( "dist/css/admin/style-customize{$rtl}{$suffix}.css" ),
+		get_theme_file_uri( "dist/css/customize/style-customize{$rtl}{$suffix}.css" ),
 		array(),
 		GO_VERSION
 	);

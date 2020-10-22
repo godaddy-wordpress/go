@@ -43,9 +43,9 @@ function setup() {
  */
 function development_environment() {
 
-	if ( is_readable( get_template_directory() . '/.dev/assets/development-environment.php' ) ) {
+	if ( is_readable( get_template_directory() . '/development-environment.php' ) ) {
 
-		require_once get_template_directory() . '/.dev/assets/development-environment.php';
+		require_once get_template_directory() . '/development-environment.php';
 
 	}
 
@@ -345,7 +345,7 @@ function block_editor_assets() {
 
 	wp_enqueue_script(
 		'go-block-filters',
-		wp_unslash( get_theme_file_uri( 'dist/js/admin/block-filters.js' ) ),
+		wp_unslash( get_theme_file_uri( 'dist/js/editor/block-filters.js' ) ),
 		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post', 'wp-components' ),
 		GO_VERSION,
 		true
@@ -978,19 +978,19 @@ function get_available_header_variations() {
 	$default_header_variations = array(
 		'header-1' => array(
 			'label'         => esc_html_x( 'Header 1', 'name of the first header variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-1.svg' ),
+			'preview_image' => get_theme_file_uri( 'assets/images/customizer/header-1.svg' ),
 		),
 		'header-2' => array(
 			'label'         => esc_html_x( 'Header 2', 'name of the second header variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-2.svg' ),
+			'preview_image' => get_theme_file_uri( 'assets/images/customizer/header-2.svg' ),
 		),
 		'header-3' => array(
 			'label'         => esc_html_x( 'Header 3', 'name of the third header variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-3.svg' ),
+			'preview_image' => get_theme_file_uri( 'assets/images/customizer/header-3.svg' ),
 		),
 		'header-4' => array(
 			'label'         => esc_html_x( 'Header 4', 'name of the fourth header variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-4.svg' ),
+			'preview_image' => get_theme_file_uri( 'assets/images/customizer/header-4.svg' ),
 		),
 	);
 
@@ -1017,28 +1017,28 @@ function get_available_footer_variations() {
 	$default_footer_variations = array(
 		'footer-1' => array(
 			'label'         => esc_html_x( 'Footer 1', 'name of the first footer variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-1.svg' ),
+			'preview_image' => get_theme_file_uri( 'assets/images/customizer/footer-1.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '1' );
 			},
 		),
 		'footer-2' => array(
 			'label'         => esc_html_x( 'Footer 2', 'name of the second footer variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-2.svg' ),
+			'preview_image' => get_theme_file_uri( 'assets/images/customizer/footer-2.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '2' );
 			},
 		),
 		'footer-3' => array(
 			'label'         => esc_html_x( 'Footer 3', 'name of the third footer variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-3.svg' ),
+			'preview_image' => get_theme_file_uri( 'assets/images/customizer/footer-3.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '3' );
 			},
 		),
 		'footer-4' => array(
 			'label'         => esc_html_x( 'Footer 4', 'name of the fourth footer variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-4.svg' ),
+			'preview_image' => get_theme_file_uri( 'assets/images/customizer/footer-4.svg' ),
 			'partial'       => function() {
 				return get_template_part( 'partials/footers/footer', '4' );
 			},
