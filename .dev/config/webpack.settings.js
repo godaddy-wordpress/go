@@ -78,7 +78,7 @@ module.exports = {
 		to: 'images/[path][name].[ext]',
 		transformPath: ( targetPath ) => {
 			console.log(targetPath);
-			return 'images/' + targetPath.replace( /(\src\/|assets\/|images\/|shared\/)/g, '' );
+			return 'images/' + targetPath.replace( /(\src\/|assets\/|images\/|shared\/|src\/)/g, '' );
 		},
 	},
 	BrowserSyncConfig: {
