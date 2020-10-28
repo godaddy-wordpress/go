@@ -74,10 +74,11 @@ module.exports = {
 		performance: true
 	},
 	copyWebpackConfig: {
-		from: 'src/assets/**/*.{jpg,jpeg,png,gif,svg}',
+		from: 'src/images/**/*.{jpg,jpeg,png,gif,svg}',
 		to: 'images/[path][name].[ext]',
 		transformPath: ( targetPath ) => {
-			return 'images/' + targetPath.replace( /(\src\/assets\/|images\/|shared\/)/g, '' );
+			console.log(targetPath);
+			return 'images/' + targetPath.replace( /(\src\/|assets\/|images\/|shared\/)/g, '' );
 		},
 	},
 	BrowserSyncConfig: {
