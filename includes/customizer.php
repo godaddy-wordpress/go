@@ -1055,7 +1055,7 @@ function inline_css() {
 	// Spacing.
 	$viewport_basis = get_theme_mod( 'viewport_basis', '1100' );
 
-	// Fonts
+	// Fonts.
 	$fonts      = get_theme_mod( 'fonts' );
 	$fonts      = array_keys( $fonts );
 	$font_size  = get_theme_mod( 'font_size' );

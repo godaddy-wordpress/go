@@ -273,13 +273,13 @@ function fonts_url() {
 
 	$design_style = get_design_style();
 
-	if ( ! isset( $design_style[ 'fonts' ] ) ) {
+	if ( ! isset( $design_style['fonts'] ) ) {
 
 		return;
 
 	}
 
-	$cur_fonts = get_theme_mod('fonts', $design_style[ 'fonts' ] );
+	$cur_fonts = get_theme_mod( 'fonts', $design_style['fonts'] );
 
 	$design_styles = get_available_design_styles();
 
@@ -685,8 +685,8 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'font_size' => '1.05rem',
-			'type_ratio' => '1.275',
+			'font_size'      => '1.05rem',
+			'type_ratio'     => '1.275',
 			'viewport_basis' => '900',
 		),
 		'modern'      => array(
@@ -739,8 +739,8 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'font_size' => '0.85rem',
-			'type_ratio' => '1.3',
+			'font_size'      => '0.85rem',
+			'type_ratio'     => '1.3',
 			'viewport_basis' => '950',
 		),
 		'trendy'      => array(
@@ -798,8 +798,8 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'font_size' => '1.1rem',
-			'type_ratio' => '1.2',
+			'font_size'      => '1.1rem',
+			'type_ratio'     => '1.2',
 			'viewport_basis' => '850',
 		),
 		'welcoming'   => array(
@@ -852,8 +852,8 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'font_size' => '1rem',
-			'type_ratio' => '1.235',
+			'font_size'      => '1rem',
+			'type_ratio'     => '1.235',
 			'viewport_basis' => '750',
 		),
 		'playful'     => array(
@@ -912,8 +912,8 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
-			'font_size' => '1.1rem',
-			'type_ratio' => '1.215',
+			'font_size'      => '1.1rem',
+			'type_ratio'     => '1.215',
 			'viewport_basis' => '950',
 		),
 	);
