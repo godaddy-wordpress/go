@@ -27,7 +27,7 @@ module.exports = {
 		'admin/style-customize': './src/sass/customize/style-customize.scss',
 
 		// JS.
-		'js/frontend': './src/js/frontend/frontend.js',
+		'js/frontend/frontend': './src/js/frontend/frontend.js',
 
 		// Admin JS.
 		'js/customize/customize-controls': './src/js/customize/customize-controls.js',
