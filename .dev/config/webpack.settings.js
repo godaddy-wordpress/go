@@ -27,12 +27,12 @@ module.exports = {
 		'admin/style-customize': './src/sass/customize/style-customize.scss',
 
 		// JS.
-		'js/frontend/frontend': './src/js/frontend/frontend.js',
+		'frontend': './src/js/frontend/frontend.js',
 
 		// Admin JS.
-		'js/customize/customize-controls': './src/js/customize/customize-controls.js',
-		'js/customize/customize-preview': './src/js/customize/customize-preview.js',
-		'js/editor/block-filters': './src/js/editor/block-filters.js',
+		'customize/customize-controls': './src/js/customize/customize-controls.js',
+		'customize/customize-preview': './src/js/customize/customize-preview.js',
+		'editor/block-filters': './src/js/editor/block-filters.js',
 	},
 	paths: {
 		src: {
