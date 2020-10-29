@@ -233,7 +233,7 @@ function enqueue_controls_assets() {
 
 	wp_enqueue_style(
 		'go-customize-style',
-		get_theme_file_uri( "dist/css/customize/style-customize{$rtl}{$suffix}.css" ),
+		get_theme_file_uri( "dist/css/admin/style-customize{$rtl}{$suffix}.css" ),
 		array(),
 		GO_VERSION
 	);
