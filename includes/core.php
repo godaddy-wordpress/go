@@ -352,7 +352,7 @@ function block_editor_assets() {
 		'go-block-filters',
 		'GoBlockFilters',
 		array(
-			'inlineStyles' => $styles,
+			'inlineStyles' => str_replace( ':root', '.editor-styles-wrapper', $styles ),
 		)
 	);
 

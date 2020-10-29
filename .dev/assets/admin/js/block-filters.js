@@ -6,6 +6,11 @@ const { withSelect, withDispatch } = wp.data;
 const { PluginPostStatusInfo } = wp.editPost;
 const { compose, withInstanceId } = wp.compose;
 
+// Inject Custom CSS into the block editor
+wp.domReady( function() {
+	jQuery( 'head' ).append( GoBlockFilters.inlineStyles );
+} );
+
 /**
  * Adds an 'Hide Page Title' toggle to the block editor 'Status & Visibility' section.
  *
@@ -13,8 +18,6 @@ const { compose, withInstanceId } = wp.compose;
  */
 function GoPageTitleToggle( { isEnabled, onChange } ) {
 	wp.domReady( function() {
-		jQuery( '.block-editor' ).append( GoBlockFilters.inlineStyles );
-
 		if ( isEnabled ) {
 			jQuery( '.block-editor .editor-post-title__input' ).css( { opacity: 0.5 } );
 		}
