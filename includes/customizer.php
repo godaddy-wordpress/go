@@ -1056,7 +1056,7 @@ function inline_css() {
 	$viewport_basis = get_theme_mod( 'viewport_basis', '1100' );
 
 	// Fonts.
-	$fonts      = get_theme_mod( 'fonts' );
+	$fonts      = get_theme_mod( 'fonts', array() );
 	$fonts      = array_keys( $fonts );
 	$font_size  = get_theme_mod( 'font_size' );
 	$type_ratio = get_theme_mod( 'type_ratio' );
