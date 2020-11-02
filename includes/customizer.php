@@ -1054,6 +1054,12 @@ function inline_css() {
 
 	// Spacing.
 	$viewport_basis = get_theme_mod( 'viewport_basis', '1100' );
+
+	// Fonts.
+	$fonts      = get_theme_mod( 'fonts', array() );
+	$fonts      = array_keys( $fonts );
+	$font_size  = get_theme_mod( 'font_size' );
+	$type_ratio = get_theme_mod( 'type_ratio' );
 	?>
 		<style>
 			:root {
@@ -1113,6 +1119,19 @@ function inline_css() {
 
 				<?php if ( $viewport_basis ) : ?>
 					--go--viewport-basis: <?php echo esc_attr( $viewport_basis ); ?>;
+				<?php endif; ?>
+
+				<?php if ( isset( $fonts[0], $fonts[1] ) ) : ?>
+					--go-heading--font-family: <?php echo esc_attr( $fonts[0] ); ?>;
+					--go--font-family: <?php echo esc_attr( $fonts[1] ); ?>;
+				<?php endif; ?>
+
+				<?php if ( $font_size ) : ?>
+					--go--font-size: <?php echo esc_attr( $font_size ); ?>;
+				<?php endif; ?>
+
+				<?php if ( $type_ratio ) : ?>
+					--go--type-ratio: <?php echo esc_attr( $type_ratio ); ?>;
 				<?php endif; ?>
 			}
 

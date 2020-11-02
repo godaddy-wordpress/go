@@ -273,28 +273,19 @@ function fonts_url() {
 
 	$design_style = get_design_style();
 
-	if ( ! $design_style ) {
+	if ( ! isset( $design_style['fonts'] ) ) {
 
 		return;
 
 	}
+
+	$cur_fonts = get_theme_mod( 'fonts', $design_style['fonts'] );
 
 	$design_styles = get_available_design_styles();
-	$design_style  = $design_style['slug'];
-
-	if (
-		! isset( $design_styles[ $design_style ] ) ||
-		! isset( $design_styles[ $design_style ]['fonts'] ) ||
-		empty( $design_styles[ $design_style ]['fonts'] )
-	) {
-
-		return;
-
-	}
 
 	$fonts = array();
 
-	foreach ( $design_styles[ $design_style ]['fonts'] as $font => $font_weights ) {
+	foreach ( $cur_fonts as $font => $font_weights ) {
 
 		$fonts[] = sprintf( '%1$s:%2$s', $font, implode( ',', $font_weights ) );
 
@@ -361,7 +352,7 @@ function block_editor_assets() {
 		'go-block-filters',
 		'GoBlockFilters',
 		array(
-			'inlineStyles' => $styles,
+			'inlineStyles' => str_replace( ':root', '.editor-styles-wrapper', $styles ),
 		)
 	);
 
@@ -694,6 +685,8 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
+			'font_size'      => '1.05rem',
+			'type_ratio'     => '1.275',
 			'viewport_basis' => '900',
 		),
 		'modern'      => array(
@@ -732,20 +725,22 @@ function get_available_design_styles() {
 				),
 			),
 			'fonts'          => array(
-				'Montserrat' => array(
+				'Heebo'      => array(
 					'400',
-					'700',
+					'800',
 				),
 				'Fira Code'  => array(
 					'400',
 					'400i',
 					'700',
 				),
-				'Heebo'      => array(
+				'Montserrat' => array(
 					'400',
-					'800',
+					'700',
 				),
 			),
+			'font_size'      => '0.85rem',
+			'type_ratio'     => '1.3',
 			'viewport_basis' => '950',
 		),
 		'trendy'      => array(
@@ -803,6 +798,8 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
+			'font_size'      => '1.1rem',
+			'type_ratio'     => '1.2',
 			'viewport_basis' => '850',
 		),
 		'welcoming'   => array(
@@ -855,6 +852,8 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
+			'font_size'      => '1rem',
+			'type_ratio'     => '1.235',
 			'viewport_basis' => '750',
 		),
 		'playful'     => array(
@@ -913,6 +912,8 @@ function get_available_design_styles() {
 					'700',
 				),
 			),
+			'font_size'      => '1.1rem',
+			'type_ratio'     => '1.215',
 			'viewport_basis' => '950',
 		),
 	);
