@@ -233,12 +233,6 @@ class Test_Core extends WP_UnitTestCase {
 	 */
 	function testTextDomain() {
 
-		if ( ! file_exists( get_template_directory() . '/languages/es_ES.mo' ) ) {
-
-			copy( dirname( __FILE__ ) . '/src/es_ES.mo', get_template_directory() . '/languages/es_ES.mo' );
-
-		}
-
 		add_filter( 'locale', function() {
 
 			return 'es_ES';
@@ -248,12 +242,6 @@ class Test_Core extends WP_UnitTestCase {
 		Go\Core\i18n();
 
 		$this->assertTrue( is_textdomain_loaded( 'go' ) );
-
-		if ( file_exists( get_template_directory() . '/languages/es_ES.mo' ) ) {
-
-			unlink( get_template_directory() . '/languages/es_ES.mo' );
-
-		}
 
 		// Unset the text domain so the remaining tests run in English
 		global $l10n;
