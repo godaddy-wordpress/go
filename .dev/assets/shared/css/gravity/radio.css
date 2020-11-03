@@ -1,26 +1,26 @@
 /*! Gravity Forms: Radio */
 body .gform_wrapper {
 
-	& .gfield_radio li input,
-	& .gfield_radio li input[type="radio"] {
+	.gfield_radio li input,
+	.gfield_radio li input[type="radio"] {
 		display: none;
 	}
 
-	& .gfield_radio li input[type="radio"] {
+	.gfield_radio li input[type="radio"] {
 
 		& + label {
-			@mixin checkbox-radio-label;
+			@include checkbox-radio-label;
 
 			&::before {
-				@mixin checkbox-radio-label-before;
-				@mixin radio-label-before;
+				@include checkbox-radio-label-before;
+				@include radio-label-before;
 			}
 		}
 
 		& :checked + label {
 
 			&::before {
-				@mixin radio-label-selected-before;
+				@include radio-label-selected-before;
 			}
 		}
 	}

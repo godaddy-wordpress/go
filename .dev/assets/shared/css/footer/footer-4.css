@@ -48,7 +48,7 @@
 		}
 
 		& a:focus {
-			@mixin outline-text-link;
+			@include outline-text-link;
 		}
 	}
 

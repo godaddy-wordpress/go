@@ -15,7 +15,7 @@
 	word-wrap: normal !important;
 
 	&:focus {
-		@mixin button;
+		@include button;
 		@include outline;
 		background-color: var(--go-button--color--background, var(--go--color--primary));
 		border-bottom-left-radius: 0;

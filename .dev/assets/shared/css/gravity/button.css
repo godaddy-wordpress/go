@@ -5,13 +5,13 @@ body {
 
 		/* Primary Button */
 		& input[type="submit"] {
-			@mixin button;
+			@include button;
 			height: inherit;
 
 			&:hover,
 			&:focus,
 			&:active {
-				@mixin button-hover;
+				@include button-hover;
 			}
 		}
 	}

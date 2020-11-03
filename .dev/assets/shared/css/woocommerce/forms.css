@@ -101,18 +101,18 @@
 }
 
 .comment-form-cookies-consent input[type="checkbox"] + label {
-	@mixin checkbox-radio-label;
+	@include checkbox-radio-label;
 
 	&::before {
-		@mixin checkbox-radio-label-before;
-		@mixin checkbox-label-before;
+		@include checkbox-radio-label-before;
+		@include checkbox-label-before;
 	}
 }
 
 .comment-form-cookies-consent input[type="checkbox"]:checked + label {
 
 	&::before {
-		@mixin checkbox-label-checked-before;
+		@include checkbox-label-checked-before;
 	}
 }
 

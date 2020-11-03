@@ -47,7 +47,7 @@
 			outline: none;
 
 			&::after {
-				@mixin outline-text-link;
+				@include outline-text-link;
 
 				@media (--medium) {
 					bottom: -3px;

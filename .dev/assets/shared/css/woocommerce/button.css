@@ -7,12 +7,12 @@ body {
 		& #respond input#submit.alt,
 		& .button.alt,
 		& .button {
-			@mixin button;
+			@include button;
 
 			&:hover,
 			&:focus,
 			&:active {
-				@mixin button-hover;
+				@include button-hover;
 			}
 		}
 
@@ -22,19 +22,19 @@ body {
 		& .button.alt.disabled:hover,
 		& .woocommerce button.button:disabled,
 		& .woocommerce button.button:disabled[disabled] {
-			@mixin button;
+			@include button;
 		}
 
 		/* Secondary Button */
 		& #respond input#submit,
 		& .button,
 		& .wp-block-button__link.add_to_cart_button {
-			@mixin button;
+			@include button;
 
 			&:hover,
 			&:focus,
 			&:active {
-				@mixin button-hover;
+				@include button-hover;
 			}
 
 			/* Safari fix, in order for the after loading icon to animate
@@ -67,12 +67,12 @@ body {
 	}
 
 	& .widget_shopping_cart a.wc-forward {
-		@mixin button;
+		@include button;
 
 		&:hover,
 		&:focus,
 		&:active {
-			@mixin button-hover;
+			@include button-hover;
 		}
 	}
 }

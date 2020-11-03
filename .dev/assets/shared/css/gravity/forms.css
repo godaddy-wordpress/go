@@ -18,7 +18,7 @@
 	}
 
 	&:focus {
-		@mixin select-menu-focus;
+		@include select-menu-focus;
 	}
 }
 
@@ -56,7 +56,7 @@ body .gform_wrapper .top_label select.medium {
 	padding: var(--go-button--padding--y) calc(var(--go-input--padding--x) * 2) var(--go-button--padding--y) var(--go-input--padding--x);
 
 	&:focus {
-		@mixin select-menu-focus;
+		@include select-menu-focus;
 	}
 }
 

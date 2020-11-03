@@ -4,10 +4,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	@mixin button;
+	@include button;
 
 	&:hover {
-		@mixin button-hover;
+		@include button-hover;
 		cursor: pointer;
 	}
 

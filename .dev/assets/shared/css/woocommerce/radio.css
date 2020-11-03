@@ -7,7 +7,7 @@
 		}
 
 		& label {
-			@mixin checkbox-radio-label;
+			@include checkbox-radio-label;
 			position: relative;
 
 			&:hover {
@@ -15,8 +15,8 @@
 			}
 
 			&::before {
-				@mixin checkbox-radio-label-before;
-				@mixin radio-label-before;
+				@include checkbox-radio-label-before;
+				@include radio-label-before;
 				top: 8px;
 			}
 		}

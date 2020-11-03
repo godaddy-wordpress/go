@@ -27,12 +27,12 @@
 
 	/* Post Comment button */
 	& input[type="submit"] {
-		@mixin button;
+		@include button;
 
 		&:hover,
 		&:focus,
 		&:active {
-			@mixin button-hover;
+			@include button-hover;
 		}
 	}
 

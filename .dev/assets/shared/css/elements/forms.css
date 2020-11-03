@@ -74,7 +74,7 @@ input[type="radio"]:checked + label::before {
 }
 
 .coblocks-radio-label {
-	@mixin checkbox-radio-label;
+	@include checkbox-radio-label;
 	position: relative;
 
 	&:hover {
@@ -82,14 +82,14 @@ input[type="radio"]:checked + label::before {
 	}
 
 	&::before {
-		@mixin checkbox-radio-label-before;
-		@mixin radio-label-before;
+		@include checkbox-radio-label-before;
+		@include radio-label-before;
 		top: 5px;
 	}
 }
 
 .coblocks-checkbox-label {
-	@mixin checkbox-radio-label;
+	@include checkbox-radio-label;
 	position: relative;
 
 	&:hover {
@@ -97,8 +97,8 @@ input[type="radio"]:checked + label::before {
 	}
 
 	&::before {
-		@mixin checkbox-radio-label-before;
-		@mixin checkbox-label-before;
+		@include checkbox-radio-label-before;
+		@include checkbox-label-before;
 		top: 5px;
 	}
 }
@@ -106,7 +106,7 @@ input[type="radio"]:checked + label::before {
 input[type="checkbox"]:checked + label {
 
 	&::before {
-		@mixin checkbox-label-checked-before;
+		@include checkbox-label-checked-before;
 	}
 }
 
@@ -133,7 +133,7 @@ textarea {
 }
 
 select {
-	@mixin select-menu;
+	@include select-menu;
 	margin-bottom: var(--go-input--margin-bottom);
 	padding: var(--go-input--padding--y) var(--go-input--padding--x) !important;
 
@@ -143,7 +143,7 @@ select {
 	}
 
 	&:focus {
-		@mixin select-menu-focus;
+		@include select-menu-focus;
 	}
 
 	/* Target Internet Explorer 9 to undo the custom arrow */
