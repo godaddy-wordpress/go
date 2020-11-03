@@ -1,0 +1,11 @@
+.wp-block-social-links {
+
+	.wp-social-link {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	&.is-style-logos-only .wp-social-link {
+		padding: 0;
+	}
+}

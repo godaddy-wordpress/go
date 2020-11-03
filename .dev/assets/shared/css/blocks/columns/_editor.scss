@@ -1,6 +1,25 @@
 /*  Columns */
 .wp-block-columns {
 
+	.wp-block {
+		max-width: none;
+	}
+
+	.wp-block-column {
+
+		&[class*="background-color"] {
+			padding: calc(var(--go--spacing--vertical--lg) * 0.25);
+
+			&:first-child {
+				padding-left: calc(var(--go--spacing--vertical--lg) * 0.25);
+			}
+
+			&:last-child {
+				padding-right: calc(var(--go--spacing--vertical--lg) * 0.25);
+			}
+		}
+	}
+
 	.wp-block-quote {
 		max-width: none;
 

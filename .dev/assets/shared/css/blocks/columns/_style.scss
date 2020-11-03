@@ -18,8 +18,6 @@
 
 	.wp-block-column {
 		margin-bottom: 0;
-		margin-left: 0;
-		margin-right: 0;
 
 		@include media(medium) {
 			margin-top: 0;
@@ -30,12 +28,16 @@
 			flex-basis: 100% !important;
 		}
 
-		&:first-child {
+		&[class*="background-color"] {
+			padding: calc(var(--go--spacing--vertical--lg) * 0.25);
+		}
+
+		&:not([class*="background-color"]):first-child {
 			margin-top: 0;
 			padding-left: 0;
 		}
 
-		&:last-child {
+		&:not([class*="background-color"]):last-child {
 			margin-bottom: 0;
 			padding-right: 0;
 		}

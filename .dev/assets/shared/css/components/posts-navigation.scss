@@ -3,12 +3,12 @@
 	display: flex;
 	margin: 1rem 0;
 
-	& .nav-previous,
-	& .nav-next {
+	.nav-previous,
+	.nav-next {
 		flex: 1 50%;
 	}
 
-	& .nav-next {
+	.nav-next {
 		text-align: right;
 	}
 }

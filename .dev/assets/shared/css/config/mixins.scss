@@ -46,7 +46,7 @@
 @mixin select-menu {
 	appearance: button;
 	background-color: var(--go-input--color--background, var(--go--color--white));
-	background-image: url("../../images/arrow-down-solid.svg");
+	background-image: url(../../images/arrow-down-solid.svg);
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border: var(--go-input--border);

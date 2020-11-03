@@ -5,11 +5,11 @@
 		opacity: 0.65;
 	}
 
-	& li:hover a {
+	li:hover a {
 		opacity: 1;
 	}
 
-	& a {
+	a {
 		align-items: center;
 		display: flex;
 		justify-content: center;
@@ -21,7 +21,7 @@
 		}
 	}
 
-	& svg {
+	svg {
 		fill: var(--go-social--color--text, var(--go-heading--color--text));
 		vertical-align: middle;
 	}

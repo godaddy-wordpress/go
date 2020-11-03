@@ -10,7 +10,19 @@
 @import "editor/title-block";
 @import "editor/title-permalink";
 
-// Default Appender
+// Add padding to the editor.
+body {
+	padding-left: var(--go-block--padding--x);
+	padding-right: var(--go-block--padding--x);
+}
+
+// Add negative padding on fullwidth blocks.
+.block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
+	margin-left: calc(-1 * var(--go-block--padding--x));
+	margin-right: calc(-1 * var(--go-block--padding--x));
+}
+
+// Default appender
 .editor-default-block-appender .editor-default-block-appender__content {
 	font-family: var(--go--font-family);
 	font-size: var(--go--font-size);

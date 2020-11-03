@@ -26,7 +26,7 @@
 	margin-bottom: var(--go--spacing--vertical--lg);
 
 	/* Post Comment button */
-	& input[type="submit"] {
+	input[type="submit"] {
 		@include button;
 
 		&:hover,
@@ -37,87 +37,87 @@
 	}
 
 	/* Each response */
-	& article {
+	article {
 		margin: 3rem 0;
 	}
 
-	& .comments-title {
+	.comments-title {
 		font-size: var(--go--type-scale-4);
 	}
 
-	& .comment-reply-title {
+	.comment-reply-title {
 		font-size: var(--go--type-scale-4);
 
-		& small {
+		small {
 			font-size: 50%;
 		}
 	}
 
-	& .comment-content * {
+	.comment-content * {
 		font-size: var(--go-comments--font-size, 0.975rem);
 	}
 
 	/* Response list */
-	& .commentlist {
+	.commentlist {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 
 		/* Don't need to see numeric count */
-		& li::before {
+		li::before {
 			display: none;
 		}
 
 		/* Indent replies only once */
-		& > li > .children {
+		> li > .children {
 			margin-left: 2rem;
 		}
 	}
 
 	/* Header of each comment */
-	& .comment-meta {
+	.comment-meta {
 
-		& img,
-		& cite {
+		img,
+		cite {
 			display: block;
 		}
 
 		/* Comment Gravatar */
-		& img {
+		img {
 			border-radius: 100px;
 			margin: 0 0 1rem;
 		}
 
 		/* Comment author */
-		& cite {
+		cite {
 			font-style: normal;
 			margin: 0 1rem 0 0;
 		}
 
 		/* Comment Timestamp */
-		& > a {
+		> a {
 			font-size: 0.75rem;
 		}
 	}
 
 	/* Actual response form */
-	& .comment-form {
+	.comment-form {
 
-		& > p {
+		> p {
 			margin: 0;
 		}
 
-		& .form-submit {
+		.form-submit {
 			margin-top: 2.5rem;
 		}
 	}
 
-	& p.comment-notes {
+	p.comment-notes {
 		font-size: var(--go-comments-label--font-size, 0.95rem);
 		margin-bottom: 2.25rem;
 	}
 
-	& p.logged-in-as {
+	p.logged-in-as {
 		font-size: var(--go-comments-label--font-size, 0.95rem);
 		margin-bottom: 2.25rem;
 	}
@@ -125,21 +125,21 @@
 	@include media(medium) {
 
 		/* Response list */
-		& .commentlist {
+		.commentlist {
 
 			/* Indent replies only once */
-			& > li > .children {
+			> li > .children {
 				margin-left: 4rem;
 			}
 		}
 
 		/* Header of each comment */
-		& .comment-meta {
+		.comment-meta {
 			align-items: center;
 			display: flex;
 
 			/* Comment Gravatar */
-			& img {
+			img {
 				display: inline;
 				margin: 0 1rem 0 0;
 			}
