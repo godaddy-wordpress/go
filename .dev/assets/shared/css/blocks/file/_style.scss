@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: space-between;
 
-	& .wp-block-file__button {
+	.wp-block-file__button {
 		@include button;
 		vertical-align: inherit;
 	}

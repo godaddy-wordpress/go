@@ -1,15 +1,15 @@
 /*! CoBlocks: Form */
 .coblocks-form {
 
-	& .coblocks-label {
+	.coblocks-label {
 		margin-bottom: var(--go-label--margin-bottom);
 	}
 
-	& .coblocks-field {
+	.coblocks-field {
 		margin-bottom: var(--go-input--margin-bottom);
 	}
 
-	& .required {
+	.required {
 		color: var(--go--color--primary);
 	}
 }

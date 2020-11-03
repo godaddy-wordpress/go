@@ -1,7 +1,7 @@
 /*  Columns */
 .wp-block-columns {
 
-	& .wp-block-quote {
+	.wp-block-quote {
 		max-width: none;
 
 		&.is-style-large {
@@ -10,7 +10,7 @@
 		}
 	}
 
-	& .wp-block[data-type="core/paragraph"] ~ .wp-block[data-type="core/button"] {
+	.wp-block[data-type="core/paragraph"] ~ .wp-block[data-type="core/button"] {
 		margin-bottom: 0 !important;
 	}
 }

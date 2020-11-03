@@ -1,25 +1,25 @@
 /* Form */
 .wp-block[data-type="coblocks/form"] {
 
-	& .wp-block {
+	.wp-block {
 		margin-bottom: var(--go-input--margin-bottom);
 	}
 
-	& .components-base-control__field {
+	.components-base-control__field {
 		align-content: center;
 		align-items: center;
 	}
 
-	& .components-form-toggle {
+	.components-form-toggle {
 		display: flex;
 		margin-top: 0 !important;
 	}
 
-	& .components-base-control__field label {
+	.components-base-control__field label {
 		line-height: 1;
 	}
 
-	& .required {
+	.required {
 		color: var(--go--color--primary);
 		margin-top: -6px;
 	}

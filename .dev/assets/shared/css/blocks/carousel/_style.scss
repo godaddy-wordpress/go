@@ -1,12 +1,11 @@
 /*! CoBlocks: Carousel */
 .wp-block-coblocks-gallery-carousel {
 
-	& .coblocks-gallery--figure {
+	.coblocks-gallery--figure {
 		margin: 0;
 	}
 
-	/* @todo, does not work with the new hsl variables. */
-	& .coblocks-gallery--figure::before {
+	.coblocks-gallery--figure::before {
 		background-color: var(--wp-block-coblocks-gallery-carousel--overlay--color--background, var(--go--color--primary));
 		content: "";
 		height: 100%;
@@ -17,15 +16,15 @@
 		z-index: 19;
 	}
 
-	& .has-aligned-cells .coblocks-gallery--figure::before {
+	.has-aligned-cells .coblocks-gallery--figure::before {
 		display: none;
 	}
 
-	& .coblocks-gallery--item:not(.is-selected) .coblocks-gallery--figure::before {
+	.coblocks-gallery--item:not(.is-selected) .coblocks-gallery--figure::before {
 		opacity: var(--wp-block-coblocks-gallery-carousel--overlay--opacity, 0.75);
 	}
 
-	& + .wp-block-coblocks-gallery-stacked {
+	+ .wp-block-coblocks-gallery-stacked {
 		margin-top: 0 !important;
 	}
 }

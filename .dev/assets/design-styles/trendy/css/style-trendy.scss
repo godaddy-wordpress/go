@@ -1,10 +1,10 @@
 /**
  * Trendy - Styles
  */
-@import url("../../../shared/css/config/media-queries.css");
-@import url("../settings.css");
-@import url("components/button.css");
-@import url("components/carousel.css");
+@import "../../../shared/css/config/breakpoints";
+@import "../settings";
+@import "components/button";
+@import "components/carousel";
 
 body {
 	-webkit-font-smoothing: antialiased;

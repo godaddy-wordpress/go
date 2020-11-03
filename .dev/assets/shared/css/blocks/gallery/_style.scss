@@ -1,11 +1,11 @@
 /*! Gallery */
 .wp-block-gallery {
 
-	& .blocks-gallery-grid {
+	.blocks-gallery-grid {
 		width: 100%;
 	}
 
-	& .blocks-gallery-item figcaption {
+	.blocks-gallery-item figcaption {
 		font-size: var(--go-caption--font-size);
 		font-style: var(--go-caption--font-style, normal);
 		padding-left: 15px;
@@ -13,19 +13,19 @@
 		text-align: var(--go-caption--text-align);
 	}
 
-	& .blocks-gallery-grid + figcaption {
+	.blocks-gallery-grid + figcaption {
 		display: block;
 		width: 100%;
 	}
 
-	& .blocks-gallery-item:last-child {
+	.blocks-gallery-item:last-child {
 		margin-bottom: 16px !important;
 	}
 }
 
 body.rtl .wp-block-gallery {
 
-	& .blocks-gallery-item figcaption {
+	.blocks-gallery-item figcaption {
 		text-align: var(--go-caption--text-align--rtl);
 	}
 }

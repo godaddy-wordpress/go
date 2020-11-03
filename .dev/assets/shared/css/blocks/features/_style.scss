@@ -4,11 +4,11 @@
 
 .wp-block-coblocks-features .wp-block-coblocks-feature {
 
-	& h2,
-	& h3,
-	& h4,
-	& h5,
-	& h6 {
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		margin-bottom: var(--wp-block-coblocks-features--heading--margin-bottom, 1.5rem);
 	}
 
