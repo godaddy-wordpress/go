@@ -77,7 +77,7 @@ module.exports = {
 
 			// Styles.
 			{
-				test: /\.css$/,
+				test: /\.(sc|sa|c)ss$/,
 				include: [
 					path.resolve( process.cwd(), settings.paths.src.sharedCss ),
 					path.resolve( process.cwd(), settings.paths.src.modernCss ),
@@ -100,6 +100,12 @@ module.exports = {
 					},
 					{
 						loader: 'postcss-loader',
+						options: {
+							sourceMap: ! isProduction,
+						},
+					},
+					{
+						loader: 'sass-loader',
 						options: {
 							sourceMap: ! isProduction,
 						},
@@ -137,13 +143,16 @@ module.exports = {
 			}
 		] ),
 
-		// Lint CSS.
-		new StyleLintPlugin( {
-			context: path.resolve( process.cwd(), settings.paths.src.base ),
-			files: '**/*.css',
-		} ),
+		// Lint SCSS.
+		// new StyleLintPlugin( {
+		// 	context: path.resolve( process.cwd(), settings.paths.src.base ),
+		// 	files: '**/*.scss',
+		// } ),
 
 		// Fancy WebpackBar.
-		new WebpackBar(),
+		new WebpackBar( {
+			name: isProduction ? 'Building Go...' : 'Starting Go...',
+			color: '#08757a',
+		}),
 	],
 };
