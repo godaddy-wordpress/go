@@ -1,93 +1,92 @@
-/* Reset */
-@import url("normalize.css");
+// @import "normalize";
 
-/* Global Variables */
-@import url("config/media-queries.css");
-@import url("config/mixins.css");
-@import url("config/root.css");
+// Global variables
+@import "config/media-queries";
+@import "config/mixins";
+@import "config/root";
 
-/* Elements */
-@import url("elements/page.css");
-@import url("elements/typography.css");
-@import url("elements/links.css");
-@import url("elements/buttons.css");
-@import url("elements/labels.css");
-@import url("elements/forms.css");
-@import url("elements/headings.css");
-@import url("elements/lists.css");
-@import url("elements/media.css");
+// Elements
+// @import url("elements/page.css");
+// @import url("elements/typography.css");
+// @import url("elements/links.css");
+// @import url("elements/buttons.css");
+// @import url("elements/labels.css");
+// @import url("elements/forms.css");
+// @import url("elements/headings.css");
+// @import url("elements/lists.css");
+// @import url("elements/media.css");
 
-/* Layout */
-@import url("layout/alignments.css");
-@import url("layout/entry-header.css");
-@import url("layout/featured-image.css");
-@import url("layout/post.css");
-@import url("layout/pagination.css");
-@import url("layout/404.css");
+// // Layout
+// @import url("layout/alignments.css");
+// @import url("layout/entry-header.css");
+// @import url("layout/featured-image.css");
+// @import url("layout/post.css");
+// @import url("layout/pagination.css");
+// @import url("layout/404.css");
 
-/* Header */
-@import url("header/header.css");
-@import url("header/header-2.css");
-@import url("header/header-3.css");
-@import url("header/header-4.css");
-@import url("header/header__nav-toggle.css");
-@import url("header/header__navigation.css");
-@import url("header/header__navigation-mobile.css");
-@import url("header/header__search-toggle.css");
-@import url("header/header__cart-toggle.css");
-@import url("header/header__titles.css");
-@import url("header/site-search.css");
-@import url("header/search-modal.css");
-@import url("header/sub-menu.css");
+// // Header
+// @import url("header/header.css");
+// @import url("header/header-2.css");
+// @import url("header/header-3.css");
+// @import url("header/header-4.css");
+// @import url("header/header__nav-toggle.css");
+// @import url("header/header__navigation.css");
+// @import url("header/header__navigation-mobile.css");
+// @import url("header/header__search-toggle.css");
+// @import url("header/header__cart-toggle.css");
+// @import url("header/header__titles.css");
+// @import url("header/site-search.css");
+// @import url("header/search-modal.css");
+// @import url("header/sub-menu.css");
 
-/* Footer */
-@import url("footer/footer-1.css");
-@import url("footer/footer-2.css");
-@import url("footer/footer-3.css");
-@import url("footer/footer-4.css");
-@import url("footer/site-footer.css");
+// // Footer
+// @import url("footer/footer-1.css");
+// @import url("footer/footer-2.css");
+// @import url("footer/footer-3.css");
+// @import url("footer/footer-4.css");
+// @import url("footer/site-footer.css");
 
-/* Misc Components */
-@import url("components/posts-navigation.css");
-@import url("components/comments.css");
-@import url("components/social-icons.css");
+// //Misc Components
+// @import url("components/posts-navigation.css");
+// @import url("components/comments.css");
+// @import url("components/social-icons.css");
 
-/*! Blocks */
-@import url("blocks/blocks.css");
+// //Blocks
+// @import url("blocks/blocks.css");
 
-/*! WooCommerce */
-@import url("woocommerce/notice.css");
-@import url("woocommerce/onsale.css");
-@import url("woocommerce/account.css");
-@import url("woocommerce/button.css");
-@import url("woocommerce/cart.css");
-@import url("woocommerce/checkbox.css");
-@import url("woocommerce/radio.css");
-@import url("woocommerce/forms.css");
-@import url("woocommerce/product.css");
-@import url("woocommerce/pagination.css");
-@import url("woocommerce/shop.css");
-@import url("woocommerce/tabs.css");
-@import url("woocommerce/typography.css");
-@import url("woocommerce/thank-you.css");
-@import url("woocommerce/blocks.css");
-@import url("woocommerce/single-product.css");
-@import url("woocommerce/slideout-menu.css");
+// //WooCommerce
+// @import url("woocommerce/notice.css");
+// @import url("woocommerce/onsale.css");
+// @import url("woocommerce/account.css");
+// @import url("woocommerce/button.css");
+// @import url("woocommerce/cart.css");
+// @import url("woocommerce/checkbox.css");
+// @import url("woocommerce/radio.css");
+// @import url("woocommerce/forms.css");
+// @import url("woocommerce/product.css");
+// @import url("woocommerce/pagination.css");
+// @import url("woocommerce/shop.css");
+// @import url("woocommerce/tabs.css");
+// @import url("woocommerce/typography.css");
+// @import url("woocommerce/thank-you.css");
+// @import url("woocommerce/blocks.css");
+// @import url("woocommerce/single-product.css");
+// @import url("woocommerce/slideout-menu.css");
 
-/*! Gravity Forms */
-@import url("gravity/forms.css");
-@import url("gravity/checkbox.css");
-@import url("gravity/radio.css");
+// // Gravity Forms
+// @import url("gravity/forms.css");
+// @import url("gravity/checkbox.css");
+// @import url("gravity/radio.css");
 
-/* Utilities */
-@import url("utilities/captions.css");
-@import url("utilities/accessibility.css");
-@import url("utilities/font-sizes.css");
-@import url("utilities/colors.css");
-@import url("utilities/padding.css");
+// // Utilities
+// @import url("utilities/captions.css");
+// @import url("utilities/accessibility.css");
+// @import url("utilities/font-sizes.css");
+// @import url("utilities/colors.css");
+// @import url("utilities/padding.css");
 
-/* AMP */
-@import url("amp/amp.css");
+// // AMP
+// @import url("amp/amp.css");
 
 .site-content {
 	overflow: hidden;
