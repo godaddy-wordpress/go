@@ -1,19 +1,19 @@
 /*! Header: Header 3 */
 .has-header-3 {
 
-	& .header__extras {
+	.header__extras {
 		margin-left: -0.75rem;
 		order: 1;
 	}
 
-	& .header__title-nav {
+	.header__title-nav {
 		order: 2;
 	}
 
-	& .header .header__titles {
+	.header .header__titles {
 		flex-direction: column;
 
-		& .site-description {
+		.site-description {
 			margin-left: 0;
 			margin-right: 0;
 			margin-top: var(--go-site-description--margin-top, 0.25rem);
@@ -26,20 +26,20 @@
 
 	@include media(large) {
 
-		& .header__title-nav {
+		.header__title-nav {
 			align-items: center;
 			flex-direction: column;
 			order: 2;
 		}
 
-		& .nav-toggle {
+		.nav-toggle {
 			display: block;
 			opacity: 0;
 			pointer-events: none;
 			visibility: hidden;
 		}
 
-		& .header__navigation {
+		.header__navigation {
 			justify-content: center;
 			margin-left: inherit;
 			margin-top: 0.75rem;

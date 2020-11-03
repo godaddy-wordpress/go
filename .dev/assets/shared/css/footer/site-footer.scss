@@ -1,11 +1,10 @@
-/*! Footer */
 .site-footer {
 	background-color: var(--go-footer--color--background);
 	color: var(--go-footer--color--text, initial);
 	font-family: var(--go-footer--font-family, inherit);
 	margin-top: var(--go--spacing--vertical--lg);
 
-	& .site-info {
+	.site-info {
 		color: var(--go-footer--color--text, initial);
 	}
 
@@ -14,7 +13,7 @@
 		padding-top: var(--go--spacing--vertical--lg);
 	}
 
-	& a {
+	a {
 		color: var(--go-footer--color--text, initial);
 		text-decoration: none;
 
@@ -23,7 +22,7 @@
 		}
 	}
 
-	& .privacy-policy-link {
+	.privacy-policy-link {
 		display: inline;
 		margin-left: 0.85rem;
 		margin-top: 0;
@@ -64,7 +63,7 @@
 .footer-navigation {
 	line-height: var(--go-footer-navigation--line-height, 2.5);
 
-	& a:focus {
+	a:focus {
 		@include outline;
 	}
 }

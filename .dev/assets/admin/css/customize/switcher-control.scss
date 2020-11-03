@@ -2,7 +2,7 @@
 .switcher__wrapper {
 	margin-top: 14px;
 
-	& .switcher__choice {
+	.switcher__choice {
 		cursor: pointer;
 		display: block;
 		margin-bottom: 10px;
@@ -10,7 +10,7 @@
 		border-radius: 3px;
 		background: #ffffff;
 
-		& .label {
+		.label {
 			backdrop-filter: blur(10px) saturate(150%);
 			background: rgba(0,0,0, 0.5);
 			border-radius: 0 0 3px 3px;
@@ -23,7 +23,7 @@
 			width: 100%;
 		}
 
-		& img {
+		img {
 			background: #ffffff;
 			border-radius: 3px;
 			vertical-align: middle;
@@ -32,16 +32,16 @@
 		}
 	}
 
-	& label {
+	label {
 		position: relative;
 	}
 
-	& label[for^="header_variation"] img,
-	& label[for^="footer_variation"] img {
+	label[for^="header_variation"] img,
+	label[for^="footer_variation"] img {
 		border: 1px solid #ccc;
 	}
 
-	& input[type="radio"] {
+	input[type="radio"] {
 		height: 0;
 		margin: 0;
 		opacity: 0;
@@ -50,12 +50,12 @@
 		width: 0;
 	}
 
-	& input[type="radio"]:hover + img {
+	input[type="radio"]:hover + img {
     		border-color: #999;
 	}
 
-	& input[type="radio"]:focus + img,
-	& input[type="radio"]:checked + img {
+	input[type="radio"]:focus + img,
+	input[type="radio"]:checked + img {
 		border-color: #0085ba;
    		box-shadow: 0 0 0 1px #0085ba;
 	}
@@ -81,12 +81,12 @@
 		}
 	}
 
-	& input[type="radio"]:hover + .color-scheme,
-	& input[type="radio"]:focus + .color-scheme {
+	input[type="radio"]:hover + .color-scheme,
+	input[type="radio"]:focus + .color-scheme {
    		box-shadow: 0 0 0 2px #eeeeee, 0 0 0 3px #5b9dd9, 0 0 2px 3px rgba(30,140,190,.8);
 	}
 
-	& .color-scheme__check {
+	.color-scheme__check {
 		bottom: 2px;
 		cursor: pointer;
 		display: inline-block;
@@ -123,10 +123,10 @@
 		}
 	}
 
-	& input[type="radio"]:checked + .color-scheme {
+	input[type="radio"]:checked + .color-scheme {
 		box-shadow: 0 0 0 2px #eeeeee, 0 0 0 3px #5b9dd9, 0 0 2px 3px rgba(30,140,190,.8);
 
-		& + .color-scheme__check {
+		+ .color-scheme__check {
 			opacity: 1;
 			visibility: visible;
 		}

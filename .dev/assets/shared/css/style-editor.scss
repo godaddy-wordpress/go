@@ -1,5 +1,5 @@
 // Global variables
-@import "config/media-queries";
+@import "config/breakpoints";
 @import "config/mixins";
 @import "config/root";
 
@@ -9,20 +9,6 @@
 @import "editor/widths";
 @import "editor/title-block";
 @import "editor/title-permalink";
-
-// Elements
-@import "elements/headings";
-@import "elements/typography";
-
-// Utitlities
-@import "utilities/padding";
-@import "utilities/font-sizes";
-@import "utilities/captions";
-@import "utilities/colors";
-
-// Blocks
-@import "blocks/blocks";
-@import "blocks/blocks-editor";
 
 // Default Appender
 .editor-default-block-appender .editor-default-block-appender__content {
@@ -39,3 +25,17 @@
 		margin-top: 0 !important;
 	}
 }
+
+// Elements
+@import "elements/headings";
+@import "elements/typography";
+
+// Utitlities
+@import "utilities/padding";
+@import "utilities/font-sizes";
+@import "utilities/captions";
+@import "utilities/colors";
+
+// Blocks
+@import "blocks/blocks";
+@import "blocks/blocks-editor";

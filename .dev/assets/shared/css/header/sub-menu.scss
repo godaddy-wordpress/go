@@ -2,7 +2,7 @@
 .primary-menu {
 
 	/* A toggling parent item with children */
-	& .menu-item-has-children {
+	.menu-item-has-children {
 
 		& svg {
 			color: currentColor;
@@ -15,7 +15,7 @@
 		&:hover,
 		&.child-has-focus {
 
-			& > .sub-menu {
+			> .sub-menu {
 				@include media(large) {
 					display: block;
 				}
@@ -24,7 +24,7 @@
 	}
 
 	/* First submenu */
-	& > li > .sub-menu {
+	> li > .sub-menu {
 		position: relative;
 
 		@include media(large) {
@@ -64,7 +64,7 @@
 	}
 
 	/* All other submenus */
-	& .sub-menu {
+	.sub-menu {
 		background-color: var(--go-submenu--color--background, var(--go-heading--color--text));
 		list-style: none;
 		margin: 0;
@@ -82,7 +82,7 @@
 		}
 
 		/* All submenu link containers (<li>) */
-		& .menu-item {
+		.menu-item {
 			white-space: normal;
 
 			@include media(large) {
@@ -92,7 +92,7 @@
 		}
 
 		/* All submenu links */
-		& a {
+		a {
 			color: var(--go-submenu--color--text, var(--go--color--white));
 			width: 100%;
 
@@ -114,7 +114,7 @@
 	}
 
 	/* Tertiary submenu */
-	& .sub-menu .sub-menu {
+	.sub-menu .sub-menu {
 		display: block;
 		left: 0;
 		margin: 0;
@@ -135,13 +135,13 @@
 /* Flip icon when item is expanded */
 .submenu-is-open {
 
-	& svg {
+	svg {
 		transform: rotate(180deg);
 		z-index: 9999;
 	}
 }
 
-& .sub-menu[aria-hidden="true"] {
+.sub-menu[aria-hidden="true"] {
 	display: none;
 	opacity: 0;
 	visibility: hidden;
