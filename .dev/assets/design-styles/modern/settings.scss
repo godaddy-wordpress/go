@@ -1,0 +1,124 @@
+:root {
+
+	// Content width
+	--go--max-width: 38rem;
+	--go--max-width--alignwide: 90rem;
+
+	// Spacing
+	--go--viewport-basis: 950;
+	--go--spacing--header: 17;
+	--go--spacing--horizontal: 40;
+	--go--spacing--paragraph: 13;
+
+	// Typography
+	--go--color--text: hsl(0, 0%, 0%);
+	--go--font-family: "Fira Code", mono, sans-serif;
+	--go--font-size--small: 90%;
+	--go--font-size: 0.85rem;
+	--go--line-height: 2.25;
+	--go--type-ratio: 1.3;
+
+	// Headings
+	--go-heading--button-spacing: 1.75rem;
+	--go-heading--color--text: hsl(0, 0%, 0%);
+	--go-heading--font-family: "Heebo", sans-serif;
+	--go-heading--font-weight: 800;
+	--go-heading--letter-spacing: -0.02rem;
+	--go-heading--line-height: 1.2;
+	--go-heading--margin-bottom: 1rem;
+
+	// Captions
+	--go-caption--color--text: hsl(0, 0%, 34%);
+	--go-caption--font-size: 0.75rem;
+	--go-caption--text-align--rtl: right;
+	--go-caption--text-align: left;
+
+	// Links
+	--go--hyperlink--color--text: var(--go-heading--color--text);
+	--go--hyperlink-interactive--color--text: var(--go--color--primary);
+
+	// Quote
+	--go-quote--border-width: 0.45rem;
+
+	// Pullquote
+	--go-pullquote--font-family: serif;
+
+	// Accessibility
+	--go-outline--color--text: hsl(0, 0%, 0%);
+	--go-selection--color--background: hsl(0, 0%, 0%);
+
+	// Buttons
+	--go-button--border-radius: 0;
+	--go-button--font-size: 0.75rem;
+	--go-button--font-weight: 600;
+	--go-button--letter-spacing: 3px;
+	--go-button--padding--x: 2rem;
+	--go-button--padding--y: 1.8rem;
+	--go-button--text-transform: uppercase;
+	--go-button-interactive--color--background: var(--go-heading--color--text);
+
+	// Labels
+	--go-label--font-size: var(--go-navigation--font-size);
+	--go-label--font-weight: var(--go-navigation--font-weight, 400);
+	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
+	--go-label--margin-bottom: 0.75rem;
+	--go-label--text-transform: uppercase;
+
+	// Input
+	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
+	--go-input--color--text: var(--go--color--text);
+	--go-input--font-size: 1rem;
+	--go-input--margin-bottom: 2.25rem;
+	--go-input--padding--x: 1.25rem;
+	--go-input--padding--y: 1.25rem;
+
+	// Site Title
+	--go-site-title--color--text: var(--go-heading--color--text);
+	--go-site-title--font-size: 1.1rem;
+	--go-site-title--font-family: var(--go-navigation--font-family);
+	--go-site-title--text-transform: uppercase;
+	--go-site-title--letter-spacing: 3px;
+
+	@include media(large) {
+		--go-site-title--font-size: 1.5rem;
+	}
+
+	// Site Description
+	--go-site-description--color--text: var(--go-heading--color--text);
+	--go-site-description--opacity: 1;
+	--go-site-description--font-size: 0.65rem;
+	--go-site-description--font-family: "Montserrat", sans-serif;
+	--go-site-description--font-weight: 700;
+	--go-site-description--letter-spacing: 10px;
+
+	// Site Navigation
+	--go-navigation--color--text: var(--go-heading--color--text);
+	--go-navigation--font-family: "Montserrat", sans-serif;
+	--go-navigation--font-size: 0.8rem;
+	--go-navigation-mobile--font-size: 1rem;
+	--go-navigation--font-weight: 700;
+	--go-navigation--text-transform: uppercase;
+	--go-navigation--letter-spacing: 3px;
+
+	// Site Search
+	--go-search-button--color--text-interactive: var(--go-heading--color--text);
+	--go-search-button--color--background: var(--go--color--primary);
+	--go-search-button--color--background-interactive: var(--go-heading--color--text);
+
+	// Social
+	--go-social--size: 1.5rem;
+	--go-social--padding: 0.75rem;
+
+	@include media(medium) {
+		--go-social--size: 2rem;
+		--go-social--padding: 1rem;
+	}
+
+	// Blog Posts
+	--go-meta--color--text: var(--go-heading--color--text);
+
+	// CoBlocks
+	--wp-block-coblocks-features--heading--margin-bottom: 1rem;
+	--wp-block-coblocks-features--icon--margin-bottom: 1.75rem;
+	--wp-block-coblocks-food-item--heading--font-weight: 700;
+}

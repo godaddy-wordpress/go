@@ -1,0 +1,17 @@
+/*! File */
+.wp-block-file {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+
+	.wp-block-file__button {
+		@include button;
+		vertical-align: inherit;
+	}
+}
+
+.wp-block-file__content-wrapper {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}

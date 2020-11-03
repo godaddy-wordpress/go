@@ -37,7 +37,7 @@
     "postversion": "git tag -d canary && git push && git push --tags",
     "build-release": "npm install && npm run build",
     "lint-release": "npm install && composer install && npm run lint",
-    "lint-css": "stylelint 'assets/shared/css' '.dev/assets/design-styles/**/*.css'",
+    "lint-css": "stylelint '.dev/assets/shared/**/*.scss' '.dev/assets/design-styles/**/*.scss'",
     "lint-js": "eslint assets/shared/js",
     "lint-php": "composer run lint",
     "makepot": "wp i18n make-pot . languages/go.pot --skip-audit --exclude=build,dist --headers='{\"Last-Translator\":\"plugins@godaddy.com\",\"Report-Msgid-Bugs-To\":\"https://github.com/godaddy-wordpress/go/issues\"}' --file-comment='Copyright (c) 2019 GoDaddy Operating Company, LLC. All Rights Reserved.' && npm run pot2json",
@@ -82,11 +82,6 @@
     "vi": "Tiếng Việt",
     "zh_CN": "简体中文",
     "zh_TW": "繁體中文"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.css": [
@@ -169,6 +164,8 @@
   "dependencies": {
     "css-vars-ponyfill": "^2.0.2",
     "lodash.throttle": "^4.1.1",
-    "normalize.css": "^8.0.0"
+    "node-sass": "^5.0.0",
+    "normalize.css": "^8.0.0",
+    "sass-loader": "^10.0.5"
   }
 }

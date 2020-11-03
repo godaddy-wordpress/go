@@ -1,0 +1,59 @@
+/*! Gravity Forms: Checkbox */
+.ginput_container_consent {
+	position: relative;
+
+	& input[type="checkbox"] {
+		display: none;
+	}
+}
+
+body .gform_wrapper .gfield_radio li input,
+body .gform_wrapper .gfield_checkbox li input[type="checkbox"] {
+	display: none;
+}
+
+.gform_wrapper .gfield_checkbox li input[type="checkbox"] {
+	display: none;
+}
+
+.ginput_container_consent input[type="checkbox"] + label {
+	@include checkbox-radio-label;
+
+	&::before {
+		@include checkbox-radio-label-before;
+		@include checkbox-label-before;
+	}
+}
+
+.ginput_container_consent input[type="checkbox"]:checked + label {
+
+	&::before {
+		@include checkbox-label-checked-before;
+	}
+}
+
+.gform_wrapper ul.gfield_radio li,
+.gform_wrapper ul.gfield_checkbox li {
+	overflow: visible !important;
+}
+
+.gform_wrapper ul.gfield_radio li::before,
+.gform_wrapper ul.gfield_checkbox li::before {
+	display: none;
+}
+
+.gform_wrapper ul.gfield_checkbox li input[type="checkbox"] + label {
+	@include checkbox-radio-label;
+
+	&::before {
+		@include checkbox-radio-label-before;
+		@include checkbox-label-before;
+	}
+}
+
+.gform_wrapper ul.gfield_checkbox li input[type="checkbox"]:checked + label {
+
+	&::before {
+		@include checkbox-label-checked-before;
+	}
+}

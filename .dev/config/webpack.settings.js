@@ -7,20 +7,20 @@ module.exports = {
 		'frontend': './.dev/assets/shared/js/frontend/frontend.js',
 
 		// CSS.
-		'style-editor': './.dev/assets/shared/css/style-editor.css',
-		'style-shared': './.dev/assets/shared/css/style-shared.css',
+		'style-editor': './.dev/assets/shared/css/style-editor.scss',
+		'style-shared': './.dev/assets/shared/css/style-shared.scss',
 
 		// Design Style CSS.
-		'design-styles/style-modern': './.dev/assets/design-styles/modern/css/style-modern.css',
-		'design-styles/style-modern-editor': './.dev/assets/design-styles/modern/css/style-modern-editor.css',
-		'design-styles/style-traditional': './.dev/assets/design-styles/traditional/css/style-traditional.css',
-		'design-styles/style-traditional-editor': './.dev/assets/design-styles/traditional/css/style-traditional-editor.css',
-		'design-styles/style-trendy': './.dev/assets/design-styles/trendy/css/style-trendy.css',
-		'design-styles/style-trendy-editor': './.dev/assets/design-styles/trendy/css/style-trendy-editor.css',
-		'design-styles/style-welcoming': './.dev/assets/design-styles/welcoming/css/style-welcoming.css',
-		'design-styles/style-welcoming-editor': './.dev/assets/design-styles/welcoming/css/style-welcoming-editor.css',
-		'design-styles/style-playful': './.dev/assets/design-styles/playful/css/style-playful.css',
-		'design-styles/style-playful-editor': './.dev/assets/design-styles/playful/css/style-playful-editor.css',
+		'design-styles/style-modern': './.dev/assets/design-styles/modern/css/style-modern.scss',
+		'design-styles/style-modern-editor': './.dev/assets/design-styles/modern/css/style-modern-editor.scss',
+		'design-styles/style-traditional': './.dev/assets/design-styles/traditional/css/style-traditional.scss',
+		'design-styles/style-traditional-editor': './.dev/assets/design-styles/traditional/css/style-traditional-editor.scss',
+		'design-styles/style-trendy': './.dev/assets/design-styles/trendy/css/style-trendy.scss',
+		'design-styles/style-trendy-editor': './.dev/assets/design-styles/trendy/css/style-trendy-editor.scss',
+		'design-styles/style-welcoming': './.dev/assets/design-styles/welcoming/css/style-welcoming.scss',
+		'design-styles/style-welcoming-editor': './.dev/assets/design-styles/welcoming/css/style-welcoming-editor.scss',
+		'design-styles/style-playful': './.dev/assets/design-styles/playful/css/style-playful.scss',
+		'design-styles/style-playful-editor': './.dev/assets/design-styles/playful/css/style-playful-editor.scss',
 
 		// Admin JS.
 		'admin/customize-controls': './.dev/assets/admin/js/customize-controls.js',
@@ -28,7 +28,7 @@ module.exports = {
 		'admin/block-filters': './.dev/assets/admin/js/block-filters.js',
 
 		// Admin CSS.
-		'admin/style-customize': './.dev/assets/admin/css/style-customize.css',
+		'admin/style-customize': './.dev/assets/admin/css/style-customize.scss',
 	},
 	paths: {
 		src: {
