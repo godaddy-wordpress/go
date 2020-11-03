@@ -43,11 +43,11 @@
 	&:not(.is-style-outline) .wp-block-button__link {
 
 		&:hover {
-			@mixin button-hover;
+			@include button-hover;
 		}
 
 		&:focus {
-			@mixin button-hover;
+			@include button-hover;
 		}
 	}
 
@@ -59,7 +59,7 @@
 
 .wp-block-search__button,
 .wp-block-button__link {
-	@mixin button;
+	@include button;
 	position: relative;
 
 	&:focus {

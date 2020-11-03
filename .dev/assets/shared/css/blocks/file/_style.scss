@@ -5,7 +5,7 @@
 	justify-content: space-between;
 
 	& .wp-block-file__button {
-		@mixin button;
+		@include button;
 		vertical-align: inherit;
 	}
 }
