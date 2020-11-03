@@ -19,7 +19,7 @@
 	vertical-align: bottom;
 }
 
-@mixin button-hover; {
+@mixin button-hover {
 	background-color: var(--go-button-interactive--color--background, var(--go--color--secondary));
 }
 
