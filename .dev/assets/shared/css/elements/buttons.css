@@ -12,7 +12,7 @@ input[type="submit"] {
 	}
 
 	&:focus {
-		@mixin outline;
+		@include outline;
 		cursor: pointer;
 	}
 }

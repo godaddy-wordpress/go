@@ -16,7 +16,7 @@
 
 	&:focus {
 		@mixin button;
-		@mixin outline;
+		@include outline;
 		background-color: var(--go-button--color--background, var(--go--color--primary));
 		border-bottom-left-radius: 0;
 		border-top-left-radius: 0;

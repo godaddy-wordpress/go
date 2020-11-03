@@ -106,7 +106,7 @@
 			}
 
 			&:focus {
-				@mixin outline;
+				@include outline;
 				outline-color: var(--go-submenu--color--text, hsla(0, 0%, 100%, 0.25));
 				outline-offset: 0;
 			}

@@ -22,7 +22,7 @@
 	}
 
 	&:focus {
-		@mixin outline;
+		@include outline;
 		outline-offset: -6px;
 	}
 }

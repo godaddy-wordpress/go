@@ -65,7 +65,7 @@
 	line-height: var(--go-footer-navigation--line-height, 2.5);
 
 	& a:focus {
-		@mixin outline;
+		@include outline;
 	}
 }
 
