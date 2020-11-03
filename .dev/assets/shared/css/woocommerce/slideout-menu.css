@@ -105,7 +105,7 @@ body {
 	width: 100%;
 	z-index: 10001;
 
-	@media (--medium) {
+	@include media(medium) {
 		width: 480px;
 	}
 
@@ -205,7 +205,7 @@ body.admin-bar {
 		height: calc(100vh - 32px);
 		margin-top: 32px;
 
-		@media (--mediumMax) {
+		@include media(medium-only) {
 			height: calc(100vh - 46px);
 			margin-top: 46px;
 		}

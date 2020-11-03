@@ -17,7 +17,7 @@
 	top: 1em;
 	width: 3rem;
 
-	@media (--medium) {
+	@include media(medium) {
 		font-size: var(--go-button--font-size, var(--go--font-size));
 		height: 4.5rem;
 		letter-spacing: var(--go-button--letter-spacing);
@@ -33,7 +33,7 @@
 }
 
 .single-product .product > .onsale {
-	@media (--large) {
+	@include media(large) {
 		height: 6rem;
 		left: 1rem;
 		top: 1rem;

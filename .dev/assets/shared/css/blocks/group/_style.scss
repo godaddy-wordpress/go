@@ -6,7 +6,7 @@
 		&:not([class*="padding"]) {
 			padding: var(--go--spacing--vertical) calc(var(--go--spacing--vertical) * 1.3);
 
-			@media (--medium) {
+			@include media(medium) {
 				padding: calc(var(--go--spacing--vertical--lg) * 0.2) calc(var(--go--spacing--vertical--lg) * 0.25);
 			}
 
@@ -53,7 +53,7 @@
 	& .wp-block-column {
 		padding-bottom: var(--go--spacing--vertical);
 
-		@media (--medium) {
+		@include media(medium) {
 			padding-bottom: 0;
 		}
 

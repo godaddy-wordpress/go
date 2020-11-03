@@ -20,11 +20,11 @@
 	--go--line-height: 1.85;
 	--go--type-ratio: 1.275;
 
-	@media (--small) {
+	@include media(small) {
 		--go--font-size--small: 90%;
 	}
 
-	@media (--large) {
+	@include media(large) {
 		--go--font-size--small: 97%;
 	}
 
@@ -47,7 +47,7 @@
 	--go-quote--border-width: 0.45rem;
 	--go-quote-large--font-size: 2.5em;
 
-	@media (--medium) {
+	@include media(medium) {
 		--go-quote-large--font-size: 3.75em;
 	}
 
@@ -88,7 +88,7 @@
 	--go-site-title--color--text: var(--go-heading--color--text);
 	--go-site-title--font-size: 1.75rem;
 
-	@media (--medium) {
+	@include media(medium) {
 		--go-site-title--font-size: 2.15rem;
 	}
 

@@ -5,7 +5,7 @@
 		margin-top: calc(var(--go--spacing--vertical--lg) / 1.5);
 		padding-bottom: calc(var(--go--spacing--vertical--lg) / 1.5);
 
-		@media (--medium) {
+		@include media(medium) {
 			margin-top: calc(var(--go--spacing--vertical--lg) / 2);
 			padding-bottom: calc(var(--go--spacing--vertical--lg) / 2);
 		}
@@ -13,7 +13,7 @@
 		&.has-background {
 			padding-top: calc(var(--go--spacing--vertical--lg) / 1.5);
 
-			@media (--medium) {
+			@include media(medium) {
 				padding-top: calc(var(--go--spacing--vertical--lg) / 2);
 			}
 		}
@@ -22,18 +22,18 @@
 	& .footer-navigation {
 		text-align: center;
 
-		@media (--medium) {
+		@include media(medium) {
 			flex: 1 65%;
 			text-align: left;
 		}
 
 		& li {
-			@media (--medium) {
+			@include media(medium) {
 				display: inline-block;
 			}
 
 			&:first-child a {
-				@media (--large) {
+				@include media(large) {
 					padding-left: 0;
 				}
 			}
@@ -49,7 +49,7 @@
 			text-transform: var(--go-navigation--text-transform, normal);
 
 			&:focus {
-				@media (--medium) {
+				@include media(medium) {
 					outline-offset: -1px;
 				}
 			}
@@ -59,14 +59,14 @@
 	& .social-icons {
 		margin-top: 2rem;
 
-		@media (--large) {
+		@include media(large) {
 			margin-top: 0;
 		}
 
 		& a {
 			padding: calc(var(--go-social--padding) * 0.85);
 
-			@media (--medium) {
+			@include media(medium) {
 				padding: calc(var(--go-social--padding) * 0.5);
 			}
 		}
@@ -81,7 +81,7 @@
 		margin-top: 2rem;
 		text-align: center;
 
-		@media (--large) {
+		@include media(large) {
 			margin-bottom: calc(var(--go-navigation--padding--x) * 0.85);
 			margin-top: 0.75rem;
 			text-align: left;

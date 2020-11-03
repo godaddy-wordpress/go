@@ -259,7 +259,7 @@ figure {
 	padding-right: var(--go-block--padding--x) !important;
 }
 
-@media (--small) {
+@include media(small) {
 
 	.sm\:display-block {
 		display: block;
@@ -286,7 +286,7 @@ figure {
 	}
 }
 
-@media (--medium) {
+@include media(medium) {
 
 	.md\:flex {
 		display: flex;
@@ -333,7 +333,7 @@ figure {
 	}
 }
 
-@media (--large) {
+@include media(large) {
 
 	.lg\:flex {
 		display: flex;

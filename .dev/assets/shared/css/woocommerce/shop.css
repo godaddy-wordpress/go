@@ -14,7 +14,7 @@
 	}
 
 	& .woocommerce-ordering {
-		@media (--medium) {
+		@include media(medium) {
 			float: right;
 			margin-bottom: 0;
 			margin-left: 1em;
@@ -53,7 +53,7 @@
 		margin-bottom: 5rem !important;
 		text-align: center;
 
-		@media (--small ) {
+		@include media(small) {
 			margin-bottom: 5rem !important;
 		}
 
@@ -72,7 +72,7 @@
 				margin: 0;
 				width: 100%;
 
-				@media (--large) {
+				@include media(large) {
 					margin: 0 0 1rem;
 				}
 			}
@@ -95,7 +95,7 @@
 			line-height: var(--go-heading--line-height);
 			margin-bottom: 2rem;
 
-			@media (--large) {
+			@include media(large) {
 				font-size: var(--go--type-scale-3);
 			}
 		}
@@ -108,7 +108,7 @@
 			color: var(--go-caption--color--text);
 			font-size: var(--go--font-size--small);
 
-			@media (--large) {
+			@include media(large) {
 				margin-bottom: 2rem;
 			}
 		}

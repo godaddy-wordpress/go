@@ -18,7 +18,7 @@
 	margin-bottom: 2rem;
 	text-decoration: none !important;
 
-	@media (--large) {
+	@include media(large) {
 		font-size: var(--go--type-scale-3);
 	}
 

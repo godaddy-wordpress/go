@@ -3,14 +3,14 @@ body::before {
 	content: "has-offscreen-nav";
 	display: none;
 
-	@media (--large) {
+	@include media(large) {
 		content: "has-full-nav has-search-toggle";
 	}
 }
 
 /*! Offscreen Navigation */
 .menu-is-open {
-	@media (--largeMax) {
+	@include media(large-only) {
 		overflow: hidden;
 
 		& .header__navigation {
@@ -30,7 +30,7 @@ body::before {
 				font-size: 3.25vmin;
 				padding: 0.25rem;
 
-				@media (--smallMax) {
+				@include media(small-only) {
 					font-size: 1rem;
 				}
 
@@ -93,7 +93,7 @@ body::before {
 			& .sub-menu li a {
 				font-size: 2.25vmin;
 
-				@media (--smallMax) {
+				@include media(small-only) {
 					font-size: 0.85rem;
 				}
 			}

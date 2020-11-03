@@ -21,13 +21,13 @@
 	}
 
 	& .header .header__titles .site-description {
-		@media (--large) {
+		@include media(large) {
 			margin-left: 0;
 			margin-right: var(--go-navigation--padding--x, 2vw);
 		}
 	}
 
-	@media (--large) {
+	@include media(large) {
 
 		& .header__title-nav {
 			order: 3;

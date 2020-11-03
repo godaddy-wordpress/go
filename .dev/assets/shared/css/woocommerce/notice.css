@@ -16,7 +16,7 @@
 		color: var(--go--color--white);
 		text-decoration: underline;
 
-		@media (--medium) {
+		@include media(medium) {
 			margin-left: 1rem;
 		}
 

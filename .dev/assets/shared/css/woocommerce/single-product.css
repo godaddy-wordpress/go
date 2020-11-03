@@ -9,7 +9,7 @@
 			padding: 2rem 0 2.75rem;
 			width: 100%;
 
-			@media (--medium) {
+			@include media(medium) {
 				display: inline-block;
 			}
 
@@ -25,7 +25,7 @@
 				display: inline-block;
 				text-decoration: none;
 
-				@media (--large) {
+				@include media(large) {
 					display: none;
 				}
 
@@ -66,7 +66,7 @@
 					padding-left: 1px;
 					padding-right: 4px;
 
-					@media (--medium) {
+					@include media(medium) {
 						padding-left: 5px;
 						padding-right: 10px;
 					}
@@ -97,7 +97,7 @@
 				margin: 0 5px;
 			}
 
-			@media (--large) {
+			@include media(large) {
 				display: inline-block;
 			}
 
@@ -124,7 +124,7 @@
 	float: none;
 	width: 100%;
 
-	@media (--large) {
+	@include media(large) {
 		float: left;
 		width: 60%;
 	}
@@ -137,7 +137,7 @@
 	float: none;
 	width: 100%;
 
-	@media (--large) {
+	@include media(large) {
 		clear: none;
 		float: right;
 		padding: 4rem 0 0 var(--go-block--padding--x);

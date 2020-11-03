@@ -16,7 +16,7 @@
 	text-decoration: none;
 	text-transform: var(--go-navigation--text-transform, normal);
 
-	@media (--large) {
+	@include media(large) {
 		display: flex;
 		flex-direction: row;
 		font-size: 1.35rem;
@@ -44,7 +44,7 @@
 	display: none;
 }
 
-@media (--large) {
+@include media(large) {
 
 	.pagination .next,
 	.pagination .prev {

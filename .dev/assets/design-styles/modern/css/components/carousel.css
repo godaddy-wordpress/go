@@ -35,7 +35,7 @@
 		&.previous {
 			left: 18px;
 
-			@media (--medium) {
+			@include media(medium) {
 				left: 25px;
 			}
 
@@ -57,7 +57,7 @@
 		&.next {
 			right: 18px;
 
-			@media (--medium) {
+			@include media(medium) {
 				right: 25px;
 			}
 

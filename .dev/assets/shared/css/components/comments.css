@@ -17,7 +17,7 @@
 	max-width: var(--go--max-width);
 	width: calc(100% - var(--go-block--padding--x));
 
-	@media (--large) {
+	@include media(large) {
 		width: calc(100% - var(--go-block--padding--x));
 	}
 }
@@ -122,7 +122,7 @@
 		margin-bottom: 2.25rem;
 	}
 
-	@media (--medium) {
+	@include media(medium) {
 
 		/* Response list */
 		& .commentlist {

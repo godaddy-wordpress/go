@@ -34,7 +34,7 @@ p {
 		padding: 0.5rem 0 0.5rem 1.5rem;
 		position: relative;
 
-		@media (--medium) {
+		@include media(medium) {
 			padding-left: 2.75rem;
 		}
 

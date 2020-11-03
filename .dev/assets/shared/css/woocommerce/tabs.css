@@ -26,11 +26,11 @@
 		display: none;
 	}
 
-	@media (--medium) {
+	@include media(medium) {
 		display: inline-block;
 	}
 
-	@media (--large) {
+	@include media(large) {
 		margin: 0 5rem 0 0;
 	}
 

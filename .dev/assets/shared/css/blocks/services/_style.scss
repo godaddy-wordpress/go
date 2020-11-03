@@ -24,23 +24,23 @@
 }
 
 .wp-block-coblocks-services[data-columns="2"] > .wp-block-coblocks-service {
-	@media (--medium) {
+	@include media(medium) {
 		max-width: calc(100% / 2 - 2em);
 	}
 }
 
 .wp-block-coblocks-services[data-columns="3"] > .wp-block-coblocks-service {
-	@media (--large) {
+	@include media(large) {
 		max-width: calc(100% / 3 - 2em);
 	}
 }
 
 .wp-block-coblocks-services[data-columns="4"] > .wp-block-coblocks-service {
-	@media (--small) {
+	@include media(small) {
 		max-width: calc(100% / 2 - 2em);
 	}
 
-	@media (--large) {
+	@include media(large) {
 		max-width: calc(100% / 4 - 2em);
 	}
 }

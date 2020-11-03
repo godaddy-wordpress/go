@@ -23,7 +23,7 @@
 		& .wp-block-cover__inner-container {
 			padding: calc(var(--go--spacing--vertical) * 0.5) var(--go--spacing--vertical);
 
-			@media (--medium) {
+			@include media(medium) {
 				padding: calc(var(--go--spacing--vertical) * 1.5) calc(var(--go--spacing--vertical) * 2);
 			}
 		}

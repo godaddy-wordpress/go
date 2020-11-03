@@ -4,7 +4,7 @@
 }
 
 .woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme {
-	@media (--medium) {
+	@include media(medium) {
 		padding: var(--go-button--padding--y) var(--go-button--padding--x);
 	}
 }

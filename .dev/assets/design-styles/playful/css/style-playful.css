@@ -29,7 +29,7 @@
 		position: absolute;
 		transform: translate3d(-120%, 0, 0);
 
-		@media (--medium) {
+		@include media(medium) {
 			font-size: 3em;
 		}
 	}

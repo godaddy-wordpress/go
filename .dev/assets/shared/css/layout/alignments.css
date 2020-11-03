@@ -162,7 +162,7 @@
 	margin-right: 2rem;
 }
 
-@media (--medium) {
+@include media(medium) {
 
 	[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .alignleft,
 	[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > p .alignleft,
@@ -182,7 +182,7 @@
 
 }
 
-@media (--large) {
+@include media(large) {
 
 	[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > .alignleft,
 	[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > p .alignleft,

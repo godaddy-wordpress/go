@@ -9,7 +9,7 @@
 @import url("components/wc-button.css");
 
 .site-title {
-	@media (--largeMax) {
+	@include media(large-only) {
 		margin-left: calc(var(--go-site-title--letter-spacing) * 2.5);
 	}
 }

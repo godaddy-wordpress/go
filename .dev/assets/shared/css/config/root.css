@@ -3,7 +3,7 @@
 	/* Typographic scale */
 	--go--type-scale-0: calc(var(--go--heading-size, var(--go--font-size)) * 0.7);
 
-	@media (--large) {
+	@include media(large) {
 		--go--type-scale-0: var(--go--heading-size, var(--go--font-size)); /* --go--heading-size is a future user-controlled value, in rem. */
 	}
 
@@ -21,11 +21,11 @@
 	--go-block--padding--x: calc(var(--go--spacing--horizontal) / var(--go--viewport-basis) * 100vw);
 	--go-header--padding--y: calc(var(--go--spacing--header) / var(--go--viewport-basis) * 100vw);
 
-	@media (--medium) {
+	@include media(medium) {
 		--go--spacing--vertical--lg: calc(100 / var(--go--viewport-basis) * 100vw);
 	}
 
-	@media (--huge) {
+	@include media(xlarge) {
 		--go--spacing--vertical--lg: calc(90 / var(--go--viewport-basis) * 100rem);
 		--go-block--padding--x: calc(var(--go--spacing--horizontal) / var(--go--viewport-basis) * 90rem);
 		--go-header--padding--y: calc(var(--go--spacing--header) / var(--go--viewport-basis) * 90rem);

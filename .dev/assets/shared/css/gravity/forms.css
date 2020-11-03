@@ -196,7 +196,7 @@ body {
 		}
 
 		& div.gform_body ul.top_label li.gfield {
-			@media (--medium) {
+			@include media(medium) {
 				padding-right: 0.5rem;
 			}
 		}

@@ -7,7 +7,7 @@
 	text-align: right;
 	z-index: 2;
 
-	@media (--large) {
+	@include media(large) {
 		flex: 0;
 	}
 }
@@ -24,7 +24,7 @@
 	padding: 0.75rem;
 	position: relative;
 
-	@media (--large) {
+	@include media(large) {
 		display: none;
 	}
 

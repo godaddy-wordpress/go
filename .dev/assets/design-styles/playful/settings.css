@@ -76,7 +76,7 @@
 	--go-site-title--letter-spacing: 0;
 	--go-site-title--text-transform: none;
 
-	@media (--medium) {
+	@include media(medium) {
 		--go-site-title--font-size: 1.8rem;
 	}
 
@@ -109,7 +109,7 @@
 	--go-social--padding: 0.5rem;
 	--go-social--size: 1.5rem;
 
-	@media (--medium) {
+	@include media(medium) {
 		--go-social--padding: 1rem;
 	}
 

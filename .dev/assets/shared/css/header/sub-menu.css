@@ -16,7 +16,7 @@
 		&.child-has-focus {
 
 			& > .sub-menu {
-				@media (--large) {
+				@include media(large) {
 					display: block;
 				}
 			}
@@ -27,7 +27,7 @@
 	& > li > .sub-menu {
 		position: relative;
 
-		@media (--large) {
+		@include media(large) {
 			position: absolute;
 			top: 165%;
 		}
@@ -46,7 +46,7 @@
 			transform: translateX(-10px);
 			width: 0;
 
-			@media (--large) {
+			@include media(large) {
 				left: 50%;
 			}
 		}
@@ -71,7 +71,7 @@
 		padding: 0;
 		z-index: 999;
 
-		@media (--large) {
+		@include media(large) {
 			display: none;
 			left: 50%;
 			padding: 0.75rem;
@@ -85,7 +85,7 @@
 		& .menu-item {
 			white-space: normal;
 
-			@media (--large) {
+			@include media(large) {
 				display: block;
 				margin-left: 0;
 			}
@@ -96,7 +96,7 @@
 			color: var(--go-submenu--color--text, var(--go--color--white));
 			width: 100%;
 
-			@media (--large) {
+			@include media(large) {
 				padding-bottom: 0.35rem;
 				padding-top: 0.35rem;
 			}
@@ -125,7 +125,7 @@
 	}
 
 	&.primary-menu--hide-medium {
-		@media (--medium) {
+		@include media(medium) {
 			opacity: 0;
 			pointer-events: none;
 		}

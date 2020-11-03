@@ -12,7 +12,7 @@
 			display: inline-block;
 			width: 100%;
 
-			@media (--medium) {
+			@include media(medium) {
 				width: auto;
 			}
 		}

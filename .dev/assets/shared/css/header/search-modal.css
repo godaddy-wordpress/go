@@ -49,7 +49,7 @@
 	transform: translateY(-100%);
 	transition: transform 0.15s linear, box-shadow 0.15s linear;
 
-	@media (--medium) {
+	@include media(medium) {
 		padding: var(--go-header--padding--y, 3vw) var(--go-block--padding--x);
 	}
 }
@@ -57,7 +57,7 @@
 .admin-bar .search-modal.active {
 	top: 32px;
 
-	@media (--admin-bar-lg) {
+	@include media(admin-bar-only) {
 		top: 46px;
 	}
 }

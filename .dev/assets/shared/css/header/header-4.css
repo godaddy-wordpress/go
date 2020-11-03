@@ -5,7 +5,7 @@
 		content: "has-search-toggle has-offscreen-nav";
 		display: none;
 
-		@media (--large) {
+		@include media(large) {
 			content: "has-full-nav has-search-toggle has-offscreen-nav";
 		}
 	}
@@ -41,7 +41,7 @@
 	}
 
 	& .header__navigation {
-		@media (--large) {
+		@include media(large) {
 			align-items: normal;
 			position: fixed !important;
 		}
@@ -53,7 +53,7 @@
 	}
 
 	&:not(.menu-is-open) .header__navigation {
-		@media (--large) {
+		@include media(large) {
 			display: none;
 		}
 	}
@@ -79,7 +79,7 @@
 				font-size: 3vmin;
 				padding: 0.25rem;
 
-				@media (--smallMax) {
+				@include media(small-only) {
 					font-size: 1rem;
 				}
 
@@ -142,7 +142,7 @@
 			& .sub-menu li a {
 				font-size: 2.25vmin;
 
-				@media (--smallMax) {
+				@include media(small-only) {
 					font-size: 0.85rem;
 				}
 			}

@@ -34,7 +34,7 @@
 			color: var(--go-quote--color--text, var(--go-heading--color--text));
 			padding-left: 1.5rem;
 
-			@media (--medium) {
+			@include media(medium) {
 				padding-left: 2.75rem;
 			}
 		}
@@ -44,7 +44,7 @@
 			margin-left: 1.5rem;
 			margin-top: -2rem;
 
-			@media (--medium) {
+			@include media(medium) {
 				margin-left: 2.75rem;
 			}
 		}

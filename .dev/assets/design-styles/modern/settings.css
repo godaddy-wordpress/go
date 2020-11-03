@@ -79,7 +79,7 @@
 	--go-site-title--text-transform: uppercase;
 	--go-site-title--letter-spacing: 3px;
 
-	@media (--large) {
+	@include media(large) {
 		--go-site-title--font-size: 1.5rem;
 	}
 
@@ -109,7 +109,7 @@
 	--go-social--size: 1.5rem;
 	--go-social--padding: 0.75rem;
 
-	@media (--medium) {
+	@include media(medium) {
 		--go-social--size: 2rem;
 		--go-social--padding: 1rem;
 	}
@@ -127,7 +127,7 @@
 	--editor-max-w-base: 633px;
 	--editor-max-w-wide: 1280px;
 
-	@media (--medium) {
+	@include media(medium) {
 		--editor-title--font-size: 3.65em;
 	}
 }

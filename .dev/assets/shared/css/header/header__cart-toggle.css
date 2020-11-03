@@ -52,14 +52,14 @@
 	& .header__title-nav {
 		flex: 1 0 60%;
 
-		@media (--large) {
+		@include media(large) {
 			flex: 1 0 70%;
 		}
 	}
 
 	& .header__extras,
 	& .header__nav-toggle {
-		@media (--mediumMax) {
+		@include media(medium-only) {
 			flex: 0 0 20%;
 		}
 	}
