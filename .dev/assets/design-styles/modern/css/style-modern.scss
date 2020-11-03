@@ -1,9 +1,12 @@
+// Modern - Styles
 @import "../../../shared/css/config/breakpoints";
 @import "../../../shared/css/config/mixins";
 @import "../settings";
-@import "components/button";
-@import "components/carousel";
-@import "components/wc-button";
+
+// Blocks
+@import "blocks/button";
+@import "blocks/carousel";
+@import "blocks/wc-button";
 
 .site-title {
 	@include media(large-only) {

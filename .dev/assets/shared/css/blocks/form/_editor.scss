@@ -58,11 +58,11 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 
 .gform_wrapper {
 
-	& .gfield_time_hour i {
+	.gfield_time_hour i {
 		margin-top: 0 !important;
 	}
 
-	& .gfield_time_ampm select {
+	.gfield_time_ampm select {
 		height: inherit !important;
 	}
 }

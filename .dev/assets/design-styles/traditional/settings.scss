@@ -1,16 +1,16 @@
 :root {
 
-	/* Content width */
+	// Content width
 	--go--max-width: 42rem;
 	--go--max-width--alignwide: 84rem;
 
-	/* Spacing */
+	// Spacing
 	--go--viewport-basis: 1000;
 	--go--spacing--horizontal: 60;
 	--go--spacing--paragraph: 9;
 	--go--spacing--header: 30;
 
-	/* Typography */
+	// Typography
 	--go--color--text: hsl(218, 12%, 30%);
 	--go--font-family: "Nunito Sans", sans-serif;
 	--go--font-size--small: 85%;
@@ -28,7 +28,7 @@
 		--go--font-size--small: 97%;
 	}
 
-	/* Headings */
+	// Headings
 	--go-heading--button-spacing: 1.75rem;
 	--go-heading--color--text: var(--go--color--secondary);
 	--go-heading--font-family: "Crimson Text", serif;
@@ -37,13 +37,13 @@
 	--go-heading--line-height: 1.15;
 	--go-heading--margin-bottom: 2rem;
 
-	/* Captions */
+	// Captions
 	--go-caption--color--text: hsl(0, 0%, 43%);
 	--go-caption--font-size: 0.85rem;
 	--go-caption--text-align--rtl: right;
 	--go-caption--text-align: left;
 
-	/* Blockquote */
+	// Blockquote
 	--go-quote--border-width: 0.45rem;
 	--go-quote-large--font-size: 2.5em;
 
@@ -51,15 +51,15 @@
 		--go-quote-large--font-size: 3.75em;
 	}
 
-	/* Pullquote */
+	// Pullquote
 	--go-pullquote--font-family: serif;
 	--go-pullquote--font-style: normal;
 
-	/* Accessibility */
+	// Accessibility
 	--go-outline--color--text: var(--go-heading--color--text);
 	--go-selection--color--background: var(--go-heading--color--text);
 
-	/* Buttons */
+	// Buttons
 	--go-button--border-radius: 4px;
 	--go-button--font-family: var(--go-heading--font-family);
 	--go-button--font-size: 1.3rem;
@@ -68,14 +68,14 @@
 	--go-button--padding--y: 1.4rem;
 	--go-button-interactive--color--background: var(--go-heading--color--text);
 
-	/* Labels */
+	// Labels
 	--go-label--font-family: var(--go--font-family);
 	--go-label--font-size: 1rem;
 	--go-label--font-weight: var(--go-navigation--font-weight, 400);
 	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
 	--go-label--margin-bottom: 0.25rem;
 
-	/* Input */
+	// Input
 	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
 	--go-input--color--background: var(--go--color--background);
 	--go-input--color--text: var(--go--color--text);
@@ -84,7 +84,7 @@
 	--go-input--padding--x: 0.85rem;
 	--go-input--padding--y: 0.85rem;
 
-	/* Site Title */
+	// Site Title
 	--go-site-title--color--text: var(--go-heading--color--text);
 	--go-site-title--font-size: 1.75rem;
 
@@ -92,33 +92,33 @@
 		--go-site-title--font-size: 2.15rem;
 	}
 
-	/* Site Description */
+	// Site Description
 	--go-site-description--color--text: var(--go-heading--color--text);
 
-	/* Site Navigation */
+	// Site Navigation
 	--go-navigation--color--text: var(--go-heading--color--text);
 	--go-navigation--font-family: var(--go-heading--font-family);
 	--go-navigation--font-size: 1.3rem;
 	--go-navigation-mobile--font-size: 1.65rem;
 
-	/* Site Search */
+	// Site Search
 	--go-search-button--color--text-interactive: var(--go--color--primary);
 	--go-search-button--color--background: var(--go--color--primary);
 	--go-search-button--color--background-interactive: var(--go-heading--color--text);
 
-	/* Entry Header */
+	// Entry Header
 	--go-entryheader--padding-top: 3rem;
 
-	/* Footer */
+	// Footer
 	--go-footer--color--text: var(--go-heading--color--text);
 	--go-footer-navigation--line-height: 2.25;
 
-	/* Social Icons */
+	// Social Icons
 	--go-social--color--text: var(--go--color--primary);
 	--go-social--padding: 1rem;
 	--go-social--size: 1.5rem;
 
-	/* CoBlocks */
+	// CoBlocks
 	--wp-block-coblocks-accordion-item--border-color: var(--go--color--primary);
 	--wp-block-coblocks-accordion-item--color--text: var(--go--color--primary);
 	--wp-block-coblocks-accordion-item-interactive--color--background: none;
@@ -133,8 +133,4 @@
 	--wp-block-coblocks-gallery-carousel--overlay--opacity: 0.5;
 	--wp-block-coblocks-services--heading--margin-bottom: 1.25rem;
 	--wp-block-coblocks-services--heading--margin-top: 2rem;
-
-	/* Block Editor */
-	--editor-max-w-base: 702px;
-	--editor-max-w-wide: 1118px;
 }

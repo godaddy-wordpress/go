@@ -1,7 +1,7 @@
-/**
- * Welcoming - Editor Styles
- */
+// Welcoming - Editor Styles
 @import "../../../shared/css/config/breakpoints";
 @import "../settings";
-@import "components/button";
-@import "components/carousel";
+
+//Blocks
+@import "blocks/button";
+@import "blocks/carousel";

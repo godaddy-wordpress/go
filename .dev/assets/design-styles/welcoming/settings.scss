@@ -1,16 +1,16 @@
 :root {
 
-	/* Content width */
+	// Content width
 	--go--max-width: 42rem;
 	--go--max-width--alignwide: 82rem;
 
-	/* Spacing */
+	// Spacing
 	--go--viewport-basis: 750;
 	--go--spacing--horizontal: 50;
 	--go--spacing--paragraph: 15;
 	--go--spacing--header: 25;
 
-	/* Typography */
+	// Typography
 	--go--color--text: var(--go--color--primary);
 	--go--font-family: "Karla", sans-serif;
 	--go--font-size--small: 90%;
@@ -18,7 +18,7 @@
 	--go--line-height: 1.8;
 	--go--type-ratio: 1.235;
 
-	/* Headings */
+	// Headings
 	--go-heading--button-spacing: 2rem;
 	--go-heading--color--text: var(--go--color--primary);
 	--go-heading--font-family: "Work Sans", sans-serif;
@@ -26,19 +26,19 @@
 	--go-heading--line-height: 1.35;
 	--go-heading--margin-bottom: 1.75rem;
 
-	/* Captions */
+	// Captions
 	--go-caption--color--text: hsl(0, 0%, 52%);
 	--go-caption--font-size: 0.85rem;
 	--go-caption--text-align: center;
 
-	/* Pullquote */
+	// Pullquote
 	--go-pullquote--font-size: var(--go--type-scale-6);
 
-	/* Accessibility */
+	// Accessibility
 	--go-outline--color--text: var(--go--color--primary);
 	--go-selection--color--background: var(--go--color--primary);
 
-	/* Buttons */
+	// Buttons
 	--go-button--border-width: 1px;
 	--go-button--padding--x: 1.85rem;
 	--go-button--padding--y: 1.35rem;
@@ -48,14 +48,14 @@
 	--go-button--font-weight: 400;
 	--go-button-interactive--color--background: var(--go--color--secondary);
 
-	/* Labels */
+	// Labels
 	--go-label--font-size: var(--go--font-size);
 	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
 	--go-label--text-transform: lowercase;
 	--go-label--font-weight: var(--go-navigation--font-weight, 400);
 	--go-label--margin-bottom: 0.35rem;
 
-	/* Input */
+	// Input
 	--go-input--border-color: var(--go--color--primary);
 	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
 	--go-input--color--text: var(--go-caption--color--text);
@@ -66,10 +66,10 @@
 	--go-input-interactive--color--border-color: var(--go--color--secondary);
 	--go-input-interactive--color--text: var(--go-heading--color--text);
 
-	/* Header */
+	// Header
 	--go-header--color--background: "";
 
-	/* Site Title */
+	// Site Title
 	--go-site-title--color--text: var(--go-heading--color--text);
 	--go-site-title--font-size: 1.85rem;
 	--go-site-title--font-weight: 600;
@@ -80,11 +80,11 @@
 		--go-site-title--font-size: 2.25rem;
 	}
 
-	/* Site Description */
+	// Site Description
 	--go-site-description--color--text: var(--go--color--primary);
 	--go-site-description--opacity: 1;
 
-	/* Site Navigation */
+	// Site Navigation
 	--go-navigation--color--text: var(--go--color--primary);
 	--go-navigation--font-family: var(--go--font-family);
 	--go-navigation--font-size: 1rem;
@@ -93,18 +93,18 @@
 	--go-navigation--text-transform: lowercase;
 	--go-navigation-mobile--font-size: 1.75rem;
 
-	/* Site Search */
+	// Site Search
 	--go-search-button--color--text-interactive: var(--go--color--text);
 	--go-search-button--color--background: var(--go--color--primary);
 	--go-search-button--color--background-interactive: var(--go--color--text);
 
-	/* Footer */
+	// Footer
 	--go-footer--color--text: var(--go--color--primary);
 	--go-footer-navigation--color--text: var(--go-heading--color--text);
 	--go-footer-3--border-color: var(--go-header--color--background);
 	--go-footer-3--border-width: 10px;
 
-	/* Social */
+	// Social
 	--go-social--padding: 0.5rem;
 	--go-social--size: 1.5rem;
 
@@ -113,13 +113,9 @@
 		--go-social--size: 2rem;
 	}
 
-	/* Posts */
+	// Posts
 	--go-meta--color--text: var(--go--color--primary);
 
-	/* CoBlocks */
+	// CoBlocks
 	--wp-block-coblocks-food-item--heading--font-weight: 700;
-
-	/* Block Editor */
-	--editor-max-w-base: 702px;
-	--editor-max-w-wide: 1134px;
 }

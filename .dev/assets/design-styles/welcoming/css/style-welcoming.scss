@@ -1,12 +1,10 @@
-/**
- * Welcoming - Styles
- */
+// Welcoming - Styles
 @import "../../../shared/css/config/breakpoints";
 @import "../settings";
-@import "components/button";
-@import "components/carousel";
-@import "woocommerce/tabs";
-@import "woocommerce/product";
+
+//Blocks
+@import "blocks/button";
+@import "blocks/carousel";
 
 html {
 	background-color: var(--go-header--color--background);
