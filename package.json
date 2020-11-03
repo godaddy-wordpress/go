@@ -37,7 +37,7 @@
     "postversion": "git tag -d canary && git push && git push --tags",
     "build-release": "npm install && npm run build",
     "lint-release": "npm install && composer install && npm run lint",
-    "lint-css": "stylelint 'assets/shared/css' '.dev/assets/design-styles/**/*.css'",
+    "lint-css": "stylelint '.dev/assets/shared/css' '.dev/assets/design-styles/**/*.css'",
     "lint-js": "eslint assets/shared/js",
     "lint-php": "composer run lint",
     "makepot": "wp i18n make-pot . languages/go.pot --skip-audit --exclude=build,dist --headers='{\"Last-Translator\":\"plugins@godaddy.com\",\"Report-Msgid-Bugs-To\":\"https://github.com/godaddy-wordpress/go/issues\"}' --file-comment='Copyright (c) 2019 GoDaddy Operating Company, LLC. All Rights Reserved.' && npm run pot2json",
@@ -102,7 +102,6 @@
   "license": "MIT",
   "devDependencies": {
     "@10up/eslint-config": "^1.0.9",
-    "@10up/stylelint-config": "^1.0.3",
     "@babel/core": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.9.4",
     "@babel/preset-env": "^7.0.0",
