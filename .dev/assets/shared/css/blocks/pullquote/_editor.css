@@ -1,0 +1,13 @@
+/* Pullquote */
+.wp-block-pullquote blockquote > .block-editor-rich-text p {
+	font-size: var(--go-pullquote--font-size, var(--go--type-scale-5));
+	line-height: var(--go-pullquote--line-height, 1.25);
+}
+
+.wp-block[data-type="core/pullquote"] {
+
+	& .is-style-solid-color blockquote {
+		padding-left: var(--go-block--padding--x);
+		padding-right: var(--go-block--padding--x);
+	}
+}

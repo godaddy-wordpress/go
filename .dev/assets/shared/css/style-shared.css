@@ -16,7 +16,6 @@
 @import url("elements/headings.css");
 @import url("elements/lists.css");
 @import url("elements/media.css");
-@import url("blocks/table.css");
 
 /* Layout */
 @import url("layout/alignments.css");
@@ -54,46 +53,7 @@
 @import url("components/social-icons.css");
 
 /*! Blocks */
-@import url("blocks/button.css");
-@import url("blocks/separator.css");
-@import url("blocks/image.css");
-@import url("blocks/columns.css");
-@import url("blocks/cover.css");
-@import url("blocks/media.css");
-@import url("blocks/gallery.css");
-@import url("blocks/preformatted.css");
-@import url("blocks/pullquote.css");
-@import url("blocks/file.css");
-@import url("blocks/latest-posts.css");
-@import url("blocks/latest-comments.css");
-@import url("blocks/quote.css");
-@import url("blocks/paragraph.css");
-@import url("blocks/verse.css");
-@import url("blocks/more.css");
-@import url("blocks/code.css");
-@import url("blocks/audio-video.css");
-@import url("blocks/search.css");
-@import url("blocks/group.css");
-
-/*! CoBlocks */
-@import url("coblocks/accordion.css");
-@import url("coblocks/alert.css");
-@import url("coblocks/author.css");
-@import url("coblocks/carousel.css");
-@import url("coblocks/dynamic-separator.css");
-@import url("coblocks/events.css");
-@import url("coblocks/features.css");
-@import url("coblocks/food-drinks.css");
-@import url("coblocks/form.css");
-@import url("coblocks/hero.css");
-@import url("coblocks/icon.css");
-@import url("coblocks/masonry.css");
-@import url("coblocks/media-card.css");
-@import url("coblocks/pricing-table.css");
-@import url("coblocks/row.css");
-@import url("coblocks/services.css");
-@import url("coblocks/shape-divider.css");
-@import url("coblocks/social.css");
+@import url("blocks/blocks.css");
 
 /*! WooCommerce */
 @import url("woocommerce/notice.css");
