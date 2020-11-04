@@ -8,6 +8,7 @@
 	color: var(--go-navigation--color--text);
 	display: flex;
 	flex-wrap: wrap;
+	font-display: swap;
 	font-family: var(--go-navigation--font-family);
 	font-size: 1.25rem;
 	font-size: var(--go-navigation--font-size);

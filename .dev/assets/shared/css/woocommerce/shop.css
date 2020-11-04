@@ -88,6 +88,7 @@
 		& .wc-block-grid__product-title,
 		& .woocommerce-loop-product__title {
 			color: var(--go-heading--color--text);
+			font-display: swap;
 			font-family: var(--go-heading--font-family);
 			font-size: var(--go--type-scale-2);
 			font-weight: var(--go-heading--font-weight);

@@ -55,6 +55,7 @@
 	& a {
 		color: var(--go-navigation--color--text);
 		display: inline-block;
+		font-display: swap;
 		font-family: var(--go-navigation--font-family);
 		font-size: var(--go-navigation-mobile--font-size);
 		font-weight: var(--go-navigation--font-weight, 400);

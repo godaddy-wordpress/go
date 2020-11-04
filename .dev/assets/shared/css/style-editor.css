@@ -166,6 +166,7 @@
 .wp-block-search__label .rich-text,
 label:not(.components-toggle-control__label):not(.components-base-control__label):not(.has-text-color) {
 	color: var(--go-label--color--text, var(--go-heading--color--text));
+	font-display: swap;
 	font-family: var(--go-label--font-family, var(--go-navigation--font-family));
 	font-size: var(--go-label--font-size);
 	font-weight: var(--go-label--font-weight);
@@ -196,6 +197,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 
 /* Default Appender */
 .editor-default-block-appender .editor-default-block-appender__content {
+	font-display: swap;
 	font-family: var(--go--font-family);
 	font-size: var(--go--font-size);
 }
@@ -303,6 +305,7 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 .wc-block-grid__products .wc-block-grid__product-title,
 .wc-block-grid__products .woocommerce-loop-product__title {
 	color: var(--go-heading--color--text);
+	font-display: swap;
 	font-family: var(--go-heading--font-family);
 	font-size: var(--go--type-scale-2);
 	font-weight: var(--go-heading--font-weight);

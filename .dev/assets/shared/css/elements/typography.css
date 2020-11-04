@@ -2,6 +2,7 @@
 body {
 	background-color: var(--go--color--background, 0, 0%, 100%);
 	color: var(--go--color--text);
+	font-display: swap;
 	font-family: var(--go--font-family);
 	font-size: var(--go--font-size);
 	font-weight: var(--go--font-weight, 400);
@@ -25,6 +26,7 @@ p {
 
 	& p {
 		color: var(--go-quote--color--text, var(--go-heading--color--text));
+		font-display: swap;
 		font-family: var(--go-heading--font-family);
 		font-size: var(--go-quote--font-size, var(--go--type-scale-4));
 		font-style: var(--go-quote--font-style, normal);

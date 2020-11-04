@@ -1,5 +1,6 @@
 /*! Comments */
 .comment-form-cookies-consent input[type="checkbox"] + label {
+	font-display: swap;
 	font-family: var(--go--font-family);
 	font-size: var(--go-comments-label--font-size, 0.95rem);
 	font-weight: var(--go--font-weight, 400);
@@ -146,4 +147,3 @@
 		}
 	}
 }
-

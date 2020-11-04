@@ -95,6 +95,7 @@ body {
 
 	& .gform_wrapper label.gfield_label,
 	& .gform_wrapper legend.gfield_label {
+		font-display: swap;
 		font-family: var(--go-label--font-family, var(--go-navigation--font-family));
 		font-size: var(--go-label--font-size);
 		font-weight: var(--go-label--font-weight);
