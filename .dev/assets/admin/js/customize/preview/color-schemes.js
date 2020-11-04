@@ -3,7 +3,7 @@ import { hexToHSL } from '../util';
 const $ = jQuery; // eslint-disable-line
 
 export default () => {
-	let selectedDesignStyle;
+	let selectedDesignStyle = GoPreviewData.selectedDesignStyle;
 
 	/**
 	 * Set color

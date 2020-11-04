@@ -1,0 +1,55 @@
+@import "customize/global";
+@import "customize/switcher-control";
+@import "customize/range-control";
+
+#customize-preview {
+	transition: opacity 100ms cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+#customize-preview.is-loading {
+	opacity: 0;
+}
+
+.wp-full-overlay {
+	background: #fff;
+}
+
+.customize-control-design_style_control {
+
+	.customize-control-title {
+		line-height: 1.75;
+		margin-bottom: 4px;
+	}
+}
+
+.home .entry-header.page-header {
+	display: none;
+}
+
+#customize-control-viewport_basis {
+	direction: rtl;
+
+	.customize-control-title {
+		font-size: 13px;
+		font-weight: 500;
+	}
+}
+
+.customize-control-go_title {
+	border-top: 1px solid #ddd;
+	margin-top: 12px;
+	padding-top: 20px;
+
+	.customize-control-title {
+		line-height: 1.75;
+		margin-bottom: 4px;
+	}
+}
+
+.customize-control-color {
+
+	.customize-control-title {
+		font-size: 13px;
+		font-weight: 500;
+	}
+}
