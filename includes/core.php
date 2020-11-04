@@ -904,12 +904,12 @@ function get_available_design_styles() {
 				),
 			),
 			'fonts'          => array(
+				'Poppins'   => array(
+					'600',
+				),
 				'Quicksand' => array(
 					'400',
 					'600',
-				),
-				'Poppins'   => array(
-					'700',
 				),
 			),
 			'font_size'      => '1.1rem',
