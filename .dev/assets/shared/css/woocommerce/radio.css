@@ -1,5 +1,6 @@
 .woocommerce-page {
 
+	& .woocommerce-shipping-methods,
 	& .wc_payment_methods {
 
 		& input[name="payment_method"] {
