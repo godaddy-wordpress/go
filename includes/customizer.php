@@ -183,7 +183,8 @@ function customize_preview_init() {
 		'go-customize-preview',
 		'GoPreviewData',
 		array(
-			'design_styles' => \Go\Core\get_available_design_styles(),
+			'design_styles'       => \Go\Core\get_available_design_styles(),
+			'selectedDesignStyle' => get_theme_mod( 'design_style', \Go\Core\get_default_design_style() ),
 		)
 	);
 }
