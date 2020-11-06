@@ -21,6 +21,7 @@
 	color: var(--go-meta--color--text, var(--go-caption--color--text));
 	display: flex;
 	flex-wrap: wrap;
+	font-display: swap;
 	font-family: var(--go-meta--font-family, inherit);
 	font-size: var(--go-meta--font-size, var(--go-navigation--font-size));
 	list-style: none;

@@ -36,6 +36,7 @@ select,
 optgroup,
 textarea {
 	color: var(--go--color--text);
+	font-display: swap;
 	font-family: var(--go--font-family);
 	font-weight: var(--go--font-weight, 400);
 	line-height: var(--go--line-height);

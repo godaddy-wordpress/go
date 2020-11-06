@@ -22,7 +22,7 @@
 	}
 
 	& p {
-
+		font-display: swap;
 		font-family: var(--go-pullquote--font-family, var(--go-heading--font-family));
 		font-size: var(--go-pullquote--font-size, var(--go--type-scale-5));
 		font-style: var(--go-pullquote--font-style, italic);

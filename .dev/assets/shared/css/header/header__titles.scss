@@ -32,6 +32,7 @@
 
 .site-title {
 	color: var(--go-site-title--color--text);
+	font-display: swap;
 	font-family: var(--go-site-title--font-family, var(--go-heading--font-family));
 	font-size: var(--go-site-title--font-size);
 	font-weight: var(--go-site-title--font-weight, var(--go-heading--font-weight));
@@ -43,6 +44,7 @@
 
 .site-description {
 	color: var(--go-site-description--color--text, var(--go-heading--color--text));
+	font-display: swap;
 	font-family: var(--go-site-description--font-family, inherit);
 	font-size: var(--go-site-description--font-size, inherit) !important;
 	font-weight: var(--go-site-description--font-weight, 400);

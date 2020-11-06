@@ -1,6 +1,7 @@
 .site-footer {
 	background-color: var(--go-footer--color--background);
 	color: var(--go-footer--color--text, initial);
+	font-display: swap;
 	font-family: var(--go-footer--font-family, inherit);
 	margin-top: var(--go--spacing--vertical--lg);
 
@@ -71,6 +72,7 @@
 .footer-navigation__title {
 	color: var(--go-footer-heading--color--text, var(--go-heading--color--text));
 	display: block;
+	font-display: swap;
 	font-family: var(--go-navigation--font-family);
 	font-size: var(--go-navigation--font-size);
 	font-weight: var(--go-navigation--font-weight, 400);
