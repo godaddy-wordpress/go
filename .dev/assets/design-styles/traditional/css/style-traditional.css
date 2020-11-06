@@ -1,9 +1,0 @@
-/**
- * Traditional - Styles
- */
-@import url("../../../shared/css/config/media-queries.css");
-@import url("../settings.css");
-
-.wp-block-coblocks-food-item__attributes {
-	top: 0;
-}

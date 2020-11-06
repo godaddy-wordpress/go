@@ -1,0 +1,52 @@
+/*! Header: Header 3 */
+.has-header-3 {
+
+	.header__extras {
+		margin-left: -0.75rem;
+		order: 1;
+	}
+
+	.header__title-nav {
+		order: 2;
+	}
+
+	.header .header__titles {
+		flex-direction: column;
+
+		.site-description {
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: var(--go-site-description--margin-top, 0.25rem);
+
+			@include media(large) {
+				margin-bottom: calc(var(--go-site-description--margin-top, 0.25rem) * 3);
+			}
+		}
+	}
+
+	@include media(large) {
+
+		.header__title-nav {
+			align-items: center;
+			flex-direction: column;
+			order: 2;
+		}
+
+		.nav-toggle {
+			display: block;
+			opacity: 0;
+			pointer-events: none;
+			visibility: hidden;
+		}
+
+		.header__navigation {
+			justify-content: center;
+			margin-left: inherit;
+			margin-top: 0.75rem;
+			order: 2;
+			padding-left: 0;
+			padding-right: 0;
+			text-align: center;
+		}
+	}
+}

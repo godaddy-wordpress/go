@@ -1,0 +1,24 @@
+/*! WooCommerce: Account */
+.woocommerce-account {
+
+	nav.woocommerce-MyAccount-navigation {
+		margin-bottom: 3rem;
+
+		ul {
+			margin-top: 0;
+			padding-left: 0;
+		}
+	}
+
+	.col2-set.addresses {
+
+		.col-1,
+		.col-2 {
+			width: 100%;
+
+			&:first-child {
+				margin-bottom: var(--go--spacing--vertical);
+			}
+		}
+	}
+}

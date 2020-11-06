@@ -1,0 +1,9 @@
+/* Captions */
+.wp-block figcaption {
+	margin-top: 0 !important;
+}
+
+[data-align="full"] figcaption {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}

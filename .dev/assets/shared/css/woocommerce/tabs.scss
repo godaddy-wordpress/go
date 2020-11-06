@@ -1,0 +1,48 @@
+/*! WooCommerce: Tabs */
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	margin: 0;
+	padding: 0;
+
+	&::before {
+		border: none;
+	}
+}
+
+.woocommerce div.product .woocommerce-tabs .panel {
+	margin-bottom: 0;
+	padding: 2rem 0 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	background-color: transparent;
+	border: none;
+	display: block;
+	margin: 0 2rem 1rem 0;
+	padding: 0;
+	text-transform: uppercase;
+
+	&::after,
+	&::before {
+		display: none;
+	}
+
+	@include media(medium) {
+		display: inline-block;
+	}
+
+	@include media(large) {
+		margin: 0 5rem 0 0;
+	}
+
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	border-bottom: 2px solid transparent;
+	font-weight: 400;
+	line-height: var(--go--line-height);
+	padding: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+	border-bottom: 2px solid currentColor;
+}

@@ -1,0 +1,19 @@
+// Trendy - Styles
+@import "../../../shared/css/config/breakpoints";
+@import "../settings";
+
+//Blocks
+@import "blocks/button";
+@import "blocks/carousel";
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+.site-footer__inner {
+	max-width: none;
+}
+
+.has-footer-1 .footer-navigation a {
+	color: var(--go-footer--color--text, initial);
+}
