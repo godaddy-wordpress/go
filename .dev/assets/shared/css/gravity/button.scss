@@ -1,0 +1,18 @@
+/*! Gravity Forms: Button */
+body {
+
+	& .gform_wrapper {
+
+		/* Primary Button */
+		& input[type="submit"] {
+			@include button;
+			height: inherit;
+
+			&:hover,
+			&:focus,
+			&:active {
+				@include button-hover;
+			}
+		}
+	}
+}

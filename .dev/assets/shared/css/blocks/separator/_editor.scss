@@ -1,0 +1,13 @@
+/*! Separator */
+.wp-block-separator {
+	border-bottom-color: var(--go-separator--color--border, var(--go-heading--color--text));
+	padding: 0;
+
+	&.is-style-wide {
+		max-width: 100%;
+	}
+
+	&.is-style-dots::before {
+		font-size: var(--go-separator--size, 2rem);
+	}
+}

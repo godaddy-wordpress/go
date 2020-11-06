@@ -1,0 +1,207 @@
+/*! Layout: Content Area */
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+	--double-padding: calc(var(--go-block--padding--x) * 2);
+	max-width: var(--go--max-width);
+	width: calc(100% - var(--double-padding));
+}
+
+.entry-content > * {
+	margin-bottom: var(--go--spacing--vertical);
+	margin-left: auto;
+	margin-right: auto;
+
+	&:first-child {
+		margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
+
+		&.alignfull,
+		&.alignwide.wp-block-image,
+		&.alignwide[class*="gallery"] {
+			margin-top: 0;
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.has-page-titles .entry-content > *:first-child {
+
+	&.alignwide.wp-block-image,
+	&.alignwide[class*="gallery"] {
+		margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
+	}
+}
+
+[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+	max-width: var(--go--max-width);
+	width: 100%;
+}
+
+.alignwide > [class*="__inner-container"] > *:not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(.coblocks-form),
+.alignfull > [class*="__inner-container"] > *:not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(.coblocks-form) {
+	max-width: var(--go--max-width--alignwide);
+	width: 100%;
+}
+
+.alignnone,
+.aligncenter,
+.alignleft,
+.alignright {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright) {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+/* Full */
+
+.alignfull {
+	margin-bottom: var(--go--spacing--vertical--lg);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: var(--go--spacing--vertical--lg);
+	max-width: 100vw;
+	position: relative;
+	width: 100%;
+}
+
+/* @todo - this should exist within CoBlocks: */
+
+.alignfull > [class*="__inner-container"] .has-columns {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* END @todo */
+
+[class*="__inner-container"] > .alignfull {
+	max-width: 100%;
+}
+
+[class*="__inner-container"] > *:first-child {
+	margin-top: 0;
+}
+
+[class*="__inner-container"] > *:last-child {
+	margin-bottom: 0;
+}
+
+.has-footer-background .entry-content > *:last-child:not(.alignfull) {
+	margin-bottom: var(--go--spacing--vertical--lg);
+}
+
+.has-footer-background .entry-content > *:last-child.alignfull.px {
+	margin-bottom: var(--go--spacing--vertical--lg);
+}
+
+/* Wide */
+
+.alignwide {
+	--double-padding: calc(var(--go-block--padding--x) * 2);
+	margin-bottom: var(--go--spacing--vertical--lg);
+	margin-top: var(--go--spacing--vertical--lg);
+	max-width: var(--go--max-width--alignwide);
+	position: relative;
+	width: calc(100% - var(--double-padding));
+}
+
+[class*="__inner-container"] > .alignwide {
+	width: 100%;
+}
+
+/* Center */
+
+.aligncenter,
+.aligncenter img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Left and right */
+
+.alignleft,
+.alignright {
+	max-width: 50%;
+}
+
+.alignleft {
+
+	/*rtl:ignore*/
+	float: left;
+	margin: 0 2rem 2rem 0;
+}
+
+.alignright {
+
+	/*rtl:ignore*/
+	float: right;
+	margin: 0 0 2rem 2rem;
+}
+
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .alignleft,
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > p .alignleft,
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .wp-block-image .alignleft {
+
+	/*rtl:ignore*/
+	margin-left: 2rem;
+}
+
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .alignright,
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > p .alignright,
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .wp-block-image .alignright {
+
+	/*rtl:ignore*/
+	margin-right: 2rem;
+}
+
+@include media(medium) {
+
+	[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .alignleft,
+	[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > p .alignleft,
+	[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .wp-block-image .alignleft {
+
+		/*rtl:ignore*/
+		margin-left: 4rem;
+	}
+
+	[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .alignright,
+	[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > p .alignright,
+	[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .wp-block-image .alignright {
+
+		/*rtl:ignore*/
+		margin-right: 4rem;
+	}
+
+}
+
+@include media(large) {
+
+	[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > .alignleft,
+	[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > p .alignleft,
+	[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > .wp-block-image .alignleft {
+		max-width: inherit;
+		position: relative;
+
+		/*rtl:ignore*/
+		right: inherit;
+	}
+}
+
+/* Entry Media ------------------------------- */
+
+.alignfull > figcaption,
+.alignfull > .wp-caption-text {
+	--double-padding: calc(var(--go-block--padding--x) * 2);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--go--max-width--alignwide);
+	width: calc(100% - var(--double-padding));
+}

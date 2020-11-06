@@ -1,0 +1,16 @@
+/*! Editor Post Title */
+.editor-post-title__block {
+	max-width: var(--editor-title-max-w);
+
+	.editor-post-title__input {
+		color: var(--go-h1--color--text, var(--go-heading--color--text));
+		font-display: swap;
+		font-family: var(--go-heading--font-family);
+		font-size: var(--go--type-scale-6);
+		font-style: var(--go-heading--font-style, normal);
+		font-weight: var(--go-heading--font-weight, normal);
+		letter-spacing: var(--go-heading--letter-spacing, normal);
+		line-height: var(--go-heading--line-height);
+		text-align: var(--editor-title-block--alignment, center);
+	}
+}

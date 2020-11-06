@@ -1,0 +1,21 @@
+/*! Welcoming: Button */
+.wp-block-search__button,
+.wp-block-button__link:not(.wp-block-coblocks-social__button) {
+	padding-right: calc(var(--go-button--padding--x) + 40px) !important;
+	position: relative;
+
+	&::after {
+		background-color: currentColor;
+		background-repeat: no-repeat;
+		background-size: cover;
+		content: "";
+		display: inline-block;
+		height: 6px;
+		mask-image: url(../../../dist/images/design-styles/welcoming/arrow-right.svg);
+		position: absolute;
+		right: var(--go-button--padding--x);
+		top: 50%;
+		transform: translateY(-50%);
+		width: 34px;
+	}
+}

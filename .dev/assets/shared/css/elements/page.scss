@@ -1,0 +1,44 @@
+html {
+	box-sizing: border-box;
+	font-size: 100%; /* 1rem = 16px */
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+::-moz-selection {
+	background-color: var(--go-selection--color--background, var(--go--color--primary));
+	color: var(--go-selection--color--text, inherit);
+}
+
+::selection {
+	background-color: var(--go-selection--color--background, var(--go--color--primary));
+	color: var(--go-selection--color--text, var(--go--color--white));
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+input,
+select,
+optgroup,
+textarea {
+	color: var(--go--color--text);
+	font-display: swap;
+	font-family: var(--go--font-family);
+	font-weight: var(--go--font-weight, 400);
+	line-height: var(--go--line-height);
+	text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,65 @@
+/*! CoBlocks: Food & Drinks */
+.wp-block-coblocks-food-and-drinks {
+
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+		background-color: var(--wp-block-coblocks-food-drinks--heading--color--background, var(--go-heading--color--text));
+		border-bottom: var(--wp-block-coblocks-food-drinks--heading--border-bottom, none);
+		color: var(--wp-block-coblocks-food-drinks--heading--color--text, var(--go--color--white));
+		font-size: var(--wp-block-coblocks-food-drinks--heading--font-size, 1.25rem);
+		font-style: var(--wp-block-coblocks-food-drinks--heading--font-style, normal);
+		margin-bottom: var(--wp-block-coblocks-food-drinks--heading--margin-bottom, 0.65rem);
+		padding: var(--wp-block-coblocks-food-drinks--heading--padding, 0.4rem 0.25rem 0.4rem);
+	}
+
+	&.is-style-list .wp-block-coblocks-food-item {
+		margin-top: var(--wp-block-coblocks-food-item--spacing, 3rem);
+	}
+}
+
+.wp-block-coblocks-food-item {
+	margin-top: var(--wp-block-coblocks-food-item--spacing, 3rem);
+}
+
+.wp-block-coblocks-food-item__heading-wrapper {
+	margin-bottom: 0;
+}
+
+.wp-block-coblocks-food-item__heading {
+	font-size: var(--wp-block-coblocks-food-item--heading--font-size, 0.8rem);
+	font-weight: var(--wp-block-coblocks-food-item--heading--font-weight, var(--go-heading--font-weight));
+	letter-spacing: var(--wp-block-coblocks-food-item--heading--letter-spacing, 2px);
+	margin-bottom: 0.75rem;
+	text-transform: var(--wp-block-coblocks-food-item--heading--text-transform, uppercase);
+}
+
+.wp-block-coblocks-food-item__attributes {
+	position: relative;
+	top: -5px;
+
+	svg {
+		fill: var(--wp-block-coblocks-food-item--icon--color--text, var(--go-heading--color--text));
+	}
+}
+
+.wp-block-coblocks-food-item__description {
+	font-size: var(--wp-block-coblocks-food-item--font-size, var(--go--font-size--small));
+}
+
+.wp-block-coblocks-food-item__price {
+	color: var(--wp-block-coblocks-food-item--price--color--text, var(--go-caption--color--text));
+	font-size: var(--wp-block-coblocks-food-item--price--font-size, var(--go--font-size--small));
+	opacity: 1;
+}
+
+[class*="hint--"]::after {
+	background-color: var(--wp-block-coblocks-food-item--tooltip--color--background, var(--go-heading--color--text));
+	border-radius: var(--wp-block-coblocks-food-item--tooltip--border-radius, 0);
+}
+
+.hint--top::before {
+	border-top-color: var(--wp-block-coblocks-food-item--tooltip--color--background, var(--go-heading--color--text));
+}

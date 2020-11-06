@@ -1,0 +1,15 @@
+.wp-block-pullquote p {
+	margin-left: 1em;
+
+	&::before {
+		content: "“";
+		font-size: 2em;
+		line-height: 1;
+		position: absolute;
+		transform: translate3d(-120%, 0, 0);
+
+		@include media(medium) {
+			font-size: 3em;
+		}
+	}
+}

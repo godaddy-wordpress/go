@@ -1,0 +1,53 @@
+// Global variables
+@import "config/breakpoints";
+@import "config/mixins";
+@import "config/root";
+
+// Styling the editor
+@import "editor/settings";
+@import "editor/vertical-rhythm";
+@import "editor/horizontal-rhythm";
+@import "editor/title-block";
+@import "editor/title-permalink";
+
+// Add padding to the editor.
+body {
+	padding-left: var(--go-block--padding--x);
+	padding-right: var(--go-block--padding--x);
+}
+
+// Add negative padding on fullwidth blocks.
+.block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
+	margin-left: calc(-1 * var(--go-block--padding--x));
+	margin-right: calc(-1 * var(--go-block--padding--x));
+}
+
+// Default appender
+.editor-default-block-appender .editor-default-block-appender__content {
+	font-family: var(--go--font-family);
+	font-size: var(--go--font-size);
+}
+
+// Block Editor Insert Panel Fix
+.block-editor-inserter__panel-content {
+
+	.wp-block[data-align="full"],
+	.wp-block[data-align="wide"] {
+		margin-bottom: 0 !important;
+		margin-top: 0 !important;
+	}
+}
+
+// Elements
+@import "elements/headings";
+@import "elements/typography";
+
+// Utitlities
+@import "utilities/padding";
+@import "utilities/font-sizes";
+@import "utilities/captions";
+@import "utilities/colors";
+
+// Blocks
+@import "blocks/blocks";
+@import "blocks/blocks-editor";

@@ -1,0 +1,12 @@
+/*! Button */
+.wp-block-button__link,
+.wp-block-search__button {
+
+	&:focus {
+		outline: none !important;
+	}
+}
+
+.is-style-outline .wp-block-button__link {
+	border: 2px solid;
+}

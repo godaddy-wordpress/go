@@ -1,0 +1,41 @@
+/*! Gallery */
+.wp-block-gallery {
+
+	.blocks-gallery-grid {
+		width: 100%;
+	}
+
+	.blocks-gallery-item figcaption {
+		font-size: var(--go-caption--font-size);
+		font-style: var(--go-caption--font-style, normal);
+		padding-left: 15px;
+		padding-right: 15px;
+		text-align: var(--go-caption--text-align);
+	}
+
+	.blocks-gallery-grid + figcaption {
+		display: block;
+		width: 100%;
+	}
+
+	.blocks-gallery-item:last-child {
+		margin-bottom: 16px !important;
+	}
+}
+
+body.rtl .wp-block-gallery {
+
+	.blocks-gallery-item figcaption {
+		text-align: var(--go-caption--text-align--rtl);
+	}
+}
+
+.wp-block-gallery.alignfull + .wp-block-image.alignfull,
+.wp-block-gallery.alignfull + .wp-block-group.alignfull.has-background,
+.wp-block-image.alignfull + .wp-block-group.alignfull.has-background {
+	margin-top: calc(var(--go--spacing--vertical--lg) * -1);
+}
+
+#page.site .content-area__wrapper .content-area .wp-block-gallery.mb-0 {
+	margin-bottom: 0 !important;
+}
