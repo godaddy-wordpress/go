@@ -29,8 +29,13 @@ body {
 	font-size: var(--go--font-size);
 }
 
+// Make fonts smaller in previews
+body.block-editor-block-preview__container {
+	--go--type-scale-0: calc(var(--go--heading-size, var(--go--font-size)) * 0.75);
+}
+
 // Block Editor Insert Panel Fix
-.block-editor-inserter__panel-content {
+body.block-editor-inserter__panel-content {
 
 	.wp-block[data-align="full"],
 	.wp-block[data-align="wide"] {
