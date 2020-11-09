@@ -110,14 +110,9 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Fix radio group required error visibility. [#579](https://github.com/godaddy-wordpress/go/pull/579)
-- Display the page title checkbox on page post types only. [#577](https://github.com/godaddy-wordpress/go/pull/577)
-- Exclude the CoBlocks form block `.custom-color` label from inheriting theme colors. [#574](https://github.com/godaddy-wordpress/go/pull/574)
-- Fix first block top margin with class alignwide/alignfull. [#571](https://github.com/godaddy-wordpress/go/pull/571)
-
-### New Feature
-- Introduce the ability to toggle post excerpt length on the blog roll. [#576](https://github.com/godaddy-wordpress/go/pull/576)
-- Introduce the ability to toggle menu behavior (hover/click). [#575](https://github.com/godaddy-wordpress/go/pull/575)
+- Hide default select field arrow. [#601](https://github.com/godaddy-wordpress/go/pull/601)
+- Add `font-display: swap;` property. [#599](https://github.com/godaddy-wordpress/go/pull/599)
 
 ### Tweaks
-- Add e-commerce tag to Go theme. [#572](https://github.com/godaddy-wordpress/go/pull/572)
+- Added a check to see whether the user is in the Blog page or a single post page.. [#591](https://github.com/godaddy-wordpress/go/pull/591)
+- Update Poppins font-weight to 600. [#594](https://github.com/godaddy-wordpress/go/pull/594)
