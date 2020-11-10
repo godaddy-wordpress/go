@@ -29,9 +29,19 @@ body {
 	font-size: var(--go--font-size);
 }
 
-// Make fonts smaller in previews
+// Make elements smaller in previews
 body.block-editor-block-preview__container {
 	--go--type-scale-0: calc(var(--go--heading-size, var(--go--font-size)) * 0.75);
+	--go--viewport-basis-0: calc(var(--go--viewport-basis) * 5);
+	--go--spacing--vertical--lg: calc(120 / var(--go--viewport-basis-0) * 100vw);
+
+	.block-editor-block-list__layout.is-root-container .block-editor-block-list__block:first-child {
+		margin-top: 0 !important;
+	}
+
+	.block-editor-block-list__layout.is-root-container .block-editor-block-list__block:last-child {
+		margin-bottom: 0;
+	}
 }
 
 // Block Editor Insert Panel Fix
