@@ -20,6 +20,10 @@
 	}
 }
 
+.woocommerce ul.products li.product:hover h2.woocommerce-loop-product__title {
+	text-decoration: underline;
+}
+
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
 	background: transparent;
 }
