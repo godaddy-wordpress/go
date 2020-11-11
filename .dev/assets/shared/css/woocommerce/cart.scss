@@ -148,3 +148,32 @@ body {
 		margin-bottom: unset;
 	}
 }
+
+/* Mobile */
+@media (max-width:768px) {
+	body.woocommerce-cart {
+
+		& .coupon {
+			display: inline-block;
+			width: 100%;
+
+			& #coupon_code {
+				float: none;
+				width: 100% !important;
+			}
+
+			& button[type="submit"] {
+				width: 100% !important;
+				margin: 0.5rem 0;
+			}
+		}
+
+		& .cart_totals  {
+			width: 100% !important;
+
+			& .checkout-button {
+				width: 100%;
+			}
+		}
+	}
+}
