@@ -17,6 +17,8 @@
 
 .wp-block[data-align="full"] {
 	max-width: none;
+	margin-left: calc(var(--go-block--padding--x) * -1);
+	margin-right: calc(var(--go-block--padding--x) * -1);
 }
 
 .wp-block[data-align="wide"] .wp-block[data-align="wide"],
