@@ -5,7 +5,7 @@
 	margin-right: auto;
 	margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
 
-	& p {
+	p {
 		color: var(--go-quote--color--text, var(--go-heading--color--text));
 		font-display: swap;
 		font-family: var(--go-heading--font-family);
@@ -18,8 +18,8 @@
 		position: relative;
 	}
 
-	& cite,
-	& .wp-block-quote__citation {
+	cite,
+	.wp-block-quote__citation {
 		color: var(--go-caption--color--text);
 		display: block;
 		font-size: var(--go-caption--font-size);
@@ -31,7 +31,7 @@
 		padding-left: 0;
 		padding-right: 0;
 
-		& p {
+		p {
 			color: var(--go-quote--color--text, var(--go-heading--color--text));
 			padding-left: 1.5rem;
 
@@ -40,8 +40,8 @@
 			}
 		}
 
-		& cite,
-		& .wp-block-quote__citation {
+		cite,
+		.wp-block-quote__citation {
 			margin-left: 1.5rem;
 			margin-top: -2rem;
 
@@ -57,7 +57,7 @@
 		margin-right: auto;
 		padding: 0;
 
-		& p {
+		p {
 			font-size: var(--go-quote-large--font-size, var(--go--type-scale-5));
 			font-style: var(--go-quote-large--font-style, normal);
 			font-weight: var(--go-quote--font-weight, var(--go-heading--font-weight));
@@ -72,12 +72,12 @@
 			}
 		}
 
-		& cite,
-		& .wp-block-quote__citation {
+		cite,
+		.wp-block-quote__citation {
 			font-size: var(--go-caption--font-size);
 			text-align: inherit;
 
-			& em {
+			em {
 				font-style: normal;
 			}
 		}
