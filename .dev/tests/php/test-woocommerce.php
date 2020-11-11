@@ -16,6 +16,8 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		parent::tearDown();
 
+		delete_option( 'woocommerce_shop_page_id' );
+
 	}
 
 	/**
