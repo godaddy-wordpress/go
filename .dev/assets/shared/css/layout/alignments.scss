@@ -33,7 +33,7 @@
 	}
 }
 
-[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(h1) {
 	max-width: var(--go--max-width);
 	width: 100%;
 }
