@@ -79,7 +79,6 @@ if ( ! function_exists( 'go_comment' ) ) :
 				</div><!-- .reply -->
 			</article><!-- #comment-## -->
 				<?php
-				break;
 
 		endswitch; // end comment_type check.
 	}
