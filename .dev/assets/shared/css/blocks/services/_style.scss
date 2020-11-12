@@ -6,11 +6,11 @@
 		padding-right: var(--go-block--padding--x);
 	}
 
-	& h2,
-	& h3,
-	& h4,
-	& h5,
-	& h6 {
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		margin-bottom: var(--wp-block-coblocks-services--heading--margin-bottom, 1rem);
 		margin-top: var(--wp-block-coblocks-services--heading--margin-top, 1.75rem);
 	}
@@ -18,7 +18,7 @@
 
 .wp-block-coblocks-service__content {
 
-	& p ~ .wp-block-button {
+	p ~ .wp-block-button {
 		margin-top: 2.5rem !important;
 	}
 }
