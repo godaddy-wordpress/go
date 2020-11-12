@@ -111,3 +111,6 @@ List of bespoke icons:
 
 ### Bug Fixes
 - Fix primary menu sub menu hiding on hover. [#611](https://github.com/godaddy-wordpress/go/pull/611)
+
+### Tweaks
+- Add proper negative margin for fullwidth blocks, remove unnecessary & nested selectors from block styles, tweak a few minor front-end to editor style mishaps, fix block quote style. [#608](https://github.com/godaddy-wordpress/go/pull/608)
