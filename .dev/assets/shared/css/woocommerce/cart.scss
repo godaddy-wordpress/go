@@ -3,16 +3,16 @@ body {
 
 	&.woocommerce-cart {
 
-		& .coupon {
+		.coupon {
 			display: flex;
 
-			& #coupon_code {
+			#coupon_code {
 				padding: var(--go-input--padding--y) var(--go-input--padding--x);
 				width: auto !important;
 			}
 		}
 
-		& td.product-remove a {
+		td.product-remove a {
 			color: var(--go--color--primary) !important;
 			margin: 0 auto;
 
@@ -21,23 +21,23 @@ body {
 			}
 		}
 
-		& table.cart th,
-		& table.cart td {
+		table.cart th,
+		table.cart td {
 			text-align: center;
 		}
 
-		& .product-thumbnail img {
+		.product-thumbnail img {
 			width: 150px;
 		}
 
-		& .cart-empty-icon {
+		.cart-empty-icon {
 			margin: 0 auto;
 			max-width: 75px;
 			text-align: center;
 			width: 100%;
 		}
 
-		& .return-to-shop {
+		.return-to-shop {
 			margin-top: 1em;
 			text-align: center;
 		}
@@ -47,7 +47,7 @@ body {
 	&.woocommerce,
 	&.woocommerce-page {
 
-		& .input-text {
+		.input-text {
 			width: 180px;
 		}
 	}

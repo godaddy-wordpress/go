@@ -2,7 +2,7 @@
 
 	&.single-product {
 
-		& .product-navigation-wrapper {
+		.product-navigation-wrapper {
 			display: none;
 			font-size: var(--go--font-size--small);
 			line-height: 1;
@@ -13,7 +13,7 @@
 				display: inline-block;
 			}
 
-			& svg {
+			svg {
 				display: inline-block;
 				position: relative;
 				top: -0.0015em;
@@ -21,7 +21,7 @@
 				width: 1.5rem;
 			}
 
-			& .back-to-shop {
+			.back-to-shop {
 				display: inline-block;
 				text-decoration: none;
 
@@ -29,35 +29,35 @@
 					display: none;
 				}
 
-				& svg {
+				svg {
 					margin-right: 2px;
 					top: -1px;
 				}
 			}
 		}
 
-		& .post-navigation {
+		.post-navigation {
 			float: right;
 			text-align: right;
 
-			& div {
+			div {
 				display: inline-block;
 			}
 
-			& svg {
+			svg {
 				top: -0.13em;
 				transition: transform 300ms;
 			}
 
-			& .nav-previous {
+			.nav-previous {
 				margin-right: 3px;
 
-				& svg {
+				svg {
 					margin-right: 5px;
 				}
 			}
 
-			& .nav-next {
+			.nav-next {
 				margin-left: 5px;
 
 				&::before {
@@ -72,28 +72,28 @@
 					}
 				}
 
-				& svg {
+				svg {
 					margin-left: 5px;
 				}
 			}
 
-			& .nav-links {
+			.nav-links {
 
-				& .nav-next::before {
+				.nav-next::before {
 					display: none;
 				}
 
-				& .nav-previous + .nav-next::before {
+				.nav-previous + .nav-next::before {
 					display: inline-block;
 				}
 			}
 		}
 
-		& .woocommerce-breadcrumb {
+		.woocommerce-breadcrumb {
 			display: none;
 			float: left;
 
-			& .sep {
+			.sep {
 				margin: 0 5px;
 			}
 
@@ -101,7 +101,7 @@
 				display: inline-block;
 			}
 
-			& a {
+			a {
 				color: var(--go-caption--color--text);
 
 				&:hover {
@@ -149,7 +149,7 @@
 .single-product .entry-summary {
 	text-align: center;
 
-	& .product_title {
+	.product_title {
 		font-size: var(--go--type-scale-5);
 	}
 }
@@ -170,11 +170,11 @@
 	color: var(--go-caption--color--text);
 	margin-top: 2.5rem;
 
-	& a {
+	a {
 		color: var(--go-caption--color--text);
 	}
 
-	& > span {
+	> span {
 		display: block;
 		font-size: var(--go--font-size--small);
 	}

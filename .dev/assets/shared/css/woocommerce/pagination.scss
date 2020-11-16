@@ -2,15 +2,15 @@
 .woocommerce nav.woocommerce-pagination {
 	text-align: center;
 
-	& ul,
-	& ul li {
+	ul,
+	ul li {
 		border: none;
 	}
 
-	& ul li {
+	ul li {
 
-		& a,
-		& span {
+		a,
+		span {
 			border-bottom: 0;
 			font-weight: 700;
 			margin: 0 1px;
@@ -41,8 +41,8 @@
 		}
 	}
 
-	& .prev,
-	& .next {
+	.prev,
+	.next {
 		font-size: 1rem;
 		position: relative;
 		text-indent: -9999px;
@@ -59,11 +59,11 @@
 		}
 	}
 
-	& .next {
+	.next {
 		margin-left: 0.25rem;
 	}
 
-	& .prev {
+	.prev {
 		margin-right: 0.25rem;
 
 		&::before {
