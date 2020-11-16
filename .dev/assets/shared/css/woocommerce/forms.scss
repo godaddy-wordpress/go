@@ -186,7 +186,7 @@
 .comment-form-cookies-consent {
 	position: relative;
 
-	& input[type="checkbox"] {
+	input[type="checkbox"] {
 		display: none;
 	}
 }
@@ -195,7 +195,7 @@
 	border: none;
 	padding: 0;
 
-	& legend {
+	legend {
 		border-top: 1px solid var(--go-input--border-color, var(--go-heading--color--text));
 		display: block;
 		margin: 0 0 1.5rem;

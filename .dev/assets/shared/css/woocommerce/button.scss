@@ -4,9 +4,9 @@ body {
 	&.woocommerce-page {
 
 		/* Primary Button */
-		& #respond input#submit.alt,
-		& .button.alt,
-		& .button {
+		#respond input#submit.alt,
+		.button.alt,
+		.button {
 			@include button;
 
 			&:hover,
@@ -16,19 +16,19 @@ body {
 			}
 		}
 
-		& .button.disabled,
-		& .button.alt.disabled,
-		& .button.disabled:hover,
-		& .button.alt.disabled:hover,
-		& .woocommerce button.button:disabled,
-		& .woocommerce button.button:disabled[disabled] {
+		.button.disabled,
+		.button.alt.disabled,
+		.button.disabled:hover,
+		.button.alt.disabled:hover,
+		.woocommerce button.button:disabled,
+		.woocommerce button.button:disabled[disabled] {
 			@include button;
 		}
 
 		/* Secondary Button */
-		& #respond input#submit,
-		& .button,
-		& .wp-block-button__link.add_to_cart_button {
+		#respond input#submit,
+		.button,
+		.wp-block-button__link.add_to_cart_button {
 			@include button;
 
 			&:hover,
@@ -66,7 +66,7 @@ body {
 		}
 	}
 
-	& .widget_shopping_cart a.wc-forward {
+	.widget_shopping_cart a.wc-forward {
 		@include button;
 
 		&:hover,
