@@ -4,7 +4,7 @@ Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-
 Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 5.6.0
-Stable tag: 1.3.7
+Stable tag: 1.3.8
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -110,9 +110,7 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Hide default select field arrow. [#601](https://github.com/godaddy-wordpress/go/pull/601)
-- Add `font-display: swap;` property. [#599](https://github.com/godaddy-wordpress/go/pull/599)
+- Fix primary menu sub menu hiding on hover. [#611](https://github.com/godaddy-wordpress/go/pull/611)
 
 ### Tweaks
-- Added a check to see whether the user is in the Blog page or a single post page.. [#591](https://github.com/godaddy-wordpress/go/pull/591)
-- Update Poppins font-weight to 600. [#594](https://github.com/godaddy-wordpress/go/pull/594)
+- Add proper negative margin for fullwidth blocks, remove unnecessary & nested selectors from block styles, tweak a few minor front-end to editor style mishaps, fix block quote style. [#608](https://github.com/godaddy-wordpress/go/pull/608)

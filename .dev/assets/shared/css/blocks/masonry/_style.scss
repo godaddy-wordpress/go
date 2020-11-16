@@ -5,11 +5,11 @@
 
 .wp-block-coblocks-gallery-masonry {
 
-	& ul {
+	ul {
 		margin: 0;
 	}
 
-	& figcaption {
+	figcaption {
 		font-size: var(--go-caption--font-size);
 		font-style: var(--go-caption--font-style, normal);
 		padding-left: 15px !important;
@@ -20,7 +20,7 @@
 
 body.rtl .wp-block-coblocks-gallery-masonry {
 
-	& figcaption {
+	figcaption {
 		text-align: var(--go-caption--text-align--rtl);
 	}
 }

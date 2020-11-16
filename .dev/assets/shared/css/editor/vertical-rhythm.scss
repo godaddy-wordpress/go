@@ -28,8 +28,8 @@
 
 .block-editor-block-list__block:first-child {
 
-	.wp-block[data-align="wide"],
-	.wp-block[data-align="full"] {
+	> .wp-block[data-align="wide"],
+	> .wp-block[data-align="full"] {
 		margin-top: inherit;
 	}
 }

@@ -6,12 +6,12 @@
 		padding-right: var(--go-block--padding--x);
 	}
 
-	& .wp-block-coblocks-buttons {
+	.wp-block-coblocks-buttons {
 		margin-bottom: 0 !important;
 		margin-top: 2rem;
 	}
 
-	& .wp-block-coblocks-hero__content *:last-child {
+	.wp-block-coblocks-hero__content *:last-child {
 		margin-bottom: 0;
 	}
 }

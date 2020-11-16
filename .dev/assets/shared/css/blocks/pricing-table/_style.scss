@@ -6,11 +6,11 @@
 		background: var(--wp-block-coblocks-pricing-table-item--color--background, var(--go--color--white));
 	}
 
-	& .wp-block-coblocks-pricing-table-item__price-wrapper {
+	.wp-block-coblocks-pricing-table-item__price-wrapper {
 		margin: 2rem 0;
 	}
 
-	& .wp-block-coblocks-pricing-table-item__features {
+	.wp-block-coblocks-pricing-table-item__features {
 		font-size: var(--go--font-size--small);
 		letter-spacing: var(--go--letter-spacing--small, 0);
 		margin-bottom: 2.5rem;
@@ -19,9 +19,9 @@
 	&.has-primary-background-color:not(.has-text-color),
 	&.has-secondary-background-color:not(.has-text-color) {
 
-		& .wp-block-coblocks-pricing-table-item__title,
-		& .wp-block-coblocks-pricing-table-item__amount,
-		& .wp-block-coblocks-pricing-table-item__currency {
+		.wp-block-coblocks-pricing-table-item__title,
+		.wp-block-coblocks-pricing-table-item__amount,
+		.wp-block-coblocks-pricing-table-item__currency {
 			color: var(--go--color--white);
 		}
 	}
@@ -38,12 +38,12 @@
 
 .wp-block-coblocks-pricing-table-item:not(.has-text-color) {
 
-	& .wp-block-coblocks-pricing-table-item__title {
+	.wp-block-coblocks-pricing-table-item__title {
 		color: var(--wp-block-coblocks-pricing-table-item--color--title, var(--go-heading--color--text));
 	}
 
-	& .wp-block-coblocks-pricing-table-item__currency,
-	& .wp-block-coblocks-pricing-table-item__amount {
+	.wp-block-coblocks-pricing-table-item__currency,
+	.wp-block-coblocks-pricing-table-item__amount {
 		color: var(--wp-block-coblocks-pricing-table-item--price--color--text, var(--go-heading--color--text));
 	}
 }
