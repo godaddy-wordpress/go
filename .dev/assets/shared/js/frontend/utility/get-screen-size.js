@@ -1,6 +1,6 @@
 /**
  * Use pseudo-element content to get breakpoints.
- * See: shared/css/config/media-queries.css
+ * See: shared/css/config/breakpoints.css
  *
  * @param {string} sizeString
  */

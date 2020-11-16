@@ -1,0 +1,19 @@
+.wp-block-coblocks-features .wp-block-coblocks-feature .wp-block-coblocks-icon {
+	margin-bottom: var(--wp-block-coblocks-features--icon--margin-bottom, 2rem);
+}
+
+.wp-block-coblocks-features .wp-block-coblocks-feature {
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: var(--wp-block-coblocks-features--heading--margin-bottom, 1.5rem);
+	}
+
+}
+
+.wp-block-coblocks-features .wp-block-coblocks-feature *:last-child {
+	margin-bottom: 0 !important;
+}

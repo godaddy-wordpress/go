@@ -1,0 +1,28 @@
+/*! Social Icons */
+.social-icons {
+
+	&:hover li a {
+		opacity: 0.65;
+	}
+
+	li:hover a {
+		opacity: 1;
+	}
+
+	a {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		padding: var(--go-social--padding);
+		transition: opacity 200ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+
+		&:focus {
+			@include outline;
+		}
+	}
+
+	svg {
+		fill: var(--go-social--color--text, var(--go-heading--color--text));
+		vertical-align: middle;
+	}
+}

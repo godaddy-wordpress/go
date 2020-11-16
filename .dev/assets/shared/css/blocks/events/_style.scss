@@ -1,0 +1,36 @@
+/*! CoBlocks: Events */
+.wp-block-coblocks-events__title,
+.wp-block-coblocks-events__day,
+.wp-block-coblocks-events__time,
+.wp-block-coblocks-events__month,
+.wp-block-coblocks-events__year,
+.wp-block-coblocks-events__location {
+	font-display: swap;
+	font-family: var(--go-heading--font-family);
+	font-style: var(--go-heading--font-style, normal);
+	font-weight: var(--go-heading--font-weight);
+	line-height: var(--go-heading--line-height);
+}
+
+.wp-block-coblocks-events__title {
+	font-size: var(--go--type-scale-3);
+}
+
+.wp-block-coblocks-events__day {
+	font-size: var(--go--type-scale-4);
+}
+
+.wp-block-coblocks-events__time,
+.wp-block-coblocks-events__month,
+.wp-block-coblocks-events__year {
+	font-size: var(--go--type-scale-1);
+}
+
+.wp-block-coblocks-events__location {
+	font-size: 100%;
+}
+
+.wp-block-coblocks-events__description {
+	font-size: 100%;
+	line-height: var(--go--line-height);
+}

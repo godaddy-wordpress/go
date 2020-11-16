@@ -1,0 +1,69 @@
+/* Form */
+.wp-block[data-type="coblocks/form"] {
+
+	.wp-block {
+		margin-bottom: var(--go-input--margin-bottom);
+	}
+
+	.components-base-control__field {
+		align-content: center;
+		align-items: center;
+	}
+
+	.components-form-toggle {
+		display: flex;
+		margin-top: 0 !important;
+	}
+
+	.components-base-control__field label {
+		line-height: 1;
+	}
+
+	.required {
+		color: var(--go--color--primary);
+		margin-top: -6px;
+	}
+}
+
+.wp-block-search__label .rich-text,
+label:not(.components-toggle-control__label):not(.components-base-control__label):not(.has-text-color) {
+	color: var(--go-label--color--text, var(--go-heading--color--text));
+	font-display: swap;
+	font-family: var(--go-label--font-family, var(--go-navigation--font-family));
+	font-size: var(--go-label--font-size);
+	font-weight: var(--go-label--font-weight);
+	letter-spacing: var(--go-label--letter-spacing);
+	text-transform: var(--go-label--text-transform, normal);
+}
+
+.wp-block-search__label .rich-text {
+	margin-bottom: calc(var(--go-label--margin-bottom) - 5px);
+}
+
+.coblocks-field-label {
+	margin-bottom: calc(var(--go-label--margin-bottom) - 5px);
+}
+
+.wp-block-search__input,
+.wp-block[data-type="coblocks/form"] .components-text-control__input,
+.wp-block[data-type="coblocks/form"] .components-textarea-control__input {
+	background-color: var(--go-input--color--background, var(--go--color--white));
+	border: var(--go-input--border);
+	border-radius: var(--go-input--border-radius, var(--go-button--border-radius));
+	box-shadow: var(--go-input--box-shadow, none);
+	color: var(--go-input--color--text);
+	font-size: var(--go-input--font-size);
+	font-weight: var(--go-input--font-weight, 400);
+	padding: var(--go-input--padding--y) var(--go-input--padding--x);
+}
+
+.gform_wrapper {
+
+	.gfield_time_hour i {
+		margin-top: 0 !important;
+	}
+
+	.gfield_time_ampm select {
+		height: inherit !important;
+	}
+}

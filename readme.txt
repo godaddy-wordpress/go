@@ -4,7 +4,7 @@ Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-
 Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 5.6.0
-Stable tag: 1.3.6
+Stable tag: 1.3.8
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -110,14 +110,7 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Fix radio group required error visibility. [#579](https://github.com/godaddy-wordpress/go/pull/579)
-- Display the page title checkbox on page post types only. [#577](https://github.com/godaddy-wordpress/go/pull/577)
-- Exclude the CoBlocks form block `.custom-color` label from inheriting theme colors. [#574](https://github.com/godaddy-wordpress/go/pull/574)
-- Fix first block top margin with class alignwide/alignfull. [#571](https://github.com/godaddy-wordpress/go/pull/571)
-
-### New Feature
-- Introduce the ability to toggle post excerpt length on the blog roll. [#576](https://github.com/godaddy-wordpress/go/pull/576)
-- Introduce the ability to toggle menu behavior (hover/click). [#575](https://github.com/godaddy-wordpress/go/pull/575)
+- Fix primary menu sub menu hiding on hover. [#611](https://github.com/godaddy-wordpress/go/pull/611)
 
 ### Tweaks
-- Add e-commerce tag to Go theme. [#572](https://github.com/godaddy-wordpress/go/pull/572)
+- Add proper negative margin for fullwidth blocks, remove unnecessary & nested selectors from block styles, tweak a few minor front-end to editor style mishaps, fix block quote style. [#608](https://github.com/godaddy-wordpress/go/pull/608)

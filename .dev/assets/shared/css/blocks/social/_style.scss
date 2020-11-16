@@ -1,0 +1,15 @@
+/*! CoBlocks: Social */
+.wp-block-coblocks-social {
+
+	.wp-block-button__link:not(.has-background) {
+		background-color: var(--go-button--color--background, var(--go--color--primary));
+	}
+
+	a::after {
+		display: none;
+	}
+}
+
+.wp-block-coblocks-social__button {
+	font-size: inherit;
+}

@@ -1,0 +1,123 @@
+:root {
+
+	// Content width
+	--go--max-width: 42rem;
+	--go--max-width--alignwide: 84rem;
+
+	// Spacing
+	--go--viewport-basis: 950;
+	--go--spacing--header: 25;
+	--go--spacing--horizontal: 55;
+	--go--spacing--paragraph: 9;
+
+	// Typography
+	--go--color--text: hsl(230, 9%, 39%);
+	--go--font-family: "Quicksand", sans-serif;
+	--go--font-size--small: 80%;
+	--go--font-size--smallest: 80%;
+	--go--font-size: 1.1rem;
+	--go--line-height: 1.8;
+
+	// Headings
+	--go-heading--button-spacing: 2rem;
+	--go-heading--color--text: hsl(229, 18%, 24%);
+	--go-heading--font-family: "Poppins", sans-serif;
+	--go-heading--font-weight: 600;
+	--go-heading--line-height: 1.35;
+	--go-heading--margin-bottom: 1.75rem;
+	--go--type-ratio: 1.215;
+
+	// Captions
+	--go-caption--color--text: hsl(0, 0%, 52%);
+	--go-caption--font-size: 0.85rem;
+	--go-caption--text-align: center;
+
+	// Pullquote
+	--go-pullquote--font-family: var(--go-heading--font-family);
+	--go-pullquote--font-size: var(--go--type-scale-6);
+	--go-pullquote--font-style: normal;
+	--go-pullquote--font-weight: 700;
+
+	// Accessibility
+	--go-outline--color--text: var(--go--color--primary);
+	--go-selection--color--background: var(--go--color--primary);
+
+	// Buttons
+	--go-button--border-radius: 5px;
+	--go-button--border-width: 1px;
+	--go-button--font-weight: 600;
+	--go-button--padding--x: 1.85rem;
+	--go-button--padding--y: 1.35rem;
+
+	// Labels
+	--go-label--font-size: var(--go--font-size);
+	--go-label--font-weight: 600;
+	--go-label--letter-spacing: var(--go-navigation--letter-spacing, normal);
+	--go-label--margin-bottom: 0.35rem;
+
+	// Input
+	--go-input--border-radius: 5px;
+	--go-input--border: var(--go-input--border-width, 2px) var(--go-input--border-style, solid) var(--go-input--border-color, var(--go-heading--color--text));
+	--go-input--color--text: var(--go-heading--color--text);
+	--go-input--font-size: 1.1rem;
+	--go-input--font-weight: 600;
+	--go-input--margin-bottom: 1.75rem;
+	--go-input--padding--x: 1.35rem;
+	--go-input--padding--y: 1rem;
+	--go-input-interactive--color--text: var(--go--color--primary);
+
+	// Header
+	--go-header--color--background: "";
+
+	// Site Title
+	--go-site-title--color--text: var(--go--color--white);
+	--go-site-title--font-size: 1.4rem;
+	--go-site-title--letter-spacing: 0;
+	--go-site-title--text-transform: none;
+
+	@include media(medium) {
+		--go-site-title--font-size: 1.8rem;
+	}
+
+	// Site Description
+	--go-site-description--color--text: var(--go--color--white);
+
+	// Site Navigation
+	--go-navigation--color--text: var(--go--color--white);
+	--go-navigation--font-family: var(--go--font-family);
+	--go-navigation--font-size: 1.1rem;
+	--go-navigation--font-weight: 600;
+	--go-navigation-mobile--font-size: 1.4rem;
+
+	// Site Search
+	--go-search-button--color--background-interactive: var(--go--color--primary);
+	--go-search-button--color--background: var(--go--color--white);
+	--go-search-button--color--text-interactive: var(--go--color--white);
+	--go-search-button--color--text: var(--go--color--primary);
+	--go-search-toggle--color--text: var(--go--color--white);
+
+	// Footer
+	--go-footer--color--text: var(--go--color--white);
+	--go-footer-heading--color--text: var(--go--color--white);
+	--go-footer-navigation--color--text: var(--go--color--white);
+	--go-footer-3--border-color: var(--go-header--color--background);
+	--go-footer-3--border-width: 10px;
+
+	// Social
+	--go-social--color--text: var(--go--color--white);
+	--go-social--padding: 0.5rem;
+	--go-social--size: 1.5rem;
+
+	@include media(medium) {
+		--go-social--padding: 1rem;
+	}
+
+	// Posts
+	--go-meta--color--text: var(--go--color--primary);
+
+	// CoBlocks
+	--wp-block-coblocks-accordion-item--border-color: var(--go--color--primary);
+	--wp-block-coblocks-accordion-item--color--background: var(--go--color--tertiary);
+	--wp-block-coblocks-services--heading--margin-bottom: 1.25rem;
+	--wp-block-coblocks-services--heading--margin-top: 2rem;
+}

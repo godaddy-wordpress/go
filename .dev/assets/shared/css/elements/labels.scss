@@ -1,0 +1,11 @@
+label {
+	color: var(--go-label--color--text, var(--go-heading--color--text));
+	display: block;
+	font-display: swap;
+	font-family: var(--go-label--font-family, var(--go-navigation--font-family));
+	font-size: var(--go-label--font-size);
+	font-weight: var(--go-label--font-weight);
+	letter-spacing: var(--go-label--letter-spacing);
+	margin-bottom: var(--go-label--margin-bottom);
+	text-transform: var(--go-label--text-transform, normal);
+}

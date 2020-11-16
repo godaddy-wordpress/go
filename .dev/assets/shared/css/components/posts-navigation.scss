@@ -1,0 +1,14 @@
+/*! Post Navigation */
+.posts-navigation .nav-links {
+	display: flex;
+	margin: 1rem 0;
+
+	.nav-previous,
+	.nav-next {
+		flex: 1 50%;
+	}
+
+	.nav-next {
+		text-align: right;
+	}
+}

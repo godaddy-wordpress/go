@@ -1,0 +1,107 @@
+/*! Footer: Footer 2 */
+.has-footer-2 {
+
+	& .site-footer {
+		margin-top: calc(var(--go--spacing--vertical--lg) / 1.5);
+		padding-bottom: calc(var(--go--spacing--vertical--lg) / 1.5);
+
+		@include media(medium) {
+			margin-top: calc(var(--go--spacing--vertical--lg) / 2);
+			padding-bottom: calc(var(--go--spacing--vertical--lg) / 2);
+		}
+
+		&.has-background {
+			padding-top: calc(var(--go--spacing--vertical--lg) / 1.5);
+
+			@include media(medium) {
+				padding-top: calc(var(--go--spacing--vertical--lg) / 2);
+			}
+		}
+	}
+
+	& .footer-navigation {
+		text-align: center;
+
+		@include media(medium) {
+			flex: 1 65%;
+			text-align: left;
+		}
+
+		& li {
+			@include media(medium) {
+				display: inline-block;
+			}
+
+			&:first-child a {
+				@include media(large) {
+					padding-left: 0;
+				}
+			}
+		}
+
+		& a {
+			display: block;
+			font-display: swap;
+			font-family: var(--go-navigation--font-family);
+			font-size: var(--go-navigation--font-size);
+			font-weight: var(--go-navigation--font-weight, 400);
+			letter-spacing: var(--go-navigation--letter-spacing, normal);
+			padding: 0 var(--go-navigation--padding--x, 2vw);
+			text-transform: var(--go-navigation--text-transform, normal);
+
+			&:focus {
+				@include media(medium) {
+					outline-offset: -1px;
+				}
+			}
+		}
+	}
+
+	& .social-icons {
+		margin-top: 2rem;
+
+		@include media(large) {
+			margin-top: 0;
+		}
+
+		& a {
+			padding: calc(var(--go-social--padding) * 0.85);
+
+			@include media(medium) {
+				padding: calc(var(--go-social--padding) * 0.5);
+			}
+		}
+
+		& svg {
+			height: calc(var(--go-social--size) * 0.85);
+		}
+	}
+
+	& .site-info {
+		flex: 1 65%;
+		margin-top: 2rem;
+		text-align: center;
+
+		@include media(large) {
+			margin-bottom: calc(var(--go-navigation--padding--x) * 0.85);
+			margin-top: 0.75rem;
+			text-align: left;
+		}
+	}
+
+	&.has-no-footer-menu {
+
+		& .site-footer__inner {
+			justify-content: space-between;
+		}
+
+		& .site-info {
+			margin-top: 0;
+			order: 1;
+		}
+
+		& .social-icons {
+			order: 2;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+/*! Table */
+.wp-block-table {
+
+	table td,
+	table th {
+		border: 2px solid var(--go-table--border-color, var(--go-heading--color--text));
+	}
+}

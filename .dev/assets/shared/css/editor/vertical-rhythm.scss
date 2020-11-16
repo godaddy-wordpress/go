@@ -1,0 +1,50 @@
+// Vertical Spacing
+.wp-block {
+	margin-bottom: var(--go--spacing--vertical);
+	margin-top: var(--go--spacing--vertical);
+}
+
+//Spacing for child blocks
+.block-editor-block-list__layout > .wp-block {
+
+	&:first-child {
+
+		&[data-align="full"],
+		&[data-align="wide"] {
+			margin-top: 0;
+		}
+	}
+
+	&:nth-last-child(2) {
+		margin-bottom: 0;
+	}
+}
+
+.wp-block[data-align="wide"],
+.wp-block[data-align="full"] {
+	margin-bottom: var(--go--spacing--vertical--lg);
+	margin-top: var(--go--spacing--vertical--lg);
+}
+
+.block-editor-block-list__block:first-child {
+
+	> .wp-block[data-align="wide"],
+	> .wp-block[data-align="full"] {
+		margin-top: inherit;
+	}
+}
+
+.wp-block[data-type="core/gallery"][data-align="full"] + .wp-block[data-type="core/image"][data-align="full"],
+.wp-block[data-type="core/gallery"][data-align="full"] + .wp-block[data-type="core/group"][data-align="full"] .has-background,
+.wp-block[data-type="core/image"][data-align="full"] + .wp-block[data-type="core/group"][data-align="full"] .has-background {
+	margin-top: calc(var(--go--spacing--vertical--lg) * -1);
+}
+
+/* Remove spacing from the first and last blocks */
+.block-editor-block-list__layout .wp-block.block-editor-block-list__block:first-of-type {
+	margin-top: 0 !important;
+}
+
+.block-editor-block-list__layout .wp-block.block-editor-block-list__block:last-of-type {
+	margin-top: 0 !important;
+}

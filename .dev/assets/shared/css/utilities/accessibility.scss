@@ -1,0 +1,58 @@
+/* stylelint-disable declaration-no-important */
+
+/*! Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	transition: none !important;
+	width: 1px;
+	word-wrap: normal !important;
+
+	&:focus {
+		@include button;
+		@include outline;
+		background-color: var(--go-button--color--background, var(--go--color--primary));
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		clip: auto !important;
+		clip-path: none;
+		height: auto;
+		left: 0;
+		outline-offset: -5px;
+		padding: 0.95rem;
+		position: absolute;
+		text-decoration: none;
+		top: 0;
+		width: auto;
+		z-index: 100000;
+	}
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/* stylelint-enable */
+
+/*!
+ * Resources on prefers-reduced-motion:
+ * https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+ */
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001s !important;
+		transition-duration: 0.001s !important;
+	}
+}

@@ -1,0 +1,84 @@
+/*! Pullquote */
+.wp-block-pullquote {
+	border: none;
+
+	&:not(.alignleft):not(.alignright) {
+		padding-bottom: var(--go-pullquote--padding--y, 0.75rem);
+		padding-top: var(--go-pullquote--padding--y, 0.75rem);
+	}
+
+	&:not(.is-style-solid-color):not(.alignleft):not(.alignright) {
+		padding-left: var(--go-pullquote--padding-x, 1rem);
+		padding-right: var(--go-pullquote--padding-x, 1rem);
+
+		p {
+			color: var(--go-pullquote--color--text, var(--go-heading--color--text));
+			margin: 1rem 0;
+		}
+	}
+
+	blockquote {
+		margin: 0;
+	}
+
+	p {
+		font-display: swap;
+		font-family: var(--go-pullquote--font-family, var(--go-heading--font-family));
+		font-size: var(--go-pullquote--font-size, var(--go--type-scale-5));
+		font-style: var(--go-pullquote--font-style, italic);
+		font-weight: var(--go-pullquote--font-weight, var(--go-heading--font-weight));
+		line-height: var(--go-pullquote--line-height, 1.25);
+	}
+
+	cite,
+	.wp-block-pullquote__citation {
+		color: var(--go-caption--color--text);
+		display: inline-block;
+		font-size: var(--go-caption--font-size, var(--go--type-scale-5));
+		font-style: var(--go-caption--font-style, normal);
+		margin-bottom: calc(var(--go-pullquote--padding--y) + 0.5rem);
+		text-transform: none;
+	}
+
+	&.is-style-solid-color {
+		padding: 0 !important;
+
+		&:not([class*="background-color"]) {
+			background-color: var(--go--color--primary);
+		}
+
+		&:not([class*="text-color"]) {
+			color: var(--go--color--white);
+		}
+
+		blockquote {
+			max-width: 100%;
+			padding: calc(var(--go--spacing--vertical--lg) * 0.35) calc(var(--go--spacing--vertical--lg) * 0.35);
+
+
+			p {
+				font-size: var(--go-pullquote--font-size, var(--go--type-scale-5));
+			}
+
+			cite,
+			.wp-block-pullquote__citation {
+				color: currentColor;
+				display: block;
+				margin-bottom: 0;
+				margin-top: 1rem;
+				opacity: 0.65;
+				text-align: right;
+			}
+		}
+	}
+}
+
+.wp-block-pullquote.alignfull {
+
+	> blockquote {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: var(--go--max-width--alignwide);
+		padding: var(--go--spacing--vertical--lg);
+	}
+}
