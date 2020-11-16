@@ -1,12 +1,14 @@
 .woocommerce-page {
 
-	& .wc_payment_methods {
+	.wc_payment_methods,
+	.woocommerce-shipping-methods {
 
-		& input[name="payment_method"] {
+		input[name="payment_method"],
+		.shipping_method {
 			display: none;
 		}
 
-		& label {
+		label {
 			@include checkbox-radio-label;
 			position: relative;
 
@@ -19,6 +21,13 @@
 				@include radio-label-before;
 				top: 8px;
 			}
+		}
+	}
+
+	.woocommerce-shipping-methods {
+
+		label::before {
+			top: 3px;
 		}
 	}
 }

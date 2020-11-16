@@ -6,12 +6,12 @@ body {
 
 	&.woocommerce-checkout .woocommerce.widget_shopping_cart {
 
-		& a.remove_from_cart_button,
-		& .woocommerce-mini-cart__buttons a.checkout {
+		a.remove_from_cart_button,
+		.woocommerce-mini-cart__buttons a.checkout {
 			display: none;
 		}
 
-		& .cart_list li {
+		.cart_list li {
 			padding-left: 0;
 		}
 	}
@@ -47,9 +47,9 @@ body {
 
 .js-woo-slideout {
 
-	& .cart-menu {
+	.cart-menu {
 
-		& .count-holder {
+		.count-holder {
 			height: 21px;
 			left: 0;
 			overflow: hidden;
@@ -58,7 +58,7 @@ body {
 			width: 30px;
 		}
 
-		& .count {
+		.count {
 			animation-duration: 300ms;
 			font-size: 0.8125rem;
 			font-weight: 700;
@@ -81,7 +81,7 @@ body {
 		animation-name: scroll-out;
 	}
 
-	& svg {
+	svg {
 		fill: var(--go-navigation--color--text);
 		vertical-align: sub;
 		width: 30px;
@@ -113,7 +113,7 @@ body {
 		transform: translateX(0);
 	}
 
-	& .site-close-handle {
+	.site-close-handle {
 		background: transparent;
 		padding: 0;
 		position: absolute;
@@ -121,23 +121,23 @@ body {
 		top: -2px;
 		z-index: 10001;
 
-		& svg {
+		svg {
 			width: 25px;
 		}
 	}
 
-	& #site-cart {
+	#site-cart {
 
-		& .top {
+		.top {
 			padding-top: 50px;
 			position: relative;
 		}
 
-		& h6.title {
+		h6.title {
 			margin: 3px 0 0 0;
 		}
 
-		& p.subheading {
+		p.subheading {
 			align-items: center;
 			border-bottom: 1px solid #ededed;
 			border-top: 1px solid #ededed;
@@ -147,22 +147,22 @@ body {
 			opacity: 0.66 !important;
 		}
 
-		& li.mini_cart_item {
+		li.mini_cart_item {
 			margin-bottom: 1rem;
 
 			&:last-child {
 				margin-bottom: 0;
 			}
 
-			& img.attachment-woocommerce_thumbnail {
+			img.attachment-woocommerce_thumbnail {
 				width: 60px;
 			}
 		}
 
-		& .cart_list {
+		.cart_list {
 			padding-bottom: 25px;
 
-			& .remove {
+			.remove {
 				top: 4px;
 
 				&:not(:hover) {
@@ -174,20 +174,20 @@ body {
 				}
 			}
 
-			& .woocommerce-Price-amount {
+			.woocommerce-Price-amount {
 				color: inherit;
 			}
 		}
 
-		& .total {
+		.total {
 			border-top: 3px solid #000;
 			padding: 15px 0 0;
 		}
 
-		& p.buttons {
+		p.buttons {
 			display: flex;
 
-			& a {
+			a {
 				flex: 1;
 				text-align: center;
 			}
@@ -197,7 +197,7 @@ body {
 
 body.admin-bar {
 
-	& #site-nav--cart {
+	#site-nav--cart {
 		height: calc(100vh - 32px);
 		margin-top: 32px;
 

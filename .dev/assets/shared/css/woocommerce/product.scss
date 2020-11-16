@@ -10,11 +10,11 @@
 	}
 
 	/* Avoid last child bottom margin */
-	& .wc-block-grid__product-link,
-	& .woocommerce-loop-product__link {
+	.wc-block-grid__product-link,
+	.woocommerce-loop-product__link {
 		display: block;
 
-		& > *:last-child {
+		> *:last-child {
 			margin-bottom: 0;
 		}
 	}
@@ -108,7 +108,7 @@ table.variations tbody tr:nth-child(odd) {
 	display: block;
 	width: 100%;
 
-	& label {
+	label {
 		margin-bottom: 0;
 		padding: 0;
 	}
@@ -125,30 +125,30 @@ table.variations tbody tr:nth-child(odd) {
 /* Input qty and add to cart button when HAS variations */
 .cart.variations_form {
 
-	& .single_variation_wrap {
+	.single_variation_wrap {
 
-		& .woocommerce-variation-add-to-cart {
+		.woocommerce-variation-add-to-cart {
 			align-items: center;
 			display: flex;
 			justify-content: center;
 
-			& .quantity {
+			.quantity {
 				flex: 1;
 
-				& input {
+				input {
 					margin-bottom: 0;
 					padding: var(--go-input--padding--y) 36px var(--go-input--padding--y) var(--go-input--padding--x);
 					width: 100%;
 				}
 			}
 
-			& button[type="submit"] {
+			button[type="submit"] {
 				flex: 1;
 				margin-right: 1em;
 			}
 		}
 
-		& .woocommerce-variation-price {
+		.woocommerce-variation-price {
 			margin: 0 0 1.5rem;
 		}
 	}
