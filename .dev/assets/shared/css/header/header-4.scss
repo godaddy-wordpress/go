@@ -10,44 +10,44 @@
 		}
 	}
 
-	& .header__extras {
+	.header__extras {
 		justify-content: flex-start;
 		margin-left: -0.75rem;
 		order: 1;
 	}
 
-	& .header__nav-toggle {
+	.header__nav-toggle {
 
-		& .nav-toggle {
+		.nav-toggle {
 			display: inline-flex;
 		}
 	}
 
-	& .header__title-nav {
+	.header__title-nav {
 		order: 2;
 	}
 
-	& .header .header__titles {
+	.header .header__titles {
 		flex: 1 0 100%;
 		flex-direction: column;
 		justify-content: center;
 		text-align: center;
 
-		& .site-description {
+		.site-description {
 			margin-left: 0;
 			margin-right: 0;
 			margin-top: var(--go-site-description--margin-top, 0.25rem);
 		}
 	}
 
-	& .header__navigation {
+	.header__navigation {
 		@include media(large) {
 			align-items: normal;
 			position: fixed !important;
 		}
 	}
 
-	& .header__navigation li {
+	.header__navigation li {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
 	}
@@ -62,8 +62,8 @@
 	&.menu-is-open {
 		overflow: hidden;
 
-		& .header__navigation {
-			background-color: var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
+		.header__navigation {
+			background-color: var(--go-header--color--background, var(--go--color--background));
 			font-size: 1.5rem;
 			opacity: 1;
 			padding-bottom: var(--go-header--padding--y, 3vw);
@@ -74,7 +74,7 @@
 			text-align: center;
 			visibility: visible;
 
-			& a {
+			a {
 				display: block;
 				font-size: 3vmin;
 				padding: 0.25rem;
@@ -89,7 +89,7 @@
 			}
 		}
 
-		& .header__navigation-inner {
+		.header__navigation-inner {
 			display: flex;
 			flex-direction: column;
 			flex-grow: 1;
@@ -97,7 +97,7 @@
 			position: relative;
 		}
 
-		& .header__navigation-inner > div {
+		.header__navigation-inner > div {
 			display: block;
 			height: 100%;
 			left: 0;
@@ -108,7 +108,7 @@
 			width: 100%;
 		}
 
-		& .primary-menu {
+		.primary-menu {
 			display: flex;
 			flex-direction: column;
 			height: 100%;
@@ -120,14 +120,14 @@
 			top: 0;
 			width: 100%;
 
-			& .sub-menu {
+			.sub-menu {
 				margin-bottom: 1rem;
 
 				&::before {
 					display: none;
 				}
 
-				& li {
+				li {
 
 					&:first-child {
 						padding-top: 0.75rem;
@@ -139,7 +139,7 @@
 				}
 			}
 
-			& .sub-menu li a {
+			.sub-menu li a {
 				font-size: 2.25vmin;
 
 				@include media(small-only) {
@@ -147,7 +147,7 @@
 				}
 			}
 
-			& .menu-item-has-children svg {
+			.menu-item-has-children svg {
 				height: 0.75rem;
 				margin-left: 0.5rem;
 				position: absolute;

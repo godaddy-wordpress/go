@@ -13,8 +13,8 @@ body::before {
 	@include media(large-only) {
 		overflow: hidden;
 
-		& .header__navigation {
-			background-color: var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
+		.header__navigation {
+			background-color: var(--go-header--color--background, var(--go--color--background));
 			font-size: 1.5rem;
 			opacity: 1;
 			padding-bottom: var(--go-header--padding--y, 3vw);
@@ -25,7 +25,7 @@ body::before {
 			text-align: center;
 			visibility: visible;
 
-			& a {
+			a {
 				display: block;
 				font-size: 3.25vmin;
 				padding: 0.25rem;
@@ -40,7 +40,7 @@ body::before {
 			}
 		}
 
-		& .header__navigation-inner {
+		.header__navigation-inner {
 			display: flex;
 			flex-direction: column;
 			flex-grow: 1;
@@ -48,7 +48,7 @@ body::before {
 			position: relative;
 		}
 
-		& .header__navigation-inner > div {
+		.header__navigation-inner > div {
 			display: block;
 			height: 100%;
 			left: 0;
@@ -59,7 +59,7 @@ body::before {
 			width: 100%;
 		}
 
-		& .primary-menu {
+		.primary-menu {
 			display: flex;
 			flex-direction: column;
 			height: 100%;
@@ -71,14 +71,14 @@ body::before {
 			top: 0;
 			width: 100%;
 
-			& .sub-menu {
+			.sub-menu {
 				margin-bottom: 1rem;
 
 				&::before {
 					display: none;
 				}
 
-				& li {
+				li {
 
 					&:first-child {
 						padding-top: 0.75rem;
@@ -90,7 +90,7 @@ body::before {
 				}
 			}
 
-			& .sub-menu li a {
+			.sub-menu li a {
 				font-size: 2.25vmin;
 
 				@include media(small-only) {
@@ -98,7 +98,7 @@ body::before {
 				}
 			}
 
-			& .menu-item-has-children svg {
+			.menu-item-has-children svg {
 				height: 0.75rem;
 				margin-left: 0.5rem;
 				position: absolute;
@@ -107,7 +107,7 @@ body::before {
 				width: 0.75rem;
 			}
 
-			& .submenu-is-open svg {
+			.submenu-is-open svg {
 				transform: translateY(-50%) rotate(180deg);
 			}
 		}

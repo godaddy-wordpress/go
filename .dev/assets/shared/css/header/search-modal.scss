@@ -31,11 +31,11 @@
 		opacity: 1;
 		transition: opacity 0.2s linear;
 
-		& > * {
+		> * {
 			cursor: default;
 		}
 
-		& .search-modal-inner {
+		.search-modal-inner {
 			box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.08);
 			transform: translateY(0);
 			transition: transform 0.25s ease-in-out, box-shadow 0.1s 0.25s linear;
@@ -44,7 +44,7 @@
 }
 
 .search-modal-inner {
-	background-color: var(--go-header--color--background, var(--go--color--background, 0, 0, 100%));
+	background-color: var(--go-header--color--background, var(--go--color--background));
 	padding: 3vw;
 	transform: translateY(-100%);
 	transition: transform 0.15s linear, box-shadow 0.15s linear;
