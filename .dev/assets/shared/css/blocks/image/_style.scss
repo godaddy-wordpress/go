@@ -1,20 +1,20 @@
 /*! Image */
 .wp-block-image {
 
-	& img {
+	img {
 		display: block;
 	}
 
-	& .alignleft {
+	.alignleft {
 		margin-right: 2rem;
 	}
 
-	& .alignright {
+	.alignright {
 		margin-left: 2rem;
 	}
 
-	& figure.alignleft,
-	& figure.alignright {
+	figure.alignleft,
+	figure.alignright {
 		margin-bottom: 1.5rem;
 		margin-top: 0.7rem;
 	}

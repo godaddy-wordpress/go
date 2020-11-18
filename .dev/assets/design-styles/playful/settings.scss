@@ -21,7 +21,7 @@
 	// Headings
 	--go-heading--button-spacing: 2rem;
 	--go-heading--color--text: hsl(229, 18%, 24%);
-	--go-heading--font-family: "Quicksand", sans-serif;
+	--go-heading--font-family: "Poppins", sans-serif;
 	--go-heading--font-weight: 600;
 	--go-heading--line-height: 1.35;
 	--go-heading--margin-bottom: 1.75rem;
@@ -33,7 +33,7 @@
 	--go-caption--text-align: center;
 
 	// Pullquote
-	--go-pullquote--font-family: "Poppins", sans-serif;
+	--go-pullquote--font-family: var(--go-heading--font-family);
 	--go-pullquote--font-size: var(--go--type-scale-6);
 	--go-pullquote--font-style: normal;
 	--go-pullquote--font-weight: 700;
@@ -71,7 +71,6 @@
 
 	// Site Title
 	--go-site-title--color--text: var(--go--color--white);
-	--go-site-title--font-family: "Poppins", sans-serif;
 	--go-site-title--font-size: 1.4rem;
 	--go-site-title--letter-spacing: 0;
 	--go-site-title--text-transform: none;

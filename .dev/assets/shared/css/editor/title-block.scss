@@ -4,6 +4,7 @@
 
 	.editor-post-title__input {
 		color: var(--go-h1--color--text, var(--go-heading--color--text));
+		font-display: swap;
 		font-family: var(--go-heading--font-family);
 		font-size: var(--go--type-scale-6);
 		font-style: var(--go-heading--font-style, normal);

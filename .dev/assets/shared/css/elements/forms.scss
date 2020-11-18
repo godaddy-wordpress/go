@@ -134,6 +134,8 @@ textarea {
 
 select {
 	@include select-menu;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	margin-bottom: var(--go-input--margin-bottom);
 	padding: var(--go-input--padding--y) var(--go-input--padding--x) !important;
 
