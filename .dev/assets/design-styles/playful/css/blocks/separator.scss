@@ -1,0 +1,13 @@
+.wp-block-separator:not(.is-style-dots) {
+	background-color: var(--go--color--secondary);
+	background-position: 50%;
+	background-repeat: repeat-x;
+	border: none;
+	height: 9pt;
+	mask-image: url(../../../dist/images/design-styles/playful/cross-stich-border.svg);
+	max-width: 115px !important;
+}
+
+.wp-block-separator.is-style-dots:not(.has-text-color)::before {
+	color: var(--go--color--secondary);
+}

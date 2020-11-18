@@ -1,0 +1,54 @@
+/*! CoBlocks: Pricing Table */
+.wp-block-coblocks-pricing-table-item {
+	border: var(--wp-block-coblocks-pricing-table-item--border-width, 2px) solid var(--wp-block-coblocks-pricing-table-item--border-color, var(--go-heading--color--text));
+
+	&:not(.has-background) {
+		background: var(--wp-block-coblocks-pricing-table-item--color--background, var(--go--color--white));
+	}
+
+	.wp-block-coblocks-pricing-table-item__price-wrapper {
+		margin: 2rem 0;
+	}
+
+	.wp-block-coblocks-pricing-table-item__features {
+		font-size: var(--go--font-size--small);
+		letter-spacing: var(--go--letter-spacing--small, 0);
+		margin-bottom: 2.5rem;
+	}
+
+	&.has-primary-background-color:not(.has-text-color),
+	&.has-secondary-background-color:not(.has-text-color) {
+
+		.wp-block-coblocks-pricing-table-item__title,
+		.wp-block-coblocks-pricing-table-item__amount,
+		.wp-block-coblocks-pricing-table-item__currency {
+			color: var(--go--color--white);
+		}
+	}
+}
+
+.wp-block-coblocks-pricing-table-item__title {
+	font-display: swap;
+	font-family: var(--go-navigation--font-family);
+	font-size: var(--go-navigation--font-size);
+	font-weight: var(--go-navigation--font-weight, 400);
+	letter-spacing: var(--go-navigation--letter-spacing, normal);
+	text-transform: var(--go-navigation--text-transform, normal);
+}
+
+.wp-block-coblocks-pricing-table-item:not(.has-text-color) {
+
+	.wp-block-coblocks-pricing-table-item__title {
+		color: var(--wp-block-coblocks-pricing-table-item--color--title, var(--go-heading--color--text));
+	}
+
+	.wp-block-coblocks-pricing-table-item__currency,
+	.wp-block-coblocks-pricing-table-item__amount {
+		color: var(--wp-block-coblocks-pricing-table-item--price--color--text, var(--go-heading--color--text));
+	}
+}
+
+.wp-block-coblocks-pricing-table-item__currency {
+	position: relative;
+	top: 12px;
+}

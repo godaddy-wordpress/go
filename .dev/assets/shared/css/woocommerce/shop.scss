@@ -1,0 +1,118 @@
+/*! WooCommerce: Shop */
+.content-area--woocommerce {
+	margin-bottom: var(--go--spacing--vertical--lg);
+
+	.page-title {
+		display: none !important;
+	}
+
+	.woocommerce-result-count {
+		float: left;
+		margin-bottom: 0;
+		padding: 0;
+		position: relative;
+	}
+
+	.woocommerce-ordering {
+		@include media(medium) {
+			float: right;
+			margin-bottom: 0;
+			margin-left: 1em;
+			padding: 0;
+		}
+	}
+
+
+	.go-sorting {
+		margin-bottom: 5rem;
+		margin-top: 4rem;
+
+		&::before,
+		&::after {
+			content: "";
+			display: table;
+		}
+
+		&::after {
+			clear: both;
+		}
+
+		select {
+			line-height: 1;
+			margin-bottom: 0;
+			padding: 1rem 0.75rem !important;
+			width: auto;
+		}
+	}
+}
+
+.woocommerce ul.products,
+.wc-block-grid__products {
+
+	li {
+		margin-bottom: 5rem !important;
+		text-align: center;
+
+		@include media(small) {
+			margin-bottom: 5rem !important;
+		}
+
+		a {
+
+			&:hover {
+
+				.star-rating {
+					color: var(--go--color--primary);
+					color: var(--go--hyperlink--color--text, var(--go--color--primary));
+				}
+			}
+
+			img {
+				height: auto;
+				margin: 0;
+				width: 100%;
+
+				@include media(large) {
+					margin: 0 0 1rem;
+				}
+			}
+
+			/* Add to cart button appears on Shop page after ajax load */
+			&.added_to_cart {
+				border: none;
+				margin: 0.5rem 0 0 1rem;
+				padding-top: 0;
+			}
+		}
+
+		.wc-block-grid__product-title,
+		.woocommerce-loop-product__title {
+			color: var(--go-heading--color--text);
+			font-display: swap;
+			font-family: var(--go-heading--font-family);
+			font-size: var(--go--type-scale-2);
+			font-weight: var(--go-heading--font-weight);
+			letter-spacing: var(--go-heading--letter-spacing, normal);
+			line-height: var(--go-heading--line-height);
+			margin-bottom: 2rem;
+
+			@include media(large) {
+				font-size: var(--go--type-scale-3);
+			}
+		}
+
+		.star-rating {
+			margin: 0 auto 0.5em;
+		}
+
+		.price {
+			color: var(--go-caption--color--text);
+			font-size: var(--go--font-size--small);
+
+			@include media(large) {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+
+}

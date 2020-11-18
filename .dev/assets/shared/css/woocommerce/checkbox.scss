@@ -1,0 +1,11 @@
+/*! WooCommerce: Checkbox */
+.woocommerce-page input[type="checkbox"] {
+	appearance: checkbox;
+	opacity: 1;
+}
+
+.woocommerce .woocommerce-form-login .woocommerce-form-login__rememberme {
+	@include media(medium) {
+		padding: var(--go-button--padding--y) var(--go-button--padding--x);
+	}
+}

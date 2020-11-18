@@ -1,0 +1,25 @@
+/*! Links */
+a {
+	color: var(--go--hyperlink--color--text, var(--go--color--primary));
+	text-decoration: underline;
+
+	&:hover,
+	&:active {
+		color: var(--go--hyperlink-interactive--color--text, var(--go--color--text));
+		outline: 0;
+	}
+
+	&:focus {
+		@include outline;
+	}
+}
+
+p,
+li,
+ul,
+ol {
+
+	& a:focus {
+		outline-width: thin;
+	}
+}

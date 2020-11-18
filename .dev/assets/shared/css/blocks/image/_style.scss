@@ -1,0 +1,29 @@
+/*! Image */
+.wp-block-image {
+
+	img {
+		display: block;
+	}
+
+	.alignleft {
+		margin-right: 2rem;
+	}
+
+	.alignright {
+		margin-left: 2rem;
+	}
+
+	figure.alignleft,
+	figure.alignright {
+		margin-bottom: 1.5rem;
+		margin-top: 0.7rem;
+	}
+}
+
+.wp-block-coblocks-pricing-table-item {
+	width: 100%;
+}
+
+.wp-block-image.alignfull + .wp-block-gallery {
+	margin-top: calc(var(--go--spacing--vertical--lg) * -1 + 16px) !important;
+}

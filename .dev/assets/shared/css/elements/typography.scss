@@ -1,0 +1,81 @@
+/*! Body Typography */
+body {
+	background-color: var(--go--color--background, 0, 0%, 100%);
+	color: var(--go--color--text);
+	font-display: swap;
+	font-family: var(--go--font-family);
+	font-size: var(--go--font-size);
+	font-weight: var(--go--font-weight, 400);
+	letter-spacing: var(--go--letter-spacing, normal);
+	line-height: var(--go--line-height);
+	text-rendering: optimizeLegibility;
+	word-wrap: break-word;
+}
+
+p {
+	font-size: var(--go--font-size);
+	line-height: var(--go--line-height);
+}
+
+.content-area > blockquote {
+	border-left: var(--go-quote--border-width) var(--go-quote--border-style) var(--go-quote--border-color);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0;
+	padding-right: 0;
+
+	& p {
+		color: var(--go-quote--color--text, var(--go-heading--color--text));
+		font-display: swap;
+		font-family: var(--go-heading--font-family);
+		font-size: var(--go-quote--font-size, var(--go--type-scale-4));
+		font-style: var(--go-quote--font-style, normal);
+		font-weight: var(--go-quote--font-weight, var(--go-heading--font-weight));
+		line-height: var(--go-quote--line-height, var(--go-heading--line-height));
+		margin: 0 0 2rem;
+		padding: 0.5rem 0 0.5rem 1.5rem;
+		position: relative;
+
+		@include media(medium) {
+			padding-left: 2.75rem;
+		}
+
+		&::before {
+			content: "“";
+			line-height: 1;
+			position: absolute;
+			transform: translate3d(-120%, 20%, 0);
+		}
+
+		&::after {
+			content: "”";
+		}
+	}
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0 0 1rem;
+	width: 100%;
+
+	& td,
+	& th {
+		border: 2px solid var(--go-table--border-color, var(--go-heading--color--text));
+		padding: 1em;
+		word-break: break-all;
+	}
+}
+
+code {
+	font-family: monospace;
+	font-size: 1em;
+	word-wrap: break-word;
+}
+
+pre {
+	border: 0.1rem solid var(--go-table--border-color, var(--go-heading--color--text));
+	line-height: 1.5;
+	overflow: auto;
+	padding: 3rem 2rem;
+	text-align: left;
+}

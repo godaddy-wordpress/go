@@ -1,0 +1,11 @@
+/*! More */
+.content-area {
+
+	> [id*="more-"] {
+		display: none;
+	}
+}
+
+.read-more-button-wrap {
+	text-align: center;
+}

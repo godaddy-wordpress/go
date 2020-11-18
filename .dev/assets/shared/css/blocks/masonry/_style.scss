@@ -1,0 +1,26 @@
+/*! CoBlocks: Masonry */
+.content-area .wp-block-image + .wp-block-coblocks-gallery-masonry {
+	margin-top: 16px !important;
+}
+
+.wp-block-coblocks-gallery-masonry {
+
+	ul {
+		margin: 0;
+	}
+
+	figcaption {
+		font-size: var(--go-caption--font-size);
+		font-style: var(--go-caption--font-style, normal);
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+		text-align: var(--go-caption--text-align);
+	}
+}
+
+body.rtl .wp-block-coblocks-gallery-masonry {
+
+	figcaption {
+		text-align: var(--go-caption--text-align--rtl);
+	}
+}

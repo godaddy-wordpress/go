@@ -1,0 +1,52 @@
+/*! Headings - <h1> through </h6> */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	display: block;
+	font-display: swap;
+	font-family: var(--go-heading--font-family);
+	font-style: var(--go-heading--font-style, normal);
+	font-weight: var(--go-heading--font-weight);
+	line-height: var(--go-heading--line-height);
+	margin-bottom: var(--go-heading--margin-bottom);
+
+	& + .wp-block-button {
+		margin-top: var(--go-heading--button-spacing);
+	}
+}
+
+h1 {
+	color: var(--go-h1--color--text, var(--go-heading--color--text));
+	font-size: var(--go--type-scale-6);
+	letter-spacing: var(--go-heading--letter-spacing, normal);
+}
+
+h2 {
+	color: var(--go-h2--color--text, var(--go-heading--color--text));
+	font-size: var(--go--type-scale-5);
+	letter-spacing: var(--go-heading--letter-spacing, normal);
+}
+
+h3 {
+	color: var(--go-h3--color--text, var(--go-heading--color--text));
+	font-size: var(--go--type-scale-4);
+}
+
+h4 {
+	color: var(--go-h4--color--text, var(--go-heading--color--text));
+	font-size: var(--go--type-scale-3);
+}
+
+h5 {
+	color: var(--go-h5--color--text, var(--go-heading--color--text));
+	font-size: var(--go--type-scale-2);
+}
+
+h6 {
+	color: var(--go-h6--color--text, var(--go-heading--color--text));
+	font-size: var(--go--type-scale-1);
+}

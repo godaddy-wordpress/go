@@ -1,0 +1,18 @@
+/*! Buttons */
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	@include button;
+
+	&:hover {
+		@include button-hover;
+		cursor: pointer;
+	}
+
+	&:focus {
+		@include outline;
+		cursor: pointer;
+	}
+}

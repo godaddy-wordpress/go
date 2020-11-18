@@ -1,0 +1,35 @@
+/*  Columns */
+.wp-block-columns {
+
+	.wp-block {
+		max-width: none;
+	}
+
+	.wp-block-column {
+
+		&[class*="background-color"] {
+			padding: calc(var(--go--spacing--vertical--lg) * 0.25);
+
+			&:first-child {
+				padding-left: calc(var(--go--spacing--vertical--lg) * 0.25);
+			}
+
+			&:last-child {
+				padding-right: calc(var(--go--spacing--vertical--lg) * 0.25);
+			}
+		}
+	}
+
+	.wp-block-quote {
+		max-width: none;
+
+		&.is-style-large {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	.wp-block[data-type="core/paragraph"] ~ .wp-block[data-type="core/button"] {
+		margin-bottom: 0 !important;
+	}
+}

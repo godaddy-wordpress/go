@@ -1,0 +1,28 @@
+/*! Editor Padding Sizes */
+.has-small-padding {
+	padding: var(--go--spacing--vertical);
+
+	@include media(medium) {
+		padding: calc(var(--go--spacing--vertical--lg) * 0.2);
+	}
+}
+
+.has-medium-padding {
+	padding: var(--go--spacing--vertical);
+
+	@include media(medium) {
+		padding: calc(var(--go--spacing--vertical--lg) * 0.5);
+	}
+}
+
+.has-large-padding {
+	padding: var(--go--spacing--vertical);
+
+	@include media(medium) {
+		padding: calc(var(--go--spacing--vertical--lg) * 0.75);
+	}
+}
+
+.has-huge-padding {
+	padding: var(--go--spacing--vertical--lg);
+}
