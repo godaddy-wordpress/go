@@ -21,7 +21,7 @@
 
 	&__inner-container {
 		margin: 0 auto;
-		max-width: var(--go--max-width);
+		max-width: var(--go--max-width--alignwide) !important;
 		padding: var(--go--spacing--vertical--lg) 1rem;
 		width: auto !important;
 
@@ -38,6 +38,26 @@
 			@include media(medium) {
 				padding: calc(var(--go--spacing--vertical) * 1.5) calc(var(--go--spacing--vertical) * 2);
 			}
+		}
+	}
+
+	&.is-position-center-center {
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p {
+			text-align: center;
+		}
+
+		.wp-block-buttons {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: center;
 		}
 	}
 }
