@@ -184,12 +184,21 @@ body {
 				width: 100%;
 			}
 		}
+
+		table.shop_table_responsive tr {
+			display: block;
+			margin: 1rem 0;
+		}
 	}
 
 	.woocommerce-page table.shop_table_responsive .product-thumbnail {
 
 		&::before {
 			display: none;
+		}
+
+		a:first-child {
+			display: block;
 		}
 
 		.actions {
