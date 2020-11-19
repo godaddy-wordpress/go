@@ -1057,8 +1057,14 @@ function inline_css() {
 	$viewport_basis = get_theme_mod( 'viewport_basis', '1100' );
 
 	// Fonts.
-	$fonts      = get_theme_mod( 'fonts', array() );
-	$fonts      = array_keys( $fonts );
+	$fonts                             = get_theme_mod( 'fonts', array() );
+	list( $font_headings, $font_body ) = array_keys( $fonts );
+
+	list(
+		$font_heading_weights,
+		$font_body_weights
+	) = array_values( $fonts );
+
 	$font_size  = get_theme_mod( 'font_size' );
 	$type_ratio = get_theme_mod( 'type_ratio' );
 	?>
@@ -1122,9 +1128,9 @@ function inline_css() {
 					--go--viewport-basis: <?php echo esc_attr( $viewport_basis ); ?>;
 				<?php endif; ?>
 
-				<?php if ( isset( $fonts[0], $fonts[1] ) ) : ?>
-					--go-heading--font-family: <?php echo esc_attr( $fonts[0] ); ?>;
-					--go--font-family: <?php echo esc_attr( $fonts[1] ); ?>;
+				<?php if ( isset( $font_headings, $font_body ) ) : ?>
+					--go-heading--font-family: <?php echo esc_attr( $font_headings ); ?>;
+					--go--font-family: <?php echo esc_attr( $font_body ); ?>;
 				<?php endif; ?>
 
 				<?php if ( $font_size ) : ?>
@@ -1133,6 +1139,14 @@ function inline_css() {
 
 				<?php if ( $type_ratio ) : ?>
 					--go--type-ratio: <?php echo esc_attr( $type_ratio ); ?>;
+				<?php endif; ?>
+
+				<?php if ( ! empty( $font_heading_weights ) ) : ?>
+					--go-heading--font-weight: <?php echo esc_attr( $font_heading_weights[0] ); ?>;
+				<?php endif; ?>
+
+				<?php if ( ! empty( $font_body_weights ) ) : ?>
+					--go--font-weight: <?php echo esc_attr( $font_body_weights[0] ); ?>;
 				<?php endif; ?>
 			}
 
