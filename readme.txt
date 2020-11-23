@@ -110,7 +110,12 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Fix primary menu sub menu hiding on hover. [#611](https://github.com/godaddy-wordpress/go/pull/611)
+- Fix variable product quantity/submit button height. [#602](https://github.com/godaddy-wordpress/go/pull/602)
+- Fix visibility of WooCommerce checkboxes and radios. [#598](https://github.com/godaddy-wordpress/go/pull/598)
 
 ### Tweaks
-- Add proper negative margin for fullwidth blocks, remove unnecessary & nested selectors from block styles, tweak a few minor front-end to editor style mishaps, fix block quote style. [#608](https://github.com/godaddy-wordpress/go/pull/608)
+- Tweak margin, spacing of product in cart. [#615](https://github.com/godaddy-wordpress/go/pull/615)
+- Improve cover block styles. [#614](https://github.com/godaddy-wordpress/go/pull/614)
+- Update bundled version of Cypress to 5.6.0. [#609](https://github.com/godaddy-wordpress/go/pull/609)
+- Improve the WooCommerce cart template. [#607](https://github.com/godaddy-wordpress/go/pull/607)
+- Add underline to WooCommerce product title on hover. [#606](https://github.com/godaddy-wordpress/go/pull/606)
