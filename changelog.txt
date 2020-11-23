@@ -1,5 +1,20 @@
+1.3.9 / 2020-11-23
+===================
+
+### Bug Fixes
+- Fix variable product quantity/submit button height. [#602](https://github.com/godaddy-wordpress/go/pull/602)
+- Fix visibility of WooCommerce checkboxes and radios. [#598](https://github.com/godaddy-wordpress/go/pull/598)
+
+### Tweaks
+- Tweak margin, spacing of product in cart. [#615](https://github.com/godaddy-wordpress/go/pull/615)
+- Improve cover block styles. [#614](https://github.com/godaddy-wordpress/go/pull/614)
+- Update bundled version of Cypress to 5.6.0. [#609](https://github.com/godaddy-wordpress/go/pull/609)
+- Improve the WooCommerce cart template. [#607](https://github.com/godaddy-wordpress/go/pull/607)
+- Add underline to WooCommerce product title on hover. [#606](https://github.com/godaddy-wordpress/go/pull/606)
+
 1.3.8 / 2020-11-12
-==================
+===================
+
 ### Bug Fixes
 - Fix primary menu sub menu hiding on hover. [#611](https://github.com/godaddy-wordpress/go/pull/611)
 
@@ -7,7 +22,8 @@
 - Add proper negative margin for fullwidth blocks, remove unnecessary & nested selectors from block styles, tweak a few minor front-end to editor style mishaps, fix block quote style. [#608](https://github.com/godaddy-wordpress/go/pull/608)
 
 1.3.7 / 2020-11-11
-==================
+===================
+
 ### Bug Fixes
 - Hide default select field arrow. [#601](https://github.com/godaddy-wordpress/go/pull/601)
 - Add `font-display: swap;` property. [#599](https://github.com/godaddy-wordpress/go/pull/599)
@@ -17,7 +33,8 @@
 - Update Poppins font-weight to 600. [#594](https://github.com/godaddy-wordpress/go/pull/594)
 
 1.3.6 / 2020-09-03
-==================
+===================
+
 ### Bug Fixes
 - Fix radio group required error visibility. [#579](https://github.com/godaddy-wordpress/go/pull/579)
 - Display the page title checkbox on page post types only. [#577](https://github.com/godaddy-wordpress/go/pull/577)
@@ -32,10 +49,13 @@
 - Add e-commerce tag to Go theme. [#572](https://github.com/godaddy-wordpress/go/pull/572)
 
 1.3.5 / 2020-08-11
-==================
+===================
+
 - Bump tested up to version to 5.5 and Go patch version 1.3.5 [#566][https://github.com/godaddy-wordpress/go/pull/566]
 
 1.3.4 / 2020-08-06
+===================
+
 ### Bug Fixes
 - Fix header background fallback issue. [#564](https://github.com/godaddy-wordpress/go/pull/564)
 - Fix group block's custom padding not properly reflected in the editor. [#563](https://github.com/godaddy-wordpress/go/pull/563)
@@ -44,7 +64,7 @@
 - Add new experimental link color theme support. [#541](https://github.com/godaddy-wordpress/go/pull/541)
 
 1.3.3 / 2020-07-23
-==================
+===================
 
 ### Bug Fixes
 - Removed rogue `gd-system-plugin` text domain and replaced it with the proper `go` text domain. [#549](https://github.com/godaddy-wordpress/go/pull/549)
@@ -54,20 +74,20 @@
 - Fix block editor inserter panel pattern styles. [#556](https://github.com/godaddy-wordpress/go/pull/556)
 
 1.3.2 / 2020-06-26
-==================
+===================
 
 ### Bug Fixes
 * Fix WooCommerce checkout radio buttons. [#540](https://github.com/godaddy-wordpress/go/pull/540)
 
 1.3.1 / 2020-06-12
-==================
+===================
 
 ### Bug Fixes
 * Add missing minified asset files. [#537](https://github.com/godaddy-wordpress/go/pull/537)
 * Exclude cypress.json file from the build. [#537](https://github.com/godaddy-wordpress/go/pull/537)
 
 1.3.0 / 2020-06-11
-==================
+===================
 
 ### Bug Fixes
 * Fixed gradient control. [#528](https://github.com/godaddy-wordpress/go/pull/528)
@@ -78,7 +98,8 @@
 * Tweak svgs for improved accessibility. [#534](https://github.com/godaddy-wordpress/go/pull/534)
 
 1.2.10 / 2020-05-29
-==================
+===================
+
 ### Enhancements
 * Updates to PHP syntax and PHPCS rulesets. [#518](https://github.com/godaddy-wordpress/go/pull/518)
 * Add `Tested up to` and `Requires PHP` to style.css headers. [#521](https://github.com/godaddy-wordpress/go/pull/521)
@@ -87,7 +108,8 @@
 * Minor block style design tweaks. [#526](https://github.com/godaddy-wordpress/go/pull/526)
 
 1.2.9 / 2020-05-05
-==================
+===================
+
 ### Enhancements
 * Adjust vertical spacing in the block editor. [#510](https://github.com/godaddy-wordpress/go/pull/510)
 * Add viewport basis Customizer controls to allow for granular control over the themes white space. [#512](https://github.com/godaddy-wordpress/go/pull/512)
@@ -99,7 +121,8 @@
 * Resolve an issue where the featured image causes featured image text to be white. [#513](https://github.com/godaddy-wordpress/go/pull/513)
 
 1.2.8 / 2020-04-16
-==================
+===================
+
 ### Enhancements
 * Add color controls to Site Design panel. [#500](https://github.com/godaddy-wordpress/go/pull/500)
 
@@ -107,7 +130,8 @@
 * Remove the `customize-preview` dependency from `go-customize-preview` script. [#501](https://github.com/godaddy-wordpress/go/pull/501)
 
 1.2.7 / 2020-04-13
-==================
+===================
+
 ### Enhancements
 * Various design and functionality improvements to the WooCommerce slide out cart. [#488](https://github.com/godaddy-wordpress/go/pull/488)
 * Introduce improved fallbacks for CSS custom properties. [#491](https://github.com/godaddy-wordpress/go/pull/491)
@@ -118,14 +142,14 @@
 * Fix copyright footer text error on save. [#497](https://github.com/godaddy-wordpress/go/pull/497)
 
 1.2.6 / 2020-03-20
-==================
+===================
 
 ### Bug Fixes
 * Resolve specificity issue with the group block within the editor. [#485](https://github.com/godaddy-wordpress/go/pull/485)
 * Remove languages from tagged releases, keep MO files in canary. [#486](https://github.com/godaddy-wordpress/go/pull/486)
 
 1.2.5 / 2020-03-19
-==================
+===================
 
 ### Enhancements
 * Introduce [AMP](https://amp.dev/) compatibility. [#447](https://github.com/godaddy-wordpress/go/pull/447), [#471](https://github.com/godaddy-wordpress/go/pull/471)
