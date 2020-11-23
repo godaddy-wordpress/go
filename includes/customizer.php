@@ -1057,13 +1057,18 @@ function inline_css() {
 	$viewport_basis = get_theme_mod( 'viewport_basis', '1100' );
 
 	// Fonts.
-	$fonts                             = get_theme_mod( 'fonts', array() );
-	list( $font_headings, $font_body ) = array_keys( $fonts );
+	$fonts = get_theme_mod( 'fonts', array() );
 
-	list(
-		$font_heading_weights,
-		$font_body_weights
-	) = array_values( $fonts );
+	if ( ! empty( $fonts ) ) {
+
+		list( $font_headings, $font_body ) = array_keys( $fonts );
+
+		list(
+			$font_heading_weights,
+			$font_body_weights
+		) = array_values( $fonts );
+
+	}
 
 	$font_size  = get_theme_mod( 'font_size' );
 	$type_ratio = get_theme_mod( 'type_ratio' );
