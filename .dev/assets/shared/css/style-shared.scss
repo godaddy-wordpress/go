@@ -260,7 +260,6 @@ figure {
 }
 
 @include media(small) {
-
 	.sm\:display-block {
 		display: block;
 	}
@@ -285,9 +284,7 @@ figure {
 		max-width: var(--go--max-width);
 	}
 }
-
 @include media(medium) {
-
 	.md\:flex {
 		display: flex;
 	}
@@ -332,9 +329,7 @@ figure {
 		text-align: right;
 	}
 }
-
 @include media(large) {
-
 	.lg\:flex {
 		display: flex;
 	}

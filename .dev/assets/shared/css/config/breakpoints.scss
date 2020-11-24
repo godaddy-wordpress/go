@@ -6,68 +6,57 @@ $breakpoint_admin-bar: 782px;
 
 // Responsive breakpoints mixin
 @mixin media( $res ) {
-
 	@if small-only == $res {
 		@media only screen and (max-width: #{$breakpoint_sm - 1}) {
 			@content;
 		}
 	}
-
 	@if small == $res {
 		@media only screen and (min-width: #{$breakpoint_sm}) {
 			@content;
 		}
 	}
-
 	@if medium-only == $res {
 		@media only screen and (max-width: #{$breakpoint_md - 1}) {
 			@content;
 		}
 	}
-
 	@if medium == $res {
 		@media only screen and (min-width: #{$breakpoint_md}) {
 			@content;
 		}
 	}
-
 	@if large-only == $res {
 		@media only screen and (max-width: #{$breakpoint_lg - 1}) {
 			@content;
 		}
 	}
-
 	@if large == $res {
 		@media only screen and (min-width: #{$breakpoint_lg}) {
 			@content;
 		}
 	}
-
 	@if xlarge-only == $res {
 		@media only screen and (max-width: #{$breakpoint_xl - 1}) {
 			@content;
 		}
 	}
-
 	@if xlarge == $res {
 		@media only screen and (min-width: #{$breakpoint_xl}) {
 			@content;
 		}
 	}
-
 	@if admin-bar-only == $res {
 		@media only screen and (max-width: #{$breakpoint_admin-bar - 1}) {
 			@content;
 		}
 	}
-
 	@if admin-bar == $res {
 		@media only screen and (min-width: #{$breakpoint_admin-bar}) {
 			@content;
 		}
 	}
 }
-
 
 @custom-media --small (min-width: 600px);
 @custom-media --smallMax (max-width: 599px);

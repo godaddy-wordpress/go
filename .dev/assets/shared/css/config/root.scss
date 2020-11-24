@@ -24,7 +24,6 @@
 	@include media(medium) {
 		--go--spacing--vertical--lg: calc(100 / var(--go--viewport-basis) * 100vw);
 	}
-
 	@include media(xlarge) {
 		--go--spacing--vertical--lg: calc(90 / var(--go--viewport-basis) * 100rem);
 		--go-block--padding--x: calc(var(--go--spacing--horizontal) / var(--go--viewport-basis) * 90rem);

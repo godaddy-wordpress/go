@@ -24,7 +24,6 @@
 	@include media(small) {
 		max-width: calc(100% / 2 - 1em);
 	}
-
 	@include media(large) {
 		max-width: calc(100% / 4 - 0.5em);
 	}

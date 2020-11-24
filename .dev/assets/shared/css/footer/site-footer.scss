@@ -48,7 +48,6 @@
 
 			&::after {
 				@include outline-text-link;
-
 				@include media(medium) {
 					bottom: -3px;
 					content: "";

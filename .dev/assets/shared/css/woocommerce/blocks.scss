@@ -113,7 +113,6 @@ h2 + .wc-block-grid {
 			margin: 0;
 			max-width: calc(100% / 2 - 1rem);
 		}
-
 		@include media(large) {
 			max-width: calc(100% / 2 - 2rem);
 		}
