@@ -75,7 +75,7 @@ pre {
 
 a {
 	background-color: transparent;
-	text-decoration-thickness: 1px;
+	text-decoration-thickness: 1px; // stylelint-disable-line property-no-unknown
 }
 
 /**
@@ -175,8 +175,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
-	overflow: visible;
+input {
+	overflow: visible; /* 1 */
 }
 
 /**
@@ -185,8 +185,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
-	text-transform: none;
+select {
+	text-transform: none; /* 1 */
 }
 
 /**

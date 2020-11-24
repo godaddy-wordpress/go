@@ -1,15 +1,25 @@
 {
-	"extends": [
-		"stylelint-config-wordpress/scss"
-	],
+	"extends": "stylelint-config-wordpress/scss",
+	"plugins": [ "stylelint-order" ],
 	"rules": {
-		"selector-class-pattern": null,
-		"font-weight-notation": null,
-		"selector-type-no-unknown": null,
-		"max-line-length": null,
 		"at-rule-empty-line-before": null,
-		"selector-pseudo-element-colon-notation": null,
+
+		"font-weight-notation": null,
+
+		"function-url-quotes": "never",
+
+		"max-line-length": null,
+
+		"no-descending-specificity": null,
+
 		"number-leading-zero": null,
-		"no-descending-specificity": null
+
+		"order/properties-alphabetical-order": true,
+
+		"scss/selector-no-redundant-nesting-selector": null,
+
+		"selector-class-pattern": null,
+		"selector-pseudo-element-colon-notation": null,
+		"selector-type-no-unknown": null
 	}
 }
