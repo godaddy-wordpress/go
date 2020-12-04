@@ -1,6 +1,6 @@
 /*! CoBlocks: Row */
 div.is-stacked-on-mobile.has-medium-gutter > [class*="wp-block-coblocks-"]:not(:last-child) {
-	@media (max-width: 600px) {
+	@include media(small-only) {
 		margin-bottom: var(--go--spacing--vertical);
 	}
 }

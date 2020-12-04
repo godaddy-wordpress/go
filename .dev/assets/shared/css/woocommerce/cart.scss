@@ -156,7 +156,7 @@ body {
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@include media(medium-only) {
 
 	body.woocommerce-cart {
 
