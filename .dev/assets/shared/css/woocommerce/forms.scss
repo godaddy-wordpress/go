@@ -20,7 +20,7 @@
 
 .select2-container--default .select2-selection--single {
 	background-color: var(--go-input--color--background, var(--go--color--white));
-	background-image: url("../shared/images/arrow-down-solid.svg");
+	background-image: url(../shared/images/arrow-down-solid.svg);
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border: var(--go-input--border);
@@ -125,7 +125,7 @@
 .woocommerce form .form-row.woocommerce-invalid input.input-text,
 .woocommerce form .form-row.woocommerce-invalid select {
 	background-color: var(--go-input--color--background, var(--go--color--white));
-	background-image: url("../shared/images/error-icon.svg");
+	background-image: url(../shared/images/error-icon.svg);
 	background-position: calc(100% - 10px) center;
 	background-repeat: no-repeat;
 	border-color: var(--go-input-error--border-color, hsl(0, 65%, 51%));

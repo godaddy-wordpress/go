@@ -42,16 +42,41 @@ body {
 		}
 
 		.product-thumbnail {
-				padding-left: 0 !important;
+			padding-left: 0 !important;
 
-				a:first-child {
+			a {
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+				&.remove {
+					border-radius: unset;
+					color: inherit !important;
 					display: inline-block;
-				}
+					font-size: inherit;
+					font-weight: inherit;
+					height: auto;
+					line-height: 1;
+					text-align: unset;
+					text-decoration: underline;
+					width: auto;
 
-				img {
-					margin-right: 10px;
-					width: 150px;
+					&:hover {
+						background: unset;
+					}
 				}
+			}
+
+			a:first-child {
+				display: inline-block;
+			}
+
+			img {
+				margin-right: 10px;
+				width: 150px;
+			}
 
 			table.cart th,
 			table.cart td {
@@ -60,6 +85,11 @@ body {
 
 			.product-thumbnail img {
 				width: 150px;
+			}
+
+			.actions {
+				display: inline-block;
+				margin-left: 5px;
 			}
 		}
 
@@ -79,39 +109,6 @@ body {
 
 			td:not(:first-child) {
 				text-align: center;
-			}
-		}
-
-		.product-thumbnail {
-
-			.actions {
-				display: inline-block;
-				margin-left: 5px;
-			}
-
-			a {
-				text-decoration: none;
-
-				&:hover {
-					text-decoration: underline;
-				}
-
-				&.remove {
-					display: inline-block;
-					font-size: inherit;
-					height: auto;
-					width: auto;
-					text-align: unset;
-					line-height: 1;
-					border-radius: unset;
-					color: inherit !important;
-					text-decoration: underline;
-					font-weight: inherit;
-
-					&:hover {
-						background: unset;
-					}
-				}
 			}
 		}
 
@@ -159,7 +156,8 @@ body {
 }
 
 /* Mobile */
-@media (max-width:768px) {
+@include media(medium-only) {
+
 	body.woocommerce-cart {
 
 		.coupon {
@@ -172,12 +170,12 @@ body {
 			}
 
 			button[type="submit"] {
-				width: 100% !important;
 				margin: 0.5rem 0;
+				width: 100% !important;
 			}
 		}
 
-		.cart_totals  {
+		.cart_totals {
 			width: 100% !important;
 
 			.checkout-button {
@@ -202,8 +200,8 @@ body {
 		}
 
 		.actions {
-			align-items: center;
 			align-content: space-between;
+			align-items: center;
 			display: flex;
 			flex-wrap: wrap;
 			padding-left: 9px;

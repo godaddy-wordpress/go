@@ -9,7 +9,6 @@
 	@include media(medium) {
 		padding-bottom: var(--go-featured-image--height, 35%);
 	}
-
 	@include media(xlarge) {
 		padding-bottom: calc(var(--go-featured-image--height, 35%) / 1.5);
 	}

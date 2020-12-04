@@ -18,7 +18,7 @@
 	}
 
 	.wp-block-media-text__content {
-		@media (max-width: 600px) {
+		@include media(small-only) {
 			padding-right: 0;
 		}
 	}

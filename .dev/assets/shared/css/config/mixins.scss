@@ -19,23 +19,19 @@
 	transition: var(--go-button--transition, background-color 200ms cubic-bezier(0.7, 0, 0.3, 1), box-shadow 200ms cubic-bezier(0.7, 0, 0.3, 1), border-color 200ms cubic-bezier(0.7, 0, 0.3, 1), color 200ms cubic-bezier(0.7, 0, 0.3, 1), fill 200ms cubic-bezier(0.7, 0, 0.3, 1));
 	vertical-align: bottom;
 }
-
 @mixin button-hover {
 	background-color: var(--go-button-interactive--color--background, var(--go--color--secondary));
 }
-
 @mixin button-disabled {
 	background-color: var(--go-button-disabled--color--background, hsl(0, 2%, 89%));
 	color: var(--go-button-disabled--color--text, hsl(0, 0%, 61%));
 	cursor: default;
 }
-
 @mixin outline {
 	outline-color: var(--go-outline--color--text);
 	outline-style: var(--go-outline--style, dotted);
 	outline-width: var(--go-outline--width, 1px);
 }
-
 @mixin outline-text-link {
 	border: 0;
 	border-bottom-width: var(--go-outline--width);
@@ -43,7 +39,6 @@
 	border-style: var(--go-outline--style, dotted);
 	outline: none;
 }
-
 @mixin select-menu {
 	appearance: button;
 	background-color: var(--go-input--color--background, var(--go--color--white));
@@ -63,19 +58,16 @@
 	white-space: nowrap;
 	width: 100%;
 }
-
 @mixin select-menu-focus {
 	border-color: var(--go-input-interactive--color--border-color, var(--go--color--primary));
 	color: var(--go-input--color--text);
 	outline: 0;
 }
-
 @mixin checkbox-radio-label {
 	align-items: center;
 	display: flex;
 	padding-left: 2.5rem;
 }
-
 @mixin checkbox-radio-label-before {
 	background-color: var(--go-input-radio--color--fill, var(--go-heading--color--text));
 	content: "";
@@ -87,26 +79,21 @@
 	position: absolute;
 	width: 20px;
 }
-
 @mixin checkbox-label-before {
 	//mask-image: url(../images/checkbox.svg);
 }
-
 @mixin checkbox-label-checked-before {
 	//mask-image: url(../images/checkbox-checked.svg);
 }
-
 @mixin radio-label-before {
 	background-color: var(--go--color--white);
 	border: 1px solid var(--go-input-radio--color--fill, var(--go-heading--color--text));
 	border-radius: 9999px;
 	box-shadow: inset 0 0 0 3px #fff;
 }
-
 @mixin radio-label-selected-before {
 	background-color: var(--go-input-radio--color--fill, var(--go-heading--color--text));
 }
-
 @mixin blockWidthNoPaddingWide {
 	--total-block-padding: calc(var(--go-block--padding--x) * 2);
 	max-width: calc(var(--go--max-width--alignwide) - var(--total-block-padding));
