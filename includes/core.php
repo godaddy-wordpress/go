@@ -316,7 +316,7 @@ function fonts_url() {
 			array(
 				'family'       => rawurlencode( implode( '|', $fonts ) ),
 				'subset'       => rawurlencode( 'latin,latin-ext' ),
-				'font-display' => 'swap',
+				'display' => 'swap',
 			),
 			'https://fonts.googleapis.com/css'
 		)
