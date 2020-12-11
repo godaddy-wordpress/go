@@ -320,7 +320,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		unset( $GLOBALS['wp_customize'] );
 
-		$expected  = 'https://fonts.googleapis.com/css?family=Crimson Text:400,400i,700,700i|Nunito Sans:400,400i,600,700&subset=latin,latin-ext';
+		$expected  = 'https://fonts.googleapis.com/css?family=Crimson Text:400,400i,700,700i|Nunito Sans:400,400i,600,700&subset=latin,latin-ext&display=swap';
 		$fonts_url = Go\Core\fonts_url();
 
 		$this->assertEquals( $expected, urldecode( $fonts_url ) );
@@ -374,7 +374,7 @@ class Test_Core extends WP_UnitTestCase {
 		$GLOBALS['wp_customize'] = new WP_Customize_Manager();
 		$GLOBALS['wp_customize']->setup_theme();
 
-		$expected = 'https://fonts.googleapis.com/css?family=Crimson Text:400,400i,700,700i|Nunito Sans:400,400i,600,700|Heebo:400,800|Fira Code:400,400i,700|Montserrat:400,700|Trocchi:400,600|Noto Sans:400,400i,700|Source Code Pro:400,700|Work Sans:300,700|Karla:400,400i,700|Poppins:600|Quicksand:400,600&subset=latin,latin-ext';
+		$expected = 'https://fonts.googleapis.com/css?family=Crimson Text:400,400i,700,700i|Nunito Sans:400,400i,600,700|Heebo:400,800|Fira Code:400,400i,700|Montserrat:400,700|Trocchi:400,600|Noto Sans:400,400i,700|Source Code Pro:400,700|Work Sans:300,700|Karla:400,400i,700|Poppins:600|Quicksand:400,600&subset=latin,latin-ext&display=swap';
 
 		$this->assertEquals( urldecode( $expected ), urldecode( Go\Core\fonts_url() ) );
 

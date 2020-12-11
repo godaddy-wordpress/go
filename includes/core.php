@@ -314,8 +314,9 @@ function fonts_url() {
 	return esc_url_raw(
 		add_query_arg(
 			array(
-				'family' => rawurlencode( implode( '|', $fonts ) ),
-				'subset' => rawurlencode( 'latin,latin-ext' ),
+				'family'  => rawurlencode( implode( '|', $fonts ) ),
+				'subset'  => rawurlencode( 'latin,latin-ext' ),
+				'display' => 'swap',
 			),
 			'https://fonts.googleapis.com/css'
 		)
