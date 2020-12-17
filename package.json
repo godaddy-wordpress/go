@@ -57,6 +57,7 @@
     "snapshots:download": "npm run snapshots:download-all -- --exclude='*' --include='barista*' --include='bento*' --include='furnish*' --include='miller*'"
   },
   "locales": {
+    "ar": "العربية",
     "da_DK": "Dansk",
     "de_DE": "Deutsch",
     "el": "Ελληνικά",
