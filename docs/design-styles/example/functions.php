@@ -7,7 +7,7 @@
  * Version: 1.22.0
  * Text Domain:
  * Domain Path:
- * Tested up to: 5.4
+ * Tested up to: 5.6
  *
  * @package Go
  */
