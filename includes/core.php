@@ -287,7 +287,7 @@ function fonts_url() {
 
 	foreach ( $cur_fonts as $font => $font_weights ) {
 
-		$fonts[] = sprintf( '%1$s:%2$s', $font, implode( ',', $font_weights ) );
+		$fonts[] = sprintf( '%1$s:%2$s', str_replace( array( '_heading', '_body' ), '', $font ), implode( ',', $font_weights ) );
 
 	}
 
