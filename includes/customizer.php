@@ -1063,6 +1063,9 @@ function inline_css() {
 
 		list( $font_headings, $font_body ) = array_keys( $fonts );
 
+		$font_headings = str_replace( '_heading', '', $font_headings );
+		$font_body     = str_replace( '_body', '', $font_body );
+
 		list(
 			$font_heading_weights,
 			$font_body_weights
