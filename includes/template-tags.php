@@ -757,6 +757,14 @@ function social_icons( $args = array() ) {
 						// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 						include $social_icon['icon'];
 						?>
+						<span class="screen-reader-text">
+							<?php
+							printf(
+								/* translators: %s: The social icon label. */
+								esc_html__( 'Open %s in a new tab', 'go' ), $social_icon['label']
+							);
+							?>
+						</span>
 					</a>
 				</li>
 			<?php endif; ?>
