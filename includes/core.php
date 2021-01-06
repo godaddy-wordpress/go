@@ -353,7 +353,8 @@ function block_editor_assets() {
 		'go-block-filters',
 		'GoBlockFilters',
 		array(
-			'inlineStyles' => str_replace( ':root', '.editor-styles-wrapper', $styles ),
+			'inlineStyles'   => str_replace( ':root', '.editor-styles-wrapper', $styles ),
+			'showPageTitles' => (bool) get_theme_mod( 'page_titles', true ),
 		)
 	);
 
