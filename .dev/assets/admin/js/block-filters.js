@@ -31,7 +31,7 @@ function GoPageTitleToggle( { isEnabled, onChange } ) {
 		} );
 	} );
 
-	if ( 'page' !== wp.data.select('core/editor').getCurrentPostType() ) {
+	if ( 'page' !== wp.data.select('core/editor').getCurrentPostType() || ! GoBlockFilters.showPageTitles ) {
 
 		return null;
 
