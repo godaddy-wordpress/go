@@ -761,7 +761,8 @@ function social_icons( $args = array() ) {
 							<?php
 							printf(
 								/* translators: %s: The social icon label. */
-								esc_html__( 'Open %s in a new tab', 'go' ), $social_icon['label']
+								esc_html__( 'Open %s in a new tab', 'go' ),
+								esc_html( $social_icon['label'] )
 							);
 							?>
 						</span>
