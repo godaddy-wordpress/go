@@ -71,6 +71,14 @@ body::before {
 			top: 0;
 			width: 100%;
 
+			li {
+				text-align: left;
+
+				svg {
+					right: 0;
+				}
+			}
+
 			.sub-menu {
 				margin-bottom: 1rem;
 
