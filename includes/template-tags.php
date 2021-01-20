@@ -749,7 +749,7 @@ function social_icons( $args = array() ) {
 
 			<?php
 
-			$screen_reader_text = printf(
+			$screen_reader_text = sprintf(
 				/* translators: %s: The social icon label. */
 				esc_html__( 'Open %s in a new tab', 'go' ),
 				esc_html( $social_icon['label'] )
