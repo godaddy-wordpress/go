@@ -743,17 +743,21 @@ function social_icons( $args = array() ) {
 		return;
 	}
 
-	$screen_reader_text = printf(
-		/* translators: %s: The social icon label. */
-		esc_html__( 'Open %s in a new tab', 'go' ),
-		esc_html( $social_icon['label'] )
-	);
-
 	?>
 	<ul class="<?php echo esc_attr( $args['class'] ); ?>">
 		<?php foreach ( $social_icons as $key => $social_icon ) : ?>
 
-			<?php $visibility = empty( $social_icon['url'] ) ? ' display-none' : null; ?>
+			<?php
+
+			$screen_reader_text = printf(
+				/* translators: %s: The social icon label. */
+				esc_html__( 'Open %s in a new tab', 'go' ),
+				esc_html( $social_icon['label'] )
+			);
+
+			$visibility = empty( $social_icon['url'] ) ? ' display-none' : null;
+
+			?>
 
 			<?php if ( ! empty( $social_icon['url'] ) || is_customize_preview() ) : ?>
 				<li class="<?php echo esc_attr( sprintf( $args['li_class'], $key ) ) . esc_attr( $visibility ); ?>">
