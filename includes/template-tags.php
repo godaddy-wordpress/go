@@ -747,23 +747,28 @@ function social_icons( $args = array() ) {
 	<ul class="<?php echo esc_attr( $args['class'] ); ?>">
 		<?php foreach ( $social_icons as $key => $social_icon ) : ?>
 
-			<?php $visibility = empty( $social_icon['url'] ) ? ' display-none' : null; ?>
+			<?php
+
+			$screen_reader_text = sprintf(
+				/* translators: %s: The social icon label. */
+				esc_html__( 'Open %s in a new tab', 'go' ),
+				esc_html( $social_icon['label'] )
+			);
+
+			$visibility = empty( $social_icon['url'] ) ? ' display-none' : null;
+
+			?>
 
 			<?php if ( ! empty( $social_icon['url'] ) || is_customize_preview() ) : ?>
 				<li class="<?php echo esc_attr( sprintf( $args['li_class'], $key ) ) . esc_attr( $visibility ); ?>">
-					<a class="social-icons__icon" href="<?php echo esc_url( $social_icon['url'] ); ?>" aria-label="<?php echo esc_attr( $social_icon['label'] ); ?>" rel="noopener noreferrer" target="_blank">
+					<a class="social-icons__icon" href="<?php echo esc_url( $social_icon['url'] ); ?>" aria-label="<?php echo esc_attr( $screen_reader_text ); ?>" rel="noopener noreferrer" target="_blank">
 						<?php
 						// Including SVGs, not template files.
 						// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 						include $social_icon['icon'];
 						?>
 						<span class="screen-reader-text">
-							<?php
-							printf(
-								/* translators: %s: The social icon label. */
-								esc_html__( 'Open %s in a new tab', 'go' ), $social_icon['label']
-							);
-							?>
+							<?php echo esc_html( $screen_reader_text ); ?>
 						</span>
 					</a>
 				</li>
