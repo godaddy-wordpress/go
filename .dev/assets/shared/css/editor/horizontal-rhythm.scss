@@ -1,7 +1,7 @@
 .wp-block {
 	max-width: var(--go--max-width);
 
-	.wp-block {
+	.wp-block:not(.wp-block-button) {
 		width: 100%;
 	}
 
