@@ -173,7 +173,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install node packages
-          command: npm install
+          command: npm install --save --legacy-peer-deps
           working_directory: /tmp/wordpress/wp-content/themes/go
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
@@ -235,7 +235,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install node packages
-          command: npm install
+          command: npm install --save --legacy-peer-deps
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -297,7 +297,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install node packages
-          command: npm install
+          command: npm install --save --legacy-peer-deps
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -397,7 +397,7 @@ jobs:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
           name: Install node packages
-          command: npm install
+          command: npm install --save --legacy-peer-deps
       - save_cache:
           key: dependency-cache--{{ checksum "package.json" }}
           paths:
@@ -436,7 +436,7 @@ jobs:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
           name: Install node packages
-          command: npm install
+          command: npm install --save --legacy-peer-deps
       - save_cache:
           key: dependency-cache--{{ checksum "package.json" }}
           paths:
@@ -475,7 +475,7 @@ jobs:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
           name: Install node packages
-          command: npm install
+          command: npm install --save --legacy-peer-deps
       - save_cache:
           key: dependency-cache--{{ checksum "package.json" }}
           paths:
@@ -509,7 +509,7 @@ jobs:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
           name: Install node packages
-          command: npm install
+          command: npm install --save --legacy-peer-deps
       - save_cache:
           key: dependency-cache--{{ checksum "package.json" }}
           paths:
@@ -562,7 +562,7 @@ jobs:
           command: sudo apt install rsync
       - run:
           name: Install node packages
-          command: npm install
+          command: npm install --save --legacy-peer-deps
       - run:
           name: Build the Go Theme
           command: |
@@ -619,7 +619,7 @@ jobs:
           command: sudo apt install rsync
       - run:
           name: Install node packages
-          command: npm install
+          command: npm install --save --legacy-peer-deps
       - run:
           name: Build the Go Theme
           command: |
