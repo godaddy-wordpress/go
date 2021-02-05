@@ -13,7 +13,7 @@
 function go_coblocks_gallery_layouts( $layouts ) {
 	$layouts[] = array(
 		'category' => 'gallery',
-		'label'    => __( 'gallery', 'go' ),
+		'label'    => __( 'Gallery', 'go' ),
 		'blocks'   => array(
 			array(
 				'core/columns',
