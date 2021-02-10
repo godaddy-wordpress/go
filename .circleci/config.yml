@@ -12,10 +12,6 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
-      - php74-phpcs: # Will be deprecated on 28 Nov 2021
-          filters:
-            tags:
-              only: /^(?!canary).*$/
       - unit-test-73:
           filters:
             tags:
