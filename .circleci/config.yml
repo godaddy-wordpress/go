@@ -180,8 +180,6 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-          working_directory: /tmp/wordpress/wp-content/themes/go
-      - checkout
       - wait_for_mysql
       - run:
           name: Update hosts
@@ -247,8 +245,6 @@ jobs:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
     steps:
-      - checkout
-          working_directory: /tmp/wordpress/wp-content/themes/go
       - checkout
       - wait_for_mysql
       - run:
