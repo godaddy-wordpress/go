@@ -273,7 +273,7 @@ jobs:
           name: Install Composer 1.10.15
           command: |
             sudo chmod 755 /usr/local/bin/composer
-            self-update 1.10.15
+            composer self-update 1.10.15
       - run:
           name: Install Composer packages
           command: composer install
