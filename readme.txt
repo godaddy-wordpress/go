@@ -112,6 +112,7 @@ List of bespoke icons:
 ### Bug Fixes
 - Enable post categories on posts. [#638](https://github.com/godaddy-wordpress/go/pull/638)
 - Hide the page title toggle when the customizer option "Page Titles" is unchecked. [#629](https://github.com/godaddy-wordpress/go/pull/629)
+- Fix checkboxes not displaying/functioning correctly. [#631](https://github.com/godaddy-wordpress/go/pull/631)
 
 ### Tweaks
 - Update 'Portfolio' verbiage to 'Gallery'. [#639](https://github.com/godaddy-wordpress/go/pull/639)
