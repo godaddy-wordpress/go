@@ -6,14 +6,14 @@
  */
 
 /**
- * Set up layouts for 'portfolio' category.
+ * Set up layouts for 'gallery' category.
  *
  * @param array $layouts Array of block templates.
  */
-function go_coblocks_portfolio_layouts( $layouts ) {
+function go_coblocks_gallery_layouts( $layouts ) {
 	$layouts[] = array(
-		'category' => 'portfolio',
-		'label'    => __( 'Portfolio', 'go' ),
+		'category' => 'gallery',
+		'label'    => __( 'Gallery', 'go' ),
 		'blocks'   => array(
 			array(
 				'core/columns',
@@ -143,8 +143,8 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 	);
 
 	$layouts[] = array(
-		'category' => 'portfolio',
-		'label'    => __( 'Portfolio', 'go' ),
+		'category' => 'gallery',
+		'label'    => __( 'Gallery', 'go' ),
 		'blocks'   => array(
 			array(
 				'coblocks/gallery-masonry',
@@ -252,4 +252,4 @@ function go_coblocks_portfolio_layouts( $layouts ) {
 	return $layouts;
 };
 
-add_filter( 'coblocks_layout_selector_layouts', 'go_coblocks_portfolio_layouts' );
+add_filter( 'coblocks_layout_selector_layouts', 'go_coblocks_gallery_layouts' );
