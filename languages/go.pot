@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-15T16:53:10+00:00\n"
+"POT-Creation-Date: 2021-02-15T16:59:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -1160,6 +1160,25 @@ msgstr ""
 #: partials/layouts/contact.php:164
 #: partials/layouts/contact.php:300
 #: partials/layouts/contact.php:307
+#: partials/layouts/gallery.php:79
+#: partials/layouts/gallery.php:100
+#: partials/layouts/gallery.php:105
+#: partials/layouts/gallery.php:127
+#: partials/layouts/gallery.php:155
+#: partials/layouts/gallery.php:160
+#: partials/layouts/gallery.php:165
+#: partials/layouts/gallery.php:170
+#: partials/layouts/gallery.php:175
+#: partials/layouts/gallery.php:180
+#: partials/layouts/gallery.php:185
+#: partials/layouts/gallery.php:190
+#: partials/layouts/gallery.php:195
+#: partials/layouts/gallery.php:200
+#: partials/layouts/gallery.php:205
+#: partials/layouts/gallery.php:210
+#: partials/layouts/gallery.php:215
+#: partials/layouts/gallery.php:220
+#: partials/layouts/gallery.php:225
 #: partials/layouts/home.php:50
 #: partials/layouts/home.php:140
 #: partials/layouts/home.php:176
@@ -1183,25 +1202,6 @@ msgstr ""
 #: partials/layouts/home.php:905
 #: partials/layouts/home.php:910
 #: partials/layouts/home.php:1208
-#: partials/layouts/portfolio.php:79
-#: partials/layouts/portfolio.php:100
-#: partials/layouts/portfolio.php:105
-#: partials/layouts/portfolio.php:127
-#: partials/layouts/portfolio.php:155
-#: partials/layouts/portfolio.php:160
-#: partials/layouts/portfolio.php:165
-#: partials/layouts/portfolio.php:170
-#: partials/layouts/portfolio.php:175
-#: partials/layouts/portfolio.php:180
-#: partials/layouts/portfolio.php:185
-#: partials/layouts/portfolio.php:190
-#: partials/layouts/portfolio.php:195
-#: partials/layouts/portfolio.php:200
-#: partials/layouts/portfolio.php:205
-#: partials/layouts/portfolio.php:210
-#: partials/layouts/portfolio.php:215
-#: partials/layouts/portfolio.php:220
-#: partials/layouts/portfolio.php:225
 msgid "Image description"
 msgstr ""
 
@@ -1322,6 +1322,17 @@ msgstr ""
 msgid "Mon-Fri => 8:00 - 21:00<br>Sat => 8:00 - 20:00<br>Sun => 10:00 - 14:00"
 msgstr ""
 
+#: partials/layouts/gallery.php:16
+#: partials/layouts/gallery.php:41
+#: partials/layouts/gallery.php:147
+msgid "Gallery"
+msgstr ""
+
+#: partials/layouts/gallery.php:54
+#: partials/layouts/home.php:102
+msgid "Connecting audience + artist in our lush, speakeasy-style listening room. Only 50 seats available for this sought-after scene."
+msgstr ""
+
 #: partials/layouts/home.php:16
 #: partials/layouts/home.php:213
 #: partials/layouts/home.php:401
@@ -1336,11 +1347,6 @@ msgstr ""
 
 #: partials/layouts/home.php:89
 msgid "Enjoy Live Music + the Best Coffee You've Ever Had"
-msgstr ""
-
-#: partials/layouts/home.php:102
-#: partials/layouts/portfolio.php:54
-msgid "Connecting audience + artist in our lush, speakeasy-style listening room. Only 50 seats available for this sought-after scene."
 msgstr ""
 
 #: partials/layouts/home.php:147
@@ -1517,15 +1523,6 @@ msgstr ""
 
 #: partials/layouts/home.php:1187
 msgid "Add feature content"
-msgstr ""
-
-#: partials/layouts/portfolio.php:16
-#: partials/layouts/portfolio.php:147
-msgid "Portfolio"
-msgstr ""
-
-#: partials/layouts/portfolio.php:41
-msgid "Gallery"
 msgstr ""
 
 #: partials/pagination.php:21
