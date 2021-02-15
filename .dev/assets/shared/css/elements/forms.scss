@@ -69,7 +69,8 @@ input[type="checkbox"] {
 	}
 }
 
-input[type="radio"]:checked + label::before {
+input[type="radio"]:checked + label::before,
+input[type="radio"]:checked + br + label::before {
 	background-color: var(--go--color--primary) !important;
 }
 
