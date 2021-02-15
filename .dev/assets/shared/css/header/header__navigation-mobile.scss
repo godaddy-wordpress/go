@@ -107,12 +107,18 @@ body::before {
 			}
 
 			.menu-item-has-children svg {
-				height: 0.75rem;
+				height: 2.25rem;
 				margin-left: 0.5rem;
+				padding: 0.75rem;
 				position: absolute;
 				top: 50%;
 				transform: translateY(-50%);
-				width: 0.75rem;
+				transition: opacity 0.75s;
+				width: 2.25rem;
+
+				&:hover {
+					opacity: 0.5;
+				}
 			}
 
 			.submenu-is-open svg {
