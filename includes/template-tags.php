@@ -59,6 +59,7 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 			array(
 				'author',
 				'post-date',
+				'categories',
 				'comments',
 				'sticky',
 			)
