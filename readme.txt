@@ -110,12 +110,11 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Remove invalid HSL styles. [#616](https://github.com/godaddy-wordpress/go/pull/616)
+- Enable post categories on posts. [#638](https://github.com/godaddy-wordpress/go/pull/638)
+- Hide the page title toggle when the customizer option "Page Titles" is unchecked. [#629](https://github.com/godaddy-wordpress/go/pull/629)
 
 ### Tweaks
-- Hide page title toggle when customizer option is unchecked. [#629](https://github.com/godaddy-wordpress/go/pull/629)
-- Add heading and body fonts. [#628](https://github.com/godaddy-wordpress/go/pull/628)
-- Add `target="_blank"` to social media links. [#626](https://github.com/godaddy-wordpress/go/pull/626)
-- Bump tested up version to 5.6. [#624](https://github.com/godaddy-wordpress/go/pull/624)
-- Add arabic language (ar) to the languages manifest. [#623](https://github.com/godaddy-wordpress/go/pull/623)
-- Add font-display swap to Google fonts URLs. [#621](https://github.com/godaddy-wordpress/go/pull/621)
+- Update 'Portfolio' verbiage to 'Gallery'. [#639](https://github.com/godaddy-wordpress/go/pull/639)
+- Various WooCommerce cart style adjustments for better display on mobile devices. [#636](https://github.com/godaddy-wordpress/go/pull/636)
+- Adjust the menu styles/functionality on mobile. [#630](https://github.com/godaddy-wordpress/go/pull/630)
+- Introduce screen reader text to social icons, improving accessibility. [#626](https://github.com/godaddy-wordpress/go/pull/626)
