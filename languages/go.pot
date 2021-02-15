@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-02T14:01:01+00:00\n"
+"POT-Creation-Date: 2021-02-15T16:53:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -976,7 +976,7 @@ msgid "(Edit)"
 msgstr ""
 
 #: includes/pluggable.php:44
-#: includes/template-tags.php:114
+#: includes/template-tags.php:115
 msgid "Post author"
 msgstr ""
 
@@ -998,41 +998,41 @@ msgid "Reply"
 msgstr ""
 
 #. Translators: %s = the author name.
-#: includes/template-tags.php:120
+#: includes/template-tags.php:121
 msgctxt "%s = author name"
 msgid "By %s"
 msgstr ""
 
-#: includes/template-tags.php:136
+#: includes/template-tags.php:137
 msgid "Post date"
 msgstr ""
 
-#: includes/template-tags.php:171
+#: includes/template-tags.php:172
 msgid "Categories"
 msgstr ""
 
-#: includes/template-tags.php:175
+#: includes/template-tags.php:176
 msgid "In"
 msgstr ""
 
-#: includes/template-tags.php:189
+#: includes/template-tags.php:190
 msgid "Tags"
 msgstr ""
 
-#: includes/template-tags.php:227
+#: includes/template-tags.php:228
 msgid "Featured"
 msgstr ""
 
 #. translators: %s: The social icon label.
-#: includes/template-tags.php:754
+#: includes/template-tags.php:755
 msgid "Open %s in a new tab"
 msgstr ""
 
-#: includes/template-tags.php:872
+#: includes/template-tags.php:873
 msgid "Menu"
 msgstr ""
 
-#: includes/template-tags.php:905
+#: includes/template-tags.php:906
 msgid "Search Toggle"
 msgstr ""
 
