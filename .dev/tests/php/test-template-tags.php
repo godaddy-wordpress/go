@@ -1207,7 +1207,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'social_icon_facebook', 'https://www.facebook.com/custom' );
 
-		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.facebook.com\/custom" aria-label="Facebook" rel="noopener noreferrer" target="_blank">/' );
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.facebook.com\/custom" aria-label="Open Facebook in a new tab" rel="noopener noreferrer" target="_blank">/' );
 
 		Go\social_icons( [] );
 
@@ -1220,7 +1220,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'social_icon_twitter', 'https://www.twitter.com/custom' );
 
-		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.twitter.com\/custom" aria-label="Twitter" rel="noopener noreferrer" target="_blank">/' );
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.twitter.com\/custom" aria-label="Open Twitter in a new tab" rel="noopener noreferrer" target="_blank">/' );
 
 		Go\social_icons( [] );
 
@@ -1233,7 +1233,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'social_icon_instagram', 'https://www.instagram.com/custom' );
 
-		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.instagram.com\/custom" aria-label="Instagram" rel="noopener noreferrer" target="_blank">/' );
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.instagram.com\/custom" aria-label="Open Instagram in a new tab" rel="noopener noreferrer" target="_blank">/' );
 
 		Go\social_icons( [] );
 
@@ -1246,7 +1246,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'social_icon_linkedin', 'https://www.linkedin.com/custom' );
 
-		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.linkedin.com\/custom" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">/' );
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.linkedin.com\/custom" aria-label="Open LinkedIn in a new tab" rel="noopener noreferrer" target="_blank">/' );
 
 		Go\social_icons( [] );
 
@@ -1259,7 +1259,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'social_icon_pinterest', 'https://www.pinterest.com/custom' );
 
-		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.pinterest.com\/custom" aria-label="Pinterest" rel="noopener noreferrer" target="_blank">/' );
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.pinterest.com\/custom" aria-label="Open Pinterest in a new tab" rel="noopener noreferrer" target="_blank">/' );
 
 		Go\social_icons( [] );
 
@@ -1272,7 +1272,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'social_icon_youtube', 'https://www.youtube.com/custom' );
 
-		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.youtube.com\/custom" aria-label="YouTube" rel="noopener noreferrer" target="_blank">/' );
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.youtube.com\/custom" aria-label="Open YouTube in a new tab" rel="noopener noreferrer" target="_blank">/' );
 
 		Go\social_icons( [] );
 
@@ -1285,7 +1285,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'social_icon_github', 'https://www.github.com/custom' );
 
-		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.github.com\/custom" aria-label="GitHub" rel="noopener noreferrer" target="_blank">/' );
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.github.com\/custom" aria-label="Open GitHub in a new tab" rel="noopener noreferrer" target="_blank">/' );
 
 		Go\social_icons( [] );
 
