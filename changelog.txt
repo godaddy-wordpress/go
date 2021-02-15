@@ -1,3 +1,17 @@
+1.4.0 / 2021-01-21
+===================
+
+### Bug Fixes
+- Remove invalid HSL styles. [#616](https://github.com/godaddy-wordpress/go/pull/616)
+
+### Tweaks
+- Hide page title toggle when customizer option is unchecked. [#629](https://github.com/godaddy-wordpress/go/pull/629)
+- Add heading and body fonts. [#628](https://github.com/godaddy-wordpress/go/pull/628)
+- Add `target="_blank"` to social media links. [#626](https://github.com/godaddy-wordpress/go/pull/626)
+- Bump tested up version to 5.6. [#624](https://github.com/godaddy-wordpress/go/pull/624)
+- Add arabic language (ar) to the languages manifest. [#623](https://github.com/godaddy-wordpress/go/pull/623)
+- Add font-display swap to Google fonts URLs. [#621](https://github.com/godaddy-wordpress/go/pull/621)
+
 1.3.9 / 2020-11-23
 ===================
 
