@@ -8,6 +8,8 @@
 @import "blocks/carousel";
 @import "blocks/wc-button";
 
+@import "../../../shared/css/config/mixins";
+
 .site-title {
 	@include media(large-only) {
 		margin-left: calc(var(--go-site-title--letter-spacing) * 2.5);
@@ -56,4 +58,44 @@
 	border-radius: 0;
 	left: 0;
 	top: 0;
+}
+
+#ship-to-different-address .woocommerce-form__label-for-checkbox input + span {
+	display: inline-block;
+	margin-left: 0.5rem;;
+	width: calc(90% - 0.5rem);
+}
+
+.woocommerce-notices-wrapper .woocommerce-message a {
+	float: none !important;
+	margin-bottom: 0.5rem;
+}
+
+.woocommerce-additional-fields__field-wrapper textarea[name="order_comments"] {
+	height: 100% !important;
+	line-height: unset !important;
+}
+
+.woocommerce-page .woocommerce-shipping-methods label {
+	padding-left: 2rem;
+}
+
+.woocommerce ul#shipping_method li {
+	display: flex !important;
+	margin: 0 0 1em;
+}
+
+.woocommerce-page .woocommerce-shipping-methods label:before {
+	top: -2px;
+}
+
+@include media(small) {
+	.woocommerce-page .woocommerce-shipping-methods label:before {
+		top: 0 !important;
+		display: none;
+	}
+}
+
+.woocommerce ul#shipping_method li label {
+	word-break: break-word !important;
 }
