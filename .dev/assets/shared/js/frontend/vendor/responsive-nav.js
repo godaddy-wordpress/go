@@ -98,20 +98,23 @@
 			currentTarget = e.currentTarget;
 			target = e.target;
 
-			console.log( 'Before' );
-			console.log( currentTarget );
-			console.log( target );
-			console.log( '----------' );
-
 			if ( target.tagName === 'svg' || target.tagName === 'path' ) {
-				console.log( 'Yes, the target is an SVG' );
 				target = currentTarget.closest( '.menu-item > a' );
+			} else {
+				console.log( target.previousSibling.previousSibling.href );
+				if ( goFrontend.isMobile ) {
+					if ( target.tagName === 'A' ) {
+						return;
+					}
+					if ( target.tagName === 'UL' ) {
+						let tempURL = target.previousSibling.previousSibling.href;
+						if ( null !== tempURL ) {
+							window.location.href = tempURL;
+							return;
+						}
+					}
+				}
 			}
-
-			console.log( 'After' );
-			console.log( currentTarget );
-			console.log( target );
-			console.log( '----------' );
 
 			if ( target.getAttribute( 'aria-haspopup' ) ) {
 				// Stop links from firing
