@@ -80,10 +80,10 @@
 	width: 20px;
 }
 @mixin checkbox-label-before {
-	//mask-image: url(../images/checkbox.svg);
+	mask-image: url(../images/checkbox.svg);
 }
 @mixin checkbox-label-checked-before {
-	//mask-image: url(../images/checkbox-checked.svg);
+	mask-image: url(../images/checkbox-checked.svg);
 }
 @mixin radio-label-before {
 	background-color: var(--go--color--white);

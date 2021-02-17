@@ -1,14 +1,14 @@
 # Copyright (c) 2019 GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: Go 1.4.0\n"
+"Project-Id-Version: Go 1.4.1\n"
 "Report-Msgid-Bugs-To: https://github.com/godaddy-wordpress/go/issues\n"
 "Last-Translator: plugins@godaddy.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-02T14:01:01+00:00\n"
+"POT-Creation-Date: 2021-02-15T23:38:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -107,7 +107,7 @@ msgid "Millennial"
 msgstr ""
 
 #: docs/design-styles/example/functions.php:39
-#: includes/core.php:708
+#: includes/core.php:709
 msgctxt "color palette name"
 msgid "Blush"
 msgstr ""
@@ -612,204 +612,204 @@ msgstr ""
 msgid "Secondary to Tertiary"
 msgstr ""
 
-#: includes/core.php:643
+#: includes/core.php:644
 msgctxt "design style name"
 msgid "Traditional"
 msgstr ""
 
-#: includes/core.php:648
+#: includes/core.php:649
 msgctxt "color palette name"
 msgid "Apricot"
 msgstr ""
 
-#: includes/core.php:655
+#: includes/core.php:656
 msgctxt "color palette name"
 msgid "Emerald"
 msgstr ""
 
-#: includes/core.php:662
+#: includes/core.php:663
 msgctxt "color palette name"
 msgid "Brick"
 msgstr ""
 
-#: includes/core.php:669
+#: includes/core.php:670
 msgctxt "color palette name"
 msgid "Bronze"
 msgstr ""
 
-#: includes/core.php:696
+#: includes/core.php:697
 msgctxt "design style name"
 msgid "Modern"
 msgstr ""
 
-#: includes/core.php:701
+#: includes/core.php:702
 msgctxt "color palette name"
 msgid "Shade"
 msgstr ""
 
-#: includes/core.php:715
+#: includes/core.php:716
 msgctxt "color palette name"
 msgid "Indigo"
 msgstr ""
 
-#: includes/core.php:722
+#: includes/core.php:723
 msgctxt "color palette name"
 msgid "Pacific"
 msgstr ""
 
-#: includes/core.php:750
+#: includes/core.php:751
 msgctxt "design style name"
 msgid "Trendy"
 msgstr ""
 
-#: includes/core.php:755
+#: includes/core.php:756
 msgctxt "color palette name"
 msgid "Plum"
 msgstr ""
 
-#: includes/core.php:764
+#: includes/core.php:765
 msgctxt "color palette name"
 msgid "Steel"
 msgstr ""
 
-#: includes/core.php:772
+#: includes/core.php:773
 msgctxt "color palette name"
 msgid "Avocado"
 msgstr ""
 
-#: includes/core.php:780
+#: includes/core.php:781
 msgctxt "color palette name"
 msgid "Champagne"
 msgstr ""
 
-#: includes/core.php:809
+#: includes/core.php:810
 msgctxt "design style name"
 msgid "Welcoming"
 msgstr ""
 
-#: includes/core.php:814
+#: includes/core.php:815
 msgctxt "color palette name"
 msgid "Forest"
 msgstr ""
 
-#: includes/core.php:822
+#: includes/core.php:823
 msgctxt "color palette name"
 msgid "Spruce"
 msgstr ""
 
-#: includes/core.php:830
+#: includes/core.php:831
 msgctxt "color palette name"
 msgid "Mocha"
 msgstr ""
 
-#: includes/core.php:838
+#: includes/core.php:839
 msgctxt "color palette name"
 msgid "Lavender"
 msgstr ""
 
-#: includes/core.php:863
+#: includes/core.php:864
 msgctxt "design style name"
 msgid "Playful"
 msgstr ""
 
-#: includes/core.php:868
+#: includes/core.php:869
 msgctxt "color palette name"
 msgid "Frolic"
 msgstr ""
 
-#: includes/core.php:878
+#: includes/core.php:879
 msgctxt "color palette name"
 msgid "Coral"
 msgstr ""
 
-#: includes/core.php:888
+#: includes/core.php:889
 msgctxt "color palette name"
 msgid "Organic"
 msgstr ""
 
-#: includes/core.php:898
+#: includes/core.php:899
 msgctxt "color palette name"
 msgid "Berry"
 msgstr ""
 
-#: includes/core.php:983
+#: includes/core.php:984
 msgctxt "name of the first header variation option"
 msgid "Header 1"
 msgstr ""
 
-#: includes/core.php:987
+#: includes/core.php:988
 msgctxt "name of the second header variation option"
 msgid "Header 2"
 msgstr ""
 
-#: includes/core.php:991
+#: includes/core.php:992
 msgctxt "name of the third header variation option"
 msgid "Header 3"
 msgstr ""
 
-#: includes/core.php:995
+#: includes/core.php:996
 msgctxt "name of the fourth header variation option"
 msgid "Header 4"
 msgstr ""
 
-#: includes/core.php:1022
+#: includes/core.php:1023
 msgctxt "name of the first footer variation option"
 msgid "Footer 1"
 msgstr ""
 
-#: includes/core.php:1029
+#: includes/core.php:1030
 msgctxt "name of the second footer variation option"
 msgid "Footer 2"
 msgstr ""
 
-#: includes/core.php:1036
+#: includes/core.php:1037
 msgctxt "name of the third footer variation option"
 msgid "Footer 3"
 msgstr ""
 
-#: includes/core.php:1043
+#: includes/core.php:1044
 msgctxt "name of the fourth footer variation option"
 msgid "Footer 4"
 msgstr ""
 
-#: includes/core.php:1126
+#: includes/core.php:1127
 msgid "Facebook"
 msgstr ""
 
-#: includes/core.php:1131
+#: includes/core.php:1132
 msgid "Twitter"
 msgstr ""
 
-#: includes/core.php:1136
+#: includes/core.php:1137
 msgid "Instagram"
 msgstr ""
 
-#: includes/core.php:1141
+#: includes/core.php:1142
 msgid "LinkedIn"
 msgstr ""
 
-#: includes/core.php:1146
+#: includes/core.php:1147
 msgid "Pinterest"
 msgstr ""
 
-#: includes/core.php:1151
+#: includes/core.php:1152
 msgid "YouTube"
 msgstr ""
 
-#: includes/core.php:1156
+#: includes/core.php:1157
 msgid "GitHub"
 msgstr ""
 
-#: includes/core.php:1308
+#: includes/core.php:1309
 msgid "That page can't be found"
 msgstr ""
 
 #. translators: Search query term(s).
-#: includes/core.php:1326
+#: includes/core.php:1327
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1334
+#: includes/core.php:1335
 msgid "Nothing Found"
 msgstr ""
 
@@ -976,7 +976,7 @@ msgid "(Edit)"
 msgstr ""
 
 #: includes/pluggable.php:44
-#: includes/template-tags.php:114
+#: includes/template-tags.php:115
 msgid "Post author"
 msgstr ""
 
@@ -998,41 +998,41 @@ msgid "Reply"
 msgstr ""
 
 #. Translators: %s = the author name.
-#: includes/template-tags.php:120
+#: includes/template-tags.php:121
 msgctxt "%s = author name"
 msgid "By %s"
 msgstr ""
 
-#: includes/template-tags.php:136
+#: includes/template-tags.php:137
 msgid "Post date"
 msgstr ""
 
-#: includes/template-tags.php:171
+#: includes/template-tags.php:172
 msgid "Categories"
 msgstr ""
 
-#: includes/template-tags.php:175
+#: includes/template-tags.php:176
 msgid "In"
 msgstr ""
 
-#: includes/template-tags.php:189
+#: includes/template-tags.php:190
 msgid "Tags"
 msgstr ""
 
-#: includes/template-tags.php:227
+#: includes/template-tags.php:228
 msgid "Featured"
 msgstr ""
 
 #. translators: %s: The social icon label.
-#: includes/template-tags.php:754
+#: includes/template-tags.php:755
 msgid "Open %s in a new tab"
 msgstr ""
 
-#: includes/template-tags.php:872
+#: includes/template-tags.php:873
 msgid "Menu"
 msgstr ""
 
-#: includes/template-tags.php:905
+#: includes/template-tags.php:906
 msgid "Search Toggle"
 msgstr ""
 
@@ -1160,6 +1160,25 @@ msgstr ""
 #: partials/layouts/contact.php:164
 #: partials/layouts/contact.php:300
 #: partials/layouts/contact.php:307
+#: partials/layouts/gallery.php:79
+#: partials/layouts/gallery.php:100
+#: partials/layouts/gallery.php:105
+#: partials/layouts/gallery.php:127
+#: partials/layouts/gallery.php:155
+#: partials/layouts/gallery.php:160
+#: partials/layouts/gallery.php:165
+#: partials/layouts/gallery.php:170
+#: partials/layouts/gallery.php:175
+#: partials/layouts/gallery.php:180
+#: partials/layouts/gallery.php:185
+#: partials/layouts/gallery.php:190
+#: partials/layouts/gallery.php:195
+#: partials/layouts/gallery.php:200
+#: partials/layouts/gallery.php:205
+#: partials/layouts/gallery.php:210
+#: partials/layouts/gallery.php:215
+#: partials/layouts/gallery.php:220
+#: partials/layouts/gallery.php:225
 #: partials/layouts/home.php:50
 #: partials/layouts/home.php:140
 #: partials/layouts/home.php:176
@@ -1183,25 +1202,6 @@ msgstr ""
 #: partials/layouts/home.php:905
 #: partials/layouts/home.php:910
 #: partials/layouts/home.php:1208
-#: partials/layouts/portfolio.php:79
-#: partials/layouts/portfolio.php:100
-#: partials/layouts/portfolio.php:105
-#: partials/layouts/portfolio.php:127
-#: partials/layouts/portfolio.php:155
-#: partials/layouts/portfolio.php:160
-#: partials/layouts/portfolio.php:165
-#: partials/layouts/portfolio.php:170
-#: partials/layouts/portfolio.php:175
-#: partials/layouts/portfolio.php:180
-#: partials/layouts/portfolio.php:185
-#: partials/layouts/portfolio.php:190
-#: partials/layouts/portfolio.php:195
-#: partials/layouts/portfolio.php:200
-#: partials/layouts/portfolio.php:205
-#: partials/layouts/portfolio.php:210
-#: partials/layouts/portfolio.php:215
-#: partials/layouts/portfolio.php:220
-#: partials/layouts/portfolio.php:225
 msgid "Image description"
 msgstr ""
 
@@ -1322,6 +1322,17 @@ msgstr ""
 msgid "Mon-Fri => 8:00 - 21:00<br>Sat => 8:00 - 20:00<br>Sun => 10:00 - 14:00"
 msgstr ""
 
+#: partials/layouts/gallery.php:16
+#: partials/layouts/gallery.php:41
+#: partials/layouts/gallery.php:147
+msgid "Gallery"
+msgstr ""
+
+#: partials/layouts/gallery.php:54
+#: partials/layouts/home.php:102
+msgid "Connecting audience + artist in our lush, speakeasy-style listening room. Only 50 seats available for this sought-after scene."
+msgstr ""
+
 #: partials/layouts/home.php:16
 #: partials/layouts/home.php:213
 #: partials/layouts/home.php:401
@@ -1336,11 +1347,6 @@ msgstr ""
 
 #: partials/layouts/home.php:89
 msgid "Enjoy Live Music + the Best Coffee You've Ever Had"
-msgstr ""
-
-#: partials/layouts/home.php:102
-#: partials/layouts/portfolio.php:54
-msgid "Connecting audience + artist in our lush, speakeasy-style listening room. Only 50 seats available for this sought-after scene."
 msgstr ""
 
 #: partials/layouts/home.php:147
@@ -1517,15 +1523,6 @@ msgstr ""
 
 #: partials/layouts/home.php:1187
 msgid "Add feature content"
-msgstr ""
-
-#: partials/layouts/portfolio.php:16
-#: partials/layouts/portfolio.php:147
-msgid "Portfolio"
-msgstr ""
-
-#: partials/layouts/portfolio.php:41
-msgid "Gallery"
 msgstr ""
 
 #: partials/pagination.php:21
