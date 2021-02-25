@@ -196,7 +196,7 @@ fi
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/go
 mkdir -p $INSTALL_PATH
 
-if [ "$CIRCLE_JOB" == 'unit-tests' ]; then
+if [[ "$CIRCLE_JOB" == 'unit-test-73' || "$CIRCLE_JOB" == 'unit-test-74' ]]; then
 	# Unit test job, copy entire directory including config files
 	rsync -av --delete ~/project/. $INSTALL_PATH/
 else

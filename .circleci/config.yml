@@ -12,7 +12,11 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
-      - unit-tests:
+      - unit-test-73:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+      - unit-test-74:
           filters:
             tags:
               only: /^(?!canary).*$/
@@ -53,7 +57,8 @@ workflows:
           requires:
             - php56-phpcs
             - php73-phpcs
-            - unit-tests
+            - unit-test-73
+            - unit-test-74
             - theme-check
             - a11y-tests
           filters:
@@ -63,7 +68,8 @@ workflows:
           requires:
             - php56-phpcs
             - php73-phpcs
-            - unit-tests
+            - unit-test-73
+            - unit-test-74
             - theme-check
             - a11y-tests
             - visual-regression-chrome
@@ -75,55 +81,11 @@ workflows:
               ignore: /.*/
 
 version: 2.1
-jobs:
-  php56-phpcs:
-    docker:
-      - image: circleci/php:5.6
-    steps:
-      - checkout
-      - run:
-          name: "Setup Environment Variables"
-          command: |
-            echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
-            source /home/circleci/.bashrc
-      - run:
-          name: "Install Dependencies"
-          command: |
-            sudo chmod -R 777 ../../
-            mkdir -p ../../plugins/coblocks
-            composer install
-      - run:
-          name: "Run PHPCS"
-          command: composer lint
 
-  php73-phpcs:
-    docker:
-      - image: circleci/php:7.3.8
+commands:
+  wait_for_mysql:
     steps:
-      - checkout
       - run:
-          name: "Setup Environment Variables"
-          command: |
-            echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
-            source /home/circleci/.bashrc
-      - run:
-          name: "Install Dependencies"
-          command: |
-            sudo chmod -R 777 ../../
-            mkdir -p ../../plugins/coblocks
-            composer install
-      - run:
-          name: "Run PHPCS"
-          command: composer lint
-
-  unit-tests:
-    docker:
-      - image: circleci/php:7.3.8-apache-node-browsers
-      - image: circleci/mysql:5.7
-    steps:
-      - checkout
-      - run:
-          # Our primary container isn't MYSQL so run a sleep command until it's ready.
           name: Waiting for MySQL to be ready
           command: |
             for i in `seq 1 10`;
@@ -133,6 +95,95 @@ jobs:
               sleep 1
             done
             echo Failed waiting for MySQL && exit 1
+
+  install_dependencies:
+    steps:
+      - run:
+          name: "Install Dependencies"
+          command: |
+            sudo chmod -R 777 ../../
+            mkdir -p ../../plugins/coblocks
+            if [ "$CIRCLE_JOB" == "php56-phpcs" ]; then
+              composer require oomphinc/composer-installers-extender ^1.1
+            fi
+            composer install
+
+  install_code_climate_test_reporter:
+    steps:
+      - run:
+          name: Install Code Climate test reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+            ./cc-test-reporter before-build
+
+  install_wpcli:
+    steps:
+      - run:
+          name: Install WPCLI
+          command: |
+            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+            chmod +x wp-cli.phar
+            sudo mv wp-cli.phar /usr/local/bin/wp
+
+  run_phpunit_single_site_generate_coverage:
+    steps:
+      - run:
+          name: "Run PHPUnit - Single Site - Generate Coverage Reports"
+          command: composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml --coverage-clover=clover.xml
+          working_directory: /tmp/wordpress/wp-content/themes/go
+
+
+jobs:
+  php56-phpcs:
+    docker:
+      - image: circleci/php:5.6
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - run:
+          name: "Setup Environment Variables"
+          command: |
+            echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
+            source /home/circleci/.bashrc
+      - install_dependencies
+      - run:
+          name: "Run PHPCS"
+          command: composer lint
+
+  php73-phpcs:
+    docker:
+      - image: circleci/php:7.3.8
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - run:
+          name: "Setup Environment Variables"
+          command: |
+            echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
+            source /home/circleci/.bashrc
+      - install_dependencies
+      - run:
+          name: "Run PHPCS"
+          command: composer lint
+
+  unit-test-73:
+    docker:
+      - image: circleci/php:7.3.8-apache-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+      - image: circleci/mysql:5.7
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - wait_for_mysql
       - run:
           name: Update hosts
           command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
@@ -147,18 +198,8 @@ jobs:
       - run:
           name: Install rsync
           command: sudo apt install rsync
-      - run:
-          name: Install Code Climate test reporter
-          command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-            chmod +x ./cc-test-reporter
-            ./cc-test-reporter before-build
-      - run:
-          name: Install WPCLI
-          command: |
-            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-            chmod +x wp-cli.phar
-            sudo mv wp-cli.phar /usr/local/bin/wp
+      - install_code_climate_test_reporter
+      - install_wpcli
       - run:
           name: Install gettext
           command: sudo apt-get install gettext
@@ -183,10 +224,73 @@ jobs:
           name: Build the Go Theme
           command: npm run build
           working_directory: /tmp/wordpress/wp-content/themes/go
+      - run_phpunit_single_site_generate_coverage
       - run:
-          name: "Run PHPUnit - Single Site - Generate Coverage Reports"
-          command: composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml --coverage-clover=clover.xml
+          name: "Deploy Coverage to Code Climate"
+          command: ./cc-test-reporter after-build -t clover --exit-code $?
           working_directory: /tmp/wordpress/wp-content/themes/go
+      - store_artifacts:
+          path: /tmp/artifacts/code-coverage/
+          destination: phpunit-coverage
+      - store_test_results:
+          path: /tmp/artifacts/code-coverage/
+
+  unit-test-74:
+    docker:
+      - image: circleci/php:7.4.15-apache-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+        environment:
+          XDEBUG_MODE=coverage
+      - image: circleci/mysql:5.7
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - wait_for_mysql
+      - run:
+          name: Update hosts
+          command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - run:
+          name: Install MariaDB
+          command: |
+            sudo apt-get update
+            sudo apt-get install mariadb-client
+      - run:
+          name: Install rsync
+          command: sudo apt install rsync
+      - install_code_climate_test_reporter
+      - install_wpcli
+      - run:
+          name: Install gettext
+          command: sudo apt-get install gettext
+      - run:
+          name: Setup WordPress site
+          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+      - run:
+          name: Install Composer packages
+          command: composer install
+          working_directory: /tmp/wordpress/wp-content/themes/go
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+          working_directory: /tmp/wordpress/wp-content/themes/go
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Build the Go Theme
+          command: npm run build
+          working_directory: /tmp/wordpress/wp-content/themes/go
+      - run_phpunit_single_site_generate_coverage
       - run:
           name: "Deploy Coverage to Code Climate"
           command: ./cc-test-reporter after-build -t clover --exit-code $?
@@ -200,20 +304,16 @@ jobs:
   theme-check:
     docker:
       - image: circleci/php:7.3.8-apache-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
       - image: circleci/mysql:5.7
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - run:
-          # Our primary container isn't MYSQL so run a sleep command until it's ready.
-          name: Waiting for MySQL to be ready
-          command: |
-            for i in `seq 1 10`;
-            do
-              nc -z 127.0.0.1 3306 && echo Success && exit 0
-              echo -n .
-              sleep 1
-            done
-            echo Failed waiting for MySQL && exit 1
+      - wait_for_mysql
       - run:
           name: Update npm
           command: sudo npm install -g npm@latest
@@ -240,12 +340,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run:
-          name: Install WPCLI
-          command: |
-            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-            chmod +x wp-cli.phar
-            sudo mv wp-cli.phar /usr/local/bin/wp
+      - install_wpcli
       - run:
           name: Build the Go Theme
           command: npm run build
@@ -259,20 +354,16 @@ jobs:
   a11y-tests:
     docker:
       - image: circleci/php:7.3.8-apache-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
       - image: circleci/mysql:5.7
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - run:
-          # Our primary container isn't MYSQL so run a sleep command until it's ready.
-          name: Waiting for MySQL to be ready
-          command: |
-            for i in `seq 1 10`;
-            do
-              nc -z 127.0.0.1 3306 && echo Success && exit 0
-              echo -n .
-              sleep 1
-            done
-            echo Failed waiting for MySQL && exit 1
+      - wait_for_mysql
       - run:
           name: Update hosts
           command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
@@ -302,12 +393,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run:
-          name: Install WPCLI
-          command: |
-            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-            chmod +x wp-cli.phar
-            sudo mv wp-cli.phar /usr/local/bin/wp
+      - install_wpcli
       - run:
           name: Build the Go Theme
           command: npm run build
@@ -327,6 +413,9 @@ jobs:
   i18n:
     docker:
       - image: circleci/php:7.3-node-browsers-legacy
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -346,12 +435,7 @@ jobs:
             sudo rm -f /etc/php/*/mods-enabled/xdebug.ini
             sudo rm -f /etc/php/*/conf.d/*xdebug.ini
             sudo rm -f /usr/local/etc/php/conf.d/*xdebug.ini
-      - run:
-          name: Install WPCLI
-          command: |
-            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-            chmod +x wp-cli.phar
-            sudo mv wp-cli.phar /usr/local/bin/wp
+      - install_wpcli
       - restore_cache:
           keys:
             - npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
@@ -387,6 +471,9 @@ jobs:
   visual-regression-chrome:
     docker:
       - image: circleci/python:latest-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     parallelism: 10
     steps:
       - checkout
@@ -426,6 +513,9 @@ jobs:
   visual-regression-firefox:
     docker:
       - image: circleci/python:latest-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     parallelism: 10
     steps:
       - checkout
@@ -465,6 +555,9 @@ jobs:
   visual-regression-update-snapshots-chrome:
     docker:
       - image: circleci/python:latest-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     parallelism: 10
     steps:
       - checkout
@@ -499,6 +592,9 @@ jobs:
   visual-regression-update-snapshots-firefox:
     docker:
       - image: circleci/python:latest-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     parallelism: 10
     steps:
       - checkout
@@ -533,6 +629,9 @@ jobs:
   canary:
     docker:
       - image: circleci/golang:latest-node-browsers-legacy
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run:
@@ -547,12 +646,7 @@ jobs:
       - run:
           name: Install gettext
           command: sudo apt-get install gettext
-      - run:
-          name: Install WPCLI
-          command: |
-            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-            chmod +x wp-cli.phar
-            sudo mv wp-cli.phar /usr/local/bin/wp
+      - install_wpcli
       - run:
           name: Install ghr
           command: |
@@ -590,6 +684,9 @@ jobs:
   deploy:
     docker:
       - image: circleci/golang:latest-node-browsers-legacy
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run:
@@ -604,12 +701,7 @@ jobs:
       - run:
           name: Install gettext
           command: sudo apt-get install gettext
-      - run:
-          name: Install WPCLI
-          command: |
-            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-            chmod +x wp-cli.phar
-            sudo mv wp-cli.phar /usr/local/bin/wp
+      - install_wpcli
       - run:
           name: Install ghr
           command: |
