@@ -1,0 +1,21 @@
+.woocommerce-checkout {
+
+	.woocommerce-SavedPaymentMethods-saveNew {
+		padding: 0 1em 1em 1em !important;
+	}
+
+	input[name="wc-stripe-new-payment-method"] {
+		margin-right: 0.5em !important;
+	}
+
+	#ship-to-different-address-checkbox {
+		position: relative;
+		top: 3px;
+	}
+
+	#wc-stripe-new-payment-method {
+		position: relative;
+		top: 4px;
+		width: 20px !important;
+	}
+}

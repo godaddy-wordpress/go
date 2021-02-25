@@ -8,6 +8,9 @@
 @import "blocks/carousel";
 @import "blocks/wc-button";
 
+// WooCommerce
+@import "woocommerce/checkout";
+
 @import "../../../shared/css/config/mixins";
 
 .site-title {

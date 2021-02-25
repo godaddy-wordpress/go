@@ -1,0 +1,13 @@
+.woocommerce-checkout {
+
+	input[name="payment_method"] {
+
+		+ label {
+			padding-left: 2rem;
+
+			&::before {
+				top: 4px;
+			}
+		}
+	}
+}
