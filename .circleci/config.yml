@@ -274,7 +274,7 @@ jobs:
           command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run:
           name: Install Composer packages
-          command: composer install
+          command: composer install -vvv
           working_directory: /tmp/wordpress/wp-content/themes/go
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
