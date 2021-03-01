@@ -1,0 +1,19 @@
+.woocommerce-checkout {
+
+	#ship-to-different-address-checkbox {
+		margin-right: 0.5rem;
+	}
+
+	.wc_payment_methods {
+
+		li.wc_payment_method {
+
+			label[for^="payment_method_"] {
+
+				&::before {
+					top: 5px;
+				}
+			}
+		}
+	}
+}

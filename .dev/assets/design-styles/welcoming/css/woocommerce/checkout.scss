@@ -1,0 +1,15 @@
+.woocommerce-checkout {
+
+	.wc_payment_methods {
+
+		li.wc_payment_method {
+
+			label[for^="payment_method_"] {
+
+				&::before {
+					top: 6px;
+				}
+			}
+		}
+	}
+}

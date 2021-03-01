@@ -22,6 +22,17 @@
 				top: 8px;
 			}
 		}
+
+		.payment_box {
+
+			label {
+				padding-left: unset;
+
+				&::before {
+					display: none;
+				}
+			}
+		}
 	}
 
 	.woocommerce-shipping-methods {

@@ -2,9 +2,12 @@
 @import "../../../shared/css/config/breakpoints";
 @import "../settings";
 
-//Blocks
+// Blocks
 @import "blocks/button";
 @import "blocks/carousel";
+
+// WooCommerce
+@import "woocommerce/checkout";
 
 body {
 	-webkit-font-smoothing: antialiased;
