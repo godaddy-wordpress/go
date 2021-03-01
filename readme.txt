@@ -110,12 +110,7 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Enable post categories on posts. [#638](https://github.com/godaddy-wordpress/go/pull/638)
-- Hide the page title toggle when the customizer option "Page Titles" is unchecked. [#629](https://github.com/godaddy-wordpress/go/pull/629)
-- Fix checkboxes not displaying/functioning correctly. [#631](https://github.com/godaddy-wordpress/go/pull/631)
-
-### Tweaks
-- Update 'Portfolio' verbiage to 'Gallery'. [#639](https://github.com/godaddy-wordpress/go/pull/639)
-- Various WooCommerce cart style adjustments for better display on mobile devices. [#636](https://github.com/godaddy-wordpress/go/pull/636)
-- Adjust the menu styles/functionality on mobile. [#630](https://github.com/godaddy-wordpress/go/pull/630)
-- Introduce screen reader text to social icons, improving accessibility. [#626](https://github.com/godaddy-wordpress/go/pull/626)
+- Introduce new WooCommerce override styles for certain templates. [#647](https://github.com/godaddy-wordpress/go/pull/647)
+- Fix hidden radio and checkboxes on WooCommerce checkout. [#647](https://github.com/godaddy-wordpress/go/pull/647)
+- Fix incorrect radio buttons on credit card checkout form. [#647](https://github.com/godaddy-wordpress/go/pull/647)
+- Tweak spacing of credit card radio button for each design style. [#647](https://github.com/godaddy-wordpress/go/pull/647)
