@@ -44,6 +44,11 @@ body.block-editor-inserter__panel-content {
 	}
 }
 
+.px {
+	padding-left: var(--go-block--padding--x) !important;
+	padding-right: var(--go-block--padding--x) !important;
+}
+
 // Elements
 @import "elements/headings";
 @import "elements/typography";
