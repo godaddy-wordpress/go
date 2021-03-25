@@ -316,6 +316,12 @@ function get_palette_color( $color, $format = 'RGB' ) {
 	}
 
 	if ( ! empty( $the_color ) ) {
+
+		// Ensure we have a hex and not an RGB. If we do, convert back to hex value.
+		if ( strpos( $the_color, 'rgb' ) !== false ) {
+			$the_color = rgb_to_hex( $the_color );
+		}
+
 			// Ensure we have a hash mark at the beginning of the hex value.
 		$the_color = '#' . ltrim( $the_color, '#' );
 
@@ -362,6 +368,27 @@ function get_default_palette_color( $color, $format = 'RGB' ) {
 	}
 
 	return $the_color;
+}
+
+/**
+ * Convert an RGB string back to the proper hex value.
+ *
+ * @param string $color The RGB color string.
+ *
+ * @return string
+ */
+function rgb_to_hex( $color ) {
+
+	if ( ! preg_match( '#\((.*?)\)#', $color, $match ) ) {
+
+		return '';
+
+	}
+
+	$rgb_arr = explode( ',', $match[1], 3 );
+
+	return sprintf( '#%02x%02x%02x', $rgb_arr[0], $rgb_arr[1], $rgb_arr[2] );
+
 }
 
 /**
