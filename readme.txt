@@ -110,7 +110,5 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Introduce new WooCommerce override styles for certain templates. [#647](https://github.com/godaddy-wordpress/go/pull/647)
-- Fix hidden radio and checkboxes on WooCommerce checkout. [#647](https://github.com/godaddy-wordpress/go/pull/647)
-- Fix incorrect radio buttons on credit card checkout form. [#647](https://github.com/godaddy-wordpress/go/pull/647)
-- Tweak spacing of credit card radio button for each design style. [#647](https://github.com/godaddy-wordpress/go/pull/647)
+- Add missing `.px` class to editor stylesheet. [#650](https://github.com/godaddy-wordpress/go/pull/650)
+- Remove Carousel block overlay styles. [#653](https://github.com/godaddy-wordpress/go/pull/653)
