@@ -47,6 +47,10 @@
 			& li:not(:last-child) {
 				margin-right: var(--go-navigation--padding--x, 2vw);
 			}
+
+			& ul.sub-menu li.menu-item {
+				margin-right: inherit;
+			}
 		}
 
 		& .header__extras {
