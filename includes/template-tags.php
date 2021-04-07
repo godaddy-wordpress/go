@@ -331,7 +331,6 @@ function get_palette_color( $color, $format = 'RGB' ) {
 		if ( 'HEX' === $format ) {
 			return $the_color;
 		}
-
 	}
 
 	return $the_color;
