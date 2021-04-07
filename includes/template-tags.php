@@ -285,8 +285,7 @@ function get_copyright_kses_html() {
  * Returns the color selected by the user.
  *
  * @param string $color  Which color to return.
- * @param string $format The format to return the color.
- * 											 Possible Values: RGB (default), HSL (returns an array) or HEX.
+ * @param string $format The format to return the color. Possible Values: RGB (default), HSL (returns an array) or HEX.
  *
  * @return string|array|bool A string with the RGB value or an array containing the HSL values.
  */
