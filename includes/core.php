@@ -729,8 +729,8 @@ function get_available_design_styles() {
 			),
 			'fonts'          => array(
 				'Heebo'      => array(
-					'400',
 					'800',
+					'400',
 				),
 				'Fira Code'  => array(
 					'400',
