@@ -17,6 +17,10 @@
 
 		& a {
 			order: 2;
+
+			&.custom-logo-link {
+				order: 3;
+			}
 		}
 	}
 

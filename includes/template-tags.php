@@ -813,23 +813,23 @@ function site_branding( $args = array() ) {
 
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 		the_custom_logo();
-	} else {
-		$blog_name        = get_bloginfo( 'name' );
-		$blog_description = get_bloginfo( 'description' );
-
-		if ( ! empty( $blog_name ) ) {
-			echo '<a class="display-inline-block no-underline" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
-			printf(
-				'<%1$s class="site-title">' . esc_html( $blog_name ) . '</%1$s>',
-				( is_front_page() && ! did_action( 'get_footer' ) ) ? 'h1' : 'span'
-			);
-			echo '</a>';
-		}
-
-		if ( true === $args['description'] && ! empty( $blog_description ) ) :
-			echo '<span class="site-description display-none sm:display-block relative text-sm">' . esc_html( $blog_description ) . '</span>';
-		endif;
 	}
+
+	$blog_name        = get_bloginfo( 'name' );
+	$blog_description = get_bloginfo( 'description' );
+
+	if ( ! empty( $blog_name ) ) {
+		echo '<a class="display-inline-block no-underline" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
+		printf(
+			'<%1$s class="site-title">' . esc_html( $blog_name ) . '</%1$s>',
+			( is_front_page() && ! did_action( 'get_footer' ) ) ? 'h1' : 'span'
+		);
+		echo '</a>';
+	}
+
+	if ( true === $args['description'] && ! empty( $blog_description ) ) :
+		echo '<span class="site-description display-none sm:display-block relative text-sm">' . esc_html( $blog_description ) . '</span>';
+	endif;
 }
 
 /**
