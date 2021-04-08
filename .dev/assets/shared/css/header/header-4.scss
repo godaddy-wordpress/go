@@ -38,6 +38,16 @@
 			margin-right: 0;
 			margin-top: var(--go-site-description--margin-top, 0.25rem);
 		}
+
+		.custom-logo-link {
+			.custom-logo {
+				margin: 0;
+			}
+
+			~ a .site-title { 
+				margin: 0;
+			}
+		}
 	}
 
 	.header__navigation {

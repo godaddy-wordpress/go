@@ -22,6 +22,16 @@
 				margin-bottom: calc(var(--go-site-description--margin-top, 0.25rem) * 3);
 			}
 		}
+
+		.custom-logo-link {
+			.custom-logo {
+				margin: 0;
+			}
+
+			~ a .site-title { 
+				margin: 0;
+			}
+		}
 	}
 
 	@include media(large) {
