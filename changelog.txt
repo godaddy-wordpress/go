@@ -1,3 +1,10 @@
+1.4.3 / 2021-03-31
+===================
+
+### Bug Fixes
+- Add missing `.px` class to editor stylesheet. [#650](https://github.com/godaddy-wordpress/go/pull/650)
+- Remove Carousel block overlay styles. [#653](https://github.com/godaddy-wordpress/go/pull/653)
+
 1.4.2 / 2021-03-01
 ===================
 
