@@ -141,7 +141,7 @@ function theme_setup() {
 	add_theme_support(
 		'custom-background',
 		array(
-			'default-color' => \Go\get_palette_color( 'background' ),
+			'default-color' => \Go\get_palette_color( 'background', 'HEX' ),
 		)
 	);
 

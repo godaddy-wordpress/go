@@ -641,7 +641,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test the selected color palette returns correct data - color override
+	 * Test the selected color palette returns correct data - HSL
 	 */
 	public function test_get_palette_color_HSL() {
 
@@ -652,6 +652,30 @@ class Test_Template_Tags extends WP_UnitTestCase {
 				'44.0',
 			],
 			Go\get_palette_color( 'primary', 'HSL' )
+		);
+
+	}
+
+	/**
+	 * Test the selected color palette returns correct data - RGB
+	 */
+	public function test_get_palette_color_RGB() {
+
+		$this->assertEquals(
+			'rgb(199,105,25)',
+			Go\get_palette_color( 'primary', 'RGB' )
+		);
+
+	}
+
+	/**
+	 * Test the selected color palette returns correct data - HEX
+	 */
+	public function test_get_palette_color_HEX() {
+
+		$this->assertEquals(
+			'#c76919',
+			Go\get_palette_color( 'primary', 'HEX' )
 		);
 
 	}
