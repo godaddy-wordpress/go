@@ -60,6 +60,12 @@
 	}
 }
 
-.custom-logo-link:focus {
-	outline-offset: 6px;
+.custom-logo-link {
+	&:focus {
+		outline-offset: 6px;
+	}
+
+	~ a .site-title {
+	 	margin-left: var(--go-navigation--padding--x, 2vw);
+	}
 }

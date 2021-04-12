@@ -17,11 +17,22 @@
 
 		& a {
 			order: 2;
+
+			&.custom-logo-link {
+				order: 3;
+			}
 		}
 	}
 
-	& .header .header__titles .site-description {
-		@include media(large) {
+	& .header .header__titles {
+		.site-description {
+			@include media(large) {
+				margin-left: 0;
+				margin-right: var(--go-navigation--padding--x, 2vw);
+			}
+		}
+
+		.custom-logo-link ~ a .site-title {
 			margin-left: 0;
 			margin-right: var(--go-navigation--padding--x, 2vw);
 		}
