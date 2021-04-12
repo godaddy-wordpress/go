@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-12T16:01:35+00:00\n"
+"POT-Creation-Date: 2021-04-12T19:09:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
@@ -43,27 +43,27 @@ msgstr ""
 msgid "Your installation of the Go theme is incomplete. If you installed the Go theme from GitHub, please refer to <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">this document</a> to set up your development environment."
 msgstr ""
 
-#: .dev/tests/php/test-template-tags.php:924
-#: .dev/tests/php/test-template-tags.php:954
+#: .dev/tests/php/test-template-tags.php:948
+#: .dev/tests/php/test-template-tags.php:978
 #: includes/core.php:101
 #: includes/customizer.php:494
 msgid "Primary"
 msgstr ""
 
-#: .dev/tests/php/test-template-tags.php:925
-#: .dev/tests/php/test-template-tags.php:955
+#: .dev/tests/php/test-template-tags.php:949
+#: .dev/tests/php/test-template-tags.php:979
 #: includes/core.php:102
 msgid "Footer Menu #1"
 msgstr ""
 
-#: .dev/tests/php/test-template-tags.php:926
-#: .dev/tests/php/test-template-tags.php:956
+#: .dev/tests/php/test-template-tags.php:950
+#: .dev/tests/php/test-template-tags.php:980
 #: includes/core.php:103
 msgid "Footer Menu #2"
 msgstr ""
 
-#: .dev/tests/php/test-template-tags.php:927
-#: .dev/tests/php/test-template-tags.php:957
+#: .dev/tests/php/test-template-tags.php:951
+#: .dev/tests/php/test-template-tags.php:981
 #: includes/core.php:104
 msgid "Footer Menu #3"
 msgstr ""
@@ -1024,15 +1024,15 @@ msgid "Featured"
 msgstr ""
 
 #. translators: %s: The social icon label.
-#: includes/template-tags.php:755
+#: includes/template-tags.php:760
 msgid "Open %s in a new tab"
 msgstr ""
 
-#: includes/template-tags.php:873
+#: includes/template-tags.php:878
 msgid "Menu"
 msgstr ""
 
-#: includes/template-tags.php:906
+#: includes/template-tags.php:911
 msgid "Search Toggle"
 msgstr ""
 
