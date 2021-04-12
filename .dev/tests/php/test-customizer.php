@@ -1257,4 +1257,56 @@ class Test_Customizer extends WP_UnitTestCase {
 		$this->assertTrue( true );
 
 	}
+
+	/**
+	 * Test the inline CSS outputs font heading weight
+	 */
+	function test_inline_css_font_heading_weight() {
+
+		$fonts = [
+			'Poppins_heading' => [ '600' ],
+			'Quicksand_body'  => [ '400', '600' ]
+		];
+
+		set_theme_mod( 'fonts', $fonts );
+
+		ob_start();
+		Go\Customizer\inline_css();
+		$inline_css = ob_get_clean();
+
+		if ( false === strpos( $inline_css, '--go-heading--font-weight' ) ) {
+
+			$this->fail( "--go-heading--font-weight was not found in the output of Go\Customizer\inline_css() after setting fonts theme mod" );
+
+		}
+
+		$this->assertTrue( true );
+
+	}
+
+	/**
+	 * Test the inline CSS outputs font body weight
+	 */
+	function test_inline_css_font_body_weights() {
+
+		$fonts = [
+			'Poppins_heading' => [ '600' ],
+			'Quicksand_body'  => [ '400', '600' ]
+		];
+
+		set_theme_mod( 'fonts', $fonts );
+
+		ob_start();
+		Go\Customizer\inline_css();
+		$inline_css = ob_get_clean();
+
+		if ( false === strpos( $inline_css, '--go--font-weight' ) ) {
+
+			$this->fail( "--go--font-weight was not found in the output of Go\Customizer\inline_css() after setting fonts theme mod" );
+
+		}
+
+		$this->assertTrue( true );
+
+	}
 }
