@@ -16,10 +16,10 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
-      - unit-test-74:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
+      # - unit-test-74:
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
       - theme-check:
           filters:
             tags:
@@ -58,7 +58,7 @@ workflows:
             - php56-phpcs
             - php73-phpcs
             - unit-test-73
-            - unit-test-74
+            # - unit-test-74
             - theme-check
             - a11y-tests
           filters:
@@ -69,7 +69,7 @@ workflows:
             - php56-phpcs
             - php73-phpcs
             - unit-test-73
-            - unit-test-74
+            # - unit-test-74
             - theme-check
             - a11y-tests
             - visual-regression-chrome
