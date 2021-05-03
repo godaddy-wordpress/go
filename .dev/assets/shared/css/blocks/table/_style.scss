@@ -12,4 +12,13 @@
 		padding: 1em;
 		word-break: break-all;
 	}
+
+	table.woocommerce-grouped-product-list td {
+		word-break: normal;
+		vertical-align: middle !important;
+	}
+
+	.woocommerce-grouped-product-list-item__price del + ins {
+		display: block;
+	}
 }
