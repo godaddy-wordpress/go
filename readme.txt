@@ -110,5 +110,12 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Add missing `.px` class to editor stylesheet. [#650](https://github.com/godaddy-wordpress/go/pull/650)
-- Remove Carousel block overlay styles. [#653](https://github.com/godaddy-wordpress/go/pull/653)
+- Fix WooCommerce grouped product table styles. [#661](https://github.com/godaddy-wordpress/go/pull/661)
+- Fix invalid RGB color string warning in the customizer when no color is set. [#652](https://github.com/godaddy-wordpress/go/pull/652)
+- Fix header 2 submenu alignment. [#655](https://github.com/godaddy-wordpress/go/pull/655)
+- Remove the 16px bottom margin from the last-child image for galleries in the editor. [#656](https://github.com/godaddy-wordpress/go/pull/656)
+- Set Heebo as the default font for the modern design style. [#657](https://github.com/godaddy-wordpress/go/pull/657)
+
+### Tweaks
+- Allow for logo, title and tagline to display in the header. [#658](https://github.com/godaddy-wordpress/go/pull/658)
+- Fix modern tagline kearning. [#660](https://github.com/godaddy-wordpress/go/pull/660)

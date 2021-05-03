@@ -1,3 +1,17 @@
+1.4.4 / 2021-05-03
+===================
+
+### Bug Fixes
+- Fix WooCommerce grouped product table styles. [#661](https://github.com/godaddy-wordpress/go/pull/661)
+- Fix invalid RGB color string warning in the customizer when no color is set. [#652](https://github.com/godaddy-wordpress/go/pull/652)
+- Fix header 2 submenu alignment. [#655](https://github.com/godaddy-wordpress/go/pull/655)
+- Remove the 16px bottom margin from the last-child image for galleries in the editor. [#656](https://github.com/godaddy-wordpress/go/pull/656)
+- Set Heebo as the default font for the modern design style. [#657](https://github.com/godaddy-wordpress/go/pull/657)
+
+### Tweaks
+- Allow for logo, title and tagline to display in the header. [#658](https://github.com/godaddy-wordpress/go/pull/658)
+- Fix modern tagline kearning. [#660](https://github.com/godaddy-wordpress/go/pull/660)
+
 1.4.3 / 2021-03-31
 ===================
 
