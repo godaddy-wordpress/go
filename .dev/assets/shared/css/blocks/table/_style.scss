@@ -17,4 +17,8 @@
 		word-break: normal;
 		vertical-align: middle !important;
 	}
+
+	.woocommerce-grouped-product-list-item__price del + ins {
+		display: block;
+	}
 }
