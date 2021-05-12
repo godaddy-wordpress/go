@@ -9,6 +9,7 @@
 @import "editor/horizontal-rhythm";
 @import "editor/title-block";
 @import "editor/title-permalink";
+@import "editor/user-agent-overrides";
 
 // Add padding to the editor.
 body {
@@ -20,6 +21,11 @@ body {
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
 	margin-left: calc(-1 * var(--go-block--padding--x));
 	margin-right: calc(-1 * var(--go-block--padding--x));
+}
+
+// First element top margin, to match the front of site
+.block-editor-block-list__layout>:first-child {
+	margin-top: calc(var(--go--spacing--vertical--lg)*0.5);
 }
 
 // Default appender

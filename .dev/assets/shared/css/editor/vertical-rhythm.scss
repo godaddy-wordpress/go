@@ -40,11 +40,7 @@
 	margin-top: calc(var(--go--spacing--vertical--lg) * -1);
 }
 
-/* Remove spacing from the first and last blocks */
-.block-editor-block-list__layout .wp-block.block-editor-block-list__block:first-of-type {
-	margin-top: 0 !important;
-}
-
+/* Remove spacing from the last block */
 .block-editor-block-list__layout .wp-block.block-editor-block-list__block:last-of-type {
 	margin-top: 0 !important;
 }
