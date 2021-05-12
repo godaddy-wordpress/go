@@ -264,6 +264,9 @@ function theme_setup() {
 
 	}
 
+	// Enable custom padding controls.
+	add_theme_support( 'custom-spacing' );
+
 }
 
 /**
