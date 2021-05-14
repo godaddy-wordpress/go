@@ -10,6 +10,10 @@
 @import "editor/title-block";
 @import "editor/title-permalink";
 
+.block-list-appender {
+	width: auto !important;
+}
+
 // Add padding to the editor.
 body {
 	padding-left: var(--go-block--padding--x);
