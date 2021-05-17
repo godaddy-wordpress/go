@@ -775,7 +775,7 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 		'header_variation',
 		array(
 			'default'           => \Go\Core\get_default_header_variation(),
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 			'sanitize_callback' => __NAMESPACE__ . '\\sanitize_radio',
 		)
 	);

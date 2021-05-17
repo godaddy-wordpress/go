@@ -803,7 +803,7 @@ function render_go_header_social_icons() {
 	\Go\social_icons();
 
 }
-// add_action( 'go_header_social_icons', 'Go\render_go_header_social_icons' );
+add_action( 'go_header_social_icons', 'Go\render_go_header_social_icons' );
 
 /**
  * Display the site branding section, which includes a logo
