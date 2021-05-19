@@ -26,6 +26,10 @@
 	margin-top: var(--go--spacing--vertical--lg);
 }
 
+.block-editor-block-list__block {
+	margin-top: 0px;
+}
+
 .block-editor-block-list__block:first-child {
 
 	> .wp-block[data-align="wide"],
