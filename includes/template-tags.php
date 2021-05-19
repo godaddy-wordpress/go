@@ -800,7 +800,13 @@ function render_go_header_social_icons() {
 
 	}
 
-	\Go\social_icons();
+	?>
+
+	<div class="social-icons-container">
+		<?php \Go\social_icons(); ?>
+	</div>
+
+	<?php
 
 }
 add_action( 'go_header_social_icons', 'Go\render_go_header_social_icons' );

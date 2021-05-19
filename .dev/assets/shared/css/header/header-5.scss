@@ -32,11 +32,18 @@
 		order: 5;
 	}
 
-	.site-header .social-icons {
-		display: flex;
-		margin: 0 1rem 0 0;
-		order: 4;
-		padding-left: 0;
+	.site-header {
+
+		.social-icons-container {
+			display: flex;
+			margin: 0 1rem 0 0;
+			order: 4;
+			padding-left: 0;
+
+			.social-icons {
+				margin: 0;
+			}
+		}
 	}
 
 	.header .header__titles {

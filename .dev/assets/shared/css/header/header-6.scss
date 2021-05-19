@@ -36,13 +36,13 @@
 
 	.header {
 
-		.social-icons,
+		.social-icons-container,
 		.header__extras {
 			width: 50%;
 			margin-bottom: 2%;
 		}
 
-		.social-icons {
+		.social-icons-container {
 			display: inline-flex;
 			justify-content: flex-start;
 			margin: 0;

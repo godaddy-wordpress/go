@@ -9,7 +9,7 @@
  * @package Go
  */
 
-$header_flex_class = in_array( get_theme_mod( 'header_variation', \Go\Core\get_default_header_variation() ), array( 'header-6', 'header-7' ) ) ? '' : ' flex';
+$header_flex_class = in_array( get_theme_mod( 'header_variation', \Go\Core\get_default_header_variation() ), array( 'header-6' ) ) ? '' : ' flex';
 
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
