@@ -794,7 +794,7 @@ function render_go_header_social_icons() {
 
 	$header_variation = get_theme_mod( 'header_variation', \Go\Core\get_default_header_variation() );
 
-	if ( ! in_array( $header_variation, array( 'header-5', 'header-6', 'header-7' ) ) ) {
+	if ( ! in_array( $header_variation, array( 'header-5', 'header-6', 'header-7' ), true ) ) {
 
 		return;
 
