@@ -10,6 +10,15 @@
 @import "editor/title-block";
 @import "editor/title-permalink";
 
+.block-list-appender {
+	width: auto !important;
+	top: 0 !important;
+}
+
+.wp-block-button {
+	margin-bottom: var(--go--spacing--vertical) !important;
+}
+
 // Add padding to the editor.
 body {
 	padding-left: var(--go-block--padding--x);
