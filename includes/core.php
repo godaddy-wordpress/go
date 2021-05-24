@@ -998,15 +998,15 @@ function get_available_header_variations() {
 		),
 		'header-5' => array(
 			'label'         => esc_html_x( 'Header 5', 'name of the fourth header variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-4.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-5.svg' ),
 		),
 		'header-6' => array(
 			'label'         => esc_html_x( 'Header 6', 'name of the fourth header variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-4.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-6.svg' ),
 		),
 		'header-7' => array(
 			'label'         => esc_html_x( 'Header 7', 'name of the fourth header variation option', 'go' ),
-			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-4.svg' ),
+			'preview_image' => get_theme_file_uri( 'dist/images/admin/header-7.svg' ),
 		),
 	);
 
