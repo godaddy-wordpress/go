@@ -11,12 +11,12 @@
 	}
 
 	.header__nav-toggle {
+		flex: 1 1 25%;
 		order: 1;
 		text-align: left;
 
 		.nav-toggle {
 			display: inline-flex;
-			margin-left: -0.75rem;
 			margin-right: unset;
 			padding: 0.75em 0;
 		}
@@ -24,21 +24,38 @@
 
 	.header__title-nav {
 		order: 2;
+
+		@include media(large) {
+			flex: 1 0 50%;
+		}
 	}
 
 	.header__extras {
+		direction: rtl;
 		justify-content: flex-start;
-		margin-left: -0.75rem;
 		order: 5;
+		width: 25%;
 	}
 
 	.site-header {
 
 		.social-icons-container {
-			display: flex;
 			margin: 0 1rem 0 0;
 			order: 4;
 			padding-left: 0;
+			position: relative;
+
+			&::after {
+				background-color: #000;
+				content: "";
+				display: block;
+				height: 15px;
+				opacity: 0.5;
+				position: absolute;
+				right: -10px;
+				top: 8px;
+				width: 1px;
+			}
 
 			.social-icons {
 				margin: 0;
