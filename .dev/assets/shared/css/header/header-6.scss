@@ -2,7 +2,6 @@
 .has-header-6 {
 
 	.header__extras {
-		margin-left: -0.75rem;
 		order: 1;
 	}
 
@@ -36,10 +35,10 @@
 
 	.header {
 
-		.social-icons-container,
 		.header__extras {
-			width: 50%;
-			margin-bottom: 2%;
+			width: 100%;
+			margin-bottom: 1rem;
+			margin-left: 0;
 		}
 
 		.social-icons {
@@ -55,6 +54,7 @@
 			justify-content: flex-start;
 			margin: 0;
 			padding-left: 0;
+			width: 100%;
 		}
 
 		.header__extras {
@@ -70,8 +70,18 @@
 		text-align: center;
 	}
 
-	&.menu-is-open .header__cart-toggle {
-		display: none;
+	&.menu-is-open {
+
+		.nav-toggle {
+			position: absolute;
+			right: 15px;
+			top: 15px;
+			z-index: 1;
+		}
+
+		.header__cart-toggle {
+			display: none;
+		}
 	}
 
 	@include media(large) {
