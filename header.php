@@ -44,9 +44,8 @@ $header_flex_class = in_array( get_theme_mod( 'header_variation', \Go\Core\get_d
 
 			<div class="header__inner<?php echo esc_attr( $header_flex_class ); ?> items-center justify-between h-inherit w-full relative">
 
-				<?php do_action( 'go_header_social_icons' ); ?>
-
 				<div class="header__extras">
+					<?php do_action( 'go_header_social_icons' ); ?>
 					<?php Go\search_toggle(); ?>
 					<?php Go\WooCommerce\woocommerce_cart_link(); ?>
 				</div>
