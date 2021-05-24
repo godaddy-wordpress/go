@@ -42,6 +42,14 @@
 			margin-bottom: 2%;
 		}
 
+		.social-icons {
+			padding-left: 0;
+
+			a {
+				padding: 5px;
+			}
+		}
+
 		.social-icons-container {
 			display: inline-flex;
 			justify-content: flex-start;
