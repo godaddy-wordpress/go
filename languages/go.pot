@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-05-21T20:18:05+00:00\n"
+"POT-Creation-Date: 2021-05-25T17:52:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: go\n"
@@ -112,11 +112,11 @@ msgctxt "color palette name"
 msgid "Blush"
 msgstr ""
 
-#: header.php:39
+#: header.php:41
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:56
+#: header.php:59
 msgid "Horizontal"
 msgstr ""
 
@@ -752,64 +752,79 @@ msgctxt "name of the fourth header variation option"
 msgid "Header 4"
 msgstr ""
 
-#: includes/core.php:1026
+#: includes/core.php:1003
+msgctxt "name of the fourth header variation option"
+msgid "Header 5"
+msgstr ""
+
+#: includes/core.php:1007
+msgctxt "name of the fourth header variation option"
+msgid "Header 6"
+msgstr ""
+
+#: includes/core.php:1011
+msgctxt "name of the fourth header variation option"
+msgid "Header 7"
+msgstr ""
+
+#: includes/core.php:1038
 msgctxt "name of the first footer variation option"
 msgid "Footer 1"
 msgstr ""
 
-#: includes/core.php:1033
+#: includes/core.php:1045
 msgctxt "name of the second footer variation option"
 msgid "Footer 2"
 msgstr ""
 
-#: includes/core.php:1040
+#: includes/core.php:1052
 msgctxt "name of the third footer variation option"
 msgid "Footer 3"
 msgstr ""
 
-#: includes/core.php:1047
+#: includes/core.php:1059
 msgctxt "name of the fourth footer variation option"
 msgid "Footer 4"
 msgstr ""
 
-#: includes/core.php:1130
+#: includes/core.php:1142
 msgid "Facebook"
 msgstr ""
 
-#: includes/core.php:1135
+#: includes/core.php:1147
 msgid "Twitter"
 msgstr ""
 
-#: includes/core.php:1140
+#: includes/core.php:1152
 msgid "Instagram"
 msgstr ""
 
-#: includes/core.php:1145
+#: includes/core.php:1157
 msgid "LinkedIn"
 msgstr ""
 
-#: includes/core.php:1150
+#: includes/core.php:1162
 msgid "Pinterest"
 msgstr ""
 
-#: includes/core.php:1155
+#: includes/core.php:1167
 msgid "YouTube"
 msgstr ""
 
-#: includes/core.php:1160
+#: includes/core.php:1172
 msgid "GitHub"
 msgstr ""
 
-#: includes/core.php:1312
+#: includes/core.php:1324
 msgid "That page can't be found"
 msgstr ""
 
 #. translators: Search query term(s).
-#: includes/core.php:1330
+#: includes/core.php:1342
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1338
+#: includes/core.php:1350
 msgid "Nothing Found"
 msgstr ""
 
@@ -1028,11 +1043,11 @@ msgstr ""
 msgid "Open %s in a new tab"
 msgstr ""
 
-#: includes/template-tags.php:878
+#: includes/template-tags.php:905
 msgid "Menu"
 msgstr ""
 
-#: includes/template-tags.php:911
+#: includes/template-tags.php:938
 msgid "Search Toggle"
 msgstr ""
 
