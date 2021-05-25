@@ -785,6 +785,33 @@ function social_icons( $args = array() ) {
 }
 
 /**
+ * Display the social icons in the header
+ * Displays on header-5, header-6 and header-7
+ *
+ * @return mixed Markup for the social icons.
+ */
+function render_go_header_social_icons() {
+
+	$header_variation = get_theme_mod( 'header_variation', \Go\Core\get_default_header_variation() );
+
+	if ( ! in_array( $header_variation, array( 'header-5', 'header-6', 'header-7' ), true ) ) {
+
+		return;
+
+	}
+
+	?>
+
+	<div class="social-icons-container">
+		<?php \Go\social_icons(); ?>
+	</div>
+
+	<?php
+
+}
+add_action( 'go_header_social_icons', 'Go\render_go_header_social_icons' );
+
+/**
  * Display the site branding section, which includes a logo
  * from Customizer (if set) or site title and description.
  *

@@ -7,6 +7,27 @@
 		display: inline-block;
 		padding: 0.3rem 0.5rem;
 	}
+
+	.social-icons-container {
+		display: none;
+
+		@include media(large) {
+			display: flex;
+		}
+	}
+
+	.social-icons {
+		margin: 0;
+		padding: 0;
+	}
+
+	.social-icons svg {
+		height: calc(var(--go-social--size) / 1.45);
+	}
+
+	.social-icons a {
+		padding: 0.25rem;
+	}
 }
 
 .header__inner {
