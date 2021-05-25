@@ -857,6 +857,9 @@ class Test_Core extends WP_UnitTestCase {
 			'header-2',
 			'header-3',
 			'header-4',
+			'header-5',
+			'header-6',
+			'header-7',
 		];
 
 		$this->assertEquals( $expected_headers, array_keys( Go\Core\get_available_header_variations() ) );
@@ -880,6 +883,9 @@ class Test_Core extends WP_UnitTestCase {
 			'header-1',
 			'header-2',
 			'header-4',
+			'header-5',
+			'header-6',
+			'header-7',
 		];
 
 		$this->assertEquals( $expected_headers, array_keys( Go\Core\get_available_header_variations() ) );
