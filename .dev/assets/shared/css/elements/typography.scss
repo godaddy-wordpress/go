@@ -24,8 +24,13 @@ p {
 	padding-left: 0;
 	padding-right: 0;
 
+	&:not([style]){
+		p {
+			color: var(--go-quote--color--text, var(--go-heading--color--text));
+		}
+	}
+
 	& p {
-		color: var(--go-quote--color--text, var(--go-heading--color--text));
 		font-display: swap;
 		font-family: var(--go-heading--font-family);
 		font-size: var(--go-quote--font-size, var(--go--type-scale-4));
