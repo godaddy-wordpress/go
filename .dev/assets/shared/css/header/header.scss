@@ -63,8 +63,28 @@
 	}
 }
 
-.has-header-1 .header__extras {
+.header-1 .header__extras {
 	@include media(large) {
 		justify-content: flex-end;
 	}
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-nowrap {
+	flex-wrap: nowrap;
+}
+
+.display-inline-block {
+	display: inline-block;
+}
+
+.display-none {
+	display: none;
 }

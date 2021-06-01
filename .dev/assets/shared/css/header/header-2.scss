@@ -1,5 +1,5 @@
 /*! Header: Header 2 */
-.has-header-2 {
+.header-2 {
 
 	& .header__extras {
 		justify-content: flex-start;
@@ -12,7 +12,7 @@
 		order: 2;
 	}
 
-	& .header .header__titles {
+	&.header .header__titles {
 		justify-content: flex-end;
 
 		& a {
@@ -24,7 +24,7 @@
 		}
 	}
 
-	& .header .header__titles {
+	& .header__titles {
 		.site-description {
 			@include media(large) {
 				margin-left: 0;

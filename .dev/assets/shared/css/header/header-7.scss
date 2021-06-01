@@ -1,5 +1,5 @@
 /*! Header: Header 7 */
-.has-header-7 {
+.header-7 {
 
 	@include media(large) {
 		.header__title-nav {
@@ -41,7 +41,7 @@
 		}
 	}
 
-	.header .header__titles {
+	&.header .header__titles {
 		@include media(large) {
 			align-items: flex-start;
 			flex: 0 0 27%;

@@ -1,5 +1,5 @@
 /*! Header: Header 4 */
-.has-header-4 {
+.header-4 {
 
 	&::before {
 		content: "has-search-toggle has-offscreen-nav";
@@ -44,7 +44,7 @@
 				margin: 0;
 			}
 
-			~ a .site-title { 
+			~ a .site-title {
 				margin: 0;
 			}
 		}
