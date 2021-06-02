@@ -24,8 +24,13 @@ p {
 	padding-left: 0;
 	padding-right: 0;
 
+	&:not([style]){
+		p {
+			color: var(--go-quote--color--text, var(--go-heading--color--text));
+		}
+	}
+
 	& p {
-		color: var(--go-quote--color--text, var(--go-heading--color--text));
 		font-display: swap;
 		font-family: var(--go-heading--font-family);
 		font-size: var(--go-quote--font-size, var(--go--type-scale-4));
@@ -77,5 +82,8 @@ pre {
 	line-height: 1.5;
 	overflow: auto;
 	padding: 3rem 2rem;
-	text-align: left;
+
+	&:not([class*="has-text-align-"]) {
+		text-align: left;
+	}
 }
