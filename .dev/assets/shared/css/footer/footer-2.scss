@@ -1,7 +1,7 @@
 /*! Footer: Footer 2 */
-.has-footer-2 {
+.site-footer--2 {
 
-	& .site-footer {
+	&.site-footer {
 		margin-top: calc(var(--go--spacing--vertical--lg) / 1.5);
 		padding-bottom: calc(var(--go--spacing--vertical--lg) / 1.5);
 
@@ -57,7 +57,7 @@
 		}
 	}
 
-	& .site-footer .social-icons {
+	&.site-footer .social-icons {
 		margin-top: 2rem;
 
 		@include media(large) {

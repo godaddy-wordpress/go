@@ -1,7 +1,7 @@
 /*! Footer: Footer 4 */
-.has-footer-4 {
+.site-footer--4 {
 
-	& .site-footer {
+	&.site-footer {
 		margin-top: calc(var(--go--spacing--vertical--lg) * 0.7);
 		padding-bottom: calc(var(--go--spacing--vertical--lg) * 0.5);
 	}
@@ -10,7 +10,7 @@
 		margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
 	}
 
-	& .site-footer .header__titles {
+	&.site-footer .header__titles {
 		align-items: flex-start;
 		flex: 0 0 100%;
 		margin-bottom: calc(var(--go--spacing--vertical--lg) * 0.55);
@@ -24,6 +24,7 @@
 
 		& .site-title {
 			color: var(--go-footer-heading--color--text, var(--go-heading--color--text));
+			margin-left: 0;
 		}
 
 		& .site-description {
@@ -64,7 +65,7 @@
 		flex: 1 50%;
 	}
 
-	& .site-footer .social-icons {
+	&.site-footer .social-icons {
 		margin-left: calc(var(--go-social--padding) * -0.5);
 		margin-top: 1rem;
 

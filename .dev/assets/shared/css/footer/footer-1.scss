@@ -1,7 +1,7 @@
 /*! Footer: Footer 1 */
-.has-footer-1 {
+.site-footer--1 {
 
-	& .site-footer {
+	&.site-footer {
 		padding-bottom: var(--go--spacing--vertical--lg);
 	}
 
@@ -29,7 +29,7 @@
 		}
 	}
 
-	& .site-footer .social-icons {
+	&.site-footer .social-icons {
 		margin-bottom: calc(var(--go--spacing--vertical--lg) * 0.5);
 
 		& svg {

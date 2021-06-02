@@ -8,7 +8,7 @@
 $has_background = Go\has_footer_background();
 ?>
 
-<footer id="colophon" class="site-footer site-footer--2 <?php echo esc_attr( $has_background ); ?>">
+<footer id="colophon" class="site-footer site-footer--2 <?php echo esc_attr( $has_background ); ?><?php if( ! has_nav_menu( 'footer-1' ) ) { echo ' has-no-footer-menu'; } ?>">
 
 	<div class="site-footer__inner flex flex-column lg:flex-row lg:flex-wrap items-center align-center max-w-wide m-auto px">
 
