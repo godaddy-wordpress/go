@@ -1316,6 +1316,35 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the social icons do not render on header-1
+	 */
+	public function test_header_social_icons_header_1() {
+
+		set_theme_mod( 'header_variation', 'header-1' );
+
+		ob_start();
+		Go\render_go_header_social_icons();
+		$icons = ob_get_clean();
+
+		$this->assertEmpty( $icons );
+
+	}
+
+	/**
+	 * Test the social icons render
+	 */
+	public function test_header_social_icons_header_6() {
+
+		set_theme_mod( 'header_variation', 'header-6' );
+		set_theme_mod( 'social_icon_github', 'https://www.github.com/custom' );
+
+		$this->expectOutputRegex( '/<div class=\"social-icons-container\">/' );
+
+		Go\render_go_header_social_icons();
+
+	}
+
+	/**
 	 * Test the site branding renders properly
 	 */
 	public function test_display_site_branding() {
