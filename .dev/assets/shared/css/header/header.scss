@@ -63,7 +63,7 @@
 	}
 }
 
-.has-header-1 .header__extras {
+.header-1 .header__extras {
 	@include media(large) {
 		justify-content: flex-end;
 	}

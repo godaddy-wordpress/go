@@ -1,5 +1,5 @@
 /*! Header: Header 6 */
-.has-header-6 {
+.header-6 {
 
 	.header__extras {
 		order: 3;
@@ -23,7 +23,7 @@
 		}
 	}
 
-	.header .header__titles {
+	&.header .header__titles {
 		flex-direction: column;
 
 		.site-description {
@@ -47,7 +47,7 @@
 		}
 	}
 
-	.header {
+	&.header {
 
 		.header__extras {
 			@include media(large) {

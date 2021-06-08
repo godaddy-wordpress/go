@@ -1,5 +1,5 @@
 /*! Header: Header 5 */
-.has-header-5 {
+.header-5 {
 
 	&::before {
 		content: "has-search-toggle has-offscreen-nav";
@@ -63,7 +63,7 @@
 		}
 	}
 
-	.header .header__titles {
+	&.header .header__titles {
 		flex: 1 0 100%;
 		flex-direction: column;
 		justify-content: center;

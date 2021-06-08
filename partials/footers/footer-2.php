@@ -6,9 +6,14 @@
  */
 
 $has_background = Go\has_footer_background();
+$classes        = array( 'site-footer', 'site-footer--2', $has_background );
+
+if ( ! has_nav_menu( 'footer-1' ) ) {
+	$classes[] = 'has-no-footer-menu';
+}
 ?>
 
-<footer id="colophon" class="site-footer site-footer--2 <?php echo esc_attr( $has_background ); ?>">
+<footer id="colophon" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 
 	<div class="site-footer__inner flex flex-column lg:flex-row lg:flex-wrap items-center align-center max-w-wide m-auto px">
 

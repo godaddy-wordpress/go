@@ -1,5 +1,5 @@
 /*! Footer: Footer 3 */
-.has-footer-3 {
+.site-footer--3 {
 
 	& .site-footer__inner {
 		padding-bottom: calc(var(--go--spacing--vertical--lg) * 0.25);
@@ -42,7 +42,7 @@
 		}
 	}
 
-	& .site-footer .header__titles {
+	&.site-footer .header__titles {
 		align-items: flex-start;
 		flex: 0 0 100%;
 		margin-bottom: calc(var(--go--spacing--vertical--lg) * 0.75);
@@ -56,6 +56,7 @@
 
 		& .site-title {
 			color: var(--go-footer-heading--color--text, var(--go-heading--color--text));
+			margin-left: 0;
 		}
 
 		& .site-description {
@@ -63,7 +64,7 @@
 		}
 	}
 
-	& .site-footer .social-icons {
+	&.site-footer .social-icons {
 		margin-top: 1rem;
 
 		@include media(large) {
