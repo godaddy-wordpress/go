@@ -1168,7 +1168,7 @@ function get_available_social_icons() {
 			'icon'        => get_theme_file_path( 'dist/images/social/youtube.svg' ),
 			'placeholder' => 'https://youtube.com/user',
 		),
-		'spotify'  => array(
+		'spotify'   => array(
 			'label'       => esc_html__( 'Spotify', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/spotify.svg' ),
 			'placeholder' => 'https://open.spotify.com/user/user',
