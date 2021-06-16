@@ -958,7 +958,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 			return $args;
 		} );
 
-		$this->expectOutputRegex( '/Test Blog/' );
+		$this->expectOutputRegex( '/Go by GoDaddy/' );
 
 		Go\footer_variation();
 
@@ -1024,7 +1024,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_copyright() {
 
-		$this->expectOutputRegex( '/Test Blog/' );
+		$this->expectOutputRegex( '/Go by GoDaddy/' );
 
 		Go\copyright();
 
