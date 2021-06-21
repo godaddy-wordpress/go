@@ -98,7 +98,7 @@
   "license": "MIT",
   "devDependencies": {
     "@10up/eslint-config": "^1.0.9",
-    "@10up/stylelint-config": "^1.0.3",
+    "@10up/stylelint-config": "^1.1.1",
     "@babel/core": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.9.4",
     "@babel/preset-env": "^7.0.0",
@@ -142,7 +142,7 @@
     "rtlcss-webpack-plugin": "^4.0.3",
     "strip-css-comments-cli": "^2.0.2",
     "stylelint": "^9.6.0",
-    "stylelint-declaration-use-variable": "^1.7.0",
+    "stylelint-declaration-use-variable": "^1.7.3",
     "stylelint-webpack-plugin": "^0.10.5",
     "terser": "^3.17.0",
     "webpack": "^4.29.6",
