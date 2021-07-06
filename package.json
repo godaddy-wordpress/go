@@ -140,7 +140,6 @@
     "prop-types": "15.7.2",
     "rtlcss": "^2.4.1",
     "rtlcss-webpack-plugin": "^4.0.3",
-    "strip-css-comments-cli": "^2.0.2",
     "stylelint": "^9.6.0",
     "stylelint-declaration-use-variable": "^1.7.0",
     "stylelint-webpack-plugin": "^0.10.5",
@@ -150,6 +149,15 @@
     "webpack-fix-style-only-entries": "^0.2.1",
     "webpack-merge": "^4.2.1",
     "webpackbar": "^3.1.5"
+  },
+  "resolutions": {
+    "css-what": "^5.0.1",
+    "trim-newlines": "^4.0.1",
+    "normalize-url": "^6.0.1",
+    "glob-parent": "^5.1.2",
+    "property-expr": "^2.0.3",
+    "trim": "^0.0.3",
+    "yargs-parser": "^18.1.2"
   },
   "testing": {
     "urls": {
@@ -166,6 +174,7 @@
     "lodash.throttle": "^4.1.1",
     "node-sass": "^5.0.0",
     "normalize.css": "^8.0.0",
-    "sass-loader": "^10.0.5"
+    "sass-loader": "^10.0.5",
+    "strip-css-comments-cli": "^2.0.2"
   }
 }
