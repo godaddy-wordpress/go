@@ -121,6 +121,16 @@ export default () => {
 		} );
 	} );
 
+	wp.customize( 'social_icon_spotify', ( value ) => {
+		value.bind( ( to ) => {
+			if ( to ) {
+				$( '.social-icon-spotify' ).removeClass( 'display-none' );
+			} else {
+				$( '.social-icon-spotify' ).addClass( 'display-none' );
+			}
+		} );
+	} );
+
 	wp.customize( 'social_icon_github', ( value ) => {
 		value.bind( ( to ) => {
 			if ( to ) {
