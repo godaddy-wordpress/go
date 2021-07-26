@@ -37,21 +37,23 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
+              ignore: master
       # - visual-regression-firefox:
       #     filters:
       #       tags:
       #         only: /^(?!canary).*$/
+      #         ignore: master
 
       - visual-regression-update-snapshots-chrome:
           filters:
             branches:
-              only:
-                - actions/visual-regression-update-snapshots
+              only: actions/visual-regression-update-snapshots
+              ignore: master
       - visual-regression-update-snapshots-firefox:
           filters:
             branches:
-              only:
-                - actions/visual-regression-update-snapshots
+              only: actions/visual-regression-update-snapshots
+              ignore: master
 
       - canary:
           requires:
