@@ -13,5 +13,9 @@
   "env": {
     "templateGalleryEndpoint": "https://wpnux.godaddy.com/v2/",
     "templateLang": "en_US"
-	}
+  },
+  "retries": {
+    "runMode": 0,
+    "openMode": 0
+  }
 }
