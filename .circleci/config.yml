@@ -55,7 +55,7 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
-        requires:
+          requires:
             - visual-regression-update-snapshots-chrome
             - visual-regression-update-snapshots-firefox
 
