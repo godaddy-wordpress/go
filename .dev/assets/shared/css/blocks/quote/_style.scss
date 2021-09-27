@@ -1,3 +1,14 @@
+.wp-block-quote:not([style]){
+	p {
+		color: var(--go-quote--color--text, var(--go-heading--color--text));
+	}
+	&:not(.is-style-large) {
+		p {
+			color: var(--go-quote--color--text, var(--go-heading--color--text));
+		}
+	}
+}
+
 /*! Blockquote */
 .wp-block-quote {
 	margin-bottom: calc(var(--go--spacing--vertical--lg) * 0.5);
@@ -6,7 +17,6 @@
 	margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
 
 	p {
-		color: var(--go-quote--color--text, var(--go-heading--color--text));
 		font-display: swap;
 		font-family: var(--go-heading--font-family);
 		font-size: var(--go-quote--font-size, var(--go--type-scale-4));
@@ -32,7 +42,6 @@
 		padding-right: 0;
 
 		p {
-			color: var(--go-quote--color--text, var(--go-heading--color--text));
 			padding-left: 1.5rem;
 
 			@include media(medium) {

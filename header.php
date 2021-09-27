@@ -9,6 +9,8 @@
  * @package Go
  */
 
+$header_flex_class = in_array( get_theme_mod( 'header_variation', \Go\Core\get_default_header_variation() ), array( 'header-6' ), true ) ? '' : ' flex';
+
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -38,16 +40,17 @@
 
 		<a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'go' ); ?></a>
 
-		<header id="site-header" class="site-header header relative <?php echo esc_attr( Go\has_header_background() ); ?>" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+		<header id="site-header" class="site-header header relative <?php echo esc_attr( Go\has_header_background() ); ?> <?php echo esc_attr( get_theme_mod( 'header_variation' ) ); ?>" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-			<div class="header__inner flex items-center justify-between h-inherit w-full relative">
+			<div class="header__inner<?php echo esc_attr( $header_flex_class ); ?> items-center justify-between h-inherit w-full relative">
 
 				<div class="header__extras">
+					<?php do_action( 'go_header_social_icons' ); ?>
 					<?php Go\search_toggle(); ?>
 					<?php Go\WooCommerce\woocommerce_cart_link(); ?>
 				</div>
 
-				<div class="header__title-nav flex items-center flex-nowrap">
+				<div class="header__title-nav<?php echo esc_attr( $header_flex_class ); ?> items-center flex-nowrap">
 
 					<?php Go\display_site_branding(); ?>
 
