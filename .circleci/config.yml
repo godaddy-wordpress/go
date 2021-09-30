@@ -303,7 +303,7 @@ jobs:
 
   theme-check:
     docker:
-      - image: circleci/php:7.3.31-apache-node-browsers
+      - image: circleci/php:7.3.31-apache-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -353,7 +353,7 @@ jobs:
 
   a11y-tests:
     docker:
-      - image: circleci/php:7.3.31-apache-node-browsers
+      - image: circleci/php:7.3.31-apache-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
