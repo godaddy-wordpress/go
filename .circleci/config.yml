@@ -173,7 +173,7 @@ jobs:
 
   unit-test-73:
     docker:
-      - image: circleci/php:7.3.31-apache-node-browsers
+      - image: circleci/php:7.3.31-apache-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -189,7 +189,9 @@ jobs:
           command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - run:
           name: Update npm
-          command: sudo npm install -g npm@latest
+          command: |
+            sudo apt-get update
+            sudo install npm
       - run:
           name: Install MariaDB
           command: |
@@ -237,7 +239,7 @@ jobs:
 
   unit-test-74:
     docker:
-      - image: circleci/php:7.4.16-apache-node-browsers
+      - image: circleci/php:7.4.16-apache-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -255,7 +257,9 @@ jobs:
           command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - run:
           name: Update npm
-          command: sudo npm install -g npm@latest
+          command: |
+            sudo apt-get update
+            sudo install npm
       - run:
           name: Install MariaDB
           command: |
@@ -316,11 +320,12 @@ jobs:
       - wait_for_mysql
       - run:
           name: Update npm
-          command: sudo npm install -g npm@latest
+          command: |
+            sudo apt-get update
+            sudo install npm
       - run:
           name: Install MariaDB
           command: |
-            sudo apt-get update
             sudo apt-get install mariadb-client
       - run:
           name: Install rsync
@@ -369,7 +374,9 @@ jobs:
           command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - run:
           name: Update npm
-          command: sudo npm install -g npm@latest
+          command: |
+            sudo apt-get update
+            sudo install npm
       - run:
           name: Install MariaDB
           command: |
@@ -412,7 +419,7 @@ jobs:
 
   i18n:
     docker:
-      - image: circleci/php:7.3-node-browsers-legacy
+      - image: circleci/php:7.3-browsers-legacy
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -470,7 +477,7 @@ jobs:
 
   visual-regression-chrome:
     docker:
-      - image: circleci/python:latest-node-browsers
+      - image: circleci/python:latest-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -479,7 +486,9 @@ jobs:
       - checkout
       - run:
           name: Update npm
-          command: sudo npm install -g npm@latest
+          command: |
+            sudo apt-get update
+            sudo install npm
       - restore_cache:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
@@ -512,7 +521,7 @@ jobs:
 
   visual-regression-firefox:
     docker:
-      - image: circleci/python:latest-node-browsers
+      - image: circleci/python:latest-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -521,7 +530,9 @@ jobs:
       - checkout
       - run:
           name: Update npm
-          command: sudo npm install -g npm@latest
+          command: |
+            sudo apt-get update
+            sudo install npm
       - restore_cache:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
@@ -554,7 +565,7 @@ jobs:
 
   visual-regression-update-snapshots-chrome:
     docker:
-      - image: circleci/python:latest-node-browsers
+      - image: circleci/python:latest-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -563,7 +574,9 @@ jobs:
       - checkout
       - run:
           name: Update npm
-          command: sudo npm install -g npm@latest
+          command: |
+            sudo apt-get update
+            sudo install npm
       - restore_cache:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
@@ -591,7 +604,7 @@ jobs:
 
   visual-regression-update-snapshots-firefox:
     docker:
-      - image: circleci/python:latest-node-browsers
+      - image: circleci/python:latest-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -600,7 +613,9 @@ jobs:
       - checkout
       - run:
           name: Update npm
-          command: sudo npm install -g npm@latest
+          command: |
+            sudo apt-get update
+            sudo install npm
       - restore_cache:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
@@ -628,7 +643,7 @@ jobs:
 
   canary:
     docker:
-      - image: circleci/golang:latest-node-browsers-legacy
+      - image: circleci/golang:latest-browsers-legacy
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -636,7 +651,9 @@ jobs:
       - checkout
       - run:
           name: Update npm
-          command: sudo npm install -g npm@latest
+          command: |
+            sudo apt-get update
+            sudo install npm
       - run:
           name: Install Grunt.js
           command: sudo npm install -g grunt-cli
@@ -683,7 +700,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/golang:latest-node-browsers-legacy
+      - image: circleci/golang:latest-browsers-legacy
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -691,7 +708,9 @@ jobs:
       - checkout
       - run:
           name: Update npm
-          command: sudo npm install -g npm@latest
+          command: |
+            sudo apt-get update
+            sudo install npm
       - run:
           name: Install Grunt.js
           command: sudo npm install -g grunt-cli
