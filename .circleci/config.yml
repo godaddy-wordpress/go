@@ -130,7 +130,7 @@ commands:
     steps:
       - run:
           name: "Run PHPUnit - Single Site - Generate Coverage Reports"
-          command: composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml --coverage-clover=clover.xml
+          command: XDEBUG_MODE=coverage composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml --coverage-clover=clover.xml
           working_directory: /tmp/wordpress/wp-content/themes/go
 
 
