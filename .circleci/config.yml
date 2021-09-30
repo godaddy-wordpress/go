@@ -191,7 +191,7 @@ jobs:
           name: Update npm
           command: |
             sudo apt-get update
-            sudo install npm
+            sudo apt-get install npm
       - run:
           name: Install MariaDB
           command: |
@@ -259,7 +259,7 @@ jobs:
           name: Update npm
           command: |
             sudo apt-get update
-            sudo install npm
+            sudo apt-get install npm
       - run:
           name: Install MariaDB
           command: |
@@ -322,7 +322,7 @@ jobs:
           name: Update npm
           command: |
             sudo apt-get update
-            sudo install npm
+            sudo apt-get install npm
       - run:
           name: Install MariaDB
           command: |
@@ -376,7 +376,7 @@ jobs:
           name: Update npm
           command: |
             sudo apt-get update
-            sudo install npm
+            sudo apt-get install npm
       - run:
           name: Install MariaDB
           command: |
@@ -488,7 +488,7 @@ jobs:
           name: Update npm
           command: |
             sudo apt-get update
-            sudo install npm
+            sudo apt-get install npm
       - restore_cache:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
@@ -532,7 +532,7 @@ jobs:
           name: Update npm
           command: |
             sudo apt-get update
-            sudo install npm
+            sudo apt-get install npm
       - restore_cache:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
@@ -576,7 +576,7 @@ jobs:
           name: Update npm
           command: |
             sudo apt-get update
-            sudo install npm
+            sudo apt-get install npm
       - restore_cache:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
@@ -615,7 +615,7 @@ jobs:
           name: Update npm
           command: |
             sudo apt-get update
-            sudo install npm
+            sudo apt-get install npm
       - restore_cache:
           key: dependency-cache--{{ checksum "package.json" }}
       - run:
@@ -653,7 +653,7 @@ jobs:
           name: Update npm
           command: |
             sudo apt-get update
-            sudo install npm
+            sudo apt-get install npm
       - run:
           name: Install Grunt.js
           command: sudo npm install -g grunt-cli
@@ -710,7 +710,7 @@ jobs:
           name: Update npm
           command: |
             sudo apt-get update
-            sudo install npm
+            sudo apt-get install npm
       - run:
           name: Install Grunt.js
           command: sudo npm install -g grunt-cli
