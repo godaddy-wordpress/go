@@ -341,7 +341,7 @@ jobs:
           name: Install node packages
           command: npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: v1.0-dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - install_wpcli
