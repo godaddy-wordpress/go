@@ -80,6 +80,9 @@ workflows:
             branches:
               ignore: /.*/
 
+orbs: # declare what orbs we are going to use
+  node: circleci/node@2.0.2 # the node orb provides common node-related configuration
+
 version: 2.1
 
 commands:
@@ -307,7 +310,7 @@ jobs:
 
   theme-check:
     docker:
-      - image: circleci/php:7.3.31-apache-node-browsers
+      - image: cimg/node:@14.17.5-apache-browsers-php@7.3.31
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
