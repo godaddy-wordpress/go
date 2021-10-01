@@ -310,7 +310,7 @@ jobs:
 
   theme-check:
     docker:
-      - image: cimg/node:@14.17.5-apache-browsers-php@7.3.31
+      - image: circleci/php:7.3.31-apache-node-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -394,12 +394,12 @@ jobs:
           name: Install Grunt.js
           command: sudo npm install -g grunt-cli
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: v1.1-dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install node packages
           command: npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: v1.1-dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - install_wpcli
