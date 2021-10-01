@@ -336,12 +336,12 @@ jobs:
           name: Install Grunt.js
           command: sudo npm install -g grunt-cli
       - restore_cache:
-          key: v1.0-dependency-cache-{{ checksum "package.json" }}
+          key: v1.1-dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install node packages
           command: npm install
       - save_cache:
-          key: v1.0-dependency-cache-{{ checksum "package.json" }}
+          key: v1.1-dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - install_wpcli
