@@ -360,7 +360,7 @@ jobs:
 
   a11y-tests:
     docker:
-      - image: circleci/php:7.3.31-apache-browsers
+      - image: circleci/php:7.3.31-apache-node-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -377,8 +377,7 @@ jobs:
       - run:
           name: Update npm
           command: |
-            sudo apt-get update
-            sudo apt-get install npm
+            sudo npm install -g npm@latest
       - run:
           name: Install MariaDB
           command: |
