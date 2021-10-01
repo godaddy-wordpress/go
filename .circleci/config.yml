@@ -80,9 +80,6 @@ workflows:
             branches:
               ignore: /.*/
 
-orbs: # declare what orbs we are going to use
-  node: circleci/node@2.0.2 # the node orb provides common node-related configuration
-
 version: 2.1
 
 commands:
