@@ -1,0 +1,11 @@
+.wp-block-coblocks-click-to-tweet {
+	.wp-block-coblocks-click-to-tweet__text {
+		left: 29px;
+		padding-left: 5px;
+		padding-top: 0;
+
+		&::after {
+			content: none;
+		}
+	}
+}
