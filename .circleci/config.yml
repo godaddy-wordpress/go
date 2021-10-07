@@ -25,6 +25,8 @@ executors:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
+        environment:
+          XDEBUG_MODE=coverage
       - image: circleci/mysql:5.7-ram
         auth:
           username: $DOCKERHUB_USERNAME
@@ -402,7 +404,7 @@ jobs:
           command: sudo apt-get install gettext
       - run:
           name: Install Grunt.js
-          command: sudo yarn install -g grunt-cli
+          command: sudo yarn global add grunt-cli
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
