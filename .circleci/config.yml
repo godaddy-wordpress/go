@@ -214,7 +214,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install node packages
-          command: npm install
+          command: yarn install
           working_directory: /tmp/wordpress/wp-content/themes/go
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
@@ -222,7 +222,7 @@ jobs:
             - node_modules
       - run:
           name: Build the Go Theme
-          command: npm run build
+          command: yarn build
           working_directory: /tmp/wordpress/wp-content/themes/go
       - run_phpunit_single_site_generate_coverage
       - run:
