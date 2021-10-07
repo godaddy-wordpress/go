@@ -187,10 +187,7 @@ commands:
           command: composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml --coverage-clover=clover.xml
           working_directory: /tmp/wordpress/wp-content/themes/go
 
-
-jobs:
-  php56-phpcs:
-    executor: php_56
+  run_php_cs:
     steps:
       - checkout
       - run:
@@ -203,22 +200,7 @@ jobs:
           name: "Run PHPCS"
           command: composer lint
 
-  php73-phpcs:
-    executor: php_73
-    steps:
-      - checkout
-      - run:
-          name: "Setup Environment Variables"
-          command: |
-            echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
-            source /home/circleci/.bashrc
-      - install_dependencies
-      - run:
-          name: "Run PHPCS"
-          command: composer lint
-
-  unit-test-73:
-    executor: php_73_apache_node_browser_mysql
+  run_php_unit_test:
     steps:
       - checkout
       - wait_for_mysql
@@ -273,61 +255,101 @@ jobs:
       - store_test_results:
           path: /tmp/artifacts/code-coverage/
 
-  unit-test-74:
-    executor: php_74_apache_node_browser_mysql
+  run_visual_regression_tests:
+    parameters:
+      browser:
+        type: enum
+        enum: ['chrome', 'firefox']
     steps:
       - checkout
-      - wait_for_mysql
-      - run:
-          name: Update hosts
-          command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - run:
           name: Update npm
           command: sudo npm install -g npm@latest
-      - run:
-          name: Install MariaDB
-          command: |
-            sudo apt-get update --allow-releaseinfo-change
-            sudo apt-get install mariadb-client
-      - run:
-          name: Install rsync
-          command: sudo apt install rsync
-      - install_code_climate_test_reporter
-      - install_wpcli
-      - run:
-          name: Install gettext
-          command: sudo apt-get install gettext
-      - run:
-          name: Setup WordPress site
-          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
-      - run:
-          name: Install Composer packages
-          command: composer install
-          working_directory: /tmp/wordpress/wp-content/themes/go
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache--{{ checksum "package.json" }}
       - run:
           name: Install node packages
           command: npm install
-          working_directory: /tmp/wordpress/wp-content/themes/go
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache--{{ checksum "package.json" }}
           paths:
             - node_modules
+            - ~/.cache
       - run:
-          name: Build the Go Theme
-          command: npm run build
-          working_directory: /tmp/wordpress/wp-content/themes/go
-      - run_phpunit_single_site_generate_coverage
+          name: "Install awscli"
+          command: sudo apt-get install awscli
       - run:
-          name: "Deploy Coverage to Code Climate"
-          command: ./cc-test-reporter after-build -t clover --exit-code $?
-          working_directory: /tmp/wordpress/wp-content/themes/go
-      - store_artifacts:
-          path: /tmp/artifacts/code-coverage/
-          destination: phpunit-coverage
-      - store_test_results:
-          path: /tmp/artifacts/code-coverage/
+          name: "Download base snapshots"
+          command: |
+            if [ "$CIRCLE_BRANCH" == "master" ]; then
+              npm run snapshots:download-all
+            else
+              npm run snapshots:download
+            fi
+      - run:
+          name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
+          command: |
+            if [ "$CIRCLE_BRANCH" == "master" ]; then
+              npm run test-vr-all -- --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >>
+            else
+              npm run test-vr -- --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >>
+            fi
+
+  visual-regression-update-snapshots:
+    parameters:
+      browser:
+        type: enum
+        enum: ['chrome', 'firefox']
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: sudo npm install -g npm@latest
+      - restore_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+      - run:
+          name: Install node packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache--{{ checksum "package.json" }}
+          paths:
+            - node_modules
+            - ~/.cache
+      - run:
+          name: "Install awscli"
+          command: sudo apt-get install awscli
+      - run:
+          name: "Run end to end tests (Cypress.io)"
+          command: npm run test-vr-all -- --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >>
+      - run:
+          name: "Update base snapshots - << parameters.browser >>"
+          command: |
+            if [ ! -d .dev/tests/cypress/snapshots/visual-regression ] || [ -z "$(ls -A .dev/tests/cypress/snapshots/visual-regression)"]; then
+              echo "No snapshots to upload."
+              circleci-agent step halt
+            fi
+            npm run snapshots:upload-all
+
+jobs:
+  php56-phpcs:
+    executor: php_56
+    steps:
+      - run_php_cs
+
+  php73-phpcs:
+    executor: php_73
+    steps:
+      - run_php_cs
+
+  unit-test-73:
+    executor: php_73_apache_node_browser_mysql
+    steps:
+      - run_php_unit_test
+
+  unit-test-74:
+    executor: php_74_apache_node_browser_mysql
+    steps:
+      - run_php_unit_test
 
   theme-check:
     executor: php_73_apache_node_browser_mysql
@@ -480,143 +502,29 @@ jobs:
     executor: python_node_browsers
     parallelism: 10
     steps:
-      - checkout
-      - run:
-          name: Update npm
-          command: sudo npm install -g npm@latest
-      - restore_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: npm install
-      - save_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-          paths:
-            - node_modules
-            - ~/.cache
-      - run:
-          name: "Install awscli"
-          command: sudo apt-get install awscli
-      - run:
-          name: "Download base snapshots"
-          command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              npm run snapshots:download-all
-            else
-              npm run snapshots:download
-            fi
-      - run:
-          name: "Run end to end tests (Cypress.io)"
-          command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              npm run test-vr-all -- --browser chrome --record --parallel --group vr-chrome
-            else
-              npm run test-vr -- --browser chrome --record --parallel --group vr-chrome
-            fi
+      - run_visual_regression_tests:
+          browser: chrome
 
   visual-regression-firefox:
     executor: python_node_browsers
     parallelism: 10
     steps:
-      - checkout
-      - run:
-          name: Update npm
-          command: sudo npm install -g npm@latest
-      - restore_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: npm install
-      - save_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-          paths:
-            - node_modules
-            - ~/.cache
-      - run:
-          name: "Install awscli"
-          command: sudo apt-get install awscli
-      - run:
-          name: "Download base snapshots"
-          command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              npm run snapshots:download-all
-            else
-              npm run snapshots:download
-            fi
-      - run:
-          name: "Run end to end tests (Cypress.io)"
-          command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              npm run test-vr-all -- --browser firefox --record --parallel --group vr-firefox
-            else
-              npm run test-vr -- --browser firefox --record --parallel --group vr-firefox
-            fi
+      - run_visual_regression_tests:
+          browser: firefox
 
   visual-regression-update-snapshots-chrome:
     executor: python_node_browsers
     parallelism: 10
     steps:
-      - checkout
-      - run:
-          name: Update npm
-          command: sudo npm install -g npm@latest
-      - restore_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: npm install
-      - save_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-          paths:
-            - node_modules
-            - ~/.cache
-      - run:
-          name: "Install awscli"
-          command: sudo apt-get install awscli
-      - run:
-          name: "Run end to end tests (Cypress.io)"
-          command: npm run test-vr-all -- --browser chrome --record --parallel --group vr-chrome
-      - run:
-          name: "Update base snapshots"
-          command: |
-            if [ ! -d .dev/tests/cypress/snapshots/visual-regression ] || [ -z "$(ls -A .dev/tests/cypress/snapshots/visual-regression)"]; then
-              echo "No snapshots to upload."
-              circleci-agent step halt
-            fi
-            npm run snapshots:upload-all
+      - visual-regression-update-snapshots:
+          browser: chrome
 
   visual-regression-update-snapshots-firefox:
     executor: python_node_browsers
     parallelism: 10
     steps:
-      - checkout
-      - run:
-          name: Update npm
-          command: sudo npm install -g npm@latest
-      - restore_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: npm install
-      - save_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-          paths:
-            - node_modules
-            - ~/.cache
-      - run:
-          name: "Install awscli"
-          command: sudo apt-get install awscli
-      - run:
-          name: "Run end to end tests (Cypress.io)"
-          command: npm run test-vr-all -- --browser firefox --record --parallel --group vr-firefox
-      - run:
-          name: "Update base snapshots"
-          command: |
-            if [ ! -d .dev/tests/cypress/snapshots/visual-regression ] || [ -z "$(ls -A .dev/tests/cypress/snapshots/visual-regression)"]; then
-              echo "No snapshots to upload."
-              circleci-agent step halt
-            fi
-            npm run snapshots:upload-all
+      - visual-regression-update-snapshots:
+          browser: firefox
 
   canary:
     executor: go_node_browsers_legacy
