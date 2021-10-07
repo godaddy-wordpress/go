@@ -360,7 +360,7 @@ jobs:
           command: sudo apt-get install gettext
       - run:
           name: Install Grunt.js
-          command: sudo yarn install -g grunt-cli
+          command: sudo yarn global add grunt-cli
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
