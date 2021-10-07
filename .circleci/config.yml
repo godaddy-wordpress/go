@@ -1,3 +1,59 @@
+version: 2.1
+
+executors:
+  php_56:
+    docker:
+      - image: circleci/php:5.6
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWOR
+  php_73:
+    docker:
+      - image: circleci/php:7.3.31
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+  php_73_node_browser_legacy:
+     docker:
+      - image: circleci/php:7.3-node-browsers-legacy
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+  php_73_apache_node_browser_mysql:
+    docker:
+      - image: circleci/php:7.3.31-apache-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+      - image: circleci/mysql:5.7-ram
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+  php_74_apache_node_browser_mysql:
+    docker:
+      - image: circleci/php:7.4.24-apache-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+        environment:
+          XDEBUG_MODE=coverage
+      - image: circleci/mysql:5.7-ram
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+  python_node_browsers:
+    docker:
+      - image: circleci/python:latest-node-browsers
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+  go_node_browsers_legacy:
+    docker:
+      - image: circleci/golang:latest-node-browsers-legacy
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+
 workflows:
   version: 2.1
   main:
@@ -80,8 +136,6 @@ workflows:
             branches:
               ignore: /.*/
 
-version: 2.1
-
 commands:
   wait_for_mysql:
     steps:
@@ -136,11 +190,7 @@ commands:
 
 jobs:
   php56-phpcs:
-    docker:
-      - image: circleci/php:5.6
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: php_56
     steps:
       - checkout
       - run:
@@ -154,11 +204,7 @@ jobs:
           command: composer lint
 
   php73-phpcs:
-    docker:
-      - image: circleci/php:7.3.8
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: php_73
     steps:
       - checkout
       - run:
@@ -172,15 +218,7 @@ jobs:
           command: composer lint
 
   unit-test-73:
-    docker:
-      - image: circleci/php:7.3.8-apache-node-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
-      - image: circleci/mysql:5.7
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: php_73_apache_node_browser_mysql
     steps:
       - checkout
       - wait_for_mysql
@@ -193,7 +231,7 @@ jobs:
       - run:
           name: Install MariaDB
           command: |
-            sudo apt-get update
+            sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - run:
           name: Install rsync
@@ -236,17 +274,7 @@ jobs:
           path: /tmp/artifacts/code-coverage/
 
   unit-test-74:
-    docker:
-      - image: circleci/php:7.4.16-apache-node-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
-        environment:
-          XDEBUG_MODE=coverage
-      - image: circleci/mysql:5.7
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: php_74_apache_node_browser_mysql
     steps:
       - checkout
       - wait_for_mysql
@@ -259,7 +287,7 @@ jobs:
       - run:
           name: Install MariaDB
           command: |
-            sudo apt-get update
+            sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - run:
           name: Install rsync
@@ -302,15 +330,7 @@ jobs:
           path: /tmp/artifacts/code-coverage/
 
   theme-check:
-    docker:
-      - image: circleci/php:7.3.8-apache-node-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
-      - image: circleci/mysql:5.7
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: php_73_apache_node_browser_mysql
     steps:
       - checkout
       - wait_for_mysql
@@ -320,7 +340,7 @@ jobs:
       - run:
           name: Install MariaDB
           command: |
-            sudo apt-get update
+            sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - run:
           name: Install rsync
@@ -352,15 +372,7 @@ jobs:
           command: wp themecheck --theme=go --no-interactive --path=/tmp/wordpress
 
   a11y-tests:
-    docker:
-      - image: circleci/php:7.3.8-apache-node-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
-      - image: circleci/mysql:5.7
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: php_73_apache_node_browser_mysql
     steps:
       - checkout
       - wait_for_mysql
@@ -373,7 +385,7 @@ jobs:
       - run:
           name: Install MariaDB
           command: |
-            sudo apt-get update
+            sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - run:
           name: Install rsync
@@ -411,11 +423,7 @@ jobs:
             fi
 
   i18n:
-    docker:
-      - image: circleci/php:7.3-node-browsers-legacy
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: php_73_node_browser_legacy
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -469,11 +477,7 @@ jobs:
             git push origin master --quiet
 
   visual-regression-chrome:
-    docker:
-      - image: circleci/python:latest-node-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: python_node_browsers
     parallelism: 10
     steps:
       - checkout
@@ -511,11 +515,7 @@ jobs:
             fi
 
   visual-regression-firefox:
-    docker:
-      - image: circleci/python:latest-node-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: python_node_browsers
     parallelism: 10
     steps:
       - checkout
@@ -553,11 +553,7 @@ jobs:
             fi
 
   visual-regression-update-snapshots-chrome:
-    docker:
-      - image: circleci/python:latest-node-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: python_node_browsers
     parallelism: 10
     steps:
       - checkout
@@ -590,11 +586,7 @@ jobs:
             npm run snapshots:upload-all
 
   visual-regression-update-snapshots-firefox:
-    docker:
-      - image: circleci/python:latest-node-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: python_node_browsers
     parallelism: 10
     steps:
       - checkout
@@ -627,11 +619,7 @@ jobs:
             npm run snapshots:upload-all
 
   canary:
-    docker:
-      - image: circleci/golang:latest-node-browsers-legacy
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: go_node_browsers_legacy
     steps:
       - checkout
       - run:
@@ -682,11 +670,7 @@ jobs:
             -d '[ "go" ]'
 
   deploy:
-    docker:
-      - image: circleci/golang:latest-node-browsers-legacy
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
+    executor: go_node_browsers_legacy
     steps:
       - checkout
       - run:
