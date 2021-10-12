@@ -1,8 +1,8 @@
 ---
-name: "\U0001F3A8 Design Style Issue"
+name: "\U0001F3A8 Design Style Issue/Bug"
 about: Create a report to help us improve our new theme
 title: ''
-labels: design, bug
+labels: "[Type] Design, [Type] Bug"
 assignees: ''
 
 ---
