@@ -95,7 +95,9 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
-              ignore: master
+              ignore:
+                - master
+                - actions/visual-regression-update-snapshots
       # - visual-regression-firefox:
       #     filters:
       #       tags:
