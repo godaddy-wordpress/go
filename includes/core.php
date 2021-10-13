@@ -1158,6 +1158,11 @@ function get_available_social_icons() {
 			'icon'        => get_theme_file_path( 'dist/images/social/linkedin.svg' ),
 			'placeholder' => 'https://linkedin.com/in/user',
 		),
+		'xing'      => array(
+			'label'       => esc_html__( 'Xing', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/xing.svg' ),
+			'placeholder' => 'https://www.xing.com/profile/user',
+		),
 		'pinterest' => array(
 			'label'       => esc_html__( 'Pinterest', 'go' ),
 			'icon'        => get_theme_file_path( 'dist/images/social/pinterest.svg' ),
