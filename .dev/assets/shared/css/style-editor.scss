@@ -10,9 +10,9 @@
 @import "editor/title-block";
 @import "editor/title-permalink";
 
-.block-list-appender {
-	width: auto !important;
-	top: 0 !important;
+.editor-post-title__input {
+	text-align: center;
+	padding: 19px 0;
 }
 
 .wp-block-button {
