@@ -1,8 +1,8 @@
 ---
-name: "\U0001F41E Functionality Issue"
+name: "\U0001F41E Functionality Issue / Bug Report"
 about: Create a functionality issue to help us improve our new theme
 title: ''
-labels: bug
+labels: "[Type] Bug"
 assignees: ''
 
 ---

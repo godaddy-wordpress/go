@@ -59,6 +59,8 @@
 		var aria_controls = menu_toggle.getAttribute( 'aria-controls' );
 		var sub_menu_acion = options.sub_menu_open;
 		var current_menu_item = menu.querySelector( '.current-menu-item' );
+		var menu_items_links = menu.querySelectorAll( '.menu-item > a' );
+		var menu_items_links_count = menu_items_links.length;
 		var menu_items_with_children = menu.querySelectorAll( '.menu-item-has-children' );
 		var menu_items_with_children_count = menu_items_with_children.length;
 		var currentTarget;
@@ -157,6 +159,17 @@
 				}
 			}
 		}; // listener_submenu_click()
+
+		// Listener for same page link (hash) click
+		function listener_hash_click() {
+
+			// Close the menu
+			menu.setAttribute( 'aria-hidden', 'true' );
+			menu_toggle.setAttribute( 'aria-expanded', 'false' );
+
+			// Bubble to the document
+			document.body.classList.remove( 'menu-is-open' );
+		};
 
 		// When "hover", this is how focus should act
 		function listener_submenu_focus( e ) {
@@ -280,12 +293,19 @@
 				}
 
 				// Loop through all submenus and bind events when needed
-				for ( i = 0; i < menu_items_with_children_count; i = i + 1 ) {
+				for ( i = 0; i < menu_items_with_children_count; i++ ) {
 					var svgElements = menu_items_with_children[i].querySelectorAll( 'svg' );
 					for ( var q = 0; q < svgElements.length; q = q + 1 ) {
 						svgElements[q].addEventListener( 'click', listener_submenu_click );
 					}
 					menu_items_with_children[i].removeEventListener( 'focusin', listener_submenu_focus );
+				} // for
+
+				// Loop through all links for hash and bind events when needed
+				for ( i = 0; i < menu_items_links_count; i++ ) {
+					if ( menu_items_links[i].hash && menu_items_links[i].pathname === '/' ) {
+						menu_items_links[i].addEventListener( 'click', listener_hash_click );
+					}
 				} // for
 
 				// Bind the event
