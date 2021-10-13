@@ -113,21 +113,6 @@ workflows:
               only: actions/visual-regression-update-snapshots
               ignore: master
 
-      - visual-regression-chrome:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-          requires:
-            - visual-regression-update-snapshots-chrome
-            - visual-regression-update-snapshots-firefox
-      - visual-regression-firefox:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-          requires:
-            - visual-regression-update-snapshots-chrome
-            - visual-regression-update-snapshots-firefox
-
       - canary:
           requires:
             - php56-phpcs
