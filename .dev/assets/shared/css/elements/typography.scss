@@ -17,7 +17,7 @@ p {
 	line-height: var(--go--line-height);
 }
 
-.content-area > blockquote {
+blockquote {
 	border-left: var(--go-quote--border-width) var(--go-quote--border-style) var(--go-quote--border-color);
 	margin-left: auto;
 	margin-right: auto;
