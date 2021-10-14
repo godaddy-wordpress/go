@@ -561,7 +561,7 @@ function body_classes( $classes ) {
 
 	// Add class when no primary navigation is set.
 	if ( ! has_nav_menu( 'primary' ) ) {
-		$classes[] = 'has-no-primary-nav';
+		$classes[] = 'has-no-primary-menu';
 	}
 
 	// Add class when there is not a footer menu.
