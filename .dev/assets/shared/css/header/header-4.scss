@@ -177,3 +177,13 @@
 		}
 	}
 }
+
+body.has-header-4 {
+
+	&.has-no-primary-menu {
+
+		& .header__nav-toggle {
+			display: none;
+		}
+	}
+}

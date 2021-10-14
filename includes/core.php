@@ -559,6 +559,11 @@ function body_classes( $classes ) {
 		$classes[] = sprintf( 'has-%s', esc_attr( $footer_variation ) );
 	}
 
+	// Add class when no primary navigation is set.
+	if ( ! has_nav_menu( 'primary' ) ) {
+		$classes[] = 'has-no-primary-menu';
+	}
+
 	// Add class when there is not a footer menu.
 	if ( ! has_nav_menu( 'footer-1' ) ) {
 		$classes[] = 'has-no-footer-menu';
