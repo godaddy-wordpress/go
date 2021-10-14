@@ -543,10 +543,16 @@ function body_classes( $classes ) {
 	$design_style     = get_theme_mod( 'design_style', get_default_design_style() );
 	$footer_variation = get_theme_mod( 'footer_variation', get_default_footer_variation() );
 	$header_variation = get_theme_mod( 'header_variation', get_default_header_variation() );
+	$has_primary_nav  = has_nav_menu( 'primary' );
 
 	// Add class for the current design style.
 	if ( $design_style ) {
 		$classes[] = sprintf( 'is-style-%s', esc_attr( $design_style ) );
+	}
+
+	// Add class when no primary navigation is set.
+	if ( ! $has_primary_nav ) {
+		$classes[] = 'no-primary-nav';
 	}
 
 	// Add class for the current header variation.
