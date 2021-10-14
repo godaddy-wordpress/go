@@ -28,5 +28,5 @@ do
 	else
 		OutputFilename=${f/.css/-rtl.css}
 	fi
-	./node_modules/.bin/rtlcss $f $OutputFilename
+	./node_modules/.bin/rtlcss -s $f $OutputFilename
 done
