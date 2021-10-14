@@ -1395,7 +1395,7 @@ function custom_logo_alt_text( $custom_logo_attr, $custom_logo_id ) {
 
 	$alt_text = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
 
-	$custom_logo_attr['alt'] = $alt_text ?? get_bloginfo( 'name' );
+	$custom_logo_attr['alt'] = $alt_text ? $alt_text : get_bloginfo( 'name' );
 
 	return $custom_logo_attr;
 
