@@ -843,8 +843,27 @@ function site_branding( $args = array() ) {
 		)
 	);
 
+	$hide_title_tagline = (bool) get_theme_mod( 'hide_site_title_tagline', false );
+
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+
+		/**
+		 * Wrap the custom logo in an h1 element when the hiding the site title & tagline.
+		 */
+		add_filter( 'get_custom_logo', function( $html ) use ( $hide_title_tagline ) {
+
+			return $hide_title_tagline ? '<h1 class="custom-logo">' . $html . '</h1>' : $html;
+
+		}, PHP_INT_MAX );
+
 		the_custom_logo();
+
+	}
+
+	if ( $hide_title_tagline ) {
+
+		return;
+
 	}
 
 	$blog_name        = get_bloginfo( 'name' );

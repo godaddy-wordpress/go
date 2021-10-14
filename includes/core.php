@@ -35,6 +35,7 @@ function setup() {
 	add_filter( 'go_page_title_args', $n( 'filter_page_titles' ) );
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
 	add_filter( 'the_content_more_link', $n( 'read_more_tag' ) );
+	add_filter( 'get_custom_logo_image_attributes', $n( 'custom_logo_alt_text' ), PHP_INT_MAX, 2 );
 
 }
 
@@ -1380,4 +1381,14 @@ function filter_page_titles( $args ) {
  */
 function read_more_tag( $html ) {
 	return preg_replace( '/<a(.*)>(.*)<\/a>/iU', sprintf( '<div class="read-more-button-wrap"><a$1><span class="button">$2</span> <span class="screen-reader-text">"%1$s"</span></a></div>', get_the_title( get_the_ID() ) ), $html );
+}
+
+function custom_logo_alt_text( $custom_logo_attr, $custom_logo_id ) {
+
+	$alt_text = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
+
+	$custom_logo_attr['alt'] = $alt_text ?? get_bloginfo( 'name' );
+
+	return $custom_logo_attr;
+
 }

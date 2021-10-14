@@ -390,6 +390,26 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'hide_site_title_tagline',
+		array(
+			'default'           => false,
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'hide_site_title_tagline_checkbox',
+		array(
+			'label'       => esc_html__( 'Hide Site Title & Tagline', 'go' ),
+			'description' => esc_html__( 'Hide the site title and tagline.', 'go' ),
+			'section'     => 'go_site_settings',
+			'settings'    => 'hide_site_title_tagline',
+			'type'        => 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
 		'copyright',
 		array(
 			'default'           => \Go\Core\get_default_copyright(),
