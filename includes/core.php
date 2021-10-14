@@ -279,7 +279,7 @@ function fonts_url() {
 	 *
 	 * @var bool
 	 */
-	$use_google_fonts = apply_filters( 'go_use_google_fonts', false );
+	$use_google_fonts = apply_filters( 'go_use_google_fonts', true );
 
 	$design_style = get_design_style();
 
