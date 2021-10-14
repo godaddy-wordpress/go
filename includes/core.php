@@ -438,7 +438,7 @@ function editor_styles() {
 	if ( ! empty( $fonts_url ) ) {
 
 		// Enqueue fonts into the editor.
-		add_editor_style( fonts_url() );
+		add_editor_style( $fonts_url );
 
 	}
 
