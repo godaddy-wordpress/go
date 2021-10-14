@@ -850,11 +850,15 @@ function site_branding( $args = array() ) {
 		/**
 		 * Wrap the custom logo in an h1 element when the hiding the site title & tagline.
 		 */
-		add_filter( 'get_custom_logo', function( $html ) use ( $hide_title_tagline ) {
+		add_filter(
+			'get_custom_logo',
+			function( $html ) use ( $hide_title_tagline ) {
 
-			return $hide_title_tagline ? '<h1 class="custom-logo">' . $html . '</h1>' : $html;
+				return $hide_title_tagline ? '<h1 class="custom-logo">' . $html . '</h1>' : $html;
 
-		}, PHP_INT_MAX );
+			},
+			PHP_INT_MAX
+		);
 
 		the_custom_logo();
 
