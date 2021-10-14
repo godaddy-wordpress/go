@@ -176,6 +176,6 @@
     "node-sass": "^5.0.0",
     "normalize.css": "^8.0.0",
     "sass-loader": "^10.0.5",
-    "strip-css-comments-cli": "^2.0.2"
+    "strip-css-comments-cli": "^3.0.0"
   }
 }
