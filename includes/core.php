@@ -1383,6 +1383,14 @@ function read_more_tag( $html ) {
 	return preg_replace( '/<a(.*)>(.*)<\/a>/iU', sprintf( '<div class="read-more-button-wrap"><a$1><span class="button">$2</span> <span class="screen-reader-text">"%1$s"</span></a></div>', get_the_title( get_the_ID() ) ), $html );
 }
 
+/**
+ * Add the image alt text to the custom logo.
+ *
+ * @param  array $custom_logo_attr Array of custom logo attributes.
+ * @param  int   $custom_logo_id   The custom logo image ID.
+ *
+ * @return array Array of altered custom logo attributes.
+ */
 function custom_logo_alt_text( $custom_logo_attr, $custom_logo_id ) {
 
 	$alt_text = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
