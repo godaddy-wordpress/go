@@ -274,9 +274,16 @@ function theme_setup() {
  */
 function fonts_url() {
 
+	/**
+	 * Filter to disable Google fonts from loading on the site.
+	 *
+	 * @var bool
+	 */
+	$use_google_fonts = apply_filters( 'go_use_google_fonts', true );
+
 	$design_style = get_design_style();
 
-	if ( ! isset( $design_style['fonts'] ) ) {
+	if ( ! $use_google_fonts || ! isset( $design_style['fonts'] ) ) {
 
 		return;
 
@@ -426,8 +433,14 @@ function editor_styles() {
 		);
 	}
 
-	// Enqueue fonts into the editor.
-	add_editor_style( fonts_url() );
+	$fonts_url = fonts_url();
+
+	if ( ! empty( $fonts_url ) ) {
+
+		// Enqueue fonts into the editor.
+		add_editor_style( $fonts_url );
+
+	}
 
 }
 
