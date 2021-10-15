@@ -275,7 +275,7 @@ function theme_setup() {
 function fonts_url() {
 
 	/**
-	 * Filter to disable Google fonts from loading ont the site.
+	 * Filter to disable Google fonts from loading on the site.
 	 *
 	 * @var bool
 	 */
