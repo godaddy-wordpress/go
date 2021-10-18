@@ -19,24 +19,26 @@ const init = () => {
 
 /**
  * Lock tabbing to the main navigation only.
+ *
+ * @param {event} evt
  */
 function lockMenuFocus( evt ) {
-	var e = event || evt; // for cross-browser compatibility
-	var charCode = e.which || e.keyCode;
+	const e = event || evt; // for cross-browser compatibility
+	const charCode = e.which || e.keyCode;
 
 	if ( charCode !== 9 || ! jQuery( 'body' ).hasClass( 'menu-is-open' ) ) {
 		return;
 	}
 
-	var $element       = jQuery( ':focus' ),
-	    mainMenuLength = jQuery( 'ul.primary-menu' ).children().length,
-	    currentIndex   = jQuery( $element ).closest( 'li' ).index(),
-	    isShiftTab     = ( event.shiftKey && event.keyCode == 9 );
+	const $element = jQuery( ':focus' );
+	const mainMenuLength = jQuery( 'ul.primary-menu' ).children().length;
+	const isShiftTab = ( event.shiftKey && event.keyCode === 9 );
 
 	if ( $element.closest( 'ul' ).hasClass( 'sub-menu' ) ) {
 		return;
 	}
 
+	let currentIndex = jQuery( $element ).closest( 'li' ).index();
 	currentIndex = isShiftTab ? currentIndex - 1 : currentIndex + 1;
 
 	if ( $element.attr( 'id' ) === 'nav-toggle' ) {
@@ -44,7 +46,7 @@ function lockMenuFocus( evt ) {
 			return;
 		}
 		setTimeout( function() {
-			jQuery( 'ul.primary-menu li:first-child a' )[0].focus();
+			jQuery( 'ul.primary-menu li:first-child a' )[ 0 ].focus();
 		}, 10 );
 	}
 
@@ -56,6 +58,6 @@ function lockMenuFocus( evt ) {
 			}, 10 );
 		}
 	}
-};
+}
 
 export default init;

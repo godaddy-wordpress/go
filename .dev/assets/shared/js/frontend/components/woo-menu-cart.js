@@ -1,7 +1,7 @@
-let menuObject   = document.getElementById( 'header__cart-toggle' );
-let siteOverlay  = document.getElementById( 'site-overlay' );
-let sideNav      = document.getElementById( 'site-nav--cart' );
-let sideNavClose = document.getElementById( 'site-close-handle' );
+const menuObject = document.getElementById( 'header__cart-toggle' );
+const siteOverlay = document.getElementById( 'site-overlay' );
+const sideNav = document.getElementById( 'site-nav--cart' );
+const sideNavClose = document.getElementById( 'site-close-handle' );
 
 const wooMenuCart = () => {
 	if (
@@ -14,7 +14,7 @@ const wooMenuCart = () => {
 
 	document.body.classList.add( 'has-woo-cart-slideout' );
 
-	menuObject.addEventListener( 'click',  function( event ) {
+	menuObject.addEventListener( 'click', function( event ) {
 		event.preventDefault();
 		toggleSideNavVisibility();
 	} );
@@ -23,7 +23,7 @@ const wooMenuCart = () => {
 	sideNavClose.addEventListener( 'click', toggleSideNavVisibility );
 };
 
-const toggleSideNavVisibility = ( event ) => {
+const toggleSideNavVisibility = () => {
 	sideNav.classList.toggle( 'active' );
 	siteOverlay.classList.toggle( 'active' );
 	document.body.classList.toggle( 'sidebar-move' );

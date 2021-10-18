@@ -1,7 +1,7 @@
 const searchToggle = () => {
-	const searchToggle = document.getElementById( 'header__search-toggle' );
+	const searchToggleEl = document.getElementById( 'header__search-toggle' );
 
-	if ( ! searchToggle ) {
+	if ( ! searchToggleEl ) {
 		return;
 	}
 
@@ -28,7 +28,7 @@ const searchToggle = () => {
 					const focusElement = document.querySelector( toggle.dataset.setFocus );
 
 					if ( focusElement ) {
-						var searchTerm = focusElement.value;
+						const searchTerm = focusElement.value;
 						focusElement.value = '';
 						focusElement.focus();
 						focusElement.value = searchTerm;
@@ -38,18 +38,18 @@ const searchToggle = () => {
 		}
 	};
 
-	document.querySelectorAll( '*[data-toggle-target]' ).forEach( element => {
-		element.addEventListener( 'click', event => {
+	document.querySelectorAll( '*[data-toggle-target]' ).forEach( ( element ) => {
+		element.addEventListener( 'click', ( event ) => {
 			event.preventDefault();
 			performToggle( element );
 		} );
 	} );
 
 	// Close modal on escape key press.
-	document.addEventListener( 'keyup', event => {
+	document.addEventListener( 'keyup', ( event ) => {
 		if ( event.keyCode === 27 ) {
 			event.preventDefault();
-			document.querySelectorAll( '.search-modal.active' ).forEach( element => {
+			document.querySelectorAll( '.search-modal.active' ).forEach( ( element ) => {
 				performToggle(
 					document.querySelector( '*[data-toggle-target="' + element.dataset.modalTargetString + '"]' )
 				);
@@ -58,7 +58,7 @@ const searchToggle = () => {
 	} );
 
 	// Close modal on outside click.
-	document.addEventListener( 'click', event => {
+	document.addEventListener( 'click', ( event ) => {
 		const target = event.target;
 		const modal = document.querySelector( '.search-modal.active' );
 
@@ -74,17 +74,19 @@ const searchToggle = () => {
 
 /**
  * Lock tabbing to the search form only.
+ *
+ * @param {event} evt
  */
 function lockSearchFocus( evt ) {
-	var e = event || evt; // for cross-browser compatibility
-	var charCode = e.which || e.keyCode;
+	const e = event || evt; // for cross-browser compatibility
+	const charCode = e.which || e.keyCode;
 
 	if ( charCode !== 9 || ! jQuery( 'div.search-modal' ).hasClass( 'active' ) ) {
 		return;
 	}
 
-	var $element       = jQuery( ':focus' ),
-	    isShiftTab     = ( event.shiftKey && event.keyCode == 9 );
+	const $element = jQuery( ':focus' );
+	const isShiftTab = ( event.shiftKey && event.keyCode === 9 );
 
 	if ( $element.hasClass( 'search-form__input' ) && isShiftTab ) {
 		setTimeout( function() {
@@ -97,7 +99,6 @@ function lockSearchFocus( evt ) {
 			jQuery( 'input.search-form__input' ).focus();
 		}, 10 );
 	}
-};
-
+}
 
 export default searchToggle;
