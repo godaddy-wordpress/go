@@ -843,7 +843,8 @@ function site_branding( $args = array() ) {
 		)
 	);
 
-	$hide_title_tagline = (bool) get_theme_mod( 'hide_site_title_tagline', false );
+	$hide_title   = (bool) get_theme_mod( 'hide_site_title', false );
+	$hide_tagline = (bool) get_theme_mod( 'hide_site_tagline', false );
 
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 
@@ -852,9 +853,9 @@ function site_branding( $args = array() ) {
 		 */
 		add_filter(
 			'get_custom_logo',
-			function( $html ) use ( $hide_title_tagline ) {
+			function( $html ) use ( $hide_title ) {
 
-				return $hide_title_tagline ? '<h1 class="custom-logo">' . $html . '</h1>' : $html;
+				return $hide_title ? '<h1 class="custom-logo">' . $html . '</h1>' : $html;
 
 			},
 			PHP_INT_MAX
@@ -864,7 +865,7 @@ function site_branding( $args = array() ) {
 
 	}
 
-	if ( $hide_title_tagline ) {
+	if ( $hide_title && $hide_tagline ) {
 
 		return;
 
@@ -873,7 +874,7 @@ function site_branding( $args = array() ) {
 	$blog_name        = get_bloginfo( 'name' );
 	$blog_description = get_bloginfo( 'description' );
 
-	if ( ! empty( $blog_name ) ) {
+	if ( ! $hide_title && ! empty( $blog_name ) ) {
 		echo '<a class="display-inline-block no-underline" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
 		printf(
 			'<%1$s class="site-title">' . esc_html( $blog_name ) . '</%1$s>',
@@ -882,7 +883,7 @@ function site_branding( $args = array() ) {
 		echo '</a>';
 	}
 
-	if ( true === $args['description'] && ! empty( $blog_description ) ) :
+	if ( ! $hide_tagline && true === $args['description'] && ! empty( $blog_description ) ) :
 		echo '<span class="site-description display-none sm:display-block relative text-sm">' . esc_html( $blog_description ) . '</span>';
 	endif;
 }

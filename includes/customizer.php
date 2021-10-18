@@ -390,7 +390,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'hide_site_title_tagline',
+		'hide_site_title',
 		array(
 			'default'           => false,
 			'transport'         => 'refresh',
@@ -399,12 +399,32 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'hide_site_title_tagline_checkbox',
+		'hide_site_title_checkbox',
 		array(
-			'label'       => esc_html__( 'Hide Site Title & Tagline', 'go' ),
-			'description' => esc_html__( 'Hide the site title and tagline.', 'go' ),
+			'label'       => esc_html__( 'Hide Site Title', 'go' ),
+			'description' => esc_html__( 'Hide the site title.', 'go' ),
 			'section'     => 'go_site_settings',
-			'settings'    => 'hide_site_title_tagline',
+			'settings'    => 'hide_site_title',
+			'type'        => 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'hide_site_tagline',
+		array(
+			'default'           => false,
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'hide_site_tagline_checkbox',
+		array(
+			'label'       => esc_html__( 'Hide Site Tagline', 'go' ),
+			'description' => esc_html__( 'Hide the site tagline.', 'go' ),
+			'section'     => 'go_site_settings',
+			'settings'    => 'hide_site_tagline',
 			'type'        => 'checkbox',
 		)
 	);
