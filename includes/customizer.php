@@ -819,6 +819,26 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 			)
 		)
 	);
+
+	$wp_customize->add_setting(
+		'sticky_header',
+		array(
+			'default'           => false,
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'sticky_header_checkbox',
+		array(
+			'label'       => esc_html__( 'Sticky Header', 'go' ),
+			'description' => esc_html__( 'Set the header to sticky, so that it follows as users scroll.', 'go' ),
+			'section'     => 'go_header_settings',
+			'settings'    => 'sticky_header',
+			'type'        => 'checkbox',
+		)
+	);
 }
 
 /**

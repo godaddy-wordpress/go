@@ -5,6 +5,13 @@
 	text-align: center;
 }
 
+body.has-sticky-header {
+
+	.entry-header {
+		padding-top: calc(var(--go--spacing--vertical--lg) * 1);
+	}
+}
+
 .has-featured-image .entry-header {
 	padding-top: var(--go-entryheader--padding-top, 4rem);
 }
