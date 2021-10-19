@@ -13,6 +13,17 @@
 			max-width: var(--go-logo--max-width);
 		}
 	}
+
+	h1.custom-logo {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		max-width: none;
+
+		> .custom-logo-link {
+			display: flex;
+		}
+	}
 }
 
 .header .header__titles {
