@@ -2,20 +2,6 @@
 # yarn lockfile v1
 
 
-"@10up/eslint-config@^1.0.9":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@10up/eslint-config/-/eslint-config-1.1.0.tgz#3ee4775450a7d3525f7383edd77909b8529c9897"
-  integrity sha512-AyFLskgY6+OQC1a+7tzJKFcn7lC47fjubPDgn5FBpWh4xx/6b02+qCVfjNIPZMVBtf8v+EyM+nk2YXbAJMP5xA==
-
-"@10up/stylelint-config@^1.0.3":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@10up/stylelint-config/-/stylelint-config-1.1.2.tgz#2ce5069f3634e8f2be085e193323cd8b9025d871"
-  integrity sha512-uopVemoIPzOXhvVHYnd2bozsmexH/7gqtCe00ejaD+jdkDsusSFMUKRXubSI+aXwRoQneVrWFR3g7Ae7uXm2XA==
-  dependencies:
-    "@wordpress/stylelint-config" "^19.0.3"
-    stylelint-declaration-use-variable "^1.7.2"
-    stylelint-order "^4.1.0"
-
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -2184,15 +2170,6 @@
     "@babel/runtime" "^7.13.10"
     lodash "^4.17.19"
     memize "^1.1.0"
-
-"@wordpress/stylelint-config@^19.0.3":
-  version "19.1.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/stylelint-config/-/stylelint-config-19.1.0.tgz#ec023dfd265e1f8ae20e5c760f67aee9ba85a1e5"
-  integrity sha512-K/wB9rhB+pH5WvDh3fV3DN5C3Bud+jPGXmnPY8fOXKMYI3twCFozK/j6sVuaJHqGp/0kKEF0hkkGh+HhD30KGQ==
-  dependencies:
-    stylelint-config-recommended "^3.0.0"
-    stylelint-config-recommended-scss "^4.2.0"
-    stylelint-scss "^3.17.2"
 
 "@wordpress/token-list@^1.15.3":
   version "1.15.3"
@@ -12017,12 +11994,12 @@ stylelint-config-wordpress@^17.0.0:
     stylelint-config-recommended-scss "^4.2.0"
     stylelint-scss "^3.17.2"
 
-stylelint-declaration-use-variable@^1.7.0, stylelint-declaration-use-variable@^1.7.2:
+stylelint-declaration-use-variable@^1.7.0:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/stylelint-declaration-use-variable/-/stylelint-declaration-use-variable-1.7.3.tgz#14fd0d3faa0a017b3dc258eec38cd5fcefc8ab90"
   integrity sha512-6aH9aJcjT4QAzwgqcE+0td507lqBeSZGWbRf8nX7VJRNm8SQT//b2uoshQ4sNxKfJBH3S8RUWeVP37DgCjzZmQ==
 
-stylelint-order@4.1.0, stylelint-order@^4.1.0:
+stylelint-order@4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-4.1.0.tgz#692d05b7d0c235ac66fcf5ea1d9e5f08a76747f6"
   integrity sha512-sVTikaDvMqg2aJjh4r48jsdfmqLT+nqB1MOsaBnvM3OwLx4S+WXcsxsgk5w18h/OZoxZCxuyXMh61iBHcj9Qiw==
