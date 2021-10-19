@@ -1112,10 +1112,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@godaddy-wordpress/eslint-config@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@godaddy-wordpress/eslint-config/-/eslint-config-0.2.0.tgz#386b183ba848ef207eb8b7c5022039897687cdd2"
-  integrity sha512-lkvNnASxIZh34QyCvtZVhFqIcqqTqDdT8mT3Aqm5ruzW7fLlPcq6DGwp3HqCLvSMQ1yfJhKERgf4DLZCNvur1A==
+"@godaddy-wordpress/eslint-config@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@godaddy-wordpress/eslint-config/-/eslint-config-0.3.0.tgz#221d15c3d013db1d05ca606b7c42761e306cfabd"
+  integrity sha512-n8ef8UbawDpYH+LtqWWVCsibvb6tFv/1H+0sSpRy8NotZtXaxUWSnoRubWiwqp/VsgmBM/6QCr1ISsM80L4/hw==
 
 "@godaddy-wordpress/stylelint-config@0.2.0":
   version "0.2.0"

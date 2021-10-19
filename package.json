@@ -101,7 +101,7 @@
     "@babel/plugin-transform-react-jsx": "^7.9.4",
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "@godaddy-wordpress/eslint-config": "0.2.0",
+    "@godaddy-wordpress/eslint-config": "0.3.0",
     "@godaddy-wordpress/stylelint-config": "0.2.0",
     "@wordpress/browserslist-config": "^4.1.0",
     "@wordpress/edit-post": "^3.16.0",
