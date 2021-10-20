@@ -121,3 +121,4 @@ List of bespoke icons:
 - Add ability to hide site title and tagline. [#707](https://github.com/godaddy-wordpress/go/pull/707)
 - Add click to tweet styles. [#700](https://github.com/godaddy-wordpress/go/pull/699)
 - Add quote formatting to back end. [#698](https://github.com/godaddy-wordpress/go/pull/698)
+- Remove reliance on jQuery for locking tabbing in search modal [#713](https://github.com/godaddy-wordpress/go/pull/713)
