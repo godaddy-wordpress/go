@@ -290,6 +290,7 @@ function register_site_title_controls( \WP_Customize_Manager $wp_customize ) {
 		'hide_site_title_checkbox',
 		array(
 			'label'       => esc_html__( 'Hide Site Title', 'go' ),
+			'description' => esc_html__( 'Prevent the site title from appearing in the header area.', 'go' ),
 			'section'     => 'title_tagline',
 			'settings'    => 'hide_site_title',
 			'priority'    => 10,
@@ -310,6 +311,7 @@ function register_site_title_controls( \WP_Customize_Manager $wp_customize ) {
 		'hide_site_tagline_checkbox',
 		array(
 			'label'       => esc_html__( 'Hide Tagline', 'go' ),
+			'description' => esc_html__( 'Prevent the site tagline from appearing in the header area.', 'go' ),
 			'section'     => 'title_tagline',
 			'settings'    => 'hide_site_tagline',
 			'priority'    => 12,
