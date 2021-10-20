@@ -110,12 +110,15 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Fix WooCommerce grouped product table styles. [#661](https://github.com/godaddy-wordpress/go/pull/661)
-- Fix invalid RGB color string warning in the customizer when no color is set. [#652](https://github.com/godaddy-wordpress/go/pull/652)
-- Fix header 2 submenu alignment. [#655](https://github.com/godaddy-wordpress/go/pull/655)
-- Remove the 16px bottom margin from the last-child image for galleries in the editor. [#656](https://github.com/godaddy-wordpress/go/pull/656)
-- Set Heebo as the default font for the modern design style. [#657](https://github.com/godaddy-wordpress/go/pull/657)
+- Fix comment navigation header and output. [#711](https://github.com/godaddy-wordpress/go/pull/711)
+- Enable anchors links in mobile menu. [#702](https://github.com/godaddy-wordpress/go/pull/702)
+- Reduce size of CSS files using only required prefixes. [#700](https://github.com/godaddy-wordpress/go/pull/700)
+- Update styles to prevent override of user set text color. [#698](https://github.com/godaddy-wordpress/go/pull/696)
+- Apply the same styles to title with or without Gutenberg active. [#695](https://github.com/godaddy-wordpress/go/pull/695)
+- Upgrade internal `npm` dependencies.
 
 ### Tweaks
-- Allow for logo, title and tagline to display in the header. [#658](https://github.com/godaddy-wordpress/go/pull/658)
-- Fix modern tagline kearning. [#660](https://github.com/godaddy-wordpress/go/pull/660)
+- Add ability to hide site title and tagline. [#707](https://github.com/godaddy-wordpress/go/pull/707)
+- Add click to tweet styles. [#700](https://github.com/godaddy-wordpress/go/pull/699)
+- Add quote formatting to back end. [#698](https://github.com/godaddy-wordpress/go/pull/698)
+- Remove reliance on jQuery for locking tabbing in search modal [#713](https://github.com/godaddy-wordpress/go/pull/713)
