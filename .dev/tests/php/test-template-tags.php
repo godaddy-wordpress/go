@@ -1367,6 +1367,45 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the site branding renders properly
+	 */
+	public function test_site_branding_hide_title_tagline_null() {
+
+		set_theme_mod( 'hide_site_title', true );
+		set_theme_mod( 'hide_site_tagline', true );
+
+		ob_start();
+		Go\site_branding();
+
+		$this->assertEmpty( ob_get_clean() );
+
+	}
+
+	/**
+	 * Test the site branding renders properly
+	 */
+	public function test_site_branding_custom_logo_h1() {
+
+		set_theme_mod( 'hide_site_title', true );
+		set_theme_mod( 'hide_site_tagline', true );
+
+		$post_id = $this->factory->post->create(
+			[
+				'post_title' => 'Body Classes Test Post',
+			]
+		);
+
+		$featured_image_id = media_sideload_image( 'https://raw.githubusercontent.com/godaddy-wordpress/go/master/screenshot.png', $post_id, '', 'id' );
+
+		set_theme_mod( 'custom_logo', $featured_image_id );
+
+		$this->expectOutputRegex( '/<h1 class="custom-logo"><a href="http:\/\/example.org\/" class="custom-logo-link" rel="home">(<img)([^<]*|[^>]*)(.*\/>)<\/a><\/h1>/' );
+
+		Go\site_branding();
+
+	}
+
+	/**
 	 * Test the site branding renders properly with a custom logo
 	 */
 	public function test_site_branding_custom_logo() {
