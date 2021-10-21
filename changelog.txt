@@ -1,3 +1,9 @@
+1.5.1 / 2021-10-21
+===================
+
+### Bug Fixes
+- Fix broken menu styles. [#715](https://github.com/godaddy-wordpress/go/pull/715)
+
 1.5 / 2021-10-20
 ===================
 
