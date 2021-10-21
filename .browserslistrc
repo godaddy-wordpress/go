@@ -1,6 +1,1 @@
-# Browsers that we support
-
-> 1%
-last 2 versions
-Firefox ESR
-IE 11
+extends @wordpress/browserslist-config

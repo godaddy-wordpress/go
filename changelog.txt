@@ -1,3 +1,20 @@
+1.5 / 2021-10-20
+===================
+
+### Bug Fixes
+- Fix comment navigation header and output. [#711](https://github.com/godaddy-wordpress/go/pull/711)
+- Enable anchors links in mobile menu. [#702](https://github.com/godaddy-wordpress/go/pull/702)
+- Reduce size of CSS files using only required prefixes. [#700](https://github.com/godaddy-wordpress/go/pull/700)
+- Update styles to prevent override of user set text color. [#698](https://github.com/godaddy-wordpress/go/pull/696)
+- Apply the same styles to title with or without Gutenberg active. [#695](https://github.com/godaddy-wordpress/go/pull/695)
+- Upgrade internal `npm` dependencies.
+
+### Tweaks
+- Add ability to hide site title and tagline. [#707](https://github.com/godaddy-wordpress/go/pull/707)
+- Add click to tweet styles. [#700](https://github.com/godaddy-wordpress/go/pull/699)
+- Add quote formatting to back end. [#698](https://github.com/godaddy-wordpress/go/pull/698)
+- Remove reliance on jQuery for locking tabbing in search modal [#713](https://github.com/godaddy-wordpress/go/pull/713)
+
 1.4.4 / 2021-05-03
 ===================
 

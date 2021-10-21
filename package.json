@@ -1,6 +1,6 @@
 {
   "name": "go",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "description": "Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowering makers to build beautifully rich websites with WordPress.",
   "homepage": "https://github.com/godaddy-wordpress/go",
   "repository": {
@@ -104,12 +104,13 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@godaddy-wordpress/stylelint-config": "0.2.0",
+    "@wordpress/browserslist-config": "^4.1.0",
     "@wordpress/edit-post": "^3.16.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
     "browser-sync": "^2.26.4",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "browserslist": "^4.16.5",
+    "browserslist": "^4.17.3",
     "caniuse-db": "^1.0.30000878",
     "clean-webpack-plugin": "^2.0.1",
     "copy-webpack-plugin": "^5.0.2",
@@ -140,7 +141,7 @@
     "prop-types": "15.7.2",
     "rtlcss": "^2.4.1",
     "rtlcss-webpack-plugin": "^4.0.3",
-    "stylelint": "^9.6.0",
+    "stylelint": "^12.0.0",
     "stylelint-declaration-use-variable": "^1.7.0",
     "stylelint-webpack-plugin": "^0.10.5",
     "terser": "^3.17.0",
@@ -175,6 +176,6 @@
     "node-sass": "^5.0.0",
     "normalize.css": "^8.0.0",
     "sass-loader": "^10.0.5",
-    "strip-css-comments-cli": "^2.0.2"
+    "strip-css-comments-cli": "^3.0.0"
   }
 }

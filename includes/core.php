@@ -35,6 +35,7 @@ function setup() {
 	add_filter( 'go_page_title_args', $n( 'filter_page_titles' ) );
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
 	add_filter( 'the_content_more_link', $n( 'read_more_tag' ) );
+	add_filter( 'get_custom_logo_image_attributes', $n( 'custom_logo_alt_text' ), PHP_INT_MAX, 2 );
 
 }
 
@@ -274,9 +275,16 @@ function theme_setup() {
  */
 function fonts_url() {
 
+	/**
+	 * Filter to disable Google fonts from loading on the site.
+	 *
+	 * @var bool
+	 */
+	$use_google_fonts = apply_filters( 'go_use_google_fonts', true );
+
 	$design_style = get_design_style();
 
-	if ( ! isset( $design_style['fonts'] ) ) {
+	if ( ! $use_google_fonts || ! isset( $design_style['fonts'] ) ) {
 
 		return;
 
@@ -426,8 +434,14 @@ function editor_styles() {
 		);
 	}
 
-	// Enqueue fonts into the editor.
-	add_editor_style( fonts_url() );
+	$fonts_url = fonts_url();
+
+	if ( ! empty( $fonts_url ) ) {
+
+		// Enqueue fonts into the editor.
+		add_editor_style( $fonts_url );
+
+	}
 
 }
 
@@ -557,6 +571,11 @@ function body_classes( $classes ) {
 	// Add class for the current footer variation.
 	if ( $footer_variation ) {
 		$classes[] = sprintf( 'has-%s', esc_attr( $footer_variation ) );
+	}
+
+	// Add class when no primary navigation is set.
+	if ( ! has_nav_menu( 'primary' ) ) {
+		$classes[] = 'has-no-primary-menu';
 	}
 
 	// Add class when there is not a footer menu.
@@ -1375,4 +1394,22 @@ function filter_page_titles( $args ) {
  */
 function read_more_tag( $html ) {
 	return preg_replace( '/<a(.*)>(.*)<\/a>/iU', sprintf( '<div class="read-more-button-wrap"><a$1><span class="button">$2</span> <span class="screen-reader-text">"%1$s"</span></a></div>', get_the_title( get_the_ID() ) ), $html );
+}
+
+/**
+ * Add the image alt text to the custom logo.
+ *
+ * @param  array $custom_logo_attr Array of custom logo attributes.
+ * @param  int   $custom_logo_id   The custom logo image ID.
+ *
+ * @return array Array of altered custom logo attributes.
+ */
+function custom_logo_alt_text( $custom_logo_attr, $custom_logo_id ) {
+
+	$alt_text = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
+
+	$custom_logo_attr['alt'] = $alt_text ? $alt_text : get_bloginfo( 'name' );
+
+	return $custom_logo_attr;
+
 }

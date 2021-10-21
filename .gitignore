@@ -6,7 +6,6 @@ vendor
 temp
 .idea
 .vscode
-package-lock.json
 
 # Translations
 languages/*.mo

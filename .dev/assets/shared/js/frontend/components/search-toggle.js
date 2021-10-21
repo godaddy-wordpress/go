@@ -75,26 +75,28 @@ const searchToggle = () => {
 /**
  * Lock tabbing to the search form only.
  */
-function lockSearchFocus( evt ) {
-	var e = event || evt; // for cross-browser compatibility
-	var charCode = e.which || e.keyCode;
-
-	if ( charCode !== 9 || ! jQuery( 'div.search-modal' ).hasClass( 'active' ) ) {
+ function lockSearchFocus( e ) {
+	// If the keypress isn't a tab or the search form isn't active, return
+	if ( e.keyCode !== 9 || ! document.querySelector( '.site-search.active' ) ) {
 		return;
 	}
 
-	var $element       = jQuery( ':focus' ),
-	    isShiftTab     = ( event.shiftKey && event.keyCode == 9 );
+	// Current active element before it moves
+	let activeElement = document.activeElement;
 
-	if ( $element.hasClass( 'search-form__input' ) && isShiftTab ) {
+	// If we're on the input and shift+tab was pressed, override and focus on button.
+	if ( document.activeElement.classList.contains( 'search-form__input' ) && e.shiftKey ) {
 		setTimeout( function() {
-			jQuery( '.search-input__button' ).focus();
+			// Focus the correct button by only looking for it in the parent element
+			activeElement.parentElement.getElementsByClassName( 'search-input__button' ).item(0).focus();
 		}, 10 );
 	}
 
-	if ( $element.hasClass( 'search-input__button' ) && ! isShiftTab ) {
+	// If we're on the button and tab was pressed, override and focus on input.
+	if ( document.activeElement.classList.contains( 'search-input__button' ) && ! e.shiftKey ) {
 		setTimeout( function() {
-			jQuery( 'input.search-form__input' ).focus();
+			// Focus the correct input by only looking for it in the parent element
+			activeElement.parentElement.getElementsByClassName( 'search-form__input' ).item(0).focus();
 		}, 10 );
 	}
 };
