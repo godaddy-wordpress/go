@@ -10,6 +10,8 @@
 		}
 	}
 
+
+
 	.header__extras {
 		justify-content: flex-start;
 		margin-left: -0.75rem;
@@ -21,6 +23,10 @@
 		.nav-toggle {
 			display: inline-flex;
 		}
+	}
+
+	&.has-no-primary-menu .header__nav-toggle {
+		display: none;
 	}
 
 	.header__title-nav {

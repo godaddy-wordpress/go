@@ -22,6 +22,10 @@
 		}
 	}
 
+	&.has-no-primary-menu .header__nav-toggle {
+		display: none;
+	}
+
 	.header__title-nav {
 		order: 2;
 
