@@ -1,5 +1,5 @@
 /*! Header: Header 4 */
-.header-4 {
+.has-header-4 {
 
 	&::before {
 		content: "has-search-toggle has-offscreen-nav";
@@ -171,19 +171,9 @@
 				}
 			}
 
-			& .submenu-is-open svg {
+			.submenu-is-open svg {
 				transform: translateY(-50%) rotate(180deg);
 			}
-		}
-	}
-}
-
-body.has-header-4 {
-
-	&.has-no-primary-menu {
-
-		& .header__nav-toggle {
-			display: none;
 		}
 	}
 }
