@@ -60,6 +60,19 @@ class Test_Customizer extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test register_site_title_controls is hooked correctly
+	 */
+	function test_hooked_register_site_title_controls() {
+
+		$this->assertEquals(
+			10,
+			has_action( 'customize_register', 'Go\Customizer\register_site_title_controls' ),
+			'customize_register is not attached to Go\Customizer\register_site_title_controls. It might also have the wrong priority (validated priority: 10)'
+		);
+
+	}
+
+	/**
 	 * Test register_logo_controls is hooked correctly
 	 */
 	function test_hooked_register_logo_controls() {
@@ -523,6 +536,73 @@ class Test_Customizer extends WP_UnitTestCase {
 		Go\Customizer\register_logo_controls( $GLOBALS['wp_customize'] );
 
 		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'logo_width_mobile' ) );
+
+	}
+
+	/**
+	 * Test the hide_site_title setting is registered
+	 */
+	function test_register_site_title_controls_hide_site_title() {
+
+		Go\Customizer\register_site_title_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'hide_site_title' ) );
+
+	}
+
+	/**
+	 * Test the hide_site_title control is registered
+	 */
+	function test_register_site_title_controls_hide_site_title_control() {
+
+		Go\Customizer\register_site_title_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'hide_site_title_checkbox' ) );
+
+	}
+
+	/**
+	 * Test the hide_site_tagline setting is registered
+	 */
+	function test_register_site_title_controls_hide_site_tagline() {
+
+		Go\Customizer\register_site_title_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_setting( 'hide_site_tagline' ) );
+
+	}
+
+	/**
+	 * Test the hide_site_tagline control is registered
+	 */
+	function test_register_site_title_controls_hide_site_tagline_control() {
+
+		Go\Customizer\register_site_title_controls( $GLOBALS['wp_customize'] );
+
+		$this->assertNotNull( $GLOBALS['wp_customize']->get_control( 'hide_site_tagline_checkbox' ) );
+
+	}
+
+	/**
+	 * Test the hide_site_tagline control is registered
+	 */
+	function test_site_title_control_priorities() {
+
+		Go\Customizer\register_site_title_controls( $GLOBALS['wp_customize'] );
+
+		$expected_priorites = [
+			'hide_site_title_checkbox'   => 10,
+			'blogdescription'            => 11,
+			'hide_site_tagline_checkbox' => 12,
+		];
+
+		$current_priorites = [
+			'hide_site_title_checkbox'   => $GLOBALS['wp_customize']->get_control( 'hide_site_title_checkbox' )->priority,
+			'blogdescription'            => $GLOBALS['wp_customize']->get_control( 'blogdescription' )->priority,
+			'hide_site_tagline_checkbox' => $GLOBALS['wp_customize']->get_control( 'hide_site_tagline_checkbox' )->priority,
+		];
+
+		$this->assertEquals( $expected_priorites, $current_priorites );
 
 	}
 

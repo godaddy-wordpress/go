@@ -1,9 +1,9 @@
 /*! Header: Header 7 */
-.header-7 {
+.has-header-7 {
 
 	@include media(large) {
 		.header__title-nav {
-			flex: 1 0 60%;
+			flex: 1 0 75%;
 			order: 1;
 		}
 
@@ -41,7 +41,7 @@
 		}
 	}
 
-	&.header .header__titles {
+	.header .header__titles {
 		@include media(large) {
 			align-items: flex-start;
 			flex: 0 0 27%;
@@ -70,7 +70,7 @@
 	@include media(large) {
 
 		.header__navigation {
-			flex: 0 0 83%;
+			flex: 1 1 100%;
 			justify-content: center;
 			margin-left: inherit;
 			margin-top: 0.75rem;

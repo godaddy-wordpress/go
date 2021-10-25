@@ -481,7 +481,7 @@ jobs:
             git config --global user.email "plugins@godaddy.com"
             git config --global user.name "GoDaddy Translator Bot"
             git checkout HEAD -- composer.lock
-            git checkout HEAD -- package-lock.json
+            git checkout HEAD -- yarn.lock
             git add languages/go.json
             git add languages/go.pot
             git status

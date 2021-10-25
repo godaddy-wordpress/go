@@ -1,5 +1,5 @@
 /*! Header: Header 4 */
-.header-4 {
+.has-header-4 {
 
 	&::before {
 		content: "has-search-toggle has-offscreen-nav";
@@ -9,6 +9,8 @@
 			content: "has-full-nav has-search-toggle has-offscreen-nav";
 		}
 	}
+
+
 
 	.header__extras {
 		justify-content: flex-start;
@@ -21,6 +23,10 @@
 		.nav-toggle {
 			display: inline-flex;
 		}
+	}
+
+	&.has-no-primary-menu .header__nav-toggle {
+		display: none;
 	}
 
 	.header__title-nav {
@@ -171,19 +177,9 @@
 				}
 			}
 
-			& .submenu-is-open svg {
+			.submenu-is-open svg {
 				transform: translateY(-50%) rotate(180deg);
 			}
-		}
-	}
-}
-
-body.has-header-4 {
-
-	&.has-no-primary-menu {
-
-		& .header__nav-toggle {
-			display: none;
 		}
 	}
 }
