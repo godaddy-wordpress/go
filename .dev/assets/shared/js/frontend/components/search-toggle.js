@@ -84,10 +84,10 @@ function lockSearchFocus( e ) {
 	}
 
 	// Current active element before it moves
-	const activeElement = document.activeElement; // eslint-disable-line @wordpress/no-global-active-element
+	const activeElement = document.activeElement;
 
 	// If we're on the input and shift+tab was pressed, override and focus on button.
-	if ( document.activeElement.classList.contains( 'search-form__input' ) && e.shiftKey ) { // eslint-disable-line @wordpress/no-global-active-element
+	if ( document.activeElement.classList.contains( 'search-form__input' ) && e.shiftKey ) {
 		setTimeout( function() {
 			// Focus the correct button by only looking for it in the parent element
 			activeElement.parentElement.getElementsByClassName( 'search-input__button' ).item( 0 ).focus();
@@ -95,7 +95,7 @@ function lockSearchFocus( e ) {
 	}
 
 	// If we're on the button and tab was pressed, override and focus on input.
-	if ( document.activeElement.classList.contains( 'search-input__button' ) && ! e.shiftKey ) { // eslint-disable-line @wordpress/no-global-active-element
+	if ( document.activeElement.classList.contains( 'search-input__button' ) && ! e.shiftKey ) {
 		setTimeout( function() {
 			// Focus the correct input by only looking for it in the parent element
 			activeElement.parentElement.getElementsByClassName( 'search-form__input' ).item( 0 ).focus();

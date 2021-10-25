@@ -14,5 +14,9 @@ module.exports = {
 		GoPreviewData: true,
 		goCustomizerControls: true,
 		GoBlockFilters: true,
+	},
+
+	rules: {
+		'@wordpress/no-global-active-element': 0 // because we are not using React, no need for this
 	}
 };
