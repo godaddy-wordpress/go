@@ -210,7 +210,7 @@ mkdir -p $INSTALL_PATH
 
 # If the ~/project/go directory exists, it persisted from the build job
 if [ -d ~/project/go ]; then
-	cp -r ~/project/go $INSTALL_PATH/
+	cp -r ~/project/go/* $INSTALL_PATH/
 else
 	install_rsync
 	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
