@@ -245,7 +245,9 @@ commands:
       - restore_composer_cache
       - run:
           name: Install Composer dependencies
-          command: composer install
+          command: |
+            composer config --json extra.installer-paths '{"/tmp/wordpress/wp-content/plugins/{$name}/": [ "type:wordpress-plugin" ]}'
+            composer install
       - save_cache:
           key: composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "composer.lock" }}
           paths:
