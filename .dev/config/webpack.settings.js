@@ -76,7 +76,7 @@ module.exports = {
 		host: 'localhost',
 		port: 3000,
 		proxy: 'https://go.test',
-		open: true,
+		open: false,
 		files: [
 			'**/*.php',
 			'dist/js/**/*.js',
