@@ -201,5 +201,9 @@ if [[ "$CIRCLE_JOB" == 'unit-test-73' || "$CIRCLE_JOB" == 'unit-test-74' ]]; the
 	# Unit test job, copy entire directory including config files
 	rsync -av --delete ~/project/. $INSTALL_PATH/
 else
-	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
+	if [ -d "~/project/go" ]; then
+		cp -r ~/project/go $INSTALL_PATH/
+	else
+		rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
+	fi
 fi
