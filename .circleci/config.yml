@@ -70,23 +70,23 @@ workflows:
           requires:
             - build
 
-      # Theme Check
-      - theme-check:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-          requires:
-            - build
-
-      # PHPCS
-      - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-      - php73-phpcs: # Will be deprecated on 30 Nov 2020
-          filters:
-            tags:
-              only: /^(?!canary).*$/
+      # # Theme Check
+      # - theme-check:
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
+      #     requires:
+      #       - build
+      #
+      # # PHPCS
+      # - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
+      # - php73-phpcs: # Will be deprecated on 30 Nov 2020
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
 
       # - a11y-tests:
       #     filters:

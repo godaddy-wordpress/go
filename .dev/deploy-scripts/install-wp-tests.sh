@@ -220,6 +220,6 @@ fi
 if [[ "$CIRCLE_JOB" == 'unit-test-73' ]]; then
 	cp ~/project/composer.json $INSTALL_PATH/
 	cp ~/project/composer.lock $INSTALL_PATH/
-	cp -r ~/project/.dev/tests $INSTALL_PATH/
+	cp -r ~/project/.dev $INSTALL_PATH/
 	cp ~/project/phpunit.xml $INSTALL_PATH/
 fi
