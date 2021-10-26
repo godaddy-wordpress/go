@@ -129,17 +129,17 @@ workflows:
               only: actions/visual-regression-update-snapshots
               ignore: master
 
-      - canary:
-          requires:
-            # - php56-phpcs
-            # - php73-phpcs
-            # - unit-tests
-            # - theme-check
-            # - a11y-tests
-            - build
-          # filters:
-          #   branches:
-          #     only: master
+      # - canary:
+      #     requires:
+      #       - php56-phpcs
+      #       - php73-phpcs
+      #       - unit-tests
+      #       - theme-check
+      #       - a11y-tests
+      #       - build
+      #     filters:
+      #       branches:
+      #         only: master
       #
       # - deploy:
       #     requires:
@@ -546,32 +546,20 @@ jobs:
     executor: go_node_browsers_legacy
     steps:
       - checkout
-      - run:
-          name: Install Grunt.js
-          command: sudo yarn global add grunt-cli
+      - attach_workspace:
+          at: ~/project
       - run:
           name: Install PHP
           command: sudo apt-get install php libapache2-mod-php php-mbstring
-      - run:
-          name: Install gettext
-          command: sudo apt-get install gettext
       - install_wpcli
       - run:
           name: Install ghr
           command: |
             go get -u github.com/tcnksm/ghr
-      - install_rsync
       - run:
-          name: Install node packages
-          command: yarn install
-      - run:
-          name: Build the Go Theme
+          name: Zip the Go Theme
           command: |
-            yarn build
-            mkdir -p go
             mkdir -p /tmp/artifacts
-            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
-            rm -rf go/languages
             zip -r /tmp/artifacts/go.zip ./go
       - deploy:
           name: Deploy a new release to GitHub
