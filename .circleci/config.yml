@@ -245,7 +245,7 @@ commands:
       - run:
           name: Install Composer dependencies
           command: |
-            if [ "$CIRCLE_JOB" == "php56-phpcs" ]; then
+            if [ "$CIRCLE_JOB" == "php73-phpcs" ]; then
               composer config --json extra.installer-paths '{"/tmp/wordpress/wp-content/plugins/{$name}/": [ "type:wordpress-plugin" ]}'
             fi
             composer install
