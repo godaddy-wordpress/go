@@ -183,10 +183,7 @@ commands:
   install_yarn_dependencies:
     steps:
       - restore_cache:
-          keys:
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
           name: Install Yarn Dependencies
           command: yarn install
@@ -195,7 +192,7 @@ commands:
           paths:
             - ~/project/node_modules
             - ~/.cache/yarn
-            - /home/circleci/.cache/Cypress
+            - ~/.cache/Cypress
 
   install_code_climate_test_reporter:
     steps:
