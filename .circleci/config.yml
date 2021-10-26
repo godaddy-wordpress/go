@@ -169,9 +169,6 @@ commands:
           command: |
             sudo chmod -R 777 ../../
             mkdir -p ../../plugins/coblocks
-            if [ "$CIRCLE_JOB" == "php56-phpcs" ]; then
-              composer require oomphinc/composer-installers-extender ^1.1
-            fi
             composer install
 
   install_code_climate_test_reporter:
