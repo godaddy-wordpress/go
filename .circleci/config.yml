@@ -183,16 +183,15 @@ commands:
   install_yarn_dependencies:
     steps:
       - restore_cache:
-          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}-1
       - run:
           name: Install Yarn Dependencies
           command: yarn install
       - save_cache:
-          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}-1
           paths:
             - ~/project/node_modules
-            - ~/.cache/yarn
-            - ~/.cache/Cypress
+            - ~/.cache
 
   install_code_climate_test_reporter:
     steps:
