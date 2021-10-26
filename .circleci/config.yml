@@ -62,13 +62,13 @@ workflows:
     jobs:
       - build
 
-      # Unit Tests
-      - unit-test-73:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-          requires:
-            - build
+      # # Unit Tests
+      # - unit-test:
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
+      #     requires:
+      #       - build
 
       # # Theme Check
       # - theme-check:
@@ -88,10 +88,15 @@ workflows:
       #       tags:
       #         only: /^(?!canary).*$/
 
-      # - a11y-tests:
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
+      # Accessibility Tests
+      - a11y-tests:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+          requires:
+            - build
+      #
+      # Translations
       # - i18n:
       #     filters:
       #       branches:
@@ -125,8 +130,7 @@ workflows:
       #     requires:
       #       - php56-phpcs
       #       - php73-phpcs
-      #       - unit-test-73
-      #       # - unit-test-74
+      #       - unit-test
       #       - theme-check
       #       - a11y-tests
       #     filters:
@@ -136,8 +140,7 @@ workflows:
       #     requires:
       #       - php56-phpcs
       #       - php73-phpcs
-      #       - unit-test-73
-      #       # - unit-test-74
+      #       - unit-test
       #       - theme-check
       #       - a11y-tests
       #       - visual-regression-chrome
@@ -408,7 +411,7 @@ jobs:
     steps:
       - run_php_cs
 
-  unit-test-73:
+  unit-test:
     executor: php_73_apache_node_browser_mysql
     steps:
       - run_php_unit_test
@@ -437,6 +440,8 @@ jobs:
     executor: php_73_apache_node_browser_mysql
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/project
       - wait_for_mysql
       - run:
           name: Update hosts
@@ -446,14 +451,7 @@ jobs:
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - run:
-          name: Install gettext
-          command: sudo apt-get install gettext
-      - run:
-          name: Install Grunt.js
-          command: sudo yarn global add grunt-cli
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+      - restore_yarn_cache
       - run:
           name: Install node packages
           command: yarn install
@@ -462,9 +460,6 @@ jobs:
           paths:
             - node_modules
       - install_wpcli
-      - run:
-          name: Build the Go Theme
-          command: yarn build
       - run:
           name: Setup WordPress site
           command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
