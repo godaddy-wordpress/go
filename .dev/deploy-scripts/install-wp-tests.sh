@@ -218,7 +218,7 @@ fi
 
 # PHPUnit requires the configuration file, the .dev/tests directory and
 # the languages directory (which is not shipped in the build)
-if [[ "$CIRCLE_JOB" == 'unit-test-73' ]]; then
+if [[ "$CIRCLE_JOB" == 'unit-tests' ]]; then
 	cp -r ~/project/languages $INSTALL_PATH/
 	cp ~/project/composer.json $INSTALL_PATH/
 	cp ~/project/composer.lock $INSTALL_PATH/
