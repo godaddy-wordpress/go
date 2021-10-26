@@ -216,8 +216,10 @@ else
 	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
 fi
 
-# PHPUnit requires the configuration file and the .dev/tests directory
+# PHPUnit requires the configuration file, the .dev/tests directory and
+# the languages directory (which is not shipped in the build)
 if [[ "$CIRCLE_JOB" == 'unit-test-73' ]]; then
+	cp -r ~/project/languages $INSTALL_PATH/
 	cp ~/project/composer.json $INSTALL_PATH/
 	cp ~/project/composer.lock $INSTALL_PATH/
 	cp -r ~/project/.dev $INSTALL_PATH/
