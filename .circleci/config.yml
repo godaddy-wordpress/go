@@ -102,43 +102,45 @@ workflows:
       #       branches:
       #         only: master
 
-      # Visual Regression Tests
-      - visual-regression-chrome:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-              ignore:
-                - master
-                - actions/visual-regression-update-snapshots
-      - visual-regression-firefox:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-              ignore:
-                - master
-                - actions/visual-regression-update-snapshots
+      # # Visual Regression Tests
+      # - visual-regression-chrome:
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
+      #         ignore:
+      #           - master
+      #           - actions/visual-regression-update-snapshots
+      # - visual-regression-firefox:
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
+      #         ignore:
+      #           - master
+      #           - actions/visual-regression-update-snapshots
 
-      # - visual-regression-update-snapshots-chrome:
-      #     filters:
-      #       branches:
-      #         only: actions/visual-regression-update-snapshots
-      #         ignore: master
-      # - visual-regression-update-snapshots-firefox:
-      #     filters:
-      #       branches:
-      #         only: actions/visual-regression-update-snapshots
-      #         ignore: master
+      - visual-regression-update-snapshots-chrome:
+          filters:
+            branches:
+              only: actions/visual-regression-update-snapshots
+              ignore: master
+      - visual-regression-update-snapshots-firefox:
+          filters:
+            branches:
+              only: actions/visual-regression-update-snapshots
+              ignore: master
+
+      - canary:
+          requires:
+            # - php56-phpcs
+            # - php73-phpcs
+            # - unit-tests
+            # - theme-check
+            # - a11y-tests
+            - build
+          # filters:
+          #   branches:
+          #     only: master
       #
-      # - canary:
-      #     requires:
-      #       - php56-phpcs
-      #       - php73-phpcs
-      #       - unit-tests
-      #       - theme-check
-      #       - a11y-tests
-      #     filters:
-      #       branches:
-      #         only: master
       # - deploy:
       #     requires:
       #       - php56-phpcs
@@ -310,16 +312,7 @@ commands:
         enum: ['chrome', 'firefox']
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: yarn install
-      - save_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-          paths:
-            - node_modules
-            - ~/.cache
+      - install_yarn_dependencies
       - run:
           name: "Install awscli"
           command: sudo apt-get install awscli
@@ -522,33 +515,18 @@ jobs:
     executor: go_node_browsers_legacy
     steps:
       - checkout
-      - run:
-          name: Install Grunt.js
-          command: sudo yarn global add grunt-cli
-      - run:
-          name: Install PHP
-          command: sudo apt-get install php libapache2-mod-php php-mbstring
-      - run:
-          name: Install gettext
-          command: sudo apt-get install gettext
-      - install_wpcli
+      - attach_workspace:
+          at: ~/project
+      - install_yarn_dependencies
       - run:
           name: Install ghr
-          command: |
-            go get -u github.com/tcnksm/ghr
-      - install_rsync
+          command: go get -u github.com/tcnksm/ghr
       - run:
-          name: Install node packages
-          command: yarn install
-      - run:
-          name: Build the Go Theme
+          name: Zip the Go Theme
           command: |
-            yarn build
-            mkdir -p go
             mkdir -p /tmp/artifacts
             yarn json2po
             yarn po2mo
-            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
             GO_VERSION_LINE=$(awk '/\* Version:/{ print NR; exit }' ./go/style.css)
             GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
             sed -i -e "${GO_VERSION_LINE}s/$/-${GO_COMMIT_HASH}/" ./go/style.css
