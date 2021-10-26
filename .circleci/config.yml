@@ -376,6 +376,13 @@ jobs:
             mkdir -p go
             rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
             rm -rf go/languages
+      - run:
+          name: Zip the Go Theme
+          command: |
+            mkdir -p /tmp/artifacts
+            zip -r /tmp/artifacts/go.zip ./go
+      - store_artifacts:
+          path: /tmp/artifacts
       - persist_to_workspace:
           root: ~/project
           paths:
