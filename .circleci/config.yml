@@ -236,14 +236,14 @@ commands:
             sudo apt-get install mariadb-client
       - install_code_climate_test_reporter
       - install_wpcli
+      - run:
+          name: Setup WordPress site
+          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - restore_composer_cache
       - run:
           name: Install Composer packages
           command: composer install
           working_directory: /tmp/wordpress/wp-content/themes/go
-      - run:
-          name: Setup WordPress site
-          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run_phpunit_single_site_generate_coverage
       - run:
           name: "Deploy Coverage to Code Climate"
