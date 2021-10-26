@@ -165,10 +165,10 @@ commands:
             done
             echo Failed waiting for MySQL && exit 1
 
-  install_dependencies:
+  install_composer_dependencies:
     steps:
       - run:
-          name: "Install Dependencies"
+          name: "Install Composer Dependencies"
           command: |
             sudo chmod -R 777 ../../
             mkdir -p ../../plugins/coblocks
@@ -176,6 +176,14 @@ commands:
               composer require oomphinc/composer-installers-extender ^1.1
             fi
             composer install
+
+  install_yarn_dependencies:
+    steps:
+      - restore_yarn_cache
+      - run:
+          name: Install Yarn Dependencies
+          command: yarn install
+      - save_yarn_cache
 
   install_code_climate_test_reporter:
     steps:
@@ -218,7 +226,7 @@ commands:
           command: |
             echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
             source /home/circleci/.bashrc
-      - install_dependencies
+      - install_composer_dependencies
       - run:
           name: "Run PHPCS"
           command: composer lint
@@ -350,6 +358,15 @@ commands:
             - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
             - yarn-deps-{{ .Environment.CACHE_VERSION }}
 
+  # Restore yarn cache
+  save_yarn_cache:
+    steps:
+      - save_cache:
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/project/node_modules
+            - ~/.cache/yarn
+
   # Restore composer cache
   restore_composer_cache:
     steps:
@@ -373,21 +390,11 @@ jobs:
     steps:
       - checkout
       - disable_xdebug_php_extension
-      - restore_yarn_cache
-      - run:
-          name: Install Yarn dependencies
-          command: |
-            PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-            yarn install --frozen-lockfile
+      - install_yarn_dependencies
       - install_rsync
       - run:
           name: Install gettext
           command: sudo apt-get install gettext
-      - save_cache:
-          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/project/node_modules
-            - ~/.cache/yarn
       - install_wpcli
       - run:
           name: Build the Go theme
@@ -451,14 +458,7 @@ jobs:
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - restore_yarn_cache
-      - run:
-          name: Install node packages
-          command: yarn install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
+      - install_yarn_dependencies
       - install_wpcli
       - run:
           name: Setup WordPress site
