@@ -195,6 +195,7 @@ commands:
           paths:
             - ~/project/node_modules
             - ~/.cache/yarn
+            - /home/circleci/.cache/Cypress
 
   install_code_climate_test_reporter:
     steps:
@@ -285,9 +286,7 @@ commands:
         enum: ['chrome', 'firefox']
     steps:
       - checkout
-      - run:
-          name: Install Yarn Dependencies
-          command: yarn install
+      - install_yarn_dependencies
       - run:
           name: "Install awscli"
           command: sudo apt-get install awscli
