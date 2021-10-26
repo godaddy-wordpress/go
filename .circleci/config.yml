@@ -242,13 +242,7 @@ commands:
       - install_code_climate_test_reporter
       - install_wpcli
       - restore_composer_cache
-      - run:
-          name: Install Composer dependencies
-          command: |
-            if [ "$CIRCLE_JOB" == "php73-phpcs" ]; then
-              composer config --json extra.installer-paths '{"/tmp/wordpress/wp-content/plugins/{$name}/": [ "type:wordpress-plugin" ]}'
-            fi
-            composer install
+      - install_dependencies
       - save_cache:
           key: composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "composer.lock" }}
           paths:
