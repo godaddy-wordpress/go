@@ -63,7 +63,7 @@ workflows:
       - build
 
       # # Unit Tests
-      # - unit-test:
+      # - unit-tests:
       #     filters:
       #       tags:
       #         only: /^(?!canary).*$/
@@ -88,20 +88,20 @@ workflows:
       #       tags:
       #         only: /^(?!canary).*$/
 
-      # Accessibility Tests
-      - a11y-tests:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-          requires:
-            - build
-      #
-      # Translations
-      # - i18n:
+      # # Accessibility Tests
+      # - a11y-tests:
       #     filters:
-      #       branches:
-      #         only: master
-      #
+      #       tags:
+      #         only: /^(?!canary).*$/
+      #     requires:
+      #       - build
+
+      # Translations
+      - i18n:
+          filters:
+            branches:
+              only: master
+
       # - visual-regression-chrome:
       #     filters:
       #       tags:
@@ -130,7 +130,7 @@ workflows:
       #     requires:
       #       - php56-phpcs
       #       - php73-phpcs
-      #       - unit-test
+      #       - unit-tests
       #       - theme-check
       #       - a11y-tests
       #     filters:
@@ -140,7 +140,7 @@ workflows:
       #     requires:
       #       - php56-phpcs
       #       - php73-phpcs
-      #       - unit-test
+      #       - unit-tests
       #       - theme-check
       #       - a11y-tests
       #       - visual-regression-chrome
@@ -179,11 +179,19 @@ commands:
 
   install_yarn_dependencies:
     steps:
-      - restore_yarn_cache
+      - restore_cache:
+          keys:
+            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
+            - yarn-deps-{{ .Environment.CACHE_VERSION }}
       - run:
           name: Install Yarn Dependencies
           command: yarn install
-      - save_yarn_cache
+      - save_cache:
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/project/node_modules
+            - ~/.cache/yarn
 
   install_code_climate_test_reporter:
     steps:
@@ -349,24 +357,6 @@ commands:
             sudo rm -f /etc/php/*/conf.d/*xdebug.ini
             sudo rm -f /usr/local/etc/php/conf.d/*xdebug.ini
 
-  # Restore yarn cache
-  restore_yarn_cache:
-    steps:
-      - restore_cache:
-          keys:
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}
-
-  # Restore yarn cache
-  save_yarn_cache:
-    steps:
-      - save_cache:
-          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/project/node_modules
-            - ~/.cache/yarn
-
   # Restore composer cache
   restore_composer_cache:
     steps:
@@ -418,7 +408,7 @@ jobs:
     steps:
       - run_php_cs
 
-  unit-test:
+  unit-tests:
     executor: php_73_apache_node_browser_mysql
     steps:
       - run_php_unit_test
@@ -487,28 +477,9 @@ jobs:
             if [[ $GIT_COMMIT_DESC == *"skip i18n"* ]]; then
               circleci-agent step halt
             fi
-      - run:
-          name: Disable xdebug PHP extension
-          command: |
-            sudo rm -f /etc/php/*/mods-available/xdebug.ini
-            sudo rm -f /etc/php/*/mods-enabled/xdebug.ini
-            sudo rm -f /etc/php/*/conf.d/*xdebug.ini
-            sudo rm -f /usr/local/etc/php/conf.d/*xdebug.ini
+      - disable_xdebug_php_extension
       - install_wpcli
-      - restore_cache:
-          keys:
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}
-      - run:
-          name: Install node dependencies
-          command: |
-            yarn install
-      - save_cache:
-          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/project/node_modules
-            - ~/.cache/yarn
+      - install_yarn_dependencies
       - run:
           name: Generate the translations
           command: |
