@@ -383,7 +383,6 @@ jobs:
             zip -r /tmp/artifacts/go.zip ./go
       - store_artifacts:
           path: /tmp/artifacts
-          destination: go.zip
       - persist_to_workspace:
           root: ~/project
           paths:
@@ -549,7 +548,6 @@ jobs:
             -d '[ "go" ]'
       - store_artifacts:
           path: /tmp/artifacts
-          destination: go-canary.zip
 
   deploy:
     executor: go_node_browsers_legacy
