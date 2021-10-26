@@ -199,6 +199,7 @@ commands:
       - run:
           name: Install rsync
           command: |
+            sudo apt-get update --allow-releaseinfo-change
             sudo apt install rsync
 
   run_phpunit_single_site_generate_coverage:
