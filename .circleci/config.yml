@@ -60,87 +60,95 @@ workflows:
   version: 2.1
   main:
     jobs:
+      - build
+
       # Support PHP Versions
       # http://php.net/supported-versions.php
-      - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-      - php73-phpcs: # Will be deprecated on 30 Nov 2020
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-      - unit-test-73:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
+      # - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
+      # - php73-phpcs: # Will be deprecated on 30 Nov 2020
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
+      #
+      # - unit-test-73:
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
+
       # - unit-test-74:
       #     filters:
       #       tags:
       #         only: /^(?!canary).*$/
+
       - theme-check:
           filters:
             tags:
               only: /^(?!canary).*$/
-      - a11y-tests:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-      - i18n:
-          filters:
-            branches:
-              only: master
+          requires:
+            - build
 
-      - visual-regression-chrome:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-              ignore:
-                - master
-                - actions/visual-regression-update-snapshots
+      # - a11y-tests:
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
+      # - i18n:
+      #     filters:
+      #       branches:
+      #         only: master
+      #
+      # - visual-regression-chrome:
+      #     filters:
+      #       tags:
+      #         only: /^(?!canary).*$/
+      #         ignore:
+      #           - master
+      #           - actions/visual-regression-update-snapshots
       # - visual-regression-firefox:
       #     filters:
       #       tags:
       #         only: /^(?!canary).*$/
       #         ignore: master
 
-      - visual-regression-update-snapshots-chrome:
-          filters:
-            branches:
-              only: actions/visual-regression-update-snapshots
-              ignore: master
-      - visual-regression-update-snapshots-firefox:
-          filters:
-            branches:
-              only: actions/visual-regression-update-snapshots
-              ignore: master
-
-      - canary:
-          requires:
-            - php56-phpcs
-            - php73-phpcs
-            - unit-test-73
-            # - unit-test-74
-            - theme-check
-            - a11y-tests
-          filters:
-            branches:
-              only: master
-      - deploy:
-          requires:
-            - php56-phpcs
-            - php73-phpcs
-            - unit-test-73
-            # - unit-test-74
-            - theme-check
-            - a11y-tests
-            - visual-regression-chrome
-            # - visual-regression-firefox
-          filters:
-            tags:
-              only: /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*)?(\+[0-9-]+(\.[0-9]+)*)?/ # Run on semantic version tags only
-            branches:
-              ignore: /.*/
+      # - visual-regression-update-snapshots-chrome:
+      #     filters:
+      #       branches:
+      #         only: actions/visual-regression-update-snapshots
+      #         ignore: master
+      # - visual-regression-update-snapshots-firefox:
+      #     filters:
+      #       branches:
+      #         only: actions/visual-regression-update-snapshots
+      #         ignore: master
+      #
+      # - canary:
+      #     requires:
+      #       - php56-phpcs
+      #       - php73-phpcs
+      #       - unit-test-73
+      #       # - unit-test-74
+      #       - theme-check
+      #       - a11y-tests
+      #     filters:
+      #       branches:
+      #         only: master
+      # - deploy:
+      #     requires:
+      #       - php56-phpcs
+      #       - php73-phpcs
+      #       - unit-test-73
+      #       # - unit-test-74
+      #       - theme-check
+      #       - a11y-tests
+      #       - visual-regression-chrome
+      #       # - visual-regression-firefox
+      #     filters:
+      #       tags:
+      #         only: /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*)?(\+[0-9-]+(\.[0-9]+)*)?/ # Run on semantic version tags only
+      #       branches:
+      #         ignore: /.*/
 
 commands:
   wait_for_mysql:
@@ -327,7 +335,83 @@ commands:
             fi
             yarn snapshots:upload-all
 
+
+  # Disable the xdebug PHP extension.
+  disable_xdebug_php_extension:
+    description: ""
+    steps:
+      - run:
+          name: Disable xdebug PHP extension
+          command: |
+            sudo rm -f /etc/php/*/mods-available/xdebug.ini
+            sudo rm -f /etc/php/*/mods-enabled/xdebug.ini
+            sudo rm -f /etc/php/*/conf.d/*xdebug.ini
+            sudo rm -f /usr/local/etc/php/conf.d/*xdebug.ini
+
+  # Restore yarn cache
+  restore_yarn_cache:
+    steps:
+      - restore_cache:
+          keys:
+            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
+            - yarn-deps-{{ .Environment.CACHE_VERSION }}
+
+  # Restore composer cache
+  restore_composer_cache:
+    steps:
+      - restore_cache:
+          keys:
+            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "composer.lock" }}
+            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
+            - composer-deps-{{ .Environment.CACHE_VERSION }}
+
 jobs:
+
+  # 1. Download and cache node and composer dependencies.
+  # 2. Build deployable plugin folder.
+  # 3. Persist project folder to workspace for other jobs.
+  build:
+    docker:
+      - image: circleci/php:7.3-node
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - disable_xdebug_php_extension
+      - restore_yarn_cache
+      - run:
+          name: Install Node dependencies
+          command: |
+            PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+            yarn install --frozen-lockfile
+      - run:
+          name: Install rsync
+          command: sudo apt install rsync
+      - run:
+          name: Install gettext
+          command: sudo apt-get install gettext
+      - run:
+          name: Install Grunt.js
+          command: sudo yarn global add grunt-cli
+      - save_cache:
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/project/node_modules
+            - ~/.cache/yarn
+      - run:
+          name: Build the plugin
+          command: |
+            yarn build
+            mkdir -p go
+            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
+            rm -rf go/languages
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - go
+
   php56-phpcs:
     executor: php_56
     steps:
@@ -358,28 +442,9 @@ jobs:
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - run:
-          name: Install rsync
-          command: sudo apt install rsync
-      - run:
-          name: Install gettext
-          command: sudo apt-get install gettext
-      - run:
-          name: Install Grunt.js
-          command: sudo yarn global add grunt-cli
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: yarn install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
+      - attach_workspace:
+          at: ~/project
       - install_wpcli
-      - run:
-          name: Build the Go Theme
-          command: yarn build
       - run:
           name: Setup WordPress site and install the Theme Check package
           command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
