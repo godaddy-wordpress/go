@@ -245,7 +245,9 @@ commands:
       - run:
           name: Install Composer dependencies
           command: |
-            composer config --json extra.installer-paths '{"/tmp/wordpress/wp-content/plugins/{$name}/": [ "type:wordpress-plugin" ]}'
+            if [ "$CIRCLE_JOB" == "php56-phpcs" ]; then
+              composer config --json extra.installer-paths '{"/tmp/wordpress/wp-content/plugins/{$name}/": [ "type:wordpress-plugin" ]}'
+            fi
             composer install
       - save_cache:
           key: composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "composer.lock" }}
