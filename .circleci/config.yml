@@ -62,45 +62,45 @@ workflows:
     jobs:
       - build
 
-      # # Unit Tests
-      # - unit-tests:
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-      #     requires:
-      #       - build
+      # Unit Tests
+      - unit-tests:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+          requires:
+            - build
 
-      # # Theme Check
-      # - theme-check:
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-      #     requires:
-      #       - build
-      #
-      # # PHPCS
-      # - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-      # - php73-phpcs: # Will be deprecated on 30 Nov 2020
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
+      # Theme Check
+      - theme-check:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+          requires:
+            - build
 
-      # # Accessibility Tests
-      # - a11y-tests:
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-      #     requires:
-      #       - build
+      # Accessibility Tests
+      - a11y-tests:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+          requires:
+            - build
 
-      # # Translations
-      # - i18n:
-      #     filters:
-      #       branches:
-      #         only: master
+      # PHPCS
+      - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+      - php73-phpcs: # Will be deprecated on 30 Nov 2020
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+
+      # Translations
+      - i18n:
+          filters:
+            branches:
+              only: master
 
       # # Visual Regression Tests
       # - visual-regression-chrome:
@@ -129,32 +129,31 @@ workflows:
               only: actions/visual-regression-update-snapshots
               ignore: master
 
-      # - canary:
-      #     requires:
-      #       - php56-phpcs
-      #       - php73-phpcs
-      #       - unit-tests
-      #       - theme-check
-      #       - a11y-tests
-      #       - build
-      #     filters:
-      #       branches:
-      #         only: master
-      #
-      # - deploy:
-      #     requires:
-      #       - php56-phpcs
-      #       - php73-phpcs
-      #       - unit-tests
-      #       - theme-check
-      #       - a11y-tests
-      #       - visual-regression-chrome
-      #       # - visual-regression-firefox
-      #     filters:
-      #       tags:
-      #         only: /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*)?(\+[0-9-]+(\.[0-9]+)*)?/ # Run on semantic version tags only
-      #       branches:
-      #         ignore: /.*/
+      - canary:
+          requires:
+            - php56-phpcs
+            - php73-phpcs
+            - unit-tests
+            - theme-check
+            - a11y-tests
+            - build
+          filters:
+            branches:
+              only: master
+
+      - deploy:
+          requires:
+            - php56-phpcs
+            - php73-phpcs
+            - unit-tests
+            - theme-check
+            - a11y-tests
+            - build
+          filters:
+            tags:
+              only: /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*)?(\+[0-9-]+(\.[0-9]+)*)?/ # Run on semantic version tags only
+            branches:
+              ignore: /.*/
 
 commands:
   wait_for_mysql:
@@ -466,8 +465,7 @@ jobs:
       - install_yarn_dependencies
       - run:
           name: Generate the translations
-          command: |
-            yarn makepot
+          command: yarn makepot
       - run:
           name: Deploy go.pot/go.json back to GitHub
           command: |
