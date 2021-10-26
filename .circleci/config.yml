@@ -440,6 +440,7 @@ jobs:
   theme-check:
     executor: php_73_apache_node_browser_mysql
     steps:
+      - checkout
       - attach_workspace:
           at: ~/project
       - wait_for_mysql
