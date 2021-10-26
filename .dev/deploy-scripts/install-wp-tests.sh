@@ -208,10 +208,10 @@ fi
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/go
 mkdir -p $INSTALL_PATH
 
-if [[ "$CIRCLE_JOB" == 'unit-test-73' || "$CIRCLE_JOB" == 'unit-test-74' ]]; then
+if [[ "$CIRCLE_JOB" == 'unit-test-73' ]]; then
 	install_rsync
 	# Unit test job, copy entire directory including config files
-	rsync -av --delete ~/project/. $INSTALL_PATH/
+	rsync -av --no-perms --delete ~/project/. $INSTALL_PATH/
 else
 	# If the ~/project/go directory exists, it persisted from the build job
 	if [ -d ~/project/go ]; then
@@ -220,4 +220,18 @@ else
 		install_rsync
 		rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
 	fi
+fi
+
+# If the ~/project/go directory exists, it persisted from the build job
+if [ -d ~/project/go ]; then
+	cp -r ~/project/go $INSTALL_PATH/
+else
+	install_rsync
+	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
+fi
+
+# PHPUnit requires the configuration file and the .dev/tests directory
+if [[ "$CIRCLE_JOB" == 'unit-test-73' ]]; then
+	cp -r ~/project/.dev/tests $INSTALL_PATH/
+	cp ~/project/phpunit.xml $INSTALL_PATH/
 fi
