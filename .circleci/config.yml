@@ -194,6 +194,13 @@ commands:
             chmod +x wp-cli.phar
             sudo mv wp-cli.phar /usr/local/bin/wp
 
+  install_rsync:
+    steps:
+      - run:
+          name: Install rsync
+          command: |
+            sudo apt install rsync
+
   run_phpunit_single_site_generate_coverage:
     steps:
       - run:
@@ -226,10 +233,8 @@ commands:
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - run:
-          name: Install rsync
-          command: sudo apt install rsync
       - install_code_climate_test_reporter
+      - install_rsync
       - install_wpcli
       - run:
           name: Install gettext
@@ -386,9 +391,7 @@ jobs:
           command: |
             PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
             yarn install --frozen-lockfile
-      - run:
-          name: Install rsync
-          command: sudo apt-get update --allow-releaseinfo-change && sudo apt install rsync
+      - install_rsync
       - run:
           name: Install gettext
           command: sudo apt-get install gettext
@@ -436,15 +439,15 @@ jobs:
   theme-check:
     executor: php_73_apache_node_browser_mysql
     steps:
-      - checkout
+      - attach_workspace:
+          at: ~/project
       - wait_for_mysql
       - run:
           name: Install MariaDB
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - attach_workspace:
-          at: ~/project
+      - install_rsync
       - install_wpcli
       - run:
           name: Setup WordPress site and install the Theme Check package
@@ -466,9 +469,7 @@ jobs:
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - run:
-          name: Install rsync
-          command: sudo apt install rsync
+      - install_rsync
       - run:
           name: Install gettext
           command: sudo apt-get install gettext
@@ -602,9 +603,7 @@ jobs:
           name: Install ghr
           command: |
             go get -u github.com/tcnksm/ghr
-      - run:
-          name: Install rsync
-          command: sudo apt install rsync
+      - install_rsync
       - run:
           name: Install node packages
           command: yarn install
@@ -650,9 +649,7 @@ jobs:
           name: Install ghr
           command: |
             go get -u github.com/tcnksm/ghr
-      - run:
-          name: Install rsync
-          command: sudo apt install rsync
+      - install_rsync
       - run:
           name: Install node packages
           command: yarn install
