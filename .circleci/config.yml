@@ -62,35 +62,37 @@ workflows:
     jobs:
       - build
 
-      # Support PHP Versions
-      # http://php.net/supported-versions.php
-      # - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-      # - php73-phpcs: # Will be deprecated on 30 Nov 2020
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
+      # Unit Tests
+      - unit-test-73:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+          requires:
+            - build
+      - unit-test-74:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+          requires:
+            - build
 
-      # - unit-test-73:
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-      #     requires:
-      #       - build
-
-      # - unit-test-74:
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-
+      # Theme Check
       - theme-check:
           filters:
             tags:
               only: /^(?!canary).*$/
           requires:
             - build
+
+      # PHPCS
+      - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+      - php73-phpcs: # Will be deprecated on 30 Nov 2020
+          filters:
+            tags:
+              only: /^(?!canary).*$/
 
       # - a11y-tests:
       #     filters:
@@ -227,6 +229,8 @@ commands:
   run_php_unit_test:
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/project
       - wait_for_mysql
       - run:
           name: Update hosts
@@ -238,29 +242,17 @@ commands:
             sudo apt-get install mariadb-client
       - install_code_climate_test_reporter
       - install_wpcli
-      - attach_workspace:
-          at: ~/project
+      - restore_composer_cache
+      - run:
+          name: Install Composer dependencies
+          command: composer install
+      - save_cache:
+          key: composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "composer.lock" }}
+          paths:
+            - ~/project/vendor
       - run:
           name: Setup WordPress site
           command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
-      - run:
-          name: Install Composer packages
-          command: composer install
-          working_directory: /tmp/wordpress/wp-content/themes/go
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: yarn install
-          working_directory: /tmp/wordpress/wp-content/themes/go
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-      - run:
-          name: Build the Go Theme
-          command: yarn build
-          working_directory: /tmp/wordpress/wp-content/themes/go
       - run_phpunit_single_site_generate_coverage
       - run:
           name: "Deploy Coverage to Code Climate"
@@ -388,7 +380,7 @@ jobs:
       - disable_xdebug_php_extension
       - restore_yarn_cache
       - run:
-          name: Install Node dependencies
+          name: Install Yarn dependencies
           command: |
             PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
             yarn install --frozen-lockfile
@@ -396,9 +388,6 @@ jobs:
       - run:
           name: Install gettext
           command: sudo apt-get install gettext
-      - run:
-          name: Install Grunt.js
-          command: sudo yarn global add grunt-cli
       - save_cache:
           key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
