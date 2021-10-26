@@ -237,7 +237,6 @@ commands:
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - install_code_climate_test_reporter
-      - install_rsync
       - install_wpcli
       - attach_workspace:
           at: ~/project
@@ -450,7 +449,6 @@ jobs:
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - install_rsync
       - install_wpcli
       - run:
           name: Setup WordPress site and install the Theme Check package
@@ -472,7 +470,6 @@ jobs:
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - install_rsync
       - run:
           name: Install gettext
           command: sudo apt-get install gettext

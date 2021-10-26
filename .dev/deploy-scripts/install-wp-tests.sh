@@ -174,6 +174,17 @@ install_db() {
 	mysqladmin create $DB_NAME --user="$DB_USER" --password="$DB_PASS"$EXTRA
 }
 
+install_rsync() {
+
+	if [ ! -z $(which rsync) ]; then
+		return 0
+	fi
+
+	sudo apt-get update --allow-releaseinfo-change
+	sudo apt install rsync
+
+}
+
 install_wp
 setup_wp
 install_test_suite
@@ -198,12 +209,15 @@ export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/go
 mkdir -p $INSTALL_PATH
 
 if [[ "$CIRCLE_JOB" == 'unit-test-73' || "$CIRCLE_JOB" == 'unit-test-74' ]]; then
+	install_rsync
 	# Unit test job, copy entire directory including config files
 	rsync -av --delete ~/project/. $INSTALL_PATH/
 else
-	if [ -d "~/project/go" ]; then
+	# If the ~/project/go directory exists, it persisted from the build job
+	if [ -d ~/project/go ]; then
 		cp -r ~/project/go $INSTALL_PATH/
 	else
+		install_rsync
 		rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
 	fi
 fi
