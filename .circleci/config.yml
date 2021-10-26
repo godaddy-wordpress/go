@@ -195,6 +195,7 @@ commands:
           paths:
             - ~/project/node_modules
             - ~/.cache/yarn
+            - /home/circleci/.cache/Cypress
 
   install_code_climate_test_reporter:
     steps:
