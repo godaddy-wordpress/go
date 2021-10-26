@@ -249,7 +249,7 @@ commands:
           name: "Deploy Coverage to Code Climate"
           command: |
             cp /tmp/wordpress/wp-content/themes/go/clover.xml ~/project/
-            ./cc-test-reporter after-build /tmp/wordpress/wp-content/themes/go/clover.xml -t clover --exit-code $?
+            ./cc-test-reporter after-build -t clover --exit-code $?
       - store_artifacts:
           path: /tmp/artifacts/code-coverage/
           destination: phpunit-coverage
