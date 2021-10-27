@@ -4,13 +4,7 @@ describe( 'VR Testing: li - traditional', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "https://wpnux.godaddy.com/v2/?template=li&style=traditional&lang=en_US".replace(
-            unslashit( 'https://wpnux.godaddy.com/v2/' ),
-            unslashit( Cypress.env( 'templateGalleryEndpoint' ) )
-        ).replace(
-            'en_US',
-            Cypress.env( 'templateLang' )
-        );
+        let url = "https://mwp-old.test/?wpnux_template_loader=1&template=li&style=traditional&lang=en_US";
 
         cy.visit( url );
         captureDocument( screenshotPathFromUrl( url ) );

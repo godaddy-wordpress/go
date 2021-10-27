@@ -11,7 +11,7 @@
   "viewportWidth": 1920,
   "viewportHeight": 1080,
   "env": {
-    "templateGalleryEndpoint": "https://wpnux.godaddy.com/v2/",
+    "templateEndpoint": "https://local-site.test/",
     "templateLang": "en_US"
   },
   "retries": {

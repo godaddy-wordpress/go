@@ -4,13 +4,7 @@ describe( 'VR Testing: bento - modern', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "https://wpnux.godaddy.com/v2/?template=bento&style=modern&lang=en_US".replace(
-            unslashit( 'https://wpnux.godaddy.com/v2/' ),
-            unslashit( Cypress.env( 'templateGalleryEndpoint' ) )
-        ).replace(
-            'en_US',
-            Cypress.env( 'templateLang' )
-        );
+        let url = "https://mwp-old.test/?wpnux_template_loader=1&template=bento&style=modern&lang=en_US";
 
         cy.visit( url );
         captureDocument( screenshotPathFromUrl( url ) );

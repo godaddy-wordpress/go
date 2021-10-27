@@ -33,7 +33,7 @@ export function captureDocument( path = '' ) {
  */
 export function screenshotPathFromUrl( url ) {
     const urlParts = new URL( url );
-    const envEndpointParts = new URL( Cypress.env( 'templateGalleryEndpoint' ) );
+    const envEndpointParts = new URL( Cypress.env( 'templateEndpoint' ) );
 
     return [
         urlParts.searchParams.get( 'lang' ),
