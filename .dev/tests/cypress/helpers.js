@@ -6,7 +6,7 @@
  */
 export function captureDocument( path = '' ) {
     // Disable scroll-behavior as it prevents reliable full-page screenshots.
-    cy.get('html').invoke('css', 'scroll-behavior', 'auto');
+    cy.get( 'html' ).invoke( 'css', 'scroll-behavior', 'auto' );
 
     [
         { label: 'go-1080', width: 1920, height: 1080 }
@@ -36,7 +36,7 @@ export function screenshotPathFromUrl( url ) {
     const envEndpointParts = new URL( Cypress.env( 'templateEndpoint' ) );
 
     return [
-        urlParts.searchParams.get( 'lang' ),
+        Cypress.env( 'templateLang' ),
         Cypress.browser.name,
         unslashit( urlParts.pathname.replace( envEndpointParts.pathname, '' ) ) || 'frontpage',
     ].join( '/' );
