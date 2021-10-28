@@ -228,6 +228,8 @@ fi
 
 # Visual regression tests need the .dev and the languages directories
 if [[ "$CIRCLE_JOB" == 'run_visual_regression_tests' ]]; then
+	cp ~/project/composer.json $INSTALL_PATH/
+	cp ~/project/composer.lock $INSTALL_PATH/
 	cp -r ~/project/languages $INSTALL_PATH/
 	cp -r ~/project/.dev $INSTALL_PATH/
 fi
