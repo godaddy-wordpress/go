@@ -15,9 +15,9 @@ do
 		if [[ "${testSpec}" -eq 0 ]]; then
 			# Spec file string is empty, do not start string with a ,
 			if [[ ${#SPECSTRING} -eq 0 ]]; then
-				SPECSTRING=".dev/tests/cypress/integration/visual-regression/*-{$testSpec}.spec.js"
+				SPECSTRING=".dev/tests/cypress/integration/visual-regression/*-$testSpec.spec.js"
 			else
-				SPECSTRING="${SPECSTRING},.dev/tests/cypress/integration/visual-regression/*-{$testSpec}.spec.js"
+				SPECSTRING="${SPECSTRING},.dev/tests/cypress/integration/visual-regression/*-$testSpec.spec.js"
 			fi
 			SPECS=( "${SPECS[@]}" "${testSpec}" )
 		fi
