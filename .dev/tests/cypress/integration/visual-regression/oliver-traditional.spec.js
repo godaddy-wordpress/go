@@ -4,7 +4,7 @@ describe( 'VR Testing: oliver - traditional', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "https://go.test?wpnux_template_loader=1&template=oliver&style=traditional&lang=en_US";
+        let url = "http://go.test?wpnux_template_loader=1&template=oliver&style=traditional&lang=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();

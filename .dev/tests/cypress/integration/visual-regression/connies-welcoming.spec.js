@@ -4,7 +4,7 @@ describe( 'VR Testing: connies - welcoming', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "https://go.test?wpnux_template_loader=1&template=connies&style=welcoming&lang=en_US";
+        let url = "http://go.test?wpnux_template_loader=1&template=connies&style=welcoming&lang=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();
