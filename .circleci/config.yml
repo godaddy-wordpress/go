@@ -102,21 +102,21 @@ workflows:
             branches:
               only: master
 
-      # # Visual Regression Tests
-      # - visual-regression-chrome:
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-      #         ignore:
-      #           - master
-      #           - actions/visual-regression-update-snapshots
-      # - visual-regression-firefox:
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-      #         ignore:
-      #           - master
-      #           - actions/visual-regression-update-snapshots
+      # Visual Regression Tests
+      - visual-regression-chrome:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+              ignore:
+                - master
+                - actions/visual-regression-update-snapshots
+      - visual-regression-firefox:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+              ignore:
+                - master
+                - actions/visual-regression-update-snapshots
 
       - visual-regression-update-snapshots-chrome:
           filters:
