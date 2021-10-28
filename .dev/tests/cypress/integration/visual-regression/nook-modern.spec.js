@@ -1,12 +1,13 @@
-import { captureDocument, screenshotPathFromUrl, unslashit } from '../../helpers';
+import { captureDocument, screenshotPathFromUrl, unslashit, showCoBlocksAnimatedObjects } from '../../helpers';
 
 describe( 'VR Testing: nook - modern', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "https://mwp-old.test/?wpnux_template_loader=1&template=nook&style=modern&lang=en_US";
+        let url = "https://go.test?wpnux_template_loader=1&template=nook&style=modern&lang=en_US";
 
         cy.visit( url );
+        showCoBlocksAnimatedObjects();
         captureDocument( screenshotPathFromUrl( url ) );
 
         cy.get( '#header__navigation' ).then( $headerNavigation => {
@@ -19,6 +20,7 @@ describe( 'VR Testing: nook - modern', () => {
     it( 'Loads additional pages', () => {
         pages.forEach( page => {
             cy.visit( page );
+            showCoBlocksAnimatedObjects();
             captureDocument( screenshotPathFromUrl( page ) );
         } );
     } );

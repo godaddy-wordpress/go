@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 
 URLS=$(curl -sS https://wpnux.godaddy.com/v2/api/templates | jq -r '.[].styles[].preview_url')
-baseURL=$(cat cypress.json | jq -r '.env.templateEndpoint')
+baseURL=$(cat cypress.json | jq -r '.env.localTestURL')
 
 for URL in $URLS; do
     params=(${URL//[=&]/ })

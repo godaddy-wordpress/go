@@ -1,12 +1,13 @@
-import { captureDocument, screenshotPathFromUrl, unslashit } from '../../helpers';
+import { captureDocument, screenshotPathFromUrl, unslashit, showCoBlocksAnimatedObjects } from '../../helpers';
 
 describe( 'VR Testing: mias - playful', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "https://mwp-old.test/?wpnux_template_loader=1&template=mias&style=playful&lang=en_US";
+        let url = "https://go.test?wpnux_template_loader=1&template=mias&style=playful&lang=en_US";
 
         cy.visit( url );
+        showCoBlocksAnimatedObjects();
         captureDocument( screenshotPathFromUrl( url ) );
 
         cy.get( '#header__navigation' ).then( $headerNavigation => {
@@ -19,6 +20,7 @@ describe( 'VR Testing: mias - playful', () => {
     it( 'Loads additional pages', () => {
         pages.forEach( page => {
             cy.visit( page );
+            showCoBlocksAnimatedObjects();
             captureDocument( screenshotPathFromUrl( page ) );
         } );
     } );

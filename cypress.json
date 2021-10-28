@@ -11,7 +11,7 @@
   "viewportWidth": 1920,
   "viewportHeight": 1080,
   "env": {
-    "templateEndpoint": "https://local-site.test/",
+    "localTestURL": "https://go.test",
     "templateLang": "en_US"
   },
   "retries": {
