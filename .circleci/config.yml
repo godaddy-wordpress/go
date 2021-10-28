@@ -310,6 +310,9 @@ commands:
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
+      - run:
+          name: "Install awscli"
+          command: sudo apt-get install awscli
       - install_wpcli
       - run:
           name: "Install awscli"
