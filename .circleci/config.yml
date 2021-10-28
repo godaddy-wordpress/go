@@ -290,10 +290,6 @@ commands:
         type: enum
         enum: ['chrome', 'firefox']
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "3c:e9:ef:51:a5:2f:f4:b6:cd:ee:ba:88:33:a2:83:00"
-            - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
       - run:
           name: Update hosts
           command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
@@ -322,15 +318,24 @@ commands:
           name: Install Composer packages
           command: composer install
           working_directory: /tmp/wordpress/wp-content/themes/go
+      - add_ssh_keys:
+          fingerprints:
+            - "3c:e9:ef:51:a5:2f:f4:b6:cd:ee:ba:88:33:a2:83:00"
       - run:
-          name: Install WPNUX Importer and WPNUX Template Switcher
+          name: Install WPNUX Template Switcher
           command: |
             cd /tmp/wordpress/wp-content/plugins
             git clone git@github.com:godaddy-wordpress/wpnux-template-switcher.git
             wp plugin activate wpnux-template-switcher
+      - add_ssh_keys:
+          fingerprints:
+            - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
+      - run:
+          name:  Install WPCLI NUX Importer
+          command: |
             mkdir -p ~/.wp-cli/packages/local
             cd ~/.wp-cli/packages/local
-            git clone git@github.secureserver.net:WordPress/wp-cli-nux-command.git
+            git clone git@github.com:godaddy-wordpress/wp-cli-nux-command.git
       - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
           command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
