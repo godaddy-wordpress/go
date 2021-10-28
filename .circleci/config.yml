@@ -294,6 +294,9 @@ commands:
           fingerprints:
             - "3c:e9:ef:51:a5:2f:f4:b6:cd:ee:ba:88:33:a2:83:00"
             - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
+      - run:
+          name: Update hosts
+          command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
       - checkout
       - attach_workspace:
           at: ~/project
@@ -306,17 +309,11 @@ commands:
           command: yarn snapshots:download
       - wait_for_mysql
       - run:
-          name: Update hosts
-          command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
-      - run:
           name: Install MariaDB
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - install_wpcli
-      - run:
-          name: "Install awscli"
-          command: sudo apt-get install awscli
       - run:
           name: Setup WordPress site
           command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
