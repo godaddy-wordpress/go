@@ -38,7 +38,7 @@ export function screenshotPathFromUrl( url ) {
     return [
         Cypress.env( 'templateLang' ),
         Cypress.browser.name,
-        unslashit( urlParts.pathname.replace( envEndpointParts.pathname, '' ) ) || 'frontpage',
+        unslashit( urlParts.pathname.replace( envEndpointParts.pathname, '' ).replace( 'v2/', '' ) ) || 'frontpage',
     ].join( '/' );
 }
 
@@ -49,4 +49,16 @@ export function screenshotPathFromUrl( url ) {
  */
 export function unslashit( path ) {
     return path.replace( /(^[\/]+|[\/]+$)/, '' );
+}
+
+export function showCoBlocksAnimatedObjects() {
+  // Scroll to each animated object on the page,
+  // then scroll back to the top for the screenshot
+	cy.get( 'body' ).then( ( body ) => {
+		if ( body.find( '.coblocks-animate' ).length > 0 ) {
+			cy.get( '.coblocks-animate' ).then( ( $el ) => {
+				$el.removeClass( 'coblocks-animate' );
+			} );
+		}
+	} );
 }
