@@ -323,6 +323,15 @@ commands:
           command: composer install
           working_directory: /tmp/wordpress/wp-content/themes/go
       - run:
+          name: Install WPNUX Importer and WPNUX Template Switcher
+          command: |
+            cd /tmp/wordpress/wp-content/plugins
+            git clone git@github.com:godaddy-wordpress/wpnux-template-switcher.git
+            wp plugin activate wpnux-template-switcher
+            mkdir -p ~/.wp-cli/packages/local
+            cd ~/.wp-cli/packages/local
+            git clone git@github.secureserver.net:WordPress/wp-cli-nux-command.git
+      - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
           command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
 
@@ -510,14 +519,14 @@ jobs:
             git push origin master --quiet
 
   visual-regression-chrome:
-    executor: python_node_browsers
+    executor: php_73_apache_node_browser_mysql
     parallelism: 10
     steps:
       - run_visual_regression_tests:
           browser: chrome
 
   visual-regression-firefox:
-    executor: python_node_browsers
+    executor: php_73_apache_node_browser_mysql
     parallelism: 10
     steps:
       - run_visual_regression_tests:
