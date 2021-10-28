@@ -108,14 +108,12 @@ workflows:
             tags:
               only: /^(?!canary).*$/
               ignore:
-                - master
                 - actions/visual-regression-update-snapshots
       - visual-regression-firefox:
           filters:
             tags:
               only: /^(?!canary).*$/
               ignore:
-                - master
                 - actions/visual-regression-update-snapshots
 
       - visual-regression-update-snapshots-chrome:
@@ -240,6 +238,15 @@ commands:
           name: "Run PHPCS"
           command: composer lint
 
+  setup_spec_files_diff_tree:
+    steps:
+      - run:
+          name: Setup spec files to run based on git diff-tree
+          command: |
+            if [[ "$CIRCLE_BRANCH" != "master" ]]; then
+              bash .dev/bin/setup-test-specs.sh
+            fi
+
   run_php_unit_test:
     steps:
       - checkout
@@ -283,6 +290,7 @@ commands:
         enum: ['chrome', 'firefox']
     steps:
       - checkout
+      - setup_spec_files_diff_tree
       - install_yarn_dependencies
       - run:
           name: "Install awscli"
@@ -297,12 +305,7 @@ commands:
             fi
       - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
-          command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              yarn test-vr-all -- --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >>
-            else
-              yarn test-vr -- --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >>
-            fi
+          command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
 
   visual-regression-update-snapshots:
     parameters:
