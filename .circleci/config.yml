@@ -291,45 +291,12 @@ commands:
             - "3c:e9:ef:51:a5:2f:f4:b6:cd:ee:ba:88:33:a2:83:00"
             - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
       - checkout
-      - setup_spec_files_diff_tree
-      - install_yarn_dependencies
-      - run:
-          name: "Install awscli"
-          command: sudo apt-get install awscli
-      - run:
-          name: "Download base snapshots"
-          command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              yarn snapshots:download-all
-            else
-              yarn snapshots:download
-            fi
-      - run:
-          name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
-          command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
-
-  run_visual_regression_tests:
-    parameters:
-      browser:
-        type: enum
-        enum: ['chrome', 'firefox']
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "3c:e9:ef:51:a5:2f:f4:b6:cd:ee:ba:88:33:a2:83:00"
-            - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
-      - checkout
       - attach_workspace:
           at: ~/project
       - setup_spec_files_diff_tree
       - run:
           name: "Download base snapshots"
-          command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              yarn snapshots:download-all
-            else
-              yarn snapshots:download
-            fi
+          command: yarn snapshots:download
       - wait_for_mysql
       - run:
           name: Update hosts
