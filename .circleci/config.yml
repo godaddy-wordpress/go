@@ -242,10 +242,7 @@ commands:
     steps:
       - run:
           name: Setup spec files to run based on git diff-tree
-          command: |
-            if [[ "$CIRCLE_BRANCH" != "master" ]]; then
-              bash .dev/bin/setup-test-specs.sh
-            fi
+          command: bash .dev/bin/setup-test-specs.sh
 
   run_php_unit_test:
     steps:
