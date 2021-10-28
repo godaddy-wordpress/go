@@ -121,11 +121,15 @@ workflows:
             branches:
               only: actions/visual-regression-update-snapshots
               ignore: master
+            requires:
+              - build
       - visual-regression-update-snapshots-firefox:
           filters:
             branches:
               only: actions/visual-regression-update-snapshots
               ignore: master
+            requires:
+              - build
 
       - canary:
           requires:
