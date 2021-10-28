@@ -336,9 +336,10 @@ commands:
             mkdir -p ~/.wp-cli/packages/local
             cd ~/.wp-cli/packages/local
             git clone git@github.com:godaddy-wordpress/wp-cli-nux-command.git
+            cp wp-cli-nux-command/bin/config.yml ~/.wp-cli/config.yml
       - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
-          command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
+          command: npx cypress run --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
 
   visual-regression-update-snapshots:
     parameters:
