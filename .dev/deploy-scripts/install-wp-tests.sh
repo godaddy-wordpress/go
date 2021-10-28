@@ -196,7 +196,7 @@ if [ "$CIRCLE_JOB" == 'theme-check' ]; then
 	cd ~/.wp-cli/packages/vendor/anhskohbo/wp-cli-themecheck && git pull
 fi
 
-if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
+if [ "$CIRCLE_JOB" == 'a11y-tests' || "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-regression-firefox' ]; then
 	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
 	sudo a2ensite apache-ci.conf
 	sudo service apache2 restart
