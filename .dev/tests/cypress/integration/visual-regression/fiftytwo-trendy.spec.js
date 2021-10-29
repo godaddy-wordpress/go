@@ -4,7 +4,7 @@ describe( 'VR Testing: fiftytwo - trendy', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "http://go.test?wpnux_template_loader=1&template=fiftytwo&style=trendy&lang=en_US";
+        let url = "http://go.test/?wpnux_template_loader=1&template=fiftytwo&style=trendy&lang=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();

@@ -4,7 +4,7 @@ describe( 'VR Testing: novak - trendy', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "http://go.test?wpnux_template_loader=1&template=novak&style=trendy&lang=en_US";
+        let url = "http://go.test/?wpnux_template_loader=1&template=novak&style=trendy&lang=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();

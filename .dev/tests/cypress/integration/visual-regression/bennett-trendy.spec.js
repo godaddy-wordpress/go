@@ -4,7 +4,7 @@ describe( 'VR Testing: bennett - trendy', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "http://go.test?wpnux_template_loader=1&template=bennett&style=trendy&lang=en_US";
+        let url = "http://go.test/?wpnux_template_loader=1&template=bennett&style=trendy&lang=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();

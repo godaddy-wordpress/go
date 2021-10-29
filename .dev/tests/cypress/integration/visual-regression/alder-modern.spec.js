@@ -4,7 +4,7 @@ describe( 'VR Testing: alder - modern', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "http://go.test?wpnux_template_loader=1&template=alder&style=modern&lang=en_US";
+        let url = "http://go.test/?wpnux_template_loader=1&template=alder&style=modern&lang=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();

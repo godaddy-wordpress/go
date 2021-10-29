@@ -4,7 +4,7 @@ describe( 'VR Testing: garage - trendy', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "http://go.test?wpnux_template_loader=1&template=garage&style=trendy&lang=en_US";
+        let url = "http://go.test/?wpnux_template_loader=1&template=garage&style=trendy&lang=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();
