@@ -32,11 +32,20 @@
 
 body.has-sticky-header {
 
-	& .header {
+	.site-header {
 		position: sticky;
 		top: 0;
+
+		&:not(.has-background) {
+			background: var(--go--color--background,0,0,100%);
+		}
 	}
 
+	&.admin-bar {
+		.site-header {
+			top: 32px;
+		}
+	}
 }
 
 .header__inner {
