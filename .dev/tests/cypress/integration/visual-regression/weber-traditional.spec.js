@@ -8,7 +8,7 @@ describe( 'VR Testing: weber - traditional', () => {
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();
-        captureDocument( screenshotPathFromUrl( url ) );
+        cy.wait( 30000 );
 
         cy.get( '#header__navigation' ).then( $headerNavigation => {
             [ ...$headerNavigation.find( '.menu-item a' ) ].forEach( $navLink => {
@@ -21,7 +21,7 @@ describe( 'VR Testing: weber - traditional', () => {
         pages.forEach( page => {
             cy.visit( page );
             showCoBlocksAnimatedObjects();
-            captureDocument( screenshotPathFromUrl( page ) );
+            cy.wait( 30000 );
         } );
     } );
 
