@@ -235,4 +235,5 @@ if [[ "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-re
 	cp ~/project/composer.lock $INSTALL_PATH/
 	cp -r ~/project/languages $INSTALL_PATH/
 	cp -r ~/project/.dev $INSTALL_PATH/
+	wp theme activate go --path=$WP_CORE_DIR
 fi
