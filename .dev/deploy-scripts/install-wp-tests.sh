@@ -200,6 +200,9 @@ if [[ "$CIRCLE_JOB" == 'a11y-tests' || "$CIRCLE_JOB" == 'visual-regression-chrom
 	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
 	sudo a2ensite apache-ci.conf
 	sudo service apache2 restart
+fi
+
+if [[ "$CIRCLE_JOB" == 'a11y-tests' ]]; then
 	wp db reset --yes --path=$WP_CORE_DIR
 	wp db import ~/project/.dev/tests/a11y-test-db.sql --path=$WP_CORE_DIR
 	wp search-replace https://go.test http://go.test --path=$WP_CORE_DIR
