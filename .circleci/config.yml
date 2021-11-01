@@ -61,7 +61,10 @@ workflows:
   main:
     jobs:
       - build
-
+          filters:
+            branches:
+              ignore:
+                - actions/visual-regression-update-snapshots
       # Unit Tests
       - unit-tests:
           filters:
@@ -398,7 +401,8 @@ commands:
           command: sudo apt-get install awscli
       - run:
           name: "Run end to end tests (Cypress.io)"
-          command: yarn new-go-vr-snapshots
+          command: |
+            .dev/bin/generate-go-screenshot-specs.sh && MOZ_HEADLESS_WIDTH=1920 MOZ_HEADLESS_HEIGHT=1080 ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --group vr-<< parameters.browser >> --config video=false --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
       - run:
           name: "Update base snapshots - << parameters.browser >>"
           command: |
