@@ -173,7 +173,7 @@
   "dependencies": {
     "css-vars-ponyfill": "^2.0.2",
     "lodash.throttle": "^4.1.1",
-    "node-sass": "^5.0.0",
+    "sass": "1.35.2",
     "normalize.css": "^8.0.0",
     "sass-loader": "^10.0.5",
     "strip-css-comments-cli": "^3.0.0"
