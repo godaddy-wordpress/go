@@ -1,15 +1,22 @@
 module.exports = {
-	parser: 'babel-eslint',
-	extends: ['@10up/eslint-config'],
+	extends: ['@godaddy-wordpress/eslint-config'],
+
+	// Go config
 	env: {
 		browser: true,
 		es6: true,
 	},
+	parser: 'babel-eslint',
+
+	// Specific Globals used in Go
 	globals: {
-		window: true,
-		document: true,
-		wp: true,
 		jQuery: true,
 		GoPreviewData: true,
+		goCustomizerControls: true,
+		GoBlockFilters: true,
+	},
+
+	rules: {
+		'@wordpress/no-global-active-element': 0 // because we are not using React, no need for this
 	}
 };
