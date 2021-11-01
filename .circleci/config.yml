@@ -61,7 +61,10 @@ workflows:
   main:
     jobs:
       - build
-
+          filters:
+            branches:
+              ignore:
+                - actions/visual-regression-update-snapshots
       # Unit Tests
       - unit-tests:
           filters:
