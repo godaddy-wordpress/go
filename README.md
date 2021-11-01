@@ -89,7 +89,7 @@ We are crafting Go to be powerful, yet simplistic, as demonstrated by this showc
 
 You can fork and contribute back to Go by getting involved with [existing issues](https://github.com/godaddy-wordpress/go/issues), [creating new ones](https://github.com/godaddy-wordpress/go/issues/new/choose), or [issuing pull requests](https://github.com/godaddy-wordpress/go/compare).
 
-To clone this project, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) and [Composer](https://getcomposer.org) installed on your machine.
+To clone this project, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/), [yarn](https://yarnpkg.com/), and [Composer](https://getcomposer.org) installed on your machine.
 
 From your command line:
 
@@ -100,11 +100,11 @@ $ git clone https://github.com/godaddy-wordpress/go
 # Go into the repository
 $ cd go
 
-# Install dependencies and create a build
-$ npm start
+# Install composer dependencies
+$ composer install
 
-# Install using WP-CLI (if available)
-$ wp theme install path/to/go/build/go.zip --activate --path=path/to/wordpress
+# Install dependencies and create a build
+$ yarn install && yarn build
 ```
 
 ## Credits
