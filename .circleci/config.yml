@@ -227,7 +227,7 @@ commands:
       - run:
           name: "Run PHPUnit - Single Site - Generate Coverage Reports"
           command: composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml --coverage-clover=clover.xml
-          working_directory: /tmp/wordpress/wp-content/themes/go
+          working_directory: /var/www/html/wordpress/wp-content/themes/go
 
   run_php_cs:
     steps:
@@ -285,13 +285,13 @@ commands:
       - run:
           name: Install Composer packages
           command: composer install
-          working_directory: /tmp/wordpress/wp-content/themes/go
+          working_directory: /var/www/html/wordpress/wp-content/themes/go
       - install_code_climate_test_reporter
       - run_phpunit_single_site_generate_coverage
       - run:
           name: "Deploy Coverage to Code Climate"
           command: |
-            cp /tmp/wordpress/wp-content/themes/go/clover.xml ~/project/
+            cp /var/www/html/wordpress/wp-content/themes/go/clover.xml ~/project/
             ./cc-test-reporter after-build -t clover --exit-code $?
       - store_artifacts:
           path: /tmp/artifacts/code-coverage/
@@ -332,7 +332,7 @@ commands:
       - run:
           name: Install Composer packages
           command: composer install
-          working_directory: /tmp/wordpress/wp-content/themes/go
+          working_directory: /var/www/html/wordpress/wp-content/themes/go
       - add_ssh_keys:
           fingerprints:
             - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
@@ -340,7 +340,7 @@ commands:
       - run:
           name: Install WPNUX Template Switcher
           command: |
-            cd /tmp/wordpress/wp-content/plugins
+            cd /var/www/html/wordpress/wp-content/plugins
             git clone git@github.com:godaddy-wordpress/wpnux-template-switcher.git wpnux-template-loader
             wp plugin activate wpnux-template-loader
       - add_ssh_keys:
@@ -355,7 +355,7 @@ commands:
             cp wp-cli-nux-command/bin/config.yml ~/.wp-cli/config.yml
       - run:
           name:  Flush permalinks and generate .htaccess file
-          command: wp rewrite flush --hard --path=/tmp/wordpress
+          command: wp rewrite flush --hard --path=/var/www/html/wordpress
       - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
           command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec .dev/tests/cypress/integration/visual-regression/ahoy-modern.spec.js
@@ -477,7 +477,7 @@ jobs:
           command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run:
           name: Run theme check
-          command: wp themecheck --theme=go --no-interactive --path=/tmp/wordpress
+          command: wp themecheck --theme=go --no-interactive --path=/var/www/html/wordpress
 
   a11y-tests:
     executor: php_73_apache_node_browser_mysql
