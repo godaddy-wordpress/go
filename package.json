@@ -54,7 +54,7 @@
     "test-vr": "yarn generate-vr-specs && MOZ_HEADLESS_WIDTH=1920 MOZ_HEADLESS_HEIGHT=1080 npx cypress run --config video=false --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js' --headless",
     "snapshots:upload-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\" --exclude \"*__diff_output__*\"",
     "snapshots:download-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete",
-    "snapshots:download": "yarn snapshots:download-all -- --exclude='*' --include='barista*' --include='bento*' --include='furnish*' --include='miller*'"
+    "snapshots:download": ".dev/bin/setup-test-specs.sh.sh yarn snapshots:download-all -- --exclude='*' $(cat /tmp/template_includes)"
   },
   "locales": {
     "ar": "العربية",

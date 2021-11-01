@@ -4,6 +4,7 @@
 CHANGEDFILES=${@-$(git diff --name-only origin/master)}
 SPECS=()
 SPECSTRING=''
+TEMPLATE_INCLUDES=''
 
 for FILE in $CHANGEDFILES
 do
@@ -12,7 +13,7 @@ do
 		testSpec=$(echo $FILE | cut -d'/' -f4)
 		foundwords=$(echo ${SPECS[@]} | grep -o "${testSpec}" | wc -w)
 		# The test spec does not yet exist in the SPECS array
-		if [[ "${testSpec}" -eq 0 ]]; then
+		if [[ "${foundwords}" -eq 0 ]]; then
 			# Spec file string is empty, do not start string with a ,
 			if [[ ${#SPECSTRING} -eq 0 ]]; then
 				SPECSTRING=".dev/tests/cypress/integration/visual-regression/*-$testSpec.spec.js"
@@ -31,7 +32,20 @@ if [ ${#SPECS[@]} -eq 0 ]; then
 	exit
 fi
 
-printf "\n\033[0;33mRunning the following Cypress spec files: ${SPECS[*]}\033[0m\n"
+# printf "\n\033[0;33mRunning the following Cypress spec files: ${SPECS[*]}\033[0m\n"
 
 # Store $SPECSTRING value in /tmp/specstring file for later use
 echo $SPECSTRING > /tmp/specstring
+
+for SPEC in "${SPECS[@]}"
+do
+	# Spec file string is empty, do not start string with a ,
+	if [[ ${#TEMPLATE_INCLUDES} -eq 0 ]]; then
+		TEMPLATE_INCLUDES="--include='$SPEC*'"
+	else
+		TEMPLATE_INCLUDES="${TEMPLATE_INCLUDES} --include='$SPEC*'"
+	fi
+done
+
+# Store $TEMPLATE_INCLUDES value in /tmp/template_includes file for later use
+echo $TEMPLATE_INCLUDES > /tmp/template_includes
