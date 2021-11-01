@@ -67,6 +67,9 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
+            branches:
+              ignore:
+                - actions/visual-regression-update-snapshots
           requires:
             - build
 
@@ -75,6 +78,9 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
+            branches:
+              ignore:
+                - actions/visual-regression-update-snapshots
           requires:
             - build
 
@@ -83,6 +89,9 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
+            branches:
+              ignore:
+                - actions/visual-regression-update-snapshots
           requires:
             - build
 
@@ -91,10 +100,16 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
+            branches:
+              ignore:
+                - actions/visual-regression-update-snapshots
       - php73-phpcs: # Will be deprecated on 30 Nov 2020
           filters:
             tags:
               only: /^(?!canary).*$/
+            branches:
+              ignore:
+                - actions/visual-regression-update-snapshots
 
       # Translations
       - i18n:
@@ -102,11 +117,13 @@ workflows:
             branches:
               only: master
 
+
       # Visual Regression Tests
       - visual-regression-chrome:
           filters:
             tags:
               only: /^(?!canary).*$/
+            branches:
               ignore:
                 - actions/visual-regression-update-snapshots
           requires:
@@ -115,6 +132,7 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
+            branches:
               ignore:
                 - actions/visual-regression-update-snapshots
           requires:
@@ -124,12 +142,10 @@ workflows:
           filters:
             branches:
               only: actions/visual-regression-update-snapshots
-              ignore: master
       - visual-regression-update-snapshots-firefox:
           filters:
             branches:
               only: actions/visual-regression-update-snapshots
-              ignore: master
 
       - canary:
           requires:
@@ -375,6 +391,7 @@ commands:
         enum: ['chrome', 'firefox']
     steps:
       - checkout
+      - set_proper_node_version
       - install_yarn_dependencies
       - run:
           name: "Install awscli"
