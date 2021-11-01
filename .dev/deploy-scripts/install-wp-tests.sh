@@ -199,6 +199,7 @@ fi
 if [[ "$CIRCLE_JOB" == 'a11y-tests' || "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-regression-firefox' ]]; then
 	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
 	sudo a2ensite apache-ci.conf
+	sudo a2enmod rewrite
 	sudo service apache2 restart
 fi
 
@@ -237,3 +238,6 @@ if [[ "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-re
 	cp -r ~/project/.dev $INSTALL_PATH/
 	wp theme activate go --path=$WP_CORE_DIR
 fi
+
+# Generate a .htaccess file
+wp rewrite flush --hard --path=$WP_CORE_DIR
