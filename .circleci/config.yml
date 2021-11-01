@@ -354,6 +354,9 @@ commands:
             git clone git@github.com:godaddy-wordpress/wp-cli-nux-command.git
             cp wp-cli-nux-command/bin/config.yml ~/.wp-cli/config.yml
       - run:
+          name:  Flush permalinks and generate .htaccess file
+          command: wp rewrite flush --hard --path=/tmp/wordpress
+      - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
           command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec .dev/tests/cypress/integration/visual-regression/ahoy-modern.spec.js
 
