@@ -575,28 +575,28 @@ jobs:
 
   visual-regression-chrome:
     executor: php_73_apache_node_browser_mysql
-    parallelism: 80
+    parallelism: 20
     steps:
       - run_visual_regression_tests:
           browser: chrome
 
   visual-regression-firefox:
     executor: php_73_apache_node_browser_mysql
-    parallelism: 80
+    parallelism: 20
     steps:
       - run_visual_regression_tests:
           browser: firefox
 
   visual-regression-update-snapshots-chrome:
     executor: python_node_browsers
-    parallelism: 80
+    parallelism: 20
     steps:
       - visual-regression-update-snapshots:
           browser: chrome
 
   visual-regression-update-snapshots-firefox:
     executor: python_node_browsers
-    parallelism: 80
+    parallelism: 20
     steps:
       - visual-regression-update-snapshots:
           browser: firefox
