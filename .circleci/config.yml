@@ -409,6 +409,7 @@ commands:
             if [ ! -d .dev/tests/cypress/snapshots/visual-regression ] || [ -z "$(ls -A .dev/tests/cypress/snapshots/visual-regression)"]; then
               echo "No snapshots to upload."
               circleci-agent step halt
+            	exit
             fi
             yarn snapshots:upload-all
 
