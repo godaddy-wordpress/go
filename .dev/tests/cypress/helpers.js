@@ -6,7 +6,7 @@
  */
 export function captureDocument( path = '' ) {
     // Disable scroll-behavior as it prevents reliable full-page screenshots.
-    cy.get('html').invoke('css', 'scroll-behavior', 'auto');
+    cy.get( 'html' ).invoke( 'css', 'scroll-behavior', 'auto' );
 
     [
         { label: 'go-1080', width: 1920, height: 1080 }
@@ -33,12 +33,12 @@ export function captureDocument( path = '' ) {
  */
 export function screenshotPathFromUrl( url ) {
     const urlParts = new URL( url );
-    const envEndpointParts = new URL( Cypress.env( 'templateGalleryEndpoint' ) );
+    const envEndpointParts = new URL( Cypress.env( 'localTestURL' ) );
 
     return [
-        urlParts.searchParams.get( 'lang' ),
+        Cypress.env( 'templateLang' ),
         Cypress.browser.name,
-        unslashit( urlParts.pathname.replace( envEndpointParts.pathname, '' ) ) || 'frontpage',
+        unslashit( urlParts.pathname.replace( envEndpointParts.pathname, '' ).replace( 'v2/', '' ) ) || 'frontpage',
     ].join( '/' );
 }
 
@@ -49,4 +49,16 @@ export function screenshotPathFromUrl( url ) {
  */
 export function unslashit( path ) {
     return path.replace( /(^[\/]+|[\/]+$)/, '' );
+}
+
+export function showCoBlocksAnimatedObjects() {
+  // Scroll to each animated object on the page,
+  // then scroll back to the top for the screenshot
+	cy.get( 'body' ).then( ( body ) => {
+		if ( body.find( '.coblocks-animate' ).length > 0 ) {
+			cy.get( '.coblocks-animate' ).then( ( $el ) => {
+				$el.removeClass( 'coblocks-animate' );
+			} );
+		}
+	} );
 }

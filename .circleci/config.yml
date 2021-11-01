@@ -60,8 +60,33 @@ workflows:
   version: 2.1
   main:
     jobs:
-      # Support PHP Versions
-      # http://php.net/supported-versions.php
+      - build
+
+      # Unit Tests
+      - unit-tests:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+          requires:
+            - build
+
+      # Theme Check
+      - theme-check:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+          requires:
+            - build
+
+      # Accessibility Tests
+      - a11y-tests:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+          requires:
+            - build
+
+      # PHPCS
       - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
           filters:
             tags:
@@ -70,39 +95,30 @@ workflows:
           filters:
             tags:
               only: /^(?!canary).*$/
-      - unit-test-73:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-      # - unit-test-74:
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-      - theme-check:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-      - a11y-tests:
-          filters:
-            tags:
-              only: /^(?!canary).*$/
+
+      # Translations
       - i18n:
           filters:
             branches:
               only: master
 
+      # Visual Regression Tests
       - visual-regression-chrome:
           filters:
             tags:
               only: /^(?!canary).*$/
               ignore:
-                - master
                 - actions/visual-regression-update-snapshots
-      # - visual-regression-firefox:
-      #     filters:
-      #       tags:
-      #         only: /^(?!canary).*$/
-      #         ignore: master
+          requires:
+            - build
+      - visual-regression-firefox:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+              ignore:
+                - actions/visual-regression-update-snapshots
+          requires:
+            - build
 
       - visual-regression-update-snapshots-chrome:
           filters:
@@ -119,23 +135,22 @@ workflows:
           requires:
             - php56-phpcs
             - php73-phpcs
-            - unit-test-73
-            # - unit-test-74
+            - unit-tests
             - theme-check
             - a11y-tests
+            - build
           filters:
             branches:
               only: master
+
       - deploy:
           requires:
             - php56-phpcs
             - php73-phpcs
-            - unit-test-73
-            # - unit-test-74
+            - unit-tests
             - theme-check
             - a11y-tests
-            - visual-regression-chrome
-            # - visual-regression-firefox
+            - build
           filters:
             tags:
               only: /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*)?(\+[0-9-]+(\.[0-9]+)*)?/ # Run on semantic version tags only
@@ -156,10 +171,10 @@ commands:
             done
             echo Failed waiting for MySQL && exit 1
 
-  install_dependencies:
+  install_composer_dependencies:
     steps:
       - run:
-          name: "Install Dependencies"
+          name: "Install Composer Dependencies"
           command: |
             sudo chmod -R 777 ../../
             mkdir -p ../../plugins/coblocks
@@ -167,6 +182,19 @@ commands:
               composer require oomphinc/composer-installers-extender ^1.1
             fi
             composer install
+
+  install_yarn_dependencies:
+    steps:
+      - restore_cache:
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Yarn Dependencies
+          command: yarn install
+      - save_cache:
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/project/node_modules
+            - ~/.cache
 
   install_code_climate_test_reporter:
     steps:
@@ -186,12 +214,20 @@ commands:
             chmod +x wp-cli.phar
             sudo mv wp-cli.phar /usr/local/bin/wp
 
+  install_rsync:
+    steps:
+      - run:
+          name: Install rsync
+          command: |
+            sudo apt-get update --allow-releaseinfo-change
+            sudo apt install rsync
+
   run_phpunit_single_site_generate_coverage:
     steps:
       - run:
           name: "Run PHPUnit - Single Site - Generate Coverage Reports"
           command: composer run test -- --coverage-html=/tmp/artifacts/code-coverage/phpunit/html --log-junit=/tmp/artifacts/code-coverage/phpunit/results.xml --coverage-clover=clover.xml
-          working_directory: /tmp/wordpress/wp-content/themes/go
+          working_directory: /var/www/html/wordpress/wp-content/themes/go
 
   run_php_cs:
     steps:
@@ -201,14 +237,37 @@ commands:
           command: |
             echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
             source /home/circleci/.bashrc
-      - install_dependencies
+      - install_composer_dependencies
       - run:
           name: "Run PHPCS"
           command: composer lint
 
+  setup_spec_files_diff_tree:
+    steps:
+      - run:
+          name: Setup spec files to run based on git diff-tree
+          command: bash .dev/bin/setup-test-specs.sh
+
+  set_proper_node_version:
+    steps:
+      - run:
+          name: Swap node versions
+          command: |
+            set +e
+            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+            nvm install v14
+            nvm alias default 14.18.1
+            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
+            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
+
   run_php_unit_test:
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/project
       - wait_for_mysql
       - run:
           name: Update hosts
@@ -218,40 +277,22 @@ commands:
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - run:
-          name: Install rsync
-          command: sudo apt install rsync
-      - install_code_climate_test_reporter
       - install_wpcli
-      - run:
-          name: Install gettext
-          command: sudo apt-get install gettext
       - run:
           name: Setup WordPress site
           command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+      - restore_composer_cache
       - run:
           name: Install Composer packages
           command: composer install
-          working_directory: /tmp/wordpress/wp-content/themes/go
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: yarn install
-          working_directory: /tmp/wordpress/wp-content/themes/go
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-      - run:
-          name: Build the Go Theme
-          command: yarn build
-          working_directory: /tmp/wordpress/wp-content/themes/go
+          working_directory: /var/www/html/wordpress/wp-content/themes/go
+      - install_code_climate_test_reporter
       - run_phpunit_single_site_generate_coverage
       - run:
           name: "Deploy Coverage to Code Climate"
-          command: ./cc-test-reporter after-build -t clover --exit-code $?
-          working_directory: /tmp/wordpress/wp-content/themes/go
+          command: |
+            cp /var/www/html/wordpress/wp-content/themes/go/clover.xml ~/project/
+            ./cc-test-reporter after-build -t clover --exit-code $?
       - store_artifacts:
           path: /tmp/artifacts/code-coverage/
           destination: phpunit-coverage
@@ -264,36 +305,68 @@ commands:
         type: enum
         enum: ['chrome', 'firefox']
     steps:
-      - checkout
-      - restore_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
       - run:
-          name: Install node packages
-          command: yarn install
-      - save_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-          paths:
-            - node_modules
-            - ~/.cache
+          name: Update hosts
+          command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - setup_spec_files_diff_tree
       - run:
           name: "Install awscli"
           command: sudo apt-get install awscli
       - run:
           name: "Download base snapshots"
+          command: yarn snapshots:download
+      - wait_for_mysql
+      - run:
+          name: Install MariaDB
           command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              yarn snapshots:download-all
-            else
-              yarn snapshots:download
-            fi
+            sudo apt-get update --allow-releaseinfo-change
+            sudo apt-get install mariadb-client
+      - install_wpcli
+      - run:
+          name: Setup WordPress site
+          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+      - restore_composer_cache
+      - run:
+          name: Install Composer packages
+          command: composer install
+          working_directory: /var/www/html/wordpress/wp-content/themes/go
+      - add_ssh_keys:
+          fingerprints:
+            - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
+      - install_yarn_dependencies
+      - run:
+          name: Install WPNUX Template Switcher
+          command: |
+            cd /var/www/html/wordpress/wp-content/plugins
+            git clone git@github.com:godaddy-wordpress/wpnux-template-switcher.git wpnux-template-loader
+            wp plugin activate wpnux-template-loader
+      - add_ssh_keys:
+          fingerprints:
+            - "3c:e9:ef:51:a5:2f:f4:b6:cd:ee:ba:88:33:a2:83:00"
+      - run:
+          name:  Install WPCLI NUX Importer
+          command: |
+            mkdir -p ~/.wp-cli/packages/local
+            cd ~/.wp-cli/packages/local
+            git clone git@github.com:godaddy-wordpress/wp-cli-nux-command.git
+            cp wp-cli-nux-command/bin/config.yml ~/.wp-cli/config.yml
+      - run:
+          name:  Flush permalinks and generate .htaccess file
+          command: wp rewrite flush --hard --path=/var/www/html/wordpress
+      - run:
+          name: Fix permissions on uploads directory for WPNUX importer
+          command: sudo chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
+      - run:
+          name: Activate CoBlocks and WooCommerce
+          command: |
+            wp plugin activate coblocks --path=/var/www/html/wordpress
+            wp plugin activate woocommerce --path=/var/www/html/wordpress
       - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
-          command: |
-            if [ "$CIRCLE_BRANCH" == "master" ]; then
-              yarn test-vr-all -- --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >>
-            else
-              yarn test-vr -- --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >>
-            fi
+          command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
 
   visual-regression-update-snapshots:
     parameters:
@@ -302,22 +375,13 @@ commands:
         enum: ['chrome', 'firefox']
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: yarn install
-      - save_cache:
-          key: dependency-cache--{{ checksum "package.json" }}
-          paths:
-            - node_modules
-            - ~/.cache
+      - install_yarn_dependencies
       - run:
           name: "Install awscli"
           command: sudo apt-get install awscli
       - run:
           name: "Run end to end tests (Cypress.io)"
-          command: yarn test-vr-all -- --browser << parameters.browser >> --record --parallel --group vr-<< parameters.browser >>
+          command: yarn new-go-vr-snapshots
       - run:
           name: "Update base snapshots - << parameters.browser >>"
           command: |
@@ -327,7 +391,67 @@ commands:
             fi
             yarn snapshots:upload-all
 
+  # Disable the xdebug PHP extension.
+  disable_xdebug_php_extension:
+    description: ""
+    steps:
+      - run:
+          name: Disable xdebug PHP extension
+          command: |
+            sudo rm -f /etc/php/*/mods-available/xdebug.ini
+            sudo rm -f /etc/php/*/mods-enabled/xdebug.ini
+            sudo rm -f /etc/php/*/conf.d/*xdebug.ini
+            sudo rm -f /usr/local/etc/php/conf.d/*xdebug.ini
+
+  # Restore composer cache
+  restore_composer_cache:
+    steps:
+      - restore_cache:
+          keys:
+            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "composer.lock" }}
+            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
+            - composer-deps-{{ .Environment.CACHE_VERSION }}
+
 jobs:
+
+  # 1. Download and cache node and composer dependencies.
+  # 2. Build deployable plugin folder.
+  # 3. Persist project folder to workspace for other jobs.
+  build:
+    docker:
+      - image: circleci/php:7.3-node
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - disable_xdebug_php_extension
+      - set_proper_node_version
+      - install_yarn_dependencies
+      - install_rsync
+      - run:
+          name: Install gettext
+          command: sudo apt-get install gettext
+      - install_wpcli
+      - run:
+          name: Build the Go theme
+          command: |
+            yarn build
+            mkdir -p go
+            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
+            rm -rf go/languages
+      - run:
+          name: Zip the Go Theme
+          command: |
+            mkdir -p /tmp/artifacts
+            zip -r /tmp/artifacts/go.zip ./go
+      - store_artifacts:
+          path: /tmp/artifacts
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - go
+
   php56-phpcs:
     executor: php_56
     steps:
@@ -338,13 +462,8 @@ jobs:
     steps:
       - run_php_cs
 
-  unit-test-73:
+  unit-tests:
     executor: php_73_apache_node_browser_mysql
-    steps:
-      - run_php_unit_test
-
-  unit-test-74:
-    executor: php_74_apache_node_browser_mysql
     steps:
       - run_php_unit_test
 
@@ -352,45 +471,28 @@ jobs:
     executor: php_73_apache_node_browser_mysql
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/project
       - wait_for_mysql
       - run:
           name: Install MariaDB
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - run:
-          name: Install rsync
-          command: sudo apt install rsync
-      - run:
-          name: Install gettext
-          command: sudo apt-get install gettext
-      - run:
-          name: Install Grunt.js
-          command: sudo yarn global add grunt-cli
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: yarn install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
       - install_wpcli
-      - run:
-          name: Build the Go Theme
-          command: yarn build
       - run:
           name: Setup WordPress site and install the Theme Check package
           command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run:
           name: Run theme check
-          command: wp themecheck --theme=go --no-interactive --path=/tmp/wordpress
+          command: wp themecheck --theme=go --no-interactive --path=/var/www/html/wordpress
 
   a11y-tests:
     executor: php_73_apache_node_browser_mysql
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/project
       - wait_for_mysql
       - run:
           name: Update hosts
@@ -400,28 +502,8 @@ jobs:
           command: |
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
-      - run:
-          name: Install rsync
-          command: sudo apt install rsync
-      - run:
-          name: Install gettext
-          command: sudo apt-get install gettext
-      - run:
-          name: Install Grunt.js
-          command: sudo yarn global add grunt-cli
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: yarn install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
+      - install_yarn_dependencies
       - install_wpcli
-      - run:
-          name: Build the Go Theme
-          command: yarn build
       - run:
           name: Setup WordPress site
           command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
@@ -449,32 +531,12 @@ jobs:
             if [[ $GIT_COMMIT_DESC == *"skip i18n"* ]]; then
               circleci-agent step halt
             fi
-      - run:
-          name: Disable xdebug PHP extension
-          command: |
-            sudo rm -f /etc/php/*/mods-available/xdebug.ini
-            sudo rm -f /etc/php/*/mods-enabled/xdebug.ini
-            sudo rm -f /etc/php/*/conf.d/*xdebug.ini
-            sudo rm -f /usr/local/etc/php/conf.d/*xdebug.ini
+      - disable_xdebug_php_extension
       - install_wpcli
-      - restore_cache:
-          keys:
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
-            - yarn-deps-{{ .Environment.CACHE_VERSION }}
-      - run:
-          name: Install node dependencies
-          command: |
-            yarn install
-      - save_cache:
-          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/project/node_modules
-            - ~/.cache/yarn
+      - install_yarn_dependencies
       - run:
           name: Generate the translations
-          command: |
-            yarn makepot
+          command: yarn makepot
       - run:
           name: Deploy go.pot/go.json back to GitHub
           command: |
@@ -491,14 +553,14 @@ jobs:
             git push origin master --quiet
 
   visual-regression-chrome:
-    executor: python_node_browsers
+    executor: php_73_apache_node_browser_mysql
     parallelism: 10
     steps:
       - run_visual_regression_tests:
           browser: chrome
 
   visual-regression-firefox:
-    executor: python_node_browsers
+    executor: php_73_apache_node_browser_mysql
     parallelism: 10
     steps:
       - run_visual_regression_tests:
@@ -522,35 +584,18 @@ jobs:
     executor: go_node_browsers_legacy
     steps:
       - checkout
-      - run:
-          name: Install Grunt.js
-          command: sudo yarn global add grunt-cli
-      - run:
-          name: Install PHP
-          command: sudo apt-get install php libapache2-mod-php php-mbstring
-      - run:
-          name: Install gettext
-          command: sudo apt-get install gettext
-      - install_wpcli
+      - attach_workspace:
+          at: ~/project
+      - install_yarn_dependencies
       - run:
           name: Install ghr
+          command: go get -u github.com/tcnksm/ghr
+      - run:
+          name: Zip the Go Theme
           command: |
-            go get -u github.com/tcnksm/ghr
-      - run:
-          name: Install rsync
-          command: sudo apt install rsync
-      - run:
-          name: Install node packages
-          command: yarn install
-      - run:
-          name: Build the Go Theme
-          command: |
-            yarn build
-            mkdir -p go
             mkdir -p /tmp/artifacts
             yarn json2po
             yarn po2mo
-            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
             GO_VERSION_LINE=$(awk '/\* Version:/{ print NR; exit }' ./go/style.css)
             GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
             sed -i -e "${GO_VERSION_LINE}s/$/-${GO_COMMIT_HASH}/" ./go/style.css
@@ -565,39 +610,27 @@ jobs:
             -H 'Content-Type: application/json' \
             -H "X-Authorization: Bearer ${WPNUX_SITE_X_AUTHORIZATION}" \
             -d '[ "go" ]'
+      - store_artifacts:
+          path: /tmp/artifacts
 
   deploy:
     executor: go_node_browsers_legacy
     steps:
       - checkout
-      - run:
-          name: Install Grunt.js
-          command: sudo yarn global add grunt-cli
+      - attach_workspace:
+          at: ~/project
       - run:
           name: Install PHP
           command: sudo apt-get install php libapache2-mod-php php-mbstring
-      - run:
-          name: Install gettext
-          command: sudo apt-get install gettext
       - install_wpcli
       - run:
           name: Install ghr
           command: |
             go get -u github.com/tcnksm/ghr
       - run:
-          name: Install rsync
-          command: sudo apt install rsync
-      - run:
-          name: Install node packages
-          command: yarn install
-      - run:
-          name: Build the Go Theme
+          name: Zip the Go Theme
           command: |
-            yarn build
-            mkdir -p go
             mkdir -p /tmp/artifacts
-            rsync -av --exclude-from ~/project/.distignore --delete ~/project/. ./go
-            rm -rf go/languages
             zip -r /tmp/artifacts/go.zip ./go
       - deploy:
           name: Deploy a new release to GitHub
