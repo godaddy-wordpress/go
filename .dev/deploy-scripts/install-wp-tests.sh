@@ -117,6 +117,8 @@ setup_wp() {
 		--admin_email=admin@go.test \
 		--skip-email \
 		--path=$WP_CORE_DIR
+
+	wp option set permalink_structure "/%postname%/" --path=$WP_CORE_DIR
 }
 
 install_test_suite() {
