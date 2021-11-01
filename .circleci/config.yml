@@ -402,7 +402,7 @@ commands:
       - run:
           name: "Run end to end tests (Cypress.io)"
           command: |
-            .dev/bin/generate-go-screenshot-specs.sh && MOZ_HEADLESS_WIDTH=1920 MOZ_HEADLESS_HEIGHT=1080 ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --group vr-<< parameters.browser >> --config video=false --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
+            .dev/bin/generate-go-screenshot-specs.sh && MOZ_HEADLESS_WIDTH=1920 MOZ_HEADLESS_HEIGHT=1080 ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --group vr-<< parameters.browser >> --record false --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'
       - run:
           name: "Update base snapshots - << parameters.browser >>"
           command: |
