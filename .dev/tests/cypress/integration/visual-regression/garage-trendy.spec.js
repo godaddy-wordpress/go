@@ -8,7 +8,7 @@ describe( 'VR Testing: garage - trendy', () => {
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();
-        cy.wait( 30000 );
+        captureDocument( screenshotPathFromUrl( url ) );
 
         cy.get( '#header__navigation' ).then( $headerNavigation => {
             [ ...$headerNavigation.find( '.menu-item a' ) ].forEach( $navLink => {
@@ -21,7 +21,7 @@ describe( 'VR Testing: garage - trendy', () => {
         pages.forEach( page => {
             cy.visit( page );
             showCoBlocksAnimatedObjects();
-            cy.wait( 30000 );
+            captureDocument( screenshotPathFromUrl( page ) );
         } );
     } );
 
