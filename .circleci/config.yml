@@ -391,6 +391,7 @@ commands:
         enum: ['chrome', 'firefox']
     steps:
       - checkout
+      - set_proper_node_version
       - install_yarn_dependencies
       - run:
           name: "Install awscli"
