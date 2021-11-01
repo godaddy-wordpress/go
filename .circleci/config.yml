@@ -362,8 +362,8 @@ commands:
       - run:
           name: Activate CoBlocks and WooCommerce
           command: |
-            wp plugin activate coblocks
-            wp plugin activate woocommerce
+            wp plugin activate coblocks --path=/var/www/html/wordpress
+            wp plugin activate woocommerce --path=/var/www/html/wordpress
       - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
           command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec .dev/tests/cypress/integration/visual-regression/ahoy-modern.spec.js
