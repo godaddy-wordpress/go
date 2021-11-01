@@ -357,6 +357,9 @@ commands:
           name:  Flush permalinks and generate .htaccess file
           command: wp rewrite flush --hard --path=/var/www/html/wordpress
       - run:
+          name: Fix permissions on uploads directory for WPNUX importer
+          command: sudo chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
+      - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
           command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec .dev/tests/cypress/integration/visual-regression/ahoy-modern.spec.js
 
