@@ -361,7 +361,7 @@ commands:
           command: |
             cd /var/www/html/wordpress/wp-content/plugins
             git clone git@github.com:godaddy-wordpress/wpnux-template-switcher.git wpnux-template-loader
-            wp plugin activate wpnux-template-loader
+            wp plugin activate wpnux-template-loader --path=/var/www/html/wordpress
       - add_ssh_keys:
           fingerprints:
             - "3c:e9:ef:51:a5:2f:f4:b6:cd:ee:ba:88:33:a2:83:00"
@@ -383,7 +383,6 @@ commands:
           command: |
             wp plugin activate coblocks --path=/var/www/html/wordpress
             wp plugin activate woocommerce --path=/var/www/html/wordpress
-            wp theme mod set page_titles 0 --path=/var/www/html/wordpress
       - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
           command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
