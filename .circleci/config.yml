@@ -385,7 +385,7 @@ commands:
             wp plugin activate woocommerce --path=/var/www/html/wordpress
       - run:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
-          command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
+          command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g') --headless"
 
   visual-regression-update-snapshots:
     parameters:
