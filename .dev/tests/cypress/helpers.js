@@ -19,13 +19,11 @@ export function captureDocument( path = '' ) {
     ].forEach( viewport => {
         // cy.viewport( viewport.width, viewport.height );
 
-        // Wait for any animations to finish for those we're unable to prevent right now.
-        cy.wait( 1500 );
-
         // Scroll to the bottom to get lazy loaded images loading fully
         cy.window().then( cyWindow => scrollToBottom( { remoteWindow: cyWindow } ) );
 
-        cy.wait( 500 );
+        // Wait for any animations to finish for those we're unable to prevent right now.
+        cy.wait( 1500 );
 
         // Take the full-page screenshot
         cy.matchImageSnapshot( `${path}/${viewport.label}` );
