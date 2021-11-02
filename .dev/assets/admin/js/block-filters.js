@@ -14,6 +14,9 @@ wp.domReady( function() {
 /**
  * Adds an 'Hide Page Title' toggle to the block editor 'Status & Visibility' section.
  *
+ * @param {*} root0
+ * @param {*} root0.isEnabled
+ * @param {*} root0.onChange
  * @return {Object} GoPageTitleToggle component.
  */
 function GoPageTitleToggle( { isEnabled, onChange } ) {
@@ -31,10 +34,8 @@ function GoPageTitleToggle( { isEnabled, onChange } ) {
 		} );
 	} );
 
-	if ( 'page' !== wp.data.select('core/editor').getCurrentPostType() || ! GoBlockFilters.showPageTitles ) {
-
+	if ( 'page' !== wp.data.select( 'core/editor' ).getCurrentPostType() || ! GoBlockFilters.showPageTitles ) {
 		return null;
-
 	}
 
 	return (
@@ -44,8 +45,8 @@ function GoPageTitleToggle( { isEnabled, onChange } ) {
 			</label>
 			<FormToggle
 				checked={ isEnabled }
-				onChange={ () => onChange( ! isEnabled ) }
 				id="hide-page-title-toggle"
+				onChange={ () => onChange( ! isEnabled ) }
 			/>
 		</PluginPostStatusInfo>
 	);
@@ -59,7 +60,7 @@ GoPageTitleToggle.propTypes = {
 registerPlugin( 'go-page-title-toggle', {
 	icon: 'hidden',
 	render: compose(
-		withSelect( (select) => {
+		withSelect( ( select ) => {
 			const isPageTitleHidden = () => {
 				const { getEditedPostAttribute } = select( 'core/editor' );
 				const meta = getEditedPostAttribute( 'meta' );

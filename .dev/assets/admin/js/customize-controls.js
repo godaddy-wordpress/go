@@ -9,22 +9,20 @@ import './customize/controls/set-active-color-schemes';
  */
 
 ( function() {
-
-	wp.customize.bind( 'ready', function () {
-
+	wp.customize.bind( 'ready', function() {
 		/**
 		 * Function to hide/show Customizer options, based on another control.
 		 *
 		 * Parent option, Affected Control, Value which affects the control.
 		 *
-		 * @param {String} parentSetting The setting that will toggle the display of the control.
-		 * @param {String} affectedControl The control that will be toggled.
-		 * @param {Array} values The values the parentSetting must have for the affectedControl to be displayed.
-		 * @param {Integer} speed The speed of the toggle animation.
+		 * @param {string} parentSetting   The setting that will toggle the display of the control.
+		 * @param {string} affectedControl The control that will be toggled.
+		 * @param {Array}  values          The values the parentSetting must have for the affectedControl to be displayed.
+		 * @param {number} speed           The speed of the toggle animation.
 		 */
 		function customizerOptionDisplay( parentSetting, affectedControl, values, speed = 100 ) {
 			wp.customize( parentSetting, function( setting ) {
-				wp.customize.control( affectedControl, function ( control ) {
+				wp.customize.control( affectedControl, function( control ) {
 					/**
 					 * Toggle the visibility of a control.
 					 */
@@ -47,13 +45,13 @@ import './customize/controls/set-active-color-schemes';
 		 *
 		 * Parent option, Affected Control, Value which affects the control.
 		 *
-		 * @param {String} parentSetting The setting that will toggle the display of the control.
-		 * @param {String} affectedControl The control that will be toggled.
-		 * @param {Integer} speed The speed of the toggle animation.
+		 * @param {string} parentSetting   The setting that will toggle the display of the control.
+		 * @param {string} affectedControl The control that will be toggled.
+		 * @param {number} speed           The speed of the toggle animation.
 		 */
 		function customizerImageOptionDisplay( parentSetting, affectedControl, speed = 100 ) {
 			wp.customize( parentSetting, function( setting ) {
-				wp.customize.control( affectedControl, function ( control ) {
+				wp.customize.control( affectedControl, function( control ) {
 					/**
 					 * Toggle the visibility of a control.
 					 */
@@ -83,5 +81,4 @@ import './customize/controls/set-active-color-schemes';
 		customizerImageOptionDisplay( 'custom_logo', 'logo_width' );
 		customizerImageOptionDisplay( 'custom_logo', 'logo_width_mobile' );
 	} );
-
-} )( jQuery );
+}( jQuery ) );

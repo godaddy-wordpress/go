@@ -57,6 +57,25 @@ label:not(.components-toggle-control__label):not(.components-base-control__label
 	padding: var(--go-input--padding--y) var(--go-input--padding--x);
 }
 
+
+.wp-block[data-type="coblocks/form"] .components-base-control__field select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: none;
+	border: var(--go-input--border);
+	border-radius: 0;
+	color: var(--go-input--color--text);
+	font-size: var(--go-input--font-size);
+	font-weight: var(--go-input--font-weight, 400);
+	margin-bottom: var(--go-input--margin-bottom);
+	max-width: none;
+	padding: var(--go-input--padding--y) var(--go-input--padding--x);
+
+	&:hover {
+		color: var(--go-input--color--text);
+	}
+}
+
 .gform_wrapper {
 
 	.gfield_time_hour i {
