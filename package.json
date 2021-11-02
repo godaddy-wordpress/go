@@ -141,6 +141,7 @@
     "prop-types": "15.7.2",
     "rtlcss": "^2.4.1",
     "rtlcss-webpack-plugin": "^4.0.3",
+    "scroll-to-bottomjs": "^1.1.0",
     "stylelint": "^12.0.0",
     "stylelint-declaration-use-variable": "^1.7.0",
     "stylelint-webpack-plugin": "^0.10.5",

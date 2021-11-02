@@ -10577,6 +10577,11 @@ schema-utils@^3.0.0:
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
 
+scroll-to-bottomjs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/scroll-to-bottomjs/-/scroll-to-bottomjs-1.1.0.tgz#06589ea5c398742cae4bb56664fa132c8f095123"
+  integrity sha512-+e7MRrUwY7M1V93ebqxIyPwIC8rPkvcmmmdSrOnNnCpbDP2Fpva3B6RadoRQ+ubZoYdYxye3Cculgbzb/CZiGw==
+
 scss-tokenizer@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"
