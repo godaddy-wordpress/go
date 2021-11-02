@@ -41,9 +41,9 @@ for SPEC in "${SPECS[@]}"
 do
 	# Spec file string is empty, do not start string with a ,
 	if [[ ${#TEMPLATE_INCLUDES} -eq 0 ]]; then
-		TEMPLATE_INCLUDES="--include='$SPEC*'"
+		TEMPLATE_INCLUDES="--include '*$SPEC*'"
 	else
-		TEMPLATE_INCLUDES="${TEMPLATE_INCLUDES} --include='$SPEC*'"
+		TEMPLATE_INCLUDES="${TEMPLATE_INCLUDES} --include '*$SPEC*'"
 	fi
 done
 
