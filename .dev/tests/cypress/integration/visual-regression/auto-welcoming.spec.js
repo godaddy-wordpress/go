@@ -1,4 +1,4 @@
-import { captureDocument, screenshotPathFromUrl, unslashit, showCoBlocksAnimatedObjects } from '../../helpers';
+import { captureDocument, screenshotPathFromUrl, unslashit } from '../../helpers';
 
 describe( 'VR Testing: auto - welcoming', () => {
     let pages = [];
@@ -7,7 +7,6 @@ describe( 'VR Testing: auto - welcoming', () => {
         let url = "http://go.test/?wpnux_template_loader=1&template=auto&style=welcoming&lang=en_US";
 
         cy.visit( url );
-        showCoBlocksAnimatedObjects();
         captureDocument( screenshotPathFromUrl( url ) );
 
         cy.get( '#header__navigation' ).then( $headerNavigation => {
@@ -20,7 +19,6 @@ describe( 'VR Testing: auto - welcoming', () => {
     it( 'Loads additional pages', () => {
         pages.forEach( page => {
             cy.visit( page );
-            showCoBlocksAnimatedObjects();
             captureDocument( screenshotPathFromUrl( page ) );
         } );
     } );
