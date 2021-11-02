@@ -8,8 +8,8 @@
   "supportFile": ".dev/tests/cypress/support/commands.js",
   "testFiles": "**/*.spec.js",
   "projectId": "i8uxwt",
-  "viewportWidth": 1920,
-  "viewportHeight": 1080,
+  "viewportWidth": 1280,
+  "viewportHeight": 720,
   "env": {
     "localTestURL": "http://go.test",
     "templateLang": "en_US"
