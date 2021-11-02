@@ -54,3 +54,18 @@ export function screenshotPathFromUrl( url ) {
 export function unslashit( path ) {
     return path.replace( /(^[\/]+|[\/]+$)/, '' );
 }
+
+/**
+ * Display animated objects on the page
+ */
+export function showCoBlocksAnimatedObjects() {
+  // Scroll to each animated object on the page,
+  // then scroll back to the top for the screenshot
+  cy.get( 'body' ).then( ( body ) => {
+    if ( body.find( '.coblocks-animate' ).length > 0 ) {
+      cy.get( '.coblocks-animate' ).then( ( $el ) => {
+        $el.removeClass( 'coblocks-animate' );
+      } );
+    }
+  } );
+}
