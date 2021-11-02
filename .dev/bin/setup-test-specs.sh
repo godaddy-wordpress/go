@@ -32,7 +32,7 @@ if [ ${#SPECS[@]} -eq 0 ]; then
 	exit
 fi
 
-# printf "\n\033[0;33mRunning the following Cypress spec files: ${SPECS[*]}\033[0m\n"
+printf "\n\033[0;33mRunning the following Cypress spec files: ${SPECS[*]}\033[0m\n"
 
 # Store $SPECSTRING value in /tmp/specstring file for later use
 echo $SPECSTRING > /tmp/specstring
