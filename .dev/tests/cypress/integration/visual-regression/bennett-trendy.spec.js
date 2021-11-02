@@ -1,4 +1,4 @@
-import { captureDocument, screenshotPathFromUrl, unslashit } from '../../helpers';
+import { captureDocument, screenshotPathFromUrl, unslashit, showCoBlocksAnimatedObjects } from '../../helpers';
 
 describe( 'VR Testing: bennett - trendy', () => {
     let pages = [];
@@ -7,6 +7,7 @@ describe( 'VR Testing: bennett - trendy', () => {
         let url = "http://go.test/?wpnux_template_loader=1&template=bennett&style=trendy&lang=en_US";
 
         cy.visit( url );
+        showCoBlocksAnimatedObjects();
         captureDocument( screenshotPathFromUrl( url ) );
 
         cy.get( '#header__navigation' ).then( $headerNavigation => {
@@ -19,6 +20,7 @@ describe( 'VR Testing: bennett - trendy', () => {
     it( 'Loads additional pages', () => {
         pages.forEach( page => {
             cy.visit( page );
+            showCoBlocksAnimatedObjects();
             captureDocument( screenshotPathFromUrl( page ) );
         } );
     } );
