@@ -1,14 +1,15 @@
 import { hexToHSL } from '../util';
 
-const $ = jQuery; // eslint-disable-line
+const $ = jQuery;
 
 $( document ).ready( setMenuLocationDescription );
 
 export default () => {
 	wp.customize( 'footer_variation', ( value ) => {
 		value.bind( ( to ) => {
-			$( 'body' ).removeClass( 'has-footer-1 has-footer-2 has-footer-3 has-footer-4' )
-			           .addClass( 'has-' + to );
+			$( 'body' )
+				.removeClass( 'has-footer-1 has-footer-2 has-footer-3 has-footer-4' )
+				.addClass( 'has-' + to );
 			setMenuLocationDescription();
 		} );
 	} );
@@ -22,7 +23,7 @@ export default () => {
 	wp.customize( 'footer_background_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined;
+			const setTo = to ? `hsl(${ hsl[ 0 ] }, ${ hsl[ 1 ] }%, ${ hsl[ 2 ] }%)` : undefined;
 			document.querySelector( ':root' ).style.setProperty( '--go-footer--color--background', setTo );
 
 			// Add class if a background color is applied.
@@ -39,7 +40,7 @@ export default () => {
 	wp.customize( 'social_icon_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined;
+			const setTo = to ? `hsl(${ hsl[ 0 ] }, ${ hsl[ 1 ] }%, ${ hsl[ 2 ] }%)` : undefined;
 			document.querySelector( ':root' ).style.setProperty( '--go-social--color--text', setTo );
 		} );
 	} );
@@ -47,7 +48,7 @@ export default () => {
 	wp.customize( 'footer_text_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : undefined;
+			const setTo = to ? `hsl(${ hsl[ 0 ] }, ${ hsl[ 1 ] }%, ${ hsl[ 2 ] }%)` : undefined;
 			document.querySelector( ':root' ).style.setProperty( '--go-footer--color--text', setTo );
 			document.querySelector( ':root' ).style.setProperty( '--go-footer-navigation--color--text', setTo );
 		} );
@@ -56,7 +57,7 @@ export default () => {
 	wp.customize( 'footer_heading_color', ( value ) => {
 		value.bind( ( to ) => {
 			const hsl = hexToHSL( to );
-			const setTo = to ? `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)` : null;
+			const setTo = to ? `hsl(${ hsl[ 0 ] }, ${ hsl[ 1 ] }%, ${ hsl[ 2 ] }%)` : null;
 			document.querySelector( ':root' ).style.setProperty( '--go-footer-heading--color--text', setTo );
 		} );
 	} );
@@ -101,15 +102,15 @@ export default () => {
 		} );
 	} );
 
-	wp.customize('social_icon_xing', function (value) {
-		value.bind(function (to) {
-			if (to) {
-				$('.social-icon-xing').removeClass('display-none');
+	wp.customize( 'social_icon_xing', function( value ) {
+		value.bind( function( to ) {
+			if ( to ) {
+				$( '.social-icon-xing' ).removeClass( 'display-none' );
 			} else {
-				$('.social-icon-xing').addClass('display-none');
+				$( '.social-icon-xing' ).addClass( 'display-none' );
 			}
-		});
-	});
+		} );
+	} );
 
 	wp.customize( 'social_icon_pinterest', ( value ) => {
 		value.bind( ( to ) => {
@@ -153,7 +154,7 @@ export default () => {
 };
 
 function setMenuLocationDescription() {
-	var menuLocationsDescription = $( '.customize-section-title-menu_locations-description' ).text(),
-	    menuLocationCount        = [ 'footer-1', 'footer-2' ].includes( wp.customize( 'footer_variation' ).get() ) ? '2' : '4';
+	const menuLocationsDescription = $( '.customize-section-title-menu_locations-description' ).text();
+	const menuLocationCount = [ 'footer-1', 'footer-2' ].includes( wp.customize( 'footer_variation' ).get() ) ? '2' : '4';
 	$( '.customize-section-title-menu_locations-description' ).text( menuLocationsDescription.replace( /[0-9]/g, menuLocationCount ) );
 }

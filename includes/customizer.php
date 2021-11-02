@@ -22,6 +22,7 @@ function setup() {
 
 	add_action( 'customize_register', $n( 'register_control_types' ) );
 	add_action( 'customize_register', $n( 'default_controls' ) );
+	add_action( 'customize_register', $n( 'register_site_title_controls' ) );
 	add_action( 'customize_register', $n( 'register_logo_controls' ) );
 	add_action( 'customize_register', $n( 'register_color_controls' ) );
 	add_action( 'customize_register', $n( 'register_global_controls' ) );
@@ -263,6 +264,61 @@ function get_color_schemes_as_choices() {
 	);
 
 	return $color_schemes;
+}
+
+/**
+ * Register the Site Title and Tagline controls.
+ *
+ * @param \WP_Customize_Manager $wp_customize The customize manager object.
+ *
+ * @return void
+ */
+function register_site_title_controls( \WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->get_control( 'blogdescription' )->priority = 11;
+
+	$wp_customize->add_setting(
+		'hide_site_title',
+		array(
+			'default'           => false,
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'hide_site_title_checkbox',
+		array(
+			'label'       => esc_html__( 'Hide Site Title', 'go' ),
+			'description' => esc_html__( 'Prevent the site title from appearing in the header area.', 'go' ),
+			'section'     => 'title_tagline',
+			'settings'    => 'hide_site_title',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'hide_site_tagline',
+		array(
+			'default'           => false,
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'hide_site_tagline_checkbox',
+		array(
+			'label'       => esc_html__( 'Hide Tagline', 'go' ),
+			'description' => esc_html__( 'Prevent the site tagline from appearing in the header area.', 'go' ),
+			'section'     => 'title_tagline',
+			'settings'    => 'hide_site_tagline',
+			'priority'    => 12,
+			'type'        => 'checkbox',
+		)
+	);
+
 }
 
 /**

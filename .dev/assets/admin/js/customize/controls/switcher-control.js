@@ -8,7 +8,7 @@ const SwitcherControl = wp.customize.Control.extend( {
 		this.container.on( 'change', 'input:radio', function() {
 			control.setting.set( this.value );
 		} );
-	}
+	},
 } );
 
 export default SwitcherControl;

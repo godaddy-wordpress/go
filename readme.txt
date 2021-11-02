@@ -4,7 +4,7 @@ Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-
 Requires at least: 5.0
 Tested up to: 5.8
 Requires PHP: 5.6.0
-Stable tag: 1.4.4
+Stable tag: 1.5.1
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -110,12 +110,4 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Fix WooCommerce grouped product table styles. [#661](https://github.com/godaddy-wordpress/go/pull/661)
-- Fix invalid RGB color string warning in the customizer when no color is set. [#652](https://github.com/godaddy-wordpress/go/pull/652)
-- Fix header 2 submenu alignment. [#655](https://github.com/godaddy-wordpress/go/pull/655)
-- Remove the 16px bottom margin from the last-child image for galleries in the editor. [#656](https://github.com/godaddy-wordpress/go/pull/656)
-- Set Heebo as the default font for the modern design style. [#657](https://github.com/godaddy-wordpress/go/pull/657)
-
-### Tweaks
-- Allow for logo, title and tagline to display in the header. [#658](https://github.com/godaddy-wordpress/go/pull/658)
-- Fix modern tagline kearning. [#660](https://github.com/godaddy-wordpress/go/pull/660)
+- Fix broken menu styles. [#715](https://github.com/godaddy-wordpress/go/pull/715)

@@ -16,7 +16,6 @@ installed.json
 /.dev/deploy-scripts
 .gitlab-ci.yml
 */package-lock.json
-package-lock.json
 */Gruntfile.js
 Gruntfile.js
 */bower.json
