@@ -44,6 +44,10 @@ body.has-sticky-header {
 	&.admin-bar {
 		.site-header {
 			top: 32px;
+
+			@media (max-width:782px) {
+				top: 46px;
+			}
 		}
 	}
 }
