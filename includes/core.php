@@ -275,15 +275,6 @@ function theme_setup() {
  * Enqueue the correct font(s) for the given design style.
  */
 function fonts_url() {
-
-	static $fonts_url = null;
-
-	if ( ! is_null( $fonts_url ) && ! is_customize_preview() ) {
-
-		return $fonts_url;
-
-	}
-
 	/**
 	 * Filter to disable Google fonts from loading on the site.
 	 *
@@ -331,7 +322,7 @@ function fonts_url() {
 		}
 	}
 
-	return $fonts_url = esc_url_raw(
+	return esc_url_raw(
 		add_query_arg(
 			array(
 				'family'  => rawurlencode( implode( '|', $fonts ) ),
@@ -461,9 +452,9 @@ function editor_styles() {
  */
 function styles() {
 
-	$suffix                = SCRIPT_DEBUG ? '' : '.min';
-	$rtl                   = ! is_rtl() ? '' : '-rtl';
-	$fonts_url             = fonts_url();
+	$suffix    = SCRIPT_DEBUG ? '' : '.min';
+	$rtl       = ! is_rtl() ? '' : '-rtl';
+	$fonts_url = fonts_url();
 
 	if ( ! empty( $fonts_url ) ) {
 		wp_register_style(
@@ -507,6 +498,7 @@ function enqueue_google_fonts() {
 
 	$fonts_url = fonts_url();
 
+	// @codingStandardsIgnoreStart
 	echo <<<GOOGLE_FONTS
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -515,7 +507,8 @@ function enqueue_google_fonts() {
 		<link rel="stylesheet" href="$fonts_url" media="print" onload="this.media='all'" />
 
 		<noscript><link rel="stylesheet" href="$fonts_url" /></noscript>
-	GOOGLE_FONTS;
+GOOGLE_FONTS;
+	//// @codingStandardsIgnoreEnd
 
 }
 
