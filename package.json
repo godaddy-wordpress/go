@@ -173,7 +173,6 @@
     }
   },
   "dependencies": {
-    "css-vars-ponyfill": "^2.0.2",
     "lodash.throttle": "^4.1.1",
     "sass": "1.35.2",
     "normalize.css": "^8.0.0",

@@ -29,6 +29,7 @@ function setup() {
 	add_action( 'enqueue_block_editor_assets', $n( 'block_editor_assets' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
+	add_action( 'wp_head', $n( 'enqueue_google_fonts' ) );
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
@@ -275,6 +276,14 @@ function theme_setup() {
  */
 function fonts_url() {
 
+	static $fonts_url = null;
+
+	if ( ! is_null( $fonts_url ) && ! is_customize_preview() ) {
+
+		return $fonts_url;
+
+	}
+
 	/**
 	 * Filter to disable Google fonts from loading on the site.
 	 *
@@ -322,7 +331,7 @@ function fonts_url() {
 		}
 	}
 
-	return esc_url_raw(
+	return $fonts_url = esc_url_raw(
 		add_query_arg(
 			array(
 				'family'  => rawurlencode( implode( '|', $fonts ) ),
@@ -390,7 +399,7 @@ function scripts() {
 	wp_enqueue_script(
 		'go-frontend',
 		get_theme_file_uri( "dist/js/frontend{$suffix}.js" ),
-		array( 'jquery' ),
+		array(),
 		GO_VERSION,
 		true
 	);
@@ -454,26 +463,21 @@ function styles() {
 
 	$suffix                = SCRIPT_DEBUG ? '' : '.min';
 	$rtl                   = ! is_rtl() ? '' : '-rtl';
-	$go_style_dependencies = array();
 	$fonts_url             = fonts_url();
 
 	if ( ! empty( $fonts_url ) ) {
-
-		$go_style_dependencies[] = 'go-fonts';
-
-		wp_enqueue_style(
+		wp_register_style(
 			'go-fonts',
 			$fonts_url,
 			array(),
 			GO_VERSION
 		);
-
 	}
 
 	wp_enqueue_style(
 		'go-style',
 		get_theme_file_uri( "dist/css/style-shared{$rtl}{$suffix}.css" ),
-		$go_style_dependencies,
+		array(),
 		GO_VERSION
 	);
 
@@ -487,6 +491,31 @@ function styles() {
 			GO_VERSION
 		);
 	}
+
+}
+
+/**
+ * Enqueue custom non-render blocking Google Fonts stylesheets.
+ *
+ * @return void
+ */
+function enqueue_google_fonts() {
+
+	if ( ! wp_style_is( 'go-fonts', 'registered' ) || wp_style_is( 'go-fonts', 'enqueued' ) ) {
+		return;
+	}
+
+	$fonts_url = fonts_url();
+
+	echo <<<GOOGLE_FONTS
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<link rel="preload" as="style" href="$fonts_url" />
+
+		<link rel="stylesheet" href="$fonts_url" media="print" onload="this.media='all'" />
+
+		<noscript><link rel="stylesheet" href="$fonts_url" /></noscript>
+	GOOGLE_FONTS;
 
 }
 
