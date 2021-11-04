@@ -502,7 +502,7 @@ function google_fonts_style_loader_tag( $tag, $handle, $href, $media ) {
 		return $tag;
 	}
 
-	// @todo remove once core supports preload natively.
+	// Remove once core supports preload natively.
 	$tag = "<link rel='preload' as='style' href='$href' />\n" . $tag;
 
 	$tag = str_replace( array( "media=\"$media\"", "media='$media'" ), 'media="print" onload="this.media=\'all\'"', $tag );
@@ -515,8 +515,7 @@ function google_fonts_style_loader_tag( $tag, $handle, $href, $media ) {
 
 /**
  * Add preconnect to Google Fonts domain.
- *
- * @todo Once preload is included in WordPress core let's add it here.
+ * Once preload is included in WordPress core let's add it here.
  * Ref: https://core.trac.wordpress.org/ticket/42438.
  *
  * @param array  $urls Array of resources and their attributes, or URLs to print for resource hints.
