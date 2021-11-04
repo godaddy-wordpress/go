@@ -532,9 +532,8 @@ jobs:
       - run:
           name: Run a11y tests
           command: |
-            RESULTS=$(yarn test-a11y)
-            # rerun tests to display the formatted output
-            yarn test-a11y
+            RESULTS=$(yarn test:a11y)
+            echo $RESULTS
             if [[ $RESULTS != *"All accessibility tests have passed"* ]]; then
               exit 1
             fi
