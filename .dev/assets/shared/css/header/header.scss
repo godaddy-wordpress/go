@@ -31,7 +31,6 @@
 }
 
 body.has-sticky-header {
-
 	.site-header {
 		position: sticky;
 		top: 0;
@@ -42,6 +41,17 @@ body.has-sticky-header {
 	}
 
 	&.admin-bar {
+		margin-top: -32px;
+
+		@media (max-width:782px) {
+			margin-top: -46px;
+		}
+
+		#wpadminbar {
+			position: sticky;
+			top: 0;
+		}
+
 		.site-header {
 			top: 32px;
 

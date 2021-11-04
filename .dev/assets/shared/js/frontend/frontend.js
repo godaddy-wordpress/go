@@ -3,13 +3,11 @@ import cssVars from 'css-vars-ponyfill';
 import primaryMenu from './components/primary-menu.js';
 import searchToggle from './components/search-toggle.js';
 import wooMenuCart from './components/woo-menu-cart.js';
-import stickyHeader from './components/sticky-header.js';
 
 primaryMenu();
 searchToggle();
 wooMenuCart();
 cssVars();
-stickyHeader();
 
 document.addEventListener( 'DOMContentLoaded', function() {
 	const hasSelectiveRefresh = (
