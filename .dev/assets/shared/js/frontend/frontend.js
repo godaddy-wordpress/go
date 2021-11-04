@@ -1,5 +1,4 @@
-import _debouce from 'lodash/debounce'; // we need an alias for debounce otherwise it conflicts with customizer
-import cssVars from 'css-vars-ponyfill';
+import debounce from './utility/debounce';
 import primaryMenu from './components/primary-menu.js';
 import searchToggle from './components/search-toggle.js';
 import wooMenuCart from './components/woo-menu-cart.js';
@@ -7,7 +6,6 @@ import wooMenuCart from './components/woo-menu-cart.js';
 primaryMenu();
 searchToggle();
 wooMenuCart();
-cssVars();
 
 document.addEventListener( 'DOMContentLoaded', function() {
 	const hasSelectiveRefresh = (
@@ -18,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	);
 
 	// partial-content-rendered might render multiple times for some reason, let's make sure to debouce this.
-	const init = _debouce( () => {
+	const init = debounce( () => {
 		// we need to remove this before calling primary menu again.
 		document.body.classList.remove( 'has-offscreen-nav' );
 
