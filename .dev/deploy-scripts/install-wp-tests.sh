@@ -17,7 +17,7 @@ DB_HOST=${4-localhost}
 WP_VERSION=${5-latest}
 SKIP_DB_CREATE=${6-false}
 
-TMPDIR=${TMPDIR-/tmp}
+TMPDIR=${TMPDIR-/var/www/html}
 TMPDIR=$(echo $TMPDIR | sed -e "s/\/$//")
 WP_TESTS_DIR=${WP_TESTS_DIR-$TMPDIR/wordpress-tests-lib}
 WP_CORE_DIR=${WP_CORE_DIR-$TMPDIR/wordpress/}
@@ -45,9 +45,9 @@ elif [[ $WP_VERSION == 'nightly' || $WP_VERSION == 'trunk' ]]; then
 	WP_TESTS_TAG="trunk"
 else
 	# http serves a single offer, whereas https serves multiple. we only want one
-	download http://api.wordpress.org/core/version-check/1.7/ /tmp/wp-latest.json
-	grep '[0-9]+\.[0-9]+(\.[0-9]+)?' /tmp/wp-latest.json
-	LATEST_VERSION=$(grep -o '"version":"[^"]*' /tmp/wp-latest.json | sed 's/"version":"//')
+	download http://api.wordpress.org/core/version-check/1.7/ /var/www/html/wp-latest.json
+	grep '[0-9]+\.[0-9]+(\.[0-9]+)?' /var/www/html/wp-latest.json
+	LATEST_VERSION=$(grep -o '"version":"[^"]*' /var/www/html/wp-latest.json | sed 's/"version":"//')
 	if [[ -z "$LATEST_VERSION" ]]; then
 		echo "Latest WordPress version could not be found"
 		exit 1
@@ -117,6 +117,8 @@ setup_wp() {
 		--admin_email=admin@go.test \
 		--skip-email \
 		--path=$WP_CORE_DIR
+
+	wp option set permalink_structure "/%postname%/" --path=$WP_CORE_DIR
 }
 
 install_test_suite() {
@@ -174,6 +176,17 @@ install_db() {
 	mysqladmin create $DB_NAME --user="$DB_USER" --password="$DB_PASS"$EXTRA
 }
 
+install_rsync() {
+
+	if [ ! -z $(which rsync) ]; then
+		return 0
+	fi
+
+	sudo apt-get update --allow-releaseinfo-change
+	sudo apt install rsync
+
+}
+
 install_wp
 setup_wp
 install_test_suite
@@ -185,10 +198,14 @@ if [ "$CIRCLE_JOB" == 'theme-check' ]; then
 	cd ~/.wp-cli/packages/vendor/anhskohbo/wp-cli-themecheck && git pull
 fi
 
-if [ "$CIRCLE_JOB" == 'a11y-tests' ]; then
+if [[ "$CIRCLE_JOB" == 'a11y-tests' || "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-regression-firefox' ]]; then
 	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
 	sudo a2ensite apache-ci.conf
+	sudo a2enmod rewrite
 	sudo service apache2 restart
+fi
+
+if [[ "$CIRCLE_JOB" == 'a11y-tests' ]]; then
 	wp db reset --yes --path=$WP_CORE_DIR
 	wp db import ~/project/.dev/tests/a11y-test-db.sql --path=$WP_CORE_DIR
 	wp search-replace https://go.test http://go.test --path=$WP_CORE_DIR
@@ -197,9 +214,29 @@ fi
 export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/go
 mkdir -p $INSTALL_PATH
 
-if [[ "$CIRCLE_JOB" == 'unit-test-73' || "$CIRCLE_JOB" == 'unit-test-74' ]]; then
-	# Unit test job, copy entire directory including config files
-	rsync -av --delete ~/project/. $INSTALL_PATH/
+# If the ~/project/go directory exists, it persisted from the build job
+if [ -d ~/project/go ]; then
+	cp -r ~/project/go/* $INSTALL_PATH/
 else
+	install_rsync
 	rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
+fi
+
+# PHPUnit requires the configuration file, the .dev/tests directory and
+# the languages directory (which is not shipped in the build)
+if [[ "$CIRCLE_JOB" == 'unit-tests' ]]; then
+	cp -r ~/project/languages $INSTALL_PATH/
+	cp ~/project/composer.json $INSTALL_PATH/
+	cp ~/project/composer.lock $INSTALL_PATH/
+	cp -r ~/project/.dev $INSTALL_PATH/
+	cp ~/project/phpunit.xml $INSTALL_PATH/
+fi
+
+# Visual regression tests need the .dev and the languages directories
+if [[ "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-regression-firefox' ]]; then
+	cp ~/project/composer.json $INSTALL_PATH/
+	cp ~/project/composer.lock $INSTALL_PATH/
+	cp -r ~/project/languages $INSTALL_PATH/
+	cp -r ~/project/.dev $INSTALL_PATH/
+	wp theme activate go --path=$WP_CORE_DIR
 fi
