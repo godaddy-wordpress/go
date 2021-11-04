@@ -80,8 +80,12 @@
 			/* Add to cart button appears on Shop page after ajax load */
 			&.added_to_cart {
 				border: none;
-				margin: 0.5rem 0 0 1rem;
-				padding-top: 0;
+				bottom: -35px;
+				left: 0;
+				margin: 0 auto;
+				position: absolute;
+				right: 0;
+				width: 50%;
 			}
 		}
 
