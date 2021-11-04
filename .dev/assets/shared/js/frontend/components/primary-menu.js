@@ -20,43 +20,23 @@ const init = () => {
 /**
  * Lock tabbing to the main navigation only.
  *
- * @param {event} evt
+ * @param {event} e
  */
-function lockMenuFocus( evt ) {
-	const e = event || evt; // for cross-browser compatibility
-	const charCode = e.which || e.keyCode;
-
-	if ( charCode !== 9 || ! jQuery( 'body' ).hasClass( 'menu-is-open' ) ) {
+function lockMenuFocus( e ) {
+	if ( [ 'Space', 'Enter', 'Tab' ].includes[ e.code ] || ! document.querySelector( 'body' ).classList.contains( 'menu-is-open' ) ) {
 		return;
 	}
 
-	const $element = jQuery( ':focus' );
-	const mainMenuLength = jQuery( 'ul.primary-menu' ).children().length;
-	const isShiftTab = ( event.shiftKey && event.keyCode === 9 );
+	const element = document.querySelector( ':focus' );
+	const isShiftTab = ( e.shiftKey && e.code === 'Tab' );
 
-	if ( $element.closest( 'ul' ).hasClass( 'sub-menu' ) ) {
-		return;
-	}
-
-	let currentIndex = jQuery( $element ).closest( 'li' ).index();
-	currentIndex = isShiftTab ? currentIndex - 1 : currentIndex + 1;
-
-	if ( $element.attr( 'id' ) === 'nav-toggle' ) {
+	if ( element.getAttribute( 'id' ) === 'nav-toggle' ) {
 		if ( isShiftTab ) {
 			return;
 		}
 		setTimeout( function() {
-			jQuery( 'ul.primary-menu li:first-child a' )[ 0 ].focus();
+			document.querySelectorAll( 'ul.primary-menu li:first-child a' )[ 0 ].focus();
 		}, 10 );
-	}
-
-	// Menu link
-	if ( $element.parents( 'ul.primary-menu' ).length > 0 ) {
-		if ( ( currentIndex < 0 && isShiftTab ) || ( currentIndex === mainMenuLength ) ) {
-			setTimeout( function() {
-				jQuery( '#nav-toggle' ).focus();
-			}, 10 );
-		}
 	}
 }
 

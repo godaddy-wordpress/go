@@ -30,6 +30,39 @@
 	}
 }
 
+body.has-sticky-header {
+	.site-header {
+		position: sticky;
+		top: 0;
+
+		&:not(.has-background) {
+			background: var(--go--color--background, 0, 0, 100%);
+		}
+	}
+
+	&.admin-bar {
+		// In 5.9 we could have used calc(-1 * var(--wp-admin--admin-bar--height));
+		margin-top: -32px;
+
+		@media (max-width:782px) {
+			margin-top: -46px;
+		}
+
+		#wpadminbar {
+			position: sticky;
+			top: 0;
+		}
+
+		.site-header {
+			top: 32px;
+
+			@media (max-width:782px) {
+				top: 46px;
+			}
+		}
+	}
+}
+
 .header__inner {
 	padding: 2vw var(--go-header--padding--x, var(--go-block--padding--x));
 
