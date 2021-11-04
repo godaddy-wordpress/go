@@ -29,7 +29,6 @@ function setup() {
 	add_action( 'enqueue_block_editor_assets', $n( 'block_editor_assets' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_print_footer_scripts', $n( 'skip_link_focus_fix' ) );
-	add_action( 'wp_head', $n( 'enqueue_google_fonts' ) );
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 	add_filter( 'body_class', $n( 'body_classes' ) );
 	add_filter( 'nav_menu_item_title', $n( 'add_dropdown_icons' ), 10, 4 );
@@ -457,12 +456,16 @@ function styles() {
 	$fonts_url = fonts_url();
 
 	if ( ! empty( $fonts_url ) ) {
-		wp_register_style(
+		wp_enqueue_style(
 			'go-fonts',
 			$fonts_url,
 			array(),
-			GO_VERSION
+			GO_VERSION,
+			'all'
 		);
+
+		add_filter( 'wp_resource_hints', __NAMESPACE__ . '\google_fonts_resource_hints', 10, 2 );
+		add_filter( 'style_loader_tag', __NAMESPACE__ . '\google_fonts_style_loader_tag', 10, 4 );
 	}
 
 	wp_enqueue_style(
@@ -486,30 +489,49 @@ function styles() {
 }
 
 /**
- * Enqueue custom non-render blocking Google Fonts stylesheets.
+ * Technique to prevent render blocking scripts.
  *
- * @return void
+ * @param string $tag The link tag for the enqueued style.
+ * @param string $handle The style's registered handle.
+ * @param string $href The stylesheet's source URL.
+ * @param string $media The stylesheet's media attribute.
+ * @return string $tag
  */
-function enqueue_google_fonts() {
-
-	if ( ! wp_style_is( 'go-fonts', 'registered' ) || wp_style_is( 'go-fonts', 'enqueued' ) ) {
-		return;
+function google_fonts_style_loader_tag( $tag, $handle, $href, $media ) {
+	if ( 'go-fonts' !== $handle ) {
+		return $tag;
 	}
 
-	$fonts_url = fonts_url();
+	// @todo remove once core supports preload natively.
+	$tag = "<link rel='preload' as='style' href='$href' />\n" . $tag;
 
-	// @codingStandardsIgnoreStart
-	echo <<<GOOGLE_FONTS
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	$tag = str_replace( array( "media=\"$media\"", "media='$media'" ), 'media="print" onload="this.media=\'all\'"', $tag );
 
-		<link rel="preload" as="style" href="$fonts_url" />
+	// phpcs:disable WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet
+	$tag .= "\n<noscript><link rel=\"stylesheet\" href=\"$href\" /></noscript>";
 
-		<link rel="stylesheet" href="$fonts_url" media="print" onload="this.media='all'" />
+	return $tag;
+}
 
-		<noscript><link rel="stylesheet" href="$fonts_url" /></noscript>
-GOOGLE_FONTS;
-	//// @codingStandardsIgnoreEnd
+/**
+ * Add preconnect to Google Fonts domain.
+ *
+ * @todo Once preload is included in WordPress core let's add it here.
+ * Ref: https://core.trac.wordpress.org/ticket/42438.
+ *
+ * @param array  $urls Array of resources and their attributes, or URLs to print for resource hints.
+ * @param string $relation_type The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.
+ * @return array $urls
+ */
+function google_fonts_resource_hints( $urls, $relation_type ) {
+	if ( 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href'        => 'https://fonts.gstatic.com',
+			'crossorigin' => true,
+		);
+	}
 
+	return $urls;
 }
 
 /**
