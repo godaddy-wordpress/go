@@ -26,6 +26,19 @@
 	}
 }
 
+body.woocommerce-cart {
+
+	.woocommerce-message {
+		display: flex;
+		flex-direction: column-reverse;
+
+		a.button,
+		a.restore-item {
+			align-self: flex-start;
+		}
+	}
+}
+
 body.admin-bar .woocommerce-store-notice.demo_store {
 	top: initial;
 }

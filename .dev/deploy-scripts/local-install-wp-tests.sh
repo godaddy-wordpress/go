@@ -5,8 +5,8 @@ if [ $# -lt 3 ]; then
 	exit 1
 fi
 
-rm -rf /tmp/wordpress-tests-lib/
-rm -rf /tmp/wordpress/
+rm -rf /var/www/html/wordpress-tests-lib/
+rm -rf /var/www/html/wordpress/
 
 DB_NAME=$1
 DB_USER=$2
@@ -15,8 +15,8 @@ DB_HOST=${4-localhost}
 WP_VERSION=${5-latest}
 SKIP_DB_CREATE=${6-false}
 
-WP_TESTS_DIR=${WP_TESTS_DIR-/tmp/wordpress-tests-lib}
-WP_CORE_DIR=${WP_CORE_DIR-/tmp/wordpress/}
+WP_TESTS_DIR=${WP_TESTS_DIR-/var/www/html/wordpress-tests-lib}
+WP_CORE_DIR=${WP_CORE_DIR-/var/www/html/wordpress/}
 
 download() {
     if [ `which curl` ]; then
@@ -53,18 +53,18 @@ install_wp() {
 	mkdir -p $WP_CORE_DIR
 
 	if [[ $WP_VERSION == 'nightly' || $WP_VERSION == 'trunk' ]]; then
-		mkdir -p /tmp/wordpress-nightly
-		download https://wordpress.org/nightly-builds/wordpress-latest.zip  /tmp/wordpress-nightly/wordpress-nightly.zip
-		unzip -q /tmp/wordpress-nightly/wordpress-nightly.zip -d /tmp/wordpress-nightly/
-		mv /tmp/wordpress-nightly/wordpress/* $WP_CORE_DIR
+		mkdir -p /var/www/html/wordpress-nightly
+		download https://wordpress.org/nightly-builds/wordpress-latest.zip  /var/www/html/wordpress-nightly/wordpress-nightly.zip
+		unzip -q /var/www/html/wordpress-nightly/wordpress-nightly.zip -d /var/www/html/wordpress-nightly/
+		mv /var/www/html/wordpress-nightly/wordpress/* $WP_CORE_DIR
 	else
 		if [ $WP_VERSION == 'latest' ]; then
 			local ARCHIVE_NAME='latest'
 		else
 			local ARCHIVE_NAME="wordpress-$WP_VERSION"
 		fi
-		download https://wordpress.org/${ARCHIVE_NAME}.tar.gz  /tmp/wordpress.tar.gz
-		tar --strip-components=1 -zxmf /tmp/wordpress.tar.gz -C $WP_CORE_DIR
+		download https://wordpress.org/${ARCHIVE_NAME}.tar.gz  /var/www/html/wordpress.tar.gz
+		tar --strip-components=1 -zxmf /var/www/html/wordpress.tar.gz -C $WP_CORE_DIR
 	fi
 
 	download https://raw.github.com/markoheijnen/wp-mysqli/master/db.php $WP_CORE_DIR/wp-content/db.php
