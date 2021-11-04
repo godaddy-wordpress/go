@@ -573,6 +573,11 @@ function body_classes( $classes ) {
 		$classes[] = sprintf( 'has-%s', esc_attr( $footer_variation ) );
 	}
 
+	// Add class for the current footer variation.
+	if ( get_theme_mod( 'sticky_header', false ) ) {
+		$classes[] = 'has-sticky-header';
+	}
+
 	// Add class when no primary navigation is set.
 	if ( ! has_nav_menu( 'primary' ) ) {
 		$classes[] = 'has-no-primary-menu';
