@@ -36,11 +36,12 @@ body.has-sticky-header {
 		top: 0;
 
 		&:not(.has-background) {
-			background: var(--go--color--background,0,0,100%);
+			background: var(--go--color--background, 0, 0, 100%);
 		}
 	}
 
 	&.admin-bar {
+		// In 5.9 we could have used calc(-1 * var(--wp-admin--admin-bar--height));
 		margin-top: -32px;
 
 		@media (max-width:782px) {
