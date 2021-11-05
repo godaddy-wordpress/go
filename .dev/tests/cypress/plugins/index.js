@@ -7,16 +7,26 @@ module.exports = (on, config) => {
 
 	on( 'before:browser:launch', ( browser, launchOptions ) => {
 		if ( ! browser.isHeadless ) {
-			return;
+			return launchOptions;
 		}
 
-		if ( browser.family === 'chromium' && browser.name !== 'electron' ) {
-			launchOptions.args.push( '--window-size=1920,1080' );
-		}
-
-		if ( browser.name === 'firefox' ) {
-			launchOptions.args.push('--width=1920')
-			launchOptions.args.push('--height=1080')
+		switch (browser.name) {
+			case 'chrome': {
+				launchOptions.args.push('--window-size=1920,1080');
+				// force screen to be non-retina (1920 size)
+				launchOptions.args.push('--force-device-scale-factor=1');
+				break;
+			}
+			case 'electron': {
+				launchOptions.preferences.width = 1920;
+				launchOptions.preferences.height = 1080;
+				break;
+			}
+			case 'firefox': {
+				launchOptions.args.push('--width=1920');
+				launchOptions.args.push('--height=1080');
+				break;
+			}
 		}
 
 		return launchOptions;
