@@ -336,7 +336,8 @@ commands:
           command: sudo apt-get install awscli
       - run:
           name: "Download base snapshots"
-          command: yarn snapshots:download
+          command: yarn snapshots:download-all
+          # command: yarn snapshots:download
       - wait_for_mysql
       - run:
           name: Install MariaDB
