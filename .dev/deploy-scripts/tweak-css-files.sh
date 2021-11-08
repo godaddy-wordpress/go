@@ -8,13 +8,6 @@ do
 	./node_modules/.bin/perfectionist $f $f
 done
 
-# Group similar media queries using mqpicker package
-for f in $(find ./dist/css -type f -name '*.css' ! -name '*.min.css')
-do
-	echo "Grouping like media queries in $f..."
-	./node_modules/.bin/mqpacker $f $f
-done
-
 # Generate a -rtl file
 for f in $(find ./dist/css -type f -name '*.css')
 do

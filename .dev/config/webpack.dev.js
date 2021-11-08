@@ -1,9 +1,9 @@
 /* global module, require */
 
-const merge = require( 'webpack-merge' );
+const { merge } = require( 'webpack-merge' );
 const common = require( './webpack.common.js' );
 const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
-const OptimizeCssAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
+const CssMinimizerPlugin = require( 'css-minimizer-webpack-plugin' );
 const RtlCssPlugin = require( 'rtlcss-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const settings = require( './webpack.settings.js' );
@@ -24,16 +24,14 @@ module.exports = merge( common, {
 				injectCss: true,
 				reload: false,
 			}
-		),
-		new OptimizeCssAssetsPlugin( {
-			assetNameRegExp: /\.*\.css$/g,
-			cssProcessor: require( 'cssnano' ),
-			cssProcessorPluginOptions: {
-				preset: [ 'default' ],
-			},
-			canPrint: true
-		} ),
+		)
 	],
+	optimization: {
+		minimizer: [
+			`...`,
+			new CssMinimizerPlugin(),
+		]
+	}
 } );
 
 if ( 'development' === process.env.NODE_ENV ) {

@@ -1,3 +1,4 @@
 {
-	"extends": "@godaddy-wordpress/stylelint-config"
+	"extends": "@godaddy-wordpress/stylelint-config",
+	customSyntax: 'postcss-scss'
 }
