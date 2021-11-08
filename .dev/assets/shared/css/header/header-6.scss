@@ -86,6 +86,13 @@
 		}
 	}
 
+	&.has-sticky-header {
+
+		.header__title-nav {
+			margin-bottom: 0;
+		}
+	}
+
 	@include media(large) {
 
 		.header__title-nav {

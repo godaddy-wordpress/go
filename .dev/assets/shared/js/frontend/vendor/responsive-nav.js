@@ -1,3 +1,5 @@
+import debounce from "../utility/debounce";
+
 /********************************
 
 	Name: WordPress Accessible Responsive Navigation Menu
@@ -406,6 +408,8 @@
 				for ( var z = 0; z < svgElements.length; z = z + 1 ) {
 
 					svgElements[z].addEventListener( 'click', listener_submenu_click );
+					svgElements[z].addEventListener( 'keypress', ( e ) => { ['Space', 'Enter'].includes( e.code ) && listener_submenu_click( e ) } );
+					svgElements[z].setAttribute( 'tabindex', '0' );
 
 				}
 
@@ -458,26 +462,6 @@
 		if ( size && size.indexOf( sizeString ) !== -1 ) {
 			return true;
 		}
-	};
-
-	// Debounce
-	function debounce( func, wait, immediate ) {
-		var timeout;
-
-		return function() {
-			var context = this, args = arguments;
-
-			var later = function() {
-				timeout = null;
-				if ( ! immediate ) func.apply( context, args );
-			};
-
-			var callNow = immediate && !timeout;
-
-			clearTimeout( timeout );
-			timeout = setTimeout( later, wait );
-			if ( callNow ) func.apply( context, args );
-		};
 	};
 
 } )();

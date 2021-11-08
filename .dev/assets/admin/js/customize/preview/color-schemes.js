@@ -1,6 +1,6 @@
 import { hexToHSL } from '../util';
 
-const $ = jQuery; // eslint-disable-line
+const $ = jQuery;
 
 export default () => {
 	let selectedDesignStyle = GoPreviewData.selectedDesignStyle;
@@ -9,18 +9,21 @@ export default () => {
 	 * Set color
 	 *
 	 * @param {*} color
+	 * @param {*} cssVar
 	 */
 	const setColor = ( color, cssVar ) => {
 		const hsl = hexToHSL( color );
-		document.querySelector( ':root' ).style.setProperty( `${cssVar}`, `hsl(${hsl[ 0 ]}, ${hsl[ 1 ]}%, ${hsl[ 2 ]}%)` );
+		document.querySelector( ':root' ).style.setProperty( `${ cssVar }`, `hsl(${ hsl[ 0 ] }, ${ hsl[ 1 ] }%, ${ hsl[ 2 ] }%)` );
 	};
 
 	/**
 	 * Load the color schemes for the selected design style.
+	 *
+	 * @param {*} colorScheme
 	 */
 	const loadColorSchemes = ( colorScheme ) => {
 		const designStyle = getDesignStyle( selectedDesignStyle );
-		colorScheme = colorScheme.replace( `${selectedDesignStyle}-`, '' );
+		colorScheme = colorScheme.replace( `${ selectedDesignStyle }-`, '' );
 
 		if ( 'undefined' !== typeof designStyle.color_schemes[ colorScheme ] && 'undefined' !== typeof wp.customize.settings.controls ) {
 			const colors = designStyle.color_schemes[ colorScheme ];
@@ -31,6 +34,7 @@ export default () => {
 			}, 200 );
 
 			Object.entries( wp.customize.settings.controls )
+				// eslint-disable-next-line no-unused-vars
 				.filter( ( [ _control, config ] ) => config.type === 'color' )
 				.forEach( ( [ customizerControl, config ] ) => {
 					const customizerSetting = wp.customize( config.settings.default );
@@ -51,14 +55,16 @@ export default () => {
 	 */
 	const toggleColorSchemes = () => {
 		$( 'label[for^=color_scheme_control]' ).hide();
-		$( `label[for^=color_scheme_control-${selectedDesignStyle}-]` ).show();
+		$( `label[for^=color_scheme_control-${ selectedDesignStyle }-]` ).show();
 	};
 
 	/**
 	 * Update the viewport basis for the selected design style.
+	 *
+	 * @param {*} designStyle
 	 */
 	const updateViewportBasis = ( designStyle ) => {
-		let viewportBasis = ( 'undefined'!== typeof designStyle.viewport_basis ) ? designStyle.viewport_basis : '950';
+		const viewportBasis = ( 'undefined' !== typeof designStyle.viewport_basis ) ? designStyle.viewport_basis : '950';
 		wp.customize.control( 'viewport_basis' ).setting( viewportBasis );
 	};
 
@@ -69,10 +75,10 @@ export default () => {
 	 */
 	const getDesignStyle = ( designStyle ) => {
 		if (
-			'undefined' !== typeof GoPreviewData['design_styles'] &&
-			'undefined' !== GoPreviewData['design_styles'][ designStyle ]
+			'undefined' !== typeof GoPreviewData.design_styles &&
+			'undefined' !== GoPreviewData.design_styles[ designStyle ]
 		) {
-			return GoPreviewData['design_styles'][ designStyle ];
+			return GoPreviewData.design_styles[ designStyle ];
 		}
 
 		return false;
@@ -85,7 +91,7 @@ export default () => {
 		value.bind( ( to ) => {
 			selectedDesignStyle = to;
 			loadColorSchemes( 'one' );
-			$( `#color_scheme_control-${selectedDesignStyle}-one` ).prop( 'checked', true );
+			$( `#color_scheme_control-${ selectedDesignStyle }-one` ).prop( 'checked', true );
 		} );
 	} );
 
