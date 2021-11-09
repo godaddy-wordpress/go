@@ -543,7 +543,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "14:ee:bc:31:0f:50:7e:fe:8b:56:87:f8:56:db:48:5b"
+            - "7b:54:70:0e:66:62:21:d3:29:1e:49:f7:3f:13:f4:b9"
       - checkout
       - run:
           name: Check the commit for [skip i18n]
