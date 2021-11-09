@@ -256,7 +256,9 @@ commands:
           command: |
             echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
             source /home/circleci/.bashrc
+      - restore_composer_cache
       - install_composer_dependencies
+      - save_composer_cache
       - restore_cache:
           key: phpcs-go-cache
       - run:
@@ -431,14 +433,19 @@ commands:
             sudo rm -f /etc/php/*/conf.d/*xdebug.ini
             sudo rm -f /usr/local/etc/php/conf.d/*xdebug.ini
 
+  # Save composer cache
+  save_composer_cache:
+    steps:
+      - restore_cache:
+          keys:
+            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "composer.lock" }}
+
   # Restore composer cache
   restore_composer_cache:
     steps:
       - restore_cache:
           keys:
-            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "composer.lock" }}
-            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
-            - composer-deps-{{ .Environment.CACHE_VERSION }}
+            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "composer.lock" }}
 
 jobs:
 
