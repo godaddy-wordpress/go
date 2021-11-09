@@ -521,6 +521,7 @@ jobs:
           command: wp themecheck --theme=go --no-interactive --path=/var/www/html/wordpress
 
   cypress:
+    executor: php_73_apache_node_browser_mysql
     parallelism: 4
     steps:
       - run:
