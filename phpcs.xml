@@ -1,21 +1,24 @@
 <?xml version="1.0"?>
 <ruleset name="go">
-	<description>Rules for go</description>
+		<description>Rules for go</description>
 
-    <arg name="extensions" value="php" />
-    <arg name="basepath" value="./" />
-    <file>./</file>
+		<arg name="extensions" value="php" />
+		<arg name="basepath" value="./" />
+		<file>./</file>
 
-    <exclude-pattern>*/build/*</exclude-pattern>
-    <exclude-pattern>*/dist/*</exclude-pattern>
-    <exclude-pattern>*/vendor/*</exclude-pattern>
-    <exclude-pattern>*/node_modules/*</exclude-pattern>
-	<exclude-pattern>*/wordpress*/*</exclude-pattern>
-    <exclude-pattern>*/\.*</exclude-pattern>
-    <exclude-pattern>*/.dev/*</exclude-pattern>
+		<exclude-pattern>*/build/*</exclude-pattern>
+		<exclude-pattern>*/dist/*</exclude-pattern>
+		<exclude-pattern>*/vendor/*</exclude-pattern>
+		<exclude-pattern>*/node_modules/*</exclude-pattern>
+		<exclude-pattern>*/wordpress*/*</exclude-pattern>
+		<exclude-pattern>*/\.*</exclude-pattern>
+		<exclude-pattern>*/.dev/*</exclude-pattern>
 
 	<arg name="colors"/>
 	<arg value="sp"/>
+
+	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
+	<arg name="cache"/>
 
 	<!-- Include the WordPress-Extra standard. -->
 	<rule ref="WordPress-Extra">
@@ -30,9 +33,9 @@
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
 		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
 		<!--
-		ShortPrefixPassed is excluded due to the use of prefix `Go` This prefix, 
+		ShortPrefixPassed is excluded due to the use of prefix `Go` This prefix,
 		while short in length, is approved by the themes team at WordPress.org.
-		For this reason the rule should be excluded as we are not concerned with 
+		For this reason the rule should be excluded as we are not concerned with
 		code collisions.
 		-->
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed" />
