@@ -436,16 +436,16 @@ commands:
   # Save composer cache
   save_composer_cache:
     steps:
-      - restore_cache:
-          keys:
-            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "composer.lock" }}
+      - save_cache:
+          key: composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "composer.lock" }}
+          paths:
+            - ~/project/vendor
 
   # Restore composer cache
   restore_composer_cache:
     steps:
       - restore_cache:
-          keys:
-            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "composer.lock" }}
+          key: composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "composer.lock" }}
 
 jobs:
 
