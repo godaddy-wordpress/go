@@ -548,6 +548,7 @@ jobs:
           fingerprints:
             - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
       - install_yarn_dependencies
+      - install_wpcli
       - run:
           name: Install WPNUX Template Switcher
           command: |
