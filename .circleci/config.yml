@@ -581,7 +581,7 @@ jobs:
           command: wp nux import keynote --path=/var/www/html/wordpress
       - run:
           name: "Run end to end Customizer tests (Cypress.io) - chrome"
-          command: ./node_modules/.bin/cypress run --browser chrome --parallel --record --spec .dev/tests/cy/press/integration/customizer/*.js
+          command: ./node_modules/.bin/cypress run --browser chrome --parallel --record --spec .dev/tests/cypress/integration/customizer/*.js
 
   a11y-tests:
     executor: php_73_apache_node_browser_mysql
