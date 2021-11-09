@@ -56,7 +56,6 @@ module.exports = {
 	stats: {
 		all: false,
 		errors: true,
-		maxModules: 0,
 		modules: true,
 		warnings: true,
 		assets: true,
@@ -67,10 +66,9 @@ module.exports = {
 	},
 	copyWebpackConfig: {
 		from: '.dev/assets/**/*.{jpg,jpeg,png,gif,svg}',
-		to: 'images/[path][name].[ext]',
-		transformPath: ( targetPath ) => {
-			return 'images/' + targetPath.replace( /(\.dev\/assets\/|images\/|shared\/)/g, '' );
-		},
+		to({ context, absoluteFilename }) {
+			return 'images/' + absoluteFilename.replace( /^.*(\.dev\/assets\/|images\/|shared\/)/g, '' );
+        },
 	},
 	BrowserSyncConfig: {
 		host: 'localhost',

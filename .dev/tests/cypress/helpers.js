@@ -17,16 +17,18 @@ export function captureDocument( path = '' ) {
         // { label: 'go-small', width: 600, height: 1080 },
 
     ].forEach( viewport => {
-        // cy.viewport( viewport.width, viewport.height );
-
         // Scroll to the bottom to get lazy loaded images loading fully
         cy.window().then( cyWindow => scrollToBottom( { remoteWindow: cyWindow } ) );
 
         // Wait for any animations to finish for those we're unable to prevent right now.
         cy.wait( 1500 );
 
+        cy.viewport( viewport.width, viewport.height );
+
         // Take the full-page screenshot
-        cy.matchImageSnapshot( `${path}/${viewport.label}` );
+        cy.matchImageSnapshot( `${path}/${viewport.label}`, {
+          customDiffConfig: { threshold: 0.5 }
+        } );
     } );
 }
 

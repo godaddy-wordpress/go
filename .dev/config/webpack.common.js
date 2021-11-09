@@ -1,14 +1,14 @@
 /* global process, module, require */
 
 const path = require( 'path' );
-const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
-const FixStyleOnlyEntriesPlugin = require( 'webpack-fix-style-only-entries' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const WebpackBar = require( 'webpackbar' );
 const isProduction = 'production' === process.env.NODE_ENV;
 const settings = require( './webpack.settings.js' );
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 /**
  * Configure entries.
@@ -49,16 +49,6 @@ module.exports = {
 	// Build rules to handle asset files.
 	module: {
 		rules: [
-			// Lint JS.
-			{
-				test: /\.js$/,
-				enforce: 'pre',
-				loader: 'eslint-loader',
-				options: {
-					fix: true
-				}
-			},
-
 			// Scripts.
 			{
 				test: /\.js$/,
@@ -117,12 +107,6 @@ module.exports = {
 
 	plugins: [
 
-		// Remove the extra JS files Webpack creates for CSS entries.
-		// This should be fixed in Webpack 5.
-		new FixStyleOnlyEntriesPlugin( {
-			silent: true,
-		} ),
-
 		// Clean the `dist` folder on build.
 		new CleanWebpackPlugin( {
 			cleanStaleWebpackAssets: false,
@@ -135,13 +119,14 @@ module.exports = {
 		} ),
 
 		// Copy static assets to the `dist` folder.
-		new CopyWebpackPlugin( [
-			{
+		new CopyWebpackPlugin( {
+			patterns:[{
 				from: settings.copyWebpackConfig.from,
 				to: settings.copyWebpackConfig.to,
-				transformPath: settings.copyWebpackConfig.transformPath,
-			}
-		] ),
+			}]
+		} ),
+
+		new ESLintPlugin(),
 
 		// Lint SCSS.
 		// new StyleLintPlugin( {

@@ -87,7 +87,7 @@ module.exports = function( grunt ) {
 
 	} );
 
-	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
+	require( 'load-grunt-tasks' )( grunt );
 
 	grunt.registerTask( 'default', [ 'version' ] );
 	grunt.registerTask( 'version', [ 'replace' ] );
