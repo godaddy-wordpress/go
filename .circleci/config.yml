@@ -579,7 +579,7 @@ jobs:
           name: Setup the Keynote template
           command: wp nux import keynote
       - run:
-          name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
+          name: "Run end to end Customizer tests (Cypress.io) - chrome"
           command: ./node_modules/.bin/cypress run --browser chrome --parallel --record --spec .dev/tests/cy/press/integration/customizer/*.js
 
   a11y-tests:
