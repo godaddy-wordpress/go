@@ -1,0 +1,8 @@
+{
+  "themes": [
+    "."
+  ],
+  "plugins": [
+    "https://downloads.wordpress.org/plugin/gutenberg.latest-stable.zip"
+  ]
+}
