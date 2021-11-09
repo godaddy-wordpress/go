@@ -7,9 +7,13 @@
 
 ?>
 
-	</main>
+		</main>
 
-	<?php Go\footer_variation(); ?>
+		<footer class="wp-block-template-part">
+			<?php
+			echo do_blocks( file_get_contents( get_stylesheet_directory() . '/go-block-template-parts/footer-01.html' ) );
+			?>
+		</footer>
 
 	</div>
 
