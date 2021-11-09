@@ -198,7 +198,7 @@ if [ "$CIRCLE_JOB" == 'theme-check' ]; then
 	cd ~/.wp-cli/packages/vendor/anhskohbo/wp-cli-themecheck && git pull
 fi
 
-if [[ "$CIRCLE_JOB" == 'a11y-tests' || "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-regression-firefox' ]]; then
+if [[ "$CIRCLE_JOB" == 'a11y-tests' || "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-regression-firefox' || "$CIRCLE_JOB" == 'cypress' ]]; then
 	sudo cp ~/project/.dev/tests/apache-ci.conf /etc/apache2/sites-available
 	sudo a2ensite apache-ci.conf
 	sudo a2enmod rewrite
@@ -233,7 +233,7 @@ if [[ "$CIRCLE_JOB" == 'unit-tests' ]]; then
 fi
 
 # Visual regression tests need the .dev and the languages directories
-if [[ "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-regression-firefox' ]]; then
+if [[ "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-regression-firefox' || "$CIRCLE_JOB" == 'cypress' ]]; then
 	cp ~/project/composer.json $INSTALL_PATH/
 	cp ~/project/composer.lock $INSTALL_PATH/
 	cp -r ~/project/languages $INSTALL_PATH/
