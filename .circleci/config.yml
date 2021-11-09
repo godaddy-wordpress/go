@@ -361,6 +361,7 @@ commands:
           name: Install Composer packages
           command: composer install
           working_directory: /var/www/html/wordpress/wp-content/themes/go
+      - save_composer_cache
       - add_ssh_keys:
           fingerprints:
             - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
