@@ -260,12 +260,12 @@ commands:
       - install_composer_dependencies
       - save_composer_cache
       - restore_cache:
-          key: {{ .Environment.CIRCLE_JOB }}-go-cache
+          key: go-{{ .Environment.CIRCLE_JOB }}-cache
       - run:
           name: "Run PHPCS"
           command: composer lint
       - save_cache:
-          key: {{ .Environment.CIRCLE_JOB }}-go-cache
+          key: go-{{ .Environment.CIRCLE_JOB }}-cache
           paths:
             - /tmp/phpcs-go-cache
 
