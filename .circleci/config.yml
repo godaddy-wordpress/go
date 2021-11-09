@@ -313,6 +313,7 @@ commands:
           name: Install Composer packages
           command: composer install
           working_directory: /var/www/html/wordpress/wp-content/themes/go
+      - save_composer_cache
       - install_code_climate_test_reporter
       - run_phpunit_single_site_generate_coverage
       - run:
