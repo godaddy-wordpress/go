@@ -12,6 +12,8 @@
   "viewportHeight": 720,
   "env": {
     "localTestURL": "http://go.test",
+    "wpUsername": "admin",
+    "wpPassword": "password",
     "templateLang": "en_US"
   },
   "retries": {
