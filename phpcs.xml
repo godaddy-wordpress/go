@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <ruleset name="go">
-		<description>Rules for go</description>
+	<description>Rules for go</description>
 
-		<arg name="extensions" value="php" />
-		<arg name="basepath" value="./" />
-		<file>./</file>
+	<arg name="extensions" value="php" />
+	<arg name="basepath" value="./" />
+	<file>./</file>
 
-		<exclude-pattern>*/build/*</exclude-pattern>
-		<exclude-pattern>*/dist/*</exclude-pattern>
-		<exclude-pattern>*/vendor/*</exclude-pattern>
-		<exclude-pattern>*/node_modules/*</exclude-pattern>
-		<exclude-pattern>*/wordpress*/*</exclude-pattern>
-		<exclude-pattern>*/\.*</exclude-pattern>
-		<exclude-pattern>*/.dev/*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/dist/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/wordpress*/*</exclude-pattern>
+	<exclude-pattern>*/\.*</exclude-pattern>
+	<exclude-pattern>*/.dev/*</exclude-pattern>
 
 	<arg name="colors"/>
 	<arg value="sp"/>
