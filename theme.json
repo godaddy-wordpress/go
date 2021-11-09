@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json.schemastore.org/theme-v1.json",
+  "version": 1,
+  "templateParts": [
+    {
+      "name": "header-01",
+      "area": "header"
+    },
+    {
+      "name": "header-02",
+      "area": "header"
+    },
+    {
+      "name": "header-03",
+      "area": "header"
+    },
+    {
+      "name": "footer-01",
+      "area": "footer"
+    },
+    {
+      "name": "footer-02",
+      "area": "footer"
+    },
+    {
+      "name": "footer-03",
+      "area": "footer"
+    },
+    {
+      "name": "content-01",
+      "area": "content"
+    },
+    {
+      "name": "commerce-01",
+      "area": "commerce"
+    }
+  ],
+  "settings": {
+    "border": {
+      "customColor": true,
+      "customRadius": true,
+      "customStyle": true,
+      "customWidth": true
+    },
+    "color": {
+      "gradients": [],
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#007cba",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#006ba1",
+          "name": "Secondary"
+        },
+        {
+          "slug": "foreground",
+          "color": "#333333",
+          "name": "Foreground"
+        },
+        {
+          "slug": "background",
+          "color": "#ffffff",
+          "name": "Background"
+        },
+        {
+          "slug": "tertiary",
+          "color": "#FAFAFA",
+          "name": "Tertiary"
+        }
+      ]
+    }
+  }
+}
