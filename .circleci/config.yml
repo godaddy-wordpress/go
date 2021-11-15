@@ -443,20 +443,7 @@ commands:
       - run:
           name: Send Comment
           command: |
-            GH_LOGIN=$(curl -sS -H "Authorization: token $GH_ACCESS_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
-            echo "Authenticated with $GH_LOGIN"
-            PR_URL=<< parameters.pr >>
-            PR_ID=${PR_URL##*/}
-            echo "PR_ID=$PR_ID"
-            if [ -z $PR_ID ]; then
-              echo "No PR found, skipping"
-            else
-              if [ $(/usr/local/bin/ghi comment --list $PR_ID | grep -c $GH_LOGIN) -ge << parameters.maxComments >> ]; then
-                /usr/local/bin/ghi comment --amend "<< parameters.comment >>" $PR_ID
-              else
-                /usr/local/bin/ghi comment -m "<< parameters.comment >>" $PR_ID
-              fi
-            fi
+            curl -H "Circle-Token: $CIRCLE_TOKEN" https://circleci.com/api/v1.1/project/gh/godaddy-wordpress/go/${CIRCLE_BUILD_NUM}/artifacts | jq .[0].url
 
   visual-regression-update-snapshots:
     parameters:
@@ -541,8 +528,7 @@ jobs:
       - store_artifacts:
           path: /tmp/artifacts
       - get_artifacts
-      - pr-comment:
-          comment: ${STORED_ARTIFACTS}
+      - pr-comment
       - persist_to_workspace:
           root: ~/project
           paths:
