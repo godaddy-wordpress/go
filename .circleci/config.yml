@@ -525,13 +525,15 @@ jobs:
             PR_URL=${CIRCLE_PULL_REQUEST}
             PR_ID=${PR_URL##*/}
             echo "PR_ID=$PR_ID"
+            PREV_BUILD_ID=$(cat ~/project/go/build-num.txt)
+            ARTIFACT_URL=$(curl -H "Circle-Token: $CIRCLE_TOKEN" https://circleci.com/api/v1.1/project/gh/godaddy-wordpress/go/${PREV_BUILD_ID}/artifacts | jq .[0].url)
             if [ -z $PR_ID ]; then
               echo "No PR found, skipping"
             else
               if [ $(/usr/local/bin/ghi comment --list $PR_ID | grep -c $GH_LOGIN) -ge 1 ]; then
-                /usr/local/bin/ghi comment --amend "Updated comment." $PR_ID
+                /usr/local/bin/ghi comment --amend "Download Go.zip: ${ARTIFACT_URL}" $PR_ID
               else
-                /usr/local/bin/ghi comment -m "Test comment." $PR_ID
+                /usr/local/bin/ghi comment -m "Download Go.zip: ${ARTIFACT_URL}" $PR_ID
               fi
             fi
 
