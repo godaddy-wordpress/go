@@ -528,7 +528,8 @@ jobs:
       - store_artifacts:
           path: /tmp/artifacts
       - get_artifacts
-      - pr-comment
+      - pr-comment:
+          comment: ${STORED_ARTIFACTS}
       - persist_to_workspace:
           root: ~/project
           paths:
