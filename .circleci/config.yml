@@ -685,9 +685,10 @@ jobs:
             mkdir -p /tmp/artifacts
             yarn json2po
             yarn po2mo
-            GO_VERSION_LINE=$(awk '/\* Version:/{ print NR; exit }' ./go/style.css)
+            GO_VERSION_LINE=$(awk '/\* Version:/' ./go/style.css)
+            VER_NUMBER=$(echo $GO_VERSION_LINE | tr -dc '0-9.')
             GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
-            sed -i -e "${GO_VERSION_LINE}s/$/-${GO_COMMIT_HASH}/" ./go/style.css
+            sed -i -e "${VER_NUMBER}/$/${VER_NUMBER}-canary-${GO_COMMIT_HASH}/" ./go/style.css
             zip -r /tmp/artifacts/go-canary.zip ./go
       - run:
           name: Create a canary release on GitHub
@@ -707,7 +708,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/project 
+          at: ~/project
       - run:
           name: Install PHP
           command: sudo apt-get install php libapache2-mod-php php-mbstring
