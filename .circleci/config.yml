@@ -417,7 +417,8 @@ commands:
     steps:
       - run:
           name: Install Ruby
-          command: sudo apt-get update && sudo apt-get install ruby-full
+          command: |
+            sudo apt-get install ruby-full
       - run:
           name: Install GHI
           command: |
@@ -482,7 +483,6 @@ commands:
 
   # Disable the xdebug PHP extension.
   disable_xdebug_php_extension:
-    description: ""
     steps:
       - run:
           name: Disable xdebug PHP extension
