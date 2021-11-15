@@ -707,7 +707,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/project
+          at: ~/project 
       - run:
           name: Install PHP
           command: sudo apt-get install php libapache2-mod-php php-mbstring
