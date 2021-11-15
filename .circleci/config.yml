@@ -65,6 +65,15 @@ workflows:
             branches:
               ignore:
                 - actions/visual-regression-update-snapshots
+
+      - pr_artifact_comment:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - master
+
       # Unit Tests
       - unit-tests:
           filters:
@@ -387,20 +396,6 @@ commands:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
           command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
 
-  get_artifacts:
-    steps:
-      - run:
-          name: Get artifacts
-          command: |
-            artifacts=$(curl -X GET "https://circleci.com/api/v2/project/github/godaddy-wordpress/go/$CIRCLE_BUILD_NUM/artifacts" \
-            -H "Accept: application/json" \
-            -u "$CIRCLE_API_TOKEN:")
-            # generate a heredoc in BASH_ENV
-            # the '\<<' is a CircleCI escape
-            echo "read -r -d '' STORED_ARTIFACTS \<< 'EOF_ARTIFACTS'" >> $BASH_ENV
-            echo "$artifacts" >> $BASH_ENV
-            echo "EOF_ARTIFACTS" >> $BASH_ENV
-
   pre-pr-comment:
     steps:
       - run:
@@ -512,7 +507,6 @@ jobs:
           name: Install gettext
           command: sudo apt-get install gettext
       - install_wpcli
-      - pre-pr-comment
       - run:
           name: Build the Go theme
           command: |
@@ -525,15 +519,65 @@ jobs:
           command: |
             mkdir -p /tmp/artifacts
             zip -r /tmp/artifacts/go.zip ./go
+      - run:
+          name: Store the build number
+          command: |
+            echo ${CIRCLE_BUILD_NUM} > ~/project/build-num.txt
       - store_artifacts:
           path: /tmp/artifacts
-      - get_artifacts
-      - pr-comment:
-          comment: ${STORED_ARTIFACTS}
       - persist_to_workspace:
           root: ~/project
           paths:
             - go
+
+  pr_artifact_comment:
+    docker:
+      - image: circleci/php:7.3-node
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - run:
+          name: Install Ruby
+          command: |
+            sudo apt-get install ruby-full
+      - run:
+          name: Install GHI
+          command: |
+            curl -sL https://raw.githubusercontent.com/stephencelis/ghi/master/ghi > ghi
+            chmod +x ghi
+            sudo mv ghi /usr/local/bin
+      - run:
+          name: Check Token and PR status
+          command: |
+            if [[ -z "${GH_ACCESS_TOKEN}" ]]; then
+              echo "GH_ACCESS_TOKEN not set"
+              /bin/false
+            fi
+            if [[ -z "${CIRCLE_PULL_REQUEST}" ]]; then
+              echo "Not a pull request."
+              circleci-agent step halt
+              exit
+            fi
+      - run:
+          name: Send Comment
+          command: |
+            GH_LOGIN=$(curl -sS -H "Authorization: token $GH_ACCESS_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
+            echo "Authenticated with $GH_LOGIN"
+            PR_URL=${CIRCLE_PULL_REQUEST}
+            PR_ID=${PR_URL##*/}
+            echo "PR_ID=$PR_ID"
+            if [ -z $PR_ID ]; then
+              echo "No PR found, skipping"
+            else
+              if [ $(/usr/local/bin/ghi comment --list $PR_ID | grep -c $GH_LOGIN) -ge 1 ]; then
+                /usr/local/bin/ghi comment --amend "Updated comment." $PR_ID
+              else
+                /usr/local/bin/ghi comment -m "Test comment." $PR_ID
+              fi
+            fi
+
 
   php56-phpcs:
     executor: php_56
