@@ -401,30 +401,53 @@ commands:
             echo "$artifacts" >> $BASH_ENV
             echo "EOF_ARTIFACTS" >> $BASH_ENV
 
-  post_github_comment:
+  pr-comment:
+    parameters:
+      comment:
+        description: The comment to add to the PR
+        type: string
+      maxComments:
+        default: 1
+        description: Max nb of comments per PR
+        type: integer
+      pr:
+        default: $CIRCLE_PULL_REQUEST
+        description: The PR number or URL
+        type: string
     steps:
       - run:
-          name: Install GHI
+          command: sudo apt-get install ruby-full
+          name: Install Ruby
+      - run:
           command: |
             curl -sL https://raw.githubusercontent.com/stephencelis/ghi/master/ghi > ghi
             chmod 755 ghi
             sudo mv ghi /usr/local/bin
+          name: Install GHI
       - run:
-          name: Post Artifacts back to Github as a comment
+          command: |
+            if [[ -z "${GH_ACCESS_TOKEN}" ]]; then
+              echo "GH_ACCESS_TOKEN not set"
+              /bin/false
+            fi
+          name: Check Token
+      - run:
           command: |
             GH_LOGIN=$(curl -sS -H "Authorization: token $GH_ACCESS_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
             echo "Authenticated with $GH_LOGIN"
-            PR_ID=${CIRCLE_PULL_REQUEST##*/}
+            PR_URL=<< parameters.pr >>
+            PR_ID=${PR_URL##*/}
             echo "PR_ID=$PR_ID"
             if [ -z $PR_ID ]; then
               echo "No PR found, skipping"
             else
-              if [ $(ghi comment --list $PR_ID | grep -c $GH_LOGIN) -ge 1 ]; then
-                ghi comment -a "Updated comment" $PR_ID
+              if [ $(ghi comment --list $PR_ID | grep -c $GH_LOGIN) -ge << parameters.maxComments >> ]; then
+                ghi comment --amend "<< parameters.comment >>" $PR_ID
               else
-                ghi comment -m "Go Build for this PR: ${STORED_ARTIFACTS}" $PR_ID
+                ghi comment -m "<< parameters.comment >>" $PR_ID
               fi
             fi
+          name: Send Comment
 
   visual-regression-update-snapshots:
     parameters:
@@ -509,7 +532,8 @@ jobs:
       - store_artifacts:
           path: /tmp/artifacts
       - get_artifacts
-      - post_github_comment
+      - pr-comment:
+          comment: ${STORED_ARTIFACTS}
       - persist_to_workspace:
           root: ~/project
           paths:
