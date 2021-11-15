@@ -523,23 +523,19 @@ jobs:
       - run:
           name: Send Comment
           command: |
+            GH_LOGIN=$(curl -sS -H "Authorization: token $GH_ACCESS_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
             git config github.user $GH_LOGIN
             git config ghi.token $GH_ACCESS_TOKEN
-            GH_LOGIN=$(curl -sS -H "Authorization: token $GH_ACCESS_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
             echo "Authenticated with $GH_LOGIN"
             PR_URL=${CIRCLE_PULL_REQUEST}
             PR_ID=${PR_URL##*/}
             echo "PR_ID=$PR_ID"
-            PREV_BUILD_ID=$(cat ~/project/go/build-num.txt)
-            ARTIFACT_URL=$(curl -H "Circle-Token: $CIRCLE_TOKEN" https://circleci.com/api/v1.1/project/gh/godaddy-wordpress/go/${PREV_BUILD_ID}/artifacts | jq .[0].url)
+            PREV_BUILD_ID=$(cat ~/project/build-num.txt)
+            ARTIFACT_URL=$(curl -H "Circle-Token: $CIRCLE_TOKEN" https://circleci.com/api/v1.1/project/gh/godaddy-wordpress/go/${PREV_BUILD_ID}/artifacts | jq .[0].url | tr -d "\042")
             if [ -z $PR_ID ]; then
               echo "No PR found, skipping"
             else
-              if [ $(/usr/local/bin/ghi comment --list $PR_ID | grep -c $GH_LOGIN) -ge 1 ]; then
-                /usr/local/bin/ghi comment --amend "Download Go.zip: ${ARTIFACT_URL}" $PR_ID
-              else
-                /usr/local/bin/ghi comment -m "Download Go.zip: ${ARTIFACT_URL}" $PR_ID
-              fi
+              /usr/local/bin/ghi comment -m "Download Go.zip: ${ARTIFACT_URL}" $PR_ID
             fi
 
   php56-phpcs:
