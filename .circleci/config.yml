@@ -511,8 +511,8 @@ jobs:
       - run:
           name: Check Token and PR status
           command: |
-            if [[ -z "${GH_ACCESS_TOKEN}" ]]; then
-              echo "GH_ACCESS_TOKEN not set"
+            if [[ -z "${GH_AUTH_TOKEN}" ]]; then
+              echo "GH_AUTH_TOKEN not set"
               /bin/false
             fi
             if [[ -z "${CIRCLE_PULL_REQUEST}" ]]; then
@@ -523,9 +523,9 @@ jobs:
       - run:
           name: Send Comment
           command: |
-            GH_LOGIN=$(curl -sS -H "Authorization: token $GH_ACCESS_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
+            GH_LOGIN=$(curl -sS -H "Authorization: token $GH_AUTH_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
             git config github.user $GH_LOGIN
-            git config ghi.token $GH_ACCESS_TOKEN
+            git config ghi.token $GH_AUTH_TOKEN
             echo "Authenticated with $GH_LOGIN"
             PR_URL=${CIRCLE_PULL_REQUEST}
             PR_ID=${PR_URL##*/}
@@ -691,7 +691,7 @@ jobs:
             zip -r /tmp/artifacts/go-canary.zip ./go
       - run:
           name: Create a canary release on GitHub
-          command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -n "canary" -b "Latest build of the master branch. This bleeding edge version is for testing purposes only and should not be used in production." -delete -prerelease -replace canary /tmp/artifacts/go-canary.zip
+          command: ghr -t ${GH_AUTH_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -n "canary" -b "Latest build of the master branch. This bleeding edge version is for testing purposes only and should not be used in production." -delete -prerelease -replace canary /tmp/artifacts/go-canary.zip
       - deploy:
           name: Deploy Go canary to the WPNUX site
           command: |
@@ -725,6 +725,6 @@ jobs:
           name: Deploy a new release to GitHub
           command: |
             CHANGELOG=$(sed -n -e '/== Changelog ==/,$p' $HOME/project/readme.txt | tail -n +3)
-            ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -b "${CHANGELOG}" -delete ${CIRCLE_TAG} /tmp/artifacts
+            ghr -t ${GH_AUTH_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -b "${CHANGELOG}" -delete ${CIRCLE_TAG} /tmp/artifacts
       - store_artifacts:
           path: /tmp/artifacts
