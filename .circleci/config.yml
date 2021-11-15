@@ -535,7 +535,11 @@ jobs:
             if [ -z $PR_ID ]; then
               echo "No PR found, skipping"
             else
-              /usr/local/bin/ghi comment -m "Download Go.zip: ${ARTIFACT_URL}" $PR_ID
+              if [ $(/usr/local/bin/ghi comment --list $PR_ID | grep -c godaddy-wordpress-bot) -ge 1 ]; then
+                /usr/local/bin/ghi comment --amend "Download Go.zip: ${ARTIFACT_URL}" $PR_ID
+              else
+                /usr/local/bin/ghi comment -m "Download Go.zip: ${ARTIFACT_URL}" $PR_ID
+              fi
             fi
 
   php56-phpcs:
