@@ -448,10 +448,10 @@ commands:
             if [ -z $PR_ID ]; then
               echo "No PR found, skipping"
             else
-              if [ $(ghi comment --list $PR_ID | grep -c $GH_LOGIN) -ge << parameters.maxComments >> ]; then
-                ghi comment --amend "<< parameters.comment >>" $PR_ID
+              if [ $(/usr/local/bin/ghi comment --list $PR_ID | grep -c $GH_LOGIN) -ge << parameters.maxComments >> ]; then
+                /usr/local/bin/ghi comment --amend "<< parameters.comment >>" $PR_ID
               else
-                ghi comment -m "<< parameters.comment >>" $PR_ID
+                /usr/local/bin/ghi comment -m "<< parameters.comment >>" $PR_ID
               fi
             fi
 
