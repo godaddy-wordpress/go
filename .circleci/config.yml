@@ -159,7 +159,9 @@ workflows:
             branches:
               only: actions/visual-regression-update-snapshots
 
-      - canary
+      - canary:
+          requires:
+            - build
 
       - deploy:
           requires:
