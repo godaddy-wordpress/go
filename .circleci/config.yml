@@ -401,6 +401,31 @@ commands:
             echo "$artifacts" >> $BASH_ENV
             echo "EOF_ARTIFACTS" >> $BASH_ENV
 
+  pre-pr-comment:
+    steps:
+      - run:
+          name: Install Ruby
+          command: |
+            sudo apt-get install ruby-full
+      - run:
+          name: Install GHI
+          command: |
+            curl -sL https://raw.githubusercontent.com/stephencelis/ghi/master/ghi > ghi
+            chmod +x ghi
+            sudo mv ghi /usr/local/bin
+      - run:
+          name: Check Token and PR status
+          command: |
+            if [[ -z "${GH_ACCESS_TOKEN}" ]]; then
+              echo "GH_ACCESS_TOKEN not set"
+              /bin/false
+            fi
+            if [[ -z "${CIRCLE_PULL_REQUEST}" ]]; then
+              echo "Not a pull request."
+              circleci-agent step halt
+              exit
+            fi
+
   pr-comment:
     parameters:
       comment:
@@ -415,18 +440,6 @@ commands:
         description: The PR number or URL
         type: string
     steps:
-      - run:
-          name: Check Token and PR status
-          command: |
-            if [[ -z "${GH_ACCESS_TOKEN}" ]]; then
-              echo "GH_ACCESS_TOKEN not set"
-              /bin/false
-            fi
-            if [[ -z "${CIRCLE_PULL_REQUEST}" ]]; then
-              echo "Not a pull request."
-              circleci-agent step halt
-              exit
-            fi
       - run:
           name: Send Comment
           command: |
@@ -511,16 +524,8 @@ jobs:
       - run:
           name: Install gettext
           command: sudo apt-get install gettext
-      - run:
-          name: Install ruby
-          command: sudo apt-get install ruby-full
-      - run:
-          name: Install GHI
-          command: |
-            curl -sL https://raw.githubusercontent.com/stephencelis/ghi/master/ghi > ghi
-            chmod +x ghi
-            sudo mv ghi /usr/local/bin
       - install_wpcli
+      - pre-pr-comment
       - run:
           name: Build the Go theme
           command: |
