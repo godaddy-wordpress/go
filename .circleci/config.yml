@@ -416,22 +416,28 @@ commands:
         type: string
     steps:
       - run:
-          command: sudo apt-get install ruby-full
           name: Install Ruby
+          command: sudo apt-get install ruby-full
       - run:
+          name: Install GHI
           command: |
             curl -sL https://raw.githubusercontent.com/stephencelis/ghi/master/ghi > ghi
-            chmod 755 ghi
+            chmod +x ghi
             sudo mv ghi /usr/local/bin
-          name: Install GHI
       - run:
+          name: Check Token and PR status
           command: |
             if [[ -z "${GH_ACCESS_TOKEN}" ]]; then
               echo "GH_ACCESS_TOKEN not set"
               /bin/false
             fi
-          name: Check Token
+            if [[ -z "${CIRCLE_PULL_REQUEST}" ]]; then
+              echo "Not a pull request."
+              circleci-agent step halt
+              exit
+            fi
       - run:
+          name: Send Comment
           command: |
             GH_LOGIN=$(curl -sS -H "Authorization: token $GH_ACCESS_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
             echo "Authenticated with $GH_LOGIN"
@@ -447,7 +453,6 @@ commands:
                 ghi comment -m "<< parameters.comment >>" $PR_ID
               fi
             fi
-          name: Send Comment
 
   visual-regression-update-snapshots:
     parameters:
