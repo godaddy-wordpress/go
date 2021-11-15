@@ -416,10 +416,6 @@ commands:
         type: string
     steps:
       - run:
-          name: Install Ruby
-          command: |
-            sudo apt-get install ruby-full
-      - run:
           name: Install GHI
           command: |
             curl -sL https://raw.githubusercontent.com/stephencelis/ghi/master/ghi > ghi
@@ -520,7 +516,7 @@ jobs:
       - install_rsync
       - run:
           name: Install gettext
-          command: sudo apt-get install gettext
+          command: sudo apt-get install gettext ruby-full
       - install_wpcli
       - run:
           name: Build the Go theme
