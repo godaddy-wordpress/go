@@ -387,6 +387,43 @@ commands:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
           command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
 
+  get_artifacts:
+    - run:
+        name: Get artifacts
+        command: |
+          artifacts=$(curl -X GET "https://circleci.com/api/v2/project/github/godaddy-wordpress/go/$CIRCLE_BUILD_NUM/artifacts" \
+          -H "Accept: application/json" \
+          -u "$CIRCLE_API_TOKEN:")
+          # generate a heredoc in BASH_ENV
+          # the '\<<' is a CircleCI escape
+          echo "read -r -d '' STORED_ARTIFACTS \<< 'EOF_ARTIFACTS'" >> $BASH_ENV
+          echo "$artifacts" >> $BASH_ENV
+          echo "EOF_ARTIFACTS" >> $BASH_ENV
+
+  post_github_comment:
+    - run:
+        name: Install GHI
+        command: |
+          curl -sL https://raw.githubusercontent.com/stephencelis/ghi/master/ghi > ghi
+          chmod 755 ghi
+          sudo mv ghi /usr/local/bin
+    - run:
+        name: Post Artifacts back to Github as a comment
+        command: |
+          GH_LOGIN=$(curl -sS -H "Authorization: token $GH_ACCESS_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
+          echo "Authenticated with $GH_LOGIN"
+          PR_ID=${CIRCLE_PULL_REQUEST##*/}
+          echo "PR_ID=$PR_ID"
+          if [ -z $PR_ID ]; then
+            echo "No PR found, skipping"
+          else
+            if [ $(ghi comment --list $PR_ID | grep -c $GH_LOGIN) -ge 1 ]; then
+              ghi comment -a "Updated comment" $PR_ID
+            else
+              ghi comment -m "Go Build for this PR: ${STORED_ARTIFACTS}" $PR_ID
+            fi
+          fi
+
   visual-regression-update-snapshots:
     parameters:
       browser:
@@ -469,6 +506,8 @@ jobs:
             zip -r /tmp/artifacts/go.zip ./go
       - store_artifacts:
           path: /tmp/artifacts
+      - get_artifacts
+      - post_github_comment
       - persist_to_workspace:
           root: ~/project
           paths:
