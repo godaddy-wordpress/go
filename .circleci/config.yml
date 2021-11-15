@@ -485,7 +485,7 @@ jobs:
           root: ~/project
           paths:
             - go
-            - ~/project/build-num.txt
+            - build-num.txt
 
   pr_artifact_comment:
     docker:
