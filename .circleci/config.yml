@@ -418,7 +418,7 @@ commands:
       - run:
           name: Install Ruby
           command: |
-            sudo apt-get install ruby
+            sudo apt-get install ruby-full
       - run:
           name: Install GHI
           command: |
