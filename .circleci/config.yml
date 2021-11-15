@@ -516,7 +516,10 @@ jobs:
       - install_rsync
       - run:
           name: Install gettext
-          command: sudo apt-get install gettext ruby-full
+          command: sudo apt-get install gettext
+      - run:
+          name: Install ruby
+          command: sudo apt-get install ruby-full
       - install_wpcli
       - run:
           name: Build the Go theme
