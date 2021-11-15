@@ -161,7 +161,15 @@ workflows:
 
       - canary:
           requires:
+            # - php56-phpcs
+            # - php73-phpcs
+            # - unit-tests
+            # - theme-check
+            # - a11y-tests
             - build
+          # filters:
+          #   branches:
+          #     only: master
 
       - deploy:
           requires:
@@ -672,12 +680,18 @@ jobs:
           name: Install ghr
           command: go get -u github.com/tcnksm/ghr
       - run:
+          name: Install PHP
+          command: sudo apt -y install php7.4
+      - run:
+          name: Install gettext
+          command: sudo apt-get install gettext
+      - run:
           name: Zip the Go Theme
           command: |
             mkdir -p /tmp/artifacts
             yarn json2po
             yarn po2mo
-            GO_VERSION_LINE=$(awk '/\* Version:/' ./go/style.css)
+            GO_VERSION_LINE=$(awk '/* Version:/' ./go/style.css)
             VER_NUMBER=$(echo $GO_VERSION_LINE | tr -dc '0-9.')
             GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
             sed -i -e "${VER_NUMBER}/$/${VER_NUMBER}-canary-${GO_COMMIT_HASH}/" ./go/style.css
