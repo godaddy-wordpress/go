@@ -416,12 +416,6 @@ commands:
         type: string
     steps:
       - run:
-          name: Install GHI
-          command: |
-            curl -sL https://raw.githubusercontent.com/stephencelis/ghi/master/ghi > ghi
-            chmod +x ghi
-            sudo mv ghi /usr/local/bin
-      - run:
           name: Check Token and PR status
           command: |
             if [[ -z "${GH_ACCESS_TOKEN}" ]]; then
@@ -520,6 +514,12 @@ jobs:
       - run:
           name: Install ruby
           command: sudo apt-get install ruby-full
+      - run:
+          name: Install GHI
+          command: |
+            curl -sL https://raw.githubusercontent.com/stephencelis/ghi/master/ghi > ghi
+            chmod +x ghi
+            sudo mv ghi /usr/local/bin
       - install_wpcli
       - run:
           name: Build the Go theme
