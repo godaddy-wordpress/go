@@ -494,6 +494,8 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/project
       - run:
           name: Install Ruby
           command: |
@@ -520,6 +522,8 @@ jobs:
       - run:
           name: Send Comment
           command: |
+            git config github.user $GH_LOGIN
+            git config ghi.token $GH_ACCESS_TOKEN
             GH_LOGIN=$(curl -sS -H "Authorization: token $GH_ACCESS_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
             echo "Authenticated with $GH_LOGIN"
             PR_URL=${CIRCLE_PULL_REQUEST}
