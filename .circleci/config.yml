@@ -396,50 +396,6 @@ commands:
           name: "Run end to end tests (Cypress.io) - << parameters.browser >>"
           command: ./node_modules/.bin/cypress run --browser << parameters.browser >> --parallel --record --group vr-<< parameters.browser >> --spec "$(cat /tmp/specstring | xargs | sed -e 's/ /,/g')"
 
-  pre-pr-comment:
-    steps:
-      - run:
-          name: Install Ruby
-          command: |
-            sudo apt-get install ruby-full
-      - run:
-          name: Install GHI
-          command: |
-            curl -sL https://raw.githubusercontent.com/stephencelis/ghi/master/ghi > ghi
-            chmod +x ghi
-            sudo mv ghi /usr/local/bin
-      - run:
-          name: Check Token and PR status
-          command: |
-            if [[ -z "${GH_ACCESS_TOKEN}" ]]; then
-              echo "GH_ACCESS_TOKEN not set"
-              /bin/false
-            fi
-            if [[ -z "${CIRCLE_PULL_REQUEST}" ]]; then
-              echo "Not a pull request."
-              circleci-agent step halt
-              exit
-            fi
-
-  pr-comment:
-    parameters:
-      comment:
-        description: The comment to add to the PR
-        type: string
-      maxComments:
-        default: 1
-        description: Max nb of comments per PR
-        type: integer
-      pr:
-        default: $CIRCLE_PULL_REQUEST
-        description: The PR number or URL
-        type: string
-    steps:
-      - run:
-          name: Send Comment
-          command: |
-            curl -H "Circle-Token: $CIRCLE_TOKEN" https://circleci.com/api/v1.1/project/gh/godaddy-wordpress/go/${CIRCLE_BUILD_NUM}/artifacts | jq .[0].url
-
   visual-regression-update-snapshots:
     parameters:
       browser:
@@ -541,6 +497,7 @@ jobs:
       - run:
           name: Install Ruby
           command: |
+            sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install ruby-full
       - run:
           name: Install GHI
