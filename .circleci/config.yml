@@ -485,6 +485,7 @@ jobs:
           root: ~/project
           paths:
             - go
+            - ~/project/build-num.txt
 
   pr_artifact_comment:
     docker:
@@ -540,7 +541,6 @@ jobs:
                 /usr/local/bin/ghi comment -m "Download Go.zip: ${ARTIFACT_URL}" $PR_ID
               fi
             fi
-
 
   php56-phpcs:
     executor: php_56
