@@ -694,7 +694,7 @@ jobs:
             GO_VERSION_LINE=$(awk '/\* Version:/' ./go/style.css)
             VER_NUMBER=$(echo "$GO_VERSION_LINE" | tr -dc '0-9.')
             GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
-            sed -i -e "${VER_NUMBER}/$/${VER_NUMBER}-canary-${GO_COMMIT_HASH}/" ./go/style.css
+            sed -i -e "s/${VER_NUMBER}/${VER_NUMBER}-canary-${GO_COMMIT_HASH}/g" ./go/style.css
             zip -r /tmp/artifacts/go-canary.zip ./go
       - run:
           name: Create a canary release on GitHub
