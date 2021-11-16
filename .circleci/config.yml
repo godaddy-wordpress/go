@@ -161,15 +161,15 @@ workflows:
 
       - canary:
           requires:
-            # - php56-phpcs
-            # - php73-phpcs
-            # - unit-tests
-            # - theme-check
-            # - a11y-tests
+            - php56-phpcs
+            - php73-phpcs
+            - unit-tests
+            - theme-check
+            - a11y-tests
             - build
-          # filters:
-          #   branches:
-          #     only: master
+          filters:
+            branches:
+              only: master
 
       - deploy:
           requires:
@@ -696,9 +696,9 @@ jobs:
             GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
             sed -i -e "s/${VER_NUMBER}/${VER_NUMBER}-canary+${GO_COMMIT_HASH}/g" ./go/style.css
             zip -r /tmp/artifacts/go-canary.zip ./go
-      # - run:
-      #     name: Create a canary release on GitHub
-      #     command: ghr -t ${GH_AUTH_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -n "canary" -b "Latest build of the master branch. This bleeding edge version is for testing purposes only and should not be used in production." -delete -prerelease -replace canary /tmp/artifacts/go-canary.zip
+      - run:
+          name: Create a canary release on GitHub
+          command: ghr -t ${GH_AUTH_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -n "canary" -b "Latest build of the master branch. This bleeding edge version is for testing purposes only and should not be used in production." -delete -prerelease -replace canary /tmp/artifacts/go-canary.zip
       - store_artifacts:
           path: /tmp/artifacts
 
