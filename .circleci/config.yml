@@ -503,6 +503,8 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/project
       - run:
           name: Send Comment
           command: bash .dev/bin/comment-on-pr.sh
