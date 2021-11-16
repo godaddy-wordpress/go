@@ -474,7 +474,6 @@ jobs:
           name: Zip the Go Theme
           command: |
             mkdir -p /tmp/artifacts
-            zip -r /tmp/artifacts/go.zip ./go
             if [ "$CIRCLE_JOB" == 'master' ]; then
               zip -r /tmp/artifacts/go.zip ./go
             else
