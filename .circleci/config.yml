@@ -502,6 +502,7 @@ jobs:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
     steps:
+      - checkout
       - attach_workspace:
           at: ~/project
       - run:
