@@ -29,11 +29,11 @@ fi
 GH_LOGIN=$(curl -sS -H "Authorization: token $GH_AUTH_TOKEN" https://api.github.com/user | jq '.login' --raw-output)
 success "Successfully authenticated with $GH_LOGIN"
 
-# git config github.user $GH_LOGIN
+git config github.user $GH_LOGIN
 
 success "Pull Request ID: $PR_ID"
 
-# PREV_BUILD_ID=$(cat ~/project/build-num.txt)
+PREV_BUILD_ID=$(cat ~/project/build-num.txt)
 ARTIFACT_URL=$(curl -sS -H "Circle-Token: $CIRCLE_TOKEN" "https://circleci.com/api/v1.1/project/gh/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$PREV_BUILD_ID/artifacts" | jq .[0].url | tr -d "\042")
 
 if [ -z "$ARTIFACT_URL" ]; then
@@ -55,12 +55,12 @@ COMMENT=$(echo $BOT_COMMENTS | jq '.[-1]')
 # Bot has not commented on the issue, create new comment
 if [ 'null' == "$COMMENT" ]; then
   success "Posting new comment."
-  curl -sS \
+  NEW_COMMENT=$(curl -sS \
     -X POST \
     -u $GH_LOGIN:$GH_AUTH_TOKEN \
     -H "Accept: application/vnd.github.v3+json" \
     "https://api.github.com/repos/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/issues/$PR_ID/comments" \
-    -d "{\"body\": \"$COMMENT_BODY\"}"
+    -d "{\"body\": \"$COMMENT_BODY\"}")
   exit 1
 fi
 
