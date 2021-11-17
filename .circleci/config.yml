@@ -65,6 +65,15 @@ workflows:
             branches:
               ignore:
                 - actions/visual-regression-update-snapshots
+
+      - pr_artifact_comment:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - master
+
       # Unit Tests
       - unit-tests:
           filters:
@@ -415,7 +424,6 @@ commands:
 
   # Disable the xdebug PHP extension.
   disable_xdebug_php_extension:
-    description: ""
     steps:
       - run:
           name: Disable xdebug PHP extension
@@ -466,13 +474,40 @@ jobs:
           name: Zip the Go Theme
           command: |
             mkdir -p /tmp/artifacts
-            zip -r /tmp/artifacts/go.zip ./go
+            if [ "$CIRCLE_JOB" == 'master' ]; then
+              zip -r /tmp/artifacts/go.zip ./go
+            else
+              GO_VERSION_LINE=$(awk '/\* Version:/' ./go/style.css)
+              VER_NUMBER=$(echo "$GO_VERSION_LINE" | tr -dc '0-9.')
+              GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
+              sed -i -e "s/${VER_NUMBER}/${VER_NUMBER}-${CIRCLE_PULL_REQUEST##*/}+${GO_COMMIT_HASH}/g" ./go/style.css
+              zip -r "/tmp/artifacts/go-${CIRCLE_PULL_REQUEST##*/}.zip" ./go
+            fi
+      - run:
+          name: Store the build number
+          command: |
+            echo ${CIRCLE_BUILD_NUM} > ~/project/build-num.txt
       - store_artifacts:
           path: /tmp/artifacts
       - persist_to_workspace:
           root: ~/project
           paths:
             - go
+            - build-num.txt
+
+  pr_artifact_comment:
+    docker:
+      - image: circleci/php:7.3-node
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Send Comment
+          command: bash .dev/bin/comment-on-pr.sh
 
   php56-phpcs:
     executor: php_56
@@ -612,18 +647,25 @@ jobs:
           name: Install ghr
           command: go get -u github.com/tcnksm/ghr
       - run:
+          name: Install PHP
+          command: sudo apt -y install php7.4
+      - run:
+          name: Install gettext
+          command: sudo apt-get install gettext
+      - run:
           name: Zip the Go Theme
           command: |
             mkdir -p /tmp/artifacts
             yarn json2po
             yarn po2mo
-            GO_VERSION_LINE=$(awk '/\* Version:/{ print NR; exit }' ./go/style.css)
+            GO_VERSION_LINE=$(awk '/\* Version:/' ./go/style.css)
+            VER_NUMBER=$(echo "$GO_VERSION_LINE" | tr -dc '0-9.')
             GO_COMMIT_HASH=$(git rev-parse --verify HEAD | head -c 7)
-            sed -i -e "${GO_VERSION_LINE}s/$/-${GO_COMMIT_HASH}/" ./go/style.css
+            sed -i -e "s/${VER_NUMBER}/${VER_NUMBER}-canary+${GO_COMMIT_HASH}/g" ./go/style.css
             zip -r /tmp/artifacts/go-canary.zip ./go
       - run:
           name: Create a canary release on GitHub
-          command: ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -n "canary" -b "Latest build of the master branch. This bleeding edge version is for testing purposes only and should not be used in production." -delete -prerelease -replace canary /tmp/artifacts/go-canary.zip
+          command: ghr -t ${GH_AUTH_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -n "canary" -b "Latest build of the master branch. This bleeding edge version is for testing purposes only and should not be used in production." -delete -prerelease -replace canary /tmp/artifacts/go-canary.zip
       - deploy:
           name: Deploy Go canary to the WPNUX site
           command: |
@@ -657,6 +699,6 @@ jobs:
           name: Deploy a new release to GitHub
           command: |
             CHANGELOG=$(sed -n -e '/== Changelog ==/,$p' $HOME/project/readme.txt | tail -n +3)
-            ghr -t ${GH_ACCESS_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -b "${CHANGELOG}" -delete ${CIRCLE_TAG} /tmp/artifacts
+            ghr -t ${GH_AUTH_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -b "${CHANGELOG}" -delete ${CIRCLE_TAG} /tmp/artifacts
       - store_artifacts:
           path: /tmp/artifacts
