@@ -47,7 +47,7 @@ describe( 'Test the customizer works as intended.', () => {
 		cy.frameLoaded( '[name="customize-preview-0"]' );
 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( '.custom-logo-link img' ).should( 'have.attr', 'src' ).and( 'match', /150x150/ );
 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'h1.site-title' ).contains( atts.title );
-		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'span.site-description' ).contains( atts.tagline );
+		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'p.site-description' ).contains( atts.tagline );
 	} );
 
 	// it( 'Should switch design styles as intended', () => {
