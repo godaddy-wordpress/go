@@ -51,9 +51,9 @@ describe( 'Test the customizer works as intended.', () => {
 	} );
 
 	it( 'Should switch design styles as intended', () => {
-		cy.get( '#accordion-section-colors' ).click();
-
 		 designStyles.forEach( designStyle => {
+			 cy.get( '#accordion-section-colors' ).click();
+
 		 	cy.get( 'label[for="_customize-input-design_style_control-radio-' + designStyle.toLowerCase() + '"]' ).click({ force: true });
 		 	cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
 		 	cy.reload();
