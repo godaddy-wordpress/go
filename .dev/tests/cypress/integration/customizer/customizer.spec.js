@@ -47,43 +47,43 @@ describe( 'Test the customizer works as intended.', () => {
 		cy.frameLoaded( '[name="customize-preview-0"]' );
 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( '.custom-logo-link img' ).should( 'have.attr', 'src' ).and( 'match', /150x150/ );
 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'h1.site-title' ).contains( atts.title );
-		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'p.site-description' ).contains( atts.tagline );
+		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'span.site-description' ).contains( atts.tagline );
 	} );
 
-	// it( 'Should switch design styles as intended', () => {
-	// 	cy.get( '#accordion-section-colors' ).click();
-	//
-	// 	designStyles.forEach( designStyle => {
-	// 		cy.get( 'label[for="_customize-input-design_style_control-radio-' + designStyle.toLowerCase() + '"]' ).click();
-	// 		cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
-	// 		cy.reload();
-	// 		cy.frameLoaded( '[name="customize-preview-0"]' );
-	// 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'h1.site-title' ).should( 'have.class', 'is-style-' + designStyle.toLowerCase() );
-	// 	} );
-	//
-	// 	// Loop over design style labels
-	// 	// cy.get( '#customize-control-design_style_control .customize-inside-control-row' ).then( $designStyle => {
-	// 	// 	[ ...$designStyle.find( 'label[for^="_customize-input-design_style_control-radio-"]' ) ].forEach( $designStyleLabel => {
-	// 	// 		let designStyleName = $designStyleLabel.innerHTML;
-	// 	// 		// let colors = [];
-	// 	//
-	// 	// 		console.log( designStyleName );
-	// 	//
-	// 	// 		$designStyleLabel.click();
-	// 	//
-	// 	// 		cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
-	// 	// 		cy.reload();
-	// 	// 		cy.frameLoaded( '[name="customize-preview-0"]' );
-	// 	// 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'body' ).should( 'have.class', 'is-style-' + designStyleName.toLowerCase() );
-	// 	//
-	// 	// 		// Loop over design style color schemes
-	// 	// 		// cy.get( 'label[for^="color_scheme_control-' + designStyleName.toLowerCase() + '-"]' ).each( $colorScheme => {
-	// 	// 		// 	console.log( $colorScheme );
-	// 	// 		// } );
-	// 	//
-	// 	// 		// designStyles.push( designStyleName[ colors ] );
-	// 	// 	} );
-	// 	// } );
-	// } );
+	it( 'Should switch design styles as intended', () => {
+		cy.get( '#accordion-section-colors' ).click();
+
+		 designStyles.forEach( designStyle => {
+		 	cy.get( 'label[for="_customize-input-design_style_control-radio-' + designStyle.toLowerCase() + '"]' ).click({ force: true });
+		 	cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
+		 	cy.reload();
+		 	cy.frameLoaded( '[name="customize-preview-0"]' );
+		 	cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'is-style-' + designStyle.toLowerCase() );
+		 } );
+
+		// Loop over design style labels
+		// cy.get( '#customize-control-design_style_control .customize-inside-control-row' ).then( $designStyle => {
+		// 	[ ...$designStyle.find( 'label[for^="_customize-input-design_style_control-radio-"]' ) ].forEach( $designStyleLabel => {
+		// 		let designStyleName = $designStyleLabel.innerHTML;
+		// 		// let colors = [];
+		//
+		// 		console.log( designStyleName );
+		//
+		// 		$designStyleLabel.click();
+		//
+		// 		cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
+		// 		cy.reload();
+		// 		cy.frameLoaded( '[name="customize-preview-0"]' );
+		// 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'body' ).should( 'have.class', 'is-style-' + designStyleName.toLowerCase() );
+		//
+		// 		// Loop over design style color schemes
+		// 		// cy.get( 'label[for^="color_scheme_control-' + designStyleName.toLowerCase() + '-"]' ).each( $colorScheme => {
+		// 		// 	console.log( $colorScheme );
+		// 		// } );
+		//
+		// 		// designStyles.push( designStyleName[ colors ] );
+		// 	} );
+		// } );
+	} );
 
 } );

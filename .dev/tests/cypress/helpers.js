@@ -90,6 +90,11 @@ export function loginToSite() {
     } );
 
   cy.get( 'body' ).should( 'have.class', 'wp-admin' );
+
+	// Maintain WordPress logged in state
+	Cypress.Cookies.defaults( {
+		preserve: /wordpress_.*/,
+	} );
 }
 
 /**
