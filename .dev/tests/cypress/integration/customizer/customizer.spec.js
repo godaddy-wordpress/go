@@ -8,8 +8,8 @@ describe( 'Test the customizer works as intended.', () => {
 	};
 
 	const designStyles = [
-		'Traditional',
 		'Modern',
+		'Traditional',
 		'Trendy',
 		'Welcoming',
 		'Playful',
