@@ -240,3 +240,9 @@ if [[ "$CIRCLE_JOB" == 'visual-regression-chrome' || "$CIRCLE_JOB" == 'visual-re
 	cp -r ~/project/.dev $INSTALL_PATH/
 	wp theme activate go --path=$WP_CORE_DIR
 fi
+
+if [[ "$CIRCLE_JOB" == 'cypress' ]]; then
+	# Replace build style.css with local project build file
+	rm -rf $INSTALL_PATH/style.css
+	cp ~/project/style.css $INSTALL_PATH/
+fi
