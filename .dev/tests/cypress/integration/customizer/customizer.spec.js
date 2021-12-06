@@ -86,31 +86,7 @@ describe( 'Test the customizer works as intended.', () => {
 			cy.reload();
 			cy.frameLoaded( '[name="customize-preview-0"]' );
 			cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'is-style-' + designStyle.toLowerCase() );
-		 } );
-
-		// Loop over design style labels
-		// cy.get( '#customize-control-design_style_control .customize-inside-control-row' ).then( $designStyle => {
-		// 	[ ...$designStyle.find( 'label[for^="_customize-input-design_style_control-radio-"]' ) ].forEach( $designStyleLabel => {
-		// 		let designStyleName = $designStyleLabel.innerHTML;
-		// 		// let colors = [];
-		//
-		// 		console.log( designStyleName );
-		//
-		// 		$designStyleLabel.click();
-		//
-		// 		saveCustomizerSettings();
-		// 		cy.reload();
-		// 		cy.frameLoaded( '[name="customize-preview-0"]' );
-		// 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'body' ).should( 'have.class', 'is-style-' + designStyleName.toLowerCase() );
-		//
-		// 		// Loop over design style color schemes
-		// 		// cy.get( 'label[for^="color_scheme_control-' + designStyleName.toLowerCase() + '-"]' ).each( $colorScheme => {
-		// 		// 	console.log( $colorScheme );
-		// 		// } );
-		//
-		// 		// designStyles.push( designStyleName[ colors ] );
-		// 	} );
-		// } );
+		} );
 	} );
 
 	it( 'Should switch headers as intended', () => {

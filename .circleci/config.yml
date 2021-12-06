@@ -557,7 +557,6 @@ jobs:
 
   customizer-e2e:
     executor: php_73_apache_node_browser_mysql
-    parallelism: 4
     steps:
       - run:
           name: Update hosts
