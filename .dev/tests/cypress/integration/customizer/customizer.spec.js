@@ -8,16 +8,16 @@ describe( 'Test the customizer works as intended.', () => {
 	};
 
 	const designStyles = [
-		'Modern',
 		'Traditional',
+		'Modern',
 		'Trendy',
 		'Welcoming',
 		'Playful',
 	];
 
-	const headerCount = 7;
+	let headerCount = 7;
 
-	const footerCount = 4;
+	let footerCount = 4;
 
 	const socialAccounts = {
 		facebook: 'https://www.facebook.com',
@@ -75,21 +75,14 @@ describe( 'Test the customizer works as intended.', () => {
 
 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'h1#site-title' ).should( 'not.exist' );
 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'span.site-description' ).should( 'not.exist' );
-
-		// re-enable site title and tagline
-		cy.get( '#accordion-section-title_tagline' ).click();
-		cy.get( '#_customize-input-hide_site_title_checkbox' ).click();
-		cy.get( '#_customize-input-hide_site_tagline_checkbox' ).click();
-		saveCustomizerSettings();
 	} );
 
 	it( 'Should switch design styles as intended', () => {
-		designStyles.forEach( designStyle => {
+		// Start at the bottom of the list
+		designStyles.reverse().forEach( designStyle => {
 			cy.get( '#accordion-section-colors' ).click();
-
-			cy.get( 'label[for="_customize-input-design_style_control-radio-' + designStyle.toLowerCase() + '"]' ).click({ force: true });
+			cy.get( 'label[for="_customize-input-design_style_control-radio-' + designStyle.toLowerCase() + '"]' ).click( { force: true } );
 			saveCustomizerSettings();
-			cy.wait( 500 );
 			cy.reload();
 			cy.frameLoaded( '[name="customize-preview-0"]' );
 			cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'is-style-' + designStyle.toLowerCase() );
@@ -121,28 +114,26 @@ describe( 'Test the customizer works as intended.', () => {
 	} );
 
 	it( 'Should switch headers as intended', () => {
-		let header = 1;
-		while ( header <= headerCount ) {
+		while ( headerCount >= 1 ) {
 			cy.get( '#accordion-section-go_header_settings' ).click();
-			cy.get( 'label[for="header_variation_control-header-' + header + '"]' ).click();
+			cy.get( 'label[for="header_variation_control-header-' + headerCount + '"]' ).click();
 			saveCustomizerSettings();
 			cy.reload();
 			cy.frameLoaded( '[name="customize-preview-0"]' );
-			cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'has-header-' + header );
-			header++;
+			cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'has-header-' + headerCount );
+			headerCount--;
 		}
 	} );
 
 	it( 'Should switch footers as intended', () => {
-		let footer = 1;
-		while ( footer <= footerCount ) {
+		while ( footerCount >= 1 ) {
 			cy.get( '#accordion-section-go_footer_settings' ).click();
-			cy.get( 'label[for="footer_variation_control-footer-' + footer + '"]' ).click();
+			cy.get( 'label[for="footer_variation_control-footer-' + footerCount + '"]' ).click();
 			saveCustomizerSettings();
 			cy.reload();
 			cy.frameLoaded( '[name="customize-preview-0"]' );
-			cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'has-footer-' + footer );
-			footer++;
+			cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'has-footer-' + footerCount );
+			footerCount--;
 		}
 	} );
 

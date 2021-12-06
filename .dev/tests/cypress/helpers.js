@@ -134,4 +134,5 @@ export const upload = {
  */
 export function saveCustomizerSettings () {
   cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
+  cy.get( '#publish-settings' ).should( 'not.be.visible' );
 };
