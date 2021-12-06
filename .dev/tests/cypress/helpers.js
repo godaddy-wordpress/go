@@ -128,3 +128,10 @@ export const upload = {
     pathToFixtures: '../.dev/tests/cypress/fixtures/images/',
   },
 };
+
+/**
+ * Save the customier settings.
+ */
+export function saveCustomizerSettings () {
+  cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
+};

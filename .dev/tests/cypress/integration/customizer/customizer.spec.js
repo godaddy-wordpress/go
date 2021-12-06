@@ -1,4 +1,4 @@
-import { loginToSite, upload } from '../../helpers';
+import { loginToSite, upload, saveCustomizerSettings } from '../../helpers';
 
 describe( 'Test the customizer works as intended.', () => {
 
@@ -15,6 +15,22 @@ describe( 'Test the customizer works as intended.', () => {
 		'Playful',
 	];
 
+	const headerCount = 7;
+
+	const footerCount = 4;
+
+	const socialAccounts = {
+		facebook: 'https://www.facebook.com',
+		twitter: 'https://www.twitter.com',
+		instagram: 'https://www.instagram.com',
+		linkedin: 'https://www.linkedin.com',
+		xing: 'https://www.xing.com',
+		pinterest: 'https://www.pinterest.com',
+		youtube: 'https://www.youtube.com',
+		spotify: 'https://www.spotify.com',
+		github: 'https://www.github.com',
+	};
+
 	before( () => {
 		loginToSite();
 	} );
@@ -25,7 +41,7 @@ describe( 'Test the customizer works as intended.', () => {
 		cy.frameLoaded( '[name="customize-preview-0"]' );
 	} );
 
-	it( 'Should upload a custom logo', () => {
+	it( 'Test Site title, description and a custom logo', () => {
 		cy.get( '#accordion-section-title_tagline' ).click();
 
 		// Custom Logo
@@ -40,7 +56,7 @@ describe( 'Test the customizer works as intended.', () => {
 		// Site Tagline
 		cy.get( '#_customize-input-blogdescription' ).clear().type( atts.tagline );
 
-		cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
+		saveCustomizerSettings();
 
 		cy.reload();
 
@@ -48,18 +64,35 @@ describe( 'Test the customizer works as intended.', () => {
 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( '.custom-logo-link img' ).should( 'have.attr', 'src' ).and( 'match', /150x150/ );
 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'h1.site-title' ).contains( atts.title );
 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'span.site-description' ).contains( atts.tagline );
+
+		// Test Hidden title and tagline
+		cy.get( '#accordion-section-title_tagline' ).click();
+		cy.get( '#_customize-input-hide_site_title_checkbox' ).click();
+		cy.get( '#_customize-input-hide_site_tagline_checkbox' ).click();
+		saveCustomizerSettings();
+
+		cy.reload();
+
+		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'h1#site-title' ).should( 'not.exist' );
+		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'span.site-description' ).should( 'not.exist' );
+
+		// re-enable site title and tagline
+		cy.get( '#accordion-section-title_tagline' ).click();
+		cy.get( '#_customize-input-hide_site_title_checkbox' ).click();
+		cy.get( '#_customize-input-hide_site_tagline_checkbox' ).click();
+		saveCustomizerSettings();
 	} );
 
 	it( 'Should switch design styles as intended', () => {
-		 designStyles.forEach( designStyle => {
-			 cy.get( '#accordion-section-colors' ).click();
+		designStyles.forEach( designStyle => {
+			cy.get( '#accordion-section-colors' ).click();
 
-		 	cy.get( 'label[for="_customize-input-design_style_control-radio-' + designStyle.toLowerCase() + '"]' ).click({ force: true });
-		 	cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
-		 	cy.wait( 500 );
-		 	cy.reload();
-		 	cy.frameLoaded( '[name="customize-preview-0"]' );
-		 	cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'is-style-' + designStyle.toLowerCase() );
+			cy.get( 'label[for="_customize-input-design_style_control-radio-' + designStyle.toLowerCase() + '"]' ).click({ force: true });
+			saveCustomizerSettings();
+			cy.wait( 500 );
+			cy.reload();
+			cy.frameLoaded( '[name="customize-preview-0"]' );
+			cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'is-style-' + designStyle.toLowerCase() );
 		 } );
 
 		// Loop over design style labels
@@ -72,7 +105,7 @@ describe( 'Test the customizer works as intended.', () => {
 		//
 		// 		$designStyleLabel.click();
 		//
-		// 		cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
+		// 		saveCustomizerSettings();
 		// 		cy.reload();
 		// 		cy.frameLoaded( '[name="customize-preview-0"]' );
 		// 		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'body' ).should( 'have.class', 'is-style-' + designStyleName.toLowerCase() );
@@ -85,6 +118,56 @@ describe( 'Test the customizer works as intended.', () => {
 		// 		// designStyles.push( designStyleName[ colors ] );
 		// 	} );
 		// } );
+	} );
+
+	it( 'Should switch headers as intended', () => {
+		let header = 1;
+		while ( header <= headerCount ) {
+			cy.get( '#accordion-section-go_header_settings' ).click();
+			cy.get( 'label[for="header_variation_control-header-' + header + '"]' ).click();
+			saveCustomizerSettings();
+			cy.reload();
+			cy.frameLoaded( '[name="customize-preview-0"]' );
+			cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'has-header-' + header );
+			header++;
+		}
+	} );
+
+	it( 'Should switch footers as intended', () => {
+		let footer = 1;
+		while ( footer <= footerCount ) {
+			cy.get( '#accordion-section-go_footer_settings' ).click();
+			cy.get( 'label[for="footer_variation_control-footer-' + footer + '"]' ).click();
+			saveCustomizerSettings();
+			cy.reload();
+			cy.frameLoaded( '[name="customize-preview-0"]' );
+			cy.iframe( 'iframe[name="customize-preview-0"]' ).should( 'have.class', 'has-footer-' + footer );
+			footer++;
+		}
+	} );
+
+	it( 'Should show social icons and set the URL', () => {
+		cy.get( '#accordion-section-go_social_media' ).click();
+
+		// Check icons do not show on page when no input is present
+		cy.get( '#_customize-input-social_icon_github_control' ).should( 'have.value', '' );
+
+		cy.frameLoaded( '[name="customize-preview-0"]' );
+		cy.iframe( 'iframe[name="customize-preview-0"]' ).find( 'ul.social-icons > .social-icon-github' ).should( 'not.be.visible' );
+
+		for ( const socialNetworkName in socialAccounts ) {
+			cy.get( `#_customize-input-social_icon_${socialNetworkName}_control` ).clear().type( socialAccounts[ socialNetworkName ] );
+		}
+
+		saveCustomizerSettings();
+		cy.reload();
+
+		// Check that the social icons are visible in the header and the footer
+		cy.frameLoaded( '[name="customize-preview-0"]' );
+		for ( const socialNetworkName in socialAccounts ) {
+			cy.iframe( 'iframe[name="customize-preview-0"]' ).find( `#site-header ul.social-icons > .social-icon-${socialNetworkName}` ).should( 'be.visible' );
+			cy.iframe( 'iframe[name="customize-preview-0"]' ).find( `footer ul.social-icons > .social-icon-${socialNetworkName}` ).should( 'be.visible' );
+		}
 	} );
 
 } );
