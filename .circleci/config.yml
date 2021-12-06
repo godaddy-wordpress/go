@@ -96,6 +96,17 @@ workflows:
           requires:
             - build
 
+      # Cypress Tests
+      - customizer-e2e:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+            branches:
+              ignore:
+                - actions/visual-regression-update-snapshots
+          requires:
+            - build
+
       # Accessibility Tests
       - a11y-tests:
           filters:
@@ -543,6 +554,68 @@ jobs:
       - run:
           name: Run theme check
           command: wp themecheck --theme=go --no-interactive --path=/var/www/html/wordpress
+
+  customizer-e2e:
+    executor: php_73_apache_node_browser_mysql
+    steps:
+      - run:
+          name: Update hosts
+          command: echo 127.0.0.1 go.test | sudo tee -a /etc/hosts
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - wait_for_mysql
+      - install_wpcli
+      - run:
+          name: Install MariaDB
+          command: |
+            sudo apt-get update --allow-releaseinfo-change
+            sudo apt-get install mariadb-client
+      - run:
+          name: Setup WordPress site
+          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+      - restore_composer_cache
+      - run:
+          name: Install Composer packages
+          command: composer install
+          working_directory: /var/www/html/wordpress/wp-content/themes/go
+      - add_ssh_keys:
+          fingerprints:
+            - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
+      - install_yarn_dependencies
+      - run:
+          name: Install WPNUX Template Switcher
+          command: |
+            cd /var/www/html/wordpress/wp-content/plugins
+            git clone git@github.com:godaddy-wordpress/wpnux-template-switcher.git wpnux-template-loader
+            wp plugin activate wpnux-template-loader
+      - add_ssh_keys:
+          fingerprints:
+            - "3c:e9:ef:51:a5:2f:f4:b6:cd:ee:ba:88:33:a2:83:00"
+      - run:
+          name:  Install WPCLI NUX Importer
+          command: |
+            mkdir -p ~/.wp-cli/packages/local
+            cd ~/.wp-cli/packages/local
+            git clone git@github.com:godaddy-wordpress/wp-cli-nux-command.git
+            cp wp-cli-nux-command/bin/config.yml ~/.wp-cli/config.yml
+      - run:
+          name:  Flush permalinks and generate .htaccess file
+          command: wp rewrite flush --hard --path=/var/www/html/wordpress
+      - run:
+          name: Fix permissions on uploads directory for WPNUX importer
+          command: sudo chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
+      - run:
+          name: Activate CoBlocks and WooCommerce
+          command: |
+            wp plugin activate coblocks --path=/var/www/html/wordpress
+            wp plugin activate woocommerce --path=/var/www/html/wordpress
+      - run:
+          name: Setup the Keynote template
+          command: wp nux import keynote --path=/var/www/html/wordpress
+      - run:
+          name: "Run end to end Customizer tests (Cypress.io) - chrome"
+          command: ./node_modules/.bin/cypress run --browser chrome --parallel --record --spec .dev/tests/cypress/integration/customizer/*.js
 
   a11y-tests:
     executor: php_73_apache_node_browser_mysql

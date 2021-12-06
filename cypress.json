@@ -1,5 +1,6 @@
 {
   "chromeWebSecurity": false,
+  "defaultCommandTimeout": 120000,
   "fixturesFolder": ".dev/tests/cypress/fixtures",
   "integrationFolder": ".dev/tests/cypress/integration",
   "screenshotsFolder": ".dev/tests/cypress/screenshots",
@@ -8,10 +9,12 @@
   "supportFile": ".dev/tests/cypress/support/commands.js",
   "testFiles": "**/*.spec.js",
   "projectId": "i8uxwt",
-  "viewportWidth": 1280,
-  "viewportHeight": 720,
+  "viewportWidth": 2560,
+  "viewportHeight": 1440,
   "env": {
     "localTestURL": "http://go.test",
+    "wpUsername": "admin",
+    "wpPassword": "password",
     "templateLang": "en_US"
   },
   "retries": {

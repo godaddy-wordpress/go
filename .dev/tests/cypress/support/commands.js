@@ -1,4 +1,6 @@
 import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
+import 'cypress-file-upload';
+import 'cypress-iframe';
 
 addMatchImageSnapshotCommand( {
     failureThreshold: 0.25,
