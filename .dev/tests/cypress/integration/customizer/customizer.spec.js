@@ -153,10 +153,9 @@ describe( 'Test the customizer works as intended.', () => {
 		saveCustomizerSettings();
 		cy.reload();
 
-		// Check that the social icons are visible in the header and the footer
+		// Check that the social icons are visible in the footer (header 1 has no social icons visible)
 		cy.frameLoaded( '[name="customize-preview-0"]' );
 		for ( const socialNetworkName in socialAccounts ) {
-			cy.iframe( 'iframe[name="customize-preview-0"]' ).find( `#site-header ul.social-icons > .social-icon-${socialNetworkName}` ).should( 'be.visible' );
 			cy.iframe( 'iframe[name="customize-preview-0"]' ).find( `footer ul.social-icons > .social-icon-${socialNetworkName}` ).should( 'be.visible' );
 		}
 	} );
