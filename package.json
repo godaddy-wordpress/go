@@ -53,7 +53,8 @@
     "test:vr": "yarn generate:vr-specs && MOZ_HEADLESS_WIDTH=1280 MOZ_HEADLESS_HEIGHT=720 npx cypress run --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'",
     "snapshots:upload-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\" --exclude \"*__diff_output__*\"",
     "snapshots:download-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete",
-    "snapshots:download": ".dev/bin/setup-test-specs.sh && yarn snapshots:download-all -- --exclude \"*\" $(cat /tmp/template_includes | xargs)"
+    "snapshots:download": ".dev/bin/setup-test-specs.sh && yarn snapshots:download-all -- --exclude \"*\" $(cat /tmp/template_includes | xargs)",
+    "prepare": "husky install .dev/husky"
   },
   "locales": {
     "ar": "العربية",
@@ -120,6 +121,7 @@
     "eslint-webpack-plugin": "^3.1.0",
     "grunt": "^1.0.3",
     "grunt-text-replace": "^0.4.0",
+    "husky": "^7.0.4",
     "json2po": "^1.0.5",
     "lint-staged": "^11.2.6",
     "load-grunt-tasks": "^5.1.0",
