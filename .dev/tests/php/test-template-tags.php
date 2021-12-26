@@ -1316,6 +1316,19 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the post_meta() returns proper data tiktok icon data
+	 */
+	public function test_social_icons_tiktok() {
+
+		set_theme_mod( 'social_icon_tiktok', 'https://www.tiktok.com/@custom' );
+
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.tiktok.com\/@custom" aria-label="Open TikTok in a new tab" rel="noopener noreferrer" target="_blank">/' );
+
+		Go\social_icons( [] );
+
+	}
+
+	/**
 	 * Test the social icons do not render on header-1
 	 */
 	public function test_header_social_icons_header_1() {
