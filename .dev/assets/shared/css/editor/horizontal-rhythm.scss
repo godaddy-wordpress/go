@@ -1,7 +1,7 @@
 .wp-block {
 	max-width: var(--go--max-width);
 
-	.wp-block:not(.wp-block-button):not(.wp-social-link) {
+	.wp-block:not(.wp-block-button):not(.wp-social-link):not(.block-list-appender) {
 		width: 100%;
 	}
 
