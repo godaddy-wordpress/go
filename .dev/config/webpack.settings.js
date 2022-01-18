@@ -67,7 +67,8 @@ module.exports = {
 	copyWebpackConfig: {
 		from: '.dev/assets/**/*.{jpg,jpeg,png,gif,svg}',
 		to({ context, absoluteFilename }) {
-			return 'images/' + absoluteFilename.replace( /^.*(\.dev\/assets\/)/g, '' ).replace( 'images/', '');
+			// Remove everything before .dev/assets/, remove images/, remove shared/
+			return 'images/' + absoluteFilename.replace( /^.*(\.dev\/assets\/)/g, '' ).replace( 'images/', '' ).replace( 'shared/', '' );
 		},
 	},
 	BrowserSyncConfig: {
