@@ -721,7 +721,7 @@ jobs:
           command: go get -u github.com/tcnksm/ghr
       - run:
           name: Install PHP
-          command: sudo apt -y install php7.4
+          command: sudo apt update && sudo apt -y install php7.4
       - run:
           name: Install gettext
           command: sudo apt-get install gettext
@@ -757,7 +757,7 @@ jobs:
           at: ~/project
       - run:
           name: Install PHP
-          command: sudo apt-get install php libapache2-mod-php php-mbstring
+          command: sudo apt update && sudo apt-get install php libapache2-mod-php php-mbstring
       - install_wpcli
       - run:
           name: Install ghr
