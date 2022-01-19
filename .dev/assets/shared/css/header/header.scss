@@ -44,7 +44,7 @@ body.has-sticky-header {
 		// In 5.9 we could have used calc(-1 * var(--wp-admin--admin-bar--height));
 		margin-top: -32px;
 
-		@media (max-width:782px) {
+		@media (max-width: 782px) {
 			margin-top: -46px;
 		}
 
@@ -56,7 +56,7 @@ body.has-sticky-header {
 		.site-header {
 			top: 32px;
 
-			@media (max-width:782px) {
+			@media (max-width: 782px) {
 				top: 46px;
 			}
 		}
