@@ -104,6 +104,7 @@
     "@godaddy-wordpress/eslint-config": "0.5.0",
     "@godaddy-wordpress/stylelint-config": "^0.4.0",
     "@wordpress/browserslist-config": "^4.1.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
     "browser-sync-webpack-plugin": "^2.3.0",
@@ -114,9 +115,9 @@
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.1.1",
     "cypress": "^9.1.1",
+    "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
     "cypress-image-snapshot": "^4.0.1",
-    "cypress-file-upload": "^5.0.8",
     "eslint": "^7.32.0",
     "eslint-webpack-plugin": "^3.1.0",
     "grunt": "^1.0.3",
@@ -162,5 +163,8 @@
   "dependencies": {
     "lodash.throttle": "^4.1.1",
     "normalize.css": "^8.0.1"
+  },
+  "resolutions": {
+    "stylelint-config-recommended": "^6.0.0"
   }
 }
