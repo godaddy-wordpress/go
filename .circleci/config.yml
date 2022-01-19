@@ -487,7 +487,7 @@ jobs:
           name: Zip the Go Theme
           command: |
             mkdir -p /tmp/artifacts
-            if [ "$CIRCLE_BRANCH" == 'master' ]; then
+            if [ "$CIRCLE_BRANCH" == 'master' ] || [ ! -z "$CIRCLE_TAG" ]; then
               zip -r /tmp/artifacts/go.zip ./go
             else
               GO_VERSION_LINE=$(awk '/\* Version:/' ./go/style.css)
