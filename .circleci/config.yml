@@ -62,6 +62,8 @@ workflows:
     jobs:
       - build:
           filters:
+            tags:
+              only: /^(?!canary).*$/
             branches:
               ignore:
                 - actions/visual-regression-update-snapshots
