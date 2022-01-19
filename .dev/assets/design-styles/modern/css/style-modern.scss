@@ -11,8 +11,6 @@
 // WooCommerce
 @import "woocommerce/checkout";
 
-@import "../../../shared/css/config/mixins";
-
 .site-title {
 	@include media(large-only) {
 		margin-left: calc(var(--go-site-title--letter-spacing) * 2.5);
@@ -65,7 +63,7 @@
 
 #ship-to-different-address .woocommerce-form__label-for-checkbox input + span {
 	display: inline-block;
-	margin-left: 0.5rem;;
+	margin-left: 0.5rem;
 	width: calc(90% - 0.5rem);
 }
 
@@ -88,12 +86,12 @@
 	margin: 0 0 1em;
 }
 
-.woocommerce-page .woocommerce-shipping-methods label:before {
+.woocommerce-page .woocommerce-shipping-methods label::before {
 	top: -2px;
 }
 
 @include media(small) {
-	.woocommerce-page .woocommerce-shipping-methods label:before {
+	.woocommerce-page .woocommerce-shipping-methods label::before {
 		top: 0 !important;
 	}
 }

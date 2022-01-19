@@ -2,8 +2,8 @@
 .has-header-6 {
 
 	.header__extras {
-		order: 3;
 		display: flex;
+		order: 3;
 
 		@include media(large-only) {
 			order: 1;

@@ -110,4 +110,12 @@ List of bespoke icons:
 == Changelog ==
 
 ### Bug Fixes
-- Fix broken menu styles. [#715](https://github.com/godaddy-wordpress/go/pull/715)
+- Fix image build path. [#746](https://github.com/godaddy-wordpress/go/pull/746)
+- Ignore width 100 on appender. [#744](https://github.com/godaddy-wordpress/go/pull/744)
+- Fix shared padding classes being overridden by CoBlocks. [#730](https://github.com/godaddy-wordpress/go/pull/730)
+- Don't override styles of the social-link block. [#720](https://github.com/godaddy-wordpress/go/pull/720)
+
+### Tweaks
+- Rename scripts to be consistent with CoBlocks. [#723](https://github.com/godaddy-wordpress/go/pull/723)
+- Huge performance and optimization tweaks. [#722](https://github.com/godaddy-wordpress/go/pull/722)
+- Add editor styles for select element. [#717](https://github.com/godaddy-wordpress/go/pull/717)

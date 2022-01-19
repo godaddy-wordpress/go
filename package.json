@@ -26,10 +26,10 @@
   ],
   "scripts": {
     "setup": "composer install && yarn install && yarn build",
-    "start": "NODE_ENV=development webpack --watch --config .dev/config/webpack.dev.js",
-    "build": "NODE_ENV=production webpack --config .dev/config/webpack.prod.js",
-    "postbuild": "rm -rf temp && mkdir temp && cp -a dist/* temp && NODE_ENV=development webpack --config .dev/config/webpack.dev.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh && yarn makepot",
-    "postdev": "mkdir temp && cp -a dist/* temp && NODE_ENV=production webpack --config .dev/config/webpack.prod.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
+    "start": "NODE_ENV=development webpack --watch --config webpack.config.js",
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "postbuild": "rm -rf temp && mkdir temp && cp -a dist/* temp && NODE_ENV=development webpack --config webpack.config.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh && yarn makepot",
+    "postdev": "mkdir temp && cp -a dist/* temp && NODE_ENV=production webpack --config webpack.config.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
     "package": "rm -rf build && mkdir -p build/go && yarn build && rsync -av --exclude-from .distignore --delete . build/go && cd build && zip -r go.zip ./go",
     "version": "grunt version && git add -A .",
     "preversion": "git pull origin master && git reset --hard origin/master",
@@ -53,7 +53,8 @@
     "test:vr": "yarn generate:vr-specs && MOZ_HEADLESS_WIDTH=1280 MOZ_HEADLESS_HEIGHT=720 npx cypress run --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'",
     "snapshots:upload-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\" --exclude \"*__diff_output__*\"",
     "snapshots:download-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete",
-    "snapshots:download": ".dev/bin/setup-test-specs.sh && yarn snapshots:download-all -- --exclude \"*\" $(cat /tmp/template_includes | xargs)"
+    "snapshots:download": ".dev/bin/setup-test-specs.sh && yarn snapshots:download-all -- --exclude \"*\" $(cat /tmp/template_includes | xargs)",
+    "prepare": "husky install .dev/husky"
   },
   "locales": {
     "ar": "العربية",
@@ -103,6 +104,7 @@
     "@godaddy-wordpress/eslint-config": "0.5.0",
     "@godaddy-wordpress/stylelint-config": "^0.4.0",
     "@wordpress/browserslist-config": "^4.1.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
     "browser-sync-webpack-plugin": "^2.3.0",
@@ -112,12 +114,15 @@
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.1.1",
-    "cypress": "^8.7.0",
+    "cypress": "^9.1.1",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
     "cypress-image-snapshot": "^4.0.1",
     "eslint": "^7.32.0",
     "eslint-webpack-plugin": "^3.1.0",
     "grunt": "^1.0.3",
     "grunt-text-replace": "^0.4.0",
+    "husky": "^7.0.4",
     "json2po": "^1.0.5",
     "lint-staged": "^11.2.6",
     "load-grunt-tasks": "^5.1.0",
@@ -158,5 +163,8 @@
   "dependencies": {
     "lodash.throttle": "^4.1.1",
     "normalize.css": "^8.0.1"
+  },
+  "resolutions": {
+    "stylelint-config-recommended": "^6.0.0"
   }
 }
