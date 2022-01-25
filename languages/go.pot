@@ -1,14 +1,14 @@
 # Copyright (c) GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: Go 1.5.2\n"
+"Project-Id-Version: Go 1.5.3\n"
 "Report-Msgid-Bugs-To: https://github.com/godaddy-wordpress/go/issues\n"
 "Last-Translator: plugins@godaddy.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-25T16:30:05+00:00\n"
+"POT-Creation-Date: 2022-01-25T16:42:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: go\n"
@@ -823,16 +823,20 @@ msgstr ""
 msgid "GitHub"
 msgstr ""
 
-#: includes/core.php:1401
+#: includes/core.php:1254
+msgid "TikTok"
+msgstr ""
+
+#: includes/core.php:1406
 msgid "That page can't be found"
 msgstr ""
 
 #. translators: Search query term(s).
-#: includes/core.php:1419
+#: includes/core.php:1424
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1427
+#: includes/core.php:1432
 msgid "Nothing Found"
 msgstr ""
 
