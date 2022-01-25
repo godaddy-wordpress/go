@@ -5,9 +5,8 @@
  * Description:
  * Author: GoDaddy
  * Version: 1.22.0
- * Text Domain:
- * Domain Path:
- * Tested up to: 5.8
+ * Text Domain: go
+ * Tested up to: 5.9
  *
  * @package Go
  */
