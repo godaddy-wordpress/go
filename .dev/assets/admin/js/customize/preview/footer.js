@@ -151,6 +151,16 @@ export default () => {
 			}
 		} );
 	} );
+
+	wp.customize( 'social_icon_tiktok', ( value ) => {
+		value.bind( ( to ) => {
+			if ( to ) {
+				$( '.social-icon-tiktok' ).removeClass( 'display-none' );
+			} else {
+				$( '.social-icon-tiktok' ).addClass( 'display-none' );
+			}
+		} );
+	} );
 };
 
 function setMenuLocationDescription() {

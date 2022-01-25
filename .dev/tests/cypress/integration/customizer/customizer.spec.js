@@ -29,6 +29,7 @@ describe( 'Test the customizer works as intended.', () => {
 		youtube: 'https://www.youtube.com',
 		spotify: 'https://www.spotify.com',
 		github: 'https://www.github.com',
+		tiktok: 'https://www.tiktok.com',
 	};
 
 	before( () => {

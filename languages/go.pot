@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2022-01-25T16:39:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: go\n"
 
 #. Theme Name of the theme
@@ -823,16 +823,20 @@ msgstr ""
 msgid "GitHub"
 msgstr ""
 
-#: includes/core.php:1401
+#: includes/core.php:1254
+msgid "TikTok"
+msgstr ""
+
+#: includes/core.php:1406
 msgid "That page can't be found"
 msgstr ""
 
 #. translators: Search query term(s).
-#: includes/core.php:1419
+#: includes/core.php:1424
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1427
+#: includes/core.php:1432
 msgid "Nothing Found"
 msgstr ""
 

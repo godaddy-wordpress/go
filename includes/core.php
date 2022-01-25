@@ -1250,6 +1250,11 @@ function get_available_social_icons() {
 			'icon'        => get_theme_file_path( 'dist/images/social/github.svg' ),
 			'placeholder' => 'https://github.com/user',
 		),
+		'tiktok'    => array(
+			'label'       => esc_html__( 'TikTok', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/tiktok.svg' ),
+			'placeholder' => 'https://www.tiktok.com/@user',
+		),
 	);
 
 	/**
