@@ -109,13 +109,6 @@ List of bespoke icons:
 
 == Changelog ==
 
-### Bug Fixes
-- Fix image build path. [#746](https://github.com/godaddy-wordpress/go/pull/746)
-- Ignore width 100 on appender. [#744](https://github.com/godaddy-wordpress/go/pull/744)
-- Fix shared padding classes being overridden by CoBlocks. [#730](https://github.com/godaddy-wordpress/go/pull/730)
-- Don't override styles of the social-link block. [#720](https://github.com/godaddy-wordpress/go/pull/720)
-
 ### Tweaks
-- Rename scripts to be consistent with CoBlocks. [#723](https://github.com/godaddy-wordpress/go/pull/723)
-- Huge performance and optimization tweaks. [#722](https://github.com/godaddy-wordpress/go/pull/722)
-- Add editor styles for select element. [#717](https://github.com/godaddy-wordpress/go/pull/717)
+- Introduce TikTok icon. [#739](https://github.com/godaddy-wordpress/go/pull/739)
+- Bumped tested up to version to 5.9. [#750](https://github.com/godaddy-wordpress/go/pull/750)
