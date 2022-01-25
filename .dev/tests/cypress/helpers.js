@@ -71,3 +71,68 @@ export function showCoBlocksAnimatedObjects() {
     }
   } );
 }
+
+/**
+ * Login to our test WordPress site
+ */
+export function loginToSite() {
+  cy.visit( Cypress.env( 'localTestURL' ) + '/wp-admin/' )
+    .then( ( window ) => {
+      if ( window.location.pathname === '/wp-login.php' ) {
+      // WordPress has a wp_attempt_focus() function that fires 200ms after the wp-login.php page loads.
+      // We need to wait a short time before trying to login.
+        cy.wait( 250 );
+
+        cy.get( '#user_login' ).type( Cypress.env( 'wpUsername' ) );
+        cy.get( '#user_pass' ).type( Cypress.env( 'wpPassword' ) );
+        cy.get( '#wp-submit' ).click();
+      }
+    } );
+
+  cy.get( 'body' ).should( 'have.class', 'wp-admin' );
+
+	// Maintain WordPress logged in state
+	Cypress.Cookies.defaults( {
+		preserve: /wordpress_.*/,
+	} );
+}
+
+/**
+ * Upload helper object. Contains image fixture spec and uploader function.
+ * `helpers.upload.newLogo` Function uploads the new logo.
+ * `helpers.upload.spec` Object containing image spec.
+ */
+export const upload = {
+  /**
+   * Upload image to input element and trigger replace image flow.
+   *
+   * @param {string} blockName The name of the block that is replace target
+   *                           imageReplaceFlow works with CoBlocks Galleries: Carousel, Collage, Masonry, Offset, Stacked.
+   */
+  newLogo: () => {
+    cy.get( '#customize-control-custom_logo' ).should( 'exist' );
+
+    const imagePath = `../fixtures/images/150x150.png`;
+
+    /* eslint-disable */
+    cy.fixture( imagePath ).then( ( fileContent ) => {
+      cy.get( '[class^="moxie"] [type="file"]' )
+        .attachFile( { fileContent, filePath: imagePath, mimeType: 'image/png' }, { force: true } );
+    } );
+    /* eslint-enable */
+  },
+
+  spec: {
+    fileName: '150x150.png',
+    imageBase: '150x150',
+    pathToFixtures: '../.dev/tests/cypress/fixtures/images/',
+  },
+};
+
+/**
+ * Save the customier settings.
+ */
+export function saveCustomizerSettings () {
+  cy.get( '#customize-header-actions input[type="submit"]' ).click().should( 'have.attr', 'disabled' );
+  cy.get( '#publish-settings' ).should( 'not.be.visible' );
+};

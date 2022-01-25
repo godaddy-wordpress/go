@@ -2,9 +2,9 @@
 Contributors: godaddy, richtabor, eherman24, jrtashjian
 Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-style, one-column, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 5.6.0
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -109,5 +109,6 @@ List of bespoke icons:
 
 == Changelog ==
 
-### Bug Fixes
-- Fix broken menu styles. [#715](https://github.com/godaddy-wordpress/go/pull/715)
+### Tweaks
+- Introduce TikTok icon. [#739](https://github.com/godaddy-wordpress/go/pull/739)
+- Bumped tested up to version to 5.9. [#750](https://github.com/godaddy-wordpress/go/pull/750)

@@ -18,3 +18,4 @@ languages/*.po
 languages/*.pot
 vendor/
 cypress.json
+webpack.config.js

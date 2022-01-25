@@ -1,14 +1,14 @@
 # Copyright (c) GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: Go 1.5.1\n"
+"Project-Id-Version: Go 1.5.2\n"
 "Report-Msgid-Bugs-To: https://github.com/godaddy-wordpress/go/issues\n"
 "Last-Translator: plugins@godaddy.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-11-09T17:08:18+00:00\n"
+"POT-Creation-Date: 2022-01-25T16:59:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: go\n"
@@ -96,17 +96,17 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: docs/design-styles/example/functions.php:27
+#: docs/design-styles/example/functions.php:26
 msgctxt "design style name"
 msgid "Brutalist"
 msgstr ""
 
-#: docs/design-styles/example/functions.php:32
+#: docs/design-styles/example/functions.php:31
 msgctxt "color palette name"
 msgid "Millennial"
 msgstr ""
 
-#: docs/design-styles/example/functions.php:39
+#: docs/design-styles/example/functions.php:38
 #: includes/core.php:779
 msgctxt "color palette name"
 msgid "Blush"
@@ -823,16 +823,20 @@ msgstr ""
 msgid "GitHub"
 msgstr ""
 
-#: includes/core.php:1401
+#: includes/core.php:1254
+msgid "TikTok"
+msgstr ""
+
+#: includes/core.php:1406
 msgid "That page can't be found"
 msgstr ""
 
 #. translators: Search query term(s).
-#: includes/core.php:1419
+#: includes/core.php:1424
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1427
+#: includes/core.php:1432
 msgid "Nothing Found"
 msgstr ""
 

@@ -1070,6 +1070,7 @@ class Test_Customizer extends WP_UnitTestCase {
 			'pinterest',
 			'youtube',
 			'github',
+			'tiktok',
 		];
 
 		foreach ( $networks as $social_network ) {
