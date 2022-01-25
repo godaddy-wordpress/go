@@ -112,3 +112,4 @@ List of bespoke icons:
 ### Tweaks
 - Introduce TikTok icon. [#739](https://github.com/godaddy-wordpress/go/pull/739)
 - Bumped tested up to version to 5.9. [#750](https://github.com/godaddy-wordpress/go/pull/750)
+- Add a basic child theme example. [#719](https://github.com/godaddy-wordpress/go/pull/719)
