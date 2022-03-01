@@ -25,11 +25,11 @@
     "[![WordPress <%= pkg.engines.wordpress %>](https://img.shields.io/badge/wordpress-<% print(encodeURI(pkg.engines.wordpress)) %>-blue.svg)](https://wordpress.org/download/release-archive/)"
   ],
   "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start --progress",
     "setup": "composer install && yarn install && yarn build",
-    "start": "NODE_ENV=development webpack --watch --config webpack.config.js",
-    "build": "NODE_ENV=production webpack --config webpack.config.js",
-    "postbuild": "rm -rf temp && mkdir temp && cp -a dist/* temp && NODE_ENV=development webpack --config webpack.config.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh && yarn makepot",
-    "postdev": "mkdir temp && cp -a dist/* temp && NODE_ENV=production webpack --config webpack.config.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
+    "postbuild": "rm -rf temp && mkdir temp && cp -a dist/* temp && wp-scripts build && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh && yarn makepot",
+    "postdev": "mkdir temp && cp -a dist/* temp && wp-scripts build && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
     "package": "rm -rf build && mkdir -p build/go && yarn build && rsync -av --exclude-from .distignore --delete . build/go && cd build && zip -r go.zip ./go",
     "version": "grunt version && git add -A .",
     "preversion": "git pull origin master && git reset --hard origin/master",
@@ -103,6 +103,7 @@
     "@babel/register": "^7.16.0",
     "@godaddy-wordpress/eslint-config": "0.5.0",
     "@godaddy-wordpress/stylelint-config": "^0.4.0",
+    "@wordpress/scripts": "^20.0.1",
     "@wordpress/browserslist-config": "^4.1.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
