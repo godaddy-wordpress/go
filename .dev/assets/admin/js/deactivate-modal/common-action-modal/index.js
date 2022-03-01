@@ -74,11 +74,8 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 
 	const clickHandler = useCallback( ( e ) => {
 		if ( ! isEvent( e ) ) {
-			alert('noEvent');
 			return;
 		}
-
-		alert('test');
 
 		e.preventDefault();
 		setOpen( true );
