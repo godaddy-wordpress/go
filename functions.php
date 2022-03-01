@@ -51,6 +51,11 @@ require_once get_parent_theme_file_path( 'includes/woocommerce.php' );
 require_once get_parent_theme_file_path( 'includes/title-meta.php' );
 
 /**
+ * Page Titles Meta functions.
+ */
+require_once get_parent_theme_file_path( 'includes/deactivation.php' );
+
+/**
  * Layouts for the CoBlocks layout selector.
  */
 foreach ( glob( get_parent_theme_file_path( 'partials/layouts/*.php' ) ) as $filename ) {
@@ -66,6 +71,7 @@ Go\TGM\setup();
 Go\Customizer\setup();
 Go\WooCommerce\setup();
 Go\Title_Meta\setup();
+Go\Deactivation\setup();
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
