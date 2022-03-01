@@ -66,7 +66,6 @@ Go\TGM\setup();
 Go\Customizer\setup();
 Go\WooCommerce\setup();
 Go\Title_Meta\setup();
-Go\Deactivation\setup();
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
