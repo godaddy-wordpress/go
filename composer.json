@@ -29,6 +29,11 @@
   "config": {
     "platform": {
       "php": "7.3"
+    },
+    "allow-plugins": {
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "oomphinc/composer-installers-extender": true
     }
   },
   "require": {

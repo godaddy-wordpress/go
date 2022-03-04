@@ -86,7 +86,7 @@ describe( 'go-deactivate-modal', () => {
 			expect(response).toEqual(mockData);
 		});
 
-		test('should call the fetch api', async () => {
+		/*test('should call the fetch api', async () => {
 			const fetchMock = jest.spyOn(global, 'fetch');
 
 			await act(async () => {
@@ -94,7 +94,7 @@ describe( 'go-deactivate-modal', () => {
 			});
 
 			expect(fetchMock).toHaveBeenCalledWith('https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout?domain=foo.com&random=1&language=en-US');
-		});
+		});*/
 	});
 
 	/*describe( 'closed state', () => {
