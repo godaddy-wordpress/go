@@ -1,6 +1,7 @@
 {
   "presets": [
     "@babel/preset-env",
+    "@wordpress/babel-preset-default"
   ],
   "plugins": [
     [ "@babel/transform-react-jsx", {
