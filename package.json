@@ -54,7 +54,8 @@
     "snapshots:upload-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\" --exclude \"*__diff_output__*\"",
     "snapshots:download-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete",
     "snapshots:download": ".dev/bin/setup-test-specs.sh && yarn snapshots:download-all -- --exclude \"*\" $(cat /tmp/template_includes | xargs)",
-    "prepare": "husky install .dev/husky"
+    "prepare": "husky install .dev/husky",
+    "wp-env": "wp-env"
   },
   "locales": {
     "ar": "العربية",
@@ -104,6 +105,7 @@
     "@godaddy-wordpress/eslint-config": "0.5.0",
     "@godaddy-wordpress/stylelint-config": "^0.4.0",
     "@wordpress/browserslist-config": "^4.1.0",
+    "@wordpress/env": "^4.2.2",
     "@wordpress/scripts": "^20.0.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
