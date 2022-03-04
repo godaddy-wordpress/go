@@ -25,11 +25,11 @@
     "[![WordPress <%= pkg.engines.wordpress %>](https://img.shields.io/badge/wordpress-<% print(encodeURI(pkg.engines.wordpress)) %>-blue.svg)](https://wordpress.org/download/release-archive/)"
   ],
   "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start --progress",
     "setup": "composer install && yarn install && yarn build",
-    "start": "NODE_ENV=development webpack --watch --config webpack.config.js",
-    "build": "NODE_ENV=production webpack --config webpack.config.js",
-    "postbuild": "rm -rf temp && mkdir temp && cp -a dist/* temp && NODE_ENV=development webpack --config webpack.config.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh && yarn makepot",
-    "postdev": "mkdir temp && cp -a dist/* temp && NODE_ENV=production webpack --config webpack.config.js && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
+    "postbuild": "rm -rf temp && mkdir temp && cp -a dist/* temp && NODE_ENV=development wp-scripts build && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh && yarn makepot",
+    "postdev": "mkdir temp && cp -a dist/* temp && wp-scripts build && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
     "package": "rm -rf build && mkdir -p build/go && yarn build && rsync -av --exclude-from .distignore --delete . build/go && cd build && zip -r go.zip ./go",
     "version": "grunt version && git add -A .",
     "preversion": "git pull origin master && git reset --hard origin/master",
@@ -54,7 +54,8 @@
     "snapshots:upload-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\" --exclude \"*__diff_output__*\"",
     "snapshots:download-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete",
     "snapshots:download": ".dev/bin/setup-test-specs.sh && yarn snapshots:download-all -- --exclude \"*\" $(cat /tmp/template_includes | xargs)",
-    "prepare": "husky install .dev/husky"
+    "prepare": "husky install .dev/husky",
+    "wp-env": "wp-env"
   },
   "locales": {
     "ar": "العربية",
@@ -104,6 +105,8 @@
     "@godaddy-wordpress/eslint-config": "0.5.0",
     "@godaddy-wordpress/stylelint-config": "^0.4.0",
     "@wordpress/browserslist-config": "^4.1.0",
+    "@wordpress/env": "^4.2.2",
+    "@wordpress/scripts": "^20.0.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
@@ -134,7 +137,7 @@
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.2.0",
     "postcss-mixins": "^8.1.0",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-preset-env": "^7.0.0",
     "postcss-scss": "^4.0.2",
     "prop-types": "15.7.2",
     "rtlcss": "^3.5.0",

@@ -1,5 +1,10 @@
 /* global process, module, require */
 
+/**
+ * WordPress dependencies
+ */
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+
 const path = require( 'path' );
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
@@ -24,6 +29,7 @@ const configureEntries = () => {
 };
 
 module.exports = {
+	...defaultConfig,
 	entry: configureEntries(),
 	output: {
 		path: path.resolve( process.cwd(), settings.paths.dist.base ),
@@ -106,6 +112,7 @@ module.exports = {
 	},
 
 	plugins: [
+		...defaultConfig.plugins,
 
 		// Clean the `dist` folder on build.
 		new CleanWebpackPlugin( {

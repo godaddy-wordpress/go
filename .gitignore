@@ -16,6 +16,7 @@ dist
 !.dev/assets/shared/js/frontend/vendor/
 *.mo
 !.dev/tests/php/assets/*.mo
+.wp-env.override.json
 
 # Editors
 *.esproj
