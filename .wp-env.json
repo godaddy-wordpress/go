@@ -1,0 +1,10 @@
+{
+	"plugins": [
+    "https://downloads.wordpress.org/plugin/woocommerce.6.2.0.zip"
+  ],
+  "themes": [ "." ],
+	"config": {
+		"WP_DEBUG": true,
+		"SCRIPT_DEBUG": false
+	}
+}
