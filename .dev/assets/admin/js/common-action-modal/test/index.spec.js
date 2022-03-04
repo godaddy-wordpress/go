@@ -5,10 +5,10 @@
 /**
  * External dependencies
  */
-import React from "react";
+import React from 'react';
 import { mount } from 'enzyme';
 import '@testing-library/jest-dom/extend-expect';
-import { act } from "react-dom/test-utils";
+import { act } from 'react-dom/test-utils';
 
 /**
  * Internal dependencies.
@@ -36,13 +36,13 @@ const defaultEvent = {
 };
 
 describe( 'go-deactivate-modal', () => {
-	let wrapper, props;
+	let props, wrapper;
 	let events = {};
 
 	props = {
 		apiUrl: 'https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout',
 		getParams: {
-			domain: 'foo.com'
+			domain: 'foo.com',
 		},
 		isEvent: () => true,
 		pageData: {
@@ -54,37 +54,37 @@ describe( 'go-deactivate-modal', () => {
 				skill: 'skill',
 			},
 			wpVersion: '5.9',
-		}
-	}
+		},
+	};
 
 	const setup = () => {
 		return mount(
 			<div>
-				<button className='activate'>Activate</button>
+				<button className="activate">Activate</button>
 				<Modal { ...props } />
 			</div>
-			);
+		);
 	};
 
-	beforeEach(() => {
+	beforeEach( () => {
 		fetch.resetMocks();
-		fetch.mockResponse(JSON.stringify(mockData));
+		fetch.mockResponse( JSON.stringify( mockData ) );
 
 		events = {};
 		window.addEventListener = jest.fn( ( event, callback ) => {
 			events[ event ] = callback;
 		} );
-	});
+	} );
 
 	afterEach( () => {
 		jest.clearAllMocks();
 	} );
 
 	describe( 'fetchData', () => {
-		test('should return feedback data', async () => {
-			const response = await fetchData('foo.com');
-			expect(response).toEqual(mockData);
-		});
+		test( 'should return feedback data', async () => {
+			const response = await fetchData( 'foo.com' );
+			expect( response ).toEqual( mockData );
+		} );
 
 		/*test('should call the fetch api', async () => {
 			const fetchMock = jest.spyOn(global, 'fetch');
@@ -95,7 +95,7 @@ describe( 'go-deactivate-modal', () => {
 
 			expect(fetchMock).toHaveBeenCalledWith('https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout?domain=foo.com&random=1&language=en-US');
 		});*/
-	});
+	} );
 
 	/*describe( 'closed state', () => {
 		beforeEach(async () => {

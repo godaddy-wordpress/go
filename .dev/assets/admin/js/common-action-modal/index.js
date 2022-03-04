@@ -1,15 +1,15 @@
-import { Button, ButtonGroup, CheckboxControl, Modal, TextControl } from '@wordpress/components';
 import { safeHTML } from '@wordpress/dom';
-import { useCallback, useEffect, useState } from '@wordpress/element';
 import PropTypes from 'prop-types';
+import { Button, ButtonGroup, CheckboxControl, Modal, TextControl } from '@wordpress/components';
+import { useCallback, useEffect, useState } from '@wordpress/element';
 
 const language = document.documentElement.getAttribute( 'lang' ) || 'en-US';
 
 const fetchData = async ( apiUrl, getParams = null ) => {
 	const params = {
 		...getParams,
-		random: 1,
 		language,
+		random: 1,
 	};
 	let paramString = '';
 	Object.keys( params ).forEach( ( key ) => paramString += `${ key }=${ params[ key ] }&` );
@@ -61,8 +61,8 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 
 		setFormData( {
 			choices: [],
-			go_theme_version: pageData.goThemeVersion,
 			domain: pageData.domain,
+			go_theme_version: pageData.goThemeVersion,
 			hostname: pageData.hostname,
 			language,
 			persona: pageData.wpOptions?.persona,
@@ -107,11 +107,11 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 	const onAction = async ( submit = false ) => {
 		if ( submit && formData.choices.length >= feedbackData.choices_min ) {
 			await fetch( apiUrl, {
-				method: 'POST',
 				body: JSON.stringify( formData ),
 				headers: {
 					'Content-Type': 'application/json',
 				},
+				method: 'POST',
 			} );
 		}
 

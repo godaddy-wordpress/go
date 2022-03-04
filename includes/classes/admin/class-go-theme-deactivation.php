@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since NEXT
  */
-class CoBlocks_Go_Theme_Deactivation {
+class Go_Theme_Deactivation {
 
 	const CONTAINER_ID = 'go-theme-deactivate-modal';
 
@@ -109,4 +109,4 @@ class CoBlocks_Go_Theme_Deactivation {
 
 }
 
-return new CoBlocks_Go_Theme_Deactivation();
+return new Go_Theme_Deactivation();
