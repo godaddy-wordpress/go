@@ -49,15 +49,15 @@ class CoBlocks_Go_Theme_Deactivation {
 
 		}
 
-		$name       = 'go-theme-deactivation';
-		$filepath   = '/dist/js/admin/' . $name;
+		$name     = 'go-theme-deactivation';
+		$filepath = '/dist/js/admin/' . $name;
 
 		// Enqueue modal script.
 		wp_enqueue_script(
 			'go-theme-deactivation',
 			GO_PLUGIN_URL . $filepath . '.js',
 			array( 'wp-components', 'wp-dom', 'wp-dom-ready', 'wp-element' ),
-			null,
+			GO_VERSION,
 			true
 		);
 
@@ -88,7 +88,8 @@ class CoBlocks_Go_Theme_Deactivation {
 		wp_enqueue_style(
 			'go-theme-deactivation',
 			GO_PLUGIN_URL . $filepath . $rtl . '.css',
-			array( 'wp-components' )
+			array( 'wp-components' ),
+			GO_VERSION
 		);
 
 	}
