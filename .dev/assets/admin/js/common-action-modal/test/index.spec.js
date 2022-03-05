@@ -86,18 +86,18 @@ describe( 'go-deactivate-modal', () => {
 			expect( response ).toEqual( mockData );
 		} );
 
-		/*test('should call the fetch api', async () => {
+		test('should call the fetch api', async () => {
 			const fetchMock = jest.spyOn(global, 'fetch');
 
 			await act(async () => {
 				wrapper = setup();
 			});
 
-			expect(fetchMock).toHaveBeenCalledWith('https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout?domain=foo.com&random=1&language=en-US');
-		});*/
+			expect(fetchMock).toHaveBeenCalledWith('https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout?domain=foo.com&language=en-US&random=1');
+		});
 	} );
 
-	/*describe( 'closed state', () => {
+	describe( 'closed state', () => {
 		beforeEach(async () => {
 			await act(async () => {
 				wrapper = setup();
@@ -145,5 +145,5 @@ describe( 'go-deactivate-modal', () => {
 			actionButton.invoke( 'onClick' )();
 			expect( window.location.href ).toEqual( defaultEvent.target.href );
 		} );
-	});*/
+	});
 } );

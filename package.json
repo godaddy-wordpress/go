@@ -102,7 +102,6 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/eslint-parser": "^7.16.0",
-    "@babel/plugin-transform-react-jsx": "^7.16.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.16.0",
     "@godaddy-wordpress/eslint-config": "0.5.0",
