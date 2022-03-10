@@ -24,12 +24,6 @@ class Go_Theme_Deactivation {
 	 */
 	public function __construct() {
 
-		if ( 'go' !== get_option( 'stylesheet' ) ) {
-
-			return;
-
-		}
-
 		add_action( 'admin_footer-themes.php', array( $this, 'admin_go_deactivation_modal' ) );
 
 		add_filter( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
