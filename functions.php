@@ -9,6 +9,8 @@
  * Theme constants.
  */
 define( 'GO_VERSION', '1.5.3' );
+define( 'GO_PLUGIN_DIR', get_template_directory( __FILE__ ) );
+define( 'GO_PLUGIN_URL', get_template_directory_uri( __FILE__ ) );
 
 /**
  * AMPP setup, hooks, and filters.
@@ -49,6 +51,11 @@ require_once get_parent_theme_file_path( 'includes/woocommerce.php' );
  * Page Titles Meta functions.
  */
 require_once get_parent_theme_file_path( 'includes/title-meta.php' );
+
+/**
+ * Go Deactivate Modal functions.
+ */
+require_once get_parent_theme_file_path( 'includes/classes/admin/class-go-theme-deactivation.php' );
 
 /**
  * Layouts for the CoBlocks layout selector.

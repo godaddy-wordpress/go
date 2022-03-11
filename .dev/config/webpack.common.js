@@ -32,6 +32,7 @@ module.exports = {
 	...defaultConfig,
 	entry: configureEntries(),
 	output: {
+		...defaultConfig.output,
 		path: path.resolve( process.cwd(), settings.paths.dist.base ),
 		filename: isProduction ? 'js/[name].min.js' : 'js/[name].js',
 	},
