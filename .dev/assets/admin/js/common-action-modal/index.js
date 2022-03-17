@@ -65,8 +65,6 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 			go_theme_version: pageData.goThemeVersion,
 			hostname: pageData.hostname,
 			language,
-			persona: pageData.wpOptions?.persona,
-			skill: pageData.wpOptions?.skill,
 			wp_version: pageData.wpVersion,
 			...textFields,
 		} );

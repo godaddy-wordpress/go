@@ -67,10 +67,6 @@ class Go_Theme_Deactivation {
 				'domain'         => site_url(),
 				'goThemeVersion' => GO_VERSION,
 				'wpVersion'      => $GLOBALS['wp_version'],
-				'wpOptions'      => array(
-					'persona' => isset( $wpnux_export_data['_meta']['persona'] ) ? $wpnux_export_data['_meta']['persona'] : null,
-					'skill'   => isset( $wpnux_export_data['_meta']['skill'] ) ? $wpnux_export_data['_meta']['skill'] : null,
-				),
 			)
 		);
 
