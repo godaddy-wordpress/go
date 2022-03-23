@@ -62,27 +62,14 @@ export default () => {
 		} );
 	} );
 
-	let socialIcons = [
-		'facebook',
-		'twitter',
-		'instagram',
-		'linkedin',
-		'xing',
-		'pinterest',
-		'youtube',
-		'spotify',
-		'github',
-		'tiktok',
-	];
+	for ( let i = 0; i < GoPreviewData.socialIcons.length; i++ ) {
 
-	for ( let i = 0; i < socialIcons.length; i++ ) {
-
-		wp.customize( `social_icon_${socialIcons[i]}`, ( value ) => {
+		wp.customize( `social_icon_${GoPreviewData.socialIcons[i]}`, ( value ) => {
 			value.bind( ( to ) => {
 				if ( to ) {
-					$( `.social-icon-${socialIcons[i]}` ).removeClass( 'display-none' );
+					$( `.social-icon-${GoPreviewData.socialIcons[i]}` ).removeClass( 'display-none' );
 				} else {
-					$( `.social-icon-${socialIcons[i]}` ).addClass( 'display-none' );
+					$( `.social-icon-${GoPreviewData.socialIcons[i]}` ).addClass( 'display-none' );
 				}
 			} );
 		} );
