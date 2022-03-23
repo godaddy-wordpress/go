@@ -5,6 +5,12 @@
  * @package Go
  */
 
+if ( get_theme_mod( 'remove_search', false ) ) {
+
+	return;
+
+}
+
 ?>
 
 <div

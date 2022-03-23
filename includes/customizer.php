@@ -895,6 +895,26 @@ function register_header_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'        => 'checkbox',
 		)
 	);
+
+	$wp_customize->add_setting(
+		'remove_search',
+		array(
+			'default'           => false,
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'remove_search_checkbox',
+		array(
+			'label'       => esc_html__( 'Remove Search', 'go' ),
+			'description' => esc_html__( 'Remove the search icon from the header.', 'go' ),
+			'section'     => 'go_header_settings',
+			'settings'    => 'remove_search',
+			'type'        => 'checkbox',
+		)
+	);
 }
 
 /**
