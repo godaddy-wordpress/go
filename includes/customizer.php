@@ -186,6 +186,7 @@ function customize_preview_init() {
 		array(
 			'design_styles'       => \Go\Core\get_available_design_styles(),
 			'selectedDesignStyle' => get_theme_mod( 'design_style', \Go\Core\get_default_design_style() ),
+			'socialIcons'         => array_keys( \Go\Core\get_available_social_icons() ),
 		)
 	);
 }
