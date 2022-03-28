@@ -62,95 +62,19 @@ export default () => {
 		} );
 	} );
 
-	wp.customize( 'social_icon_facebook', ( value ) => {
-		value.bind( ( to ) => {
-			if ( to ) {
-				$( '.social-icon-facebook' ).removeClass( 'display-none' );
-			} else {
-				$( '.social-icon-facebook' ).addClass( 'display-none' );
-			}
-		} );
-	} );
+	for ( let i = 0; i < GoPreviewData.socialIcons.length; i++ ) {
 
-	wp.customize( 'social_icon_twitter', ( value ) => {
-		value.bind( ( to ) => {
-			if ( to ) {
-				$( '.social-icon-twitter' ).removeClass( 'display-none' );
-			} else {
-				$( '.social-icon-twitter' ).addClass( 'display-none' );
-			}
+		wp.customize( `social_icon_${GoPreviewData.socialIcons[i]}`, ( value ) => {
+			value.bind( ( to ) => {
+				if ( to ) {
+					$( `.social-icon-${GoPreviewData.socialIcons[i]}` ).removeClass( 'display-none' );
+				} else {
+					$( `.social-icon-${GoPreviewData.socialIcons[i]}` ).addClass( 'display-none' );
+				}
+			} );
 		} );
-	} );
 
-	wp.customize( 'social_icon_instagram', ( value ) => {
-		value.bind( ( to ) => {
-			if ( to ) {
-				$( '.social-icon-instagram' ).removeClass( 'display-none' );
-			} else {
-				$( '.social-icon-instagram' ).addClass( 'display-none' );
-			}
-		} );
-	} );
-
-	wp.customize( 'social_icon_linkedin', ( value ) => {
-		value.bind( ( to ) => {
-			if ( to ) {
-				$( '.social-icon-linkedin' ).removeClass( 'display-none' );
-			} else {
-				$( '.social-icon-linkedin' ).addClass( 'display-none' );
-			}
-		} );
-	} );
-
-	wp.customize( 'social_icon_xing', function( value ) {
-		value.bind( function( to ) {
-			if ( to ) {
-				$( '.social-icon-xing' ).removeClass( 'display-none' );
-			} else {
-				$( '.social-icon-xing' ).addClass( 'display-none' );
-			}
-		} );
-	} );
-
-	wp.customize( 'social_icon_pinterest', ( value ) => {
-		value.bind( ( to ) => {
-			if ( to ) {
-				$( '.social-icon-pinterest' ).removeClass( 'display-none' );
-			} else {
-				$( '.social-icon-pinterest' ).addClass( 'display-none' );
-			}
-		} );
-	} );
-
-	wp.customize( 'social_icon_youtube', ( value ) => {
-		value.bind( ( to ) => {
-			if ( to ) {
-				$( '.social-icon-youtube' ).removeClass( 'display-none' );
-			} else {
-				$( '.social-icon-youtube' ).addClass( 'display-none' );
-			}
-		} );
-	} );
-
-	wp.customize( 'social_icon_spotify', ( value ) => {
-		value.bind( ( to ) => {
-			if ( to ) {
-				$( '.social-icon-spotify' ).removeClass( 'display-none' );
-			} else {
-				$( '.social-icon-spotify' ).addClass( 'display-none' );
-			}
-		} );
-	} );
-
-	wp.customize( 'social_icon_github', ( value ) => {
-		value.bind( ( to ) => {
-			if ( to ) {
-				$( '.social-icon-github' ).removeClass( 'display-none' );
-			} else {
-				$( '.social-icon-github' ).addClass( 'display-none' );
-			}
-		} );
-	} );
+	}
 };
 
 function setMenuLocationDescription() {

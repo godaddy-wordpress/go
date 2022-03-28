@@ -62,6 +62,8 @@ workflows:
     jobs:
       - build:
           filters:
+            tags:
+              only: /^(?!canary).*$/
             branches:
               ignore:
                 - actions/visual-regression-update-snapshots
@@ -225,12 +227,12 @@ commands:
   install_yarn_dependencies:
     steps:
       - restore_cache:
-          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}
       - run:
           name: Install Yarn Dependencies
           command: yarn install
       - save_cache:
-          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}
           paths:
             - ~/project/node_modules
             - ~/.cache
@@ -276,10 +278,18 @@ commands:
           command: |
             echo "export PATH=$HOME/.composer/vendor/bin:$PATH" >> $BASH_ENV
             source /home/circleci/.bashrc
+      - restore_composer_cache
       - install_composer_dependencies
+      - save_composer_cache
+      - restore_cache:
+          key: go-{{ .Environment.CACHE_VERSION }}
       - run:
           name: "Run PHPCS"
           command: composer lint
+      - save_cache:
+          key: go-{{ .Environment.CACHE_VERSION }}
+          paths:
+            - /tmp/phpcs-go-cache
 
   setup_spec_files_diff_tree:
     steps:
@@ -325,6 +335,7 @@ commands:
           name: Install Composer packages
           command: composer install
           working_directory: /var/www/html/wordpress/wp-content/themes/go
+      - save_composer_cache
       - install_code_climate_test_reporter
       - run_phpunit_single_site_generate_coverage
       - run:
@@ -373,6 +384,7 @@ commands:
           name: Install Composer packages
           command: composer install
           working_directory: /var/www/html/wordpress/wp-content/themes/go
+      - save_composer_cache
       - add_ssh_keys:
           fingerprints:
             - "7e:67:b2:b7:ac:45:85:15:5d:e2:16:11:f5:00:8f:2b"
@@ -446,14 +458,19 @@ commands:
             sudo rm -f /etc/php/*/conf.d/*xdebug.ini
             sudo rm -f /usr/local/etc/php/conf.d/*xdebug.ini
 
+  # Save composer cache
+  save_composer_cache:
+    steps:
+      - save_cache:
+          key: composer-deps-{{ .Environment.CACHE_VERSION }}
+          paths:
+            - ~/project/vendor
+
   # Restore composer cache
   restore_composer_cache:
     steps:
       - restore_cache:
-          keys:
-            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "composer.lock" }}
-            - composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}
-            - composer-deps-{{ .Environment.CACHE_VERSION }}
+          key: composer-deps-{{ .Environment.CACHE_VERSION }}
 
 jobs:
 
@@ -487,7 +504,7 @@ jobs:
           name: Zip the Go Theme
           command: |
             mkdir -p /tmp/artifacts
-            if [ "$CIRCLE_BRANCH" == 'master' ]; then
+            if [ "$CIRCLE_BRANCH" == 'master' ] || [ ! -z "$CIRCLE_TAG" ]; then
               zip -r /tmp/artifacts/go.zip ./go
             else
               GO_VERSION_LINE=$(awk '/\* Version:/' ./go/style.css)
