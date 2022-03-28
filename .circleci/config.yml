@@ -227,12 +227,12 @@ commands:
   install_yarn_dependencies:
     steps:
       - restore_cache:
-          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}
       - run:
           name: Install Yarn Dependencies
           command: yarn install
       - save_cache:
-          key: yarn-deps-{{ .Environment.CACHE_VERSION }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: yarn-deps-{{ .Environment.CACHE_VERSION }}
           paths:
             - ~/project/node_modules
             - ~/.cache
@@ -282,12 +282,12 @@ commands:
       - install_composer_dependencies
       - save_composer_cache
       - restore_cache:
-          key: go-{{ .Environment.CIRCLE_JOB }}-cache
+          key: go-{{ .Environment.CACHE_VERSION }}
       - run:
           name: "Run PHPCS"
           command: composer lint
       - save_cache:
-          key: go-{{ .Environment.CIRCLE_JOB }}-cache
+          key: go-{{ .Environment.CACHE_VERSION }}
           paths:
             - /tmp/phpcs-go-cache
 
@@ -460,7 +460,7 @@ commands:
   save_composer_cache:
     steps:
       - save_cache:
-          key: composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "composer.lock" }}
+          key: composer-deps-{{ .Environment.CACHE_VERSION }}
           paths:
             - ~/project/vendor
 
@@ -468,7 +468,7 @@ commands:
   restore_composer_cache:
     steps:
       - restore_cache:
-          key: composer-deps-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_JOB }}-{{ checksum "composer.lock" }}
+          key: composer-deps-{{ .Environment.CACHE_VERSION }}
 
 jobs:
 
