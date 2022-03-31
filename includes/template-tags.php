@@ -846,16 +846,35 @@ function site_branding( $args = array() ) {
 	$hide_title   = (bool) get_theme_mod( 'hide_site_title', false );
 	$hide_tagline = (bool) get_theme_mod( 'hide_site_tagline', false );
 
+	global $post;
+
+	$blocks = parse_blocks( $post->post_content );
+
+	// Check for an existing h1 heading block in the post content.
+	$h1_elements = array_filter(
+		$blocks,
+		function( $v, $k ) {
+			return ( 'core/heading' === $v['blockName'] && 1 === $v['attrs']['level'] );
+		},
+		ARRAY_FILTER_USE_BOTH
+	);
+
+	$found_h1 = 1 >= count( $h1_elements );
+
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 
 		/**
-		 * Wrap the custom logo in an h1 element when the hiding the site title & tagline.
+		 * Wrap the custom logo in an h1 element when hiding the title.
 		 */
 		add_filter(
 			'get_custom_logo',
-			function( $html ) use ( $hide_title ) {
+			function( $html ) use ( $hide_title, $found_h1 ) {
 
-				return $hide_title ? '<h1 class="custom-logo">' . $html . '</h1>' : $html;
+				if ( $hide_title && ! $found_h1 ) {
+					return '<h1 class="custom-logo">' . $html . '</h1>';
+				}
+
+				return $html;
 
 			},
 			PHP_INT_MAX
@@ -878,7 +897,7 @@ function site_branding( $args = array() ) {
 		echo '<a class="display-inline-block no-underline" href="' . esc_url( home_url( '/' ) ) . '" itemprop="url">';
 		printf(
 			'<%1$s class="site-title">' . esc_html( $blog_name ) . '</%1$s>',
-			( is_front_page() && ! did_action( 'get_footer' ) ) ? 'h1' : 'span'
+			( ! $found_h1 && is_front_page() && ! did_action( 'get_footer' ) ) ? 'h1' : 'span'
 		);
 		echo '</a>';
 	}
