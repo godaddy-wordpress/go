@@ -435,7 +435,7 @@ commands:
       - run:
           name: "Install awscli"
           command: |
-            udo apt-get update
+            sudo apt-get update
             sudo apt-get install awscli
       - run:
           name: "Run end to end tests (Cypress.io)"
