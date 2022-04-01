@@ -364,7 +364,9 @@ commands:
       - setup_spec_files_diff_tree
       - run:
           name: "Install awscli"
-          command: sudo apt-get install awscli
+          command: |
+            sudo apt-get update
+            sudo apt-get install awscli
       - run:
           name: "Download base snapshots"
           command: yarn snapshots:download
@@ -430,7 +432,9 @@ commands:
       - install_yarn_dependencies
       - run:
           name: "Install awscli"
-          command: sudo apt-get install awscli
+          command: |
+            udo apt-get update
+            sudo apt-get install awscli
       - run:
           name: "Run end to end tests (Cypress.io)"
           command: |
@@ -756,13 +760,6 @@ jobs:
       - run:
           name: Create a canary release on GitHub
           command: ghr -t ${GH_AUTH_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -n "canary" -b "Latest build of the master branch. This bleeding edge version is for testing purposes only and should not be used in production." -delete -prerelease -replace canary /tmp/artifacts/go-canary.zip
-      - deploy:
-          name: Deploy Go canary to the WPNUX site
-          command: |
-            curl https://wpnux.godaddy.com/v2/webhook-install-canary.php \
-            -H 'Content-Type: application/json' \
-            -H "X-Authorization: Bearer ${WPNUX_SITE_X_AUTHORIZATION}" \
-            -d '[ "go" ]'
       - store_artifacts:
           path: /tmp/artifacts
 
