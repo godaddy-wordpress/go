@@ -4,7 +4,7 @@ describe( 'VR Testing: miller - welcoming', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "http://go.test/?wpnux_template_loader=1&template=miller&style=welcoming&lang=en_US";
+        let url = "http://go.test/?wpnux_template_loader=1&template=miller&style=welcoming&language=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();
@@ -12,6 +12,9 @@ describe( 'VR Testing: miller - welcoming', () => {
 
         cy.get( '#header__navigation' ).then( $headerNavigation => {
             [ ...$headerNavigation.find( '.menu-item a' ) ].forEach( $navLink => {
+                if ( "Home" === $navLink.textContent ) {
+                  continue;
+                }
                 pages.push( $navLink.href );
             } );
         } );
