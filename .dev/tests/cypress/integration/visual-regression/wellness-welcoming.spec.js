@@ -13,7 +13,7 @@ describe( 'VR Testing: wellness - welcoming', () => {
         cy.get( '#header__navigation' ).then( $headerNavigation => {
             [ ...$headerNavigation.find( '.menu-item a' ) ].forEach( $navLink => {
                 if ( "Home" === $navLink.textContent ) {
-                  continue;
+                  return;
                 }
                 pages.push( $navLink.href );
             } );
