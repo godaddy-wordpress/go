@@ -12,6 +12,12 @@ describe( 'VR Testing: salt - welcoming', () => {
 
         cy.get( '#header__navigation' ).then( $headerNavigation => {
             [ ...$headerNavigation.find( '.menu-item a' ) ].forEach( $navLink => {
+<<<<<<< HEAD
+=======
+                if ( "Home" === $navLink.textContent ) {
+                  continue;
+                }
+>>>>>>> circleci-pipeline-tweak
                 pages.push( $navLink.href );
             } );
         } );

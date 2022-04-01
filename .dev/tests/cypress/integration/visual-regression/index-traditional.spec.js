@@ -12,6 +12,9 @@ describe( 'VR Testing: index - traditional', () => {
 
         cy.get( '#header__navigation' ).then( $headerNavigation => {
             [ ...$headerNavigation.find( '.menu-item a' ) ].forEach( $navLink => {
+                if ( "Home" === $navLink.textContent ) {
+                  continue;
+                }
                 pages.push( $navLink.href );
             } );
         } );
