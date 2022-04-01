@@ -4,7 +4,7 @@ describe( 'VR Testing: yose - traditional', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "http://go.test/?wpnux_template_loader=1&template=yose&style=traditional&lang=en_US";
+        let url = "http://go.test/?wpnux_template_loader=1&template=yose&style=traditional&language=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();

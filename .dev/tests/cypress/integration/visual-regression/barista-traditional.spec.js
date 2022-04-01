@@ -4,7 +4,7 @@ describe( 'VR Testing: barista - traditional', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "http://go.test/?wpnux_template_loader=1&template=barista&style=traditional&lang=en_US";
+        let url = "http://go.test/?wpnux_template_loader=1&template=barista&style=traditional&language=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();

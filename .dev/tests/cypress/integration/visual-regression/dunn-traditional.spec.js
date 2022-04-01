@@ -4,7 +4,7 @@ describe( 'VR Testing: dunn - traditional', () => {
     let pages = [];
 
     it( 'Loads frontpage', () => {
-        let url = "http://go.test/?wpnux_template_loader=1&template=dunn&style=traditional&lang=en_US";
+        let url = "http://go.test/?wpnux_template_loader=1&template=dunn&style=traditional&language=en_US";
 
         cy.visit( url );
         showCoBlocksAnimatedObjects();
