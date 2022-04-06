@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Go_Theme_Deactivation Class
  *
- * @since NEXT
+ * @since 1.6.0
  */
 class Go_Theme_Deactivation {
 
