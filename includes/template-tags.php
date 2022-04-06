@@ -939,6 +939,13 @@ function navigation_toggle() {
  * @return void
  */
 function search_toggle() {
+
+	if ( get_theme_mod( 'remove_search', false ) ) {
+
+		return;
+
+	}
+
 	?>
 
 	<button
