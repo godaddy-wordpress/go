@@ -109,7 +109,10 @@ List of bespoke icons:
 
 == Changelog ==
 
+### New
+- Introduce a deactivation modal to gather feedback from users when Go is deactivated. [#757](https://github.com/godaddy-wordpress/go/pull/757)
+- Add a new option to remove the search button/bar. [#761](https://github.com/godaddy-wordpress/go/pull/761)
+
 ### Tweaks
-- Introduce TikTok icon. [#739](https://github.com/godaddy-wordpress/go/pull/739)
-- Bumped tested up to version to 5.9. [#750](https://github.com/godaddy-wordpress/go/pull/750)
-- Add a basic child theme example. [#719](https://github.com/godaddy-wordpress/go/pull/719)
+- Fix the Modern design style nav underline width. [#760](https://github.com/godaddy-wordpress/go/pull/760)
+- Remove repetitive code from `footer.js`. [#762](https://github.com/godaddy-wordpress/go/pull/762)
