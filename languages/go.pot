@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-04-06T18:35:29+00:00\n"
+"POT-Creation-Date: 2022-04-06T19:37:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: go\n"
@@ -924,14 +924,14 @@ msgstr ""
 #: includes/customizer.php:638
 #: includes/customizer.php:700
 #: includes/customizer.php:860
-#: includes/customizer.php:947
+#: includes/customizer.php:967
 msgid "Background"
 msgstr ""
 
 #: includes/customizer.php:658
 #: includes/customizer.php:720
 #: includes/customizer.php:873
-#: includes/customizer.php:960
+#: includes/customizer.php:980
 msgid "Foreground"
 msgstr ""
 
@@ -944,7 +944,7 @@ msgid "Customize colors within the site footer."
 msgstr ""
 
 #: includes/customizer.php:740
-#: includes/customizer.php:973
+#: includes/customizer.php:993
 msgid "Heading"
 msgstr ""
 
@@ -981,40 +981,48 @@ msgstr ""
 msgid "Set the header to sticky, so that it follows as users scroll."
 msgstr ""
 
+#: includes/customizer.php:912
+msgid "Remove Search"
+msgstr ""
+
 #: includes/customizer.php:913
-#: includes/customizer.php:932
-msgid "Footer"
+msgid "Remove the search icon from the header."
 msgstr ""
 
 #: includes/customizer.php:933
+#: includes/customizer.php:952
+msgid "Footer"
+msgstr ""
+
+#: includes/customizer.php:953
 msgid "Choose a footer for every page on your site, then style it with the selectors below."
 msgstr ""
 
-#: includes/customizer.php:993
+#: includes/customizer.php:1013
 msgid "Social"
 msgstr ""
 
-#: includes/customizer.php:994
+#: includes/customizer.php:1014
 msgid "Add social media account links to apply social icons on the site footer."
 msgstr ""
 
-#: includes/customizer.php:1030
+#: includes/customizer.php:1050
 msgid "Social icon"
 msgstr ""
 
-#: includes/customizer.php:1050
+#: includes/customizer.php:1070
 msgid "Menu Behavior"
 msgstr ""
 
-#: includes/customizer.php:1067
+#: includes/customizer.php:1087
 msgid "Show sub menus on hover."
 msgstr ""
 
-#: includes/customizer.php:1068
+#: includes/customizer.php:1088
 msgid "Show sub menu items on hover."
 msgstr ""
 
-#: includes/customizer.php:1086
+#: includes/customizer.php:1106
 msgid "Site Design"
 msgstr ""
 
@@ -1083,7 +1091,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: includes/template-tags.php:962
+#: includes/template-tags.php:969
 msgid "Search Toggle"
 msgstr ""
 
