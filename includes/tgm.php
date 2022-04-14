@@ -36,6 +36,11 @@ function register_required_plugins() {
 			'slug'     => 'coblocks',
 			'required' => false,
 		),
+		array(
+			'name'     => 'Mailazy',
+			'slug'     => 'mailazy',
+			'required' => true,
+		),
 	);
 
 	/**
