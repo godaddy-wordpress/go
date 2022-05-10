@@ -6,9 +6,7 @@
 
 //Spacing for child blocks
 .block-editor-block-list__layout > .wp-block:not(.wp-social-link) {
-
 	&:first-child {
-
 		&[data-align="full"],
 		&[data-align="wide"] {
 			margin-top: 0;
@@ -18,6 +16,12 @@
 	&:nth-last-child(2) {
 		margin-bottom: 0;
 	}
+}
+
+// Handles animation feature in CoBlocks
+style ~ .wp-block[data-align="wide"],
+style ~ .wp-block[data-align="full"] {
+	margin-top: 0;
 }
 
 .wp-block[data-align="wide"],
@@ -31,7 +35,6 @@
 }
 
 .block-editor-block-list__block:first-child {
-
 	> .wp-block[data-align="wide"],
 	> .wp-block[data-align="full"] {
 		margin-top: inherit;
@@ -39,7 +42,11 @@
 }
 
 .wp-block[data-type="core/gallery"][data-align="full"] + .wp-block[data-type="core/image"][data-align="full"],
-.wp-block[data-type="core/gallery"][data-align="full"] + .wp-block[data-type="core/group"][data-align="full"] .has-background,
-.wp-block[data-type="core/image"][data-align="full"] + .wp-block[data-type="core/group"][data-align="full"] .has-background {
+.wp-block[data-type="core/gallery"][data-align="full"]
+	+ .wp-block[data-type="core/group"][data-align="full"]
+	.has-background,
+.wp-block[data-type="core/image"][data-align="full"]
+	+ .wp-block[data-type="core/group"][data-align="full"]
+	.has-background {
 	margin-top: calc(var(--go--spacing--vertical--lg) * -1);
 }
