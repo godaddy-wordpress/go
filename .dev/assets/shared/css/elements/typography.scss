@@ -24,12 +24,6 @@ blockquote {
 	padding-left: 0;
 	padding-right: 0;
 
-	&:not([style]) {
-		p {
-			color: var(--go-quote--color--text, var(--go-heading--color--text));
-		}
-	}
-
 	& p {
 		font-display: swap;
 		font-family: var(--go-heading--font-family);
