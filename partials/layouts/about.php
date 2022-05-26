@@ -18,7 +18,7 @@ function go_coblocks_about_layouts( $layouts ) {
 			array(
 				'core/heading',
 				array(
-					'align'   => 'center',
+					'textAlign' => 'center',
 					'content' => __( 'Hi, I’m Everett', 'go' ),
 					'level'   => 2,
 				),
@@ -36,7 +36,6 @@ function go_coblocks_about_layouts( $layouts ) {
 			array(
 				'core/button',
 				array(
-
 					'text'  => __( 'Work With Me', 'go' ),
 					'align' => 'center',
 				),
@@ -45,36 +44,31 @@ function go_coblocks_about_layouts( $layouts ) {
 			array(
 				'core/gallery',
 				array(
-					'images'    => array(
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'about-image-1',
-							'caption' => '',
-						),
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'about-image-1',
-							'caption' => '',
-						),
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'fullUrl' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'about-image-1',
-							'caption' => '',
-						),
-					),
-					'ids'       => array(),
-					'caption'   => '',
-					'imageCrop' => true,
-					'linkTo'    => 'none',
-					'sizeslug'  => 'large',
-					'columns'   => 3,
-					'align'     => 'wide',
+					'align' => 'wide',
 				),
-				array(),
+				array(
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+				),
 			),
 			array(
 				'core/columns',

@@ -293,30 +293,24 @@ function go_coblocks_contact_layouts( $layouts ) {
 			array(
 				'core/gallery',
 				array(
-					'images'    => array(
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'fullUrl' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-3',
-							'caption' => '',
-						),
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'fullUrl' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-1',
-							'caption' => '',
-						),
-					),
-					'ids'       => array(),
-					'caption'   => '',
-					'imageCrop' => true,
-					'linkTo'    => 'none',
-					'sizeslug'  => 'large',
-					'align'     => 'full',
+					'align' => 'wide',
 				),
-				array(),
+				array(
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+				),
 			),
 		),
 	);

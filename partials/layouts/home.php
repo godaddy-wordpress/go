@@ -263,30 +263,24 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/gallery',
 				array(
-					'images'         => array(
-						array(
-							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt' => __( 'Image description', 'go' ),
-							'id'  => '1',
-						),
-						array(
-							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt' => __( 'Image description', 'go' ),
-							'id'  => '2',
-						),
-					),
-					'ids'            => array(
-						1,
-						2,
-					),
-					'imageCrop'      => true,
-					'linkTo'         => 'none',
-					'sizeslug'       => 'large',
-					'align'          => 'wide',
-					'noBottomMargin' => false,
-					'noTopMargin'    => false,
+					'align' => 'wide',
 				),
-				array(),
+				array(
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+				),
 			),
 			array(
 				'core/columns',
@@ -763,46 +757,45 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/gallery',
 				array(
-					'images'    => array(
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-1',
-							'caption' => '',
-						),
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-2',
-							'caption' => '',
-						),
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-3',
-							'caption' => '',
-						),
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-4',
-							'caption' => '',
-						),
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-5',
-							'caption' => '',
-						),
-					),
-					'ids'       => array(),
-					'caption'   => '',
-					'imageCrop' => true,
-					'linkTo'    => 'none',
-					'sizeslug'  => 'large',
-					'align'     => 'wide',
+					'align' => 'wide',
 				),
-				array(),
+				array(
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+				),
 			),
 			array(
 				'core/image',
@@ -819,28 +812,31 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/gallery',
 				array(
-					'images'    => array(
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-7',
-							'caption' => '',
-						),
-						array(
-							'url'     => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt'     => __( 'Image description', 'go' ),
-							'id'      => 'image-8',
-							'caption' => '',
-						),
-					),
-					'ids'       => array(),
-					'caption'   => '',
-					'imageCrop' => true,
-					'linkTo'    => 'none',
-					'sizeslug'  => 'large',
-					'align'     => 'wide',
+					'align' => 'wide',
 				),
-				array(),
+				array(
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+				),
 			),
 			array(
 				'core/group',
@@ -899,28 +895,31 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/gallery',
 				array(
-					'images'      => array(
-						array(
-							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt' => __( 'Image description', 'go' ),
-							'id'  => 'home-image-2',
-						),
-						array(
-							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt' => __( 'Image description', 'go' ),
-							'id'  => 'home-image-3',
-						),
-					),
-					'ids'         => array(),
-					'caption'     => '',
-					'imageCrop'   => true,
-					'noTopMargin' => true,
-					'linkTo'      => 'none',
-					'sizeslug'    => 'large',
-					'className'   => 'mt-0',
-					'align'       => 'full',
+					'align' => 'wide',
 				),
-				array(),
+				array(
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+				),
 			),
 			array(
 				'core/heading',
