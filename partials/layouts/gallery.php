@@ -94,30 +94,24 @@ function go_coblocks_gallery_layouts( $layouts ) {
 			array(
 				'core/gallery',
 				array(
-					'images'         => array(
-						array(
-							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt' => __( 'Image description', 'go' ),
-							'id'  => '1',
-						),
-						array(
-							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
-							'alt' => __( 'Image description', 'go' ),
-							'id'  => '2',
-						),
-					),
-					'ids'            => array(
-						1,
-						2,
-					),
-					'imageCrop'      => true,
-					'linkTo'         => 'none',
-					'sizeslug'       => 'full',
-					'align'          => 'wide',
-					'noBottomMargin' => true,
-					'noTopMargin'    => true,
+					'align' => 'wide',
 				),
-				array(),
+				array(
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+					array(
+						'core/image',
+						array(
+							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
+							'alt' => __( 'Image description', 'go' ),
+						)
+					),
+				),
 			),
 			array(
 				'core/image',
