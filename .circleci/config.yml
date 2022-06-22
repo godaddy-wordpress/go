@@ -220,6 +220,7 @@ commands:
             sudo chmod -R 777 ../../
             mkdir -p ../../plugins/coblocks
             if [ "$CIRCLE_JOB" == "php56-phpcs" ]; then
+              rm vendor/composer/installed.json
               composer require oomphinc/composer-installers-extender ^1.1
             fi
             composer install
