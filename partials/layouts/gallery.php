@@ -102,14 +102,14 @@ function go_coblocks_gallery_layouts( $layouts ) {
 						array(
 							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
 							'alt' => __( 'Image description', 'go' ),
-						)
+						),
 					),
 					array(
 						'core/image',
 						array(
 							'url' => get_theme_file_uri( '/partials/layouts/images/1x1.jpg' ),
 							'alt' => __( 'Image description', 'go' ),
-						)
+						),
 					),
 				),
 			),
