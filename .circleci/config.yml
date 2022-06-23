@@ -141,6 +141,13 @@ workflows:
             branches:
               ignore:
                 - actions/visual-regression-update-snapshots
+      - php80-phpcs:
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+            branches:
+              ignore:
+                - actions/visual-regression-update-snapshots
 
       # Translations
       - i18n:
