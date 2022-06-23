@@ -13,6 +13,12 @@ executors:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
+  php_80:
+    docker:
+      - image: cimg/php:8.0
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
   php_73_node_browser_legacy:
      docker:
       - image: circleci/php:7.3-node-browsers-legacy
@@ -129,6 +135,13 @@ workflows:
               ignore:
                 - actions/visual-regression-update-snapshots
       - php73-phpcs: # Will be deprecated on 30 Nov 2020
+          filters:
+            tags:
+              only: /^(?!canary).*$/
+            branches:
+              ignore:
+                - actions/visual-regression-update-snapshots
+      - php80-phpcs:
           filters:
             tags:
               only: /^(?!canary).*$/
@@ -549,6 +562,11 @@ jobs:
 
   php73-phpcs:
     executor: php_73
+    steps:
+      - run_php_cs
+  
+  php80-phpcs:
+    executor: php_80
     steps:
       - run_php_cs
 
