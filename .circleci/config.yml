@@ -9,7 +9,7 @@ executors:
           password: $DOCKERHUB_PASSWOR
   php_74:
     docker:
-      - image: circleci/php:7.4.30
+      - image: circleci/php:7.4
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
