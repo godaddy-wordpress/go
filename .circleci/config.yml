@@ -7,33 +7,21 @@ executors:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWOR
-  php_73:
+  php_74:
     docker:
-      - image: circleci/php:7.3.31
+      - image: circleci/php:7.4.30
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
   php_80:
     docker:
-      - image: cimg/php:8.0
+      - image: circleci/php:8.0
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
   php_73_node_browser_legacy:
      docker:
-      - image: circleci/php:7.3-node-browsers-legacy
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
-  php_73_apache_node_browser_mysql:
-    docker:
-      - image: circleci/php:7.3.31-apache-node-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
-        environment:
-          XDEBUG_MODE=coverage
-      - image: circleci/mysql:5.7-ram
+      - image: circleci/php:7.4-node-browsers-legacy
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
