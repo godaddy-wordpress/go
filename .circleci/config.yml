@@ -19,7 +19,7 @@ executors:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-  php_73_node_browser_legacy:
+  php_74_node_browser_legacy:
      docker:
       - image: circleci/php:7.4-node-browsers-legacy
         auth:
@@ -122,7 +122,7 @@ workflows:
             branches:
               ignore:
                 - actions/visual-regression-update-snapshots
-      - php73-phpcs: # Will be deprecated on 30 Nov 2020
+      - php74-phpcs:
           filters:
             tags:
               only: /^(?!canary).*$/
@@ -176,7 +176,7 @@ workflows:
       - canary:
           requires:
             - php56-phpcs
-            - php73-phpcs
+            - php74-phpcs
             - unit-tests
             - theme-check
             - a11y-tests
@@ -188,7 +188,7 @@ workflows:
       - deploy:
           requires:
             - php56-phpcs
-            - php73-phpcs
+            - php74-phpcs
             - unit-tests
             - theme-check
             - a11y-tests
@@ -548,8 +548,8 @@ jobs:
     steps:
       - run_php_cs
 
-  php73-phpcs:
-    executor: php_73
+  php74-phpcs:
+    executor: php_74
     steps:
       - run_php_cs
   
@@ -559,12 +559,12 @@ jobs:
       - run_php_cs
 
   unit-tests:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browser_mysql
     steps:
       - run_php_unit_test
 
   theme-check:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browser_mysql
     steps:
       - checkout
       - attach_workspace:
@@ -584,7 +584,7 @@ jobs:
           command: wp themecheck --theme=go --no-interactive --path=/var/www/html/wordpress
 
   customizer-e2e:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browser_mysql
     steps:
       - run:
           name: Update hosts
@@ -646,7 +646,7 @@ jobs:
           command: ./node_modules/.bin/cypress run --browser chrome --parallel --record --spec .dev/tests/cypress/integration/customizer/*.js
 
   a11y-tests:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browser_mysql
     steps:
       - checkout
       - attach_workspace:
@@ -675,7 +675,7 @@ jobs:
             fi
 
   i18n:
-    executor: php_73_node_browser_legacy
+    executor: php_74_node_browser_legacy
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -710,14 +710,14 @@ jobs:
             git push origin master --quiet
 
   visual-regression-chrome:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browser_mysql
     parallelism: 30
     steps:
       - run_visual_regression_tests:
           browser: chrome
 
   visual-regression-firefox:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browser_mysql
     parallelism: 30
     steps:
       - run_visual_regression_tests:
