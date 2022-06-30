@@ -3,49 +3,49 @@ version: 2.1
 executors:
   php_56:
     docker:
-      - image: circleci/php:5.6
+      - image: cimg/php:5.6
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWOR
   php_74:
     docker:
-      - image: circleci/php:7.4
+      - image: cimg/php:7.4
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
   php_80:
     docker:
-      - image: circleci/php:8.0
+      - image: cimg/php:8.0
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-  php_74_node_browser_legacy:
+  php_74_browsers:
      docker:
-      - image: circleci/php:7.4-node-browsers-legacy
+      - image: cimg/php:7.4-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-  php_74_apache_node_browser_mysql:
+  php_74_browsers_mysql:
     docker:
-      - image: circleci/php:7.4.24-apache-node-browsers
+      - image: cimg/php:7.4-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
         environment:
           XDEBUG_MODE=coverage
-      - image: circleci/mysql:5.7-ram
+      - image: cimg/mysql:5.7
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-  python_node_browsers:
+  python_310_browsers:
     docker:
-      - image: circleci/python:latest-node-browsers
+      - image: cimg/python:3.10-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-  go_node_browsers_legacy:
+  go_1_17_browsers:
     docker:
-      - image: circleci/golang:latest-node-browsers-legacy
+      - image: cimg/go:1.17-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -483,7 +483,7 @@ jobs:
   # 3. Persist project folder to workspace for other jobs.
   build:
     docker:
-      - image: circleci/php:7.3-node
+      - image: cimg/php:7.3-node
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -531,7 +531,7 @@ jobs:
 
   pr_artifact_comment:
     docker:
-      - image: circleci/php:7.3-node
+      - image: cimg/php:7.3-node
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -559,12 +559,12 @@ jobs:
       - run_php_cs
 
   unit-tests:
-    executor: php_74_apache_node_browser_mysql
+    executor: php_74_browsers_mysql
     steps:
       - run_php_unit_test
 
   theme-check:
-    executor: php_74_apache_node_browser_mysql
+    executor: php_74_browsers_mysql
     steps:
       - checkout
       - attach_workspace:
@@ -584,7 +584,7 @@ jobs:
           command: wp themecheck --theme=go --no-interactive --path=/var/www/html/wordpress
 
   customizer-e2e:
-    executor: php_74_apache_node_browser_mysql
+    executor: php_74_browsers_mysql
     steps:
       - run:
           name: Update hosts
@@ -646,7 +646,7 @@ jobs:
           command: ./node_modules/.bin/cypress run --browser chrome --parallel --record --spec .dev/tests/cypress/integration/customizer/*.js
 
   a11y-tests:
-    executor: php_74_apache_node_browser_mysql
+    executor: php_74_browsers_mysql
     steps:
       - checkout
       - attach_workspace:
@@ -675,7 +675,7 @@ jobs:
             fi
 
   i18n:
-    executor: php_74_node_browser_legacy
+    executor: php_74_browsers
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -710,35 +710,35 @@ jobs:
             git push origin master --quiet
 
   visual-regression-chrome:
-    executor: php_74_apache_node_browser_mysql
+    executor: php_74_browsers_mysql
     parallelism: 30
     steps:
       - run_visual_regression_tests:
           browser: chrome
 
   visual-regression-firefox:
-    executor: php_74_apache_node_browser_mysql
+    executor: php_74_browsers_mysql
     parallelism: 30
     steps:
       - run_visual_regression_tests:
           browser: firefox
 
   visual-regression-update-snapshots-chrome:
-    executor: python_node_browsers
+    executor: python_310_browsers
     parallelism: 30
     steps:
       - visual-regression-update-snapshots:
           browser: chrome
 
   visual-regression-update-snapshots-firefox:
-    executor: python_node_browsers
+    executor: python_310_browsers
     parallelism: 30
     steps:
       - visual-regression-update-snapshots:
           browser: firefox
 
   canary:
-    executor: go_node_browsers_legacy
+    executor: go_1_17_browsers
     steps:
       - checkout
       - attach_workspace:
@@ -771,7 +771,7 @@ jobs:
           path: /tmp/artifacts
 
   deploy:
-    executor: go_node_browsers_legacy
+    executor: go_1_17_browsers
     steps:
       - checkout
       - attach_workspace:
