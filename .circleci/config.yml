@@ -606,6 +606,8 @@ jobs:
       - run:
           name: Install Apache
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9
             sudo apt-get update && sudo apt-get install -y apache2
       - run:
           name: Setup WordPress site
