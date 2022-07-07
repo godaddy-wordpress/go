@@ -105,10 +105,9 @@ setup_wp() {
 		--dbpass=$DB_PASS \
 		--dbhost=$DB_HOST \
 		--skip-check \
-		--path=$WP_CORE_DIR \
-		--allow-root
+		--path=$WP_CORE_DIR
 
-	wp db create --path=$WP_CORE_DIR --allow-root
+	wp db create --path=$WP_CORE_DIR
 	wp core install \
 		--url=http://go.test \
 		--title="WordPress Site" \
@@ -116,10 +115,9 @@ setup_wp() {
 		--admin_password=password \
 		--admin_email=admin@go.test \
 		--skip-email \
-		--path=$WP_CORE_DIR \
-		--allow-root
+		--path=$WP_CORE_DIR 
 
-	wp option set permalink_structure "/%postname%/" --path=$WP_CORE_DIR --allow-root
+	wp option set permalink_structure "/%postname%/" --path=$WP_CORE_DIR
 }
 
 install_test_suite() {

@@ -29,9 +29,9 @@ executors:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-  php_74_browsers_mysql:
+  php_74_apache_node_browsers_mysql:
     docker:
-      - image: cimg/php:7.4-browsers
+      - image: circleci/php:7.4-apache-node-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -563,12 +563,12 @@ jobs:
       - run_php_cs
 
   unit-tests:
-    executor: php_74_browsers_mysql
+    executor: php_74_apache_node_browsers_mysql
     steps:
       - run_php_unit_test
 
   theme-check:
-    executor: php_74_browsers_mysql
+    executor: php_74_apache_node_browsers_mysql
     steps:
       - checkout
       - attach_workspace:
@@ -588,7 +588,7 @@ jobs:
           command: wp themecheck --theme=go --no-interactive --path=/var/www/html/wordpress
 
   customizer-e2e:
-    executor: php_74_browsers_mysql
+    executor: php_74_apache_node_browsers_mysql
     steps:
       - run:
           name: Update hosts
@@ -604,14 +604,8 @@ jobs:
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - run:
-          name: Install Apache
-          command: |
-            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138
-            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9
-            sudo apt-get update && sudo apt-get install -y apache2
-      - run:
           name: Setup WordPress site
-          command: sudo bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - restore_composer_cache
       - run:
           name: Install Composer packages
@@ -656,7 +650,7 @@ jobs:
           command: ./node_modules/.bin/cypress run --browser chrome --parallel --record --spec .dev/tests/cypress/integration/customizer/*.js
 
   a11y-tests:
-    executor: php_74_browsers_mysql
+    executor: php_74_apache_node_browsers_mysql
     steps:
       - checkout
       - attach_workspace:
@@ -720,14 +714,14 @@ jobs:
             git push origin master --quiet
 
   visual-regression-chrome:
-    executor: php_74_browsers_mysql
+    executor: php_74_apache_node_browsers_mysql
     parallelism: 30
     steps:
       - run_visual_regression_tests:
           browser: chrome
 
   visual-regression-firefox:
-    executor: php_74_browsers_mysql
+    executor: php_74_apache_node_browsers_mysql
     parallelism: 30
     steps:
       - run_visual_regression_tests:
