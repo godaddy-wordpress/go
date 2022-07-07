@@ -105,7 +105,8 @@ setup_wp() {
 		--dbpass=$DB_PASS \
 		--dbhost=$DB_HOST \
 		--skip-check \
-		--path=$WP_CORE_DIR
+		--path=$WP_CORE_DIR \
+		--allow-root
 
 	wp db create --path=$WP_CORE_DIR
 	wp core install \
