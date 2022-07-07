@@ -611,7 +611,7 @@ jobs:
             sudo apt-get update && sudo apt-get install -y apache2
       - run:
           name: Setup WordPress site
-          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+          command: sudo bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - restore_composer_cache
       - run:
           name: Install Composer packages
