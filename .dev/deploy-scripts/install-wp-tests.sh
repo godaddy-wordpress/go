@@ -6,7 +6,6 @@ if [ $# -lt 3 ]; then
 fi
 
 sudo apt-get update && sudo apt-get install subversion
-sudo -E docker-php-ext-install mysqli
 sudo sh -c "printf '\ndeb http://ftp.us.debian.org/debian sid main\n' >> /etc/apt/sources.list"
 sudo apt-get update && sudo apt-get install mysql-client-5.7
 
