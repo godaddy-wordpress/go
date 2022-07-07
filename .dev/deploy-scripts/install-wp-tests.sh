@@ -7,7 +7,7 @@ fi
 
 sudo apt-get update && sudo apt-get install subversion
 sudo sh -c "printf '\ndeb http://ftp.us.debian.org/debian sid main\n' >> /etc/apt/sources.list"
-sudo apt-get update && sudo apt-get install mysql-client-5.7
+sudo apt-get update && sudo apt-get install default-mysql-client
 
 DB_NAME=$1
 DB_USER=$2
