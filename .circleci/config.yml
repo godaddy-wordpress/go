@@ -336,7 +336,9 @@ commands:
       - install_wpcli
       - run:
           name: Setup WordPress site
-          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+          command: |
+            sudo docker-php-ext-install gd sockets mysqli exif imagick ssh2
+            bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - restore_composer_cache
       - run:
           name: Install Composer packages
@@ -387,7 +389,9 @@ commands:
       - install_wpcli
       - run:
           name: Setup WordPress site
-          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+          command: |
+            sudo docker-php-ext-install gd sockets mysqli exif imagick ssh2
+            bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - restore_composer_cache
       - run:
           name: Install Composer packages
@@ -585,7 +589,9 @@ jobs:
       - install_wpcli
       - run:
           name: Setup WordPress site and install the Theme Check package
-          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+          command: |
+            sudo docker-php-ext-install gd sockets mysqli exif imagick ssh2
+            bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run:
           name: Run theme check
           command: wp themecheck --theme=go --no-interactive --path=/var/www/html/wordpress
@@ -609,7 +615,9 @@ jobs:
             sudo apt-get install mariadb-client
       - run:
           name: Setup WordPress site
-          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+          command: |
+            sudo docker-php-ext-install gd sockets mysqli exif imagick ssh2
+            bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - restore_composer_cache
       - run:
           name: Install Composer packages
@@ -673,7 +681,9 @@ jobs:
       - install_wpcli
       - run:
           name: Setup WordPress site
-          command: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+          command: |
+            sudo docker-php-ext-install gd sockets mysqli exif imagick ssh2
+            bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run:
           name: Run a11y tests
           command: |
