@@ -6,9 +6,8 @@ if [ $# -lt 3 ]; then
 fi
 
 sudo apt-get update && sudo apt-get install subversion
-sudo -E docker-php-ext-install mysqli
 sudo sh -c "printf '\ndeb http://ftp.us.debian.org/debian sid main\n' >> /etc/apt/sources.list"
-sudo apt-get update && sudo apt-get install mysql-client-5.7
+sudo apt-get update && sudo apt-get install default-mysql-client
 
 DB_NAME=$1
 DB_USER=$2
@@ -97,6 +96,9 @@ install_wp() {
 	fi
 
 	download https://raw.github.com/markoheijnen/wp-mysqli/master/db.php $WP_CORE_DIR/wp-content/db.php
+
+	sudo apt-get install libpng-dev
+	sudo docker-php-ext-install gd sockets mysqli exif
 }
 
 setup_wp() {

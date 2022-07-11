@@ -1,15 +1,19 @@
 version: 2.1
 
+
+orbs:
+  browser-tools: circleci/browser-tools@1.1
+
 executors:
   php_56:
     docker:
-      - image: circleci/php:5.6
+      - image: cimg/php:5.6
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWOR
-  php_73:
+  php_74:
     docker:
-      - image: circleci/php:7.3.31
+      - image: cimg/php:7.4
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -19,45 +23,33 @@ executors:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-  php_73_node_browser_legacy:
+  php_74_browsers:
      docker:
-      - image: circleci/php:7.3-node-browsers-legacy
+      - image: cimg/php:7.4-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-  php_73_apache_node_browser_mysql:
+  php_74_apache_node_browsers_mysql:
     docker:
-      - image: circleci/php:7.3.31-apache-node-browsers
+      - image: circleci/php:7.4-apache-node-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
         environment:
           XDEBUG_MODE=coverage
-      - image: circleci/mysql:5.7-ram
+      - image: cimg/mysql:5.7
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-  php_74_apache_node_browser_mysql:
+  python_310_browsers:
     docker:
-      - image: circleci/php:7.4.24-apache-node-browsers
+      - image: cimg/python:3.10-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-        environment:
-          XDEBUG_MODE=coverage
-      - image: circleci/mysql:5.7-ram
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
-  python_node_browsers:
+  go_1_17_browsers:
     docker:
-      - image: circleci/python:latest-node-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
-  go_node_browsers_legacy:
-    docker:
-      - image: circleci/golang:latest-node-browsers-legacy
+      - image: cimg/go:1.17-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -134,7 +126,7 @@ workflows:
             branches:
               ignore:
                 - actions/visual-regression-update-snapshots
-      - php73-phpcs: # Will be deprecated on 30 Nov 2020
+      - php74-phpcs:
           filters:
             tags:
               only: /^(?!canary).*$/
@@ -188,7 +180,7 @@ workflows:
       - canary:
           requires:
             - php56-phpcs
-            - php73-phpcs
+            - php74-phpcs
             - unit-tests
             - theme-check
             - a11y-tests
@@ -200,7 +192,7 @@ workflows:
       - deploy:
           requires:
             - php56-phpcs
-            - php73-phpcs
+            - php74-phpcs
             - unit-tests
             - theme-check
             - a11y-tests
@@ -338,6 +330,7 @@ commands:
       - run:
           name: Install MariaDB
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - install_wpcli
@@ -388,6 +381,7 @@ commands:
       - run:
           name: Install MariaDB
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - install_wpcli
@@ -495,7 +489,7 @@ jobs:
   # 3. Persist project folder to workspace for other jobs.
   build:
     docker:
-      - image: circleci/php:7.3-node
+      - image: cimg/php:7.3-node
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -543,7 +537,7 @@ jobs:
 
   pr_artifact_comment:
     docker:
-      - image: circleci/php:7.3-node
+      - image: cimg/php:7.3-node
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -560,8 +554,8 @@ jobs:
     steps:
       - run_php_cs
 
-  php73-phpcs:
-    executor: php_73
+  php74-phpcs:
+    executor: php_74
     steps:
       - run_php_cs
   
@@ -571,12 +565,12 @@ jobs:
       - run_php_cs
 
   unit-tests:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browsers_mysql
     steps:
       - run_php_unit_test
 
   theme-check:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browsers_mysql
     steps:
       - checkout
       - attach_workspace:
@@ -585,6 +579,7 @@ jobs:
       - run:
           name: Install MariaDB
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - install_wpcli
@@ -596,7 +591,7 @@ jobs:
           command: wp themecheck --theme=go --no-interactive --path=/var/www/html/wordpress
 
   customizer-e2e:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browsers_mysql
     steps:
       - run:
           name: Update hosts
@@ -609,6 +604,7 @@ jobs:
       - run:
           name: Install MariaDB
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - run:
@@ -658,7 +654,7 @@ jobs:
           command: ./node_modules/.bin/cypress run --browser chrome --parallel --record --spec .dev/tests/cypress/integration/customizer/*.js
 
   a11y-tests:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browsers_mysql
     steps:
       - checkout
       - attach_workspace:
@@ -670,6 +666,7 @@ jobs:
       - run:
           name: Install MariaDB
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - install_yarn_dependencies
@@ -687,7 +684,7 @@ jobs:
             fi
 
   i18n:
-    executor: php_73_node_browser_legacy
+    executor: php_74_browsers
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -722,35 +719,35 @@ jobs:
             git push origin master --quiet
 
   visual-regression-chrome:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browsers_mysql
     parallelism: 30
     steps:
       - run_visual_regression_tests:
           browser: chrome
 
   visual-regression-firefox:
-    executor: php_73_apache_node_browser_mysql
+    executor: php_74_apache_node_browsers_mysql
     parallelism: 30
     steps:
       - run_visual_regression_tests:
           browser: firefox
 
   visual-regression-update-snapshots-chrome:
-    executor: python_node_browsers
+    executor: python_310_browsers
     parallelism: 30
     steps:
       - visual-regression-update-snapshots:
           browser: chrome
 
   visual-regression-update-snapshots-firefox:
-    executor: python_node_browsers
+    executor: python_310_browsers
     parallelism: 30
     steps:
       - visual-regression-update-snapshots:
           browser: firefox
 
   canary:
-    executor: go_node_browsers_legacy
+    executor: go_1_17_browsers
     steps:
       - checkout
       - attach_workspace:
@@ -783,7 +780,7 @@ jobs:
           path: /tmp/artifacts
 
   deploy:
-    executor: go_node_browsers_legacy
+    executor: go_1_17_browsers
     steps:
       - checkout
       - attach_workspace:
