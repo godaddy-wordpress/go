@@ -330,6 +330,7 @@ commands:
       - run:
           name: Install MariaDB
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - install_wpcli
@@ -380,6 +381,7 @@ commands:
       - run:
           name: Install MariaDB
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - install_wpcli
@@ -577,6 +579,7 @@ jobs:
       - run:
           name: Install MariaDB
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - install_wpcli
@@ -663,6 +666,7 @@ jobs:
       - run:
           name: Install MariaDB
           command: |
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4EB27DB2A3B88B8B
             sudo apt-get update --allow-releaseinfo-change
             sudo apt-get install mariadb-client
       - install_yarn_dependencies
