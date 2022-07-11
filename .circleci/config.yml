@@ -337,7 +337,7 @@ commands:
       - run:
           name: Setup WordPress site
           command: |
-            sudo docker-php-ext-install gd sockets mysqli exif imagick ssh2
+            sudo docker-php-ext-install gd sockets mysqli exif
             bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - restore_composer_cache
       - run:
@@ -390,7 +390,7 @@ commands:
       - run:
           name: Setup WordPress site
           command: |
-            sudo docker-php-ext-install gd sockets mysqli exif imagick ssh2
+            sudo docker-php-ext-install gd sockets mysqli exif
             bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - restore_composer_cache
       - run:
@@ -590,7 +590,7 @@ jobs:
       - run:
           name: Setup WordPress site and install the Theme Check package
           command: |
-            sudo docker-php-ext-install gd sockets mysqli exif imagick ssh2
+            sudo docker-php-ext-install gd sockets mysqli exif
             bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run:
           name: Run theme check
@@ -616,7 +616,7 @@ jobs:
       - run:
           name: Setup WordPress site
           command: |
-            sudo docker-php-ext-install gd sockets mysqli exif imagick ssh2
+            sudo docker-php-ext-install gd sockets mysqli exif
             bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - restore_composer_cache
       - run:
@@ -682,7 +682,7 @@ jobs:
       - run:
           name: Setup WordPress site
           command: |
-            sudo docker-php-ext-install gd sockets mysqli exif imagick ssh2
+            sudo docker-php-ext-install gd sockets mysqli exif
             bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
       - run:
           name: Run a11y tests

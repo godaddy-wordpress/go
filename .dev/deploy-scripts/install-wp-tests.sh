@@ -100,7 +100,7 @@ install_wp() {
 
 setup_wp() {
 	wp package install git@github.com:johnbillion/ext.git
-	wp ext check
+	wp ext required
 	wp config create \
 		--dbname=wordpress \
 		--dbuser=$DB_USER \
