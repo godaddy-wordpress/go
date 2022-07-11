@@ -96,11 +96,12 @@ install_wp() {
 	fi
 
 	download https://raw.github.com/markoheijnen/wp-mysqli/master/db.php $WP_CORE_DIR/wp-content/db.php
+
+	sudo apt-get install libpng-dev
+    sudo docker-php-ext-install gd sockets mysqli exif
 }
 
 setup_wp() {
-	wp package install git@github.com:johnbillion/ext.git
-	wp ext required
 	wp config create \
 		--dbname=wordpress \
 		--dbuser=$DB_USER \
@@ -117,8 +118,7 @@ setup_wp() {
 		--admin_password=password \
 		--admin_email=admin@go.test \
 		--skip-email \
-		--path=$WP_CORE_DIR \
-		--debug
+		--path=$WP_CORE_DIR
 
 	wp option set permalink_structure "/%postname%/" --path=$WP_CORE_DIR
 }
