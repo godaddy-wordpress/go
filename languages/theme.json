@@ -1,8 +1,0 @@
-{
-	"version": 2,
-	"styles": {
-		"spacing": {
-			"blockGap": "min(2rem, 3.5vw)"
-		}
-	}
-}
