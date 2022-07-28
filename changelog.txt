@@ -1,3 +1,7 @@
+1.6.2 / 2022-07-28
+- Add theme.json file to enable Appearance Tools. [#793](https://github.com/godaddy-wordpress/go/pull/793)
+- Resolve WooCommerce Apple Pay button style conflict. [#794](https://github.com/godaddy-wordpress/go/pull/794)
+
 1.6.1 / 2022-06-27
 ===================
 - Bump tested up to version to 6.0. [#782](https://github.com/godaddy-wordpress/go/pull/782)

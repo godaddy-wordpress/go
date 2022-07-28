@@ -110,4 +110,5 @@ List of bespoke icons:
 == Changelog ==
 
 ### Updates
-- Bump tested up to version to 6.0
+- Resolve WooCommerce Apple Pay button style conflict.
+- Add theme.json file to enable Appearance Tools.
