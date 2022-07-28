@@ -3,7 +3,8 @@ button,
 .button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.button:not( #applepay-button-container button ) {
 	@include button;
 
 	&:hover {
