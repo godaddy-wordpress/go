@@ -3,6 +3,12 @@ body {
 
 	&.woocommerce-page {
 
+		// force default apple pay button appearance
+		#applepay-button-container button {
+			appearance: -apple-pay-button !important;
+			-webkit-appearance: -apple-pay-button !important;
+		}
+
 		/* Primary Button */
 		#respond input#submit.alt,
 		.button.alt,
