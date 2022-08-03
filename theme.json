@@ -1,6 +1,10 @@
 {
 	"version": 2,
 	"settings": {
-		"appearanceTools": true
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "800px",
+			"wideSize": "1000px"
+		}
 	}
 }
