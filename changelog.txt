@@ -1,3 +1,6 @@
+1.6.3 / 2022-07-28
+- Modify theme.json to allow wide and full alignment optionsAdd theme. [#799](https://github.com/godaddy-wordpress/go/pull/799)
+
 1.6.2 / 2022-07-28
 - Add theme.json file to enable Appearance Tools. [#793](https://github.com/godaddy-wordpress/go/pull/793)
 - Resolve WooCommerce Apple Pay button style conflict. [#794](https://github.com/godaddy-wordpress/go/pull/794)

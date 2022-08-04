@@ -4,7 +4,7 @@ Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-
 Requires at least: 5.0
 Tested up to: 6.0
 Requires PHP: 5.6.0
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -108,7 +108,12 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
+= 1.6.3 / 2022-08-04 =
+### Updates
+- Modify theme.json file to enable wide and full width alignment options.
 
+
+= 1.6.2 / 2022-07-28 =
 ### Updates
 - Resolve WooCommerce Apple Pay button style conflict.
 - Add theme.json file to enable Appearance Tools.
