@@ -558,7 +558,7 @@ jobs:
     executor: php_74
     steps:
       - run_php_cs
-  
+
   php80-phpcs:
     executor: php_80
     steps:
@@ -648,7 +648,7 @@ jobs:
             wp plugin activate woocommerce --path=/var/www/html/wordpress
       - run:
           name: Setup the Keynote template
-          command: wp nux import keynote --path=/var/www/html/wordpress
+          command: wp nux import keynote --path=/var/www/html/wordpress --content-only
       - run:
           name: "Run end to end Customizer tests (Cypress.io) - chrome"
           command: ./node_modules/.bin/cypress run --browser chrome --parallel --record --spec .dev/tests/cypress/integration/customizer/*.js
