@@ -3,8 +3,8 @@
 	"settings": {
 		"appearanceTools": true,
 		"layout": {
-			"contentSize": "800px",
-			"wideSize": "1000px"
+			"contentSize": "--go--max-width",
+			"wideSize": "--go--max-width--alignwide"
 		}
 	}
 }
