@@ -27,8 +27,8 @@ body {
 
 // Add negative padding on fullwidth blocks.
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
-	margin-left: calc(-1 * var(--go-block--padding--x));
-	margin-right: calc(-1 * var(--go-block--padding--x));
+	margin-left: calc(-1 * var(--go-block--padding--x)) !important;
+	margin-right: calc(-1 * var(--go-block--padding--x)) !important;
 }
 
 // Default appender
@@ -45,7 +45,6 @@ body.block-editor-block-preview__container {
 
 // Block Editor Insert Panel Fix
 body.block-editor-inserter__panel-content {
-
 	.wp-block[data-align="full"],
 	.wp-block[data-align="wide"] {
 		margin-bottom: 0 !important;
