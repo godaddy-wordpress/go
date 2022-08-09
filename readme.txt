@@ -108,6 +108,10 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
+= 1.6.4 / 2022-08-09 =
+### Updates
+- Revert theme.json changes to preserve block width and alignment. [#802](https://github.com/godaddy-wordpress/go/pull/802)
+
 = 1.6.3 / 2022-08-04 =
 ### Updates
 - Modify theme.json file to enable wide and full width alignment options.

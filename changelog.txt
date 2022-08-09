@@ -1,3 +1,6 @@
+1.6.4 / 2022-07-28
+- Revert theme.json changes to preserve block width and alignment. [#802](https://github.com/godaddy-wordpress/go/pull/802)
+
 1.6.3 / 2022-07-28
 - Modify theme.json to allow wide and full alignment optionsAdd theme. [#799](https://github.com/godaddy-wordpress/go/pull/799)
 
