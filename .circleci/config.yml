@@ -31,7 +31,7 @@ executors:
           password: $DOCKERHUB_PASSWORD
   php_74_apache_node_browsers_mysql:
     docker:
-      - image: cimg/php:7.4-browsers
+      - image: circleci/php:7.4-apache-node-browsers
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -195,7 +195,7 @@ workflows:
             - php74-phpcs
             - unit-tests
             - theme-check
-            - a11y-tests
+            # - a11y-tests
             - build
           filters:
             tags:
