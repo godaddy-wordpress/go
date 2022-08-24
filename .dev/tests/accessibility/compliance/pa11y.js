@@ -49,7 +49,7 @@ const config = {
 	includeWarnings: true,
 	rootElement: 'body',
 	threshold: 2,
-	timeout: 20000,
+	timeout: 300000,
 	userAgent: 'pa11y',
 	width: 1280,
 	ignore: [
