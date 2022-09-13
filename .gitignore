@@ -4,6 +4,7 @@ build
 release
 vendor
 temp
+coverage
 .idea
 .vscode
 
