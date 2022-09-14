@@ -9,13 +9,15 @@ jobs:
   publish_coverage:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Project
         uses: actions/checkout@v1
-      - uses: actions/setup-node@v3
+      - name: Setup Node & Run Coverage Report
+        uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: npm ci
-      - run: npm run test:js:coverage
+        run: |
+          npm ci
+          npm run test:js:coverage
       - name: Downloading SPAQ-CLI and making executable.
         shell: bash
         run: |
@@ -25,7 +27,7 @@ jobs:
         shell: bash
         run: |
           ./spaq-cli publish-coverage file \
-            --file=coverage/lcov.info \
+            --file=./coverage/lcov.info \
             --type=lcov \
             --service=4185 \
             --repo=${{ github.repository }} \
