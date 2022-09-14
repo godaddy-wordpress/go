@@ -16,7 +16,7 @@ jobs:
         with:
           repository: gdcorp-wordpress/spaq-publish-coverage
           ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           path: ./.github/actions/spaq-publish-coverage
       - uses: actions/setup-node@v3
         with:
