@@ -16,5 +16,8 @@ jobs:
           node-version: 14
       - run: npm ci
       - run: npm run test:js:coverage
-      - name: List code coverage.
-        run: ls -lA coverage
+      - uses: gdcorp-wordpress/spaq-publish-coverage@main
+        with:
+          coverage-file: 'coverage/lcov.info'
+          coverage-type: 'lcov'
+          service-id: 4185
