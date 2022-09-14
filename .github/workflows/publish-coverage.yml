@@ -11,10 +11,11 @@ jobs:
     steps:
       - name: Checkout Project
         uses: actions/checkout@v1
-      - name: Setup Node & Run Coverage Report
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 14
+      - name: Run Coverage Report
         run: |
           npm ci
           npm run test:js:coverage
