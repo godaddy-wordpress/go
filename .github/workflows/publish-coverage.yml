@@ -15,6 +15,6 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
-      - run: npm test:js:coverage
+      - run: npm run test:js:coverage
       - name: List code coverage.
         run: ls -lA coverage
