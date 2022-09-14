@@ -1,0 +1,20 @@
+name: Publish Coverage to SPAQ
+
+on:
+  push:
+    branches:
+      - try-publish-coverage
+
+jobs:
+  publish_coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - run: npm ci
+      - run: npm test:js:coverage
+      - name: List code coverage.
+        run: ls -lA coverage
