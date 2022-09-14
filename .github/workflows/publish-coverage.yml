@@ -28,7 +28,7 @@ jobs:
         shell: bash
         run: |
           ./spaq-cli publish-coverage file \
-            --file=./coverage/lcov.info \
+            --file=coverage/lcov.info \
             --type=lcov \
             --service=4185 \
             --repo=${{ github.repository }} \
