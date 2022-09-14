@@ -11,20 +11,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Checkout Private Action
-        uses: actions/checkout@v3
-        with:
-          repository: gdcorp-wordpress/spaq-publish-coverage
-          ref: main
-          token: ${{ secrets.ACCESS_TOKEN }}
-          path: ./.github/actions/spaq-publish-coverage
       - uses: actions/setup-node@v3
         with:
           node-version: 14
       - run: npm ci
       - run: npm run test:js:coverage
-      - uses: ./.github/actions/spaq-publish-coverage
-        with:
-          coverage-file: 'coverage/lcov.info'
-          coverage-type: 'lcov'
-          service-id: 4185
+      - name: Downloading SPAQ-CLI and making executable.
+        shell: bash
+        run: |
+          curl https://assets.spaq.gdcorp.tools/spaq-cli-linux-x64_v1 -o spaq-cli
+          chmod +x spaq-cli
+      - name: Publishing Code Coverage report to SPAQ.
+        shell: bash
+        run: |
+          ./spaq-cli publish-coverage file \
+            --file=coverage/lcov.info \
+            --type=lcov \
+            --service=4185 \
+            --repo=${{ github.repository }} \
+            --git-sha=${{ github.sha }}
