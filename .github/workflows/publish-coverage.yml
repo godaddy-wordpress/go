@@ -11,12 +11,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Checkout Private Action
+        uses: actions/checkout@v3
+        with:
+          repository: gdcorp-wordpress/spaq-publish-coverage@main
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: ./.github/actions/spaq-publish-coverage
       - uses: actions/setup-node@v3
         with:
           node-version: 14
       - run: npm ci
       - run: npm run test:js:coverage
-      - uses: gdcorp-wordpress/spaq-publish-coverage@main
+      - uses: ./.github/actions/spaq-publish-coverage
         with:
           coverage-file: 'coverage/lcov.info'
           coverage-type: 'lcov'
