@@ -15,7 +15,7 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": ">=14"
+    "node": ">=16 <17"
   },
   "license": "GPL-2.0-or-later",
   "badges": [
