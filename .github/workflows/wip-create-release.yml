@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build theme
+    name: Build
     uses: ./.github/workflows/wip-create-artifact.yml
 
   release:

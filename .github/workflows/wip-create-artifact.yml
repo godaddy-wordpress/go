@@ -1,7 +1,7 @@
 # Handles the build process for the theme, which includes creating and storing
 # an artifact in the workflow.
 
-name: 'WIP - Build & Store Theme'
+name: Create Artifact
 
 on:
   workflow_call:
@@ -17,7 +17,7 @@ env:
 # First build our theme, the create and store the artifact.
 jobs:
   build:
-    name: Build & Store
+    name: Create Artifact
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,6 +35,7 @@ jobs:
 
       - name: Build theme
         run: |
+          yarn install
           yarn build
 
       - name: Create distribution artifact
