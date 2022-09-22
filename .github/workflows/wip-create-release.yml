@@ -1,0 +1,19 @@
+name: Create Release
+
+on:
+  push:
+    branches: [ migrate/circleci-to-github-actions ]
+
+jobs:
+  build:
+    name: Build theme
+    uses: ./.github/workflows/wip-build-store-theme.yml
+
+  release:
+    runs-on: ubuntu-latest
+    name: Release theme
+    needs: build
+    steps:
+      - name: hello
+        run: |
+          echo "hello world"

@@ -1,0 +1,16 @@
+# List all files and directories to be deployed with the Go thene.
+# Use the rsync syntax https://linux.die.net/man/1/rsync
+
++ /dist/
++ /includes/
++ /partials/
++ /woocommerce/
++ /*.php
++ /LICENSE
++ /readme.txt
++ /screenshot.png
++ /style.css
+
+
+# Exclude everything else
+- /*
