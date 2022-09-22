@@ -5,12 +5,12 @@
 + /includes/
 + /partials/
 + /woocommerce/
++ /languages/
 + /*.php
 + /LICENSE
 + /readme.txt
 + /screenshot.png
 + /style.css
-
 
 # Exclude everything else
 - /*
