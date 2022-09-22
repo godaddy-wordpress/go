@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: Build theme
-    uses: ./.github/workflows/wip-build-store-theme.yml
+    uses: ./.github/workflows/wip-create-artifact.yml
 
   release:
     runs-on: ubuntu-latest
