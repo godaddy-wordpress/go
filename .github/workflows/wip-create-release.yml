@@ -2,7 +2,8 @@ name: Create Release
 
 on:
   push:
-    branches: [ migrate/circleci-to-github-actions ]
+    branches:
+      - migrate/circleci-to-github-actions
 
 jobs:
   build:
