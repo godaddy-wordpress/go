@@ -39,7 +39,7 @@ jobs:
       - name: Build theme
         run: |
           yarn install --immutable
-          yarn build
+          yarn setup
 
       - name: Create distribution artifact
         run: |
