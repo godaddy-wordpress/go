@@ -5,7 +5,6 @@
 /**
  * External dependencies
  */
-import React from 'react';
 import { mount } from 'enzyme';
 import '@testing-library/jest-dom/extend-expect';
 import { act } from 'react-dom/test-utils';
