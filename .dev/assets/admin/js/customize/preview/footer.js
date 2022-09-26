@@ -63,17 +63,15 @@ export default () => {
 	} );
 
 	for ( let i = 0; i < GoPreviewData.socialIcons.length; i++ ) {
-
-		wp.customize( `social_icon_${GoPreviewData.socialIcons[i]}`, ( value ) => {
+		wp.customize( `social_icon_${ GoPreviewData.socialIcons[ i ] }`, ( value ) => {
 			value.bind( ( to ) => {
 				if ( to ) {
-					$( `.social-icon-${GoPreviewData.socialIcons[i]}` ).removeClass( 'display-none' );
+					$( `.social-icon-${ GoPreviewData.socialIcons[ i ] }` ).removeClass( 'display-none' );
 				} else {
-					$( `.social-icon-${GoPreviewData.socialIcons[i]}` ).addClass( 'display-none' );
+					$( `.social-icon-${ GoPreviewData.socialIcons[ i ] }` ).addClass( 'display-none' );
 				}
 			} );
 		} );
-
 	}
 };
 
