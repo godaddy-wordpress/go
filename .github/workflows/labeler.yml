@@ -1,6 +1,9 @@
 name: Labeler
 
-on: push
+on:
+  push:
+    paths:
+      - '.github/labels.yml'
 
 jobs:
   labeler:
