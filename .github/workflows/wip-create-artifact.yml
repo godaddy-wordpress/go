@@ -1,7 +1,7 @@
 # Handles the build process for the theme, which includes creating and storing
 # an artifact in the workflow.
 
-name: Create Artifact
+name: WIP Create Artifact
 
 on:
   workflow_call:
