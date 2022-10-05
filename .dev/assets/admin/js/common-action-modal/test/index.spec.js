@@ -5,15 +5,15 @@
 /**
  * External dependencies
  */
+import { act } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import '@testing-library/jest-dom/extend-expect';
-import { act } from 'react-dom/test-utils';
 
 /**
  * Internal dependencies.
  */
-import Modal, { fetchData } from '../index';
 import mockData from '../../../../../tests/cypress/fixtures/network/go_optout.json';
+import Modal, { fetchData } from '../index';
 
 import { enableFetchMocks } from 'jest-fetch-mock';
 enableFetchMocks();
@@ -35,10 +35,10 @@ const defaultEvent = {
 };
 
 describe( 'go-deactivate-modal', () => {
-	let props, wrapper;
+	let wrapper;
 	let events = {};
 
-	props = {
+	const props = {
 		apiUrl: 'https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout',
 		getParams: {
 			domain: 'foo.com',

@@ -1,5 +1,5 @@
-import { safeHTML } from '@wordpress/dom';
 import PropTypes from 'prop-types';
+import { safeHTML } from '@wordpress/dom';
 import { Button, ButtonGroup, CheckboxControl, Modal, TextControl } from '@wordpress/components';
 import { useCallback, useEffect, useState } from '@wordpress/element';
 
