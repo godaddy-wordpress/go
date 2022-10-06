@@ -1,0 +1,20 @@
+name: WIP Tests
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  php:
+    name: PHP Unit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: composer install
+
+      - name: Install WP Tests
+        run: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
