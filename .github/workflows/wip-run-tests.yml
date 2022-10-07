@@ -18,6 +18,11 @@ jobs:
 
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@main
+        with:
+          themes: '["."]'
 
       - name: Start env
         run: wp-env start
+
+      - name: Run tests
+        run: composer test
