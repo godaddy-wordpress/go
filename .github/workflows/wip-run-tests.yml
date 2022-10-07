@@ -23,6 +23,8 @@ jobs:
 
       - name: Start env
         run: |
+          echo "WP_ENV_PORT=8889" >> $GITHUB_ENV
+          echo "WP_ENV_TESTS_PORT=8888" >> $GITHUB_ENV
           wp-env start
           echo "WP_TESTS_DIR=$WP_TESTS_DIR" >> $GITHUB_ENV
 
