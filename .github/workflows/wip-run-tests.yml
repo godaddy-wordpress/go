@@ -22,7 +22,9 @@ jobs:
           themes: '["."]'
 
       - name: Start env
-        run: wp-env start
+        run: |
+          wp-env start
+          echo "WP_TESTS_DIR=$WP_TESTS_DIR" >> $GITHUB_ENV
 
       - name: Check if WP_TESTS_DIR var is available
         run: echo $WP_TESTS_DIR
