@@ -16,5 +16,5 @@ jobs:
       - name: Install dependencies
         run: composer install
 
-      - name: Install WP Tests
-        run: bash .dev/deploy-scripts/install-wp-tests.sh wordpress_test root '' 127.0.0.1 latest
+      - name: Setup wp-env
+        uses: godaddy-wordpress/setup-wp-env@main
