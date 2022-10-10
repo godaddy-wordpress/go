@@ -489,7 +489,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		add_filter( 'go_menu_cart_alt', [ $this, 'custom_alt_text' ] );
 
-		$this->expectOutputRegex( '/<a id="header__cart-toggle" href="http:\/\/example.org" class="header__cart-toggle" alt="Alternate Text">/' );
+		$this->expectOutputRegex( '/<a id="header__cart-toggle" href="http:\/\/localhost:8889" class="header__cart-toggle" alt="Alternate Text">/' );
 
 		Go\WooCommerce\woocommerce_cart_link();
 
@@ -510,7 +510,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		add_filter( 'go_menu_cart_text', [ $this, 'custom_cart_text' ] );
 
-		$this->expectOutputRegex( '/<a id="header__cart-toggle" href="http:\/\/example.org" class="header__cart-toggle" alt="View cart">Custom Cart Text<\/a>/' );
+		$this->expectOutputRegex( '/<a id="header__cart-toggle" href="http:\/\/localhost:8889" class="header__cart-toggle" alt="View cart">Custom Cart Text<\/a>/' );
 
 		Go\WooCommerce\woocommerce_cart_link();
 
@@ -784,7 +784,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
-		$this->expectOutputRegex( sprintf( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb">Shop Page<\/nav><a href="http:\/\/example\.org\/\?page_id=%s" class="back-to-shop">/', get_option( 'woocommerce_shop_page_id' ), get_option( 'woocommerce_shop_page_id' ) ) );
+		$this->expectOutputRegex( sprintf( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb">Shop Page<\/nav><a href="http:\/\/localhost:8889\/\?page_id=%s" class="back-to-shop">/', get_option( 'woocommerce_shop_page_id' ), get_option( 'woocommerce_shop_page_id' ) ) );
 
 		Go\WooCommerce\single_product_header();
 
@@ -819,7 +819,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$wp_query->post                    = $product_post_object;
 		$post                              = $product_post_object;
 
-		$this->expectOutputRegex( '/<div class="nav-links"><div class="nav-previous"><a href="http:\/\/example.org\/\?product=simple-product-1" rel="prev"><span class="screen-reader-text">Previous Post:  Simple Product 1<\/span>(<svg)([^<]*|[^>]*)(.*<\/svg>)<span class="nav-title">Previous<\/span><\/a><\/div><div class="nav-next"><a href="http:\/\/example.org\/\?product=simple-product-3" rel="next"><span class="screen-reader-text">Next Post: Simple Product 3<\/span><span class="nav-title">Next<\/span>/' );
+		$this->expectOutputRegex( '/<div class="nav-links"><div class="nav-previous"><a href="http:\/\/localhost:8889\/\?product=simple-product-1" rel="prev"><span class="screen-reader-text">Previous Post:  Simple Product 1<\/span>(<svg)([^<]*|[^>]*)(.*<\/svg>)<span class="nav-title">Previous<\/span><\/a><\/div><div class="nav-next"><a href="http:\/\/localhost:8889\/\?product=simple-product-3" rel="next"><span class="screen-reader-text">Next Post: Simple Product 3<\/span><span class="nav-title">Next<\/span>/' );
 
 		Go\WooCommerce\single_product_pagination();
 
@@ -851,7 +851,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 		$wp_query->post                    = $product_post_object;
 		$post                              = $product_post_object;
 
-		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/', get_option( 'woocommerce_shop_page_id' ) ) );
+		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/localhost:8889\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Back<\/a>/', get_option( 'woocommerce_shop_page_id' ) ) );
 
 		Go\WooCommerce\single_product_back_to_shop();
 
@@ -925,7 +925,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		} );
 
-		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/example.org\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Head Back to the Shop!<\/a>/', get_option( 'woocommerce_shop_page_id' ) ) );
+		$this->expectOutputRegex( sprintf( '/<a href="http:\/\/localhost:8889\/\?page_id=%s" class="back-to-shop">(<svg)([^<]*|[^>]*)(.*<\/svg>)Head Back to the Shop!<\/a>/', get_option( 'woocommerce_shop_page_id' ) ) );
 
 		Go\WooCommerce\single_product_back_to_shop();
 
@@ -938,7 +938,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
-		$this->assertEquals( sprintf( 'http://example.org/?page_id=%s', get_option( 'woocommerce_shop_page_id' ) ), Go\WooCommerce\breadcrumb_home_url() );
+		$this->assertEquals( sprintf( 'http://localhost:8889/?page_id=%s', get_option( 'woocommerce_shop_page_id' ) ), Go\WooCommerce\breadcrumb_home_url() );
 
 	}
 

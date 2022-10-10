@@ -13,20 +13,31 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: composer install
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Install dependencies and build
+        run: |
+          npm i -g yarn
+          yarn run setup
 
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@main
         with:
+          core: 'WordPress/WordPress#6.0'
+          phpVersion: '7.4'
           themes: '["."]'
 
-      - name: Start env
+      - name: Start and setup environment
         run: |
-          echo "WP_ENV_PORT=8889" >> $GITHUB_ENV
-          echo "WP_ENV_TESTS_PORT=8888" >> $GITHUB_ENV
           wp-env start
-          echo "WP_TESTS_DIR=$WP_TESTS_DIR" >> $GITHUB_ENV
+          wp-env run tests-cli "wp plugin install coblocks woocommerce --activate"
+          wp-env run tests-cli "wp theme activate go"
 
-      - name: Check if WP_TESTS_DIR var is available
-        run: echo $WP_TESTS_DIR
+      - name: Run tests
+        run: |
+          wp-env run phpunit "composer install --working-dir=html/wp-content/themes/go/"
+          wp-env run phpunit "composer run test --working-dir=html/wp-content/themes/go/"

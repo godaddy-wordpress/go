@@ -1362,7 +1362,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_display_site_branding() {
 
-		$this->expectOutputRegex( '/<div class="header__titles lg:flex items-center" itemscope itemtype="http:\/\/schema.org\/Organization"><a class="display-inline-block no-underline" href="http:\/\/example.org\/" itemprop="url"><span class="site-title">Test Blog<\/span><\/a><span class="site-description display-none sm:display-block relative text-sm">Just another WordPress site<\/span><\/div>/' );
+		$this->expectOutputRegex( '/<div class="header__titles lg:flex items-center" itemscope itemtype="http:\/\/schema.org\/Organization"><a class="display-inline-block no-underline" href="http:\/\/localhost:8889\/" itemprop="url"><span class="site-title">Test Blog<\/span><\/a><span class="site-description display-none sm:display-block relative text-sm">Just another WordPress site<\/span><\/div>/' );
 
 		Go\display_site_branding();
 
@@ -1373,7 +1373,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_site_branding() {
 
-		$this->expectOutputRegex( '/<a class="display-inline-block no-underline" href="http:\/\/example.org\/" itemprop="url"><span class="site-title">Test Blog<\/span><\/a><span class="site-description display-none sm:display-block relative text-sm">Just another WordPress site<\/span>/' );
+		$this->expectOutputRegex( '/<a class="display-inline-block no-underline" href="http:\/\/localhost:8889\/" itemprop="url"><span class="site-title">Test Blog<\/span><\/a><span class="site-description display-none sm:display-block relative text-sm">Just another WordPress site<\/span>/' );
 
 		Go\site_branding();
 
@@ -1412,7 +1412,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'custom_logo', $featured_image_id );
 
-		$this->expectOutputRegex( '/<h1 class="custom-logo"><a href="http:\/\/example.org\/" class="custom-logo-link" rel="home">(<img)([^<]*|[^>]*)(.*\/>)<\/a><\/h1>/' );
+		$this->expectOutputRegex( '/<h1 class="custom-logo"><a href="http:\/\/localhost:8889\/" class="custom-logo-link" rel="home">(<img)([^<]*|[^>]*)(.*\/>)<\/a><\/h1>/' );
 
 		Go\site_branding();
 
@@ -1433,7 +1433,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'custom_logo', $featured_image_id );
 
-		$this->expectOutputRegex( '/<a href="http:\/\/example.org\/" class="custom-logo-link" rel="home">(<img)([^<]*|[^>]*)(.*\/>)<\/a>/' );
+		$this->expectOutputRegex( '/<a href="http:\/\/localhost:8889\/" class="custom-logo-link" rel="home">(<img)([^<]*|[^>]*)(.*\/>)<\/a>/' );
 
 		Go\site_branding();
 
