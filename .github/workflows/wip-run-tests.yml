@@ -19,6 +19,9 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'yarn'
 
+      - name: Setup WP-CLI
+        uses: godaddy-wordpress/setup-wp-cli@1
+
       - name: Install dependencies and build
         run: |
           npm i -g yarn
