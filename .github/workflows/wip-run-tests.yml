@@ -91,7 +91,11 @@ jobs:
 
       - name: Run tests
         run: |
-          yarn test:a11y
+          A11Y=$(yarn test:a11y)
+          echo "$A11Y"
+          if [[ $A11Y != *"All accessibility tests have passed"* ]]; then
+            exit 1
+          fi
 
 
   js:
