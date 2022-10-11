@@ -42,8 +42,8 @@ jobs:
       - name: Prepare tests
         run: |
           cd $(wp-env install-path)
-          docker-compose run --rm -u $(id -u) -e HOME=/tmp phpunit cp html/wp-content/themes/go/.dev/tests/php/assets/es_ES.mo html/wp-content/themes/go/languages/es_ES.mo
+          ls -lA
 
-      - name: Run tests
-        run: |
-          wp-env run phpunit "composer run test --working-dir=html/wp-content/themes/go/"
+      # - name: Run tests
+      #   run: |
+      #     wp-env run phpunit "composer run test --working-dir=html/wp-content/themes/go/"
