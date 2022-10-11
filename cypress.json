@@ -12,7 +12,7 @@
   "viewportWidth": 2560,
   "viewportHeight": 1440,
   "env": {
-    "localTestURL": "http://go.test",
+    "localTestURL": "http://localhost:8888/",
     "wpUsername": "admin",
     "wpPassword": "password",
     "templateLang": "en_US"
