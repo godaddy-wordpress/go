@@ -22,10 +22,10 @@ jobs:
       - name: Setup WP-CLI
         uses: godaddy-wordpress/setup-wp-cli@1
 
-      # - name: Install dependencies and build
-      #   run: |
-      #     npm i -g yarn
-      #     yarn run setup
+      - name: Install dependencies and build
+        run: |
+          npm i -g yarn
+          yarn run setup
 
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@main
@@ -46,6 +46,4 @@ jobs:
 
       - name: Run tests
         run: |
-          wp-env run phpunit "ls -lA"
-          wp-env run phpunit "ls -lA .."
-          wp-env run phpunit "ls -lA html/wp-content/themes/go/languages"
+          wp-env run phpunit "composer run test --working-dir=html/wp-content/themes/go/"
