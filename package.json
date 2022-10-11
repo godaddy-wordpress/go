@@ -167,7 +167,7 @@
   },
   "testing": {
     "urls": {
-      "local": "http://go.test",
+      "local": "http://localhost:8888/",
       "staging": "",
       "production": ""
     },

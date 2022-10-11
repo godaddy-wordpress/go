@@ -27,7 +27,7 @@ jobs:
           npm i -g yarn
           composer install
           yarn install --immutable
-          yarn run build
+          yarn build
 
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@main
@@ -49,6 +49,49 @@ jobs:
       - name: Run tests
         run: |
           wp-env run phpunit "composer run test --working-dir=html/wp-content/themes/go/"
+
+  a11y:
+    name: Accessibility
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Setup WP-CLI
+        uses: godaddy-wordpress/setup-wp-cli@1
+
+      - name: Install dependencies and build
+        run: |
+          npm i -g yarn
+          composer install
+          yarn install --immutable
+          yarn build
+
+      - name: Setup wp-env
+        uses: godaddy-wordpress/setup-wp-env@main
+        with:
+          core: 'WordPress/WordPress#6.0'
+          phpVersion: '7.4'
+          plugins: '["https://downloads.wordpress.org/plugin/coblocks.2.24.4.zip","https://downloads.wordpress.org/plugin/woocommerce.6.9.4.zip"]'
+          themes: '["."]'
+
+      - name: Start and setup environment
+        run: |
+          wp-env start
+
+      - name: Prepare tests
+        run: |
+          wp-env run cli "wp db import wp-content/themes/go/.dev/tests/a11y-test-db.sql"
+
+      - name: Run tests
+        run: |
+          yarn test:a11y
 
 
   js:
