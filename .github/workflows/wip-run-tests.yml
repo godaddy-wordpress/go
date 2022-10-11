@@ -32,15 +32,13 @@ jobs:
         with:
           core: 'WordPress/WordPress#6.0'
           phpVersion: '7.4'
+          plugins: '["https://downloads.wordpress.org/plugin/coblocks.2.24.4.zip","https://downloads.wordpress.org/plugin/woocommerce.6.9.4.zip"]'
           themes: '["."]'
 
       - name: Start and setup environment
         run: |
           wp-env start
-          wp-env run tests-cli "wp plugin install coblocks woocommerce --activate"
-          wp-env run tests-cli "wp theme activate go"
 
       - name: Run tests
         run: |
-          wp-env run phpunit "composer install --working-dir=html/wp-content/themes/go/"
           wp-env run phpunit "composer run test --working-dir=html/wp-content/themes/go/"
