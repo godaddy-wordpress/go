@@ -38,8 +38,13 @@ jobs:
 
       - name: Build theme
         run: |
+          composer install
           yarn install --immutable
           yarn setup
+
+      - name: Create translations
+        run: |
+          yarn makepot
 
       - name: Create distribution artifact
         run: |

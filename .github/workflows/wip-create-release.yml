@@ -15,6 +15,7 @@ jobs:
     name: Release theme
     needs: build
     steps:
-      - name: hello
+      # We need some internal discussion to first understand how we are going to publish releases.
+      - name: Publish new release
         run: |
-          echo "hello world"
+          echo "We need some internal discussion to first understand how we are going to publish releases."
