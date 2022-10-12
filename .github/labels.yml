@@ -72,7 +72,7 @@
   description: "Relevant to improving the quality of our code"
 - name: "[Type] Docs"
   color: "674399"
-  description: "Relevant improving documentation"
+  description: "Relevant to improving documentation"
 - name: "[Type] Woo"
   color: "7f54b3"
   description: "Relevant to WooCommerce"
