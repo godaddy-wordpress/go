@@ -152,7 +152,9 @@ jobs:
           wp-env start
 
       - name: Prepare tests
-        run: wp-env run cli "wp option update permalink_structure '/%postname%'"
+        run: |
+          wp-env run cli "wp theme activate go"
+          wp-env run cli "wp option update permalink_structure '/%postname%'"
 
       - name: Run tests
         run: yarn test:e2e:customizer -- --record
