@@ -47,7 +47,7 @@
     "lint": "yarn lint:css && yarn lint:js && yarn lint:php",
     "format": "yarn format:js",
     "test:a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
-    "test:e2e:customizer": "cypress run --browser chrome --parallel --record --spec .dev/tests/cypress/integration/customizer/*.js",
+    "test:e2e:customizer": "cypress run --browser chrome --parallel --spec .dev/tests/cypress/integration/customizer/*.js",
     "test:php": "./vendor/bin/phpunit",
     "test:js": "wp-scripts test-unit-js --config .dev/tests/jest/jest.config.js",
     "test:js:coverage": "yarn test:js --coverage",
