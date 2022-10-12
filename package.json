@@ -52,12 +52,6 @@
     "test:js": "wp-scripts test-unit-js --config .dev/tests/jest/jest.config.js",
     "test:js:coverage": "yarn test:js --coverage",
     "test:js:update": "yarn test:js -u",
-    "generate:vr-specs": ".dev/bin/generate-vr-specs.sh",
-    "new-go-vr-snapshots": ".dev/bin/generate-go-screenshot-specs.sh && MOZ_HEADLESS_WIDTH=1280 MOZ_HEADLESS_HEIGHT=720 npx cypress run --browser chrome --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'",
-    "test:vr": "yarn generate:vr-specs && MOZ_HEADLESS_WIDTH=1280 MOZ_HEADLESS_HEIGHT=720 npx cypress run --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'",
-    "snapshots:upload-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\" --exclude \"*__diff_output__*\"",
-    "snapshots:download-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete",
-    "snapshots:download": ".dev/bin/setup-test-specs.sh && yarn snapshots:download-all -- --exclude \"*\" $(cat /tmp/template_includes | xargs)",
     "prepare": "husky install .dev/husky",
     "wp-env": "wp-env"
   },
