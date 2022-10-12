@@ -1,4 +1,4 @@
-name: WIP Create Release
+name: Create Release
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: Build
-    uses: ./.github/workflows/wip-create-artifact.yml
+    uses: ./.github/workflows/create-artifact.yml
 
   release:
     runs-on: ubuntu-latest
