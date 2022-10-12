@@ -1,4 +1,4 @@
-name: Labeler
+name: 'Github / Labeler'
 
 on:
   push:
