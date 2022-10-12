@@ -157,4 +157,4 @@ jobs:
           wp-env run cli "wp option update permalink_structure '/%postname%'"
 
       - name: Run tests
-        run: yarn test:e2e:customizer -- --record
+        run: yarn test:e2e:customizer
