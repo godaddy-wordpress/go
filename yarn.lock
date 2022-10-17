@@ -1916,12 +1916,12 @@
     "@floating-ui/dom" "^0.4.5"
     use-isomorphic-layout-effect "^1.1.1"
 
-"@godaddy-wordpress/eslint-config@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@godaddy-wordpress/eslint-config/-/eslint-config-0.6.0.tgz#87e4b1ecd6103ef2c941375148395ef3b1ea2c0c"
-  integrity sha512-wli9Aprvr+poiJ71K5Y5tCEZBE8ZD64y1KWyhTphVoiBeJ9G1+co2+iqJQoohG8U2G8n//ktw/syuzJUOVrQEw==
+"@godaddy-wordpress/eslint-config@0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@godaddy-wordpress/eslint-config/-/eslint-config-0.6.1.tgz#595021032eef46e1922e7e874f617ce79920b8d4"
+  integrity sha512-HI8tT3mMu1pBC7ydm1Gsqt64P056A/Zl1zMb4dYByrA5owWqAqA/6rP8WadR1EIIn0oRZ/1ufsvl0aHH1ajopg==
   dependencies:
-    "@wordpress/eslint-plugin" "^12.4.0"
+    "@wordpress/eslint-plugin" "^12.7.0"
 
 "@godaddy-wordpress/stylelint-config@^0.6.0":
   version "0.6.0"
@@ -3454,15 +3454,15 @@
   dependencies:
     "@babel/runtime" "^7.16.0"
 
-"@wordpress/eslint-plugin@^12.4.0":
-  version "12.9.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/eslint-plugin/-/eslint-plugin-12.9.0.tgz#c49f0a523c8c72ade28c2b86a975668832b22938"
-  integrity sha512-R6dTvD4uFYeoUJFZNUhm1CSwthC0Pl0RIY057Y9oUvGSqjjm7RqRIwKrMlw3dO0P9KoBGGHUox8NUj6EciRXww==
+"@wordpress/eslint-plugin@^12.5.0":
+  version "12.5.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/eslint-plugin/-/eslint-plugin-12.5.0.tgz#93fc2bb62abb6e1bf4c1d6f07ccb01917e5974f4"
+  integrity sha512-VQF0yjR+yaO9NJiATvEiMs61dNVem3+a1NZlzFGfsouBw1Y4oB+rexZGdeHH/jRhXHoluDidDjFMdzZaPSsuHw==
   dependencies:
     "@babel/eslint-parser" "^7.16.0"
     "@typescript-eslint/eslint-plugin" "^5.3.0"
     "@typescript-eslint/parser" "^5.3.0"
-    "@wordpress/babel-preset-default" "^6.17.0"
+    "@wordpress/babel-preset-default" "^6.13.0"
     "@wordpress/prettier-config" "^1.4.0"
     cosmiconfig "^7.0.0"
     eslint-config-prettier "^8.3.0"
@@ -3476,15 +3476,15 @@
     globals "^13.12.0"
     requireindex "^1.2.0"
 
-"@wordpress/eslint-plugin@^12.5.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/eslint-plugin/-/eslint-plugin-12.5.0.tgz#93fc2bb62abb6e1bf4c1d6f07ccb01917e5974f4"
-  integrity sha512-VQF0yjR+yaO9NJiATvEiMs61dNVem3+a1NZlzFGfsouBw1Y4oB+rexZGdeHH/jRhXHoluDidDjFMdzZaPSsuHw==
+"@wordpress/eslint-plugin@^12.7.0":
+  version "12.9.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/eslint-plugin/-/eslint-plugin-12.9.0.tgz#c49f0a523c8c72ade28c2b86a975668832b22938"
+  integrity sha512-R6dTvD4uFYeoUJFZNUhm1CSwthC0Pl0RIY057Y9oUvGSqjjm7RqRIwKrMlw3dO0P9KoBGGHUox8NUj6EciRXww==
   dependencies:
     "@babel/eslint-parser" "^7.16.0"
     "@typescript-eslint/eslint-plugin" "^5.3.0"
     "@typescript-eslint/parser" "^5.3.0"
-    "@wordpress/babel-preset-default" "^6.13.0"
+    "@wordpress/babel-preset-default" "^6.17.0"
     "@wordpress/prettier-config" "^1.4.0"
     cosmiconfig "^7.0.0"
     eslint-config-prettier "^8.3.0"
