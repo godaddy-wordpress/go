@@ -30,7 +30,7 @@ jobs:
           yarn build
 
       - name: Setup wp-env
-        uses: godaddy-wordpress/setup-wp-env@main
+        uses: godaddy-wordpress/setup-wp-env@v1
         with:
           core: 'WordPress/WordPress#6.0'
           phpVersion: '7.4'
@@ -93,7 +93,7 @@ jobs:
           yarn build
 
       - name: Setup wp-env
-        uses: godaddy-wordpress/setup-wp-env@main
+        uses: godaddy-wordpress/setup-wp-env@v1
         with:
           core: 'WordPress/WordPress#6.0'
           phpVersion: '7.4'
@@ -140,7 +140,7 @@ jobs:
           yarn build
 
       - name: Setup wp-env
-        uses: godaddy-wordpress/setup-wp-env@main
+        uses: godaddy-wordpress/setup-wp-env@v1
         with:
           core: 'WordPress/WordPress#6.0'
           phpVersion: '7.4'
