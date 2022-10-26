@@ -5,12 +5,6 @@ orbs:
   browser-tools: circleci/browser-tools@1.1
 
 executors:
-  php_56:
-    docker:
-      - image: cimg/php:5.6
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWOR
   php_74:
     docker:
       - image: cimg/php:7.4
@@ -119,13 +113,6 @@ workflows:
             - build
 
       # PHPCS
-      - php56-phpcs: # EOL December 31, 2018, latest PHP version supported by Go
-          filters:
-            tags:
-              only: /^(?!canary).*$/
-            branches:
-              ignore:
-                - actions/visual-regression-update-snapshots
       - php74-phpcs:
           filters:
             tags:
@@ -179,7 +166,6 @@ workflows:
 
       - canary:
           requires:
-            - php56-phpcs
             - php74-phpcs
             - unit-tests
             - theme-check
@@ -191,7 +177,6 @@ workflows:
 
       - deploy:
           requires:
-            - php56-phpcs
             - php74-phpcs
             - unit-tests
             - theme-check
@@ -224,10 +209,6 @@ commands:
           command: |
             sudo chmod -R 777 ../../
             mkdir -p ../../plugins/coblocks
-            if [ "$CIRCLE_JOB" == "php56-phpcs" ]; then
-              rm vendor/composer/installed.json
-              composer require oomphinc/composer-installers-extender ^1.1
-            fi
             composer install
 
   install_yarn_dependencies:
@@ -548,11 +529,6 @@ jobs:
       - run:
           name: Send Comment
           command: bash .dev/bin/comment-on-pr.sh
-
-  php56-phpcs:
-    executor: php_56
-    steps:
-      - run_php_cs
 
   php74-phpcs:
     executor: php_74
