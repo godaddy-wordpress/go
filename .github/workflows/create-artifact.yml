@@ -14,7 +14,7 @@ on:
 env:
   ARTIFACT_PATH: 'go-theme'
 
-# First build our theme, the create and store the artifact.
+# First build our theme, then create and store the artifact.
 jobs:
   build:
     name: Create Artifact
