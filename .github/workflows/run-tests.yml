@@ -34,12 +34,8 @@ jobs:
         with:
           core: 'WordPress/WordPress#6.0'
           phpVersion: '7.4'
-          plugins: '["https://downloads.wordpress.org/plugin/coblocks.2.24.4.zip","https://downloads.wordpress.org/plugin/woocommerce.6.9.4.zip"]'
+          plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
-
-      - name: Start and setup environment
-        run: |
-          wp-env start
 
       - name: Prepare tests
         run: |
@@ -97,12 +93,8 @@ jobs:
         with:
           core: 'WordPress/WordPress#6.0'
           phpVersion: '7.4'
-          plugins: '["https://downloads.wordpress.org/plugin/coblocks.2.24.4.zip","https://downloads.wordpress.org/plugin/woocommerce.6.9.4.zip"]'
+          plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
-
-      - name: Start and setup environment
-        run: |
-          wp-env start
 
       - name: Prepare tests
         run: |
@@ -144,12 +136,8 @@ jobs:
         with:
           core: 'WordPress/WordPress#6.0'
           phpVersion: '7.4'
-          plugins: '["https://downloads.wordpress.org/plugin/coblocks.2.24.4.zip","https://downloads.wordpress.org/plugin/woocommerce.6.9.4.zip"]'
+          plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
-
-      - name: Start and setup environment
-        run: |
-          wp-env start
 
       - name: Prepare tests
         run: |
