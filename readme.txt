@@ -2,8 +2,8 @@
 Contributors: godaddy, richtabor, eherman24, jrtashjian
 Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-style, one-column, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 5.0
-Tested up to: 6.0
-Requires PHP: 5.6.0
+Tested up to: 6.1
+Requires PHP: 7.4
 Stable tag: 1.6.5
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
