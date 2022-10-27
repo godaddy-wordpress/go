@@ -72,6 +72,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup wp-env
+        uses: godaddy-wordpress/setup-wp-env@v1
+        with:
+          core: 'WordPress/WordPress#6.0'
+          phpVersion: '7.4'
+          plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
+          themes: '["."]'
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -87,14 +95,6 @@ jobs:
           composer install
           yarn install --immutable
           yarn build
-
-      - name: Setup wp-env
-        uses: godaddy-wordpress/setup-wp-env@v1
-        with:
-          core: 'WordPress/WordPress#6.0'
-          phpVersion: '7.4'
-          plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
-          themes: '["."]'
 
       - name: Prepare tests
         run: |
@@ -115,6 +115,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup wp-env
+        uses: godaddy-wordpress/setup-wp-env@v1
+        with:
+          core: 'WordPress/WordPress#6.0'
+          phpVersion: '7.4'
+          plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
+          themes: '["."]'
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -130,14 +138,6 @@ jobs:
           composer install
           yarn install --immutable
           yarn build
-
-      - name: Setup wp-env
-        uses: godaddy-wordpress/setup-wp-env@v1
-        with:
-          core: 'WordPress/WordPress#6.0'
-          phpVersion: '7.4'
-          plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
-          themes: '["."]'
 
       - name: Prepare tests
         run: |
