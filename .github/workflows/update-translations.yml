@@ -44,11 +44,11 @@ jobs:
       - name: Commit changes
         shell: bash
         run: |
-          git status
-          if [ -z $(git status languages/go.json --porcelain)]; then
+          if [ ! -z $(git status languages/go.json --porcelain)]; then
             git status
-            git add .
+            git add languages/go.json
+            git add languages/go.pot
             git status
-            git commit -m "[BOT] Update language translations"
+            git commit -m "[BOT] Update language translations" --no-verify
             git status
           fi
