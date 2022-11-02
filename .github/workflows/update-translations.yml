@@ -31,10 +31,13 @@ jobs:
       - name: Install yarn
         run: npm i -g yarn
 
-      - name: Build theme
+      - name: Install dependencies
         run: |
           composer install --no-dev --prefer-dist --optimize-autoloader
           yarn install --immutable
+
+      - name: Build theme
+        run: |
           yarn setup
 
       - name: Create translations
