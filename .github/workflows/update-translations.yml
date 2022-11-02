@@ -33,7 +33,7 @@ jobs:
 
       - name: Build theme
         run: |
-          composer install
+          composer install --no-dev --prefer-dist --optimize-autoloader
           yarn install --immutable
           yarn setup
 
@@ -45,7 +45,7 @@ jobs:
         shell: bash
         run: |
           git status
-          if [ -z "$(git status languages/go.json --porcelain)"]; then
+          if [ -z $(git status languages/go.json --porcelain)]; then
             git status
             git add .
             git status
