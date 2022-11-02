@@ -36,15 +36,14 @@ jobs:
       - name: Install yarn
         run: npm i -g yarn
 
+      - name: Install dependencies
+        run: |
+          composer install --prefer-dist --optimize-autoloader
+          yarn install --immutable
+
       - name: Build theme
         run: |
-          composer install
-          yarn install --immutable
-          yarn setup
-
-      - name: Create translations
-        run: |
-          yarn makepot
+          yarn build
 
       - name: Create distribution artifact
         run: |
