@@ -178,7 +178,7 @@ function theme_setup() {
 		'editor-font-sizes',
 		array(
 			array(
-				'name'      => esc_html_x( 'Small', 'font size option label', 'go' ),
+				'name'      => esc_html_x( 'Smaller', 'font size option label', 'go' ),
 				'shortName' => esc_html_x( 'S', 'abbreviation of the font size option label', 'go' ),
 				'size'      => 17,
 				'slug'      => 'small',

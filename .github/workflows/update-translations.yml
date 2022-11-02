@@ -1,0 +1,54 @@
+name: WIP Update Translations
+
+on:
+  push:
+    branches:
+      - migrate/circleci-to-github-actions-translations-test
+
+jobs:
+  update:
+    name: Update Translations
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure git user
+        run: |
+          git config --global user.name "godaddy-wordpress-bot"
+          git config --global user.email "plugins@godaddy.com"
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Setup WP-CLI
+        uses: godaddy-wordpress/setup-wp-cli@main
+
+      # Yarn is still required on this project, so we need to make sure it is
+      # installed globally.
+      - name: Install yarn
+        run: npm i -g yarn
+
+      - name: Build theme
+        run: |
+          composer install
+          yarn install --immutable
+          yarn setup
+
+      - name: Create translations
+        run: |
+          yarn makepot
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git status
+          if [ -z "$(git status languages/go.json --porcelain)"]; then
+            git status
+            git add .
+            git status
+            git commit -m "[BOT] Update language translations"
+            git status
+          fi
