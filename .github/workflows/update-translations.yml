@@ -36,10 +36,6 @@ jobs:
           composer install --no-dev --prefer-dist --optimize-autoloader
           yarn install --immutable
 
-      - name: Build theme
-        run: |
-          yarn setup
-
       - name: Create translations
         run: |
           yarn makepot
