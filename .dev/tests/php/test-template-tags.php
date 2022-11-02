@@ -1362,7 +1362,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_display_site_branding() {
 
-		$this->expectOutputRegex( '/<div class="header__titles lg:flex items-center" itemscope itemtype="http:\/\/schema.org\/Organization"><a class="display-inline-block no-underline" href="http:\/\/localhost:8889\/" itemprop="url"><span class="site-title">Test Blog<\/span><\/a><span class="site-description display-none sm:display-block relative text-sm">Just another WordPress site<\/span><\/div>/' );
+		$this->expectOutputRegex( '/<div class="header__titles lg:flex items-center" itemscope itemtype="http:\/\/schema.org\/Organization"><a class="display-inline-block no-underline" href="http:\/\/localhost:8889\/" itemprop="url"><span class="site-title">Test Blog<\/span><\/a><\/div>/' );
 
 		Go\display_site_branding();
 
@@ -1373,7 +1373,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_site_branding() {
 
-		$this->expectOutputRegex( '/<a class="display-inline-block no-underline" href="http:\/\/localhost:8889\/" itemprop="url"><span class="site-title">Test Blog<\/span><\/a><span class="site-description display-none sm:display-block relative text-sm">Just another WordPress site<\/span>/' );
+		$this->expectOutputRegex( '/<a class="display-inline-block no-underline" href="http:\/\/localhost:8889\/" itemprop="url"><span class="site-title">Test Blog<\/span><\/a>/' );
 
 		Go\site_branding();
 
