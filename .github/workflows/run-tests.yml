@@ -32,7 +32,7 @@ jobs:
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
-          core: 'WordPress/WordPress#6.0'
+          core: 'WordPress/WordPress#6.1'
           phpVersion: '7.4'
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
@@ -75,7 +75,7 @@ jobs:
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
-          core: 'WordPress/WordPress#6.0'
+          core: 'WordPress/WordPress#6.1'
           phpVersion: '7.4'
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
@@ -118,7 +118,7 @@ jobs:
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
-          core: 'WordPress/WordPress#6.0'
+          core: 'WordPress/WordPress#6.1'
           phpVersion: '7.4'
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
