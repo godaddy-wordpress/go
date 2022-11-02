@@ -98,7 +98,7 @@ install_wp() {
 	download https://raw.github.com/markoheijnen/wp-mysqli/master/db.php $WP_CORE_DIR/wp-content/db.php
 
 	sudo apt-get install libpng-dev
-	sudo docker-php-ext-install gd sockets mysqli exif
+	sudo docker-php-ext-install sockets mysqli exif
 }
 
 setup_wp() {
