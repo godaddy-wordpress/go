@@ -53,7 +53,7 @@ describe( 'go-deactivate-modal', () => {
 				persona: 'persona',
 				skill: 'skill',
 			},
-			wpVersion: '5.9',
+			wpVersion: '6.1',
 		},
 	};
 
