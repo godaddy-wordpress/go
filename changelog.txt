@@ -1,4 +1,10 @@
-1.6.4 / 2022-07-28
+1.6.6 / 2022-11-03
+- Bump 'Tested Up To' Version to 6.1. [#818](https://github.com/godaddy-wordpress/go/pull/818)
+- Update WooCommerce cart.php template version. [#817](https://github.com/godaddy-wordpress/go/pull/817)
+- Add label styles to site design stylesheets. [#814](https://github.com/godaddy-wordpress/go/pull/814)
+- Drop support for PHP 5.6. [#811](https://github.com/godaddy-wordpress/go/pull/811)
+
+1.6.4/1.6.5 / 2022-07-28
 - Revert theme.json changes to preserve block width and alignment. [#802](https://github.com/godaddy-wordpress/go/pull/802)
 
 1.6.3 / 2022-07-28
