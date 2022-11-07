@@ -4,7 +4,7 @@ Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-
 Requires at least: 5.0
 Tested up to: 6.1
 Requires PHP: 7.4
-Stable tag: 1.6.5
+Stable tag: 1.6.6
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -108,16 +108,9 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.6.4 / 2022-08-09 =
+= 1.6.6 / 2022-11-03 =
 ### Updates
-- Revert theme.json changes to preserve block width and alignment. [#802](https://github.com/godaddy-wordpress/go/pull/802)
-
-= 1.6.3 / 2022-08-04 =
-### Updates
-- Modify theme.json file to enable wide and full width alignment options.
-
-
-= 1.6.2 / 2022-07-28 =
-### Updates
-- Resolve WooCommerce Apple Pay button style conflict.
-- Add theme.json file to enable Appearance Tools.
+- Bump 'Tested Up To' Version to 6.1. [#818](https://github.com/godaddy-wordpress/go/pull/818)
+- Update WooCommerce cart.php template version. [#817](https://github.com/godaddy-wordpress/go/pull/817)
+- Add label styles to site design stylesheets. [#814](https://github.com/godaddy-wordpress/go/pull/814)
+- Drop support for PHP 5.6. [#811](https://github.com/godaddy-wordpress/go/pull/811)
