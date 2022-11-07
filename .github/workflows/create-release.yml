@@ -1,21 +1,71 @@
 name: Create Release
 
 on:
-  push:
-    branches:
-      - master
+  milestone:
+    types: [ closed ]
+
+env:
+  ARTIFACT_NAME: 'go-theme'
+  ARTIFACT_ZIP: 'go-theme.zip'
 
 jobs:
   build:
-    name: Build
+    name: Build theme
     uses: ./.github/workflows/create-artifact.yml
+
+  tag:
+    runs-on: ubuntu-latest
+    name: Tag new version
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup git user
+        uses: godaddy-wordpress/setup-godaddy-git-user@v1
+
+      - name: Set version and message
+        run: |
+          echo "NEW_TAG_VERSION=${{ github.event.milestone.title }}" >> $GITHUB_ENV
+
+      - name: Validate tag version
+        run: |
+          MATCH='^([0-9]+\.){2}(\*|[0-9]+)(-.*)?$'
+          if ! [[ $NEW_TAG_VERSION =~ $MATCH ]]; then
+              echo "::error::Milestone title does not match semver format: '$NEW_TAG_VERSION'"
+              exit 1
+          fi
+
+      - name: Publish new tag
+        run: |
+          git tag -a $NEW_TAG_VERSION
+          git push origin $NEW_TAG_VERSION
 
   release:
     runs-on: ubuntu-latest
-    name: Release theme
-    needs: build
+    name: Create new release
+    needs: tag
     steps:
-      # We need some internal discussion to first understand how we are going to publish releases.
-      - name: Publish new release
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set release version
         run: |
-          echo "We need some internal discussion to first understand how we are going to publish releases."
+          echo "RELEASE_VERSION=${{ github.event.milestone.title }}" >> $GITHUB_ENV
+
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create $RELEASE_VERSION -n "${{ github.event.milestone.description }}" -t "$RELEASE_VERSION"
+
+      - name: Download theme
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+
+      - name: Upload asset to release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload $RELEASE_VERSION ${{ env.ARTIFACT_ZIP }}

@@ -13,6 +13,7 @@ on:
 
 env:
   ARTIFACT_PATH: 'go-theme'
+  ARTIFACT_ZIP: 'go-theme.zip'
 
 # First build our theme, then create and store the artifact.
 jobs:
@@ -48,11 +49,12 @@ jobs:
       - name: Create distribution artifact
         run: |
           rsync --archive --recursive --filter='protect .git' --delete --prune-empty-dirs --include-from="$GITHUB_WORKSPACE/.distinclude" "$GITHUB_WORKSPACE/" "$GITHUB_WORKSPACE/$ARTIFACT_PATH/"
+          zip -r $ARTIFACT_ZIP $ARTIFACT_PATH
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.ARTIFACT_PATH }}
-          path: ${{ env.ARTIFACT_PATH }}
+          path: ${{ env.ARTIFACT_ZIP }}
           if-no-files-found: error
           retention-days: ${{ inputs.retention-days }}
