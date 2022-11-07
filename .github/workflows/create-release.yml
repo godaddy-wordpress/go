@@ -9,22 +9,27 @@ env:
   ARTIFACT_ZIP: 'go-theme.zip'
 
 jobs:
-  build:
-    name: Build theme
-    uses: ./.github/workflows/create-artifact.yml
-
-  tag:
+  update:
+    name: Update version
     runs-on: ubuntu-latest
-    name: Tag new version
-    needs: build
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
       - name: Setup git user
         uses: godaddy-wordpress/setup-godaddy-git-user@v1
 
-      - name: Set version and message
+      # Yarn is still required on this project, so we need to make sure it is
+      # installed globally.
+      - name: Install yarn
+        run: npm i -g yarn
+
+      - name: Set version
         run: |
           echo "NEW_TAG_VERSION=${{ github.event.milestone.title }}" >> $GITHUB_ENV
 
@@ -36,6 +41,35 @@ jobs:
               exit 1
           fi
 
+      - name: Run version update
+        run: yarn version --new-version $NEW_TAG_VERSION
+
+      - name: Push changes
+        run: |
+          git add .
+          git commit -m "Updating to version $NEW_TAG_VERSION"
+          git push
+
+  build:
+    name: Build theme
+    uses: ./.github/workflows/create-artifact.yml
+    needs: update
+
+  tag:
+    runs-on: ubuntu-latest
+    name: Tag new version
+    needs: update
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup git user
+        uses: godaddy-wordpress/setup-godaddy-git-user@v1
+
+      - name: Set version
+        run: |
+          echo "NEW_TAG_VERSION=${{ github.event.milestone.title }}" >> $GITHUB_ENV
+
       - name: Publish new tag
         run: |
           git tag -a $NEW_TAG_VERSION
@@ -44,7 +78,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     name: Create new release
-    needs: tag
+    needs: [ build, tag ]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
