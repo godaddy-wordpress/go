@@ -51,7 +51,7 @@ jobs:
       - name: Push changes
         run: |
           git add .
-          git commit -m "Updating to version $NEW_TAG_VERSION"
+          git commit -m "Updating to version $NEW_TAG_VERSION" --no-verify
           git push
 
   build:
