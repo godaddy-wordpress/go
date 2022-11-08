@@ -1,5 +1,5 @@
 === Go ===
-Contributors: godaddy, richtabor, eherman24, jrtashjian
+Contributors: godaddy, richtabor, eherman24, jrtashjian, kopepasah, olivierlafleur
 Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-style, one-column, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 5.0
 Tested up to: 6.1

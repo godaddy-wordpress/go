@@ -31,7 +31,7 @@
     "postbuild": "rm -rf temp && mkdir temp && cp -a dist/* temp && NODE_ENV=development wp-scripts build && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh && yarn makepot",
     "postdev": "mkdir temp && cp -a dist/* temp && wp-scripts build && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
     "package": "rm -rf build && mkdir -p build/go && yarn build && rsync -av --exclude-from .distignore --delete . build/go && cd build && zip -r go.zip ./go",
-    "version": "grunt version && git add -A .",
+    "version": "grunt version",
     "build:release": "yarn install && yarn build",
     "lint:release": "yarn install && composer install && yarn lint",
     "lint:css": "stylelint '.dev/assets/shared/**/*.scss' '.dev/assets/design-styles/**/*.scss'",
