@@ -76,7 +76,7 @@ jobs:
 
       - name: Publish new tag
         run: |
-          git tag -a $NEW_TAG_VERSION
+          git tag $NEW_TAG_VERSION
           git push origin $NEW_TAG_VERSION
 
   release:
