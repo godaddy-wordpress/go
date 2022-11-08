@@ -38,8 +38,6 @@
   },
   "require": {
     "php": ">=7.4",
-    "wpackagist-plugin/coblocks": "dev-trunk",
-    "wpackagist-plugin/woocommerce": "dev-trunk",
     "oomphinc/composer-installers-extender": "^2.0"
   },
   "require-dev": {

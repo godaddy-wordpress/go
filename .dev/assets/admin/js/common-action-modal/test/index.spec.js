@@ -5,16 +5,15 @@
 /**
  * External dependencies
  */
-import React from 'react';
+import { act } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import '@testing-library/jest-dom/extend-expect';
-import { act } from 'react-dom/test-utils';
 
 /**
  * Internal dependencies.
  */
-import Modal, { fetchData } from '../index';
 import mockData from '../../../../../tests/cypress/fixtures/network/go_optout.json';
+import Modal, { fetchData } from '../index';
 
 import { enableFetchMocks } from 'jest-fetch-mock';
 enableFetchMocks();
@@ -36,10 +35,10 @@ const defaultEvent = {
 };
 
 describe( 'go-deactivate-modal', () => {
-	let props, wrapper;
+	let wrapper;
 	let events = {};
 
-	props = {
+	const props = {
 		apiUrl: 'https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout',
 		getParams: {
 			domain: 'foo.com',
@@ -86,29 +85,29 @@ describe( 'go-deactivate-modal', () => {
 			expect( response ).toEqual( mockData );
 		} );
 
-		test('should call the fetch api', async () => {
-			const fetchMock = jest.spyOn(global, 'fetch');
+		test( 'should call the fetch api', async () => {
+			const fetchMock = jest.spyOn( global, 'fetch' );
 
-			await act(async () => {
+			await act( async () => {
 				wrapper = setup();
-			});
+			} );
 
-			expect(fetchMock).toHaveBeenCalledWith('https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout?domain=foo.com&language=en-US&random=1');
-		});
+			expect( fetchMock ).toHaveBeenCalledWith( 'https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout?domain=foo.com&language=en-US&random=1' );
+		} );
 	} );
 
 	describe( 'closed state', () => {
-		beforeEach(async () => {
-			await act(async () => {
+		beforeEach( async () => {
+			await act( async () => {
 				wrapper = setup();
-			});
-		});
+			} );
+		} );
 
-		test('should not display modal by default', () => {
+		test( 'should not display modal by default', () => {
 			expect( wrapper.find( '.go-deactivate-modal' ) ).toHaveLength( 0 );
-		});
+		} );
 
-		it( 'should not be displayed when opening condition is not met', async() => {
+		it( 'should not be displayed when opening condition is not met', async () => {
 			events.click( {
 				...defaultEvent,
 				target: {
@@ -119,16 +118,16 @@ describe( 'go-deactivate-modal', () => {
 
 			expect( wrapper.find( '.go-deactivate-modal' ) ).toHaveLength( 0 );
 		} );
-	});
+	} );
 
 	describe( 'opened state', () => {
-		beforeEach(async () => {
-			await act(async () => {
+		beforeEach( async () => {
+			await act( async () => {
 				wrapper = setup();
-			});
+			} );
 			events.click( defaultEvent );
 			wrapper.update();
-		});
+		} );
 
 		it( 'should show modal on click', () => {
 			expect( wrapper.find( '.go-deactivate-modal' ) ).toHaveLength( 2 );
@@ -145,5 +144,5 @@ describe( 'go-deactivate-modal', () => {
 			actionButton.invoke( 'onClick' )();
 			expect( window.location.href ).toEqual( defaultEvent.target.href );
 		} );
-	});
+	} );
 } );

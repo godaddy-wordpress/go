@@ -47,30 +47,6 @@ function _register_theme() {
 
 	} );
 
-	$theme_symlink = '/var/www/html/wordpress/wp-content/themes/go';
-
-	if ( ! file_exists( $theme_symlink ) ) {
-
-		shell_exec( "ln -s ${theme_dir} ${theme_symlink}" );
-
-	}
-
-	$coblocks_symlink = '/var/www/html/wordpress/wp-content/plugins/coblocks';
-
-	if ( ! file_exists( $coblocks_symlink ) ) {
-
-		shell_exec( "ln -s ${plugin_root}/coblocks ${coblocks_symlink}" );
-
-	}
-
-	$woocommerce_symlink = '/var/www/html/wordpress/wp-content/plugins/woocommerce';
-
-	if ( ! file_exists( $woocommerce_symlink ) ) {
-
-		shell_exec( "ln -s ${plugin_root}/woocommerce ${woocommerce_symlink}" );
-
-	}
-
 	update_option( 'active_plugins', [ 'coblocks/class-coblocks.php' ] );
 
 }
@@ -80,11 +56,11 @@ tests_add_filter( 'muplugins_loaded', '_register_theme' );
  * Install WooCommerce
  */
 tests_add_filter( 'setup_theme', function() {
-	include '/var/www/html/wordpress/wp-content/plugins/woocommerce/woocommerce.php';
+	include '/var/www/html/wp-content/plugins/woocommerce/woocommerce.php';
 	// Clean existing install first.
 	define( 'WP_UNINSTALL_PLUGIN', true );
 	define( 'WC_REMOVE_ALL_DATA', true );
-	include '/var/www/html/wordpress/wp-content/plugins/woocommerce/uninstall.php';
+	include '/var/www/html/wp-content/plugins/woocommerce/uninstall.php';
 	WC_Install::install();
 	// Reload capabilities after install, see https://core.trac.wordpress.org/ticket/28374
 	if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {

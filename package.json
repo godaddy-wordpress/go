@@ -15,7 +15,7 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": ">=14"
+    "node": ">=16 <17"
   },
   "license": "GPL-2.0-or-later",
   "badges": [
@@ -32,12 +32,10 @@
     "postdev": "mkdir temp && cp -a dist/* temp && wp-scripts build && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
     "package": "rm -rf build && mkdir -p build/go && yarn build && rsync -av --exclude-from .distignore --delete . build/go && cd build && zip -r go.zip ./go",
     "version": "grunt version && git add -A .",
-    "preversion": "git pull origin master && git reset --hard origin/master",
-    "postversion": "git tag -d canary && git push && git push --tags",
     "build:release": "yarn install && yarn build",
     "lint:release": "yarn install && composer install && yarn lint",
     "lint:css": "stylelint '.dev/assets/shared/**/*.scss' '.dev/assets/design-styles/**/*.scss'",
-    "lint:js": "eslint '.dev/assets/shared/js/**/*.js' '.dev/assets/admin/js/**/*.js'",
+    "lint:js": "eslint '.eslintrc.js' '.dev/assets/shared/js/**/*.js' '.dev/assets/admin/js/**/*.js'",
     "lint:php": "composer run lint",
     "makepot": "wp i18n make-pot . languages/go.pot --skip-audit --exclude=build,dist --headers='{\"Last-Translator\":\"plugins@godaddy.com\",\"Report-Msgid-Bugs-To\":\"https://github.com/godaddy-wordpress/go/issues\"}' --file-comment='Copyright (c) GoDaddy Operating Company, LLC. All Rights Reserved.' && yarn pot2json",
     "pot2json": ".dev/bin/pot2json languages/go.pot languages/go.json",
@@ -47,16 +45,11 @@
     "lint": "yarn lint:css && yarn lint:js && yarn lint:php",
     "format": "yarn format:js",
     "test:a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
+    "test:e2e:customizer": "cypress run --browser chrome --parallel --spec .dev/tests/cypress/integration/customizer/*.js",
     "test:php": "./vendor/bin/phpunit",
     "test:js": "wp-scripts test-unit-js --config .dev/tests/jest/jest.config.js",
     "test:js:coverage": "yarn test:js --coverage",
     "test:js:update": "yarn test:js -u",
-    "generate:vr-specs": ".dev/bin/generate-vr-specs.sh",
-    "new-go-vr-snapshots": ".dev/bin/generate-go-screenshot-specs.sh && MOZ_HEADLESS_WIDTH=1280 MOZ_HEADLESS_HEIGHT=720 npx cypress run --browser chrome --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'",
-    "test:vr": "yarn generate:vr-specs && MOZ_HEADLESS_WIDTH=1280 MOZ_HEADLESS_HEIGHT=720 npx cypress run --spec '.dev/tests/cypress/integration/visual-regression/*.spec.js'",
-    "snapshots:upload-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync .dev/tests/cypress/snapshots/visual-regression s3://wordpress-experience-theme-go/visual-regression-snapshots/ --exclude \"*.DS_Store\" --exclude \"*__diff_output__*\"",
-    "snapshots:download-all": "aws --endpoint-url=$AWS_ENDPOINT s3 sync s3://wordpress-experience-theme-go/visual-regression-snapshots/ .dev/tests/cypress/snapshots/visual-regression --exclude \"*.DS_Store\" --delete",
-    "snapshots:download": ".dev/bin/setup-test-specs.sh && yarn snapshots:download-all -- --exclude \"*\" $(cat /tmp/template_includes | xargs)",
     "prepare": "husky install .dev/husky",
     "wp-env": "wp-env"
   },
@@ -104,8 +97,8 @@
     "@babel/eslint-parser": "^7.16.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.16.0",
-    "@godaddy-wordpress/eslint-config": "0.5.0",
-    "@godaddy-wordpress/stylelint-config": "^0.4.0",
+    "@godaddy-wordpress/eslint-config": "0.6.1",
+    "@godaddy-wordpress/stylelint-config": "^0.6.0",
     "@jest/core": "^27.5.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@wordpress/babel-preset-default": "^6.5.1",
@@ -115,8 +108,8 @@
     "@wordpress/dom": "^3.3.2",
     "@wordpress/dom-ready": "^3.3.1",
     "@wordpress/element": "^4.0.3",
-    "@wordpress/jest-preset-default": "^8.0.1",
     "@wordpress/env": "^4.9.0",
+    "@wordpress/jest-preset-default": "^8.0.1",
     "@wordpress/scripts": "^23.3.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
@@ -158,7 +151,7 @@
     "sass-loader": "^10.0.5",
     "scroll-to-bottomjs": "^1.1.0",
     "strip-css-comments-cli": "^3.0.0",
-    "stylelint": "^14.0.1",
+    "stylelint": "^14.13.0",
     "stylelint-webpack-plugin": "^3.1.0",
     "webpack": "^5.61.0",
     "webpack-cli": "^4.9.1",
@@ -167,7 +160,7 @@
   },
   "testing": {
     "urls": {
-      "local": "http://go.test",
+      "local": "http://localhost:8888/",
       "staging": "",
       "production": ""
     },
@@ -179,6 +172,10 @@
     "lodash.throttle": "^4.1.1",
     "normalize.css": "^8.0.1"
   },
+  "bundleDependencies": [
+    "enzyme",
+    "react-dom"
+  ],
   "resolutions": {
     "async": "^2.6.4",
     "got": "^11.8.5",

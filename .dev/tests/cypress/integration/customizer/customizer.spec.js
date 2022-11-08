@@ -83,6 +83,9 @@ describe( 'Test the customizer works as intended.', () => {
 		designStyles.reverse().forEach( designStyle => {
 			cy.get( '#accordion-section-colors' ).click();
 			cy.get( 'label[for="_customize-input-design_style_control-radio-' + designStyle.toLowerCase() + '"]' ).click( { force: true } );
+
+			// Wait for the submit button to be ready.
+			cy.get('.publish-settings', { timeout: 10000 }).should('be.visible');
 			saveCustomizerSettings();
 			cy.reload();
 			cy.frameLoaded( '[name="customize-preview-0"]' );

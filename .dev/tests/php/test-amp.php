@@ -74,9 +74,9 @@ class Test_AMP extends WP_UnitTestCase {
 			]
 		);
 
-		$output = Go\AMP\amp_nav_sub_menu_buttons( '<a href="http://example.org/blog/">Blog</a>', get_post( $nav_menu_item ), 1, new stdClass() );
+		$output = Go\AMP\amp_nav_sub_menu_buttons( '<a href="http://localhost:8889/blog/">Blog</a>', get_post( $nav_menu_item ), 1, new stdClass() );
 
-		$this->assertEquals( '<a href="http://example.org/blog/">Blog</a>', $output );
+		$this->assertEquals( '<a href="http://localhost:8889/blog/">Blog</a>', $output );
 
 	}
 
@@ -100,7 +100,7 @@ class Test_AMP extends WP_UnitTestCase {
 		$menu_args = new stdClass();
 		$menu_args->theme_location = 'primary';
 
-		$output = Go\AMP\amp_nav_sub_menu_buttons( '<a href="http://example.org/blog/">Blog</a>', $post, 1, $menu_args );
+		$output = Go\AMP\amp_nav_sub_menu_buttons( '<a href="http://localhost:8889/blog/">Blog</a>', $post, 1, $menu_args );
 
 		$this->assertRegexp( '/<button class="dropdown-toggle" \[class\]="&quot;dropdown-toggle&quot; \+ \( navMenuItemExpanded1 \? &quot; toggled-on&quot; : &#039;&#039; \)" aria-expanded="false" \[aria-expanded\]="navMenuItemExpanded1 \? &#039;true&#039; : &#039;false&#039;" on="tap:AMP\.setState\( { navMenuItemExpanded1: ! navMenuItemExpanded1 } \)">/', $output );
 

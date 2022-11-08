@@ -249,12 +249,6 @@ class Test_Core extends WP_UnitTestCase {
 
 		$this->assertTrue( is_textdomain_loaded( 'go' ) );
 
-		if ( file_exists( get_template_directory() . '/languages/es_ES.mo' ) ) {
-
-			unlink( get_template_directory() . '/languages/es_ES.mo' );
-
-		}
-
 		// Unset the text domain so the remaining tests run in English
 		global $l10n;
 		unset( $l10n['go'] );
