@@ -6,7 +6,7 @@ on:
 
 env:
   ARTIFACT_NAME: 'go-theme'
-  ARTIFACT_ZIP: 'go-theme.zip'
+  ARTIFACT_ZIP: 'go.zip'
 
 jobs:
   update:

@@ -12,8 +12,9 @@ on:
         default: 1
 
 env:
-  ARTIFACT_PATH: 'go-theme'
-  ARTIFACT_ZIP: 'go-theme.zip'
+  ARTIFACT_NAME: 'go-theme'
+  ARTIFACT_PATH: 'go'
+  ARTIFACT_ZIP: 'go.zip'
 
 # First build our theme, then create and store the artifact.
 jobs:
@@ -54,7 +55,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ env.ARTIFACT_PATH }}
+          name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.ARTIFACT_ZIP }}
           if-no-files-found: error
           retention-days: ${{ inputs.retention-days }}
