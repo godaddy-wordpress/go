@@ -41,6 +41,10 @@ jobs:
               exit 1
           fi
 
+      - name: Install dependencies
+        run: |
+          yarn install --immutable
+
       - name: Run version update
         run: yarn version --new-version $NEW_TAG_VERSION
 
