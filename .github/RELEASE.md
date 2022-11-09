@@ -30,4 +30,4 @@ Once all the Pull Requests and Issues are closed (or moved), the Milestone will 
 
 ## Upload to [WordPress](https://wordpress.org/themes/upload/) (human)
 
-From the newly created release, grab the `go-theme.zip` from the assets and upload it to [WordPress.org](https://wordpress.org/themes/upload/).
+From the newly created release, grab the `go.zip` from the assets and upload it to [WordPress.org](https://wordpress.org/themes/upload/).
