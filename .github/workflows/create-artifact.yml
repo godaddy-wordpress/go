@@ -31,6 +31,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
+          cache: 'yarn'
 
       - name: Setup WP-CLI
         uses: godaddy-wordpress/setup-wp-cli@main

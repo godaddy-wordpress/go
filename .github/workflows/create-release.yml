@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
+          cache: 'yarn'
 
       - name: Setup git user
         uses: godaddy-wordpress/setup-godaddy-git-user@v1
