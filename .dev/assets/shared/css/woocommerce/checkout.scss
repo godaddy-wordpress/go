@@ -8,12 +8,15 @@
 		margin-right: 0.5em !important;
 	}
 
-	.woocommerce-SavedPaymentMethods input[type="radio"] {
-		opacity: 1;
-	}
+	.woocommerce-SavedPaymentMethods {
 
-	.woocommerce-SavedPaymentMethods li::marker {
-		content: '';
+		input[type="radio"] {
+			opacity: 1;
+		}
+
+		li::marker {
+			content: '';
+		}
 	}
 
 	#ship-to-different-address-checkbox {
