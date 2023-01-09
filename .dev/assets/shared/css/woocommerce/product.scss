@@ -118,7 +118,7 @@ table.variations tbody tr:nth-child(odd) {
 	}
 
 	&.value {
-		padding-bottom: 0.5rem;
+		padding: 0.5rem;
 	}
 }
 
@@ -131,7 +131,7 @@ table.variations tbody tr:nth-child(odd) {
 
 	.single_variation_wrap {
 
-		.woocommerce-variation-add-to-cart {
+		.woocommerce-variation-add-to-cart:not(.variations_button) {
 			align-items: center;
 			display: flex;
 			justify-content: center;
