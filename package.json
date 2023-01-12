@@ -188,6 +188,7 @@
     "stylelint-config-recommended": "^6.0.0",
     "eslint-plugin-jsdoc": "^39.2.5",
     "socket.io-parser": "^4.0.5",
-    "simple-git": "^3.15.0"
+    "simple-git": "^3.15.0",
+    "json5": "^2.2.2"
   }
 }
