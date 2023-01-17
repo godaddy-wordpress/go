@@ -109,8 +109,8 @@
     "@wordpress/dom-ready": "^3.3.1",
     "@wordpress/element": "^4.0.3",
     "@wordpress/env": "^4.9.0",
-    "@wordpress/jest-preset-default": "^8.0.1",
-    "@wordpress/scripts": "^23.3.0",
+    "@wordpress/jest-preset-default": "^10.5.0",
+    "@wordpress/scripts": "^25.1.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.10",
@@ -135,7 +135,7 @@
     "lint-staged": "^11.2.6",
     "load-grunt-tasks": "^5.1.0",
     "lodash": "^4.17.21",
-    "mini-css-extract-plugin": "^2.4.4",
+    "mini-css-extract-plugin": "^2.7.2",
     "pa11y": "^6.0.1",
     "perfectionist-dfd": "^3.0.0",
     "postcss": "^8.3.11",
@@ -147,8 +147,8 @@
     "prop-types": "15.7.2",
     "rtlcss": "^3.5.0",
     "rtlcss-webpack-plugin": "^4.0.7",
-    "sass": "1.35.2",
-    "sass-loader": "^10.0.5",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
     "scroll-to-bottomjs": "^1.1.0",
     "strip-css-comments-cli": "^3.0.0",
     "stylelint": "^14.13.0",
@@ -177,18 +177,9 @@
     "react-dom"
   ],
   "resolutions": {
-    "async": "^2.6.4",
     "got": "^11.8.5",
-    "minimist": "^1.2.6",
-    "moment": "^2.29.4",
-    "plist": "^3.0.5",
-    "loader-utils": "^2.0.4",
-    "node-forge": "^1.3.0",
-    "qs": "^6.2.4",
-    "stylelint-config-recommended": "^6.0.0",
-    "eslint-plugin-jsdoc": "^39.2.5",
-    "socket.io-parser": "^4.0.5",
-    "simple-git": "^3.15.0",
-    "json5": "^2.2.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "qs": "^6.2.4"
   }
 }
