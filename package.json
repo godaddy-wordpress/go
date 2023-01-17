@@ -101,6 +101,8 @@
     "@godaddy-wordpress/stylelint-config": "^0.6.0",
     "@jest/core": "^27.5.1",
     "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
     "@wordpress/babel-preset-default": "^6.5.1",
     "@wordpress/base-styles": "^4.1.1",
     "@wordpress/browserslist-config": "^4.1.0",
