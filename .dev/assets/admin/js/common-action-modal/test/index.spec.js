@@ -6,8 +6,7 @@
  * External dependencies
  */
 import { act } from 'react-dom/test-utils';
-import { render, screen, within } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 /**
@@ -107,7 +106,7 @@ describe( 'go-deactivate-modal', () => {
 		} );
 
 		test( 'should not display modal by default', () => {
-			expect( wrapper.getElementsByClassName( '.go-deactivate-modal' ).length ).toBe(0);
+			expect( wrapper.getElementsByClassName( '.go-deactivate-modal' ).length ).toBe( 0 );
 		} );
 
 		it( 'should not be displayed when opening condition is not met', async () => {
@@ -119,7 +118,7 @@ describe( 'go-deactivate-modal', () => {
 				},
 			} );
 
-			expect( wrapper.getElementsByClassName( '.go-deactivate-modal' ).length ).toBe(0);
+			expect( wrapper.getElementsByClassName( '.go-deactivate-modal' ).length ).toBe( 0 );
 		} );
 	} );
 } );
