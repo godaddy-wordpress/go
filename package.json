@@ -104,7 +104,7 @@
     "@wordpress/babel-preset-default": "^6.5.1",
     "@wordpress/base-styles": "^4.1.1",
     "@wordpress/browserslist-config": "^4.1.0",
-    "@wordpress/components": "^19.13.0",
+    "@wordpress/components": "^20.0.0",
     "@wordpress/dom": "^3.3.2",
     "@wordpress/dom-ready": "^3.3.1",
     "@wordpress/element": "^4.0.3",
@@ -173,7 +173,6 @@
     "normalize.css": "^8.0.1"
   },
   "bundleDependencies": [
-    "enzyme",
     "react-dom"
   ],
   "resolutions": {
