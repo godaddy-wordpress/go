@@ -1335,7 +1335,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'social_icon_mastodon', 'https://mastodon.social/@custom' );
 
-		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/mastodon.social\/@custom" aria-label="Open MAstodon in a new tab" rel="noopener noreferrer" target="_blank">/' );
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/mastodon.social\/@custom" aria-label="Open Mastodon in a new tab" rel="noopener noreferrer" target="_blank">/' );
 
 		Go\social_icons( [] );
 
