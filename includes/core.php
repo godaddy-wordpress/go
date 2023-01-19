@@ -1255,6 +1255,11 @@ function get_available_social_icons() {
 			'icon'        => get_theme_file_path( 'dist/images/social/tiktok.svg' ),
 			'placeholder' => 'https://www.tiktok.com/@user',
 		),
+		'mastodon'    => array(
+			'label'       => esc_html__( 'Mastodon', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/mastodon.svg' ),
+			'placeholder' => 'https://mastodon.social/@user',
+		),
 	);
 
 	/**

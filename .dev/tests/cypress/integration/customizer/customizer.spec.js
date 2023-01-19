@@ -30,6 +30,7 @@ describe( 'Test the customizer works as intended.', () => {
 		spotify: 'https://www.spotify.com',
 		github: 'https://www.github.com',
 		tiktok: 'https://www.tiktok.com',
+		mastodon: 'https://mastodon.social',
 	};
 
 	before( () => {
