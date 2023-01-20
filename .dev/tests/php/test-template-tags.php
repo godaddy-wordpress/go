@@ -1329,6 +1329,19 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the post_meta() returns proper data mastodon icon data
+	 */
+	public function test_social_icons_mastodon() {
+
+		set_theme_mod( 'social_icon_mastodon', 'https://mastodon.social/@custom' );
+
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/mastodon.social\/@custom" aria-label="Open Mastodon in a new tab" rel="noopener noreferrer" target="_blank">/' );
+
+		Go\social_icons( [] );
+
+	}
+
+	/**
 	 * Test the social icons do not render on header-1
 	 */
 	public function test_header_social_icons_header_1() {

@@ -1015,6 +1015,7 @@ class Test_Core extends WP_UnitTestCase {
 			'spotify',
 			'github',
 			'tiktok',
+			'mastodon'
 		];
 
 		$this->assertEquals( $social_icons, array_keys( Go\Core\get_available_social_icons() ) );
