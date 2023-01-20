@@ -85,6 +85,9 @@
 	}
 
 	+ .wp-block-columns {
-		margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
+			&:not(.coblocks-author-columns) {
+				margin-top: calc(var(--go--spacing--vertical--lg) * 0.5);
+		}
 	}
+
 }
