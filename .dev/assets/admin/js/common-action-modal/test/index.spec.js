@@ -6,8 +6,8 @@
  * External dependencies
  */
 import { act } from 'react-dom/test-utils';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event';
+import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 /**
@@ -132,12 +132,12 @@ describe( 'go-deactivate-modal', () => {
 
 			// Make sure that the modal is loaded
 			await waitFor( () => {
-				screen.getByRole('heading');
-			});
+				screen.getByRole( 'heading' );
+			} );
 		} );
 
 		it( 'should show modal on click', async () => {
-			expect( document.body.getElementsByClassName('go-deactivate-modal').length ).toBe( 1 );
+			expect( document.body.getElementsByClassName( 'go-deactivate-modal' ).length ).toBe( 1 );
 		} );
 
 		it( 'should call activate link on modal submit', () => {
@@ -147,8 +147,8 @@ describe( 'go-deactivate-modal', () => {
 				},
 			} );
 
-			const actionButton = wrapper.getElementsByClassName( 'go-deactivate-modal__button' )[0];
-			userEvent.click(actionButton);
+			const actionButton = wrapper.getElementsByClassName( 'go-deactivate-modal__button' )[ 0 ];
+			userEvent.click( actionButton );
 
 			expect( window.location.href ).toEqual( defaultEvent.target.href );
 		} );
