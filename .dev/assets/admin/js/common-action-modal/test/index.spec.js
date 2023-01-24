@@ -6,7 +6,8 @@
  * External dependencies
  */
 import { act } from 'react-dom/test-utils';
-import { render } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom/extend-expect';
 
 /**
@@ -106,7 +107,7 @@ describe( 'go-deactivate-modal', () => {
 		} );
 
 		test( 'should not display modal by default', () => {
-			expect( wrapper.getElementsByClassName( '.go-deactivate-modal' ).length ).toBe( 0 );
+			expect( wrapper.getElementsByClassName( 'go-deactivate-modal' ).length ).toBe( 0 );
 		} );
 
 		it( 'should not be displayed when opening condition is not met', async () => {
@@ -118,7 +119,38 @@ describe( 'go-deactivate-modal', () => {
 				},
 			} );
 
-			expect( wrapper.getElementsByClassName( '.go-deactivate-modal' ).length ).toBe( 0 );
+			expect( wrapper.getElementsByClassName( 'go-deactivate-modal' ).length ).toBe( 0 );
+		} );
+	} );
+
+	describe( 'opened state', () => {
+		beforeEach( async () => {
+			await act( async () => {
+				wrapper = setup();
+			} );
+			events.click( defaultEvent );
+
+			// Make sure that the modal is loaded
+			await waitFor( () => {
+				screen.getByRole('heading');
+			});
+		} );
+
+		it( 'should show modal on click', async () => {
+			expect( document.body.getElementsByClassName('go-deactivate-modal').length ).toBe( 1 );
+		} );
+
+		it( 'should call activate link on modal submit', () => {
+			Object.defineProperty( window, 'location', {
+				value: {
+					href: defaultEvent.target.href,
+				},
+			} );
+
+			const actionButton = wrapper.getElementsByClassName( 'go-deactivate-modal__button' )[0];
+			userEvent.click(actionButton);
+
+			expect( window.location.href ).toEqual( defaultEvent.target.href );
 		} );
 	} );
 } );
