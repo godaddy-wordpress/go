@@ -6,7 +6,8 @@
  * External dependencies
  */
 import { act } from 'react-dom/test-utils';
-import { mount } from 'enzyme';
+import userEvent from '@testing-library/user-event';
+import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 /**
@@ -57,12 +58,14 @@ describe( 'go-deactivate-modal', () => {
 	};
 
 	const setup = () => {
-		return mount(
+		const { container } = render(
 			<div>
 				<button className="activate">Activate</button>
 				<Modal { ...props } />
 			</div>
 		);
+
+		return container;
 	};
 
 	beforeEach( () => {
@@ -104,7 +107,7 @@ describe( 'go-deactivate-modal', () => {
 		} );
 
 		test( 'should not display modal by default', () => {
-			expect( wrapper.find( '.go-deactivate-modal' ) ).toHaveLength( 0 );
+			expect( wrapper.getElementsByClassName( 'go-deactivate-modal' ).length ).toBe( 0 );
 		} );
 
 		it( 'should not be displayed when opening condition is not met', async () => {
@@ -116,7 +119,7 @@ describe( 'go-deactivate-modal', () => {
 				},
 			} );
 
-			expect( wrapper.find( '.go-deactivate-modal' ) ).toHaveLength( 0 );
+			expect( wrapper.getElementsByClassName( 'go-deactivate-modal' ).length ).toBe( 0 );
 		} );
 	} );
 
@@ -126,11 +129,15 @@ describe( 'go-deactivate-modal', () => {
 				wrapper = setup();
 			} );
 			events.click( defaultEvent );
-			wrapper.update();
+
+			// Make sure that the modal is loaded
+			await waitFor( () => {
+				screen.getByRole( 'heading' );
+			} );
 		} );
 
-		it( 'should show modal on click', () => {
-			expect( wrapper.find( '.go-deactivate-modal' ) ).toHaveLength( 2 );
+		it( 'should show modal on click', async () => {
+			expect( document.body.getElementsByClassName( 'go-deactivate-modal' ).length ).toBe( 1 );
 		} );
 
 		it( 'should call activate link on modal submit', () => {
@@ -140,8 +147,9 @@ describe( 'go-deactivate-modal', () => {
 				},
 			} );
 
-			const actionButton = wrapper.find( '.go-deactivate-modal__button' ).first();
-			actionButton.invoke( 'onClick' )();
+			const actionButton = wrapper.getElementsByClassName( 'go-deactivate-modal__button' )[ 0 ];
+			userEvent.click( actionButton );
+
 			expect( window.location.href ).toEqual( defaultEvent.target.href );
 		} );
 	} );
