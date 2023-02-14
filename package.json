@@ -179,6 +179,7 @@
     "react-dom"
   ],
   "resolutions": {
+    "@sideway/formula": "^3.0.1",
     "got": "^11.8.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
