@@ -60,4 +60,4 @@ add_filter( 'go_design_styles', 'prefix_get_available_design_styles' );
 ```
 
 ## Registering a styleseheet and modify CSS custom properties
-2. Add a stylesheet to override any default CSS custom properties in Go, using any existing property throughout the theme's shared.css stylesheet. I go into detail how Go's CSS custom properties are formatted and compiled a non-exhaustive of properties [here](https://github.com/godaddy-wordpress/go/docs/design-styles/properties.md).
+2. Add a stylesheet to override any default CSS custom properties in Go, using any existing property throughout the theme's shared.css stylesheet. I go into detail how Go's CSS custom properties are formatted and compiled a non-exhaustive of properties [here](https://github.com/godaddy-wordpress/go/blob/master/docs/design-styles/properties.md).
