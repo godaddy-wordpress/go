@@ -51,7 +51,8 @@
     "test:js:coverage": "yarn test:js --coverage",
     "test:js:update": "yarn test:js -u",
     "prepare": "husky install .dev/husky",
-    "wp-env": "wp-env"
+    "wp-env": "wp-env",
+    "update:woo-template-versions": ".dev/bin/update-woo-template-versions.php"
   },
   "locales": {
     "ar": "العربية",

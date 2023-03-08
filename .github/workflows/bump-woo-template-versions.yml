@@ -1,0 +1,40 @@
+name: Update WooCommerce Template Versions
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update:
+    name: Update Translations
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure git user
+        run: |
+          git config --global user.name "godaddy-wordpress-bot"
+          git config --global user.email "plugins@godaddy.com"
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Update the WooCommerce template files
+        run: .dev/bin/update-woo-template-versions.php
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          if [ ! -z "$(git status woocommerce/* --porcelain)" ]; then
+            git add woocommerce/*
+            git commit -m "[BOT] Update WooCommerce template versions." --no-verify
+            git reset --hard
+            git push --quiet
+          else
+            echo "No WooCommerce template versions to update."
+          fi
