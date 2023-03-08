@@ -5,7 +5,7 @@
 $it = new RecursiveDirectoryIterator( './woocommerce' );
 
 // Loop through template files.
-foreach( new RecursiveIteratorIterator( $it ) as $file ) {
+foreach ( new RecursiveIteratorIterator( $it ) as $file ) {
 
 	if ( $file->getExtension() !== 'php' ) {
 
@@ -18,7 +18,7 @@ foreach( new RecursiveIteratorIterator( $it ) as $file ) {
 	$remote_template_contents = file_get_contents( sprintf( 'https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/plugins/woocommerce/templates/%s', $template_dir ) );
 
 	// Grab the version from the remote template.
-	preg_match( "/(?:@version)\s*((?:[0-9]+\.?)+)/i", $remote_template_contents, $matches );
+	preg_match( '/(?:@version)\s*((?:[0-9]+\.?)+)/i', $remote_template_contents, $matches );
 
 	if ( empty( $matches ) ) {
 
@@ -33,7 +33,7 @@ foreach( new RecursiveIteratorIterator( $it ) as $file ) {
 	$bundled_template_markup = file_get_contents( $file );
 
 	// Grab the version from the bundled template.
-	preg_match( "/(?:@version)\s*((?:[0-9]+\.?)+)/i", $bundled_template_markup, $matches );
+	preg_match( '/(?:@version)\s*((?:[0-9]+\.?)+)/i', $bundled_template_markup, $matches );
 
 	if ( empty( $matches ) ) {
 
