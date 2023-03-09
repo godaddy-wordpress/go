@@ -15,7 +15,12 @@ foreach ( new RecursiveIteratorIterator( $it ) as $file ) {
 
 	$template_dir = str_replace( './woocommerce/', '', $file );
 
-	$remote_template_contents = file_get_contents( sprintf( 'https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/plugins/woocommerce/templates/%s', $template_dir ) );
+	$remote_template_contents = file_get_contents(
+		sprintf(
+			'https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/plugins/woocommerce/templates/%s',
+			$template_dir
+		)
+	);
 
 	// Grab the version from the remote template.
 	preg_match( '/(?:@version)\s*((?:[0-9]+\.?)+)/i', $remote_template_contents, $matches );
@@ -55,7 +60,17 @@ foreach ( new RecursiveIteratorIterator( $it ) as $file ) {
 	// Update the version in the template file.
 	printf( 'Bundled template version is outdated (%1$s). Updating %2$s now.' . PHP_EOL, $bundled_woocommerce_template_version, $template_dir );
 
-	$new_file_contents = str_replace( sprintf( '@version %s', $bundled_woocommerce_template_version ), sprintf( '@version %s', $current_woocommerce_template_version ), $bundled_template_markup );
+	$new_file_contents = str_replace(
+		sprintf(
+			'@version %s',
+			$bundled_woocommerce_template_version
+		),
+		sprintf(
+			'@version %s',
+			$current_woocommerce_template_version
+		),
+		$bundled_template_markup
+	);
 
 	file_put_contents( $file, $new_file_contents );
 
