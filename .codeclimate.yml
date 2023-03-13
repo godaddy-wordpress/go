@@ -18,6 +18,7 @@ checks:
   method-complexity:
     enabled: false
 exclude_patterns:
+  - ".dev/bin/"
   - ".dev/config/"
   - ".dev/deploy-scripts/"
   - ".dev/tests/"
