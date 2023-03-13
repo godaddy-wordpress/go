@@ -107,6 +107,9 @@ $ composer install
 $ yarn install && yarn build
 ```
 
+## Release
+[New Release Workflow](.github/RELEASE.md)
+
 ## Credits
 
 This software uses the following open source packages:
