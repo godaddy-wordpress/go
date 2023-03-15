@@ -27,8 +27,8 @@ jobs:
         uses: godaddy-wordpress/setup-wp-cli@1
 
       - name: Upgrade PHPUnit on PHP 8.2
-       if: ${{matrix.phpVersion == '8.2'}}
-       run: composer require phpunit/phpunit "^10"
+        if: ${{matrix.phpVersion == '8.2'}}
+        run: composer require phpunit/phpunit "^10"
 
       - name: Install dependencies and build
         run: |
