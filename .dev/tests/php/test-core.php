@@ -2,7 +2,7 @@
 
 class Test_Core extends WP_UnitTestCase {
 
-	function setUp() {
+	function setUp(): void {
 
 		parent::setUp();
 
@@ -10,7 +10,7 @@ class Test_Core extends WP_UnitTestCase {
 
 	}
 
-	function tearDown() {
+	function tearDown(): void {
 
 		parent::tearDown();
 

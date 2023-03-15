@@ -2,7 +2,7 @@
 
 class Test_Customizer extends WP_UnitTestCase {
 
-	function setUp() {
+	function setUp(): void {
 
 		parent::setUp();
 
@@ -23,7 +23,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 	}
 
-	function tearDown() {
+	function tearDown(): void {
 
 		parent::tearDown();
 

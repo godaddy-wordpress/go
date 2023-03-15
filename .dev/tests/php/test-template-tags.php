@@ -4,7 +4,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 	private $post_id;
 
-	function setUp() {
+	function setUp(): void {
 
 		parent::setUp();
 
@@ -42,7 +42,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 	}
 
-	function tearDown() {
+	function tearDown(): void {
 
 		parent::tearDown();
 

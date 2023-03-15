@@ -2,7 +2,7 @@
 
 class Test_Class_Range_Control extends WP_UnitTestCase {
 
-	function setUp() {
+	function setUp(): void {
 
 		parent::setUp();
 
@@ -20,7 +20,7 @@ class Test_Class_Range_Control extends WP_UnitTestCase {
 
 	}
 
-	function tearDown() {
+	function tearDown(): void {
 
 		parent::tearDown();
 
