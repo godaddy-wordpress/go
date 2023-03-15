@@ -26,6 +26,10 @@ jobs:
       - name: Setup WP-CLI
         uses: godaddy-wordpress/setup-wp-cli@1
 
+      - name: Notify Team on Slack
+       if: ${{matrix.phpVersion == '8.2'}}
+       run: composer require phpunit/phpunit "^10"
+
       - name: Install dependencies and build
         run: |
           npm i -g yarn
