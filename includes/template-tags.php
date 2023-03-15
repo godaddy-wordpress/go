@@ -469,7 +469,7 @@ function hex_to_hsl( $hex, $string_output = false ) {
 	$l = abs( round( $l * 100 ) );
 
 	if ( $string_output ) {
-		return "{$h}, {$s}%, ${l}%";
+		return "{$h}, {$s}%, {$l}%";
 	}
 
 	return array( $h, $s, $l );
