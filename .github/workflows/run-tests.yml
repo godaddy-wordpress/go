@@ -26,7 +26,7 @@ jobs:
       - name: Setup WP-CLI
         uses: godaddy-wordpress/setup-wp-cli@1
 
-      - name: Notify Team on Slack
+      - name: Upgrade PHPUnit on PHP 8.2
        if: ${{matrix.phpVersion == '8.2'}}
        run: composer require phpunit/phpunit "^10"
 
