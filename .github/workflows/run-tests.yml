@@ -28,7 +28,9 @@ jobs:
 
       - name: Upgrade PHPUnit on PHP 8.2
         if: ${{matrix.phpVersion == '8.2'}}
-        run: composer require --dev phpunit/phpunit "^9"
+        run: |
+          rm -rf composer.lock
+          composer require --dev phpunit/phpunit "^9"
 
       - name: Install dependencies and build
         run: |
