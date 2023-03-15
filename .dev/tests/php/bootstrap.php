@@ -4,7 +4,7 @@ $_tests_dir = getenv( 'WP_TESTS_DIR' );
 
 if ( ! $_tests_dir ) {
 
-	$_tests_dir = '/var/www/html/wordpress-tests-lib';
+	$_tests_dir = '/tmp/wordpress-tests-lib';
 
 }
 
@@ -56,11 +56,11 @@ tests_add_filter( 'muplugins_loaded', '_register_theme' );
  * Install WooCommerce
  */
 tests_add_filter( 'setup_theme', function() {
-	include '/var/www/html/wp-content/plugins/woocommerce/woocommerce.php';
+	include '/Users/eherman/Desktop/Sites/mwp-old/wp-content/plugins/woocommerce/woocommerce.php';
 	// Clean existing install first.
 	define( 'WP_UNINSTALL_PLUGIN', true );
 	define( 'WC_REMOVE_ALL_DATA', true );
-	include '/var/www/html/wp-content/plugins/woocommerce/uninstall.php';
+	include '/Users/eherman/Desktop/Sites/mwp-old/wp-content/plugins/woocommerce/uninstall.php';
 	WC_Install::install();
 	// Reload capabilities after install, see https://core.trac.wordpress.org/ticket/28374
 	if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {

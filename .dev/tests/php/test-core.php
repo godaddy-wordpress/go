@@ -299,7 +299,7 @@ class Test_Core extends WP_UnitTestCase {
 
 			}
 
-			$this->fail( "Theme lacks support for ${support}" );
+			$this->fail( "Theme lacks support for {$support}" );
 
 		}
 
@@ -334,7 +334,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		} );
 
-		$this->assertEquals( null, urldecode( Go\Core\fonts_url() ) );
+		$this->assertNull( Go\Core\fonts_url() );
 
 	}
 
@@ -352,7 +352,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		} );
 
-		$this->assertEquals( null, urldecode( Go\Core\fonts_url() ) );
+		$this->assertNull( Go\Core\fonts_url() );
 
 	}
 
@@ -387,7 +387,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		} );
 
-		$this->assertNotContains( 'Montserrat', Go\Core\fonts_url() );
+		$this->assertStringNotContainsString( 'Montserrat', Go\Core\fonts_url() );
 
 	}
 
@@ -409,7 +409,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		global $wp_scripts;
 
-		$this->assertContains( 'var GoBlockFilters = {"inlineStyles"', $wp_scripts->registered['go-block-filters']->extra['data'] );
+		$this->assertStringContainsString( 'var GoBlockFilters = {"inlineStyles"', $wp_scripts->registered['go-block-filters']->extra['data'] );
 
 	}
 
