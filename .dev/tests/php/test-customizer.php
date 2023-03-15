@@ -383,7 +383,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 		global $wp_scripts;
 
-		$this->assertContains( 'var GoPreviewData = {"design_styles"', $wp_scripts->registered['go-customize-preview']->extra['data'] );
+		$this->assertStringContainsString( 'var GoPreviewData = {"design_styles"', $wp_scripts->registered['go-customize-preview']->extra['data'] );
 
 	}
 
