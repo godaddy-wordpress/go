@@ -4,7 +4,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 	private $post_id;
 
-	function setUp() {
+	function setUp(): void {
 
 		parent::setUp();
 
@@ -42,7 +42,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 	}
 
-	function tearDown() {
+	function tearDown(): void {
 
 		parent::tearDown();
 
@@ -135,7 +135,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_get_post_meta_top_location() {
 
-		$this->assertRegexp( '/<ul class="post__meta list-reset">/', Go\get_post_meta( $this->post_id ) );
+		$this->assertMatchesRegularExpression( '/<ul class="post__meta list-reset">/', Go\get_post_meta( $this->post_id ) );
 
 	}
 
@@ -144,7 +144,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	 */
 	public function test_get_post_meta_bottom_location() {
 
-		$this->assertRegexp( '/<ul class="post__meta list-reset">/', Go\get_post_meta( $this->post_id, 'single-bottom' ) );
+		$this->assertMatchesRegularExpression( '/<ul class="post__meta list-reset">/', Go\get_post_meta( $this->post_id, 'single-bottom' ) );
 
 	}
 
@@ -188,7 +188,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		} );
 
-		$this->assertRegexp( '/<li class="post-categories meta-wrapper">/', Go\get_post_meta( $this->post_id, 'single-bottom' ) );
+		$this->assertMatchesRegularExpression( '/<li class="post-categories meta-wrapper">/', Go\get_post_meta( $this->post_id, 'single-bottom' ) );
 
 	}
 
@@ -207,7 +207,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		} );
 
-		$this->assertRegexp( '/<li class="post-sticky meta-wrapper">/', Go\get_post_meta( $this->post_id, 'single-bottom' ) );
+		$this->assertMatchesRegularExpression( '/<li class="post-sticky meta-wrapper">/', Go\get_post_meta( $this->post_id, 'single-bottom' ) );
 
 	}
 
@@ -1080,7 +1080,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 		Go\page_title();
 		$page_title = ob_get_clean();
 
-		$this->assertRegexp( '/My Custom Title/', $page_title );
+		$this->assertMatchesRegularExpression( '/My Custom Title/', $page_title );
 
 	}
 
@@ -1122,7 +1122,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 		Go\page_title();
 		$page_title = ob_get_clean();
 
-		$this->assertRegexp( '/custom-class/', $page_title );
+		$this->assertMatchesRegularExpression( '/custom-class/', $page_title );
 
 	}
 
@@ -1169,7 +1169,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 		Go\page_title();
 		$page_title = ob_get_clean();
 
-		$this->assertRegexp( '/<header class="page-header entry-header m-auto px "><h1 class="post__title m-0 text-center">Test Post Meta<\/h1><\/header>/', $page_title );
+		$this->assertMatchesRegularExpression( '/<header class="page-header entry-header m-auto px "><h1 class="post__title m-0 text-center">Test Post Meta<\/h1><\/header>/', $page_title );
 
 	}
 

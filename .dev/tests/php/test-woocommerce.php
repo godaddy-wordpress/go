@@ -6,13 +6,13 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 	private $woo_cart;
 
-	function setUp() {
+	function setUp(): void {
 
 		parent::setUp();
 
 	}
 
-	function tearDown() {
+	function tearDown(): void {
 
 		parent::tearDown();
 

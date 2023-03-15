@@ -6,6 +6,7 @@ vendor
 temp
 .idea
 .vscode
+.phpunit.result.cache
 
 # Translations
 languages/*.mo

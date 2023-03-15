@@ -2,7 +2,7 @@
 
 class Test_Core extends WP_UnitTestCase {
 
-	function setUp() {
+	function setUp(): void {
 
 		parent::setUp();
 
@@ -10,7 +10,7 @@ class Test_Core extends WP_UnitTestCase {
 
 	}
 
-	function tearDown() {
+	function tearDown(): void {
 
 		parent::tearDown();
 
@@ -299,7 +299,7 @@ class Test_Core extends WP_UnitTestCase {
 
 			}
 
-			$this->fail( "Theme lacks support for ${support}" );
+			$this->fail( "Theme lacks support for {$support}" );
 
 		}
 
@@ -334,7 +334,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		} );
 
-		$this->assertEquals( null, urldecode( Go\Core\fonts_url() ) );
+		$this->assertNull( Go\Core\fonts_url() );
 
 	}
 
@@ -352,7 +352,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		} );
 
-		$this->assertEquals( null, urldecode( Go\Core\fonts_url() ) );
+		$this->assertNull( Go\Core\fonts_url() );
 
 	}
 
@@ -387,7 +387,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		} );
 
-		$this->assertNotContains( 'Montserrat', Go\Core\fonts_url() );
+		$this->assertStringNotContainsString( 'Montserrat', Go\Core\fonts_url() );
 
 	}
 
@@ -409,7 +409,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		global $wp_scripts;
 
-		$this->assertContains( 'var GoBlockFilters = {"inlineStyles"', $wp_scripts->registered['go-block-filters']->extra['data'] );
+		$this->assertStringContainsString( 'var GoBlockFilters = {"inlineStyles"', $wp_scripts->registered['go-block-filters']->extra['data'] );
 
 	}
 
@@ -577,7 +577,7 @@ class Test_Core extends WP_UnitTestCase {
 		ob_start();
 		Go\Core\skip_link_focus_fix();
 
-		$this->assertContains( '(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);', ob_get_clean() );
+		$this->assertStringContainsString( '(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);', ob_get_clean() );
 
 	}
 

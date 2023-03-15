@@ -2,7 +2,7 @@
 
 class Test_Customizer extends WP_UnitTestCase {
 
-	function setUp() {
+	function setUp(): void {
 
 		parent::setUp();
 
@@ -23,7 +23,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 	}
 
-	function tearDown() {
+	function tearDown(): void {
 
 		parent::tearDown();
 
@@ -383,7 +383,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 		global $wp_scripts;
 
-		$this->assertContains( 'var GoPreviewData = {"design_styles"', $wp_scripts->registered['go-customize-preview']->extra['data'] );
+		$this->assertStringContainsString( 'var GoPreviewData = {"design_styles"', $wp_scripts->registered['go-customize-preview']->extra['data'] );
 
 	}
 
@@ -406,7 +406,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 			if ( ! wp_script_is( $script_handle ) ) {
 
-				$this->fail( "The script '${script_handle}' was not enqueued." );
+				$this->fail( "The script '{$script_handle}' was not enqueued." );
 
 			}
 		}
@@ -415,7 +415,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 			if ( ! wp_style_is( $style_handle ) ) {
 
-				$this->fail( "The style '${style_handle}' was not enqueued." );
+				$this->fail( "The style '{$style_handle}' was not enqueued." );
 
 			}
 		}
@@ -1076,15 +1076,15 @@ class Test_Customizer extends WP_UnitTestCase {
 
 		foreach ( $networks as $social_network ) {
 
-			if ( is_null( $GLOBALS['wp_customize']->get_setting( "social_icon_${social_network}" ) ) ) {
+			if ( is_null( $GLOBALS['wp_customize']->get_setting( "social_icon_{$social_network}" ) ) ) {
 
-				$this->fail( "social_icon_${social_network} customizer setting was not registered" );
+				$this->fail( "social_icon_{$social_network} customizer setting was not registered" );
 
 			}
 
-			if ( is_null( $GLOBALS['wp_customize']->get_control( "social_icon_${social_network}_control" ) ) ) {
+			if ( is_null( $GLOBALS['wp_customize']->get_control( "social_icon_{$social_network}_control" ) ) ) {
 
-				$this->fail( "social_icon_${social_network}_control customizer control was not registered" );
+				$this->fail( "social_icon_{$social_network}_control customizer control was not registered" );
 
 			}
 		}
@@ -1186,7 +1186,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 			if ( false === strpos( $inline_css, $expected_string ) ) {
 
-				$this->fail( "${expected_string} was not found in the output of Go\Customizer\inline_css()" );
+				$this->fail( "{$expected_string} was not found in the output of Go\Customizer\inline_css()" );
 
 			}
 		}
@@ -1239,7 +1239,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 			if ( false === strpos( $inline_css, $expected_string ) ) {
 
-				$this->fail( "${expected_string} was not found in the output of Go\Customizer\inline_css() after setting header_text_color" );
+				$this->fail( "{$expected_string} was not found in the output of Go\Customizer\inline_css() after setting header_text_color" );
 
 			}
 		}
@@ -1310,7 +1310,7 @@ class Test_Customizer extends WP_UnitTestCase {
 
 			if ( false === strpos( $inline_css, $expected_string ) ) {
 
-				$this->fail( "${expected_string} was not found in the output of Go\Customizer\inline_css() after setting footer_text_color" );
+				$this->fail( "{$expected_string} was not found in the output of Go\Customizer\inline_css() after setting footer_text_color" );
 
 			}
 		}

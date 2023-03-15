@@ -2,7 +2,7 @@
 
 class Test_Title_Meta extends WP_UnitTestCase {
 
-	function setUp() {
+	function setUp(): void {
 
 		parent::setUp();
 
@@ -12,7 +12,7 @@ class Test_Title_Meta extends WP_UnitTestCase {
 
 	}
 
-	function tearDown() {
+	function tearDown(): void {
 
 		parent::tearDown();
 

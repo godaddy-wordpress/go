@@ -258,7 +258,7 @@ function get_color_schemes_as_choices() {
 			array_walk(
 				$style_data['color_schemes'],
 				function( $data, $name ) use ( $design_style, &$color_schemes ) {
-					$color_schemes[ "${design_style}-${name}" ] = $data;
+					$color_schemes[ "{$design_style}-{$name}" ] = $data;
 				}
 			);
 		}
