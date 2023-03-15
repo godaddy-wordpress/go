@@ -9,6 +9,10 @@ jobs:
   php:
     name: PHP Unit
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        phpVersion: ["7.4", "8.2"]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -33,7 +37,7 @@ jobs:
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
           core: 'WordPress/WordPress#6.1'
-          phpVersion: '7.4'
+          phpVersion: ${{ matrix.phpVersion }}
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
 
@@ -68,10 +72,6 @@ jobs:
   a11y:
     name: Accessibility
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        phpVersion: ["7.4", "8.2"]
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -80,7 +80,7 @@ jobs:
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
           core: 'WordPress/WordPress#6.1'
-          phpVersion: ${{ matrix.phpVersion }}
+          phpVersion: '7.4'
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
 
