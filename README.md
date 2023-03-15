@@ -5,8 +5,8 @@
 <br>
 
 <p align="center">
-	<a href="https://circleci.com/gh/godaddy-wordpress/go/tree/master" target="_blank">
-		<img src="https://img.shields.io/circleci/build/github/godaddy-wordpress/go/master?label=&logo=circleci&style=flat-square" alt="CircleCI Build">
+	<a href="https://github.com/godaddy-wordpress/go/actions/workflows/run-tests.yml" target="_blank">
+		<img src="https://github.com/godaddy-wordpress/go/actions/workflows/run-tests.yml/badge.svg" alt="Github Test Workflow">
 	</a>
 	<a href="https://wordpress.org/" target="_blank">
 		<img src="https://img.shields.io/static/v1?label=&message=5.0+-+6.1&color=blue&style=flat-square&logo=wordpress&logoColor=white" alt="WordPress Versions">
