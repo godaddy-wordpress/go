@@ -1,3 +1,29 @@
+1.8.1 / 2023-03-24
+- Modify styles for CoBlocks 3.0. [#838](https://github.com/godaddy-wordpress/go/pull/838)
+- Introduce a script and a Github workflow to ensure our WooCommerce templates are always up to date with the latest version. [#847](https://github.com/godaddy-wordpress/go/pull/847)
+- Update the CircleCi badge in the package.json file. [#851](https://github.com/godaddy-wordpress/go/pull/851)
+
+1.8.0 / 2023-01-20
+- Bump loader-utils from 1.4.1 to 1.4.2. [#826](https://github.com/godaddy-wordpress/go/pull/826)
+- Bump engine.io from 6.2.0 to 6.2.1. [#827](https://github.com/godaddy-wordpress/go/pull/827)
+- Bump decode-uri-component from 0.2.0 to 0.2.2. [#828](https://github.com/godaddy-wordpress/go/pull/828)
+- Update dependencies. [#830](https://github.com/godaddy-wordpress/go/pull/830)
+- Fix variation product payment buttons on Safari and Chrome. [#833](https://github.com/godaddy-wordpress/go/pull/833)
+- Fix WooCommerce saved payment method radio button visibility. [#834](https://github.com/godaddy-wordpress/go/pull/834)
+- Update json5 dependency. [#835](https://github.com/godaddy-wordpress/go/pull/835)
+- Add support for Mastodon in the social media options. [#837](https://github.com/godaddy-wordpress/go/pull/837)
+
+1.7.3 / 2022-11-09
+- Bump loader-utils from 1.4.0 to 1.4.1. [#820](https://github.com/godaddy-wordpress/go/pull/825)
+- Fix an issue with the release reference. [#825](https://github.com/godaddy-wordpress/go/pull/825)
+
+1.7.2 / 2022-11-08
+- Align zip file structure with current. [#824](https://github.com/godaddy-wordpress/go/pull/824)
+
+1.7.1 / 2022-11-08
+- Migration from CircleCI to Github Actions. [#810](https://github.com/godaddy-wordpress/go/pull/810)
+- Lightweight Git tagging. [#823](https://github.com/godaddy-wordpress/go/pull/823)
+
 1.6.6 / 2022-11-03
 - Bump 'Tested Up To' Version to 6.1. [#818](https://github.com/godaddy-wordpress/go/pull/818)
 - Update WooCommerce cart.php template version. [#817](https://github.com/godaddy-wordpress/go/pull/817)
