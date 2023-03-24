@@ -19,7 +19,7 @@
   },
   "license": "GPL-2.0-or-later",
   "badges": [
-    "[![CircleCI](https://circleci.com/gh/godaddy-wordpress/go.svg?style=svg)](https://circleci.com/gh/godaddy-wordpress/go)",
+    "[![Github Actions](https://github.com/godaddy-wordpress/go/actions/workflows/run-tests.yml/badge.svg)](https://github.com/godaddy-wordpress/go/actions/workflows/run-tests.yml)",
     "[![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/<%= pkg.repository.base %>/blob/master/license.txt)",
     "[![PHP <%= pkg.engines.php %>](https://img.shields.io/badge/php-<% print(encodeURI(pkg.engines.php)) %>-8892bf.svg)](https://secure.php.net/supported-versions.php)",
     "[![WordPress <%= pkg.engines.wordpress %>](https://img.shields.io/badge/wordpress-<% print(encodeURI(pkg.engines.wordpress)) %>-blue.svg)](https://wordpress.org/download/release-archive/)"
