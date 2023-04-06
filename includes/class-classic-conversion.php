@@ -164,7 +164,7 @@ class Classic_Conversion {
 				'post_type'   => $type,
 				'post_status' => 'publish',
 				'tax_input'   => array(
-					'wp_theme'              => array( 'go-fse' ),
+					'wp_theme'              => array( 'go' ),
 					'wp_template_part_area' => array_filter(
 						array(
 							strpos( $template_file, 'header' ) !== false ? 'header' : null,
@@ -334,7 +334,7 @@ class Classic_Conversion {
 			'blockName'    => 'core/template-part',
 			'attrs'        => array(
 				'slug'  => $search_slug,
-				'theme' => 'go-fse',
+				'theme' => 'go',
 			),
 			'innerContent' => array(),
 		);
@@ -528,9 +528,9 @@ class Classic_Conversion {
 		}
 
 		return str_replace(
-			'<!-- wp:template-part {"slug":"header-1","theme":"go-fse"} /-->',
+			'<!-- wp:template-part {"slug":"header-1","theme":"go"} /-->',
 			'<!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"default"}} -->
-			<div class="wp-block-group"><!-- wp:template-part {"slug":"header-3","theme":"go-fse"} /--></div>
+			<div class="wp-block-group"><!-- wp:template-part {"slug":"header-3","theme":"go"} /--></div>
 			<!-- /wp:group -->',
 			$post_content
 		);
@@ -635,10 +635,10 @@ class Classic_Conversion {
 
 		// Setup Templates.
 		$template_data = array(
-			'post_name'   => 'wp-global-styles-go-fse',
+			'post_name'   => 'wp-global-styles-go',
 			'post_type'   => 'wp_global_styles',
 			'post_status' => 'publish',
-			'tax_input'   => array( 'wp_theme' => array( 'go-fse' ) ),
+			'tax_input'   => array( 'wp_theme' => array( 'go' ) ),
 		);
 
 		$template_data['ID'] = $this->post_exists( $template_data['post_name'], $template_data['post_type'] );
