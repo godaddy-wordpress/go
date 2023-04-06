@@ -46,7 +46,8 @@
     "phpcompatibility/phpcompatibility-wp": "^2.1",
     "wp-coding-standards/wpcs": "^2.1",
     "phpunit/phpunit": "^9",
-    "yoast/phpunit-polyfills": "^1.0.1"
+    "yoast/phpunit-polyfills": "^1.0.1",
+    "johnpbloch/wordpress-core": "^6.2"
   },
   "scripts": {
     "lint": "@php ./vendor/bin/phpcs --standard=phpcs.xml --extensions=php --colors -s -p -v ./",
