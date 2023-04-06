@@ -7,6 +7,8 @@
 - name: "Hacktoberfest"
   color: "ff8ae2"
   description: "Issues/PRs related to Hacktoberfest: https://hacktoberfest.digitalocean.com"
+- name: "Full Site Editing"
+  color: "fbca04"
 
 - name: "[Priority] Low"
   color: "907300"
