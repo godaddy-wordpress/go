@@ -15,9 +15,9 @@ if ( isset( $_GET['migrate'] ) ) {
 	header( 'content-type: text/plain' );
 
 	$go_conversion = Go_Classic_Conversion::get_instance();
-	$go_conversion->setBasePath( __FILE__ );
+	$go_conversion->set_base_path( __FILE__ );
 
-	// Convert classic menus to block based menus
+	// Convert classic menus to block based menus.
 	$go_conversion->convert_nav_menus();
 
 	// Convert theme mods to user global styles.
@@ -32,14 +32,6 @@ if ( isset( $_GET['migrate'] ) ) {
 	$go_conversion->apply_template_part_customizations(
 		$go_conversion->get_block_templates( '/parts' )
 	);
-
-	print_r(
-		array(
-			'go_conversion' => $go_conversion,
-			'go_theme_mods' => get_option( 'theme_mods_go' ),
-		)
-	);
-	exit;
 }
 
 /**
@@ -60,6 +52,11 @@ class Go_Classic_Conversion {
 	 */
 	protected $base_path;
 
+	/**
+	 * The new navigation locations.
+	 *
+	 * @var array
+	 */
 	protected $nav_menu_locations;
 
 	/**
@@ -79,9 +76,10 @@ class Go_Classic_Conversion {
 	 *
 	 * @param string $functions_file The full path to the main functions file.
 	 */
-	public function setBasePath( $functions_file ) {
+	public function set_base_path( $functions_file ) {
 		$this->base_path = trailingslashit( dirname( $functions_file ) );
 	}
+
 
 	/**
 	 * Get the base path of the theme.
@@ -90,7 +88,7 @@ class Go_Classic_Conversion {
 	 *
 	 * @return string
 	 */
-	public function basePath( $path = '' ) {
+	public function base_path( $path = '' ) {
 		return rtrim( $this->base_path, DIRECTORY_SEPARATOR ) . ( '' !== $path ? DIRECTORY_SEPARATOR . ltrim( $path, DIRECTORY_SEPARATOR ) : '' );
 	}
 
@@ -130,13 +128,13 @@ class Go_Classic_Conversion {
 	 * @return array the template files
 	 */
 	public function get_block_templates( $path = 'templates' ) {
-		return glob( $this->basePath( $path ) . '/*.html' );
+		return glob( $this->base_path( $path ) . '/*.html' );
 	}
 
 	/**
 	 * Apply customizations to block templates.
 	 *
-	 * @param array $template_files array of template files
+	 * @param array $template_files array of template files.
 	 *
 	 * @return bool true if successful
 	 */
@@ -147,7 +145,7 @@ class Go_Classic_Conversion {
 	/**
 	 * Apply customizations to block template parts.
 	 *
-	 * @param array $template_files array of template files
+	 * @param array $template_files array of template files.
 	 *
 	 * @return bool true if successful
 	 */
@@ -159,11 +157,11 @@ class Go_Classic_Conversion {
 	 * Apply customizations to block templates and if they have changed, insert
 	 * a new wp_template post to override the default template.
 	 *
-	 * @param string $template_file path to template file
-	 * @param int $index index of template file in array
-	 * @param string $type wp_template or wp_template_part
+	 * @param string $template_file path to template file.
+	 * @param int    $index index of template file in array.
+	 * @param string $type wp_template or wp_template_part.
 	 */
-	public function save_template_customizations( $template_file, $index, $type = 'wp_template' ) {
+	public function save_template_customizations( $template_file, $index, $type = 'wp_template' ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 		$template_contents = file_get_contents( $template_file );
 
 		$new_contents = array_reduce(
@@ -178,7 +176,7 @@ class Go_Classic_Conversion {
 				array( $this, 'hide_site_title' ),
 				array( $this, 'hide_site_tagline' ),
 			),
-			function( $carry, $callback ) use( $template_file ) {
+			function( $carry, $callback ) use ( $template_file ) {
 				return $callback( $carry, $template_file );
 			},
 			$template_contents
@@ -187,11 +185,11 @@ class Go_Classic_Conversion {
 		// If template has changed, insert new wp_template post to override the default template.
 		if ( $new_contents !== $template_contents ) {
 			$template_data = array(
-				'post_name' => basename( $template_file, '.html' ),
-				'post_type' => $type,
+				'post_name'   => basename( $template_file, '.html' ),
+				'post_type'   => $type,
 				'post_status' => 'publish',
-				'tax_input' => array(
-					'wp_theme' => array( 'go-fse' ),
+				'tax_input'   => array(
+					'wp_theme'              => array( 'go-fse' ),
 					'wp_template_part_area' => array_filter(
 						array(
 							strpos( $template_file, 'header' ) !== false ? 'header' : null,
@@ -206,7 +204,7 @@ class Go_Classic_Conversion {
 			// Replace numbers with words in title.
 			$template_data['post_title'] = str_replace(
 				array( '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' ),
-				array( 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'zero'),
+				array( 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'zero' ),
 				$template_data['post_name']
 			);
 
@@ -217,6 +215,7 @@ class Go_Classic_Conversion {
 			wp_insert_post( array_filter( $template_data ) );
 		}
 	}
+
 
 	/**
 	 * Get the value of a theme mod.
@@ -239,13 +238,11 @@ class Go_Classic_Conversion {
 	 * assigned to a location.
 	 *
 	 * @see https://github.com/WordPress/gutenberg/blob/wp/6.2/packages/block-library/src/navigation/index.php#L327-L365
-	 *
-	 * @return void
 	 */
 	public function convert_nav_menus() {
 		$nav_menu_locations = $this->get_theme_mod( 'nav_menu_locations' );
 
-		if( ! is_array( $nav_menu_locations ) ) {
+		if ( ! is_array( $nav_menu_locations ) ) {
 			return;
 		}
 
@@ -271,7 +268,7 @@ class Go_Classic_Conversion {
 				// Create a new navigation menu from the classic menu.
 				$new_nav_menu_id = wp_insert_post(
 					array(
-						'ID' => $this->post_exists( $classic_nav_menu->slug, 'wp_navigation' ),
+						'ID'           => $this->post_exists( $classic_nav_menu->slug, 'wp_navigation' ),
 						'post_content' => $classic_nav_menu_blocks,
 						'post_title'   => ucwords( str_replace( '-', ' ', $classic_nav_menu->slug ) ), // Format as title case.
 						'post_name'    => $classic_nav_menu->slug,
@@ -298,8 +295,8 @@ class Go_Classic_Conversion {
 	 *
 	 * @return string The post content.
 	 */
-	public function migrate_navigation_locations( $post_content, $template_file ) {
-		if( ! is_array( $this->nav_menu_locations ) ) {
+	public function migrate_navigation_locations( $post_content, $template_file ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
+		if ( ! is_array( $this->nav_menu_locations ) ) {
 			return $post_content;
 		}
 
@@ -310,7 +307,7 @@ class Go_Classic_Conversion {
 
 			// Check if the navigation block exists in the template and replace the ref with the menu ID for the location.
 			if ( 1 === preg_match( '/^.+"nav-loc-' . $location . '".+$/m', $post_content, $nav_matches ) ) {
-				$replace = str_replace( 'wp:navigation {', 'wp:navigation {"ref":' . esc_attr( $this->nav_menu_locations[ $location ] ) . ',', $nav_matches[0] );
+				$replace      = str_replace( 'wp:navigation {', 'wp:navigation {"ref":' . esc_attr( $this->nav_menu_locations[ $location ] ) . ',', $nav_matches[0] );
 				$post_content = str_replace( $nav_matches[0], $replace, $post_content );
 			}
 		}
@@ -326,7 +323,7 @@ class Go_Classic_Conversion {
 	 *
 	 * @return string The post content.
 	 */
-	public function migrate_header_variations( $post_content, $template_file ) {
+	public function migrate_header_variations( $post_content, $template_file ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 		$header_variation = $this->get_theme_mod( 'header_variation' );
 		return empty( $header_variation )
 			? $post_content
@@ -341,7 +338,7 @@ class Go_Classic_Conversion {
 	 *
 	 * @return string The post content.
 	 */
-	public function migrate_footer_variations( $post_content, $template_file ) {
+	public function migrate_footer_variations( $post_content, $template_file ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 		$footer_variation = $this->get_theme_mod( 'footer_variation' );
 		return empty( $footer_variation )
 			? $post_content
@@ -359,15 +356,15 @@ class Go_Classic_Conversion {
 	 */
 	public function migrate_template_parts( $search_slug, $replace_slug, $post_content ) {
 		$search_block = array(
-			'blockName' => 'core/template-part',
-			'attrs'     => array(
+			'blockName'    => 'core/template-part',
+			'attrs'        => array(
 				'slug'  => $search_slug,
 				'theme' => 'go-fse',
 			),
 			'innerContent' => array(),
 		);
 
-		$replace_block = $search_block;
+		$replace_block                  = $search_block;
 		$replace_block['attrs']['slug'] = $replace_slug;
 
 		return str_replace(
@@ -383,14 +380,14 @@ class Go_Classic_Conversion {
 	 * @param string $post_content The post content.
 	 * @param string $template_file The template file.
 	 */
-	public function migrate_social_links( $post_content, $template_file ) {
+	public function migrate_social_links( $post_content, $template_file ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 		if ( ! preg_match( '/(<!-- wp:social-links \X+<ul[^>]+>)(<\/ul>\X+\/wp:social-links -->)/m', $post_content, $matches ) ) {
 			return $post_content;
 		}
 
 		$search_block = $matches[0];
 
-		$wrapper_open = $matches[1];
+		$wrapper_open  = $matches[1];
 		$wrapper_close = $matches[2];
 
 		// Migrate social_icon_color to iconColor attribute.
@@ -431,8 +428,8 @@ class Go_Classic_Conversion {
 				$url = $this->get_theme_mod( 'social_icon_' . $icon );
 
 				return empty( $url ) ? null : array(
-					'blockName' => 'core/social-link',
-					'attrs'     => array(
+					'blockName'    => 'core/social-link',
+					'attrs'        => array(
 						'url'     => $url,
 						'service' => $icon,
 					),
@@ -449,6 +446,7 @@ class Go_Classic_Conversion {
 			$post_content
 		);
 	}
+
 
 	/**
 	 * Migrate the header text and background colors to the new wrapper group.
@@ -495,7 +493,7 @@ class Go_Classic_Conversion {
 	 */
 	public function migrate_wrapper_group_colors( $post_content, $text_color, $background_color ) {
 		$parsed_blocks = parse_blocks( $post_content );
-		$target_block = $parsed_blocks[0];
+		$target_block  = $parsed_blocks[0];
 
 		// Bail if the first block is not a group.
 		if ( empty( $target_block ) || $target_block['blockName'] !== 'core/group' ) {
@@ -507,7 +505,7 @@ class Go_Classic_Conversion {
 			unset( $target_block['attrs']['backgroundColor'] );
 			$target_block['attrs']['style']['color']['background'] = $background_color;
 
-			$search = array(
+			$search  = array(
 				' has-base-background-color ',
 				'style="',
 			);
@@ -516,7 +514,7 @@ class Go_Classic_Conversion {
 				sprintf( 'style="background-color:%s;', esc_attr( $background_color ) ),
 			);
 
-			$target_block['innerHTML'] = str_replace( $search, $replace, $target_block['innerHTML'] );
+			$target_block['innerHTML']       = str_replace( $search, $replace, $target_block['innerHTML'] );
 			$target_block['innerContent'][0] = str_replace( $search, $replace, $target_block['innerContent'][0] );
 		}
 
@@ -524,9 +522,9 @@ class Go_Classic_Conversion {
 		if ( ! empty( $text_color ) ) {
 			unset( $target_block['attrs']['textColor'] );
 			$target_block['attrs']['style']['elements']['link']['color']['text'] = $text_color;
-			$target_block['attrs']['style']['color']['text'] = $text_color;
+			$target_block['attrs']['style']['color']['text']                     = $text_color;
 
-			$search = array(
+			$search  = array(
 				' has-contrast-color ',
 				'style="',
 			);
@@ -535,7 +533,7 @@ class Go_Classic_Conversion {
 				sprintf( 'style="color:%s;', esc_attr( $text_color ) ),
 			);
 
-			$target_block['innerHTML'] = str_replace( $search, $replace, $target_block['innerHTML'] );
+			$target_block['innerHTML']       = str_replace( $search, $replace, $target_block['innerHTML'] );
 			$target_block['innerContent'][0] = str_replace( $search, $replace, $target_block['innerContent'][0] );
 		}
 
@@ -546,10 +544,10 @@ class Go_Classic_Conversion {
 	/**
 	 * Make the header sticky.
 	 *
-	 * @param string $post_content
-	 * @param string $template_file
+	 * @param string $post_content The post content.
+	 * @param string $template_file The template file.
 	 */
-	public function make_header_sticky( $post_content, $template_file ) {
+	public function make_header_sticky( $post_content, $template_file ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 		if ( ! $this->get_theme_mod( 'sticky_header' ) ) {
 			return $post_content;
 		}
@@ -566,10 +564,10 @@ class Go_Classic_Conversion {
 	/**
 	 * Hide the site title.
 	 *
-	 * @param string $post_content
-	 * @param strint $template_file
+	 * @param string $post_content The post content.
+	 * @param strint $template_file The template file.
 	 */
-	public function hide_site_title( $post_content, $template_file ) {
+	public function hide_site_title( $post_content, $template_file ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 		if ( ! $this->get_theme_mod( 'hide_site_title' ) ) {
 			return $post_content;
 		}
@@ -580,10 +578,10 @@ class Go_Classic_Conversion {
 	/**
 	 * Hide the site tagline.
 	 *
-	 * @param string $post_content
-	 * @param string $template_file
+	 * @param string $post_content The post content.
+	 * @param string $template_file The template file.
 	 */
-	public function hide_site_tagline( $post_content, $template_file ) {
+	public function hide_site_tagline( $post_content, $template_file ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 		if ( ! $this->get_theme_mod( 'hide_site_tagline' ) ) {
 			return $post_content;
 		}
@@ -599,48 +597,48 @@ class Go_Classic_Conversion {
 
 		// Used as a reference for default values.
 		$theme_json_data = 'traditional' === $design_style
-			? wp_json_file_decode( $this->basePath( 'theme.json' ), array( 'associative' => true ) )
-			: wp_json_file_decode( $this->basePath( '/styles/' . $design_style . '.json' ), array( 'associative' => true ) );
+			? wp_json_file_decode( $this->base_path( 'theme.json' ), array( 'associative' => true ) )
+			: wp_json_file_decode( $this->base_path( '/styles/' . $design_style . '.json' ), array( 'associative' => true ) );
 
 		$theme_json = new WP_Theme_JSON( $theme_json_data, 'theme' );
 
 		// This will become the customized global styles.
 		$user_json_data = 'traditional' === $design_style
-			? array( 'version' => WP_Theme_JSON::LATEST_SCHEMA, )
+			? array( 'version' => WP_Theme_JSON::LATEST_SCHEMA )
 			: $theme_json->get_raw_data();
 
 		$user_json = new WP_Theme_JSON( $user_json_data, 'user' );
 
 		// This will become the customized palette.
 		$palette_json_data = array(
-			'version' => WP_Theme_JSON::LATEST_SCHEMA,
+			'version'  => WP_Theme_JSON::LATEST_SCHEMA,
 			'settings' => array(
 				'color' => array(
 					'palette' => array(
 						array(
 							'color' => $theme_json->get_data()['settings']['color']['palette'][0]['color'],
-							'name' => 'Base',
-							'slug' => 'base',
+							'name'  => 'Base',
+							'slug'  => 'base',
 						),
 						array(
 							'color' => $theme_json->get_data()['settings']['color']['palette'][1]['color'],
-							'name' => 'Contrast',
-							'slug' => 'contrast',
+							'name'  => 'Contrast',
+							'slug'  => 'contrast',
 						),
 						array(
 							'color' => $this->get_theme_mod( 'primary_color' ) ?? $theme_json->get_data()['settings']['color']['palette'][2]['color'],
-							'name' => 'Primary',
-							'slug' => 'primary',
+							'name'  => 'Primary',
+							'slug'  => 'primary',
 						),
 						array(
 							'color' => $this->get_theme_mod( 'secondary_color' ) ?? $theme_json->get_data()['settings']['color']['palette'][3]['color'],
-							'name' => 'Secondary',
-							'slug' => 'secondary',
+							'name'  => 'Secondary',
+							'slug'  => 'secondary',
 						),
 						array(
 							'color' => $this->get_theme_mod( 'tertiary_color' ) ?? $theme_json->get_data()['settings']['color']['palette'][4]['color'],
-							'name' => 'Tertiary',
-							'slug' => 'tertiary',
+							'name'  => 'Tertiary',
+							'slug'  => 'tertiary',
 						),
 					),
 				),
@@ -655,23 +653,23 @@ class Go_Classic_Conversion {
 		$global_theme_json = array_merge(
 			$user_json->get_data(),
 			array(
-				'version' => WP_Theme_JSON::LATEST_SCHEMA,
+				'version'                     => WP_Theme_JSON::LATEST_SCHEMA,
 				'isGlobalStylesUserThemeJSON' => true,
 			)
 		);
 
-		// Setup Templates
+		// Setup Templates.
 		$template_data = array(
-			'post_name' => 'wp-global-styles-go-fse',
-			'post_type' => 'wp_global_styles',
+			'post_name'   => 'wp-global-styles-go-fse',
+			'post_type'   => 'wp_global_styles',
 			'post_status' => 'publish',
-			'tax_input' => array( 'wp_theme' => array( 'go-fse' ) ),
+			'tax_input'   => array( 'wp_theme' => array( 'go-fse' ) ),
 		);
 
 		$template_data['ID'] = $this->post_exists( $template_data['post_name'], $template_data['post_type'] );
 
-		$template_data['post_title'] = 'Custom Styles';
-		$template_data['post_content'] = json_encode( $global_theme_json );
+		$template_data['post_title']   = 'Custom Styles';
+		$template_data['post_content'] = wp_json_encode( $global_theme_json );
 		wp_insert_post( array_filter( $template_data ) );
 	}
 }
