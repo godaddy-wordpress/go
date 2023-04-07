@@ -83,9 +83,16 @@ class Classic_Conversion {
 		$post_name = wp_unslash( sanitize_post_field( 'post_name', $name, 0, 'db' ) );
 		$post_type = wp_unslash( sanitize_post_field( 'post_type', $type, 0, 'db' ) );
 
-		return (int) $wpdb->get_var( $wpdb->prepare( 
-			"SELECT ID FROM $wpdb->posts WHERE 1=1  AND post_name = %s AND post_type = %s", 
-			$post_name, $post_type ) );
+		$query = "SELECT ID FROM $wpdb->posts WHERE 1=1";
+		$args  = array();
+
+		$query .= ' AND post_name = %s';
+		$args[] = $post_name;
+
+		$query .= ' AND post_type = %s';
+		$args[] = $post_type;
+
+		return (int) $wpdb->get_var( $wpdb->prepare( $query, $args ) );
 	}
 
 	/**
