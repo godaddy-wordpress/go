@@ -83,16 +83,9 @@ class Classic_Conversion {
 		$post_name = wp_unslash( sanitize_post_field( 'post_name', $name, 0, 'db' ) );
 		$post_type = wp_unslash( sanitize_post_field( 'post_type', $type, 0, 'db' ) );
 
-		$query = "SELECT ID FROM $wpdb->posts WHERE 1=1";
-		$args  = array();
-
-		$query .= ' AND post_name = %s';
-		$args[] = $post_name;
-
-		$query .= ' AND post_type = %s';
-		$args[] = $post_type;
-
-		return (int) $wpdb->get_var( $wpdb->prepare( $query, $args ) );
+		return (int) $wpdb->get_var( $wpdb->prepare( 
+			"SELECT ID FROM $wpdb->posts WHERE 1=1  AND post_name = %s AND post_type = %s", 
+			$post_name, $post_type ) );
 	}
 
 	/**
@@ -206,7 +199,7 @@ class Classic_Conversion {
 	/**
 	 * Migrate navigation locations from theme_mods to wp_navigation post.
 	 *
-	 * The core navigation block aprovides
+	 * The core navigation block provides
 	 * `block_core_navigation_maybe_use_classic_menu_fallback` as a way to
 	 * migrate. However, this function does not allow us to specify which menu
 	 * to migrate. We need to be able to migrate only the menus that are
