@@ -13,6 +13,7 @@
 	<exclude-pattern>*/wordpress*/*</exclude-pattern>
 	<exclude-pattern>*/\.*</exclude-pattern>
 	<exclude-pattern>*/.dev/*</exclude-pattern>
+	<exclude-pattern>/index.php</exclude-pattern>
 
 	<arg name="colors"/>
 	<arg value="sp"/>
