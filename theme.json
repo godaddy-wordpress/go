@@ -428,6 +428,18 @@
 	},
 	"styles": {
 		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": "3px"
+				},
+				"variations": {
+					"outline": {
+						"color": {
+							"text": "#c76919"
+						}
+					}
+				}
+			},
 			"core/navigation": {
 				"elements": {
 					"link": {
@@ -450,6 +462,10 @@
 							"textDecoration": "none"
 						}
 					}
+				},
+				"typography": {
+					"fontFamily": "var:preset|font-family|crimson-text",
+					"fontSize": "var:preset|font-size|medium"
 				}
 			},
 			"core/post-author": {
@@ -481,7 +497,7 @@
 			},
 			"core/post-title": {
 				"color": {
-					"text": "var:preset|color|contrast"
+					"text": "var:preset|color|secondary"
 				},
 				"elements": {
 					"link": {
@@ -501,7 +517,7 @@
 							}
 						},
 						"color": {
-							"text": "var:preset|color|contrast"
+							"text": "var:preset|color|secondary"
 						},
 						"typography": {
 							"textDecoration": "none"
