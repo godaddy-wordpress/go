@@ -497,7 +497,7 @@
 			},
 			"core/post-title": {
 				"color": {
-					"text": "var:preset|color|secondary"
+					"text": "var:preset|color|contrast"
 				},
 				"elements": {
 					"link": {
@@ -517,7 +517,7 @@
 							}
 						},
 						"color": {
-							"text": "var:preset|color|secondary"
+							"text": "var:preset|color|contrast"
 						},
 						"typography": {
 							"textDecoration": "none"
@@ -586,7 +586,7 @@
 			},
 			"h1": {
 				"color": {
-					"text": "var:preset|color|secondary"
+					"text": "var:preset|color|contrast"
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|crimson-text",
@@ -598,7 +598,7 @@
 			},
 			"h2": {
 				"color": {
-					"text": "var:preset|color|secondary"
+					"text": "var:preset|color|contrast"
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|crimson-text",
@@ -610,7 +610,7 @@
 			},
 			"h3": {
 				"color": {
-					"text": "var:preset|color|secondary"
+					"text": "var:preset|color|contrast"
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|crimson-text",
@@ -622,7 +622,7 @@
 			},
 			"h4": {
 				"color": {
-					"text": "var:preset|color|secondary"
+					"text": "var:preset|color|contrast"
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|crimson-text",
@@ -634,7 +634,7 @@
 			},
 			"h5": {
 				"color": {
-					"text": "var:preset|color|secondary"
+					"text": "var:preset|color|contrast"
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|crimson-text",
@@ -646,7 +646,7 @@
 			},
 			"h6": {
 				"color": {
-					"text": "var:preset|color|secondary"
+					"text": "var:preset|color|contrast"
 				},
 				"typography": {
 					"fontSize": "var:preset|font-size|medium",
@@ -657,7 +657,7 @@
 			},
 			"heading": {
 				"color": {
-					"text": "var:preset|color|secondary"
+					"text": "var:preset|color|contrast"
 				},
 				"spacing": {
 					"padding": {
