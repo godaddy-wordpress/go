@@ -1,7 +1,4 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
-	"title": "Trendy",
 	"settings": {
 		"color": {
 			"palette": [
@@ -77,12 +74,6 @@
 		}
 	},
 	"styles": {
-		"typography": {
-			"fontFamily": "var:preset|font-family|noto-sans",
-			"fontSize": "var:preset|font-size|small",
-			"letterSpacing": "normal",
-			"lineHeight": "1.9"
-		},
 		"elements": {
 			"h1": {
 				"color": {
@@ -154,6 +145,15 @@
 					"lineHeight": "1.325"
 				}
 			}
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|noto-sans",
+			"fontSize": "var:preset|font-size|small",
+			"letterSpacing": "normal",
+			"lineHeight": "1.9"
 		}
-	}
+	},
+	"title": "Trendy",
+	"version": 2,
+	"$schema": "https://schemas.wp.org/wp/6.2/theme.json"
 }

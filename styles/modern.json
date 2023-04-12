@@ -122,16 +122,12 @@
 					"textTransform": "uppercase"
 				}
 			},
-			"core/post-title": {
-				"color": {
-					"text": "var:preset|color|contrast"
-				},
-				"elements": {
-					"link": {
-						"color": {
-							"text": "var:preset|color|contrast"
-						}
-					}
+			"core/site-title": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|montserrat",
+					"fontSize": "var:preset|font-size|x-large",
+					"letterSpacing": "3px",
+					"textTransform": "uppercase"
 				}
 			}
 		},
