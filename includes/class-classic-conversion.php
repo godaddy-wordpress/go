@@ -221,11 +221,9 @@ class Classic_Conversion {
 			return;
 		}
 
-		$unique_nav_menu_ids = array_unique( array_filter( array_values( $nav_menu_locations ) ) );
-
 		array_walk(
-			$unique_nav_menu_ids,
-			function( $nav_menu_id ) use ( $nav_menu_locations ) {
+			$nav_menu_locations,
+			function( $nav_menu_id, $nav_menu_loc ) {
 				// See if we have a classic menu.
 				$classic_nav_menu = wp_get_nav_menu_object( $nav_menu_id );
 
@@ -252,12 +250,7 @@ class Classic_Conversion {
 					),
 				);
 
-				$this->nav_menu_locations = array_map(
-					function( $location ) use ( $nav_menu_id, $new_nav_menu_id ) {
-						return $nav_menu_id === $location ? $new_nav_menu_id : $location;
-					},
-					$nav_menu_locations
-				);
+				$this->nav_menu_locations[ $nav_menu_loc ] = $new_nav_menu_id;
 			}
 		);
 	}
@@ -275,15 +268,63 @@ class Classic_Conversion {
 			return $post_content;
 		}
 
-		$nav_locations = array_keys( array_filter( $this->nav_menu_locations ) );
+		// Check if the template has a navigation block.
+		if ( empty( preg_match_all( '/<!-- wp:navigation \X+?\/-->/', $post_content, $matches ) ) ) {
+			return $post_content;
+		}
 
-		foreach ( $nav_locations as $location ) {
-			$nav_matches = array();
+		// Loop through the navigation blocks and add the ref attribute.
+		array_map(
+			function( $match ) use ( &$post_content ) {
+				$parsed_block = parse_blocks( $match )[0];
 
-			// Check if the navigation block exists in the template and replace the ref with the menu ID for the location.
-			if ( 1 === preg_match( '/^.+"nav-loc-' . $location . '".+$/m', $post_content, $nav_matches ) ) {
-				$replace      = str_replace( 'wp:navigation {', 'wp:navigation {"ref":' . esc_attr( $this->nav_menu_locations[ $location ] ) . ',', $nav_matches[0] );
-				$post_content = str_replace( $nav_matches[0], $replace, $post_content );
+				// Clear the inner blocks and content.
+				$parsed_block['innerBlocks']  = array();
+				$parsed_block['innerHTML']    = '';
+				$parsed_block['innerContent'] = array();
+
+				// Add the ref attribute if the location matches.
+				foreach ( $this->nav_menu_locations as $location => $menu_id ) {
+					if ( false !== strpos( $parsed_block['attrs']['className'], $location ) ) {
+						$parsed_block['attrs']['ref'] = $menu_id;
+					}
+				}
+
+				$replace = serialize_block( $parsed_block );
+
+				$post_content = str_replace( $match, $replace, $post_content );
+			},
+			$matches[0]
+		);
+
+		// Remove the column block if the location doesn't have a menu.
+		if ( preg_match( '/<!-- wp:columns \X+?<!-- \/wp:columns -->/', $post_content, $columns_match ) ) {
+			$columns_block = parse_blocks( $columns_match[0] )[0];
+			$column_blocks = array_map( 'serialize_block', $columns_block['innerBlocks'] );
+
+			$missing_nav_locations = array_diff(
+				array( 'primary', 'footer-1', 'footer-2', 'footer-3' ),
+				array_keys( $this->nav_menu_locations ),
+			);
+
+			// Loop through the column blocks and remove the column block if it contains a missing nav location.
+			foreach ( $column_blocks as $column_block ) {
+				$should_remove = ! empty(
+					array_filter(
+						$missing_nav_locations,
+						function( $missing_nav_location ) use ( $column_block ) {
+							if ( false !== strpos( $column_block, "nav-loc-$missing_nav_location" ) ) {
+								return true;
+							}
+
+							return false;
+						}
+					)
+				);
+
+				if ( $should_remove ) {
+					$post_content = str_replace( $column_block, '', $post_content );
+				}
 			}
 		}
 
