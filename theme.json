@@ -523,6 +523,14 @@
 							"textDecoration": "none"
 						}
 					}
+				},
+				"spacing": {
+					"padding": {
+						"bottom": "0",
+						"left": "0",
+						"right": "0",
+						"top": "0"
+					}
 				}
 			},
 			"core/site-title": {
@@ -721,6 +729,11 @@
 	"templateParts": [
 		{
 			"area": "header",
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "header",
 			"name": "header-1",
 			"title": "Header One"
 		},
@@ -753,6 +766,11 @@
 			"area": "header",
 			"name": "header-7",
 			"title": "Header Seven"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
 		},
 		{
 			"area": "footer",
