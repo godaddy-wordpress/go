@@ -9,8 +9,10 @@ node_modules export-ignore
 package-lock.json export-ignore
 package.json export-ignore
 phpcs.xml export-ignore
-phpunit.xml.dist export-ignore
+phpunit.xml export-ignore
+postcss.config.js export-ignore
 README.md export-ignore
+screenshot.png export-ignore
 vendor export-ignore
 webpack.config.js export-ignore
 yarn.lock export-ignore
