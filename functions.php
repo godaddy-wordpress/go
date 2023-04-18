@@ -3,6 +3,7 @@
 function go_theme_setup() {
 	add_theme_support( 'wp-block-styles' );
 	add_editor_style( 'style.css' );
+	delete_option( 'coblocks_site_design_controls_enabled' );
 }
 add_action( 'after_theme_setup', 'go_theme_setup' );
 
