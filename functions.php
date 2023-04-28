@@ -12,6 +12,11 @@ function go_theme_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'go_theme_styles' );
 
+define( 'GO_VERSION', '1.8.1' );
+define( 'GO_PLUGIN_DIR', get_template_directory( __FILE__ ) );
+define( 'GO_PLUGIN_URL', get_template_directory_uri( __FILE__ ) );
+require_once get_parent_theme_file_path( 'includes/class-go-theme-deactivation.php' );
+
 if ( isset( $_GET['migrate'] ) ) {
 	require_once get_parent_theme_file_path( '/includes/class-classic-conversion.php' );
 

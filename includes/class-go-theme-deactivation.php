@@ -38,19 +38,14 @@ class Go_Theme_Deactivation {
 	public function enqueue_scripts( $hook_suffix ) {
 
 		if ( 'themes.php' !== $hook_suffix ) {
-
 			return;
-
 		}
-
-		$name     = 'go-theme-deactivation';
-		$filepath = '/dist/js/admin/' . $name;
 
 		// Enqueue modal script.
 		wp_enqueue_script(
 			'go-theme-deactivation',
-			GO_PLUGIN_URL . $filepath . '.js',
-			array( 'wp-components', 'wp-dom', 'wp-dom-ready', 'wp-element' ),
+			GO_PLUGIN_URL . '/build/index.js',
+			array('wp-components', 'wp-dom', 'wp-dom-ready', 'wp-element'),
 			GO_VERSION,
 			true
 		);
@@ -71,14 +66,10 @@ class Go_Theme_Deactivation {
 		);
 
 		// Styles.
-		$name     = 'style-go-theme-deactivation';
-		$filepath = '/dist/css/admin/' . $name;
-		$rtl      = ! is_rtl() ? '' : '-rtl';
-
 		wp_enqueue_style(
 			'go-theme-deactivation',
-			GO_PLUGIN_URL . $filepath . $rtl . '.css',
-			array( 'wp-components' ),
+			GO_PLUGIN_URL . '/build/index.css',
+			array('wp-components', 'wp-dom', 'wp-dom-ready', 'wp-element'),
 			GO_VERSION
 		);
 
