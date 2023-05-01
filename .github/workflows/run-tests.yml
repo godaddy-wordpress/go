@@ -30,7 +30,7 @@ jobs:
         run: |
           composer install
           npm install
-          npm build
+          npm run build
 
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
@@ -96,7 +96,7 @@ jobs:
         run: |
           composer install
           npm install
-          npm build
+          npm run build
 
       - name: Prepare tests
         run: |
