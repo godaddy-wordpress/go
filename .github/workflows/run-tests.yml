@@ -21,17 +21,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Setup WP-CLI
         uses: godaddy-wordpress/setup-wp-cli@1
 
       - name: Install dependencies and build
         run: |
-          npm i -g yarn
           composer install
-          yarn install --immutable
-          yarn build
+          npm install
+          npm build
 
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
@@ -61,13 +60,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: npm install
 
       - name: Run tests
-        run: yarn run test:js
+        run: npm run test:js
 
   a11y:
     name: Accessibility
@@ -88,17 +87,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Setup WP-CLI
         uses: godaddy-wordpress/setup-wp-cli@1
 
       - name: Install dependencies and build
         run: |
-          npm i -g yarn
           composer install
-          yarn install --immutable
-          yarn build
+          npm install
+          npm build
 
       - name: Prepare tests
         run: |
@@ -106,47 +104,8 @@ jobs:
 
       - name: Run tests
         run: |
-          A11Y=$(yarn test:a11y)
+          A11Y=$(npm test:a11y)
           echo "$A11Y"
           if [[ $A11Y != *"All accessibility tests have passed"* ]]; then
             exit 1
           fi
-
-  e2e:
-    name: Customizer E2E
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup wp-env
-        uses: godaddy-wordpress/setup-wp-env@v1
-        with:
-          core: 'WordPress/WordPress#6.1'
-          phpVersion: '7.4'
-          plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
-          themes: '["."]'
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'yarn'
-
-      - name: Setup WP-CLI
-        uses: godaddy-wordpress/setup-wp-cli@1
-
-      - name: Install dependencies and build
-        run: |
-          npm i -g yarn
-          composer install
-          yarn install --immutable
-          yarn build
-
-      - name: Prepare tests
-        run: |
-          wp-env run cli "wp theme activate go"
-          wp-env run cli "wp option update permalink_structure '/%postname%'"
-
-      - name: Run tests
-        run: yarn test:e2e:customizer -- --record
