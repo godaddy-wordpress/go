@@ -75,8 +75,12 @@
   "devDependencies": {
     "@godaddy-wordpress/eslint-config": "^0.6.1",
     "@godaddy-wordpress/stylelint-config": "^0.6.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@wordpress/env": "^5.11.1",
     "@wordpress/scripts": "^25.3.4",
+    "jest-fetch-mock": "^3.0.3",
     "pa11y": "^6.2.3"
   },
   "dependencies": {
