@@ -27,7 +27,6 @@ class Go_Theme_Deactivation {
 		add_action( 'admin_footer-themes.php', array( $this, 'admin_go_deactivation_modal' ) );
 
 		add_filter( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-
 	}
 
 	/**
@@ -45,7 +44,7 @@ class Go_Theme_Deactivation {
 		wp_enqueue_script(
 			'go-theme-deactivation',
 			GO_PLUGIN_URL . '/build/index.js',
-			array('wp-components', 'wp-dom', 'wp-dom-ready', 'wp-element'),
+			array( 'wp-components', 'wp-dom', 'wp-dom-ready', 'wp-element' ),
 			GO_VERSION,
 			true
 		);
@@ -69,10 +68,9 @@ class Go_Theme_Deactivation {
 		wp_enqueue_style(
 			'go-theme-deactivation',
 			GO_PLUGIN_URL . '/build/index.css',
-			array('wp-components', 'wp-dom', 'wp-dom-ready', 'wp-element'),
+			array( 'wp-components', 'wp-dom', 'wp-dom-ready', 'wp-element' ),
 			GO_VERSION
 		);
-
 	}
 
 	/**
@@ -85,7 +83,6 @@ class Go_Theme_Deactivation {
 		<div id="<?php echo esc_attr( self::CONTAINER_ID ); ?>"></div>
 
 		<?php
-
 	}
 
 }

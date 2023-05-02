@@ -1,1 +1,1 @@
-<?php // This page intentionally left blank.
+<?php // phpcs:ignore This page intentionally left blank.

@@ -71,6 +71,7 @@ class Classic_Conversion {
 	 * Determines if a post exists based on name and type.
 	 *
 	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @see https://github.com/WordPress/WordPress/blob/6.2-branch/wp-admin/includes/post.php#L787-L845
 	 *
 	 * @param string $name   Post name.
 	 * @param string $type    Optional. Post type.
@@ -92,7 +93,7 @@ class Classic_Conversion {
 		$query .= ' AND post_type = %s';
 		$args[] = $post_type;
 
-		return (int) $wpdb->get_var( $wpdb->prepare( $query, $args ) );
+		return (int) $wpdb->get_var( $wpdb->prepare( $query, $args ) ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared -- Ignoring since we are preparing the query.
 	}
 
 	/**
@@ -137,7 +138,7 @@ class Classic_Conversion {
 	 * @param string $type wp_template or wp_template_part.
 	 */
 	public function save_template_customizations( $template_file, $index, $type = 'wp_template' ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
-		$template_contents = file_get_contents( $template_file );
+		$template_contents = file_get_contents( $template_file ); // phpcs:ignore WordPress.WP.AlternativeFunctions -- Retrieving a local file with file_get_contents is fine here.
 
 		$new_contents = array_reduce(
 			array(
@@ -275,8 +276,8 @@ class Classic_Conversion {
 
 		// Loop through the navigation blocks and add the ref attribute.
 		array_map(
-			function( $match ) use ( &$post_content ) {
-				$parsed_block = parse_blocks( $match )[0];
+			function( $content_match ) use ( &$post_content ) {
+				$parsed_block = parse_blocks( $content_match )[0];
 
 				// Clear the inner blocks and content.
 				$parsed_block['innerBlocks']  = array();
@@ -292,7 +293,7 @@ class Classic_Conversion {
 
 				$replace = serialize_block( $parsed_block );
 
-				$post_content = str_replace( $match, $replace, $post_content );
+				$post_content = str_replace( $content_match, $replace, $post_content );
 			},
 			$matches[0]
 		);

@@ -1,23 +1,44 @@
 <?php
+/**
+ * Go functions and definitions
+ *
+ * @package Go
+ */
 
-function go_theme_setup() {
-	add_theme_support( 'wp-block-styles' );
-	add_editor_style( 'style.css' );
-	delete_option( 'coblocks_site_design_controls_enabled' );
-}
-add_action( 'after_theme_setup', 'go_theme_setup' );
-
-function go_theme_styles() {
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-}
-add_action( 'wp_enqueue_scripts', 'go_theme_styles' );
-
-define( 'GO_VERSION', '1.8.1' );
+// Load deactivation modal.
+define( 'GO_VERSION', '2.0.0' );
 define( 'GO_PLUGIN_DIR', get_template_directory( __FILE__ ) );
 define( 'GO_PLUGIN_URL', get_template_directory_uri( __FILE__ ) );
 require_once get_parent_theme_file_path( 'includes/class-go-theme-deactivation.php' );
 
-if ( isset( $_GET['migrate'] ) ) {
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ */
+function go_theme_setup() {
+	add_theme_support( 'wp-block-styles' );
+	add_editor_style( 'style.css' );
+
+	// Disable CoBlocks Site Design controls.
+	delete_option( 'coblocks_site_design_controls_enabled' );
+}
+
+add_action( 'after_theme_setup', 'go_theme_setup' );
+
+/**
+ * Enqueue theme styles.
+ */
+function go_theme_styles() {
+	wp_enqueue_style(
+		'style',
+		get_stylesheet_uri(),
+		array(),
+		GO_VERSION
+	);
+}
+add_action( 'wp_enqueue_scripts', 'go_theme_styles' );
+
+// Migration process.
+if ( isset( $_GET['migrate'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 	require_once get_parent_theme_file_path( '/includes/class-classic-conversion.php' );
 
 	$go_conversion = Go\Classic_Conversion::get_instance();
