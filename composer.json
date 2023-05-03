@@ -39,7 +39,7 @@
     },
     "scripts": {
         "lint": "phpcs --standard=phpcs.xml.dist",
-        "format": "phpcbf --standard=phpcs.xml.dist --report-summary --report-source",
+        "lint:fix": "phpcbf --standard=phpcs.xml.dist --report-summary --report-source",
         "test": "phpunit",
         "makepot": "wp i18n make-pot . --exclude=\"node_modules,vendor\" --headers='{\"Last-Translator\":\"plugins@godaddy.com\",\"Report-Msgid-Bugs-To\":\"https://github.com/godaddy-wordpress/go/issues\"}' --file-comment='Copyright (c) GoDaddy Operating Company, LLC. All Rights Reserved.'"
     }
