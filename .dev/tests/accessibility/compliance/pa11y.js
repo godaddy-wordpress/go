@@ -62,6 +62,7 @@ const config = {
 	},
 	chromeLaunchConfig: {
 		ignoreHTTPSErrors: true,
+		executablePath: process.env.CI && '/usr/bin/google-chrome',
 	}
 };
 
