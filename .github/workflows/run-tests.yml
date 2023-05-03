@@ -104,7 +104,7 @@ jobs:
 
       - name: Run tests
         run: |
-          A11Y=$(npm test:a11y)
+          A11Y=$(npm run test:a11y)
           echo "$A11Y"
           if [[ $A11Y != *"All accessibility tests have passed"* ]]; then
             exit 1
