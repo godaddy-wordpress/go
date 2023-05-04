@@ -334,7 +334,10 @@ class Classic_Conversion {
 				}
 				$menu_names[] = wp_get_nav_menu_name( $location );
 			}
-			$count = 0;
+			if ( empty( $menu_names ) ) {
+				return $post_content;
+			}
+			$count        = 0;
 			$post_content = preg_replace_callback(
 				'/Primary/',
 				function ( $v ) use ( $menu_names, &$count ) {
