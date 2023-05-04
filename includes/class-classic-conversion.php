@@ -329,6 +329,25 @@ class Classic_Conversion {
 			}
 		}
 
+		// Setup the navigation headings with the correct names.
+		if ( preg_match_all( '/Primary<\/h5>/', $post_content, $nav_headings_match ) ) {
+			$menu_names = array();
+			foreach ( $this->nav_menu_locations as $location => $menu_id ) {
+				if ( 'primary' === $location ) {
+					continue;
+				}
+				$menu_names[] = wp_get_nav_menu_name( $location );
+			}
+			$count = 0;
+			$post_content = preg_replace_callback(
+				'/Primary/',
+				function ( $v ) use ( $menu_names, &$count ) {
+					return $menu_names[ $count++ ];
+				},
+				$post_content
+			);
+		}
+
 		return $post_content;
 	}
 
