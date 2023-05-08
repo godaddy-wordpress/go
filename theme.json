@@ -30,27 +30,27 @@
 		"color": {
 			"palette": [
 				{
-					"color": "#FFFFFF",
+					"color": "hsl(0, 0%, 100%)",
 					"name": "Base",
 					"slug": "base"
 				},
 				{
-					"color": "#434a56",
+					"color": "hsl(210, 51%, 15%)",
 					"name": "Contrast",
 					"slug": "contrast"
 				},
 				{
-					"color": "#c76919",
+					"color": "hsl(28, 78%, 44%)",
 					"name": "Primary",
 					"slug": "primary"
 				},
 				{
-					"color": "#122538",
+					"color": "hsl(210, 51%, 15%)",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
 				{
-					"color": "#f8f8f8",
+					"color": "hsl(0, 0%, 97%)",
 					"name": "Tertiary",
 					"slug": "tertiary"
 				}
