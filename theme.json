@@ -1,4 +1,30 @@
 {
+	"customTemplates": [
+		{
+			"name": "archive-product",
+			"title": "Product Catalog"
+		},
+		{
+			"name": "product-search-results",
+			"title": "Product Search Results"
+		},
+		{
+			"name": "single-product",
+			"title": "Single Product"
+		},
+		{
+			"name": "taxonomy-product_attribute",
+			"title": "Products by Attribute"
+		},
+		{
+			"name": "taxonomy-product_cat",
+			"title": "Products by Category"
+		},
+		{
+			"name": "taxonomy-product_tag",
+			"title": "Products by Tag"
+		}
+	],
 	"settings": {
 		"appearanceTools": true,
 		"color": {
@@ -726,32 +752,6 @@
 			"lineHeight": "1.85"
 		}
 	},
-  "customTemplates": [
-    {
-			"name": "archive-product",
-			"title": "Product Catalog"
-		},
-    {
-			"name": "product-search-results",
-			"title": "Product Search Results"
-		},
-    {
-			"name": "single-product",
-			"title": "Single Product"
-		},
-    {
-			"name": "taxonomy-product_attribute",
-			"title": "Products by Attribute"
-		},
-    {
-			"name": "taxonomy-product_cat",
-			"title": "Products by Category"
-		},
-    {
-			"name": "taxonomy-product_tag",
-			"title": "Products by Tag"
-		}
-  ],
 	"templateParts": [
 		{
 			"area": "header",
@@ -818,8 +818,8 @@
 			"name": "footer-4",
 			"title": "Footer Four"
 		},
-    {
-      "area": "uncategorized",
+		{
+			"area": "uncategorized",
 			"name": "mini-cart",
 			"title": "Mini Cart"
 		}
