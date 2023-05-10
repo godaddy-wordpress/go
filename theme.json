@@ -96,7 +96,12 @@
 					"name": "7",
 					"size": "var(--wp--preset--font-size--xxxx-large)",
 					"slug": "70"
-				}
+				},
+        {
+          "name": "Default content padding",
+          "size": "clamp(1.5rem, var(--wp--preset--font-size--xxxx-large), 4vw)",
+          "slug": "default-content-padding"
+        }
 			],
 			"units": [
 				"px",
@@ -741,8 +746,8 @@
 		"spacing": {
 			"blockGap": "0.8182rem",
 			"padding": {
-				"left": "var:preset|spacing|30",
-				"right": "var:preset|spacing|30"
+				"left": "var:preset|spacing|default-content-padding",
+				"right": "var:preset|spacing|default-content-padding"
 			}
 		},
 		"typography": {
