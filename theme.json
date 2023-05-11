@@ -56,6 +56,11 @@
 				}
 			]
 		},
+    "custom": {
+      "spacing-default": "clamp(1.5rem, var(--wp--preset--font-size--xxxx-large), 4vw)",
+      "spacing-content": "42rem",
+      "spacing-align-wide": "84rem"
+    },
 		"layout": {
 			"contentSize": "42rem",
 			"wideSize": "84rem"
@@ -96,12 +101,7 @@
 					"name": "7",
 					"size": "var(--wp--preset--font-size--xxxx-large)",
 					"slug": "70"
-				},
-        {
-          "name": "Default content padding",
-          "size": "clamp(1.5rem, var(--wp--preset--font-size--xxxx-large), 4vw)",
-          "slug": "default-content-padding"
-        }
+				}
 			],
 			"units": [
 				"px",
@@ -471,6 +471,14 @@
 					}
 				}
 			},
+      "core/cover": {
+        "spacing": {
+          "padding": {
+            "left": "var:custom|spacing-default",
+            "right": "var:custom|spacing-default"
+          }
+        }
+      },
 			"core/navigation": {
 				"elements": {
 					"link": {
@@ -746,8 +754,8 @@
 		"spacing": {
 			"blockGap": "0.8182rem",
 			"padding": {
-				"left": "var:preset|spacing|default-content-padding",
-				"right": "var:preset|spacing|default-content-padding"
+				"left": "var:custom|spacing-default",
+				"right": "var:custom|spacing-default"
 			}
 		},
 		"typography": {
