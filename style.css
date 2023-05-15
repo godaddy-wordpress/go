@@ -24,3 +24,11 @@
 .wp-block-cover__inner-container {
 	max-width: var(--wp--custom--spacing-align-wide);
 }
+
+body .is-layout-flex {
+	gap: var(--wp--preset--spacing-20);
+}
+
+body .is-layout-flow > * + * {
+	margin-block-start: var(--wp--custom--spacing-xsmall);
+}

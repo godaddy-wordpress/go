@@ -57,7 +57,12 @@
 			]
 		},
     "custom": {
+      "spacing-xsmall": "calc(var(--wp--custom--spacing-default) * 0.5)",
+      "spacing-small": "calc(var(--wp--custom--spacing-default) * 0.75)",
       "spacing-default": "clamp(1.5rem, var(--wp--preset--font-size--xxxx-large), 4vw)",
+      "spacing-large": "calc(var(--wp--custom--spacing-default) * 1.25)",
+      "spacing-xlarge": "calc(var(--wp--custom--spacing-default) * 1.5)",
+      "spacing-xxlarge": "calc(var(--wp--custom--spacing-default) * 2)",
       "spacing-content": "42rem",
       "spacing-align-wide": "84rem"
     },
@@ -752,7 +757,7 @@
 			}
 		},
 		"spacing": {
-			"blockGap": "0.8182rem",
+			"blockGap": "var:custom|spacing-large",
 			"padding": {
 				"left": "var:custom|spacing-default",
 				"right": "var:custom|spacing-default"
