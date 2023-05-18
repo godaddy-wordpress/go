@@ -617,7 +617,8 @@
           "padding": {
             "left": "2.45rem"
           }
-        }
+        },
+        "css": "margin: 0 auto; max-width: 42rem;"
       }
 		},
 		"color": {
