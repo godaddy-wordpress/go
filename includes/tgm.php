@@ -39,11 +39,11 @@ function register_required_plugins() {
 	);
 
 	/**
-	 * Filters the list of plugin depedencies.
+	 * Filters the list of plugin dependencies.
 	 *
 	 * @since 0.1.0
 	 *
-	 * @param array $plugins Array containings the plugin dependencies in the TGM format.
+	 * @param array $plugins Array containing the plugin dependencies in the TGM format.
 	 */
 	$plugins = (array) apply_filters( 'go_plugin_dependencies', $plugins );
 

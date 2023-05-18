@@ -699,7 +699,7 @@ function get_default_design_style() {
 }
 
 /**
- * Returns the avaliable design styles.
+ * Returns the available design styles.
  *
  * @return array
  */
@@ -996,7 +996,7 @@ function get_available_design_styles() {
 	 *
 	 * @since 0.1.0
 	 *
-	 * @param array $design_styles Array containings the supported design styles,
+	 * @param array $design_styles Array containing the supported design styles,
 	 * where the index is the slug of design style and value an array of options that sets up the design styles.
 	 */
 	$supported_design_styles = (array) apply_filters( 'go_design_styles', $default_design_styles );
@@ -1044,7 +1044,7 @@ function get_default_header_variation() {
 }
 
 /**
- * Returns the avaliable header variations.
+ * Returns the available header variations.
  *
  * @return array
  */
@@ -1085,7 +1085,7 @@ function get_available_header_variations() {
 	 *
 	 * @since 0.1.0
 	 *
-	 * @param array $header_variations Array containings the supported header variations,
+	 * @param array $header_variations Array containing the supported header variations,
 	 * where the index is the slug of header variation and the value an array of options that sets up the header variation.
 	 */
 	$supported_header_variations = (array) apply_filters( 'go_header_variations', $default_header_variations );
@@ -1095,7 +1095,7 @@ function get_available_header_variations() {
 }
 
 /**
- * Returns the avaliable footer variations.
+ * Returns the available footer variations.
  *
  * @return array
  */
@@ -1136,7 +1136,7 @@ function get_available_footer_variations() {
 	 *
 	 * @since 0.1.0
 	 *
-	 * @param array $footer_variations Array containings the supported header variations,
+	 * @param array $footer_variations Array containing the supported header variations,
 	 * where the index is the slug of header variation and the value an array of options that sets up the header variation.
 	 */
 	$supported_footer_variations = (array) apply_filters( 'go_footer_variations', $default_footer_variations );
@@ -1267,9 +1267,9 @@ function get_available_social_icons() {
 	 *
 	 * @since 0.1.0
 	 *
-	 * @param array $social_icons Array containings the supported social icons.
+	 * @param array $social_icons Array containing the supported social icons.
 	 */
-	return (array) apply_filters( 'go_avaliable_social_icons', $social_icons );
+	return (array) apply_filters( 'go_available_social_icons', $social_icons );
 
 }
 
@@ -1290,7 +1290,7 @@ function get_social_icons() {
 }
 
 /**
- * Returns the avaliable color schemes
+ * Returns the available color schemes
  *
  * @return array
  */
@@ -1298,7 +1298,7 @@ function get_available_color_schemes() {
 	$design_style = get_design_style();
 
 	/**
-	 * Filters the avaliable color schemes
+	 * Filters the available color schemes
 	 *
 	 * @since 0.1.0
 	 *

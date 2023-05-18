@@ -303,12 +303,12 @@ function get_palette_color( $color, $format = 'RGB' ) {
 
 	$color_override = get_theme_mod( $override_colors[ $color ] );
 
-	$avaliable_color_schemes = get_available_color_schemes();
+	$available_color_schemes = get_available_color_schemes();
 
 	$the_color = '';
 
-	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) && isset( $avaliable_color_schemes[ $color_scheme ][ $color ] ) ) {
-		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
+	if ( $color_scheme && isset( $available_color_schemes[ $color_scheme ] ) && isset( $available_color_schemes[ $color_scheme ][ $color ] ) ) {
+		$the_color = $available_color_schemes[ $color_scheme ][ $color ];
 	}
 
 	if ( $color_override ) {
@@ -347,17 +347,17 @@ function get_palette_color( $color, $format = 'RGB' ) {
 function get_default_palette_color( $color, $format = 'RGB' ) {
 	$default                 = \Go\Core\get_default_color_scheme();
 	$color_scheme            = get_theme_mod( 'color_scheme', $default );
-	$avaliable_color_schemes = get_available_color_schemes();
+	$available_color_schemes = get_available_color_schemes();
 
 	$the_color = '';
 
-	if ( $color_scheme && empty( $avaliable_color_schemes[ $color_scheme ] ) ) {
-		$color_scheme_keys = array_keys( $avaliable_color_schemes );
+	if ( $color_scheme && empty( $available_color_schemes[ $color_scheme ] ) ) {
+		$color_scheme_keys = array_keys( $available_color_schemes );
 		$color_scheme      = array_shift( $color_scheme_keys );
 	}
 
-	if ( $color_scheme && isset( $avaliable_color_schemes[ $color_scheme ] ) && isset( $avaliable_color_schemes[ $color_scheme ][ $color ] ) ) {
-		$the_color = $avaliable_color_schemes[ $color_scheme ][ $color ];
+	if ( $color_scheme && isset( $available_color_schemes[ $color_scheme ] ) && isset( $available_color_schemes[ $color_scheme ][ $color ] ) ) {
+		$the_color = $available_color_schemes[ $color_scheme ][ $color ];
 	}
 
 	if ( ! empty( $the_color ) ) {
@@ -393,9 +393,9 @@ function hex_to_rgb( $color, $opacity = false ) {
 		$hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
 	} else {
 		$default                 = \Go\Core\get_default_color_scheme();
-		$avaliable_color_schemes = get_available_color_schemes();
-		if ( isset( $avaliable_color_schemes[ $default ] ) && isset( $avaliable_color_schemes[ $default ]['primary'] ) ) {
-			$default = $avaliable_color_schemes[ $default ]['primary'];
+		$available_color_schemes = get_available_color_schemes();
+		if ( isset( $available_color_schemes[ $default ] ) && isset( $available_color_schemes[ $default ]['primary'] ) ) {
+			$default = $available_color_schemes[ $default ]['primary'];
 		}
 		return $default;
 	}
@@ -490,7 +490,7 @@ function has_header_background() {
 }
 
 /**
- * Includes the selected footer varation
+ * Includes the selected footer variation
  *
  * @return void
  */

@@ -48,7 +48,7 @@ Here are properties that may be leveraged within design style stylesheets:
 | --go-caption--color--text | Text color for all captions |
 | --go-caption--font-size | Font size for captions |
 | --go-caption--text-align | Text alignment for captions: right, left, center |
-| --go-caption--text-align--rtl | Text alignment for RTL langauges|
+| --go-caption--text-align--rtl | Text alignment for RTL languages|
 
 
 ### Forms

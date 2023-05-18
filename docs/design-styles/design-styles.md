@@ -4,7 +4,7 @@ The easiest way to add a custom design style is to create a plugin with a functi
 Then you'd be able to add all sorts of design styles to your site, instantly changing the look and feel of your site - without risking any compatibility/theme conflicts that arise when traditionally changing themes:
 
 ![customize](https://user-images.githubusercontent.com/1813435/77576898-4d633900-6eac-11ea-8a2f-10e3ca761b9c.jpg)
-Note how the "Brutalist" style is added to the list of availble design styles. 👆
+Note how the "Brutalist" style is added to the list of available design styles. 👆
 
 ## Registering a design style
 Add a function to make the design styles available within the Customizer:
@@ -15,7 +15,7 @@ Add a function to make the design styles available within the Customizer:
  *
  * @since 0.1.0
  *
- * @param array $default_design_styles Array containings the supported design styles,
+ * @param array $default_design_styles Array containing the supported design styles,
  * where the index is the slug of design style and value an array of options that sets up the design styles.
  */
 function prefix_get_available_design_styles( $default_design_styles ) {
@@ -59,5 +59,5 @@ function prefix_get_available_design_styles( $default_design_styles ) {
 add_filter( 'go_design_styles', 'prefix_get_available_design_styles' );
 ```
 
-## Registering a styleseheet and modify CSS custom properties
+## Registering a stylesheet and modify CSS custom properties
 2. Add a stylesheet to override any default CSS custom properties in Go, using any existing property throughout the theme's shared.css stylesheet. I go into detail how Go's CSS custom properties are formatted and compiled a non-exhaustive of properties [here](https://github.com/godaddy-wordpress/go/blob/master/docs/design-styles/properties.md).

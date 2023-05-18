@@ -16,7 +16,7 @@
  *
  * @since 0.1.0
  *
- * @param array $default_design_styles Array containings the supported design styles,
+ * @param array $default_design_styles Array containing the supported design styles,
  * where the index is the slug of design style and value an array of options that sets up the design styles.
  */
 function prefix_get_available_design_styles( $default_design_styles ) {
