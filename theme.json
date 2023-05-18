@@ -30,32 +30,42 @@
 		"color": {
 			"palette": [
 				{
-					"color": "#FFFFFF",
+					"color": "hsl(0, 0%, 100%)",
 					"name": "Base",
 					"slug": "base"
 				},
 				{
-					"color": "#434a56",
+					"color": "hsl(210, 51%, 15%)",
 					"name": "Contrast",
 					"slug": "contrast"
 				},
 				{
-					"color": "#c76919",
+					"color": "hsl(28, 78%, 44%)",
 					"name": "Primary",
 					"slug": "primary"
 				},
 				{
-					"color": "#122538",
+					"color": "hsl(210, 51%, 15%)",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
 				{
-					"color": "#f8f8f8",
+					"color": "hsl(0, 0%, 97%)",
 					"name": "Tertiary",
 					"slug": "tertiary"
 				}
 			]
 		},
+    "custom": {
+      "spacing-xsmall": "calc(var(--wp--custom--spacing-default) * 0.5)",
+      "spacing-small": "calc(var(--wp--custom--spacing-default) * 0.75)",
+      "spacing-default": "clamp(1.5rem, var(--wp--preset--font-size--xxxx-large), 4vw)",
+      "spacing-large": "calc(var(--wp--custom--spacing-default) * 1.25)",
+      "spacing-xlarge": "calc(var(--wp--custom--spacing-default) * 1.5)",
+      "spacing-xxlarge": "calc(var(--wp--custom--spacing-default) * 2)",
+      "spacing-content": "42rem",
+      "spacing-align-wide": "84rem"
+    },
 		"layout": {
 			"contentSize": "42rem",
 			"wideSize": "84rem"
@@ -466,6 +476,14 @@
 					}
 				}
 			},
+      "core/cover": {
+        "spacing": {
+          "padding": {
+            "left": "var:custom|spacing-default",
+            "right": "var:custom|spacing-default"
+          }
+        }
+      },
 			"core/navigation": {
 				"elements": {
 					"link": {
@@ -739,10 +757,10 @@
 			}
 		},
 		"spacing": {
-			"blockGap": "0.8182rem",
+			"blockGap": "var:custom|spacing-large",
 			"padding": {
-				"left": "var:preset|spacing|30",
-				"right": "var:preset|spacing|30"
+				"left": "var:custom|spacing-default",
+				"right": "var:custom|spacing-default"
 			}
 		},
 		"typography": {
