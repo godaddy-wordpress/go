@@ -618,7 +618,26 @@
 					"fontSize": "var:preset|font-size|x-large",
 					"lineHeight": "1.1"
 				}
-			}
+			},
+      "core/quote": {
+        "border": {
+          "left": {
+            "width": "0.45rem",
+            "color": "var:preset|color|primary",
+            "style": "var(--go-quote--border-style,solid)"
+          }
+        },
+        "typography": {
+          "fontSize": "var:preset|font-size|xx-large",
+          "fontFamily": "var:preset|font-family|crimson-text"
+        },
+        "spacing": {
+          "padding": {
+            "left": "2.45rem"
+          }
+        },
+        "css": "margin: 0 auto; max-width: 42rem;"
+      }
 		},
 		"color": {
 			"background": "var:preset|color|base",
