@@ -1,7 +1,7 @@
 === Go ===
 Contributors: godaddy, richtabor, eherman24, jrtashjian, kopepasah, olivierlafleur
 Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-style, one-column, theme-options, threaded-comments, translation-ready, wide-blocks
-Requires at least: 5.0
+Requires at least: 6.2
 Tested up to: 6.2
 Requires PHP: 7.4
 Stable tag: 1.8.1

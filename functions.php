@@ -5,83 +5,60 @@
  * @package Go
  */
 
-/**
- * Theme constants.
- */
-define( 'GO_VERSION', '1.8.1' );
+// Load deactivation modal.
+define( 'GO_VERSION', '2.0.0' );
 define( 'GO_PLUGIN_DIR', get_template_directory( __FILE__ ) );
 define( 'GO_PLUGIN_URL', get_template_directory_uri( __FILE__ ) );
+require_once get_parent_theme_file_path( 'includes/class-go-theme-deactivation.php' );
 
 /**
- * AMPP setup, hooks, and filters.
+ * Sets up theme defaults and registers support for various WordPress features.
  */
-require_once get_parent_theme_file_path( 'includes/amp.php' );
+function go_theme_setup() {
+	add_theme_support( 'wp-block-styles' );
+	add_editor_style( 'style.css' );
 
-/**
- * Core setup, hooks, and filters.
- */
-require_once get_parent_theme_file_path( 'includes/core.php' );
-
-/**
- * Customizer additions.
- */
-require_once get_parent_theme_file_path( 'includes/customizer.php' );
-
-/**
- * Custom template tags for the theme.
- */
-require_once get_parent_theme_file_path( 'includes/template-tags.php' );
-
-/**
- * Pluggable functions.
- */
-require_once get_parent_theme_file_path( 'includes/pluggable.php' );
-
-/**
- * TGMPA plugin activation.
- */
-require_once get_parent_theme_file_path( 'includes/tgm.php' );
-
-/**
- * WooCommerce functions.
- */
-require_once get_parent_theme_file_path( 'includes/woocommerce.php' );
-
-/**
- * Page Titles Meta functions.
- */
-require_once get_parent_theme_file_path( 'includes/title-meta.php' );
-
-/**
- * Go Deactivate Modal functions.
- */
-require_once get_parent_theme_file_path( 'includes/classes/admin/class-go-theme-deactivation.php' );
-
-/**
- * Layouts for the CoBlocks layout selector.
- */
-foreach ( glob( get_parent_theme_file_path( 'partials/layouts/*.php' ) ) as $filename ) {
-	require_once $filename;
+	// Disable CoBlocks Site Design controls.
+	delete_option( 'coblocks_site_design_controls_enabled' );
 }
 
-/**
- * Run setup functions.
- */
-Go\AMP\setup();
-Go\Core\setup();
-Go\TGM\setup();
-Go\Customizer\setup();
-Go\WooCommerce\setup();
-Go\Title_Meta\setup();
+add_action( 'after_theme_setup', 'go_theme_setup' );
 
-if ( ! function_exists( 'wp_body_open' ) ) :
-	/**
-	 * Fire the wp_body_open action.
-	 *
-	 * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
-	 */
-	function wp_body_open() {
-		// Triggered after the opening <body> tag.
-		do_action( 'wp_body_open' );
-	}
-endif;
+/**
+ * Enqueue theme styles.
+ */
+function go_theme_styles() {
+	wp_enqueue_style(
+		'style',
+		get_stylesheet_uri(),
+		array(),
+		GO_VERSION
+	);
+}
+add_action( 'wp_enqueue_scripts', 'go_theme_styles' );
+
+// Migration process.
+if ( isset( $_GET['migrate'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+	require_once get_parent_theme_file_path( '/includes/class-classic-conversion.php' );
+
+	$go_conversion = Go\Classic_Conversion::get_instance();
+	$go_conversion->set_base_path(
+		get_parent_theme_file_path( '/functions.php' )
+	);
+
+	// Convert classic menus to block based menus.
+	$go_conversion->convert_nav_menus();
+
+	// Convert theme mods to user global styles.
+	$go_conversion->apply_global_styles();
+
+	// Apply customizations to block templates.
+	$go_conversion->apply_template_customizations(
+		$go_conversion->get_block_templates( '/templates' )
+	);
+
+	// Apply customizations to block template parts.
+	$go_conversion->apply_template_part_customizations(
+		$go_conversion->get_block_templates( '/parts' )
+	);
+}

@@ -1,0 +1,57 @@
+.go-deactivate-modal {
+	.components-modal__content {
+		width: 600px;
+	}
+
+	.components-modal__header .components-modal__header-heading {
+		font-size: 20px;
+	}
+
+	.go-deactivate-modal__text {
+		display: none;
+		margin: 0 0 0 32px;
+		width: 93%;
+
+		&.show {
+			display: block;
+		}
+	}
+
+	.components-modal__content::before {
+		margin-bottom: 16px;
+	}
+
+	.go-deactivate-modal__checkbox {
+		padding: 0 0 24px 0;
+	}
+
+	.go-deactivate-modal__checkbox .components-checkbox-control {
+		font-size: 14px;
+		height: 40px;
+		line-height: 24px;
+	}
+
+	.components-button-group {
+		width: 100%;
+
+		.go-deactivate-modal__button {
+			font-size: 14px;
+
+			&.is-link {
+				text-decoration: none;
+			}
+
+			&.is-primary {
+				border-radius: 6px;
+				box-shadow: none;
+				margin: 0 15px 0 0;
+			}
+		}
+	}
+
+	.go-deactivate-modal__footer {
+		font-size: 12px;
+		line-height: 18px;
+		padding: 16px 0 0;
+	}
+}

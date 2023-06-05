@@ -13,46 +13,27 @@
     "url": "https://www.godaddy.com",
     "role": "Developer"
   },
-  "engineStrict": true,
-  "engines": {
-    "node": ">=16 <17"
-  },
   "license": "GPL-2.0-or-later",
-  "badges": [
-    "[![Github Actions](https://github.com/godaddy-wordpress/go/actions/workflows/run-tests.yml/badge.svg)](https://github.com/godaddy-wordpress/go/actions/workflows/run-tests.yml)",
-    "[![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/<%= pkg.repository.base %>/blob/master/license.txt)",
-    "[![PHP <%= pkg.engines.php %>](https://img.shields.io/badge/php-<% print(encodeURI(pkg.engines.php)) %>-8892bf.svg)](https://secure.php.net/supported-versions.php)",
-    "[![WordPress <%= pkg.engines.wordpress %>](https://img.shields.io/badge/wordpress-<% print(encodeURI(pkg.engines.wordpress)) %>-blue.svg)](https://wordpress.org/download/release-archive/)"
-  ],
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start --progress",
-    "setup": "composer install && yarn install && yarn build",
-    "postbuild": "rm -rf temp && mkdir temp && cp -a dist/* temp && NODE_ENV=development wp-scripts build && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh && yarn makepot",
-    "postdev": "mkdir temp && cp -a dist/* temp && wp-scripts build && cp -a temp/* dist && rm -rf temp && .dev/deploy-scripts/tweak-css-files.sh",
-    "package": "rm -rf build && mkdir -p build/go && yarn build && rsync -av --exclude-from .distignore --delete . build/go && cd build && zip -r go.zip ./go",
-    "version": "grunt version",
-    "build:release": "yarn install && yarn build",
-    "lint:release": "yarn install && composer install && yarn lint",
-    "lint:css": "stylelint '.dev/assets/shared/**/*.scss' '.dev/assets/design-styles/**/*.scss'",
-    "lint:js": "eslint '.eslintrc.js' '.dev/assets/shared/js/**/*.js' '.dev/assets/admin/js/**/*.js'",
-    "lint:php": "composer run lint",
-    "makepot": "wp i18n make-pot . languages/go.pot --skip-audit --exclude=build,dist --headers='{\"Last-Translator\":\"plugins@godaddy.com\",\"Report-Msgid-Bugs-To\":\"https://github.com/godaddy-wordpress/go/issues\"}' --file-comment='Copyright (c) GoDaddy Operating Company, LLC. All Rights Reserved.' && yarn pot2json",
+    "lint:css": "wp-scripts lint-style -f verbose",
+    "lint:js": "wp-scripts lint-js",
+    "lint:php": "wp-env run composer run-script lint",
+    "makepot": "composer run-script makepot && npm run pot2json",
     "pot2json": ".dev/bin/pot2json languages/go.pot languages/go.json",
     "json2po": "cd languages && find . -name '*.json' ! -name 'go.json' -execdir /bin/bash -c 'FROM=\"$0\" && TO=\"go-`basename $0 .json`.po\" && echo \"$FROM > $TO\" && ../.dev/bin/json2po go.json $FROM $TO && msgmerge --previous $TO go.pot > $TO-msgmerge && mv $TO-msgmerge $TO && if [[ \"$OSTYPE\" == \"darwin\"* ]]; then sed -i \"\" -e \"/^#, fuzzy$/d\" $TO; else sed -i -e \"/^#, fuzzy$/d\" $TO; fi;' '{}' \\;",
     "po2mo": "cd languages && find . -name '*.json' ! -name 'go.json' -execdir /bin/bash -c 'FROM=\"go-`basename $0 .json`.po\" && TO=\"`basename $0 .json`.mo\" && echo \"$FROM > $TO\" && msgfmt $FROM -o $TO' '{}'  \\;",
-    "format:js": "eslint --fix assets/shared/js",
-    "lint": "yarn lint:css && yarn lint:js && yarn lint:php",
-    "format": "yarn format:js",
+    "packages-update": "wp-scripts packages-update --dist-tag=wp-6.2",
+    "postpackages-update": "npm run build",
+    "prelint:php": "wp-env start && wp-env run composer \"install --no-interaction\"",
+    "pretest:unit:php": "wp-env start --xdebug=develop,coverage",
+    "test:unit:php": "wp-env run tests-wordpress /var/www/html/wp-content/themes/$(basename $(pwd))/vendor/bin/phpunit -c /var/www/html/wp-content/themes/$(basename $(pwd))/phpunit.xml.dist --verbose --coverage-html /var/www/html/wp-content/themes/$(basename $(pwd))/phpunit/coverage",
     "test:a11y": "node .dev/tests/accessibility/compliance/pa11y.js",
-    "test:e2e:customizer": "cypress run --browser chrome --parallel --spec .dev/tests/cypress/integration/customizer/*.js",
-    "test:php": "./vendor/bin/phpunit",
     "test:js": "wp-scripts test-unit-js --config .dev/tests/jest/jest.config.js",
-    "test:js:coverage": "yarn test:js --coverage",
-    "test:js:update": "yarn test:js -u",
-    "prepare": "husky install .dev/husky",
-    "wp-env": "wp-env",
-    "update:woo-template-versions": ".dev/bin/update-woo-template-versions.php"
+    "test:js:coverage": "npm test:js --coverage",
+    "test:js:update": "npm test:js -u",
+    "wp-env": "wp-env"
   },
   "locales": {
     "ar": "العربية",
@@ -82,86 +63,6 @@
     "zh_CN": "简体中文",
     "zh_TW": "繁體中文"
   },
-  "lint-staged": {
-    "*.css": [
-      "stylelint"
-    ],
-    "*.js": [
-      "eslint"
-    ],
-    "*.php": [
-      "./vendor/bin/phpcs --extensions=php --warning-severity=8 -s"
-    ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/eslint-parser": "^7.16.0",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/register": "^7.16.0",
-    "@godaddy-wordpress/eslint-config": "0.6.1",
-    "@godaddy-wordpress/stylelint-config": "^0.6.0",
-    "@jest/core": "^27.5.1",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
-    "@wordpress/babel-preset-default": "^6.5.1",
-    "@wordpress/base-styles": "^4.1.1",
-    "@wordpress/browserslist-config": "^4.1.0",
-    "@wordpress/components": "^20.0.0",
-    "@wordpress/dom": "^3.3.2",
-    "@wordpress/dom-ready": "^3.3.1",
-    "@wordpress/element": "^4.0.3",
-    "@wordpress/env": "^4.9.0",
-    "@wordpress/jest-preset-default": "^10.5.0",
-    "@wordpress/scripts": "^25.1.0",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.3",
-    "browser-sync": "^2.27.10",
-    "browser-sync-webpack-plugin": "^2.3.0",
-    "browserslist": "^4.17.6",
-    "caniuse-db": "^1.0.30001278",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^9.0.1",
-    "css-loader": "^6.5.1",
-    "css-minimizer-webpack-plugin": "^3.1.1",
-    "cypress": "^9.1.1",
-    "cypress-file-upload": "^5.0.8",
-    "cypress-iframe": "^1.0.1",
-    "cypress-image-snapshot": "^4.0.1",
-    "eslint": "^7.32.0",
-    "eslint-webpack-plugin": "^3.1.0",
-    "grunt": "^1.5.3",
-    "grunt-text-replace": "^0.4.0",
-    "husky": "^7.0.4",
-    "jest-fetch-mock": "^3.0.3",
-    "json2po": "^1.0.5",
-    "lint-staged": "^11.2.6",
-    "load-grunt-tasks": "^5.1.0",
-    "lodash": "^4.17.21",
-    "mini-css-extract-plugin": "^2.7.2",
-    "pa11y": "^6.0.1",
-    "perfectionist-dfd": "^3.0.0",
-    "postcss": "^8.3.11",
-    "postcss-import": "^14.0.2",
-    "postcss-loader": "^6.2.0",
-    "postcss-mixins": "^8.1.0",
-    "postcss-preset-env": "^7.0.0",
-    "postcss-scss": "^4.0.2",
-    "prop-types": "15.7.2",
-    "react-dom": "^18.2.0",
-    "rtlcss": "^3.5.0",
-    "rtlcss-webpack-plugin": "^4.0.7",
-    "sass": "^1.57.1",
-    "sass-loader": "^13.2.0",
-    "scroll-to-bottomjs": "^1.1.0",
-    "strip-css-comments-cli": "^3.0.0",
-    "stylelint": "^14.13.0",
-    "stylelint-webpack-plugin": "^3.1.0",
-    "webpack": "^5.76.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-merge": "^5.8.0",
-    "webpackbar": "^5.0.0-3"
-  },
   "testing": {
     "urls": {
       "local": "http://localhost:8888/",
@@ -172,19 +73,29 @@
       "compliance": "WCAG2A"
     }
   },
-  "dependencies": {
-    "lodash.throttle": "^4.1.1",
-    "normalize.css": "^8.0.1"
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/register": "^7.21.0",
+    "@jest/core": "^29.5.0",
+    "@godaddy-wordpress/eslint-config": "^0.6.1",
+    "@godaddy-wordpress/stylelint-config": "^0.6.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@wordpress/env": "^5.11.1",
+    "@wordpress/scripts": "^25.3.4",
+    "jest-fetch-mock": "^3.0.3",
+    "pa11y": "^6.2.3",
+    "prop-types": "^15.8.1",
+    "react-dom": "^18.2.0"
   },
-  "bundleDependencies": [
-    "react-dom"
-  ],
-  "resolutions": {
-    "@sideway/formula": "^3.0.1",
-    "got": "^11.8.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "simple-git": "^3.16.0",
-    "ua-parser-js": "^1.0.33"
+  "dependencies": {
+    "@wordpress/base-styles": "^4.17.2",
+    "@wordpress/components": "^23.9.0",
+    "@wordpress/dom": "^3.32.0",
+    "@wordpress/dom-ready": "^3.26.1",
+    "@wordpress/element": "^5.3.2"
   }
 }

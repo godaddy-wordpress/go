@@ -30,13 +30,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: npm install
 
       - name: Run lint
-        run: yarn run lint:js
+        run: npm run lint:js
 
   css:
     name: Lint CSS
@@ -49,10 +49,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: npm install
 
       - name: Run lint
-        run: yarn run lint:css
+        run: npm run lint:css

@@ -1,6 +1,7 @@
 {
 	"plugins": [
-		"https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip"
+		"https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip",
+    "https://downloads.wordpress.org/plugin/create-block-theme.latest-stable.zip"
 	],
 	"themes": [ "." ],
 	"config": {

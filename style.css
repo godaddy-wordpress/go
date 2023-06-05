@@ -5,7 +5,7 @@
  * Description:  Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowering makers to build beautifully rich websites with WordPress.
  * Author:       GoDaddy
  * Author URI:   https://www.godaddy.com
- * Version:      1.8.1
+ * Version:      2.0.0
  * Tested up to: 6.2
  * Requires PHP: 7.4
  * License:      GPL-2.0
@@ -20,3 +20,15 @@
  * Copyright © 2019 GoDaddy Operating Company, LLC. All Rights Reserved.
  */
 /* stylelint-enable */
+
+.wp-block-cover__inner-container {
+	max-width: var(--wp--custom--spacing-align-wide);
+}
+
+body .is-layout-flex {
+	gap: var(--wp--preset--spacing-20);
+}
+
+body .is-layout-flow > * + * {
+	margin-block-start: var(--wp--custom--spacing-xsmall);
+}
