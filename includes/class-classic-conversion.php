@@ -235,10 +235,6 @@ class Classic_Conversion {
 				// If we have a classic menu then convert it to blocks.
 				$classic_nav_menu_blocks = block_core_navigation_get_classic_menu_fallback_blocks( $classic_nav_menu );
 
-				if ( empty( $classic_nav_menu_blocks ) ) {
-					return;
-				}
-
 				// Create a new navigation menu from the classic menu.
 				$new_nav_menu_id = wp_insert_post(
 					array(
@@ -327,6 +323,28 @@ class Classic_Conversion {
 					$post_content = str_replace( $column_block, '', $post_content );
 				}
 			}
+		}
+
+		// Setup the navigation headings with the correct names.
+		if ( ! empty( $this->nav_menu_locations ) && preg_match_all( '/Primary<\/h5>/', $post_content, $nav_headings_match ) ) {
+			$menu_names = array();
+			foreach ( $this->nav_menu_locations as $location => $menu_id ) {
+				if ( 'primary' === $location ) {
+					continue;
+				}
+				$menu_names[] = wp_get_nav_menu_name( $location );
+			}
+			if ( empty( $menu_names ) ) {
+				return $post_content;
+			}
+			$count        = 0;
+			$post_content = preg_replace_callback(
+				'/Primary/',
+				function ( $v ) use ( $menu_names, &$count ) {
+					return $menu_names[ $count++ ];
+				},
+				$post_content
+			);
 		}
 
 		return $post_content;
