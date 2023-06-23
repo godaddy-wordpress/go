@@ -4,7 +4,7 @@ Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-
 Requires at least: 5.0
 Tested up to: 6.2
 Requires PHP: 7.4
-Stable tag: 1.8.1
+Stable tag: 1.8.2
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -108,9 +108,6 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.6.6 / 2022-11-03 =
+= 1.8.2 / 2023-06-23 =
 ### Updates
-- Bump 'Tested Up To' Version to 6.1. [#818](https://github.com/godaddy-wordpress/go/pull/818)
-- Update WooCommerce cart.php template version. [#817](https://github.com/godaddy-wordpress/go/pull/817)
-- Add label styles to site design stylesheets. [#814](https://github.com/godaddy-wordpress/go/pull/814)
-- Drop support for PHP 5.6. [#811](https://github.com/godaddy-wordpress/go/pull/811)
+- Bump the WooCommerce `cart.php` template version to `7.8.0`.
