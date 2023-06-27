@@ -133,7 +133,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 ---
 
-Copyright © 2019 GoDaddy Operating Company, LLC. All Rights Reserved.
+Copyright © 2023 GoDaddy Operating Company, LLC. All Rights Reserved.
 
 [godaddy.com](https://www.godaddy.com) &nbsp;&middot;&nbsp;
 GitHub [@godaddy-wordpress](https://github.com/godaddy-wordpress) &nbsp;&middot;&nbsp;

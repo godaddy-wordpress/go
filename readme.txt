@@ -108,6 +108,6 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.8.2 / 2023-06-23 =
+= 1.8.3 / 2023-06-27 =
 ### Updates
-- Bump the WooCommerce `cart.php` template version to `7.8.0`.
+- Revert Requires PHP from `7.4` to `5.6`.
