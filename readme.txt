@@ -108,6 +108,6 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.8.3 / 2023-06-27 =
+= 1.8.4 / 2023-06-28 =
 ### Updates
-- Revert Requires PHP from `7.4` to `5.6`.
+- Fix layout of the WooCommerce block grid inside of a vertical group block. [#878](https://github.com/godaddy-wordpress/go/pull/878)
