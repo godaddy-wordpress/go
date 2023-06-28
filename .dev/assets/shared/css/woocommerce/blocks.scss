@@ -34,6 +34,10 @@
 	}
 }
 
+.wp-block-group.is-vertical .wc-block-grid {
+	width: 100%;
+}
+
 .wc-block-grid__product-add-to-cart a.added_to_cart {
 	margin-top: 0.5rem !important;
 }
