@@ -34,10 +34,6 @@
 	}
 }
 
-.wp-block-group.is-vertical .wc-block-grid {
-	width: 100%;
-}
-
 .wc-block-grid__product-add-to-cart a.added_to_cart {
 	margin-top: 0.5rem !important;
 }
@@ -135,5 +131,13 @@ h2 + .wc-block-grid {
 			flex-basis: 25%;
 			max-width: calc(100% / 4 - 2rem);
 		}
+	}
+}
+
+.wp-block-group.is-vertical .wc-block-grid {
+	width: 100%;
+
+	ul {
+		justify-content: flex-start;
 	}
 }
