@@ -13,7 +13,7 @@ module.exports = ( { file, options, env } ) => ( { /* eslint-disable-line */
 			}
 		},
 		'postcss-mixins': {},
-		// Minify style on production using cssano.
+		// Minify style on production using cssnano.
 		cssnano: 'production' === env ?
 			{
 				preset: [
