@@ -3,8 +3,8 @@ Contributors: godaddy, richtabor, eherman24, jrtashjian, kopepasah, olivierlafle
 Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-style, one-column, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 5.0
 Tested up to: 6.2
-Requires PHP: 7.4
-Stable tag: 1.8.1
+Requires PHP: 5.6
+Stable tag: 1.8.4
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -108,9 +108,6 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.6.6 / 2022-11-03 =
+= 1.8.4 / 2023-06-28 =
 ### Updates
-- Bump 'Tested Up To' Version to 6.1. [#818](https://github.com/godaddy-wordpress/go/pull/818)
-- Update WooCommerce cart.php template version. [#817](https://github.com/godaddy-wordpress/go/pull/817)
-- Add label styles to site design stylesheets. [#814](https://github.com/godaddy-wordpress/go/pull/814)
-- Drop support for PHP 5.6. [#811](https://github.com/godaddy-wordpress/go/pull/811)
+- Fix layout of the WooCommerce block grid inside of a vertical group block. [#878](https://github.com/godaddy-wordpress/go/pull/878)

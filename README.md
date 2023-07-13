@@ -1,4 +1,4 @@
-<h1 align="center">Go <a href="https://github.com/godaddy-wordpress/go/releases/latest/"><img src="https://img.shields.io/static/v1?goVersion=&message=v1.8.0&label=&color=999&style=flat-square"></a></h1>
+<h1 align="center">Go <a href="https://github.com/godaddy-wordpress/go/releases/latest/"><img src="https://img.shields.io/static/v1?goVersion=&message=v1.8.2&label=&color=999&style=flat-square"></a></h1>
 
 <h4 align="center">The most flexible <a href="https://github.com/wordpress/gutenberg" target="_blank">Gutenberg</a>-first <a href="https://wordpress.org" target="_blank">WordPress</a> theme built for go-getters everywhere.</h4>
 
@@ -133,7 +133,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 ---
 
-Copyright © 2019 GoDaddy Operating Company, LLC. All Rights Reserved.
+Copyright © 2023 GoDaddy Operating Company, LLC. All Rights Reserved.
 
 [godaddy.com](https://www.godaddy.com) &nbsp;&middot;&nbsp;
 GitHub [@godaddy-wordpress](https://github.com/godaddy-wordpress) &nbsp;&middot;&nbsp;
