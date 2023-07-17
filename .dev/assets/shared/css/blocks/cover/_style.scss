@@ -60,4 +60,8 @@
 			justify-content: center;
 		}
 	}
+
+	&.has-image-filter-contrast .wp-block-cover__background {
+		filter: contrast(0.3);
+	}
 }
