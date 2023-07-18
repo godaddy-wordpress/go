@@ -1268,8 +1268,11 @@ function get_available_social_icons() {
 	 * @since 0.1.0
 	 *
 	 * @param array $social_icons Array containing the supported social icons.
+	 *
+	 * Note: There is a double filter here to maintain backwards compatibility after fixing a typo in the name of the filter.
+	 * @see https://github.com/godaddy-wordpress/go/pull/870/files#diff-21e944aca0f42ff6529bde979b0fd787d00e010406e6642f947e71bf5e6f5ad1L1272-R1272
 	 */
-	return (array) apply_filters( 'go_available_social_icons', $social_icons );
+	return (array) apply_filters( 'go_available_social_icons', apply_filters( 'go_avaliable_social_icons', $social_icons ) );
 
 }
 
