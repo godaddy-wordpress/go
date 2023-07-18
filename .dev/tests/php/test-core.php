@@ -1033,7 +1033,7 @@ class Test_Core extends WP_UnitTestCase {
 			'placeholder' => 'placeholder',
 		];
 
-		add_filter( 'go_avaliable_social_icons', function( $social_icons ) use( $test_data ) {
+		add_filter( 'go_available_social_icons', function( $social_icons ) use( $test_data ) {
 
 			$social_icons['test'] = $test_data;
 
