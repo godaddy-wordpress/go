@@ -110,7 +110,7 @@ We bundle PHPUnit locally with Go as a composer package. This makes installing P
 $ composer install
 ```
 
-Once PHPUnit is installed, you'll need to install the WordPress test library, and create a new, empty, test database. We have included a bash script with Go to make this process a bit more streamlined. You can execute install the WordPress test library with the following commnad:
+Once PHPUnit is installed, you'll need to install the WordPress test library, and create a new, empty, test database. We have included a bash script with Go to make this process a bit more streamlined. You can execute install the WordPress test library with the following command:
 
 ```sh
 $ composer install-phpunit

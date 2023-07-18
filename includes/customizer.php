@@ -210,18 +210,18 @@ function enqueue_controls_assets() {
 	);
 
 	$color_scheme            = str_replace( get_theme_mod( 'design_style' ) . '-', '', get_theme_mod( 'color_scheme', \Go\Core\get_default_color_scheme() ) );
-	$avaliable_color_schemes = \Go\Core\get_available_color_schemes();
+	$available_color_schemes = \Go\Core\get_available_color_schemes();
 	$color_scheme_colors     = array();
 
-	if ( $color_scheme && ! empty( $avaliable_color_schemes[ $color_scheme ] ) ) {
+	if ( $color_scheme && ! empty( $available_color_schemes[ $color_scheme ] ) ) {
 
-		if ( ! empty( $avaliable_color_schemes[ $color_scheme ]['label'] ) ) {
+		if ( ! empty( $available_color_schemes[ $color_scheme ]['label'] ) ) {
 
-			unset( $avaliable_color_schemes[ $color_scheme ]['label'] );
+			unset( $available_color_schemes[ $color_scheme ]['label'] );
 
 		}
 
-		$color_scheme_colors = $avaliable_color_schemes[ $color_scheme ];
+		$color_scheme_colors = $available_color_schemes[ $color_scheme ];
 
 	}
 
@@ -467,7 +467,7 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 }
 
 /**
- * Callback to retreive the copyright kses HTML
+ * Callback to retrieve the copyright kses HTML
  *
  * @param string $input Input value.
 

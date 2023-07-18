@@ -191,7 +191,7 @@ function woocommerce_cart_link() {
 }
 
 /**
- * Render the markup for yhe WooCommerce slideout cart
+ * Render the markup for the WooCommerce slideout cart
  *
  * @return mixed Markup for the slideout cart.
  */
