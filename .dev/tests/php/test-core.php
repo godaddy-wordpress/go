@@ -1023,7 +1023,32 @@ class Test_Core extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test filtering the social icons
+	 * Test filtering the social icons with the go_avaliable_social_icons filter (old filter name with typo).
+	 */
+	function testGetAvaliableSocialIconsFilter() {
+
+		$test_data = [
+			'label'       => 'Test',
+			'icon'        => 'icon',
+			'placeholder' => 'placeholder',
+		];
+
+		add_filter( 'go_avaliable_social_icons', function( $social_icons ) use( $test_data ) {
+
+			$social_icons['test'] = $test_data;
+
+			return $social_icons;
+
+		} );
+
+		$social_icons = Go\Core\get_available_social_icons();
+
+		$this->assertEquals( $test_data, $social_icons['test'] );
+
+	}
+
+	/**
+	 * Test filtering the social icons with the go_available_social_icons filter.
 	 */
 	function testGetAvailableSocialIconsFilter() {
 
@@ -1033,7 +1058,7 @@ class Test_Core extends WP_UnitTestCase {
 			'placeholder' => 'placeholder',
 		];
 
-		add_filter( 'go_avaliable_social_icons', function( $social_icons ) use( $test_data ) {
+		add_filter( 'go_available_social_icons', function( $social_icons ) use( $test_data ) {
 
 			$social_icons['test'] = $test_data;
 
