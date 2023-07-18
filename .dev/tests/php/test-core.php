@@ -1053,14 +1053,14 @@ class Test_Core extends WP_UnitTestCase {
 	function testGetAvailableSocialIconsFilter() {
 
 		$test_data = [
-			'label'       => 'Test',
+			'label'       => 'Test New',
 			'icon'        => 'icon',
 			'placeholder' => 'placeholder',
 		];
 
 		add_filter( 'go_available_social_icons', function( $social_icons ) use( $test_data ) {
 
-			$social_icons['test'] = $test_data;
+			$social_icons['test_new'] = $test_data;
 
 			return $social_icons;
 
@@ -1068,7 +1068,7 @@ class Test_Core extends WP_UnitTestCase {
 
 		$social_icons = Go\Core\get_available_social_icons();
 
-		$this->assertEquals( $test_data, $social_icons['test'] );
+		$this->assertEquals( $test_data, $social_icons['test_new'] );
 
 	}
 
