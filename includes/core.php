@@ -475,6 +475,20 @@ function styles() {
 		GO_VERSION
 	);
 
+	$wpnux_export_data = json_decode( get_option( 'wpnux_export_data', '{}' ), true );
+
+	if ( isset( $wpnux_export_data['_meta']['content_id'] ) ) {
+
+		$caas_cover_block_contrast_adjustmnet = '
+			.wp-block-cover.has-image-filter-contrast .wp-block-cover__image-background {
+				filter: contrast(0.3);
+			}
+		';
+
+		wp_add_inline_style( 'go-style', $caas_cover_block_contrast_adjustmnet );
+
+	}
+
 	$design_style = get_design_style();
 
 	if ( $design_style ) {
