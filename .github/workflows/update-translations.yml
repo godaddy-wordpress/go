@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Configure git user
         run: |
@@ -40,13 +43,6 @@ jobs:
       - name: Create translations
         run: |
           yarn makepot
-          
-      
-      - name: ssh
-        uses: ryanchapman/gha-ssh@v1
-        timeout-minutes: 30
-        with:
-          authorized_github_users: 'EvanHerman'
 
       - name: Commit changes
         shell: bash
@@ -56,7 +52,7 @@ jobs:
             git add languages/go.pot
             git commit -m "[BOT] Update language translations" --no-verify
             git reset --hard
-            git push origin HEAD:${{ github.ref_name }} --quiet
+            git push --quiet
           else
             echo "No language translations to update."
           fi
