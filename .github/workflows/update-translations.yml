@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        ref: ${GITHUB_BASE_REF}
 
       - name: Configure git user
         run: |
@@ -49,7 +50,7 @@ jobs:
             git add languages/go.pot
             git commit -m "[BOT] Update language translations" --no-verify
             git reset --hard
-            git push origin/${{ github.ref_name }} --quiet
+            git push --quiet
           else
             echo "No language translations to update."
           fi
