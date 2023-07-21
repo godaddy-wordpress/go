@@ -40,6 +40,13 @@ jobs:
       - name: Create translations
         run: |
           yarn makepot
+          
+      
+      - name: ssh
+        uses: ryanchapman/gha-ssh@v1
+        timeout-minutes: 30
+        with:
+          authorized_github_users: 'EvanHerman'
 
       - name: Commit changes
         shell: bash
