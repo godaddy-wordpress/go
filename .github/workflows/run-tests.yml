@@ -46,6 +46,12 @@ jobs:
           cd $(wp-env install-path)
           docker-compose run --rm -u $(id -u) -e HOME=/tmp tests-cli cp wp-content/themes/go/.dev/tests/php/assets/es_ES.mo wp-content/themes/go/languages/es_ES.mo
 
+      - name: ssh
+        uses: ryanchapman/gha-ssh@v1
+        timeout-minutes: 10
+        with:
+          authorized_github_users: 'EvanHerman'
+
       - name: Run tests
         run: |
           wp-env run phpunit "composer run test --working-dir=html/wp-content/themes/go/"
