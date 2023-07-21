@@ -12,7 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        ref: ${GITHUB_BASE_REF}
+        with:
+          ref: ${GITHUB_BASE_REF}
 
       - name: Configure git user
         run: |
