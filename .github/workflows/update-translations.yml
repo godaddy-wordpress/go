@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: ${GITHUB_BASE_REF}
+          ref: ${{ github.head_ref }}
 
       - name: Configure git user
         run: |
