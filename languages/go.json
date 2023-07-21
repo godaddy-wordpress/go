@@ -4,12 +4,6 @@
   "45a0bfab2afddc3488bc5271244f2706": "Go is an innovative, Gutenberg-first WordPress theme, hyper-focused on empowering makers to build beautifully rich websites with WordPress.",
   "ab0a2ad2de4a8df6663bbcb8fd532f46": "GoDaddy",
   "14f0fd22288f6490c67087be904ab544": "https://www.godaddy.com",
-  "2b63489305859743e2a0ff1f1fc3d44e": "Your installation of the Go theme is incomplete. If you installed the Go theme from GitHub, please refer to this document to set up your development environment: %1$s",
-  "eb6248e0e51d886d0a025adb479163e9": "Your installation of the Go theme is incomplete. If you installed the Go theme from GitHub, please refer to <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">this document</a> to set up your development environment.",
-  "074de7e7c226d5c60f8af14c20725352": "Primary",
-  "7aaf0c93c9323c3379ede972e0950896": "Footer Menu #1",
-  "be18b79db515eef9e3b22ff01a0af98e": "Footer Menu #2",
-  "c3349428ccc248d1af8335f5851adfcd": "Footer Menu #3",
   "5bf57e0fcef61ba61afc7a88a17b1f71": "One thought on &ldquo;%s&rdquo;",
   "f22ad85909b230935593b8d269b2b86b": "%1$s thought on &ldquo;%2$s&rdquo;",
   "221b94a7f866d10d0b85b7886cea5d18": "Comment navigation",
@@ -107,6 +101,10 @@
   "0b8c1d6179d1c4a20f002d67dc49bc0c": "%1$s installed successfully.",
   "003b8672b471e60c83cb28552f948625": "All installations have been completed.",
   "4cee13af8289e47431d5b934e6ecd69f": "Installing Plugin %1$s (%2$d/%3$d)",
+  "074de7e7c226d5c60f8af14c20725352": "Primary",
+  "7aaf0c93c9323c3379ede972e0950896": "Footer Menu #1",
+  "be18b79db515eef9e3b22ff01a0af98e": "Footer Menu #2",
+  "c3349428ccc248d1af8335f5851adfcd": "Footer Menu #3",
   "2660064e68655415da2628c2ae2f7592": "Small",
   "5dbc98dcc983a70728bd082d1a47546e": "S",
   "87f8a6ab85c9ced3702b4ea641ad4bb5": "Medium",
@@ -337,6 +335,5 @@
   "29042a31d997c996f52c1d2fd4ad813d": "Search &hellip;",
   "a4d3b161ce1309df1c4e25df28694b7b": "Submit",
   "c25a996297244c1e01e47adb13679782": "Items (%s)",
-  "1063e38cb53d94d386f21227fcd84717": "Remove",
-  "0e979c88b3a83cc4da445e3dc2a06213": "Hide page title"
+  "1063e38cb53d94d386f21227fcd84717": "Remove"
 }
