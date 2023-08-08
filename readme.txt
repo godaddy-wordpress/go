@@ -2,7 +2,7 @@
 Contributors: godaddy, richtabor, eherman24, jrtashjian, kopepasah, olivierlafleur
 Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-style, one-column, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 5.0
-Tested up to: 6.2
+Tested up to: 6.3
 Requires PHP: 5.6
 Stable tag: 1.8.5
 License: GPL-2.0-only
@@ -108,13 +108,6 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.8.5 / 2023-07-18 =
+= 1.8.6 / 2023-08-08 =
 ### Updates
-- Introduce cover styles for image contrast filters. [884](https://github.com/godaddy-wordpress/go/pull/884)
-- Introduce filter fallbacks for typo updates. [889](https://github.com/godaddy-wordpress/go/pull/889)
-- Fix typos in code and filter. [882](https://github.com/godaddy-wordpress/go/pull/882) [870](https://github.com/godaddy-wordpress/go/pull/870)
-- Misc software bumps. [881](https://github.com/godaddy-wordpress/go/pull/881)[880](https://github.com/godaddy-wordpress/go/pull/880)
-
-= 1.8.4 / 2023-06-28 =
-### Updates
-- Fix layout of the WooCommerce block grid inside of a vertical group block. [#878](https://github.com/godaddy-wordpress/go/pull/878)
+- Bump the tested up to version to 6.3. [896](https://github.com/godaddy-wordpress/go/pull/896)
