@@ -1,3 +1,6 @@
+= 1.8.6 / 2023-08-08 =
+- Bump the tested up to version to 6.3. [896](https://github.com/godaddy-wordpress/go/pull/896)
+
 = 1.8.5 / 2023-07-18 =
 - Introduce cover styles for image contrast filters. [884](https://github.com/godaddy-wordpress/go/pull/884)
 - Introduce filter fallbacks for typo updates. [889](https://github.com/godaddy-wordpress/go/pull/889)
