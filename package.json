@@ -141,7 +141,7 @@
     "mini-css-extract-plugin": "^2.7.2",
     "pa11y": "^6.0.1",
     "perfectionist-dfd": "^3.0.0",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.31",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.2.0",
     "postcss-mixins": "^8.1.0",
