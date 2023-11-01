@@ -2,7 +2,7 @@
 Contributors: godaddy, richtabor, eherman24, jrtashjian, kopepasah, olivierlafleur
 Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-style, one-column, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 5.0
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 5.6
 Stable tag: 1.8.6
 License: GPL-2.0-only
@@ -38,7 +38,7 @@ You can fork and contribute back to Go by visiting [our public repo on GitHub](h
 
 == Copyright ==
 
-Go WordPress theme, Copyright 2019 GoDaddy Operating Company, LLC.
+Go WordPress theme, Copyright 2023 GoDaddy Operating Company, LLC.
 Go is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
