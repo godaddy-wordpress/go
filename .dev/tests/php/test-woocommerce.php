@@ -784,7 +784,7 @@ class Test_WooCommerce extends WP_UnitTestCase {
 
 		$this->initialize_woo_session();
 
-		$this->expectOutputRegex( '/<div class="product-navigation-wrapper">\\n(\s*)<a href="(.*)" class="back-to-shop">Back<\/a>(\s*)<\/div>/' );
+		$this->expectOutputRegex( sprintf( '/<div class="product-navigation-wrapper">\\n(\s*)<nav class="woocommerce-breadcrumb" aria-label="Breadcrumb">Shop Page<\/nav><a href="http:\/\/localhost:8889\/\?page_id=%s" class="back-to-shop">/', get_option( 'woocommerce_shop_page_id' ) ) );
 
 		Go\WooCommerce\single_product_header();
 
