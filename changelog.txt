@@ -1,11 +1,14 @@
+= 1.8.7 / 2023-08-08 =
+- Bump the tested up to version to 6.4. [#899](https://github.com/godaddy-wordpress/go/pull/899)
+
 = 1.8.6 / 2023-08-08 =
-- Bump the tested up to version to 6.3. [896](https://github.com/godaddy-wordpress/go/pull/896)
+- Bump the tested up to version to 6.3. [#896](https://github.com/godaddy-wordpress/go/pull/896)
 
 = 1.8.5 / 2023-07-18 =
-- Introduce cover styles for image contrast filters. [884](https://github.com/godaddy-wordpress/go/pull/884)
-- Introduce filter fallbacks for typo updates. [889](https://github.com/godaddy-wordpress/go/pull/889)
-- Fix typos in code and filter. [882](https://github.com/godaddy-wordpress/go/pull/882) [870](https://github.com/godaddy-wordpress/go/pull/870)
-- Misc software bumps. [881](https://github.com/godaddy-wordpress/go/pull/881)[880](https://github.com/godaddy-wordpress/go/pull/880)
+- Introduce cover styles for image contrast filters. [#884](https://github.com/godaddy-wordpress/go/pull/884)
+- Introduce filter fallbacks for typo updates. [#889](https://github.com/godaddy-wordpress/go/pull/889)
+- Fix typos in code and filter. [#882](https://github.com/godaddy-wordpress/go/pull/882) [870](https://github.com/godaddy-wordpress/go/pull/870)
+- Misc software bumps. [#881](https://github.com/godaddy-wordpress/go/pull/881)[880](https://github.com/godaddy-wordpress/go/pull/880)
 
 = 1.8.4 / 2023-06-28 =
 - Fix layout of the WooCommerce block grid inside of a vertical group block. [#878](https://github.com/godaddy-wordpress/go/pull/878)

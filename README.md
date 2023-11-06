@@ -1,4 +1,4 @@
-<h1 align="center">Go <a href="https://github.com/godaddy-wordpress/go/releases/latest/"><img src="https://img.shields.io/static/v1?goVersion=&message=v1.8.4&label=&color=999&style=flat-square"></a></h1>
+<h1 align="center">Go <a href="https://github.com/godaddy-wordpress/go/releases/latest/"><img src="https://img.shields.io/static/v1?goVersion=&message=v1.8.7&label=&color=999&style=flat-square"></a></h1>
 
 <h4 align="center">The most flexible <a href="https://github.com/wordpress/gutenberg" target="_blank">Gutenberg</a>-first <a href="https://wordpress.org" target="_blank">WordPress</a> theme built for go-getters everywhere.</h4>
 
@@ -9,7 +9,7 @@
 		<img src="https://github.com/godaddy-wordpress/go/actions/workflows/run-tests.yml/badge.svg" alt="Github Test Workflow">
 	</a>
 	<a href="https://wordpress.org/" target="_blank">
-		<img src="https://img.shields.io/static/v1?label=&message=5.0+-+6.3&color=blue&style=flat-square&logo=wordpress&logoColor=white" alt="WordPress Versions">
+		<img src="https://img.shields.io/static/v1?label=&message=5.0+-+6.4&color=blue&style=flat-square&logo=wordpress&logoColor=white" alt="WordPress Versions">
 	</a>
 	<a href="https://www.php.net/" target="_blank">
 		<img src="https://img.shields.io/static/v1?label=&message=7.4+-+8.2&color=777bb4&style=flat-square&logo=php&logoColor=white" alt="PHP Versions">
