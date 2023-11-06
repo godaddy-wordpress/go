@@ -108,6 +108,6 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.8.6 / 2023-08-08 =
+= 1.8.6 / 2023-11-06 =
 ### Updates
 - Bump the tested up to version to 6.3. [896](https://github.com/godaddy-wordpress/go/pull/896)
