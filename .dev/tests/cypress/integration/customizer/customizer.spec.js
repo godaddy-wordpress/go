@@ -40,7 +40,7 @@ describe( 'Test the customizer works as intended.', () => {
 	beforeEach( () => {
 		cy.visit( Cypress.env( 'localTestURL' ) + '/wp-admin/customize.php' );
 		cy.get( 'body' ).should( 'have.class', 'wp-customizer' );
-		// cy.frameLoaded( '[name="customize-preview-0"]' );
+		cy.frameLoaded( '[name="customize-preview-0"]' );
 	} );
 
 	it( 'Test Site title, description and a custom logo', () => {
