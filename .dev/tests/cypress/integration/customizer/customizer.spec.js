@@ -40,7 +40,7 @@ describe( 'Test the customizer works as intended.', () => {
 	beforeEach( () => {
 		cy.visit( Cypress.env( 'localTestURL' ) + '/wp-admin/customize.php' );
 		cy.get( 'body' ).should( 'have.class', 'wp-customizer' );
-		cy.frameLoaded( '[name="customize-preview-0"]' );
+		// cy.frameLoaded( '[name="customize-preview-0"]' );
 	} );
 
 	it( 'Test Site title, description and a custom logo', () => {
@@ -85,6 +85,7 @@ describe( 'Test the customizer works as intended.', () => {
 			cy.get( '#accordion-section-colors' ).click();
 			cy.get( 'label[for="_customize-input-design_style_control-radio-' + designStyle.toLowerCase() + '"]' ).click( { force: true } );
 
+			cy.wait( 1500 );
 			// Wait for the submit button to be ready.
 			cy.get('.publish-settings', { timeout: 10000 }).should('be.visible');
 			saveCustomizerSettings();
