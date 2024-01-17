@@ -150,3 +150,11 @@ jobs:
 
       - name: Run tests
         run: yarn test:e2e:customizer -- --record
+        
+      - name: Upload failure video
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: e2e-fail.mp4
+          path: ./.dev/tests/cypress/videos/e2e-fail.mp4
+          retention-days: 1
