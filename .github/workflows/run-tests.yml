@@ -155,6 +155,6 @@ jobs:
         if: ${{ failure() }}
         uses: actions/upload-artifact@v3
         with:
-          name: e2e-fail.mp4
-          path: ./.dev/tests/cypress/videos/e2e-fail.mp4
+          name: customizer.spec.js.mp4
+          path: ./.dev/tests/cypress/videos/customizer/customizer.spec.js.mp4
           retention-days: 1
