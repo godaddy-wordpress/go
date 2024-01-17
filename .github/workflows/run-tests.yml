@@ -156,5 +156,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: customizer.spec.js.mp4
-          path: ./.dev/tests/cypress/videos/customizer/customizer.spec.js.mp4
+          path: ./.dev/tests/cypress/videos/**/*.mp4
           retention-days: 1
