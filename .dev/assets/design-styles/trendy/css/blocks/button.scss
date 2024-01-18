@@ -3,7 +3,7 @@
 .wp-block-button__link:not(.wp-block-coblocks-social__button) {
 	box-shadow: 0.4em 0.4em 0 0 rgba(0, 0, 0, 0.075);
 	overflow: hidden;
-	transition: width 200ms cubic-bezier(0.7, 0, 0.3, 1);
+	transition: width 100ms cubic-bezier(0.7, 0, 0.3, 1);
 
 	&::after {
 		content: "→";
@@ -13,7 +13,7 @@
 		overflow: hidden;
 		position: relative;
 		top: 1px;
-		transition: max-width 200ms cubic-bezier(0.7, 0, 0.3, 1), opacity 200ms cubic-bezier(0.7, 0, 0.3, 1), margin 100ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
+		transition: max-width 100ms cubic-bezier(0.7, 0, 0.3, 1), opacity 100ms cubic-bezier(0.7, 0, 0.3, 1), margin 100ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
 		width: 0;
 	}
 
