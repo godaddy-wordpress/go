@@ -8,12 +8,12 @@
 	&::after {
 		content: "→";
 		display: inline-block;
+		max-width: 0;
 		opacity: 0;
 		overflow: hidden;
 		position: relative;
 		top: 1px;
 		transition: max-width 200ms cubic-bezier(0.7, 0, 0.3, 1), opacity 200ms cubic-bezier(0.7, 0, 0.3, 1), margin 100ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
-		max-width: 0;
 		width: 0;
 	}
 
@@ -22,8 +22,8 @@
 
 		&::after {
 			margin-left: 10px;
-			opacity: 1;
 			max-width: 300px;
+			opacity: 1;
 			width: auto;
 		}
 	}
