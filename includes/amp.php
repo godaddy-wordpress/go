@@ -116,7 +116,7 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
  * This function is used as a "Conditional Tag" in WordPress. It can only be used at the `wp` action or later.
  *
  * @link https://developer.wordpress.org/themes/references/list-of-conditional-tags/
- * @see is_amp_endpoint()
+ * @see amp_is_request()
  *
  * @return bool Is AMP response.
  */
@@ -127,6 +127,6 @@ function is_amp() {
 	 *
 	 * @var bool
 	 */
-	return (bool) apply_filters( 'go_is_amp', ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) );
+	return (bool) apply_filters( 'go_is_amp', ( function_exists( 'amp_is_request' ) && amp_is_request() ) );
 
 }
