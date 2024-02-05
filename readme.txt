@@ -108,6 +108,7 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.8.8 / 2024-01-05 =
+= 1.8.8 / 2024-01-06 =
 ### Updates
 - Fix style issue in Trendy design style where button arrow is cut off above a certain font size. [902](https://github.com/godaddy-wordpress/go/pull/902)
+- Replace deprecated `is_amp_endpoint` with `amp_is_request`. [904](https://github.com/godaddy-wordpress/go/pull/904)
