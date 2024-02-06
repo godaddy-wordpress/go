@@ -38,7 +38,7 @@ You can fork and contribute back to Go by visiting [our public repo on GitHub](h
 
 == Copyright ==
 
-Go WordPress theme, Copyright 2023 GoDaddy Operating Company, LLC.
+Go WordPress theme, Copyright 2024 GoDaddy Operating Company, LLC.
 Go is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -108,6 +108,7 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.8.6 / 2023-11-06 =
+= 1.8.8 / 2024-01-06 =
 ### Updates
-- Bump the tested up to version to 6.3. [896](https://github.com/godaddy-wordpress/go/pull/896)
+- Fix style issue in Trendy design style where button arrow is cut off above a certain font size. [902](https://github.com/godaddy-wordpress/go/pull/902)
+- Replace deprecated `is_amp_endpoint` with `amp_is_request`. [904](https://github.com/godaddy-wordpress/go/pull/904)
