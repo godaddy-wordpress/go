@@ -161,6 +161,15 @@
 	color: var(--go-caption--color--text);
 }
 
+// Nested within a block with a secondary background color.
+// We should use alternate colors for text within a secondary background.
+.has-secondary-background-color .wc-block-grid .wc-block-grid__products {
+	.wc-block-grid__product-title,
+	.wc-block-grid__product-price.price .woocommerce-Price-amount {
+		color: var(--go--color--primary);
+	}
+}
+
 .woocommerce-Price-amount {
 	color: var(--go-heading--color--text);
 }
