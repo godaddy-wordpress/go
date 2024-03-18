@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        phpVersion: ["8.2", "8.3"]
+        phpVersion: ["7.4", "8.3"]
 
     steps:
       - name: Checkout
@@ -36,7 +36,7 @@ jobs:
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
-          core: 'WordPress/WordPress#6.3'
+          core: 'WordPress/WordPress#6.4'
           phpVersion: ${{ matrix.phpVersion }}
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
@@ -79,8 +79,8 @@ jobs:
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
-          core: 'WordPress/WordPress#6.3'
-          phpVersion: '7.4'
+          core: 'WordPress/WordPress#6.4'
+          phpVersion: '8.3'
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
 
@@ -122,8 +122,8 @@ jobs:
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
-          core: 'WordPress/WordPress#6.3'
-          phpVersion: '7.4'
+          core: 'WordPress/WordPress#6.4'
+          phpVersion: '8.3'
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
 
