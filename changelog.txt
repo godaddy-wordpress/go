@@ -1,3 +1,7 @@
+= 1.8.10 / 2024-04-02 =
+### Updates
+- Bump the tested up to version to 6.5. [#908](https://github.com/godaddy-wordpress/go/pull/908)
+
 = 1.8.9 / 2024-02-27 =
 ### Updates
 - Update WooCommerce product colors when inside of 'has-secondary-background-color' block. [905](https://github.com/godaddy-wordpress/go/pull/905)
