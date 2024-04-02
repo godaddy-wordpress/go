@@ -2,7 +2,7 @@
 Contributors: godaddy, richtabor, eherman24, jrtashjian, kopepasah, olivierlafleur
 Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-style, one-column, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 5.0
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 5.6
 Stable tag: 1.8.9
 License: GPL-2.0-only
@@ -108,6 +108,6 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.8.9 / 2024-02-27 =
+= 1.8.10 / 2024-04-02 =
 ### Updates
-- Update WooCommerce product colors when inside of 'has-secondary-background-color' block. [905](https://github.com/godaddy-wordpress/go/pull/905)
+- Bump the tested up to version to 6.5. [#908](https://github.com/godaddy-wordpress/go/pull/908)
