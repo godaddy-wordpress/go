@@ -1,6 +1,6 @@
 = 1.8.10 / 2024-04-02 =
 ### Updates
-- Bump the tested up to version to 6.5. [#908](https://github.com/godaddy-wordpress/go/pull/908)
+- Bump the tested up to version to 6.5. [#909](https://github.com/godaddy-wordpress/go/pull/909)
 
 = 1.8.9 / 2024-02-27 =
 ### Updates

@@ -4,7 +4,7 @@ Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-
 Requires at least: 5.0
 Tested up to: 6.5
 Requires PHP: 5.6
-Stable tag: 1.8.10
+Stable tag: 1.8.9
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -110,4 +110,4 @@ List of bespoke icons:
 == Changelog ==
 = 1.8.10 / 2024-04-02 =
 ### Updates
-- Bump the tested up to version to 6.5. [#908](https://github.com/godaddy-wordpress/go/pull/908)
+- Bump the tested up to version to 6.5. [#909](https://github.com/godaddy-wordpress/go/pull/909)
