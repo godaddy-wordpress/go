@@ -368,6 +368,8 @@ function block_editor_assets() {
 		)
 	);
 
+	wp_set_script_translations( 'go-block-filters', 'go' );
+
 }
 
 /**
