@@ -15,7 +15,7 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": ">=16 <=17"
+    "node": "18"
   },
   "license": "GPL-2.0-or-later",
   "badges": [
@@ -185,6 +185,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "simple-git": "^3.16.0",
-    "ua-parser-js": "^1.0.33"
+    "ua-parser-js": "^1.0.33",
+    "eslint-plugin-jsdoc": "^48.0.0"
   }
 }
