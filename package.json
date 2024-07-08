@@ -186,6 +186,6 @@
     "react-dom": "^18.2.0",
     "simple-git": "^3.16.0",
     "ua-parser-js": "^1.0.33",
-    "eslint-plugin-jsdoc": "^48.0.0"
+    "eslint-plugin-jsdoc": "^41.0.0"
   }
 }
