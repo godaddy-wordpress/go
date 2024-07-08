@@ -3585,7 +3585,7 @@
     react "^18.2.0"
     react-dom "^18.2.0"
 
-"@wordpress/env@^10.1.0":
+"@wordpress/env@^10.2.0":
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/@wordpress/env/-/env-10.2.0.tgz#9ebb7b9d89a146ee8a27b29751d436c8b2324b81"
   integrity sha512-EToZYPGXpl42Asw3bxpX8aKmHfRUdGxKPjQ9CHZVQoTAL27Af4FyjyGnepsnDpnYdIeI8VPb2S3k2NL/1+fpIA==
