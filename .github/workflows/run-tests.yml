@@ -40,6 +40,8 @@ jobs:
           phpVersion: ${{ matrix.phpVersion }}
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
+          port: 8888
+          testsPort: 8889
 
       - name: Prepare tests
         run: |
