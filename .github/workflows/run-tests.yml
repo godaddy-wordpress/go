@@ -5,9 +5,6 @@ on:
     branches:
       - master
 
-env:
-  WP_ENV_TESTS_MYSQL_PORT: 8889
-
 jobs:
   php:
     name: PHP Unit
