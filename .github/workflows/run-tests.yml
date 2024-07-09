@@ -41,13 +41,6 @@ jobs:
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
 
-      # - name: Prepare tests
-      #   run: |
-      #     cd $(wp-env install-path)
-      #     ls -la
-      #     cat docker-compose.yml
-      #     docker-compose run --rm -u $(id -u) -e HOME=/tmp tests-cli cp wp-content/themes/go/.dev/tests/php/assets/es_ES.mo wp-content/themes/go/languages/es_ES.mo
-
       - name: Run tests
         run: |
           wp-env run tests-wordpress /var/www/html/wp-content/themes/go/vendor/bin/phpunit -c /var/www/html/wp-content/themes/go/phpunit.xml --verbose
