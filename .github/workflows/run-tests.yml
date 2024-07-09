@@ -102,7 +102,7 @@ jobs:
 
       - name: Prepare tests
         run: |
-          wp-env run cli "wp db import wp-content/themes/go/.dev/tests/a11y-test-db.sql"
+          wp-env run cli wp db import wp-content/themes/go/.dev/tests/a11y-test-db.sql
 
       - name: Run tests
         run: |
@@ -145,8 +145,8 @@ jobs:
 
       - name: Prepare tests
         run: |
-          wp-env run cli "wp theme activate go"
-          wp-env run cli "wp option update permalink_structure '/%postname%'"
+          wp-env run cli wp theme activate go
+          wp-env run cli wp option update permalink_structure '/%postname%'
 
       - name: Run tests
         run: yarn test:e2e:customizer -- --record
