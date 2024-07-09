@@ -50,7 +50,7 @@ jobs:
 
       - name: Run tests
         run: |
-          wp-env run tests-cli --env-cwd=html/wp-content/themes/go/ phpunit
+          wp-env run tests-wordpress /var/www/html/wp-content/themes/go/vendor/bin/phpunit -c /var/www/html/wp-content/themes/go/phpunit.xml --verbose
 
   js:
     name: JS Unit
