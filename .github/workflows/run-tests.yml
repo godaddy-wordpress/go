@@ -36,19 +36,14 @@ jobs:
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
-          core: 'WordPress/WordPress#6.4'
+          core: 'WordPress/WordPress#6.5'
           phpVersion: ${{ matrix.phpVersion }}
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
 
-      - name: Prepare tests
-        run: |
-          cd $(wp-env install-path)
-          docker-compose run --rm -u $(id -u) -e HOME=/tmp tests-cli cp wp-content/themes/go/.dev/tests/php/assets/es_ES.mo wp-content/themes/go/languages/es_ES.mo
-
       - name: Run tests
         run: |
-          wp-env run phpunit "composer run test --working-dir=html/wp-content/themes/go/"
+          wp-env run tests-wordpress /var/www/html/wp-content/themes/go/vendor/bin/phpunit -c /var/www/html/wp-content/themes/go/phpunit.xml --verbose
 
   js:
     name: JS Unit
@@ -79,7 +74,7 @@ jobs:
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
-          core: 'WordPress/WordPress#6.4'
+          core: 'WordPress/WordPress#6.5'
           phpVersion: '8.3'
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
@@ -102,7 +97,7 @@ jobs:
 
       - name: Prepare tests
         run: |
-          wp-env run cli "wp db import wp-content/themes/go/.dev/tests/a11y-test-db.sql"
+          wp-env run cli wp db import wp-content/themes/go/.dev/tests/a11y-test-db.sql
 
       - name: Run tests
         run: |
@@ -122,7 +117,7 @@ jobs:
       - name: Setup wp-env
         uses: godaddy-wordpress/setup-wp-env@v1
         with:
-          core: 'WordPress/WordPress#6.4'
+          core: 'WordPress/WordPress#6.5'
           phpVersion: '8.3'
           plugins: '["https://downloads.wordpress.org/plugin/coblocks.zip","https://downloads.wordpress.org/plugin/woocommerce.zip"]'
           themes: '["."]'
@@ -145,8 +140,8 @@ jobs:
 
       - name: Prepare tests
         run: |
-          wp-env run cli "wp theme activate go"
-          wp-env run cli "wp option update permalink_structure '/%postname%'"
+          wp-env run cli wp theme activate go
+          wp-env run cli wp option update permalink_structure '/%postname%'
 
       - name: Run tests
         run: yarn test:e2e:customizer -- --record
