@@ -507,7 +507,9 @@ function google_fonts_style_loader_tag( $tag, $handle, $href, $media ) {
 	// Remove once core supports preload natively.
 	$tag = "<link rel='preload' as='style' href='$href' />\n" . $tag;
 
-	$tag = str_replace( array( "media=\"$media\"", "media='$media'" ), 'media="print" onload="this.media=\'all\'"', $tag );
+	if ( ! is_amp() ) {
+		$tag = str_replace( array( "media=\"$media\"", "media='$media'" ), 'media="print" onload="this.media=\'all\'"', $tag );
+	}
 
 	// phpcs:disable WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet
 	$tag .= "\n<noscript><link rel=\"stylesheet\" href=\"$href\" /></noscript>";
