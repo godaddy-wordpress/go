@@ -110,4 +110,4 @@ List of bespoke icons:
 == Changelog ==
 = 1.8.12 / 2024-10-31 =
 ### Updates
-- Bump the tested up to version to 6.7. [#915](https://github.com/godaddy-wordpress/go/pull/915)
+- Bump the tested up to version to 6.7. [#919](https://github.com/godaddy-wordpress/go/pull/919)
