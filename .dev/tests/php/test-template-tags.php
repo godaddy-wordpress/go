@@ -1342,6 +1342,19 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test the post_meta() returns proper data bluesky icon data
+	 */
+	public function test_social_icons_bluesky() {
+
+		set_theme_mod( 'social_icon_bluesky', 'https://bsky.app/profile/custom' );
+
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/bsky.app\/profile\/custom" aria-label="Open Bluesky in a new tab" rel="noopener noreferrer" target="_blank">/' );
+
+		Go\social_icons( [] );
+
+	}
+
+	/**
 	 * Test the social icons do not render on header-1
 	 */
 	public function test_header_social_icons_header_1() {

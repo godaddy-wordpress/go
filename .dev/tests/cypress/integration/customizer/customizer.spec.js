@@ -31,6 +31,7 @@ describe( 'Test the customizer works as intended.', () => {
 		github: 'https://www.github.com',
 		tiktok: 'https://www.tiktok.com',
 		mastodon: 'https://mastodon.social',
+		bluesky: 'https://bsky.app/',
 	};
 
 	before( () => {

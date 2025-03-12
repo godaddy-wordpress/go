@@ -1262,6 +1262,11 @@ function get_available_social_icons() {
 			'icon'        => get_theme_file_path( 'dist/images/social/mastodon.svg' ),
 			'placeholder' => 'https://mastodon.social/@user',
 		),
+		'bluesky'  => array(
+			'label'       => esc_html__( 'Bluesky', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/bluesky.svg' ),
+			'placeholder' => 'https://bsky.app/profile/user',
+		),
 	);
 
 	/**
