@@ -1,3 +1,10 @@
+= 1.8.13 / 2025-04-01 =
+### Updates
+- Avoid adding onload attribute to stylesheet when serving AMP response. [#917](https://github.com/godaddy-wordpress/go/pull/917)
+- Update workflows to use WordPress 6.7 image. [#920](https://github.com/godaddy-wordpress/go/pull/920)
+- Add support for Bluesky in the social media options. [#922](https://github.com/godaddy-wordpress/go/pull/922)
+- Update actions/upload-artifact. [#923](https://github.com/godaddy-wordpress/go/pull/923)
+
 = 1.8.12 / 2024-10-31 =
 ### Updates
 - Bump the tested up to version to 6.7. [#919](https://github.com/godaddy-wordpress/go/pull/919)
