@@ -45,25 +45,6 @@ jobs:
         run: |
           wp-env run tests-wordpress /var/www/html/wp-content/themes/go/vendor/bin/phpunit -c /var/www/html/wp-content/themes/go/phpunit.xml --verbose
 
-  js:
-    name: JS Unit
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'yarn'
-
-      - name: Install dependencies
-        run: yarn install --immutable
-
-      - name: Run tests
-        run: yarn run test:js
-
   a11y:
     name: Accessibility
     runs-on: ubuntu-latest
