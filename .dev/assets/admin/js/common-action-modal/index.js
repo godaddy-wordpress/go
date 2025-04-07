@@ -5,62 +5,23 @@ import { useCallback, useEffect, useState } from '@wordpress/element';
 
 const language = document.documentElement.getAttribute( 'lang' ) || 'en-US';
 
-const fetchData = async ( apiUrl, getParams = null ) => {
-	const params = {
-		...getParams,
-		language,
-		random: 1,
-	};
-	let paramString = '';
-	Object.keys( params ).forEach( ( key ) => paramString += `${ key }=${ params[ key ] }&` );
-
-	try {
-		const response = await fetch( `${ apiUrl }?${ paramString.slice( 0, -1 ) }` );
-		if ( ! response.ok ) {
-			return null;
-		}
-
-		return await response.json();
-	} catch ( e ) {
-		return null;
-	}
-};
-
 const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 	const [ href, setHref ] = useState( null );
 	const [ isOpen, setOpen ] = useState( false );
-	const [ feedbackData, setFeedbackData ] = useState( null );
 	const [ formData, setFormData ] = useState( {} );
 
 	useEffect( () => {
-		const getData = async () => {
-			const data = await fetchData( apiUrl, getParams );
-
-			if ( data && data.can_submit_feedback ) {
-				window.addEventListener( 'click', clickHandler );
-				setInitialData( data );
-			}
-		};
-
-		getData();
-
-		return () => {
-			window.removeEventListener( 'click', clickHandler );
-		};
-	}, [] );
-
-	const setInitialData = ( data ) => {
-		setFeedbackData( data );
-
 		const textFields = {};
-		data.choices.forEach( ( choice ) => {
+		goThemeDeactivateData.choices.forEach( ( choice ) => {
 			if ( !! choice.text_field ) {
 				textFields[ choice.text_field ] = '';
 			}
 		} );
 
+		window.addEventListener( 'click', clickHandler );
+
 		setFormData( {
-			choices: [],
+			choices: goThemeDeactivateData.choices,
 			domain: pageData.domain,
 			go_theme_version: pageData.goThemeVersion,
 			hostname: pageData.hostname,
@@ -68,7 +29,7 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 			wp_version: pageData.wpVersion,
 			...textFields,
 		} );
-	};
+	}, [] );
 
 	const clickHandler = useCallback( ( e ) => {
 		if ( ! isEvent( e ) ) {
@@ -103,7 +64,7 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 	};
 
 	const onAction = async ( submit = false ) => {
-		if ( submit && formData.choices.length >= feedbackData.choices_min ) {
+		if ( submit && formData.choices.length >= 0 ) {
 			await fetch( apiUrl, {
 				body: JSON.stringify( formData ),
 				headers: {
@@ -117,7 +78,7 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 		window.location.href = href;
 	};
 
-	if ( ! isOpen || ! feedbackData ) {
+	if ( ! isOpen ) {
 		return null;
 	}
 
@@ -125,10 +86,10 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 		<Modal
 			className="go-deactivate-modal"
 			onRequestClose={ () => setOpen( false ) }
-			title={ feedbackData.labels.title }
+			title={ goThemeDeactivateData.labels.title }
 		>
 			<div className="go-deactivate-modal__checkbox">
-				{ feedbackData.choices.map( ( choice ) => {
+				{ goThemeDeactivateData.choices.map( ( choice ) => {
 					const isChecked = formData.choices.indexOf( choice.slug ) >= 0;
 					return (
 						<div key={ choice.slug }>
@@ -156,21 +117,21 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 					onClick={ () => onAction( true ) }
 					variant="primary"
 				>
-					{ feedbackData.labels.submit_deactivate }
+					{ goThemeDeactivateData.labels.submit_deactivate }
 				</Button>
 				<Button
 					className="go-deactivate-modal__button"
 					onClick={ () => onAction( false ) }
 					variant="link"
 				>
-					{ feedbackData.labels.skip_deactivate }
+					{ goThemeDeactivateData.labels.skip_deactivate }
 				</Button>
 			</ButtonGroup>
 
 			<footer className="go-deactivate-modal__footer">
 				<div
 					dangerouslySetInnerHTML={ {
-						__html: safeHTML( feedbackData.labels.privacy_disclaimer ),
+						__html: safeHTML( goThemeDeactivateData.labels.privacy_disclaimer ),
 					} }
 				/>
 			</footer>
@@ -186,6 +147,5 @@ DeactivateModal.propTypes = {
 };
 
 export {
-	DeactivateModal as default,
-	fetchData,
+	DeactivateModal as default
 };
