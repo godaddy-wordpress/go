@@ -102,10 +102,10 @@ class Go_Theme_Deactivation {
 		];
 
 		$deactivation_labels = [
-			'privacy_disclaimer'  => __( "Please do not include any personal information in your submission. We do not collect or need this information. Please see our <a href='https://www.godaddy.com/legal/agreements/privacy-policy' target='_blank'>privacy policy</a> for details.", 'go' ),
-			'skip_deactivate'     => __( 'Skip & Switch Theme', 'go' ),
-			'submit_deactivate'   => __( 'Submit & Switch Theme', 'go' ),
-			'title'               => __( 'Thanks for trying Go. Let us know how we can improve.', 'go' ),
+			'privacy_disclaimer' => __( "Please do not include any personal information in your submission. We do not collect or need this information. Please see our <a href='https://www.godaddy.com/legal/agreements/privacy-policy' target='_blank'>privacy policy</a> for details.", 'go' ),
+			'skip_deactivate'    => __( 'Skip & Switch Theme', 'go' ),
+			'submit_deactivate'  => __( 'Submit & Switch Theme', 'go' ),
+			'title'              => __( 'Thanks for trying Go. Let us know how we can improve.', 'go' ),
 		];
 
 		// Pass data.
