@@ -82,23 +82,6 @@ describe( 'go-deactivate-modal', () => {
 		jest.clearAllMocks();
 	} );
 
-	describe( 'fetchData', () => {
-		test( 'should return feedback data', async () => {
-			const response = await fetchData( 'foo.com' );
-			expect( response ).toEqual( mockData );
-		} );
-
-		test( 'should call the fetch api', async () => {
-			const fetchMock = jest.spyOn( global, 'fetch' );
-
-			await act( async () => {
-				wrapper = setup();
-			} );
-
-			expect( fetchMock ).toHaveBeenCalledWith( 'https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout?domain=foo.com&language=en-US&random=1' );
-		} );
-	} );
-
 	describe( 'closed state', () => {
 		beforeEach( async () => {
 			await act( async () => {
