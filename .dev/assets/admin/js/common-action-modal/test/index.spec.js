@@ -14,7 +14,7 @@ import '@testing-library/jest-dom/extend-expect';
  * Internal dependencies.
  */
 import mockData from '../../../../../tests/cypress/fixtures/network/go_optout.json';
-import Modal, { fetchData } from '../index';
+import Modal from '../index';
 
 import { enableFetchMocks } from 'jest-fetch-mock';
 enableFetchMocks();
@@ -72,6 +72,8 @@ describe( 'go-deactivate-modal', () => {
 		fetch.resetMocks();
 		fetch.mockResponse( JSON.stringify( mockData ) );
 
+		global.goThemeDeactivateData = mockData;
+
 		events = {};
 		window.addEventListener = jest.fn( ( event, callback ) => {
 			events[ event ] = callback;
@@ -80,23 +82,6 @@ describe( 'go-deactivate-modal', () => {
 
 	afterEach( () => {
 		jest.clearAllMocks();
-	} );
-
-	describe( 'fetchData', () => {
-		test( 'should return feedback data', async () => {
-			const response = await fetchData( 'foo.com' );
-			expect( response ).toEqual( mockData );
-		} );
-
-		test( 'should call the fetch api', async () => {
-			const fetchMock = jest.spyOn( global, 'fetch' );
-
-			await act( async () => {
-				wrapper = setup();
-			} );
-
-			expect( fetchMock ).toHaveBeenCalledWith( 'https://wpnux.godaddy.com/v3/api/feedback/go-theme-optout?domain=foo.com&language=en-US&random=1' );
-		} );
 	} );
 
 	describe( 'closed state', () => {

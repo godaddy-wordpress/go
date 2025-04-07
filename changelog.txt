@@ -1,3 +1,7 @@
+= 1.8.14 / 2025-04-07 =
+### Updates
+- Refactor the deactivation modal. [#927](https://github.com/godaddy-wordpress/go/pull/927)
+
 = 1.8.13 / 2025-04-01 =
 ### Updates
 - Avoid adding onload attribute to stylesheet when serving AMP response. [#917](https://github.com/godaddy-wordpress/go/pull/917)

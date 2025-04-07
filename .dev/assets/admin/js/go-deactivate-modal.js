@@ -24,12 +24,9 @@ const GoDeactivateModal = () => {
 		return null;
 	}
 
-	const getParams = { domain };
-
 	return (
 		<DeactivateModal
 			apiUrl={ apiUrl }
-			getParams={ getParams }
 			isEvent={ isEvent }
 			pageData={ goThemeDeactivateData }
 		/>
