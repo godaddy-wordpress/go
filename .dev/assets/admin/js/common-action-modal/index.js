@@ -1,3 +1,5 @@
+/* global goThemeDeactivateData */
+
 import PropTypes from 'prop-types';
 import { safeHTML } from '@wordpress/dom';
 import { Button, ButtonGroup, CheckboxControl, Modal, TextControl } from '@wordpress/components';
@@ -5,7 +7,7 @@ import { useCallback, useEffect, useState } from '@wordpress/element';
 
 const language = document.documentElement.getAttribute( 'lang' ) || 'en-US';
 
-const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
+const DeactivateModal = ( { apiUrl, isEvent, pageData } ) => {
 	const [ href, setHref ] = useState( null );
 	const [ isOpen, setOpen ] = useState( false );
 	const [ formData, setFormData ] = useState( {} );
@@ -92,7 +94,7 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 				{ goThemeDeactivateData.choices.map( ( choice ) => {
 					const isChecked = formData.choices.indexOf( choice.slug ) >= 0;
 					if ( typeof choice !== 'object' ) {
-						return;
+						return null;
 					}
 					return (
 						<div key={ choice.slug }>
@@ -144,11 +146,10 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 
 DeactivateModal.propTypes = {
 	apiUrl: PropTypes.string.isRequired,
-	getParams: PropTypes.object,
 	isEvent: PropTypes.func.isRequired,
 	pageData: PropTypes.object.isRequired,
 };
 
 export {
-	DeactivateModal as default
+	DeactivateModal as default,
 };
