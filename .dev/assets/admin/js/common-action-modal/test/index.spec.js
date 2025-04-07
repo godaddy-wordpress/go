@@ -14,7 +14,6 @@ import '@testing-library/jest-dom/extend-expect';
  * Internal dependencies.
  */
 import mockData from '../../../../../tests/cypress/fixtures/network/go_optout.json';
-import Modal, { fetchData } from '../index';
 
 import { enableFetchMocks } from 'jest-fetch-mock';
 enableFetchMocks();
