@@ -91,6 +91,9 @@ const DeactivateModal = ( { apiUrl, getParams, isEvent, pageData } ) => {
 			<div className="go-deactivate-modal__checkbox">
 				{ goThemeDeactivateData.choices.map( ( choice ) => {
 					const isChecked = formData.choices.indexOf( choice.slug ) >= 0;
+					if ( typeof choice !== 'object' ) {
+						return;
+					}
 					return (
 						<div key={ choice.slug }>
 							<CheckboxControl

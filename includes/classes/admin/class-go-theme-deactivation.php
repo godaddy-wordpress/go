@@ -88,12 +88,17 @@ class Go_Theme_Deactivation {
 				'is_checked' => false,
 				'text_field' => null,
 			],
-			[
-				'slug'       => 'other',
-				'label'      => 'Other reason:',
-				'is_checked' => false,
-				'text_field' => 'choice_other_text',
-			]
+		];
+
+		// Randomize the choices.
+		shuffle( $deactivation_form_choices );
+
+		// Ensure "Other Reason" is last.
+		$deactivation_form_choices[] = [
+			'slug'       => 'other',
+			'label'      => 'Other reason:',
+			'is_checked' => false,
+			'text_field' => 'choice_other_text',
 		];
 
 		$deactivation_labels = [
