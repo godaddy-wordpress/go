@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-07T15:17:21+00:00\n"
+"POT-Creation-Date: 2025-04-07T15:46:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: go\n"
@@ -98,6 +98,22 @@ msgstr ""
 #: includes/amp.php:102
 #: includes/amp.php:105
 msgid "expand child menu"
+msgstr ""
+
+#: includes/classes/admin/class-go-theme-deactivation.php:100
+msgid "Please do not include any personal information in your submission. We do not collect or need this information. Please see our <a href='https://www.godaddy.com/legal/agreements/privacy-policy' target='_blank'>privacy policy</a> for details."
+msgstr ""
+
+#: includes/classes/admin/class-go-theme-deactivation.php:101
+msgid "Skip & Switch Theme"
+msgstr ""
+
+#: includes/classes/admin/class-go-theme-deactivation.php:102
+msgid "Submit & Switch Theme"
+msgstr ""
+
+#: includes/classes/admin/class-go-theme-deactivation.php:103
+msgid "Thanks for trying Go. Let us know how we can improve."
 msgstr ""
 
 #: includes/classes/class-tgm-plugin-activation.php:325
