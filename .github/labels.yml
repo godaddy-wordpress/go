@@ -65,7 +65,7 @@
   description: "Relevant to project tooling"
 - name: "[Type] Tests"
   color: "646970"
-  description: "Relevant to our test suite; i.e. Cypress, Jest, PHPUnit, etc"
+  description: "Relevant to our test suite; i.e. Cypress, PHPUnit, etc"
 - name: "[Type] Needs Tests"
   color: "646970"
   description: "This issue/pull request requires proper tests implemented"

@@ -20,8 +20,6 @@ module.exports = {
 
 	rules: {
 		'@wordpress/no-global-active-element': 0, // because we are not using React, no need for this
-		'jsdoc/check-tag-names': [ 2, {
-			definedTags: [ 'jest-environment' ],
-		} ],
+		'jsdoc/check-tag-names': [ 2 ],
 	},
 };
