@@ -72,6 +72,8 @@ describe( 'go-deactivate-modal', () => {
 		fetch.resetMocks();
 		fetch.mockResponse( JSON.stringify( mockData ) );
 
+		global.goThemeDeactivateData = mockData;
+
 		events = {};
 		window.addEventListener = jest.fn( ( event, callback ) => {
 			events[ event ] = callback;
