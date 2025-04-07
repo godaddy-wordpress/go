@@ -26,7 +26,6 @@ module.exports = {
 		'admin/customize-controls': './.dev/assets/admin/js/customize-controls.js',
 		'admin/customize-preview': './.dev/assets/admin/js/customize-preview.js',
 		'admin/block-filters': './.dev/assets/admin/js/block-filters.js',
-		'admin/go-theme-deactivation': './.dev/assets/admin/js/go-deactivate-modal.js',
 
 		// Admin CSS.
 		'admin/style-customize': './.dev/assets/admin/css/style-customize.scss',
