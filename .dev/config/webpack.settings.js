@@ -30,7 +30,6 @@ module.exports = {
 
 		// Admin CSS.
 		'admin/style-customize': './.dev/assets/admin/css/style-customize.scss',
-		'admin/style-go-theme-deactivation': './.dev/assets/admin/css/style-deactivate-modal.scss',
 	},
 	paths: {
 		src: {
