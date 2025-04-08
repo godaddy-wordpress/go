@@ -20,40 +20,40 @@ function setup() {
 
 	add_filter( 'go_page_title_args', $n( 'hide_page_title' ) );
 
-	add_action( 'rest_api_init', $n( 'register_meta' ) );
+	add_action( 'rest_api_init', function() {
+		register_meta(
+			'post',
+			'hide_page_title',
+			array(
+				'sanitize_callback' => 'Go\Title_Meta\hide_page_title_callback',
+				'type'              => 'string',
+				'description'       => __( 'Hide Page Title.', 'go' ),
+				'show_in_rest'      => true,
+				'single'            => true,
+			)
+		);
+	} );
 
 }
 
-function register_meta() {
+/**
+ * Hide page title meta callback
+ *
+ * @param  string $status Hide page title status (eg: enable, disabled).
+ *
+ * @return string Whether or not the page title should be enabled or not.
+ */
+function hide_page_title_callback( $status ) {
 
-	register_meta(
-		'post',
-		'hide_page_title',
-		array(
-			/**
-			 * Hide page title meta callback
-			 *
-			 * @param  string $status Hide page title status (eg: enable, disabled).
-			 *
-			 * @return string Whether or not the page title should be enabled or not.
-			 */
-			'sanitize_callback' => function( $status ) {
-				$status = strtolower( trim( $status ) );
+	$status = strtolower( trim( $status ) );
 
-				if ( ! in_array( $status, array( 'enabled', 'disabled' ), true ) ) {
+	if ( ! in_array( $status, array( 'enabled', 'disabled' ), true ) ) {
 
-					$status = '';
+		$status = '';
 
-				}
+	}
 
-				return $status;
-			},
-			'type'              => 'string',
-			'description'       => __( 'Hide Page Title.', 'go' ),
-			'show_in_rest'      => true,
-			'single'            => true,
-		)
-	);
+	return $status;
 
 }
 
