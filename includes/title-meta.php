@@ -21,7 +21,7 @@ function setup() {
 	add_filter( 'go_page_title_args', $n( 'hide_page_title' ) );
 
 	add_action(
-		'rest_api_init',
+		'rest_api_init', 
 		/**
 		 * Register the meta field for the REST API.
 		 */
