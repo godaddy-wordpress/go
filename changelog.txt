@@ -1,3 +1,8 @@
+= 1.8.15 / 2025-04-08 =
+### Updates
+- Refactor where `register_meta` is hooked, to resolve translation warnings. [#928](https://github.com/godaddy-wordpress/go/pull/928)
+- Update `readme.txt` with information about data collection on theme deactivation. [#929](https://github.com/godaddy-wordpress/go/pull/929)
+
 = 1.8.14 / 2025-04-07 =
 ### Updates
 - Refactor the deactivation modal. [#927](https://github.com/godaddy-wordpress/go/pull/927)
