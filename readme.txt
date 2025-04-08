@@ -30,7 +30,7 @@ You can fork and contribute back to Go by visiting [our public repo on GitHub](h
 
 **Privacy Policy**
 
-When the Go theme is deactivated users are provided with an opportunity to provide feedback as to why they chose to switch themes. This form is optional and no data is collected until the form is submitted. If a users chooses to submit the form, the following information will be collected, so we can continue to iterate and improve on the Go theme: The reason for deactivation, domain, Go theme version, hostname, site language, WordPress version and any text responses you provided. **Note:** Users can easily opt-out by clicking on 'Skip and Switch Theme'.
+When the Go theme is deactivated users are provided with an opportunity to provide feedback as to why they chose to switch themes. This form is optional and no data is collected until the form is submitted. If a user chooses to submit the form, the following information will be collected, so we can continue to iterate and improve on the Go theme: The reason for deactivation, domain, Go theme version, hostname, site language, WordPress version and any text responses you provided. **Note:** Users can easily opt-out by clicking on 'Skip and Switch Theme'.
 
 == Installation ==
 
