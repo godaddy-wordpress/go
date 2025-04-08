@@ -20,16 +20,24 @@ function setup() {
 
 	add_filter( 'go_page_title_args', $n( 'hide_page_title' ) );
 
-	register_meta(
-		'post',
-		'hide_page_title',
-		array(
-			'sanitize_callback' => $n( 'hide_page_title_callback' ),
-			'type'              => 'string',
-			'description'       => __( 'Hide Page Title.', 'go' ),
-			'show_in_rest'      => true,
-			'single'            => true,
-		)
+	add_action(
+		'rest_api_init',
+		/**
+		 * Register the meta field for the REST API.
+		 */
+		function() {
+			register_meta(
+				'post',
+				'hide_page_title',
+				array(
+					'sanitize_callback' => 'Go\Title_Meta\hide_page_title_callback',
+					'type'              => 'string',
+					'description'       => __( 'Hide Page Title.', 'go' ),
+					'show_in_rest'      => true,
+					'single'            => true,
+				)
+			);
+		}
 	);
 
 }

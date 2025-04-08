@@ -61,6 +61,8 @@ class Test_Title_Meta extends WP_UnitTestCase {
 	 */
 	function test_hide_page_title_callback() {
 
+		do_action( 'rest_api_init' );
+
 		$post_title_visible = $this->factory->post->create(
 			[
 				'post_title' => 'Show Post title',
