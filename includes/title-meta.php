@@ -22,6 +22,9 @@ function setup() {
 
 	add_action(
 		'rest_api_init',
+		/**
+		 * Register the meta field for the REST API.
+		 */
 		function() {
 			register_meta(
 				'post',
