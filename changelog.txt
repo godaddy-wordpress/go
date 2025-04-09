@@ -1,4 +1,4 @@
-= 1.8.15 / 2025-04-08 =
+= 1.8.15 / 2025-04-09 =
 ### Updates
 - Refactor where `register_meta` is hooked, to resolve translation warnings. [#928](https://github.com/godaddy-wordpress/go/pull/928)
 - Update `readme.txt` with information about data collection on theme deactivation. [#929](https://github.com/godaddy-wordpress/go/pull/929)
