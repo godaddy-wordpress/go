@@ -6,7 +6,7 @@
  * Author: GoDaddy
  * Version: 1.22.0
  * Text Domain: go
- * Tested up to: 6.7
+ * Tested up to: 6.8
  *
  * @package Go
  */
