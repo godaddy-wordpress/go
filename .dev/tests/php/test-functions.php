@@ -28,7 +28,7 @@ class Test_Functions extends WP_UnitTestCase {
 	 */
 	function testVersionDefined() {
 
-		$this->assertEquals( '1.8.15', GO_VERSION );
+		$this->assertEquals( '1.8.16', GO_VERSION );
 
 	}
 
