@@ -16,7 +16,7 @@ use function Go\hex_to_hsl;
  * @return void
  */
 function setup() {
-	$n = function( $function ) {
+	$n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
 
@@ -89,7 +89,7 @@ function wp_nav_fallback( $args ) {
 	$attributes = implode(
 		' ',
 		array_map(
-			function( $key, $value ) {
+			function ( $key, $value ) {
 				return sprintf( '%s="%s"', $key, esc_attr( $value ) );
 			},
 			array_keys( $attrs ),
@@ -110,7 +110,6 @@ function wp_nav_fallback( $args ) {
 			)
 		)
 	);
-
 }
 
 /**
@@ -254,10 +253,10 @@ function get_color_schemes_as_choices() {
 
 	array_walk(
 		$design_styles,
-		function( $style_data, $design_style ) use ( &$color_schemes ) {
+		function ( $style_data, $design_style ) use ( &$color_schemes ) {
 			array_walk(
 				$style_data['color_schemes'],
-				function( $data, $name ) use ( $design_style, &$color_schemes ) {
+				function ( $data, $name ) use ( $design_style, &$color_schemes ) {
 					$color_schemes[ "{$design_style}-{$name}" ] = $data;
 				}
 			);
@@ -319,7 +318,6 @@ function register_site_title_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'        => 'checkbox',
 		)
 	);
-
 }
 
 /**
@@ -476,7 +474,6 @@ function register_global_controls( \WP_Customize_Manager $wp_customize ) {
 function copyright_kses_html( $input ) {
 
 	return wp_kses( $input, \Go\get_copyright_kses_html() );
-
 }
 
 /**
@@ -808,7 +805,6 @@ function register_color_controls( \WP_Customize_Manager $wp_customize ) {
 			),
 		)
 	);
-
 }
 
 /**
@@ -1091,7 +1087,6 @@ function register_menu_controls( \WP_Customize_Manager $wp_customize ) {
 			'type'        => 'checkbox',
 		)
 	);
-
 }
 
 /**
@@ -1104,7 +1099,6 @@ function register_menu_controls( \WP_Customize_Manager $wp_customize ) {
 function rename_panels( \WP_Customize_Manager $wp_customize ) {
 
 	$wp_customize->get_section( 'colors' )->title = __( 'Site Design', 'go' );
-
 }
 
 /**
@@ -1122,7 +1116,6 @@ function sanitize_radio( $value, $setting ) {
 	$choices = $setting->manager->get_control( $setting->id . '_control' )->choices;
 
 	return array_key_exists( $input, $choices ) ? $input : $setting->default;
-
 }
 
 /**

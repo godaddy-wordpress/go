@@ -17,7 +17,7 @@ require_once get_parent_theme_file_path( 'includes/classes/class-tgm-plugin-acti
  * @return void
  */
 function setup() {
-	$n = function( $function ) {
+	$n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
 

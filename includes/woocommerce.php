@@ -25,7 +25,7 @@ function setup() {
 	}
 	// @codeCoverageIgnoreEnd
 
-	$n = function( $function ) {
+	$n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
 
@@ -60,7 +60,6 @@ function setup() {
 	add_action( 'wp', $n( 'disable_cart' ) );
 
 	add_filter( 'woocommerce_widget_cart_is_hidden', $n( 'show_widget_cart_on_checkout' ) );
-
 }
 
 /**
@@ -85,7 +84,6 @@ function should_show_woo_cart_item() {
 	 * @var bool
 	*/
 	return (bool) apply_filters( 'go_wc_show_cart_menu', true );
-
 }
 
 /**
@@ -110,7 +108,6 @@ function should_use_woo_slideout_cart() {
 	 * @var bool
 	*/
 	return (bool) apply_filters( 'go_wc_use_slideout_cart', true );
-
 }
 
 /**
@@ -187,7 +184,6 @@ function woocommerce_cart_link() {
 		esc_attr( $cart_alt_text ),
 		$cart_text // @codingStandardsIgnoreLine
 	);
-
 }
 
 /**
@@ -286,7 +282,6 @@ function go_cart_fragments( $fragments ) {
 	);
 
 	return $fragments;
-
 }
 
 /**
@@ -336,7 +331,6 @@ function empty_cart_message() {
 		),
 		esc_html( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'go' ) ) )
 	);
-
 }
 
 /**
@@ -366,7 +360,6 @@ function disable_cart() {
 
 	add_filter( 'go_wc_use_slideout_cart', '__return_false' );
 	add_filter( 'go_wc_show_cart_menu', '__return_false' );
-
 }
 
 /**
@@ -377,7 +370,6 @@ function disable_cart() {
 function show_widget_cart_on_checkout() {
 
 	return is_cart() ? true : false;
-
 }
 
 /**
@@ -390,7 +382,6 @@ function show_widget_cart_on_checkout() {
 function page_title_visibility( $show_title ) {
 
 	return is_shop() ? false : $show_title;
-
 }
 
 /**
@@ -411,7 +402,6 @@ function shop_title() {
 	\Go\page_title();
 
 	remove_filter( 'go_page_title_args', __NAMESPACE__ . '\\shop_title_attributes' );
-
 }
 
 /**
@@ -428,7 +418,6 @@ function shop_title_attributes( $atts ) {
 	$atts['custom']        = false;
 
 	return $atts;
-
 }
 
 /**
@@ -454,7 +443,6 @@ function single_product_header() {
 	</div>
 
 	<?php
-
 }
 
 /**
@@ -476,7 +464,6 @@ function single_product_pagination() {
 			'next_text' => '<span class="screen-reader-text">' . esc_html__( 'Next Post:', 'go' ) . ' %title</span><span class="nav-title">' . esc_html__( 'Next', 'go' ) . '</span>' . $arrow_right,
 		)
 	);
-
 }
 
 /**
@@ -512,7 +499,6 @@ function single_product_back_to_shop() {
 		$arrow_left, // @codingStandardsIgnoreLine
 		esc_html( $text )
 	);
-
 }
 
 /**
@@ -523,7 +509,6 @@ function single_product_back_to_shop() {
 function breadcrumb_home_url() {
 
 	return get_permalink( wc_get_page_id( 'shop' ) );
-
 }
 
 /**
@@ -534,7 +519,6 @@ function breadcrumb_home_url() {
 function sorting_wrapper() {
 
 	echo '<div class="go-sorting">';
-
 }
 
 /**
@@ -545,7 +529,6 @@ function sorting_wrapper() {
 function sorting_wrapper_close() {
 
 	echo '</div>';
-
 }
 
 /**
@@ -557,5 +540,4 @@ function reset_variations_link() {
 		'<a class="reset_variations" href="#">%s</a>',
 		esc_html__( 'Reset Selections', 'go' )
 	);
-
 }

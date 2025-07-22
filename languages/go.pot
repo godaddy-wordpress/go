@@ -1,16 +1,16 @@
 # Copyright (c) GoDaddy Operating Company, LLC. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: Go 1.8.13\n"
+"Project-Id-Version: Go 1.8.15\n"
 "Report-Msgid-Bugs-To: https://github.com/godaddy-wordpress/go/issues\n"
 "Last-Translator: plugins@godaddy.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-07T15:46:31+00:00\n"
+"POT-Creation-Date: 2025-07-22T17:58:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: go\n"
 
 #. Theme Name of the theme
@@ -40,11 +40,13 @@ msgstr ""
 
 #. translators: %s: The post title.
 #: comments.php:32
+#, php-format
 msgid "One thought on &ldquo;%s&rdquo;"
 msgstr ""
 
 #. translators: %1$s: The number of comments. %2$s: The post title.
 #: comments.php:39
+#, php-format
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
@@ -100,19 +102,19 @@ msgstr ""
 msgid "expand child menu"
 msgstr ""
 
-#: includes/classes/admin/class-go-theme-deactivation.php:100
+#: includes/classes/admin/class-go-theme-deactivation.php:105
 msgid "Please do not include any personal information in your submission. We do not collect or need this information. Please see our <a href='https://www.godaddy.com/legal/agreements/privacy-policy' target='_blank'>privacy policy</a> for details."
 msgstr ""
 
-#: includes/classes/admin/class-go-theme-deactivation.php:101
+#: includes/classes/admin/class-go-theme-deactivation.php:106
 msgid "Skip & Switch Theme"
 msgstr ""
 
-#: includes/classes/admin/class-go-theme-deactivation.php:102
+#: includes/classes/admin/class-go-theme-deactivation.php:107
 msgid "Submit & Switch Theme"
 msgstr ""
 
-#: includes/classes/admin/class-go-theme-deactivation.php:103
+#: includes/classes/admin/class-go-theme-deactivation.php:108
 msgid "Thanks for trying Go. Let us know how we can improve."
 msgstr ""
 
@@ -126,11 +128,13 @@ msgstr ""
 
 #. translators: %s: plugin name.
 #: includes/classes/class-tgm-plugin-activation.php:328
+#, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. translators: %s: plugin name.
 #: includes/classes/class-tgm-plugin-activation.php:330
+#, php-format
 msgid "Updating Plugin: %s"
 msgstr ""
 
@@ -140,6 +144,7 @@ msgstr ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:332
+#, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
@@ -147,6 +152,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:338
+#, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
@@ -154,6 +160,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:344
+#, php-format
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
@@ -161,6 +168,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:350
+#, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
@@ -168,6 +176,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:356
+#, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
@@ -175,6 +184,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: includes/classes/class-tgm-plugin-activation.php:362
+#, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
@@ -223,16 +233,19 @@ msgstr[1] ""
 
 #. translators: 1: plugin name.
 #: includes/classes/class-tgm-plugin-activation.php:388
+#, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. translators: 1: plugin name.
 #: includes/classes/class-tgm-plugin-activation.php:390
+#, php-format
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
 #. translators: 1: dashboard link.
 #: includes/classes/class-tgm-plugin-activation.php:392
+#, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
@@ -277,6 +290,7 @@ msgstr ""
 
 #. translators: %s: version number
 #: includes/classes/class-tgm-plugin-activation.php:1980
+#, php-format
 msgid "TGMPA v%s"
 msgstr ""
 
@@ -326,12 +340,14 @@ msgstr ""
 
 #. translators: 1: install status, 2: update status
 #: includes/classes/class-tgm-plugin-activation.php:2340
+#, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
 #. translators: 1: number of plugins.
 #: includes/classes/class-tgm-plugin-activation.php:2386
+#, php-format
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
@@ -340,6 +356,7 @@ msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: includes/classes/class-tgm-plugin-activation.php:2390
+#, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -347,6 +364,7 @@ msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: includes/classes/class-tgm-plugin-activation.php:2394
+#, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -354,6 +372,7 @@ msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: includes/classes/class-tgm-plugin-activation.php:2398
+#, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -402,16 +421,19 @@ msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
 #: includes/classes/class-tgm-plugin-activation.php:2601
+#, php-format
 msgid "Install %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
 #: includes/classes/class-tgm-plugin-activation.php:2606
+#, php-format
 msgid "Update %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
 #: includes/classes/class-tgm-plugin-activation.php:2612
+#, php-format
 msgid "Activate %2$s"
 msgstr ""
 
@@ -461,16 +483,19 @@ msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: includes/classes/class-tgm-plugin-activation.php:3496
+#, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #. translators: 1: plugin name, 2: error message.
 #: includes/classes/class-tgm-plugin-activation.php:3499
+#, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
 #. translators: 1: plugin name.
 #: includes/classes/class-tgm-plugin-activation.php:3501
+#, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
@@ -480,6 +505,7 @@ msgstr ""
 
 #. translators: 1: plugin name.
 #: includes/classes/class-tgm-plugin-activation.php:3507
+#, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
@@ -501,6 +527,7 @@ msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: includes/classes/class-tgm-plugin-activation.php:3510
+#, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
@@ -510,6 +537,7 @@ msgstr ""
 
 #. translators: 1: plugin name.
 #: includes/classes/class-tgm-plugin-activation.php:3515
+#, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
@@ -519,6 +547,7 @@ msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: includes/classes/class-tgm-plugin-activation.php:3518
+#, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
@@ -838,21 +867,28 @@ msgstr ""
 msgid "Bluesky"
 msgstr ""
 
-#: includes/core.php:1423
+#: includes/core.php:1378
+#, php-format
+msgid "%1$s Menu"
+msgstr ""
+
+#: includes/core.php:1426
 msgid "That page can't be found"
 msgstr ""
 
 #. translators: Search query term(s).
-#: includes/core.php:1441
+#: includes/core.php:1444
+#, php-format
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1449
+#: includes/core.php:1452
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: %s is the registered nav menu name
 #: includes/customizer.php:108
+#, php-format
 msgid "Please assign a menu to the %s menu location"
 msgstr ""
 
@@ -1052,6 +1088,7 @@ msgstr ""
 
 #. translators: 1: date, 2: time
 #: includes/pluggable.php:51
+#, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
@@ -1069,6 +1106,7 @@ msgstr ""
 
 #. Translators: %s = the author name.
 #: includes/template-tags.php:121
+#, php-format
 msgctxt "%s = author name"
 msgid "By %s"
 msgstr ""
@@ -1095,6 +1133,7 @@ msgstr ""
 
 #. translators: %s: The social icon label.
 #: includes/template-tags.php:760
+#, php-format
 msgid "Open %s in a new tab"
 msgstr ""
 
@@ -1106,7 +1145,7 @@ msgstr ""
 msgid "Search Toggle"
 msgstr ""
 
-#: includes/title-meta.php:29
+#: includes/title-meta.php:35
 msgid "Hide Page Title."
 msgstr ""
 
@@ -1125,6 +1164,7 @@ msgstr ""
 #. translators: 1. Single integer value. (eg: 1 product in your cart). 2. Integer larger than 1. (eg: 5 products in your cart).
 #: includes/woocommerce.php:233
 #: includes/woocommerce.php:283
+#, php-format
 msgid "%s product in your cart"
 msgid_plural "%s products in your cart"
 msgstr[0] ""
@@ -1165,6 +1205,7 @@ msgstr ""
 
 #. translators: 1: link to WP admin new post page.
 #: partials/content-none.php:21
+#, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
@@ -1622,6 +1663,7 @@ msgstr ""
 
 #. translators: 1. Single integer value. (eg: Items (1), Items (2) etc.).
 #: woocommerce/cart/cart.php:32
+#, php-format
 msgid "Items (%s)"
 msgstr ""
 
