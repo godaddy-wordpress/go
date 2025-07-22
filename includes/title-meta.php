@@ -14,7 +14,7 @@ namespace Go\Title_Meta;
  */
 function setup() {
 
-	$n = function( $function ) {
+	$n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
 
@@ -25,7 +25,7 @@ function setup() {
 		/**
 		 * Register the meta field for the REST API.
 		 */
-		function() {
+		function () {
 			register_meta(
 				'post',
 				'hide_page_title',
@@ -39,7 +39,6 @@ function setup() {
 			);
 		}
 	);
-
 }
 
 /**
@@ -60,7 +59,6 @@ function hide_page_title_callback( $status ) {
 	}
 
 	return $status;
-
 }
 
 /**
@@ -79,5 +77,4 @@ function hide_page_title( $title_data ) {
 	}
 
 	return $title_data;
-
 }

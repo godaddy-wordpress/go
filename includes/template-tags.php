@@ -22,7 +22,6 @@ use function Go\AMP\is_amp;
 function post_meta( $post_id = null, $location = 'top' ) {
 
 	echo get_post_meta( $post_id, $location ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in get_post_meta().
-
 }
 
 /**
@@ -253,7 +252,6 @@ function get_post_meta( $post_id = null, $location = 'top' ) {
 	}
 
 	return $meta_output;
-
 }
 
 /**
@@ -278,7 +276,6 @@ function get_copyright_kses_html() {
 			),
 		)
 	);
-
 }
 
 /**
@@ -416,7 +413,6 @@ function hex_to_rgb( $color, $opacity = false ) {
 	}
 
 	return esc_attr( $output );
-
 }
 
 /**
@@ -434,7 +430,7 @@ function hex_to_hsl( $hex, $string_output = false ) {
 
 	$hex = array( $hex[1] . $hex[2], $hex[3] . $hex[4], $hex[5] . $hex[6] );
 	$rgb = array_map(
-		function( $part ) {
+		function ( $part ) {
 			return intval( hexdec( $part ) ) / 255.0;
 		},
 		$hex
@@ -677,7 +673,6 @@ function page_title() {
 			)
 		)
 	);
-
 }
 
 /**
@@ -697,7 +692,6 @@ function content_wrapper_class( $class = '' ) {
 	}
 
 	echo esc_attr( $class );
-
 }
 
 /**
@@ -714,7 +708,7 @@ function has_social_icons( $social_icons = null ) {
 
 	return array_reduce(
 		$social_icons,
-		function( $previous, $social_icon ) {
+		function ( $previous, $social_icon ) {
 			return $previous || ! empty( $social_icon['url'] );
 		},
 		false
@@ -807,7 +801,6 @@ function render_go_header_social_icons() {
 	</div>
 
 	<?php
-
 }
 add_action( 'go_header_social_icons', 'Go\render_go_header_social_icons' );
 
@@ -853,10 +846,9 @@ function site_branding( $args = array() ) {
 		 */
 		add_filter(
 			'get_custom_logo',
-			function( $html ) use ( $hide_title ) {
+			function ( $html ) use ( $hide_title ) {
 
 				return $hide_title ? '<h1 class="custom-logo">' . $html . '</h1>' : $html;
-
 			},
 			PHP_INT_MAX
 		);
@@ -1027,5 +1019,4 @@ function load_inline_svg( $filename ) {
 			)
 		)
 	);
-
 }

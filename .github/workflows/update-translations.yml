@@ -22,7 +22,7 @@ jobs:
           git config --global user.email "plugins@godaddy.com"
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'

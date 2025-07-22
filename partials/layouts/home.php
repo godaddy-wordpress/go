@@ -128,7 +128,6 @@ function go_coblocks_home_layouts( $layouts ) {
 					'headingLevel' => 4,
 					'buttons'      => false,
 					'className'    => 'is-style-threebyfour',
-					'align'        => 'wide',
 				),
 				array(
 					array(
@@ -1216,6 +1215,6 @@ function go_coblocks_home_layouts( $layouts ) {
 	);
 
 	return $layouts;
-};
+}
 
 add_filter( 'coblocks_layout_selector_layouts', 'go_coblocks_home_layouts' );

@@ -308,6 +308,6 @@ function go_coblocks_about_layouts( $layouts ) {
 	);
 
 	return $layouts;
-};
+}
 
 add_filter( 'coblocks_layout_selector_layouts', 'go_coblocks_about_layouts' );

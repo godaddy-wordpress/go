@@ -27,7 +27,6 @@ class Go_Theme_Deactivation {
 		add_action( 'admin_footer-themes.php', array( $this, 'admin_go_deactivation_modal' ) );
 
 		add_filter( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-
 	}
 
 	/**
@@ -135,7 +134,6 @@ class Go_Theme_Deactivation {
 			array( 'wp-components' ),
 			GO_VERSION
 		);
-
 	}
 
 	/**
@@ -148,9 +146,7 @@ class Go_Theme_Deactivation {
 		<div id="<?php echo esc_attr( self::CONTAINER_ID ); ?>"></div>
 
 		<?php
-
 	}
-
 }
 
 return new Go_Theme_Deactivation();
