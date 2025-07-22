@@ -1238,13 +1238,14 @@ class Test_Template_Tags extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test the post_meta() returns proper data twitter icon data
+	 * Test the post_meta() returns proper data x icon data
 	 */
-	public function test_social_icons_twitter() {
+	public function test_social_icons_x() {
 
-		set_theme_mod( 'social_icon_twitter', 'https://www.twitter.com/custom' );
+		// Note: X is the new name for Twitter, but the theme_mod name should remain as 'social_icon_twitter' for compatibility.
+		set_theme_mod( 'social_icon_twitter', 'https://www.x.com/custom' );
 
-		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.twitter.com\/custom" aria-label="Open Twitter in a new tab" rel="noopener noreferrer" target="_blank">/' );
+		$this->expectOutputRegex( '/<a class="social-icons__icon" href="https:\/\/www.x.com\/custom" aria-label="Open X in a new tab" rel="noopener noreferrer" target="_blank">/' );
 
 		Go\social_icons( [] );
 
