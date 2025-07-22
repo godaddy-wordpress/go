@@ -1195,9 +1195,9 @@ function get_available_social_icons() {
 			'placeholder' => 'https://facebook.com/user',
 		),
 		'twitter'   => array(
-			'label'       => esc_html__( 'Twitter', 'go' ),
-			'icon'        => get_theme_file_path( 'dist/images/social/twitter.svg' ),
-			'placeholder' => 'https://twitter.com/user',
+			'label'       => esc_html__( 'X', 'go' ),
+			'icon'        => get_theme_file_path( 'dist/images/social/x.svg' ),
+			'placeholder' => 'https://x.com/user',
 		),
 		'instagram' => array(
 			'label'       => esc_html__( 'Instagram', 'go' ),
