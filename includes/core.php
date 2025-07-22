@@ -1375,7 +1375,7 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
 	$icon = ob_get_clean();
 
 	// Add aria-label to the SVG for accessibility
-	$icon = str_replace( '<svg', '<svg aria-label="' . sprintf( esc_attr__( '%1$s Menu', 'go' ), $title ) . '"', $icon );
+	$icon = str_replace( '<svg', '<svg aria-label="' . /* translators: %1$s is the title of the page/post. eg: Contact Menu. */ sprintf( esc_attr__( '%1$s Menu', 'go' ), $title ) . '"', $icon );
 
 	// Only add class to 'top level' items on the 'primary' menu.
 	if ( 'primary' === $args->theme_location && 0 === $depth ) {
