@@ -55,6 +55,5 @@ function prefix_get_available_design_styles( $default_design_styles ) {
 	);
 
 	return $default_design_styles;
-
 }
 add_filter( 'go_design_styles', 'prefix_get_available_design_styles' );

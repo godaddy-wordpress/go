@@ -252,6 +252,12 @@ import debounce from "../utility/debounce";
 			if ( open_item && open_item.classList ) {
 				open_item.classList.remove('submenu-is-open');
 				open_item.parentNode.classList.remove('child-has-focus');
+				
+				// Set aria-expanded=false on the SVG element within this menu item
+				var svgElement = open_item.parentNode.querySelector( 'svg' );
+				if ( svgElement ) {
+					svgElement.setAttribute( 'aria-expanded', 'false' );
+				}
 			}
 
 			if ( open_item && open_item.parentNode && open_item.parentNode.querySelector( '.sub-menu' ) ) {
@@ -276,6 +282,12 @@ import debounce from "../utility/debounce";
 			closed_item.classList.add( 'submenu-is-open' );
 			closed_item.parentNode.classList.add( 'child-has-focus' );
 
+			// Set aria-expanded=true on the SVG element within this menu item
+			var svgElement = closed_item.parentNode.querySelector( 'svg' );
+			if ( svgElement ) {
+				svgElement.setAttribute( 'aria-expanded', 'true' );
+			}
+
 			if ( closed_item.parentNode.querySelector( '.sub-menu' ) ) {
 				closed_item.parentNode.querySelector( '.sub-menu' ).setAttribute( 'aria-hidden', 'false' );
 			}
@@ -296,9 +308,10 @@ import debounce from "../utility/debounce";
 
 				// Loop through all submenus and bind events when needed
 				for ( i = 0; i < menu_items_with_children_count; i++ ) {
-					var svgElements = menu_items_with_children[i].querySelectorAll( 'svg' );
-					for ( var q = 0; q < svgElements.length; q = q + 1 ) {
-						svgElements[q].addEventListener( 'click', listener_submenu_click );
+					var svgElement = menu_items_with_children[i].querySelector( 'svg' );
+					if ( svgElement ) {
+						svgElement.addEventListener( 'click', listener_submenu_click );
+						svgElement.setAttribute( 'aria-expanded', 'false' );
 					}
 					menu_items_with_children[i].removeEventListener( 'focusin', listener_submenu_focus );
 				} // for
@@ -403,14 +416,13 @@ import debounce from "../utility/debounce";
 			if ( get_screen_size( 'has-offscreen-nav' ) || sub_menu_acion === 'click' ) {
 				menu_items_with_children[i].addEventListener( 'click', listener_submenu_click );
 
-				var svgElements = menu_items_with_children[i].querySelectorAll( 'svg' );
+				var svgElement = menu_items_with_children[i].querySelector( 'svg' );
 
-				for ( var z = 0; z < svgElements.length; z = z + 1 ) {
-
-					svgElements[z].addEventListener( 'click', listener_submenu_click );
-					svgElements[z].addEventListener( 'keypress', ( e ) => { ['Space', 'Enter'].includes( e.code ) && listener_submenu_click( e ) } );
-					svgElements[z].setAttribute( 'tabindex', '0' );
-
+				if ( svgElement ) {
+					svgElement.addEventListener( 'click', listener_submenu_click );
+					svgElement.addEventListener( 'keypress', ( e ) => { ['Space', 'Enter'].includes( e.code ) && listener_submenu_click( e ) } );
+					svgElement.setAttribute( 'tabindex', '0' );
+					svgElement.setAttribute( 'aria-expanded', 'false' );
 				}
 
 				menu.classList.add( sub_menu_acion === 'click' ? 'uses-click' : 'uses-hover' );

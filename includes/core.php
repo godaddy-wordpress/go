@@ -17,7 +17,7 @@ use function Go\AMP\is_amp;
  * @return void
  */
 function setup() {
-	$n = function( $function ) {
+	$n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
 
@@ -36,7 +36,6 @@ function setup() {
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
 	add_filter( 'the_content_more_link', $n( 'read_more_tag' ) );
 	add_filter( 'get_custom_logo_image_attributes', $n( 'custom_logo_alt_text' ), PHP_INT_MAX, 2 );
-
 }
 
 /**
@@ -49,7 +48,6 @@ function development_environment() {
 		require_once get_template_directory() . '/.dev/assets/development-environment.php';
 
 	}
-
 }
 
 /**
@@ -64,7 +62,6 @@ function development_environment() {
 function i18n() {
 
 	load_theme_textdomain( 'go', get_template_directory() . '/languages' );
-
 }
 
 /**
@@ -267,7 +264,6 @@ function theme_setup() {
 
 	// Enable custom padding controls.
 	add_theme_support( 'custom-spacing' );
-
 }
 
 /**
@@ -331,7 +327,6 @@ function fonts_url() {
 			'https://fonts.googleapis.com/css'
 		)
 	);
-
 }
 
 /**
@@ -369,7 +364,6 @@ function block_editor_assets() {
 	);
 
 	wp_set_script_translations( 'go-block-filters', 'go' );
-
 }
 
 /**
@@ -408,7 +402,6 @@ function scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
 }
 
 /**
@@ -443,7 +436,6 @@ function editor_styles() {
 		add_editor_style( $fonts_url );
 
 	}
-
 }
 
 /**
@@ -487,7 +479,6 @@ function styles() {
 			GO_VERSION
 		);
 	}
-
 }
 
 /**
@@ -590,7 +581,6 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	return $tag;
-
 }
 
 /**
@@ -681,7 +671,6 @@ function body_classes( $classes ) {
 	}
 
 	return $classes;
-
 }
 
 /**
@@ -699,7 +688,6 @@ function get_default_design_style() {
 	 * @param array $default_design_style The slug of the default design style.
 	 */
 	return (string) apply_filters( 'go_default_design_style', 'traditional' );
-
 }
 
 /**
@@ -1006,7 +994,6 @@ function get_available_design_styles() {
 	$supported_design_styles = (array) apply_filters( 'go_design_styles', $default_design_styles );
 
 	return $supported_design_styles;
-
 }
 
 /**
@@ -1027,7 +1014,6 @@ function get_design_style() {
 	}
 
 	return false;
-
 }
 
 /**
@@ -1044,7 +1030,6 @@ function get_default_header_variation() {
 	 * @param array $default_header_variation The slug of the default header variation.
 	 */
 	return (string) apply_filters( 'go_default_header', 'header-1' );
-
 }
 
 /**
@@ -1095,7 +1080,6 @@ function get_available_header_variations() {
 	$supported_header_variations = (array) apply_filters( 'go_header_variations', $default_header_variations );
 
 	return $supported_header_variations;
-
 }
 
 /**
@@ -1108,28 +1092,28 @@ function get_available_footer_variations() {
 		'footer-1' => array(
 			'label'         => esc_html_x( 'Footer 1', 'name of the first footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-1.svg' ),
-			'partial'       => function() {
+			'partial'       => function () {
 				return get_template_part( 'partials/footers/footer', '1' );
 			},
 		),
 		'footer-2' => array(
 			'label'         => esc_html_x( 'Footer 2', 'name of the second footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-2.svg' ),
-			'partial'       => function() {
+			'partial'       => function () {
 				return get_template_part( 'partials/footers/footer', '2' );
 			},
 		),
 		'footer-3' => array(
 			'label'         => esc_html_x( 'Footer 3', 'name of the third footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-3.svg' ),
-			'partial'       => function() {
+			'partial'       => function () {
 				return get_template_part( 'partials/footers/footer', '3' );
 			},
 		),
 		'footer-4' => array(
 			'label'         => esc_html_x( 'Footer 4', 'name of the fourth footer variation option', 'go' ),
 			'preview_image' => get_theme_file_uri( 'dist/images/admin/footer-4.svg' ),
-			'partial'       => function() {
+			'partial'       => function () {
 				return get_template_part( 'partials/footers/footer', '4' );
 			},
 		),
@@ -1146,7 +1130,6 @@ function get_available_footer_variations() {
 	$supported_footer_variations = (array) apply_filters( 'go_footer_variations', $default_footer_variations );
 
 	return $supported_footer_variations;
-
 }
 
 /**
@@ -1163,7 +1146,6 @@ function get_default_footer_variation() {
 	 * @param array $default_footer_variation The slug of the default footer variation.
 	 */
 	return (string) apply_filters( 'go_default_footer_variation', 'footer-1' );
-
 }
 
 /**
@@ -1181,7 +1163,6 @@ function get_footer_variation() {
 	}
 
 	return false;
-
 }
 
 /**
@@ -1199,7 +1180,6 @@ function get_default_copyright() {
 	 */
 	/* translators: the theme author */
 	return (string) apply_filters( 'go_default_copyright', get_bloginfo( 'name' ) );
-
 }
 
 /**
@@ -1282,7 +1262,6 @@ function get_available_social_icons() {
 	 * @see https://github.com/godaddy-wordpress/go/pull/870/files#diff-21e944aca0f42ff6529bde979b0fd787d00e010406e6642f947e71bf5e6f5ad1L1272-R1272
 	 */
 	return (array) apply_filters( 'go_available_social_icons', apply_filters( 'go_avaliable_social_icons', $social_icons ) );
-
 }
 
 /**
@@ -1298,7 +1277,6 @@ function get_social_icons() {
 	}
 
 	return $social_icons;
-
 }
 
 /**
@@ -1318,7 +1296,6 @@ function get_available_color_schemes() {
 	 * @param array $design_style  The full design style object
 	 */
 	return (array) apply_filters( 'go_color_schemes', $design_style['color_schemes'], $design_style );
-
 }
 
 /**
@@ -1333,7 +1310,6 @@ function get_default_color_scheme() {
 	 * @param array $default_color_scheme The slug of the default color scheme.
 	 */
 	return (string) apply_filters( 'go_default_color_scheme', 'one' );
-
 }
 
 /**
@@ -1374,6 +1350,9 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
 
 	$icon = ob_get_clean();
 
+	// Add aria-label to the SVG for accessibility.
+	$icon = str_replace( '<svg', '<svg aria-label="' . /* translators: %1$s is the title of the page/post. eg: Contact Menu. */ sprintf( esc_attr__( '%1$s Menu', 'go' ), $title ) . '"', $icon );
+
 	// Only add class to 'top level' items on the 'primary' menu.
 	if ( 'primary' === $args->theme_location && 0 === $depth ) {
 		foreach ( $item->classes as $value ) {
@@ -1384,7 +1363,6 @@ function add_dropdown_icons( $title, $item, $args, $depth ) {
 	}
 
 	return $title;
-
 }
 
 /**
@@ -1400,7 +1378,6 @@ function comment_form_reply_title( $args ) {
 	$args['title_reply_after']  = '</h2>';
 
 	return $args;
-
 }
 
 /**
@@ -1452,7 +1429,6 @@ function filter_page_titles( $args ) {
 	}
 
 	return $args;
-
 }
 
 /**
@@ -1481,5 +1457,4 @@ function custom_logo_alt_text( $custom_logo_attr, $custom_logo_id ) {
 	$custom_logo_attr['alt'] = $alt_text ? $alt_text : get_bloginfo( 'name' );
 
 	return $custom_logo_attr;
-
 }

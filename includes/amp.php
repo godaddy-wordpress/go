@@ -14,14 +14,13 @@ namespace Go\AMP;
  */
 function setup() {
 
-	$n = function( $function ) {
+	$n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
 
 	add_filter( 'walker_nav_menu_start_el', $n( 'amp_nav_sub_menu_buttons' ), 10, 4 );
 
 	add_filter( 'body_class', $n( 'amp_body_class' ) );
-
 }
 
 /**
@@ -42,7 +41,6 @@ function amp_body_class( $classes ) {
 	$classes[] = 'amp';
 
 	return $classes;
-
 }
 
 // phpcs:disable Generic.CodeAnalysis.UnusedFunctionParameter -- Parameters are coming from a hook.
@@ -69,7 +67,7 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 	$expanded = in_array( 'current-menu-ancestor', $item->classes, true );
 
 	static $nav_menu_item_number = 0;
-	$nav_menu_item_number++;
+	++$nav_menu_item_number;
 	$expanded_state_id = 'navMenuItemExpanded' . $nav_menu_item_number;
 
 	$item_output .= sprintf(
@@ -106,7 +104,6 @@ function amp_nav_sub_menu_buttons( $item_output, $item, $depth, $args ) {
 	);
 
 	return $dropdown_button . $item_output;
-
 }
 // phpcs:enable Generic.CodeAnalysis.UnusedFunctionParameter
 
@@ -128,5 +125,4 @@ function is_amp() {
 	 * @var bool
 	 */
 	return (bool) apply_filters( 'go_is_amp', ( function_exists( 'amp_is_request' ) && amp_is_request() ) );
-
 }
