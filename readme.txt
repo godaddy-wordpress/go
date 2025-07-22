@@ -112,7 +112,8 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.8.15 / 2025-04-08 =
+= 1.8.16 / 2025-07-22 =
 ### Updates
-- Refactor where `register_meta` is hooked, to resolve translation warnings. [#928](https://github.com/godaddy-wordpress/go/pull/928)
-- Update `readme.txt` with information about data collection on theme deactivation. [#929](https://github.com/godaddy-wordpress/go/pull/929)
+- Bump Woo cart template to version 10.0.0. [#932](https://github.com/godaddy-wordpress/go/pull/932)
+- Added `aria-label` and `aria-expanded` attributes to the mobile menu carets. [#933](https://github.com/godaddy-wordpress/go/pull/933)
+- Refreshed the Twitter and Bluesky icons. [#934](https://github.com/godaddy-wordpress/go/pull/934)
