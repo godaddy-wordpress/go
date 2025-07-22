@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-22T17:58:51+00:00\n"
+"POT-Creation-Date: 2025-07-22T18:53:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: go\n"
@@ -79,7 +79,7 @@ msgid "Millennial"
 msgstr ""
 
 #: docs/design-styles/example/functions.php:38
-#: includes/core.php:783
+#: includes/core.php:771
 msgctxt "color palette name"
 msgid "Blush"
 msgstr ""
@@ -92,29 +92,29 @@ msgstr ""
 msgid "Horizontal"
 msgstr ""
 
-#: includes/amp.php:101
-#: includes/amp.php:105
+#: includes/amp.php:99
+#: includes/amp.php:103
 msgid "collapse child menu"
 msgstr ""
 
-#: includes/amp.php:102
-#: includes/amp.php:105
+#: includes/amp.php:100
+#: includes/amp.php:103
 msgid "expand child menu"
 msgstr ""
 
-#: includes/classes/admin/class-go-theme-deactivation.php:105
+#: includes/classes/admin/class-go-theme-deactivation.php:104
 msgid "Please do not include any personal information in your submission. We do not collect or need this information. Please see our <a href='https://www.godaddy.com/legal/agreements/privacy-policy' target='_blank'>privacy policy</a> for details."
 msgstr ""
 
-#: includes/classes/admin/class-go-theme-deactivation.php:106
+#: includes/classes/admin/class-go-theme-deactivation.php:105
 msgid "Skip & Switch Theme"
 msgstr ""
 
-#: includes/classes/admin/class-go-theme-deactivation.php:107
+#: includes/classes/admin/class-go-theme-deactivation.php:106
 msgid "Submit & Switch Theme"
 msgstr ""
 
-#: includes/classes/admin/class-go-theme-deactivation.php:108
+#: includes/classes/admin/class-go-theme-deactivation.php:107
 msgid "Thanks for trying Go. Let us know how we can improve."
 msgstr ""
 
@@ -551,338 +551,339 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/core.php:102
-#: includes/customizer.php:551
+#: includes/core.php:99
+#: includes/customizer.php:548
 msgid "Primary"
 msgstr ""
 
-#: includes/core.php:103
+#: includes/core.php:100
 msgid "Footer Menu #1"
 msgstr ""
 
-#: includes/core.php:104
+#: includes/core.php:101
 msgid "Footer Menu #2"
 msgstr ""
 
-#: includes/core.php:105
+#: includes/core.php:102
 msgid "Footer Menu #3"
 msgstr ""
 
-#: includes/core.php:181
+#: includes/core.php:178
 msgctxt "font size option label"
 msgid "Small"
 msgstr ""
 
-#: includes/core.php:182
+#: includes/core.php:179
 msgctxt "abbreviation of the font size option label"
 msgid "S"
 msgstr ""
 
-#: includes/core.php:187
+#: includes/core.php:184
 msgctxt "font size option label"
 msgid "Medium"
 msgstr ""
 
-#: includes/core.php:188
+#: includes/core.php:185
 msgctxt "abbreviation of the font size option label"
 msgid "M"
 msgstr ""
 
-#: includes/core.php:193
+#: includes/core.php:190
 msgctxt "font size option label"
 msgid "Large"
 msgstr ""
 
-#: includes/core.php:194
+#: includes/core.php:191
 msgctxt "abbreviation of the font size option label"
 msgid "L"
 msgstr ""
 
-#: includes/core.php:199
+#: includes/core.php:196
 msgctxt "font size option label"
 msgid "Huge"
 msgstr ""
 
-#: includes/core.php:200
+#: includes/core.php:197
 msgctxt "abbreviation of the font size option label"
 msgid "XL"
 msgstr ""
 
-#: includes/core.php:212
+#: includes/core.php:209
 msgctxt "name of the first color palette selection"
 msgid "Primary"
 msgstr ""
 
-#: includes/core.php:217
+#: includes/core.php:214
 msgctxt "name of the second color palette selection"
 msgid "Secondary"
 msgstr ""
 
-#: includes/core.php:222
+#: includes/core.php:219
 msgctxt "name of the third color palette selection"
 msgid "Tertiary"
 msgstr ""
 
-#: includes/core.php:227
+#: includes/core.php:224
 msgctxt "name of the fourth color palette selection"
 msgid "Quaternary"
 msgstr ""
 
-#: includes/core.php:244
+#: includes/core.php:241
 msgid "Primary to Secondary"
 msgstr ""
 
-#: includes/core.php:249
+#: includes/core.php:246
 msgid "Primary to Tertiary"
 msgstr ""
 
-#: includes/core.php:254
+#: includes/core.php:251
 msgid "Primary to Background"
 msgstr ""
 
-#: includes/core.php:259
+#: includes/core.php:256
 msgid "Secondary to Tertiary"
 msgstr ""
 
-#: includes/core.php:718
+#: includes/core.php:706
 msgctxt "design style name"
 msgid "Traditional"
 msgstr ""
 
-#: includes/core.php:723
+#: includes/core.php:711
 msgctxt "color palette name"
 msgid "Apricot"
 msgstr ""
 
-#: includes/core.php:730
+#: includes/core.php:718
 msgctxt "color palette name"
 msgid "Emerald"
 msgstr ""
 
-#: includes/core.php:737
+#: includes/core.php:725
 msgctxt "color palette name"
 msgid "Brick"
 msgstr ""
 
-#: includes/core.php:744
+#: includes/core.php:732
 msgctxt "color palette name"
 msgid "Bronze"
 msgstr ""
 
-#: includes/core.php:771
+#: includes/core.php:759
 msgctxt "design style name"
 msgid "Modern"
 msgstr ""
 
-#: includes/core.php:776
+#: includes/core.php:764
 msgctxt "color palette name"
 msgid "Shade"
 msgstr ""
 
-#: includes/core.php:790
+#: includes/core.php:778
 msgctxt "color palette name"
 msgid "Indigo"
 msgstr ""
 
-#: includes/core.php:797
+#: includes/core.php:785
 msgctxt "color palette name"
 msgid "Pacific"
 msgstr ""
 
-#: includes/core.php:825
+#: includes/core.php:813
 msgctxt "design style name"
 msgid "Trendy"
 msgstr ""
 
-#: includes/core.php:830
+#: includes/core.php:818
 msgctxt "color palette name"
 msgid "Plum"
 msgstr ""
 
-#: includes/core.php:839
+#: includes/core.php:827
 msgctxt "color palette name"
 msgid "Steel"
 msgstr ""
 
-#: includes/core.php:847
+#: includes/core.php:835
 msgctxt "color palette name"
 msgid "Avocado"
 msgstr ""
 
-#: includes/core.php:855
+#: includes/core.php:843
 msgctxt "color palette name"
 msgid "Champagne"
 msgstr ""
 
-#: includes/core.php:884
+#: includes/core.php:872
 msgctxt "design style name"
 msgid "Welcoming"
 msgstr ""
 
-#: includes/core.php:889
+#: includes/core.php:877
 msgctxt "color palette name"
 msgid "Forest"
 msgstr ""
 
-#: includes/core.php:897
+#: includes/core.php:885
 msgctxt "color palette name"
 msgid "Spruce"
 msgstr ""
 
-#: includes/core.php:905
+#: includes/core.php:893
 msgctxt "color palette name"
 msgid "Mocha"
 msgstr ""
 
-#: includes/core.php:913
+#: includes/core.php:901
 msgctxt "color palette name"
 msgid "Lavender"
 msgstr ""
 
-#: includes/core.php:938
+#: includes/core.php:926
 msgctxt "design style name"
 msgid "Playful"
 msgstr ""
 
-#: includes/core.php:943
+#: includes/core.php:931
 msgctxt "color palette name"
 msgid "Frolic"
 msgstr ""
 
-#: includes/core.php:953
+#: includes/core.php:941
 msgctxt "color palette name"
 msgid "Coral"
 msgstr ""
 
-#: includes/core.php:963
+#: includes/core.php:951
 msgctxt "color palette name"
 msgid "Organic"
 msgstr ""
 
-#: includes/core.php:973
+#: includes/core.php:961
 msgctxt "color palette name"
 msgid "Berry"
 msgstr ""
 
-#: includes/core.php:1058
+#: includes/core.php:1043
 msgctxt "name of the first header variation option"
 msgid "Header 1"
 msgstr ""
 
-#: includes/core.php:1062
+#: includes/core.php:1047
 msgctxt "name of the second header variation option"
 msgid "Header 2"
 msgstr ""
 
-#: includes/core.php:1066
+#: includes/core.php:1051
 msgctxt "name of the third header variation option"
 msgid "Header 3"
 msgstr ""
 
-#: includes/core.php:1070
+#: includes/core.php:1055
 msgctxt "name of the fourth header variation option"
 msgid "Header 4"
 msgstr ""
 
-#: includes/core.php:1074
+#: includes/core.php:1059
 msgctxt "name of the fourth header variation option"
 msgid "Header 5"
 msgstr ""
 
-#: includes/core.php:1078
+#: includes/core.php:1063
 msgctxt "name of the fourth header variation option"
 msgid "Header 6"
 msgstr ""
 
-#: includes/core.php:1082
+#: includes/core.php:1067
 msgctxt "name of the fourth header variation option"
 msgid "Header 7"
 msgstr ""
 
-#: includes/core.php:1109
+#: includes/core.php:1093
 msgctxt "name of the first footer variation option"
 msgid "Footer 1"
 msgstr ""
 
-#: includes/core.php:1116
+#: includes/core.php:1100
 msgctxt "name of the second footer variation option"
 msgid "Footer 2"
 msgstr ""
 
-#: includes/core.php:1123
+#: includes/core.php:1107
 msgctxt "name of the third footer variation option"
 msgid "Footer 3"
 msgstr ""
 
-#: includes/core.php:1130
+#: includes/core.php:1114
 msgctxt "name of the fourth footer variation option"
 msgid "Footer 4"
 msgstr ""
 
-#: includes/core.php:1213
+#: includes/core.php:1193
 msgid "Facebook"
 msgstr ""
 
-#: includes/core.php:1218
+#: includes/core.php:1198
 msgid "Twitter"
 msgstr ""
 
-#: includes/core.php:1223
+#: includes/core.php:1203
 msgid "Instagram"
 msgstr ""
 
-#: includes/core.php:1228
+#: includes/core.php:1208
 msgid "LinkedIn"
 msgstr ""
 
-#: includes/core.php:1233
+#: includes/core.php:1213
 msgid "Xing"
 msgstr ""
 
-#: includes/core.php:1238
+#: includes/core.php:1218
 msgid "Pinterest"
 msgstr ""
 
-#: includes/core.php:1243
+#: includes/core.php:1223
 msgid "YouTube"
 msgstr ""
 
-#: includes/core.php:1248
+#: includes/core.php:1228
 msgid "Spotify"
 msgstr ""
 
-#: includes/core.php:1253
+#: includes/core.php:1233
 msgid "GitHub"
 msgstr ""
 
-#: includes/core.php:1258
+#: includes/core.php:1238
 msgid "TikTok"
 msgstr ""
 
-#: includes/core.php:1263
+#: includes/core.php:1243
 msgid "Mastodon"
 msgstr ""
 
-#: includes/core.php:1268
+#: includes/core.php:1248
 msgid "Bluesky"
 msgstr ""
 
-#: includes/core.php:1378
+#. translators: %1$s is the title of the page/post. eg: Contact Menu.
+#: includes/core.php:1354
 #, php-format
 msgid "%1$s Menu"
 msgstr ""
 
-#: includes/core.php:1426
+#: includes/core.php:1400
 msgid "That page can't be found"
 msgstr ""
 
 #. translators: Search query term(s).
-#: includes/core.php:1444
+#: includes/core.php:1418
 #, php-format
 msgid "Search for: %s"
 msgstr ""
 
-#: includes/core.php:1452
+#: includes/core.php:1426
 msgid "Nothing Found"
 msgstr ""
 
@@ -892,184 +893,184 @@ msgstr ""
 msgid "Please assign a menu to the %s menu location"
 msgstr ""
 
-#: includes/customizer.php:293
+#: includes/customizer.php:292
 msgid "Hide Site Title"
 msgstr ""
 
-#: includes/customizer.php:294
+#: includes/customizer.php:293
 msgid "Prevent the site title from appearing in the header area."
 msgstr ""
 
-#: includes/customizer.php:314
+#: includes/customizer.php:313
 msgid "Hide Tagline"
 msgstr ""
 
-#: includes/customizer.php:315
+#: includes/customizer.php:314
 msgid "Prevent the site tagline from appearing in the header area."
 msgstr ""
 
-#: includes/customizer.php:350
+#: includes/customizer.php:348
 msgid "Width"
 msgstr ""
 
-#: includes/customizer.php:379
+#: includes/customizer.php:377
 msgid "Mobile Width"
 msgstr ""
 
-#: includes/customizer.php:405
+#: includes/customizer.php:403
 msgid "Site Settings"
 msgstr ""
 
-#: includes/customizer.php:422
+#: includes/customizer.php:420
 msgid "Page Titles"
 msgstr ""
 
-#: includes/customizer.php:423
+#: includes/customizer.php:421
 msgid "Display page titles on individual pages that are not individually opted-out."
 msgstr ""
 
-#: includes/customizer.php:441
+#: includes/customizer.php:439
 msgid "Blog Excerpt"
 msgstr ""
 
-#: includes/customizer.php:442
+#: includes/customizer.php:440
 msgid "Use post excerpts on the blog page."
 msgstr ""
 
-#: includes/customizer.php:461
+#: includes/customizer.php:459
 msgid "Copyright Text"
 msgstr ""
 
-#: includes/customizer.php:503
+#: includes/customizer.php:500
 msgid "Design Style"
 msgstr ""
 
-#: includes/customizer.php:504
+#: includes/customizer.php:501
 msgid "Choose a style, select a color scheme and customize colors to personalize your site."
 msgstr ""
 
-#: includes/customizer.php:527
+#: includes/customizer.php:524
 msgid "Color scheme"
 msgstr ""
 
-#: includes/customizer.php:573
+#: includes/customizer.php:570
 msgid "Secondary"
 msgstr ""
 
-#: includes/customizer.php:595
+#: includes/customizer.php:592
 msgid "Tertiary"
 msgstr ""
 
-#: includes/customizer.php:617
+#: includes/customizer.php:614
 msgid "Header Colors"
 msgstr ""
 
-#: includes/customizer.php:618
+#: includes/customizer.php:615
 msgid "Customize colors within the site header."
 msgstr ""
 
-#: includes/customizer.php:638
-#: includes/customizer.php:700
-#: includes/customizer.php:860
-#: includes/customizer.php:967
+#: includes/customizer.php:635
+#: includes/customizer.php:697
+#: includes/customizer.php:856
+#: includes/customizer.php:963
 msgid "Background"
 msgstr ""
 
-#: includes/customizer.php:658
-#: includes/customizer.php:720
-#: includes/customizer.php:873
-#: includes/customizer.php:980
+#: includes/customizer.php:655
+#: includes/customizer.php:717
+#: includes/customizer.php:869
+#: includes/customizer.php:976
 msgid "Foreground"
 msgstr ""
 
-#: includes/customizer.php:679
+#: includes/customizer.php:676
 msgid "Footer Colors"
 msgstr ""
 
-#: includes/customizer.php:680
+#: includes/customizer.php:677
 msgid "Customize colors within the site footer."
 msgstr ""
 
-#: includes/customizer.php:740
-#: includes/customizer.php:993
+#: includes/customizer.php:737
+#: includes/customizer.php:989
 msgid "Heading"
 msgstr ""
 
-#: includes/customizer.php:760
+#: includes/customizer.php:757
 msgid "Social Icon"
 msgstr ""
 
-#: includes/customizer.php:781
+#: includes/customizer.php:778
 msgid "Additional Design Controls"
 msgstr ""
 
-#: includes/customizer.php:782
+#: includes/customizer.php:779
 msgid "Customize additional design settings."
 msgstr ""
 
-#: includes/customizer.php:802
+#: includes/customizer.php:799
 msgid "Site Spacing"
 msgstr ""
 
-#: includes/customizer.php:826
-#: includes/customizer.php:845
+#: includes/customizer.php:822
+#: includes/customizer.php:841
 msgid "Header"
 msgstr ""
 
-#: includes/customizer.php:846
+#: includes/customizer.php:842
 msgid "Choose a header for every page on your site, then style it with the selectors below."
 msgstr ""
 
-#: includes/customizer.php:892
+#: includes/customizer.php:888
 msgid "Sticky Header"
 msgstr ""
 
-#: includes/customizer.php:893
+#: includes/customizer.php:889
 msgid "Set the header to sticky, so that it follows as users scroll."
 msgstr ""
 
-#: includes/customizer.php:912
+#: includes/customizer.php:908
 msgid "Remove Search"
 msgstr ""
 
-#: includes/customizer.php:913
+#: includes/customizer.php:909
 msgid "Remove the search icon from the header."
 msgstr ""
 
-#: includes/customizer.php:933
-#: includes/customizer.php:952
+#: includes/customizer.php:929
+#: includes/customizer.php:948
 msgid "Footer"
 msgstr ""
 
-#: includes/customizer.php:953
+#: includes/customizer.php:949
 msgid "Choose a footer for every page on your site, then style it with the selectors below."
 msgstr ""
 
-#: includes/customizer.php:1013
+#: includes/customizer.php:1009
 msgid "Social"
 msgstr ""
 
-#: includes/customizer.php:1014
+#: includes/customizer.php:1010
 msgid "Add social media account links to apply social icons on the site footer."
 msgstr ""
 
-#: includes/customizer.php:1050
+#: includes/customizer.php:1046
 msgid "Social icon"
 msgstr ""
 
-#: includes/customizer.php:1070
+#: includes/customizer.php:1066
 msgid "Menu Behavior"
 msgstr ""
 
-#: includes/customizer.php:1087
+#: includes/customizer.php:1083
 msgid "Show sub menus on hover."
 msgstr ""
 
-#: includes/customizer.php:1088
+#: includes/customizer.php:1084
 msgid "Show sub menu items on hover."
 msgstr ""
 
-#: includes/customizer.php:1106
+#: includes/customizer.php:1101
 msgid "Site Design"
 msgstr ""
 
@@ -1082,7 +1083,7 @@ msgid "(Edit)"
 msgstr ""
 
 #: includes/pluggable.php:44
-#: includes/template-tags.php:115
+#: includes/template-tags.php:114
 msgid "Post author"
 msgstr ""
 
@@ -1105,43 +1106,43 @@ msgid "Reply"
 msgstr ""
 
 #. Translators: %s = the author name.
-#: includes/template-tags.php:121
+#: includes/template-tags.php:120
 #, php-format
 msgctxt "%s = author name"
 msgid "By %s"
 msgstr ""
 
-#: includes/template-tags.php:137
+#: includes/template-tags.php:136
 msgid "Post date"
 msgstr ""
 
-#: includes/template-tags.php:172
+#: includes/template-tags.php:171
 msgid "Categories"
 msgstr ""
 
-#: includes/template-tags.php:176
+#: includes/template-tags.php:175
 msgid "In"
 msgstr ""
 
-#: includes/template-tags.php:190
+#: includes/template-tags.php:189
 msgid "Tags"
 msgstr ""
 
-#: includes/template-tags.php:228
+#: includes/template-tags.php:227
 msgid "Featured"
 msgstr ""
 
 #. translators: %s: The social icon label.
-#: includes/template-tags.php:760
+#: includes/template-tags.php:754
 #, php-format
 msgid "Open %s in a new tab"
 msgstr ""
 
-#: includes/template-tags.php:929
+#: includes/template-tags.php:921
 msgid "Menu"
 msgstr ""
 
-#: includes/template-tags.php:969
+#: includes/template-tags.php:961
 msgid "Search Toggle"
 msgstr ""
 
@@ -1149,52 +1150,52 @@ msgstr ""
 msgid "Hide Page Title."
 msgstr ""
 
-#: includes/woocommerce.php:153
+#: includes/woocommerce.php:150
 msgid "View cart"
 msgstr ""
 
-#: includes/woocommerce.php:218
+#: includes/woocommerce.php:214
 msgid "Close sidebar"
 msgstr ""
 
-#: includes/woocommerce.php:226
+#: includes/woocommerce.php:222
 msgid "Cart"
 msgstr ""
 
 #. translators: 1. Single integer value. (eg: 1 product in your cart). 2. Integer larger than 1. (eg: 5 products in your cart).
-#: includes/woocommerce.php:233
-#: includes/woocommerce.php:283
+#: includes/woocommerce.php:229
+#: includes/woocommerce.php:279
 #, php-format
 msgid "%s product in your cart"
 msgid_plural "%s products in your cart"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/woocommerce.php:337
+#: includes/woocommerce.php:332
 msgid "Your cart is currently empty."
 msgstr ""
 
-#: includes/woocommerce.php:475
+#: includes/woocommerce.php:463
 msgid "Previous Post: "
 msgstr ""
 
-#: includes/woocommerce.php:475
+#: includes/woocommerce.php:463
 msgid "Previous"
 msgstr ""
 
-#: includes/woocommerce.php:476
+#: includes/woocommerce.php:464
 msgid "Next Post:"
 msgstr ""
 
-#: includes/woocommerce.php:476
+#: includes/woocommerce.php:464
 msgid "Next"
 msgstr ""
 
-#: includes/woocommerce.php:507
+#: includes/woocommerce.php:494
 msgid "Back"
 msgstr ""
 
-#: includes/woocommerce.php:558
+#: includes/woocommerce.php:541
 msgid "Reset Selections"
 msgstr ""
 
@@ -1291,30 +1292,30 @@ msgstr ""
 #: partials/layouts/gallery.php:214
 #: partials/layouts/gallery.php:219
 #: partials/layouts/home.php:50
-#: partials/layouts/home.php:140
-#: partials/layouts/home.php:176
-#: partials/layouts/home.php:220
-#: partials/layouts/home.php:273
-#: partials/layouts/home.php:280
-#: partials/layouts/home.php:375
-#: partials/layouts/home.php:401
-#: partials/layouts/home.php:513
-#: partials/layouts/home.php:543
-#: partials/layouts/home.php:574
-#: partials/layouts/home.php:767
-#: partials/layouts/home.php:774
-#: partials/layouts/home.php:781
-#: partials/layouts/home.php:788
-#: partials/layouts/home.php:795
-#: partials/layouts/home.php:804
-#: partials/layouts/home.php:822
-#: partials/layouts/home.php:829
-#: partials/layouts/home.php:836
-#: partials/layouts/home.php:886
-#: partials/layouts/home.php:905
-#: partials/layouts/home.php:912
-#: partials/layouts/home.php:919
-#: partials/layouts/home.php:1207
+#: partials/layouts/home.php:139
+#: partials/layouts/home.php:175
+#: partials/layouts/home.php:219
+#: partials/layouts/home.php:272
+#: partials/layouts/home.php:279
+#: partials/layouts/home.php:374
+#: partials/layouts/home.php:400
+#: partials/layouts/home.php:512
+#: partials/layouts/home.php:542
+#: partials/layouts/home.php:573
+#: partials/layouts/home.php:766
+#: partials/layouts/home.php:773
+#: partials/layouts/home.php:780
+#: partials/layouts/home.php:787
+#: partials/layouts/home.php:794
+#: partials/layouts/home.php:803
+#: partials/layouts/home.php:821
+#: partials/layouts/home.php:828
+#: partials/layouts/home.php:835
+#: partials/layouts/home.php:885
+#: partials/layouts/home.php:904
+#: partials/layouts/home.php:911
+#: partials/layouts/home.php:918
+#: partials/layouts/home.php:1206
 msgid "Image description"
 msgstr ""
 
@@ -1362,7 +1363,7 @@ msgstr ""
 #: partials/layouts/contact.php:16
 #: partials/layouts/contact.php:194
 #: partials/layouts/contact.php:208
-#: partials/layouts/home.php:1193
+#: partials/layouts/home.php:1192
 msgid "Contact"
 msgstr ""
 
@@ -1447,10 +1448,10 @@ msgid "Connecting audience + artist in our lush, speakeasy-style listening room.
 msgstr ""
 
 #: partials/layouts/home.php:16
-#: partials/layouts/home.php:213
-#: partials/layouts/home.php:395
-#: partials/layouts/home.php:721
-#: partials/layouts/home.php:880
+#: partials/layouts/home.php:212
+#: partials/layouts/home.php:394
+#: partials/layouts/home.php:720
+#: partials/layouts/home.php:879
 msgid "Homepage"
 msgstr ""
 
@@ -1462,179 +1463,179 @@ msgstr ""
 msgid "Enjoy Live Music + the Best Coffee You've Ever Had"
 msgstr ""
 
-#: partials/layouts/home.php:147
+#: partials/layouts/home.php:146
 msgid "A social house"
 msgstr ""
 
-#: partials/layouts/home.php:159
+#: partials/layouts/home.php:158
 msgid "With our guides' experience, we will not only get you to where the fish are - but we'll get you hooked on them too. Our crew is knowledgeable and friendly - ready to take you on the trip of your dreams."
 msgstr ""
 
-#: partials/layouts/home.php:183
+#: partials/layouts/home.php:182
 msgid "A listening room"
 msgstr ""
 
-#: partials/layouts/home.php:195
+#: partials/layouts/home.php:194
 msgid "Folks have fought some monster bluefin tuna on standup gear with our offshore fishing packager, which is an incredible challenge for sure! Stick to the shoreline and test your strength pulling in some biggies!"
 msgstr ""
 
-#: partials/layouts/home.php:239
+#: partials/layouts/home.php:238
 msgid "Our approach reflects the people we serve. We are diverse, yet the same."
 msgstr ""
 
-#: partials/layouts/home.php:252
+#: partials/layouts/home.php:251
 msgid "Learn More"
 msgstr ""
 
-#: partials/layouts/home.php:320
+#: partials/layouts/home.php:319
 msgid "When we set up shop with an espresso machine up front and a roaster in the back, we hoped to some day be a part of New York's rich tradition of service and culinary achievement. Everyday this aspiration drives us."
 msgstr ""
 
-#: partials/layouts/home.php:332
+#: partials/layouts/home.php:331
 msgid "The city's energy binds us together. It drives us to be the best."
 msgstr ""
 
-#: partials/layouts/home.php:344
+#: partials/layouts/home.php:343
 msgid "This fairly new coffee shop, conveniently located in downtown Scottsdale, is one of the best coffee shops I've ever been to, and trust me when I say, I've been to many. The owners and the staff will make you feel like an old friend or even family."
 msgstr ""
 
-#: partials/layouts/home.php:357
+#: partials/layouts/home.php:356
 msgid "Grab a cup"
 msgstr ""
 
-#: partials/layouts/home.php:413
+#: partials/layouts/home.php:412
 msgid "Bringing the finest culinary food from the heart of Asia directly to you"
 msgstr ""
 
-#: partials/layouts/home.php:422
+#: partials/layouts/home.php:421
 msgid "View our Menu"
 msgstr ""
 
-#: partials/layouts/home.php:460
+#: partials/layouts/home.php:459
 msgid "<strong>Sushi Nakazawa</strong>&nbsp;serves the&nbsp;<em>omakase</em>&nbsp;of&nbsp;<strong>Chef Daisuke Nakazawa</strong>. Within the twenty-course meal lies Chef Nakazawa’s passion for sushi. With ingredients sourced both domestically and internationally, the chef crafts a very special tasting menu within the style of Edomae sushi. Chef Nakazawa is a strong believer in the food he serves representing the waters he is surrounded by, so only the best and freshest find its way to your plate."
 msgstr ""
 
-#: partials/layouts/home.php:468
+#: partials/layouts/home.php:467
 msgid "The relaxed dining experience at Sushi Nakazawa is chic nonetheless. High back leather chairs at the sushi bar coddle you while each course is explained in detail, and every nuance is revealed. Whether an Edomae novice or self-proclaimed sushi foodie, you will leave with a feeling of euphoria."
 msgstr ""
 
-#: partials/layouts/home.php:521
+#: partials/layouts/home.php:520
 msgid "Authentic"
 msgstr ""
 
-#: partials/layouts/home.php:530
+#: partials/layouts/home.php:529
 msgid "The relaxed dining experience at Bento is chic and airy. High back chairs at the sushi bar coddle you for each course."
 msgstr ""
 
-#: partials/layouts/home.php:551
+#: partials/layouts/home.php:550
 msgid "Historical"
 msgstr ""
 
-#: partials/layouts/home.php:553
-#: partials/layouts/home.php:584
+#: partials/layouts/home.php:552
+#: partials/layouts/home.php:583
 msgid "Write title..."
 msgstr ""
 
-#: partials/layouts/home.php:561
+#: partials/layouts/home.php:560
 msgid "Housed in the original Yami House, the history behind Bento is amazing. Learn more as you dine in our historical dining room."
 msgstr ""
 
-#: partials/layouts/home.php:582
+#: partials/layouts/home.php:581
 msgid "Best-rated"
 msgstr ""
 
-#: partials/layouts/home.php:592
+#: partials/layouts/home.php:591
 msgid "Bento is one of the best-rated restaurants in the region. With glamourous food and delicious drinks - you won't want to miss out!"
 msgstr ""
 
-#: partials/layouts/home.php:652
+#: partials/layouts/home.php:651
 msgid "Bento, Steak &amp; Sushi"
 msgstr ""
 
-#: partials/layouts/home.php:661
+#: partials/layouts/home.php:660
 msgid "123 Example Rd"
 msgstr ""
 
-#: partials/layouts/home.php:670
+#: partials/layouts/home.php:669
 msgid "Scottsdale, AZ 85260"
 msgstr ""
 
-#: partials/layouts/home.php:678
+#: partials/layouts/home.php:677
 msgid "Reservations"
 msgstr ""
 
-#: partials/layouts/home.php:733
+#: partials/layouts/home.php:732
 msgid "Hello! We're a"
 msgstr ""
 
-#: partials/layouts/home.php:742
+#: partials/layouts/home.php:741
 msgid "Branding &amp; Digital Design<br>Studio in Tokyo"
 msgstr ""
 
-#: partials/layouts/home.php:750
-#: partials/layouts/home.php:868
+#: partials/layouts/home.php:749
+#: partials/layouts/home.php:867
 msgid "Let's Talk"
 msgstr ""
 
-#: partials/layouts/home.php:851
+#: partials/layouts/home.php:850
 msgid "Need our help?"
 msgstr ""
 
-#: partials/layouts/home.php:860
+#: partials/layouts/home.php:859
 msgid "We Create Brands and Inspire Experiences"
 msgstr ""
 
-#: partials/layouts/home.php:928
+#: partials/layouts/home.php:927
 msgid "Welcome to Salt"
 msgstr ""
 
-#: partials/layouts/home.php:937
+#: partials/layouts/home.php:936
 msgid "For over forty years Salt has been known for its luxury lobster, steamed clams, barbecued chicken and homemade clam chowder. Stop on by and grab some of the most incredible seafood you'll ever taste."
 msgstr ""
 
-#: partials/layouts/home.php:953
+#: partials/layouts/home.php:952
 msgid "Food &amp; Hours"
 msgstr ""
 
-#: partials/layouts/home.php:1035
+#: partials/layouts/home.php:1034
 msgid "Ocean to Plate"
 msgstr ""
 
-#: partials/layouts/home.php:1037
-#: partials/layouts/home.php:1107
-#: partials/layouts/home.php:1177
+#: partials/layouts/home.php:1036
+#: partials/layouts/home.php:1106
+#: partials/layouts/home.php:1176
 msgid "Add feature title..."
 msgstr ""
 
-#: partials/layouts/home.php:1044
+#: partials/layouts/home.php:1043
 msgid "Cajun &amp; creole seafood cuisine, never frozen - delish"
 msgstr ""
 
-#: partials/layouts/home.php:1052
+#: partials/layouts/home.php:1051
 msgid "See Menu"
 msgstr ""
 
-#: partials/layouts/home.php:1105
+#: partials/layouts/home.php:1104
 msgid "Dine with Us"
 msgstr ""
 
-#: partials/layouts/home.php:1114
+#: partials/layouts/home.php:1113
 msgid "Mon - Thurs => 5pm - 11pm<br> Fri-Sat => 5pm - Midnight"
 msgstr ""
 
-#: partials/layouts/home.php:1122
+#: partials/layouts/home.php:1121
 msgid "Dine in"
 msgstr ""
 
-#: partials/layouts/home.php:1175
+#: partials/layouts/home.php:1174
 msgid "Catering"
 msgstr ""
 
-#: partials/layouts/home.php:1184
+#: partials/layouts/home.php:1183
 msgid "We cater all events from family reunions, to weddings"
 msgstr ""
 
-#: partials/layouts/home.php:1186
+#: partials/layouts/home.php:1185
 msgid "Add feature content"
 msgstr ""
 
