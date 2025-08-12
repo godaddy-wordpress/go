@@ -18,7 +18,7 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/spacer',
 				array(
-					'height' => 60,
+					'height' => '60px',
 				),
 				array(),
 			),
@@ -38,7 +38,7 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/spacer',
 				array(
-					'height' => 20,
+					'height' => '20px',
 				),
 				array(),
 			),
@@ -941,7 +941,7 @@ function go_coblocks_home_layouts( $layouts ) {
 			array(
 				'core/spacer',
 				array(
-					'height' => 30,
+					'height' => '30px',
 				),
 				array(),
 			),

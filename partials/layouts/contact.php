@@ -36,7 +36,7 @@ function go_coblocks_contact_layouts( $layouts ) {
 			array(
 				'core/spacer',
 				array(
-					'height' => 30,
+					'height' => '30px',
 				),
 				array(),
 			),
