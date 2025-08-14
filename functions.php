@@ -8,7 +8,7 @@
 /**
  * Theme constants.
  */
-define( 'GO_VERSION', '1.8.16' );
+define( 'GO_VERSION', '1.8.17' );
 define( 'GO_PLUGIN_DIR', get_template_directory( __FILE__ ) );
 define( 'GO_PLUGIN_URL', get_template_directory_uri( __FILE__ ) );
 
