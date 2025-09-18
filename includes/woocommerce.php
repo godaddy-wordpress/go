@@ -340,13 +340,6 @@ function empty_cart_message() {
  */
 function disable_cart() {
 
-	// Skip for API requests.
-	if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
-
-		return;
-
-	}
-
 	/**
 	 * Filter whether to always show the cart icon.
 	 * Default: `false`
