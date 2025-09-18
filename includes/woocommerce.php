@@ -340,6 +340,13 @@ function empty_cart_message() {
  */
 function disable_cart() {
 
+	// Skip for API requests.
+	if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+
+		return;
+
+	}
+
 	/**
 	 * Filter whether to always show the cart icon.
 	 * Default: `false`
@@ -352,7 +359,7 @@ function disable_cart() {
 
 	global $woocommerce;
 
-	if ( is_admin() || $always_show_cart || 0 < $woocommerce->cart->get_cart_contents_count() ) {
+	if ( is_admin() || $always_show_cart || ( $woocommerce->cart && 0 < $woocommerce->cart->get_cart_contents_count() ) ) {
 
 		return;
 
