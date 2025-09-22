@@ -9,7 +9,7 @@
 		<img src="https://github.com/godaddy-wordpress/go/actions/workflows/run-tests.yml/badge.svg" alt="Github Test Workflow">
 	</a>
 	<a href="https://wordpress.org/" target="_blank">
-		<img src="https://img.shields.io/static/v1?label=&message=5.0+-+6.7&color=blue&style=flat-square&logo=wordpress&logoColor=white" alt="WordPress Versions">
+		<img src="https://img.shields.io/static/v1?label=&message=5.0+-+6.8&color=blue&style=flat-square&logo=wordpress&logoColor=white" alt="WordPress Versions">
 	</a>
 	<a href="https://www.php.net/" target="_blank">
 		<img src="https://img.shields.io/static/v1?label=&message=7.4+-+8.3&color=777bb4&style=flat-square&logo=php&logoColor=white" alt="PHP Versions">
