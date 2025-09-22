@@ -1,3 +1,11 @@
+= 1.8.18 / 2025-09-22 =
+### Updates
+- Fix WooCommerce Fatal Error. [#943](https://github.com/godaddy-wordpress/go/pull/943)
+
+= 1.8.17 / 2025-08-12 =
+### Updates
+- Fix height attribute for spacer block. [#940](https://github.com/godaddy-wordpress/go/pull/940)
+
 = 1.8.16 / 2025-07-22 =
 ### Updates
 - Bump Woo cart template to version 10.0.0. [#932](https://github.com/godaddy-wordpress/go/pull/932)
