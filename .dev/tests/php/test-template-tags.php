@@ -1439,7 +1439,7 @@ class Test_Template_Tags extends WP_UnitTestCase {
 
 		set_theme_mod( 'custom_logo', $featured_image_id );
 
-		$this->expectOutputRegex( '/<h1 class="custom-logo"><a href="http:\/\/localhost:8889\/" class="custom-logo-link" rel="home">(<img)([^<]*|[^>]*)(.*\/>)<\/a><\/h1>/' );
+		$this->expectOutputRegex( '/<div class="custom-logo"><a href="http:\/\/localhost:8889\/" class="custom-logo-link" rel="home">(<img)([^<]*|[^>]*)(.*\/>)<\/a><\/div>/' );
 
 		Go\site_branding();
 
