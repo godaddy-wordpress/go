@@ -137,7 +137,7 @@
     "json2po": "^1.0.5",
     "lint-staged": "^11.2.6",
     "load-grunt-tasks": "^5.1.0",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "mini-css-extract-plugin": "^2.7.2",
     "pa11y": "^6.0.1",
     "perfectionist-dfd": "^3.0.0",
