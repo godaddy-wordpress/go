@@ -12,6 +12,8 @@
 - Enable on-demand core block stylesheet loading (`should_load_separate_core_block_assets`) — the classic-theme path was hardened in WordPress 7.0.
 - Add `.gitattributes` to normalise line endings to LF for all text source files so cross-platform commits stop failing the `Generic.Files.LineEndings.InvalidEOLChar` sniff.
 - Decouple from CoBlocks. Only load `partials/layouts/*.php` when the CoBlocks plugin is active, and ship `includes/patterns.php` with four native, core-block-only patterns (About, Contact, Gallery, Home) registered under a new "Go" block pattern category so sites without CoBlocks still get curated starter content.
+- Add a CSS-class-triggered mega menu for the primary navigation. Editors add the `go-mega` class to any top-level menu item in Appearance > Menus and the new `Go\Mega_Menu\Walker` wraps the child submenu in a full-width, multi-column panel with hover, focus, Escape, and click-outside handling.
+- Add a live product search REST endpoint at `/wp-json/go/v1/product-search` (active when WooCommerce is loaded) plus a frontend component (`js-go-product-search` input class) that renders a debounced dropdown of matching products with thumbnail, price, and out-of-stock badge.
 
 = 1.8.18 / 2025-09-22 =
 ### Updates

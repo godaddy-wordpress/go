@@ -1,0 +1,107 @@
+/**
+ * Mega-menu styles for the primary navigation.
+ *
+ * Triggered when a menu item carries the `go-mega` CSS class. The
+ * walker (Go\Mega_Menu\Walker) wraps the submenu in `.go-mega__panel`
+ * and the children in `.go-mega__columns`.
+ */
+
+.primary-menu {
+
+	.menu-item-has-mega {
+		position: static;
+
+		> a {
+			cursor: pointer;
+		}
+	}
+
+	.go-mega__panel {
+		background-color: var(--wp--preset--color--background, #fff);
+		border-top: 1px solid var(--wp--preset--color--tertiary, rgba(0, 0, 0, 0.08));
+		box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+		left: 0;
+		padding: var(--wp--preset--spacing--60, 2.25rem) var(--wp--preset--spacing--50, 1.5rem);
+		position: absolute;
+		right: 0;
+		top: 100%;
+		transform-origin: top center;
+		z-index: 50;
+
+		&[hidden] {
+			display: none;
+		}
+
+		&.is-go-mega-open {
+			animation: go-mega-in 160ms ease-out;
+		}
+	}
+
+	.go-mega__columns {
+		display: grid;
+		gap: var(--wp--preset--spacing--50, 1.5rem) var(--wp--preset--spacing--60, 2.25rem);
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		list-style: none;
+		margin: 0 auto;
+		max-width: var(--wp--style--global--wide-size, 1280px);
+		padding: 0;
+	}
+
+	.go-mega__columns > li {
+		break-inside: avoid;
+		min-width: 0;
+	}
+
+	.go-mega__columns > li > a {
+		color: var(--wp--preset--color--secondary, currentColor);
+		display: inline-block;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		margin-bottom: 0.5rem;
+		text-transform: uppercase;
+	}
+
+	.go-mega__columns .sub-menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.go-mega__columns .sub-menu > li > a {
+		color: var(--wp--preset--color--secondary, inherit);
+		display: block;
+		font-weight: 400;
+		padding: 0.25rem 0;
+		text-transform: none;
+
+		&:hover,
+		&:focus {
+			color: var(--wp--preset--color--primary, currentColor);
+		}
+	}
+}
+
+@keyframes go-mega-in {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 768px) {
+
+	.primary-menu .go-mega__panel {
+		border-top: 0;
+		box-shadow: none;
+		padding: var(--wp--preset--spacing--40, 1rem) 0;
+		position: static;
+	}
+
+	.primary-menu .go-mega__columns {
+		grid-template-columns: 1fr;
+	}
+}

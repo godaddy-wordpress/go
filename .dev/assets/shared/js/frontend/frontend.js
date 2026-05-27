@@ -2,10 +2,14 @@ import debounce from './utility/debounce';
 import primaryMenu from './components/primary-menu.js';
 import searchToggle from './components/search-toggle.js';
 import wooMenuCart from './components/woo-menu-cart.js';
+import megaMenu from './components/mega-menu.js';
+import productSearch from './components/product-search.js';
 
 primaryMenu();
 searchToggle();
 wooMenuCart();
+megaMenu();
+productSearch();
 
 document.addEventListener( 'DOMContentLoaded', function() {
 	const hasSelectiveRefresh = (

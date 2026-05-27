@@ -58,6 +58,16 @@ require_once get_parent_theme_file_path( 'includes/title-meta.php' );
 require_once get_parent_theme_file_path( 'includes/patterns.php' );
 
 /**
+ * Mega-menu walker + helpers for the primary navigation.
+ */
+require_once get_parent_theme_file_path( 'includes/mega-menu.php' );
+
+/**
+ * REST product search endpoint backing the live product-search component.
+ */
+require_once get_parent_theme_file_path( 'includes/product-search.php' );
+
+/**
  * Go Deactivate Modal functions.
  */
 require_once get_parent_theme_file_path( 'includes/classes/admin/class-go-theme-deactivation.php' );
