@@ -105,6 +105,9 @@ module.exports = {
 						loader: 'sass-loader',
 						options: {
 							sourceMap: ! isProduction,
+							sassOptions: {
+								loadPaths: [ path.resolve( process.cwd(), 'node_modules' ) ],
+							},
 						},
 					},
 				],

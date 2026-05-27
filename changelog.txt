@@ -1,3 +1,12 @@
+= 1.9.0 / 2026-05-27 =
+### Updates
+- Target WordPress 7.0. Bump `Tested up to: 7.0` and `Requires at least: 6.8` in `style.css`; update CI to run PHPUnit against `WordPress/WordPress#7.0`; bump `phpcs.xml` minimum_supported_wp_version to 6.8.
+- Raise minimum PHP requirement to 8.1. Align `style.css`, `composer.json`, and `phpcs.xml` so all three agree on the floor. CI PHPUnit matrix now runs PHP 8.1, 8.2, 8.3 (7.4 dropped).
+- Bump build toolchain: `@wordpress/scripts` to 30.26.x (wp-6.9 line) with aligned `@wordpress/*` packages, `eslint` 8.x, `cypress` 13.x, `stylelint` 14.x, `webpackbar` 7.x.
+- Bump Composer dev deps: `johnpbloch/wordpress-core` and `wp-phpunit/wp-phpunit` to 6.8.x, `wp-coding-standards/wpcs` to 3.1.x, `yoast/phpunit-polyfills` to 3.x.
+- Normalise Windows path separators in CopyWebpackPlugin `to()` so production builds succeed on Windows hosts.
+- Drop redundant `@wordpress/components` source-SCSS imports from `style-deactivate-modal.scss`; WordPress already enqueues `wp-components` in the admin, so the duplicate compile is unnecessary and breaks on the current components package layout.
+
 = 1.8.18 / 2025-09-22 =
 ### Updates
 - Fix WooCommerce Fatal Error. [#943](https://github.com/godaddy-wordpress/go/pull/943)
