@@ -36,6 +36,74 @@ function setup() {
 	add_filter( 'comment_form_defaults', $n( 'comment_form_reply_title' ) );
 	add_filter( 'the_content_more_link', $n( 'read_more_tag' ) );
 	add_filter( 'get_custom_logo_image_attributes', $n( 'custom_logo_alt_text' ), PHP_INT_MAX, 2 );
+	add_filter( 'wp_theme_json_data_theme', $n( 'filter_theme_json_palette' ) );
+
+	// Load each core block's stylesheet only when the block renders. WordPress
+	// 7.0 made this path more reliable for classic themes.
+	add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+}
+
+/**
+ * Inject the runtime Customizer palette into theme.json so the live values from
+ * the active design style and colour scheme drive the block editor + frontend
+ * presets instead of the static defaults shipped in theme.json.
+ *
+ * @param \WP_Theme_JSON_Data $theme_json The theme JSON data object.
+ * @return \WP_Theme_JSON_Data
+ */
+function filter_theme_json_palette( $theme_json ) {
+
+	if ( ! function_exists( '\Go\get_palette_color' ) ) {
+		return $theme_json;
+	}
+
+	$primary    = \Go\get_palette_color( 'primary' );
+	$secondary  = \Go\get_palette_color( 'secondary' );
+	$tertiary   = \Go\get_palette_color( 'tertiary' );
+	$background = \Go\get_palette_color( 'background' );
+
+	if ( empty( $primary ) || empty( $secondary ) ) {
+		return $theme_json;
+	}
+
+	$palette = array(
+		array(
+			'name'  => __( 'Primary', 'go' ),
+			'slug'  => 'primary',
+			'color' => $primary,
+		),
+		array(
+			'name'  => __( 'Secondary', 'go' ),
+			'slug'  => 'secondary',
+			'color' => $secondary,
+		),
+		array(
+			'name'  => __( 'Tertiary', 'go' ),
+			'slug'  => 'tertiary',
+			'color' => $tertiary,
+		),
+		array(
+			'name'  => __( 'Quaternary', 'go' ),
+			'slug'  => 'quaternary',
+			'color' => '#ffffff',
+		),
+		array(
+			'name'  => __( 'Background', 'go' ),
+			'slug'  => 'background',
+			'color' => $background,
+		),
+	);
+
+	return $theme_json->update_with(
+		array(
+			'version'  => 3,
+			'settings' => array(
+				'color' => array(
+					'palette' => $palette,
+				),
+			),
+		)
+	);
 }
 
 /**
@@ -167,8 +235,11 @@ function theme_setup() {
 	// Add support for editor styles.
 	add_theme_support( 'editor-styles' );
 
-	// Add support for experimental link colors.
-	add_theme_support( 'experimental-link-color' );
+	// Add support for the Font Library across both classic and block themes
+	// (available to classic themes from WordPress 7.0). Link colours are
+	// driven by theme.json now, so the legacy experimental opt-in is no
+	// longer required.
+	add_theme_support( 'font-library' );
 
 	// Add custom editor font sizes.
 	add_theme_support(

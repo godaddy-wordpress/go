@@ -6,6 +6,11 @@
 - Bump Composer dev deps: `johnpbloch/wordpress-core` and `wp-phpunit/wp-phpunit` to 6.8.x, `wp-coding-standards/wpcs` to 3.1.x, `yoast/phpunit-polyfills` to 3.x.
 - Normalise Windows path separators in CopyWebpackPlugin `to()` so production builds succeed on Windows hosts.
 - Drop redundant `@wordpress/components` source-SCSS imports from `style-deactivate-modal.scss`; WordPress already enqueues `wp-components` in the admin, so the duplicate compile is unnecessary and breaks on the current components package layout.
+- Add `theme.json` (schema v3, WordPress 7.0) with the existing color palette, gradients, font sizes, fluid typography ranges, spacing scale, and layout sizes; expose `appearanceTools`, `useRootPaddingAwareAlignments`, custom duotone, fluid type, and the spacing scale to the editor.
+- Wire the Customizer-driven palette into `theme.json` via the `wp_theme_json_data_theme` filter so the active design style and colour scheme drive `--wp--preset--color--*` instead of the static defaults.
+- Opt the theme into the Font Library (`add_theme_support( 'font-library' )`) — available to classic themes from WordPress 7.0 — and drop the legacy `experimental-link-color` opt-in now that link colour is configured through `theme.json`.
+- Enable on-demand core block stylesheet loading (`should_load_separate_core_block_assets`) — the classic-theme path was hardened in WordPress 7.0.
+- Add `.gitattributes` to normalise line endings to LF for all text source files so cross-platform commits stop failing the `Generic.Files.LineEndings.InvalidEOLChar` sniff.
 
 = 1.8.18 / 2025-09-22 =
 ### Updates
