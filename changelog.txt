@@ -1,3 +1,13 @@
+= 1.8.19 / 2026-05-27 =
+### Updates
+- Bump `woocommerce/cart/cart.php` override to WC 10.8.0:
+  - Add `role="button"` and product-aware `aria-label` ("Remove %s from cart") on the remove link.
+  - Add the `screen-reader-text` class to the visually-hidden coupon label.
+  - Wire the **Apply coupon** and **Update cart** buttons through `wc_wp_theme_get_element_class_name( 'button' )` so theme.json button styles flow through.
+  - Tighten the loop with an `instanceof WC_Product` check and extract `$visible` / `$product_name` variables for clarity.
+  - Pass the cleaned `$product_name` to `woocommerce_quantity_input()` and split the min/max quantity calc.
+  - Preserve the existing theme design: remove link + name remain inside the combined `product-thumbnail` cell with the `.actions` wrapper.
+
 = 1.8.18 / 2025-09-22 =
 ### Updates
 - Fix WooCommerce Fatal Error. [#943](https://github.com/godaddy-wordpress/go/pull/943)
