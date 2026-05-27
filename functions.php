@@ -53,15 +53,26 @@ require_once get_parent_theme_file_path( 'includes/woocommerce.php' );
 require_once get_parent_theme_file_path( 'includes/title-meta.php' );
 
 /**
+ * Native block patterns.
+ */
+require_once get_parent_theme_file_path( 'includes/patterns.php' );
+
+/**
  * Go Deactivate Modal functions.
  */
 require_once get_parent_theme_file_path( 'includes/classes/admin/class-go-theme-deactivation.php' );
 
 /**
- * Layouts for the CoBlocks layout selector.
+ * Layouts for the CoBlocks layout selector. The CoBlocks plugin is optional
+ * (TGM declares it as recommended, not required), so only register the
+ * layout-selector filters when the plugin is actually active. Sites without
+ * CoBlocks fall back to the native block patterns registered in
+ * includes/patterns.php.
  */
-foreach ( glob( get_parent_theme_file_path( 'partials/layouts/*.php' ) ) as $filename ) {
-	require_once $filename;
+if ( class_exists( 'CoBlocks' ) ) {
+	foreach ( glob( get_parent_theme_file_path( 'partials/layouts/*.php' ) ) as $filename ) {
+		require_once $filename;
+	}
 }
 
 /**

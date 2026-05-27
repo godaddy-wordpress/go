@@ -11,6 +11,7 @@
 - Opt the theme into the Font Library (`add_theme_support( 'font-library' )`) — available to classic themes from WordPress 7.0 — and drop the legacy `experimental-link-color` opt-in now that link colour is configured through `theme.json`.
 - Enable on-demand core block stylesheet loading (`should_load_separate_core_block_assets`) — the classic-theme path was hardened in WordPress 7.0.
 - Add `.gitattributes` to normalise line endings to LF for all text source files so cross-platform commits stop failing the `Generic.Files.LineEndings.InvalidEOLChar` sniff.
+- Decouple from CoBlocks. Only load `partials/layouts/*.php` when the CoBlocks plugin is active, and ship `includes/patterns.php` with four native, core-block-only patterns (About, Contact, Gallery, Home) registered under a new "Go" block pattern category so sites without CoBlocks still get curated starter content.
 
 = 1.8.18 / 2025-09-22 =
 ### Updates
